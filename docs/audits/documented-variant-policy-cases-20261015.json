@@ -1,0 +1,894 @@
+{
+  "scope": "PROPOSAL ONLY. No installation or certification is authorized by this dataset. Current manufacturer recapture and reference-by-reference validation remain required.",
+  "cases": [
+    {
+      "sku": "EA15136",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "DBA5136",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA14867",
+            "EA15136"
+          ],
+          "canonical_codes": [
+            "P124867",
+            "DBA5136"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P124867",
+              "record_sha256": "cb490c6efd0ea0fef2c4b7a12c2c8f555e59253eeffd603fafde7b4d7d75201e",
+              "mutually_listed_alternatives": [
+                "DBA5136"
+              ]
+            },
+            {
+              "code": "DBA5136",
+              "record_sha256": "389f98c81b0ff48c652a4e4c8665ba9e350c9e1824b668cd859c37502160a4f7",
+              "mutually_listed_alternatives": [
+                "P124867"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "006307053",
+              "brands": [
+                "TAMROCK"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "00810690",
+              "brands": [
+                "WALGAHN-MOTORENTECHN",
+                "WALGAHN-MOTORENTECHNIK"
+              ],
+              "reference_types": [
+                "COMPETITOR",
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "12565177",
+              "brands": [
+                "VOLVO"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "125651778",
+              "brands": [
+                "VOLVO"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "1401654",
+              "brands": [
+                "ONAN"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "1903930",
+              "brands": [
+                "MARINE TRAVELIFT, INC."
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "29320609",
+              "brands": [
+                "MORBARK"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "361322",
+              "brands": [
+                "WAGNER MINING EQUIPMENT"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "3A13690",
+              "brands": [
+                "LINK BELT"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "4065101",
+              "brands": [
+                "VME"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "499505",
+              "brands": [
+                "VIBRO"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "6211441500",
+              "brands": [
+                "EXMAN"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "69029995",
+              "brands": [
+                "SANDVIK"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "9Y6813",
+              "brands": [
+                "PRO MATCH"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "AE34020",
+              "brands": [
+                "EXMAN"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "AF2235",
+              "brands": [
+                "REFILCO"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "ELM81",
+              "brands": [
+                "WORTHINGTON"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "GD1402840R1",
+              "brands": [
+                "LEROI"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            },
+            {
+              "part_number": "M12565177",
+              "brands": [
+                "VOLVO"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA14867",
+                "EA15136"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA15520",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "P785520",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA11740",
+            "EA15520"
+          ],
+          "canonical_codes": [
+            "P781740",
+            "P785520"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P781740",
+              "record_sha256": "e263e7a4dba8a87bae09ae53180767ff8b90adab2c3419f7c839f06a173a876c",
+              "mutually_listed_alternatives": [
+                "P785520"
+              ]
+            },
+            {
+              "code": "P785520",
+              "record_sha256": "da742bfd3fe940a1b4bd8217de703d7c1a71e606df88be74cf895726f700de82",
+              "mutually_listed_alternatives": [
+                "P781740"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "1387549",
+              "brands": [
+                "SCANIA"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA11740",
+                "EA15520"
+              ]
+            },
+            {
+              "part_number": "1526087",
+              "brands": [
+                "SCANIA"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA11740",
+                "EA15520"
+              ]
+            },
+            {
+              "part_number": "1801775",
+              "brands": [
+                "SCANIA"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA11740",
+                "EA15520"
+              ]
+            },
+            {
+              "part_number": "C311254",
+              "brands": [
+                "MANN"
+              ],
+              "reference_types": [
+                "COMPETITOR"
+              ],
+              "owners": [
+                "EA11740",
+                "EA15520"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA12096",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "P182096",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA11096",
+            "EA12096"
+          ],
+          "canonical_codes": [
+            "P181096",
+            "P182096"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P181096",
+              "record_sha256": "f4289a2ea0def399bdb9b764a3076ff581bc99f83b11d83a8437b75f74d4c083",
+              "mutually_listed_alternatives": [
+                "P182096"
+              ]
+            },
+            {
+              "code": "P182096",
+              "record_sha256": "fba10fd8f1062f0a6788e89e03f090b98be28f875f726a261ec7686eec511d6d",
+              "mutually_listed_alternatives": [
+                "P181096"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "220055038",
+              "brands": [
+                "VOLVO",
+                "WHITE"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA11096",
+                "EA12096"
+              ]
+            },
+            {
+              "part_number": "N1545",
+              "brands": [
+                "NUTECH"
+              ],
+              "reference_types": [
+                "COMPETITOR"
+              ],
+              "owners": [
+                "EA11096",
+                "EA12096"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA12095",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "P182095",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA11095",
+            "EA12095"
+          ],
+          "canonical_codes": [
+            "P181095",
+            "P182095"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P181095",
+              "record_sha256": "feb85256e12dc05e88f23c8013e3d31c47716b309a4c8980166e4e1bac07cb12",
+              "mutually_listed_alternatives": [
+                "DBA5095",
+                "P182095"
+              ]
+            },
+            {
+              "code": "P182095",
+              "record_sha256": "ca6af61ff84a1d92e26df9fec23c974bbcb97196b89730497f05a0922591dcaf",
+              "mutually_listed_alternatives": [
+                "P181095"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "220055039",
+              "brands": [
+                "WESTERN STAR TRUCK",
+                "WHITE"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA11095",
+                "EA12095"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA15043",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "DBA5043",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA12043",
+            "EA15043"
+          ],
+          "canonical_codes": [
+            "P182043",
+            "DBA5043"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P182043",
+              "record_sha256": "7019d57959671cf178bc5a9745df48cc138ca2e940b1ff49ddb0ab132da7baf3",
+              "mutually_listed_alternatives": [
+                "P181043",
+                "DBA5043"
+              ]
+            },
+            {
+              "code": "DBA5043",
+              "record_sha256": "24caea96d8ff77249a3a4513c7c522c7dc862ec9933e10ecce849e9737bb49a2",
+              "mutually_listed_alternatives": [
+                "P181043",
+                "P182043"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "36062830029",
+              "brands": [
+                "GARDNER DENVER",
+                "SULLIVAN PALATEK"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA12043",
+                "EA15043"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA15397",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "DBA5397",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA108676",
+            "EA15397"
+          ],
+          "canonical_codes": [
+            "P608676",
+            "DBA5397"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P608676",
+              "record_sha256": "b1417871506aa712572671574058bf8d418abdac26d78a08ea6ac8631e7cfe2d",
+              "mutually_listed_alternatives": [
+                "DBA5397"
+              ]
+            },
+            {
+              "code": "DBA5397",
+              "record_sha256": "dc327c3ab7f96e4293998e88cfad6f05c7172373d3d2d8d7118b0450e9b57d93",
+              "mutually_listed_alternatives": [
+                "P608676"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "42569259",
+              "brands": [
+                "IVECO"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA108676",
+                "EA15397"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA11186",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "P181186",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA11186",
+            "EA15102"
+          ],
+          "canonical_codes": [
+            "P181186",
+            "DBA5102"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P181186",
+              "record_sha256": "7d4e5aeddbcc89566125b49916f7bd74e559ef34c9037e4a2804cae744a16519",
+              "mutually_listed_alternatives": [
+                "DBA5102"
+              ]
+            },
+            {
+              "code": "DBA5102",
+              "record_sha256": "a46e2aca052dcd7f121e1d0adf9722accce5998777ea61a1d86c7e0ad28d42d3",
+              "mutually_listed_alternatives": [
+                "P181186"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "46868",
+              "brands": [
+                "WIX"
+              ],
+              "reference_types": [
+                "COMPETITOR"
+              ],
+              "owners": [
+                "EA11186",
+                "EA15102"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA15102",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "DBA5102",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA11186",
+            "EA15102"
+          ],
+          "canonical_codes": [
+            "P181186",
+            "DBA5102"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P181186",
+              "record_sha256": "7d4e5aeddbcc89566125b49916f7bd74e559ef34c9037e4a2804cae744a16519",
+              "mutually_listed_alternatives": [
+                "DBA5102"
+              ]
+            },
+            {
+              "code": "DBA5102",
+              "record_sha256": "a46e2aca052dcd7f121e1d0adf9722accce5998777ea61a1d86c7e0ad28d42d3",
+              "mutually_listed_alternatives": [
+                "P181186"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "46868",
+              "brands": [
+                "WIX"
+              ],
+              "reference_types": [
+                "COMPETITOR"
+              ],
+              "owners": [
+                "EA11186",
+                "EA15102"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA15194",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "DBA5194",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA11017",
+            "EA15194"
+          ],
+          "canonical_codes": [
+            "P181017",
+            "DBA5194"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P181017",
+              "record_sha256": "ab3af68ab8803059543a2a775bcb42bde4a8bc05e9438b0f92f8b7b71516962d",
+              "mutually_listed_alternatives": [
+                "DBA5194"
+              ]
+            },
+            {
+              "code": "DBA5194",
+              "record_sha256": "1640d505559097b88be24338664713e5af4c0bf36212fa015455ba0316eb6405",
+              "mutually_listed_alternatives": [
+                "P181017"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "4HS65",
+              "brands": [
+                "MCNEILUS",
+                "OSHKOSH"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA11017",
+                "EA15194"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA10676",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "P600676",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA10676",
+            "EA15108"
+          ],
+          "canonical_codes": [
+            "P600676",
+            "DBA5108"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P600676",
+              "record_sha256": "ac3f4e5a009fa687eaa751a0f2c273215edf2db47c61d26eb06c7c0ee61258c9",
+              "mutually_listed_alternatives": [
+                "DBA5108"
+              ]
+            },
+            {
+              "code": "DBA5108",
+              "record_sha256": "e4f1c4e759023bf85989e6a42e343f7681276b1f02adaaa0e90d29023761e449",
+              "mutually_listed_alternatives": [
+                "P600676"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "57MD46M",
+              "brands": [
+                "MACK"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA10676",
+                "EA15108"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sku": "EA15108",
+      "canonical_manufacturer": "DONALDSON",
+      "canonical_code": "DBA5108",
+      "source_status": "VERIFIED",
+      "proposal_only": true,
+      "policy_approved": false,
+      "manual_mark": false,
+      "groups": [
+        {
+          "owners": [
+            "EA10676",
+            "EA15108"
+          ],
+          "canonical_codes": [
+            "P600676",
+            "DBA5108"
+          ],
+          "source_file": "scripts/donaldson_air_results.json",
+          "source_file_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+          "records": [
+            {
+              "code": "P600676",
+              "record_sha256": "ac3f4e5a009fa687eaa751a0f2c273215edf2db47c61d26eb06c7c0ee61258c9",
+              "mutually_listed_alternatives": [
+                "DBA5108"
+              ]
+            },
+            {
+              "code": "DBA5108",
+              "record_sha256": "e4f1c4e759023bf85989e6a42e343f7681276b1f02adaaa0e90d29023761e449",
+              "mutually_listed_alternatives": [
+                "P600676"
+              ]
+            }
+          ],
+          "conflicts": [
+            {
+              "part_number": "57MD46M",
+              "brands": [
+                "MACK"
+              ],
+              "reference_types": [
+                "OEM"
+              ],
+              "owners": [
+                "EA10676",
+                "EA15108"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
