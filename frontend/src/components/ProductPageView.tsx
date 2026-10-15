@@ -72,7 +72,7 @@ export function ProductPageView({ product: p }: { product: ProductPage }) {
       <header style={hero}>
         <span style={kicker}>{p.duty} · {familyName}</span>
         <h1 style={h1}>{productHeading(p)}</h1>
-        <p style={lead}>{p.description}{' '}<PublicUiText textKey="publicUi.text9">{"Equivalent to"}</PublicUiText>{' '}{equivalenceLine(p, 3)}.</p>
+        <p style={lead}>{p.description}{' '}<PublicUiText textKey="publicUi.text9">{"Reference codes:"}</PublicUiText>{' '}{equivalenceLine(p, 3)}.</p>
         <p style={meta}><PublicUiText textKey="publicUi.text8">{"Technology:"}</PublicUiText>{' '}<Link href={`/technologies/${p.technology.toLowerCase()}/`} style={link}>{p.technology}™</Link></p>
       </header>
 
@@ -89,11 +89,11 @@ export function ProductPageView({ product: p }: { product: ProductPage }) {
       </section>
 
       <section style={section} aria-labelledby="equivalences">
-        <h2 id="equivalences" style={h2}>Equivalences</h2>
+        <h2 id="equivalences" style={h2}>Reference codes</h2>
         {p.oem.length > 0 && (
           <>
             <h3 style={h3}>OEM references</h3>
-            <p style={note}>Equivalent to:</p>
+            <p style={note}>Referenced part numbers:</p>
             <Refs items={p.oem} />
             {extraOem > 0 && <p style={note}>{extraOem} more OEM references are listed in <a href={`${PART_SEARCH}/part/${p.sku}/`} style={link}>Part Search</a>.</p>}
           </>
@@ -103,7 +103,7 @@ export function ProductPageView({ product: p }: { product: ProductPage }) {
             <h3 style={h3}>Cross-references</h3>
             <Refs items={p.crossRefs} />
             {extraCross > 0 && <p style={note}>{extraCross} more cross-references are listed in <a href={`${PART_SEARCH}/part/${p.sku}/`} style={link}>Part Search</a>.</p>}
-            <p style={note}>Third-party brand names are used only to identify equivalent part numbers. Fit and application must be confirmed for each asset.</p>
+            <p style={note}>Third-party brand names are used only to identify reference part numbers. Fit and application must be confirmed for each asset.</p>
           </>
         )}
       </section>
