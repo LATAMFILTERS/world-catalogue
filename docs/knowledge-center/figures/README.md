@@ -2,9 +2,10 @@
 
 Interactive isometric explainer figures for Fuel Cleanliness Protection technology pages.
 
-**Status: see `status.json`.** The HYDROCORE™, TURBOCORE™ and SYNTAPORE™ figures are approved for publication:
-their English builds (`--en`) are written to `frontend/public/knowledge-center/figures/` and linked from the How
-It Works section of each technology page (`/knowledge-center/technologies/<technology>/`).
+**Status: see `status.json`.** Every figure listed below is approved for publication. Their public builds
+(`--lang en|es|pt --public`) are written to `frontend/public/knowledge-center/figures/`: `<name>.html` in English,
+`<name>-es.html` and `<name>-pt.html`. The How It Works section of each technology page
+(`/knowledge-center/technologies/<technology>/`) opens the English page and links the Spanish and Portuguese ones.
 Do not publish a new figure until both of its statuses are approved (see the publication gate in
 `../FUEL_CANONICAL_GOVERNANCE.md`). The Spanish pages in this folder are the review drafts and are not served.
 
@@ -46,11 +47,11 @@ node hydrocore/build.mjs --housing --audit && node hydrocore/build.mjs --housing
 node turbocore/build.mjs --audit && node turbocore/build.mjs --light
 node syntapore/build.mjs --audit && node syntapore/build.mjs --light
 node syntrax/build.mjs --audit && node syntrax/build.mjs --light
-# published English pages and their previews (dark theme, for the Knowledge Center)
-for v in "" --spinon --housing; do node hydrocore/build.mjs $v --en; done
-node turbocore/build.mjs --en
-node syntapore/build.mjs --en
-node syntrax/build.mjs --en
+# published pages (dark theme, for the Knowledge Center) in English, Spanish and Portuguese, and the English previews
+for l in en es pt; do
+  for v in "" --spinon --housing; do node hydrocore/build.mjs $v --lang $l --public; done
+  for f in turbocore syntapore syntrax; do node $f/build.mjs --lang $l --public; done
+done
 for t in syntapore syntrax nanoforce; do
   node compare/build.mjs --tech $t --audit && node compare/build.mjs --tech $t --light
   for l in en es pt; do node compare/build.mjs --tech $t --lang $l --public; done

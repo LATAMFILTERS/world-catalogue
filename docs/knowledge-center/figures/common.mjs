@@ -1,5 +1,6 @@
-// DRAFT (internal-only, see README.md): shared bench parts for the HYDROCORE™ and TURBOCORE™ figures.
+// Shared bench parts and page helpers for the Knowledge Center technology figures (status in status.json).
 // Every drawn item records its true shape so `node build.mjs --audit` can prove the geometry.
+import { join } from "node:path";
 import * as k from "./.anatomy/kit/iso-kit.mjs";
 import * as G from "./.anatomy/kit/lathe.mjs";
 import * as A from "./.anatomy/kit/audit.mjs";
@@ -11,6 +12,19 @@ export { k, G, A };
 export const KIT_NOTICE = "/* anatomy kit (github.com/wheresryan22/anatomy @ be2fa9b) · Copyright (c) 2026 Ryan · MIT License, see ANATOMY_LICENSE.txt */\n";
 // Figure pages are not indexed on their own: the Knowledge Center page that links them is.
 export const draftPage = (html, lang = "es") => html.replace('<html lang="en">', `<html lang="${lang}">`).replace("<head>", '<head><meta name="robots" content="noindex, nofollow">');
+
+// Where a build writes its page: --lang es|en|pt (default es; --en is kept as "--lang en --public") and --public
+// (the site's public figures folder: <base>.html in English, <base>-es / -pt otherwise; review drafts stay here).
+export function pageTarget(here, base, argv = process.argv) {
+  const i = argv.indexOf("--lang");
+  const lang = i > 0 ? argv[i + 1] : argv.includes("--en") ? "en" : "es";
+  if (!["es", "en", "pt"].includes(lang)) throw new Error(`--lang must be es, en or pt (got ${lang})`);
+  const pub = argv.includes("--public") || argv.includes("--en");
+  const theme = argv.includes("--light") ? "light" : "dark";
+  const dir = pub ? join(here, "../../../../frontend/public/knowledge-center/figures") : here;
+  const file = pub ? `${base}${lang === "en" ? "" : `-${lang}`}.html` : `${base}${lang === "es" ? "" : `-${lang}`}${theme === "light" ? "-light" : ""}.html`;
+  return { lang, pub, theme, path: join(dir, file), file, dir };
+}
 
 export const UP = [0, 0, 1];
 export const vertical = (z, x = 0, y = 0) => G.frameOf([x, y, z], UP, [1, 0, 0], [0, 1, 0]);

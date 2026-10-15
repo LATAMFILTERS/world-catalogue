@@ -1,17 +1,16 @@
 // SYNTRAX™ engine lube filtration (status in ../status.json): a full-flow spin-on in the lube circuit.
 //   oil pan → oil pump → SYNTRAX spin-on (on the engine) → main gallery to the bearings → back to the pan
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Loads shown are illustrative, not product data.
-// node build.mjs [--light] [--audit] [--en]
-//   --en  English page for the Knowledge Center, written to frontend/public/knowledge-center/figures
+// node build.mjs [--light] [--audit] [--lang es|en|pt] [--public]   (see pageTarget in ../common.mjs)
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, KIT_NOTICE, draftPage } from "../common.mjs";
+import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, pageTarget, KIT_NOTICE, draftPage } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const theme = process.argv.includes("--light") ? "light" : "dark";
-const EN = process.argv.includes("--en");
+const TARGET = pageTarget(HERE, "syntrax");
+const { lang: LANG, theme } = TARGET;
 const WIDTH = 640;
 const HEIGHT = 520;
 const SERVICE = [0, 70, 0]; // where the spin-on goes when it is changed
@@ -65,7 +64,7 @@ const FRONT = HEAD.y + HEAD.d;
 const headMark =
   k.faceTextSvg(k.sideMatrix([FX, FRONT], HEAD_Z + 16.2, P, "left"), "ELIMFILTERS", { size: 2.8, tone: "hi", anchor: "middle" }) +
   k.faceTextSvg(k.sideMatrix([FX, FRONT], HEAD_Z + 12.6, P, "left"), "SYNTRAX™ · EL8", { size: 2.1, tone: "mid", anchor: "middle" }) +
-  k.faceTextSvg(k.sideMatrix([FX, FRONT], HEAD_Z + 8.8, P, "left"), EN ? "LUBE OIL" : "ACEITE", { size: 1.9, tone: "lo", anchor: "middle" });
+  k.faceTextSvg(k.sideMatrix([FX, FRONT], HEAD_Z + 8.8, P, "left"), { en: "LUBE OIL", es: "ACEITE", pt: "ÓLEO" }[LANG], { size: 1.9, tone: "lo", anchor: "middle" });
 put("head", [FX, HEAD.y + HEAD.d / 2, HEAD_Z + HEAD_H / 2], S(k.slabOf(HEAD, HEAD_Z, HEAD_H, P, 8, 1), { tone: "mid", inner: L(k.sideSeam(HEAD, HEAD_Z + 6, P, 8), { tone: "faint" }) }) + headMark, [A.slab(HEAD, HEAD_Z, HEAD_H, { name: "head" })]);
 const filterIn = FX - 28 - fitting("head.inlet", side(FX - 28, PORT_Z, -1));
 const filterOut = FX + 28 + fitting("head.outlet", side(FX + 28, PORT_Z, 1));
@@ -102,7 +101,7 @@ const galIn = GAL.x + GAL.w + fitting("gallery.inlet", side(GAL.x + GAL.w, GAL_P
 const galOut = GAL.x - fitting("gallery.return", side(GAL.x, GAL_PORT_Z, -1), { boss: 4.6, bossH: 3, hex: 3.8, hexH: 4 });
 
 // oil pan on the bench: pickup and return on top
-put("pan", [PAN.x + PAN.w / 2, PAN.y + PAN.d / 2, PAN_H / 2], S(k.slabOf(PAN, 0, PAN_H, P, 6, 1), { tone: "mid", inner: L(k.sideSeam(PAN, PAN_H - 6, P, 6), { tone: "faint" }) }) + k.faceTextSvg(k.sideMatrix([PAN.x + PAN.w / 2, PAN.y + PAN.d], PAN_H - 15, P, "left"), EN ? "OIL" : "ACEITE", { size: 3, tone: "lo", anchor: "middle" }), [A.slab(PAN, 0, PAN_H, { name: "pan" })]);
+put("pan", [PAN.x + PAN.w / 2, PAN.y + PAN.d / 2, PAN_H / 2], S(k.slabOf(PAN, 0, PAN_H, P, 6, 1), { tone: "mid", inner: L(k.sideSeam(PAN, PAN_H - 6, P, 6), { tone: "faint" }) }) + k.faceTextSvg(k.sideMatrix([PAN.x + PAN.w / 2, PAN.y + PAN.d], PAN_H - 15, P, "left"), { en: "OIL", es: "ACEITE", pt: "ÓLEO" }[LANG], { size: 3, tone: "lo", anchor: "middle" }), [A.slab(PAN, 0, PAN_H, { name: "pan" })]);
 const up = ([x, y]) => G.frameOf([x, y, PAN_H], [0, 0, 1], [1, 0, 0], [0, 1, 0]);
 const pickupTop = PAN_H + fitting("pan.pickup", up(PICKUP));
 const returnTop = PAN_H + fitting("pan.return", up(RETURN));
@@ -118,8 +117,8 @@ const layers = F.render();
 // the gallery hoses plug into the ends of the gallery, a rod, along its own axis: on screen their ends meet it by design
 A.auditOrExit(F.R, P, { crowd: [["feed.hose#3", "gallery"], ["return.hose", "gallery"]] });
 
-const COPY = EN
-  ? {
+const COPY = {
+  en: {
       hint: "Cursor: wear · top: service",
       readout: "filter: low load",
       keys: [
@@ -133,8 +132,8 @@ const COPY = EN
         "Engine lube circuit on a wall bracket: an oil pan on the bench, an oil pump, a full-flow spin-on filter drawn in section with its pleated element, and a main gallery with feeds to the bearings, with a return line to the pan. Particles carried by the oil collect on the pleats.",
       title: "SYNTRAX lube filtration",
       live: { filter: "filter", light: "low load", building: "loading", heavy: "high load", fresh: "new filter", out: "filter off · replaced" },
-    }
-  : {
+    },
+  es: {
       hint: "Cursor: desgaste · arriba: servicio",
       readout: "filtro: carga baja",
       keys: [
@@ -148,7 +147,23 @@ const COPY = EN
         "Circuito de lubricación de motor sobre un soporte de pared: un cárter en el banco, una bomba de aceite, un filtro spin-on de flujo total en corte con su elemento plisado y una galería principal con alimentación a los cojinetes, con retorno al cárter. Las partículas que arrastra el aceite se acumulan en el plisado.",
       title: "SYNTRAX filtración de aceite",
       live: { filter: "filtro", light: "carga baja", building: "cargando", heavy: "carga alta", fresh: "filtro nuevo", out: "filtro fuera · se reemplaza" },
-    };
+    },
+  pt: {
+    hint: "Cursor: desgaste · topo: manutenção",
+    readout: "filtro: carga baixa",
+    keys: [
+      { mark: "lit", label: "Partículas de desgaste e fuligem retidas no meio plissado" },
+      { mark: "raised", label: "Cárter, bomba de óleo, spin-on SYNTRAX de fluxo total (em corte), galeria principal para os mancais, retorno" },
+    ],
+    caption:
+      "Ilustração conceitual de um circuito de lubrificação de motor com um filtro spin-on SYNTRAX™ de fluxo total. A bomba de óleo retira o óleo do cárter e o envia por inteiro através do filtro antes da galeria principal que alimenta os mancais; depois o óleo volta ao cárter. As partículas de desgaste e a fuligem arrastadas pelo óleo ficam retidas no meio plissado, visto em corte. Na manutenção substitui-se o spin-on. Simulação ilustrativa do funcionamento: é uma animação conceitual, não um modelo de engenharia nem um resultado de ensaio, e não mostra dados de produto.",
+    aria: "Filtro de óleo SYNTRAX: setas mudam o desgaste no óleo, E troca o filtro",
+    label:
+      "Circuito de lubrificação de motor sobre um suporte de parede: um cárter na bancada, uma bomba de óleo, um filtro spin-on de fluxo total em corte com o elemento plissado e uma galeria principal com alimentação para os mancais, com retorno ao cárter. As partículas arrastadas pelo óleo acumulam-se nas pregas.",
+    title: "SYNTRAX filtração de óleo",
+    live: { filter: "filtro", light: "carga baixa", building: "carregando", heavy: "carga alta", fresh: "filtro novo", out: "filtro fora · substituído" },
+  },
+}[LANG];
 
 const live = `
 const P = ${JSON.stringify(P)};
@@ -229,8 +244,6 @@ const body = PAGE_CSS + CSS + k.plateHtml({
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
 });
 
-const name = theme === "light" ? "syntrax-light.html" : "syntrax.html";
-const OUT = EN ? join(HERE, "../../../../frontend/public/knowledge-center/figures") : HERE;
-mkdirSync(OUT, { recursive: true });
-writeFileSync(join(OUT, name), draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), EN ? "en" : "es"));
-console.log("wrote", name, F.R.items.length, "items");
+mkdirSync(TARGET.dir, { recursive: true });
+writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));
+console.log("wrote", TARGET.file, F.R.items.length, "items");

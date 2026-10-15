@@ -3,19 +3,19 @@
 //   --spinon   spin-on with an integrated drain, sump shown in section (service: replace the whole cartridge)
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Percentages shown are illustrative, not product data.
 //   --housing  replaceable element inside a tall transparent bowl under a permanent metal shroud (service: bowl off, change the element, refit the bowl)
-// node build.mjs [--spinon|--housing] [--light] [--audit] [--en]
-//   --en  English page for the Knowledge Center, written to frontend/public/knowledge-center/figures
+// node build.mjs [--spinon|--housing] [--light] [--audit] [--lang es|en|pt] [--public]   (see pageTarget in ../common.mjs)
 import { mkdirSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, glassBowl, shellCut, pleatedElement, PAGE_CSS, LIVE_BOWL, KIT_NOTICE, draftPage } from "../common.mjs";
+import { k, G, A, vertical, studio, glassBowl, shellCut, pleatedElement, PAGE_CSS, LIVE_BOWL, KIT_NOTICE, draftPage, pageTarget } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const theme = process.argv.includes("--light") ? "light" : "dark";
+
 const SPINON = process.argv.includes("--spinon");
 const HOUSING = process.argv.includes("--housing");
-const EN = process.argv.includes("--en");
+const TARGET = pageTarget(HERE, `hydrocore${SPINON ? "-spinon" : HOUSING ? "-housing" : ""}`);
+const { lang: LANG, theme } = TARGET;
 const SERVICE = [0, 78, 0]; // where the element (bowl variant), the whole cartridge (spin-on) or the bowl with its element (housing) goes at service
 const WIDTH = 600;
 const HEIGHT = 520;
@@ -141,9 +141,11 @@ const layers = F.render();
 A.auditOrExit(F.R, P);
 
 
-const LIVE_TEXT = EN
-  ? { cartridge: "cartridge", bowl: "bowl", cartridgeOut: "cartridge off · replaced whole", elementOut: "element off · bowl reused", bowlOut: "bowl off · element changed", draining: " · draining", full: " · near the limit", collecting: " · collecting water", much: "much", some: "some", little: "little", water: " water in the fuel, " }
-  : { cartridge: "cartucho", bowl: "vaso", cartridgeOut: "cartucho fuera · se cambia entero", elementOut: "elemento fuera · vaso reutilizado", bowlOut: "vaso fuera · se cambia el elemento", draining: " · purgando", full: " · llegando al límite", collecting: " · acumulando agua", much: "mucha", some: "algo de", little: "poca", water: " agua en el combustible, " };
+const LIVE_TEXT = {
+  en: { cartridge: "cartridge", bowl: "bowl", cartridgeOut: "cartridge off · replaced whole", elementOut: "element off · bowl reused", bowlOut: "bowl off · element changed", draining: " · draining", full: " · near the limit", collecting: " · collecting water", much: "much", some: "some", little: "little", water: " water in the fuel, " },
+  es: { cartridge: "cartucho", bowl: "vaso", cartridgeOut: "cartucho fuera · se cambia entero", elementOut: "elemento fuera · vaso reutilizado", bowlOut: "vaso fuera · se cambia el elemento", draining: " · purgando", full: " · llegando al límite", collecting: " · acumulando agua", much: "mucha", some: "algo de", little: "poca", water: " agua en el combustible, " },
+  pt: { cartridge: "cartucho", bowl: "copo", cartridgeOut: "cartucho fora · trocado inteiro", elementOut: "elemento fora · copo reutilizado", bowlOut: "copo fora · troca-se o elemento", draining: " · drenando", full: " · chegando ao limite", collecting: " · acumulando água", much: "muita", some: "alguma", little: "pouca", water: " água no combustível, " },
+}[LANG];
 
 const live = `
 const P = ${JSON.stringify(P)};
@@ -322,7 +324,55 @@ const COPY_ES = HOUSING
         "Separador de combustible y agua con vaso transparente y purgador, montado en un cabezal sobre un soporte de pared. Las gotas de agua separadas caen al vaso y el purgador las descarga a una taza colectora. Al cambiar el elemento, el vaso se conserva y se reutiliza.",
     };
 
-const COPY = EN ? COPY_EN : COPY_ES;
+const COPY_PT = HOUSING
+  ? {
+      fig: "Fig 1C",
+      hint: "Topo: manutenção · clique: drenar",
+      readout: "copo · acumulando água",
+      keys: [
+        { mark: "lit", label: "Nível de água no copo e borboleta do dreno" },
+        { mark: "blue", label: "Água e resíduos decantando no copo" },
+        { mark: "raised", label: "Cabeçote com carcaça metálica, copo transparente com o elemento plissado à vista, vedação, dreno, copo coletor" },
+      ],
+      caption:
+        "Ilustração conceitual de um separador de combustível/água HYDROCORE™ com elemento substituível dentro de um copo transparente, sob uma carcaça metálica permanente. O elemento plissado é visto através do copo. A água e as impurezas separadas, mais densas que o diesel, decantam no fundo do copo e são descarregadas pelo dreno. Na manutenção, o copo é desmontado, troca-se apenas o elemento e o mesmo copo é montado de volta com sua vedação: a carcaça e o cabeçote ficam no lugar. Simulação ilustrativa do funcionamento: é uma animação conceitual, não um modelo de engenharia nem um resultado de ensaio, e não mostra dados de produto.",
+      aria: "Separador HYDROCORE com elemento em copo transparente: setas mudam a água no combustível, E faz a manutenção, espaço drena",
+      label:
+        "Separador de combustível e água com um copo transparente alto sob uma carcaça metálica, montado em um cabeçote sobre um suporte de parede. O elemento plissado é visto dentro do copo e a água e as impurezas decantam no fundo, sobre o dreno. Na manutenção o copo é desmontado, troca-se o elemento e o mesmo copo volta; a carcaça e o cabeçote ficam.",
+    }
+  : SPINON
+  ? {
+      fig: "Fig 1B",
+      hint: "Topo: manutenção · clique: drenar",
+      readout: "cartucho · acumulando água",
+      keys: [
+        { mark: "lit", label: "Nível de água no fundo do cartucho e borboleta do dreno" },
+        { mark: "blue", label: "Água e resíduos decantando dentro do cartucho" },
+        { mark: "raised", label: "Cabeçote com bomba de escorva, cartucho spin-on com dreno incorporado (em corte), copo coletor" },
+      ],
+      caption:
+        "Ilustração conceitual de um filtro separador spin-on HYDROCORE™ com dreno incorporado, com o fundo do cartucho em vista de corte. A água e as impurezas separadas, mais densas que o diesel, decantam no fundo do próprio cartucho e são descarregadas abrindo o dreno. Na manutenção substitui-se o cartucho inteiro, com seu dreno. Simulação ilustrativa do funcionamento: é uma animação conceitual, não um modelo de engenharia nem um resultado de ensaio, e não mostra dados de produto.",
+      aria: "Spin-on HYDROCORE com dreno incorporado: setas mudam a água no combustível, E troca o cartucho, espaço drena",
+      label:
+        "Filtro separador spin-on de combustível e água com dreno incorporado, montado em um cabeçote sobre um suporte de parede, com o fundo do cartucho em corte. A água separada decanta no fundo do cartucho e o dreno a descarrega em um copo coletor. Na troca retira-se o cartucho inteiro.",
+    }
+  : {
+      fig: "Fig 1A",
+      hint: "Topo: manutenção · clique: drenar",
+      readout: "copo · acumulando água",
+      keys: [
+        { mark: "lit", label: "Nível de água no copo e borboleta do dreno" },
+        { mark: "blue", label: "Água e resíduos decantando no copo" },
+        { mark: "raised", label: "Cabeçote com bomba de escorva, elemento spin-on, copo transparente reutilizável, copo coletor" },
+      ],
+      caption:
+        "Ilustração conceitual de um separador de combustível/água HYDROCORE™ com copo transparente reutilizável e dreno. A água e as impurezas separadas, mais densas que o diesel, decantam no copo e são descarregadas pelo dreno. Na manutenção troca-se apenas o elemento: o mesmo copo é desmontado e instalado no elemento novo. Simulação ilustrativa do funcionamento: é uma animação conceitual, não um modelo de engenharia nem um resultado de ensaio, e não mostra dados de produto.",
+      aria: "Separador HYDROCORE com copo: setas mudam a água no combustível, E troca o elemento, espaço drena",
+      label:
+        "Separador de combustível e água com copo transparente e dreno, montado em um cabeçote sobre um suporte de parede. As gotas de água separadas caem no copo e o dreno as descarrega em um copo coletor. Ao trocar o elemento, o copo é conservado e reutilizado.",
+    };
+
+const COPY = { en: COPY_EN, es: COPY_ES, pt: COPY_PT }[LANG];
 
 const svg = k.figureSvg({
   width: WIDTH,
@@ -341,8 +391,6 @@ const body = PAGE_CSS + k.plateHtml({
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
 });
 
-const name = `hydrocore${SPINON ? "-spinon" : HOUSING ? "-housing" : ""}${theme === "light" ? "-light" : ""}.html`;
-const OUT = EN ? join(HERE, "../../../../frontend/public/knowledge-center/figures") : HERE;
-mkdirSync(OUT, { recursive: true });
-writeFileSync(join(OUT, name), draftPage(k.pageHtml({ title: EN ? "HYDROCORE separator" : "HYDROCORE separador", theme, body, script: KIT_NOTICE + kitScript() + live }), EN ? "en" : "es"));
-console.log("wrote", name, F.R.items.length, "items");
+mkdirSync(TARGET.dir, { recursive: true });
+writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: { en: "HYDROCORE separator", es: "HYDROCORE separador", pt: "HYDROCORE separador" }[LANG], theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));
+console.log("wrote", TARGET.file, F.R.items.length, "items");

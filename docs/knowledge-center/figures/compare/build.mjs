@@ -3,18 +3,15 @@
 //   right  cartridge: the bowl drops, the element stays on the head and is the only part replaced; the same bowl goes back
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Loads shown are illustrative, not product data.
 // node build.mjs --tech syntapore|syntrax|nanoforce [--lang es|en|pt] [--light] [--audit] [--public]
-//   --public  write the page to frontend/public/knowledge-center/figures (compare-<tech>.html for en, -es / -pt otherwise)
+//   (--lang and --public: see pageTarget in ../common.mjs)
 import { mkdirSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, KIT_NOTICE, draftPage } from "../common.mjs";
+import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, KIT_NOTICE, draftPage, pageTarget } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const arg = (name, fallback) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : fallback; };
-const theme = process.argv.includes("--light") ? "light" : "dark";
-const LANG = arg("--lang", "es");
-const PUBLIC = process.argv.includes("--public");
 
 // technology identity (canonical registry names and prefixes, see CLAUDE.md)
 const TECHS = {
@@ -24,7 +21,9 @@ const TECHS = {
 };
 const TECH = arg("--tech", "syntapore");
 const T = TECHS[TECH];
-if (!T || !["es", "en", "pt"].includes(LANG)) throw new Error("usage: --tech syntapore|syntrax|nanoforce --lang es|en|pt");
+if (!T) throw new Error("usage: --tech syntapore|syntrax|nanoforce");
+const TARGET = pageTarget(HERE, `compare-${TECH}`);
+const { lang: LANG, theme } = TARGET;
 
 const WIDTH = 640;
 const HEIGHT = 520;
@@ -246,8 +245,6 @@ const body = PAGE_CSS + CSS + k.plateHtml({
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
 });
 
-const name = PUBLIC ? `compare-${TECH}${LANG === "en" ? "" : "-" + LANG}.html` : `compare-${TECH}${LANG === "es" ? "" : "-" + LANG}${theme === "light" ? "-light" : ""}.html`;
-const OUT = PUBLIC ? join(HERE, "../../../../frontend/public/knowledge-center/figures") : HERE;
-mkdirSync(OUT, { recursive: true });
-writeFileSync(join(OUT, name), draftPage(k.pageHtml({ title: `${COPY.title} · ${T.mark}`, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));
-console.log("wrote", name, F.R.items.length, "items");
+mkdirSync(TARGET.dir, { recursive: true });
+writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: `${COPY.title} · ${T.mark}`, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));
+console.log("wrote", TARGET.file, F.R.items.length, "items");

@@ -83,7 +83,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     worksWith: ['HYDROCORE™', 'TURBOCORE™'],
     image: '/images/technologies/syntapore-media.png',
     figures: [
-      { href: '/knowledge-center/figures/syntapore.html', preview: '/knowledge-center/figures/syntapore.webp', title: 'Primary and secondary filters in the fuel circuit', caption: 'The primary, on the suction side before the transfer pump, holds the larger particles; the secondary, on the engine before the injection system, holds the finer ones. At service each spin-on is replaced.' },
+      { href: '/knowledge-center/figures/syntapore.html', preview: '/knowledge-center/figures/syntapore.webp', title: 'Primary and secondary filters in the fuel circuit', caption: 'The primary, on the suction side before the transfer pump, holds the larger particles; the secondary, on the engine before the injection system, holds the finer ones. At service each spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/syntapore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/syntapore-pt.html' }] },
       { href: '/knowledge-center/figures/compare-syntapore.html', preview: '/knowledge-center/figures/compare-syntapore.webp', title: 'Spin-on and cartridge formats', caption: 'A spin-on is replaced whole, can included. In a cartridge the housing stays on the equipment: the bowl comes off and only the element is changed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/compare-syntapore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/compare-syntapore-pt.html' }] },
     ],
   },
@@ -102,9 +102,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedIndustries: [],
     worksWith: ['SYNTAPORE™', 'TURBOCORE™'],
     figures: [
-      { href: '/knowledge-center/figures/hydrocore.html', preview: '/knowledge-center/figures/hydrocore.webp', title: 'Separator with reusable transparent bowl', caption: 'Water and residues settle in the bowl and leave through the drain. At service only the element is changed; the same bowl is refitted.' },
-      { href: '/knowledge-center/figures/hydrocore-spinon.html', preview: '/knowledge-center/figures/hydrocore-spinon.webp', title: 'Spin-on format with built-in drain', caption: 'Water and residues settle at the bottom of the cartridge itself. At service the whole cartridge is replaced.' },
-      { href: '/knowledge-center/figures/hydrocore-housing.html', preview: '/knowledge-center/figures/hydrocore-housing.webp', title: 'Cartridge format: element inside a transparent bowl', caption: 'The pleated element sits inside the bowl under a permanent shroud. At service the bowl comes off, the element is changed and the same bowl is refitted.' },
+      { href: '/knowledge-center/figures/hydrocore.html', preview: '/knowledge-center/figures/hydrocore.webp', title: 'Separator with reusable transparent bowl', caption: 'Water and residues settle in the bowl and leave through the drain. At service only the element is changed; the same bowl is refitted.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/hydrocore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/hydrocore-pt.html' }] },
+      { href: '/knowledge-center/figures/hydrocore-spinon.html', preview: '/knowledge-center/figures/hydrocore-spinon.webp', title: 'Spin-on format with built-in drain', caption: 'Water and residues settle at the bottom of the cartridge itself. At service the whole cartridge is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/hydrocore-spinon-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/hydrocore-spinon-pt.html' }] },
+      { href: '/knowledge-center/figures/hydrocore-housing.html', preview: '/knowledge-center/figures/hydrocore-housing.webp', title: 'Cartridge format: element inside a transparent bowl', caption: 'The pleated element sits inside the bowl under a permanent shroud. At service the bowl comes off, the element is changed and the same bowl is refitted.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/hydrocore-housing-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/hydrocore-housing-pt.html' }] },
     ],
   },
   {
@@ -122,7 +122,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedIndustries: [],
     worksWith: ['SYNTAPORE™', 'HYDROCORE™'],
     figures: [
-      { href: '/knowledge-center/figures/turbocore.html', preview: '/knowledge-center/figures/turbocore.webp', title: 'Turbine-style housing with fixed deflector', caption: 'A fixed turbine deflector swirls the fuel; water and larger solids are thrown to the wall and settle in the bowl, where the drain releases them. The replaceable element comes out through the lid.' },
+      { href: '/knowledge-center/figures/turbocore.html', preview: '/knowledge-center/figures/turbocore.webp', title: 'Turbine-style housing with fixed deflector', caption: 'A fixed turbine deflector swirls the fuel; water and larger solids are thrown to the wall and settle in the bowl, where the drain releases them. The replaceable element comes out through the lid.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/turbocore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/turbocore-pt.html' }] },
     ],
   },
   {
@@ -141,7 +141,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     worksWith: [],
     image: '/images/technologies/syntrax-media.png',
     figures: [
-      { href: '/knowledge-center/figures/syntrax.html', preview: '/knowledge-center/figures/syntrax.webp', title: 'Full-flow spin-on in the lube circuit', caption: 'The oil pump sends all the oil through the filter before the main gallery that feeds the bearings; wear particles and soot are held on the pleated media. At service the spin-on is replaced.' },
+      { href: '/knowledge-center/figures/syntrax.html', preview: '/knowledge-center/figures/syntrax.webp', title: 'Full-flow spin-on in the lube circuit', caption: 'The oil pump sends all the oil through the filter before the main gallery that feeds the bearings; wear particles and soot are held on the pleated media. At service the spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/syntrax-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/syntrax-pt.html' }] },
       { href: '/knowledge-center/figures/compare-syntrax.html', preview: '/knowledge-center/figures/compare-syntrax.webp', title: 'Spin-on and cartridge formats', caption: 'A spin-on is replaced whole, can included. In a cartridge the housing stays on the engine: the bowl comes off and only the element is changed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/compare-syntrax-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/compare-syntrax-pt.html' }] },
     ],
   },
