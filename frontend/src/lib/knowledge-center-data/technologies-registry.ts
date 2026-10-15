@@ -117,6 +117,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['fuel-cleanliness-protection'],
     relatedIndustries: [],
     worksWith: ['SYNTAPORE™', 'HYDROCORE™'],
+    figures: [
+      { href: '/knowledge-center/figures/turbocore.html', preview: '/knowledge-center/figures/turbocore.webp', title: 'Turbine-style housing with fixed deflector', caption: 'A fixed turbine deflector swirls the fuel; water and larger solids are thrown to the wall and settle in the bowl, where the drain releases them. The replaceable element comes out through the lid.' },
+    ],
   },
   {
     slug: 'syntrax',
