@@ -17,6 +17,11 @@ if (-not (Test-Command "ollama")) {
   }
   Write-Host "Installing Ollama with winget..."
   winget install --id Ollama.Ollama --exact --accept-package-agreements --accept-source-agreements
+  # winget updates PATH in the registry only; refresh this session so `ollama` resolves.
+  $env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [Environment]::GetEnvironmentVariable("Path", "User")
+  if (-not (Test-Command "ollama")) {
+    throw "Ollama was installed but is not on PATH. Open a new PowerShell window and rerun this script."
+  }
 }
 
 $env:OLLAMA_HOST = $OllamaHost
@@ -44,6 +49,7 @@ $payload = @{
   model = $Model
   temperature = 0
   max_tokens = 80
+  reasoning_effort = "none"
   response_format = @{ type = "json_object" }
   messages = @(
     @{ role = "system"; content = "Return JSON only." },
