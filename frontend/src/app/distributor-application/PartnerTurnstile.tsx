@@ -1,5 +1,7 @@
 'use client';
 
+import { ReviewedText } from '@/components/ReviewedText';
+
 import { useEffect, useRef, useState } from 'react';
 
 declare global {
@@ -108,7 +110,7 @@ export default function PartnerTurnstile({ onVerify }: Props) {
       <div ref={containerRef} style={{ margin: '1rem 0', minHeight: 65 }} />
       {message && (
         <div role="alert" style={{ color: '#ffcc55', fontSize: 14, lineHeight: 1.5, paddingBottom: 16 }}>
-          {message}
+          {message.startsWith("Cloudflare rechazó la verificación. Código: ") ? <><ReviewedText text={"Cloudflare rechazó la verificación. Código: "} />{message.slice(44)}</> : <ReviewedText text={message} />}
           <button type="button"
             onClick={() => {
               callbackRef.current('');
@@ -118,7 +120,7 @@ export default function PartnerTurnstile({ onVerify }: Props) {
               setAttempt(n => n + 1);
             }}
             style={{ display: 'block', marginTop: 8, padding: '8px 12px', background: '#ffda59', color: '#111', border: 0, cursor: 'pointer' }}>
-            Reintentar verificación
+            <ReviewedText text="Reintentar verificación" />
           </button>
         </div>
       )}
