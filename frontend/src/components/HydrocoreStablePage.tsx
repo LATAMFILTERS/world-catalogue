@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import styles from './MacrocoreTechnologyPage.module.css';
 import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 
@@ -45,8 +46,8 @@ export function HydrocoreStablePage(){
 
   <nav aria-label="Breadcrumb" style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
    <div className={styles.inner} style={{display:'flex',gap:'.65rem',fontSize:'.72rem',letterSpacing:'.08em'}}>
-    <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>HOME</Link><span>→</span>
-    <Link href="/technologies/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>TECHNOLOGIES</Link><span>→</span>
+    <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link><span>→</span>
+    <Link href="/technologies/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}><PublicUiText textKey="publicUi.text1">{"TECHNOLOGIES"}</PublicUiText></Link><span>→</span>
     <span style={{color:'#fff12d'}}>HYDROCORE™</span>
    </div>
   </nav>
@@ -60,7 +61,7 @@ export function HydrocoreStablePage(){
    <div className={styles.mediaGrid}>
     <div className={styles.mediaCopy}>
      <div className={styles.metaStack}>
-      <p><span>Technology:</span> HYDROCORE™</p>
+      <p><span><PublicUiText textKey="publicUi.text8">{"Technology:"}</PublicUiText></span> HYDROCORE™</p>
       <p><span>Application:</span> Standard non-turbine fuel/water separators</p>
       <p><span>Technical review:</span> <Link href="/about/leadership/">Víctor Abreu — Founder &amp; CEO</Link></p>
      </div>

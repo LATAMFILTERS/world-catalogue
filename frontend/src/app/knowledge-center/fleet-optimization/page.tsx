@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 
 export default function FleetOptimizationHub() {
@@ -186,9 +187,7 @@ export default function FleetOptimizationHub() {
                     fontFamily: 'JetBrains Mono, monospace',
                     fontSize: '0.75rem',
                     fontWeight: 600,
-                  }}>
-                    EXPLORE →
-                  </div>
+                  }}><PublicUiText textKey="publicUi.text17">{"EXPLORE →"}</PublicUiText></div>
                 </Link>
               </motion.div>
             ))}

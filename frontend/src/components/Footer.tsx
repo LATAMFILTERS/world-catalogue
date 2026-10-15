@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 
 // Deployment trigger - footer centered contact info section
 import '@/i18n';
@@ -22,7 +22,7 @@ const getFooterNavigation = (t: any) => [
       { label: t('footer.aboutUs', 'About Us'), href: '/about', external: false },
       { label: t('footer.philosophy', 'Our Philosophy'), href: '/about/philosophy', external: false },
       { label: t('footer.industries', 'Industries'), href: '/industries', external: false },
-      { label: 'Industrial & Process', href: '/industrial-process/', external: false },
+      { label: t('nav.industrialProcess', 'Industrial & Process'), href: '/industrial-process/', external: false },
       { label: t('footer.protectionSystems', 'Protection Systems'), href: '/systems', external: false },
       { label: t('footer.distributors', 'Distributors'), href: '/distributors', external: false },
       { label: t('footer.contact', 'Contact'), href: '/contact', external: false },
@@ -73,7 +73,7 @@ export function Footer() {
   const navColumns = getFooterNavigation(t);
 
   return (
-    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }} role="contentinfo" aria-label="Site footer">
+    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }} role="contentinfo" aria-label={t('a11y.footer', 'Site footer')}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) clamp(1.25rem, 5vw, 48px) 0' }}>
         <div
           className="footer-main-grid"
@@ -230,9 +230,9 @@ export function Footer() {
               WhatsApp
             </a>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <span style={{ color: 'rgba(255,255,255,0.5)' }}>Corporate Headquarters: Frisco, Texas</span>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>{t('footer.headquarters', 'Corporate Headquarters: Frisco, Texas')}</span>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <span style={{ color: 'rgba(255,255,255,0.5)' }}>Global Operations</span>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>{t('footer.globalOperations', 'Global Operations')}</span>
           </div>
         </div>
 
@@ -268,7 +268,7 @@ export function Footer() {
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             >
-              Warranty
+              {t('footer.warranty', 'Warranty')}
             </Link>
             <Link
               href="/legal/privacy"
@@ -281,7 +281,7 @@ export function Footer() {
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             >
-              Privacy
+              {t('footer.privacyShort', 'Privacy')}
             </Link>
             <Link
               href="/legal/terms"
@@ -294,7 +294,7 @@ export function Footer() {
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             >
-              Terms
+              {t('footer.termsShort', 'Terms')}
             </Link>
           </div>
         </div>

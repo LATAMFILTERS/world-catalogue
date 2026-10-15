@@ -56,3 +56,11 @@ export function languageHref(pathname: string | null | undefined, lang: PageLang
   const route = englishRouteOf(pathname);
   return LOCALIZED_ROUTES.includes(route) ? localizedPath(route, lang) : null;
 }
+
+/** Localize only published public pages; preserve queries, fragments and external URLs. */
+export function localizedHref(href: string, lang: PageLang): string {
+  if (!href.startsWith('/') || href.startsWith('//')) return href;
+  const match = href.match(/^([^?#]*)(.*)$/)!;
+  const route = englishRouteOf(match[1]);
+  return LOCALIZED_ROUTES.includes(route) ? localizedPath(route, lang) + match[2] : href;
+}

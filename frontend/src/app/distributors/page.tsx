@@ -1,6 +1,6 @@
 import { PageHeader } from '@/components/PageHeader';
 import { GlobalCommercialModel } from '@/components/GlobalCommercialModel';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';

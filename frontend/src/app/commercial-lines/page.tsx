@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from '@/components/PageHeader';
 
@@ -74,7 +75,7 @@ export default function CommercialLinesPage() {
           <p style={governanceCopy}>Specialized solutions organize approved technologies and components around a specific operating or maintenance context. They do not replace or expand the canonical core taxonomy.</p>
         </div>
       </section>
-      <section style={cta}><Link href="/systems/" style={primaryButton}>EXPLORE CORE SYSTEMS</Link><Link href="/knowledge-center/" style={secondaryButton}>KNOWLEDGE CENTER</Link></section>
+      <section style={cta}><Link href="/systems/" style={primaryButton}>EXPLORE CORE SYSTEMS</Link><Link href="/knowledge-center/" style={secondaryButton}><PublicUiText textKey="publicUi.text31">{"KNOWLEDGE CENTER"}</PublicUiText></Link></section>
     </main>
   );
 }

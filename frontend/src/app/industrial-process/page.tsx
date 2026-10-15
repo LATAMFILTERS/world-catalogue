@@ -1,5 +1,6 @@
+import { PublicUiText } from '@/components/PublicUiText';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { Navigation } from '@/components/Navigation';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { INDUSTRIAL_PROCESS_PLATFORMS, industrialProcessPlatformUrl, industrialProcessTechnologyUrl } from '@/lib/industrial-process-architecture';
@@ -208,7 +209,7 @@ export default function IndustrialProcessPage() {
           <div style={container}>
             <div style={twoCol}>
               <div>
-                <p style={eyebrow}>DIRECT ANSWER</p>
+                <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
                 <h2 id="industrial-direct-answer-title" style={sectionTitle}>What is ELIMFILTERS Industrial &amp; Process?</h2>
               </div>
               <div>

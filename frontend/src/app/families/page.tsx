@@ -1,6 +1,9 @@
+import { ReviewedText } from '@/components/ReviewedText';
+import { FamilyDisplayText, SystemDisplayText } from '@/components/FamilyDisplayText';
+import { PublicUiText } from '@/components/PublicUiText';
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { PRODUCT_FAMILY_LIST } from '@/lib/product-families-data';
 import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -36,23 +39,19 @@ export default function FamiliesPage() {
   return (
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Link href="/products/" style={backButton}>← PRODUCTS</Link>
+      <Link href="/products/" style={backButton}><PublicUiText textKey="publicUi.text36">{"← PRODUCTS"}</PublicUiText></Link>
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/families-hero.avif)' }} />
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <h1 style={heroTitle}>
-            Product Families
-            <br />
-            <span style={{ color: '#FFF12D' }}>Built By System Logic</span>
+          <h1 style={heroTitle}><PublicUiText textKey="publicUi.text5">{"Product Families"}</PublicUiText><br />
+            <span style={{ color: '#FFF12D' }}><ReviewedText text={"Built By System Logic"} /></span>
           </h1>
-          <p style={heroLead}>
-            ELIMFILTERS product families organize filtration products by protection system, duty class, application role, and contamination control purpose.
-          </p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS product families organize filtration products by protection system, duty class, application role, and contamination control purpose."} /></p>
           <div style={tagRow}>
             {['HD', 'LD', 'AIR', 'FUEL', 'LUBE', 'HYDRAULIC', 'COOLING'].map((item) => (
-              <span key={item} style={tag}>{item}</span>
+              <span key={item} style={tag}><ReviewedText text={item} /></span>
             ))}
           </div>
         </div>
@@ -60,14 +59,10 @@ export default function FamiliesPage() {
 
       <section style={section}>
         <div style={twoCol}>
-          <h2 style={sectionTitle}>Part numbers need structure before they can scale.</h2>
+          <h2 style={sectionTitle}><ReviewedText text={"Part numbers need structure before they can scale."} /></h2>
           <div>
-            <p style={leadText}>
-              A product family groups parts by the system they protect, the duty class they serve, and the application environment they are built for.
-            </p>
-            <p style={bodyText}>
-              This gives distributors, fleets, and technical users a cleaner path from protection system to product selection without reducing ELIMFILTERS to a commodity filter list.
-            </p>
+            <p style={leadText}><ReviewedText text={"A product family groups parts by the system they protect, the duty class they serve, and the application environment they are built for."} /></p>
+            <p style={bodyText}><ReviewedText text={"This gives distributors, fleets, and technical users a cleaner path from protection system to product selection without reducing ELIMFILTERS to a commodity filter list."} /></p>
           </div>
         </div>
       </section>
@@ -75,7 +70,7 @@ export default function FamiliesPage() {
       <section style={familySection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <h2 style={sectionTitle}>Organized by protection system.</h2>
+            <h2 style={sectionTitle}><ReviewedText text={"Organized by protection system."} /></h2>
           </div>
 
           <div style={systemStack}>
@@ -86,8 +81,8 @@ export default function FamiliesPage() {
               return (
                 <section key={system.key} style={systemBlock}>
                   <div style={systemHeader}>
-                    <Link href={`/systems/${system.slug}/`} style={systemLink}>{system.name}</Link>
-                    <span style={systemCount}>{families.length} FAMILIES</span>
+                    <Link href={`/systems/${system.slug}/`} style={systemLink}><SystemDisplayText slug={system.slug} original={system.name} /></Link>
+                    <span style={systemCount}>{families.length}{' '}<ReviewedText text={"FAMILIES"} /></span>
                   </div>
 
                   <div style={familyGrid}>
@@ -97,9 +92,9 @@ export default function FamiliesPage() {
                           {family.hdPrefix && <span style={badgeYellow}>HD {family.hdPrefix}</span>}
                           {family.ldPrefix && <span style={badgeDark}>LD {family.ldPrefix}</span>}
                         </div>
-                        <h3 style={familyTitle}>{family.name}</h3>
-                        <p style={familyBody}>{family.purpose.slice(0, 150)}...</p>
-                        <span style={explore}>VIEW FAMILY</span>
+                        <h3 style={familyTitle}><FamilyDisplayText slug={family.slug} field="name" original={family.name} /></h3>
+                        <p style={familyBody}><FamilyDisplayText slug={family.slug} field="purpose" original={family.purpose} limit={150} />...</p>
+                        <span style={explore}><ReviewedText text={"VIEW FAMILY"} /></span>
                       </Link>
                     ))}
                   </div>
@@ -112,12 +107,8 @@ export default function FamiliesPage() {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Move from product family to a validated application path.
-          </h2>
-          <p style={{ ...bodyText, maxWidth: '760px', margin: '1.2rem auto 0' }}>
-            Search Product Intelligence when you already have a part number or application reference. Use Application Support when the protected system, duty cycle or application still needs technical validation.
-          </p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}><ReviewedText text={"Move from product family to a validated application path."} /></h2>
+          <p style={{ ...bodyText, maxWidth: '760px', margin: '1.2rem auto 0' }}><ReviewedText text={"Search Product Intelligence when you already have a part number or application reference. Use Application Support when the protected system, duty cycle or application still needs technical validation."} /></p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
             <a
               href="https://part-search.elimfilters.com"
@@ -125,12 +116,10 @@ export default function FamiliesPage() {
               rel="noopener noreferrer"
               data-conversion-action="product-intelligence"
               style={yellowButton}
-            >
-              SEARCH PRODUCT INTELLIGENCE
-            </a>
-            <Link href="/contact/" data-conversion-action="application-support" style={darkButton}>APPLICATION SUPPORT</Link>
-            <Link href="/systems/" style={darkButton}>EXPLORE SYSTEMS</Link>
-            <Link href="/technologies/" style={darkButton}>EXPLORE TECHNOLOGIES</Link>
+            ><ReviewedText text={"SEARCH PRODUCT INTELLIGENCE"} /></a>
+            <Link href="/contact/" data-conversion-action="application-support" style={darkButton}><ReviewedText text={"APPLICATION SUPPORT"} /></Link>
+            <Link href="/systems/" style={darkButton}><ReviewedText text={"EXPLORE SYSTEMS"} /></Link>
+            <Link href="/technologies/" style={darkButton}><ReviewedText text={"EXPLORE TECHNOLOGIES"} /></Link>
           </div>
         </div>
       </section>

@@ -1,7 +1,8 @@
 'use client';
 
+import { PublicUiText } from '@/components/PublicUiText';
 import { useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import {
   PROBLEM_STUBS,
@@ -261,9 +262,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
             transition={{ duration: 0.5 }}
             style={{ marginBottom: '3rem' }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '1.25rem' }}>
-              FREQUENTLY ASKED QUESTIONS
-            </p>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '1.25rem' }}><PublicUiText textKey="publicUi.text27">{"FREQUENTLY ASKED QUESTIONS"}</PublicUiText></p>
             <FaqAccordion faqs={problem.faqs} />
           </motion.div>
         )}

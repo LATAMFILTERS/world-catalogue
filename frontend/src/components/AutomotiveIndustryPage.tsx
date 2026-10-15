@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
@@ -27,7 +27,7 @@ const operatingConditions = [
 
 const pathways = [
   ['ROAD DUST + PARTICULATE', 'Ambient dust + road debris + intake loading', 'AIR INTAKE', 'MACROCORE™', '/technologies/macrocore/'],
-  ['FUEL CONTAMINATION', 'Storage + dispensing + vehicle fuel-system exposure', 'FUEL FILTRATION', 'APPLICATION-SPECIFIC FUEL PROTECTION', '/families/fuel-filters/'],
+  ['FUEL CONTAMINATION', 'Storage + dispensing + vehicle fuel-system exposure', 'FUEL FILTRATION', 'APPLICATION-SPECIFIC FUEL PROTECTION', '/families/primary-fuel/'],
   ['LUBE CONTAMINATION', 'Wear debris + combustion byproducts + service ingress', 'LUBRICATION', 'SYNTRAX™', '/technologies/syntrax/'],
   ['CABIN PARTICULATE', 'Dust + pollen + urban airborne particulate', 'CABIN AIR', 'MICROKAPPA™', '/technologies/microkappa/'],
 ] as const;

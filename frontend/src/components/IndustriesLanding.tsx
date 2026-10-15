@@ -1,5 +1,5 @@
 import { PageHeader } from '@/components/PageHeader';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { industryText } from '@/lib/industries-i18n';

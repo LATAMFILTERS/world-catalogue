@@ -1,4 +1,7 @@
-import Link from 'next/link';
+import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -111,39 +114,39 @@ export function AirIntakeSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Air Intake & Airflow Protection" />
 
       <section style={hero}>
-        <img src="/images/carcasa.jd.avif" alt="Air intake and airflow protection system" style={heroMedia} />
+        <ReviewedImage src="/images/carcasa.jd.avif" alt="Air intake and airflow protection system" style={heroMedia} />
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>AIRFLOW CONTAMINATION CONTROL</p>
-          <h1 style={heroTitle}>Air Intake &<br /><span style={{ color: '#FFF12D' }}>Airflow Protection</span></h1>
-          <p style={heroPromise}>Control contamination at the airflow boundary before it reaches the engine, operator environment or applicable pneumatic system.</p>
-          <p style={heroLead}>ELIMFILTERS organizes engine intake filtration, air-cleaner housings, cabin-air filtration and air-dryer protection as distinct airflow functions inside one system architecture. The protected airflow path determines the technology, product family and validation evidence required.</p>
+          <p style={eyebrow}><ReviewedText text={"AIRFLOW CONTAMINATION CONTROL"} /></p>
+          <h1 style={heroTitle}><ReviewedText text={"Air Intake &"} context="AirIntakeSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Airflow Protection"} context="AirIntakeSystemPageTitle" /></span></h1>
+          <p style={heroPromise}><ReviewedText text={"Control contamination at the airflow boundary before it reaches the engine, operator environment or applicable pneumatic system."} /></p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS organizes engine intake filtration, air-cleaner housings, cabin-air filtration and air-dryer protection as distinct airflow functions inside one system architecture. The protected airflow path determines the technology, product family and validation evidence required."} /></p>
           <div style={buttonRow}>
-            <Link href="#protection-path" style={yellowButton}>IDENTIFY THE AIRFLOW PATH</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <Link href="#protection-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE AIRFLOW PATH"} /></Link>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
-          <h2 style={h2}>One protection system. Four different airflow boundaries.</h2>
+          <h2 style={h2}><ReviewedText text={"One protection system. Four different airflow boundaries."} /></h2>
           <div>
-            <p style={lead}>Air Intake & Airflow Protection is not a single filter category. It is the system-level architecture used to decide which airflow path is being protected before a technology or part number is selected.</p>
-            <p style={body}>Engine intake, cabin ventilation, air-cleaner housings and compressed-air drying do not share the same function or validation standard. They are connected by airflow, but each must be resolved on its own application evidence.</p>
+            <p style={lead}><ReviewedText text={"Air Intake & Airflow Protection is not a single filter category. It is the system-level architecture used to decide which airflow path is being protected before a technology or part number is selected."} /></p>
+            <p style={body}><ReviewedText text={"Engine intake, cabin ventilation, air-cleaner housings and compressed-air drying do not share the same function or validation standard. They are connected by airflow, but each must be resolved on its own application evidence."} /></p>
           </div>
         </div>
       </section>
 
       <section id="protection-path" style={sectionAlt}>
-        <p style={eyebrow}>PROTECTION PATHWAYS</p>
-        <h2 style={h2}>Start with the airflow path, not the filter shape.</h2>
+        <p style={eyebrow}><ReviewedText text={"PROTECTION PATHWAYS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Start with the airflow path, not the filter shape."} /></h2>
         <div style={grid4}>
           {domains.map(([title, exposure, technology, href]) => (
             <article key={title} style={card}>
-              <p style={cardLabel}>{title}</p>
-              <p style={cardBody}>{exposure}</p>
+              <p style={cardLabel}><ReviewedText text={title} /></p>
+              <p style={cardBody}><ReviewedText text={exposure} /></p>
               <div style={arrow}>↓</div>
               <Link href={href} style={techLink}>{technology}</Link>
             </article>
@@ -154,75 +157,75 @@ export function AirIntakeSystemPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>ENGINEERING PRINCIPLE</p>
-            <h2 style={h2}>The contamination boundary includes the housing, seal and airflow path.</h2>
+            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
+            <h2 style={h2}><ReviewedText text={"The contamination boundary includes the housing, seal and airflow path."} /></h2>
           </div>
           <div>
-            <p style={lead}>Filtration performance depends on more than media. Air can bypass the intended protection path through an incorrect housing, damaged seal, poor element fit or a product selected for the wrong airflow function.</p>
-            <p style={body}>That is why ELIMFILTERS keeps the hierarchy explicit: protected airflow path → technology → product family → validated part number.</p>
+            <p style={lead}><ReviewedText text={"Filtration performance depends on more than media. Air can bypass the intended protection path through an incorrect housing, damaged seal, poor element fit or a product selected for the wrong airflow function."} /></p>
+            <p style={body}><ReviewedText text={"That is why ELIMFILTERS keeps the hierarchy explicit: protected airflow path → technology → product family → validated part number."} /></p>
           </div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
-        <h2 style={h2}>Different airflow functions protect different parts of the asset.</h2>
+        <p style={eyebrow}><ReviewedText text={"WHAT THE SYSTEM PROTECTS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Different airflow functions protect different parts of the asset."} /></h2>
         <div style={grid2}>
           {assets.map(([title, text]) => (
             <article key={title} style={lineCard}>
-              <h3 style={h3}>{title}</h3>
-              <p style={body}>{text}</p>
+              <h3 style={h3}><ReviewedText text={title} /></h3>
+              <p style={body}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>PRODUCT ARCHITECTURE</p>
-        <h2 style={h2}>From protection system to physical filtration component.</h2>
+        <p style={eyebrow}><ReviewedText text={"PRODUCT ARCHITECTURE"} /></p>
+        <h2 style={h2}><ReviewedText text={"From protection system to physical filtration component."} /></h2>
         <div style={familyGrid}>
           {families.map(([name, slug, purpose]) => (
             <Link key={slug} href={`/families/${slug}/`} style={familyCard}>
-              <h3 style={h3}>{name}</h3>
-              <p style={body}>{purpose}</p>
-              <span style={smallLink}>VIEW PRODUCT FAMILY →</span>
+              <h3 style={h3}><ReviewedText text={name} /></h3>
+              <p style={body}><ReviewedText text={purpose} /></p>
+              <span style={smallLink}><ReviewedText text={"VIEW PRODUCT FAMILY →"} /></span>
             </Link>
           ))}
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>VALIDATION CONTEXT</p>
-        <h2 style={h2}>Do not collapse different airflow domains into one standard.</h2>
-        <p style={{ ...lead, maxWidth: '820px' }}>Standards belong to the product family and protected airflow path. Engine intake, cabin air and compressed air are separate engineering domains.</p>
+        <p style={eyebrow}><ReviewedText text={"VALIDATION CONTEXT"} /></p>
+        <h2 style={h2}><ReviewedText text={"Do not collapse different airflow domains into one standard."} /></h2>
+        <p style={{ ...lead, maxWidth: '820px' }}><ReviewedText text={"Standards belong to the product family and protected airflow path. Engine intake, cabin air and compressed air are separate engineering domains."} /></p>
         <div style={grid3}>
           {standards.map(([name, text]) => (
             <article key={name} style={card}>
-              <p style={cardLabel}>{name}</p>
-              <p style={cardBody}>{text}</p>
+              <p style={cardLabel}><ReviewedText text={name} /></p>
+              <p style={cardBody}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>FROM AIRFLOW CONDITION TO PART</p>
-        <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
+        <p style={eyebrow}><ReviewedText text={"FROM AIRFLOW CONDITION TO PART"} /></p>
+        <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
         <div className="decision-flow" style={decisionFlow}>
           {['1. EQUIPMENT / VEHICLE', '2. PROTECTED AIRFLOW PATH', '3. HOUSING + SEAL CONFIGURATION', '4. DUTY ENVIRONMENT', '5. DIMENSIONS + OEM EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
-            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>
           ))}
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>FREQUENT QUESTIONS</p>
-        <h2 style={h2}>Air Intake & Airflow Protection</h2>
+        <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Air Intake & Airflow Protection"} /></h2>
         <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
-              <h3 style={faqQuestion}>{question}</h3>
-              <p style={body}>{answer}</p>
+              <h3 style={faqQuestion}><ReviewedText text={question} /></h3>
+              <p style={body}><ReviewedText text={answer} /></p>
             </article>
           ))}
         </div>
@@ -230,11 +233,11 @@ export function AirIntakeSystemPage() {
 
       <section style={finalCta}>
         <div style={{ maxWidth: '980px', margin: '0 auto' }}>
-          <p style={eyebrow}>HAVE AN AIRFLOW APPLICATION TO RESOLVE?</p>
-          <h2 style={h2}>Identify the protected airflow path before selecting the part.</h2>
-          <p style={{ ...lead, maxWidth: '780px' }}>Use equipment, engine, housing, airflow function, operating environment and available OEM or filter evidence to resolve the correct ELIMFILTERS protection path.</p>
+          <p style={eyebrow}><ReviewedText text={"HAVE AN AIRFLOW APPLICATION TO RESOLVE?"} /></p>
+          <h2 style={h2}><ReviewedText text={"Identify the protected airflow path before selecting the part."} /></h2>
+          <p style={{ ...lead, maxWidth: '780px' }}><ReviewedText text={"Use equipment, engine, housing, airflow function, operating environment and available OEM or filter evidence to resolve the correct ELIMFILTERS protection path."} /></p>
           <div style={buttonRow}>
-            <a href="mailto:applications@elimfilters.com?subject=Air%20Intake%20Application%20Support" style={yellowButton}>IDENTIFY MY AIRFLOW PROTECTION PATH</a>
+            <a href="mailto:applications@elimfilters.com?subject=Air%20Intake%20Application%20Support" style={yellowButton}><ReviewedText text={"IDENTIFY MY AIRFLOW PROTECTION PATH"} /></a>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>PART SEARCH</a>
           </div>
         </div>

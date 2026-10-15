@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import {
@@ -71,9 +72,7 @@ function MediaExplorerContent({ entityId }: { entityId: string }) {
         <Link href="/search" style={{
           fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
           color: 'rgba(255,255,255,0.35)', textDecoration: 'none', letterSpacing: '0.08em',
-        }}>
-          ← ENGINEERING INTELLIGENCE
-        </Link>
+        }}><PublicUiText textKey="publicUi.text34">{"← ENGINEERING INTELLIGENCE"}</PublicUiText></Link>
       </div>
 
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem 2.5rem', borderBottom: `1px solid ${accentColor}18` }}>
@@ -84,9 +83,7 @@ function MediaExplorerContent({ entityId }: { entityId: string }) {
                 fontSize: '0.65rem', padding: '0.15rem 0.5rem', borderRadius: '3px',
                 background: accentColor + '15', color: accentColor,
                 fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.1em',
-              }}>
-                PROTECTION MEDIA
-              </span>
+              }}><PublicUiText textKey="publicUi.text40">{"PROTECTION MEDIA"}</PublicUiText></span>
               {mediaFunction && (
                 <span style={{
                   fontSize: '0.6rem', color: 'rgba(255,255,255,0.3)',

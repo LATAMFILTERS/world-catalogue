@@ -1,4 +1,7 @@
-import Link from 'next/link';
+import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -87,88 +90,88 @@ export function LubricationSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Lubrication Protection" />
 
       <section style={hero}>
-        <img src="/images/oil-hand.avif" alt="Lubrication protection and engine oil filtration" style={heroMedia} />
+        <ReviewedImage src="/images/oil-hand.avif" alt="Lubrication protection and engine oil filtration" style={heroMedia} />
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>LUBRICANT CONTAMINATION CONTROL</p>
-          <h1 style={heroTitle}>Lubrication<br /><span style={{ color: '#FFF12D' }}>Protection</span></h1>
-          <p style={heroPromise}>Control contamination while preserving the oil flow and pressure behavior the engine depends on.</p>
-          <p style={heroLead}>ELIMFILTERS Lubrication Protection connects oil condition, engine duty, SYNTRAX™ filtration technology and the correct oil-filter family to validated application evidence before a part number is accepted.</p>
+          <p style={eyebrow}><ReviewedText text={"LUBRICANT CONTAMINATION CONTROL"} /></p>
+          <h1 style={heroTitle}><ReviewedText text={"Lubrication"} context="LubricationSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="LubricationSystemPageTitle" /></span></h1>
+          <p style={heroPromise}><ReviewedText text={"Control contamination while preserving the oil flow and pressure behavior the engine depends on."} /></p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS Lubrication Protection connects oil condition, engine duty, SYNTRAX™ filtration technology and the correct oil-filter family to validated application evidence before a part number is accepted."} /></p>
           <div style={buttonRow}>
-            <Link href="#lubrication-path" style={yellowButton}>IDENTIFY THE LUBRICATION PATH</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <Link href="#lubrication-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE LUBRICATION PATH"} /></Link>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
-          <h2 style={h2}>Oil filtration is a flow-and-cleanliness decision, not only a filter-size decision.</h2>
+          <h2 style={h2}><ReviewedText text={"Oil filtration is a flow-and-cleanliness decision, not only a filter-size decision."} /></h2>
           <div>
-            <p style={lead}>Lubrication Protection controls contamination circulating in the oil while respecting the engine lubrication circuit's requirement for stable delivery.</p>
-            <p style={body}>The engineering sequence is explicit: engine and duty condition → contamination exposure → lubrication circuit → SYNTRAX™ technology → oil-filter family → validated part number.</p>
+            <p style={lead}><ReviewedText text={"Lubrication Protection controls contamination circulating in the oil while respecting the engine lubrication circuit's requirement for stable delivery."} /></p>
+            <p style={body}><ReviewedText text={"The engineering sequence is explicit: engine and duty condition → contamination exposure → lubrication circuit → SYNTRAX™ technology → oil-filter family → validated part number."} /></p>
           </div>
         </div>
       </section>
 
       <section id="lubrication-path" style={sectionAlt}>
-        <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-        <h2 style={h2}>The lubricant becomes contaminated while the engine is working.</h2>
-        <div style={grid4}>{contamination.map(([title, text]) => <article key={title} style={card}><p style={cardLabel}>{title}</p><p style={cardBody}>{text}</p></article>)}</div>
+        <p style={eyebrow}><ReviewedText text={"CONTAMINATION PATHWAYS"} /></p>
+        <h2 style={h2}><ReviewedText text={"The lubricant becomes contaminated while the engine is working."} /></h2>
+        <div style={grid4}>{contamination.map(([title, text]) => <article key={title} style={card}><p style={cardLabel}><ReviewedText text={title} /></p><p style={cardBody}><ReviewedText text={text} /></p></article>)}</div>
       </section>
 
       <section style={section}>
         <div style={twoCol}>
-          <div><p style={eyebrow}>ENGINEERING PRINCIPLE</p><h2 style={h2}>Capture debris without compromising lubricant delivery.</h2></div>
-          <div><p style={lead}>A lubrication filter must balance contamination control, holding capacity, structural integrity and restriction across changing viscosity, temperature and engine demand.</p><p style={body}>For that reason, visual similarity or dimensional fit alone cannot establish application compatibility.</p></div>
+          <div><p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p><h2 style={h2}><ReviewedText text={"Capture debris without compromising lubricant delivery."} /></h2></div>
+          <div><p style={lead}><ReviewedText text={"A lubrication filter must balance contamination control, holding capacity, structural integrity and restriction across changing viscosity, temperature and engine demand."} /></p><p style={body}><ReviewedText text={"For that reason, visual similarity or dimensional fit alone cannot establish application compatibility."} /></p></div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
-        <h2 style={h2}>Clean lubricant supports the interfaces carrying engine load.</h2>
-        <div style={grid2}>{protectedComponents.map(([title, text]) => <article key={title} style={lineCard}><h3 style={h3}>{title}</h3><p style={body}>{text}</p></article>)}</div>
+        <p style={eyebrow}><ReviewedText text={"WHAT THE SYSTEM PROTECTS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Clean lubricant supports the interfaces carrying engine load."} /></h2>
+        <div style={grid2}>{protectedComponents.map(([title, text]) => <article key={title} style={lineCard}><h3 style={h3}><ReviewedText text={title} /></h3><p style={body}><ReviewedText text={text} /></p></article>)}</div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>SYSTEM → TECHNOLOGY → FAMILY</p>
-        <h2 style={h2}>One controlled architecture from oil condition to product.</h2>
+        <p style={eyebrow}><ReviewedText text={"SYSTEM → TECHNOLOGY → FAMILY"} /></p>
+        <h2 style={h2}><ReviewedText text={"One controlled architecture from oil condition to product."} /></h2>
         <div style={architecture}>
-          <div style={architectureBox}><span style={cardLabel}>SYSTEM</span><strong>Lubrication Protection</strong></div>
+          <div style={architectureBox}><span style={cardLabel}><ReviewedText text={"SYSTEM"} /></span><strong><ReviewedText text={"Lubrication Protection"} /></strong></div>
           <div style={architectureArrow}>→</div>
-          <Link href="/technologies/syntrax/" style={architectureLink}><span style={cardLabel}>TECHNOLOGY</span><strong>SYNTRAX™</strong></Link>
+          <Link href="/technologies/syntrax/" style={architectureLink}><span style={cardLabel}><ReviewedText text={"TECHNOLOGY"} /></span><strong>SYNTRAX™</strong></Link>
           <div style={architectureArrow}>→</div>
-          <Link href="/families/oil-filters/" style={architectureLink}><span style={cardLabel}>PRODUCT FAMILY</span><strong>Oil Filters</strong></Link>
+          <Link href="/families/oil-filters/" style={architectureLink}><span style={cardLabel}><ReviewedText text={"PRODUCT FAMILY"} /></span><strong><ReviewedText text={"Oil Filters"} /></strong></Link>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>FROM OIL CONDITION TO PART</p>
-        <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
-        <div className="decision-flow" style={decisionFlow}>{decision.map((step, i) => <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>)}</div>
+        <p style={eyebrow}><ReviewedText text={"FROM OIL CONDITION TO PART"} /></p>
+        <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
+        <div className="decision-flow" style={decisionFlow}>{decision.map((step, i) => <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>)}</div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>APPLICATION EVIDENCE</p>
+        <p style={eyebrow}><ReviewedText text={"APPLICATION EVIDENCE"} /></p>
         <div style={twoCol}>
-          <h2 style={h2}>A valid cross-reference must resolve more than dimensions.</h2>
-          <div><p style={lead}>Useful evidence includes equipment or vehicle, engine, existing OEM or filter number, thread and seal configuration, dimensional data and the actual duty profile.</p><p style={body}>Part Search can accelerate identification, but compatibility remains an application decision.</p></div>
+          <h2 style={h2}><ReviewedText text={"A valid cross-reference must resolve more than dimensions."} /></h2>
+          <div><p style={lead}><ReviewedText text={"Useful evidence includes equipment or vehicle, engine, existing OEM or filter number, thread and seal configuration, dimensional data and the actual duty profile."} /></p><p style={body}><ReviewedText text={"Part Search can accelerate identification, but compatibility remains an application decision."} /></p></div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>FREQUENT QUESTIONS</p><h2 style={h2}>Lubrication Protection</h2>
-        <div className="faq-grid" style={faqGrid}>{faqs.map(([q, a]) => <article key={q} style={faqCard}><h3 style={faqQuestion}>{q}</h3><p style={body}>{a}</p></article>)}</div>
+        <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p><h2 style={h2}><ReviewedText text={"Lubrication Protection"} /></h2>
+        <div className="faq-grid" style={faqGrid}>{faqs.map(([q, a]) => <article key={q} style={faqCard}><h3 style={faqQuestion}><ReviewedText text={q} /></h3><p style={body}><ReviewedText text={a} /></p></article>)}</div>
       </section>
 
       <section style={finalCta}>
         <div style={{ maxWidth: '980px', margin: '0 auto' }}>
-          <p style={eyebrow}>HAVE AN OIL-FILTRATION APPLICATION TO RESOLVE?</p>
-          <h2 style={h2}>Identify the engine and lubrication path before accepting the part number.</h2>
-          <p style={{ ...lead, maxWidth: '780px' }}>Use engine, duty, oil-filter configuration and available OEM evidence to identify the appropriate ELIMFILTERS lubrication protection path.</p>
+          <p style={eyebrow}><ReviewedText text={"HAVE AN OIL-FILTRATION APPLICATION TO RESOLVE?"} /></p>
+          <h2 style={h2}><ReviewedText text={"Identify the engine and lubrication path before accepting the part number."} /></h2>
+          <p style={{ ...lead, maxWidth: '780px' }}><ReviewedText text={"Use engine, duty, oil-filter configuration and available OEM evidence to identify the appropriate ELIMFILTERS lubrication protection path."} /></p>
           <div style={buttonRow}>
-            <a href="mailto:applications@elimfilters.com?subject=Lubrication%20Application%20Support" style={yellowButton}>IDENTIFY MY LUBRICATION PROTECTION PATH</a>
+            <a href="mailto:applications@elimfilters.com?subject=Lubrication%20Application%20Support" style={yellowButton}><ReviewedText text={"IDENTIFY MY LUBRICATION PROTECTION PATH"} /></a>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>PART SEARCH</a>
           </div>
         </div>

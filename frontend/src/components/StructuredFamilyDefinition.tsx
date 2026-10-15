@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { usePathname } from 'next/navigation';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getRelatedEntities } from '@/lib/entity-graph';

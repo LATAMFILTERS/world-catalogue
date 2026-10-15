@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { usePathname } from 'next/navigation';
 import { LanguageMenu } from '@/components/LanguageMenu';
 
@@ -101,9 +102,7 @@ export default function ClientNav() {
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
           }}
-        >
-          HOME
-        </Link>
+        ><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link>
 
         <div className="kc-nav-links">
           {NAV.map((item) => {

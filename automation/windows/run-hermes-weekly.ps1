@@ -166,30 +166,23 @@ try {
   if ($jsonStart -lt 0) { throw 'HERMES email result JSON was not found' }
   $emailJson = ($emailLines[$jsonStart..($emailLines.Count - 1)] -join "`n") | ConvertFrom-Json
 
-  if ($emailJson.outcome -eq 'NO_REVIEW_READY') {
-    $noReviewState = [ordered]@{
-      timestamp = (Get-Date).ToUniversalTime().ToString('o')
-      outcome = 'NO_REVIEW_READY'
-      review_ready = [int]$emailJson.review_ready
-      queued_pending = [int]$emailJson.queued_pending
-      duplicates = [int]$emailJson.duplicates
-      invalid = [int]$emailJson.invalid
-      report = [string]$emailJson.report
-    }
-    $noReviewPath = Join-Path $StateDir 'last-no-review-ready.json'
-    $noReviewState | ConvertTo-Json -Depth 5 | Set-Content -Path $noReviewPath -Encoding UTF8
-    "[$(Get-Date -Format o)] HERMES cycle completed with no review-ready findings. Email suppressed. queued_pending=$($emailJson.queued_pending)." | Tee-Object -FilePath $log -Append
-    exit 0
-  }
-
   if ($emailJson.outcome -ne 'SENT') { throw "HERMES email was not sent; outcome=$($emailJson.outcome)" }
   if ([string]::IsNullOrWhiteSpace([string]$emailJson.recipient)) { throw 'HERMES email reported SENT but recipient is empty' }
-  if ($emailJson.actionable -ne $true) { throw 'HERMES review email was sent without active review actions' }
+
+  $isInformationalDigest = ($emailJson.informational_digest -eq $true)
+  $isActionableReview = ($emailJson.actionable -eq $true)
+  if (-not $isInformationalDigest -and -not $isActionableReview) {
+    throw 'HERMES weekly email reported SENT but was neither an informational digest nor an actionable review email'
+  }
 
   node scripts\hermes\weekly-send-guard.mjs mark | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Failed to mark weekly send state' }
 
-  "[$(Get-Date -Format o)] HERMES weekly run completed and actionable review-ready email SENT to configured recipient." | Tee-Object -FilePath $log -Append
+  if ($isInformationalDigest) {
+    "[$(Get-Date -Format o)] HERMES weekly run completed and informational intelligence digest SENT to configured recipient. queued_pending=$($emailJson.queued_pending)." | Tee-Object -FilePath $log -Append
+  } else {
+    "[$(Get-Date -Format o)] HERMES weekly run completed and actionable review-ready email SENT to configured recipient." | Tee-Object -FilePath $log -Append
+  }
 }
 catch {
   "[$(Get-Date -Format o)] HERMES FAILURE: $($_.Exception.Message)" | Tee-Object -FilePath $log -Append

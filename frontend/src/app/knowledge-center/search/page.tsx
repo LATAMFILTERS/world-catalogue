@@ -1,5 +1,6 @@
 'use client';
 
+import { PublicUiText } from '@/components/PublicUiText';
 /**
  * search/page.tsx
  * ELIMFILTERS Knowledge Center — Engineering Search
@@ -15,7 +16,7 @@
  */
 
 import { useState, useMemo } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_SEARCH_INDEX, KC_SEARCH_TYPE_COUNTS } from '@/lib/knowledge-center/search-index';
 import { search, explainResult } from '@/lib/knowledge-center/search-engine';
@@ -230,9 +231,7 @@ export default function SearchPage() {
             textDecoration:'none',
             display:       'inline-block',
             marginBottom:  '2rem',
-          }}>
-            ← KNOWLEDGE CENTER
-          </Link>
+          }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
           <motion.p
             initial={{ opacity: 0, y: 8 }}

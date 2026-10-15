@@ -1,7 +1,8 @@
 'use client';
 
+import { PublicUiText } from '@/components/PublicUiText';
 import { useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KCStandard } from '@/lib/knowledge-center-data';
 import type { KCFaqItem, KCEngineeringReference } from '@/lib/knowledge-center-data';
@@ -141,9 +142,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
             letterSpacing: '0.1em',
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
-          }}>
-            TECHNOLOGIES
-          </p>
+          }}><PublicUiText textKey="publicUi.text1">{"TECHNOLOGIES"}</PublicUiText></p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {std.relatedTechnologies.map((tech) => (
               <KCTechnologyCard key={tech} name={tech} />

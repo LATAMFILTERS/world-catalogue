@@ -1,4 +1,7 @@
-import Link from 'next/link';
+import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -108,39 +111,39 @@ export function FuelCleanlinessSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Fuel Cleanliness Protection" />
 
       <section style={hero}>
-        <img src="/images/turbine-plant.avif" alt="Fuel cleanliness protection system" style={heroMedia} />
+        <ReviewedImage src="/images/turbine-plant.avif" alt="Fuel cleanliness protection system" style={heroMedia} />
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>DIESEL FUEL CONTAMINATION CONTROL</p>
-          <h1 style={heroTitle}>Fuel Cleanliness<br /><span style={{ color: '#FFF12D' }}>Protection</span></h1>
-          <p style={heroPromise}>Control particles and water before contaminated fuel reaches precision pumps, injectors and downstream fuel-system components.</p>
-          <p style={heroLead}>ELIMFILTERS separates particulate filtration, fuel/water separation and applicable turbine-series fuel conditioning into distinct functions within one fuel-protection architecture. The correct path depends on the engine, fuel-system stage, contamination exposure and validated application evidence.</p>
+          <p style={eyebrow}><ReviewedText text={"DIESEL FUEL CONTAMINATION CONTROL"} /></p>
+          <h1 style={heroTitle}><ReviewedText text={"Fuel Cleanliness"} context="FuelCleanlinessSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="FuelCleanlinessSystemPageTitle" /></span></h1>
+          <p style={heroPromise}><ReviewedText text={"Control particles and water before contaminated fuel reaches precision pumps, injectors and downstream fuel-system components."} /></p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS separates particulate filtration, fuel/water separation and applicable turbine-series fuel conditioning into distinct functions within one fuel-protection architecture. The correct path depends on the engine, fuel-system stage, contamination exposure and validated application evidence."} /></p>
           <div style={buttonRow}>
-            <Link href="#fuel-path" style={yellowButton}>IDENTIFY THE FUEL PATH</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <Link href="#fuel-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE FUEL PATH"} /></Link>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
-          <h2 style={h2}>Fuel cleanliness is a system decision, not a single-filter decision.</h2>
+          <h2 style={h2}><ReviewedText text={"Fuel cleanliness is a system decision, not a single-filter decision."} /></h2>
           <div>
-            <p style={lead}>Fuel Cleanliness Protection organizes the filtration stages that control particulate contamination and water before diesel fuel reaches sensitive downstream components.</p>
-            <p style={body}>Primary filtration, secondary filtration, fuel/water separation and turbine-series separation may exist in different combinations. They should not be treated as interchangeable simply because every component is installed in the fuel path.</p>
+            <p style={lead}><ReviewedText text={"Fuel Cleanliness Protection organizes the filtration stages that control particulate contamination and water before diesel fuel reaches sensitive downstream components."} /></p>
+            <p style={body}><ReviewedText text={"Primary filtration, secondary filtration, fuel/water separation and turbine-series separation may exist in different combinations. They should not be treated as interchangeable simply because every component is installed in the fuel path."} /></p>
           </div>
         </div>
       </section>
 
       <section id="fuel-path" style={sectionAlt}>
-        <p style={eyebrow}>PROTECTION PATHWAYS</p>
-        <h2 style={h2}>Start with the contamination function the fuel system actually requires.</h2>
+        <p style={eyebrow}><ReviewedText text={"PROTECTION PATHWAYS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Start with the contamination function the fuel system actually requires."} /></h2>
         <div style={grid3}>
           {pathways.map(([title, exposure, technology, href]) => (
             <article key={title} style={card}>
-              <p style={cardLabel}>{title}</p>
-              <p style={cardBody}>{exposure}</p>
+              <p style={cardLabel}><ReviewedText text={title} /></p>
+              <p style={cardBody}><ReviewedText text={exposure} /></p>
               <div style={arrow}>↓</div>
               <Link href={href} style={techLink}>{technology}</Link>
             </article>
@@ -151,75 +154,75 @@ export function FuelCleanlinessSystemPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>ENGINEERING PRINCIPLE</p>
-            <h2 style={h2}>Particles and water create different risks and require different protection mechanisms.</h2>
+            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
+            <h2 style={h2}><ReviewedText text={"Particles and water create different risks and require different protection mechanisms."} /></h2>
           </div>
           <div>
-            <p style={lead}>A filter that captures particulate is not automatically a fuel/water separator. Likewise, a separator architecture should not be assumed from external dimensions or cross-reference similarity alone.</p>
-            <p style={body}>ELIMFILTERS keeps the hierarchy explicit: fuel contamination problem → protection function → technology → product family → validated part number.</p>
+            <p style={lead}><ReviewedText text={"A filter that captures particulate is not automatically a fuel/water separator. Likewise, a separator architecture should not be assumed from external dimensions or cross-reference similarity alone."} /></p>
+            <p style={body}><ReviewedText text={"ELIMFILTERS keeps the hierarchy explicit: fuel contamination problem → protection function → technology → product family → validated part number."} /></p>
           </div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
-        <h2 style={h2}>Fuel cleanliness starts before the high-pressure circuit.</h2>
+        <p style={eyebrow}><ReviewedText text={"WHAT THE SYSTEM PROTECTS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Fuel cleanliness starts before the high-pressure circuit."} /></h2>
         <div style={grid2}>
           {protectedFunctions.map(([title, text]) => (
             <article key={title} style={lineCard}>
-              <h3 style={h3}>{title}</h3>
-              <p style={body}>{text}</p>
+              <h3 style={h3}><ReviewedText text={title} /></h3>
+              <p style={body}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>PRODUCT ARCHITECTURE</p>
-        <h2 style={h2}>From fuel-protection function to physical filtration component.</h2>
+        <p style={eyebrow}><ReviewedText text={"PRODUCT ARCHITECTURE"} /></p>
+        <h2 style={h2}><ReviewedText text={"From fuel-protection function to physical filtration component."} /></h2>
         <div style={familyGrid}>
           {families.map(([name, slug, purpose]) => (
             <Link key={slug} href={`/families/${slug}/`} style={familyCard}>
-              <h3 style={h3}>{name}</h3>
-              <p style={body}>{purpose}</p>
-              <span style={smallLink}>VIEW PRODUCT FAMILY →</span>
+              <h3 style={h3}><ReviewedText text={name} /></h3>
+              <p style={body}><ReviewedText text={purpose} /></p>
+              <span style={smallLink}><ReviewedText text={"VIEW PRODUCT FAMILY →"} /></span>
             </Link>
           ))}
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>VALIDATION CONTEXT</p>
-        <h2 style={h2}>Keep measurement standards tied to the fuel function they actually describe.</h2>
-        <p style={{ ...lead, maxWidth: '840px' }}>Water measurement, fuel-condition evidence and separator performance are related but not interchangeable. Standards should be applied at the correct product-family and test context.</p>
+        <p style={eyebrow}><ReviewedText text={"VALIDATION CONTEXT"} /></p>
+        <h2 style={h2}><ReviewedText text={"Keep measurement standards tied to the fuel function they actually describe."} /></h2>
+        <p style={{ ...lead, maxWidth: '840px' }}><ReviewedText text={"Water measurement, fuel-condition evidence and separator performance are related but not interchangeable. Standards should be applied at the correct product-family and test context."} /></p>
         <div style={grid3}>
           {standards.map(([name, text]) => (
             <article key={name} style={card}>
-              <p style={cardLabel}>{name}</p>
-              <p style={cardBody}>{text}</p>
+              <p style={cardLabel}><ReviewedText text={name} /></p>
+              <p style={cardBody}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>FROM FUEL CONDITION TO PART</p>
-        <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
+        <p style={eyebrow}><ReviewedText text={"FROM FUEL CONDITION TO PART"} /></p>
+        <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
         <div className="decision-flow" style={decisionFlow}>
           {['1. EQUIPMENT / VEHICLE', '2. ENGINE + FUEL SYSTEM', '3. FILTRATION STAGE', '4. WATER-SEPARATION REQUIREMENT', '5. OEM / FILTER EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
-            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>
           ))}
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>FREQUENT QUESTIONS</p>
-        <h2 style={h2}>Fuel Cleanliness Protection</h2>
+        <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Fuel Cleanliness Protection"} /></h2>
         <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
-              <h3 style={faqQuestion}>{question}</h3>
-              <p style={body}>{answer}</p>
+              <h3 style={faqQuestion}><ReviewedText text={question} /></h3>
+              <p style={body}><ReviewedText text={answer} /></p>
             </article>
           ))}
         </div>
@@ -227,11 +230,11 @@ export function FuelCleanlinessSystemPage() {
 
       <section style={finalCta}>
         <div style={{ maxWidth: '980px', margin: '0 auto' }}>
-          <p style={eyebrow}>HAVE A FUEL APPLICATION TO RESOLVE?</p>
-          <h2 style={h2}>Identify the fuel-protection function before selecting the part.</h2>
-          <p style={{ ...lead, maxWidth: '800px' }}>Use equipment, engine, fuel-system stage, separator configuration, operating conditions and available OEM or filter evidence to identify the correct ELIMFILTERS fuel-protection path.</p>
+          <p style={eyebrow}><ReviewedText text={"HAVE A FUEL APPLICATION TO RESOLVE?"} /></p>
+          <h2 style={h2}><ReviewedText text={"Identify the fuel-protection function before selecting the part."} /></h2>
+          <p style={{ ...lead, maxWidth: '800px' }}><ReviewedText text={"Use equipment, engine, fuel-system stage, separator configuration, operating conditions and available OEM or filter evidence to identify the correct ELIMFILTERS fuel-protection path."} /></p>
           <div style={buttonRow}>
-            <a href="mailto:applications@elimfilters.com?subject=Fuel%20Cleanliness%20Application%20Support" style={yellowButton}>IDENTIFY MY FUEL PROTECTION PATH</a>
+            <a href="mailto:applications@elimfilters.com?subject=Fuel%20Cleanliness%20Application%20Support" style={yellowButton}><ReviewedText text={"IDENTIFY MY FUEL PROTECTION PATH"} /></a>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>PART SEARCH</a>
           </div>
         </div>

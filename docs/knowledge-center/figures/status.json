@@ -1,0 +1,118 @@
+{
+  "figures": [
+    {
+      "id": "kc-figure-hydrocore-bowl-separator",
+      "technology": "HYDROCORE",
+      "scope": "standard non-turbine fuel/water separator with reusable transparent bowl and drain (service: change the element, keep the bowl)",
+      "files": [
+        "hydrocore/hydrocore.html",
+        "hydrocore/hydrocore-light.html"
+      ],
+      "validationStatus": "pending-secondary-validation",
+      "publicationStatus": "internal-only",
+      "open_items": [
+        "Engineering review of the drawn configuration (head, element, reusable bowl, drain) against approved HYDROCORE applications."
+      ]
+    },
+    {
+      "id": "kc-figure-hydrocore-spinon-integrated-drain",
+      "technology": "HYDROCORE",
+      "scope": "standard non-turbine spin-on fuel/water separator with integrated drain, sump shown in section (service: replace the whole cartridge)",
+      "files": [
+        "hydrocore/hydrocore-spinon.html",
+        "hydrocore/hydrocore-spinon-light.html"
+      ],
+      "validationStatus": "pending-secondary-validation",
+      "publicationStatus": "internal-only",
+      "open_items": [
+        "Engineering review of the drawn configuration (head, spin-on cartridge, sump section, integrated drain) against approved HYDROCORE applications."
+      ]
+    },
+    {
+      "id": "kc-figure-hydrocore-housing-element",
+      "technology": "HYDROCORE",
+      "scope": "standard non-turbine fuel/water separator: permanent housing with replaceable cartridge element and reusable bowl (service: bowl off, change the element, refit the same bowl)",
+      "files": [
+        "hydrocore/hydrocore-housing.html",
+        "hydrocore/hydrocore-housing-light.html"
+      ],
+      "validationStatus": "pending-secondary-validation",
+      "publicationStatus": "internal-only",
+      "open_items": [
+        "Engineering review of the drawn configuration (head, permanent housing, replaceable element, bowl, drain) against approved HYDROCORE applications."
+      ]
+    },
+    {
+      "id": "kc-figure-turbocore-turbine-housing",
+      "technology": "TURBOCORE",
+      "scope": "turbine-style FH/FG fuel/water separation housing with replaceable element",
+      "files": [
+        "turbocore/turbocore.html",
+        "turbocore/turbocore-light.html"
+      ],
+      "validationStatus": "pending-secondary-validation",
+      "publicationStatus": "internal-only",
+      "open_items": [
+        "Engineering review of the drawn configuration (lid, housing, bowl, deflector, drain) against approved FH/FG applications.",
+        "Stage-1 mechanism is now backed by external manufacturer literature (see evidence) but not yet by an ELIMFILTERS-controlled document. FUEL_CANONICAL_GOVERNANCE.md treats a single external manufacturer source as internal evidence only; operator decides whether that is enough to publish the qualitative mechanism (no brand, no numbers)."
+      ],
+      "evidence": [
+        {
+          "type": "external-manufacturer-literature",
+          "use": "internal evidence only; never cited or named on public surfaces",
+          "source": "Parker Hannifin, Racor Division: Turbine Series 900FH/1000FH instruction sheet 12960 Rev D",
+          "url": "https://www.parker.com/content/dam/Parker-com/Literature/Racor/12960_Rev_D_900FH_and_1000FH_Turbine_Filters.pdf",
+          "finding": "Stage 1 separation: incoming fuel passes through a centrifuge that spins off large solids and water droplets, which fall to the bottom of the collection bowl. Stage 2: fine droplets coalesce on a conical baffle and the cartridge. Stage 3: the cartridge captures fine contaminants.",
+          "retrieved": "2026-10-14 via web search summary; direct PDF fetch blocked from the build environment"
+        },
+        {
+          "type": "external-manufacturer-literature",
+          "use": "internal evidence only",
+          "source": "Parker Hannifin, Racor Division: 500FG Turbine Series instruction sheet 15332",
+          "url": "https://www.parker.com/content/dam/Parker-com/Literature/Racor/Tech_Install/15332_500FG_Turbine_Series.pdf",
+          "finding": "The turbine is fixed: it uses the fuel's own flow to remove large solids and free water by centrifugal force. The figure was corrected to show a static deflector.",
+          "retrieved": "2026-10-14 via web search summary"
+        }
+      ]
+    }
+  ],
+  "kit": {
+    "name": "anatomy",
+    "source": "https://github.com/wheresryan22/anatomy",
+    "commit": "be2fa9b47a7e4b05dec468be9ffc42e830c2101c",
+    "license": "MIT (ANATOMY_LICENSE.txt)"
+  },
+  "decisions": [
+    {
+      "date": "2026-10-13",
+      "by": "operator",
+      "decision": "Superseded by the next entry."
+    },
+    {
+      "date": "2026-10-13",
+      "by": "operator",
+      "decision": "Operator confirmed the TURBOCORE stage-1 mechanism: a turbine deflector centrifuges the fuel. Copy restored to state it. Attach an ELIMFILTERS-controlled document reference before publication (FUEL_CANONICAL_GOVERNANCE.md, claims blocked by default).",
+      "evidence": "operator statement, 2026-10-13"
+    },
+    {
+      "date": "2026-10-13",
+      "by": "operator",
+      "decision": "Readouts show qualitative states instead of numbers on both figures."
+    },
+    {
+      "date": "2026-10-14",
+      "by": "operator",
+      "decision": "Look up the mechanism in Parker Hannifin literature. Result recorded as internal evidence; deflector animation changed from rotating to fixed to match it."
+    },
+    {
+      "date": "2026-10-14",
+      "by": "operator",
+      "decision": "HYDROCORE is shown in its two differentiating configurations: spin-on with integrated drain (water settles in the cartridge sump; the whole cartridge is replaced at service) and separator with a reusable bowl (only the element is changed; the same bowl is refitted)."
+    },
+    {
+      "date": "2026-10-14",
+      "by": "operator",
+      "decision": "Add the third HYDROCORE configuration: replaceable separator elements that go inside permanent separator housings (not turbine housings); at service the bowl comes off, the element is changed and the same bowl is refitted. Show solid residues settling with the water in all fuel figures. TURBOCORE stays one figure; the fuel's swirl under the fixed deflector is shown with animated rings."
+    }
+  ]
+}

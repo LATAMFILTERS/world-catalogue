@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const { Pool } = require('pg');
+const { manualLedgerRow } = require('./run_093_global_sku_certification_audit');
 
 const MIGRATION = '095_GLOBAL_CANONICAL_RESOLVER_V7_SAFE';
 const POLICY_VERSION = '2026-08-29-global-cert-v1.2';
@@ -189,7 +190,7 @@ async function applyGlobalCanonicalResolverV7Safe() {
         policy_version='${POLICY_VERSION}',
         audited_at=now()
       FROM resolved r
-      WHERE c.sku=r.sku
+      WHERE c.sku=r.sku AND NOT ${manualLedgerRow('c')}
     `);
 
     await client.query(`
@@ -199,6 +200,7 @@ async function applyGlobalCanonicalResolverV7Safe() {
         certification_state=CASE WHEN cardinality(blockers)=0 THEN 'CERTIFIED' ELSE 'BLOCKED' END,
         certified_at=CASE WHEN cardinality(blockers)=0 THEN coalesce(certified_at,now()) ELSE NULL END,
         audited_at=now()
+      WHERE NOT ${manualLedgerRow('catalog_sku_certification')}
     `);
 
     const certification = await client.query(`

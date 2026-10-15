@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
+import Link from '@/components/LocalizedLink';
 import { useTranslation } from "react-i18next";
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
@@ -34,7 +34,7 @@ export default function CinematicHero() {
         playsInline
         preload="none"
         poster="/images/Hero-HOME_elimfilters-poster.avif"
-        aria-label="ELIMFILTERS protection systems in the field"
+        aria-label={t('home.heroVideoLabel', 'ELIMFILTERS protection systems in the field')}
         style={{
           position: "absolute",
           inset: 0,

@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { primaryOnlySearchBody, upstreamTargetFor } = require('../bridge-server');
+const { primaryOnlySearchBody, applyBridgeProductPresentation, upstreamTargetFor } = require('../bridge-server');
 
 test('LF3620 exposes EL82100 only and links the other matches as alternatives', () => {
   const body = primaryOnlySearchBody({
@@ -50,4 +50,21 @@ test('bridge API route maps to the Lenovo upstream API path', () => {
   const target = upstreamTargetFor('/bridge/api/search?q=LF3620', new URL('https://search-api.elimfilters.com'));
   assert.equal(target.pathname, '/api/search');
   assert.equal(target.searchParams.get('q'), 'LF3620');
+});
+
+
+test('bridge restores ET97784 proprietary identity and TURBOCORE presentation', () => {
+  const body = applyBridgeProductPresentation({
+    success: true,
+    results: [{
+      elimfilters_sku: 'ET97784',
+      filter_type: 'TURBINE',
+      equipment_applications: [{ equipment: 'TOYOTA HILUX' }]
+    }]
+  });
+
+  assert.equal(body.results[0].technology, 'TURBOCORE™');
+  assert.equal(body.results[0].canonical_source_brand, 'ELIMFILTERS');
+  assert.equal(body.results[0].canonical_source_code, 'ET97784');
+  assert.equal(body.results[0].canonical_source_status, 'VERIFIED');
 });

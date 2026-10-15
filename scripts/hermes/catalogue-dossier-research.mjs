@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import pg from 'pg';
 import { assessDossier, canonicalRoleForDossier, resolutionDisposition } from './catalogue-dossier-core.mjs';
+import { assertZeroCostGroqAllowed } from './zero-cost-policy.mjs';
 
 const require = createRequire(import.meta.url);
 const { buildBrandResearchStrategy } = require('../../lib/hermes-brand-search-router');
@@ -23,6 +24,7 @@ const maxResearchAttempts=Math.max(1,Math.min(10,Number(process.env.HERMES_CATAL
 const timeoutMs=Math.max(10000,Number(process.env.HERMES_CATALOGUE_RESEARCH_TIMEOUT_MS||45000));
 if(!url) throw new Error('CATALOG_DATABASE_URL/DATABASE_URL is required');
 if(!apiKey) throw new Error('GROQ_API_KEY is required');
+assertZeroCostGroqAllowed();
 
 const stableId=v=>crypto.createHash('sha256').update(String(v)).digest('hex').slice(0,32);
 const sha=v=>crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex');

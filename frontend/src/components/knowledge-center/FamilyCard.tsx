@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 
 export interface FamilyCardProps {
@@ -48,8 +49,7 @@ export default function FamilyCard({ name, description, href, productCount }: Fa
           marginTop: '0.5rem',
           letterSpacing: '0.06em',
         }}>
-          {productCount} PRODUCTS
-        </p>
+          {productCount}<PublicUiText textKey="publicUi.text4">{"PRODUCTS"}</PublicUiText></p>
       )}
     </motion.div>
   );

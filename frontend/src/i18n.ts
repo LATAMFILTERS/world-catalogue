@@ -4,6 +4,8 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
 import enTranslation from '../public/locales/en/translation.json';
+import esTranslation from '../public/locales/es/translation.json';
+import ptTranslation from '../public/locales/pt/translation.json';
 
 const SUPPORTED = ['en', 'es', 'pt', 'fr', 'it', 'nl', 'ru', 'zh', 'ja', 'ar', 'fa'];
 
@@ -230,6 +232,11 @@ for (const [key, value] of Object.entries(GOVERNED_EN_OVERRIDES)) {
   setNestedValue(governedEnTranslation, key, value);
 }
 
+const bundledEsTranslation = cloneTranslation(esTranslation) as TranslationTree;
+const bundledPtTranslation = cloneTranslation(ptTranslation) as TranslationTree;
+for (const [key, value] of Object.entries(GOVERNED_ES_OVERRIDES)) setNestedValue(bundledEsTranslation, key, value);
+for (const [key, value] of Object.entries(GOVERNED_PT_OVERRIDES)) setNestedValue(bundledPtTranslation, key, value);
+
 function applyRuntimeGovernance() {
   for (const [key, value] of Object.entries(GOVERNED_EN_OVERRIDES)) {
     i18n.addResource('en', 'translation', key, value);
@@ -255,7 +262,10 @@ if (!i18n.isInitialized) {
       fallbackLng: 'en',
       supportedLngs: SUPPORTED,
       load: 'languageOnly',
+      initAsync: false,
       resources: {
+        es: { translation: bundledEsTranslation },
+        pt: { translation: bundledPtTranslation },
         en: {
           translation: governedEnTranslation,
         },

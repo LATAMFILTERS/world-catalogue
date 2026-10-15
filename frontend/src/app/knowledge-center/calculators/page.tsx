@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { KC_CALCULATORS } from '@/lib/knowledge-center-data';
 
 const CATEGORY_LABELS: Record<string, string> = {

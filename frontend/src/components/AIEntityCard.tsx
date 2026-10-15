@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { getGeoContextByKindAndSlug } from '@/lib/geo-context';
 import type { EntityKind } from '@/lib/entity-graph';
 import styles from './AIEntityCard.module.css';

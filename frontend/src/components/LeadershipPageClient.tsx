@@ -1,6 +1,8 @@
 'use client';
 
-import Link from 'next/link';
+import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
+import Link from '@/components/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
 import registry from '@/data/executive-visual-identity.json';
@@ -78,22 +80,57 @@ const FOUNDER_PROFILE = {
   ],
 };
 
+const FOUNDER_PROFILE_PT = [
+  "Víctor Abreu é o Fundador e Diretor Executivo (CEO) da ELIMFILTERS®, responsável pela estratégia corporativa, pelo desenvolvimento de mercados internacionais, pela integração de tecnologia, pelos sistemas de conhecimento e pelo crescimento de longo prazo da empresa.",
+  "Ele traz mais de duas décadas de experiência em filtragem industrial, distribuição e desenvolvimento de negócios, período em que criou e liderou operações que atendem aplicações automotivas, de transporte, industriais e de serviço pesado em diversos mercados das Américas.",
+  "Antes de estabelecer a ELIMFILTERS, Abreu liderou uma das operações mais relevantes de distribuição de filtragem industrial da Venezuela, desenvolvendo relações estratégicas com fabricantes internacionais e fortalecendo a presença da empresa entre grandes contas industriais e automotivas.",
+  "Sua experiência abrange fornecimento internacional, desenvolvimento da cadeia de suprimentos, estratégia técnica de produtos, distribuição B2B, expansão de mercados e desenvolvimento de soluções para frotas, operadores industriais e empresas com uso intensivo de ativos.",
+  "Sua abordagem de gestão combina disciplina financeira, análise de risco, controle orçamentário e estruturação de custos com um forte foco na criação de valor. Ao longo da carreira, aplicou esses princípios para desenvolver modelos operacionais e comerciais destinados a equilibrar custo, desempenho e rentabilidade, traduzindo maior eficiência em soluções de maior valor para os clientes.",
+  "Hoje, Abreu lidera a transformação da ELIMFILTERS em uma empresa de inteligência em filtragem industrial com foco em Total Assets Protection. Seu trabalho integra estratégia de produtos, sistemas de conhecimento técnico, inteligência artificial, dados de aplicação, desenvolvimento de mercados e distribuição internacional em uma plataforma operacional unificada.",
+  "É formado em Contabilidade Pública pela UCAT e obteve um MBA em Administração de Empresas pela Universidad Rafael Belloso Chacín (URBE), Venezuela, em 2002.",
+  "Responsabilidades Estratégicas: Estratégia Corporativa · Expansão Global · Integração de Tecnologia · Inteligência Artificial · Inteligência em Filtragem Industrial · Sistemas de Conhecimento · Estratégia da Cadeia de Suprimentos · Gestão Financeira · Gestão de Riscos · Governança Corporativa"
+];
+
+const AGENT_PROFILES_PT: Record<string, string[]> = {
+  "office_chief_operating_supply_chain": [
+    "O Agente de Direção de Operações e Cadeia de Suprimentos conduz a estrutura por trás de cada remessa — coordenando compras, logística de exportação por contêiner a partir dos parceiros de fabricação da ELIMFILTERS e atendimento de pedidos em toda a rede de distribuidores que abrange Colômbia, República Dominicana, Venezuela e Estados Unidos.",
+    "A função mantém o estoque, os compromissos com fornecedores e a execução de entregas alinhados à demanda comercial real, para que os pedidos de contêineres de um distribuidor nacional avancem dentro do prazo e no volume de que o mercado realmente precisa."
+  ],
+  "office_chief_product_technology": [
+    "O Agente de Direção de Produto e Tecnologia é responsável pela plataforma técnica da ELIMFILTERS: os cinco sistemas de proteção — admissão e fluxo de ar, limpeza do combustível, lubrificação, hidráulica e arrefecimento — e as dez tecnologias próprias desenvolvidas para atendê-los, incluindo MACROCORE™ para admissão de ar do motor, HYDROCORE™ para separação padrão aprovada de água e combustível, não do tipo turbina, e TURBOCORE™ para sistemas aprovados de separadores de água e combustível do tipo turbina FH/FG.",
+    "A função mantém cada especificação, referência cruzada e afirmação de aplicação validada em relação a equipamentos e modos de falha reais, para que o catálogo reflita evidências de engenharia, não uma lista genérica de peças."
+  ],
+  "office_chief_commercial_markets": [
+    "O Agente de Direção Comercial e de Mercados conduz o programa de distribuidores exclusivos por país — qualificando novos parceiros territoriais, gerenciando preços e relações com contas e coordenando o CRM em cada mercado ativo e potencial.",
+    "A função coloca em prática o modelo que prioriza distribuidores: dando prioridade a parceiros capazes de construir cobertura real e mantendo o crescimento comercial disciplinado, em vez de oportunista."
+  ],
+  "office_chief_finance_risk": [
+    "O Agente de Direção de Finanças e Riscos gerencia a disciplina financeira de um negócio baseado em contêineres que prioriza distribuidores — margens, capital de giro e fluxo de caixa entre parceiros de fabricação, logística e uma base de contas a receber em vários países.",
+    "A função dá à Chief Executive Office visibilidade da exposição financeira antes que se torne um problema: quais mercados apresentam bom desempenho, quais compromissos trazem risco e onde os recursos devem ser alocados em seguida."
+  ],
+  "office_chief_strategy_performance_intelligence": [
+    "O Agente de Direção de Estratégia, Desempenho e Inteligência governa o próprio modelo de agentes de IA — monitorando o desempenho dos outros quatro agentes executivos, coordenando os dados e a automação que os mantêm responsáveis e sinalizando tudo o que precisa ser encaminhado à Chief Executive Office humana.",
+    "A função também sustenta a estrutura organizacional plana em que a ELIMFILTERS opera: usando automação de processos para remover as camadas de aprovação interna que normalmente ficam entre um distribuidor e uma decisão."
+  ]
+};
+
 export function LeadershipPageClient() {
   const { i18n } = useTranslation();
+  const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
   const founder = registry.founder;
-  const founderProfile = isSpanish ? FOUNDER_PROFILE.es : FOUNDER_PROFILE.en;
+  const founderProfile = isPortuguese ? FOUNDER_PROFILE_PT : isSpanish ? FOUNDER_PROFILE.es : FOUNDER_PROFILE.en;
 
   return (
     <main className="leadership-page">
-      <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isSpanish ? 'Liderazgo' : 'Leadership'} />
+      <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isPortuguese ? "Liderança" : isSpanish ? 'Liderazgo' : 'Leadership'} />
 
       <section className="leadership-hero">
         <div className="leadership-wrap">
-          <p className="eyebrow">ELIMFILTERS · LEADERSHIP</p>
-          <h1>{isSpanish ? 'Liderazgo humano. Ejecución AI-native.' : 'Human leadership. AI-native execution.'}</h1>
+          <p className="eyebrow"><ReviewedText text={"ELIMFILTERS · LEADERSHIP"} /></p>
+          <h1>{isPortuguese ? "Liderança humana. Execução nativa de IA." : isSpanish ? 'Liderazgo humano. Ejecución AI-native.' : 'Human leadership. AI-native execution.'}</h1>
           <p className="hero-copy">
-            {isSpanish
+            {isPortuguese ? "A ELIMFILTERS combina autoridade executiva humana com funções executivas especializadas operadas por agentes de IA sob uma estrutura formal de responsabilidade, autoridade delegada, rastreabilidade e encaminhamento." : isSpanish
               ? 'ELIMFILTERS combina autoridad ejecutiva humana con funciones ejecutivas especializadas operadas por agentes de IA bajo un marco formal de responsabilidad, autoridad delegada, trazabilidad y escalamiento.'
               : 'ELIMFILTERS combines human executive authority with specialized executive functions operated by AI agents under a formal framework of accountability, delegated authority, traceability, and escalation.'}
           </p>
@@ -103,12 +140,12 @@ export function LeadershipPageClient() {
       <section className="founder-section">
         <div className="founder-grid">
           <div className="founder-photo-shell">
-            <img src={founder.image} alt={founder.alt} className="founder-photo" />
+            <ReviewedImage src={founder.image} alt={founder.alt} className="founder-photo" />
           </div>
           <div className="founder-copy">
-            <p className="eyebrow dark">FOUNDER & CEO</p>
+            <p className="eyebrow dark"><ReviewedText text={"FOUNDER & CEO"} /></p>
             <h2>{founder.name}</h2>
-            <p className="founder-role">{founder.designation}</p>
+            <p className="founder-role"><ReviewedText text={founder.designation} /></p>
             <div className="founder-profile">
               {founderProfile.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
@@ -118,15 +155,15 @@ export function LeadershipPageClient() {
 
       <section className="agents-section">
         <div className="leadership-wrap">
-          <p className="eyebrow">EXECUTIVE AI LEADERSHIP</p>
-          <h2>{isSpanish ? 'Cinco funciones ejecutivas especializadas.' : 'Five specialized executive functions.'}</h2>
+          <p className="eyebrow"><ReviewedText text={"EXECUTIVE AI LEADERSHIP"} /></p>
+          <h2>{isPortuguese ? "Cinco funções executivas especializadas." : isSpanish ? 'Cinco funciones ejecutivas especializadas.' : 'Five specialized executive functions.'}</h2>
           <p className="section-copy">
-            {isSpanish
+            {isPortuguese ? "O mesmo salto que levou a ELIMFILTERS de vender filtros a proteger ativos definiu como a própria empresa está organizada. Um distribuidor tradicional cresce adicionando pessoas e camadas de gestão; uma empresa construída sobre disciplina de engenharia e proteção de ativos de longo prazo precisava de uma estrutura capaz de ampliar experiência e consistência — por isso a ELIMFILTERS combina uma Chief Executive Office humana com agentes executivos de IA especializados, em vez de uma hierarquia gerencial convencional." : isSpanish
               ? 'El mismo salto que llevó a ELIMFILTERS de vender filtros a proteger activos es el que definió cómo está organizada la propia empresa. Un distribuidor tradicional escala agregando personas y capas de gerencia; una empresa construida sobre disciplina de ingeniería y protección de activos a largo plazo necesitaba una estructura que pudiera escalar experiencia y consistencia en su lugar — por eso ELIMFILTERS combina una Chief Executive Office humana con agentes ejecutivos de IA especializados, en vez de una jerarquía gerencial convencional.'
               : 'The same leap that took ELIMFILTERS from selling filters to protecting assets is what shaped how the company itself is organized. A traditional distributor scales by adding people and management layers; a company built around engineering discipline and long-term asset protection needed a structure that could scale expertise and consistency instead — which is why ELIMFILTERS pairs a human Chief Executive Office with specialized executive AI agents, rather than a conventional management hierarchy.'}
           </p>
           <p className="section-copy">
-            {isSpanish
+            {isPortuguese ? "Estes perfis são as representações visuais oficiais de agentes executivos de IA, não de funcionários humanos. Cada agente gerencia um domínio definido sob autoridade delegada e supervisão da Chief Executive Office." : isSpanish
               ? 'Estos perfiles son representaciones visuales oficiales de agentes ejecutivos de IA, no empleados humanos. Cada agente gestiona un dominio definido bajo autoridad delegada y supervisión de la Chief Executive Office.'
               : 'These profiles are the official visual representations of executive AI agents, not human employees. Each agent manages a defined domain under delegated authority and oversight of the Chief Executive Office.'}
           </p>
@@ -134,21 +171,21 @@ export function LeadershipPageClient() {
           <div className="agent-list">
             {registry.agents.map((agent) => {
               const profile = AGENT_PROFILES[agent.id];
-              const paragraphs = isSpanish ? profile.es : profile.en;
+              const paragraphs = isPortuguese ? AGENT_PROFILES_PT[agent.id] : isSpanish ? profile.es : profile.en;
               return (
                 <article className="agent-profile" key={agent.id}>
                   <div className="agent-identity">
                     <div className="agent-photo-shell">
-                      <img src={agent.image} alt={agent.alt} className="agent-photo" />
+                      <ReviewedImage src={agent.image} alt={agent.alt} className="agent-photo" />
                     </div>
-                    <span className="ai-label">{agent.label}</span>
-                    <h3>{agent.title}</h3>
+                    <span className="ai-label"><ReviewedText text={agent.label} /></span>
+                    <h3><ReviewedText text={agent.title} /></h3>
                   </div>
                   <div className="agent-description">
                     {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                     {'email' in agent && agent.email ? (
                       <div className="agent-contact">
-                        <span>{isSpanish ? 'CONTACTO' : 'CONTACT'}</span>
+                        <span>{isPortuguese ? "CONTATO" : isSpanish ? 'CONTACTO' : 'CONTACT'}</span>
                         <a href={`mailto:${agent.email}`}>{agent.email} →</a>
                       </div>
                     ) : null}
@@ -163,11 +200,11 @@ export function LeadershipPageClient() {
       <section className="governance-section">
         <div className="governance-grid">
           <div>
-            <p className="eyebrow dark">GOVERNANCE & ACCOUNTABILITY</p>
-            <h2>{isSpanish ? 'La responsabilidad nunca se vuelve artificial.' : 'Accountability never becomes artificial.'}</h2>
+            <p className="eyebrow dark"><ReviewedText text={"GOVERNANCE & ACCOUNTABILITY"} /></p>
+            <h2>{isPortuguese ? "A responsabilidade nunca se torna artificial." : isSpanish ? 'La responsabilidad nunca se vuelve artificial.' : 'Accountability never becomes artificial.'}</h2>
           </div>
           <p>
-            {isSpanish
+            {isPortuguese ? "A inteligência artificial pode exercer autoridade delegada dentro da ELIMFILTERS, mas as decisões estratégicas, materiais, excepcionais, irreversíveis ou de alto risco permanecem sujeitas à autoridade humana." : isSpanish
               ? 'La inteligencia artificial puede ejercer autoridad delegada dentro de ELIMFILTERS, pero las decisiones estratégicas, materiales, excepcionales, irreversibles o de alto riesgo permanecen sujetas a autoridad humana.'
               : 'Artificial intelligence may exercise delegated authority within ELIMFILTERS, but strategic, material, exceptional, irreversible, or high-risk decisions remain subject to human authority.'}
           </p>
@@ -176,14 +213,14 @@ export function LeadershipPageClient() {
 
       <section className="closing-section">
         <div className="leadership-wrap">
-          <p className="eyebrow">CAPABILITY BEFORE COMPLEXITY</p>
-          <h2>{isSpanish ? 'Construidos para capacidad, no para aparentar tamaño.' : 'Built for capability, not apparent headcount.'}</h2>
+          <p className="eyebrow"><ReviewedText text={"CAPABILITY BEFORE COMPLEXITY"} /></p>
+          <h2>{isPortuguese ? "Construídos para capacidade, não para aparentar tamanho." : isSpanish ? 'Construidos para capacidad, no para aparentar tamaño.' : 'Built for capability, not apparent headcount.'}</h2>
           <p className="section-copy">
-            {isSpanish
+            {isPortuguese ? "A ELIMFILTERS utiliza agentes, automação, sistemas e profissionais humanos onde cada mecanismo acrescenta maior competência. A escala organizacional cresce pela necessidade real, não para simular uma estrutura maior." : isSpanish
               ? 'ELIMFILTERS utiliza agentes, automatización, sistemas y profesionales humanos donde cada mecanismo aporta mayor competencia. La escala organizacional crece por necesidad real, no para simular una estructura mayor.'
               : 'ELIMFILTERS uses agents, automation, systems, and human professionals where each mechanism adds the greatest competence. Organizational scale grows from real need, not to simulate a larger structure.'}
           </p>
-          <Link href="/about/who-we-are" className="back-link">{isSpanish ? 'Volver a Quiénes Somos →' : 'Back to Who We Are →'}</Link>
+          <Link href="/about/who-we-are" className="back-link">{isPortuguese ? "Voltar a Quem Somos →" : isSpanish ? 'Volver a Quiénes Somos →' : 'Back to Who We Are →'}</Link>
         </div>
       </section>
 

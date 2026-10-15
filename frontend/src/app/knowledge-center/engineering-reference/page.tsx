@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { ERL_SECTIONS } from '@/lib/engineering-reference-data';
 import { heroBackgroundImage } from '@/lib/hero-media';
@@ -38,9 +39,7 @@ export default function EngineeringReferencePage() {
           padding: '0.8rem 1.15rem',
           backdropFilter: 'blur(14px)',
         }}
-      >
-        ← KNOWLEDGE CENTER
-      </Link>
+      ><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
       <Link
         href="/"
@@ -60,9 +59,7 @@ export default function EngineeringReferencePage() {
           padding: '0.8rem 1.15rem',
           backdropFilter: 'blur(14px)',
         }}
-      >
-        HOME
-      </Link>
+      ><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link>
 
       <section
         style={{

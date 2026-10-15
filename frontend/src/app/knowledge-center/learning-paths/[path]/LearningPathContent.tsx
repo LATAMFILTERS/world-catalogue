@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import type { LearningPath, LearningPathStep } from '@/lib/knowledge-center/learning-paths-registry';
 
@@ -52,9 +53,7 @@ export default function LearningPathContent({ path }: { path: LearningPath }) {
             letterSpacing: '0.1em',
             color: 'rgba(255,241,45,0.4)',
             textDecoration: 'none',
-          }}>
-            KNOWLEDGE CENTER
-          </Link>
+          }}><PublicUiText textKey="publicUi.text31">{"KNOWLEDGE CENTER"}</PublicUiText></Link>
           <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 0.5rem', fontSize: '0.65rem' }}>/</span>
           <Link href="/knowledge-center/learning-paths" style={{
             fontFamily: 'JetBrains Mono, monospace',

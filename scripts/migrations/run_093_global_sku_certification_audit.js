@@ -7,6 +7,15 @@ const { fp4436AuditApprovalSql } = require('../../lib/fp4436-cabin-oem-numbering
 const MIGRATION = '093_GLOBAL_SKU_CERTIFICATION_AUDIT';
 const POLICY_VERSION = '2026-08-29-global-cert-v1';
 
+// policy_version values written by the global rebuilds (run_093, run_095, run_273).
+// Any other value is a mark set by hand for that SKU, as is a research hold.
+// Global rebuilds keep those rows as they are.
+const GENERATED_POLICY_VERSIONS = [POLICY_VERSION, '2026-08-29-global-cert-v1.2', '2026-10-12-hd-cert-refresh-v1'];
+const MANUAL_HOLD_BLOCKERS = ['HERMES_RESEARCH_REQUIRED', 'REFERENCE_RECONCILIATION_REQUIRED'];
+const manualLedgerRow = (alias) => `(${alias}.certification_state NOT IN ('CERTIFIED','BLOCKED')
+  OR ${alias}.blockers && ARRAY['${MANUAL_HOLD_BLOCKERS.join("','")}']::text[]
+  OR ${alias}.policy_version NOT IN ('${GENERATED_POLICY_VERSIONS.join("','")}'))`;
+
 async function applyGlobalSkuCertificationAudit() {
   const databaseUrl = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
   if (!databaseUrl) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
@@ -53,7 +62,13 @@ async function applyGlobalSkuCertificationAudit() {
 
     await client.query(`CREATE INDEX IF NOT EXISTS catalog_sku_certification_state_idx ON public.catalog_sku_certification(certification_state)`);
     await client.query(`CREATE INDEX IF NOT EXISTS catalog_sku_certification_duty_idx ON public.catalog_sku_certification(duty)`);
-    await client.query('TRUNCATE public.catalog_sku_certification');
+    // Rebuild everything except manual marks on SKUs still in the catalogue.
+    await client.query(`
+      DELETE FROM public.catalog_sku_certification l
+      WHERE NOT ${manualLedgerRow('l')}
+         OR NOT EXISTS (SELECT 1 FROM public.elimfilters_catalog e WHERE e.sku=l.sku)
+    `);
+    report.preserved_manual_rows = (await client.query('SELECT count(*)::int AS n FROM public.catalog_sku_certification')).rows[0].n;
 
     await client.query(`
       WITH catalog AS (
@@ -235,6 +250,7 @@ async function applyGlobalSkuCertificationAudit() {
         CASE WHEN cardinality(f.blockers)=0 THEN now() ELSE NULL END,
         now()
       FROM final f
+      ON CONFLICT (sku) DO NOTHING
     `);
 
     const totals = await client.query(`
@@ -303,4 +319,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = { MIGRATION, POLICY_VERSION, applyGlobalSkuCertificationAudit };
+module.exports = { MIGRATION, POLICY_VERSION, MANUAL_HOLD_BLOCKERS, manualLedgerRow, applyGlobalSkuCertificationAudit };

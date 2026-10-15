@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { TERMINOLOGY_REGISTRY, termIdToSlug, getGlossarySidebarData, TERM_CATEGORY_LABELS } from '@/lib/knowledge-center';
 import type { TerminologyEntry } from '@/lib/knowledge-center';

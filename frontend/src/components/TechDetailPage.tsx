@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 import { StagesAccordion } from './ui/stages-accordion';
@@ -139,7 +140,7 @@ export function TechDetailPage({ data }: Props) {
     <>
       <div style={{ position: 'relative', zIndex: 20, background: 'rgba(0,0,0,0.6)', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 2rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          <Link href="/" style={breadcrumbLink}>HOME</Link>
+          <Link href="/" style={breadcrumbLink}><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link>
           <span style={breadcrumbDivider}>/</span>
           <Link href={data.breadcrumbParent?.href ?? '/technologies'} style={breadcrumbLink}>{data.breadcrumbParent?.label ?? 'TECHNOLOGY'}</Link>
           <span style={breadcrumbDivider}>/</span>
@@ -342,7 +343,7 @@ export function TechDetailPage({ data }: Props) {
                         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</h3>
                         <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5, margin: 0 }}>{item.text}</p>
                       </div>
-                      <div style={{ fontSize: '0.7rem', color: 'rgba(255,241,45,0.55)', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em', marginTop: 'auto' }}>LEARN MORE</div>
+                      <div style={{ fontSize: '0.7rem', color: 'rgba(255,241,45,0.55)', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em', marginTop: 'auto' }}><PublicUiText textKey="publicUi.text16">{"LEARN MORE"}</PublicUiText></div>
                     </motion.div>
                   </Link>
                 </motion.div>
