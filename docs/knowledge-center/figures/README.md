@@ -2,9 +2,10 @@
 
 Interactive isometric explainer figures for Fuel Cleanliness Protection technology pages.
 
-**Status: see `status.json`.** The HYDROCORE™, TURBOCORE™ and SYNTAPORE™ figures are approved for publication:
-their English builds (`--en`) are written to `frontend/public/knowledge-center/figures/` and linked from the How
-It Works section of each technology page (`/knowledge-center/technologies/<technology>/`).
+**Status: see `status.json`.** Every figure listed below is approved for publication. Their public builds
+(`--lang en|es|pt --public`) are written to `frontend/public/knowledge-center/figures/`: `<name>.html` in English,
+`<name>-es.html` and `<name>-pt.html`. The How It Works section of each technology page
+(`/knowledge-center/technologies/<technology>/`) opens the English page and links the Spanish and Portuguese ones.
 Do not publish a new figure until both of its statuses are approved (see the publication gate in
 `../FUEL_CANONICAL_GOVERNANCE.md`). The Spanish pages in this folder are the review drafts and are not served.
 
@@ -15,6 +16,7 @@ Do not publish a new figure until both of its statuses are approved (see the pub
 | Fig 1C · HYDROCORE™ element in a transparent bowl | Standard non-turbine separator: permanent metal shroud under the head, tall transparent bowl with the pleated element visible inside, red seal, drain; at service the bowl comes off, only the element is replaced, and the same bowl is refitted | `hydrocore/hydrocore-housing.html`, `hydrocore/hydrocore-housing-light.html` | `shots/hydrocore-housing-light.png`, `shots/hydrocore-housing-service.png` |
 | Fig 3 · SYNTAPORE™ primary and secondary | Diesel particulate filtration: primary spin-on on the suction side before the transfer pump, secondary spin-on on the engine before the injection rail, both in section; at service each spin-on is replaced | `syntapore/syntapore.html`, `syntapore/syntapore-light.html` | `shots/syntapore-light.png`, `shots/syntapore-service.png` |
 | Fig 4 · SYNTRAX™ full-flow spin-on | Engine lube circuit: oil pan, oil pump, full-flow spin-on on the engine in section, main gallery to the bearings, return; at service the spin-on is replaced | `syntrax/syntrax.html`, `syntrax/syntrax-light.html` | `shots/syntrax-light.png`, `shots/syntrax-service.png` |
+| Fig 3B / 4B / 5 · spin-on vs cartridge (SYNTAPORE™, SYNTRAX™, NANOFORCE™) | The two formats side by side: the spin-on comes off whole; on the cartridge the bowl drops, only the element is replaced and the same bowl goes back. ES / EN / PT | `compare/compare-<tech>.html`, `compare/compare-<tech>-light.html` | built on demand |
 | Fig 2 · TURBOCORE™ turbine-style housing | FH/FG turbine-style housing, replaceable element | `turbocore/turbocore.html`, `turbocore/turbocore-light.html` | `shots/turbocore-light.png`, `shots/turbocore-lid-open.png` |
 
 HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct scopes; neither page mentions the other technology.
@@ -45,12 +47,16 @@ node hydrocore/build.mjs --housing --audit && node hydrocore/build.mjs --housing
 node turbocore/build.mjs --audit && node turbocore/build.mjs --light
 node syntapore/build.mjs --audit && node syntapore/build.mjs --light
 node syntrax/build.mjs --audit && node syntrax/build.mjs --light
-# published English pages and their previews (dark theme, for the Knowledge Center)
-for v in "" --spinon --housing; do node hydrocore/build.mjs $v --en; done
-node turbocore/build.mjs --en
-node syntapore/build.mjs --en
-node syntrax/build.mjs --en
-for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax; do
+# published pages (dark theme, for the Knowledge Center) in English, Spanish and Portuguese, and the English previews
+for l in en es pt; do
+  for v in "" --spinon --housing; do node hydrocore/build.mjs $v --lang $l --public; done
+  for f in turbocore syntapore syntrax; do node $f/build.mjs --lang $l --public; done
+done
+for t in syntapore syntrax nanoforce; do
+  node compare/build.mjs --tech $t --audit && node compare/build.mjs --tech $t --light
+  for l in en es pt; do node compare/build.mjs --tech $t --lang $l --public; done
+done
+for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax compare-syntapore compare-syntrax compare-nanoforce; do
   node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f.html --out /tmp/$f.png --wait 4000 --scale 1.5
   ffmpeg -v error -i /tmp/$f.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f.webp -y
 done

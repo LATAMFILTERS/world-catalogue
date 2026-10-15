@@ -242,14 +242,23 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               <h2 id="how-it-works" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>How {tech.name} Works</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
                 {tech.figures.map((figure) => (
-                  <a key={figure.href} href={figure.href} style={{ textDecoration: 'none', border: '1px solid rgba(255,255,255,0.07)', display: 'block' }}>
-                    <img src={figure.preview} alt={figure.title} loading="lazy" width={993} height={956} style={{ width: '100%', height: 'auto', display: 'block' }} />
-                    <div style={{ padding: '0.9rem 1rem' }}>
-                      <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.35rem' }}>{figure.title}</p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>{figure.caption}</p>
-                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: '#FFF12D' }}>OPEN INTERACTIVE FIGURE →</p>
-                    </div>
-                  </a>
+                  <div key={figure.href} style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
+                    <a href={figure.href} style={{ textDecoration: 'none', display: 'block' }}>
+                      <img src={figure.preview} alt={figure.title} loading="lazy" width={993} height={956} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <div style={{ padding: '0.9rem 1rem 0' }}>
+                        <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.35rem' }}>{figure.title}</p>
+                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>{figure.caption}</p>
+                        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: '#FFF12D' }}>OPEN INTERACTIVE FIGURE →</p>
+                      </div>
+                    </a>
+                    {figure.translations && (
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.45)', padding: '0.4rem 1rem 0.9rem', margin: 0 }}>
+                        {figure.translations.map((t, i) => (
+                          <span key={t.href}>{i > 0 && ' · '}<a href={t.href} hrefLang={t.lang} lang={t.lang} style={{ color: 'rgba(255,241,45,0.75)' }}>{t.label}</a></span>
+                        ))}
+                      </p>
+                    )}
+                  </div>
                 ))}
               </div>
             </section>

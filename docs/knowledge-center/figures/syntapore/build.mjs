@@ -1,17 +1,16 @@
 // SYNTAPORE™ diesel particulate filtration (status in ../status.json): a primary and a secondary spin-on in one fuel circuit.
 //   tank → primary (suction side, before the transfer pump) → transfer pump → secondary (pressure side, on the engine) → injection rail
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Loads shown are illustrative, not product data.
-// node build.mjs [--light] [--audit] [--en]
-//   --en  English page for the Knowledge Center, written to frontend/public/knowledge-center/figures
+// node build.mjs [--light] [--audit] [--lang es|en|pt] [--public]   (see pageTarget in ../common.mjs)
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, KIT_NOTICE, draftPage } from "../common.mjs";
+import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, pageTarget, KIT_NOTICE, draftPage } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const theme = process.argv.includes("--light") ? "light" : "dark";
-const EN = process.argv.includes("--en");
+const TARGET = pageTarget(HERE, "syntapore");
+const { lang: LANG, theme } = TARGET;
 const WIDTH = 640;
 const HEIGHT = 520;
 const SERVICE = [0, 70, 0]; // where each spin-on goes when it is changed
@@ -29,8 +28,8 @@ const ER = 16; // element media radius; its end caps are 3 wider
 const CAN_Z = 74;
 const ST = HEAD_Z - 4;
 const FILTERS = [
-  { name: "primary", x: -85, mark: EN ? "PRIMARY" : "PRIMARIO" },
-  { name: "secondary", x: 85, mark: EN ? "SECONDARY" : "SECUNDARIO" },
+  { name: "primary", x: -85, mark: { en: "PRIMARY", es: "PRIMARIO", pt: "PRIMÁRIO" }[LANG] },
+  { name: "secondary", x: 85, mark: { en: "SECONDARY", es: "SECUNDARIO", pt: "SECUNDÁRIO" }[LANG] },
 ];
 const PUMP = { x: -14, y: WALL_FACE, w: 28, d: PY + 11 - WALL_FACE, r: 3 };
 const PUMP_Z = 104;
@@ -131,8 +130,8 @@ const layers = F.render();
 // the feed hose plugs into the end of the rail, a rod, along its own axis: on screen its end meets the rail by design
 A.auditOrExit(F.R, P, { crowd: [["feed.hose#3", "rail"]] });
 
-const COPY = EN
-  ? {
+const COPY = {
+  en: {
       hint: "Cursor: dirt · top: service",
       readout: "primary: low · secondary: low",
       keys: [
@@ -146,8 +145,8 @@ const COPY = EN
         "Fuel circuit on a wall bracket: a tank on the bench feeds a primary spin-on filter, then a transfer pump, then a secondary spin-on filter and an injection rail with four injectors. Both filters are drawn in section with their pleated elements; the primary collects larger particles and the secondary finer ones.",
       title: "SYNTAPORE fuel filtration",
       live: { primary: "primary", secondary: "secondary", light: "low", building: "loading", heavy: "high", fresh: "new filters", out: "filters off · replaced" },
-    }
-  : {
+    },
+  es: {
       hint: "Cursor: suciedad · arriba: servicio",
       readout: "primario: baja · secundario: baja",
       keys: [
@@ -161,7 +160,23 @@ const COPY = EN
         "Circuito de combustible sobre un soporte de pared: un tanque en el banco alimenta un filtro spin-on primario, luego una bomba de transferencia, luego un filtro spin-on secundario y un riel de inyección con cuatro inyectores. Ambos filtros se ven en corte con su elemento plisado; el primario retiene las partículas grandes y el secundario las finas.",
       title: "SYNTAPORE filtración de combustible",
       live: { primary: "primario", secondary: "secundario", light: "baja", building: "cargando", heavy: "alta", fresh: "filtros nuevos", out: "filtros fuera · se reemplazan" },
-    };
+    },
+  pt: {
+    hint: "Cursor: sujeira · topo: manutenção",
+    readout: "primário: baixa · secundário: baixa",
+    keys: [
+      { mark: "lit", label: "Partículas maiores retidas no primário, partículas finas no secundário" },
+      { mark: "raised", label: "Tanque, spin-on primário (sucção), bomba de transferência, spin-on secundário (no motor), rampa de injeção" },
+    ],
+    caption:
+      "Ilustração conceitual de um circuito de combustível diesel com dois filtros de partículas SYNTAPORE™. O primário, no lado de sucção antes da bomba de transferência, retém as partículas maiores e protege a bomba. O secundário, no lado de pressão sobre o motor, retém as partículas finas antes que o combustível chegue ao sistema de injeção. Ambos são spin-on vistos em corte, com o elemento plissado à vista; na manutenção substitui-se cada cartucho. Simulação ilustrativa do funcionamento: é uma animação conceitual, não um modelo de engenharia nem um resultado de ensaio, e não mostra dados de produto.",
+    aria: "Filtros SYNTAPORE primário e secundário: setas mudam a contaminação do combustível, E troca ambos os filtros",
+    label:
+      "Circuito de combustível sobre um suporte de parede: um tanque na bancada alimenta um filtro spin-on primário, depois uma bomba de transferência, depois um filtro spin-on secundário e uma rampa de injeção com quatro injetores. Ambos os filtros são vistos em corte com o elemento plissado; o primário retém as partículas maiores e o secundário as finas.",
+    title: "SYNTAPORE filtração de combustível",
+    live: { primary: "primário", secondary: "secundário", light: "baixa", building: "carregando", heavy: "alta", fresh: "filtros novos", out: "filtros fora · substituídos" },
+  },
+}[LANG];
 
 const live = `
 const P = ${JSON.stringify(P)};
@@ -251,8 +266,6 @@ const body = PAGE_CSS + CSS + k.plateHtml({
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
 });
 
-const name = theme === "light" ? "syntapore-light.html" : "syntapore.html";
-const OUT = EN ? join(HERE, "../../../../frontend/public/knowledge-center/figures") : HERE;
-mkdirSync(OUT, { recursive: true });
-writeFileSync(join(OUT, name), draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), EN ? "en" : "es"));
-console.log("wrote", name, F.R.items.length, "items");
+mkdirSync(TARGET.dir, { recursive: true });
+writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));
+console.log("wrote", TARGET.file, F.R.items.length, "items");

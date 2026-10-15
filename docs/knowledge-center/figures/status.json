@@ -10,7 +10,7 @@
       ],
       "validationStatus": "validated",
       "publicationStatus": "approved-for-publication",
-      "public": ["frontend/public/knowledge-center/figures/hydrocore.html", "frontend/public/knowledge-center/figures/hydrocore.webp"],
+      "public": ["frontend/public/knowledge-center/figures/hydrocore.html", "frontend/public/knowledge-center/figures/hydrocore-es.html", "frontend/public/knowledge-center/figures/hydrocore-pt.html", "frontend/public/knowledge-center/figures/hydrocore.webp"],
       "surface": "/knowledge-center/technologies/hydrocore/ (How It Works)",
       "open_items": [
         "Recommended: engineering review of the drawn configuration (head, element, reusable bowl, drain) against approved HYDROCORE applications."
@@ -26,7 +26,7 @@
       ],
       "validationStatus": "validated",
       "publicationStatus": "approved-for-publication",
-      "public": ["frontend/public/knowledge-center/figures/hydrocore-spinon.html", "frontend/public/knowledge-center/figures/hydrocore-spinon.webp"],
+      "public": ["frontend/public/knowledge-center/figures/hydrocore-spinon.html", "frontend/public/knowledge-center/figures/hydrocore-spinon-es.html", "frontend/public/knowledge-center/figures/hydrocore-spinon-pt.html", "frontend/public/knowledge-center/figures/hydrocore-spinon.webp"],
       "surface": "/knowledge-center/technologies/hydrocore/ (How It Works)",
       "open_items": [
         "Recommended: engineering review of the drawn configuration (head, spin-on cartridge, sump section, integrated drain) against approved HYDROCORE applications."
@@ -42,7 +42,7 @@
       ],
       "validationStatus": "validated",
       "publicationStatus": "approved-for-publication",
-      "public": ["frontend/public/knowledge-center/figures/hydrocore-housing.html", "frontend/public/knowledge-center/figures/hydrocore-housing.webp"],
+      "public": ["frontend/public/knowledge-center/figures/hydrocore-housing.html", "frontend/public/knowledge-center/figures/hydrocore-housing-es.html", "frontend/public/knowledge-center/figures/hydrocore-housing-pt.html", "frontend/public/knowledge-center/figures/hydrocore-housing.webp"],
       "surface": "/knowledge-center/technologies/hydrocore/ (How It Works)",
       "open_items": [
         "Recommended: engineering review of the drawn configuration (head, metal shroud, transparent bowl with the element inside, seal, drain) against approved HYDROCORE applications."
@@ -58,7 +58,7 @@
       ],
       "validationStatus": "validated",
       "publicationStatus": "approved-for-publication",
-      "public": ["frontend/public/knowledge-center/figures/turbocore.html", "frontend/public/knowledge-center/figures/turbocore.webp"],
+      "public": ["frontend/public/knowledge-center/figures/turbocore.html", "frontend/public/knowledge-center/figures/turbocore-es.html", "frontend/public/knowledge-center/figures/turbocore-pt.html", "frontend/public/knowledge-center/figures/turbocore.webp"],
       "surface": "/knowledge-center/technologies/turbocore/ (How It Works)",
       "open_items": [
         "Recommended: engineering review of the drawn configuration (lid, housing, bowl, deflector, drain) against approved FH/FG applications.",
@@ -94,7 +94,7 @@
       ],
       "validationStatus": "validated",
       "publicationStatus": "approved-for-publication",
-      "public": ["frontend/public/knowledge-center/figures/syntapore.html", "frontend/public/knowledge-center/figures/syntapore.webp"],
+      "public": ["frontend/public/knowledge-center/figures/syntapore.html", "frontend/public/knowledge-center/figures/syntapore-es.html", "frontend/public/knowledge-center/figures/syntapore-pt.html", "frontend/public/knowledge-center/figures/syntapore.webp"],
       "surface": "/knowledge-center/technologies/syntapore/ (How It Works)",
       "open_items": [
         "Recommended: engineering review of the drawn circuit (tank, primary, transfer pump, secondary, injection rail) against approved SYNTAPORE applications."
@@ -111,11 +111,45 @@
       ],
       "validationStatus": "validated",
       "publicationStatus": "approved-for-publication",
-      "public": ["frontend/public/knowledge-center/figures/syntrax.html", "frontend/public/knowledge-center/figures/syntrax.webp"],
+      "public": ["frontend/public/knowledge-center/figures/syntrax.html", "frontend/public/knowledge-center/figures/syntrax-es.html", "frontend/public/knowledge-center/figures/syntrax-pt.html", "frontend/public/knowledge-center/figures/syntrax.webp"],
       "surface": "/knowledge-center/technologies/syntrax/ (How It Works)",
       "open_items": [
         "Recommended: engineering review of the drawn lube circuit (pan, pump, full-flow spin-on, main gallery, return) against approved SYNTRAX applications."
       ]
+    }
+,
+    {
+      "id": "kc-figure-syntapore-spinon-vs-cartridge",
+      "technology": "SYNTAPORE",
+      "scope": "the two filter formats side by side: spin-on (replaced whole, can included) and cartridge in a permanent housing (the bowl drops, only the element is replaced, the same bowl goes back)",
+      "files": ["compare/compare-syntapore.html", "compare/compare-syntapore-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/compare-syntapore.html", "frontend/public/knowledge-center/figures/compare-syntapore-es.html", "frontend/public/knowledge-center/figures/compare-syntapore-pt.html", "frontend/public/knowledge-center/figures/compare-syntapore.webp"],
+      "surface": "/knowledge-center/technologies/syntapore/ (How It Works)",
+      "open_items": []
+    },
+    {
+      "id": "kc-figure-syntrax-spinon-vs-cartridge",
+      "technology": "SYNTRAX",
+      "scope": "the two filter formats side by side: spin-on (replaced whole, can included) and cartridge in a permanent housing (the bowl drops, only the element is replaced, the same bowl goes back)",
+      "files": ["compare/compare-syntrax.html", "compare/compare-syntrax-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/compare-syntrax.html", "frontend/public/knowledge-center/figures/compare-syntrax-es.html", "frontend/public/knowledge-center/figures/compare-syntrax-pt.html", "frontend/public/knowledge-center/figures/compare-syntrax.webp"],
+      "surface": "/knowledge-center/technologies/syntrax/ (How It Works)",
+      "open_items": []
+    },
+    {
+      "id": "kc-figure-nanoforce-spinon-vs-cartridge",
+      "technology": "NANOFORCE",
+      "scope": "the two filter formats side by side: spin-on (replaced whole, can included) and cartridge in a permanent housing (the bowl drops, only the element is replaced, the same bowl goes back)",
+      "files": ["compare/compare-nanoforce.html", "compare/compare-nanoforce-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/compare-nanoforce.html", "frontend/public/knowledge-center/figures/compare-nanoforce-es.html", "frontend/public/knowledge-center/figures/compare-nanoforce-pt.html", "frontend/public/knowledge-center/figures/compare-nanoforce.webp"],
+      "surface": "/knowledge-center/technologies/nanoforce/ (How It Works)",
+      "open_items": []
     }
   ],
   "kit": {
@@ -185,6 +219,16 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "Continue with SYNTRAX: full-flow lube spin-on in the engine lube circuit, published like the fuel figures. Every figure caption now calls it an illustrative simulation of how the technology works (conceptual animation, not an engineering model or test result, no product data)."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Explain how spin-on and cartridge filters work, with graphic examples, for SYNTAPORE, HYDROCORE, NANOFORCE and SYNTRAX (the four technologies that come in both formats); figures in ES, EN and PT. HYDROCORE already shows both formats (Fig 1B spin-on, Figs 1A/1C element in a housing); SYNTAPORE, SYNTRAX and NANOFORCE get a side-by-side comparison figure."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "All published figures are served in ES, EN and PT: <name>.html (EN), <name>-es.html and <name>-pt.html; the Knowledge Center cards open EN and link ES and PT."
     }
   ]
 }
