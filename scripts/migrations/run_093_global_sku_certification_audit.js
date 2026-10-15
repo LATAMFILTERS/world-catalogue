@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const { Pool } = require('pg');
+const { fp4436AuditApprovalSql } = require('../../lib/fp4436-cabin-oem-numbering');
 
 const MIGRATION = '093_GLOBAL_SKU_CERTIFICATION_AUDIT';
 const POLICY_VERSION = '2026-08-29-global-cert-v1';
@@ -154,8 +155,9 @@ async function applyGlobalSkuCertificationAudit() {
         SELECT
           x.*,
           (x.codigo_base IS NOT NULL AND x.governance_state='CANONICAL_VERIFIED') AS canonical_governance_ok,
-          CASE WHEN x.duty='LIGHT_DUTY' THEN x.regional_policy_state='POLICY_ALIGNED' ELSE true END AS regional_policy_ok,
+          CASE WHEN x.duty='LIGHT_DUTY' THEN (x.regional_policy_state='POLICY_ALIGNED' OR ${fp4436AuditApprovalSql('x')}) ELSE true END AS regional_policy_ok,
           CASE
+            WHEN ${fp4436AuditApprovalSql('x')} THEN x.active_identity_count=1 AND x.identity_origin_group='EUROPEAN' AND x.identity_brand='MANN-FILTER' AND x.identity_part_number='FP4436'
             WHEN x.duty='LIGHT_DUTY' THEN
               x.active_identity_count=1
               AND upper(regexp_replace(coalesce(x.identity_part_number,''), '[^A-Za-z0-9]', '', 'g'))=x.base_key
