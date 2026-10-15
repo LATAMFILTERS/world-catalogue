@@ -17,6 +17,11 @@ if (-not (Test-Command "ollama")) {
   }
   Write-Host "Installing Ollama with winget..."
   winget install --id Ollama.Ollama --exact --accept-package-agreements --accept-source-agreements
+  # winget updates PATH in the registry only; refresh this session so `ollama` resolves.
+  $env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [Environment]::GetEnvironmentVariable("Path", "User")
+  if (-not (Test-Command "ollama")) {
+    throw "Ollama was installed but is not on PATH. Open a new PowerShell window and rerun this script."
+  }
 }
 
 $env:OLLAMA_HOST = $OllamaHost
@@ -36,14 +41,20 @@ ollama pull $Model
 [Environment]::SetEnvironmentVariable("HERMES_LOCAL_LLM_ENABLED", "true", "User")
 [Environment]::SetEnvironmentVariable("HERMES_LOCAL_LLM_URL", "http://127.0.0.1:11434/v1/chat/completions", "User")
 [Environment]::SetEnvironmentVariable("HERMES_LOCAL_LLM_MODEL", $Model, "User")
-[Environment]::SetEnvironmentVariable("HERMES_ZERO_COST_REQUIRED", "true", "User")
-[Environment]::SetEnvironmentVariable("HERMES_GROQ_FREE_TIER_CONFIRMED", "false", "User")
+# Safe defaults only on first install; never overwrite the operator's Groq decision on rerun.
+if (-not [Environment]::GetEnvironmentVariable("HERMES_ZERO_COST_REQUIRED", "User")) {
+  [Environment]::SetEnvironmentVariable("HERMES_ZERO_COST_REQUIRED", "true", "User")
+}
+if (-not [Environment]::GetEnvironmentVariable("HERMES_GROQ_FREE_TIER_CONFIRMED", "User")) {
+  [Environment]::SetEnvironmentVariable("HERMES_GROQ_FREE_TIER_CONFIRMED", "false", "User")
+}
 
 Write-Host "Testing local OpenAI-compatible endpoint..."
 $payload = @{
   model = $Model
   temperature = 0
   max_tokens = 80
+  reasoning_effort = "none"
   response_format = @{ type = "json_object" }
   messages = @(
     @{ role = "system"; content = "Return JSON only." },
