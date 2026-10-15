@@ -115,11 +115,11 @@ export function studio(P, { order = ["stand"], spring = { stagger: 0.035, stiffn
   }
 
   // Twist drain under the bowl: a body under the cap, a wing below it that turns a quarter turn to open, and a spout.
-  function drain(valveZ, wingZ) {
-    put("drain.body", [0, 0, (wingZ + 5 + valveZ) / 2], S(k.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, P, 28), { tone: "mid" }), [A.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, { name: "drain.body" })]);
+  function drain(valveZ, wingZ, { piece = "stand" } = {}) {
+    put("drain.body", [0, 0, (wingZ + 5 + valveZ) / 2], S(k.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, P, 28), { tone: "mid" }), [A.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, { name: "drain.body" })], { piece });
     const wing = k.ringOf({ x: -9, y: -1.4, w: 18, d: 2.8, r: 1.2 }, 3);
-    put("drain.wing", [0, 0, wingZ + 2.5], `<g data-part="wing">${S(k.extrude(wing, wingZ, 5, P), { tone: "hi", lit: true })}</g>`, [A.extruded(wing, wingZ, 5, { name: "drain.wing" })]);
-    put("drain.spout", [0, 0, wingZ - 2.5], S(k.cylinder(0, 0, 1.7, wingZ - 5, 5, P, 16), { tone: "mid", crease: "none" }), [A.cylinder(0, 0, 1.7, wingZ - 5, 5, { name: "drain.spout" })]);
+    put("drain.wing", [0, 0, wingZ + 2.5], `<g data-part="wing">${S(k.extrude(wing, wingZ, 5, P), { tone: "hi", lit: true })}</g>`, [A.extruded(wing, wingZ, 5, { name: "drain.wing" })], { piece });
+    put("drain.spout", [0, 0, wingZ - 2.5], S(k.cylinder(0, 0, 1.7, wingZ - 5, 5, P, 16), { tone: "mid", crease: "none" }), [A.cylinder(0, 0, 1.7, wingZ - 5, 5, { name: "drain.spout" })], { piece });
   }
 
   function render() {
@@ -132,25 +132,59 @@ export function studio(P, { order = ["stand"], spring = { stagger: 0.035, stiffn
 }
 
 // The glass bowl as one item: cavity and fuel behind, live water and drops, then the glass in front.
-export function glassBowl(P, { z0, z1, r, mark, inside = "" }) {
+// cutaway: true draws a steel shell seen in section (the spin-on sump) instead of clear glass.
+export function glassBowl(P, { z0, z1, r, mark, inside = "", cutaway = false }) {
   const L = (d, style) => k.lineSvg(d, style);
   const glass = k.cylinder(0, 0, r, z0, z1 - z0, P, 72);
   const fuel = k.cylinder(0, 0, r - 0.8, z0, z1 - z0, P, 72);
   const out = [`<path class="pc-cav" d="${glass.fill}"/>`, `<path class="pc-fuel" d="${fuel.fill}"/>`];
   out.push(`<path data-part="water" class="pc-water" d=""/>`, `<path data-part="surface" class="iso-line" data-tone="lit" d=""/>`);
   out.push(`<g data-part="drops-back" class="pc-drops"></g>`, inside, `<g data-part="drops-front" class="pc-drops"></g>`);
-  out.push(`<g class="pc-glass">`);
+  out.push(`<g class="pc-glass${cutaway ? " pc-cut" : ""}">`);
   glass.shades.forEach((d, shade) => d && out.push(`<path class="iso-shade" data-shade="${shade}" d="${d}"/>`));
   out.push(`</g>`);
   // graduation: a ring at the drain mark and fine rings below it, all on the glass
   const rings = [];
   for (let z = z0 + 4; z < mark - 1; z += 4) rings.push(k.sideArc(0, 0, r, z, P, 48));
-  out.push(L(rings.join(""), { tone: "faint" }));
-  out.push(L(k.sideArc(0, 0, r, mark, P, 48) + k.sideArc(0, 0, r, mark + 1.6, P, 48), { tone: "hi" }));
+  if (!cutaway) {
+    out.push(L(rings.join(""), { tone: "faint" }));
+    out.push(L(k.sideArc(0, 0, r, mark, P, 48) + k.sideArc(0, 0, r, mark + 1.6, P, 48), { tone: "hi" }));
+  }
   // a reflection down the glass, from the cap rim to under the collar, toward the light
   const a = ((P.azimuth + 58) * Math.PI) / 180;
-  out.push(`<path class="pc-shine" d="${k.segment([Math.cos(a) * r, Math.sin(a) * r, z0], [Math.cos(a) * r, Math.sin(a) * r, z1], P)}"/>`);
+  if (!cutaway) out.push(`<path class="pc-shine" d="${k.segment([Math.cos(a) * r, Math.sin(a) * r, z0], [Math.cos(a) * r, Math.sin(a) * r, z1], P)}"/>`);
   out.push(L(glass.outline, { tone: "mid" }));
+  return out.join("");
+}
+
+// A steel shell seen in section: its inside (cavity), whatever sits inside it, then the shell's front shading and outline.
+// part: "all" in one item, or "back" / "front" when something moving inside must be painted between them.
+export function shellCut(P, { z0, z1, r, inside = "", part = "all" }) {
+  const shell = k.cylinder(0, 0, r, z0, z1 - z0, P, 72);
+  const back = `<path class="pc-cav" d="${shell.fill}"/>`;
+  const front = [`<g class="pc-glass pc-cut">`, ...shell.shades.map((d, i) => (d ? `<path class="iso-shade" data-shade="${i}" d="${d}"/>` : "")), `</g>`, k.lineSvg(shell.outline, { tone: "mid" })].join("");
+  return part === "back" ? back : part === "front" ? front : back + inside + front;
+}
+
+// A pleated filter element: end caps, vertical pleats, and fuel flow running down outside the pleats
+// (the drawn flow lines start and end under the end caps, which are painted after them).
+export function pleatedElement(P, { z0, z1, r, flow = true }) {
+  const F = vertical(z0 + 2);
+  const h = z1 - z0 - 4;
+  const media = k.cylinder(0, 0, r, z0 + 2, h, P, 64);
+  // bottom end cap first, so the pleats stand in front of its top face
+  const out = [k.solidSvg(k.cylinder(0, 0, r + 3, z0, 2, P, 64), { tone: "mid" })];
+  out.push(k.solidSvg(media, { tone: "mid", className: "pc-media" }), k.fadedSvg(G.ribsOf(F, 0, h, r + 0.01, 96, P, { fade: [0.12, 0.6] }), { tone: "lo" }));
+  if (flow) {
+    // fuel running down outside the pleats: each line starts under the top cap and runs out at the bottom of the element
+    const lines = [];
+    for (const deg of [-70, -40, -10, 20, 50]) {
+      const a = ((P.azimuth + deg) * Math.PI) / 180, rr = r + 2.2;
+      lines.push(k.segment([Math.cos(a) * rr, Math.sin(a) * rr, z1 - 1], [Math.cos(a) * rr, Math.sin(a) * rr, z0 + 3], P));
+    }
+    out.push(k.lineSvg(lines.join(""), { tone: "lo", className: "pc-flow", flow: true, free: "end" }));
+  }
+  out.push(k.solidSvg(k.cylinder(0, 0, r + 3, z1 - 2, 2, P, 64), { tone: "mid" }));
   return out.join("");
 }
 
@@ -160,8 +194,13 @@ export const PAGE_CSS = `<style>
 .pc-fuel{fill:color-mix(in srgb,#c9a253 10%,var(--anatomy-paper));opacity:.92}
 .pc-water{fill:color-mix(in srgb,var(--anatomy-blue) 30%,var(--anatomy-paper))}
 .pc-drops circle{fill:color-mix(in srgb,var(--anatomy-blue) 72%,var(--anatomy-lit))}
+.pc-drops circle.s{fill:color-mix(in srgb,#6b4f2e 70%,var(--anatomy-hi))}
+.pc-swirl{stroke:color-mix(in srgb,var(--anatomy-blue) 55%,var(--anatomy-mid));opacity:.55;fill:none}
 .pc-stream{stroke:color-mix(in srgb,var(--anatomy-blue) 72%,var(--anatomy-lit));stroke-width:1.2px}
 .pc-glass .iso-shade{opacity:.26}
+.pc-cut .iso-shade{opacity:.42}
+.pc-media>.iso-fill,.pc-media>.iso-top{fill:color-mix(in srgb,#c9a253 16%,var(--anatomy-paper))}
+.pc-flow{stroke:color-mix(in srgb,#c9a253 70%,var(--anatomy-mid));stroke-width:.9px}
 .pc-shine{fill:none;stroke:#fff;stroke-width:1.8px;opacity:.85;stroke-linecap:butt}
 .iso:not([data-theme="light"]) .pc-shine{opacity:.16}
 .pc-media{fill:color-mix(in srgb,#c9a253 14%,var(--anatomy-paper))}
@@ -181,7 +220,9 @@ const WING = ringOf({ x: -9, y: -1.4, w: 18, d: 2.8, r: 1.2 }, 3);
 const SPAN = B.mark - B.z0;
 let seed = 7;
 const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-const bowl = { level: 0.3, open: 0, opening: false, cup: 0 };
+const bowl = { level: 0.3, open: 0, opening: false, cup: 0, sediment: [] };
+// solids (residues) settle on the floor of the bowl and are flushed out with the water when it drains
+const settle = (x, y) => { if (bowl.sediment.length < 48) bowl.sediment.push([x, y]); };
 function setSolid(group, paths) {
   group.querySelector(".iso-fill").setAttribute("d", paths.fill);
   group.querySelector(".iso-top").setAttribute("d", paths.top);
@@ -196,16 +237,17 @@ function stepBowl(dt) {
   if (bowl.level <= 0.08) bowl.opening = false;
   bowl.open += ((bowl.opening ? 1 : 0) - bowl.open) * (1 - Math.exp(-dt / 0.25));
   const out = bowl.open > 0.5 ? Math.min(bowl.level - 0.05, dt * 0.3 * bowl.open) : 0;
-  if (out > 0) { bowl.level -= out; bowl.cup = Math.min(1, bowl.cup + out * 0.35); }
+  if (out > 0) { bowl.level -= out; bowl.cup = Math.min(1, bowl.cup + out * 0.35); if (rand() < dt * 6) bowl.sediment.shift(); }
   else bowl.cup = Math.max(0, bowl.cup - dt * 0.02); // the cup is emptied between drains
 }
 function drawBowl(drops) {
   const top = waterTop();
   water.setAttribute("d", cylinder(0, 0, B.r - 0.8, B.z0, top - B.z0, P, 72).fill);
   surface.setAttribute("d", ring(0, 0, B.r - 0.8, top, P, 72));
-  const dot = (p) => { const [x, y] = iso(p, P); return '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="1.15"/>'; };
-  back.innerHTML = drops.filter((p) => p.back).map((p) => dot(p.at)).join("");
-  front.innerHTML = drops.filter((p) => !p.back).map((p) => dot(p.at)).join("");
+  const dot = (p) => { const [x, y] = iso(p.at, P); return '<circle' + (p.solid ? ' class="s"' : "") + ' cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (p.solid ? "0.95" : "1.15") + '"/>'; };
+  const floor = bowl.sediment.map(([x, y]) => ({ at: [x, y, B.z0 + 0.7], solid: true }));
+  back.innerHTML = drops.filter((p) => p.back).map(dot).join("");
+  front.innerHTML = floor.concat(drops.filter((p) => !p.back)).map(dot).join("");
   const a = bowl.open * Math.PI / 2, c = Math.cos(a), s = Math.sin(a);
   setSolid(wing.firstChild, extrude(WING.map(([x, y]) => [x * c - y * s, x * s + y * c]), B.wing, 5, P));
   stream.style.opacity = String(clamp((bowl.open - 0.5) * 2, 0, 1));
