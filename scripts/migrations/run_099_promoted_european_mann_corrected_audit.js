@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const { Pool } = require('pg');
+const { manualLedgerRow } = require('./run_093_global_sku_certification_audit');
 
 const MIGRATION = '099_PROMOTED_EUROPEAN_MANN_CORRECTED_AUDIT';
 const BLOCKER = 'EUROPEAN_MANN_PROMOTION_INVALID';
@@ -201,7 +202,7 @@ async function applyPromotedEuropeanMannCorrectedAudit() {
     await client.query(`
       UPDATE public.catalog_sku_certification
       SET blockers=array_remove(blockers,'${BLOCKER}'), audited_at=now()
-      WHERE '${BLOCKER}'=ANY(blockers)
+      WHERE '${BLOCKER}'=ANY(blockers) AND NOT ${manualLedgerRow('catalog_sku_certification')}
     `);
 
     await client.query(`
@@ -220,6 +221,8 @@ async function applyPromotedEuropeanMannCorrectedAudit() {
           certification_state=CASE WHEN cardinality(blockers)=0 THEN 'CERTIFIED' ELSE 'BLOCKED' END,
           certified_at=CASE WHEN cardinality(blockers)=0 THEN coalesce(certified_at,now()) ELSE NULL END,
           audited_at=now()
+      -- A manual mark keeps its state unless this audit blocks it (fail closed).
+      WHERE NOT ${manualLedgerRow('catalog_sku_certification')} OR '${BLOCKER}'=ANY(blockers)
     `);
 
     const ledger = await client.query(`
