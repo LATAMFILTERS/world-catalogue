@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/localized-routes';
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
 import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
@@ -105,7 +106,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'ELIMFILTERS',
       'industrial filtration engineering',
     ],
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: languageAlternates(`/industries/${slug}`) },
     openGraph: {
       title,
       description,
