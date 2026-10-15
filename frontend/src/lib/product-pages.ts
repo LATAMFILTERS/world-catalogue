@@ -1,4 +1,5 @@
 import snapshot from '@/data/product-pages.json';
+import { publicApplicationLines } from './product-application-publication';
 
 export const BASE_URL = 'https://elimfilters.com';
 
@@ -16,6 +17,7 @@ export interface ProductPage {
   crossRefs: { brand: string; code: string }[];
   crossRefsTotal: number;
   applications: string[];
+  governance?: { applicationEvidencePublicationReady?: boolean };
   source: { kind: string; file?: string; seed?: string; table?: string };
 }
 
@@ -27,6 +29,7 @@ const PERFORMANCE_FIELDS = new Set(['Filtration rating', 'Efficiency', 'Efficien
 
 export const PRODUCT_PAGES: readonly ProductPage[] = (snapshot.products as ProductPage[]).map((p) => ({
   ...p,
+  applications: publicApplicationLines(p),
   specs: p.specs.filter((s) => OPTIONS.showPerformanceSpecs || !PERFORMANCE_FIELDS.has(s.name)),
   crossRefs: OPTIONS.showCrossReferences ? p.crossRefs : [],
   crossRefsTotal: OPTIONS.showCrossReferences ? p.crossRefsTotal : 0,
