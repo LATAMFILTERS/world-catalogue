@@ -17,6 +17,7 @@ Do not publish a new figure until both of its statuses are approved (see the pub
 | Fig 3 · SYNTAPORE™ primary and secondary | Diesel particulate filtration: primary spin-on on the suction side before the transfer pump, secondary spin-on on the engine before the injection rail, both in section; at service each spin-on is replaced | `syntapore/syntapore.html`, `syntapore/syntapore-light.html` | `shots/syntapore-light.png`, `shots/syntapore-service.png` |
 | Fig 4 · SYNTRAX™ full-flow spin-on | Engine lube circuit: oil pan, oil pump, full-flow spin-on on the engine in section, main gallery to the bearings, return; at service the spin-on is replaced | `syntrax/syntrax.html`, `syntrax/syntrax-light.html` | `shots/syntrax-light.png`, `shots/syntrax-service.png` |
 | Fig 3B / 4B / 5 · spin-on vs cartridge (SYNTAPORE™, SYNTRAX™, NANOFORCE™) | The two formats side by side: the spin-on comes off whole; on the cartridge the bowl drops, only the element is replaced and the same bowl goes back. ES / EN / PT | `compare/compare-<tech>.html`, `compare/compare-<tech>-light.html` | built on demand |
+| Fig 6 · THERMACORE™ coolant spin-on | Engine cooling circuit: radiator, water pump, coolant spin-on in section with an additive charge under the element (where approved), water jacket, return; at service the spin-on is replaced | `thermacore/thermacore.html`, `thermacore/thermacore-light.html` | `shots/thermacore-light.png`, `shots/thermacore-service.png` |
 | Fig 2 · TURBOCORE™ turbine-style housing | FH/FG turbine-style housing, replaceable element | `turbocore/turbocore.html`, `turbocore/turbocore-light.html` | `shots/turbocore-light.png`, `shots/turbocore-lid-open.png` |
 
 HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct scopes; neither page mentions the other technology.
@@ -47,16 +48,17 @@ node hydrocore/build.mjs --housing --audit && node hydrocore/build.mjs --housing
 node turbocore/build.mjs --audit && node turbocore/build.mjs --light
 node syntapore/build.mjs --audit && node syntapore/build.mjs --light
 node syntrax/build.mjs --audit && node syntrax/build.mjs --light
+node thermacore/build.mjs --audit && node thermacore/build.mjs --light
 # published pages (dark theme, for the Knowledge Center) in English, Spanish and Portuguese, and the English previews
 for l in en es pt; do
   for v in "" --spinon --housing; do node hydrocore/build.mjs $v --lang $l --public; done
-  for f in turbocore syntapore syntrax; do node $f/build.mjs --lang $l --public; done
+  for f in turbocore syntapore syntrax thermacore; do node $f/build.mjs --lang $l --public; done
 done
 for t in syntapore syntrax nanoforce; do
   node compare/build.mjs --tech $t --audit && node compare/build.mjs --tech $t --light
   for l in en es pt; do node compare/build.mjs --tech $t --lang $l --public; done
 done
-for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax compare-syntapore compare-syntrax compare-nanoforce; do
+for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax compare-syntapore compare-syntrax compare-nanoforce thermacore; do
   node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f.html --out /tmp/$f.png --wait 4000 --scale 1.5
   ffmpeg -v error -i /tmp/$f.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f.webp -y
 done

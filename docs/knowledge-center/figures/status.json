@@ -151,6 +151,20 @@
       "surface": "/knowledge-center/technologies/nanoforce/ (How It Works)",
       "open_items": []
     }
+,
+    {
+      "id": "kc-figure-thermacore-coolant-spinon",
+      "technology": "THERMACORE",
+      "scope": "engine cooling circuit: radiator, water pump, coolant spin-on in section with an additive charge under the element (where an additive-bearing element is approved), water jacket, return (service: replace the spin-on)",
+      "files": ["thermacore/thermacore.html", "thermacore/thermacore-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/thermacore.html", "frontend/public/knowledge-center/figures/thermacore-es.html", "frontend/public/knowledge-center/figures/thermacore-pt.html", "frontend/public/knowledge-center/figures/thermacore.webp"],
+      "surface": "/knowledge-center/technologies/thermacore/ (How It Works)",
+      "open_items": [
+        "Recommended: engineering review of the drawn cooling circuit and of the additive charge depiction against approved THERMACORE applications. The figure states the additive only where an additive-bearing element is approved (KC registry selectionGuidance) and gives no charge, release rate or interval."
+      ]
+    }
   ],
   "kit": {
     "name": "anatomy",
@@ -229,6 +243,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "All published figures are served in ES, EN and PT: <name>.html (EN), <name>-es.html and <name>-pt.html; the Knowledge Center cards open EN and link ES and PT."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Continue with the remaining technologies. THERMACORE first: coolant filter with the additive pellets (SCA) shown, published in ES/EN/PT like the others."
     }
   ]
 }
