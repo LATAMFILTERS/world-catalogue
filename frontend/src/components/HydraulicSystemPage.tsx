@@ -1,3 +1,5 @@
+import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
@@ -106,15 +108,15 @@ export function HydraulicSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Hydraulic Protection" />
 
       <section style={hero}>
-        <img src="/images/hidraulico-trabajador.jpg" alt="Hydraulic protection system" style={heroMedia} />
+        <ReviewedImage src="/images/hidraulico-trabajador.jpg" alt="Hydraulic protection system" style={heroMedia} />
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>HYDRAULIC CONTAMINATION CONTROL</p>
-          <h1 style={heroTitle}>Hydraulic<br /><span style={{ color: '#FFF12D' }}>Protection</span></h1>
-          <p style={heroPromise}>Control particle contamination around the hydraulic clearances that determine pressure, movement and machine response.</p>
-          <p style={heroLead}>ELIMFILTERS Hydraulic Protection organizes fluid cleanliness around pumps, valves, actuators and precision controls. The hydraulic circuit, flow, pressure context, cleanliness requirement and application evidence must be resolved before a part number is accepted.</p>
+          <p style={eyebrow}><ReviewedText text={"HYDRAULIC CONTAMINATION CONTROL"} /></p>
+          <h1 style={heroTitle}><ReviewedText text={"Hydraulic"} context="HydraulicSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="HydraulicSystemPageTitle" /></span></h1>
+          <p style={heroPromise}><ReviewedText text={"Control particle contamination around the hydraulic clearances that determine pressure, movement and machine response."} /></p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS Hydraulic Protection organizes fluid cleanliness around pumps, valves, actuators and precision controls. The hydraulic circuit, flow, pressure context, cleanliness requirement and application evidence must be resolved before a part number is accepted."} /></p>
           <div style={buttonRow}>
-            <Link href="#protection-path" style={yellowButton}>IDENTIFY THE HYDRAULIC PATH</Link>
+            <Link href="#protection-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE HYDRAULIC PATH"} /></Link>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
@@ -123,24 +125,24 @@ export function HydraulicSystemPage() {
       <section style={section}>
         <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
-          <h2 style={h2}>Hydraulic filtration protects the tolerances that make the system work.</h2>
+          <h2 style={h2}><ReviewedText text={"Hydraulic filtration protects the tolerances that make the system work."} /></h2>
           <div>
-            <p style={lead}>Hydraulic Protection is the ELIMFILTERS system architecture for controlling particulate contamination in hydraulic fluid before it reaches contamination-sensitive pumps, valves, actuators and control components.</p>
-            <p style={body}>The correct decision is not simply “which filter fits.” It is which filtration path matches the circuit, operating pressure, flow demand, cleanliness target and validated application evidence.</p>
+            <p style={lead}><ReviewedText text={"Hydraulic Protection is the ELIMFILTERS system architecture for controlling particulate contamination in hydraulic fluid before it reaches contamination-sensitive pumps, valves, actuators and control components."} /></p>
+            <p style={body}><ReviewedText text={"The correct decision is not simply “which filter fits.” It is which filtration path matches the circuit, operating pressure, flow demand, cleanliness target and validated application evidence."} /></p>
           </div>
         </div>
       </section>
 
       <section id="protection-path" style={sectionAlt}>
-        <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-        <h2 style={h2}>Resolve where contamination enters, circulates and becomes critical.</h2>
+        <p style={eyebrow}><ReviewedText text={"CONTAMINATION PATHWAYS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Resolve where contamination enters, circulates and becomes critical."} /></h2>
         <div style={grid3}>
           {pathways.map(([title, exposure, system, technology, href]) => (
             <article key={title} style={card}>
-              <p style={cardLabel}>{title}</p>
-              <p style={cardBody}>{exposure}</p>
+              <p style={cardLabel}><ReviewedText text={title} /></p>
+              <p style={cardBody}><ReviewedText text={exposure} /></p>
               <div style={arrow}>↓</div>
-              <p style={systemLabel}>{system}</p>
+              <p style={systemLabel}><ReviewedText text={system} /></p>
               <Link href={href} style={techLink}>{technology}</Link>
             </article>
           ))}
@@ -150,74 +152,74 @@ export function HydraulicSystemPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>ENGINEERING PRINCIPLE</p>
-            <h2 style={h2}>Hydraulic cleanliness has to be matched to component sensitivity and duty.</h2>
+            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
+            <h2 style={h2}><ReviewedText text={"Hydraulic cleanliness has to be matched to component sensitivity and duty."} /></h2>
           </div>
           <div>
-            <p style={lead}>The filtration target should reflect the hydraulic components being protected, the particle sizes that matter to those interfaces and the circuit conditions under which the filter must operate.</p>
-            <p style={body}>ELIMFILTERS keeps the hierarchy explicit: hydraulic circuit → cleanliness requirement → filtration technology → product family → validated part number.</p>
+            <p style={lead}><ReviewedText text={"The filtration target should reflect the hydraulic components being protected, the particle sizes that matter to those interfaces and the circuit conditions under which the filter must operate."} /></p>
+            <p style={body}><ReviewedText text={"ELIMFILTERS keeps the hierarchy explicit: hydraulic circuit → cleanliness requirement → filtration technology → product family → validated part number."} /></p>
           </div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
-        <h2 style={h2}>Protect the components that convert fluid power into controlled work.</h2>
+        <p style={eyebrow}><ReviewedText text={"WHAT THE SYSTEM PROTECTS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Protect the components that convert fluid power into controlled work."} /></h2>
         <div style={grid2}>
           {assets.map(([title, text]) => (
             <article key={title} style={lineCard}>
-              <h3 style={h3}>{title}</h3>
-              <p style={body}>{text}</p>
+              <h3 style={h3}><ReviewedText text={title} /></h3>
+              <p style={body}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>SYSTEM → TECHNOLOGY → FAMILY</p>
-        <h2 style={h2}>Keep the hydraulic protection hierarchy explicit.</h2>
+        <p style={eyebrow}><ReviewedText text={"SYSTEM → TECHNOLOGY → FAMILY"} /></p>
+        <h2 style={h2}><ReviewedText text={"Keep the hydraulic protection hierarchy explicit."} /></h2>
         <div style={hierarchy}>
-          <div style={hierarchyNode}><span style={nodeLabel}>SYSTEM</span><strong>Hydraulic Protection</strong></div>
+          <div style={hierarchyNode}><span style={nodeLabel}><ReviewedText text={"SYSTEM"} /></span><strong><ReviewedText text={"Hydraulic Protection"} /></strong></div>
           <div style={hierarchyArrow}>→</div>
-          <Link href="/technologies/nanoforce/" style={hierarchyNode}><span style={nodeLabel}>TECHNOLOGY</span><strong>NANOFORCE™</strong></Link>
+          <Link href="/technologies/nanoforce/" style={hierarchyNode}><span style={nodeLabel}><ReviewedText text={"TECHNOLOGY"} /></span><strong>NANOFORCE™</strong></Link>
           <div style={hierarchyArrow}>→</div>
-          <Link href="/families/hydraulic-filters/" style={hierarchyNode}><span style={nodeLabel}>PRODUCT FAMILY</span><strong>Hydraulic Filters</strong></Link>
+          <Link href="/families/hydraulic-filters/" style={hierarchyNode}><span style={nodeLabel}><ReviewedText text={"PRODUCT FAMILY"} /></span><strong><ReviewedText text={"Hydraulic Filters"} /></strong></Link>
           <div style={hierarchyArrow}>→</div>
-          <div style={hierarchyNode}><span style={nodeLabel}>OUTPUT</span><strong>Validated Part Number</strong></div>
+          <div style={hierarchyNode}><span style={nodeLabel}><ReviewedText text={"OUTPUT"} /></span><strong><ReviewedText text={"Validated Part Number"} /></strong></div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>VALIDATION CONTEXT</p>
-        <h2 style={h2}>Use cleanliness and filter-performance standards in the correct context.</h2>
+        <p style={eyebrow}><ReviewedText text={"VALIDATION CONTEXT"} /></p>
+        <h2 style={h2}><ReviewedText text={"Use cleanliness and filter-performance standards in the correct context."} /></h2>
         <div style={grid4}>
           {standards.map(([name, text]) => (
             <article key={name} style={card}>
-              <p style={cardLabel}>{name}</p>
-              <p style={cardBody}>{text}</p>
+              <p style={cardLabel}><ReviewedText text={name} /></p>
+              <p style={cardBody}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>FROM HYDRAULIC CONDITION TO PART</p>
-        <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
+        <p style={eyebrow}><ReviewedText text={"FROM HYDRAULIC CONDITION TO PART"} /></p>
+        <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
         <div className="decision-flow" style={decisionFlow}>
           {['1. EQUIPMENT', '2. HYDRAULIC CIRCUIT', '3. FLOW + PRESSURE CONTEXT', '4. CLEANLINESS / FILTRATION TARGET', '5. OEM + DIMENSIONAL EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
-            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>
           ))}
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>FREQUENT QUESTIONS</p>
-        <h2 style={h2}>Hydraulic Protection</h2>
+        <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Hydraulic Protection"} /></h2>
         <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
-              <h3 style={faqQuestion}>{question}</h3>
-              <p style={body}>{answer}</p>
+              <h3 style={faqQuestion}><ReviewedText text={question} /></h3>
+              <p style={body}><ReviewedText text={answer} /></p>
             </article>
           ))}
         </div>
@@ -225,11 +227,11 @@ export function HydraulicSystemPage() {
 
       <section style={finalCta}>
         <div style={{ maxWidth: '980px', margin: '0 auto' }}>
-          <p style={eyebrow}>HAVE A HYDRAULIC APPLICATION TO RESOLVE?</p>
-          <h2 style={h2}>Identify the hydraulic circuit before selecting the filter.</h2>
-          <p style={{ ...lead, maxWidth: '780px' }}>Use equipment, circuit function, flow, pressure context, existing filter or OEM reference and available cleanliness evidence to resolve the correct ELIMFILTERS hydraulic protection path.</p>
+          <p style={eyebrow}><ReviewedText text={"HAVE A HYDRAULIC APPLICATION TO RESOLVE?"} /></p>
+          <h2 style={h2}><ReviewedText text={"Identify the hydraulic circuit before selecting the filter."} /></h2>
+          <p style={{ ...lead, maxWidth: '780px' }}><ReviewedText text={"Use equipment, circuit function, flow, pressure context, existing filter or OEM reference and available cleanliness evidence to resolve the correct ELIMFILTERS hydraulic protection path."} /></p>
           <div style={buttonRow}>
-            <a href="mailto:applications@elimfilters.com?subject=Hydraulic%20Application%20Support" style={yellowButton}>IDENTIFY MY HYDRAULIC PROTECTION PATH</a>
+            <a href="mailto:applications@elimfilters.com?subject=Hydraulic%20Application%20Support" style={yellowButton}><ReviewedText text={"IDENTIFY MY HYDRAULIC PROTECTION PATH"} /></a>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>PART SEARCH</a>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
@@ -93,15 +95,15 @@ export function CoolingSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Cooling System Protection" />
 
       <section style={hero}>
-        <img src="/images/thermacore_mecnico.jpg" alt="Cooling system protection" style={heroMedia} />
+        <ReviewedImage src="/images/thermacore_mecnico.jpg" alt="Cooling system protection" style={heroMedia} />
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>THERMAL SYSTEM CONTAMINATION CONTROL</p>
-          <h1 style={heroTitle}>Cooling System<br /><span style={{ color: '#FFF12D' }}>Protection</span></h1>
-          <p style={heroPromise}>Protect coolant circulation, heat-transfer surfaces and heavy-duty engine components before contamination becomes a thermal-system problem.</p>
-          <p style={heroLead}>ELIMFILTERS Cooling System Protection connects coolant condition, contamination exposure and equipment configuration to THERMACORE™ technology, the Coolant Filters family and a validated part number.</p>
+          <p style={eyebrow}><ReviewedText text={"THERMAL SYSTEM CONTAMINATION CONTROL"} /></p>
+          <h1 style={heroTitle}><ReviewedText text={"Cooling System"} context="CoolingSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="CoolingSystemPageTitle" /></span></h1>
+          <p style={heroPromise}><ReviewedText text={"Protect coolant circulation, heat-transfer surfaces and heavy-duty engine components before contamination becomes a thermal-system problem."} /></p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS Cooling System Protection connects coolant condition, contamination exposure and equipment configuration to THERMACORE™ technology, the Coolant Filters family and a validated part number."} /></p>
           <div style={buttonRow}>
-            <Link href="#protection-path" style={yellowButton}>IDENTIFY THE COOLING PATH</Link>
+            <Link href="#protection-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE COOLING PATH"} /></Link>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
@@ -110,22 +112,22 @@ export function CoolingSystemPage() {
       <section style={section}>
         <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
-          <h2 style={h2}>Cooling-system protection is fluid-condition control tied to the actual engine architecture.</h2>
+          <h2 style={h2}><ReviewedText text={"Cooling-system protection is fluid-condition control tied to the actual engine architecture."} /></h2>
           <div>
-            <p style={lead}>A coolant filter is not a universal add-on. It belongs to a specific cooling-system configuration and must be matched to the engine, service strategy, mounting architecture and validated application evidence.</p>
-            <p style={body}>The ELIMFILTERS hierarchy is explicit: Cooling System Protection → THERMACORE™ → Coolant Filters → validated ELIMFILTERS part number.</p>
+            <p style={lead}><ReviewedText text={"A coolant filter is not a universal add-on. It belongs to a specific cooling-system configuration and must be matched to the engine, service strategy, mounting architecture and validated application evidence."} /></p>
+            <p style={body}><ReviewedText text={"The ELIMFILTERS hierarchy is explicit: Cooling System Protection → THERMACORE™ → Coolant Filters → validated ELIMFILTERS part number."} /></p>
           </div>
         </div>
       </section>
 
       <section id="protection-path" style={sectionAlt}>
-        <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-        <h2 style={h2}>Control what circulates through the thermal circuit.</h2>
+        <p style={eyebrow}><ReviewedText text={"CONTAMINATION PATHWAYS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Control what circulates through the thermal circuit."} /></h2>
         <div style={grid4}>
           {contamination.map(([title, text]) => (
             <article key={title} style={card}>
-              <p style={cardLabel}>{title}</p>
-              <p style={cardBody}>{text}</p>
+              <p style={cardLabel}><ReviewedText text={title} /></p>
+              <p style={cardBody}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
@@ -134,75 +136,75 @@ export function CoolingSystemPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>ENGINEERING PRINCIPLE</p>
-            <h2 style={h2}>Cooling performance depends on fluid condition, circulation and clean heat-transfer surfaces.</h2>
+            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
+            <h2 style={h2}><ReviewedText text={"Cooling performance depends on fluid condition, circulation and clean heat-transfer surfaces."} /></h2>
           </div>
           <div>
-            <p style={lead}>The filter must support the intended cooling-system strategy without being treated as a substitute for correct coolant chemistry, service practice or application validation.</p>
-            <p style={body}>THERMACORE™ is the canonical technology for this system. Product selection remains tied to the actual equipment configuration and evidence.</p>
+            <p style={lead}><ReviewedText text={"The filter must support the intended cooling-system strategy without being treated as a substitute for correct coolant chemistry, service practice or application validation."} /></p>
+            <p style={body}><ReviewedText text={"THERMACORE™ is the canonical technology for this system. Product selection remains tied to the actual equipment configuration and evidence."} /></p>
           </div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
-        <h2 style={h2}>The cooling circuit protects more than engine temperature.</h2>
+        <p style={eyebrow}><ReviewedText text={"WHAT THE SYSTEM PROTECTS"} /></p>
+        <h2 style={h2}><ReviewedText text={"The cooling circuit protects more than engine temperature."} /></h2>
         <div style={grid2}>
           {protectedComponents.map(([title, text]) => (
             <article key={title} style={lineCard}>
-              <h3 style={h3}>{title}</h3>
-              <p style={body}>{text}</p>
+              <h3 style={h3}><ReviewedText text={title} /></h3>
+              <p style={body}><ReviewedText text={text} /></p>
             </article>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>SYSTEM ARCHITECTURE</p>
-        <h2 style={h2}>From protected system to physical component.</h2>
+        <p style={eyebrow}><ReviewedText text={"SYSTEM ARCHITECTURE"} /></p>
+        <h2 style={h2}><ReviewedText text={"From protected system to physical component."} /></h2>
         <div style={architecture}>
-          <div style={architectureCard}><span style={smallLabel}>SYSTEM</span><strong>Cooling System Protection</strong></div>
+          <div style={architectureCard}><span style={smallLabel}><ReviewedText text={"SYSTEM"} /></span><strong><ReviewedText text={"Cooling System Protection"} /></strong></div>
           <div style={arrow}>→</div>
-          <Link href="/technologies/thermacore/" style={architectureLink}><span style={smallLabel}>TECHNOLOGY</span><strong>THERMACORE™</strong></Link>
+          <Link href="/technologies/thermacore/" style={architectureLink}><span style={smallLabel}><ReviewedText text={"TECHNOLOGY"} /></span><strong>THERMACORE™</strong></Link>
           <div style={arrow}>→</div>
-          <Link href="/families/coolant-filters/" style={architectureLink}><span style={smallLabel}>PRODUCT FAMILY</span><strong>Coolant Filters</strong></Link>
+          <Link href="/families/coolant-filters/" style={architectureLink}><span style={smallLabel}><ReviewedText text={"PRODUCT FAMILY"} /></span><strong><ReviewedText text={"Coolant Filters"} /></strong></Link>
           <div style={arrow}>→</div>
-          <div style={architectureCard}><span style={smallLabel}>APPLICATION</span><strong>Validated Part</strong></div>
+          <div style={architectureCard}><span style={smallLabel}><ReviewedText text={"APPLICATION"} /></span><strong><ReviewedText text={"Validated Part"} /></strong></div>
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>VALIDATION CONTEXT</p>
-        <h2 style={h2}>Use standards as engineering context, not as a shortcut around application validation.</h2>
+        <p style={eyebrow}><ReviewedText text={"VALIDATION CONTEXT"} /></p>
+        <h2 style={h2}><ReviewedText text={"Use standards as engineering context, not as a shortcut around application validation."} /></h2>
         <div style={twoCol}>
           <div style={card}>
-            <p style={cardLabel}>ASTM D6210</p>
-            <p style={cardBody}>Relevant heavy-duty coolant specification context for engine cooling systems. It supports technical understanding but does not prove that a specific filter fits a specific engine.</p>
+            <p style={cardLabel}><ReviewedText text={"ASTM D6210"} /></p>
+            <p style={cardBody}><ReviewedText text={"Relevant heavy-duty coolant specification context for engine cooling systems. It supports technical understanding but does not prove that a specific filter fits a specific engine."} /></p>
           </div>
           <div>
-            <p style={lead}>Selection should reconcile engine configuration, coolant-system architecture, current reference, mounting details, service strategy and available application evidence.</p>
+            <p style={lead}><ReviewedText text={"Selection should reconcile engine configuration, coolant-system architecture, current reference, mounting details, service strategy and available application evidence."} /></p>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>FROM COOLING CIRCUIT TO PART</p>
-        <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
+        <p style={eyebrow}><ReviewedText text={"FROM COOLING CIRCUIT TO PART"} /></p>
+        <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
         <div className="decision-flow" style={decisionFlow}>
           {['1. EQUIPMENT / VEHICLE', '2. ENGINE', '3. COOLING-SYSTEM CONFIGURATION', '4. COOLANT + SERVICE CONTEXT', '5. OEM / FILTER EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
-            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>
           ))}
         </div>
       </section>
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>FREQUENT QUESTIONS</p>
-        <h2 style={h2}>Cooling System Protection</h2>
+        <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p>
+        <h2 style={h2}><ReviewedText text={"Cooling System Protection"} /></h2>
         <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
-              <h3 style={faqQuestion}>{question}</h3>
-              <p style={body}>{answer}</p>
+              <h3 style={faqQuestion}><ReviewedText text={question} /></h3>
+              <p style={body}><ReviewedText text={answer} /></p>
             </article>
           ))}
         </div>
@@ -210,11 +212,11 @@ export function CoolingSystemPage() {
 
       <section style={finalCta}>
         <div style={{ maxWidth: '980px', margin: '0 auto' }}>
-          <p style={eyebrow}>HAVE A COOLING-SYSTEM APPLICATION TO RESOLVE?</p>
-          <h2 style={h2}>Confirm the cooling architecture before selecting the coolant filter.</h2>
-          <p style={{ ...lead, maxWidth: '780px' }}>Provide the equipment, engine, current filter or OEM reference, mounting details and cooling-system evidence so the application can be resolved correctly.</p>
+          <p style={eyebrow}><ReviewedText text={"HAVE A COOLING-SYSTEM APPLICATION TO RESOLVE?"} /></p>
+          <h2 style={h2}><ReviewedText text={"Confirm the cooling architecture before selecting the coolant filter."} /></h2>
+          <p style={{ ...lead, maxWidth: '780px' }}><ReviewedText text={"Provide the equipment, engine, current filter or OEM reference, mounting details and cooling-system evidence so the application can be resolved correctly."} /></p>
           <div style={buttonRow}>
-            <a href="mailto:applications@elimfilters.com?subject=Cooling%20System%20Application%20Support" style={yellowButton}>IDENTIFY MY COOLING PROTECTION PATH</a>
+            <a href="mailto:applications@elimfilters.com?subject=Cooling%20System%20Application%20Support" style={yellowButton}><ReviewedText text={"IDENTIFY MY COOLING PROTECTION PATH"} /></a>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>PART SEARCH</a>
           </div>
         </div>

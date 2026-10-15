@@ -1,4 +1,5 @@
 'use client';
+import { reviewedCopyKey } from '@/lib/reviewed-copy-key';
 
 import Link from '@/components/LocalizedLink';
 import { useEffect, useState } from 'react';
@@ -91,7 +92,7 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
 
   const localizeLabel = (label: string) => {
     const key = PAGE_KEYS[label.trim().toLowerCase()];
-    return key ? t(key, { defaultValue: label }) : label;
+    return t(key ?? reviewedCopyKey(label), { defaultValue: label });
   };
 
   const industryLabel = currentPage ? INDUSTRY_BREADCRUMB_LABELS[currentPage] : undefined;

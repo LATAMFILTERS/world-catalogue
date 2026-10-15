@@ -7,11 +7,31 @@ import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
+const COPY_PT = {
+  "heroTitle": "Quem Somos",
+  "heroLead": "ELIMFILTERS® nasceu em 2015 em Valencia, Venezuela, e rapidamente se estabeleceu em seu mercado de origem antes de se expandir para a Colômbia, a República Dominicana e os Estados Unidos, onde a marca estabeleceu suas operações em Frisco, Texas, em 2020 — organizada em torno da proteção do ativo, em vez da substituição de filtros, uma distinção que define desde a arquitetura de produtos até a estrutura executiva.",
+  "profileEyebrow": "PERFIL DA EMPRESA",
+  "profileTitle": "De Valencia, Venezuela, a operações em quatro países.",
+  "profileBody": "ELIMFILTERS® nasceu em 2015 em Valencia, Venezuela, onde iniciou operações comerciais e rapidamente estabeleceu sua posição. A partir daí, expandiu-se para a Colômbia e a República Dominicana e, depois, para os Estados Unidos, onde a marca estabeleceu suas operações em Frisco, Texas, em 2020, sob a Kleo Technology LLC. A empresa opera um modelo comercial que prioriza distribuidores, com capacidade coordenada para contas estratégicas, e organiza sua plataforma técnica em torno de cinco sistemas de proteção, em vez de um catálogo plano de peças: ar do motor e da cabine, combustível, lubrificação e circuitos hidráulicos e de arrefecimento, cada um atendido por uma tecnologia própria desenvolvida especificamente para esse domínio.",
+  "globalEyebrow": "EXPANSÃO GLOBAL",
+  "globalTitle": "Hoje, a ELIMFILTERS se lança à globalização.",
+  "globalBody": "A tecnologia colocou uma rede de distribuição global ao alcance de um celular, tablet ou computador, e a ELIMFILTERS está usando essa mudança para se globalizar — entrando em um dos mercados mais essenciais e menos visíveis do mundo. Os motores movem o mundo; controlar a contaminação que os desgasta é o que o mantém em movimento. Essa é a oportunidade que abrimos a novos empreendedores em qualquer lugar: integrar nossa rede de distribuidores sob uma filosofia operacional feita para permanecer simples, moderna e adaptável às mudanças do mercado.",
+  "globalLink": "Torne-se um distribuidor →",
+  "builtEyebrow": "COMO ESTAMOS ORGANIZADOS",
+  "builtTitle": "Uma Chief Executive Office humana, acompanhada por agentes executivos de IA especializados.",
+  "builtBody": "O Founder & CEO, Víctor Abreu, mantém a autoridade executiva final, e a Chief Executive Office conserva a responsabilidade institucional pela estrutura da empresa e por suas decisões materiais. A execução diária por domínio — operações, produto e tecnologia, mercados comerciais, finanças e risco, estratégia e inteligência — é conduzida por cinco agentes executivos de IA especializados, sob autoridade delegada, responsabilidade formal e encaminhamento humano para decisões estratégicas ou irreversíveis.",
+  "builtLink": "Conheça a equipe de liderança →",
+  "purposeEyebrow": "PROTEÇÃO AMBIENTAL",
+  "purposeTitle": "O controle de contaminação é inseparável do impacto ambiental.",
+  "purposeBody": "Cada falha que a filtragem disciplinada evita é também uma falha que o ambiente não precisa absorver: menos fluidos contaminados para descartar, menos componentes prematuramente desgastados fabricados para substituir o que deveria ter durado mais, e menos combustível ou energia consumidos por equipamentos que trabalham mais do que deveriam porque não estão operando limpos. Proteger o ativo e proteger o ambiente ao seu redor são, na prática, a mesma disciplina de engenharia."
+};
+
 export default function WhoWeArePage() {
   const { i18n } = useTranslation();
+  const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
-  const copy = isSpanish ? {
+  const copy = isPortuguese ? COPY_PT : isSpanish ? {
     heroTitle: 'Quiénes Somos',
     heroLead: 'ELIMFILTERS® nació en 2015 en Valencia, Venezuela, y se posicionó rápidamente en su mercado de origen antes de expandirse a Colombia, República Dominicana y Estados Unidos, donde en 2020 estableció sus operaciones en Frisco, Texas — organizada alrededor de la protección del activo, no del reemplazo de filtros, una distinción que define desde la arquitectura de producto hasta la estructura ejecutiva.',
     profileEyebrow: 'PERFIL DE LA EMPRESA',
@@ -49,13 +69,13 @@ export default function WhoWeArePage() {
 
   return (
     <main id="main-content" style={main}>
-      <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isSpanish ? 'Quiénes Somos' : 'Who We Are'} />
+      <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isPortuguese ? 'Quem Somos' : isSpanish ? 'Quiénes Somos' : 'Who We Are'} />
 
       <section style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
         <div aria-hidden="true" style={heroOverlay} />
         <div style={wrap}>
-          <p style={eyebrow}>ELIMFILTERS · {isSpanish ? 'QUIÉNES SOMOS' : 'WHO WE ARE'}</p>
+          <p style={eyebrow}>ELIMFILTERS · {isPortuguese ? 'QUEM SOMOS' : isSpanish ? 'QUIÉNES SOMOS' : 'WHO WE ARE'}</p>
           <h1 style={heroTitle}>{copy.heroTitle}</h1>
           <p style={heroLead}>{copy.heroLead}</p>
         </div>
@@ -69,7 +89,7 @@ export default function WhoWeArePage() {
             <p style={darkBody}>{copy.profileBody}</p>
           </div>
           <div style={identityPhotoShell}>
-            <img src="/images/planta_converted.avif" alt="ELIMFILTERS manufacturing facility" style={portraitImage} />
+            <img src="/images/planta_converted.avif" alt={isPortuguese ? 'Instalações de fabricação da ELIMFILTERS' : isSpanish ? 'Instalaciones de fabricación de ELIMFILTERS' : 'ELIMFILTERS manufacturing facility'} style={portraitImage} />
           </div>
         </div>
       </section>

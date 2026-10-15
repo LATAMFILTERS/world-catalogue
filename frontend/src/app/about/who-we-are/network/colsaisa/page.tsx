@@ -13,9 +13,11 @@ export default function ColsaisaPage() {
       titleEs="COLSAISA"
       bodyEn="Operating as a wholesale distributor (Distribuidor Mayorista), COLSAISA carried ELIMFILTERS alongside established automotive brands including Gulf, ACDelco, Fuka, and Yukkazo, extending the company's early reach across the Colombian wholesale market, together with network partner SAISA."
       bodyEs="Como distribuidor mayorista, COLSAISA comercializó ELIMFILTERS junto a marcas automotrices reconocidas como Gulf, ACDelco, Fuka y Yukkazo, ampliando el alcance inicial de la empresa en el mercado mayorista colombiano, junto al socio de la red SAISA."
+      eyebrowPt="PARCEIRO DISTRIBUIDOR · COLÔMBIA"
+      bodyPt="Atuando como distribuidor atacadista, a COLSAISA comercializou a ELIMFILTERS ao lado de marcas automotivas estabelecidas, incluindo Gulf, ACDelco, Fuka e Yukkazo, ampliando o alcance inicial da empresa no mercado atacadista colombiano, junto com a parceira de rede SAISA."
       images={[
-        { src: '/images/colsaisa_oficinas.jpg', altEn: 'COLSAISA distributor offices, Colombia', altEs: 'Oficinas del distribuidor COLSAISA, Colombia' },
-        { src: '/images/saisa_bodega.jpg', altEn: 'SAISA warehouse with ELIMFILTERS inventory', altEs: 'Bodega de SAISA con inventario de ELIMFILTERS' },
+        { src: '/images/colsaisa_oficinas.jpg', altEn: 'COLSAISA distributor offices, Colombia', altEs: 'Oficinas del distribuidor COLSAISA, Colombia', altPt: "Escritórios do distribuidor COLSAISA, Colômbia" },
+        { src: '/images/saisa_bodega.jpg', altEn: 'SAISA warehouse with ELIMFILTERS inventory', altEs: 'Bodega de SAISA con inventario de ELIMFILTERS', altPt: "Armazém da SAISA com estoque ELIMFILTERS" },
       ]}
     />
   );
