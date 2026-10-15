@@ -230,7 +230,18 @@ export const PAGE_CSS = `<style>
 .iso:not([data-theme="light"]) .pc-shine{opacity:.16}
 .pc-media{fill:color-mix(in srgb,#c9a253 14%,var(--anatomy-paper))}
 .pc-seal{fill:none;stroke:#c8372d;stroke-width:1.6px;stroke-linecap:butt}
+.fig-read{margin-top:32px}
+.fig-read h2{font-size:15px;font-weight:600;color:var(--anatomy-strong);margin:0 0 10px}
+.fig-read ol{margin:0;padding-left:20px}
+.fig-read li{margin-bottom:8px}
+.fig-read strong{color:var(--anatomy-strong);font-weight:600}
 </style>`;
+
+// "How to read this figure": the figure explained part by part, below the plate. steps = [[part, text], ...]
+const READ_HEAD = { en: "How to read this figure", es: "Cómo leer esta figura", pt: "Como ler esta figura" };
+const esc = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+export const readingHtml = (lang, steps) =>
+  `<section class="fig-read"><h2>${READ_HEAD[lang]}</h2><ol>${steps.map(([part, text]) => `<li><strong>${esc(part)}.</strong> ${esc(text)}</li>`).join("")}</ol></section>`;
 
 // Live drain logic shared by both pages: water level, drops, wing and stream. Pasted into each page's script.
 export const LIVE_BOWL = `

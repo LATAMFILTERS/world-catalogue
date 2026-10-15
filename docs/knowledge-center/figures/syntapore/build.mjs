@@ -5,7 +5,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, pageTarget, KIT_NOTICE, draftPage } from "../common.mjs";
+import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, pageTarget, KIT_NOTICE, draftPage, readingHtml } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -254,6 +254,88 @@ stage.addEventListener("keydown", (event) => {
 draw();
 `;
 
+// the figure explained part by part (same steps as the Knowledge Center page)
+const READ = {
+ "en": [
+  [
+   "Tank",
+   "Fuel leaves the tank through the suction line. The dark dots in the fuel represent the particulate it carries; moving the cursor sideways changes how much."
+  ],
+  [
+   "Primary spin-on, suction side",
+   "The transfer pump draws the fuel through the first pleated SYNTAPORE™ element. The larger particles stay on the pleats, so this is the filter that takes most of the contaminant load."
+  ],
+  [
+   "Transfer pump",
+   "The pump receives fuel that no longer carries the larger particles and sends it, now under pressure, toward the engine."
+  ],
+  [
+   "Secondary spin-on, pressure side",
+   "The fuel crosses a second pleated SYNTAPORE™ element, which holds the finer particles. It is the last filtration stage before the injection system."
+  ],
+  [
+   "Injection rail and injectors",
+   "The rail distributes the fuel to the four injectors: the components both stages exist to protect."
+  ],
+  [
+   "Service",
+   "Moving the cursor to the top of the figure, or pressing E, runs the service: both spin-ons come off their heads and new ones are fitted. Heads, lines and pump stay on the equipment."
+  ]
+ ],
+ "es": [
+  [
+   "Tanque",
+   "El combustible sale del tanque por la línea de succión. Los puntos oscuros en el combustible representan las partículas que arrastra; al mover el cursor de lado a lado cambia la cantidad."
+  ],
+  [
+   "Spin-on primario, lado de succión",
+   "La bomba de transferencia aspira el combustible a través del primer elemento plisado SYNTAPORE™. Las partículas más grandes quedan en los pliegues, por eso este es el filtro que recibe la mayor parte de la carga de contaminantes."
+  ],
+  [
+   "Bomba de transferencia",
+   "La bomba recibe combustible que ya no lleva las partículas grandes y lo envía, ahora a presión, hacia el motor."
+  ],
+  [
+   "Spin-on secundario, lado de presión",
+   "El combustible atraviesa un segundo elemento plisado SYNTAPORE™, que retiene las partículas finas. Es la última etapa de filtración antes del sistema de inyección."
+  ],
+  [
+   "Riel de inyección e inyectores",
+   "El riel reparte el combustible a los cuatro inyectores: los componentes que ambas etapas existen para proteger."
+  ],
+  [
+   "Servicio",
+   "Al llevar el cursor a la parte superior de la figura, o al pulsar E, se ejecuta el servicio: ambos spin-on salen de sus cabezales y se colocan nuevos. Cabezales, líneas y bomba permanecen en el equipo."
+  ]
+ ],
+ "pt": [
+  [
+   "Tanque",
+   "O combustível sai do tanque pela linha de sucção. Os pontos escuros no combustível representam as partículas que ele carrega; mover o cursor para os lados muda a quantidade."
+  ],
+  [
+   "Spin-on primário, lado de sucção",
+   "A bomba de transferência aspira o combustível através do primeiro elemento plissado SYNTAPORE™. As partículas maiores ficam nas pregas, por isso este é o filtro que recebe a maior parte da carga de contaminantes."
+  ],
+  [
+   "Bomba de transferência",
+   "A bomba recebe combustível que já não carrega as partículas maiores e o envia, agora sob pressão, em direção ao motor."
+  ],
+  [
+   "Spin-on secundário, lado de pressão",
+   "O combustível atravessa um segundo elemento plissado SYNTAPORE™, que retém as partículas finas. É a última etapa de filtração antes do sistema de injeção."
+  ],
+  [
+   "Rampa de injeção e injetores",
+   "A rampa distribui o combustível aos quatro injetores: os componentes que as duas etapas existem para proteger."
+  ],
+  [
+   "Manutenção",
+   "Levar o cursor ao topo da figura, ou pressionar E, executa a manutenção: os dois spin-on saem dos cabeçotes e são instalados novos. Cabeçotes, linhas e bomba permanecem no equipamento."
+  ]
+ ]
+};
+
 const svg = k.figureSvg({ width: WIDTH, height: HEIGHT, label: COPY.label, body: layers });
 const CSS = `<style>.sp-dirt circle{fill:color-mix(in srgb,#6b4f2e 75%,var(--anatomy-hi))}</style>`;
 const body = PAGE_CSS + CSS + k.plateHtml({
@@ -264,7 +346,7 @@ const body = PAGE_CSS + CSS + k.plateHtml({
   keys: COPY.keys,
   caption: COPY.caption,
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
-});
+}) + readingHtml(LANG, READ[LANG]);
 
 mkdirSync(TARGET.dir, { recursive: true });
 writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));
