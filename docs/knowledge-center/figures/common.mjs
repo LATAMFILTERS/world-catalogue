@@ -204,6 +204,7 @@ export const PAGE_CSS = `<style>
 .pc-shine{fill:none;stroke:#fff;stroke-width:1.8px;opacity:.85;stroke-linecap:butt}
 .iso:not([data-theme="light"]) .pc-shine{opacity:.16}
 .pc-media{fill:color-mix(in srgb,#c9a253 14%,var(--anatomy-paper))}
+.pc-seal{fill:none;stroke:#c8372d;stroke-width:1.6px;stroke-linecap:butt}
 </style>`;
 
 // Live drain logic shared by both pages: water level, drops, wing and stream. Pasted into each page's script.

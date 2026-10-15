@@ -31,7 +31,7 @@
     {
       "id": "kc-figure-hydrocore-housing-element",
       "technology": "HYDROCORE",
-      "scope": "standard non-turbine fuel/water separator: permanent housing with replaceable cartridge element and reusable bowl (service: bowl off, change the element, refit the same bowl)",
+      "scope": "standard non-turbine fuel/water separator: permanent metal shroud with a tall reusable transparent bowl holding the replaceable element, seal and drain (service: bowl off, change the element, refit the same bowl)",
       "files": [
         "hydrocore/hydrocore-housing.html",
         "hydrocore/hydrocore-housing-light.html"
@@ -39,7 +39,7 @@
       "validationStatus": "pending-secondary-validation",
       "publicationStatus": "internal-only",
       "open_items": [
-        "Engineering review of the drawn configuration (head, permanent housing, replaceable element, bowl, drain) against approved HYDROCORE applications."
+        "Engineering review of the drawn configuration (head, metal shroud, transparent bowl with the element inside, seal, drain) against approved HYDROCORE applications."
       ]
     },
     {
@@ -113,6 +113,11 @@
       "date": "2026-10-14",
       "by": "operator",
       "decision": "Add the third HYDROCORE configuration: replaceable separator elements that go inside permanent separator housings (not turbine housings); at service the bowl comes off, the element is changed and the same bowl is refitted. Show solid residues settling with the water in all fuel figures. TURBOCORE stays one figure; the fuel's swirl under the fixed deflector is shown with animated rings."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Operator shared field references (a HYDROCORE fuel filter / water separator photographed in service, and the ET97784 assembly render). Fig 1C redrawn to match: metal shroud under the head, tall transparent bowl with the pleated element visible inside, red seal at the rim and drain at the bottom; service takes the bowl off, changes the element and refits the same bowl. Label text, micron ratings and addresses on the references are not reproduced."
     }
   ]
 }
