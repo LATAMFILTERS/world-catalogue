@@ -1,3 +1,4 @@
+import { ReviewedText } from '@/components/ReviewedText';
 import { PageHeader } from '@/components/PageHeader';
 import { GlobalCommercialModel } from '@/components/GlobalCommercialModel';
 import Link from '@/components/LocalizedLink';
@@ -127,20 +128,18 @@ export default function DistributorsPage() {
         <div style={heroOverlay} />
 
         <div style={heroInner}>
-          <h1 style={heroTitle}>Authorized Commercial Partner Network</h1>
-          <p style={heroLead}>
-            Find an ELIMFILTERS authorized distributor for industrial, heavy-duty, fleet and equipment filtration, or use our technical channels when you need product identification or application support.
-          </p>
+          <h1 style={heroTitle}><ReviewedText text={"Authorized Commercial Partner Network"} /></h1>
+          <p style={heroLead}><ReviewedText text={"Find an ELIMFILTERS authorized distributor for industrial, heavy-duty, fleet and equipment filtration, or use our technical channels when you need product identification or application support."} /></p>
 
           <div style={heroActions}>
-            <a href="#authorized-distributors" style={yellowButton} data-conversion-action="distributor-locator">FIND A DISTRIBUTOR</a>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton} data-conversion-action="product-intelligence">SEARCH PRODUCT INTELLIGENCE</a>
-            <Link href="/contact/" style={darkButton} data-conversion-action="application-support">APPLICATION SUPPORT</Link>
+            <a href="#authorized-distributors" style={yellowButton} data-conversion-action="distributor-locator"><ReviewedText text={"FIND A DISTRIBUTOR"} /></a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton} data-conversion-action="product-intelligence"><ReviewedText text={"SEARCH PRODUCT INTELLIGENCE"} /></a>
+            <Link href="/contact/" style={darkButton} data-conversion-action="application-support"><ReviewedText text={"APPLICATION SUPPORT"} /></Link>
           </div>
 
           <div style={tagRow}>
             {TAGS.map((label) => (
-              <span key={label} style={tag}>{label}</span>
+              <span key={label} style={tag}><ReviewedText text={label} /></span>
             ))}
           </div>
         </div>
@@ -149,15 +148,11 @@ export default function DistributorsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={sectionTitle}>Regional Coverage. Technical Accountability. Sustainable Partner Value.</h2>
+            <h2 style={sectionTitle}><ReviewedText text={"Regional Coverage. Technical Accountability. Sustainable Partner Value."} /></h2>
           </div>
           <div>
-            <p style={leadText}>
-              Authorized partners extend ELIMFILTERS technical and commercial coverage while preserving one global product, quality, intelligence, and brand-governance system.
-            </p>
-            <p style={bodyText}>
-              ELIMFILTERS is structured to support the partner rather than reduce the relationship to a product transaction. Local customer relationships, inventory strategy, technical sales, service, and market knowledge are integral parts of the value chain.
-            </p>
+            <p style={leadText}><ReviewedText text={"Authorized partners extend ELIMFILTERS technical and commercial coverage while preserving one global product, quality, intelligence, and brand-governance system."} /></p>
+            <p style={bodyText}><ReviewedText text={"ELIMFILTERS is structured to support the partner rather than reduce the relationship to a product transaction. Local customer relationships, inventory strategy, technical sales, service, and market knowledge are integral parts of the value chain."} /></p>
           </div>
         </div>
       </section>
@@ -167,16 +162,16 @@ export default function DistributorsPage() {
       <section id="authorized-distributors" style={networkSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <h2 style={sectionTitle}>Authorized Distributors</h2>
+            <h2 style={sectionTitle}><ReviewedText text={"Authorized Distributors"} /></h2>
           </div>
 
           <div style={distributorGrid}>
             {DISTRIBUTORS.map((item, index) => (
               <article key={item.company} style={distributorCard}>
                 <span style={distributorNumber}>{String(index + 1).padStart(2, '0')}</span>
-                <p style={region}>{item.region}</p>
+                <p style={region}><ReviewedText text={item.region} /></p>
                 <h3 style={company}>{item.company}</h3>
-                <p style={country}>{item.country}</p>
+                <p style={country}><ReviewedText text={item.country} /></p>
                 <p style={address}>{item.address}</p>
 
                 {item.phone && <a href={`tel:${item.phone.replace(/\s/g, '')}`} style={contactLink}>{item.phone}</a>}
@@ -187,7 +182,7 @@ export default function DistributorsPage() {
                   </a>
                 )}
 
-                <div style={authorized}>ELIMFILTERS AUTHORIZED DISTRIBUTOR</div>
+                <div style={authorized}><ReviewedText text={"ELIMFILTERS AUTHORIZED DISTRIBUTOR"} /></div>
               </article>
             ))}
           </div>
@@ -196,14 +191,14 @@ export default function DistributorsPage() {
 
       <section style={partnerSection}>
         <div style={wrap}>
-          <h2 style={sectionTitle}>Partner Standards</h2>
+          <h2 style={sectionTitle}><ReviewedText text={"Partner Standards"} /></h2>
 
           <div style={partnerGrid}>
             {PARTNER_VALUES.map((item, index) => (
               <article key={item.title} style={partnerCard}>
                 <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={partnerTitle}>{item.title}</h3>
-                <p style={partnerBody}>{item.body}</p>
+                <h3 style={partnerTitle}><ReviewedText text={item.title} /></h3>
+                <p style={partnerBody}><ReviewedText text={item.body} /></p>
               </article>
             ))}
           </div>
@@ -213,27 +208,21 @@ export default function DistributorsPage() {
       <section style={applicationCallout}>
         <div style={applicationInner}>
           <div>
-            <h2 style={sectionTitle}>Become an ELIMFILTERS Authorized Commercial Partner</h2>
-            <p style={{ ...bodyText, maxWidth: '740px', marginTop: '1.2rem' }}>
-              Submit your company profile, service territory, technical capabilities, target industries, automotive / Light Duty coverage where relevant, and market-development objectives for commercial review.
-            </p>
+            <h2 style={sectionTitle}><ReviewedText text={"Become an ELIMFILTERS Authorized Commercial Partner"} /></h2>
+            <p style={{ ...bodyText, maxWidth: '740px', marginTop: '1.2rem' }}><ReviewedText text={"Submit your company profile, service territory, technical capabilities, target industries, automotive / Light Duty coverage where relevant, and market-development objectives for commercial review."} /></p>
           </div>
-          <Link href="/distributor-application" style={yellowButton} data-conversion-action="partner-application">APPLY FOR REVIEW</Link>
+          <Link href="/distributor-application" style={yellowButton} data-conversion-action="partner-application"><ReviewedText text={"APPLY FOR REVIEW"} /></Link>
         </div>
       </section>
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Need a Distributor, a Product Match, or Technical Support?
-          </h2>
-          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.2rem auto 0' }}>
-            Choose the path that matches your requirement. Distributor discovery, product identification and application support are separate workflows so technical questions do not get lost inside a generic commercial inquiry.
-          </p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}><ReviewedText text={"Need a Distributor, a Product Match, or Technical Support?"} /></h2>
+          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.2rem auto 0' }}><ReviewedText text={"Choose the path that matches your requirement. Distributor discovery, product identification and application support are separate workflows so technical questions do not get lost inside a generic commercial inquiry."} /></p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <a href="#authorized-distributors" style={yellowButton} data-conversion-action="distributor-locator">FIND A DISTRIBUTOR</a>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton} data-conversion-action="product-intelligence">PRODUCT INTELLIGENCE</a>
-            <Link href="/contact/" style={darkButton} data-conversion-action="application-support">APPLICATION SUPPORT</Link>
+            <a href="#authorized-distributors" style={yellowButton} data-conversion-action="distributor-locator"><ReviewedText text={"FIND A DISTRIBUTOR"} /></a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton} data-conversion-action="product-intelligence"><ReviewedText text={"PRODUCT INTELLIGENCE"} /></a>
+            <Link href="/contact/" style={darkButton} data-conversion-action="application-support"><ReviewedText text={"APPLICATION SUPPORT"} /></Link>
           </div>
         </div>
       </section>
