@@ -21,6 +21,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedIndustries: [],
     worksWith: ['INTEKCORE™'],
     image: '/images/technologies/macrocore-media.png',
+    figures: [
+      { href: '/knowledge-center/figures/air-intake.html', preview: '/knowledge-center/figures/air-intake.webp', title: 'Primary and safety elements in the air cleaner', caption: 'Dust is held on the pleated primary element while the restriction indicator rises. At service the primary comes out and the safety element stays in place, keeping the clean side closed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/air-intake-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/air-intake-pt.html' }] },
+    ],
   },
   {
     slug: 'microkappa',
@@ -36,6 +39,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['air-intake-protection'],
     relatedIndustries: [],
     worksWith: [],
+    figures: [
+      { href: '/knowledge-center/figures/microkappa.html', preview: '/knowledge-center/figures/microkappa.webp', title: 'Pleated panel in the cabin HVAC housing', caption: 'Outside air passes the pleated panel, which holds dust and pollen on its upstream face before the blower carries the air to the cabin. At service the panel slides out and is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/microkappa-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/microkappa-pt.html' }] },
+    ],
   },
   {
     slug: 'drycore',
@@ -51,6 +57,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['air-intake-protection'],
     relatedIndustries: [],
     worksWith: [],
+    figures: [
+      { href: '/knowledge-center/figures/drycore.html', preview: '/knowledge-center/figures/drycore.webp', title: 'Desiccant cartridge in the brake air circuit', caption: 'The desiccant bed takes up the moisture in the compressed air before the reservoir and brake valves; on the purge cycle the purge valve expels the collected water. At service the cartridge is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/drycore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/drycore-pt.html' }] },
+    ],
   },
   {
     slug: 'intekcore',
@@ -66,6 +75,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['air-intake-protection'],
     relatedIndustries: [],
     worksWith: ['MACROCORE™'],
+    figures: [
+      { href: '/knowledge-center/figures/air-intake.html', preview: '/knowledge-center/figures/air-intake.webp', title: 'Air cleaner housing, ducts and restriction indicator', caption: 'The housing, cover and ducts keep the clean-air boundary sealed around the elements. At service the cover and the primary come off; the safety element stays in place.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/air-intake-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/air-intake-pt.html' }] },
+    ],
   },
   {
     slug: 'syntapore',
@@ -161,6 +173,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     worksWith: [],
     image: '/images/technologies/nanoforce-media.png',
     figures: [
+      { href: '/knowledge-center/figures/nanoforce.html', preview: '/knowledge-center/figures/nanoforce.webp', title: 'Pressure-line spin-on in the hydraulic circuit', caption: 'The pump sends the fluid through the filter before the control valves, so particles are held on the pleated media before they reach close-tolerance components. At service the spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/nanoforce-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/nanoforce-pt.html' }] },
       { href: '/knowledge-center/figures/compare-nanoforce.html', preview: '/knowledge-center/figures/compare-nanoforce.webp', title: 'Spin-on and cartridge formats', caption: 'A spin-on is replaced whole, can included. In a cartridge the housing stays in the hydraulic circuit: the bowl comes off and only the element is changed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/compare-nanoforce-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/compare-nanoforce-pt.html' }] },
     ],
   },
