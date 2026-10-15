@@ -51,7 +51,7 @@ export function productMetaDescription(p: ProductPage) {
   const spec = (name: string) => p.specs.find((s) => s.name === name)?.value;
   const parts = [`${p.sku} ${p.title.toLowerCase()}`, spec('Thread') && `thread ${spec('Thread')}`, spec('Height') && `${spec('Height')} high`].filter(Boolean).join(', ');
   const cross = !p.oem.length ? '' : p.crossRefs[0] ? `; also ${p.crossRefs[0].brand} ${p.crossRefs[0].code}` : '';
-  const base = `${parts}. Equivalent to ${equivalenceLine(p)}${cross}.`;
+  const base = `${parts}. Reference codes: ${equivalenceLine(p)}${cross}.`;
   const withTech = `${base} ${p.technology}™ technology.`;
   return withTech.length <= 160 ? withTech : base;
 }
