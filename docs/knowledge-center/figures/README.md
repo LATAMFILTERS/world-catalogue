@@ -20,6 +20,8 @@ Do not publish a new figure until both of its statuses are approved (see the pub
 | Fig 6 · THERMACORE™ coolant spin-on | Engine cooling circuit: radiator, water pump, coolant spin-on in section with an additive charge under the element (where approved), water jacket, return; at service the spin-on is replaced | `thermacore/thermacore.html`, `thermacore/thermacore-light.html` | `shots/thermacore-light.png`, `shots/thermacore-service.png` |
 | Fig 7 · INTEKCORE™ housing + MACROCORE™ elements | Engine air cleaner in section: head with inlet and outlet ducts and restriction indicator, primary and safety elements, cover; at service the cover and primary come off and the safety element stays | `air/air-intake.html`, `air/air-intake-light.html` | `shots/air-intake-light.png`, `shots/air-intake-service.png` |
 | Fig 5B · NANOFORCE™ pressure-line spin-on | Hydraulic circuit: reservoir, pump, pressure-line spin-on in section, control-valve block, return; at service the spin-on is replaced | `nanoforce/nanoforce.html`, `nanoforce/nanoforce-light.html` | `shots/nanoforce-light.png`, `shots/nanoforce-service.png` |
+| Fig 8 · MICROKAPPA™ cabin panel | Cabin ventilation: outside-air grille, HVAC housing in section, pleated panel holding dust and pollen, blower, cabin; at service the panel slides out | `microkappa/microkappa.html`, `microkappa/microkappa-light.html` | `shots/microkappa-light.png`, `shots/microkappa-service.png` |
+| Fig 9 · DRYCORE™ air dryer | Brake air circuit: compressor, desiccant cartridge in section with purge valve, air reservoir, brake valves; at service the cartridge is replaced | `drycore/drycore.html`, `drycore/drycore-light.html` | `shots/drycore-light.png`, `shots/drycore-service.png` |
 | Fig 2 · TURBOCORE™ turbine-style housing | FH/FG turbine-style housing, replaceable element | `turbocore/turbocore.html`, `turbocore/turbocore-light.html` | `shots/turbocore-light.png`, `shots/turbocore-lid-open.png` |
 
 HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct scopes; neither page mentions the other technology.
@@ -53,16 +55,18 @@ node syntrax/build.mjs --audit && node syntrax/build.mjs --light
 node thermacore/build.mjs --audit && node thermacore/build.mjs --light
 node air/build.mjs --audit && node air/build.mjs --light
 node nanoforce/build.mjs --audit && node nanoforce/build.mjs --light
+node microkappa/build.mjs --audit && node microkappa/build.mjs --light
+node drycore/build.mjs --audit && node drycore/build.mjs --light
 # published pages (dark theme, for the Knowledge Center) in English, Spanish and Portuguese, and the English previews
 for l in en es pt; do
   for v in "" --spinon --housing; do node hydrocore/build.mjs $v --lang $l --public; done
-  for f in turbocore syntapore syntrax thermacore air nanoforce; do node $f/build.mjs --lang $l --public; done
+  for f in turbocore syntapore syntrax thermacore air nanoforce microkappa drycore; do node $f/build.mjs --lang $l --public; done
 done
 for t in syntapore syntrax nanoforce; do
   node compare/build.mjs --tech $t --audit && node compare/build.mjs --tech $t --light
   for l in en es pt; do node compare/build.mjs --tech $t --lang $l --public; done
 done
-for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax compare-syntapore compare-syntrax compare-nanoforce thermacore air-intake nanoforce; do
+for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax compare-syntapore compare-syntrax compare-nanoforce thermacore air-intake nanoforce microkappa drycore; do
   node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f.html --out /tmp/$f.png --wait 4000 --scale 1.5
   ffmpeg -v error -i /tmp/$f.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f.webp -y
 done

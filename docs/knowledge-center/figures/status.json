@@ -193,6 +193,33 @@
         "Recommended: engineering review of the drawn hydraulic circuit against approved NANOFORCE pressure-line applications."
       ]
     }
+,
+    {
+      "id": "kc-figure-microkappa-cabin-panel",
+      "technology": "MICROKAPPA",
+      "scope": "cabin ventilation: outside-air grille, HVAC housing in section, pleated panel filter (dust and pollen on its upstream face), blower, cabin (service: panel slides out and is replaced)",
+      "files": ["microkappa/microkappa.html", "microkappa/microkappa-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/microkappa.html", "frontend/public/knowledge-center/figures/microkappa-es.html", "frontend/public/knowledge-center/figures/microkappa-pt.html", "frontend/public/knowledge-center/figures/microkappa.webp"],
+      "surface": "/knowledge-center/technologies/microkappa/ (How It Works)",
+      "open_items": [
+        "Recommended: engineering review of the drawn configuration against approved MICROKAPPA applications."
+      ]
+    },
+    {
+      "id": "kc-figure-drycore-air-dryer",
+      "technology": "DRYCORE",
+      "scope": "pneumatic brake circuit: compressor, desiccant cartridge in section with purge valve, air reservoir, brake valves (service: replace the cartridge)",
+      "files": ["drycore/drycore.html", "drycore/drycore-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/drycore.html", "frontend/public/knowledge-center/figures/drycore-es.html", "frontend/public/knowledge-center/figures/drycore-pt.html", "frontend/public/knowledge-center/figures/drycore.webp"],
+      "surface": "/knowledge-center/technologies/drycore/ (How It Works)",
+      "open_items": [
+        "Recommended: engineering review of the drawn configuration against approved DRYCORE applications."
+      ]
+    }
   ],
   "kit": {
     "name": "anatomy",
@@ -286,6 +313,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "Continue: NANOFORCE hydraulic circuit figure (pressure-line spin-on before the control valves), ES/EN/PT, alongside the NANOFORCE spin-on vs cartridge comparison."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Continue with the optional technologies: MICROKAPPA (cabin panel filter in the HVAC housing) and DRYCORE (desiccant air-dryer cartridge with purge in the brake air circuit), ES/EN/PT, no dew point, efficiency or interval figures."
     }
   ]
 }
