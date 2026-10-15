@@ -14,6 +14,7 @@ Do not publish a new figure until both of its statuses are approved (see the pub
 | Fig 1B · HYDROCORE™ spin-on with integrated drain | Standard non-turbine spin-on, sump in section, integrated drain; at service the whole cartridge is replaced | `hydrocore/hydrocore-spinon.html`, `hydrocore/hydrocore-spinon-light.html` | `shots/hydrocore-spinon-light.png`, `shots/hydrocore-spinon-service.png` |
 | Fig 1C · HYDROCORE™ element in a transparent bowl | Standard non-turbine separator: permanent metal shroud under the head, tall transparent bowl with the pleated element visible inside, red seal, drain; at service the bowl comes off, only the element is replaced, and the same bowl is refitted | `hydrocore/hydrocore-housing.html`, `hydrocore/hydrocore-housing-light.html` | `shots/hydrocore-housing-light.png`, `shots/hydrocore-housing-service.png` |
 | Fig 3 · SYNTAPORE™ primary and secondary | Diesel particulate filtration: primary spin-on on the suction side before the transfer pump, secondary spin-on on the engine before the injection rail, both in section; at service each spin-on is replaced | `syntapore/syntapore.html`, `syntapore/syntapore-light.html` | `shots/syntapore-light.png`, `shots/syntapore-service.png` |
+| Fig 4 · SYNTRAX™ full-flow spin-on | Engine lube circuit: oil pan, oil pump, full-flow spin-on on the engine in section, main gallery to the bearings, return; at service the spin-on is replaced | `syntrax/syntrax.html`, `syntrax/syntrax-light.html` | `shots/syntrax-light.png`, `shots/syntrax-service.png` |
 | Fig 2 · TURBOCORE™ turbine-style housing | FH/FG turbine-style housing, replaceable element | `turbocore/turbocore.html`, `turbocore/turbocore-light.html` | `shots/turbocore-light.png`, `shots/turbocore-lid-open.png` |
 
 HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct scopes; neither page mentions the other technology.
@@ -23,6 +24,7 @@ HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct sco
 - Figures are conceptual explainers, not SKU product images (those go through `elimfilters-product-image-pipeline`).
 - No competitor names, product codes, efficiencies, capacities, pressures or service intervals.
 - Fuel figures show water drops and solid residues settling (residues as darker dots).
+- Every caption ends by calling the figure an illustrative simulation of how the technology works: a conceptual animation, not an engineering model or test result, with no product data (operator decision, 2026-10-15).
 - Readouts show qualitative states (for example `caudal medio · acumulando agua`), never numbers.
 - TURBOCORE™ copy states staged separation with a stage-1 turbine deflector that centrifuges the fuel, as confirmed by the operator (see `status.json`).
 - Remaining review items and operator decisions are recorded in `status.json`.
@@ -42,11 +44,13 @@ node hydrocore/build.mjs --spinon --audit && node hydrocore/build.mjs --spinon -
 node hydrocore/build.mjs --housing --audit && node hydrocore/build.mjs --housing --light
 node turbocore/build.mjs --audit && node turbocore/build.mjs --light
 node syntapore/build.mjs --audit && node syntapore/build.mjs --light
+node syntrax/build.mjs --audit && node syntrax/build.mjs --light
 # published English pages and their previews (dark theme, for the Knowledge Center)
 for v in "" --spinon --housing; do node hydrocore/build.mjs $v --en; done
 node turbocore/build.mjs --en
 node syntapore/build.mjs --en
-for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore; do
+node syntrax/build.mjs --en
+for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax; do
   node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f.html --out /tmp/$f.png --wait 4000 --scale 1.5
   ffmpeg -v error -i /tmp/$f.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f.webp -y
 done

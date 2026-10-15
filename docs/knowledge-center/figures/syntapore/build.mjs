@@ -38,9 +38,6 @@ const PUMP_H = 32;
 const RAIL = { x: -40, y: PY - 7, w: 140, d: 14, r: 4 };
 const RAIL_Z = 198;
 const RAIL_H = 14;
-const BALL = 4.8;
-const HOSE = 3;
-const SINK = Math.sqrt(BALL * BALL - HOSE * HOSE);
 const TANK = { x: -156, y: 8, w: 46, d: 64, r: 6 };
 const TANK_H = 38;
 const TANK_PORT = [-135, 40];
@@ -60,22 +57,11 @@ const P = k.fitProjection(
 const ORDER = FILTERS.map(({ name }) => name);
 const SPRING = { stagger: 0.12, stiffness: 46, damping: 13.6, substeps: 4 };
 const F = studio(P, { order: [...ORDER, "stand"], spring: SPRING, pieces: { primary: SERVICE, secondary: SERVICE, stand: [0, 0, 0] } });
-const { at, S, L, D, put, hose, fitting } = F;
+const { S, L, D, put, line, fitting } = F;
 
 F.plate(PLATE, { strip: { x: -62, y: PLATE.y + PLATE.d - 14, w: 124, d: 6, r: 1 }, label: { x: 120, y: 40, w: 30, d: 18, r: 1.5 } });
 F.wall(WALL, WALL_TOP, [[-130, 40], [130, 40], [0, 60], [0, 180]]);
 
-// a hose run with an elbow ball at every corner: each straight run ends rim-on-sphere on its ball
-function line(name, points) {
-  for (let i = 1; i < points.length - 1; i++) put(`${name}.elbow`, points[i], k.solidSvg(G.sphereOf(points[i], BALL, P), { tone: "mid" }), [A.ball(points[i], BALL, { name: `${name}.elbow` })]);
-  for (let i = 0; i < points.length - 1; i++) {
-    const a = points[i], b = points[i + 1];
-    const d = G.unit3(G.sub3(b, a));
-    const from = i === 0 ? a : G.add3(a, G.mul3(d, SINK));
-    const to = i === points.length - 2 ? b : G.sub3(b, G.mul3(d, SINK));
-    hose(`${name}.hose`, [from, to], HOSE);
-  }
-}
 const side = (x, dir) => G.frameOf([x, PY, PORT_Z], [dir, 0, 0], [0, 1, 0], [0, 0, 1]);
 
 // two filter heads on the wall, each with its spin-on drawn in section so the pleated element can be seen
@@ -154,7 +140,7 @@ const COPY = EN
         { mark: "raised", label: "Tank, primary spin-on (suction side), transfer pump, secondary spin-on (on the engine), injection rail" },
       ],
       caption:
-        "Conceptual illustration of a diesel fuel circuit with two SYNTAPORE™ particulate filters. The primary, on the suction side before the transfer pump, holds the larger particles and protects the pump. The secondary, on the pressure side on the engine, holds the finer particles before the fuel reaches the injection system. Both are spin-ons shown in section, with the pleated element visible; at service each cartridge is replaced. Conceptual illustration: it shows no product data.",
+        "Conceptual illustration of a diesel fuel circuit with two SYNTAPORE™ particulate filters. The primary, on the suction side before the transfer pump, holds the larger particles and protects the pump. The secondary, on the pressure side on the engine, holds the finer particles before the fuel reaches the injection system. Both are spin-ons shown in section, with the pleated element visible; at service each cartridge is replaced. Illustrative simulation of how it works: a conceptual animation, not an engineering model or test result, and it shows no product data.",
       aria: "SYNTAPORE primary and secondary filters: arrow keys change the contamination in the fuel, E changes both filters",
       label:
         "Fuel circuit on a wall bracket: a tank on the bench feeds a primary spin-on filter, then a transfer pump, then a secondary spin-on filter and an injection rail with four injectors. Both filters are drawn in section with their pleated elements; the primary collects larger particles and the secondary finer ones.",
@@ -169,7 +155,7 @@ const COPY = EN
         { mark: "raised", label: "Tanque, spin-on primario (succión), bomba de transferencia, spin-on secundario (en el motor), riel de inyección" },
       ],
       caption:
-        "Ilustración conceptual de un circuito de combustible diésel con dos filtros de partículas SYNTAPORE™. El primario, en el lado de succión antes de la bomba de transferencia, retiene las partículas más grandes y protege la bomba. El secundario, en el lado de presión sobre el motor, retiene las partículas finas antes de que el combustible llegue al sistema de inyección. Ambos son spin-on vistos en corte, con el elemento plisado a la vista; en el servicio se reemplaza cada cartucho. Es una ilustración conceptual: no muestra datos de producto.",
+        "Ilustración conceptual de un circuito de combustible diésel con dos filtros de partículas SYNTAPORE™. El primario, en el lado de succión antes de la bomba de transferencia, retiene las partículas más grandes y protege la bomba. El secundario, en el lado de presión sobre el motor, retiene las partículas finas antes de que el combustible llegue al sistema de inyección. Ambos son spin-on vistos en corte, con el elemento plisado a la vista; en el servicio se reemplaza cada cartucho. Simulación ilustrativa del funcionamiento: es una animación conceptual, no un modelo de ingeniería ni un resultado de prueba, y no muestra datos de producto.",
       aria: "Filtros SYNTAPORE primario y secundario: flechas cambian la contaminación del combustible, E cambia ambos filtros",
       label:
         "Circuito de combustible sobre un soporte de pared: un tanque en el banco alimenta un filtro spin-on primario, luego una bomba de transferencia, luego un filtro spin-on secundario y un riel de inyección con cuatro inyectores. Ambos filtros se ven en corte con su elemento plisado; el primario retiene las partículas grandes y el secundario las finas.",
