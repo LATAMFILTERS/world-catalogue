@@ -7,6 +7,7 @@ import type { KCTechnology } from './types';
 // how-it-works explanations in EN/ES/PT; the figure builds read their reading steps from the same files
 import syntaporeHowItWorks from './how-it-works/syntapore.json';
 import hydrocoreHowItWorks from './how-it-works/hydrocore.json';
+import turbocoreHowItWorks from './how-it-works/turbocore.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -141,6 +142,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/turbocore.html', preview: '/knowledge-center/figures/turbocore.webp', title: 'Turbine-style housing with fixed deflector', caption: 'A fixed turbine deflector swirls the fuel; water and larger solids are thrown to the wall and settle in the bowl, where the drain releases them. The replaceable element comes out through the lid.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/turbocore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/turbocore-pt.html' }] },
     ],
+    howItWorks: turbocoreHowItWorks,
   },
   {
     slug: 'syntrax',
