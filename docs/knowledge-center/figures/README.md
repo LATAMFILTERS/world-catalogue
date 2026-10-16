@@ -6,6 +6,10 @@ Interactive isometric explainer figures for Fuel Cleanliness Protection technolo
 (`--lang en|es|pt --public`) are written to `frontend/public/knowledge-center/figures/`: `<name>.html` in English,
 `<name>-es.html` and `<name>-pt.html`. The How It Works section of each technology page
 (`/knowledge-center/technologies/<technology>/`) opens the English page and links the Spanish and Portuguese ones.
+A figure page can end with a "How to read this figure" list (`readingSteps`/`readingHtml` in `common.mjs`). Its steps
+come from `frontend/src/lib/knowledge-center-data/how-it-works/<technology>.json`, the same EN/ES/PT file the
+technology page shows in its How It Works section (overview, figure reading, components, formats, service, diagnosis),
+so the page and the figures cannot drift apart. Rebuild the figure pages after editing that file.
 Do not publish a new figure until both of its statuses are approved (see the publication gate in
 `../FUEL_CANONICAL_GOVERNANCE.md`). The Spanish pages in this folder are the review drafts and are not served.
 

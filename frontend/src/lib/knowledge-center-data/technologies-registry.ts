@@ -4,6 +4,8 @@
  */
 
 import type { KCTechnology } from './types';
+// how-it-works explanations in EN/ES/PT; the figure builds read their reading steps from the same files
+import syntaporeHowItWorks from './how-it-works/syntapore.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -98,6 +100,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
       { href: '/knowledge-center/figures/syntapore.html', preview: '/knowledge-center/figures/syntapore.webp', title: 'Primary and secondary filters in the fuel circuit', caption: 'The primary, on the suction side before the transfer pump, holds the larger particles; the secondary, on the engine before the injection system, holds the finer ones. At service each spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/syntapore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/syntapore-pt.html' }] },
       { href: '/knowledge-center/figures/compare-syntapore.html', preview: '/knowledge-center/figures/compare-syntapore.webp', title: 'Spin-on and cartridge formats', caption: 'A spin-on is replaced whole, can included. In a cartridge the housing stays on the equipment: the bowl comes off and only the element is changed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/compare-syntapore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/compare-syntapore-pt.html' }] },
     ],
+    howItWorks: syntaporeHowItWorks,
   },
   {
     slug: 'hydrocore',

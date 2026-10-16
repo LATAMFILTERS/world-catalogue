@@ -1,6 +1,8 @@
 // Shared bench parts and page helpers for the Knowledge Center technology figures (status in status.json).
 // Every drawn item records its true shape so `node build.mjs --audit` can prove the geometry.
-import { join } from "node:path";
+import { existsSync, readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import * as k from "./.anatomy/kit/iso-kit.mjs";
 import * as G from "./.anatomy/kit/lathe.mjs";
 import * as A from "./.anatomy/kit/audit.mjs";
@@ -230,7 +232,24 @@ export const PAGE_CSS = `<style>
 .iso:not([data-theme="light"]) .pc-shine{opacity:.16}
 .pc-media{fill:color-mix(in srgb,#c9a253 14%,var(--anatomy-paper))}
 .pc-seal{fill:none;stroke:#c8372d;stroke-width:1.6px;stroke-linecap:butt}
+.fig-read{margin-top:32px}
+.fig-read h2{font-size:15px;font-weight:600;color:var(--anatomy-strong);margin:0 0 10px}
+.fig-read ol{margin:0;padding-left:20px}
+.fig-read li{margin-bottom:8px}
+.fig-read strong{color:var(--anatomy-strong);font-weight:600}
 </style>`;
+
+// "How to read this figure": the figure explained part by part, below the plate. The steps come from the
+// technology's how-it-works file, the same text its Knowledge Center page shows; none yet → no section.
+const HOW_DIR = join(dirname(fileURLToPath(import.meta.url)), "../../../frontend/src/lib/knowledge-center-data/how-it-works");
+export function readingSteps(tech, page, lang) {
+  const file = join(HOW_DIR, `${tech}.json`);
+  return existsSync(file) ? JSON.parse(readFileSync(file, "utf8"))[lang].figures[page]?.steps ?? [] : [];
+}
+const READ_HEAD = { en: "How to read this figure", es: "Cómo leer esta figura", pt: "Como ler esta figura" };
+const esc = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+export const readingHtml = (lang, steps) =>
+  !steps.length ? "" : `<section class="fig-read"><h2>${READ_HEAD[lang]}</h2><ol>${steps.map(({ part, text }) => `<li><strong>${esc(part)}.</strong> ${esc(text)}</li>`).join("")}</ol></section>`;
 
 // Live drain logic shared by both pages: water level, drops, wing and stream. Pasted into each page's script.
 export const LIVE_BOWL = `
