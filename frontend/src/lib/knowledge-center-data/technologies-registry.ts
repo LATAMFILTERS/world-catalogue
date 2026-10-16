@@ -12,6 +12,7 @@ import syntraxHowItWorks from './how-it-works/syntrax.json';
 import nanoforceHowItWorks from './how-it-works/nanoforce.json';
 import thermacoreHowItWorks from './how-it-works/thermacore.json';
 import macrocoreHowItWorks from './how-it-works/macrocore.json';
+import intekcoreHowItWorks from './how-it-works/intekcore.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -87,6 +88,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/air-intake.html', preview: '/knowledge-center/figures/air-intake.webp', title: 'Air cleaner housing, ducts and restriction indicator', caption: 'The housing, cover and ducts keep the clean-air boundary sealed around the elements. At service the cover and the primary come off; the safety element stays in place.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/air-intake-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/air-intake-pt.html' }] },
     ],
+    howItWorks: intekcoreHowItWorks,
   },
   {
     slug: 'syntapore',
