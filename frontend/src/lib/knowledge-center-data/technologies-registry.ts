@@ -8,6 +8,7 @@ import type { KCTechnology } from './types';
 import syntaporeHowItWorks from './how-it-works/syntapore.json';
 import hydrocoreHowItWorks from './how-it-works/hydrocore.json';
 import turbocoreHowItWorks from './how-it-works/turbocore.json';
+import syntraxHowItWorks from './how-it-works/syntrax.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -163,6 +164,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
       { href: '/knowledge-center/figures/syntrax.html', preview: '/knowledge-center/figures/syntrax.webp', title: 'Full-flow spin-on in the lube circuit', caption: 'The oil pump sends all the oil through the filter before the main gallery that feeds the bearings; wear particles and soot are held on the pleated media. At service the spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/syntrax-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/syntrax-pt.html' }] },
       { href: '/knowledge-center/figures/compare-syntrax.html', preview: '/knowledge-center/figures/compare-syntrax.webp', title: 'Spin-on and cartridge formats', caption: 'A spin-on is replaced whole, can included. In a cartridge the housing stays on the engine: the bowl comes off and only the element is changed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/compare-syntrax-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/compare-syntrax-pt.html' }] },
     ],
+    howItWorks: syntraxHowItWorks,
   },
   {
     slug: 'nanoforce',
