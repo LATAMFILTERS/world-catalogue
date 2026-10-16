@@ -1,0 +1,317 @@
+{
+  "en": {
+    "overview": [
+      "An engine draws in a very large volume of air, and whatever dust that air carries goes where the air goes. Mineral dust is hard: once past the air cleaner it abrades piston rings, cylinder liners, valves and turbocharger parts, and much of it ends up suspended in the engine oil, where it keeps wearing the engine from inside. MACROCORE™ is the ELIMFILTERS architecture for the engine air-intake elements, combining media configuration, dust-holding capacity, restriction control and sealing integrity.",
+      "The primary element does the main work. Its pleated media presents a large surface to the incoming air, and the dust is held on and within its upstream face. As dust builds up, it forms a layer that itself takes part in the capture, while the resistance to airflow, the restriction, rises gradually. The restriction indicator on the clean side reads that rise, which is why service decisions should follow measured restriction rather than the element's appearance: an element that looks dirty may still have useful capacity, and opening the housing more often than needed is itself a contamination risk.",
+      "Inside the primary sits the safety element. It is not the main filter; its job is to keep the clean side of the housing closed while the primary is out at service, and to stop dust if the primary is damaged. A dirty safety element is therefore a symptom: it means something upstream of it has failed.",
+      "Elements only protect the engine if the whole clean-air boundary is sealed: housing, seals, cover, clamps and the duct to the engine. A high-capacity element cannot compensate for an unsealed joint downstream of it; the housing and sealing side is governed by INTEKCORE™. ISO 5011 provides the laboratory framework for evaluating an air cleaner, and published values belong to the tested element and housing, never to the technology as a single value."
+    ],
+    "figures": {
+      "air-intake": {
+        "title": "Primary and safety elements in the air cleaner",
+        "caption": "Dust is held on the pleated primary element while the restriction indicator rises. At service the primary comes out and the safety element stays in place, keeping the clean side closed.",
+        "steps": [
+          {
+            "part": "Inlet duct",
+            "text": "Dirty air enters the housing through the duct on the left. Moving the cursor sideways changes how much dust the air carries."
+          },
+          {
+            "part": "Housing in section",
+            "text": "The front of the housing is cut away so the elements can be seen; only its back wall is drawn."
+          },
+          {
+            "part": "MACROCORE™ primary element",
+            "text": "The air crosses the pleated primary, which holds the dust on its pleats. The dust builds up as a layer on the upstream face."
+          },
+          {
+            "part": "Safety element",
+            "text": "Inside the primary, the safety element is the last barrier before the clean side."
+          },
+          {
+            "part": "Outlet to the engine",
+            "text": "Clean air leaves through the duct on the right toward the engine. Everything downstream of the elements has to stay sealed."
+          },
+          {
+            "part": "Restriction indicator",
+            "text": "On the head, the indicator rises as the primary loads; the readout shows the restriction as low, medium or high."
+          },
+          {
+            "part": "Service",
+            "text": "Moving the cursor to the top, or pressing E, runs the service: the cover comes down and the primary comes out, while the safety element stays in place and keeps the clean side closed. A new primary goes in and the restriction returns to low."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "MACROCORE™ primary element",
+        "role": "The pleated media that holds the dust. Its configuration and dust-holding capacity are matched to the engine's airflow and the dust environment."
+      },
+      {
+        "name": "Safety element",
+        "role": "The inner element that stays in place at service and backs up the primary. It is replaced as the engine maker specifies and is never cleaned."
+      },
+      {
+        "name": "Element seal",
+        "role": "Seals the element against the housing so no air can pass around the media. It is part of the clean-air boundary."
+      },
+      {
+        "name": "Restriction indicator",
+        "role": "Reads the resistance to airflow on the clean side and shows when the primary has reached its service point."
+      },
+      {
+        "name": "Housing and cover (INTEKCORE™)",
+        "role": "Hold the elements in the designed position and close the dirty side from the clean side."
+      },
+      {
+        "name": "Inlet and outlet ducts",
+        "role": "Bring dirty air in and take clean air to the engine. Every joint after the elements must be sealed and clamped."
+      },
+      {
+        "name": "Pre-cleaner (where applicable, not drawn)",
+        "role": "In very dusty duty, removes part of the dust before the air reaches the primary, extending its service life."
+      }
+    ],
+    "service": [
+      "Service the primary when the restriction indicator reaches the limit set by the engine maker, or as its schedule specifies, not by appearance.",
+      "With the engine stopped, clean around the cover before opening it so no dust falls into the housing.",
+      "Remove the cover and the primary carefully, without knocking dust off toward the clean side. Leave the safety element in place.",
+      "Wipe the dirty side of the housing and check the sealing surfaces. Look at the safety element without removing it: if it is dirty, find the leak before fitting a new primary.",
+      "Fit the new MACROCORE™ primary approved for that housing, seat it fully and refit the cover with its latches.",
+      "Reset the restriction indicator and check the duct, clamps and joints between the air cleaner and the engine.",
+      "Replace the safety element as the engine maker specifies; never clean it or reuse it."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "Restriction rises much faster than expected",
+        "check": "The dust load is heavier than the selection assumed, the pre-cleaner (if fitted) is not working, or the element's capacity does not suit the environment. Review the selection rather than shortening intervals indefinitely."
+      },
+      {
+        "symptom": "Dust on the clean side or on the safety element",
+        "check": "Something upstream has failed: an element not seated, a damaged seal or element, or a deformed housing or cover. Inspect the whole clean-air boundary."
+      },
+      {
+        "symptom": "Low restriction but signs of dust in the engine",
+        "check": "Oil analysis showing dust, or abnormal wear, with a clean-looking element points to a leak after the filter: ducts, clamps, joints or the outlet seal."
+      },
+      {
+        "symptom": "The indicator does not move or reads erratically",
+        "check": "Check the indicator and its connection to the clean side before trusting or replacing the element."
+      },
+      {
+        "symptom": "Wet or oily media",
+        "check": "Water or oil soaking the media raises restriction and can damage it. Check the position and protection of the air inlet."
+      }
+    ]
+  },
+  "es": {
+    "overview": [
+      "Un motor aspira un volumen muy grande de aire, y el polvo que trae ese aire va a donde va el aire. El polvo mineral es duro: una vez que pasa el filtro de aire, desgasta los anillos, las camisas de los cilindros, las válvulas y las piezas del turbocompresor, y buena parte termina suspendida en el aceite del motor, donde sigue desgastándolo desde adentro. MACROCORE™ es la arquitectura ELIMFILTERS de los elementos de admisión de aire del motor, que combina la configuración del medio, la capacidad de retención de polvo, el control de la restricción y la integridad del sellado.",
+      "El elemento primario hace el trabajo principal. Su medio plisado presenta una gran superficie al aire que entra, y el polvo queda retenido sobre su cara de entrada y dentro de ella. A medida que el polvo se acumula forma una capa que también participa en la captura, mientras la resistencia al paso del aire, la restricción, sube gradualmente. El indicador de restricción del lado limpio mide ese aumento; por eso las decisiones de servicio deben seguir la restricción medida y no el aspecto del elemento: un elemento que se ve sucio puede tener todavía capacidad útil, y abrir la carcasa más de lo necesario es en sí un riesgo de contaminación.",
+      "Dentro del primario va el elemento de seguridad. No es el filtro principal; su función es mantener cerrado el lado limpio de la carcasa mientras el primario está fuera en el servicio, y detener el polvo si el primario se daña. Por eso un elemento de seguridad sucio es un síntoma: significa que algo antes de él falló.",
+      "Los elementos solo protegen el motor si todo el límite del aire limpio está sellado: carcasa, sellos, tapa, abrazaderas y el ducto hacia el motor. Un elemento de gran capacidad no compensa una unión sin sellar después de él; el lado de la carcasa y del sellado corresponde a INTEKCORE™. ISO 5011 da el marco de laboratorio para evaluar un filtro de aire, y los valores publicados pertenecen al elemento y la carcasa ensayados, nunca a la tecnología como un valor único."
+    ],
+    "figures": {
+      "air-intake": {
+        "title": "Elementos primario y de seguridad en el filtro de aire",
+        "caption": "El polvo queda en el elemento primario plisado mientras sube el indicador de restricción. En el servicio sale el primario y el elemento de seguridad permanece en su lugar, manteniendo cerrado el lado limpio.",
+        "steps": [
+          {
+            "part": "Ducto de entrada",
+            "text": "El aire sucio entra a la carcasa por el ducto de la izquierda. Al mover el cursor de lado a lado cambia cuánto polvo trae el aire."
+          },
+          {
+            "part": "Carcasa en corte",
+            "text": "El frente de la carcasa está cortado para que se vean los elementos; solo se dibuja su pared trasera."
+          },
+          {
+            "part": "Elemento primario MACROCORE™",
+            "text": "El aire atraviesa el primario plisado, que retiene el polvo en sus pliegues. El polvo se acumula como una capa en la cara de entrada."
+          },
+          {
+            "part": "Elemento de seguridad",
+            "text": "Dentro del primario, el elemento de seguridad es la última barrera antes del lado limpio."
+          },
+          {
+            "part": "Salida al motor",
+            "text": "El aire limpio sale por el ducto de la derecha hacia el motor. Todo lo que está después de los elementos debe permanecer sellado."
+          },
+          {
+            "part": "Indicador de restricción",
+            "text": "En el cabezal, el indicador sube a medida que el primario se carga; la lectura de la figura muestra la restricción como baja, media o alta."
+          },
+          {
+            "part": "Servicio",
+            "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: la tapa baja y sale el primario, mientras el elemento de seguridad permanece en su lugar y mantiene cerrado el lado limpio. Entra un primario nuevo y la restricción vuelve a baja."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "Elemento primario MACROCORE™",
+        "role": "El medio plisado que retiene el polvo. Su configuración y su capacidad de retención se ajustan al caudal de aire del motor y al ambiente de polvo."
+      },
+      {
+        "name": "Elemento de seguridad",
+        "role": "El elemento interior que permanece en su lugar durante el servicio y respalda al primario. Se reemplaza como indica el fabricante del motor y nunca se limpia."
+      },
+      {
+        "name": "Sello del elemento",
+        "role": "Sella el elemento contra la carcasa para que ningún aire pase alrededor del medio. Forma parte del límite del aire limpio."
+      },
+      {
+        "name": "Indicador de restricción",
+        "role": "Mide la resistencia al paso del aire en el lado limpio y muestra cuándo el primario llegó a su punto de servicio."
+      },
+      {
+        "name": "Carcasa y tapa (INTEKCORE™)",
+        "role": "Mantienen los elementos en la posición de diseño y separan el lado sucio del lado limpio."
+      },
+      {
+        "name": "Ductos de entrada y salida",
+        "role": "Traen el aire sucio y llevan el aire limpio al motor. Toda unión después de los elementos debe estar sellada y con su abrazadera."
+      },
+      {
+        "name": "Prefiltro (cuando aplica, no dibujado)",
+        "role": "En servicio muy polvoriento, retira parte del polvo antes de que el aire llegue al primario y prolonga su vida de servicio."
+      }
+    ],
+    "service": [
+      "Dar servicio al primario cuando el indicador de restricción llegue al límite fijado por el fabricante del motor, o según su programa, no por su aspecto.",
+      "Con el motor detenido, limpiar alrededor de la tapa antes de abrirla para que no caiga polvo dentro de la carcasa.",
+      "Retirar la tapa y el primario con cuidado, sin sacudir polvo hacia el lado limpio. Dejar el elemento de seguridad en su lugar.",
+      "Limpiar el lado sucio de la carcasa y revisar las superficies de sellado. Mirar el elemento de seguridad sin retirarlo: si está sucio, encontrar la fuga antes de colocar un primario nuevo.",
+      "Colocar el primario MACROCORE™ nuevo aprobado para esa carcasa, asentarlo por completo y volver a montar la tapa con sus seguros.",
+      "Restablecer el indicador de restricción y revisar el ducto, las abrazaderas y las uniones entre el filtro de aire y el motor.",
+      "Reemplazar el elemento de seguridad como indica el fabricante del motor; nunca limpiarlo ni reutilizarlo."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "La restricción sube mucho más rápido de lo esperado",
+        "check": "La carga de polvo es mayor que la prevista en la selección, el prefiltro (si lo hay) no funciona, o la capacidad del elemento no corresponde al ambiente. Revisar la selección en lugar de acortar los intervalos indefinidamente."
+      },
+      {
+        "symptom": "Polvo en el lado limpio o en el elemento de seguridad",
+        "check": "Algo antes falló: un elemento mal asentado, un sello o un elemento dañado, o una carcasa o tapa deformada. Inspeccionar todo el límite del aire limpio."
+      },
+      {
+        "symptom": "Restricción baja pero señales de polvo en el motor",
+        "check": "Un análisis de aceite que muestra polvo, o un desgaste anormal, con un elemento que se ve limpio apunta a una fuga después del filtro: ductos, abrazaderas, uniones o el sello de salida."
+      },
+      {
+        "symptom": "El indicador no se mueve o marca de forma irregular",
+        "check": "Revisar el indicador y su conexión al lado limpio antes de confiar en él o de reemplazar el elemento."
+      },
+      {
+        "symptom": "Medio mojado o con aceite",
+        "check": "El agua o el aceite que empapan el medio elevan la restricción y pueden dañarlo. Revisar la ubicación y la protección de la toma de aire."
+      }
+    ]
+  },
+  "pt": {
+    "overview": [
+      "Um motor aspira um volume muito grande de ar, e a poeira que esse ar carrega vai para onde o ar vai. A poeira mineral é dura: depois de passar pelo filtro de ar, ela desgasta os anéis, as camisas dos cilindros, as válvulas e as peças do turbocompressor, e boa parte acaba suspensa no óleo do motor, onde continua desgastando-o por dentro. MACROCORE™ é a arquitetura ELIMFILTERS dos elementos de admissão de ar do motor, que combina a configuração do meio, a capacidade de retenção de poeira, o controle da restrição e a integridade da vedação.",
+      "O elemento primário faz o trabalho principal. Seu meio plissado apresenta uma grande superfície ao ar que entra, e a poeira fica retida sobre a sua face de entrada e dentro dela. À medida que a poeira se acumula, forma uma camada que também participa da captura, enquanto a resistência à passagem do ar, a restrição, sobe gradualmente. O indicador de restrição do lado limpo mede esse aumento; por isso as decisões de manutenção devem seguir a restrição medida e não a aparência do elemento: um elemento que parece sujo pode ainda ter capacidade útil, e abrir a carcaça mais do que o necessário é em si um risco de contaminação.",
+      "Dentro do primário fica o elemento de segurança. Ele não é o filtro principal; sua função é manter fechado o lado limpo da carcaça enquanto o primário está fora na manutenção, e deter a poeira se o primário se danificar. Por isso um elemento de segurança sujo é um sintoma: significa que algo antes dele falhou.",
+      "Os elementos só protegem o motor se todo o limite do ar limpo estiver vedado: carcaça, vedações, tampa, abraçadeiras e o duto até o motor. Um elemento de grande capacidade não compensa uma junta sem vedação depois dele; o lado da carcaça e da vedação pertence ao INTEKCORE™. A ISO 5011 fornece a estrutura de laboratório para avaliar um filtro de ar, e os valores publicados pertencem ao elemento e à carcaça ensaiados, nunca à tecnologia como um valor único."
+    ],
+    "figures": {
+      "air-intake": {
+        "title": "Elementos primário e de segurança no filtro de ar",
+        "caption": "A poeira fica no elemento primário plissado enquanto o indicador de restrição sobe. Na manutenção o primário sai e o elemento de segurança permanece no lugar, mantendo fechado o lado limpo.",
+        "steps": [
+          {
+            "part": "Duto de entrada",
+            "text": "O ar sujo entra na carcaça pelo duto da esquerda. Mover o cursor para os lados muda quanta poeira o ar carrega."
+          },
+          {
+            "part": "Carcaça em corte",
+            "text": "A frente da carcaça está cortada para que se vejam os elementos; só a parede de trás é desenhada."
+          },
+          {
+            "part": "Elemento primário MACROCORE™",
+            "text": "O ar atravessa o primário plissado, que retém a poeira nas pregas. A poeira se acumula como uma camada na face de entrada."
+          },
+          {
+            "part": "Elemento de segurança",
+            "text": "Dentro do primário, o elemento de segurança é a última barreira antes do lado limpo."
+          },
+          {
+            "part": "Saída para o motor",
+            "text": "O ar limpo sai pelo duto da direita em direção ao motor. Tudo o que vem depois dos elementos precisa permanecer vedado."
+          },
+          {
+            "part": "Indicador de restrição",
+            "text": "No cabeçote, o indicador sobe à medida que o primário se carrega; a leitura da figura mostra a restrição como baixa, média ou alta."
+          },
+          {
+            "part": "Manutenção",
+            "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: a tampa desce e o primário sai, enquanto o elemento de segurança permanece no lugar e mantém fechado o lado limpo. Entra um primário novo e a restrição volta a baixa."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "Elemento primário MACROCORE™",
+        "role": "O meio plissado que retém a poeira. Sua configuração e sua capacidade de retenção são ajustadas à vazão de ar do motor e ao ambiente de poeira."
+      },
+      {
+        "name": "Elemento de segurança",
+        "role": "O elemento interno que permanece no lugar durante a manutenção e protege o motor caso o primário falhe. É substituído conforme indica o fabricante do motor e nunca é limpo."
+      },
+      {
+        "name": "Vedação do elemento",
+        "role": "Veda o elemento contra a carcaça para que nenhum ar passe ao redor do meio. Faz parte do limite do ar limpo."
+      },
+      {
+        "name": "Indicador de restrição",
+        "role": "Mede a resistência à passagem do ar no lado limpo e mostra quando o primário chegou ao seu ponto de manutenção."
+      },
+      {
+        "name": "Carcaça e tampa (INTEKCORE™)",
+        "role": "Mantêm os elementos na posição de projeto e separam o lado sujo do lado limpo."
+      },
+      {
+        "name": "Dutos de entrada e saída",
+        "role": "Trazem o ar sujo e levam o ar limpo ao motor. Toda junta depois dos elementos deve estar vedada e com sua abraçadeira."
+      },
+      {
+        "name": "Pré-filtro (quando aplicável, não desenhado)",
+        "role": "Em serviço muito empoeirado, retira parte da poeira antes que o ar chegue ao primário, prolongando sua vida útil."
+      }
+    ],
+    "service": [
+      "Fazer a manutenção do primário quando o indicador de restrição chegar ao limite definido pelo fabricante do motor, ou conforme o seu programa, não pela aparência.",
+      "Com o motor parado, limpar ao redor da tampa antes de abri-la para que não caia poeira dentro da carcaça.",
+      "Retirar a tampa e o primário com cuidado, sem sacudir poeira para o lado limpo. Deixar o elemento de segurança no lugar.",
+      "Limpar o lado sujo da carcaça e verificar as superfícies de vedação. Olhar o elemento de segurança sem retirá-lo: se estiver sujo, encontrar o vazamento antes de instalar um primário novo.",
+      "Instalar o primário MACROCORE™ novo aprovado para essa carcaça, assentá-lo totalmente e montar a tampa com suas travas.",
+      "Rearmar o indicador de restrição e verificar o duto, as abraçadeiras e as juntas entre o filtro de ar e o motor.",
+      "Substituir o elemento de segurança conforme indica o fabricante do motor; nunca limpá-lo nem reutilizá-lo."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "A restrição sobe muito mais rápido do que o esperado",
+        "check": "A carga de poeira é maior do que a prevista na seleção, o pré-filtro (se houver) não está funcionando, ou a capacidade do elemento não corresponde ao ambiente. Revisar a seleção em vez de encurtar os intervalos indefinidamente."
+      },
+      {
+        "symptom": "Poeira no lado limpo ou no elemento de segurança",
+        "check": "Algo antes falhou: um elemento mal assentado, uma vedação ou um elemento danificado, ou uma carcaça ou tampa deformada. Inspecionar todo o limite do ar limpo."
+      },
+      {
+        "symptom": "Restrição baixa, mas sinais de poeira no motor",
+        "check": "Uma análise de óleo que mostra poeira, ou um desgaste anormal, com um elemento de aparência limpa aponta para um vazamento depois do filtro: dutos, abraçadeiras, juntas ou a vedação de saída."
+      },
+      {
+        "symptom": "O indicador não se move ou marca de forma irregular",
+        "check": "Verificar o indicador e sua conexão com o lado limpo antes de confiar nele ou de substituir o elemento."
+      },
+      {
+        "symptom": "Meio molhado ou com óleo",
+        "check": "Água ou óleo encharcando o meio elevam a restrição e podem danificá-lo. Verificar a posição e a proteção da tomada de ar."
+      }
+    ]
+  }
+}
