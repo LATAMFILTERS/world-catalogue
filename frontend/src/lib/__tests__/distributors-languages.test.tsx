@@ -42,15 +42,16 @@ describe('Distributor public language coverage', () => {
       if (lang !== 'en') for (const text of ['Authorized Commercial Partner Network', 'Find an ELIMFILTERS authorized distributor', 'Regional Coverage.', 'Partner Standards', 'ELIMFILTERS AUTHORIZED DISTRIBUTOR', 'Need a Distributor, a Product Match']) expect(html).not.toContain(text);
       if (lang === 'pt') {
         for (const text of ['THE ELIMFILTERS GLOBAL MODEL', 'PRC MANUFACTURING STRATEGY', 'PHYSICAL VALIDATION', 'MATHEMATICAL MODELING', 'PARTNER VALUE', 'Lifecycle Value', 'The economic distinction is structural.']) expect(html).not.toContain(text);
-        for (const text of ['O MODELO GLOBAL ELIMFILTERS', 'VALIDAÇÃO FÍSICA', 'MODELAGEM MATEMÁTICA', 'VALOR PARA O PARCEIRO', 'Valor do ciclo de vida', 'não substitui a validação física']) expect(html).toContain(text);
+        for (const text of ['O MODELO GLOBAL ELIMFILTERS', 'ENGENHARIA E TECNOLOGIA', 'INTELIGÊNCIA TÉCNICA', 'PRESENÇA INTERNACIONAL', 'VALOR PARA O PARCEIRO', 'Valor do ciclo de vida', 'evidências documentadas']) expect(html).toContain(text);
       }
     });
-    it(lang + ' preserves the six operating steps and six outcomes in the about variant', () => {
+    it(lang + ' presents engineering, intelligence and international partnerships with six partner outcomes', () => {
       const html = renderToStaticMarkup(<I18nextProvider i18n={instance}><GlobalCommercialModel variant="about" /></I18nextProvider>);
-      expect((html.match(/<article\b/g) || []).length).toBe(12);
+      expect((html.match(/<article\b/g) || []).length).toBe(9);
       expect(html).not.toContain('href="/distributor-application"');
       expect(html).toContain('80%'); expect(html).toContain('20%');
-      expect(html).toContain(lang === 'pt' ? 'Meios desenvolvidos na Alemanha.' : lang === 'es' ? 'Medios desarrollados en Alemania.' : 'German-Developed Media.');
+      expect(html).toContain(lang === 'pt' ? 'Engenharia avançada de filtração' : lang === 'es' ? 'Ingeniería avanzada de filtración' : 'Advanced Filtration Engineering');
+      expect(html).not.toMatch(/\b(?:China|PRC|RPC)\b/i);
     });
   }
 });
