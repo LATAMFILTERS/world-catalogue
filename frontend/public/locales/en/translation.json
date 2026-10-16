@@ -2010,5 +2010,102 @@
     "copyb5ab831c_41": "Turnstile did not start. Code: RENDER_EMPTY",
     "copy6367e045_48": "Error starting Turnstile. Code: RENDER_ERROR",
     "copy33540b7_23": "Retry verification"
+  },
+  "corporatePositioning": {
+    "title": "ELIMFILTERS — Advanced Filtration Engineering & Intelligence",
+    "description": "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
+    "commercial": {
+      "sectionEyebrowAbout": "ENGINEERING & TECHNOLOGY",
+      "sectionEyebrowDistributors": "THE ELIMFILTERS GLOBAL MODEL",
+      "titleAbout": "ELIMFILTERS — Advanced Filtration Engineering & Intelligence",
+      "titleDistributors": "Engineering, Manufacturing, Validation and Application Intelligence — Structured to Create More Value for the Partner.",
+      "lead": "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
+      "industrialEyebrow": "International Industrial Partnerships",
+      "industrialTitle": "Specialized Industrial Production Network",
+      "industrialBody": "Specialized industrial partners and distributors connect filtration solutions with markets and applications. This network does not imply ELIMFILTERS-owned factories in multiple countries.",
+      "partnerEyebrow": "HORIZONTAL OPERATIONS · PARTNER VALUE",
+      "partnerTitle": "A Different Cost Structure — Not a Low-Price Strategy.",
+      "partnerLead": "Legacy vertical organizations carry structural cost through multiple management layers, duplicated administrative functions, and repetitive processes. ELIMFILTERS is organized more horizontally, using standardized processes, disciplined data management, digital workflows, and direct technical governance to reduce avoidable organizational friction.",
+      "partnerGovernance": "That efficiency is not obtained by reducing engineering requirements, material specifications, manufacturing controls, physical validation, or technical responsibility. Those functions remain governed by defined requirements and accountable professional review.",
+      "partnerResult": "The economic distinction is structural. Lower avoidable overhead allows a greater proportion of resources to remain in engineering, materials, manufacturing quality, validation, product intelligence, availability, supply-chain execution, and support for the commercial partner.",
+      "marketEyebrow": "MARKET SCOPE",
+      "marketTitle": "Heavy Duty leads. Automotive expands commercial reach.",
+      "marketBody": "ELIMFILTERS primarily focuses on industrial, heavy-duty, fleet, and equipment applications. Automotive / Light Duty remains an important complementary line that supports recurring demand, distributor economics, catalog breadth, regional reach, and commercial intelligence.",
+      "marketAllocation": "The governing commercial architecture remains unchanged: Heavy Duty receives 80% of strategic resources and Light Duty / Automotive 20%.",
+      "partnershipEyebrow": "COMMERCIAL PARTNERSHIP",
+      "partnershipTitle": "ELIMFILTERS builds the technical platform. Our partners build the market.",
+      "apply": "APPLY FOR REVIEW"
+    },
+    "strategic": {
+      "title": "ELIMFILTERS — Advanced Filtration Engineering & Intelligence",
+      "intro1": "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
+      "intro2": "Product selection therefore begins with duty cycle, contamination exposure, flow requirement, pressure differential, temperature range, fluid or air characteristics, available installation envelope, and the evidence required for the specific application.",
+      "statement1": "The filter element is the means.",
+      "statement2": "Asset protection is the objective.",
+      "globalTitle": "International Industrial Partnerships",
+      "global1": "Technical specifications, filtration media and application-based validation guide performance assessment and asset protection. Performance claims require documented product and application evidence.",
+      "global2": "Specialized industrial partners and distributors connect filtration solutions with markets and applications. This network does not imply ELIMFILTERS-owned factories in multiple countries.",
+      "global3": "Materials, manufacturing processes, dimensional control, assembly integrity, and product validation are governed by ELIMFILTERS-defined requirements. Validation is matched to product family and application and may include filtration efficiency, restriction, contaminant-holding capacity, flow behavior, media strength, pleat stability, burst or collapse resistance, cyclic pressure endurance, seal integrity, temperature exposure, material compatibility, and water-separation performance where applicable and supported by evidence.",
+      "modelingTitle": "Product Knowledge and Digital Intelligence",
+      "modeling1": "Part Search and the Knowledge Center connect product information, applications, cross-references and engineering references to support technical decisions.",
+      "modeling2": "Models can evaluate the interaction of variables such as contaminant loading, flow rate, pressure differential, temperature, media behavior, material response, service duration, and operating severity to estimate how the filtration system and the protected asset may respond as conditions move toward demanding or extreme ranges.",
+      "modeling3": "These calculations support engineering assessment, sensitivity analysis, and test planning. They do not certify a product, replace physical validation, establish a performance claim by themselves, or substitute professional engineering judgment.",
+      "horizontalTitle": "A horizontal structure without reducing technical requirements",
+      "horizontal1": "Traditional multi-layer organizations carry administrative and structural costs through multiple management levels, duplicated functions, and repetitive processes. Those costs ultimately become part of the economics of the product and the supply chain.",
+      "horizontal2": "ELIMFILTERS operates with a more horizontal structure supported by standardized processes, disciplined data management, digital workflows, and direct technical governance. The purpose is to reduce avoidable organizational friction while preserving resources for engineering, materials, manufacturing quality, validation, product intelligence, availability, and partner support.",
+      "horizontal3": "The economic difference is therefore structural. It is not created by lowering engineering standards, reducing material requirements, weakening manufacturing controls, or positioning the brand as a low-price alternative.",
+      "efficiencyTitle": "Structural efficiency becomes commercial value",
+      "efficiency1": "The result is a different cost structure.",
+      "efficiency2": "Not a low-price strategy.",
+      "efficiency3": "ELIMFILTERS seeks to convert operating efficiency into stronger product economics, competitive landed cost, sustainable partner margin, broader application coverage, and a commercial relationship capable of supporting customers over the operating life of their assets.",
+      "closing1": "ELIMFILTERS builds the technical platform.",
+      "closing2": "Our partners build the market."
+    },
+    "pillars": [
+      {
+        "step": "01",
+        "eyebrow": "ENGINEERING & TECHNOLOGY",
+        "title": "Engineering, Technology and Validation",
+        "body": "Technical specifications, filtration media and application-based validation guide performance assessment and asset protection. Performance claims require documented product and application evidence."
+      },
+      {
+        "step": "02",
+        "eyebrow": "TECHNICAL INTELLIGENCE",
+        "title": "Product Knowledge and Digital Intelligence",
+        "body": "Part Search and the Knowledge Center connect product information, applications, cross-references and engineering references to support technical decisions."
+      },
+      {
+        "step": "03",
+        "eyebrow": "INTERNATIONAL PRESENCE",
+        "title": "International Industrial Partnerships",
+        "body": "Specialized industrial partners and distributors connect filtration solutions with markets and applications. This network does not imply ELIMFILTERS-owned factories in multiple countries."
+      }
+    ],
+    "partnerOutcomes": [
+      [
+        "Structural Efficiency",
+        "The economic difference is created by a more horizontal operating structure, not by positioning ELIMFILTERS as a low-price product."
+      ],
+      [
+        "Sustainable Partner Margin",
+        "Lower avoidable administrative and process burden reduces structural cost and helps preserve economic value for the authorized commercial partner."
+      ],
+      [
+        "Technical Confidence",
+        "Engineering, physical validation, application intelligence, traceability, and evidence-based product governance give partners a stronger technical foundation for customer decisions."
+      ],
+      [
+        "Market Flexibility",
+        "Partners can serve industrial, heavy-duty, fleet, equipment, and complementary automotive / Light Duty demand according to their territory."
+      ],
+      [
+        "Customer Continuity",
+        "Installed-base knowledge, local relationships, availability, technical support, and application discipline are treated as long-term commercial assets."
+      ],
+      [
+        "Lifecycle Value",
+        "Product quality, correct application, availability, technical intelligence, and sound economics work together to reduce total operating risk."
+      ]
+    ]
   }
 }

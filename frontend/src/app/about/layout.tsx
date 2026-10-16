@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About ELIMFILTERS — Industrial Filtration Engineering & Asset Protection',
-  description: 'Learn how ELIMFILTERS approaches industrial filtration, asset protection, engineering governance, commercial execution, and its human-governed AI-native operating model.',
+  description: "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
   alternates: {
     canonical: 'https://elimfilters.com/about',
   },
   openGraph: {
     title: 'About ELIMFILTERS — Industrial Filtration Engineering & Asset Protection',
-    description: 'Who we are, what we protect, how we operate, our engineering philosophy, leadership model, and corporate structure.',
+    description: "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
     url: 'https://elimfilters.com/about',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About ELIMFILTERS',
-    description: 'Industrial filtration engineering organized around asset protection, evidence, capability, and accountable execution.',
+    description: "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };

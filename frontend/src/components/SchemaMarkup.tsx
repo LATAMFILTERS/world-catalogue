@@ -13,7 +13,7 @@ export default function SchemaMarkup() {
           '@id': 'https://elimfilters.com/#logo',
           url: 'https://elimfilters.com/assets/elimfilters-logo-transparent.png',
         },
-        description: 'Industrial filtration engineering organization focused on contamination control, equipment reliability, and Total Asset Protection Systems.',
+        description: "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
         address: {
           '@type': 'PostalAddress',
           addressCity: 'Frisco',
@@ -46,11 +46,12 @@ export default function SchemaMarkup() {
         '@id': 'https://elimfilters.com/#brand',
         name: 'ELIMFILTERS',
         alternateName: 'ELIMFILTERS® Total Asset Protection',
+        slogan: 'Advanced Filtration Engineering & Intelligence',
         url: 'https://elimfilters.com/',
         owner: {
           '@id': 'https://elimfilters.com/#organization',
         },
-        description: 'Industrial filtration engineering brand for contamination control, protected systems, equipment reliability, and asset protection.',
+        description: "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
       },
       {
         '@type': 'WebSite',

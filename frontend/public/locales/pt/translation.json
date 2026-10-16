@@ -2106,5 +2106,102 @@
     "copyb5ab831c_41": "O Turnstile não iniciou. Código: RENDER_EMPTY",
     "copy6367e045_48": "Erro ao iniciar o Turnstile. Código: RENDER_ERROR",
     "copy33540b7_23": "Tentar verificar novamente"
+  },
+  "corporatePositioning": {
+    "title": "ELIMFILTERS — Engenharia avançada de filtração e inteligência técnica",
+    "description": "A ELIMFILTERS integra tecnologias de filtração, engenharia, conhecimento especializado e inteligência técnica digital em uma plataforma internacional voltada à proteção de ativos industriais, equipamentos pesados e aplicações automotivas.",
+    "commercial": {
+      "sectionEyebrowAbout": "ENGENHARIA E TECNOLOGIA",
+      "sectionEyebrowDistributors": "O MODELO GLOBAL ELIMFILTERS",
+      "titleAbout": "ELIMFILTERS — Engenharia avançada de filtração e inteligência técnica",
+      "titleDistributors": "Engenharia, fabricação, validação e inteligência de aplicação — estruturadas para criar mais valor para o parceiro.",
+      "lead": "A ELIMFILTERS integra tecnologias de filtração, engenharia, conhecimento especializado e inteligência técnica digital em uma plataforma internacional voltada à proteção de ativos industriais, equipamentos pesados e aplicações automotivas.",
+      "industrialEyebrow": "Parcerias industriais internacionais",
+      "industrialTitle": "Rede especializada de produção industrial",
+      "industrialBody": "Parceiros industriais especializados e distribuidores conectam soluções de filtração a mercados e aplicações. Essa rede não implica fábricas próprias da ELIMFILTERS em vários países.",
+      "partnerEyebrow": "OPERAÇÕES HORIZONTAIS · VALOR PARA O PARCEIRO",
+      "partnerTitle": "Uma estrutura de custos diferente — não uma estratégia de baixo preço.",
+      "partnerLead": "As organizações verticais tradicionais carregam custos estruturais por múltiplas camadas de gestão, funções administrativas duplicadas e processos repetitivos. A ELIMFILTERS é organizada de forma mais horizontal, utilizando processos padronizados, gestão disciplinada de dados, fluxos de trabalho digitais e governança técnica direta para reduzir o atrito organizacional evitável.",
+      "partnerGovernance": "Essa eficiência não é obtida pela redução de requisitos de engenharia, especificações de materiais, controles de fabricação, validação física ou responsabilidade técnica. Essas funções permanecem regidas por requisitos definidos e revisão profissional responsável.",
+      "partnerResult": "A distinção econômica é estrutural. Menores custos indiretos evitáveis permitem que uma proporção maior dos recursos permaneça em engenharia, materiais, qualidade de fabricação, validação, inteligência de produtos, disponibilidade, execução da cadeia de suprimentos e suporte ao parceiro comercial.",
+      "marketEyebrow": "ALCANCE DE MERCADO",
+      "marketTitle": "Heavy Duty lidera. Automotive amplia o alcance comercial.",
+      "marketBody": "A ELIMFILTERS concentra-se principalmente em aplicações industriais, Heavy Duty, frotas e equipamentos. Automotive / Light Duty permanece como uma linha complementar importante que apoia a demanda recorrente, a economia do distribuidor, a amplitude do catálogo, o alcance regional e a inteligência comercial.",
+      "marketAllocation": "A arquitetura comercial vigente permanece inalterada: Heavy Duty recebe 80% dos recursos estratégicos e Light Duty / Automotive 20%.",
+      "partnershipEyebrow": "PARCERIA COMERCIAL",
+      "partnershipTitle": "A ELIMFILTERS constrói a plataforma técnica. Nossos parceiros constroem o mercado.",
+      "apply": "SOLICITAR AVALIAÇÃO"
+    },
+    "strategic": {
+      "title": "ELIMFILTERS — Engenharia avançada de filtração e inteligência técnica",
+      "intro1": "A ELIMFILTERS integra tecnologias de filtração, engenharia, conhecimento especializado e inteligência técnica digital em uma plataforma internacional voltada à proteção de ativos industriais, equipamentos pesados e aplicações automotivas.",
+      "intro2": "A seleção começa pelo ciclo de trabalho, contaminação, vazão, pressão, temperatura e evidências da aplicação.",
+      "statement1": "O elemento filtrante é o meio.",
+      "statement2": "A proteção do ativo é o objetivo.",
+      "globalTitle": "Parcerias industriais internacionais",
+      "global1": "As especificações técnicas, os meios filtrantes e a validação por aplicação orientam a avaliação do desempenho e a proteção de ativos. As afirmações de desempenho exigem evidências documentadas do produto e da aplicação.",
+      "global2": "Parceiros industriais especializados e distribuidores conectam soluções de filtração a mercados e aplicações. Essa rede não implica fábricas próprias da ELIMFILTERS em vários países.",
+      "global3": "Materiais, fabricação e validação seguem requisitos definidos. O desempenho depende da família de produto, da aplicação e de evidências documentadas.",
+      "modelingTitle": "Conhecimento de produto e inteligência digital",
+      "modeling1": "O Part Search e o Knowledge Center conectam informações de produtos, aplicações, referências cruzadas e referências de engenharia para apoiar decisões técnicas.",
+      "modeling2": "A modelagem matemática apoia a avaliação de vazão, pressão, temperatura e carga contaminante em condições exigentes.",
+      "modeling3": "Os cálculos apoiam a engenharia e o planejamento de ensaios. Não certificam produtos nem substituem a validação física ou o julgamento profissional.",
+      "horizontalTitle": "Processos e responsabilidade técnica",
+      "horizontal1": "Processos repetitivos e funções duplicadas podem aumentar custos administrativos.",
+      "horizontal2": "Dados estruturados e fluxos digitais ajudam a preservar recursos para engenharia, materiais, qualidade e suporte aos parceiros.",
+      "horizontal3": "A eficiência operacional preserva requisitos técnicos, controles de fabricação e validação.",
+      "efficiencyTitle": "Eficiência e valor para o parceiro",
+      "efficiency1": "Uma estrutura de custos orientada à aplicação.",
+      "efficiency2": "Qualidade e responsabilidade técnica.",
+      "efficiency3": "A ELIMFILTERS busca apoiar a disponibilidade, a cobertura de aplicações e a continuidade do atendimento ao longo da vida dos ativos.",
+      "closing1": "A ELIMFILTERS constrói a plataforma técnica.",
+      "closing2": "Nossos parceiros desenvolvem o mercado."
+    },
+    "pillars": [
+      {
+        "step": "01",
+        "eyebrow": "ENGENHARIA E TECNOLOGIA",
+        "title": "Engenharia, tecnologia e validação",
+        "body": "As especificações técnicas, os meios filtrantes e a validação por aplicação orientam a avaliação do desempenho e a proteção de ativos. As afirmações de desempenho exigem evidências documentadas do produto e da aplicação."
+      },
+      {
+        "step": "02",
+        "eyebrow": "INTELIGÊNCIA TÉCNICA",
+        "title": "Conhecimento de produto e inteligência digital",
+        "body": "O Part Search e o Knowledge Center conectam informações de produtos, aplicações, referências cruzadas e referências de engenharia para apoiar decisões técnicas."
+      },
+      {
+        "step": "03",
+        "eyebrow": "PRESENÇA INTERNACIONAL",
+        "title": "Parcerias industriais internacionais",
+        "body": "Parceiros industriais especializados e distribuidores conectam soluções de filtração a mercados e aplicações. Essa rede não implica fábricas próprias da ELIMFILTERS em vários países."
+      }
+    ],
+    "partnerOutcomes": [
+      [
+        "Eficiência estrutural",
+        "A diferença econômica é criada por uma estrutura operacional mais horizontal, não pelo posicionamento da ELIMFILTERS como um produto de baixo preço."
+      ],
+      [
+        "Margem sustentável para o parceiro",
+        "Uma menor carga administrativa e de processos evitáveis reduz o custo estrutural e ajuda a preservar valor econômico para o parceiro comercial autorizado."
+      ],
+      [
+        "Confiança técnica",
+        "Engenharia, validação física, inteligência de aplicação, rastreabilidade e governança de produtos baseada em evidências dão aos parceiros uma base técnica mais sólida para as decisões dos clientes."
+      ],
+      [
+        "Flexibilidade de mercado",
+        "Os parceiros podem atender à demanda industrial, Heavy Duty, de frotas, equipamentos e Automotive / Light Duty complementar conforme seu território."
+      ],
+      [
+        "Continuidade do cliente",
+        "O conhecimento da base instalada, as relações locais, a disponibilidade, o suporte técnico e a disciplina de aplicação são tratados como ativos comerciais de longo prazo."
+      ],
+      [
+        "Valor do ciclo de vida",
+        "Qualidade do produto, aplicação correta, disponibilidade, inteligência técnica e uma economia sólida trabalham juntas para reduzir o risco operacional total."
+      ]
+    ]
   }
 }
