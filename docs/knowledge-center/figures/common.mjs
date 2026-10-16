@@ -248,8 +248,9 @@ export function readingSteps(tech, page, lang) {
 }
 const READ_HEAD = { en: "How to read this figure", es: "Cómo leer esta figura", pt: "Como ler esta figura" };
 const esc = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-export const readingHtml = (lang, steps) =>
-  !steps.length ? "" : `<section class="fig-read"><h2>${READ_HEAD[lang]}</h2><ol>${steps.map(({ part, text }) => `<li><strong>${esc(part)}.</strong> ${esc(text)}</li>`).join("")}</ol></section>`;
+// `title` names the technology when one figure carries the reading of more than one (the air cleaner)
+export const readingHtml = (lang, steps, title = "") =>
+  !steps.length ? "" : `<section class="fig-read"><h2>${READ_HEAD[lang]}${title ? ` · ${esc(title)}` : ""}</h2><ol>${steps.map(({ part, text }) => `<li><strong>${esc(part)}.</strong> ${esc(text)}</li>`).join("")}</ol></section>`;
 
 // Live drain logic shared by both pages: water level, drops, wing and stream. Pasted into each page's script.
 export const LIVE_BOWL = `

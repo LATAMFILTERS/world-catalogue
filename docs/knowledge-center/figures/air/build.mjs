@@ -254,7 +254,7 @@ const body = PAGE_CSS + CSS + k.plateHtml({
   keys: COPY.keys,
   caption: COPY.caption,
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
-}) + readingHtml(LANG, readingSteps("macrocore", "air-intake", LANG));
+}) + readingHtml(LANG, readingSteps("macrocore", "air-intake", LANG), "MACROCORE™") + readingHtml(LANG, readingSteps("intekcore", "air-intake", LANG), "INTEKCORE™");
 
 mkdirSync(TARGET.dir, { recursive: true });
 writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));
