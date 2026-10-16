@@ -6,6 +6,7 @@
 import type { KCTechnology } from './types';
 // how-it-works explanations in EN/ES/PT; the figure builds read their reading steps from the same files
 import syntaporeHowItWorks from './how-it-works/syntapore.json';
+import hydrocoreHowItWorks from './how-it-works/hydrocore.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -121,6 +122,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
       { href: '/knowledge-center/figures/hydrocore-spinon.html', preview: '/knowledge-center/figures/hydrocore-spinon.webp', title: 'Spin-on format with built-in drain', caption: 'Water and residues settle at the bottom of the cartridge itself. At service the whole cartridge is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/hydrocore-spinon-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/hydrocore-spinon-pt.html' }] },
       { href: '/knowledge-center/figures/hydrocore-housing.html', preview: '/knowledge-center/figures/hydrocore-housing.webp', title: 'Cartridge format: element inside a transparent bowl', caption: 'The pleated element sits inside the bowl under a permanent shroud. At service the bowl comes off, the element is changed and the same bowl is refitted.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/hydrocore-housing-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/hydrocore-housing-pt.html' }] },
     ],
+    howItWorks: hydrocoreHowItWorks,
   },
   {
     slug: 'turbocore',

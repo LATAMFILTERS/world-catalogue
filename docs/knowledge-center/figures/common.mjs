@@ -25,7 +25,7 @@ export function pageTarget(here, base, argv = process.argv) {
   const theme = argv.includes("--light") ? "light" : "dark";
   const dir = pub ? join(here, "../../../../frontend/public/knowledge-center/figures") : here;
   const file = pub ? `${base}${lang === "en" ? "" : `-${lang}`}.html` : `${base}${lang === "es" ? "" : `-${lang}`}${theme === "light" ? "-light" : ""}.html`;
-  return { lang, pub, theme, path: join(dir, file), file, dir };
+  return { lang, pub, theme, path: join(dir, file), file, dir, base };
 }
 
 export const UP = [0, 0, 1];
