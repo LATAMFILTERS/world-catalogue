@@ -10,6 +10,7 @@ import hydrocoreHowItWorks from './how-it-works/hydrocore.json';
 import turbocoreHowItWorks from './how-it-works/turbocore.json';
 import syntraxHowItWorks from './how-it-works/syntrax.json';
 import nanoforceHowItWorks from './how-it-works/nanoforce.json';
+import thermacoreHowItWorks from './how-it-works/thermacore.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -205,5 +206,6 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/thermacore.html', preview: '/knowledge-center/figures/thermacore.webp', title: 'Coolant spin-on in the cooling circuit', caption: 'The filter holds rust, scale and other particles on its pleated media. Where an additive-bearing element is approved, an additive charge under the element dissolves gradually into the coolant. At service the spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/thermacore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/thermacore-pt.html' }] },
     ],
+    howItWorks: thermacoreHowItWorks,
   },
 ];
