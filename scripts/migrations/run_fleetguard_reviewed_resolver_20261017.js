@@ -1,21 +1,32 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process');
-const {Client}=require('pg');
+
 const {buildReviewedFleetguardResolver}=require('../../lib/fleetguard-reviewed-resolver');
 const {deriveCodigoBaseGovernance}=require('../../lib/catalog-codigo-base-governance');
 const manifest=require('../../docs/catalog-closure/fleetguard-resolver-preview-cases-20261017.json');
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const META="SELECT pg_get_viewdef(c.oid,true) definition,pg_get_userbyid(c.relowner) owner,c.relacl::text acl,c.reloptions FROM pg_class c WHERE c.oid='public.v_api_resolver_v7'::regclass";
+function assertReviewedHead(review,head){
+  assert.match(head||'',/^[a-f0-9]{40}$/,'Explicit reviewed commit required');
+  assert.equal(review.state,'MERGED','Mandatory PR integration required');
+  assert.equal(review.headRefOid,head,'Reviewed head differs');
+  assert.ok(review.author?.login&&Array.isArray(review.reviews?.nodes),'Complete review metadata required');
+  const latest=new Map();
+  for(const r of review.reviews.nodes){
+    if(!r.author?.login||r.author.login===review.author.login||r.state==='COMMENTED'||r.state==='PENDING')continue;
+    latest.set(r.author.login,r);
+  }
+  assert.ok(![...latest.values()].some(r=>r.state==='CHANGES_REQUESTED'),'Outstanding change request');
+  assert.ok([...latest.values()].some(r=>r.state==='APPROVED'&&r.commit?.oid===head),'Approval of exact head required');
+}
 async function run(db,{backupDirectory,expectedViewSha,execute=false,reviewedHead}={}) {
   assert.ok(backupDirectory&&path.isAbsolute(backupDirectory),'Absolute private backup directory required');
   assert.match(expectedViewSha||'',/^[a-f0-9]{64}$/);
   if(execute){
     const query='query{repository(owner:"LATAMFILTERS",name:"world-catalogue"){pullRequest(number:980){state headRefOid author{login} reviews(last:100){nodes{state author{login} commit{oid}}}}}}';
     const review=JSON.parse(execFileSync('gh',['api','graphql','-f','query='+query],{encoding:'utf8'})).data.repository.pullRequest;
-    assert.equal(review.state,'MERGED','Mandatory PR integration required');
-    assert.equal(review.headRefOid,reviewedHead,'Reviewed head differs');
-    assert.ok(review.reviews.nodes.some(r=>r.state==='APPROVED'&&r.commit?.oid===reviewedHead&&r.author?.login!==review.author?.login),'Approval of exact head required');
+    assertReviewedHead(review,reviewedHead);
     assert.equal(execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),reviewedHead);
   }
   let finished=false;
@@ -52,6 +63,5 @@ async function run(db,{backupDirectory,expectedViewSha,execute=false,reviewedHea
     fs.writeFileSync(name+'-result.json',JSON.stringify(report,null,2),{flag:'wx'});return report;
   }catch(e){if(!finished)await db.query('ROLLBACK');throw e;}
 }
-if(require.main===module){(async()=>{const db=new Client({connectionString:process.env.CATALOG_DATABASE_URL,ssl:false});assert.ok(process.env.CATALOG_DATABASE_URL,'Explicit CATALOG_DATABASE_URL required');await db.connect();try{console.log(JSON.stringify(await run(db,{backupDirectory:process.env.RESOLVER_BACKUP_DIRECTORY,expectedViewSha:process.env.EXPECTED_RESOLVER_SHA256,execute:process.argv.includes('--execute'),reviewedHead:process.env.REVIEWED_RESOLVER_HEAD})));}finally{await db.end()}})().catch(e=>{console.error(e.message);process.exitCode=1});}
-module.exports={run};
-
+if(require.main===module){(async()=>{const {Client}=require('pg');const db=new Client({connectionString:process.env.CATALOG_DATABASE_URL,ssl:false});assert.ok(process.env.CATALOG_DATABASE_URL,'Explicit CATALOG_DATABASE_URL required');await db.connect();try{console.log(JSON.stringify(await run(db,{backupDirectory:process.env.RESOLVER_BACKUP_DIRECTORY,expectedViewSha:process.env.EXPECTED_RESOLVER_SHA256,execute:process.argv.includes('--execute'),reviewedHead:process.env.REVIEWED_RESOLVER_HEAD})));}finally{await db.end()}})().catch(e=>{console.error(e.message);process.exitCode=1});}
+module.exports={run,assertReviewedHead};
