@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import HomePage from '@/components/HomePage';
 import { languageAlternates } from '@/lib/localized-routes';
 
-const TITLE = 'ELIMFILTERS | Filtros industriais e para linha pesada';
-const DESCRIPTION = 'Filtros para linha pesada e industrial: filtros de combustível diesel, separadores de água, filtros de ar, óleo, hidráulicos, líquido de arrefecimento e cabine, projetados pela ELIMFILTERS para proteger motores e equipamentos.';
+const TITLE = "ELIMFILTERS — Engenharia avançada de filtração e inteligência técnica";
+const DESCRIPTION = "A ELIMFILTERS integra tecnologias de filtração, engenharia, conhecimento especializado e inteligência técnica digital em uma plataforma internacional voltada à proteção de ativos industriais, equipamentos pesados e aplicações automotivas.";
 
 export const metadata: Metadata = {
   title: TITLE,

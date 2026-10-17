@@ -5,7 +5,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, pageTarget, KIT_NOTICE, draftPage } from "../common.mjs";
+import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, pageTarget, KIT_NOTICE, draftPage, readingSteps, readingHtml } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -242,7 +242,7 @@ const body = PAGE_CSS + CSS + k.plateHtml({
   keys: COPY.keys,
   caption: COPY.caption,
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
-});
+}) + readingHtml(LANG, readingSteps("nanoforce", "nanoforce", LANG));
 
 mkdirSync(TARGET.dir, { recursive: true });
 writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));

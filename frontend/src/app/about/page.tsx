@@ -4,12 +4,13 @@ import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AboutStrategicModel } from '@/components/AboutStrategicModel';
 import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 export default function AboutPage() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
@@ -82,7 +83,7 @@ export default function AboutPage() {
         <div style={wrap}>
           <p style={eyebrow}><PublicUiText textKey="publicUi.text44">{"ABOUT ELIMFILTERS"}</PublicUiText></p>
           <h1 style={heroTitle}>{copy.heroTitle}</h1>
-          <p style={heroLead}>{copy.heroLead}</p>
+          <p style={heroLead}>{t('corporatePositioning.description')}</p>
         </div>
       </section>
 
@@ -107,6 +108,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <AboutStrategicModel />
     </main>
   );
 }

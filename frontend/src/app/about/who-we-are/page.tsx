@@ -27,7 +27,7 @@ const COPY_PT = {
 };
 
 export default function WhoWeArePage() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
@@ -77,7 +77,7 @@ export default function WhoWeArePage() {
         <div style={wrap}>
           <p style={eyebrow}>ELIMFILTERS · {isPortuguese ? 'QUEM SOMOS' : isSpanish ? 'QUIÉNES SOMOS' : 'WHO WE ARE'}</p>
           <h1 style={heroTitle}>{copy.heroTitle}</h1>
-          <p style={heroLead}>{copy.heroLead}</p>
+          <p style={heroLead}>{t('corporatePositioning.description')}</p>
         </div>
       </section>
 

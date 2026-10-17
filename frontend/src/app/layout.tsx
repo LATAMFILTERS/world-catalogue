@@ -26,8 +26,8 @@ import SkipNavigation from '@/components/SkipNavigation';
 
 const BASE_URL = 'https://elimfilters.com';
 const GA_ID = 'G-T7STY4TY9C';
-const BRAND_TITLE = 'ELIMFILTERS | Heavy-Duty & Industrial Filtration Systems';
-const BRAND_DESCRIPTION = 'Heavy-duty and industrial filters: diesel fuel filters, fuel water separators, air, oil, hydraulic, coolant and cabin filters engineered by ELIMFILTERS to protect engines and equipment.';
+const BRAND_TITLE = "ELIMFILTERS — Advanced Filtration Engineering & Intelligence";
+const BRAND_DESCRIPTION = "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

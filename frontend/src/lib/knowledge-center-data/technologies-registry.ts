@@ -8,6 +8,11 @@ import type { KCTechnology } from './types';
 import syntaporeHowItWorks from './how-it-works/syntapore.json';
 import hydrocoreHowItWorks from './how-it-works/hydrocore.json';
 import turbocoreHowItWorks from './how-it-works/turbocore.json';
+import syntraxHowItWorks from './how-it-works/syntrax.json';
+import nanoforceHowItWorks from './how-it-works/nanoforce.json';
+import thermacoreHowItWorks from './how-it-works/thermacore.json';
+import macrocoreHowItWorks from './how-it-works/macrocore.json';
+import intekcoreHowItWorks from './how-it-works/intekcore.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -28,6 +33,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/air-intake.html', preview: '/knowledge-center/figures/air-intake.webp', title: 'Primary and safety elements in the air cleaner', caption: 'Dust is held on the pleated primary element while the restriction indicator rises. At service the primary comes out and the safety element stays in place, keeping the clean side closed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/air-intake-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/air-intake-pt.html' }] },
     ],
+    howItWorks: macrocoreHowItWorks,
   },
   {
     slug: 'microkappa',
@@ -82,6 +88,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/air-intake.html', preview: '/knowledge-center/figures/air-intake.webp', title: 'Air cleaner housing, ducts and restriction indicator', caption: 'The housing, cover and ducts keep the clean-air boundary sealed around the elements. At service the cover and the primary come off; the safety element stays in place.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/air-intake-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/air-intake-pt.html' }] },
     ],
+    howItWorks: intekcoreHowItWorks,
   },
   {
     slug: 'syntapore',
@@ -163,6 +170,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
       { href: '/knowledge-center/figures/syntrax.html', preview: '/knowledge-center/figures/syntrax.webp', title: 'Full-flow spin-on in the lube circuit', caption: 'The oil pump sends all the oil through the filter before the main gallery that feeds the bearings; wear particles and soot are held on the pleated media. At service the spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/syntrax-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/syntrax-pt.html' }] },
       { href: '/knowledge-center/figures/compare-syntrax.html', preview: '/knowledge-center/figures/compare-syntrax.webp', title: 'Spin-on and cartridge formats', caption: 'A spin-on is replaced whole, can included. In a cartridge the housing stays on the engine: the bowl comes off and only the element is changed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/compare-syntrax-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/compare-syntrax-pt.html' }] },
     ],
+    howItWorks: syntraxHowItWorks,
   },
   {
     slug: 'nanoforce',
@@ -183,6 +191,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
       { href: '/knowledge-center/figures/nanoforce.html', preview: '/knowledge-center/figures/nanoforce.webp', title: 'Pressure-line spin-on in the hydraulic circuit', caption: 'The pump sends the fluid through the filter before the control valves, so particles are held on the pleated media before they reach close-tolerance components. At service the spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/nanoforce-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/nanoforce-pt.html' }] },
       { href: '/knowledge-center/figures/compare-nanoforce.html', preview: '/knowledge-center/figures/compare-nanoforce.webp', title: 'Spin-on and cartridge formats', caption: 'A spin-on is replaced whole, can included. In a cartridge the housing stays in the hydraulic circuit: the bowl comes off and only the element is changed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/compare-nanoforce-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/compare-nanoforce-pt.html' }] },
     ],
+    howItWorks: nanoforceHowItWorks,
   },
   {
     slug: 'thermacore',
@@ -201,5 +210,6 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/thermacore.html', preview: '/knowledge-center/figures/thermacore.webp', title: 'Coolant spin-on in the cooling circuit', caption: 'The filter holds rust, scale and other particles on its pleated media. Where an additive-bearing element is approved, an additive charge under the element dissolves gradually into the coolant. At service the spin-on is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/thermacore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/thermacore-pt.html' }] },
     ],
+    howItWorks: thermacoreHowItWorks,
   },
 ];

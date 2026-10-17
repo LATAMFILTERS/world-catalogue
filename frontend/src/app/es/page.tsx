@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import HomePage from '@/components/HomePage';
 import { languageAlternates } from '@/lib/localized-routes';
 
-const TITLE = 'ELIMFILTERS | Filtros industriales y para servicio pesado';
-const DESCRIPTION = 'Filtros para servicio pesado e industrial: filtros de combustible diésel, separadores de agua, filtros de aire, aceite, hidráulicos, refrigerante y cabina, diseñados por ELIMFILTERS para proteger motores y equipos.';
+const TITLE = "ELIMFILTERS — Ingeniería avanzada de filtración e inteligencia técnica";
+const DESCRIPTION = "ELIMFILTERS integra tecnologías de filtración, ingeniería, conocimiento especializado e inteligencia técnica digital en una plataforma internacional orientada a la protección de activos industriales, equipos pesados y aplicaciones automotrices.";
 
 export const metadata: Metadata = {
   title: TITLE,

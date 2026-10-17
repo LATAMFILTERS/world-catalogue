@@ -1,8 +1,10 @@
-# ELIMFILTERS — Industrial Filtration Engineering and Asset Protection Systems
+# ELIMFILTERS — Advanced Filtration Engineering & Intelligence
 # Source: https://elimfilters.com/llms.txt
-# Updated: 2026-10-02
+# Updated: 2026-10-15
 
-ELIMFILTERS is an industrial filtration engineering brand organized around contamination control, protected systems, equipment reliability, and total asset protection. Product filters are components within a broader protection architecture.
+ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.
+
+The corporate pillars are engineering and technology, technical intelligence, and international presence. Part Search provides product and cross-reference information; the Knowledge Center provides technical references. Industrial partnerships do not imply owned factories in multiple countries.
 
 ## Primary canonical resources
 
