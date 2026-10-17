@@ -24,6 +24,15 @@ Build US Kubota equipment-to-engine-to-genuine-filter-OEN-to-verified-aftermarke
 
 Sources 1-4 verify entry points and model-family existence, NOT filter OEM numbers or interchangeability.
 
+## Binding canonical source rule — user confirmed 2026-10-17
+**Mandatory per Kubota equipment engine fuel type and product domain:**
+1. Identify the actual Kubota equipment, exact engine, year/serial applicability and genuine Kubota OEN from manufacturer primary parts data. No dealer kit, aftermarket cross, or engine-family inference is allowed to become OEM evidence.
+2. For **diesel filtration**, check **Donaldson** first for a documented, manufactured, genuinely interchangeable filter with the same position/technical specification. If Donaldson does not manufacture a verified applicable cross, check **Fleetguard**. If neither supplies a verified applicable cross, use the **Kubota genuine OEN** as the proposed canonical base, subject to existing SKU rules and collision checks. Lack of search results is not proof of non-manufacture; unresolved cases remain blocked for review.
+3. For **gasoline engine equipment**, use the existing light-duty regional authority: **FRAM for US/non-European applications**; **MANN-FILTER for European LD**. Apply actual product/duty classification before selecting a canonical base. No diesel Donaldson rule inherited into gasoline or cross-category products.
+4. Baldwin, WIX, HIFI, Hengst, etc. may be research corroboration only where existing governance permits; they must **not** select Kubota diesel canonical base. Do not use their product codes to propose ELIMFILTERS SKUs.
+5. Never mint or publish SKU based only on dealer/aftermarket fitment claims or on an unverified OEN. Match existing ELIMFILTERS products first; enforce natural-prefix SKU and STOP_REVIEW rules from CLAUDE.md.
+6. Never equate distinct OENs or hydraulic/transmission filtration positions without Kubota-specific documentary evidence.
+
 ## Phase 1: initial model queue (CANDIDATE, model-year applicability NOT yet validated)
 | Family | Model | Phase-1 status | Motor association |
 |---|---|---|---|
