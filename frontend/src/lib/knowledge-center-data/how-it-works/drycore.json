@@ -1,0 +1,326 @@
+{
+  "en": {
+    "overview": [
+      "An air compressor draws in ambient air together with its water vapour. Compression concentrates that moisture, and as the compressed air cools in the lines, reservoirs and valves, the water condenses. Water in a pneumatic brake system corrodes reservoirs and valve bodies, washes out lubricant, makes valves stick and, in cold weather, can freeze in lines and valves. Oil carried over from the compressor adds to the contamination. DRYCORE™ controls moisture in compressed-air circuits to support pneumatic brake-system reliability.",
+      "The cartridge holds a desiccant bed: a mass of adsorbent beads that takes up water vapour from the compressed air flowing through it, so the air that reaches the reservoir is dry. The bed can only hold a limited amount of moisture, so it has to be regenerated regularly.",
+      "Regeneration happens on the purge cycle. When the system reaches its operating pressure and the compressor unloads, the purge valve under the cartridge opens and dry air flows back through the bed, carrying the collected moisture out through the valve to the atmosphere. The bed is then ready for the next loading cycle. That is why the cartridge's life depends on the purge working correctly, on the compressor's duty and cycling, and on how much oil reaches it: oil coats the desiccant and reduces its ability to take up water.",
+      "Diagnosis therefore has to separate normal condensate management from a failed purge valve, saturated desiccant, oil carryover, air leakage or excessive compressor cycling. DRYCORE™ does not promise one dew point, oil-removal efficiency or service interval across all vehicles and climates, and final service decisions follow the equipment maker's safety requirements."
+    ],
+    "figures": {
+      "drycore": {
+        "title": "Desiccant cartridge in the brake air circuit",
+        "caption": "The desiccant bed takes up the moisture in the compressed air before the reservoir and brake valves; on the purge cycle the purge valve expels the collected water. At service the cartridge is replaced.",
+        "steps": [
+          {
+            "part": "Compressor and intake",
+            "text": "The compressor draws ambient air through its intake and delivers it under pressure toward the dryer. Moving the cursor sideways changes how much moisture the air carries."
+          },
+          {
+            "part": "DRYCORE™ cartridge in section",
+            "text": "The compressed air flows through the desiccant bed inside the cartridge, which takes up the water vapour."
+          },
+          {
+            "part": "Moisture in the bed",
+            "text": "The blue marks show the moisture held by the front of the bed. The readout goes from dry to taking up moisture and to near saturation as the bed loads."
+          },
+          {
+            "part": "Purge valve",
+            "text": "On the purge cycle, the purge valve under the cartridge opens and the collected water drops out; part of the bed's capacity is recovered. The readout shows when the valve is open."
+          },
+          {
+            "part": "Air reservoir",
+            "text": "The dry air is stored in the reservoir, ready for the brake system."
+          },
+          {
+            "part": "Brake valves",
+            "text": "From the reservoir, the air supplies the brake-valve block, the components the dryer exists to protect."
+          },
+          {
+            "part": "Service",
+            "text": "Moving the cursor to the top, or pressing E, runs the service: the cartridge comes off and a new one goes on with a dry desiccant bed."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "Desiccant bed",
+        "role": "The adsorbent beads that take up water vapour from the compressed air. Their capacity is limited and is recovered on each purge cycle."
+      },
+      {
+        "name": "DRYCORE™ cartridge and head",
+        "role": "The cartridge holds the desiccant and seals against the dryer head, which stays on the vehicle. Thread and seal must match the installed dryer."
+      },
+      {
+        "name": "Purge valve",
+        "role": "Opens on the purge cycle so the backflow of dry air can carry the collected water out. A valve that does not open, or does not close, defeats the dryer."
+      },
+      {
+        "name": "Heater (where fitted, not drawn)",
+        "role": "Keeps the purge area from freezing in cold weather."
+      },
+      {
+        "name": "Compressor and intake",
+        "role": "Produce the compressed air. A dirty intake, a hot compressor or oil carryover all increase the load on the cartridge."
+      },
+      {
+        "name": "Governor (not drawn)",
+        "role": "Controls when the compressor loads and unloads, and so when the purge cycle happens."
+      },
+      {
+        "name": "Air reservoir",
+        "role": "Stores the dry air; any water that collects here is a symptom to investigate."
+      },
+      {
+        "name": "Brake valves",
+        "role": "The components that rely on clean, dry air to operate correctly."
+      }
+    ],
+    "service": [
+      "Park the vehicle safely, secure it against moving and follow the equipment maker's procedure. Release all the air pressure in the system before removing the cartridge: compressed air stores energy and can cause injury.",
+      "Confirm that the replacement is the DRYCORE™ cartridge approved for that dryer, with the correct thread, seal and service procedure.",
+      "Remove the used cartridge, clean the sealing face of the head, prepare the new seal as specified and fit the new cartridge, tightening it as the maker specifies.",
+      "Restart, build up pressure and check for leaks. Confirm that the purge valve exhausts when the compressor unloads.",
+      "After a period in service, drain the reservoirs and check for water or oil to confirm the system is working.",
+      "If water keeps appearing downstream, inspect the compressor, governor, heater, purge cycle and reservoirs before fitting another cartridge."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "Water in the reservoirs",
+        "check": "Check that the purge valve opens on every cycle, whether the desiccant is saturated, whether the compressor runs hot or works too long, and whether leaks keep it running."
+      },
+      {
+        "symptom": "Oil in the reservoirs or on the cartridge",
+        "check": "Oil carryover from the compressor. It contaminates the desiccant and shortens its life; the compressor has to be addressed, not only the cartridge."
+      },
+      {
+        "symptom": "The purge valve hisses or leaks continuously",
+        "check": "The valve is not seating: debris, wear or a fault in the valve. The bed cannot be regenerated correctly while it leaks."
+      },
+      {
+        "symptom": "The compressor cycles too often",
+        "check": "Look for air leaks downstream and check the governor. Frequent cycling leaves less time for regeneration and increases the moisture load."
+      },
+      {
+        "symptom": "Lines or valves freeze in cold weather",
+        "check": "Water is getting past the dryer, or the heater (where fitted) is not working. Find the source before the next cold period."
+      }
+    ]
+  },
+  "es": {
+    "overview": [
+      "Un compresor de aire aspira el aire ambiente junto con su vapor de agua. La compresión concentra esa humedad y, a medida que el aire comprimido se enfría en las líneas, los depósitos y las válvulas, el agua se condensa. El agua en un sistema de frenos neumáticos corroe los depósitos y los cuerpos de las válvulas, lava la lubricación, hace que las válvulas se traben y, con frío, puede congelarse en líneas y válvulas. El aceite que arrastra el compresor se suma a la contaminación. DRYCORE™ controla la humedad en los circuitos de aire comprimido para respaldar la confiabilidad del sistema de frenos neumáticos.",
+      "El cartucho contiene un lecho de desecante: una masa de esferas adsorbentes que toma el vapor de agua del aire comprimido que lo atraviesa, de modo que el aire que llega al depósito está seco. El lecho solo puede retener una cantidad limitada de humedad, así que debe regenerarse con regularidad.",
+      "La regeneración ocurre en el ciclo de purga. Cuando el sistema alcanza su presión de trabajo y el compresor deja de cargar, la válvula de purga bajo el cartucho se abre y aire seco fluye en sentido inverso por el lecho, arrastrando la humedad acumulada hacia la atmósfera a través de la válvula. El lecho queda listo para el siguiente ciclo de carga. Por eso la vida del cartucho depende de que la purga funcione bien, del trabajo y los ciclos del compresor y de cuánto aceite le llega: el aceite recubre el desecante y reduce su capacidad de tomar agua.",
+      "Por lo tanto, el diagnóstico debe distinguir el manejo normal del condensado de una válvula de purga que falla, un desecante saturado, arrastre de aceite, fugas de aire o ciclos excesivos del compresor. DRYCORE™ no promete un punto de rocío, una eficiencia de remoción de aceite ni un intervalo de servicio para todos los vehículos y climas, y las decisiones finales de servicio siguen los requisitos de seguridad del fabricante del equipo."
+    ],
+    "figures": {
+      "drycore": {
+        "title": "Cartucho de desecante en el circuito de aire de frenos",
+        "caption": "El lecho de desecante toma la humedad del aire comprimido antes del depósito y las válvulas de freno; en el ciclo de purga, la válvula de purga expulsa el agua acumulada. En el servicio se reemplaza el cartucho.",
+        "steps": [
+          {
+            "part": "Compresor y toma de aire",
+            "text": "El compresor aspira el aire ambiente por su toma y lo entrega a presión hacia el secador. Al mover el cursor de lado a lado cambia cuánta humedad trae el aire."
+          },
+          {
+            "part": "Cartucho DRYCORE™ en corte",
+            "text": "El aire comprimido atraviesa el lecho de desecante dentro del cartucho, que toma el vapor de agua."
+          },
+          {
+            "part": "Humedad en el lecho",
+            "text": "Las marcas azules muestran la humedad retenida por la parte frontal del lecho. La lectura de la figura pasa de seco a tomando humedad y a cerca de la saturación a medida que el lecho se carga."
+          },
+          {
+            "part": "Válvula de purga",
+            "text": "En el ciclo de purga, la válvula bajo el cartucho se abre y el agua acumulada cae; el lecho recupera parte de su capacidad. La lectura indica cuándo está abierta la válvula."
+          },
+          {
+            "part": "Depósito de aire",
+            "text": "El aire seco se almacena en el depósito, listo para el sistema de frenos."
+          },
+          {
+            "part": "Válvulas de freno",
+            "text": "Desde el depósito, el aire alimenta el bloque de válvulas de freno: los componentes que el secador existe para proteger."
+          },
+          {
+            "part": "Servicio",
+            "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: sale el cartucho y entra uno nuevo con el lecho de desecante seco."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "Lecho de desecante",
+        "role": "Las esferas adsorbentes que toman el vapor de agua del aire comprimido. Su capacidad es limitada y se recupera en cada ciclo de purga."
+      },
+      {
+        "name": "Cartucho DRYCORE™ y cabezal",
+        "role": "El cartucho contiene el desecante y sella contra el cabezal del secador, que permanece en el vehículo. La rosca y el sello deben corresponder al secador instalado."
+      },
+      {
+        "name": "Válvula de purga",
+        "role": "Se abre en el ciclo de purga para que el flujo inverso de aire seco arrastre el agua acumulada. Una válvula que no abre, o que no cierra, anula el secador."
+      },
+      {
+        "name": "Calefactor (cuando lo tiene, no dibujado)",
+        "role": "Evita que la zona de purga se congele con frío."
+      },
+      {
+        "name": "Compresor y toma de aire",
+        "role": "Producen el aire comprimido. Una toma sucia, un compresor caliente o el arrastre de aceite aumentan la carga sobre el cartucho."
+      },
+      {
+        "name": "Gobernador (no dibujado)",
+        "role": "Controla cuándo el compresor carga y descarga y, por lo tanto, cuándo ocurre el ciclo de purga."
+      },
+      {
+        "name": "Depósito de aire",
+        "role": "Guarda el aire seco; el agua que se acumula aquí es un síntoma que hay que investigar."
+      },
+      {
+        "name": "Válvulas de freno",
+        "role": "Los componentes que dependen de aire limpio y seco para funcionar correctamente."
+      }
+    ],
+    "service": [
+      "Estacionar el vehículo en forma segura, asegurarlo contra el movimiento y seguir el procedimiento del fabricante del equipo. Liberar toda la presión de aire del sistema antes de retirar el cartucho: el aire comprimido almacena energía y puede causar lesiones.",
+      "Confirmar que el repuesto es el cartucho DRYCORE™ aprobado para ese secador, con la rosca, el sello y el procedimiento de servicio correctos.",
+      "Retirar el cartucho usado, limpiar la cara de sellado del cabezal, preparar el sello nuevo como se indica y colocar el cartucho nuevo, apretándolo como lo especifica el fabricante.",
+      "Volver a arrancar, levantar presión y revisar fugas. Confirmar que la válvula de purga descarga cuando el compresor deja de cargar.",
+      "Después de un tiempo en servicio, drenar los depósitos y revisar si hay agua o aceite para confirmar que el sistema funciona.",
+      "Si sigue apareciendo agua aguas abajo, inspeccionar el compresor, el gobernador, el calefactor, el ciclo de purga y los depósitos antes de colocar otro cartucho."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "Agua en los depósitos",
+        "check": "Verificar que la válvula de purga abra en cada ciclo, si el desecante está saturado, si el compresor trabaja caliente o demasiado tiempo, y si hay fugas que lo mantienen funcionando."
+      },
+      {
+        "symptom": "Aceite en los depósitos o en el cartucho",
+        "check": "Arrastre de aceite del compresor. Contamina el desecante y acorta su vida; hay que atender el compresor, no solo el cartucho."
+      },
+      {
+        "symptom": "La válvula de purga silba o fuga todo el tiempo",
+        "check": "La válvula no asienta: suciedad, desgaste o una falla en la válvula. Mientras fugue, el lecho no puede regenerarse bien."
+      },
+      {
+        "symptom": "El compresor hace ciclos con demasiada frecuencia",
+        "check": "Buscar fugas de aire aguas abajo y revisar el gobernador. Los ciclos frecuentes dejan menos tiempo para la regeneración y aumentan la carga de humedad."
+      },
+      {
+        "symptom": "Líneas o válvulas que se congelan con frío",
+        "check": "Está pasando agua más allá del secador, o el calefactor (si lo tiene) no funciona. Encontrar la causa antes del siguiente período de frío."
+      }
+    ]
+  },
+  "pt": {
+    "overview": [
+      "Um compressor de ar aspira o ar ambiente junto com o seu vapor de água. A compressão concentra essa umidade e, à medida que o ar comprimido esfria nas linhas, nos reservatórios e nas válvulas, a água condensa. A água em um sistema de freios pneumáticos corrói os reservatórios e os corpos das válvulas, lava a lubrificação, faz as válvulas travarem e, no frio, pode congelar nas linhas e válvulas. O óleo arrastado pelo compressor se soma à contaminação. DRYCORE™ controla a umidade nos circuitos de ar comprimido para apoiar a confiabilidade do sistema de freios pneumáticos.",
+      "O cartucho contém um leito de dessecante: uma massa de esferas adsorventes que retira o vapor de água do ar comprimido que passa por ela, de modo que o ar que chega ao reservatório está seco. O leito só consegue reter uma quantidade limitada de umidade, por isso precisa ser regenerado regularmente.",
+      "A regeneração acontece no ciclo de purga. Quando o sistema atinge a pressão de trabalho e o compressor deixa de carregar, a válvula de purga sob o cartucho se abre e ar seco flui em sentido inverso pelo leito, levando a umidade acumulada para a atmosfera através da válvula. O leito fica pronto para o próximo ciclo de carga. Por isso a vida do cartucho depende do bom funcionamento da purga, do trabalho e dos ciclos do compressor e de quanto óleo chega até ele: o óleo recobre o dessecante e reduz sua capacidade de reter água.",
+      "Portanto, o diagnóstico precisa distinguir o manejo normal do condensado de uma válvula de purga com falha, um dessecante saturado, arraste de óleo, vazamentos de ar ou ciclos excessivos do compressor. DRYCORE™ não promete um ponto de orvalho, uma eficiência de remoção de óleo nem um intervalo de manutenção para todos os veículos e climas, e as decisões finais de manutenção seguem os requisitos de segurança do fabricante do equipamento."
+    ],
+    "figures": {
+      "drycore": {
+        "title": "Cartucho de dessecante no circuito de ar dos freios",
+        "caption": "O leito de dessecante retira a umidade do ar comprimido antes do reservatório e das válvulas de freio; no ciclo de purga, a válvula de purga expulsa a água acumulada. Na manutenção o cartucho é substituído.",
+        "steps": [
+          {
+            "part": "Compressor e tomada de ar",
+            "text": "O compressor aspira o ar ambiente pela sua tomada e o entrega sob pressão em direção ao secador. Mover o cursor para os lados muda quanta umidade o ar carrega."
+          },
+          {
+            "part": "Cartucho DRYCORE™ em corte",
+            "text": "O ar comprimido atravessa o leito de dessecante dentro do cartucho, que retira o vapor de água."
+          },
+          {
+            "part": "Umidade no leito",
+            "text": "As marcas azuis mostram a umidade retida pela parte da frente do leito. A leitura da figura passa de seco para retendo umidade e para perto da saturação à medida que o leito se carrega."
+          },
+          {
+            "part": "Válvula de purga",
+            "text": "No ciclo de purga, a válvula sob o cartucho se abre e a água acumulada cai; o leito recupera parte da sua capacidade. A leitura indica quando a válvula está aberta."
+          },
+          {
+            "part": "Reservatório de ar",
+            "text": "O ar seco é armazenado no reservatório, pronto para o sistema de freios."
+          },
+          {
+            "part": "Válvulas de freio",
+            "text": "Do reservatório, o ar alimenta o bloco de válvulas de freio: os componentes que o secador existe para proteger."
+          },
+          {
+            "part": "Manutenção",
+            "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o cartucho sai e entra um novo com o leito de dessecante seco."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "Leito de dessecante",
+        "role": "As esferas adsorventes que retiram o vapor de água do ar comprimido. Sua capacidade é limitada e é recuperada a cada ciclo de purga."
+      },
+      {
+        "name": "Cartucho DRYCORE™ e cabeçote",
+        "role": "O cartucho contém o dessecante e veda contra o cabeçote do secador, que permanece no veículo. A rosca e a vedação devem corresponder ao secador instalado."
+      },
+      {
+        "name": "Válvula de purga",
+        "role": "Abre no ciclo de purga para que o fluxo inverso de ar seco leve a água acumulada. Uma válvula que não abre, ou que não fecha, anula o secador."
+      },
+      {
+        "name": "Aquecedor (quando existe, não desenhado)",
+        "role": "Evita que a área de purga congele no frio."
+      },
+      {
+        "name": "Compressor e tomada de ar",
+        "role": "Produzem o ar comprimido. Uma tomada suja, um compressor quente ou o arraste de óleo aumentam a carga sobre o cartucho."
+      },
+      {
+        "name": "Governador (não desenhado)",
+        "role": "Controla quando o compressor carrega e descarrega e, portanto, quando acontece o ciclo de purga."
+      },
+      {
+        "name": "Reservatório de ar",
+        "role": "Guarda o ar seco; a água que se acumula aqui é um sintoma a investigar."
+      },
+      {
+        "name": "Válvulas de freio",
+        "role": "Os componentes que dependem de ar limpo e seco para funcionar corretamente."
+      }
+    ],
+    "service": [
+      "Estacionar o veículo com segurança, travá-lo contra movimento e seguir o procedimento do fabricante do equipamento. Aliviar toda a pressão de ar do sistema antes de retirar o cartucho: o ar comprimido armazena energia e pode causar ferimentos.",
+      "Confirmar que a reposição é o cartucho DRYCORE™ aprovado para esse secador, com a rosca, a vedação e o procedimento de manutenção corretos.",
+      "Retirar o cartucho usado, limpar a face de vedação do cabeçote, preparar a vedação nova conforme indicado e instalar o cartucho novo, apertando-o conforme especifica o fabricante.",
+      "Religar, formar pressão e verificar vazamentos. Confirmar que a válvula de purga descarrega quando o compressor deixa de carregar.",
+      "Depois de um período em serviço, drenar os reservatórios e verificar se há água ou óleo para confirmar que o sistema está funcionando.",
+      "Se continuar aparecendo água a jusante, inspecionar o compressor, o governador, o aquecedor, o ciclo de purga e os reservatórios antes de instalar outro cartucho."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "Água nos reservatórios",
+        "check": "Verificar se a válvula de purga abre em todo ciclo, se o dessecante está saturado, se o compressor trabalha quente ou por tempo demais, e se há vazamentos que o mantêm funcionando."
+      },
+      {
+        "symptom": "Óleo nos reservatórios ou no cartucho",
+        "check": "Arraste de óleo do compressor. Contamina o dessecante e encurta sua vida; é preciso tratar o compressor, não só o cartucho."
+      },
+      {
+        "symptom": "A válvula de purga chia ou vaza o tempo todo",
+        "check": "A válvula não está assentando: sujeira, desgaste ou uma falha na válvula. Enquanto vazar, o leito não consegue ser regenerado corretamente."
+      },
+      {
+        "symptom": "O compressor faz ciclos com frequência demais",
+        "check": "Procurar vazamentos de ar a jusante e verificar o governador. Ciclos frequentes deixam menos tempo para a regeneração e aumentam a carga de umidade."
+      },
+      {
+        "symptom": "Linhas ou válvulas congelando no frio",
+        "check": "Está passando água além do secador, ou o aquecedor (se houver) não está funcionando. Encontrar a causa antes do próximo período de frio."
+      }
+    ]
+  }
+}
