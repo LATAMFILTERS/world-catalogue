@@ -1,3 +1,4 @@
+import { ReviewedText } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import type { Metadata } from 'next';
 import Link from '@/components/LocalizedLink';
@@ -169,19 +170,13 @@ export default function IndustrialProcessPage() {
           />
 
           <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400, margin: '0 auto' }}>
-            <p style={eyebrow}>INDUSTRIAL & PROCESS</p>
-            <h1 style={heroTitle}>
-              ENGINEER THE PROCESS.
-              <span style={{ display: 'block', color: '#FFF12D' }}>PROTECT THE ASSET.</span>
+            <p style={eyebrow}><ReviewedText text={"INDUSTRIAL & PROCESS"} /></p>
+            <h1 style={heroTitle}><ReviewedText text={"ENGINEER THE PROCESS."} /><span style={{ display: 'block', color: '#FFF12D' }}><ReviewedText text={"PROTECT THE ASSET."} /></span>
             </h1>
-            <p style={heroCopy}>
-              A dedicated engineering entry point for industrial filtration, separation and process conditioning projects. Start with the operating problem, process conditions and required outcome — not with a generic filter list.
-            </p>
+            <p style={heroCopy}><ReviewedText text={"A dedicated engineering entry point for industrial filtration, separation and process conditioning projects. Start with the operating problem, process conditions and required outcome — not with a generic filter list."} /></p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 28 }}>
-              <a href={inquiryHref} data-conversion-action="industrial-engineering-review" style={primaryButton}>
-                REQUEST ENGINEERING REVIEW
-              </a>
-              <a href="#platforms" style={secondaryButton}>EXPLORE TECHNOLOGIES</a>
+              <a href={inquiryHref} data-conversion-action="industrial-engineering-review" style={primaryButton}><ReviewedText text={"REQUEST ENGINEERING REVIEW"} /></a>
+              <a href="#platforms" style={secondaryButton}><ReviewedText text={"EXPLORE TECHNOLOGIES"} /></a>
             </div>
           </div>
         </section>
@@ -190,16 +185,12 @@ export default function IndustrialProcessPage() {
           <div style={container}>
             <div style={twoCol}>
               <div>
-                <p style={eyebrow}>HIGH-VALUE INDUSTRIAL PROJECTS</p>
-                <h2 id="industrial-entry-title" style={sectionTitle}>A different entry path from heavy-duty replacement filtration.</h2>
+                <p style={eyebrow}><ReviewedText text={"HIGH-VALUE INDUSTRIAL PROJECTS"} /></p>
+                <h2 id="industrial-entry-title" style={sectionTitle}><ReviewedText text={"A different entry path from heavy-duty replacement filtration."} /></h2>
               </div>
               <div>
-                <p style={lead}>
-                  Industrial & Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and system compatibility. This page is the commercial and technical front door for plants, OEMs, EPCs, integrators, operators and industrial distributors.
-                </p>
-                <p style={bodyCopy}>
-                  Product selection is resolved through validated technology cores and application evidence. Supplier claims are not presented as ELIMFILTERS performance until approved.
-                </p>
+                <p style={lead}><ReviewedText text={"Industrial & Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and system compatibility. This page is the commercial and technical front door for plants, OEMs, EPCs, integrators, operators and industrial distributors."} /></p>
+                <p style={bodyCopy}><ReviewedText text={"Product selection is resolved through validated technology cores and application evidence. Supplier claims are not presented as ELIMFILTERS performance until approved."} /></p>
               </div>
             </div>
           </div>
@@ -210,16 +201,12 @@ export default function IndustrialProcessPage() {
             <div style={twoCol}>
               <div>
                 <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
-                <h2 id="industrial-direct-answer-title" style={sectionTitle}>What is ELIMFILTERS Industrial &amp; Process?</h2>
+                <h2 id="industrial-direct-answer-title" style={sectionTitle}><ReviewedText text={"What is ELIMFILTERS Industrial & Process?"} /></h2>
               </div>
               <div>
-                <p style={lead}>
-                  ELIMFILTERS Industrial &amp; Process is the commercial engineering division for replacement filtration, separation and treatment media used in industrial air, dust and fume, gas, fluid-conditioning and water-treatment applications.
-                </p>
-                <h3 style={{ ...sectionTitle, fontSize: 'clamp(1.4rem,2.3vw,2.2rem)', marginTop: 28 }}>Does ELIMFILTERS sell complete process equipment?</h3>
-                <p style={bodyCopy}>
-                  No. The commercial scope is centered on validated replacement media and filtration, separation or treatment elements. Housings, vessels, collectors, skids, pumps, fans, ductwork and controls are application context unless a separate ELIMFILTERS system scope is explicitly approved.
-                </p>
+                <p style={lead}><ReviewedText text={"ELIMFILTERS Industrial & Process is the commercial engineering division for replacement filtration, separation and treatment media used in industrial air, dust and fume, gas, fluid-conditioning and water-treatment applications."} /></p>
+                <h3 style={{ ...sectionTitle, fontSize: 'clamp(1.4rem,2.3vw,2.2rem)', marginTop: 28 }}><ReviewedText text={"Does ELIMFILTERS sell complete process equipment?"} /></h3>
+                <p style={bodyCopy}><ReviewedText text={"No. The commercial scope is centered on validated replacement media and filtration, separation or treatment elements. Housings, vessels, collectors, skids, pumps, fans, ductwork and controls are application context unless a separate ELIMFILTERS system scope is explicitly approved."} /></p>
               </div>
             </div>
           </div>
@@ -229,21 +216,15 @@ export default function IndustrialProcessPage() {
           <div style={container}>
             <div style={twoCol}>
               <div>
-                <p style={eyebrow}>GOVERNED TREATMENT ARCHITECTURE</p>
-                <h2 id="scope-title" style={sectionTitle}>Select the mechanism first. Keep the element separate from the equipment.</h2>
+                <p style={eyebrow}><ReviewedText text={"GOVERNED TREATMENT ARCHITECTURE"} /></p>
+                <h2 id="scope-title" style={sectionTitle}><ReviewedText text={"Select the mechanism first. Keep the element separate from the equipment."} /></h2>
               </div>
               <div>
-                <p style={lead}>
-                  Industrial &amp; Process selection starts with the carrier medium, contaminant phase, operating envelope and required downstream condition. Mixed contamination can require staged treatment rather than one universal filter family.
-                </p>
-                <p style={bodyCopy}>
-                  ELIMFILTERS commercial scope is centered on validated filtration, separation and treatment media and replacement elements. Housings, pressure vessels, collectors, skids, pumps, fans, ductwork, controls and other process equipment are application context unless a separate ELIMFILTERS system scope is explicitly approved.
-                </p>
+                <p style={lead}><ReviewedText text={"Industrial & Process selection starts with the carrier medium, contaminant phase, operating envelope and required downstream condition. Mixed contamination can require staged treatment rather than one universal filter family."} /></p>
+                <p style={bodyCopy}><ReviewedText text={"ELIMFILTERS commercial scope is centered on validated filtration, separation and treatment media and replacement elements. Housings, pressure vessels, collectors, skids, pumps, fans, ductwork, controls and other process equipment are application context unless a separate ELIMFILTERS system scope is explicitly approved."} /></p>
                 {rootCanonicalKnowledge ? (
                   <div style={{ marginTop: 20 }}>
-                    <Link href="/knowledge-center/canonical/ip-industrial-process-architecture/" style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none' }}>
-                      OPEN INDUSTRIAL &amp; PROCESS ENGINEERING REFERENCE →
-                    </Link>
+                    <Link href="/knowledge-center/canonical/ip-industrial-process-architecture/" style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none' }}><ReviewedText text={"OPEN INDUSTRIAL & PROCESS ENGINEERING REFERENCE →"} /></Link>
                   </div>
                 ) : null}
               </div>
@@ -253,19 +234,19 @@ export default function IndustrialProcessPage() {
 
         <section id="platforms" style={{ ...section, background: '#050505' }} aria-labelledby="platform-title">
           <div style={container}>
-            <p style={eyebrow}>FIVE COMMERCIAL TECHNOLOGY PLATFORMS</p>
-            <h2 id="platform-title" style={sectionTitle}>Navigate by treatment function.</h2>
+            <p style={eyebrow}><ReviewedText text={"FIVE COMMERCIAL TECHNOLOGY PLATFORMS"} /></p>
+            <h2 id="platform-title" style={sectionTitle}><ReviewedText text={"Navigate by treatment function."} /></h2>
             <div style={platformGrid}>
               {INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => (
                 <article key={platform.slug} style={platformCard}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline' }}>
                     <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
-                    <span style={platformDescriptor}>{platform.descriptor}</span>
+                    <span style={platformDescriptor}><ReviewedText text={platform.descriptor} /></span>
                   </div>
                   <Link href={industrialProcessPlatformUrl(platform.slug)} style={{ color: '#fff', textDecoration: 'none' }}>
                     <h3 style={platformMark}>{platform.name}</h3>
                   </Link>
-                  <p style={bodyCopy}>{platform.summary}</p>
+                  <p style={bodyCopy}><ReviewedText text={platform.summary} /></p>
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 22, paddingTop: 16 }}>
                     {platform.technologies.map((technology) => (
                       <Link
@@ -273,7 +254,7 @@ export default function IndustrialProcessPage() {
                         href={industrialProcessTechnologyUrl(platform.slug, technology.slug)}
                         style={{ ...familyRow, display: 'block', textDecoration: 'none' }}
                       >
-                        {technology.name === technology.title ? technology.name : `${technology.name} — ${technology.title}`}
+                        {technology.name === technology.title ? technology.name : <>{technology.name} — <ReviewedText text={technology.title} /></>}
                       </Link>
                     ))}
                   </div>
@@ -285,18 +266,16 @@ export default function IndustrialProcessPage() {
 
         <section style={{ ...section, background: '#050505' }} aria-labelledby="standards-title">
           <div style={container}>
-            <p style={eyebrow}>STANDARDS & TEST GOVERNANCE</p>
-            <h2 id="standards-title" style={sectionTitle}>Industrial elements are specified against the applicable test method.</h2>
-            <p style={{ ...lead, maxWidth: 980 }}>
-              ELIMFILTERS Industrial &amp; Process links each platform and treatment family to the governed ISO, ASTM and other test methods that actually apply to that mechanism. Standards are engineering references, not blanket certification claims.
-            </p>
+            <p style={eyebrow}><ReviewedText text={"STANDARDS & TEST GOVERNANCE"} /></p>
+            <h2 id="standards-title" style={sectionTitle}><ReviewedText text={"Industrial elements are specified against the applicable test method."} /></h2>
+            <p style={{ ...lead, maxWidth: 980 }}><ReviewedText text={"ELIMFILTERS Industrial & Process links each platform and treatment family to the governed ISO, ASTM and other test methods that actually apply to that mechanism. Standards are engineering references, not blanket certification claims."} /></p>
             <div style={platformGrid}>
               {platformStandards.map(({ platform, standards }) => (
                 <article key={platform.slug} style={platformCard}>
                   <Link href={industrialProcessPlatformUrl(platform.slug)} style={{ color: '#fff', textDecoration: 'none' }}>
                     <h3 style={{ ...platformMark, marginTop: 0 }}>{platform.name}</h3>
                   </Link>
-                  <p style={bodyCopy}>{platform.descriptor}</p>
+                  <p style={bodyCopy}><ReviewedText text={platform.descriptor} /></p>
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 18, paddingTop: 12 }}>
                     {standards.map((standard) => (
                       <div key={standard} style={specRow}><span>—</span><span>{standard}</span></div>
@@ -304,9 +283,7 @@ export default function IndustrialProcessPage() {
                   </div>
                   {platform.knowledgeCenterSlug ? (
                     <div style={{ marginTop: 18 }}>
-                      <Link href={`/knowledge-center/canonical/${platform.knowledgeCenterSlug}/`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none' }}>
-                        OPEN GOVERNED ENGINEERING REFERENCE →
-                      </Link>
+                      <Link href={`/knowledge-center/canonical/${platform.knowledgeCenterSlug}/`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none' }}><ReviewedText text={"OPEN GOVERNED ENGINEERING REFERENCE →"} /></Link>
                     </div>
                   ) : null}
                 </article>
@@ -319,14 +296,14 @@ export default function IndustrialProcessPage() {
           <div style={container}>
             <div style={twoCol}>
               <div>
-                <p style={eyebrow}>ENGINEERING QUALIFICATION</p>
-                <h2 id="qualification-title" style={sectionTitle}>What we need to evaluate an industrial project.</h2>
+                <p style={eyebrow}><ReviewedText text={"ENGINEERING QUALIFICATION"} /></p>
+                <h2 id="qualification-title" style={sectionTitle}><ReviewedText text={"What we need to evaluate an industrial project."} /></h2>
               </div>
               <div style={{ display: 'grid', gap: 0 }}>
                 {projectInputs.map((item, index) => (
                   <div key={item} style={requirementRow}>
                     <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
-                    <span>{item}</span>
+                    <span><ReviewedText text={item} /></span>
                   </div>
                 ))}
               </div>
@@ -336,18 +313,12 @@ export default function IndustrialProcessPage() {
 
         <section style={{ ...section, borderTop: '1px solid rgba(255,241,45,0.22)' }}>
           <div style={{ ...container, textAlign: 'center' }}>
-            <p style={{ ...eyebrow, textAlign: 'center' }}>INDUSTRIAL PROJECT INTAKE</p>
-            <h2 style={{ ...sectionTitle, maxWidth: 900, margin: '0 auto 20px' }}>Bring us the operating conditions. We resolve the filtration architecture.</h2>
-            <p style={{ ...lead, maxWidth: 820, margin: '0 auto 28px', textAlign: 'center' }}>
-              For new installations, difficult contamination problems, retrofit programs, OEM requirements and recurring industrial supply opportunities.
-            </p>
-            <a href={inquiryHref} data-conversion-action="industrial-engineering-review" style={primaryButton}>
-              START INDUSTRIAL ENGINEERING REVIEW
-            </a>
+            <p style={{ ...eyebrow, textAlign: 'center' }}><ReviewedText text={"INDUSTRIAL PROJECT INTAKE"} /></p>
+            <h2 style={{ ...sectionTitle, maxWidth: 900, margin: '0 auto 20px' }}><ReviewedText text={"Bring us the operating conditions. We resolve the filtration architecture."} /></h2>
+            <p style={{ ...lead, maxWidth: 820, margin: '0 auto 28px', textAlign: 'center' }}><ReviewedText text={"For new installations, difficult contamination problems, retrofit programs, OEM requirements and recurring industrial supply opportunities."} /></p>
+            <a href={inquiryHref} data-conversion-action="industrial-engineering-review" style={primaryButton}><ReviewedText text={"START INDUSTRIAL ENGINEERING REVIEW"} /></a>
             <div style={{ marginTop: 18 }}>
-              <Link href="/contact/" style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14 }}>
-                General contact
-              </Link>
+              <Link href="/contact/" style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14 }}><ReviewedText text={"General contact"} /></Link>
             </div>
           </div>
         </section>
