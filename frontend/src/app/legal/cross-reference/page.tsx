@@ -1,5 +1,7 @@
 'use client';
 
+import { ReviewedText } from '@/components/ReviewedText';
+
 import '@/i18n';
 
 import Link from '@/components/LocalizedLink';
@@ -156,14 +158,10 @@ export default function CrossReferencePolicyPage() {
         <section style={{ padding: '4rem 8% 3rem', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.18em', color: '#FFF12D', opacity: 0.8, marginBottom: '1rem', textTransform: 'uppercase' }}>
-              {'Legal · Cross Reference'}
+              <ReviewedText text={'Legal · Cross Reference'} />
             </p>
-            <h1 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', margin: '0 0 1rem', lineHeight: 1.15, textAlign: 'justify' }}>
-              Cross Reference Policy
-            </h1>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
-              Last updated: June 2026
-            </p>
+            <h1 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', margin: '0 0 1rem', lineHeight: 1.15, textAlign: 'justify' }}><ReviewedText text={"Cross Reference Policy"} /></h1>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', margin: 0 }}><ReviewedText text={"Last updated: June 2026"} /></p>
           </motion.div>
         </section>
 
@@ -179,11 +177,11 @@ export default function CrossReferencePolicyPage() {
               style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
             >
               <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem' }}>
-                {s.title}
+                <ReviewedText text={s.title} />
               </h2>
               {s.body.split('\n\n').map((para, j) => (
                 <p key={j} style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                  {para}
+                  <ReviewedText text={para} />
                 </p>
               ))}
             </motion.section>
@@ -196,9 +194,7 @@ export default function CrossReferencePolicyPage() {
             transition={{ duration: 0.5 }}
             style={{ marginBottom: '2.5rem' }}
           >
-            <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '1.5rem' }}>
-              Relationship Classification Types
-            </h2>
+            <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '1.5rem' }}><ReviewedText text={"Relationship Classification Types"} /></h2>
             <div style={{ display: 'grid', gap: '1rem' }}>
               {RELATIONSHIP_TYPES.map((rt, i) => (
                 <motion.div
@@ -213,12 +209,12 @@ export default function CrossReferencePolicyPage() {
                       {rt.code}
                     </span>
                     <h3 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.95rem', color: '#fff', margin: 0 }}>
-                      {rt.label}
+                      <ReviewedText text={rt.label} />
                     </h3>
                   </div>
                   {rt.body.split('\n\n').map((para, j) => (
                     <p key={j} style={{ fontFamily: 'var(--font-body)', fontSize: '0.88rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, margin: '0 0 0.5rem' }}>
-                      {para}
+                      <ReviewedText text={para} />
                     </p>
                   ))}
                 </motion.div>
@@ -236,27 +232,25 @@ export default function CrossReferencePolicyPage() {
               style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
             >
               <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem' }}>
-                {s.title}
+                <ReviewedText text={s.title} />
               </h2>
               {s.body.split('\n\n').map((para, j) => (
                 <p key={j} style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                  {para}
+                  <ReviewedText text={para} />
                 </p>
               ))}
             </motion.section>
           ))}
 
           <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,241,45,0.12)' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.3)', marginBottom: '1rem', textTransform: 'uppercase' }}>
-              Related Legal Documents
-            </p>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.3)', marginBottom: '1rem', textTransform: 'uppercase' }}><ReviewedText text={"Related Legal Documents"} /></p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
               {RELATED.map((r) => (
                 <Link key={r.href} href={r.href} style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', padding: '0.4rem 0.85rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.4)'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)'; }}
                 >
-                  {r.label}
+                  <ReviewedText text={r.label} />
                 </Link>
               ))}
             </div>

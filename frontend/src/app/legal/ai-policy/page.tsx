@@ -1,5 +1,7 @@
 'use client';
 
+import { ReviewedText } from '@/components/ReviewedText';
+
 import '@/i18n';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -88,14 +90,14 @@ export default function AIUsePolicyPage() {
         </div>
         <section style={{ padding: '4rem 8% 3rem', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
           <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
-            <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem', letterSpacing:'0.18em', color:'#FFF12D', opacity:0.8, marginBottom:'1rem', textTransform:'uppercase' }}>{'Legal · Computational Engineering'}</p>
-            <h1 style={{ fontFamily:'var(--font-body)', fontWeight:700, fontSize:'clamp(2rem, 4vw, 3rem)', color:'#fff', margin:'0 0 1rem', lineHeight:1.15 }}>AI & Computational Modeling Policy</h1>
-            <p style={{ fontFamily:'var(--font-body)', fontSize:'0.9rem', color:'rgba(255,255,255,0.45)', margin:0 }}>Last updated: August 2026</p>
+            <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem', letterSpacing:'0.18em', color:'#FFF12D', opacity:0.8, marginBottom:'1rem', textTransform:'uppercase' }}><ReviewedText text={'Legal · Computational Engineering'} /></p>
+            <h1 style={{ fontFamily:'var(--font-body)', fontWeight:700, fontSize:'clamp(2rem, 4vw, 3rem)', color:'#fff', margin:'0 0 1rem', lineHeight:1.15 }}><ReviewedText text={"AI & Computational Modeling Policy"} /></h1>
+            <p style={{ fontFamily:'var(--font-body)', fontSize:'0.9rem', color:'rgba(255,255,255,0.45)', margin:0 }}><ReviewedText text={"Last updated: August 2026"} /></p>
           </motion.div>
         </section>
         <div style={{ maxWidth:'820px', margin:'0 auto', padding:'4rem 8%' }}>
-          {SECTIONS.map((s,i)=><motion.section key={i} initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{duration:0.4,delay:i*0.04}} style={{marginBottom:'2.5rem',paddingBottom:'2.5rem',borderBottom:'1px solid rgba(255,255,255,0.05)'}}><h2 style={{fontFamily:'var(--font-body)',fontWeight:700,fontSize:'1.05rem',color:'#FFF12D',marginBottom:'0.9rem',lineHeight:1.3}}>{s.title}</h2>{s.body.split('\n\n').map((para,j)=><p key={j} style={{fontFamily:'var(--font-body)',fontSize:'0.92rem',color:'rgba(255,255,255,0.7)',lineHeight:1.8,marginBottom:'0.75rem'}}>{para}</p>)}</motion.section>)}
-          <div style={{marginTop:'3rem',paddingTop:'2rem',borderTop:'1px solid rgba(255,241,45,0.12)'}}><p style={{fontFamily:'JetBrains Mono, monospace',fontSize:'0.7rem',letterSpacing:'0.14em',color:'rgba(255,255,255,0.3)',marginBottom:'1rem',textTransform:'uppercase'}}>Related Legal Documents</p><div style={{display:'flex',flexWrap:'wrap',gap:'0.75rem'}}>{RELATED.map(r=><Link key={r.href} href={r.href} style={{fontFamily:'var(--font-body)',fontSize:'0.82rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',padding:'0.4rem 0.85rem',border:'1px solid rgba(255,255,255,0.1)',borderRadius:'4px'}}>{r.label}</Link>)}</div></div>
+          {SECTIONS.map((s,i)=><motion.section key={i} initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{duration:0.4,delay:i*0.04}} style={{marginBottom:'2.5rem',paddingBottom:'2.5rem',borderBottom:'1px solid rgba(255,255,255,0.05)'}}><h2 style={{fontFamily:'var(--font-body)',fontWeight:700,fontSize:'1.05rem',color:'#FFF12D',marginBottom:'0.9rem',lineHeight:1.3}}><ReviewedText text={s.title} /></h2>{s.body.split('\n\n').map((para,j)=><p key={j} style={{fontFamily:'var(--font-body)',fontSize:'0.92rem',color:'rgba(255,255,255,0.7)',lineHeight:1.8,marginBottom:'0.75rem'}}><ReviewedText text={para} /></p>)}</motion.section>)}
+          <div style={{marginTop:'3rem',paddingTop:'2rem',borderTop:'1px solid rgba(255,241,45,0.12)'}}><p style={{fontFamily:'JetBrains Mono, monospace',fontSize:'0.7rem',letterSpacing:'0.14em',color:'rgba(255,255,255,0.3)',marginBottom:'1rem',textTransform:'uppercase'}}><ReviewedText text={"Related Legal Documents"} /></p><div style={{display:'flex',flexWrap:'wrap',gap:'0.75rem'}}>{RELATED.map(r=><Link key={r.href} href={r.href} style={{fontFamily:'var(--font-body)',fontSize:'0.82rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',padding:'0.4rem 0.85rem',border:'1px solid rgba(255,255,255,0.1)',borderRadius:'4px'}}><ReviewedText text={r.label} /></Link>)}</div></div>
         </div>
       </main>
       <Footer />

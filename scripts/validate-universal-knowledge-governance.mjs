@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { legalIdentificationEvidenceScanText } from '../frontend/scripts/legal-identification-evidence-scan.mjs';
 
 const root = process.cwd().endsWith(`${path.sep}frontend`)
   ? path.resolve(process.cwd(), '..')
@@ -42,7 +43,10 @@ function walk(dir, allowedExts, files = []) {
 }
 
 function scan(file, patterns, reason) {
-  const text = fs.readFileSync(file, 'utf8');
+  const raw = fs.readFileSync(file, 'utf8');
+  const text = outputMode && patterns === sourceSignatures
+    ? legalIdentificationEvidenceScanText(file, raw, frontendRoot)
+    : raw;
   for (const pattern of patterns) {
     if (pattern.test(text)) violations.push(`${path.relative(root, file)} :: ${reason}: ${pattern}`);
   }
