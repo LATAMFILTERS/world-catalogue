@@ -54,10 +54,12 @@ export default function HowItWorks({ tech }: { tech: KCTechnology }) {
           const pages = [{ lang: 'en', label: LANG_LABELS.en, href: figure.href }, ...(figure.translations ?? [])];
           const main = pages.find((p) => p.lang === lang) ?? pages[0];
           const title = local?.title ?? figure.title;
+          // each translated figure page has its own preview next to the English one (<name>-es.webp, <name>-pt.webp)
+          const preview = main.lang === 'en' ? figure.preview : figure.preview.replace(/\.webp$/, `-${main.lang}.webp`);
           return (
             <div key={figure.href} style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
               <a href={main.href} hrefLang={main.lang} style={{ textDecoration: 'none', display: 'block' }}>
-                <img src={figure.preview} alt={title} loading="lazy" width={993} height={956} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src={preview} alt={title} loading="lazy" width={993} height={956} style={{ width: '100%', height: 'auto', display: 'block' }} />
                 <div style={{ padding: '0.9rem 1rem 0' }}>
                   <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.35rem' }}>{title}</p>
                   <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>{local?.caption ?? figure.caption}</p>
