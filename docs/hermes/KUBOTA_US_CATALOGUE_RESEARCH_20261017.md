@@ -24,19 +24,16 @@ Build US Kubota equipment-to-engine-to-genuine-filter-OEN-to-verified-aftermarke
 
 Sources 1-4 verify entry points and model-family existence, NOT filter OEM numbers or interchangeability.
 
-## Binding canonical source rule — user confirmed 2026-10-17
-**Mandatory per Kubota equipment engine fuel type and product domain:**
-1. Identify the actual Kubota equipment, exact engine, year/serial applicability and genuine Kubota OEN from manufacturer primary parts data. No dealer kit, aftermarket cross, or engine-family inference is allowed to become OEM evidence.
-2. For **diesel filtration**, check **Donaldson** first for a documented, manufactured, genuinely interchangeable filter with the same position/technical specification. If Donaldson does not manufacture a verified applicable cross, check **Fleetguard**. If neither supplies a verified applicable cross, use the **Kubota genuine OEN** as the proposed canonical base, subject to existing SKU rules and collision checks. Lack of search results is not proof of non-manufacture; unresolved cases remain blocked for review.
-3. For **gasoline engine equipment**, use the existing light-duty regional authority: **FRAM for US/non-European applications**; **MANN-FILTER for European LD**. Apply actual product/duty classification before selecting a canonical base. No diesel Donaldson rule inherited into gasoline or cross-category products.
-4. Baldwin, WIX, HIFI, Hengst, etc. may be research corroboration only where existing governance permits; they must **not** select Kubota diesel canonical base. Do not use their product codes to propose ELIMFILTERS SKUs.
-5. Never mint or publish SKU based only on dealer/aftermarket fitment claims or on an unverified OEN. Match existing ELIMFILTERS products first; enforce natural-prefix SKU and STOP_REVIEW rules from CLAUDE.md.
-6. Never equate distinct OENs or hydraulic/transmission filtration positions without Kubota-specific documentary evidence.
+## Binding canonical source rule — updated by owner 2026-10-17
+1. Identify genuine Kubota OEM/OEN from official manufacturer parts evidence scoped to exact model, engine, filter position, year, and serial range.
+2. For **diesel equipment**, search Donaldson FIRST. If the first bounded investigation yields no **verified** matching Donaldson cross but a **verified Fleetguard OEN cross** exists, choose Fleetguard immediately as canonical base; **do not require proof that Donaldson does not manufacture it**. Record Donaldson as NOT_VERIFIED_IN_FIRST_PASS rather than DOES_NOT_MANUFACTURE. If neither cross is verified, the verified Kubota OEN may be the fallback canonical base under existing SKU governance.
+3. For gasoline/light duty, follow existing regional FRAM / MANN source authority and duty classification; do not apply diesel fallback blindly.
+4. Once genuine OEN, direct corresponding manufacturer cross, correct application/position, product identity and collision safety are CERTIFIED, **owner approval is automatic**. Generate proposed SKU with governed family prefix + final four numeric digits of the selected base, preserving leading zeros. Reuse identical existing product/SKU rather than duplicate it.
+5. Automatic approval does not waive exact fitment/spec, manufacturer evidence, product identity, SKU conflict or authorized catalogue write requirements. If any gate fails, record BLOCKED with specific reason. Research proposal in GitHub is not live SKU insertion.
+6. Baldwin, WIX, HIFI, Hengst etc. must not become the base for these diesel Kubota parts. Distinct OEN and hydraulic/transmission positions are never merged without OEM evidence.
 
-## Owner rule — automatic approval after certification (2026-10-17)
-When a genuine Kubota OEN and a Donaldson (priority) or eligible Fleetguard (only after Donaldson nonmanufacture is documented) cross are **CERTIFIED** by authoritative manufacturer evidence, and filter position, physical/technical fitment, exact engine/model/year/serial scope, canonical-source priority, existing-product identity and natural SKU collision gates all pass, mark the Kubota application/cross and matching existing ELIMFILTERS product link **APPROVED automatically without further owner sign-off**.
-
-Automatic owner approval is NOT automatic factual certification. Third-party/reseller candidate crosses, ambiguous classification, conflicting OENs, absent manufacturer proof, and unresolved collisions remain REVIEW_REQUIRED/BLOCKED. Never convert absence of a web result into proof Donaldson does not manufacture a filter. Do not create a new product or publish an SKU solely from approval of a research candidate; application of this rule to production data still requires the existing authorized, auditable catalogue write path and access to the live source of truth. No extra parallel scheduler/worker or bypass of established review gates.
+## Owner rule — auto-approval as part of research closure
+When the above verification gates pass, mark cross and matching catalogue mapping as APPROVED automatically without asking owner for each filter. When an OEM → Fleetguard cross is verified and Donaldson has no verified result in the first pass, do not wait for a separate Donaldson non-manufacture investigation. Unverified third-party candidate, wrong filter role, unknown collision, or disputed OEM applicability are not yet certified. Route writes through the established authorized catalogue mechanism only. Do not add a parallel worker, schedule, or table.
 
 ## Phase 1: initial model queue (CANDIDATE, model-year applicability NOT yet validated)
 | Family | Model | Phase-1 status | Motor association |
