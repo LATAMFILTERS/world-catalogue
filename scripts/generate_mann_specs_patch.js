@@ -37,7 +37,7 @@ const MANN_SKU_PREFIXES = {
 const MANN_PREFIX_TYPE = [
   ['CUK',  'Cabin Filter'],
   ['FP',   'Cabin Filter'],
-  ['CU',   'Air Filter'],
+  ['CU',   'Cabin Filter'],
   ['WK',   'Fuel Filter'],
   ['ML',   'Oil Filter'],
   ['HU',   'Oil Filter'],
@@ -103,44 +103,26 @@ function parseMm(val) {
  * Returns { outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm, thread_size }
  */
 function mapDimensions(dims) {
-  const out = {
-    outer_diameter_mm:  null,
-    height_mm:          null,
-    gasket_od_mm:       null,
-    gasket_id_mm:       null,
-    thread_size:        null,
-  };
-  if (!dims || typeof dims !== 'object') return out;
-
-  for (const [key, val] of Object.entries(dims)) {
-    const k = key.trim();
-
-    // Height / Höhe / H
-    if (/^(H|Height|H\u00f6he)$/i.test(k)) {
-      out.height_mm = parseMm(val);
-    }
-    // Outer diameter / Außendurchmesser / A
-    else if (/^(A|Outer diameter|Au.?endurchmesser)$/i.test(k)) {
-      out.outer_diameter_mm = parseMm(val);
-    }
-    // Thread / G
-    else if (/^G$/i.test(k)) {
-      // G is usually "3/4-16 UNF" or "M20x1,5"
-      out.thread_size = String(val).trim() || null;
-    }
-    // Gasket OD / B
-    else if (/^B$/i.test(k)) {
-      out.gasket_od_mm = parseMm(val);
-    }
-    // Gasket ID / Inner diameter / C
-    else if (/^(C|Inner diameter|Innendurchmesser)$/i.test(k)) {
-      out.gasket_id_mm = parseMm(val);
-    }
+  const out={outer_diameter_mm:null,height_mm:null,gasket_od_mm:null,gasket_id_mm:null,thread_size:null};
+  if (!dims || typeof dims!=='object') return out;
+  for (const [key,value] of Object.entries(dims)) {
+    const k=key.trim();
+    if (/^(H|Height|Höhe)$/i.test(k)) out.height_mm=parseMm(value);
+    else if (/^(Outer diameter|Au.?endurchmesser)$/i.test(k)) out.outer_diameter_mm=parseMm(value);
+    else if (/^(G|Thread|Thread size)$/i.test(k)) out.thread_size=String(value??'').trim()||null;
+    else if (/^Gasket (outer diameter|OD)$/i.test(k)) out.gasket_od_mm=parseMm(value);
+    else if (/^Gasket (inner diameter|ID)$/i.test(k)) out.gasket_id_mm=parseMm(value);
+    else throw new Error('DIMENSION_SEMANTICS_REQUIRED: '+k);
   }
-
   return out;
 }
-
+function resolveType(mannCode,declaredType) {
+  const aliases={'Cabin Air Filter':'Cabin Filter',air:'Air Filter',cabin:'Cabin Filter',oil:'Oil Filter',fuel:'Fuel Filter'};
+  const declared=aliases[declaredType]||declaredType||null,inferred=inferType(mannCode);
+  if (declared&&!MANN_SKU_PREFIXES[declared]) return null;
+  if (declared&&inferred&&declared!==inferred) return null;
+  return declared||inferred;
+}
 function inferInstallationType(filterType) {
   if (!filterType) return null;
   const ft = filterType.toLowerCase();
@@ -198,16 +180,13 @@ function main() {
   console.log(`📊 Combined unique records to process: ${allRecordsMap.size}`);
 
   const patches = [];
-  const stats = { total: 0, skipped_no_sku: 0, skipped_no_type: 0, skipped_no_dims: 0, ok: 0 };
+  const stats = { total: 0, skipped_no_sku: 0, skipped_no_type: 0, skipped_no_dims: 0, skipped_ambiguous_dims: 0, ok: 0 };
 
   for (const [mannCode, record] of allRecordsMap.entries()) {
     stats.total++;
 
     // Resolve filter type
-    let filterType = record.filter_type || '';
-    if (!MANN_SKU_PREFIXES[filterType]) {
-      filterType = inferType(mannCode);
-    }
+    const filterType = resolveType(mannCode,record.filter_type);
     if (!filterType || !MANN_SKU_PREFIXES[filterType]) {
       stats.skipped_no_type++;
       continue;
@@ -221,7 +200,13 @@ function main() {
     }
 
     // Map dimensions
-    const dims    = mapDimensions(record.dimensions || record.dims_inline || {});
+    let dims;
+    try { dims=mapDimensions(record.dimensions || record.dims_inline || {}); }
+    catch (error) {
+      if (!error.message.startsWith('DIMENSION_SEMANTICS_REQUIRED:')) throw error;
+      stats.skipped_ambiguous_dims++;
+      continue;
+    }
     const hasAny  = Object.values(dims).some(v => v != null);
     if (!hasAny) {
       stats.skipped_no_dims++;
@@ -248,6 +233,7 @@ function main() {
     stats.ok++;
   }
 
+  console.log('   Skipped (ambiguous dimension semantics): '+stats.skipped_ambiguous_dims);
   console.log('\n📊 Stats:');
   console.log(`   Total records:       ${stats.total}`);
   console.log(`   Skipped (no sku):    ${stats.skipped_no_sku}`);
@@ -266,4 +252,5 @@ function main() {
   console.log(`\n✅ Written ${patches.length} patches → ${OUTPUT_FILE}`);
 }
 
-main();
+if (require.main === module) main();
+module.exports={inferType,resolveType,mapDimensions,generateSku};
