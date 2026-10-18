@@ -57,5 +57,6 @@ try{
  console.log(JSON.stringify({status:'PROVISIONED',role,database:'catalogo_elimfilters',port:5440,select_only:true,credential_file_written:true}));
 }catch(error){
  if(!committed)await admin.query('ROLLBACK').catch(()=>{});
+ fs.rmSync(credentialFile+'.tmp',{force:true});
  console.error('BLOCKED:',error.code||error.message);process.exitCode=1;
 }finally{await admin.end().catch(()=>{});}
