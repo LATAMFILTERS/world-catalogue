@@ -13,6 +13,8 @@ import nanoforceHowItWorks from './how-it-works/nanoforce.json';
 import thermacoreHowItWorks from './how-it-works/thermacore.json';
 import macrocoreHowItWorks from './how-it-works/macrocore.json';
 import intekcoreHowItWorks from './how-it-works/intekcore.json';
+import microkappaHowItWorks from './how-it-works/microkappa.json';
+import drycoreHowItWorks from './how-it-works/drycore.json';
 
 export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
@@ -52,6 +54,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/microkappa.html', preview: '/knowledge-center/figures/microkappa.webp', title: 'Pleated panel in the cabin HVAC housing', caption: 'Outside air passes the pleated panel, which holds dust and pollen on its upstream face before the blower carries the air to the cabin. At service the panel slides out and is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/microkappa-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/microkappa-pt.html' }] },
     ],
+    howItWorks: microkappaHowItWorks,
   },
   {
     slug: 'drycore',
@@ -70,6 +73,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     figures: [
       { href: '/knowledge-center/figures/drycore.html', preview: '/knowledge-center/figures/drycore.webp', title: 'Desiccant cartridge in the brake air circuit', caption: 'The desiccant bed takes up the moisture in the compressed air before the reservoir and brake valves; on the purge cycle the purge valve expels the collected water. At service the cartridge is replaced.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/drycore-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/drycore-pt.html' }] },
     ],
+    howItWorks: drycoreHowItWorks,
   },
   {
     slug: 'intekcore',

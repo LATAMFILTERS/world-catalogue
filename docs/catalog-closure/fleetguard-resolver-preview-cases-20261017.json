@@ -1,0 +1,644 @@
+{
+  "at": "2026-10-17T03:33:44.246Z",
+  "scope": "Review-only case manifest. Not approval or installer.",
+  "definition_sha256": "9b2226d9f6689ca83447e7d161070ab7522682bb0d36d3bf1f65587c5bc64070",
+  "preview_sha256": "cb9aaf765e9c1e9f9bd5ae9f978c35e178649df2120f146e6d07fa09b06d2e48",
+  "cases": [
+    {
+      "sku": "EF95112",
+      "base": "FF5112",
+      "fingerprint": "843b96a37c17d2fd16e168e04312362b",
+      "source_url": "https://www.fleetguard.com/product/FF5112",
+      "evidence_hash": "82845359d9a851d8b1d26585425f051878a8f04cfd30008f20bf63a7585dc3b4"
+    },
+    {
+      "sku": "ES90018",
+      "base": "FS20018",
+      "fingerprint": "218a6f700fb1e6da5d462742dd3e1458",
+      "source_url": "https://www.fleetguard.com/es/product/fs20018/01t5x000008FGWyAAO",
+      "evidence_hash": "d96ab090e9b78e5f987df29c885a5807c121e826622471edfe9f076c97be2bb7"
+    },
+    {
+      "sku": "ES99731",
+      "base": "FS19731",
+      "fingerprint": "41b5ae9979b2b768480b8fd1c9743701",
+      "source_url": "https://www.fleetguard.com/es/product/fs19731/01t5x000008FDEPAA4",
+      "evidence_hash": "193c0cde49921e15051af9cf47a8a8dc445b14e2c2385cbc0b6c2966620000d5"
+    },
+    {
+      "sku": "ES99761",
+      "base": "FS19761",
+      "fingerprint": "11cf7d1d66fcc7c9335196e41b4b79cf",
+      "source_url": "https://www.fleetguard.com/es/product/fs19761/01t5x000008FE28AAG",
+      "evidence_hash": "e49e3de97364e703fceba31fb9f4af5e047e7aa2a66e2bee39c490707b79193b"
+    },
+    {
+      "sku": "ET93027",
+      "base": "FH23027",
+      "fingerprint": "aaa4a80b0e3a48492797e1df8cd8c12d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23027/01t5x000008FDUSAA4",
+      "evidence_hash": "e9f58b48f8ed2138c42ebe1cf0997ed1f8ed0b62b669ad176d7ccac2ef6e42df"
+    },
+    {
+      "sku": "ET93029",
+      "base": "FH23029",
+      "fingerprint": "4db0c9addac2d1c84ac66ff72b412555",
+      "source_url": "https://www.fleetguard.com/es/product/fh23029/01t5x000008FDUTAA4",
+      "evidence_hash": "61767f81a93aba05a465094b90e5aae13a66091098d52280a4de99ed4b96e3fb"
+    },
+    {
+      "sku": "ET93030",
+      "base": "FH23030",
+      "fingerprint": "af777edddebc30d7673264f87fec63e3",
+      "source_url": "https://www.fleetguard.com/es/product/fh23030/01t5x000008FDV5AAO",
+      "evidence_hash": "f701eab0678fd432da12a53b9fcdce57ee81270fc9aefb04a9ecbfc3062deb54"
+    },
+    {
+      "sku": "ET93031",
+      "base": "FH23031",
+      "fingerprint": "6413626d22d46a4986c077eff7d5c2e3",
+      "source_url": "https://www.fleetguard.com/es/product/fh23031/01t5x000008FDV6AAO",
+      "evidence_hash": "e32b93eb73fc4d3c67a079f6e46a9effab7944bff03f75483af6f32880411c74"
+    },
+    {
+      "sku": "ET93032",
+      "base": "FH23032",
+      "fingerprint": "9a4f72a87528cb01b8bbe6a44e4e1664",
+      "source_url": "https://www.fleetguard.com/es/product/fh23032/01t5x000008FDV7AAO",
+      "evidence_hash": "bf399dd504d5a2afbd3c390c8c26f59052659a51a8885b6468b17e2e3de14958"
+    },
+    {
+      "sku": "ET93038",
+      "base": "FH23038",
+      "fingerprint": "669b86c07499c8c76b34eae15cca9e60",
+      "source_url": "https://www.fleetguard.com/es/product/fh23038/01t5x000008FE0jAAG",
+      "evidence_hash": "6c9c1d69a85bfc594aaf70f5fabdb063dcb22529a6f3697cf54d0ba699819702"
+    },
+    {
+      "sku": "ET93039",
+      "base": "FH23039",
+      "fingerprint": "4c0a59757d68f4e521409215b18ae706",
+      "source_url": "https://www.fleetguard.com/es/product/fh23039/01t5x000008FE0kAAG",
+      "evidence_hash": "18f9d403ca3e356709b6ec2114cf048a6875793bdd9de0718bb80bc0d8ae5900"
+    },
+    {
+      "sku": "ET93040",
+      "base": "FH23040",
+      "fingerprint": "ec75b5958ea4eb17ccb49ece88662d62",
+      "source_url": "https://www.fleetguard.com/es/product/fh23040/01t5x000008FE0lAAG",
+      "evidence_hash": "80fd873f3302bf4edcb1d5eed3953b4ebc290c82731629d7afc14d1538fc2b1d"
+    },
+    {
+      "sku": "ET93041",
+      "base": "FH23041",
+      "fingerprint": "702757e59bae403f4f8fd005740f50e5",
+      "source_url": "https://www.fleetguard.com/es/product/fh23041/01t5x000008FDVVAA4",
+      "evidence_hash": "92f3eba14d2d89cd1ef5eb3404388d809e52ff94796cce1ecff009a511a1da66"
+    },
+    {
+      "sku": "ET93042",
+      "base": "FH23042",
+      "fingerprint": "4625f857e73ab70235e2247ea8b09dd7",
+      "source_url": "https://www.fleetguard.com/es/product/fh23042/01t5x000008FE0mAAG",
+      "evidence_hash": "11e1973fb01dc11746fa2d75795d75893947e70885dad745e18191575c9ba36f"
+    },
+    {
+      "sku": "ET93045",
+      "base": "FH23045",
+      "fingerprint": "6f4d662fa0ed9a89a3a478d28af95f3a",
+      "source_url": "https://www.fleetguard.com/es/product/fh23045/01t5x000008FDVWAA4",
+      "evidence_hash": "37a70475efc5161e7851e67c6c681a61a455429876b65d99bcac256d1cce3299"
+    },
+    {
+      "sku": "ET93049",
+      "base": "FH23049",
+      "fingerprint": "34a5937a69c51a89f7429f4d33f410b8",
+      "source_url": "https://www.fleetguard.com/es/product/fh23049/01t5x000008FE3NAAW",
+      "evidence_hash": "c0b0a5108c8b08ce33554cf97d65b7c9594a022383c4d13bc32b65abdcd78ca3"
+    },
+    {
+      "sku": "ET93050",
+      "base": "FH23050",
+      "fingerprint": "456c61af0d7f4c0341e8df3cf4337f79",
+      "source_url": "https://www.fleetguard.com/es/product/fh23050/01t5x000008FE23AAG",
+      "evidence_hash": "933fb4ff31902c219e99f70dffe8e4ad81a1a5483b1560c1895678bc50549002"
+    },
+    {
+      "sku": "ET93054",
+      "base": "FH23054",
+      "fingerprint": "92aa9f96385503ddb2cb22c245808f99",
+      "source_url": "https://www.fleetguard.com/es/product/fh23054/01t5x000008FE24AAG",
+      "evidence_hash": "2c69d7bbde0678fc3594c0465b127f78102440977d9beabd61948e3da65dfea9"
+    },
+    {
+      "sku": "ET93060",
+      "base": "FH23060",
+      "fingerprint": "aa7c8026da1bcdfda88994d47933103a",
+      "source_url": "https://www.fleetguard.com/es/product/fh23060/01t5x000008FCMnAAO",
+      "evidence_hash": "dcfc3215510bd413b213a01502da990568c4d65b9b3ba45c3372fcb63c8ddbac"
+    },
+    {
+      "sku": "ET93061",
+      "base": "FH23061",
+      "fingerprint": "aa3705ebe5a049fdb73b7011ae69e0e0",
+      "source_url": "https://www.fleetguard.com/es/product/fh23061/01t5x000008FCMoAAO",
+      "evidence_hash": "68f2e14b2e4098b9c5ddcec3b94c8655a59d1844bebdf4f876eb88a3fa1ff74e"
+    },
+    {
+      "sku": "ET93067",
+      "base": "FH23067M",
+      "fingerprint": "e547fbf8631228f14c78b7945fac4509",
+      "source_url": "https://www.fleetguard.com/es/product/fh23067m/01t5x000008FDGTAA4",
+      "evidence_hash": "a147fa87ae9c13a752a9b0b8bc0ccafa2f718fbd197e438a2f705dc6755b9374"
+    },
+    {
+      "sku": "ET93068",
+      "base": "FH23068M",
+      "fingerprint": "b957fe2930157ba02af91d919122bd3d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23068m/01t5x000008FDGUAA4",
+      "evidence_hash": "c180abc1bba7175c9b6d0d01ead2dc7f368ac8627af16c96cade02df85ffe1aa"
+    },
+    {
+      "sku": "ET93069",
+      "base": "FH23069M",
+      "fingerprint": "acbd755baec3e47d377b188ff8f6368a",
+      "source_url": "https://www.fleetguard.com/es/product/fh23069m/01t5x000008FDGVAA4",
+      "evidence_hash": "a37b6e5f40c4152a0a4a125252a1672db9e3db3012ad0e12592ceafdc4568efb"
+    },
+    {
+      "sku": "ET93076",
+      "base": "FH23076",
+      "fingerprint": "55896ad7199ef24e8719bf31315b09bd",
+      "source_url": "https://www.fleetguard.com/es/product/fh23076/01t5x000008FEHmAAO",
+      "evidence_hash": "1b4142a536fde7ca978140d8b6007d02738d46c7e2a8e77a43aca0200f329aa2"
+    },
+    {
+      "sku": "ET93100",
+      "base": "FH23100",
+      "fingerprint": "040d8fc7c872a2629fb522dc005902d0",
+      "source_url": "https://www.fleetguard.com/es/product/fh23100/01t5x000008FE1IAAW",
+      "evidence_hash": "e77b2ef80bc774a6b12054bb29fca557ac2dbc861b00ab23ddf20274f5dd92a1"
+    },
+    {
+      "sku": "ET93127",
+      "base": "FH23127",
+      "fingerprint": "962567e145b11f04fb81b231a121c74f",
+      "source_url": "https://www.fleetguard.com/es/product/fh23127/01t5x000008FCWLAA4",
+      "evidence_hash": "7ad066399a55c4edcb293c02e5c3a09e4962e18c0a9624538a611de6c1b00fc2"
+    },
+    {
+      "sku": "ET93132",
+      "base": "FH23132",
+      "fingerprint": "5951edba64e0270f91219c23b030ac23",
+      "source_url": "https://www.fleetguard.com/es/product/fh23132/01t5x000008FDl4AAG",
+      "evidence_hash": "1815d80f4efd7e3ffd0375684074c32e23c94cbfc24a52213486bbee4b5d054e"
+    },
+    {
+      "sku": "ET93166",
+      "base": "FH23166",
+      "fingerprint": "630025ebcce262a04337df3d1c3d012d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23166/01t5x000008FBgwAAG",
+      "evidence_hash": "b21e96405c2cdd3f6916ddaeb90d4deee8aeabda1ce132674d2d1538d7e5a5ab"
+    },
+    {
+      "sku": "ET93500",
+      "base": "FH23500",
+      "fingerprint": "68d53cce26d691b8be3efdd09427ef68",
+      "source_url": "https://www.fleetguard.com/es/product/fh23500/01t5x000008FC0PAAW",
+      "evidence_hash": "28f28051e7300e9f8c4505a8f5b66b5f45f50e62bedc040271256fbf91b52241"
+    },
+    {
+      "sku": "ET93501",
+      "base": "FH23501",
+      "fingerprint": "6e74c1c8ca2105621fcbe202a7d877a0",
+      "source_url": "https://www.fleetguard.com/es/product/fh23501/01t5x000008FBc4AAG",
+      "evidence_hash": "7c048df609a05b3abd0f564ae52038ad1f29a2da17ca2178eda1ca81533d88ad"
+    },
+    {
+      "sku": "ET93502",
+      "base": "FH23502",
+      "fingerprint": "637464872340628bcfaff8d40c8df9cc",
+      "source_url": "https://www.fleetguard.com/es/product/fh23502/01t5x000008FBc5AAG",
+      "evidence_hash": "b12b3c53dd7bc1dcc0b6f931ad793a188b133509ab8d2d5e2ad759984040ea2a"
+    },
+    {
+      "sku": "ET93504",
+      "base": "FH23504M",
+      "fingerprint": "293777038d0a0ade6b572565d488940b",
+      "source_url": "https://www.fleetguard.com/es/product/fh23504m/01t5x000008FBcBAAW",
+      "evidence_hash": "5d9ad17d2ea9ef017aee482f75736e0163cfc4f5321d2ea0c425c4d7dad73a0c"
+    },
+    {
+      "sku": "ET93506",
+      "base": "FH23506",
+      "fingerprint": "4d6fdfd46080ef807989c9b78510a3e7",
+      "source_url": "https://www.fleetguard.com/es/product/fh23506/01t5x000008FBcCAAW",
+      "evidence_hash": "2f0bfe337e6035bcea5eb285ceedbebd2457dc34f0016fc1b4d0c7d611456f50"
+    },
+    {
+      "sku": "ET93508",
+      "base": "FH23508",
+      "fingerprint": "d21bb1f9726b2cc8200dbbdce65521c5",
+      "source_url": "https://www.fleetguard.com/es/product/fh23508/01t5x000008FBdsAAG",
+      "evidence_hash": "4fca5b21515f6226552a305a32d08dbc4c64f72f1e576c29fef162e5a72ec40e"
+    },
+    {
+      "sku": "ET93509",
+      "base": "FH23509M",
+      "fingerprint": "9128c624daf260b70f581c317b66c81d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23509m/01t5x000008FBdtAAG",
+      "evidence_hash": "abc0e5ad42f30cc0a4f5d07bdd96d15d3feb36a72943d49456e241156007a026"
+    },
+    {
+      "sku": "ET93510",
+      "base": "FH23510",
+      "fingerprint": "bfdee831b03eafc26f209103d91cb2c6",
+      "source_url": "https://www.fleetguard.com/es/product/fh23510/01t5x000008FBdxAAG",
+      "evidence_hash": "a475137e0d7d1e29e79e272d19c97137c6f53d443850531ef861e8a8a0313116"
+    },
+    {
+      "sku": "ET93515",
+      "base": "FH23515M",
+      "fingerprint": "cd21aa70b7342bf1dc1fb97d5a62b6e0",
+      "source_url": "https://www.fleetguard.com/es/product/fh23515m/01t5x000008FBZWAA4",
+      "evidence_hash": "e0b3d07092058654fe4c89087bef09fd51db549fcfeb67c4b3a5536cd4878f34"
+    },
+    {
+      "sku": "ET93517",
+      "base": "FH23517",
+      "fingerprint": "c6eea068657139a3d8d6febace0b5cc9",
+      "source_url": "https://www.fleetguard.com/es/product/fh23517/01t5x000008FBmSAAW",
+      "evidence_hash": "5d0f377465ede304e1cc2e364c08f737e289aaa0607c7953cf61c894e6a03627"
+    },
+    {
+      "sku": "ET93518",
+      "base": "FH23518M",
+      "fingerprint": "21d4d4387e453a0c78eba149fe2d693a",
+      "source_url": "https://www.fleetguard.com/es/product/fh23518m/01t5x000008FBaqAAG",
+      "evidence_hash": "48a5e702bcd3043395f74c6da3b7df2e5d71b5a1063f7a2894c4a906ade5af87"
+    },
+    {
+      "sku": "ET93600",
+      "base": "FH23600",
+      "fingerprint": "3c96625ccb677a07a0d6d424c7ae89eb",
+      "source_url": "https://www.fleetguard.com/es/product/fh23600/01t5x000008FBe0AAG",
+      "evidence_hash": "2bc3c8134e62480e68803dcbed9757987121c8a3873e6737b010e833555880c5"
+    },
+    {
+      "sku": "ET93601",
+      "base": "FH23601",
+      "fingerprint": "8e48df9fe4aff93a545ba65dad780927",
+      "source_url": "https://www.fleetguard.com/es/product/fh23601/01t5x000008FBe1AAG",
+      "evidence_hash": "c51896b67ce0d5b6cb2fe6a92b0d0515df8e7fc9c5a2c3451bcc9d4467b63025"
+    },
+    {
+      "sku": "ET93602",
+      "base": "FH23602",
+      "fingerprint": "3c145a658d653730a3d601d31ba2f6bd",
+      "source_url": "https://www.fleetguard.com/es/product/fh23602/01t5x000008FBe2AAG",
+      "evidence_hash": "2798bd8490e09223098e8ad77233a48d87f656daf1a307245661396122a3ba0b"
+    },
+    {
+      "sku": "ET93603",
+      "base": "FH23603",
+      "fingerprint": "d1ff6f2707b7ab55a58ab2688cae5b32",
+      "source_url": "https://www.fleetguard.com/es/product/fh23603/01t5x000008FBe3AAG",
+      "evidence_hash": "783aa2f6fbb975abe2d03ed3cdcbb6d4cb91af2334696658c6d4baed97518a4a"
+    },
+    {
+      "sku": "ET93604",
+      "base": "FH23604M",
+      "fingerprint": "ffae04d69044bccd9fb15b3bc8e65af4",
+      "source_url": "https://www.fleetguard.com/es/product/fh23604m/01t5x000008FBe4AAG",
+      "evidence_hash": "1187cf1f8f03cd79e3ef57e4cee1e60dc1b3069eef7885da0c116ea9b5b1f8cd"
+    },
+    {
+      "sku": "ET93605",
+      "base": "FH23605M",
+      "fingerprint": "f0e6fe44d554c6ba45d195fbe468b210",
+      "source_url": "https://www.fleetguard.com/es/product/fh23605m/01t5x000008FBe5AAG",
+      "evidence_hash": "22e58294be63560d42e4a35cecd7304a7795193f97a3e8323afc8b35ce507684"
+    },
+    {
+      "sku": "ET93606",
+      "base": "FH23606M",
+      "fingerprint": "6a067f58ef7137ea59a93278e9fe6d17",
+      "source_url": "https://www.fleetguard.com/es/product/fh23606m/01t5x000008FBgHAAW",
+      "evidence_hash": "d98e82764a89071d3738607edd030f633da9831be730a46ab9b6c3b9dd1c05b5"
+    },
+    {
+      "sku": "ET93607",
+      "base": "FH23607",
+      "fingerprint": "7c5bbe04f7cc20d8309bbd4f2fe73e1c",
+      "source_url": "https://www.fleetguard.com/es/product/fh23607/01t5x000008FBgIAAW",
+      "evidence_hash": "4c7b0483744da83130864b4ca883ba6501b4fa0ab5f14d89790ed05a4e27fe8f"
+    },
+    {
+      "sku": "ET93608",
+      "base": "FH23608M",
+      "fingerprint": "407035d6bd9e67de76eb43d3b94394c0",
+      "source_url": "https://www.fleetguard.com/es/product/fh23608m/01t5x000008FBgJAAW",
+      "evidence_hash": "61c61b34ae8a4ca24d7f49362854d7dd9eedd88a3adfe39583ed7b2929cedabe"
+    },
+    {
+      "sku": "ET93610",
+      "base": "FH23610",
+      "fingerprint": "1bb4de4da41e3748864644e03177f982",
+      "source_url": "https://www.fleetguard.com/es/product/fh23610/01t5x000008FBZJAA4",
+      "evidence_hash": "ec94b622756c7724d01e7ef792d385cfbb5c250e9ba8da2a1cf5e9a51acdbdb5"
+    },
+    {
+      "sku": "ET93616",
+      "base": "FH23616M",
+      "fingerprint": "f36626863059f7b0769d93d8a4a16a7f",
+      "source_url": "https://www.fleetguard.com/es/product/fh23616m/01t5x000008FByfAAG",
+      "evidence_hash": "e9f06a1100fc03fef7b2944cbcb88a6c46723833731478d4f9c9465113e9a257"
+    },
+    {
+      "sku": "ET93617",
+      "base": "FH23617M",
+      "fingerprint": "c3b125a0a5cb1341bc9757a31cd684a5",
+      "source_url": "https://www.fleetguard.com/es/product/fh23617m/01t5x000008FBZSAA4",
+      "evidence_hash": "520d9da0785fad422b64b3804b1cf8ef2e8f7e93eb3ea8c0d544c73af1c4131c"
+    },
+    {
+      "sku": "ET93618",
+      "base": "FH23618",
+      "fingerprint": "70ba62717f2de5b495a471364b2f28fd",
+      "source_url": "https://www.fleetguard.com/es/product/fh23618/01t5x000008FBZTAA4",
+      "evidence_hash": "c147f8e37e3794dc6b6c415ea0f4a5d96fa8ff8cdc34d3c04e17b15a4e715859"
+    },
+    {
+      "sku": "ET93622",
+      "base": "FH23622M",
+      "fingerprint": "a91ee900db3b20de24383dc82819139d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23622m/01t5x000008FByhAAG",
+      "evidence_hash": "6abaa72d3672baa2eb361332cfecf325582276a72de8c26227e318243850020d"
+    },
+    {
+      "sku": "ET93623",
+      "base": "FH23623M",
+      "fingerprint": "c40d7810a365a09cba6932bd99615204",
+      "source_url": "https://www.fleetguard.com/es/product/fh23623m/01t5x000008FDYAAA4",
+      "evidence_hash": "17ae0c31edad5645decc2d39732cc031c56c6a2bff779a188a83f66cf1a3fcde"
+    },
+    {
+      "sku": "ET93625",
+      "base": "FH23625M",
+      "fingerprint": "c04ab9ca229def6d4705dbcfbe084104",
+      "source_url": "https://www.fleetguard.com/es/product/fh23625m/01t5x000008FByiAAG",
+      "evidence_hash": "55750e81ecb0a723965dbcad188c73827323090c02f2a9121b7ae5618e87bac4"
+    },
+    {
+      "sku": "ET93659",
+      "base": "FH23659",
+      "fingerprint": "31ca6ab04e5196734c45efbcf732a768",
+      "source_url": "https://www.fleetguard.com/es/product/fh23659/01t5x000008FLXzAAO",
+      "evidence_hash": "702129ae11b80602665f98b1836a1ed18e17b076ff135f55f89a947c6ba66ade"
+    },
+    {
+      "sku": "ET93663",
+      "base": "FH23663",
+      "fingerprint": "97f2d2ba754ba51bcca68bf19f39862d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23663/01t5x000008FBkqAAG",
+      "evidence_hash": "ba5c0adfc7b310e96b432c7ab01e4767769841973f24e0ad7b829d6e5c41f120"
+    },
+    {
+      "sku": "ET93669",
+      "base": "FH23669M",
+      "fingerprint": "f62c9fba388a3c0cdd93f50c8a07b7a1",
+      "source_url": "https://www.fleetguard.com/es/product/fh23669m/01t5x000008FN25AAG",
+      "evidence_hash": "80d85fdb1c23e86ba591990918baf0b51ad052e7b2f3e3950d63d60c7e1fbed2"
+    },
+    {
+      "sku": "ET93812",
+      "base": "FH23812",
+      "fingerprint": "8f56727f8d976ce527b7f9a4eb9e328a",
+      "source_url": "https://www.fleetguard.com/es/product/fh23812/01t5x000008FDfdAAG",
+      "evidence_hash": "b4658afa9b0272a6b76f5900a85d0762f7169b6a18a0c60f51fdc506749156d7"
+    },
+    {
+      "sku": "ET93815",
+      "base": "FH23815VG",
+      "fingerprint": "da9d3226aac3f4efd50060fe02d83e6d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23815vg/01t5x000008FGQLAA4",
+      "evidence_hash": "0caaf134fe60c98c49418dca35815f84d35f8eb60ed6a110416632d78895a031"
+    },
+    {
+      "sku": "ET93900",
+      "base": "FH23900",
+      "fingerprint": "b307a49287929c149bb1ce8cc538bebc",
+      "source_url": "https://www.fleetguard.com/es/product/fh23900/01t5x000008FDmRAAW",
+      "evidence_hash": "4a4235204cc188983c438752134b5a81d34ca0d57ce4f139d1770877bafd526e"
+    },
+    {
+      "sku": "ET93901",
+      "base": "FH23901",
+      "fingerprint": "ffc73034cfb6c0f10be730a129a42738",
+      "source_url": "https://www.fleetguard.com/es/product/fh23901/01t5x000008FDU0AAO",
+      "evidence_hash": "a653c9ae1881b826bf2c8762c7f3422f40655ec425db55a02525e2a8ada22c10"
+    },
+    {
+      "sku": "ET93903",
+      "base": "FH23903",
+      "fingerprint": "9f34f8c9175ef73a4b33e1adeddb9f01",
+      "source_url": "https://www.fleetguard.com/es/product/fh23903/01t5x000008FDU1AAO",
+      "evidence_hash": "b8cb627560ac76d45c790a2afc7d569f7e04307c5ff4f8f2e6fa119513a2bc17"
+    },
+    {
+      "sku": "ET93904",
+      "base": "FH23904",
+      "fingerprint": "bc27a3c42e1fde59fa487af7136864f9",
+      "source_url": "https://www.fleetguard.com/es/product/fh23904/01t5x000008FDQyAAO",
+      "evidence_hash": "6f18c7e24124ef46cd768bee953db9e70b3f53a746efb1b91b344f6219e13dcb"
+    },
+    {
+      "sku": "ET93905",
+      "base": "FH23905",
+      "fingerprint": "ecc574de170c37fec50e70dff1da28ac",
+      "source_url": "https://www.fleetguard.com/es/product/fh23905/01t5x000008FDQzAAO",
+      "evidence_hash": "4ad9442fd5805558b5ffb93811881994c2a1a9b7c891b9285ba4ab97985948ba"
+    },
+    {
+      "sku": "ET93906",
+      "base": "FH23906",
+      "fingerprint": "6c53b31457bb97414b0635f8d447fafd",
+      "source_url": "https://www.fleetguard.com/es/product/fh23906/01t5x000008FDR0AAO",
+      "evidence_hash": "4d3c46588171a0e220bcfed6b020247c37f39bb406204daffa5bbf670ff931e2"
+    },
+    {
+      "sku": "ET93907",
+      "base": "FH23907",
+      "fingerprint": "59d5e6cafc59e5a54aa92b4ca937c162",
+      "source_url": "https://www.fleetguard.com/es/product/fh23907/01t5x000008FDh9AAG",
+      "evidence_hash": "4ec39c6c277b4a6b8889e1ec2cbeb902d1640df578c8da22414eba8d9443f6d9"
+    },
+    {
+      "sku": "ET93908",
+      "base": "FH23908",
+      "fingerprint": "32299edf68c2f02bc0469e9f859fca6c",
+      "source_url": "https://www.fleetguard.com/es/product/fh23908/01t5x000008FDlkAAG",
+      "evidence_hash": "1c27b18c40541ddf805156a0de654bbbee3636960d7f68720d4e8dd23f6c1322"
+    },
+    {
+      "sku": "ET93910",
+      "base": "FH23910",
+      "fingerprint": "948b26866a6d88954612c8dcd904416e",
+      "source_url": "https://www.fleetguard.com/es/product/fh23910/01t5x000008FDhAAAW",
+      "evidence_hash": "124ca1b6f32c55de79b683fe434d15283db61aa933204aa49acff617ddc75c8e"
+    },
+    {
+      "sku": "ET93911",
+      "base": "FH23911",
+      "fingerprint": "b934abd92a74c0857ddf847c1c78f764",
+      "source_url": "https://www.fleetguard.com/es/product/fh23911/01t5x000008FDhBAAW",
+      "evidence_hash": "d93f748b60a255c686aa4d64d5fa9fa7fc68eb8828561efb467129a6e717e3ea"
+    },
+    {
+      "sku": "ET93912",
+      "base": "FH23912",
+      "fingerprint": "ecdaefa8a3a01294b6045a45ad5b361d",
+      "source_url": "https://www.fleetguard.com/es/product/fh23912/01t5x000008FDR1AAO",
+      "evidence_hash": "ff70c5ced16c0dfa5689e801721cc49c5dfb664a4dcc51675f16ca8c5f385c7c"
+    },
+    {
+      "sku": "ET93913",
+      "base": "FH23913",
+      "fingerprint": "163bbadd682ba19bd8fe5e890aadf03e",
+      "source_url": "https://www.fleetguard.com/es/product/fh23913/01t5x000008FDR2AAO",
+      "evidence_hash": "95df696792102c5df3dd81df6d8dd1e5e9546e6c412dcc6c4ff3f896d0f0fe88"
+    },
+    {
+      "sku": "ET93914",
+      "base": "FH23914",
+      "fingerprint": "2cd7cbd455f9da0b94e372291414be16",
+      "source_url": "https://www.fleetguard.com/es/product/fh23914/01t5x000008FDR3AAO",
+      "evidence_hash": "34f2995097a6c679a5cd3d0266997e6f006c6ce963be3a47a468b45a0e610dbc"
+    },
+    {
+      "sku": "ET93915",
+      "base": "FH23915",
+      "fingerprint": "2af3a5c4a7401aef5f1247ac47bc617b",
+      "source_url": "https://www.fleetguard.com/es/product/fh23915/01t5x000008FDR4AAO",
+      "evidence_hash": "fdc5357f6e4a1de93552c867ebee0c865247bffe83867cd868d06a82d4928fdf"
+    },
+    {
+      "sku": "ET93916",
+      "base": "FH23916",
+      "fingerprint": "cbcedfd651ac7d2399653746c975e49e",
+      "source_url": "https://www.fleetguard.com/es/product/fh23916/01t5x000008FDR5AAO",
+      "evidence_hash": "bbd1eef97816136594a9530a4cc41e46f192a5def6d08496e67697022d7aebdb"
+    },
+    {
+      "sku": "ET93917",
+      "base": "FH23917",
+      "fingerprint": "fb9dc57daf0b932bb084f642adff1d41",
+      "source_url": "https://www.fleetguard.com/es/product/fh23917/01t5x000008FDR6AAO",
+      "evidence_hash": "0c90871699b7ef9e82648f6174da58a4c5b964a09c17228cf3f33b0ef3d566f1"
+    },
+    {
+      "sku": "ET93918",
+      "base": "FH23918",
+      "fingerprint": "ea1308bc59f7a742d119c151529e9f19",
+      "source_url": "https://www.fleetguard.com/es/product/fh23918/01t5x000008FDYZAA4",
+      "evidence_hash": "c73881a36607bf5a0453127f59d9cf927837dd7f89fa8b03410ffff8eaffb3aa"
+    },
+    {
+      "sku": "ET93919",
+      "base": "FH23919",
+      "fingerprint": "7b7b4cd6715cf842f29a6b39786e448a",
+      "source_url": "https://www.fleetguard.com/es/product/fh23919/01t5x000008FDYaAAO",
+      "evidence_hash": "6569629d62956d6f0f468edd517b7237213c1c61d1dfcce9152163d758671f75"
+    },
+    {
+      "sku": "ET93920",
+      "base": "FH23920",
+      "fingerprint": "56c6572da463ed4bd978cdc456c4ce11",
+      "source_url": "https://www.fleetguard.com/es/product/fh23920/01t5x000008FDYbAAO",
+      "evidence_hash": "357bd9445ce4eaccf7aa3af3c88685b272890b5e04322b40ca0ad96e8b6e0677"
+    },
+    {
+      "sku": "ET93921",
+      "base": "FH23921",
+      "fingerprint": "cb7f27ad3f3ab1ef04eab362aa44e554",
+      "source_url": "https://www.fleetguard.com/es/product/fh23921/01t5x000008FDYcAAO",
+      "evidence_hash": "e7b089006680966d0dba80d5147696e3fc68eddef8e864f4c2d45c2dfb841e57"
+    },
+    {
+      "sku": "ET93922",
+      "base": "FH23922",
+      "fingerprint": "ec0e3b0f1d030040e07173fa39c4a54b",
+      "source_url": "https://www.fleetguard.com/es/product/fh23922/01t5x000008FN1RAAW",
+      "evidence_hash": "55a2e55a62ded33fa205d535e791ba0d0b5e9f5858c3a5c3a6b9f357ada6d60d"
+    },
+    {
+      "sku": "ET93923",
+      "base": "FH23923",
+      "fingerprint": "af232a429c03c4ebc14941c0e7730585",
+      "source_url": "https://www.fleetguard.com/es/product/fh23923/01t5x000008FDokAAG",
+      "evidence_hash": "6917d09433fdeab14f86e85c82b8c05dd340d0e7625099034e672cb599ba6796"
+    },
+    {
+      "sku": "ET93926",
+      "base": "FH23926",
+      "fingerprint": "f5458187de4d1041433acb2752bd0fe3",
+      "source_url": "https://www.fleetguard.com/es/product/fh23926/01t5x000008FN1SAAW",
+      "evidence_hash": "f0330461e2b82e0d94e0085376777b26daa1420bff8cb7f4dedf7e590b2d4ddd"
+    },
+    {
+      "sku": "ET93927",
+      "base": "FH23927",
+      "fingerprint": "d1f4a0c121589461540c595b0ea56a04",
+      "source_url": "https://www.fleetguard.com/es/product/fh23927/01t5x000008FN1TAAW",
+      "evidence_hash": "ba5da1144f851bc3ef53ed0e1637249465c82608e6db82b3830928b673d59014"
+    },
+    {
+      "sku": "ET93930",
+      "base": "FH23930",
+      "fingerprint": "942d253134bfbf2782c4a6630bb6d96b",
+      "source_url": "https://www.fleetguard.com/es/product/fh23930/01t5x000008FE5eAAG",
+      "evidence_hash": "3e5bc26393ab72ab762ce2561591b34d18d4a8b95104aedd84d2ed00f2c35206"
+    },
+    {
+      "sku": "ET93931",
+      "base": "FH23931",
+      "fingerprint": "f2b7fbe4f655789b3c36ef574742439b",
+      "source_url": "https://www.fleetguard.com/es/product/fh23931/01t5x000008FDnwAAG",
+      "evidence_hash": "0f30ccf610a5177436deac47af075091474656eefdd6bdc61140b4ffbc545bf5"
+    },
+    {
+      "sku": "ET94000",
+      "base": "FH24000",
+      "fingerprint": "f4c0222a65d03355da4286a176d07aec",
+      "source_url": "https://www.fleetguard.com/es/product/fh24000/01t5x000008FBccAAG",
+      "evidence_hash": "033472d397d75a0703c94f1fa7610fb3b13c1b8ad43c63e57398dbc5b724ee97"
+    },
+    {
+      "sku": "ET94001",
+      "base": "FH24001",
+      "fingerprint": "8e4bea17406004ccc40ce787a7af1dd4",
+      "source_url": "https://www.fleetguard.com/es/product/fh24001/01t5x000008FN24AAG",
+      "evidence_hash": "d000bddcb871de641b516d6ffb526560c036b3c651f6e1eee83b5d3c67b1e620"
+    },
+    {
+      "sku": "ET94002",
+      "base": "FH24002",
+      "fingerprint": "5b2c7eaaa418fb59c61e5a4b9d98d361",
+      "source_url": "https://www.fleetguard.com/es/product/fh24002/01t5x000008FBq0AAG",
+      "evidence_hash": "12edfdb19d9764a5eda67c5784d68df44c91e5f7d95102efc6bab1480449ec94"
+    },
+    {
+      "sku": "ET94003",
+      "base": "FH24003",
+      "fingerprint": "b1f96c46f649657b08a64744332dff2c",
+      "source_url": "https://www.fleetguard.com/es/product/fh24003/01t5x000008FBpzAAG",
+      "evidence_hash": "55145644204e7cd798680931c1076bb888e408b9dca1fd33147a93fb9eb7766c"
+    }
+  ],
+  "held": [
+    {
+      "sku": "ED47754",
+      "reason": "FULL_APPROVED_FALLBACK_AND_OFFICIAL_EVIDENCE_REQUIRED"
+    }
+  ]
+}

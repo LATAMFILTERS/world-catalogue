@@ -1,0 +1,314 @@
+{
+  "en": {
+    "overview": [
+      "The operator breathes the air the cabin ventilation delivers, often for a full shift and in dusty, agricultural or urban environments. The same air also passes the HVAC components: dust that gets in settles on the evaporator and the heater core, reducing their performance and creating deposits that are hard to remove. MICROKAPPA™ applies cabin filtration media according to the operator environment, the airflow requirement and the constraints of the vehicle's HVAC system.",
+      "The pleated panel sits in the outside-air intake, ahead of the blower and the evaporator. The blower draws air through it, and dust and pollen are held on its upstream face. Because it is the first component in the path, it protects both the people in the cabin and the HVAC system behind it.",
+      "Cabin filtration is a balance. Holding more fine particulate usually means more resistance to airflow, and too much resistance reduces ventilation, demisting and heating or cooling performance. As the panel loads, that resistance rises. Recirculation behaviour, how often the doors are open in a dusty environment and the loading rate all change how quickly the panel reaches its service point.",
+      "A panel only filters the air that passes through it: its frame has to seal continuously inside the housing, and where the frame carries an airflow-direction mark it must be fitted that way. MICROKAPPA™ does not assign one particle-efficiency rating, odour-control capability or replacement interval to every cabin filter, and it does not replace vehicle-specific service information or occupational exposure controls."
+    ],
+    "figures": {
+      "microkappa": {
+        "title": "Pleated panel in the cabin HVAC housing",
+        "caption": "Outside air passes the pleated panel, which holds dust and pollen on its upstream face before the blower carries the air to the cabin. At service the panel slides out and is replaced.",
+        "steps": [
+          {
+            "part": "Outside-air grille",
+            "text": "Outside air enters through the grille in the wall above the panel. Moving the cursor sideways changes how much dust and pollen the air carries."
+          },
+          {
+            "part": "HVAC housing in section",
+            "text": "The housing is cut away in front and open on top so the panel can be seen; its side walls and floor guide the air through the panel."
+          },
+          {
+            "part": "MICROKAPPA™ pleated panel",
+            "text": "The air crosses the pleated panel, and the dust and pollen settle on its upstream (top) face. The readout shows the panel's load."
+          },
+          {
+            "part": "Rails",
+            "text": "The panel sits on rails inside the housing; they hold it in position and let it slide out at service."
+          },
+          {
+            "part": "Blower",
+            "text": "Under the housing floor, the blower draws the air through the panel."
+          },
+          {
+            "part": "Supply to the cabin",
+            "text": "The blower sends the filtered air through the supply line to the cabin."
+          },
+          {
+            "part": "Service",
+            "text": "Moving the cursor to the top, or pressing E, runs the service: the panel slides out on its rails and a new, clean one goes in."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "MICROKAPPA™ pleated panel",
+        "role": "The filtration media, folded into pleats inside a frame. It holds dust and pollen while the air passes; its configuration is matched to the operator environment and the HVAC airflow."
+      },
+      {
+        "name": "Panel frame and seal",
+        "role": "Keeps the media in shape and seals the panel against the housing so no air bypasses it."
+      },
+      {
+        "name": "HVAC housing and rails",
+        "role": "Hold the panel in the airflow and guide it in and out at service."
+      },
+      {
+        "name": "Outside-air grille",
+        "role": "Where outside air enters; leaves and debris collecting here restrict airflow before the panel."
+      },
+      {
+        "name": "Blower",
+        "role": "Draws the air through the panel and delivers it to the cabin."
+      },
+      {
+        "name": "Supply to the cabin",
+        "role": "Carries the filtered air to the vents."
+      },
+      {
+        "name": "Evaporator and heater core (downstream, not drawn)",
+        "role": "The HVAC components the panel also protects; dust that gets past it settles there."
+      }
+    ],
+    "service": [
+      "Switch off the HVAC and open the housing following the vehicle's procedure.",
+      "Slide the used panel out keeping it level, so the dust on its upstream face does not fall into the clean side.",
+      "Remove leaves and debris from the grille area and the housing, and check the housing and its sealing surfaces for damage.",
+      "Fit the MICROKAPPA™ panel approved for that vehicle, checking the fit, the seal and the airflow-direction mark where there is one.",
+      "Close the housing, run the blower and check the airflow; a whistle or draught around the panel points to a gap in the seal.",
+      "If airflow complaints keep returning, inspect the whole HVAC path, including the evaporator, instead of simply shortening the interval."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "Weak airflow or slow demisting",
+        "check": "The panel may have reached its service point. If a new panel does not restore the airflow, look at the grille, the evaporator, the blower, the ducts and any installation damage."
+      },
+      {
+        "symptom": "Dust inside the cabin with a fresh panel",
+        "check": "Air is bypassing the panel: frame not sealing, wrong fit, damaged housing. Also consider door seals and how often the doors are open in dusty conditions."
+      },
+      {
+        "symptom": "The panel loads much faster than expected",
+        "check": "The environment is dustier than the selection assumed, the recirculation setting has changed, or the grille is collecting debris."
+      },
+      {
+        "symptom": "Unpleasant odour from the vents",
+        "check": "Usually linked to moisture and deposits on the evaporator. Changing the panel alone does not resolve it; the HVAC path has to be inspected."
+      },
+      {
+        "symptom": "Whistling noise near the housing",
+        "check": "A gap around the frame lets air through at high speed. Check the fit, the seal and the housing."
+      }
+    ]
+  },
+  "es": {
+    "overview": [
+      "El operador respira el aire que entrega la ventilación de la cabina, a menudo durante todo un turno y en ambientes con polvo, agrícolas o urbanos. Ese mismo aire pasa por los componentes del sistema HVAC: el polvo que entra se deposita en el evaporador y en el núcleo del calefactor, reduce su rendimiento y forma depósitos difíciles de retirar. MICROKAPPA™ aplica medios de filtración de cabina según el ambiente del operador, el caudal de aire requerido y las limitaciones del sistema HVAC del vehículo.",
+      "El panel plisado va en la toma de aire exterior, antes del soplador y del evaporador. El soplador aspira el aire a través de él, y el polvo y el polen quedan retenidos en su cara de entrada. Como es el primer componente del recorrido, protege tanto a las personas en la cabina como al sistema HVAC que está detrás.",
+      "La filtración de cabina es un equilibrio. Retener más partículas finas suele significar más resistencia al paso del aire, y demasiada resistencia reduce la ventilación, el desempañado y el rendimiento de calefacción o aire acondicionado. A medida que el panel se carga, esa resistencia sube. El comportamiento de la recirculación, la frecuencia con que se abren las puertas en un ambiente con polvo y el ritmo de carga cambian lo rápido que el panel llega a su punto de servicio.",
+      "Un panel solo filtra el aire que pasa a través de él: su marco debe sellar de forma continua dentro de la carcasa, y donde el marco tiene una marca de sentido del flujo de aire, debe instalarse en ese sentido. MICROKAPPA™ no asigna una sola eficiencia de partículas, capacidad de control de olores ni intervalo de reemplazo a todos los filtros de cabina, y no reemplaza la información de servicio propia del vehículo ni los controles de exposición ocupacional."
+    ],
+    "figures": {
+      "microkappa": {
+        "title": "Panel plisado en la carcasa HVAC de la cabina",
+        "caption": "El aire exterior pasa por el panel plisado, que retiene el polvo y el polen en su cara de entrada antes de que el soplador lleve el aire a la cabina. En el servicio el panel se desliza hacia afuera y se reemplaza.",
+        "steps": [
+          {
+            "part": "Rejilla de aire exterior",
+            "text": "El aire exterior entra por la rejilla de la pared, sobre el panel. Al mover el cursor de lado a lado cambia cuánto polvo y polen trae el aire."
+          },
+          {
+            "part": "Carcasa HVAC en corte",
+            "text": "La carcasa está cortada al frente y abierta arriba para que se vea el panel; sus paredes laterales y su piso guían el aire a través del panel."
+          },
+          {
+            "part": "Panel plisado MICROKAPPA™",
+            "text": "El aire atraviesa el panel plisado, y el polvo y el polen se depositan en su cara de entrada (la superior). La lectura de la figura muestra la carga del panel."
+          },
+          {
+            "part": "Rieles",
+            "text": "El panel se apoya en rieles dentro de la carcasa; lo mantienen en posición y le permiten salir deslizándose en el servicio."
+          },
+          {
+            "part": "Soplador",
+            "text": "Bajo el piso de la carcasa, el soplador aspira el aire a través del panel."
+          },
+          {
+            "part": "Salida a la cabina",
+            "text": "El soplador envía el aire filtrado por la línea de suministro hacia la cabina."
+          },
+          {
+            "part": "Servicio",
+            "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: el panel sale deslizándose por sus rieles y entra uno nuevo y limpio."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "Panel plisado MICROKAPPA™",
+        "role": "El medio filtrante, plegado en pliegues dentro de un marco. Retiene el polvo y el polen mientras pasa el aire; su configuración se ajusta al ambiente del operador y al caudal de aire del HVAC."
+      },
+      {
+        "name": "Marco y sello del panel",
+        "role": "Mantienen la forma del medio y sellan el panel contra la carcasa para que ningún aire pase alrededor."
+      },
+      {
+        "name": "Carcasa HVAC y rieles",
+        "role": "Mantienen el panel en el flujo de aire y lo guían al entrar y salir en el servicio."
+      },
+      {
+        "name": "Rejilla de aire exterior",
+        "role": "Por donde entra el aire exterior; las hojas y la suciedad que se acumulan aquí restringen el aire antes del panel."
+      },
+      {
+        "name": "Soplador",
+        "role": "Aspira el aire a través del panel y lo entrega a la cabina."
+      },
+      {
+        "name": "Salida a la cabina",
+        "role": "Lleva el aire filtrado a las salidas de ventilación."
+      },
+      {
+        "name": "Evaporador y núcleo del calefactor (aguas abajo, no dibujados)",
+        "role": "Los componentes del HVAC que el panel también protege; el polvo que pasa el panel se deposita ahí."
+      }
+    ],
+    "service": [
+      "Apagar el sistema HVAC y abrir la carcasa según el procedimiento del vehículo.",
+      "Sacar el panel usado manteniéndolo nivelado, para que el polvo de su cara de entrada no caiga al lado limpio.",
+      "Retirar hojas y suciedad de la zona de la rejilla y de la carcasa, y revisar que la carcasa y sus superficies de sellado no estén dañadas.",
+      "Colocar el panel MICROKAPPA™ aprobado para ese vehículo, verificando el ajuste, el sello y la marca de sentido del flujo de aire si la tiene.",
+      "Cerrar la carcasa, encender el soplador y verificar el caudal; un silbido o una corriente alrededor del panel indica una abertura en el sello.",
+      "Si los reclamos de caudal de aire se repiten, inspeccionar todo el recorrido del HVAC, incluido el evaporador, en lugar de solo acortar el intervalo."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "Poco caudal de aire o desempañado lento",
+        "check": "El panel puede haber llegado a su punto de servicio. Si un panel nuevo no recupera el caudal, revisar la rejilla, el evaporador, el soplador, los ductos y cualquier daño de instalación."
+      },
+      {
+        "symptom": "Polvo dentro de la cabina con un panel nuevo",
+        "check": "El aire está pasando alrededor del panel: marco que no sella, ajuste incorrecto o carcasa dañada. Considerar también los sellos de las puertas y la frecuencia con que se abren en condiciones de polvo."
+      },
+      {
+        "symptom": "El panel se carga mucho más rápido de lo esperado",
+        "check": "El ambiente tiene más polvo que el previsto en la selección, cambió el uso de la recirculación o la rejilla está acumulando suciedad."
+      },
+      {
+        "symptom": "Olor desagradable en las salidas de aire",
+        "check": "Suele estar ligado a humedad y depósitos en el evaporador. Cambiar solo el panel no lo resuelve; hay que inspeccionar el recorrido del HVAC."
+      },
+      {
+        "symptom": "Silbido cerca de la carcasa",
+        "check": "Una abertura alrededor del marco deja pasar aire a alta velocidad. Revisar el ajuste, el sello y la carcasa."
+      }
+    ]
+  },
+  "pt": {
+    "overview": [
+      "O operador respira o ar que a ventilação da cabine entrega, muitas vezes durante um turno inteiro e em ambientes empoeirados, agrícolas ou urbanos. Esse mesmo ar passa pelos componentes do sistema HVAC: a poeira que entra se deposita no evaporador e no núcleo do aquecedor, reduz seu desempenho e forma depósitos difíceis de remover. MICROKAPPA™ aplica meios de filtração de cabine de acordo com o ambiente do operador, a vazão de ar necessária e as limitações do sistema HVAC do veículo.",
+      "O painel plissado fica na tomada de ar externo, antes do soprador e do evaporador. O soprador aspira o ar através dele, e a poeira e o pólen ficam retidos na sua face de entrada. Como é o primeiro componente do percurso, protege tanto as pessoas na cabine quanto o sistema HVAC que está atrás.",
+      "A filtração de cabine é um equilíbrio. Reter mais partículas finas costuma significar mais resistência à passagem do ar, e resistência demais reduz a ventilação, o desembaçamento e o desempenho de aquecimento ou ar-condicionado. À medida que o painel se carrega, essa resistência sobe. O comportamento da recirculação, a frequência com que as portas são abertas em ambiente empoeirado e o ritmo de carga mudam a rapidez com que o painel chega ao seu ponto de manutenção.",
+      "Um painel só filtra o ar que passa por ele: sua moldura deve vedar de forma contínua dentro da caixa, e onde a moldura tem uma marca de sentido do fluxo de ar, deve ser instalada nesse sentido. MICROKAPPA™ não atribui uma única eficiência de partículas, capacidade de controle de odores ou intervalo de troca a todos os filtros de cabine, e não substitui as informações de manutenção específicas do veículo nem os controles de exposição ocupacional."
+    ],
+    "figures": {
+      "microkappa": {
+        "title": "Painel plissado na caixa HVAC da cabine",
+        "caption": "O ar externo passa pelo painel plissado, que retém a poeira e o pólen na sua face de entrada antes que o soprador leve o ar à cabine. Na manutenção o painel desliza para fora e é substituído.",
+        "steps": [
+          {
+            "part": "Grade de ar externo",
+            "text": "O ar externo entra pela grade na parede, acima do painel. Mover o cursor para os lados muda quanta poeira e pólen o ar carrega."
+          },
+          {
+            "part": "Caixa HVAC em corte",
+            "text": "A caixa está cortada na frente e aberta em cima para que se veja o painel; suas paredes laterais e o piso guiam o ar através do painel."
+          },
+          {
+            "part": "Painel plissado MICROKAPPA™",
+            "text": "O ar atravessa o painel plissado, e a poeira e o pólen se depositam na sua face de entrada (a superior). A leitura da figura mostra a carga do painel."
+          },
+          {
+            "part": "Trilhos",
+            "text": "O painel se apoia em trilhos dentro da caixa; eles o mantêm na posição e permitem que deslize para fora na manutenção."
+          },
+          {
+            "part": "Soprador",
+            "text": "Sob o piso da caixa, o soprador aspira o ar através do painel."
+          },
+          {
+            "part": "Saída para a cabine",
+            "text": "O soprador envia o ar filtrado pela linha de suprimento até a cabine."
+          },
+          {
+            "part": "Manutenção",
+            "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o painel desliza para fora pelos trilhos e entra um novo e limpo."
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "name": "Painel plissado MICROKAPPA™",
+        "role": "O meio filtrante, dobrado em pregas dentro de uma moldura. Retém a poeira e o pólen enquanto o ar passa; sua configuração é ajustada ao ambiente do operador e à vazão de ar do HVAC."
+      },
+      {
+        "name": "Moldura e vedação do painel",
+        "role": "Mantêm a forma do meio e vedam o painel contra a caixa para que nenhum ar passe ao redor."
+      },
+      {
+        "name": "Caixa HVAC e trilhos",
+        "role": "Mantêm o painel no fluxo de ar e o guiam ao entrar e sair na manutenção."
+      },
+      {
+        "name": "Grade de ar externo",
+        "role": "Por onde entra o ar externo; folhas e sujeira que se acumulam aqui restringem o ar antes do painel."
+      },
+      {
+        "name": "Soprador",
+        "role": "Aspira o ar através do painel e o entrega à cabine."
+      },
+      {
+        "name": "Saída para a cabine",
+        "role": "Leva o ar filtrado às saídas de ventilação."
+      },
+      {
+        "name": "Evaporador e núcleo do aquecedor (a jusante, não desenhados)",
+        "role": "Os componentes do HVAC que o painel também protege; a poeira que passa pelo painel se deposita ali."
+      }
+    ],
+    "service": [
+      "Desligar o sistema HVAC e abrir a caixa conforme o procedimento do veículo.",
+      "Retirar o painel usado mantendo-o nivelado, para que a poeira da face de entrada não caia no lado limpo.",
+      "Remover folhas e sujeira da área da grade e da caixa, e verificar se a caixa e suas superfícies de vedação não estão danificadas.",
+      "Instalar o painel MICROKAPPA™ aprovado para esse veículo, verificando o encaixe, a vedação e a marca de sentido do fluxo de ar, se houver.",
+      "Fechar a caixa, ligar o soprador e verificar a vazão; um assobio ou uma corrente de ar ao redor do painel indica uma fresta na vedação.",
+      "Se as reclamações de vazão de ar se repetirem, inspecionar todo o percurso do HVAC, incluindo o evaporador, em vez de apenas encurtar o intervalo."
+    ],
+    "diagnostics": [
+      {
+        "symptom": "Pouca vazão de ar ou desembaçamento lento",
+        "check": "O painel pode ter chegado ao seu ponto de manutenção. Se um painel novo não recuperar a vazão, verificar a grade, o evaporador, o soprador, os dutos e qualquer dano de instalação."
+      },
+      {
+        "symptom": "Poeira dentro da cabine com um painel novo",
+        "check": "O ar está passando ao redor do painel: moldura que não veda, encaixe incorreto ou caixa danificada. Considerar também as vedações das portas e a frequência com que são abertas em condições de poeira."
+      },
+      {
+        "symptom": "O painel se carrega muito mais rápido do que o esperado",
+        "check": "O ambiente tem mais poeira do que o previsto na seleção, o uso da recirculação mudou ou a grade está acumulando sujeira."
+      },
+      {
+        "symptom": "Odor desagradável nas saídas de ar",
+        "check": "Costuma estar ligado a umidade e depósitos no evaporador. Trocar só o painel não resolve; é preciso inspecionar o percurso do HVAC."
+      },
+      {
+        "symptom": "Assobio perto da caixa",
+        "check": "Uma fresta ao redor da moldura deixa o ar passar em alta velocidade. Verificar o encaixe, a vedação e a caixa."
+      }
+    ]
+  }
+}
