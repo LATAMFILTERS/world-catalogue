@@ -278,7 +278,7 @@ export default function IndustrialProcessPage() {
                   <p style={bodyCopy}><ReviewedText text={platform.descriptor} /></p>
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 18, paddingTop: 12 }}>
                     {standards.map((standard) => (
-                      <div key={standard} style={specRow}><span>—</span><span>{standard}</span></div>
+                      <div key={standard} style={specRow}><span>—</span><span><ReviewedText text={standard} /></span></div>
                     ))}
                   </div>
                   {platform.knowledgeCenterSlug ? (
