@@ -61,7 +61,7 @@ node air/build.mjs --audit && node air/build.mjs --light
 node nanoforce/build.mjs --audit && node nanoforce/build.mjs --light
 node microkappa/build.mjs --audit && node microkappa/build.mjs --light
 node drycore/build.mjs --audit && node drycore/build.mjs --light
-# published pages (dark theme, for the Knowledge Center) in English, Spanish and Portuguese, and the English previews
+# published pages (dark theme, for the Knowledge Center) in English, Spanish and Portuguese
 for l in en es pt; do
   for v in "" --spinon --housing; do node hydrocore/build.mjs $v --lang $l --public; done
   for f in turbocore syntapore syntrax thermacore air nanoforce microkappa drycore; do node $f/build.mjs --lang $l --public; done
@@ -70,9 +70,12 @@ for t in syntapore syntrax nanoforce; do
   node compare/build.mjs --tech $t --audit && node compare/build.mjs --tech $t --light
   for l in en es pt; do node compare/build.mjs --tech $t --lang $l --public; done
 done
+# previews, one per language (the technology page shows the one in the visitor's language); capture needs CHROME_PATH
 for f in hydrocore hydrocore-spinon hydrocore-housing turbocore syntapore syntrax compare-syntapore compare-syntrax compare-nanoforce thermacore air-intake nanoforce microkappa drycore; do
-  node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f.html --out /tmp/$f.png --wait 4000 --scale 1.5
-  ffmpeg -v error -i /tmp/$f.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f.webp -y
+  for s in "" -es -pt; do
+    node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f$s.html --out /tmp/$f$s.png --wait 4000 --scale 1.5
+    ffmpeg -v error -i /tmp/$f$s.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f$s.webp -y
+  done
 done
 ```
 
