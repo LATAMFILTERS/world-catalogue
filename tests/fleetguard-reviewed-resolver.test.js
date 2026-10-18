@@ -1,0 +1,8 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {buildReviewedFleetguardResolver}=require('../lib/fleetguard-reviewed-resolver');
+const p="COALESCE(((c.enrichment_data -> 'codigo_base_governance'::text) ->> 'primary_manufacturer_verified'::text)::boolean, false) AS manufacturer_verified";
+const definition=`WITH catalog_base_raw AS (SELECT ${p} FROM elimfilters_catalog c) SELECT * FROM catalog_base_raw;`;
+const row={sku:'EF95112',base:'FF5112',source_url:'https://www.fleetguard.com/product/FF5112',evidence_hash:'a'.repeat(64)};
+test('binds exact archived authority, all fallback flags and all catalog base owners',()=>{const {sql}=buildReviewedFleetguardResolver(definition,[row]);for(const marker of ['catalog_active IS TRUE','canonical_source_status','source_url','evidence_hash','fallback_manufacturer_verified','fallback_commercial_code_verified','donaldson_absence_verified','other.sku<>c.sku','primary_manufacturer_verified'])assert.ok(sql.includes(marker),marker);assert.ok(!sql.includes('md5(to_jsonb(c)::text)'));assert.ok(!/CREATE|ALTER|UPDATE/.test(sql));});
+test('rejects unreviewable source or ambiguous manifest',()=>{for(const source_url of ['http://www.fleetguard.com/product/FF5112','https://evil.example/product/FF5112','https://user@www.fleetguard.com/product/FF5112','https://www.fleetguard.com/product/FF5112?q=1'])assert.throws(()=>buildReviewedFleetguardResolver(definition,[{...row,source_url}]));assert.throws(()=>buildReviewedFleetguardResolver(definition,[row,row]));assert.throws(()=>buildReviewedFleetguardResolver(definition,[{...row,evidence_hash:'bad'}]));});
