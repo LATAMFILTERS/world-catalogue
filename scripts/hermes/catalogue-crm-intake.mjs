@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {fileURLToPath} from 'node:url';
 const root=process.env.ELIMSERVER_ROOT||'C:\\ELIMSERVER';
 const base=path.join(root,'state','catalogue-hermes');
 const inbox=path.join(base,'inbox'),receipts=path.join(base,'receipts'),processing=path.join(base,'processing');
@@ -29,6 +30,6 @@ export async function intakeHermesRequests({stateRoot=base,limit=10}={}){
  }
  return result;
 }
-if(process.argv[1]&&path.resolve(process.argv[1])===new URL(import.meta.url).pathname){
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  console.log(JSON.stringify(await intakeHermesRequests()));
 }
