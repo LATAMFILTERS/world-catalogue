@@ -7,14 +7,24 @@ const base=path.join(root,'state','catalogue-hermes');
 const inbox=path.join(base,'inbox'),receipts=path.join(base,'receipts'),processing=path.join(base,'processing');
 const id=x=>String(x||'').replace(/[^A-Za-z0-9._-]/g,'_').slice(0,120);
 const hash=x=>crypto.createHash('sha256').update(x).digest('hex');
+async function key(stateRoot){
+ const raw=(await fs.readFile(path.join(path.resolve(stateRoot,'../..'),'secrets','catalogue-hermes-transport.key'),'utf8')).trim();
+ if(!/^[0-9a-f]{64,}$/i.test(raw)||raw.length%2)throw Error('TRANSPORT_KEY_INVALID');
+ return Buffer.from(raw,'hex');
+}
+const mac=(key,payload)=>crypto.createHmac('sha256',key).update(JSON.stringify(payload)).digest('hex');
+const same=(a,b)=>/^[0-9a-f]{64}$/i.test(String(a))&&/^[0-9a-f]{64}$/i.test(String(b))&&crypto.timingSafeEqual(Buffer.from(a,'hex'),Buffer.from(b,'hex'));
 const writeExclusive=async(p,data)=>{try{await fs.writeFile(p,JSON.stringify(data),{flag:'wx',mode:0o600});return true;}catch(e){if(e.code==='EEXIST')return false;throw e;}};
 export async function intakeHermesRequests({stateRoot=base,limit=10}={}){
  const inDir=path.join(stateRoot,'inbox'),ackDir=path.join(stateRoot,'receipts'),claimed=path.join(stateRoot,'processing');
  await Promise.all([inDir,ackDir,claimed].map(dir=>fs.mkdir(dir,{recursive:true})));
+ const shared=await key(stateRoot);
  const result=[];
  for(const name of (await fs.readdir(inDir)).filter(x=>/^[A-Za-z0-9._-]+__[-A-Za-z0-9._]+\.json$/.test(x)).sort().slice(0,limit)){
   const raw=await fs.readFile(path.join(inDir,name),'utf8');
   const entry=JSON.parse(raw),e=entry.envelope;
+  const {hmac_sha256,...signed}=entry;
+  if(!same(hmac_sha256,mac(shared,signed)))throw Error('UNAUTHENTICATED_CRM_REQUEST');
   if(entry.kind!=='HERMES_RESEARCH_REQUEST'||entry.schema_version!==1||
    entry.content_sha256!==hash(JSON.stringify(e))||e?.type!=='HERMES_RESEARCH_REQUEST'||
    e.caller!=='crm'||e.owner!=='world-catalogue'||e.mode!=='PROPOSE'||
@@ -25,7 +35,7 @@ export async function intakeHermesRequests({stateRoot=base,limit=10}={}){
   const receipt={accepted:true,requestId:e.requestId,correlationId:e.correlationId,
     status:'RECEIVED_NOT_RESEARCHED',source:'HERMES_LOCAL_INTAKE',request_sha256:entry.content_sha256};
   const created=await writeExclusive(claim,{envelope:e,received_at:new Date().toISOString(),status:'RECEIVED_NOT_RESEARCHED'});
-  if(created)await writeExclusive(ack,receipt);
+  if(created)await writeExclusive(ack,{...receipt,hmac_sha256:mac(shared,receipt)});
   result.push({requestId:e.requestId,status:'RECEIVED_NOT_RESEARCHED',new:created});
  }
  return result;
