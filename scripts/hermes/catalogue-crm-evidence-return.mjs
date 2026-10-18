@@ -25,7 +25,7 @@ export async function returnVerifiedHermesEvidence({dbUrl=process.env.CATALOG_DA
    const skus=[...new Set((e.payload?.findings||[]).flatMap(f=>[f.proposed_sku,...(f.canonical_matches||[]).map(m=>m.sku)].filter(Boolean)))];
    if(!skus.length){reports.push({requestId:e.requestId,status:'NO_SKU_CANDIDATES'});continue;}
    const rows=(await client.query(`SELECT evidence_id,sku,source_url,source_hash,verification_status,provenance
-    FROM public.hermes_catalogue_evidence WHERE sku = ANY($1::text[]) AND verification_status='VERIFIED'
+    FROM public.hermes_catalogue_evidence WHERE sku = ANY($1::text[]) AND verification_status='VERIFIED' AND captured_at >= $2::timestamptz
     ORDER BY captured_at DESC LIMIT 101`,[skus])).rows;
    if(rows.length>100)throw Error('EVIDENCE_RESULT_TRUNCATED');
    const evidences=rows.filter(r=>r.source_url&&r.source_hash&&r.provenance);
