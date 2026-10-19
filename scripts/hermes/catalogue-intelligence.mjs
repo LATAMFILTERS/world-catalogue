@@ -277,6 +277,54 @@ export function inheritDonaldsonAlternateEquipment({ target, alternateCodes, cat
   };
 }
 
+
+// Publication gate for inherited equipment. The alternate-page URL establishes
+// a part relationship, NOT independent equipment fitment evidence.
+export function auditInheritedDonaldsonEquipment({ target, candidates }) {
+  const norm = v => String(v ?? '').normalize('NFKC').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const identity = app => {
+    const make = norm(app.make || app.manufacturer || app.equipment_make || app.brand);
+    const model = norm(app.model || app.equipment_model);
+    const year = norm(app.year || app.model_year);
+    const engine = norm(app.engine || app.engine_model);
+    const option = norm(app.equipment_option || app.option || app.engine_option);
+    return make && model ? [make, model, year, engine, option].join('::') : null;
+  };
+  const existing = new Set((target?.equipment_applications || []).map(identity).filter(Boolean));
+  const seen = new Set(existing);
+  const rows = [];
+  let semanticDuplicates = 0, provenanceBlocked = 0, insufficientIdentity = 0;
+  for (const app of candidates || []) {
+    const id = identity(app);
+    const hasDonor = Boolean(app.inherited_from_sku && app.inherited_from_donaldson);
+    const directEvidence = app.equipment_evidence_url || app.fitment_source_url || null;
+    let officialFitment = false;
+    try {
+      const u = new URL(directEvidence);
+      officialFitment = u.protocol === 'https:' &&
+        (u.hostname === 'shop.donaldson.com' || u.hostname === 'donaldson.com' || u.hostname.endsWith('.donaldson.com'));
+    } catch {}
+    let reason;
+    if (!id) { reason = 'INSUFFICIENT_EQUIPMENT_IDENTITY'; insufficientIdentity++; }
+    else if (seen.has(id)) { reason = 'SEMANTIC_DUPLICATE'; semanticDuplicates++; }
+    else if (!hasDonor || !officialFitment) { reason = 'NO_INDEPENDENT_OFFICIAL_FITMENT_EVIDENCE'; provenanceBlocked++; }
+    else reason = 'EVIDENCE_READY_FOR_HUMAN_REVIEW';
+    if (id) seen.add(id);
+    rows.push({ identity: id, donor_sku: app.inherited_from_sku || null,
+      donor_code: app.inherited_from_donaldson || null,
+      direct_equipment_evidence_url: directEvidence, status: reason, application: app });
+  }
+  return {
+    summary: {
+      candidates_checked: rows.length, semantic_duplicates: semanticDuplicates,
+      identity_blocked: insufficientIdentity, provenance_blocked: provenanceBlocked,
+      ready_for_human_review: rows.filter(r => r.status === 'EVIDENCE_READY_FOR_HUMAN_REVIEW').length,
+      publication_authorized: 0
+    },
+    rows, status: 'REVIEW_REQUIRED', database_write: false
+  };
+}
+
 function officialMm(value) {
   if (typeof value !== 'string') return null;
   const mm = value.match(/\(([0-9]+(?:\.[0-9]+)?)\s*mm\)/i) ||
@@ -336,6 +384,7 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
       target: matches[0], alternateCodes: row.official.alternatives || [],
       catalog: products, officialSourceUrl: url
     });
+    const equipmentAudit = auditInheritedDonaldsonEquipment({ target: matches[0], candidates: alternates.inherited });
     const previous = Array.isArray(matches[0].equipment_applications) ? matches[0].equipment_applications : [];
     const previousIds = new Set(previous.map(a => JSON.stringify(a)));
     const proposed = alternates.inherited.filter(a => !previousIds.has(JSON.stringify(a)));
@@ -343,6 +392,7 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
       inherited_equipment_candidates: proposed,
       inherited_equipment_reviews: alternates.review,
       inherited_equipment_summary: alternates.summary,
+      inherited_equipment_audit: equipmentAudit,
       requires_application_evidence: true, database_write: false };
   });
 }
