@@ -105,6 +105,23 @@ export function logicalValue(row, field) {
   return row[field] ?? null;
 }
 
+
+// Compare dimensions using the database's numeric representation: PostgreSQL
+// NUMERIC can round-trip as strings and zero/decimal scales may differ.
+export function equivalentCatalogueValue(field, actual, expected) {
+  if (field !== 'dimensions') return hash(actual) === hash(expected);
+  const columns = COLUMN_GROUPS.dimensions;
+  const a = actual || {}, b = expected || {};
+  return columns.every(k => {
+    const left = a[k] == null || a[k] === '' ? null : a[k];
+    const right = b[k] == null || b[k] === '' ? null : b[k];
+    if (left === null || right === null) return left === right;
+    if (k === 'thread_size') return String(left).trim() === String(right).trim();
+    const l = Number(left), r = Number(right);
+    return Number.isFinite(l) && Number.isFinite(r) && Math.abs(l-r) < 0.000001;
+  });
+}
+
 export function cataloguePlanPatch(plan) {
   const patch = {};
   for (const operation of plan.operations) {
@@ -364,7 +381,7 @@ export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 
     const locked = await client.query('SELECT * FROM elimfilters_catalog WHERE sku = $1 FOR UPDATE', [plan.target_sku]);
     assert(locked.rowCount === 1, `Expected exactly one existing row for ${plan.target_sku}`);
     const row = locked.rows[0];
-    for (const operation of plan.operations) assert(hash(logicalValue(row, operation.field)) === hash(operation.before), `Stale snapshot for ${operation.field}; publication aborted`);
+    for (const operation of plan.operations) assert(equivalentCatalogueValue(operation.field, logicalValue(row, operation.field), operation.before), `Stale snapshot for ${operation.field}; publication aborted`);
     fs.mkdirSync(backupDir, { recursive: true });
     backupPath = path.join(backupDir, `${plan.target_sku}-${Date.now()}-${plan.plan_sha256.slice(0, 12)}.json`);
     const backup = { schema_version: '1.0.0', created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, research_bundle_id: plan.research_bundle_id, target_sku: plan.target_sku, operations: plan.operations, before: row };
@@ -402,7 +419,7 @@ export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 
     }
 
     const verified = await client.query(`SELECT ${columns.join(', ')} FROM elimfilters_catalog WHERE sku = $1`, [plan.target_sku]);
-    for (const operation of plan.operations) assert(hash(logicalValue(verified.rows[0], operation.field)) === hash(operation.after), `Post-write verification failed for ${operation.field}`);
+    for (const operation of plan.operations) assert(equivalentCatalogueValue(operation.field, logicalValue(verified.rows[0], operation.field), operation.after), `Post-write verification failed for ${operation.field}`);
     await client.query('COMMIT');
     return { outcome: 'PUBLISHED', database_write: true, target_sku: plan.target_sku, backup_path: backupPath, plan_sha256: plan.plan_sha256 };
   } catch (error) {
