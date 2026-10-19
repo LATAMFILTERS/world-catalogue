@@ -293,7 +293,7 @@ test('Donaldson official alternates stage equipment from independently verified 
   assert.equal(target.equipment_applications.length,0);
 });
 
-test('Donaldson alternate donors with contradictory geometry remain review-only', () => {
+test('Donaldson alternate donors preserve applications and flag dimension differences', () => {
   const identity = code => ({canonical_source_brand:'Donaldson',canonical_source_code:code,canonical_source_status:'VERIFIED'});
   const result=inheritDonaldsonAlternateEquipment({
     target:{sku:'EA10005',codigo_base:'DBA5000',source_identity:identity('DBA5000'),
@@ -302,8 +302,8 @@ test('Donaldson alternate donors with contradictory geometry remain review-only'
       dimensions:{height_mm:310},equipment_applications:[{make:'TEST'}]}],
     officialSourceUrl:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'
   });
-  assert.equal(result.inherited.length,0);
-  assert.equal(result.review[0].reason,'GEOMETRY_CONFLICT');
+  assert.equal(result.inherited.length,1);
+  assert.equal(result.review[0].reason,'OFFICIAL_ALTERNATE_DIMENSION_DIFFERENCE');
 });
 
 test('Donaldson inheritance reports proposed, duplicate and blocked counts', () => {
@@ -318,8 +318,8 @@ test('Donaldson inheritance reports proposed, duplicate and blocked counts', () 
     target,alternateCodes:['P182000','P181000'],catalog:[target,donor,bad],
     officialSourceUrl:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'
   });
-  assert.deepEqual(result.summary,{applications_proposed:1,duplicates_discarded:1,
-    applications_blocked:1,donor_references_blocked:1});
+  assert.deepEqual(result.summary,{applications_proposed:2,duplicates_discarded:1,
+    applications_blocked:0,donor_references_blocked:1});
   assert.equal(result.inherited[0].model,'B');
   assert.equal(result.database_write,false);
 });
