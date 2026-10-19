@@ -96,6 +96,21 @@ export function buildCataloguePublicationPlan({ bundle, catalog, generatedAt = n
       'Application evidence source_url must be present in candidate source_urls');
   }
 
+  // Application enrichment is additive: never erase existing applications or
+  // duplicate an already published application in a governed publication plan.
+  for (const field of applicationFields) {
+    const existing = snapshotValue(current, field) || [];
+    const proposed = proposedValues[field];
+    assert(Array.isArray(existing) && Array.isArray(proposed),
+      `${field} must be an array for application enrichment`);
+    const key = (entry) => JSON.stringify(canonical(entry));
+    const prior = new Set(existing.map(key));
+    const next = new Set(proposed.map(key));
+    assert(next.size === proposed.length, `${field} contains duplicate applications`);
+    assert([...prior].every(value => next.has(value)),
+      `${field} cannot remove existing applications`);
+  }
+
   const operations = approvedFields.map((field) => ({
     field,
     before: snapshotValue(current, field),

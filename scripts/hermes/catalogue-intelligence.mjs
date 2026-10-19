@@ -44,19 +44,64 @@ function productKey(item) {
   return `${normalizeBrand(item.brand || item.manufacturer)}::${normalizePart(item.part_number || item.partNumber || item.sku)}`;
 }
 
-// A source-verified identity match may reuse the governed SKU; a commercial
-// cross-reference alone never proves interchangeability.
-function sameVerifiedIdentity(discovery, existing) {
-  const brand = normalizeBrand(discovery.manufacturer || discovery.brand);
-  const code = normalizePart(discovery.part_number || discovery.partNumber);
-  return Boolean(brand && code && productKey(existing) === `${brand}::${code}`);
+function sourceKey(item) {
+  const source = item.source_identity || {};
+  const brand = normalizeBrand(source.canonical_source_brand || item.canonical_source_brand);
+  const code = normalizePart(source.canonical_source_code || item.canonical_source_code || item.codigo_base);
+  return brand && code ? `${brand}::${code}` : null;
+}
+function referenceKey(ref) {
+  if (!ref || typeof ref !== 'object') return null;
+  const brand = normalizeBrand(ref.manufacturer || ref.brand || ref.make);
+  const code = normalizePart(ref.code || ref.part_number || ref.partNumber);
+  return brand && code ? `${brand}::${code}` : null;
+}
+function evidenceKeys(item) {
+  const result = new Set([productKey(item), sourceKey(item)].filter(Boolean));
+  for (const field of ['oem_codes','competitor_codes','cross_references']) {
+    for (const ref of Array.isArray(item[field]) ? item[field] : []) {
+      const key = referenceKey(ref);
+      if (key) result.add(key);
+    }
+  }
+  return result;
+}
+function sameTechnicalProfile(a, b) {
+  if (!a?.dimensions || !b?.dimensions) return false;
+  const aKeys = Object.keys(a.dimensions).filter(k => a.dimensions[k] != null);
+  if (!aKeys.length || aKeys.some(k => b.dimensions[k] == null || JSON.stringify(a.dimensions[k]) !== JSON.stringify(b.dimensions[k]))) return false;
+  if (a.product_family && b.product_family && a.product_family !== b.product_family) return false;
+  return true;
+}
+function resolveExisting(candidate, products) {
+  const claimed = evidenceKeys(candidate);
+  const possible = products.filter(product => {
+    const keys = evidenceKeys(product);
+    return [...claimed].some(key => keys.has(key)) || sameTechnicalProfile(candidate, product);
+  });
+  const canonical = possible.filter(product => sourceKey(product) && sourceKey(product) === sourceKey(candidate));
+  // An unrelated product sharing the reference or technical profile is a
+  // collision, even if precisely one canonical source appears to match.
+  // Technical conflicts never clear an identity for reuse.
+  if (possible.length === 1 && canonical.length === 1 &&
+      candidate.source_identity?.canonical_source_status === 'VERIFIED' &&
+      canonical[0].source_identity?.canonical_source_status === 'VERIFIED' &&
+      sameTechnicalProfile(candidate, canonical[0]) &&
+      !incompatibleTechnicalData(candidate.dimensions, canonical[0].dimensions) &&
+      !incompatibleTechnicalData(candidate.technical_specs, canonical[0].technical_specs) &&
+      !incompatibleTechnicalData(canonical[0].technical_specs, candidate.technical_specs)) {
+    return { state: 'EXISTING_PRODUCT_REVIEW', current: canonical[0], possible };
+  }
+  if (possible.length) return { state: 'IDENTITY_CONFLICT_OR_CROSS_REVIEW', current: null, possible };
+  return { state: 'CATALOGUE_IDENTITY_SEARCH_REQUIRED', current: null, possible: [] };
 }
 
 function mergeVerifiedApplications(current, proposed) {
   const merged = [];
   const keys = new Set();
   for (const entry of [...(Array.isArray(current) ? current : []), ...(Array.isArray(proposed) ? proposed : [])]) {
-    const key = JSON.stringify(entry);
+    const key = JSON.stringify(entry && typeof entry === 'object' && !Array.isArray(entry)
+      ? Object.fromEntries(Object.entries(entry).sort(([a],[b]) => a.localeCompare(b))) : entry);
     if (!keys.has(key)) { keys.add(key); merged.push(entry); }
   }
   return merged;
@@ -66,6 +111,80 @@ function incompatibleTechnicalData(proposed, current) {
   if (!proposed || typeof proposed !== 'object' || !current || typeof current !== 'object') return false;
   return Object.entries(proposed).some(([key, value]) =>
     value != null && current[key] != null && JSON.stringify(value) !== JSON.stringify(current[key]));
+}
+
+
+const DONALDSON_DB_PREFIX = /^(DBA|DBH|DBL|DBF)[A-Z0-9]+$/;
+const DONALDSON_SPEC_FIELDS = new Set([
+  'micron_rating', 'iso_test_method', 'nominal_efficiency',
+  'burst_pressure_psi', 'collapse_pressure_psi', 'bypass_valve_psi',
+  'anti_drainback_valve', 'installation_type', 'attachment_type', 'is_primary'
+]);
+const DONALDSON_DIMENSION_FIELDS = new Set([
+  'height_mm', 'outer_diameter_mm', 'inner_diameter_mm',
+  'gasket_od_mm', 'gasket_id_mm', 'thread_size'
+]);
+function missing(value) { return value === null || value === undefined || value === ''; }
+
+// Donaldson DB variants have independent ELIMFILTERS SKUs. Source media names
+// (e.g. Ultra-Web) are evidence metadata, NEVER an ELIMFILTERS technology.
+export function buildDonaldsonDbEnrichment({ product, official }) {
+  const source = product?.source_identity || {};
+  const code = normalizePart(source.canonical_source_code || product?.codigo_base);
+  if (normalizeBrand(source.canonical_source_brand) !== 'DONALDSON' ||
+      !DONALDSON_DB_PREFIX.test(code) || !product?.sku) {
+    throw new Error('Verified Donaldson DB product with an existing SKU required');
+  }
+  if (source.canonical_source_status !== 'VERIFIED' ||
+      normalizeBrand(official?.manufacturer) !== 'DONALDSON' ||
+      normalizePart(official?.part_number) !== code ||
+      !/^https:\/\//i.test(official?.source_url || '') ||
+      !official?.source_date) {
+    throw new Error('Matching official Donaldson evidence required');
+  }
+  const differences = [];
+  const conflicts = [];
+  for (const [field, allowed] of [
+    ['dimensions', DONALDSON_DIMENSION_FIELDS],
+    ['technical_specs', DONALDSON_SPEC_FIELDS]
+  ]) {
+    const existing = product[field] || {};
+    const incoming = official[field] || {};
+    const after = { ...existing };
+    for (const [key, value] of Object.entries(incoming)) {
+      if (!allowed.has(key) || missing(value)) continue;
+      if (missing(existing[key])) after[key] = value;
+      else if (JSON.stringify(existing[key]) !== JSON.stringify(value)) conflicts.push(field + '.' + key);
+    }
+    if (JSON.stringify(existing) !== JSON.stringify(after)) {
+      differences.push({ field, before: existing, after });
+    }
+  }
+  const currentApps = Array.isArray(product.equipment_applications) ? product.equipment_applications : [];
+  const verifiedApps = Array.isArray(official.equipment_applications) ? official.equipment_applications : [];
+  const apps = mergeVerifiedApplications(currentApps, verifiedApps);
+  if (apps.length > currentApps.length) {
+    differences.push({ field: 'equipment_applications', before: currentApps, after: apps });
+  }
+  return {
+    existing_sku: product.sku,
+    codigo_base: product.codigo_base,
+    technology: product.technology, // MACROCORE remains untouched
+    identity_resolution: conflicts.length ? 'TECHNICAL_CONFLICT_REVIEW' : 'EXISTING_PRODUCT_REVIEW',
+    change_type: 'catalogue_correction',
+    status: 'REVIEW_REQUIRED',
+    conflicts,
+    differences,
+    source_urls: [official.source_url],
+    source_date: official.source_date,
+    source_metadata: {
+      manufacturer: 'DONALDSON', part_number: code,
+      supplier_media: official.media_type || null,
+      alternative_part_numbers: official.alternative_part_numbers || []
+    },
+    dry_run: true,
+    publication_enabled: false
+  };
 }
 
 function stableId(candidate) {
@@ -195,7 +314,7 @@ export async function readRelevantCatalogueProducts(file, wantedKeys) {
         depth -= 1;
         if (depth === 0) {
           const product = JSON.parse(objectText);
-          if (wantedKeys.has(productKey(product))) matches.push(product);
+          if (wantedKeys === null || wantedKeys.has(productKey(product))) matches.push(product);
           collecting = false;
           objectText = '';
         }
@@ -223,6 +342,10 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
       product_family: raw.product_family || null,
       applications: raw.applications || [],
       dimensions: raw.dimensions || {},
+      technical_specs: raw.technical_specs || {},
+      source_identity: raw.source_identity || null,
+      oem_codes: raw.oem_codes || [],
+      competitor_codes: raw.competitor_codes || [],
       cross_references: raw.cross_references || [],
       superseded_by: raw.superseded_by || null,
       catalogue_status: raw.catalogue_status || null,
@@ -238,11 +361,14 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
 
     // Fail closed: reuse only an identified existing product, and stage any
     // enrichment as a governed review candidate, never a canonical DB write.
-    const matched = catalogIndex.get(productKey(candidate));
-    if (matched && sameVerifiedIdentity(raw, matched)) {
+    const resolution = resolveExisting(candidate, catalogItems);
+    const matched = resolution.current;
+    candidate.possible_existing_skus = resolution.possible.map(item => item.sku).filter(Boolean);
+    if (matched) {
       candidate.existing_sku = matched.sku || null;
       candidate.identity_resolution = 'EXISTING_PRODUCT_REVIEW';
       if (incompatibleTechnicalData(raw.dimensions, matched.dimensions) ||
+          incompatibleTechnicalData(raw.technical_specs, matched.technical_specs) ||
           (raw.product_family && matched.product_family && raw.product_family !== matched.product_family)) {
         candidate.identity_resolution = 'TECHNICAL_CONFLICT_REVIEW';
       } else if (Array.isArray(raw.applications) && raw.applications.length) {
@@ -250,12 +376,13 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
         candidate.applications = mergeVerifiedApplications(matched.applications, raw.applications);
       }
     } else if (candidate.change_type === 'new_product') {
-      candidate.identity_resolution = 'CATALOGUE_IDENTITY_SEARCH_REQUIRED';
+      candidate.identity_resolution = resolution.state;
     }
 
     candidate.candidate_id = candidate.candidate_id || stableId(candidate);
     candidate.validation_errors = validateCandidate(candidate);
-    candidate.catalogue_comparison = compareCandidate(candidate, catalogIndex, {
+    const comparisonIndex = matched ? new Map([[productKey(candidate), matched]]) : catalogIndex;
+    candidate.catalogue_comparison = compareCandidate(candidate, comparisonIndex, {
       ...raw,
       ...(candidate.identity_resolution === 'EXISTING_PRODUCT_REVIEW' && Array.isArray(raw.applications)
         ? { applications: candidate.applications } : {}),
@@ -278,6 +405,9 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
         : 'REVIEW_REQUIRED';
     }
 
+    if (candidate.identity_resolution === 'IDENTITY_CONFLICT_OR_CROSS_REVIEW' && candidate.status !== 'INSUFFICIENT_DATA') {
+      candidate.status = 'REVIEW_REQUIRED';
+    }
     if (candidate.identity_resolution === 'EXISTING_PRODUCT_REVIEW' &&
         candidate.status !== 'REJECTED' && candidate.status !== 'INSUFFICIENT_DATA') {
       candidate.status = 'REVIEW_REQUIRED';
@@ -315,10 +445,9 @@ async function main() {
 
   const discoveriesRaw = readJson(discoveriesPath);
   const discoveries = Array.isArray(discoveriesRaw) ? discoveriesRaw : (discoveriesRaw.discoveries || discoveriesRaw.candidates || []);
-  const wantedKeys = new Set(discoveries
-    .filter((item) => item.change_type !== 'coverage_gap')
-    .map((item) => productKey(item)));
-  const catalog = await readRelevantCatalogueProducts(catalogPath, wantedKeys);
+  // Identity searches must consider canonical codes and every recorded OEM/competitor
+  // alias; loading only matching display-brand keys would silently miss duplicates.
+  const catalog = await readRelevantCatalogueProducts(catalogPath, null);
   const report = buildCatalogueCandidates({ discoveries, catalog });
 
   fs.mkdirSync(outputDir, { recursive: true });
