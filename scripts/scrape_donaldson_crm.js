@@ -35,6 +35,16 @@ const value = (flag) => { const i = args.indexOf(flag); return i >= 0 ? args[i +
 const normalize = (v) => String(v || '').trim().toUpperCase().replace(/[^A-Z0-9-]/g, '');
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 // Pause between products so a long run does not hammer the store.
+const urlMapFile = (() => { const i=args.indexOf('--url-map'); return i<0 ? null : args[i+1]; })();
+const productUrlMap = urlMapFile ? JSON.parse(fs.readFileSync(path.resolve(urlMapFile),'utf8').replace(/^\\uFEFF/,'')) : {};
+function verifiedDirectUrl(code) {
+  const url = productUrlMap[code];
+  if (!url) return null;
+  const parsed = new URL(url);
+  if (parsed.protocol !== 'https:' || parsed.hostname !== 'shop.donaldson.com' ||
+      !parsed.pathname.toUpperCase().includes('/PRODUCT/'+code+'/')) throw new Error('Invalid official product URL for '+code);
+  return parsed.href;
+}
 const PAGE_DELAY_MS = Math.max(Number(process.env.PAGE_DELAY_MS ?? 8000) || 0, 0);
 
 // Donaldson's edge answers a refused client with 403 "Access Denied". That is not "part not found":
@@ -364,7 +374,7 @@ async function main() {
       const started = new Date().toISOString();
       console.log(`[product] ${code} start`);
       try {
-        const sourceUrl = await resolveProductUrl(page, code);
+        const sourceUrl = verifiedDirectUrl(code) || await resolveProductUrl(page, code);
         if (!sourceUrl) {
           appendJsonl({ codigo_base: code, status: 'NOT_FOUND', scraped_at: started });
           console.log(`[product] ${code} NOT_FOUND`);
