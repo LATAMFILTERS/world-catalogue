@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildCatalogueCandidates, buildDonaldsonDbEnrichment, buildDonaldsonDbScraperCandidates, inheritDonaldsonAlternateEquipment } from '../../scripts/hermes/catalogue-intelligence.mjs';
+import { buildCatalogueCandidates, buildDonaldsonDbEnrichment, buildDonaldsonDbScraperCandidates, inheritDonaldsonAlternateEquipment, auditInheritedDonaldsonEquipment } from '../../scripts/hermes/catalogue-intelligence.mjs';
 
 test('creates a review candidate for a verified new official product', () => {
   const report = buildCatalogueCandidates({
@@ -322,4 +322,19 @@ test('Donaldson inheritance reports proposed, duplicate and blocked counts', () 
     applications_blocked:1,donor_references_blocked:1});
   assert.equal(result.inherited[0].model,'B');
   assert.equal(result.database_write,false);
+});
+
+test('semantic equipment audit deduplicates format variations and gates source provenance', () => {
+  const target={equipment_applications:[{make:'Caterpillar',model:'D-6'}]};
+  const candidates=[
+    {make:'CATerpillar',model:'D6',inherited_from_sku:'EA10002',inherited_from_donaldson:'P182000'},
+    {make:'Komatsu',model:'PC-200',inherited_from_sku:'EA10002',inherited_from_donaldson:'P182000'},
+    {make:'Volvo',model:'EC210',inherited_from_sku:'EA10002',inherited_from_donaldson:'P182000',
+      equipment_evidence_url:'https://shop.donaldson.com/store/en-us/product/verified-fitment'},
+    {make:'',model:'',inherited_from_sku:'EA10002'}
+  ];
+  const r=auditInheritedDonaldsonEquipment({target,candidates});
+  assert.deepEqual(r.summary,{candidates_checked:4,semantic_duplicates:1,identity_blocked:1,
+    provenance_blocked:1,ready_for_human_review:1,publication_authorized:0});
+  assert.equal(r.database_write,false);
 });
