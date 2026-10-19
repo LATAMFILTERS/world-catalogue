@@ -18,7 +18,8 @@ test('creates a review candidate for a verified new official product', () => {
   });
   assert.equal(report.dry_run, true);
   assert.equal(report.publication_enabled, false);
-  assert.equal(report.candidates[0].status, 'VERIFIED_OFFICIAL');
+  assert.equal(report.candidates[0].status, 'REVIEW_REQUIRED');
+  assert.equal(report.candidates[0].identity_resolution, 'CATALOGUE_IDENTITY_SEARCH_REQUIRED');
   assert.equal(report.candidates[0].catalogue_comparison.exists, false);
 });
 
@@ -78,4 +79,54 @@ test('requires approval metadata before publication approval', () => {
   });
   assert.equal(report.candidates[0].status, 'INSUFFICIENT_DATA');
   assert.ok(report.candidates[0].validation_errors.includes('approval metadata required'));
+});
+
+test('reuses existing SKU and preserves applications without inventing a new SKU', () => {
+  const report = buildCatalogueCandidates({
+    catalog: { products: [{
+      sku: 'EF92106', brand: 'Donaldson', part_number: 'P551210',
+      applications: [{ make: 'Kubota', model: 'RTV-X1100' }]
+    }] },
+    discoveries: [{
+      change_type: 'new_product', manufacturer: 'Donaldson', part_number: 'P551210',
+      applications: [{ make: 'Kubota', model: 'RTV-X900' }],
+      source_urls: ['https://example.com/verified-fitment'],
+      source_date: '2026-10-18', status: 'VERIFIED_OFFICIAL'
+    }]
+  });
+  const candidate = report.candidates[0];
+  assert.equal(candidate.existing_sku, 'EF92106');
+  assert.equal(candidate.change_type, 'application_update');
+  assert.equal(candidate.status, 'REVIEW_REQUIRED');
+  assert.equal(candidate.applications.length, 2);
+  assert.equal(candidate.catalogue_comparison.differences[0].field, 'applications');
+  assert.equal(report.publication_enabled, false);
+});
+
+test('repeated application produces no duplicate or publication', () => {
+  const application = { make: 'Kubota', model: 'RTV-X900' };
+  const report = buildCatalogueCandidates({
+    catalog: { products: [{sku: 'EF92106',brand:'Donaldson',part_number:'P551210',applications:[application]}] },
+    discoveries: [{
+      change_type: 'new_product',manufacturer:'Donaldson',part_number:'P551210',
+      applications:[application],source_urls:['https://example.com/evidence'],source_date:'2026-10-18'
+    }]
+  });
+  assert.equal(report.candidates[0].status, 'REJECTED');
+  assert.equal(report.candidates[0].applications.length, 1);
+});
+
+test('technical conflict blocks automatic application enrichment', () => {
+  const report = buildCatalogueCandidates({
+    catalog: { products: [{sku:'EA10001',brand:'Donaldson',part_number:'P1234',
+      dimensions:{height_mm:100},applications:['existing']}] },
+    discoveries: [{
+      change_type:'new_product',manufacturer:'Donaldson',part_number:'P1234',
+      dimensions:{height_mm:120},applications:['new'],
+      source_urls:['https://example.com/conflict'],source_date:'2026-10-18'
+    }]
+  });
+  assert.equal(report.candidates[0].identity_resolution, 'TECHNICAL_CONFLICT_REVIEW');
+  assert.equal(report.candidates[0].status, 'CONFLICTING_DATA');
+  assert.deepEqual(report.candidates[0].applications, ['new']);
 });
