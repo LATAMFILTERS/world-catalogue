@@ -12,7 +12,7 @@ if (!snapshotFile || !evidenceFile) throw new Error('Usage: node scripts/hermes/
 const snapshot = JSON.parse(fs.readFileSync(snapshotFile,'utf8'));
 const products = Array.isArray(snapshot) ? snapshot : snapshot.products;
 if (!Array.isArray(products)) throw new Error('Snapshot products missing');
-const raw = fs.readFileSync(evidenceFile,'utf8').split(/\r?\n/).filter(Boolean).map(JSON.parse);
+const raw = fs.readFileSync(evidenceFile,'utf8').replace(/^\uFEFF/,'').split(/\r?\n/).map(line=>line.replace(/^\uFEFF/,'').trim()).filter(Boolean).map(JSON.parse);
 const normalize = x => String(x || '').replace(/[^A-Z0-9]/ig,'').toUpperCase();
 const isDb = x => /^(DBL|DBF|DBH|DBA)[A-Z0-9]+$/.test(normalize(x));
 const targets = products.filter(p => isDb(p.codigo_base) || isDb(p.source_identity?.canonical_source_code));
