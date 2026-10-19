@@ -2,6 +2,10 @@ name: HERMES Weekly Intelligence Collection
 
 # GitHub Actions is the weekly scheduler; the operational runtime no longer has to trigger this flow.
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/hermes/trigger-weekly-2026-10-19.txt'
   schedule:
     - cron: '17 14 * * 1' # Monday 14:17 UTC (08:17 CST / 09:17 CDT)
   workflow_dispatch:
