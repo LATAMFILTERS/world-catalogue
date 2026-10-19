@@ -1,0 +1,33 @@
+name: HERMES Outlook Approval Intake
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: hermes-outlook-approvals
+  cancel-in-progress: false
+jobs:
+  consume-approved-replies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci --ignore-scripts
+      - name: Process verified approvals into existing research intake
+        env:
+          HERMES_OUTLOOK_APPROVALS_ENABLED: ${{ vars.HERMES_OUTLOOK_APPROVALS_ENABLED || 'false' }}
+          HERMES_SENDER_EMAIL: ${{ secrets.HERMES_SENDER_EMAIL }}
+          HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          CATALOG_DATABASE_URL: ${{ secrets.CATALOG_DATABASE_URL }}
+          HERMES_REQUESTS_ENABLED: ${{ vars.HERMES_REQUESTS_ENABLED || 'false' }}
+          KNOWLEDGE_CENTER_API_URL: ${{ secrets.KNOWLEDGE_CENTER_API_URL }}
+          KNOWLEDGE_CENTER_API_KEY: ${{ secrets.KNOWLEDGE_CENTER_API_KEY }}
+        run: node scripts/hermes/poll-outlook-approvals.js
