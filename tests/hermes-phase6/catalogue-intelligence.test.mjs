@@ -347,3 +347,27 @@ test('equipment audit recognizes canonical equipment engine type shape', () => {
  assert.equal(r.summary.provenance_blocked,1);
  assert.equal(r.summary.publication_authorized,0);
 });
+
+test('official DBA alternate relation and verified donor equipment form review evidence chain', () => {
+ const identity=code=>({canonical_source_brand:'Donaldson',canonical_source_code:code,canonical_source_status:'VERIFIED'});
+ const donor={sku:'EA11000',source_identity:identity('P181000'),
+  dimensions:{outer_diameter_mm:281.8},equipment_applications:[{equipment:'CAT D6',engine:'C9',type:'Crawler'}]};
+ const target={sku:'EA10005',source_identity:identity('DBA5000'),equipment_applications:[],
+  dimensions:{outer_diameter_mm:281.8}};
+ const app={...donor.equipment_applications[0],inherited_from_sku:'EA11000',
+  inherited_from_donaldson:'P181000'};
+ const r=auditInheritedDonaldsonEquipment({target,candidates:[app],donors:[donor],
+  equivalenceEvidence:{target_code:'DBA5000',alternative_part_numbers:['P181000'],
+    source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'}});
+ assert.equal(r.summary.ready_for_human_review,1);
+ assert.equal(r.summary.provenance_blocked,0);
+ assert.equal(r.summary.publication_authorized,0);
+});
+test('alternative relationship does not certify unknown donor source', () => {
+ const target={sku:'EA10005',source_identity:{canonical_source_code:'DBA5000'},equipment_applications:[]};
+ const r=auditInheritedDonaldsonEquipment({target,candidates:[{
+  equipment:'CAT D6',inherited_from_sku:'MISSING',inherited_from_donaldson:'P181000'}],
+  equivalenceEvidence:{target_code:'DBA5000',alternative_part_numbers:['P181000'],
+  source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'},donors:[]});
+ assert.equal(r.summary.provenance_blocked,1);
+});
