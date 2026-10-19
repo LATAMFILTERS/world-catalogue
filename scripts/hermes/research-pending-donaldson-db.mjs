@@ -59,7 +59,7 @@ let researchBlocked = false;
 if (toScrape.length && !process.argv.includes('--offline')) {
   try {
     const mapPath=path.join(evidenceDir,'donaldson-db-official-product-urls.json');
-    const urlMap=fs.existsSync(mapPath) ? JSON.parse(fs.readFileSync(mapPath,'utf8').replace(/^\\uFEFF/,'')) : {};
+    const urlMap=fs.existsSync(mapPath) ? JSON.parse(fs.readFileSync(mapPath,'utf8').replace(/^\uFEFF/,'')) : {};
     run(process.execPath,['scripts/scrape_donaldson_crm.js','--input',input,
       ...(Object.keys(urlMap).length?['--url-map',mapPath]:[])]);
 
