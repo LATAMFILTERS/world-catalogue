@@ -413,3 +413,21 @@ test('official alternate with missing geometry stays reviewable but cannot enter
  assert.equal(result.summary.publication_authorized,0);
  assert.equal(result.rows[0].status,'EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED');
 });
+
+test('bulk Donaldson HD archive ignores unrelated P-series rows in DB enrichment', () => {
+ const rows=[{codigo_base:'P181000'},{codigo_base:'P182000'}];
+ const result=buildDonaldsonDbScraperCandidates({rows,catalog:[]});
+ assert.equal(result.length,0);
+});
+test('official DB dimensional disagreement cannot enter additive update', () => {
+ const target={sku:'EA10005',codigo_base:'DBA5000',
+ source_identity:{canonical_source_brand:'DONALDSON',canonical_source_code:'DBA5000',canonical_source_status:'VERIFIED'},
+ technology:'MACROCORE',dimensions:{outer_diameter_mm:300},equipment_applications:[],oem_codes:[]};
+ const [r]=buildDonaldsonDbScraperCandidates({catalog:[target],rows:[{
+ codigo_base:'DBA5000',status:'OK',source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813',
+ audit:{expansion_complete:true},official:{part_number:'DBA5000',alternatives:[],cross_references_raw:[],
+ attributes:{'Outer Diameter':'281.8 mm','Length':'304.8 mm'}}}]});
+ assert.deepEqual(r.dimension_conflicts,['outer_diameter_mm']);
+ assert.equal(r.proposed_additive_updates.dimensions,undefined);
+ assert.equal(r.proposed_additive_updates.equipment_applications,undefined);
+});
