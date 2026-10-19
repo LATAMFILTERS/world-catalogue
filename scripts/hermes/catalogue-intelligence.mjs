@@ -240,9 +240,11 @@ export function inheritDonaldsonAlternateEquipment({ target, alternateCodes, cat
     const contradictions = geometry.filter(k => target.dimensions?.[k] != null && donor.dimensions?.[k] != null &&
       String(target.dimensions[k]) !== String(donor.dimensions[k]));
     if (contradictions.length) {
-      blockedApplications += apps.length;
-      review.push({ code, donor_sku: donor.sku, reason: 'GEOMETRY_CONFLICT', fields: contradictions, blocked_count: apps.length });
-      continue;
+      // Official manufacturer alternate relationship governs fitment inheritance.
+      // Dimension differences are recorded, never copied to the target and never
+      // misrepresented as matching geometry.
+      review.push({ code, donor_sku: donor.sku, reason: 'OFFICIAL_ALTERNATE_DIMENSION_DIFFERENCE',
+        fields: contradictions, blocked_count: 0 });
     }
     if (!apps.length) {
       review.push({ code, donor_sku: donor.sku, reason: 'NO_DONOR_EQUIPMENT_EVIDENCE', blocked_count: 0 });
@@ -339,10 +341,10 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
       if (!donor) reason = 'VERIFIED_DONOR_NOT_FOUND';
       else if (!donorRecord) reason = 'DONOR_APPLICATION_NOT_FOUND';
       else if (!officialRelationship || !officialUrl) reason = 'OFFICIAL_ALTERNATE_LINK_NOT_VERIFIED';
-      else if (contradictory) reason = 'GEOMETRY_CONFLICT';
+      else if (contradictory) reason = 'OFFICIAL_ALTERNATE_DIMENSION_DIFFERENCE_REVIEW';
       else if (geometryEvidence.length < 2) reason = 'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW';
       else reason = 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW';
-      if (!['EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW'].includes(reason))
+      if (!['EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_DIMENSION_DIFFERENCE_REVIEW'].includes(reason))
         provenanceBlocked++;
     }
     else reason = 'EVIDENCE_READY_FOR_HUMAN_REVIEW';
@@ -355,7 +357,7 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
     summary: {
       candidates_checked: rows.length, semantic_duplicates: semanticDuplicates,
       identity_blocked: insufficientIdentity, provenance_blocked: provenanceBlocked,
-      ready_for_human_review: rows.filter(r => ['EVIDENCE_READY_FOR_HUMAN_REVIEW','EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW'].includes(r.status)).length,
+      ready_for_human_review: rows.filter(r => ['EVIDENCE_READY_FOR_HUMAN_REVIEW','EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_DIMENSION_DIFFERENCE_REVIEW'].includes(r.status)).length,
       geometry_unconfirmed: rows.filter(r => r.status === 'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW').length,
       publication_authorized: 0
     },
@@ -440,8 +442,9 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
     const approvedEvidenceRows = equipmentAudit.rows.filter(a =>
       a.status === 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW' ||
       a.status === 'EVIDENCE_READY_FOR_HUMAN_REVIEW' ||
-      a.status === 'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW');
-    const suggestedApplications = dimensionConflicts.length ? [] : approvedEvidenceRows.map(a => a.application);
+      a.status === 'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW' ||
+      a.status === 'OFFICIAL_ALTERNATE_DIMENSION_DIFFERENCE_REVIEW');
+    const suggestedApplications = approvedEvidenceRows.map(a => a.application);
     const dimensionBefore = matches[0].dimensions || {};
     const dimensionAfter = { ...dimensionBefore };
     for (const [key, value] of Object.entries(dimensions)) {
