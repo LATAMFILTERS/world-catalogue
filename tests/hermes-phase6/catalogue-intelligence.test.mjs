@@ -257,3 +257,20 @@ test('incomplete or unofficial Donaldson scraper output is never promoted', () =
     audit:{expansion_complete:false},official:{part_number:'DBA5000'}}];
   assert.equal(buildDonaldsonDbScraperCandidates({rows,catalog:[]})[0].status,'REVIEW_REQUIRED');
 });
+
+test('official Quincy OEM cross reference is not duplicated on existing DBA SKU', () => {
+  const catalog=[{sku:'EA10005',codigo_base:'DBA5000',technology:'MACROCORE',
+    source_identity:{canonical_source_brand:'DONALDSON',canonical_source_code:'DBA5000',canonical_source_status:'VERIFIED'},
+    oem_codes:[{manufacturer:'QUINCY COMPRESSOR',code:'22001'}]}];
+  const rows=[{codigo_base:'DBA5000',status:'OK',
+    source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813',
+    scraped_at:'2026-09-12T01:59:05Z',audit:{expansion_complete:true},
+    official:{part_number:'DBA5000',attributes:{},cross_references_raw:[
+      ['Manufacturer Name','Manufacturer Part #','Notes'],['QUINCY COMPRESSOR','22001']
+    ],equipment_raw:[['Equipment','Year','Equipment Type']]}}];
+  const [candidate]=buildDonaldsonDbScraperCandidates({rows,catalog});
+  assert.equal(candidate.existing_sku,'EA10005');
+  assert.equal(candidate.differences.some(x=>x.field==='oem_codes'),false);
+  assert.equal(candidate.differences.some(x=>x.field==='equipment_applications'),false);
+  assert.equal(candidate.database_write,false);
+});
