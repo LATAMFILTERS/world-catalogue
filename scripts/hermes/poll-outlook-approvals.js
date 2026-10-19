@@ -13,18 +13,15 @@ function parseApproval(message, approvedSender) {
   if (!approvedSender || sender !== approvedSender.toLowerCase()) return null;
   if (message?.isDraft || !message?.receivedDateTime) return null;
   const subject = String(message?.subject || '').trim();
-  // To disambiguate multi-candidate weekly emails, the subject must identify the exact code.
-  const firstLineCandidate = String(message?.body?.content || '').replace(/<[^>]+>/g,' ').trim().slice(0,200);
-  const match = subject.match(/\b(HERMES_REAL_[A-Z0-9_]+)\b/i);
-  const bodyMatch = firstLineCandidate.match(/HERMES_REAL_[A-Z0-9_]+/i);
-  const selected = match || (bodyMatch ? [bodyMatch[0],bodyMatch[0]] : null);
-  if (!selected) return null;
-  const code = selected[1].toUpperCase();
-  if (!CODE.test(code)) return null;
   const html = String(message?.body?.content || '');
-  // Only the first line of a reply is considered, never quoted history.
-  const firstLine = html.replace(/<\/?(?:p|div|br)\b[^>]*>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').split(/\r?\n/).map(x=>x.trim()).find(Boolean) || '';
-  if (!/^APROBADO(?:\s+HERMES_REAL_[A-Z0-9_]+)?\s*\.?$/i.test(firstLine)) return null;
+  // Only first new reply line, not quoted history, can authorize work.
+  const firstLine = html.replace(/<\\/?(?:p|div|br)\\b[^>]*>/gi,'\\n').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').split(/\\r?\\n/).map(x=>x.trim()).find(Boolean) || '';
+  if (!/^APROBADO(?:\\s+HERMES_REAL_[A-Z0-9_]+)?\\s*\\.?$/i.test(firstLine)) return null;
+  const subjectMatch = subject.match(/\\b(HERMES_REAL_[A-Z0-9_]+)\\b/i);
+  const lineMatch = firstLine.match(/\\b(HERMES_REAL_[A-Z0-9_]+)\\b/i);
+  if (subjectMatch && lineMatch && subjectMatch[1].toUpperCase() !== lineMatch[1].toUpperCase()) return null;
+  const code = String(lineMatch?.[1] || subjectMatch?.[1] || '').toUpperCase();
+  if (!CODE.test(code)) return null;
   return { code, messageId:message.id };
 }
 function exactEquipment(candidate) {
