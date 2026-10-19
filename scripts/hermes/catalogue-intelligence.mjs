@@ -96,14 +96,6 @@ function resolveExisting(candidate, products) {
   return { state: 'CATALOGUE_IDENTITY_SEARCH_REQUIRED', current: null, possible: [] };
 }
 
-// A source-verified identity match may reuse the governed SKU; a commercial
-// cross-reference alone never proves interchangeability.
-function sameVerifiedIdentity(discovery, existing) {
-  const brand = normalizeBrand(discovery.manufacturer || discovery.brand);
-  const code = normalizePart(discovery.part_number || discovery.partNumber);
-  return Boolean(brand && code && productKey(existing) === `${brand}::${code}`);
-}
-
 function mergeVerifiedApplications(current, proposed) {
   const merged = [];
   const keys = new Set();
