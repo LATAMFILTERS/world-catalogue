@@ -308,7 +308,16 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
         equipment_applications: [] // requires separate application authority verification
       }
     });
+    const alternates = inheritDonaldsonAlternateEquipment({
+      target: matches[0], alternateCodes: row.official.alternatives || [],
+      catalog: products, officialSourceUrl: url
+    });
+    const previous = Array.isArray(matches[0].equipment_applications) ? matches[0].equipment_applications : [];
+    const previousIds = new Set(previous.map(a => JSON.stringify(a)));
+    const proposed = alternates.inherited.filter(a => !previousIds.has(JSON.stringify(a)));
     return { ...report, unclassified_cross_references: unclassifiedCrossReferences,
+      inherited_equipment_candidates: proposed,
+      inherited_equipment_reviews: alternates.review,
       requires_application_evidence: true, database_write: false };
   });
 }
