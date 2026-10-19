@@ -241,18 +241,22 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
     const oem_codes = refRows.filter(r => Array.isArray(r) && r.length >= 2 &&
       !/manufacturer name/i.test(String(r[0])) && String(r[0]).trim() && String(r[1]).trim())
       .map(r => ({ manufacturer: String(r[0]).trim(), code: String(r[1]).trim() }));
+    const declaredOemManufacturers = new Set((matches[0].oem_codes || []).map(r => normalizeBrand(r?.manufacturer)));
+    const classifiedOem = oem_codes.filter(r => declaredOemManufacturers.has(normalizeBrand(r.manufacturer)));
+    const unclassifiedCrossReferences = oem_codes.filter(r => !declaredOemManufacturers.has(normalizeBrand(r.manufacturer)));
     const report = buildDonaldsonDbEnrichment({
       product: matches[0],
       official: {
         manufacturer: 'DONALDSON', part_number: code,
         source_url: url, source_date: String(row.scraped_at || '').slice(0, 10),
-        dimensions, technical_specs, oem_codes,
+        dimensions, technical_specs, oem_codes: classifiedOem,
         media_type: a['Media Type'] || a['Media Brand'] || null,
         alternative_part_numbers: row.official.alternatives || [],
         equipment_applications: [] // requires separate application authority verification
       }
     });
-    return { ...report, requires_application_evidence: true, database_write: false };
+    return { ...report, unclassified_cross_references: unclassifiedCrossReferences,
+      requires_application_evidence: true, database_write: false };
   });
 }
 
