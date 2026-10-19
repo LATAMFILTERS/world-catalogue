@@ -338,3 +338,12 @@ test('semantic equipment audit deduplicates format variations and gates source p
     provenance_blocked:1,ready_for_human_review:1,publication_authorized:0});
   assert.equal(r.database_write,false);
 });
+
+test('equipment audit recognizes canonical equipment engine type shape', () => {
+ const r=auditInheritedDonaldsonEquipment({target:{equipment_applications:[]},
+ candidates:[{equipment:'CATERPILLAR D6',engine:'C9',type:'Crawler',
+  inherited_from_sku:'EA11000',inherited_from_donaldson:'P181000'}]});
+ assert.equal(r.summary.identity_blocked,0);
+ assert.equal(r.summary.provenance_blocked,1);
+ assert.equal(r.summary.publication_authorized,0);
+});
