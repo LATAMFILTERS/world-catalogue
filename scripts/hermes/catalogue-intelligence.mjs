@@ -190,10 +190,10 @@ export function buildDonaldsonDbEnrichment({ product, official }) {
 
 function officialMm(value) {
   if (typeof value !== 'string') return null;
-  const mm = value.match(/\\(([0-9]+(?:\\.[0-9]+)?)\\s*mm\\)/i) ||
-    value.match(/([0-9]+(?:\\.[0-9]+)?)\\s*mm\\b/i);
+  const mm = value.match(/\(([0-9]+(?:\.[0-9]+)?)\s*mm\)/i) ||
+    value.match(/([0-9]+(?:\.[0-9]+)?)\s*mm\b/i);
   if (mm) return Number(mm[1]);
-  const inches = value.match(/([0-9]+(?:\\.[0-9]+)?)\\s*(?:inch|inches)\\b/i);
+  const inches = value.match(/([0-9]+(?:\.[0-9]+)?)\s*(?:inch|inches)\b/i);
   return inches ? Math.round(Number(inches[1]) * 25.4 * 100) / 100 : null;
 }
 
