@@ -77,7 +77,7 @@ if (plan.operations.length !== 1 || plan.operations[0].field !== 'dimensions') {
 const connectionString = process.env.CATALOG_DATABASE_URL || process.env.ELIMFILTERS_DATABASE_URL || process.env.DATABASE_URL;
 if (!connectionString) throw new Error('A writable catalogue database URL is required');
 const { Pool } = await import('pg');
-const pool = new Pool({ connectionString, ssl: { rejectUnauthorized:false },
+const pool = new Pool({ connectionString, ssl: new URL(connectionString).hostname === '127.0.0.1' || new URL(connectionString).hostname === 'localhost' ? false : { rejectUnauthorized:false },
   application_name:'hermes-approved-dba-dimensions', max:1 });
 try {
   const outcome = await executeCataloguePublicationPlan({ plan, pool, apply:true });
