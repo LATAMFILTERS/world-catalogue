@@ -201,6 +201,16 @@ export function buildDonaldsonDbEnrichment({ product, official }) {
 
 
 
+function equipmentKey(application) {
+  if (!application || typeof application !== 'object' || Array.isArray(application)) return null;
+  // Provenance is not part of equipment identity; donor SKU and source URL
+  // must never make the same fitment appear as multiple distinct applications.
+  const ignored = new Set(['inherited_from_donaldson', 'inherited_from_sku', 'alternate_evidence_url', 'source_url', 'evidence_url']);
+  const data = Object.entries(application).filter(([key, value]) => !ignored.has(key) && value != null && value !== '');
+  if (!data.length) return null;
+  return JSON.stringify(Object.fromEntries(data.sort(([a], [b]) => a.localeCompare(b))));
+}
+
 export function inheritDonaldsonAlternateEquipment({ target, alternateCodes, catalog, officialSourceUrl }) {
   const source = target?.source_identity || {};
   const targetCode = normalizePart(source.canonical_source_code || target?.codigo_base);
@@ -211,46 +221,60 @@ export function inheritDonaldsonAlternateEquipment({ target, alternateCodes, cat
   if (!/^https:\/\/shop\.donaldson\.com\//i.test(officialSourceUrl || '')) {
     throw new Error('Official Donaldson alternate link required');
   }
-  const candidateCodes = [...new Set((alternateCodes || []).map(normalizePart).filter(code => code && code !== targetCode))];
-  const inherited = [];
-  const review = [];
   const products = Array.isArray(catalog) ? catalog : (catalog?.products || []);
-  for (const code of candidateCodes) {
+  const uniqueCodes = [...new Set((alternateCodes || []).map(normalizePart).filter(code => code && code !== targetCode))];
+  const seen = new Set((target.equipment_applications || []).map(equipmentKey).filter(Boolean));
+  const inherited = [], review = [];
+  let duplicatesDiscarded = 0, blockedApplications = 0;
+  for (const code of uniqueCodes) {
     const donors = products.filter(p => normalizeBrand(p?.source_identity?.canonical_source_brand) === 'DONALDSON' &&
       normalizePart(p?.source_identity?.canonical_source_code || p.codigo_base) === code &&
       p?.source_identity?.canonical_source_status === 'VERIFIED');
     if (donors.length !== 1) {
-      review.push({ code, reason: 'DONOR_MISSING_OR_AMBIGUOUS', donor_skus: donors.map(p=>p.sku) });
+      review.push({ code, reason: 'DONOR_MISSING_OR_AMBIGUOUS', donor_skus: donors.map(p => p.sku) });
       continue;
     }
     const donor = donors[0];
-    // Geometry is the relevant interchangeability check; different media
-    // technology and performance are explicitly NOT inherited.
-    const geometry = ['outer_diameter_mm','inner_diameter_mm','height_mm','thread_size'];
+    const apps = Array.isArray(donor.equipment_applications) ? donor.equipment_applications : [];
+    const geometry = ['outer_diameter_mm', 'inner_diameter_mm', 'height_mm', 'thread_size'];
     const contradictions = geometry.filter(k => target.dimensions?.[k] != null && donor.dimensions?.[k] != null &&
       String(target.dimensions[k]) !== String(donor.dimensions[k]));
     if (contradictions.length) {
-      review.push({ code, donor_sku: donor.sku, reason: 'GEOMETRY_CONFLICT', fields: contradictions });
+      blockedApplications += apps.length;
+      review.push({ code, donor_sku: donor.sku, reason: 'GEOMETRY_CONFLICT', fields: contradictions, blocked_count: apps.length });
       continue;
     }
-    const donorApps = Array.isArray(donor.equipment_applications) ? donor.equipment_applications : [];
-    if (!donorApps.length) {
-      review.push({ code, donor_sku: donor.sku, reason: 'NO_DONOR_EQUIPMENT_EVIDENCE' });
+    if (!apps.length) {
+      review.push({ code, donor_sku: donor.sku, reason: 'NO_DONOR_EQUIPMENT_EVIDENCE', blocked_count: 0 });
       continue;
     }
-    for (const application of donorApps) {
-      if (!application || typeof application !== 'object' || Array.isArray(application)) continue;
-      // A target alternate relationship alone is insufficient for an automatic
-      // publication: explicitly retain provenance of each inherited suggestion.
+    for (const app of apps) {
+      const key = equipmentKey(app);
+      if (!key) {
+        blockedApplications++;
+        review.push({ code, donor_sku: donor.sku, reason: 'INVALID_APPLICATION', blocked_count: 1 });
+        continue;
+      }
+      if (seen.has(key)) {
+        duplicatesDiscarded++;
+        continue;
+      }
+      seen.add(key);
       inherited.push({
-        ...application,
-        inherited_from_donaldson: code,
-        inherited_from_sku: donor.sku,
+        ...app, inherited_from_donaldson: code, inherited_from_sku: donor.sku,
         alternate_evidence_url: officialSourceUrl
       });
     }
   }
-  return { inherited, review, status: 'REVIEW_REQUIRED', database_write: false };
+  return {
+    inherited, review, status: 'REVIEW_REQUIRED', database_write: false,
+    summary: {
+      applications_proposed: inherited.length,
+      duplicates_discarded: duplicatesDiscarded,
+      applications_blocked: blockedApplications,
+      donor_references_blocked: review.length
+    }
+  };
 }
 
 function officialMm(value) {
@@ -318,6 +342,7 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
     return { ...report, unclassified_cross_references: unclassifiedCrossReferences,
       inherited_equipment_candidates: proposed,
       inherited_equipment_reviews: alternates.review,
+      inherited_equipment_summary: alternates.summary,
       requires_application_evidence: true, database_write: false };
   });
 }
@@ -590,6 +615,13 @@ async function main() {
       source_type: 'existing_donaldson_scraper_jsonl', candidates
     }, null, 2) + '\n', 'utf8');
     console.log(JSON.stringify({ output, checked: candidates.length,
+      equipment: candidates.reduce((acc, c) => { const x = c.inherited_equipment_summary || {};
+        acc.applications_proposed += x.applications_proposed || 0;
+        acc.duplicates_discarded += x.duplicates_discarded || 0;
+        acc.applications_blocked += x.applications_blocked || 0;
+        acc.donor_references_blocked += x.donor_references_blocked || 0;
+        return acc;
+      }, { applications_proposed: 0, duplicates_discarded: 0, applications_blocked: 0, donor_references_blocked: 0 }),
       review_required: candidates.filter(c => c.status === 'REVIEW_REQUIRED').length,
       database_write: false }, null, 2));
     return;
