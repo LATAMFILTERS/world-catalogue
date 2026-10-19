@@ -333,7 +333,10 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
       const contradictory = geometry.some(k => target.dimensions?.[k] != null && donor?.dimensions?.[k] != null &&
         String(target.dimensions[k]) !== String(donor.dimensions[k]));
       const donorRecord = donor?.equipment_applications?.some(e => equipmentKey(e) === equipmentKey(app));
-      if (donor && donorRecord && officialRelationship && officialUrl && !contradictory)
+      const geometryEvidence = ['outer_diameter_mm','inner_diameter_mm','height_mm'].filter(k =>
+        target.dimensions?.[k] != null && donor?.dimensions?.[k] != null &&
+        String(target.dimensions[k]) === String(donor.dimensions[k]));
+      if (donor && donorRecord && officialRelationship && officialUrl && !contradictory && geometryEvidence.length >= 2)
         reason = 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW';
       else { reason = 'INSUFFICIENT_EQUIVALENCE_PROVENANCE'; provenanceBlocked++; }
     }
@@ -414,7 +417,8 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
       catalog: products, officialSourceUrl: url
     });
     const equipmentAudit = auditInheritedDonaldsonEquipment({
-      target: matches[0], candidates: alternates.inherited, donors: products,
+      target: { ...matches[0], dimensions: { ...(matches[0].dimensions || {}), ...dimensions } },
+      candidates: alternates.inherited, donors: products,
       equivalenceEvidence: {
         target_code: code, alternative_part_numbers: row.official.alternatives || [],
         source_url: url
