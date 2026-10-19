@@ -280,7 +280,7 @@ export function inheritDonaldsonAlternateEquipment({ target, alternateCodes, cat
 
 // Publication gate for inherited equipment. The alternate-page URL establishes
 // a part relationship, NOT independent equipment fitment evidence.
-export function auditInheritedDonaldsonEquipment({ target, candidates }) {
+export function auditInheritedDonaldsonEquipment({ target, candidates, equivalenceEvidence = null, donors = [] }) {
   const norm = v => String(v ?? '').normalize('NFKC').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
   const identity = app => {
     const equipment = typeof app.equipment === 'string' ? app.equipment : '';
@@ -311,7 +311,32 @@ export function auditInheritedDonaldsonEquipment({ target, candidates }) {
     let reason;
     if (!id) { reason = 'INSUFFICIENT_EQUIPMENT_IDENTITY'; insufficientIdentity++; }
     else if (seen.has(id)) { reason = 'SEMANTIC_DUPLICATE'; semanticDuplicates++; }
-    else if (!hasDonor || !officialFitment) { reason = 'NO_INDEPENDENT_OFFICIAL_FITMENT_EVIDENCE'; provenanceBlocked++; }
+    else if (!hasDonor) { reason = 'MISSING_DONOR_IDENTITY'; provenanceBlocked++; }
+    else if (!officialFitment) {
+      // The direct official alternate listing plus a verified donor's catalogued
+      // equipment can support governed equivalent-fitment REVIEW, not publication.
+      // Require matching donor identity, canonical verification, provenance and
+      // no contradictory dimensions. An alternative URL alone is insufficient.
+      const donor = donors.find(d => d.sku === app.inherited_from_sku &&
+        normalizePart(d.source_identity?.canonical_source_code) === normalizePart(app.inherited_from_donaldson) &&
+        normalizeBrand(d.source_identity?.canonical_source_brand) === 'DONALDSON' &&
+        d.source_identity?.canonical_source_status === 'VERIFIED');
+      const evidenceCodes = Array.isArray(equivalenceEvidence?.alternative_part_numbers)
+        ? equivalenceEvidence.alternative_part_numbers.map(normalizePart) : [];
+      const officialRelationship = evidenceCodes.includes(normalizePart(app.inherited_from_donaldson)) &&
+        equivalenceEvidence?.target_code === (target?.source_identity?.canonical_source_code || target?.codigo_base);
+      const source = equivalenceEvidence?.source_url || '';
+      let officialUrl = false;
+      try { const u = new URL(source); officialUrl = u.protocol === 'https:' &&
+        (u.hostname === 'shop.donaldson.com' || u.hostname.endsWith('.donaldson.com')); } catch {}
+      const geometry = ['outer_diameter_mm','inner_diameter_mm','height_mm','thread_size'];
+      const contradictory = geometry.some(k => target.dimensions?.[k] != null && donor?.dimensions?.[k] != null &&
+        String(target.dimensions[k]) !== String(donor.dimensions[k]));
+      const donorRecord = donor?.equipment_applications?.some(e => equipmentKey(e) === equipmentKey(app));
+      if (donor && donorRecord && officialRelationship && officialUrl && !contradictory)
+        reason = 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW';
+      else { reason = 'INSUFFICIENT_EQUIVALENCE_PROVENANCE'; provenanceBlocked++; }
+    }
     else reason = 'EVIDENCE_READY_FOR_HUMAN_REVIEW';
     if (id) seen.add(id);
     rows.push({ identity: id, donor_sku: app.inherited_from_sku || null,
@@ -322,7 +347,7 @@ export function auditInheritedDonaldsonEquipment({ target, candidates }) {
     summary: {
       candidates_checked: rows.length, semantic_duplicates: semanticDuplicates,
       identity_blocked: insufficientIdentity, provenance_blocked: provenanceBlocked,
-      ready_for_human_review: rows.filter(r => r.status === 'EVIDENCE_READY_FOR_HUMAN_REVIEW').length,
+      ready_for_human_review: rows.filter(r => ['EVIDENCE_READY_FOR_HUMAN_REVIEW','EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW'].includes(r.status)).length,
       publication_authorized: 0
     },
     rows, status: 'REVIEW_REQUIRED', database_write: false
@@ -388,7 +413,13 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
       target: matches[0], alternateCodes: row.official.alternatives || [],
       catalog: products, officialSourceUrl: url
     });
-    const equipmentAudit = auditInheritedDonaldsonEquipment({ target: matches[0], candidates: alternates.inherited });
+    const equipmentAudit = auditInheritedDonaldsonEquipment({
+      target: matches[0], candidates: alternates.inherited, donors: products,
+      equivalenceEvidence: {
+        target_code: code, alternative_part_numbers: row.official.alternatives || [],
+        source_url: url
+      }
+    });
     const previous = Array.isArray(matches[0].equipment_applications) ? matches[0].equipment_applications : [];
     const previousIds = new Set(previous.map(a => JSON.stringify(a)));
     const proposed = alternates.inherited.filter(a => !previousIds.has(JSON.stringify(a)));
