@@ -113,6 +113,80 @@ function incompatibleTechnicalData(proposed, current) {
     value != null && current[key] != null && JSON.stringify(value) !== JSON.stringify(current[key]));
 }
 
+
+const DONALDSON_DB_PREFIX = /^(DBA|DBH|DBL|DBF)[A-Z0-9]+$/;
+const DONALDSON_SPEC_FIELDS = new Set([
+  'micron_rating', 'iso_test_method', 'nominal_efficiency',
+  'burst_pressure_psi', 'collapse_pressure_psi', 'bypass_valve_psi',
+  'anti_drainback_valve', 'installation_type', 'attachment_type', 'is_primary'
+]);
+const DONALDSON_DIMENSION_FIELDS = new Set([
+  'height_mm', 'outer_diameter_mm', 'inner_diameter_mm',
+  'gasket_od_mm', 'gasket_id_mm', 'thread_size'
+]);
+function missing(value) { return value === null || value === undefined || value === ''; }
+
+// Donaldson DB variants have independent ELIMFILTERS SKUs. Source media names
+// (e.g. Ultra-Web) are evidence metadata, NEVER an ELIMFILTERS technology.
+export function buildDonaldsonDbEnrichment({ product, official }) {
+  const source = product?.source_identity || {};
+  const code = normalizePart(source.canonical_source_code || product?.codigo_base);
+  if (normalizeBrand(source.canonical_source_brand) !== 'DONALDSON' ||
+      !DONALDSON_DB_PREFIX.test(code) || !product?.sku) {
+    throw new Error('Verified Donaldson DB product with an existing SKU required');
+  }
+  if (source.canonical_source_status !== 'VERIFIED' ||
+      normalizeBrand(official?.manufacturer) !== 'DONALDSON' ||
+      normalizePart(official?.part_number) !== code ||
+      !/^https:\/\//i.test(official?.source_url || '') ||
+      !official?.source_date) {
+    throw new Error('Matching official Donaldson evidence required');
+  }
+  const differences = [];
+  const conflicts = [];
+  for (const [field, allowed] of [
+    ['dimensions', DONALDSON_DIMENSION_FIELDS],
+    ['technical_specs', DONALDSON_SPEC_FIELDS]
+  ]) {
+    const existing = product[field] || {};
+    const incoming = official[field] || {};
+    const after = { ...existing };
+    for (const [key, value] of Object.entries(incoming)) {
+      if (!allowed.has(key) || missing(value)) continue;
+      if (missing(existing[key])) after[key] = value;
+      else if (JSON.stringify(existing[key]) !== JSON.stringify(value)) conflicts.push(field + '.' + key);
+    }
+    if (JSON.stringify(existing) !== JSON.stringify(after)) {
+      differences.push({ field, before: existing, after });
+    }
+  }
+  const currentApps = Array.isArray(product.equipment_applications) ? product.equipment_applications : [];
+  const verifiedApps = Array.isArray(official.equipment_applications) ? official.equipment_applications : [];
+  const apps = mergeVerifiedApplications(currentApps, verifiedApps);
+  if (apps.length > currentApps.length) {
+    differences.push({ field: 'equipment_applications', before: currentApps, after: apps });
+  }
+  return {
+    existing_sku: product.sku,
+    codigo_base: product.codigo_base,
+    technology: product.technology, // MACROCORE remains untouched
+    identity_resolution: conflicts.length ? 'TECHNICAL_CONFLICT_REVIEW' : 'EXISTING_PRODUCT_REVIEW',
+    change_type: 'catalogue_correction',
+    status: 'REVIEW_REQUIRED',
+    conflicts,
+    differences,
+    source_urls: [official.source_url],
+    source_date: official.source_date,
+    source_metadata: {
+      manufacturer: 'DONALDSON', part_number: code,
+      supplier_media: official.media_type || null,
+      alternative_part_numbers: official.alternative_part_numbers || []
+    },
+    dry_run: true,
+    publication_enabled: false
+  };
+}
+
 function stableId(candidate) {
   return crypto.createHash('sha256').update(JSON.stringify({
     change_type: candidate.change_type,
