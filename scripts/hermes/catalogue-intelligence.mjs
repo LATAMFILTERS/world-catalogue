@@ -376,7 +376,7 @@ function officialMm(value) {
 // Unverified equipment_raw is deliberately never promoted into applications.
 export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
   const products = Array.isArray(catalog) ? catalog : (catalog?.products || []);
-  return rows.map(row => {
+  return rows.filter(row => DONALDSON_DB_PREFIX.test(normalizePart(row?.codigo_base || row?.official?.part_number))).map(row => {
     const code = normalizePart(row?.codigo_base || row?.official?.part_number);
     const matches = products.filter(p =>
       normalizeBrand(p?.source_identity?.canonical_source_brand) === 'DONALDSON' &&
@@ -422,8 +422,10 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
       target: matches[0], alternateCodes: row.official.alternatives || [],
       catalog: products, officialSourceUrl: url
     });
+    const dimensionConflicts = Object.keys(dimensions).filter(key => matches[0].dimensions?.[key] != null &&
+      Number(matches[0].dimensions[key]) !== Number(dimensions[key]));
     const equipmentAudit = auditInheritedDonaldsonEquipment({
-      target: { ...matches[0], dimensions: { ...(matches[0].dimensions || {}), ...dimensions } },
+      target: { ...matches[0], dimensions: { ...dimensions, ...(matches[0].dimensions || {}) } },
       candidates: alternates.inherited, donors: products,
       equivalenceEvidence: {
         target_code: code, alternative_part_numbers: row.official.alternatives || [],
@@ -438,14 +440,14 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
     const approvedEvidenceRows = equipmentAudit.rows.filter(a =>
       a.status === 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW' ||
       a.status === 'EVIDENCE_READY_FOR_HUMAN_REVIEW');
-    const suggestedApplications = approvedEvidenceRows.map(a => a.application);
+    const suggestedApplications = dimensionConflicts.length ? [] : approvedEvidenceRows.map(a => a.application);
     const dimensionBefore = matches[0].dimensions || {};
     const dimensionAfter = { ...dimensionBefore };
     for (const [key, value] of Object.entries(dimensions)) {
       if (dimensionBefore[key] == null || dimensionBefore[key] === '') dimensionAfter[key] = value;
     }
     const updates = {};
-    if (JSON.stringify(dimensionBefore) !== JSON.stringify(dimensionAfter))
+    if (!dimensionConflicts.length && JSON.stringify(dimensionBefore) !== JSON.stringify(dimensionAfter))
       updates.dimensions = { before: dimensionBefore, after: dimensionAfter };
     if (suggestedApplications.length)
       updates.equipment_applications = {
@@ -460,6 +462,8 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
       inherited_equipment_summary: alternates.summary,
       inherited_equipment_audit: equipmentAudit,
       proposed_additive_updates: updates,
+      dimension_conflicts: dimensionConflicts,
+      publication_gate: 'EXPLICIT_APPROVAL_REQUIRED',
       requires_explicit_publication_approval: true,
       requires_application_evidence: true, database_write: false };
   });
