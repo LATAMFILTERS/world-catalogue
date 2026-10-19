@@ -80,9 +80,16 @@ function resolveExisting(candidate, products) {
     return [...claimed].some(key => keys.has(key)) || sameTechnicalProfile(candidate, product);
   });
   const canonical = possible.filter(product => sourceKey(product) && sourceKey(product) === sourceKey(candidate));
-  if (canonical.length === 1 && candidate.source_identity?.canonical_source_status === 'VERIFIED' &&
+  // An unrelated product sharing the reference or technical profile is a
+  // collision, even if precisely one canonical source appears to match.
+  // Technical conflicts never clear an identity for reuse.
+  if (possible.length === 1 && canonical.length === 1 &&
+      candidate.source_identity?.canonical_source_status === 'VERIFIED' &&
       canonical[0].source_identity?.canonical_source_status === 'VERIFIED' &&
-      sameTechnicalProfile(candidate, canonical[0])) {
+      sameTechnicalProfile(candidate, canonical[0]) &&
+      !incompatibleTechnicalData(candidate.dimensions, canonical[0].dimensions) &&
+      !incompatibleTechnicalData(candidate.technical_specs, canonical[0].technical_specs) &&
+      !incompatibleTechnicalData(canonical[0].technical_specs, candidate.technical_specs)) {
     return { state: 'EXISTING_PRODUCT_REVIEW', current: canonical[0], possible };
   }
   if (possible.length) return { state: 'IDENTITY_CONFLICT_OR_CROSS_REVIEW', current: null, possible };
