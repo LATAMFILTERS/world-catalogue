@@ -32,7 +32,39 @@ async function executeApproval({candidate, code, decisionRow, record = recordDec
   if (!candidate || candidate.entity_code !== code) throw Error('candidate mismatch');
   const equipment = exactEquipment(candidate);
   // Do not guess an OEM model from an article headline.
-  if (!equipment.brand || !equipment.model) return {status:'NEEDS_EQUIPMENT_IDENTIFICATION',code};
+  if (!equipment.brand || !equipment.model) {
+    // A verified news item is not an equipment catalogue. Queue an identity
+    // research stage rather than silently dropping an approved investigation.
+    const { createKnowledgeGap } = require('../../lib/knowledge-governance/knowledge-gap-contract');
+    const { createHermesResearchRequest } = require('../../lib/knowledge-governance/hermes-research-contract');
+    const { upsertKnowledgeGap, attachHermesResearchId } = require('../../lib/knowledge-governance/knowledge-gap-store');
+    const { createHermesResearchRequest: send } = require('../../lib/knowledge-governance/hermes-client');
+    const signal = String(candidate.research_resolution?.finding_title || candidate.source_title || code);
+    const gap = createKnowledgeGap({
+      request_id:'intel-identity-'+code, origin:'human', request_type:'filter_application',
+      priority:'high', equipment, system:'all_oem_filtration_systems',
+      component:'equipment_configuration_identification',
+      question:'Identify the exact OEM manufacturer, equipment model, years, engine and transmission variants and official parts/service catalogues for this verified industrial signal: '+signal+'. Source '+String(candidate.research_resolution?.evidence_url || candidate.source_url || '')+'. After identifying equipment, perform complete system-by-system filtration coverage; do not infer filters or fitment from a headline.',
+      reason:'Approved HERMES intelligence requires OEM configuration identification: '+code,
+      requested_by:'HERMES_APPROVAL', channel:'hermes_weekly_approved',
+      deduplication_key:'hermes-identity-'+code
+    });
+    const research = createHermesResearchRequest({
+      research_request_id:'intel-identity-research-'+code,
+      knowledge_gap_request_id:gap.request_id, research_type:'OEM_EQUIPMENT_IDENTIFICATION',
+      equipment, system:gap.system, component:gap.component, research_question:gap.question,
+      required_source_types:['official OEM vehicle catalogue','official OEM parts and service catalogue'],
+      minimum_independent_sources:1, allow_competitor_sources:false,
+      allow_industry_sources:false,priority:'high'
+    });
+    const stored=await upsertKnowledgeGap(gap);
+    if (!stored.persisted || !stored.gap) return {status:'IDENTITY_PERSIST_FAILED',code};
+    const sent=await send({knowledgeGap:stored.gap,researchRequest:research,requestId:research.research_request_id,conversationId:'hermes-weekly-identity'});
+    if (!['accepted','duplicate'].includes(sent.status)) return {status:'IDENTITY_DELIVERY_RETRY_REQUIRED',code};
+    if(sent.status==='accepted'&&sent.hermes_research_id) await attachHermesResearchId(stored.gap.request_id,sent.hermes_research_id);
+    await record({candidateCode:code,decision:'research',reason:'APROBADO: investigate OEM identity and all filtration systems; no publication'});
+    return {status:'IDENTITY_RESEARCH_QUEUED',code,research_id:sent.hermes_research_id||null};
+  }
   // Existing queue must be a verified review candidate. Approval means RESEARCH only here.
   if (candidate.workflow_status !== 'PENDING_REVIEW' || candidate.research_resolution?.status !== 'VERIFIED') return {status:'NOT_VERIFIED',code};
   if (decisionRow?.decision) return {status:'ALREADY_DECIDED',code};

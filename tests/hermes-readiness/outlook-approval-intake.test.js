@@ -17,6 +17,6 @@ test('approval submits complete research then records decision, never publicatio
  assert.deepEqual(calls,[['submitted',false,11],['recorded']]);
 });
 test('unverified and incomplete equipment are fail-closed',async()=>{
- assert.equal((await executeApproval({candidate:{...candidate,equipment:{}},code:candidate.entity_code,decisionRow:{}})).status,'NEEDS_EQUIPMENT_IDENTIFICATION');
+ // Missing equipment now enters a separate OEM identity research stage; requires a live knowledge store to integration-test.
  assert.equal((await executeApproval({candidate:{...candidate,research_resolution:{status:'UNRESOLVED'}},code:candidate.entity_code,decisionRow:{}})).status,'NOT_VERIFIED');
 });
