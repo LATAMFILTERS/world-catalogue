@@ -10,6 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   consume-approved-replies:
+    if: vars.HERMES_OUTLOOK_APPROVALS_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
