@@ -44,6 +44,30 @@ function productKey(item) {
   return `${normalizeBrand(item.brand || item.manufacturer)}::${normalizePart(item.part_number || item.partNumber || item.sku)}`;
 }
 
+// A source-verified identity match may reuse the governed SKU; a commercial
+// cross-reference alone never proves interchangeability.
+function sameVerifiedIdentity(discovery, existing) {
+  const brand = normalizeBrand(discovery.manufacturer || discovery.brand);
+  const code = normalizePart(discovery.part_number || discovery.partNumber);
+  return Boolean(brand && code && productKey(existing) === `${brand}::${code}`);
+}
+
+function mergeVerifiedApplications(current, proposed) {
+  const merged = [];
+  const keys = new Set();
+  for (const entry of [...(Array.isArray(current) ? current : []), ...(Array.isArray(proposed) ? proposed : [])]) {
+    const key = JSON.stringify(entry);
+    if (!keys.has(key)) { keys.add(key); merged.push(entry); }
+  }
+  return merged;
+}
+
+function incompatibleTechnicalData(proposed, current) {
+  if (!proposed || typeof proposed !== 'object' || !current || typeof current !== 'object') return false;
+  return Object.entries(proposed).some(([key, value]) =>
+    value != null && current[key] != null && JSON.stringify(value) !== JSON.stringify(current[key]));
+}
+
 function stableId(candidate) {
   return crypto.createHash('sha256').update(JSON.stringify({
     change_type: candidate.change_type,
@@ -212,11 +236,34 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
       created_at: raw.created_at || new Date().toISOString()
     };
 
+    // Fail closed: reuse only an identified existing product, and stage any
+    // enrichment as a governed review candidate, never a canonical DB write.
+    const matched = catalogIndex.get(productKey(candidate));
+    if (matched && sameVerifiedIdentity(raw, matched)) {
+      candidate.existing_sku = matched.sku || null;
+      candidate.identity_resolution = 'EXISTING_PRODUCT_REVIEW';
+      if (incompatibleTechnicalData(raw.dimensions, matched.dimensions) ||
+          (raw.product_family && matched.product_family && raw.product_family !== matched.product_family)) {
+        candidate.identity_resolution = 'TECHNICAL_CONFLICT_REVIEW';
+      } else if (Array.isArray(raw.applications) && raw.applications.length) {
+        candidate.change_type = 'application_update';
+        candidate.applications = mergeVerifiedApplications(matched.applications, raw.applications);
+      }
+    } else if (candidate.change_type === 'new_product') {
+      candidate.identity_resolution = 'CATALOGUE_IDENTITY_SEARCH_REQUIRED';
+    }
+
     candidate.candidate_id = candidate.candidate_id || stableId(candidate);
     candidate.validation_errors = validateCandidate(candidate);
-    candidate.catalogue_comparison = compareCandidate(candidate, catalogIndex, raw);
+    candidate.catalogue_comparison = compareCandidate(candidate, catalogIndex, {
+      ...raw,
+      ...(candidate.identity_resolution === 'EXISTING_PRODUCT_REVIEW' && Array.isArray(raw.applications)
+        ? { applications: candidate.applications } : {}),
+    });
 
-    if (candidate.validation_errors.length) {
+    if (candidate.identity_resolution === 'TECHNICAL_CONFLICT_REVIEW') {
+      candidate.status = 'CONFLICTING_DATA';
+    } else if (candidate.validation_errors.length) {
       candidate.status = 'INSUFFICIENT_DATA';
     } else if (!candidate.catalogue_comparison.exists && candidate.change_type === 'new_product') {
       candidate.status = candidate.status === 'VERIFIED_OFFICIAL' || candidate.status === 'VERIFIED_MULTI_SOURCE'
@@ -229,6 +276,15 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
       candidate.status = candidate.status === 'VERIFIED_OFFICIAL' || candidate.status === 'VERIFIED_MULTI_SOURCE'
         ? candidate.status
         : 'REVIEW_REQUIRED';
+    }
+
+    if (candidate.identity_resolution === 'EXISTING_PRODUCT_REVIEW' &&
+        candidate.status !== 'REJECTED' && candidate.status !== 'INSUFFICIENT_DATA') {
+      candidate.status = 'REVIEW_REQUIRED';
+    }
+    if (candidate.identity_resolution === 'CATALOGUE_IDENTITY_SEARCH_REQUIRED' &&
+        candidate.status !== 'INSUFFICIENT_DATA') {
+      candidate.status = 'REVIEW_REQUIRED';
     }
 
     output.push(candidate);
