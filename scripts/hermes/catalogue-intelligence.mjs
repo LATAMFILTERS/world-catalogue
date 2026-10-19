@@ -160,6 +160,18 @@ export function buildDonaldsonDbEnrichment({ product, official }) {
       differences.push({ field, before: existing, after });
     }
   }
+  // Preserve independently classified OEM cross references. Donaldson's cross-reference
+  // table is not evidence that another manufacturer's part is a competitor SKU.
+  const existingOem = Array.isArray(product.oem_codes) ? product.oem_codes : [];
+  const incomingOem = Array.isArray(official.oem_codes) ? official.oem_codes : [];
+  const normalizedOem = new Set(existingOem.map(x => normalizeBrand(x?.manufacturer) + '::' + normalizePart(x?.code)));
+  const addedOem = incomingOem.filter(x => {
+    const key = normalizeBrand(x?.manufacturer) + '::' + normalizePart(x?.code);
+    if (!normalizeBrand(x?.manufacturer) || !normalizePart(x?.code) || normalizedOem.has(key)) return false;
+    normalizedOem.add(key);
+    return true;
+  });
+  if (addedOem.length) differences.push({ field: 'oem_codes', before: existingOem, after: [...existingOem, ...addedOem] });
   const currentApps = Array.isArray(product.equipment_applications) ? product.equipment_applications : [];
   const verifiedApps = Array.isArray(official.equipment_applications) ? official.equipment_applications : [];
   const apps = mergeVerifiedApplications(currentApps, verifiedApps);
@@ -225,12 +237,16 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
     const technical_specs = {};
     if (a['Efficiency Test Std']) technical_specs.iso_test_method = a['Efficiency Test Std'];
     if (a['Efficiency']) technical_specs.nominal_efficiency = a['Efficiency'];
+    const refRows = Array.isArray(row.official.cross_references_raw) ? row.official.cross_references_raw : [];
+    const oem_codes = refRows.filter(r => Array.isArray(r) && r.length >= 2 &&
+      !/manufacturer name/i.test(String(r[0])) && String(r[0]).trim() && String(r[1]).trim())
+      .map(r => ({ manufacturer: String(r[0]).trim(), code: String(r[1]).trim() }));
     const report = buildDonaldsonDbEnrichment({
       product: matches[0],
       official: {
         manufacturer: 'DONALDSON', part_number: code,
         source_url: url, source_date: String(row.scraped_at || '').slice(0, 10),
-        dimensions, technical_specs,
+        dimensions, technical_specs, oem_codes,
         media_type: a['Media Type'] || a['Media Brand'] || null,
         alternative_part_numbers: row.official.alternatives || [],
         equipment_applications: [] // requires separate application authority verification
