@@ -336,9 +336,14 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
       const geometryEvidence = ['outer_diameter_mm','inner_diameter_mm','height_mm'].filter(k =>
         target.dimensions?.[k] != null && donor?.dimensions?.[k] != null &&
         String(target.dimensions[k]) === String(donor.dimensions[k]));
-      if (donor && donorRecord && officialRelationship && officialUrl && !contradictory && geometryEvidence.length >= 2)
-        reason = 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW';
-      else { reason = 'INSUFFICIENT_EQUIVALENCE_PROVENANCE'; provenanceBlocked++; }
+      if (!donor) reason = 'VERIFIED_DONOR_NOT_FOUND';
+      else if (!donorRecord) reason = 'DONOR_APPLICATION_NOT_FOUND';
+      else if (!officialRelationship || !officialUrl) reason = 'OFFICIAL_ALTERNATE_LINK_NOT_VERIFIED';
+      else if (contradictory) reason = 'GEOMETRY_CONFLICT';
+      else if (geometryEvidence.length < 2) reason = 'EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED';
+      else reason = 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW';
+      if (!['EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED'].includes(reason))
+        provenanceBlocked++;
     }
     else reason = 'EVIDENCE_READY_FOR_HUMAN_REVIEW';
     if (id) seen.add(id);
@@ -350,7 +355,8 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
     summary: {
       candidates_checked: rows.length, semantic_duplicates: semanticDuplicates,
       identity_blocked: insufficientIdentity, provenance_blocked: provenanceBlocked,
-      ready_for_human_review: rows.filter(r => ['EVIDENCE_READY_FOR_HUMAN_REVIEW','EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW'].includes(r.status)).length,
+      ready_for_human_review: rows.filter(r => ['EVIDENCE_READY_FOR_HUMAN_REVIEW','EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED'].includes(r.status)).length,
+      geometry_unconfirmed: rows.filter(r => r.status === 'EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED').length,
       publication_authorized: 0
     },
     rows, status: 'REVIEW_REQUIRED', database_write: false
