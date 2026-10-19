@@ -44,6 +44,51 @@ function productKey(item) {
   return `${normalizeBrand(item.brand || item.manufacturer)}::${normalizePart(item.part_number || item.partNumber || item.sku)}`;
 }
 
+function sourceKey(item) {
+  const source = item.source_identity || {};
+  const brand = normalizeBrand(source.canonical_source_brand || item.canonical_source_brand);
+  const code = normalizePart(source.canonical_source_code || item.canonical_source_code || item.codigo_base);
+  return brand && code ? `${brand}::${code}` : null;
+}
+function referenceKey(ref) {
+  if (!ref || typeof ref !== 'object') return null;
+  const brand = normalizeBrand(ref.manufacturer || ref.brand || ref.make);
+  const code = normalizePart(ref.code || ref.part_number || ref.partNumber);
+  return brand && code ? `${brand}::${code}` : null;
+}
+function evidenceKeys(item) {
+  const result = new Set([productKey(item), sourceKey(item)].filter(Boolean));
+  for (const field of ['oem_codes','competitor_codes','cross_references']) {
+    for (const ref of Array.isArray(item[field]) ? item[field] : []) {
+      const key = referenceKey(ref);
+      if (key) result.add(key);
+    }
+  }
+  return result;
+}
+function sameTechnicalProfile(a, b) {
+  if (!a?.dimensions || !b?.dimensions) return false;
+  const aKeys = Object.keys(a.dimensions).filter(k => a.dimensions[k] != null);
+  if (!aKeys.length || aKeys.some(k => b.dimensions[k] == null || JSON.stringify(a.dimensions[k]) !== JSON.stringify(b.dimensions[k]))) return false;
+  if (a.product_family && b.product_family && a.product_family !== b.product_family) return false;
+  return true;
+}
+function resolveExisting(candidate, products) {
+  const claimed = evidenceKeys(candidate);
+  const possible = products.filter(product => {
+    const keys = evidenceKeys(product);
+    return [...claimed].some(key => keys.has(key)) || sameTechnicalProfile(candidate, product);
+  });
+  const canonical = possible.filter(product => sourceKey(product) && sourceKey(product) === sourceKey(candidate));
+  if (canonical.length === 1 && candidate.source_identity?.canonical_source_status === 'VERIFIED' &&
+      canonical[0].source_identity?.canonical_source_status === 'VERIFIED' &&
+      sameTechnicalProfile(candidate, canonical[0])) {
+    return { state: 'EXISTING_PRODUCT_REVIEW', current: canonical[0], possible };
+  }
+  if (possible.length) return { state: 'IDENTITY_CONFLICT_OR_CROSS_REVIEW', current: null, possible };
+  return { state: 'CATALOGUE_IDENTITY_SEARCH_REQUIRED', current: null, possible: [] };
+}
+
 // A source-verified identity match may reuse the governed SKU; a commercial
 // cross-reference alone never proves interchangeability.
 function sameVerifiedIdentity(discovery, existing) {
@@ -195,7 +240,7 @@ export async function readRelevantCatalogueProducts(file, wantedKeys) {
         depth -= 1;
         if (depth === 0) {
           const product = JSON.parse(objectText);
-          if (wantedKeys.has(productKey(product))) matches.push(product);
+          if (wantedKeys === null || wantedKeys.has(productKey(product))) matches.push(product);
           collecting = false;
           objectText = '';
         }
@@ -223,6 +268,10 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
       product_family: raw.product_family || null,
       applications: raw.applications || [],
       dimensions: raw.dimensions || {},
+      technical_specs: raw.technical_specs || {},
+      source_identity: raw.source_identity || null,
+      oem_codes: raw.oem_codes || [],
+      competitor_codes: raw.competitor_codes || [],
       cross_references: raw.cross_references || [],
       superseded_by: raw.superseded_by || null,
       catalogue_status: raw.catalogue_status || null,
@@ -238,8 +287,10 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
 
     // Fail closed: reuse only an identified existing product, and stage any
     // enrichment as a governed review candidate, never a canonical DB write.
-    const matched = catalogIndex.get(productKey(candidate));
-    if (matched && sameVerifiedIdentity(raw, matched)) {
+    const resolution = resolveExisting(candidate, catalogItems);
+    const matched = resolution.current;
+    candidate.possible_existing_skus = resolution.possible.map(item => item.sku).filter(Boolean);
+    if (matched) {
       candidate.existing_sku = matched.sku || null;
       candidate.identity_resolution = 'EXISTING_PRODUCT_REVIEW';
       if (incompatibleTechnicalData(raw.dimensions, matched.dimensions) ||
@@ -250,7 +301,7 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
         candidate.applications = mergeVerifiedApplications(matched.applications, raw.applications);
       }
     } else if (candidate.change_type === 'new_product') {
-      candidate.identity_resolution = 'CATALOGUE_IDENTITY_SEARCH_REQUIRED';
+      candidate.identity_resolution = resolution.state;
     }
 
     candidate.candidate_id = candidate.candidate_id || stableId(candidate);
@@ -278,6 +329,9 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
         : 'REVIEW_REQUIRED';
     }
 
+    if (candidate.identity_resolution === 'IDENTITY_CONFLICT_OR_CROSS_REVIEW' && candidate.status !== 'INSUFFICIENT_DATA') {
+      candidate.status = 'REVIEW_REQUIRED';
+    }
     if (candidate.identity_resolution === 'EXISTING_PRODUCT_REVIEW' &&
         candidate.status !== 'REJECTED' && candidate.status !== 'INSUFFICIENT_DATA') {
       candidate.status = 'REVIEW_REQUIRED';
@@ -315,10 +369,9 @@ async function main() {
 
   const discoveriesRaw = readJson(discoveriesPath);
   const discoveries = Array.isArray(discoveriesRaw) ? discoveriesRaw : (discoveriesRaw.discoveries || discoveriesRaw.candidates || []);
-  const wantedKeys = new Set(discoveries
-    .filter((item) => item.change_type !== 'coverage_gap')
-    .map((item) => productKey(item)));
-  const catalog = await readRelevantCatalogueProducts(catalogPath, wantedKeys);
+  // Identity searches must consider canonical codes and every recorded OEM/competitor
+  // alias; loading only matching display-brand keys would silently miss duplicates.
+  const catalog = await readRelevantCatalogueProducts(catalogPath, null);
   const report = buildCatalogueCandidates({ discoveries, catalog });
 
   fs.mkdirSync(outputDir, { recursive: true });
