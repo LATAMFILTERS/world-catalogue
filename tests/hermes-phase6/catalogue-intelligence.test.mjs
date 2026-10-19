@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildCatalogueCandidates, buildDonaldsonDbEnrichment, buildDonaldsonDbScraperCandidates } from '../../scripts/hermes/catalogue-intelligence.mjs';
+import { buildCatalogueCandidates, buildDonaldsonDbEnrichment, buildDonaldsonDbScraperCandidates, inheritDonaldsonAlternateEquipment } from '../../scripts/hermes/catalogue-intelligence.mjs';
 
 test('creates a review candidate for a verified new official product', () => {
   const report = buildCatalogueCandidates({
@@ -273,4 +273,35 @@ test('official Quincy OEM cross reference is not duplicated on existing DBA SKU'
   assert.equal(candidate.differences.some(x=>x.field==='oem_codes'),false);
   assert.equal(candidate.differences.some(x=>x.field==='equipment_applications'),false);
   assert.equal(candidate.database_write,false);
+});
+
+test('Donaldson official alternates stage equipment from independently verified donor SKU', () => {
+  const identity = code => ({canonical_source_brand:'Donaldson',canonical_source_code:code,canonical_source_status:'VERIFIED'});
+  const target={sku:'EA10005',codigo_base:'DBA5000',source_identity:identity('DBA5000'),
+    dimensions:{outer_diameter_mm:281.8,inner_diameter_mm:170.7,height_mm:304.8},equipment_applications:[],technology:'MACROCORE'};
+  const donor={sku:'EA10002',codigo_base:'P182000',source_identity:identity('P182000'),
+    dimensions:{outer_diameter_mm:281.8,inner_diameter_mm:170.7,height_mm:304.8},
+    equipment_applications:[{make:'SAMPLE',model:'TEST',verified:true}]};
+  const result=inheritDonaldsonAlternateEquipment({
+    target,alternateCodes:['P181000','P182000'],catalog:[target,donor],
+    officialSourceUrl:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'
+  });
+  assert.equal(result.inherited.length,1);
+  assert.equal(result.inherited[0].inherited_from_sku,'EA10002');
+  assert.equal(result.review[0].reason,'DONOR_MISSING_OR_AMBIGUOUS');
+  assert.equal(result.database_write,false);
+  assert.equal(target.equipment_applications.length,0);
+});
+
+test('Donaldson alternate donors with contradictory geometry remain review-only', () => {
+  const identity = code => ({canonical_source_brand:'Donaldson',canonical_source_code:code,canonical_source_status:'VERIFIED'});
+  const result=inheritDonaldsonAlternateEquipment({
+    target:{sku:'EA10005',codigo_base:'DBA5000',source_identity:identity('DBA5000'),
+      dimensions:{height_mm:304.8}},
+    alternateCodes:['P182000'],catalog:[{sku:'EA10002',source_identity:identity('P182000'),
+      dimensions:{height_mm:310},equipment_applications:[{make:'TEST'}]}],
+    officialSourceUrl:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'
+  });
+  assert.equal(result.inherited.length,0);
+  assert.equal(result.review[0].reason,'GEOMETRY_CONFLICT');
 });
