@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildCatalogueCandidates, buildDonaldsonDbEnrichment } from '../../scripts/hermes/catalogue-intelligence.mjs';
+import { buildCatalogueCandidates, buildDonaldsonDbEnrichment, buildDonaldsonDbScraperCandidates } from '../../scripts/hermes/catalogue-intelligence.mjs';
 
 test('creates a review candidate for a verified new official product', () => {
   const report = buildCatalogueCandidates({
@@ -231,4 +231,29 @@ test('DB enrichment cannot inherit applications from alternates or mismatched pa
     manufacturer:'Donaldson',part_number:'P181000',source_url:'https://www.donaldson.com/x',source_date:'2026-10-18',
     equipment_applications:[{make:'QUINCY'}]
   }}),/Matching official/);
+});
+
+test('existing Donaldson scraper output stages DB gaps without overwriting MACROCORE', () => {
+  const catalog=[{sku:'EA10005',codigo_base:'DBA5000',technology:'MACROCORE',
+    source_identity:{canonical_source_brand:'DONALDSON',canonical_source_code:'DBA5000',canonical_source_status:'VERIFIED'},
+    dimensions:{},technical_specs:{},equipment_applications:[]}];
+  const rows=[{codigo_base:'DBA5000',status:'OK',source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/test',
+    scraped_at:'2026-10-18T00:00:00Z',audit:{expansion_complete:true},
+    official:{part_number:'DBA5000',attributes:{'Outer Diameter':'11.09 inch (281.8 mm)',
+      'Inner Diameter':'6.72 inch (170.7 mm)','Length':'12.00 inch (304.8 mm)',
+      'Efficiency':'Up to 99.99%','Efficiency Test Std':'ISO 5011','Media Type':'Ultra-Web Nanofiber'},
+      alternatives:['P181000','P182000'],equipment_raw:[{make:'SOME MAKE',model:'UNVERIFIED'}]}}];
+  const [result]=buildDonaldsonDbScraperCandidates({rows,catalog});
+  assert.equal(result.existing_sku,'EA10005');
+  assert.equal(result.technology,'MACROCORE');
+  assert.equal(result.differences[0].after.height_mm,304.8);
+  assert.equal(result.source_metadata.supplier_media,'Ultra-Web Nanofiber');
+  assert.equal(result.differences.some(x=>x.field==='equipment_applications'),false);
+  assert.equal(result.database_write,false);
+});
+
+test('incomplete or unofficial Donaldson scraper output is never promoted', () => {
+  const rows=[{codigo_base:'DBA5000',status:'PARTIAL',source_url:'https://shop.donaldson.com/a',
+    audit:{expansion_complete:false},official:{part_number:'DBA5000'}}];
+  assert.equal(buildDonaldsonDbScraperCandidates({rows,catalog:[]})[0].status,'REVIEW_REQUIRED');
 });
