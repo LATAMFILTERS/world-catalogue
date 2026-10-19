@@ -496,6 +496,22 @@ async function main() {
     process.exit(2);
   }
 
+  if (process.argv.includes('--donaldson-db-jsonl')) {
+    const lines = fs.readFileSync(discoveriesPath, 'utf8').split(/\\r?\\n/).filter(line => line.trim());
+    const rows = lines.map(line => JSON.parse(line));
+    const catalog = await readRelevantCatalogueProducts(catalogPath, null);
+    const candidates = buildDonaldsonDbScraperCandidates({ rows, catalog });
+    fs.mkdirSync(outputDir, { recursive: true });
+    const output = path.join(outputDir, `donaldson-db-review-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
+    fs.writeFileSync(output, JSON.stringify({
+      schema_version: '1.0.0', dry_run: true, publication_enabled: false,
+      source_type: 'existing_donaldson_scraper_jsonl', candidates
+    }, null, 2) + '\\n', 'utf8');
+    console.log(JSON.stringify({ output, checked: candidates.length,
+      review_required: candidates.filter(c => c.status === 'REVIEW_REQUIRED').length,
+      database_write: false }, null, 2));
+    return;
+  }
   const discoveriesRaw = readJson(discoveriesPath);
   const discoveries = Array.isArray(discoveriesRaw) ? discoveriesRaw : (discoveriesRaw.discoveries || discoveriesRaw.candidates || []);
   // Identity searches must consider canonical codes and every recorded OEM/competitor
