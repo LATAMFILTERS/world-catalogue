@@ -85,10 +85,12 @@ test('reuses existing SKU and preserves applications without inventing a new SKU
   const report = buildCatalogueCandidates({
     catalog: { products: [{
       sku: 'EF92106', brand: 'Donaldson', part_number: 'P551210',
+      source_identity:{canonical_source_brand:'Donaldson',canonical_source_code:'P551210',canonical_source_status:'VERIFIED'}, dimensions:{height_mm:100},
       applications: [{ make: 'Kubota', model: 'RTV-X1100' }]
     }] },
     discoveries: [{
       change_type: 'new_product', manufacturer: 'Donaldson', part_number: 'P551210',
+      source_identity:{canonical_source_brand:'Donaldson',canonical_source_code:'P551210',canonical_source_status:'VERIFIED'}, dimensions:{height_mm:100},
       applications: [{ make: 'Kubota', model: 'RTV-X900' }],
       source_urls: ['https://example.com/verified-fitment'],
       source_date: '2026-10-18', status: 'VERIFIED_OFFICIAL'
@@ -106,9 +108,9 @@ test('reuses existing SKU and preserves applications without inventing a new SKU
 test('repeated application produces no duplicate or publication', () => {
   const application = { make: 'Kubota', model: 'RTV-X900' };
   const report = buildCatalogueCandidates({
-    catalog: { products: [{sku: 'EF92106',brand:'Donaldson',part_number:'P551210',applications:[application]}] },
+    catalog: { products: [{sku: 'EF92106',brand:'Donaldson',part_number:'P551210',source_identity:{canonical_source_brand:'Donaldson',canonical_source_code:'P551210',canonical_source_status:'VERIFIED'}, dimensions:{height_mm:100},applications:[application]}] },
     discoveries: [{
-      change_type: 'new_product',manufacturer:'Donaldson',part_number:'P551210',
+      change_type: 'new_product',manufacturer:'Donaldson',part_number:'P551210',source_identity:{canonical_source_brand:'Donaldson',canonical_source_code:'P551210',canonical_source_status:'VERIFIED'}, dimensions:{height_mm:100},
       applications:[application],source_urls:['https://example.com/evidence'],source_date:'2026-10-18'
     }]
   });
@@ -129,4 +131,34 @@ test('technical conflict blocks automatic application enrichment', () => {
   assert.equal(report.candidates[0].identity_resolution, 'TECHNICAL_CONFLICT_REVIEW');
   assert.equal(report.candidates[0].status, 'CONFLICTING_DATA');
   assert.deepEqual(report.candidates[0].applications, ['new']);
+});
+
+test('OEM and competitor code collision cannot silently mint SKU', () => {
+  const report = buildCatalogueCandidates({
+    catalog:{products:[{sku:'EL8490', brand:'ELIMFILTERS',part_number:'EL8490',
+      oem_codes:[{manufacturer:'Kubota',code:'HH150-32430'}],
+      dimensions:{height_mm:100},product_family:'oil_filter'}]},
+    discoveries:[{change_type:'new_product',manufacturer:'Kubota',part_number:'HH15032430',
+      dimensions:{height_mm:100},product_family:'oil_filter',
+      source_urls:['https://example.com/oem'],source_date:'2026-10-18',status:'VERIFIED_OFFICIAL'}]
+  });
+  assert.equal(report.candidates[0].identity_resolution, 'IDENTITY_CONFLICT_OR_CROSS_REVIEW');
+  assert.deepEqual(report.candidates[0].possible_existing_skus,['EL8490']);
+  assert.equal(report.candidates[0].status,'REVIEW_REQUIRED');
+  assert.equal(report.publication_enabled,false);
+});
+
+test('verified canonical source and compatible dimensions identify original SKU', () => {
+  const identity={canonical_source_brand:'Donaldson',canonical_source_code:'P550490',canonical_source_status:'VERIFIED'};
+  const report=buildCatalogueCandidates({
+    catalog:{products:[{sku:'EL8490',brand:'ELIMFILTERS',part_number:'EL8490',
+      source_identity:identity,dimensions:{height_mm:100},applications:[{make:'Kubota',model:'A'}]}]},
+    discoveries:[{change_type:'new_product',manufacturer:'Donaldson',part_number:'P550490',
+      source_identity:identity,dimensions:{height_mm:100},applications:[{make:'Kubota',model:'B'}],
+      source_urls:['https://example.com/oem'],source_date:'2026-10-18',status:'VERIFIED_OFFICIAL'}]
+  });
+  assert.equal(report.candidates[0].existing_sku,'EL8490');
+  assert.equal(report.candidates[0].change_type,'application_update');
+  assert.equal(report.candidates[0].applications.length,2);
+  assert.equal(report.candidates[0].status,'REVIEW_REQUIRED');
 });
