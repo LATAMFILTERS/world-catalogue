@@ -4,7 +4,7 @@
 // No publication authority is granted. Requires Graph Mail.Read application permission.
 const axios = require('axios');
 const OutlookMailService = require('../../lib/outlook-mail');
-const { fetchDecisions, recordDecision } = require('../../lib/hermes-review-store');
+const { recordDecision } = require('../../lib/hermes-review-store');
 const { buildOrder, submitApprovedOrder } = require('./approved-intelligence-to-catalogue');
 
 const CODE = /^HERMES_REAL_[A-Z0-9_]+$/;
@@ -45,7 +45,7 @@ async function executeApproval({candidate, code, decisionRow, record = recordDec
   // Submit idempotently before recording the human decision; if unavailable leave approval retriable.
   const out = await submit(order);
   if (!['accepted','duplicate'].includes(out.status)) return {status:'DELIVERY_RETRY_REQUIRED',code,result:out.status};
-  await record({candidateCode:code,decision:'approve',reason:'Authorize full OEM filtration investigation from verified Outlook reply'});
+  await record({candidateCode:code,decision:'research',reason:'APROBADO: authorize complete OEM research only; no publication'});
   return {status:'RESEARCH_QUEUED',code,research_id:out.research_id || null};
 }
 async function poll({env=process.env, mailFactory=()=>new OutlookMailService(), get=axios.get}={}) {
