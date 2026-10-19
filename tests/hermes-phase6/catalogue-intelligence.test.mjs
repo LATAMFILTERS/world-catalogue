@@ -335,7 +335,7 @@ test('semantic equipment audit deduplicates format variations and gates source p
   ];
   const r=auditInheritedDonaldsonEquipment({target,candidates});
   assert.deepEqual(r.summary,{candidates_checked:4,semantic_duplicates:1,identity_blocked:1,
-    provenance_blocked:1,ready_for_human_review:1,publication_authorized:0});
+    provenance_blocked:1,ready_for_human_review:1,geometry_unconfirmed:0,publication_authorized:0});
   assert.equal(r.database_write,false);
 });
 
@@ -393,4 +393,23 @@ test('DB adapter stages additive geometry and donor equipment without copying Do
  assert.equal(result.technology,'MACROCORE');
  assert.equal(result.database_write,false);
  assert.equal(result.requires_explicit_publication_approval,true);
+});
+
+test('official alternate with missing geometry stays reviewable but cannot enter publication patch', () => {
+ const target={sku:'EA10005',codigo_base:'DBA5000',source_identity:{
+  canonical_source_brand:'DONALDSON',canonical_source_code:'DBA5000',
+  canonical_source_status:'VERIFIED'},dimensions:{outer_diameter_mm:281.8},equipment_applications:[]};
+ const donor={sku:'EA11000',source_identity:{
+  canonical_source_brand:'DONALDSON',canonical_source_code:'P181000',
+  canonical_source_status:'VERIFIED'},dimensions:{},
+  equipment_applications:[{equipment:'CAT D6',engine:'C9',type:'Crawler'}]};
+ const result=auditInheritedDonaldsonEquipment({target,donors:[donor],
+  candidates:[{...donor.equipment_applications[0],inherited_from_sku:'EA11000',
+   inherited_from_donaldson:'P181000'}],
+  equivalenceEvidence:{target_code:'DBA5000',alternative_part_numbers:['P181000'],
+   source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'}});
+ assert.equal(result.summary.geometry_unconfirmed,1);
+ assert.equal(result.summary.provenance_blocked,0);
+ assert.equal(result.summary.publication_authorized,0);
+ assert.equal(result.rows[0].status,'EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED');
 });
