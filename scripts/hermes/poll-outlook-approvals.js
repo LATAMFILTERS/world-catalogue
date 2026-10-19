@@ -15,10 +15,10 @@ function parseApproval(message, approvedSender) {
   const subject = String(message?.subject || '').trim();
   const html = String(message?.body?.content || '');
   // Only first new reply line, not quoted history, can authorize work.
-  const firstLine = html.replace(/<\\/?(?:p|div|br)\\b[^>]*>/gi,'\\n').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').split(/\\r?\\n/).map(x=>x.trim()).find(Boolean) || '';
-  if (!/^APROBADO(?:\\s+HERMES_REAL_[A-Z0-9_]+)?\\s*\\.?$/i.test(firstLine)) return null;
-  const subjectMatch = subject.match(/\\b(HERMES_REAL_[A-Z0-9_]+)\\b/i);
-  const lineMatch = firstLine.match(/\\b(HERMES_REAL_[A-Z0-9_]+)\\b/i);
+  const firstLine = html.replace(/<\/?(?:p|div|br)\b[^>]*>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').split(/\r?\n/).map(x=>x.trim()).find(Boolean) || '';
+  if (!/^APROBADO(?:\s+HERMES_REAL_[A-Z0-9_]+)?\s*\.?$/i.test(firstLine)) return null;
+  const subjectMatch = subject.match(/\b(HERMES_REAL_[A-Z0-9_]+)\b/i);
+  const lineMatch = firstLine.match(/\b(HERMES_REAL_[A-Z0-9_]+)\b/i);
   if (subjectMatch && lineMatch && subjectMatch[1].toUpperCase() !== lineMatch[1].toUpperCase()) return null;
   const code = String(lineMatch?.[1] || subjectMatch?.[1] || '').toUpperCase();
   if (!CODE.test(code)) return null;
