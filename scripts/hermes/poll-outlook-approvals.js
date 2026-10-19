@@ -14,14 +14,17 @@ function parseApproval(message, approvedSender) {
   if (message?.isDraft || !message?.receivedDateTime) return null;
   const subject = String(message?.subject || '').trim();
   // To disambiguate multi-candidate weekly emails, the subject must identify the exact code.
+  const firstLineCandidate = String(message?.body?.content || '').replace(/<[^>]+>/g,' ').trim().slice(0,200);
   const match = subject.match(/\b(HERMES_REAL_[A-Z0-9_]+)\b/i);
-  if (!match) return null;
-  const code = match[1].toUpperCase();
+  const bodyMatch = firstLineCandidate.match(/HERMES_REAL_[A-Z0-9_]+/i);
+  const selected = match || (bodyMatch ? [bodyMatch[0],bodyMatch[0]] : null);
+  if (!selected) return null;
+  const code = selected[1].toUpperCase();
   if (!CODE.test(code)) return null;
   const html = String(message?.body?.content || '');
   // Only the first line of a reply is considered, never quoted history.
   const firstLine = html.replace(/<\/?(?:p|div|br)\b[^>]*>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').split(/\r?\n/).map(x=>x.trim()).find(Boolean) || '';
-  if (!/^APROBADO\s*\.?$/i.test(firstLine)) return null;
+  if (!/^APROBADO(?:\s+HERMES_REAL_[A-Z0-9_]+)?\s*\.?$/i.test(firstLine)) return null;
   return { code, messageId:message.id };
 }
 function exactEquipment(candidate) {
