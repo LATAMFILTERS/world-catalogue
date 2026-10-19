@@ -340,9 +340,9 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
       else if (!donorRecord) reason = 'DONOR_APPLICATION_NOT_FOUND';
       else if (!officialRelationship || !officialUrl) reason = 'OFFICIAL_ALTERNATE_LINK_NOT_VERIFIED';
       else if (contradictory) reason = 'GEOMETRY_CONFLICT';
-      else if (geometryEvidence.length < 2) reason = 'EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED';
+      else if (geometryEvidence.length < 2) reason = 'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW';
       else reason = 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW';
-      if (!['EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED'].includes(reason))
+      if (!['EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW'].includes(reason))
         provenanceBlocked++;
     }
     else reason = 'EVIDENCE_READY_FOR_HUMAN_REVIEW';
@@ -355,8 +355,8 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
     summary: {
       candidates_checked: rows.length, semantic_duplicates: semanticDuplicates,
       identity_blocked: insufficientIdentity, provenance_blocked: provenanceBlocked,
-      ready_for_human_review: rows.filter(r => ['EVIDENCE_READY_FOR_HUMAN_REVIEW','EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED'].includes(r.status)).length,
-      geometry_unconfirmed: rows.filter(r => r.status === 'EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED').length,
+      ready_for_human_review: rows.filter(r => ['EVIDENCE_READY_FOR_HUMAN_REVIEW','EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW','OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW'].includes(r.status)).length,
+      geometry_unconfirmed: rows.filter(r => r.status === 'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW').length,
       publication_authorized: 0
     },
     rows, status: 'REVIEW_REQUIRED', database_write: false
@@ -439,7 +439,8 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
     // performance nor Donaldson's branded media is an ELIMFILTERS claim.
     const approvedEvidenceRows = equipmentAudit.rows.filter(a =>
       a.status === 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW' ||
-      a.status === 'EVIDENCE_READY_FOR_HUMAN_REVIEW');
+      a.status === 'EVIDENCE_READY_FOR_HUMAN_REVIEW' ||
+      a.status === 'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW');
     const suggestedApplications = dimensionConflicts.length ? [] : approvedEvidenceRows.map(a => a.application);
     const dimensionBefore = matches[0].dimensions || {};
     const dimensionAfter = { ...dimensionBefore };
