@@ -258,7 +258,7 @@ jobs:
         run: npm run hermes:email:real
 
       - name: Record weekly send for this ISO week
-        if: steps.guard.outputs.proceed == 'true' && steps.email.outcome == 'success' && env.HERMES_EMAIL_LIVE == 'true'
+        if: steps.guard.outputs.proceed == 'true' && steps.email.outcome == 'success' && vars.HERMES_EMAIL_LIVE == 'true'
         run: node scripts/hermes/weekly-send-guard.mjs mark
 
       - name: Upload HERMES artifacts
