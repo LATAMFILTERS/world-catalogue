@@ -497,7 +497,7 @@ async function main() {
   }
 
   if (process.argv.includes('--donaldson-db-jsonl')) {
-    const lines = fs.readFileSync(discoveriesPath, 'utf8').split(/\\r?\\n/).filter(line => line.trim());
+    const lines = fs.readFileSync(discoveriesPath, 'utf8').split(/\r?\n/).filter(line => line.trim());
     const rows = lines.map(line => JSON.parse(line));
     const catalog = await readRelevantCatalogueProducts(catalogPath, null);
     const candidates = buildDonaldsonDbScraperCandidates({ rows, catalog });
