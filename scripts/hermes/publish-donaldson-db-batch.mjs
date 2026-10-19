@@ -41,6 +41,22 @@ const host = apply ? new URL(conn).hostname : null;
 const pool = apply ? new Pool({connectionString:conn,ssl:['127.0.0.1','localhost','::1'].includes(host)?false:{rejectUnauthorized:false},max:1,application_name:'hermes-donaldson-db-batch'}) : null;
 const outcome={scanned_skus:targets.length,official_db_evidence:official.size,ready:0,published:0,unchanged:0,missing_evidence:0,blocked:0,errors:[],items:[],database_write:false};
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const canonical = value => Array.isArray(value) ? value.map(canonical) :
+  value && typeof value === 'object'
+    ? Object.fromEntries(Object.keys(value).sort().map(key => [key,canonical(value[key])]))
+    : value;
+const deduplicateAdditive = (existing, proposed) => {
+  const key = item => JSON.stringify(canonical(item));
+  const seen = new Set();
+  const result = [];
+  for (const item of [...existing,...proposed]) {
+    const identity = key(item);
+    if (seen.has(identity)) continue;
+    seen.add(identity);
+    result.push(item);
+  }
+  return result;
+};
 try {
   for (const product of targets) {
     const sku=product.sku;
@@ -57,7 +73,8 @@ try {
     const audited=candidate.inherited_equipment_audit?.summary;
     if (proposals.equipment_applications && audited?.provenance_blocked === 0 &&
        audited?.identity_blocked === 0 && audited?.semantic_duplicates === 0 &&
-       audited?.ready_for_human_review > 0) updates.equipment_applications=proposals.equipment_applications.after;
+       audited?.ready_for_human_review > 0) updates.equipment_applications=deduplicateAdditive(product.equipment_applications || [], proposals.equipment_applications.after);
+    if (updates.equipment_applications && updates.equipment_applications.length === (product.equipment_applications || []).length) delete updates.equipment_applications;
     const fields=Object.keys(updates);
     if (!fields.length) {
       outcome.unchanged++;
