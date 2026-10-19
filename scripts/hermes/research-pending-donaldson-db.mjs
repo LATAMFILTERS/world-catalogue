@@ -58,7 +58,11 @@ const run = (command,args,env=process.env) => {
 let researchBlocked = false;
 if (toScrape.length) {
   try {
-    run(process.execPath,['scripts/scrape_donaldson_crm.js','--input',input]);
+    const mapPath=path.join(evidenceDir,'donaldson-db-official-product-urls.json');
+    const urlMap=fs.existsSync(mapPath) ? JSON.parse(fs.readFileSync(mapPath,'utf8').replace(/^\\uFEFF/,'')) : {};
+    run(process.execPath,['scripts/scrape_donaldson_crm.js','--input',input,
+      ...(Object.keys(urlMap).length?['--url-map',mapPath]:[])]);
+
   } catch (error) {
     researchBlocked = true;
     console.error('[HERMES] Donaldson research stopped. Existing verified evidence will be reconciled; no access-control retry.');
