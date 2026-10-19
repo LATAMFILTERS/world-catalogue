@@ -56,7 +56,7 @@ const run = (command,args,env=process.env) => {
   if (result.status !== 0) throw new Error(command+' returned '+result.status);
 };
 let researchBlocked = false;
-if (toScrape.length) {
+if (toScrape.length && !process.argv.includes('--offline')) {
   try {
     const mapPath=path.join(evidenceDir,'donaldson-db-official-product-urls.json');
     const urlMap=fs.existsSync(mapPath) ? JSON.parse(fs.readFileSync(mapPath,'utf8').replace(/^\\uFEFF/,'')) : {};
@@ -108,7 +108,9 @@ run(process.execPath,['scripts/hermes/publish-donaldson-db-batch.mjs',snapshot,c
 const after=JSON.parse(fs.readFileSync(reportPath,'utf8'));
 const summary={outcome:researchBlocked?'PARTIAL_OFFICIAL_SITE_ACCESS':publish?'BATCH_PUBLICATION_ATTEMPTED':'PREVIEW_ONLY',
   requested:pending.length,recovered_official:recovered.length,blocked_access:researchBlocked,
-  unresolved:pending.filter(x=>!existing.has(x)),published_this_pass:after.published,
+  unresolved:after.items.filter(x=>x.status==='MISSING_OFFICIAL_EVIDENCE').map(x=>x.base),
+  official_rows_found:recovered,
+  publication_ready:after.ready,published_this_pass:after.published,
   blocked:after.blocked,errors:after.errors,snapshot,report:reportPath};
 const summaryPath=path.join(evidenceDir,'donaldson-db-pending-research-summary.json');
 fs.writeFileSync(summaryPath,JSON.stringify(summary,null,2)+'\n');
