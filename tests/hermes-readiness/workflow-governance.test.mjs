@@ -15,11 +15,9 @@ test('workflow_dispatch trigger is present', () => {
   assert.match(workflowText, /\bworkflow_dispatch:/);
 });
 
-test('GitHub Actions has no recurring cron because Lenovo owns the zero-cost schedule', () => {
-  assert.doesNotMatch(workflowText, /\bschedule:/);
-  assert.doesNotMatch(workflowText, /\bcron:/);
-  assert.match(workflowText, /recurring execution is owned by the/i);
-  assert.match(workflowText, /Lenovo primary runtime/i);
+test('GitHub Actions schedules autonomous weekly collection on Mondays', () => {
+  assert.match(workflowText, /\bschedule:/);
+  assert.match(workflowText, /cron:\s*'17 14 \* \* 1'/);
 });
 
 test('Node 20 is pinned', () => {
@@ -72,9 +70,9 @@ test('artifact upload is configured', () => {
   assert.match(workflowText, /elimfilters-vault\/94-sync-log/);
 });
 
-test('manual GitHub workflow remains non-publishing and Lenovo retains recurring execution authority', () => {
-  assert.match(workflowText, /workflow_dispatch:/);
-  assert.doesNotMatch(workflowText, /github\.event_name.*=\s*['"]schedule['"]/);
+test('scheduled workflow checks deduplication and only marks a live send', () => {
+  assert.match(workflowText, /node scripts\/hermes\/weekly-send-guard\.mjs check/);
+  assert.match(workflowText, /node scripts\/hermes\/weekly-send-guard\.mjs mark/);
+  assert.match(workflowText, /steps\.email\.outcome == 'success' && vars\.HERMES_EMAIL_LIVE == 'true'/);
   assert.doesNotMatch(workflowText, /hermes:publish\b/);
-  assert.match(workflowText, /Lenovo primary runtime/i);
 });
