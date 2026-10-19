@@ -283,12 +283,16 @@ export function inheritDonaldsonAlternateEquipment({ target, alternateCodes, cat
 export function auditInheritedDonaldsonEquipment({ target, candidates }) {
   const norm = v => String(v ?? '').normalize('NFKC').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
   const identity = app => {
+    const equipment = typeof app.equipment === 'string' ? app.equipment : '';
     const make = norm(app.make || app.manufacturer || app.equipment_make || app.brand);
     const model = norm(app.model || app.equipment_model);
+    const equipmentName = norm(equipment);
     const year = norm(app.year || app.model_year);
     const engine = norm(app.engine || app.engine_model);
     const option = norm(app.equipment_option || app.option || app.engine_option);
-    return make && model ? [make, model, year, engine, option].join('::') : null;
+    const type = norm(app.type || app.equipment_type);
+    return (make && model) || equipmentName
+      ? [make || equipmentName, model, year, engine, option, type].join('::') : null;
   };
   const existing = new Set((target?.equipment_applications || []).map(identity).filter(Boolean));
   const seen = new Set(existing);
