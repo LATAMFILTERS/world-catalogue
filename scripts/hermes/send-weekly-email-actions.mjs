@@ -99,7 +99,7 @@ function buildExecutiveMessage(report, env = process.env) {
       if (Array.isArray(rr.technical_facts) && rr.technical_facts.length) text.push(`Hechos técnicos: ${rr.technical_facts.join(' | ')}`);
       if (rr.relevance) text.push(`Relevancia para ELIMFILTERS: ${rr.relevance}`);
       text.push(`Acción propuesta: ${c.proposed_action || rr.proposed_action || 'n/a'}`);
-      text.push('Decisión: ACEPTAR / REVISAR / ELIMINAR', '');
+      text.push('Para autorizar la investigación completa: responde APROBADO ' + c.entity_code + ' en la primera línea.', '');
 
       cards.push(`<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0">
         <div style="font-size:12px;text-transform:uppercase;color:#666">${esc(candidateTypeLabel(type))}</div>
@@ -111,7 +111,7 @@ function buildExecutiveMessage(report, env = process.env) {
         ${rr.relevance ? `<p><strong>Relevancia para ELIMFILTERS:</strong> ${esc(rr.relevance)}</p>` : ''}
         ${Array.isArray(c.affected_entities) ? `<p><strong>Entidades afectadas:</strong> ${esc(c.affected_entities.join(', '))}</p>` : ''}
         <p><strong>Acción propuesta:</strong> ${esc(c.proposed_action || rr.proposed_action || 'n/a')}</p>
-        ${actionButtons(c, cfg)}
+        <p><strong>Investigar todos los filtros:</strong> responde al correo con APROBADO ${esc(c.entity_code)} en la primera línea.</p>\n        ${actionButtons(c, cfg)}
       </div>`);
     }
   }
