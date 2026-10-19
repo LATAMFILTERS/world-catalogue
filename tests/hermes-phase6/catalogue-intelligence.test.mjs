@@ -128,8 +128,8 @@ test('technical conflict blocks automatic application enrichment', () => {
       source_urls:['https://example.com/conflict'],source_date:'2026-10-18'
     }]
   });
-  assert.equal(report.candidates[0].identity_resolution, 'TECHNICAL_CONFLICT_REVIEW');
-  assert.equal(report.candidates[0].status, 'CONFLICTING_DATA');
+  assert.equal(report.candidates[0].identity_resolution, 'IDENTITY_CONFLICT_OR_CROSS_REVIEW');
+  assert.equal(report.candidates[0].status, 'REVIEW_REQUIRED');
   assert.deepEqual(report.candidates[0].applications, ['new']);
 });
 
