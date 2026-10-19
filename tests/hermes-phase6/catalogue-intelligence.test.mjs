@@ -162,3 +162,31 @@ test('verified canonical source and compatible dimensions identify original SKU'
   assert.equal(report.candidates[0].applications.length,2);
   assert.equal(report.candidates[0].status,'REVIEW_REQUIRED');
 });
+
+test('multiple canonical identity candidates do not authorize SKU reuse', () => {
+  const identity = { canonical_source_brand:'Donaldson', canonical_source_code:'P550490', canonical_source_status:'VERIFIED' };
+  const product = (sku) => ({sku,brand:'ELIMFILTERS',part_number:sku,source_identity:identity,dimensions:{height_mm:100}});
+  const report = buildCatalogueCandidates({
+    catalog: {products:[product('EL8490'),product('EL8491')]},
+    discoveries:[{change_type:'new_product',manufacturer:'Donaldson',part_number:'P550490',
+      source_identity:identity,dimensions:{height_mm:100},source_urls:['https://example.com/ref'],
+      source_date:'2026-10-18',status:'VERIFIED_OFFICIAL'}]
+  });
+  assert.equal(report.candidates[0].existing_sku, undefined);
+  assert.equal(report.candidates[0].identity_resolution, 'IDENTITY_CONFLICT_OR_CROSS_REVIEW');
+  assert.equal(report.candidates[0].status,'REVIEW_REQUIRED');
+});
+
+test('technical-spec disagreement prevents confirmed reuse', () => {
+  const identity={canonical_source_brand:'Donaldson',canonical_source_code:'P550490',canonical_source_status:'VERIFIED'};
+  const report=buildCatalogueCandidates({
+    catalog:{products:[{sku:'EL8490',brand:'ELIMFILTERS',part_number:'EL8490',source_identity:identity,
+      dimensions:{height_mm:100},technical_specs:{bypass_valve_psi:15}}]},
+    discoveries:[{change_type:'new_product',manufacturer:'Donaldson',part_number:'P550490',
+      source_identity:identity,dimensions:{height_mm:100},technical_specs:{bypass_valve_psi:20},
+      source_urls:['https://example.com/ref'],source_date:'2026-10-18'}]
+  });
+  assert.equal(report.candidates[0].existing_sku,undefined);
+  assert.equal(report.candidates[0].identity_resolution,'IDENTITY_CONFLICT_OR_CROSS_REVIEW');
+  assert.equal(report.candidates[0].status,'REVIEW_REQUIRED');
+});
