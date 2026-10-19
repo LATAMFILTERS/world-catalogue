@@ -200,6 +200,59 @@ export function buildDonaldsonDbEnrichment({ product, official }) {
 }
 
 
+
+export function inheritDonaldsonAlternateEquipment({ target, alternateCodes, catalog, officialSourceUrl }) {
+  const source = target?.source_identity || {};
+  const targetCode = normalizePart(source.canonical_source_code || target?.codigo_base);
+  if (!target?.sku || normalizeBrand(source.canonical_source_brand) !== 'DONALDSON' ||
+      !DONALDSON_DB_PREFIX.test(targetCode) || source.canonical_source_status !== 'VERIFIED') {
+    throw new Error('Verified Donaldson DB SKU required');
+  }
+  if (!/^https:\/\/shop\.donaldson\.com\//i.test(officialSourceUrl || '')) {
+    throw new Error('Official Donaldson alternate link required');
+  }
+  const candidateCodes = [...new Set((alternateCodes || []).map(normalizePart).filter(code => code && code !== targetCode))];
+  const inherited = [];
+  const review = [];
+  const products = Array.isArray(catalog) ? catalog : (catalog?.products || []);
+  for (const code of candidateCodes) {
+    const donors = products.filter(p => normalizeBrand(p?.source_identity?.canonical_source_brand) === 'DONALDSON' &&
+      normalizePart(p?.source_identity?.canonical_source_code || p.codigo_base) === code &&
+      p?.source_identity?.canonical_source_status === 'VERIFIED');
+    if (donors.length !== 1) {
+      review.push({ code, reason: 'DONOR_MISSING_OR_AMBIGUOUS', donor_skus: donors.map(p=>p.sku) });
+      continue;
+    }
+    const donor = donors[0];
+    // Geometry is the relevant interchangeability check; different media
+    // technology and performance are explicitly NOT inherited.
+    const geometry = ['outer_diameter_mm','inner_diameter_mm','height_mm','thread_size'];
+    const contradictions = geometry.filter(k => target.dimensions?.[k] != null && donor.dimensions?.[k] != null &&
+      String(target.dimensions[k]) !== String(donor.dimensions[k]));
+    if (contradictions.length) {
+      review.push({ code, donor_sku: donor.sku, reason: 'GEOMETRY_CONFLICT', fields: contradictions });
+      continue;
+    }
+    const donorApps = Array.isArray(donor.equipment_applications) ? donor.equipment_applications : [];
+    if (!donorApps.length) {
+      review.push({ code, donor_sku: donor.sku, reason: 'NO_DONOR_EQUIPMENT_EVIDENCE' });
+      continue;
+    }
+    for (const application of donorApps) {
+      if (!application || typeof application !== 'object' || Array.isArray(application)) continue;
+      // A target alternate relationship alone is insufficient for an automatic
+      // publication: explicitly retain provenance of each inherited suggestion.
+      inherited.push({
+        ...application,
+        inherited_from_donaldson: code,
+        inherited_from_sku: donor.sku,
+        alternate_evidence_url: officialSourceUrl
+      });
+    }
+  }
+  return { inherited, review, status: 'REVIEW_REQUIRED', database_write: false };
+}
+
 function officialMm(value) {
   if (typeof value !== 'string') return null;
   const mm = value.match(/\(([0-9]+(?:\.[0-9]+)?)\s*mm\)/i) ||
