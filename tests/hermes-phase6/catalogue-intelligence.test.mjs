@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildCatalogueCandidates } from '../../scripts/hermes/catalogue-intelligence.mjs';
+import { buildCatalogueCandidates, buildDonaldsonDbEnrichment } from '../../scripts/hermes/catalogue-intelligence.mjs';
 
 test('creates a review candidate for a verified new official product', () => {
   const report = buildCatalogueCandidates({
@@ -189,4 +189,46 @@ test('technical-spec disagreement prevents confirmed reuse', () => {
   assert.equal(report.candidates[0].existing_sku,undefined);
   assert.equal(report.candidates[0].identity_resolution,'IDENTITY_CONFLICT_OR_CROSS_REVIEW');
   assert.equal(report.candidates[0].status,'REVIEW_REQUIRED');
+});
+
+test('Donaldson DBA source fills gaps but preserves independent SKU and MACROCORE', () => {
+  const product={sku:'EA10005',codigo_base:'DBA5000',technology:'MACROCORE',
+    source_identity:{canonical_source_brand:'Donaldson',canonical_source_code:'DBA5000',canonical_source_status:'VERIFIED'},
+    dimensions:{},technical_specs:{},equipment_applications:[]};
+  const official={manufacturer:'Donaldson',part_number:'DBA5000',
+    source_url:'https://www.donaldson.com/official-dba5000',source_date:'2026-10-18',
+    dimensions:{outer_diameter_mm:281.8,inner_diameter_mm:170.7,height_mm:304.8},
+    technical_specs:{iso_test_method:'ISO 5011',nominal_efficiency:'up to 99.99%',filter_media:'Ultra-Web'},
+    media_type:'Ultra-Web Nanofiber',alternative_part_numbers:['P181000','P182000']};
+  const result=buildDonaldsonDbEnrichment({product,official});
+  assert.equal(result.existing_sku,'EA10005');
+  assert.equal(result.codigo_base,'DBA5000');
+  assert.equal(result.technology,'MACROCORE');
+  assert.equal(result.differences.length,2);
+  assert.equal(result.differences[1].after.filter_media,undefined);
+  assert.equal(result.source_metadata.supplier_media,'Ultra-Web Nanofiber');
+  assert.deepEqual(result.source_metadata.alternative_part_numbers,['P181000','P182000']);
+  assert.equal(result.publication_enabled,false);
+});
+
+test('DB enrichment preserves existing values and blocks technical discrepancies', () => {
+  const product={sku:'EA10005',codigo_base:'DBA5000',technology:'MACROCORE',
+    source_identity:{canonical_source_brand:'Donaldson',canonical_source_code:'DBA5000',canonical_source_status:'VERIFIED'},
+    dimensions:{height_mm:303},technical_specs:{iso_test_method:'ISO 5011'},equipment_applications:[]};
+  const official={manufacturer:'Donaldson',part_number:'DBA5000',
+    source_url:'https://www.donaldson.com/a',source_date:'2026-10-18',
+    dimensions:{height_mm:304.8},technical_specs:{iso_test_method:'ISO 5011'}};
+  const result=buildDonaldsonDbEnrichment({product,official});
+  assert.deepEqual(result.conflicts,['dimensions.height_mm']);
+  assert.equal(result.differences.length,0);
+  assert.equal(result.status,'REVIEW_REQUIRED');
+});
+
+test('DB enrichment cannot inherit applications from alternates or mismatched part', () => {
+  const product={sku:'EA10005',codigo_base:'DBA5000',technology:'MACROCORE',
+    source_identity:{canonical_source_brand:'Donaldson',canonical_source_code:'DBA5000',canonical_source_status:'VERIFIED'}};
+  assert.throws(()=>buildDonaldsonDbEnrichment({product,official:{
+    manufacturer:'Donaldson',part_number:'P181000',source_url:'https://www.donaldson.com/x',source_date:'2026-10-18',
+    equipment_applications:[{make:'QUINCY'}]
+  }}),/Matching official/);
 });
