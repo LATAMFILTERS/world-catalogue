@@ -427,11 +427,34 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
     const previous = Array.isArray(matches[0].equipment_applications) ? matches[0].equipment_applications : [];
     const previousIds = new Set(previous.map(a => JSON.stringify(a)));
     const proposed = alternates.inherited.filter(a => !previousIds.has(JSON.stringify(a)));
+    // Approval-ready, additive proposals only. Neither the donor filter's
+    // performance nor Donaldson's branded media is an ELIMFILTERS claim.
+    const approvedEvidenceRows = equipmentAudit.rows.filter(a =>
+      a.status === 'EQUIVALENCE_EVIDENCE_READY_FOR_REVIEW' ||
+      a.status === 'EVIDENCE_READY_FOR_HUMAN_REVIEW');
+    const suggestedApplications = approvedEvidenceRows.map(a => a.application);
+    const dimensionBefore = matches[0].dimensions || {};
+    const dimensionAfter = { ...dimensionBefore };
+    for (const [key, value] of Object.entries(dimensions)) {
+      if (dimensionBefore[key] == null || dimensionBefore[key] === '') dimensionAfter[key] = value;
+    }
+    const updates = {};
+    if (JSON.stringify(dimensionBefore) !== JSON.stringify(dimensionAfter))
+      updates.dimensions = { before: dimensionBefore, after: dimensionAfter };
+    if (suggestedApplications.length)
+      updates.equipment_applications = {
+        before: previous,
+        after: [...previous, ...suggestedApplications],
+        evidence: { authority: 'DONALDSON_ALTERNATE_AND_CANONICAL_DONOR',
+          source_url: url, donor_skus: [...new Set(suggestedApplications.map(a => a.inherited_from_sku))] }
+      };
     return { ...report, unclassified_cross_references: unclassifiedCrossReferences,
       inherited_equipment_candidates: proposed,
       inherited_equipment_reviews: alternates.review,
       inherited_equipment_summary: alternates.summary,
       inherited_equipment_audit: equipmentAudit,
+      proposed_additive_updates: updates,
+      requires_explicit_publication_approval: true,
       requires_application_evidence: true, database_write: false };
   });
 }
@@ -704,6 +727,9 @@ async function main() {
       source_type: 'existing_donaldson_scraper_jsonl', candidates
     }, null, 2) + '\n', 'utf8');
     console.log(JSON.stringify({ output, checked: candidates.length,
+      approval_ready_equipment: candidates.reduce((n,c) =>
+        n + (c.inherited_equipment_audit?.summary?.ready_for_human_review || 0), 0),
+      staged_skus: candidates.filter(c => Object.keys(c.proposed_additive_updates || {}).length).length,
       equipment: candidates.reduce((acc, c) => { const x = c.inherited_equipment_summary || {};
         acc.applications_proposed += x.applications_proposed || 0;
         acc.duplicates_discarded += x.duplicates_discarded || 0;
