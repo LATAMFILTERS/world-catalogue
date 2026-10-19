@@ -1,9 +1,9 @@
 name: HERMES Weekly Intelligence Collection
 
-# Schedule intentionally removed here (commit 69f7a098ef): recurring execution is owned by the
-# Lenovo primary runtime (ELIMFILTERS-HERMES-Weekly / ELIMFILTERS-HERMES-Research-Retry scheduled
-# tasks), not GitHub Actions cron, to avoid Actions minutes cost. This is not an oversight.
+# GitHub Actions is the weekly scheduler; the operational runtime no longer has to trigger this flow.
 on:
+  schedule:
+    - cron: '17 14 * * 1' # Monday 14:17 UTC (08:17 CST / 09:17 CDT)
   workflow_dispatch:
     inputs:
       promote_baseline:
@@ -107,8 +107,12 @@ jobs:
       - name: Guard against duplicate weekly send
         id: guard
         run: |
-          echo "Manual workflow_dispatch run; always proceeds regardless of weekly send state."
-          echo "proceed=true" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            node scripts/hermes/weekly-send-guard.mjs check
+          else
+            echo "Manual workflow_dispatch run; always proceeds regardless of weekly send state."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Restore baseline from hermes-state
         if: steps.guard.outputs.proceed == 'true'
@@ -254,7 +258,7 @@ jobs:
         run: npm run hermes:email:real
 
       - name: Record weekly send for this ISO week
-        if: steps.guard.outputs.proceed == 'true' && steps.email.outcome == 'success'
+        if: steps.guard.outputs.proceed == 'true' && steps.email.outcome == 'success' && env.HERMES_EMAIL_LIVE == 'true'
         run: node scripts/hermes/weekly-send-guard.mjs mark
 
       - name: Upload HERMES artifacts
