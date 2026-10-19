@@ -101,7 +101,8 @@ function mergeVerifiedApplications(current, proposed) {
   const merged = [];
   const keys = new Set();
   for (const entry of [...(Array.isArray(current) ? current : []), ...(Array.isArray(proposed) ? proposed : [])]) {
-    const key = JSON.stringify(entry);
+    const key = JSON.stringify(entry && typeof entry === 'object' && !Array.isArray(entry)
+      ? Object.fromEntries(Object.entries(entry).sort(([a],[b]) => a.localeCompare(b))) : entry);
     if (!keys.has(key)) { keys.add(key); merged.push(entry); }
   }
   return merged;
@@ -294,6 +295,7 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
       candidate.existing_sku = matched.sku || null;
       candidate.identity_resolution = 'EXISTING_PRODUCT_REVIEW';
       if (incompatibleTechnicalData(raw.dimensions, matched.dimensions) ||
+          incompatibleTechnicalData(raw.technical_specs, matched.technical_specs) ||
           (raw.product_family && matched.product_family && raw.product_family !== matched.product_family)) {
         candidate.identity_resolution = 'TECHNICAL_CONFLICT_REVIEW';
       } else if (Array.isArray(raw.applications) && raw.applications.length) {
@@ -306,7 +308,8 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
 
     candidate.candidate_id = candidate.candidate_id || stableId(candidate);
     candidate.validation_errors = validateCandidate(candidate);
-    candidate.catalogue_comparison = compareCandidate(candidate, catalogIndex, {
+    const comparisonIndex = matched ? new Map([[productKey(candidate), matched]]) : catalogIndex;
+    candidate.catalogue_comparison = compareCandidate(candidate, comparisonIndex, {
       ...raw,
       ...(candidate.identity_resolution === 'EXISTING_PRODUCT_REVIEW' && Array.isArray(raw.applications)
         ? { applications: candidate.applications } : {}),
