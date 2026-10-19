@@ -305,3 +305,21 @@ test('Donaldson alternate donors with contradictory geometry remain review-only'
   assert.equal(result.inherited.length,0);
   assert.equal(result.review[0].reason,'GEOMETRY_CONFLICT');
 });
+
+test('Donaldson inheritance reports proposed, duplicate and blocked counts', () => {
+  const identity = code => ({canonical_source_brand:'Donaldson',canonical_source_code:code,canonical_source_status:'VERIFIED'});
+  const target={sku:'EA10005',codigo_base:'DBA5000',source_identity:identity('DBA5000'),
+    dimensions:{height_mm:304.8},equipment_applications:[{make:'CAT',model:'A'}]};
+  const donor={sku:'EA10002',source_identity:identity('P182000'),
+    dimensions:{height_mm:304.8},equipment_applications:[{make:'CAT',model:'A'},{make:'CAT',model:'B'}]};
+  const bad={sku:'EA10003',source_identity:identity('P181000'),
+    dimensions:{height_mm:330},equipment_applications:[{make:'CAT',model:'C'}]};
+  const result=inheritDonaldsonAlternateEquipment({
+    target,alternateCodes:['P182000','P181000'],catalog:[target,donor,bad],
+    officialSourceUrl:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'
+  });
+  assert.deepEqual(result.summary,{applications_proposed:1,duplicates_discarded:1,
+    applications_blocked:1,donor_references_blocked:1});
+  assert.equal(result.inherited[0].model,'B');
+  assert.equal(result.database_write,false);
+});
