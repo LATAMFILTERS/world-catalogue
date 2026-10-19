@@ -55,7 +55,15 @@ const run = (command,args,env=process.env) => {
   if (result.error) throw result.error;
   if (result.status !== 0) throw new Error(command+' returned '+result.status);
 };
-if (toScrape.length) run(process.execPath,['scripts/scrape_donaldson_crm.js','--input',input]);
+let researchBlocked = false;
+if (toScrape.length) {
+  try {
+    run(process.execPath,['scripts/scrape_donaldson_crm.js','--input',input]);
+  } catch (error) {
+    researchBlocked = true;
+    console.error('[HERMES] Donaldson research stopped. Existing verified evidence will be reconciled; no access-control retry.');
+  }
+}
 for (const row of parseRows(scrapeResult)) {
   const code=normalize(row.codigo_base);
   if (eligible.has(code) && trusted(row)) existing.set(code,row);
@@ -68,6 +76,17 @@ for (const row of parseRows(all)) {
 }
 for (const [code,row] of existing) merged.set(code,row);
 fs.writeFileSync(combined,[...merged.values()].map(x=>JSON.stringify(x)).join('\n')+'\n','utf8');
+const recovered = pending.filter(code => merged.has(code));
+if (recovered.length === 0) {
+  const summary={outcome:researchBlocked?'BLOCKED_OFFICIAL_SITE_ACCESS':'NO_NEW_OFFICIAL_EVIDENCE',
+    requested:pending.length,recovered_official:0,published_this_pass:0,
+    unresolved:pending,blocked_access:researchBlocked,
+    note:'Previous publications and the original pending report are preserved.'};
+  const summaryPath=path.join(evidenceDir,'donaldson-db-pending-research-summary.json');
+  fs.writeFileSync(summaryPath,JSON.stringify(summary,null,2)+'\n');
+  console.log(JSON.stringify(summary,null,2));
+  process.exitCode=researchBlocked?2:0;
+} else {
 // The source archive is not mutated: the verified merged file is a new immutable input.
 const snapshotDir=path.join(root,'hermes/catalogue-snapshots');
 const before=new Set(fs.readdirSync(snapshotDir).filter(f=>/^elimfilters-catalogue-.*\.json$/.test(f)));
@@ -83,10 +102,12 @@ if (publish) {
 run(process.execPath,['scripts/hermes/publish-donaldson-db-batch.mjs',snapshot,combined,
   ...(publish?['--approve-knowledge','--approve-catalogue','--apply']:[])]);
 const after=JSON.parse(fs.readFileSync(reportPath,'utf8'));
-const summary={outcome:publish?'BATCH_PUBLICATION_ATTEMPTED':'PREVIEW_ONLY',
-  requested:pending.length,recovered_official:existing.size,
+const summary={outcome:researchBlocked?'PARTIAL_OFFICIAL_SITE_ACCESS':publish?'BATCH_PUBLICATION_ATTEMPTED':'PREVIEW_ONLY',
+  requested:pending.length,recovered_official:recovered.length,blocked_access:researchBlocked,
   unresolved:pending.filter(x=>!existing.has(x)),published_this_pass:after.published,
   blocked:after.blocked,errors:after.errors,snapshot,report:reportPath};
 const summaryPath=path.join(evidenceDir,'donaldson-db-pending-research-summary.json');
 fs.writeFileSync(summaryPath,JSON.stringify(summary,null,2)+'\n');
 console.log(JSON.stringify(summary,null,2));
+
+}
