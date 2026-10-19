@@ -36,7 +36,7 @@ const normalize = (v) => String(v || '').trim().toUpperCase().replace(/[^A-Z0-9-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 // Pause between products so a long run does not hammer the store.
 const urlMapFile = (() => { const i=args.indexOf('--url-map'); return i<0 ? null : args[i+1]; })();
-const productUrlMap = urlMapFile ? JSON.parse(fs.readFileSync(path.resolve(urlMapFile),'utf8').replace(/^\\uFEFF/,'')) : {};
+const productUrlMap = urlMapFile ? JSON.parse(fs.readFileSync(path.resolve(urlMapFile),'utf8').replace(/^\uFEFF/,'')) : {};
 function verifiedDirectUrl(code) {
   const url = productUrlMap[code];
   if (!url) return null;
