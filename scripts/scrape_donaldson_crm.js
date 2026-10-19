@@ -340,6 +340,7 @@ async function main() {
   });
   const runLink = `/technical-jobs/${notifier.jobId}`;
   let browser;
+  let attachedSession = false;
 
   await notifier.started(`Corrida Donaldson iniciada. Alcance solicitado: ${requestedScope}.`, {
     deepLink: runLink,
@@ -347,8 +348,17 @@ async function main() {
   });
 
   try {
-    browser = await chromium.launch({ headless: !args.includes('--headed') });
-    const context = await browser.newContext({ locale: 'en-US' });
+    const cdpUrl = value('--cdp-endpoint');
+    if (cdpUrl) {
+      const endpoint = new URL(cdpUrl);
+      if (!['127.0.0.1','localhost','[::1]'].includes(endpoint.hostname)) throw new Error('CDP endpoint must be local');
+      browser = await chromium.connectOverCDP(cdpUrl);
+      attachedSession = true;
+    } else {
+      browser = await chromium.launch({ headless: !args.includes('--headed') });
+    }
+    const context = attachedSession ? browser.contexts()[0] : await browser.newContext({ locale: 'en-US' });
+    if (!context) throw new Error('No existing Edge CDP context available');
     const page = await context.newPage();
     let codes = [];
 
@@ -440,7 +450,8 @@ async function main() {
     }
     throw error;
   } finally {
-    if (browser) await browser.close().catch(() => {});
+    if (browser && !attachedSession) await browser.close().catch(() => {});
+    if (browser && attachedSession) await browser.close().catch(() => {}); // disconnects Playwright; does not terminate external Edge
   }
 }
 
