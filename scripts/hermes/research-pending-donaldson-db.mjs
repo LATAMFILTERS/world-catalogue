@@ -60,8 +60,12 @@ if (toScrape.length && !process.argv.includes('--offline')) {
   try {
     const mapPath=path.join(evidenceDir,'donaldson-db-official-product-urls.json');
     const urlMap=fs.existsSync(mapPath) ? JSON.parse(fs.readFileSync(mapPath,'utf8').replace(/^\uFEFF/,'')) : {};
+    const cdpIndex=process.argv.indexOf('--cdp-endpoint');
+    const cdp=cdpIndex >= 0 ? process.argv[cdpIndex+1] : null;
+    if (cdpIndex >= 0 && !cdp) throw new Error('Missing --cdp-endpoint URL');
     run(process.execPath,['scripts/scrape_donaldson_crm.js','--input',input,
-      ...(Object.keys(urlMap).length?['--url-map',mapPath]:[])]);
+      ...(Object.keys(urlMap).length?['--url-map',mapPath]:[]),
+      ...(cdp?['--cdp-endpoint',cdp]:[])]);
 
   } catch (error) {
     researchBlocked = true;
