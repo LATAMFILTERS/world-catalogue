@@ -351,9 +351,9 @@ test('equipment audit recognizes canonical equipment engine type shape', () => {
 test('official DBA alternate relation and verified donor equipment form review evidence chain', () => {
  const identity=code=>({canonical_source_brand:'Donaldson',canonical_source_code:code,canonical_source_status:'VERIFIED'});
  const donor={sku:'EA11000',source_identity:identity('P181000'),
-  dimensions:{outer_diameter_mm:281.8},equipment_applications:[{equipment:'CAT D6',engine:'C9',type:'Crawler'}]};
+  dimensions:{outer_diameter_mm:281.8,inner_diameter_mm:170.7},equipment_applications:[{equipment:'CAT D6',engine:'C9',type:'Crawler'}]};
  const target={sku:'EA10005',source_identity:identity('DBA5000'),equipment_applications:[],
-  dimensions:{outer_diameter_mm:281.8}};
+  dimensions:{outer_diameter_mm:281.8,inner_diameter_mm:170.7}};
  const app={...donor.equipment_applications[0],inherited_from_sku:'EA11000',
   inherited_from_donaldson:'P181000'};
  const r=auditInheritedDonaldsonEquipment({target,candidates:[app],donors:[donor],
