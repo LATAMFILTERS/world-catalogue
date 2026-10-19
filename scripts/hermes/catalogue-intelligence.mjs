@@ -318,7 +318,7 @@ export function auditInheritedDonaldsonEquipment({ target, candidates, equivalen
       // Require matching donor identity, canonical verification, provenance and
       // no contradictory dimensions. An alternative URL alone is insufficient.
       const donor = donors.find(d => d.sku === app.inherited_from_sku &&
-        normalizePart(d.source_identity?.canonical_source_code) === normalizePart(app.inherited_from_donaldson) &&
+        normalizePart(d.source_identity?.canonical_source_code || d.codigo_base) === normalizePart(app.inherited_from_donaldson) &&
         normalizeBrand(d.source_identity?.canonical_source_brand) === 'DONALDSON' &&
         d.source_identity?.canonical_source_status === 'VERIFIED');
       const evidenceCodes = Array.isArray(equivalenceEvidence?.alternative_part_numbers)
@@ -461,6 +461,7 @@ export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
       inherited_equipment_reviews: alternates.review,
       inherited_equipment_summary: alternates.summary,
       inherited_equipment_audit: equipmentAudit,
+      inherited_equipment_reasons: Object.fromEntries([...new Set(equipmentAudit.rows.map(x => x.status))].map(k => [k, equipmentAudit.rows.filter(x => x.status === k).length])),
       proposed_additive_updates: updates,
       dimension_conflicts: dimensionConflicts,
       publication_gate: 'EXPLICIT_APPROVAL_REQUIRED',
