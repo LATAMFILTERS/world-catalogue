@@ -121,13 +121,15 @@ export async function exportCatalogueSnapshot({
   const stamp = generatedAt.replace(/[:.]/g, '-');
   const output = path.join(outputDir, `elimfilters-catalogue-${stamp}.json`);
   const fd = fs.openSync(output, 'w');
+  let client;
   const hash = crypto.createHash('sha256');
   let rowCount = 0;
   let offset = 0;
   let firstProduct = true;
 
   try {
-    await pool.query('BEGIN READ ONLY');
+    client = await pool.connect();
+    await client.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');
 
     const header = {
       schema_version: '1.0.0',
@@ -145,7 +147,7 @@ export async function exportCatalogueSnapshot({
       const remaining = Number.isInteger(limit) && limit > 0 ? limit - rowCount : batchSize;
       if (remaining <= 0) break;
       const pageSize = Math.min(batchSize, remaining);
-      const result = await pool.query(
+      const result = await client.query(
         `SELECT ${SELECT_COLUMNS} FROM elimfilters_catalog ORDER BY sku, id LIMIT $1 OFFSET $2`,
         [pageSize, offset]
       );
@@ -168,7 +170,7 @@ export async function exportCatalogueSnapshot({
     hash.update(']');
     const sha256 = hash.digest('hex');
     fs.writeSync(fd, `],"row_count":${rowCount},"sha256":"${sha256}"}\n`);
-    await pool.query('COMMIT');
+    await client.query('COMMIT');
 
     return {
       output,
@@ -184,12 +186,13 @@ export async function exportCatalogueSnapshot({
       }
     };
   } catch (error) {
-    try { await pool.query('ROLLBACK'); } catch {}
+    if (client) { try { await client.query('ROLLBACK'); } catch {} }
     try { fs.closeSync(fd); } catch {}
     try { fs.rmSync(output, { force: true }); } catch {}
     throw error;
   } finally {
     try { fs.closeSync(fd); } catch {}
+    if (client) client.release();
     await pool.end();
   }
 }
