@@ -187,6 +187,59 @@ export function buildDonaldsonDbEnrichment({ product, official }) {
   };
 }
 
+
+function officialMm(value) {
+  if (typeof value !== 'string') return null;
+  const mm = value.match(/\\(([0-9]+(?:\\.[0-9]+)?)\\s*mm\\)/i) ||
+    value.match(/([0-9]+(?:\\.[0-9]+)?)\\s*mm\\b/i);
+  if (mm) return Number(mm[1]);
+  const inches = value.match(/([0-9]+(?:\\.[0-9]+)?)\\s*(?:inch|inches)\\b/i);
+  return inches ? Math.round(Number(inches[1]) * 25.4 * 100) / 100 : null;
+}
+
+// Adapter for the EXISTING read-only Donaldson scraper JSONL output.
+// Unverified equipment_raw is deliberately never promoted into applications.
+export function buildDonaldsonDbScraperCandidates({ rows, catalog }) {
+  const products = Array.isArray(catalog) ? catalog : (catalog?.products || []);
+  return rows.map(row => {
+    const code = normalizePart(row?.codigo_base || row?.official?.part_number);
+    const matches = products.filter(p =>
+      normalizeBrand(p?.source_identity?.canonical_source_brand) === 'DONALDSON' &&
+      normalizePart(p?.source_identity?.canonical_source_code || p.codigo_base) === code);
+    const url = row?.source_url || '';
+    let officialHost = false;
+    try { officialHost = new URL(url).hostname === 'shop.donaldson.com'; } catch {}
+    if (row?.status !== 'OK' || !row?.audit?.expansion_complete ||
+        !officialHost || normalizePart(row?.official?.part_number) !== code) {
+      return { source_code: code, status: 'REVIEW_REQUIRED', reason: 'INCOMPLETE_OR_UNVERIFIED_OFFICIAL_EXTRACTION', database_write: false };
+    }
+    if (matches.length !== 1) {
+      return { source_code: code, status: 'REVIEW_REQUIRED', reason: 'AMBIGUOUS_OR_MISSING_CANONICAL_SKU', possible_skus: matches.map(p=>p.sku), database_write: false };
+    }
+    const a = row.official.attributes || {};
+    const dimensions = Object.fromEntries([
+      ['outer_diameter_mm', officialMm(a['Outer Diameter'])],
+      ['inner_diameter_mm', officialMm(a['Inner Diameter'])],
+      ['height_mm', officialMm(a['Length'])]
+    ].filter(([,v]) => v !== null));
+    const technical_specs = {};
+    if (a['Efficiency Test Std']) technical_specs.iso_test_method = a['Efficiency Test Std'];
+    if (a['Efficiency']) technical_specs.nominal_efficiency = a['Efficiency'];
+    const report = buildDonaldsonDbEnrichment({
+      product: matches[0],
+      official: {
+        manufacturer: 'DONALDSON', part_number: code,
+        source_url: url, source_date: String(row.scraped_at || '').slice(0, 10),
+        dimensions, technical_specs,
+        media_type: a['Media Type'] || a['Media Brand'] || null,
+        alternative_part_numbers: row.official.alternatives || [],
+        equipment_applications: [] // requires separate application authority verification
+      }
+    });
+    return { ...report, requires_application_evidence: true, database_write: false };
+  });
+}
+
 function stableId(candidate) {
   return crypto.createHash('sha256').update(JSON.stringify({
     change_type: candidate.change_type,
