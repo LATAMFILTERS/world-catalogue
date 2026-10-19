@@ -371,3 +371,26 @@ test('alternative relationship does not certify unknown donor source', () => {
   source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813'},donors:[]});
  assert.equal(r.summary.provenance_blocked,1);
 });
+
+test('DB adapter stages additive geometry and donor equipment without copying Donaldson performance', () => {
+ const identity=code=>({canonical_source_brand:'DONALDSON',canonical_source_code:code,canonical_source_status:'VERIFIED'});
+ const target={sku:'EA10005',codigo_base:'DBA5000',source_identity:identity('DBA5000'),technology:'MACROCORE',
+  dimensions:{},technical_specs:{filter_media:'GENUINE FILTER MEDIA'},equipment_applications:[],oem_codes:[]};
+ const donor={sku:'EA11000',codigo_base:'P181000',source_identity:identity('P181000'),
+  dimensions:{height_mm:304.8,outer_diameter_mm:281.8,inner_diameter_mm:170.7},
+  equipment_applications:[{equipment:'CAT D6',engine:'C9',type:'Crawler'}]};
+ const [result]=buildDonaldsonDbScraperCandidates({
+  catalog:[target,donor],rows:[{codigo_base:'DBA5000',status:'OK',scraped_at:'2026-09-12T01:59:05Z',
+   source_url:'https://shop.donaldson.com/store/en-us/product/DBA5000/11813',
+   audit:{expansion_complete:true},official:{part_number:'DBA5000',
+    alternatives:['P181000'],cross_references_raw:[],attributes:{
+      'Outer Diameter':'11.09 inch (281.8 mm)','Inner Diameter':'6.72 inch (170.7 mm)',
+      'Length':'12.00 inch (304.8 mm)','Efficiency':'Up to 99.99%'}}}]});
+ assert.equal(result.inherited_equipment_audit.summary.ready_for_human_review,1);
+ assert.equal(result.proposed_additive_updates.equipment_applications.after.length,1);
+ assert.equal(result.proposed_additive_updates.dimensions.after.height_mm,304.8);
+ assert.equal(result.proposed_additive_updates.technical_specs,undefined);
+ assert.equal(result.technology,'MACROCORE');
+ assert.equal(result.database_write,false);
+ assert.equal(result.requires_explicit_publication_approval,true);
+});
