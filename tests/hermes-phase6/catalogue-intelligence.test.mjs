@@ -411,7 +411,7 @@ test('official alternate with missing geometry stays reviewable but cannot enter
  assert.equal(result.summary.geometry_unconfirmed,1);
  assert.equal(result.summary.provenance_blocked,0);
  assert.equal(result.summary.publication_authorized,0);
- assert.equal(result.rows[0].status,'EQUIVALENCE_REVIEW_GEOMETRY_UNCONFIRMED');
+ assert.equal(result.rows[0].status,'OFFICIAL_ALTERNATE_EVIDENCE_READY_FOR_REVIEW');
 });
 
 test('bulk Donaldson HD archive ignores unrelated P-series rows in DB enrichment', () => {
