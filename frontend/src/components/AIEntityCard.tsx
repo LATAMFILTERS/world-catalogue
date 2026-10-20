@@ -1,4 +1,4 @@
-import Link from '@/components/LocalizedLink';
+import { PublicReferenceLink } from '@/components/PublicReferenceLink';
 import { getGeoContextByKindAndSlug } from '@/lib/geo-context';
 import type { EntityKind } from '@/lib/entity-graph';
 import styles from './AIEntityCard.module.css';
@@ -14,7 +14,7 @@ function EntityLinks({ label, links }: { label: string; links: readonly { href: 
     <div className={styles.group}>
       <h3>{label}</h3>
       <div className={styles.links}>
-        {links.map((link) => <Link key={`${label}-${link.href}`} href={link.href}>{link.name}</Link>)}
+        {links.map((link) => <PublicReferenceLink key={`${label}-${link.href}`} href={link.href}>{link.name}</PublicReferenceLink>)}
       </div>
     </div>
   );
