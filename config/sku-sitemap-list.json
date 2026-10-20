@@ -597,6 +597,62 @@
     {
       "sku": "EL82008",
       "family": "oil-filters"
+    },
+    {
+      "sku": "EH61525",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61560",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61564",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61576",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61579",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61581",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61582",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61583",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61588",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH61606",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH63596",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH63597",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH65059",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH65060",
+      "family": "hydraulic-filters"
     }
   ],
   "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, its canonical source is Donaldson or an explicitly verified Fleetguard manufacturer fallback, the gates in lib/product-page-data.js pass and it has no hold.",

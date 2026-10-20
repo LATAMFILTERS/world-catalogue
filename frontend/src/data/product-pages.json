@@ -15431,6 +15431,1079 @@
     "kind": "catalogue-db",
     "table": "elimfilters_catalog"
    }
+  },
+  {
+   "sku": "EH61525",
+   "slug": "eh61525",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61525 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "82 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "70 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Komatsu",
+     "code": "848001048"
+    },
+    {
+     "brand": "Hitachi",
+     "code": "9288182"
+    }
+   ],
+   "oemTotal": 2,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171525"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35201"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35202"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23017"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23500-MPG"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT9180"
+    },
+    {
+     "brand": "Bosch",
+     "code": "1457431601"
+    }
+   ],
+   "crossRefsTotal": 9,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61560",
+   "slug": "eh61560",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61560 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "203 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "140 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171560"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT9217"
+    }
+   ],
+   "crossRefsTotal": 2,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61564",
+   "slug": "eh61564",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61564 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "203 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "140 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Komatsu",
+     "code": "21D6011130"
+    }
+   ],
+   "oemTotal": 1,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171564"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35216"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF7908"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT9176"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "HD13013"
+    }
+   ],
+   "crossRefsTotal": 5,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61576",
+   "slug": "eh61576",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61576 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "250 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "140 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "F302094"
+    },
+    {
+     "brand": "John Deere",
+     "code": "F302094J"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "22E6012212"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "848101178"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "Y848101178"
+    },
+    {
+     "brand": "Liebherr",
+     "code": "510669708"
+    }
+   ],
+   "oemTotal": 6,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171576"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35218"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35222"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35302"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23000"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23001"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT9261-MPG"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "HD13009"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "HD14001X"
+    },
+    {
+     "brand": "Hengst",
+     "code": "EY1059HD613"
+    }
+   ],
+   "crossRefsTotal": 12,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61579",
+   "slug": "eh61579",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61579 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "400 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "140 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171579"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35219"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35220"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23152"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23467"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23505-MPG"
+    }
+   ],
+   "crossRefsTotal": 8,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61581",
+   "slug": "eh61581",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61581 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "400 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "140 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171581"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35219"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35220"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23152"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23467"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23505-MPG"
+    }
+   ],
+   "crossRefsTotal": 8,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61582",
+   "slug": "eh61582",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61582 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "400 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "140 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171582"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35219"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35220"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23152"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23467"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23505-MPG"
+    }
+   ],
+   "crossRefsTotal": 8,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61583",
+   "slug": "eh61583",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61583 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "400 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "140 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171583"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35219"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35220"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23152"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23467"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23505-MPG"
+    }
+   ],
+   "crossRefsTotal": 8,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61588",
+   "slug": "eh61588",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61588 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "169 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "95 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171588"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF7905"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PT23141"
+    },
+    {
+     "brand": "Purolator",
+     "code": "LI2692"
+    }
+   ],
+   "crossRefsTotal": 4,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61606",
+   "slug": "eh61606",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Hydraulic Spin-On Filter",
+   "technology": "NANOFORCE",
+   "description": "EH61606 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "3/4 BSP/G"
+    },
+    {
+     "name": "Height",
+     "value": "144 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "96 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "72 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "62 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171606"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35102"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT8472"
+    },
+    {
+     "brand": "WIX",
+     "code": "51546"
+    },
+    {
+     "brand": "Hengst",
+     "code": "HY352W"
+    }
+   ],
+   "crossRefsTotal": 5,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH63596",
+   "slug": "eh63596",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH63596 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "57 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "70 mm"
+    },
+    {
+     "name": "Inner diameter",
+     "value": "43 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P173596"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF7710"
+    }
+   ],
+   "crossRefsTotal": 2,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH63597",
+   "slug": "eh63597",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH63597 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "57 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "70 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "145 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P173597"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF7711"
+    }
+   ],
+   "crossRefsTotal": 2,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH65059",
+   "slug": "eh65059",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Hydraulic Spin-On Filter",
+   "technology": "NANOFORCE",
+   "description": "EH65059 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1-12 UN"
+    },
+    {
+     "name": "Height",
+     "value": "199.89 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "91.69 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "71.5 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "61.5 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "AT182209"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AT193114"
+    },
+    {
+     "brand": "Case",
+     "code": "TRA5715132"
+    }
+   ],
+   "oemTotal": 3,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P565059"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF28731"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6122"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6511"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT365"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT8443"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT8497-MPG"
+    },
+    {
+     "brand": "WIX",
+     "code": "51628"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "WD10011"
+    },
+    {
+     "brand": "Hengst",
+     "code": "H19WD03"
+    }
+   ],
+   "crossRefsTotal": 14,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH65060",
+   "slug": "eh65060",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Hydraulic Spin-On Filter",
+   "technology": "NANOFORCE",
+   "description": "EH65060 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1-12 UN"
+    },
+    {
+     "name": "Height",
+     "value": "200 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "93 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "71.5 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "61.5 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "AT182209"
+    },
+    {
+     "brand": "Case",
+     "code": "TRA5715132"
+    }
+   ],
+   "oemTotal": 2,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P565060"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF28731"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6521"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6581"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT8443"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT8903"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "WD10011"
+    },
+    {
+     "brand": "Hengst",
+     "code": "H19WD03"
+    }
+   ],
+   "crossRefsTotal": 8,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
   }
  ],
  "blocked": []
