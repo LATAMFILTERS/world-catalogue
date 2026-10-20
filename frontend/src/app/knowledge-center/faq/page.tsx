@@ -1,3 +1,4 @@
+import { PublicReferenceLink } from '@/components/PublicReferenceLink';
 import type { Metadata } from 'next';
 import Link from '@/components/LocalizedLink';
 import { getFAQCategories, getFAQRegistry } from '@/lib/faq-registry';
@@ -127,7 +128,7 @@ export default function FAQHubPage() {
                         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-neutral-500">
                           <span>{entry.topic}</span>
                           <span aria-hidden="true">·</span>
-                          <Link href={entry.sourceHref} className="font-medium text-neutral-800 underline underline-offset-4 hover:text-black">Related technical context</Link>
+                          <PublicReferenceLink href={entry.sourceHref} className="font-medium text-neutral-800 underline underline-offset-4 hover:text-black">Related technical context</PublicReferenceLink>
                           {entry.demandSignal === 'gsc-observed' ? (
                             <>
                               <span aria-hidden="true">·</span>

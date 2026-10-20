@@ -1,5 +1,7 @@
 'use client';
 
+import { PublicReferenceLink } from '@/components/PublicReferenceLink';
+
 import Link from '@/components/LocalizedLink';
 import { usePathname } from 'next/navigation';
 import { getFamilyBySlug } from '@/lib/product-families-data';
@@ -76,9 +78,9 @@ export function StructuredFamilyDefinition() {
               {row.links && row.links.length > 0 && (
                 <div className="structured-definition__links">
                   {row.links.map((link) => (
-                    <Link key={`${row.label}-${link.href}-${link.name}`} href={link.href}>
+                    <PublicReferenceLink key={`${row.label}-${link.href}-${link.name}`} href={link.href}>
                       {link.name}
-                    </Link>
+                    </PublicReferenceLink>
                   ))}
                 </div>
               )}

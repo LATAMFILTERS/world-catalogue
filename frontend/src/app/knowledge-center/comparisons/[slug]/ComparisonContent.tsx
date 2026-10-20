@@ -1,5 +1,7 @@
 'use client';
 
+import { PublicReferenceLink } from '@/components/PublicReferenceLink';
+
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { KCComparison, KCComparisonCategory } from '@/lib/knowledge-center-data';
@@ -650,7 +652,7 @@ function RelatedGroup({
         {label}
       </p>
       {items.map(item => (
-        <Link key={item.href} href={item.href} style={{
+        <PublicReferenceLink key={item.href} href={item.href} style={{
           display: 'block',
           fontFamily: 'Inter, sans-serif',
           fontSize: '0.78rem',
@@ -660,7 +662,7 @@ function RelatedGroup({
           lineHeight: 1.4,
         }}>
           {item.label} →
-        </Link>
+        </PublicReferenceLink>
       ))}
     </div>
   );

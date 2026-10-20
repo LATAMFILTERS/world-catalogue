@@ -18,7 +18,7 @@ describe('Industrial technology shared presentation in three languages',()=>{
    expect(html).toContain(String(instance.t(reviewedCopyKey(text))));
    if(lang!=='en')expect(html).not.toContain('>'+text+'<');
   }
-  if(['GAIRFIL™','HE-CRIVA™','MA-TREA™','FUMEVRA™'].includes(technology.name)){
+  if(['GAIRFIL™','HE-CRIVA™','MA-TREA™','FUMEVRA™','COALERIS™','GASLIQ™','HYLTRIS™'].includes(technology.name)){
    const fields=[technology.title,technology.summary,technology.treatmentFunction,...technology.mechanisms,...technology.applications,...technology.conditions,...technology.selectionInputs,...technology.serviceSignals,...(technology.customFaqs??[]).flat(),...(technology.subfamilies??[]),...(technology.engineeringNotes??[]).flatMap(note=>[note.title,note.body])];
    for(const text of fields){
     expect(instance.exists(reviewedCopyKey(text)),text).toBe(true);
