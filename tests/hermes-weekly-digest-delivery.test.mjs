@@ -43,10 +43,14 @@ test('weekly HERMES digest is sent even when nothing is review-ready', async()=>
     outlookFactory:FakeOutlook
   });
   assert.equal(result.outcome,'SENT');
+  assert.equal(result.delivery_status,'SUBMITTED');
+  assert.equal(result.delivery_confirmed,false);
   assert.equal(result.actionable,false);
   assert.equal(result.informational_digest,true);
   assert.equal(result.queued_pending,2);
   assert.equal(sends.length,1);
   assert.match(sends[0].text,/HERMES_ENGINE_1/);
   assert.match(sends[0].text,/HERMES_MEDIA_1/);
+  assert.match(sends[0].html,/HERMES_ENGINE_1/);
+  assert.match(sends[0].html,/HERMES_MEDIA_1/);
 });

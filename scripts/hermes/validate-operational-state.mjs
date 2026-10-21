@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import { classifyResearchItem } from './hermes-core.mjs';
 
 const stateRoot = path.resolve(process.env.HERMES_STATE_ROOT || 'hermes/state');
 const pendingPath = path.join(stateRoot, 'recovery-pending.json');
@@ -25,6 +26,7 @@ const sweepDone = Array.isArray(sweep?.completed_work) ? sweep.completed_work.le
 const sweepComplete = Boolean(sweep?.complete === true && sweepTotal > 0 && sweepDone === sweepTotal);
 const researchItems = Object.values(research?.items || {});
 const deferredResearch = researchItems.filter((item) => item?.status === 'DEFERRED' && item?.terminal !== true);
+const researchClassifications = researchItems.map(classifyResearchItem);
 const externalResearchEnabled = String(process.env.HERMES_EXTERNAL_RESEARCH_ENABLED || 'false').toLowerCase() === 'true';
 
 let status = 'UNKNOWN';
@@ -32,19 +34,19 @@ let valid = true;
 let reason = null;
 
 if (!pending) {
-  if (!externalResearchEnabled) {
-    status = 'PIPELINE_CLEAR_ZERO_COST';
-    reason = 'EXTERNAL_RESEARCH_DISABLED';
-  } else if (sweep && !sweepComplete) {
+  if (sweep && !sweepComplete) {
     valid = false;
     status = 'INVALID_STATE';
     reason = `SWEEP_INCOMPLETE_WITHOUT_PENDING_${sweepDone}_${sweepTotal}`;
   } else if (deferredResearch.length > 0) {
-    valid = false;
-    status = 'INVALID_STATE';
-    reason = `RESEARCH_DEFERRED_WITHOUT_PENDING_${deferredResearch.length}`;
+    valid = !externalResearchEnabled;
+    status = externalResearchEnabled ? 'INVALID_STATE' : 'WAITING_RESEARCH_POLICY_DISABLED';
+    reason = externalResearchEnabled
+      ? `RESEARCH_DEFERRED_WITHOUT_PENDING_${deferredResearch.length}`
+      : 'EXTERNAL_RESEARCH_DISABLED_WITH_HISTORICAL_BACKLOG';
   } else {
-    status = 'PIPELINE_CLEAR';
+    status = externalResearchEnabled ? 'PIPELINE_CLEAR' : 'PIPELINE_CLEAR_ZERO_COST';
+    reason = externalResearchEnabled ? null : 'EXTERNAL_RESEARCH_DISABLED';
   }
 } else if (sweep && !sweepComplete) {
   if (!failed.has('sweep')) {
@@ -77,7 +79,7 @@ if (!pending) {
 }
 
 const output = {
-  schema_version: '1.0.0',
+  schema_version: '1.1.0',
   generated_at: new Date().toISOString(),
   cycle,
   valid,
@@ -97,6 +99,10 @@ const output = {
     resume_reason: sweep?.last_run_summary?.resume_reason || null
   } : null,
   research: research ? {
+    stage_status: externalResearchEnabled ? 'ENABLED' : 'SKIPPED_POLICY',
+    historical_provider_errors: researchClassifications.filter(x => x === 'HISTORICAL_PROVIDER_ERROR').length,
+    pending: researchClassifications.filter(x => x === 'PENDING').length,
+    skipped_policy: researchClassifications.filter(x => x === 'SKIPPED_POLICY').length,
     deferred: deferredResearch.length,
     total_items: researchItems.length,
     resume_required: Boolean(research?.last_summary?.resume_required)

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { interpretWeeklyDelivery } from './weekly-email-integrity.mjs';
 
 const stateRoot = process.env.HERMES_STATE_ROOT || path.resolve('hermes/state');
 const requestedCycle = process.env.HERMES_CYCLE_ID || null;
@@ -26,9 +27,11 @@ const sweepComplete = !!sweep && sweep.complete === true && total > 0 && complet
 const deferredResearch = research?.items && typeof research.items === 'object'
   ? Object.values(research.items).filter(x => x && x.status === 'DEFERRED' && x.terminal !== true).length
   : 0;
-const operationalClear = operational?.valid === true && operational?.status === 'PIPELINE_CLEAR';
+const operationalClear = operational?.cycle === cycle && operational?.valid === true
+  && ['PIPELINE_CLEAR', 'PIPELINE_CLEAR_ZERO_COST'].includes(operational?.status);
 const noPending = !exists(pendingPath);
-const emailConfirmed = !!weeklySent;
+const delivery = interpretWeeklyDelivery(weeklySent, cycle);
+const emailConfirmed = delivery.confirmed;
 const pendingFailed = asArray(pending?.failed).map(String).filter(Boolean);
 
 let status = 'NOT_CLOSED';
@@ -42,7 +45,7 @@ else if (!emailConfirmed) reason = 'WEEKLY_EMAIL_NOT_CONFIRMED';
 else { status = 'CLOSED'; reason = 'PIPELINE_COMPLETE_AND_DELIVERY_CONFIRMED'; }
 
 const payload = {
-  schema_version:'1.0.1',
+  schema_version:'1.1.0',
   generated_at:new Date().toISOString(),
   cycle,
   status,
@@ -54,7 +57,9 @@ const payload = {
     sweep_progress:`${completed}/${total}`,
     deferred_research:deferredResearch,
     operational_clear:operationalClear,
-    weekly_email_confirmed:emailConfirmed
+    weekly_email_confirmed:emailConfirmed,
+    weekly_email_delivery_status:delivery.status,
+    weekly_email_delivery_reason:delivery.reason
   }
 };
 
