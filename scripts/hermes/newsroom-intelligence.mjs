@@ -178,7 +178,13 @@ export async function runNewsroomIntelligence({ outputDir = resolveRealCandidate
   for (const [k, at] of Object.entries(seen)) if (now.getTime() - Date.parse(at) > 30 * DAY_MS) delete seen[k];
   const saveSeen = () => { fs.mkdirSync(path.dirname(seenPath), { recursive: true }); fs.writeFileSync(seenPath, JSON.stringify(seen)); };
 
-  const queue = [];
+  const queue = []; const unreviewed = [];
+  // Headlines the model will not judge (per-feed cap, LLM cap, time budget or LLM down) go to the email's link annex.
+  const annex = ({ item, source }) => unreviewed.push({ source: source.name.replace(/\s*\(Google News\)$/, ''), published_at: item.published_at, headline: item.headline, url: item.url });
+  const saveAnnex = () => {
+    fs.writeFileSync(path.resolve(stateRoot, 'newsroom-unreviewed.json'), `${JSON.stringify({ generated_at: now.toISOString(), items: unreviewed }, null, 2)}\n`);
+    summary.unreviewed = unreviewed.length;
+  };
   for (const source of sources) {
     if (overBudget()) break;
     const page = await fetchWithLimits({ url: source.url, fetchImpl, timeoutMs: 20_000, maxBytes: source.feed ? 2_000_000 : 800_000 });
@@ -186,12 +192,15 @@ export async function runNewsroomIntelligence({ outputDir = resolveRealCandidate
     summary.fetched += 1;
     const items = source.feed ? itemsFromFeed(page.text, source, now)
       : extractDatedHeadlines(normalizeHtmlToText(page.text), { now }).map((h) => ({ ...h, url: findArticleLink(page.text, h.headline, source.url) }));
+    let kept = 0;
     for (const item of items) {
       summary.headlines += 1;
       if (!PLAUSIBLE.test(`${item.headline} ${item.description || ''}`)) { summary.prefiltered_out += 1; continue; }
       const probe = candidateFrom(item, source, { por_que_importa: 'x', public_safe_fact: 'x', resumen_es: 'x', titulo_es: 'x' }, now);
       const file = path.join(outputDir, `${probe.entity_code.toLowerCase()}.json`);
+      kept += 1; // max_items = the feed's top plausible headlines, judged once; the rest go to the annex
       if (fs.existsSync(file) || seen[probe.deduplication_key]) { summary.existing += 1; continue; }
+      if (source.max_items && kept > source.max_items) { annex({ item, source }); continue; }
       queue.push({ item, source, file, key: probe.deduplication_key });
     }
   }
@@ -201,15 +210,17 @@ export async function runNewsroomIntelligence({ outputDir = resolveRealCandidate
     const batch = queue.slice(i, i + 20);
     let keep;
     try { summary.triage_calls += 1; keep = await llm.triage(batch.map((q) => q.item), { fetchImpl }); }
-    catch (error) { summary.errors.push({ source: 'triage', error: `LLM: ${error.message}` }); if (unavailable(error)) { saveSeen(); return { ...summary, outcome: 'LOCAL_LLM_UNAVAILABLE' }; } continue; }
+    catch (error) { summary.errors.push({ source: 'triage', error: `LLM: ${error.message}` }); if (unavailable(error)) { queue.forEach(annex); saveSeen(); saveAnnex(); return { ...summary, outcome: 'LOCAL_LLM_UNAVAILABLE' }; } continue; }
     batch.forEach((q, j) => { if (!keep.has(j)) { summary.triaged_out += 1; seen[q.key] = now.toISOString(); q.drop = true; } });
   }
 
+  let llmDown = false;
   for (const q of queue) {
-    if (q.drop || overBudget() || summary.llm_calls >= MAX_LLM_CALLS) continue;
+    if (q.drop) continue;
+    if (llmDown || overBudget() || summary.llm_calls >= MAX_LLM_CALLS) { annex(q); continue; }
     let answer;
     try { summary.llm_calls += 1; answer = await llm.summarize(q.item, q.source, { fetchImpl }); }
-    catch (error) { summary.errors.push({ source: q.source.id, error: `LLM: ${error.message}` }); if (unavailable(error)) break; continue; }
+    catch (error) { summary.errors.push({ source: q.source.id, error: `LLM: ${error.message}` }); if (unavailable(error)) { llmDown = true; annex(q); } continue; }
     if (answer?.relevante !== true) { summary.irrelevant += 1; seen[q.key] = now.toISOString(); continue; }
     if (!groundedSummary(`${q.item.headline} ${q.item.description || ''}`, answer)) { summary.ungrounded += 1; continue; }
     const candidate = candidateFrom(q.item, q.source, answer, now);
@@ -218,7 +229,7 @@ export async function runNewsroomIntelligence({ outputDir = resolveRealCandidate
     fs.writeFileSync(q.file, `${JSON.stringify(candidate, null, 2)}\n`, 'utf8');
     summary.created += 1;
   }
-  saveSeen();
+  saveSeen(); saveAnnex();
   // Free the ~6 GB the model holds on the 16 GB Lenovo as soon as the run ends (Part Search and PostgreSQL share it).
   if (llm === LOCAL_LLM) { try { await fetchImpl(OLLAMA_URL.replace(/\/api\/chat$/, '/api/generate'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: MODEL, keep_alive: 0 }) }); } catch {} }
   return { ...summary, outcome: 'OK', duration_s: Math.round((Date.now() - started) / 1000) };

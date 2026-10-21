@@ -18,7 +18,7 @@ import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { buildValidatedKnowledgeContext, validateNoveltyAgainstValidatedBase } from './validated-knowledge-context.mjs';
 
-const BLOCKED = /\b(donaldson|fleetguard|cummins filtration|mann[- ]?filter|mann\+hummel|mann \+ hummel|baldwin|parker|racor|hengst|mahle|ufi|filtration group|fram|wix|camfil|pall|hydac|sogefi|luberfiner|purolator)\b|https?:\/\/|www\.|EVID-/i;
+const BLOCKED = /\b(donaldson|fleetguard|atmus|cummins filtration|ahlstrom|hollingsworth|mann[- ]?filter|mann\+hummel|mann \+ hummel|baldwin|parker|racor|hengst|mahle|ufi|filtration group|fram|wix|camfil|pall|hydac|sogefi|luberfiner|purolator)\b|https?:\/\/|www\.|EVID-/i;
 const SYSTEM_BY_DOMAIN = {
   fuel_filtration: 'Fuel Cleanliness Protection Systems', lubrication_oil: 'Lubrication Protection Systems',
   hydraulics_fluids: 'Hydraulic Protection Systems', industrial_fluid_conditioning: 'Hydraulic Protection Systems',

@@ -34,6 +34,7 @@ test('feed + page run: prefilter, local LLM judgement, valid approvable candidat
     <item><title>New 13-liter diesel engine platform launched for heavy trucks</title><link>https://press.example.com/engine</link><pubDate>Mon, 20 Oct 2026 10:00:00 GMT</pubDate><description>The platform targets 2027 emissions rules.</description></item>
     <item><title>Company appoints new chief marketing officer for Europe</title><link>https://press.example.com/cmo</link><pubDate>Mon, 20 Oct 2026 10:00:00 GMT</pubDate></item>
     <item><title>Diesel quarterly earnings beat expectations again</title><link>https://press.example.com/q3</link><pubDate>Mon, 20 Oct 2026 10:00:00 GMT</pubDate></item>
+    <item><title>Diesel engine item beyond the per-feed cap goes to the annex</title><link>https://press.example.com/cap</link><pubDate>Mon, 20 Oct 2026 10:00:00 GMT</pubDate></item>
   </channel></rss>`;
   const fetchImpl = async () => new Response(rss, { status: 200, headers: { 'content-type': 'application/rss+xml' } });
   const summarize = async (item) => (/earnings/.test(item.headline) ? { relevante: false } : {
@@ -43,11 +44,13 @@ test('feed + page run: prefilter, local LLM judgement, valid approvable candidat
   const triage = async (items) => new Set(items.map((_, i) => i)); // keep all; summary step judges earnings
   const llm = { triage, summarize };
   const stateRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-newsroom-state-'));
-  const sources = [{ id: 'trade', name: 'Trade Press', domain: 'oem_engines_equipment', url: 'https://press.example.com/feed', feed: true }];
+  const sources = [{ id: 'trade', name: 'Trade Press', domain: 'oem_engines_equipment', url: 'https://press.example.com/feed', feed: true, max_items: 2 }];
   const r = await runNewsroomIntelligence({ outputDir: out, stateRoot, sources, now, fetchImpl, llm });
   assert.equal(r.prefiltered_out, 1); // CMO appointment never reaches the model
   assert.equal(r.irrelevant, 1);
   assert.equal(r.created, 1);
+  const annex = JSON.parse(fs.readFileSync(path.join(stateRoot, 'newsroom-unreviewed.json'), 'utf8')).items;
+  assert.deepEqual(annex.map((i) => [i.source, i.headline]), [['Trade Press', 'Diesel engine item beyond the per-feed cap goes to the annex']]);
   const c = JSON.parse(fs.readFileSync(path.join(out, fs.readdirSync(out)[0]), 'utf8'));
   assert.deepEqual(validateCandidate(c), []);
   assert.equal(isResearchResolved(c), true);

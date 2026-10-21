@@ -16,6 +16,7 @@ test('only approved, verified, NEW knowledge with a neutral public fact is publi
   assert.equal(knowledgeEligibility(approved({ knowledge_action: 'UPDATE_REINFORCE' })), 'NOT_NEW_KNOWLEDGE');
   assert.equal(knowledgeEligibility(approved({ destination: 'INTERNAL_ONLY' })), 'INTERNAL_ONLY');
   assert.equal(knowledgeEligibility(approved({ public_safe_fact: 'Donaldson launched a new nanofiber media line.' })), 'NO_PUBLIC_SAFE_FACT');
+  assert.equal(knowledgeEligibility(approved({ public_safe_fact: 'Atmus and Ahlstrom expanded synthetic media output.' })), 'NO_PUBLIC_SAFE_FACT');
   assert.equal(knowledgeEligibility(approved({ public_safe_fact: 'See https://example.com for details on media.' })), 'NO_PUBLIC_SAFE_FACT');
 });
 
