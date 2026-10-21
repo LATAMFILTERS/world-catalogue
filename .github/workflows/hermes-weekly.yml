@@ -1,6 +1,6 @@
 name: HERMES Weekly Intelligence Collection
 
-# Lenovo (Invoke-HermesLocal.ps1 -Mode Weekly) is the PRIMARY weekly scheduler. GitHub is STANDBY: manual dispatch only, no cron, to avoid double sends.
+# Weekly schedule is owned by the Lenovo primary runtime (Invoke-HermesLocal.ps1 -Mode Weekly). GitHub is STANDBY: manual dispatch only, no cron, to avoid double sends.
 on:
   push:
     branches: [main]
