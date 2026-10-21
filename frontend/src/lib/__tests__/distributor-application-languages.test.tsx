@@ -20,6 +20,16 @@ vi.mock('next/navigation', () => ({ usePathname: () => '/distributor-application
 vi.mock('../../app/distributor-application/PartnerTurnstile', () => ({ default: () => <div data-testid="turnstile" /> }));
 vi.mock('next/link', () => ({ default: React.forwardRef<HTMLAnchorElement, React.ComponentProps<'a'>>(function TestLink(props, ref) { return <a ref={ref} {...props} />; }) }));
 describe('Distributor application language presentation', () => {
+  for (const lang of ['en', 'es', 'pt'] as const) it(`${lang} exposes a neutral heading before the client selects the program`, () => {
+    state.program = 'loading';
+    const html = renderToStaticMarkup(<I18nextProvider i18n={lang === 'en' ? i18n : localeInstances[lang]}><Application /></I18nextProvider>);
+    expect(html).toContain('<h1');
+    expect(html).toContain('aria-busy="true"');
+    expect(html).not.toContain('<form');
+    expect(html).not.toContain('territorial exclusivity');
+    const bundle = { en, es, pt }[lang];
+    expect(html).toContain((bundle.reviewedCopy as Record<string, string>)[reviewedCopyKey('Grow With ELIMFILTERS').split('.')[1]]);
+  });
   it('covers support, qualification, conditional copy and placeholders without translating field identifiers', () => {
     const file = 'src/app/distributor-application/page.tsx';
     const tree = ts.createSourceFile(file, fs.readFileSync(file, 'utf8'), ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);

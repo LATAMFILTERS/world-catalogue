@@ -240,7 +240,11 @@ export default function DistributorApplication() {
   };
 
   if (program === 'loading') {
-    return <main style={{ minHeight: '100vh', background: '#000' }} />;
+    return (
+      <main aria-busy="true" style={{ minHeight: '100vh', background: '#000', color: '#fff', padding: '7rem clamp(1.25rem, 6vw, 6rem)' }}>
+        <h1 style={headingStyle}><ReviewedText text="Grow With ELIMFILTERS" /></h1>
+      </main>
+    );
   }
 
   return (

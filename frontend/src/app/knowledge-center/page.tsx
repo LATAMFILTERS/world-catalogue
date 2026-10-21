@@ -1,3 +1,4 @@
+import { ReviewedText } from '@/components/ReviewedText';
 import Link from '@/components/LocalizedLink';
 import styles from './KnowledgeCenter.module.css';
 
@@ -43,58 +44,58 @@ export default function KnowledgeCenterPage(){
   <main className={styles.page} id="main-content">
    <section className={styles.hero}><div className={`${styles.inner} ${styles.heroGrid}`}>
     <div>
-     <p className={styles.eyebrow}>ELIMFILTERS KNOWLEDGE SYSTEM</p>
-     <h1 className={styles.title}>Engineering knowledge for better asset decisions.</h1>
-     <p className={styles.lead}>Technical knowledge for filtration, contamination control, reliability and industrial asset protection â€” organized around the way engineers, fleet managers and maintenance teams investigate real operating problems.</p>
+     <p className={styles.eyebrow}><ReviewedText text={"ELIMFILTERS KNOWLEDGE SYSTEM"} /></p>
+     <h1 className={styles.title}><ReviewedText text={"Engineering knowledge for better asset decisions."} /></h1>
+     <p className={styles.lead}><ReviewedText text={"Technical knowledge for filtration, contamination control, reliability and industrial asset protection — organized around the way engineers, fleet managers and maintenance teams investigate real operating problems."} /></p>
      <div className={styles.buttonRow}>
-      <Link className={styles.primary} href="/knowledge-center/problems" data-conversion-action="knowledge-diagnostics">DIAGNOSE A PROBLEM</Link>
-      <Link className={styles.secondary} href="/knowledge-center/search" data-conversion-action="knowledge-search">SEARCH KNOWLEDGE</Link>
+      <Link className={styles.primary} href="/knowledge-center/problems" data-conversion-action="knowledge-diagnostics"><ReviewedText text={"DIAGNOSE A PROBLEM"} /></Link>
+      <Link className={styles.secondary} href="/knowledge-center/search" data-conversion-action="knowledge-search"><ReviewedText text={"SEARCH KNOWLEDGE"} /></Link>
      </div>
     </div>
-    <div className={styles.signal} aria-label="Technical decision flow">
-     <div className={styles.signalHead}><span className={styles.micro}>CONTAMINATION CONTROL LOGIC</span><span className={styles.micro}>CONDITION â†’ VALIDATION</span></div>
+    <div className={styles.signal} role="group" aria-labelledby="kc-decision-flow-label">
+     <div className={styles.signalHead}><span id="kc-decision-flow-label" className={styles.micro}><ReviewedText text={"CONTAMINATION CONTROL LOGIC"} /></span><span className={styles.micro}><ReviewedText text={"CONDITION → VALIDATION"} /></span></div>
      <svg viewBox="0 0 620 190" role="img" aria-hidden="true" style={{width:'100%',height:'auto',display:'block',marginTop:'1.6rem'}}>
       <defs><linearGradient id="signalLine" x1="0" x2="1"><stop offset="0%" stopColor="#FFF12D" stopOpacity="0.25"/><stop offset="100%" stopColor="#FFF12D" stopOpacity="1"/></linearGradient></defs>
       <line x1="40" y1="110" x2="580" y2="110" stroke="rgba(255,255,255,0.14)" strokeWidth="2"/>
       <path d="M40 110 C90 110 125 60 175 60 C225 60 260 150 310 150 C360 150 395 60 445 60 C495 60 530 110 580 110" fill="none" stroke="url(#signalLine)" strokeWidth="3"/>
       {[{x:40,y:110},{x:175,y:60},{x:310,y:150},{x:445,y:60},{x:580,y:110}].map((p,i)=><g key={i}><circle cx={p.x} cy={p.y} r="9" fill="#050505" stroke="#FFF12D" strokeWidth="2"/><circle cx={p.x} cy={p.y} r="3" fill="#FFF12D"/></g>)}
-      {[['CONDITION',40,140],['MECHANISM',175,45],['FRAMEWORK',310,175],['PROTECTION',445,45],['VALIDATION',580,140]].map(([label,x,y])=><text key={label as string} x={x as number} y={y as number} textAnchor={x===40?'start':x===580?'end':'middle'} fill="rgba(255,255,255,0.55)" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em">{label}</text>)}
+      {[['CONDITION',40,140],['MECHANISM',175,45],['FRAMEWORK',310,175],['PROTECTION',445,45],['VALIDATION',580,140]].map(([label,x,y])=><text key={label as string} x={x as number} y={y as number} textAnchor={x===40?'start':x===580?'end':'middle'} fill="rgba(255,255,255,0.55)" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"><ReviewedText text={label as string} /></text>)}
      </svg>
-     <p className={styles.body} style={{marginTop:'1.6rem'}}>The Knowledge Center connects observed conditions to failure mechanisms, engineering references, protection systems, technologies and final application validation.</p>
+     <p className={styles.body} style={{marginTop:'1.6rem'}}><ReviewedText text={"The Knowledge Center connects observed conditions to failure mechanisms, engineering references, protection systems, technologies and final application validation."} /></p>
     </div>
    </div></section>
 
-   <section className={styles.domains}><div className={`${styles.inner} ${styles.domainRow}`}><span>REFERENCE DOMAINS</span>{['AIR INTAKE','FUEL','LUBRICATION','HYDRAULICS','COOLING','PNEUMATICS','RELIABILITY'].map(x=><span key={x}>{x}</span>)}</div></section>
+   <section className={styles.domains}><div className={`${styles.inner} ${styles.domainRow}`}><span><ReviewedText text={"REFERENCE DOMAINS"} /></span>{['AIR INTAKE','FUEL','LUBRICATION','HYDRAULICS','COOLING','PNEUMATICS','RELIABILITY'].map(x=><span key={x}><ReviewedText text={x as string} /></span>)}</div></section>
 
    <section className={`${styles.section} ${styles.sectionAlt}`}><div className={styles.inner}>
-    <p className={styles.eyebrow}>DATABASE-AUDITED APPLICATION INTELLIGENCE</p>
-    <h2 className={styles.h2}>Engineering depth backed by catalog and application data.</h2>
-    <p className={styles.lead}>ELIMFILTERS connects technical knowledge to a production catalog, OEM and aftermarket reference intelligence, equipment models and vehicle applications. Cross-reference data supports identification and application reasoning; product-level performance remains governed by validated technical evidence.</p>
-    <div className={styles.decision} style={{marginTop:'2.4rem'}}>{SCALE.map(([value,title,text])=><article className={styles.decisionItem} key={title}><span>{value}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+    <p className={styles.eyebrow}><ReviewedText text={"DATABASE-AUDITED APPLICATION INTELLIGENCE"} /></p>
+    <h2 className={styles.h2}><ReviewedText text={"Engineering depth backed by catalog and application data."} /></h2>
+    <p className={styles.lead}><ReviewedText text={"ELIMFILTERS connects technical knowledge to a production catalog, OEM and aftermarket reference intelligence, equipment models and vehicle applications. Cross-reference data supports identification and application reasoning; product-level performance remains governed by validated technical evidence."} /></p>
+    <div className={styles.decision} style={{marginTop:'2.4rem'}}>{SCALE.map(([value,title,text])=><article className={styles.decisionItem} key={title}><span>{value}</span><h3><ReviewedText text={title as string} /></h3><p><ReviewedText text={text as string} /></p></article>)}</div>
    </div></section>
 
    <section className={styles.section}><div className={styles.inner}>
-    <div className={styles.sectionHead}><h2 className={styles.h2}>Start with the technical question.</h2><p className={styles.body}>The system is organized by investigative intent, not by decorative categories. Move from the operating condition to the technical mechanism, supporting framework, protection architecture and validated application.</p></div>
-    <div className={styles.hubGrid}>{HUBS.map(([n,title,label,description,href])=><Link href={href} className={styles.hub} key={title}><div className={styles.hubMeta}><span>{n}</span><span>{label}</span></div><h3>{title}</h3><p>{description}</p><b>OPEN REFERENCE â†’</b></Link>)}</div>
+    <div className={styles.sectionHead}><h2 className={styles.h2}><ReviewedText text={"Start with the technical question."} /></h2><p className={styles.body}><ReviewedText text={"The system is organized by investigative intent, not by decorative categories. Move from the operating condition to the technical mechanism, supporting framework, protection architecture and validated application."} /></p></div>
+    <div className={styles.hubGrid}>{HUBS.map(([n,title,label,description,href])=><Link href={href} className={styles.hub} key={title}><div className={styles.hubMeta}><span>{n}</span><span><ReviewedText text={label as string} /></span></div><h3><ReviewedText text={title as string} /></h3><p><ReviewedText text={description as string} /></p><b><ReviewedText text={"OPEN REFERENCE →"} /></b></Link>)}</div>
    </div></section>
 
    <section className={`${styles.section} ${styles.sectionAlt}`}><div className={styles.inner}>
-    <p className={styles.eyebrow}>ENGINEERING DECISION PATH</p><h2 className={styles.h2}>Problem â†’ evidence â†’ protection â†’ application.</h2>
-    <div className={styles.decision} style={{marginTop:'2.4rem'}}>{DECISION.map(([n,title,text])=><article className={styles.decisionItem} key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+    <p className={styles.eyebrow}><ReviewedText text={"ENGINEERING DECISION PATH"} /></p><h2 className={styles.h2}><ReviewedText text={"Problem → evidence → protection → application."} /></h2>
+    <div className={styles.decision} style={{marginTop:'2.4rem'}}>{DECISION.map(([n,title,text])=><article className={styles.decisionItem} key={n}><span>{n}</span><h3><ReviewedText text={title as string} /></h3><p><ReviewedText text={text as string} /></p></article>)}</div>
    </div></section>
 
    <section className={styles.section}><div className={styles.inner}>
-    <div className={styles.sectionHead}><h2 className={styles.h2}>Choose the shortest technical path.</h2><p className={styles.body}>The same knowledge base supports different starting points. Use the route that matches what is already known instead of forcing every user through the same sequence.</p></div>
-    <div className={styles.pathGrid}>{PATHS.map(([title,text,href,label])=><article className={styles.pathCard} key={title}><h3>{title}</h3><p>{text}</p>{href.startsWith('http')||href.startsWith('mailto:')?<a href={href} target={href.startsWith('http')?'_blank':undefined} rel={href.startsWith('http')?'noopener noreferrer':undefined} data-conversion-action={href.includes('part-search')?'product-intelligence':href.startsWith('mailto:')?'application-support':undefined}>{label} â†’</a>:<Link href={href}>{label} â†’</Link>}</article>)}</div>
+    <div className={styles.sectionHead}><h2 className={styles.h2}><ReviewedText text={"Choose the shortest technical path."} /></h2><p className={styles.body}><ReviewedText text={"The same knowledge base supports different starting points. Use the route that matches what is already known instead of forcing every user through the same sequence."} /></p></div>
+    <div className={styles.pathGrid}>{PATHS.map(([title,text,href,label])=><article className={styles.pathCard} key={title}><h3><ReviewedText text={title as string} /></h3><p><ReviewedText text={text as string} /></p>{href.startsWith('http')||href.startsWith('mailto:')?<a href={href} target={href.startsWith('http')?'_blank':undefined} rel={href.startsWith('http')?'noopener noreferrer':undefined} data-conversion-action={href.includes('part-search')?'product-intelligence':href.startsWith('mailto:')?'application-support':undefined}><ReviewedText text={label as string} /> →</a>:<Link href={href}><ReviewedText text={label as string} /> →</Link>}</article>)}</div>
    </div></section>
 
    <section className={`${styles.section} ${styles.sectionAlt}`}><div className={styles.inner}>
-    <p className={styles.eyebrow}>SYSTEM CONNECTIONS</p><h2 className={styles.h2}>Knowledge does not stop at the article.</h2>
-    <p className={styles.lead}>Technical content should lead to the next useful decision. Problems connect to systems. Systems connect to technologies. Technologies connect to validated applications and product intelligence.</p>
-    <div className={styles.searchRow}><Link className={styles.searchLink} href="/systems/">PROTECTION SYSTEMS â†’</Link><Link className={styles.searchLink} href="/technologies/">TECHNOLOGIES â†’</Link><Link className={styles.searchLink} href="/industries/">INDUSTRIES â†’</Link><a className={styles.searchLink} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">PART SEARCH â†’</a></div>
+    <p className={styles.eyebrow}><ReviewedText text={"SYSTEM CONNECTIONS"} /></p><h2 className={styles.h2}><ReviewedText text={"Knowledge does not stop at the article."} /></h2>
+    <p className={styles.lead}><ReviewedText text={"Technical content should lead to the next useful decision. Problems connect to systems. Systems connect to technologies. Technologies connect to validated applications and product intelligence."} /></p>
+    <div className={styles.searchRow}><Link className={styles.searchLink} href="/systems/"><ReviewedText text={"PROTECTION SYSTEMS →"} /></Link><Link className={styles.searchLink} href="/technologies/"><ReviewedText text={"TECHNOLOGIES →"} /></Link><Link className={styles.searchLink} href="/industries/"><ReviewedText text={"INDUSTRIES →"} /></Link><a className={styles.searchLink} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence"><ReviewedText text={"PART SEARCH →"} /></a></div>
    </div></section>
 
-   <section className={styles.cta}><div className={`${styles.inner} ${styles.ctaGrid}`}><div><p className={styles.eyebrow}>APPLICATION SUPPORT</p><h2 className={styles.h2}>Bring us the operating condition â€” not just the part number.</h2><p className={styles.lead}>Use Part Search when the application is known. For repeated failures, contamination uncertainty, short service life or unclear protection architecture, use technical review.</p></div><div className={styles.buttonRow}><a className={styles.primary} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">Search Product Intelligence</a><a className={styles.secondary} href="mailto:applications@elimfilters.com?subject=ELIMFILTERS%20Knowledge%20Center%20Technical%20Review" data-conversion-action="application-support">TECHNICAL REVIEW</a></div></div></section>
+   <section className={styles.cta}><div className={`${styles.inner} ${styles.ctaGrid}`}><div><p className={styles.eyebrow}><ReviewedText text={"APPLICATION SUPPORT"} /></p><h2 className={styles.h2}><ReviewedText text={"Bring us the operating condition — not just the part number."} /></h2><p className={styles.lead}><ReviewedText text={"Use Part Search when the application is known. For repeated failures, contamination uncertainty, short service life or unclear protection architecture, use technical review."} /></p></div><div className={styles.buttonRow}><a className={styles.primary} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence"><ReviewedText text={"Search Product Intelligence"} /></a><a className={styles.secondary} href="mailto:applications@elimfilters.com?subject=ELIMFILTERS%20Knowledge%20Center%20Technical%20Review" data-conversion-action="application-support"><ReviewedText text={"TECHNICAL REVIEW"} /></a></div></div></section>
   </main>
  </>;
 }

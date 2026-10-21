@@ -1,7 +1,9 @@
 'use client';
 
+import { ReviewedText } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
+import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
 import { LanguageMenu } from '@/components/LanguageMenu';
 
@@ -20,10 +22,11 @@ const NAV = [
 
 export default function ClientNav() {
   const path = usePathname();
+  const { t } = useTranslation();
 
   return (
     <nav
-      aria-label="Knowledge Center navigation"
+      aria-label={t('a11y.knowledgeNavigation', 'Knowledge Center navigation')}
       style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         background: 'rgba(0,0,0,0.95)',
@@ -131,7 +134,7 @@ export default function ClientNav() {
                   transition: 'color 0.2s, border-color 0.2s',
                 }}
               >
-                {item.label}
+                <ReviewedText text={item.label} />
               </Link>
             );
           })}

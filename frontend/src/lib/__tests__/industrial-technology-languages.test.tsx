@@ -18,16 +18,22 @@ describe('Industrial technology shared presentation in three languages',()=>{
    expect(html).toContain(String(instance.t(reviewedCopyKey(text))));
    if(lang!=='en')expect(html).not.toContain('>'+text+'<');
   }
-  if(['GAIRFIL™','HE-CRIVA™','MA-TREA™','FUMEVRA™','COALERIS™','GASLIQ™','HYLTRIS™'].includes(technology.name)){
+  {
    const fields=[technology.title,technology.summary,technology.treatmentFunction,...technology.mechanisms,...technology.applications,...technology.conditions,...technology.selectionInputs,...technology.serviceSignals,...(technology.customFaqs??[]).flat(),...(technology.subfamilies??[]),...(technology.engineeringNotes??[]).flatMap(note=>[note.title,note.body])];
    for(const text of fields){
     expect(instance.exists(reviewedCopyKey(text)),text).toBe(true);
     const translated=String(instance.t(reviewedCopyKey(text)));
     expect(html).toContain(renderToStaticMarkup(<>{translated}</>).replaceAll('&amp;','&'));
-    if(lang!=='en')expect(translated,text).not.toBe(text);
+    if(lang!=='en' && text !== technology.name)expect(translated,text).not.toBe(text);
    }
   }
-  expect(html).toContain(technology.name);
+  if (lang !== 'en') {
+   const blocks = (markup: string) => [...markup.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').matchAll(/<(?:p|h[1-3]|li|summary)\b[^>]*>([\s\S]*?)<\/(?:p|h[1-3]|li|summary)>/g)].map(m => m[1].replace(/<[^>]+>/g, '').replace(/<!--.*?-->/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim());
+   const english = blocks(renderToStaticMarkup(<I18nextProvider i18n={i18n}><IndustrialProcessTechnologyStablePage platform={platform} technology={technology}/></I18nextProvider>));
+   const untranslated = blocks(html).filter(text => text.length > 20 && (text.match(/[A-Za-z]+/g) || []).length >= 4 && english.includes(text));
+   expect([...new Set(untranslated)]).toEqual([]);
+  }
+  expect(html).toContain(technology.branded ? technology.name : String(instance.t(reviewedCopyKey(technology.name), { defaultValue: technology.name })));
   expect(html).toContain(platform.name);
   expect(html).toContain(`href="${lang==='en'?'/':'/'+lang+'/'}"`);
   expect(html).toContain(`href="mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${technology.name} Industrial & Process Application Assessment`)}"`);

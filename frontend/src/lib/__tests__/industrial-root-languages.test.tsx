@@ -33,7 +33,7 @@ describe('Industrial & Process root language coverage',()=>{
     expect(main).toContain(lang==='es'?'DISEÑE EL PROCESO.':lang==='pt'?'PROJETE O PROCESSO.':'ENGINEER THE PROCESS.');
     for(const p of INDUSTRIAL_PROCESS_PLATFORMS){
       expect(main).toContain(p.name);expect(main).toContain(`href="${industrialProcessPlatformUrl(p.slug)}"`);
-      for(const t of p.technologies){expect(main).toContain(t.name);expect(main).toContain(`href="${industrialProcessTechnologyUrl(p.slug,t.slug)}"`);}
+      for(const t of p.technologies){expect(main).toContain(t.branded ? t.name : String((lang === 'en' ? i18n : localeInstances[lang]).t(reviewedCopyKey(t.name), { defaultValue: t.name })));expect(main).toContain(`href="${industrialProcessTechnologyUrl(p.slug,t.slug)}"`);}
     }
     expect((main.match(/<article\b/g)||[]).length).toBe(10);
     expect(main).toContain('href="mailto:info@elimfilters.com?subject=Industrial%20%26%20Process%20Engineering%20Review&amp;body=Company%3A');
