@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Trade-press RSS feeds read by scripts/hermes/newsroom-intelligence.mjs (zero cost, no Groq). Secondary sources: items are labelled SEÑAL in the weekly email. Verified 2026-10-21: each returned items from the last 7 days.",
+  "feeds": [
+    { "id": "intl_filtration_news", "name": "International Filtration News", "domain": "filter_manufacturing", "url": "https://www.filtnews.com/feed/" },
+    { "id": "lubes_n_greases", "name": "Lubes'n'Greases", "domain": "lubrication_oil", "url": "https://www.lubesngreases.com/feed/" },
+    { "id": "equipment_world", "name": "Equipment World", "domain": "oem_engines_equipment", "url": "https://www.equipmentworld.com/feed" },
+    { "id": "ccj", "name": "CCJ", "domain": "oem_engines_equipment", "url": "https://www.ccjdigital.com/feed" },
+    { "id": "trucking_info", "name": "Trucking Info", "domain": "oem_engines_equipment", "url": "https://www.truckinginfo.com/rss" },
+    { "id": "power_magazine", "name": "POWER Magazine", "domain": "oem_engines_equipment", "url": "https://www.powermag.com/feed/" },
+    { "id": "marinelink", "name": "MarineLink", "domain": "oem_engines_equipment", "url": "https://www.marinelink.com/news/rss" },
+    { "id": "automotive_world", "name": "Automotive World", "domain": "oem_engines_equipment", "url": "https://www.automotiveworld.com/feed/" },
+    { "id": "agriland", "name": "Agriland", "domain": "oem_engines_equipment", "url": "https://www.agriland.ie/feed/" },
+    { "id": "mining_technology", "name": "Mining Technology", "domain": "oem_engines_equipment", "url": "https://www.mining-technology.com/feed/" }
+  ]
+}

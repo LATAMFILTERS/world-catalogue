@@ -203,6 +203,8 @@ try {
   if($plan -contains 'harvestRestore'){ $status.harvestRestore=Invoke-LimitedProcess 'harvest-restore' $npm @('run','hermes:harvest:restore') 10 }
   if($plan -contains 'collect'){ $status.collect=Invoke-LimitedProcess 'collect' $npm @('run','hermes:collect') 30; if(-not $status.collect){Stop-RecoveryAtFailure 'collect'} }
   if($plan -contains 'harvestPersist'){ if($status.collect){$status.harvestPersist=Invoke-LimitedProcess 'harvest-persist' $npm @('run','hermes:harvest:persist') 10}else{$status.harvestPersist=$false} }
+  # Zero-cost newsroom intelligence (official newsrooms + trade-press RSS, local Ollama model). Non-critical: never blocks the email.
+  if($plan -contains 'collect'){ $status.newsroom=Invoke-LimitedProcess 'newsroom' $node @('scripts/hermes/newsroom-intelligence.mjs') 40 }
   if($plan -contains 'sweep'){ if($externalResearchEnabled){ $status.sweep=Invoke-LimitedProcess 'industry-sweep' $npm @('run','hermes:sweep') 45; if(-not $status.sweep){Stop-RecoveryAtFailure 'sweep'} } else { $status.sweep=$true; Write-Log 'SKIP industry-sweep: external AI provider disabled under zero-cost policy' } }
   if($plan -contains 'seoAudit'){ $status.seoAudit=Invoke-LimitedProcess 'seo-audit' $python @('scripts/seo-geo-audit/audit.py','--out-dir','seo-geo-audit-out') 15 }
   if($plan -contains 'seoTriage'){ if($status.seoAudit){$status.seoTriage=Invoke-LimitedProcess 'seo-triage' $python @('scripts/seo-geo-audit/triage_short_pages.py','seo-geo-audit-out/seo-geo-audit.csv','--threshold','250','--out-dir','seo-geo-audit-out') 10}else{$status.seoTriage=$false} }

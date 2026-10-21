@@ -76,7 +76,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
     items.push({
       entity_code: c.entity_code,
       status: c.evidence_level === 'PRIMARY' ? 'VERIFICADO' : 'SEÑAL',
-      title: rr.finding_title || c.source_title || c.entity_code,
+      title: rr.titulo_es || rr.finding_title || c.source_title || c.entity_code,
       company: c.source_publisher,
       date: new Date(published).toISOString().slice(0, 10),
       domain: DOMAIN_LABELS_ES[domainId] || domainId,

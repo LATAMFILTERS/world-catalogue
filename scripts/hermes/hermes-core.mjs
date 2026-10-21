@@ -42,7 +42,8 @@ export function isResearchResolved(candidate) {
   if (!isRealHermesCandidate(candidate)) return true;
   const resolution = candidate?.research_resolution;
   if (resolution?.status !== 'VERIFIED') return false;
-  if (resolution?.engine !== 'GROQ') return false;
+  // LOCAL_LLM = official-newsroom headline (verbatim evidence) summarised by the local model; see newsroom-intelligence.mjs.
+  if (!['GROQ', 'LOCAL_LLM'].includes(resolution?.engine)) return false;
   if (typeof resolution?.finding_title !== 'string' || resolution.finding_title.trim().length < 8) return false;
   if (typeof resolution?.evidence_url !== 'string') return false;
   try { new URL(resolution.evidence_url); } catch { return false; }
