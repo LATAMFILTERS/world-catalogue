@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "description": "Feeds read by scripts/hermes/newsroom-intelligence.mjs (zero cost, no Groq), filtration manufacturers and filter-media makers first. Most manufacturer newsrooms block automated readers (HTTP 403) or render news with JavaScript, so they are read through per-company Google News RSS searches (last 7 days). Secondary sources: items are labelled SEÑAL in the weekly email. Verified 2026-10-21: each returned items from the last 7 days.",
+  "description": "Feeds read by scripts/hermes/newsroom-intelligence.mjs (zero cost, no Groq), filtration manufacturers and filter-media makers first. Most manufacturer newsrooms block automated readers (HTTP 403) or render news with JavaScript, so they are read through per-company Google News RSS searches (last 7 days). Light-duty automaker feeds are capped with max_items (high volume). Secondary sources: items are labelled SEÑAL in the weekly email. Verified 2026-10-21: each returned items from the last 7 days.",
   "feeds": [
     {
       "id": "gn_donaldson",
@@ -169,6 +169,104 @@
       "name": "DEUTZ (Google News)",
       "domain": "oem_engines_equipment",
       "url": "https://news.google.com/rss/search?q=DEUTZ+engine+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_ld_toyota",
+      "name": "Toyota / Lexus (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Toyota+OR+Lexus)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_honda",
+      "name": "Honda / Acura (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Honda+OR+Acura)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_nissan",
+      "name": "Nissan / Infiniti (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Nissan+OR+Infiniti)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_ford",
+      "name": "Ford (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Ford)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_gm",
+      "name": "GM / Chevrolet / GMC / Cadillac (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(%22General+Motors%22+OR+Chevrolet+OR+GMC+OR+Cadillac)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_stellantis",
+      "name": "Stellantis / Jeep / Ram / Peugeot / Fiat (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Stellantis+OR+Jeep+OR+Ram+OR+Peugeot+OR+Fiat)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_vw_audi",
+      "name": "Volkswagen / Audi / Porsche / Skoda (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Volkswagen+OR+Audi+OR+Porsche+OR+Skoda)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_bmw",
+      "name": "BMW / MINI (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(BMW+OR+MINI)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_mercedes",
+      "name": "Mercedes-Benz (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(%22Mercedes-Benz%22)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_hyundai_kia",
+      "name": "Hyundai / Kia / Genesis (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Hyundai+OR+Kia+OR+Genesis)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_japan_others",
+      "name": "Subaru / Mazda / Suzuki / Mitsubishi (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Subaru+OR+Mazda+OR+Suzuki+OR+Mitsubishi)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_renault",
+      "name": "Renault / Dacia (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Renault+OR+Dacia)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_tesla",
+      "name": "Tesla (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(Tesla)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
+    },
+    {
+      "id": "gn_ld_china",
+      "name": "JAC / BYD / Chery / Geely / Great Wall / Changan (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=(JAC+OR+BYD+OR+Chery+OR+Geely+OR+%22Great+Wall+Motor%22+OR+Changan)+engine+OR+powertrain+OR+hybrid+OR+%22new+model%22+when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "max_items": 15
     }
   ]
 }
