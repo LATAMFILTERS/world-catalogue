@@ -17,3 +17,49 @@ test('documented body inner diameter renders separately from gasket inner diamet
 test('missing body inner diameter is omitted without inferring it from the gasket',()=>{const r=row();r.gasket_id_mm=50;assert.equal(render(r).specs.some(s=>s.name==='Inner diameter'),false);});
 test('impossible body inner diameters block publication',()=>{for(const value of [0,-5,80,81]){const r=row();r.inner_diameter_mm=value;assert.throws(()=>render(r),/physically impossible dimensions/,String(value));}});
 test('negative displayed dimensions cannot evade physical validation',()=>{for(const field of ['height_mm','outer_diameter_mm','gasket_od_mm','gasket_id_mm']){const r=row();r[field]=-5;assert.throws(()=>render(r),/physically impossible dimensions/,field);}});
+
+test('explicit fitment conditions remain visible and distinct after approval',()=>{
+  const r=row();r.equipment_applications=[
+    {equipment:'TEST MODEL',engine:'TEST ENGINE',year:'2019',equipment_options:'Stage V',engine_option:'Option A'},
+    {equipment:'TEST MODEL',engine:'TEST ENGINE',year:'2020',equipment_options:'Tier 4 Final',engine_option:'Option B'}
+  ];
+  assert.deepEqual(render(approve(r)).applications,[
+    'TEST MODEL · TEST ENGINE · Year: 2019 · Equipment option: Stage V · Engine option: Option A',
+    'TEST MODEL · TEST ENGINE · Year: 2020 · Equipment option: Tier 4 Final · Engine option: Option B'
+  ]);
+});
+test('changing or removing an approved option invalidates application publication',()=>{
+  for(const field of ['equipment_options','engine_option']){
+    for(const replacement of ['CHANGED',undefined]){
+      const r=row();r.equipment_applications[0][field]='ORIGINAL';approve(r);
+      if(replacement===undefined)delete r.equipment_applications[0][field];else r.equipment_applications[0][field]=replacement;
+      assert.deepEqual(render(r).applications,[],field);
+    }
+  }
+});
+test('unqualified legacy hashes and display remain unchanged for unknown options',()=>{
+  const r=row(),before=applicationPayloadHash(r.equipment_applications);
+  assert.equal(before,'47ee1b3f31d483115a8336b6bf496688');
+  r.equipment_applications[0].equipment_options=' - ';r.equipment_applications[0].engine_option='';
+  assert.equal(applicationPayloadHash(r.equipment_applications),before);
+  assert.deepEqual(render(approve(r)).applications,['TEST EQUIPMENT MODEL · TEST ENGINE']);
+});
+test('one-sided documented years never imply an invented range',()=>{
+  for(const [field,label] of [['year_from','From year'],['year_to','Through year']]){
+    const r=row();r.equipment_applications[0][field]='2019';
+    assert.deepEqual(render(approve(r)).applications,['TEST EQUIPMENT MODEL · TEST ENGINE · '+label+': 2019']);
+  }
+});
+
+test('options alone distinguish equipment variants with the same year and engine',()=>{
+  const r=row();r.equipment_applications=['Stage V','Tier 4 Final'].map(option=>({equipment:'TEST MODEL',engine:'TEST ENGINE',year:'2019',equipment_options:option}));
+  assert.equal(render(approve(r)).applications.length,2);
+});
+test('verified vehicle applications retain exact years and options',()=>{
+  const r=row();r.duty='LIGHT_DUTY';r.equipment_applications=[];
+  r.vehicle_applications=[{make:'TEST',model:'MODEL',engine:'ENGINE',year_from:'2018',year_to:'2020',equipment_options:'Option A',engine_option:'Option B'}];
+  approve(r);const gov=r.enrichment_data.application_governance;
+  gov.vehicle_verified=true;gov.vehicle_payload_hash=applicationPayloadHash(r.vehicle_applications);gov.engine_payload_hash=applicationPayloadHash(r.vehicle_applications);
+  assert.deepEqual(render(r).applications,['Test MODEL · ENGINE · Years: 2018–2020 · Equipment option: Option A · Engine option: Option B']);
+  r.vehicle_applications[0].engine_option='Option C';assert.deepEqual(render(r).applications,[]);
+});
