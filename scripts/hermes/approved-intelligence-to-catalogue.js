@@ -76,6 +76,48 @@ async function submitApprovedOrder(order) {
   return { status:submission.status, research_id:submission.hermes_research_id || null, error_code:submission.error_code || null, source_candidate:order.source_candidate, publication_authorized:false };
 }
 
+function exactEquipment(candidate) {
+  const e = candidate?.equipment || candidate?.application?.equipment || {};
+  return { brand:String(e.brand || e.make || '').trim(), model:String(e.model || '').trim(), engine:e.engine || null, year:e.year || null };
+}
+
+// A verified news item is not an equipment catalogue: without an exact make+model,
+// queue OEM identity research instead of guessing a model from a headline.
+// ponytail: mirrors the identity stage in poll-outlook-approvals.js; merge them if that poller is re-enabled.
+async function submitIdentityResearch(approved, { upsert = upsertKnowledgeGap, send = submitRequest, attach = attachHermesResearchId } = {}) {
+  const code = approved.entity_code;
+  const equipment = exactEquipment(approved);
+  const signal = String(approved.research_resolution?.finding_title || approved.source_title || code);
+  const gap = createKnowledgeGap({
+    request_id:'intel-identity-' + code, origin:'human', request_type:'filter_application', priority:'high', equipment,
+    system:'all_oem_filtration_systems', component:'equipment_configuration_identification',
+    question:'Identify the exact OEM manufacturer, equipment model, years, engine and transmission variants and official parts/service catalogues for this verified industrial signal: ' + signal + '. Source ' + String(approved.research_resolution?.evidence_url || approved.source_url || '') + '. Then research every OEM-documented filtration system. No publication.',
+    reason:'Approved HERMES intelligence requires OEM configuration identification: ' + code,
+    requested_by:'Victor Abreu', channel:'hermes_weekly_approved', deduplication_key:'hermes-identity-' + code
+  });
+  const research = buildRequest({
+    research_request_id:'intel-identity-research-' + code, knowledge_gap_request_id:gap.request_id,
+    research_type:'OEM_EQUIPMENT_IDENTIFICATION', equipment, system:gap.system, component:gap.component,
+    research_question:gap.question, required_source_types:['official OEM vehicle catalogue', 'official OEM parts and service catalogue'],
+    minimum_independent_sources:1, allow_competitor_sources:false, allow_industry_sources:false, priority:'high'
+  });
+  const stored = await upsert(gap);
+  if (!stored.persisted || !stored.gap) return { status:'PERSIST_FAILED', research_id:null };
+  const sent = await send({ knowledgeGap:stored.gap, researchRequest:research, requestId:research.research_request_id, conversationId:'hermes-weekly-identity' });
+  if (sent.status === 'accepted' && sent.hermes_research_id) await attach(stored.gap.request_id, sent.hermes_research_id);
+  return { status:sent.status, research_id:sent.hermes_research_id || null, error_code:sent.error_code || null };
+}
+
+// Option B: an ACEPTAR on an OEM/equipment/application finding opens complete OEM research.
+const RESEARCH_TYPES = new Set(['oem_update', 'equipment_update', 'application_update', 'oem_reference_update']);
+const needsOemResearch = (candidate) => RESEARCH_TYPES.has(candidate?.candidate_type);
+
+async function queueApprovedResearch(approved, deps = {}) {
+  const equipment = exactEquipment(approved);
+  if (equipment.brand && equipment.model) return (deps.submitOrder || submitApprovedOrder)(buildOrder(approved, equipment));
+  return submitIdentityResearch(approved, deps);
+}
+
 if (require.main === module) {
   (async () => {
     const [candidatePath, make, model] = process.argv.slice(2);
@@ -88,4 +130,4 @@ if (require.main === module) {
   })().catch(e=>{ console.error(e.message);process.exitCode=1; });
 }
 
-module.exports = { ALL_SYSTEMS, buildOrder, submitApprovedOrder };
+module.exports = { ALL_SYSTEMS, buildOrder, submitApprovedOrder, exactEquipment, submitIdentityResearch, needsOemResearch, queueApprovedResearch };

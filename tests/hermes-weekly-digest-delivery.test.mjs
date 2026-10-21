@@ -80,3 +80,27 @@ test('review-ready week still emails the candidates when signed review actions a
   assert.match(sends[0].html,/HERMES_REAL_OEM_READY_1/);
   assert.match(sends[0].text,/Verified OEM finding/);
 });
+
+test('verified industry findings get ACEPTAR / ELIMINAR buttons and are staged for review', async()=>{
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'hermes-weekly-digest-actions-'));
+  const finding={entity_code:'HERMES_REAL_SWEEP_STANDARDS_TESTING_ABC123',source_url:'https://example.test/std',research_resolution:{status:'VERIFIED'}};
+  fs.writeFileSync(path.join(dir,'hermes-weekly-2026-10-26.md'),'# weekly','utf8');
+  fs.writeFileSync(path.join(dir,'hermes-weekly-2026-10-26.json'),JSON.stringify({
+    reporting_period:{start:'2026-10-19',end:'2026-10-26'}, totals:{scanned:0,review_ready:0,needs_research:0},
+    groups:{}, research_pending:[], duplicates:[], invalid:[],
+    industry_digest:{window:{start:'2026-10-19',end:'2026-10-25'},excluded:{},empty_reason:null,review_candidates:[finding],
+      items:[{entity_code:finding.entity_code,status:'VERIFICADO',title:'Norma revisada',company:'ISO',date:'2026-10-20',domain:'Normas',summary:'s',summary_lang:'es',why:'w',why_lang:'es',url:'https://example.test/std'}]}
+  }),'utf8');
+  const staged=[];
+  const result=await sendWeeklyActionEmail({
+    reportsDir:dir, stage:async(c)=>{ staged.push(...c); },
+    env:{HERMES_EMAIL_PROVIDER:'outlook',HERMES_EMAIL_LIVE:'false',HERMES_COLLECTION_DRY_RUN:'true',HERMES_REVIEW_ACTIONS_ENABLED:'true',
+      HERMES_REVIEW_BASE_URL:'https://part-search.example.test/hermes/review',HERMES_REVIEW_TOKEN_SECRET:'test-secret',HERMES_REVIEW_RUN_ID:'123'}
+  });
+  assert.equal(result.outcome,'DRY_RUN');
+  assert.deepEqual(staged.map((c)=>c.entity_code),[finding.entity_code]);
+  const html=fs.readFileSync(result.preview,'utf8');
+  assert.match(html,/ACEPTAR/);
+  assert.match(html,/ELIMINAR/);
+  assert.match(html,/part-search\.example\.test\/hermes\/review/);
+});

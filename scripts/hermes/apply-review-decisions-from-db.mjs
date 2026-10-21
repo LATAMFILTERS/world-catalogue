@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
+import { pathToFileURL } from 'node:url';
 import { isResearchResolved } from './hermes-core.mjs';
 
 const require = createRequire(import.meta.url);
@@ -20,7 +21,7 @@ function targetFor(decision) {
   return 'elimfilters-vault/91-pending-review';
 }
 
-function applyDecision(row) {
+export function applyDecision(row) {
   const candidate = { ...(row.candidate || {}) };
   const decision = String(row.decision || '').toLowerCase();
   const reason = String(row.decision_reason || '').trim() || null;
@@ -81,20 +82,39 @@ function applyDecision(row) {
     output_path: path.relative(process.cwd(), target).replaceAll('\\', '/'),
   };
   atomic(path.resolve('elimfilters-vault/94-sync-log', `${candidate.entity_code}-${Date.now()}.decision.json`), audit);
-  return { candidate: candidate.entity_code, decision, workflow_status: candidate.workflow_status };
+  return { candidate: candidate.entity_code, decision, workflow_status: candidate.workflow_status, approved: decision === 'approve' ? candidate : undefined };
 }
 
-const rows = await fetchDecisions();
-const results = [];
-for (const row of rows) {
-  try {
-    const result = applyDecision(row);
-    await markApplied(row.candidate_code);
-    results.push({ ...result, outcome: 'APPLIED' });
-  } catch (error) {
-    results.push({ candidate: row.candidate_code, decision: row.decision, outcome: 'FAILED', error: error.message });
+const { needsOemResearch, queueApprovedResearch } = require('./approved-intelligence-to-catalogue.js');
+
+// ACEPTAR on an OEM/equipment finding also opens complete OEM research (option B).
+// If that request cannot be delivered, the decision stays unapplied and is retried next cycle;
+// re-applying is idempotent (same files, deduplicated research key).
+export async function processDecisions({ fetch = fetchDecisions, mark = markApplied, research = queueApprovedResearch } = {}) {
+  const results = [];
+  for (const row of await fetch()) {
+    try {
+      const result = applyDecision(row);
+      if (result.decision === 'approve' && needsOemResearch(result.approved)) {
+        const out = await research(result.approved);
+        result.research = out.status;
+        if (!['accepted', 'duplicate'].includes(out.status)) {
+          results.push({ candidate: result.candidate, decision: result.decision, outcome: 'RESEARCH_RETRY', research: out.status, error: out.error_code || null });
+          continue;
+        }
+      }
+      await mark(row.candidate_code);
+      delete result.approved;
+      results.push({ ...result, outcome: 'APPLIED' });
+    } catch (error) {
+      results.push({ candidate: row.candidate_code, decision: row.decision, outcome: 'FAILED', error: error.message });
+    }
   }
+  return results;
 }
 
-console.log(JSON.stringify({ outcome: 'OK', processed: results.length, results }, null, 2));
-if (results.some((r) => r.outcome === 'FAILED')) process.exitCode = 1;
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  const results = await processDecisions();
+  console.log(JSON.stringify({ outcome: 'OK', processed: results.length, results }, null, 2));
+  if (results.some((r) => r.outcome !== 'APPLIED')) process.exitCode = 1;
+}

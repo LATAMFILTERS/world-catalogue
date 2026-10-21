@@ -5,7 +5,8 @@ param(
   [string]$RepoRoot = 'C:\ELIMSERVER\repos\world-catalogue',
   [string]$VaultPath = 'C:\ELIMSERVER\secrets\hermes-secrets.clixml',
   [string]$StateRoot = 'C:\ELIMSERVER\state\hermes',
-  [string]$LogRoot = 'C:\ELIMSERVER\logs\hermes'
+  [string]$LogRoot = 'C:\ELIMSERVER\logs\hermes',
+  [string]$KnowledgeStackPath = 'C:\ELIMSERVER\secrets\knowledge-stack-local.json'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -118,6 +119,27 @@ function Invoke-OperationalCertification {
   } catch { Write-Log "OPERATIONAL CERTIFICATION ERROR $($_.Exception.Message)" }
 }
 
+# Review Center actions + decision intake: catalogue DB (review queue), signing secret, and the local
+# knowledge-stack API used to open OEM research after an ACEPTAR. Missing pieces degrade to no buttons / retry later.
+function Set-ReviewEnvironment($vault) {
+  foreach ($name in 'CATALOG_DATABASE_URL','DATABASE_URL','HERMES_REVIEW_TOKEN_SECRET') {
+    if ($vault.PSObject.Properties[$name]) { Set-Item "Env:$name" (Convert-SecureValue $vault.$name) }
+  }
+  $env:HERMES_REVIEW_BASE_URL = 'https://part-search.elimfilters.com/hermes/review'
+  $env:HERMES_REVIEW_ACTIONS_ENABLED = 'true'
+  $env:HERMES_REVIEW_RUN_ID = [string][DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+  try {
+    $ks = Get-Content $KnowledgeStackPath -Raw | ConvertFrom-Json
+    $env:KNOWLEDGE_CENTER_API_URL = "http://127.0.0.1:$([int]$ks.apiPort)"; $env:KNOWLEDGE_CENTER_API_KEY = [string]$ks.knowledgeApiKey; $env:HERMES_REQUESTS_ENABLED = 'true'
+  } catch { Write-Log "REVIEW research intake unavailable: $($_.Exception.Message)" }
+}
+
+function Invoke-ReviewDecisions {
+  Set-ReviewEnvironment (Import-Clixml $VaultPath)
+  if (-not $env:CATALOG_DATABASE_URL) { Write-Log 'SKIP review decisions: CATALOG_DATABASE_URL missing from vault'; return }
+  $null = Invoke-LimitedProcess 'review-decisions' $node @('scripts/hermes/apply-review-decisions-from-db.mjs') 10
+}
+
 function Stop-RecoveryAtFailure([string]$Stage) {
   if ($Mode -ne 'Recovery') { return }
   $payload = @{
@@ -141,6 +163,9 @@ try {
 
   $npm='C:\Program Files\nodejs\npm.cmd'; $node='C:\Program Files\nodejs\node.exe'; $python=(Get-Command python.exe -ErrorAction Stop).Source
   if (-not (Test-Path $npm) -or -not (Test-Path $node)) { throw 'Node.js 20 was not found in C:\Program Files\nodejs.' }
+
+  # Apply Victor's ACEPTAR / ELIMINAR / REVISAR clicks on every run (Recovery fires every 6h), before any early exit.
+  if ($Mode -ne 'Test') { Invoke-ReviewDecisions }
 
   $sentPath = Join-Path $StateRoot ("weekly-$cycle.sent.json")
   if ($Mode -eq 'Weekly' -and (Test-Path $sentPath)) { Write-Log "SKIPPED weekly email already sent for cycle $cycle"; exit 0 }
@@ -210,6 +235,6 @@ catch {
 finally {
   Invoke-OperationalCertification
   $env:HERMES_EMAIL_LIVE='false'
-  foreach($name in 'GROQ_API_KEY','AZURE_CLIENT_ID','AZURE_TENANT_ID','AZURE_CLIENT_SECRET','HERMES_SENDER_EMAIL','HERMES_REVIEW_EMAIL','HERMES_CYCLE_ID','HERMES_STATE_ROOT','HERMES_SWEEP_MODEL','HERMES_SWEEP_DOMAIN_BATCH','HERMES_SWEEP_MAX_TOPICS_PER_REQUEST','HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN','HERMES_SWEEP_MAX_RETRIES','HERMES_SWEEP_MIN_INTERVAL_MS','HERMES_SWEEP_MIN_429_BACKOFF_MS','HERMES_SWEEP_BACKOFF_MS','HERMES_SWEEP_MAX_BACKOFF_MS','HERMES_SWEEP_BUDGET_MS','HERMES_RESEARCH_BUDGET_MS','HERMES_RESEARCH_RETRY_DELAY_MS'){Remove-Item "Env:$name" -ErrorAction SilentlyContinue}
+  foreach($name in 'CATALOG_DATABASE_URL','DATABASE_URL','HERMES_REVIEW_TOKEN_SECRET','HERMES_REVIEW_BASE_URL','HERMES_REVIEW_ACTIONS_ENABLED','HERMES_REVIEW_RUN_ID','KNOWLEDGE_CENTER_API_URL','KNOWLEDGE_CENTER_API_KEY','HERMES_REQUESTS_ENABLED','GROQ_API_KEY','AZURE_CLIENT_ID','AZURE_TENANT_ID','AZURE_CLIENT_SECRET','HERMES_SENDER_EMAIL','HERMES_REVIEW_EMAIL','HERMES_CYCLE_ID','HERMES_STATE_ROOT','HERMES_SWEEP_MODEL','HERMES_SWEEP_DOMAIN_BATCH','HERMES_SWEEP_MAX_TOPICS_PER_REQUEST','HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN','HERMES_SWEEP_MAX_RETRIES','HERMES_SWEEP_MIN_INTERVAL_MS','HERMES_SWEEP_MIN_429_BACKOFF_MS','HERMES_SWEEP_BACKOFF_MS','HERMES_SWEEP_MAX_BACKOFF_MS','HERMES_SWEEP_BUDGET_MS','HERMES_RESEARCH_BUDGET_MS','HERMES_RESEARCH_RETRY_DELAY_MS'){Remove-Item "Env:$name" -ErrorAction SilentlyContinue}
   if($null -ne $lock){$lock.Dispose()}
 }

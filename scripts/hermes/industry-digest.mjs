@@ -64,7 +64,7 @@ function emptyReason(summary) {
 export function buildIndustryDigest(candidates, { now = new Date(), sweepSummaryPath = path.resolve('hermes/industry-sweep/last-run.json') } = {}) {
   const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
   const start = new Date(end.getTime() - 7 * DAY_MS);
-  const items = [];
+  const items = []; const reviewCandidates = [];
   let noDate = 0; let outOfWindow = 0; let invalid = 0;
   for (const c of candidates.filter(isIndustrySweepCandidate)) {
     if (validateCandidate(c).length) { invalid += 1; continue; }
@@ -74,6 +74,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
     const rr = c.research_resolution || {};
     const domainId = c.category.slice('industry_sweep:'.length);
     items.push({
+      entity_code: c.entity_code,
       status: c.evidence_level === 'PRIMARY' ? 'VERIFICADO' : 'SEÑAL',
       title: rr.finding_title || c.source_title || c.entity_code,
       company: c.source_publisher,
@@ -85,6 +86,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
       why_lang: rr.por_que_importa_es ? 'es' : 'en',
       url: rr.evidence_url || c.source_url
     });
+    reviewCandidates.push(c); // verified sweep findings can be approved from the email
   }
   // Zero-cost, no-LLM signals: official pages whose content changed since the
   // last harvest. The harvest state keeps a change from repeating next week.
@@ -112,6 +114,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
   return {
     window: { start: start.toISOString().slice(0, 10), end: new Date(end.getTime() - DAY_MS).toISOString().slice(0, 10) },
     items,
+    review_candidates: reviewCandidates,
     excluded: { no_published_date: noDate, outside_window: outOfWindow, invalid },
     empty_reason: items.length ? null : emptyReason(readSweepSummary(sweepSummaryPath))
   };
@@ -121,7 +124,7 @@ const esc = (v) => String(v ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt
 const safeHref = (u) => { try { return ['http:', 'https:'].includes(new URL(u).protocol) ? u : null; } catch { return null; } };
 const en = (lang) => (lang === 'en' ? ' (EN)' : '');
 
-export function renderIndustryDigest(digest) {
+export function renderIndustryDigest(digest, { actionsFor = null } = {}) {
   const title = 'INTELIGENCIA DE INDUSTRIA DE LA SEMANA';
   const note = 'Sección informativa: no pasa por revisión ni modifica catálogo, Knowledge Center, Obsidian ni PostgreSQL.';
   if (!digest) return { text: '', html: '' };
@@ -145,6 +148,7 @@ export function renderIndustryDigest(digest) {
       <p><strong>Resumen${en(i.summary_lang)}:</strong> ${esc(i.summary)}</p>
       <p><strong>Por qué importa${en(i.why_lang)}:</strong> ${esc(i.why)}</p>
       <p>${href ? `<a href="${esc(href)}">Ver fuente</a>` : esc(i.url)}</p>
+      ${i.entity_code && actionsFor ? actionsFor(i.entity_code) : ''}
     </div>`;
   });
   return {
