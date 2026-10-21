@@ -240,7 +240,9 @@ export function parseRssItems(xml, limit = DEFAULT_RSS_ITEM_LIMIT) {
     const link = (linkTag?.[1] || linkHref?.[1] || '').trim();
     const guid = (/<guid[^>]*>([\s\S]*?)<\/guid>/i.exec(block)?.[1] || link || title).trim();
     const pubDate = (/<(pubDate|updated|published)[^>]*>([\s\S]*?)<\/\1>/i.exec(block)?.[2] || '').trim();
-    if (title || link) items.push({ title, link, guid, pubDate });
+    const description = (/<(description|summary)[^>]*>([\s\S]*?)<\/\1>/i.exec(block)?.[2] || '')
+      .replace(/<!\[CDATA\[|\]\]>/g, '').replace(/<[^>]+>/g, ' ').replace(/&lt;[^&]*&gt;/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 600);
+    if (title || link) items.push({ title, link, guid, pubDate, description });
   }
   return items;
 }
