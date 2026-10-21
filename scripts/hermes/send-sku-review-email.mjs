@@ -63,7 +63,7 @@ export function buildSkuReviewMessage({ now = new Date(), proposals = [], invali
     text.push('');
   };
   section('SKUs listos para autorizar', ready, (p) => ({
-    html: `<div style="border:1px solid #ddd;border-radius:8px;padding:14px;margin:12px 0"><h4 style="margin:0 0 4px">${esc(p.proposed_sku)} — ${esc(p.position)}</h4><div style="font-size:12px;color:#666">${esc(equipment(p))} · ${esc(p.duty)} · base ${esc(p.base_manufacturer)} ${esc(p.codigo_base)} · OEM ${esc(p.oem_code)}</div><p style="font-size:13px">Evidencia: ${evidenceLinks(p)}</p>${buttons(p.entity_code, cfg)}</div>`,
+    html: `<div style="border:1px solid #ddd;border-radius:8px;padding:14px;margin:12px 0"><h4 style="margin:0 0 4px">${esc(p.proposed_sku)} — ${esc(p.position)}</h4><div style="font-size:12px;color:#666">${esc(equipment(p))} · ${esc(p.duty)} · base ${esc(p.base_manufacturer)} ${esc(p.codigo_base)} · OEM ${esc(p.oem_code)}</div><p style="font-size:13px">Evidencia: ${evidenceLinks(p)}</p>${(p.warnings || []).map((w) => `<p style="font-size:12px;color:#8a6d00">Aviso: ${esc(w)}</p>`).join('')}${buttons(p.entity_code, cfg)}</div>`,
     text: `- ${p.proposed_sku} · ${equipment(p)} · ${p.position} · base ${p.base_manufacturer} ${p.codigo_base} · OEM ${p.oem_code}`
   }));
   section('Bloqueados: requieren tu criterio (STOP_REVIEW)', stop, (p) => ({
