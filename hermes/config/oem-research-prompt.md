@@ -13,7 +13,9 @@ You are the ELIMFILTERS Product Master research step. Victor approved a HERMES f
 
 - Official pages: run `node {{PAGE_TOOL}} "<https-url>" --wait "<regex of what you expect>"` (exactly this command; no other shell commands are available). It returns JSON with `text`, `status`, `blocked` and `sha256`. Use it for every manufacturer and OEM page, because it uses the Lenovo's real Chrome and VPN. `sha256` is the `evidence_sha256` for that code.
 - WebSearch only finds candidate URLs. Never cite a search result as evidence; open the page with the tool above.
-- Donaldson search: `https://shop.donaldson.com/store/en-us/search?Ntt=<code>`. Fleetguard product: `https://www.fleetguard.com/product/<code>`.
+- Donaldson search: `node {{PAGE_TOOL}} "https://shop.donaldson.com/store/en-us/search?Ntt=<code>" --wait "P\d{6}|couldn't find"`.
+- Fleetguard search (by OEM or competitor number; Fleetguard only searches from its search box): `node {{PAGE_TOOL}} "https://www.fleetguard.com/" --search "<code>" --wait "exact match|Gasket|Results"`. A Fleetguard product page: `https://www.fleetguard.com/product/<fleetguard code>`.
+- Any other site that only searches from its box: add `--search "<text>"` to its home page URL.
 - If a page returns `blocked: true`, do not guess: leave that reference out of the file.
 
 ## Steps
