@@ -177,6 +177,23 @@ export function buildMessage(report, config, digestOptions = {}) {
   };
 }
 
+/** Send one { subject, html, text } with the configured provider (live only). */
+export async function deliverMessage(message, config, { gmailTransportFactory = null, outlookFactory = null } = {}) {
+  if (config.provider === 'gmail') {
+    const createTransport = gmailTransportFactory || require('nodemailer').createTransport;
+    const transport = createTransport({ service: 'gmail', auth: { user: config.senderEmail, pass: config.gmailAppPassword } });
+    await transport.verify();
+    const result = await transport.sendMail({ from: config.senderEmail ? `${config.senderName} <${config.senderEmail}>` : undefined, to: config.recipient, subject: message.subject, text: message.text, html: message.html });
+    return { outcome: 'SENT', provider: 'gmail', recipient: config.recipient, message_id: result.messageId || null };
+  }
+  const OutlookMailService = outlookFactory || require('../../lib/outlook-mail.js');
+  const mail = new OutlookMailService();
+  mail.validateConfig();
+  if (config.senderEmail) mail.emailMap.default = config.senderEmail;
+  await mail.send(config.recipient, message.subject, message.html, message.text, 'default');
+  return { outcome: 'SENT', provider: 'outlook', recipient: config.recipient, message_id: null };
+}
+
 export async function sendWeeklyEmail({ reportsDir = 'hermes/reports', env = process.env, gmailTransportFactory = null, outlookFactory = null } = {}) {
   const config = resolveMailConfig(env);
   const report = latestWeeklyReport(reportsDir);
