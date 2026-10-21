@@ -45,19 +45,21 @@ export function validateResearch(doc) {
   return errors;
 }
 
-/** sku -> codigo_base, and every verified code -> the SKU that already carries it. */
+/**
+ * sku -> codigo_base; codigo_base -> SKUs (identity); OEM code -> SKUs (cross-reference only:
+ * one OEM code often sits on several SKUs, so it never proves coverage by itself).
+ */
 export function indexCatalogue(rows) {
-  const occupied = new Map(); const byCode = new Map();
+  const occupied = new Map(); const byBase = new Map(); const byOem = new Map();
+  const add = (map, code, sku) => { const k = normalizeCode(code); if (k && !(map.get(k) || []).includes(sku)) map.set(k, [...(map.get(k) || []), sku]); };
   for (const r of rows) {
     const sku = String(r.sku || '').trim().toUpperCase();
     if (!sku) continue;
     occupied.set(sku, r.codigo_base || '');
-    for (const code of [r.codigo_base, ...refsFrom(r.oem_codes).map((x) => x.code)]) {
-      const k = normalizeCode(code);
-      if (k && !byCode.has(k)) byCode.set(k, sku);
-    }
+    add(byBase, r.codigo_base, sku);
+    for (const x of refsFrom(r.oem_codes)) add(byOem, x.code, sku);
   }
-  return { occupied, byCode };
+  return { occupied, byBase, byOem };
 }
 
 // First candidate whose natural SKU is free (or already carries the same code); else STOP_REVIEW.
@@ -93,17 +95,23 @@ function planPosition(p, { occupied }) {
 }
 
 export function proposePosition(doc, p, index) {
-  const known = REFS.map((k) => p[k]?.code).find((code) => index.byCode.has(normalizeCode(code)));
-  const plan = known ? { status: 'REUSE_EXISTING_SKU', sku: index.byCode.get(normalizeCode(known)), selected_code: known } : planPosition(p, index);
-  const state = plan.state || { READY: 'READY_FOR_AUTHORIZATION', REUSE_EXISTING_SKU: 'ALREADY_IN_CATALOGUE', STOP_REVIEW: 'STOP_REVIEW' }[plan.status];
+  const samePrefix = (skus = []) => skus.filter((s) => s.startsWith(p.prefix));
+  // Covered = a researched code is already the codigo_base of a SKU in the same family.
+  const known = REFS.map((k) => p[k]?.code).find((code) => samePrefix(index.byBase.get(normalizeCode(code))).length);
+  const plan = known ? { status: 'REUSE_EXISTING_SKU', sku: samePrefix(index.byBase.get(normalizeCode(known)))[0], selected_code: known } : planPosition(p, index);
+  let state = plan.state || { READY: 'READY_FOR_AUTHORIZATION', REUSE_EXISTING_SKU: 'ALREADY_IN_CATALOGUE', STOP_REVIEW: 'STOP_REVIEW' }[plan.status];
   const reasons = plan.reasons || (plan.status === 'STOP_REVIEW'
     ? (plan.attempts || []).map((a) => `${a.manufacturer} ${a.code} -> ${a.sku || '?'}: ${a.status}${a.occupied_by_code ? ` (${a.occupied_by_code})` : ''}`).concat(plan.attempts?.length ? [] : ['NO_ELIGIBLE_VERIFIED_CODE'])
     : []);
+  // The OEM code already cross-referenced on SKUs: same family = possible duplicate (human decides); other families = warning only.
+  const oemSkus = index.byOem.get(normalizeCode(p.oem.code)) || [];
+  const warnings = oemSkus.filter((s) => !s.startsWith(p.prefix)).length ? [`OEM ${p.oem.code} also referenced by other families: ${oemSkus.filter((s) => !s.startsWith(p.prefix)).join(', ')}`] : [];
+  if (state === 'READY_FOR_AUTHORIZATION' && samePrefix(oemSkus).length) { state = 'STOP_REVIEW'; reasons.push(`POSSIBLE_DUPLICATE: OEM ${p.oem.code} already referenced by ${samePrefix(oemSkus).join(', ')}`); }
   return {
     entity_code: `HERMES_SKU_${sha(`${doc.case_id}|${p.position}|${p.oem.code}`).slice(0, 12).toUpperCase()}`,
     approval_required: true, case_id: doc.case_id, equipment: doc.equipment, position: p.position, duty: p.duty, prefix: p.prefix,
     oem_code: p.oem.code, state, proposed_sku: plan.sku || null, codigo_base: plan.selected_code || null,
-    base_manufacturer: plan.selected_manufacturer || null, base_source_column: plan.selected_source_column || null, reasons,
+    base_manufacturer: plan.selected_manufacturer || null, base_source_column: plan.selected_source_column || null, reasons, warnings,
     evidence: REFS.filter((k) => p[k]).map((k) => ({ ref: k, code: p[k].code, evidence_url: p[k].evidence_url, evidence_sha256: p[k].evidence_sha256 })),
     researched_by: doc.researched_by, researched_at: doc.researched_at
   };

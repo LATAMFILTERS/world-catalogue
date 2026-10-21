@@ -45,9 +45,16 @@ test('HD: a missing Donaldson or Fleetguard reference is not proof of absence', 
 
 test('codes already in the catalogue are reported as existing coverage, not as a new SKU', () => {
   assert.equal(one([hd({ donaldson: ev('P552100') })])[0].state, 'ALREADY_IN_CATALOGUE');
-  const [byOem] = one([hd({ oem: ev('HH150-32094'), donaldson: ev('P558888') })]);
-  assert.equal(byOem.state, 'ALREADY_IN_CATALOGUE');
-  assert.equal(byOem.proposed_sku, 'EL80123');
+  assert.equal(one([hd({ prefix: 'EF9', donaldson: ev('P552100') })])[0].state, 'READY_FOR_AUTHORIZATION'); // same base, other family: not coverage
+});
+
+test('an OEM code is a cross-reference, not identity: same family -> possible duplicate, other family -> warning', () => {
+  const [dup] = one([hd({ oem: ev('HH150-32094'), donaldson: ev('P558888') })]);
+  assert.equal(dup.state, 'STOP_REVIEW');
+  assert.ok(dup.reasons.some((r) => /POSSIBLE_DUPLICATE: OEM HH150-32094 already referenced by EL80123/.test(r)));
+  const [other] = one([hd({ prefix: 'EF9', oem: ev('HH150-32094'), donaldson: ev('P558888') })]);
+  assert.equal(other.state, 'READY_FOR_AUTHORIZATION');
+  assert.match(other.warnings[0], /other families: EL80123/);
 });
 
 test('LD: non-European uses FRAM, European uses MANN-FILTER; OEM only when the maker does not make it', () => {
