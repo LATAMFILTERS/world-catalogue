@@ -1,16 +1,174 @@
 {
   "schema_version": "1.0.0",
-  "description": "Trade-press RSS feeds read by scripts/hermes/newsroom-intelligence.mjs (zero cost, no Groq). Secondary sources: items are labelled SEÑAL in the weekly email. Verified 2026-10-21: each returned items from the last 7 days.",
+  "description": "Feeds read by scripts/hermes/newsroom-intelligence.mjs (zero cost, no Groq), filtration manufacturers and filter-media makers first. Most manufacturer newsrooms block automated readers (HTTP 403) or render news with JavaScript, so they are read through per-company Google News RSS searches (last 7 days). Secondary sources: items are labelled SEÑAL in the weekly email. Verified 2026-10-21: each returned items from the last 7 days.",
   "feeds": [
-    { "id": "intl_filtration_news", "name": "International Filtration News", "domain": "filter_manufacturing", "url": "https://www.filtnews.com/feed/" },
-    { "id": "lubes_n_greases", "name": "Lubes'n'Greases", "domain": "lubrication_oil", "url": "https://www.lubesngreases.com/feed/" },
-    { "id": "equipment_world", "name": "Equipment World", "domain": "oem_engines_equipment", "url": "https://www.equipmentworld.com/feed" },
-    { "id": "ccj", "name": "CCJ", "domain": "oem_engines_equipment", "url": "https://www.ccjdigital.com/feed" },
-    { "id": "trucking_info", "name": "Trucking Info", "domain": "oem_engines_equipment", "url": "https://www.truckinginfo.com/rss" },
-    { "id": "power_magazine", "name": "POWER Magazine", "domain": "oem_engines_equipment", "url": "https://www.powermag.com/feed/" },
-    { "id": "marinelink", "name": "MarineLink", "domain": "oem_engines_equipment", "url": "https://www.marinelink.com/news/rss" },
-    { "id": "automotive_world", "name": "Automotive World", "domain": "oem_engines_equipment", "url": "https://www.automotiveworld.com/feed/" },
-    { "id": "agriland", "name": "Agriland", "domain": "oem_engines_equipment", "url": "https://www.agriland.ie/feed/" },
-    { "id": "mining_technology", "name": "Mining Technology", "domain": "oem_engines_equipment", "url": "https://www.mining-technology.com/feed/" }
+    {
+      "id": "gn_donaldson",
+      "name": "Donaldson (Google News)",
+      "domain": "aftermarket_filtration",
+      "url": "https://news.google.com/rss/search?q=%22Donaldson+Company%22+OR+%22Donaldson+filtration%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_atmus_fleetguard",
+      "name": "Atmus / Fleetguard (Google News)",
+      "domain": "aftermarket_filtration",
+      "url": "https://news.google.com/rss/search?q=%22Atmus+Filtration%22+OR+Fleetguard+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_parker_racor_baldwin",
+      "name": "Parker / Racor / Baldwin (Google News)",
+      "domain": "aftermarket_filtration",
+      "url": "https://news.google.com/rss/search?q=Racor+OR+%22Baldwin+Filters%22+OR+%22Parker+Hannifin%22+filtration+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_mann_hummel",
+      "name": "MANN+HUMMEL / MANN-FILTER (Google News)",
+      "domain": "aftermarket_filtration",
+      "url": "https://news.google.com/rss/search?q=%22MANN%2BHUMMEL%22+OR+%22MANN-FILTER%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_ahlstrom",
+      "name": "Ahlstrom (Google News)",
+      "domain": "filter_media_materials",
+      "url": "https://news.google.com/rss/search?q=Ahlstrom+filtration+OR+%22filter+media%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_hollingsworth_vose",
+      "name": "Hollingsworth & Vose (Google News)",
+      "domain": "filter_media_materials",
+      "url": "https://news.google.com/rss/search?q=%22Hollingsworth+%26+Vose%22+OR+%22Hollingsworth+and+Vose%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "intl_filtration_news",
+      "name": "International Filtration News",
+      "domain": "filter_manufacturing",
+      "url": "https://www.filtnews.com/feed/"
+    },
+    {
+      "id": "lubes_n_greases",
+      "name": "Lubes'n'Greases",
+      "domain": "lubrication_oil",
+      "url": "https://www.lubesngreases.com/feed/"
+    },
+    {
+      "id": "equipment_world",
+      "name": "Equipment World",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.equipmentworld.com/feed"
+    },
+    {
+      "id": "ccj",
+      "name": "CCJ",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.ccjdigital.com/feed"
+    },
+    {
+      "id": "trucking_info",
+      "name": "Trucking Info",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.truckinginfo.com/rss"
+    },
+    {
+      "id": "power_magazine",
+      "name": "POWER Magazine",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.powermag.com/feed/"
+    },
+    {
+      "id": "marinelink",
+      "name": "MarineLink",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.marinelink.com/news/rss"
+    },
+    {
+      "id": "automotive_world",
+      "name": "Automotive World",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.automotiveworld.com/feed/"
+    },
+    {
+      "id": "agriland",
+      "name": "Agriland",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.agriland.ie/feed/"
+    },
+    {
+      "id": "mining_technology",
+      "name": "Mining Technology",
+      "domain": "oem_engines_equipment",
+      "url": "https://www.mining-technology.com/feed/"
+    },
+    {
+      "id": "gn_caterpillar",
+      "name": "Caterpillar (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=Caterpillar+engine+OR+%22Cat+engine%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_perkins",
+      "name": "Perkins (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=%22Perkins+Engines%22+OR+%22Perkins+engine%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_john_deere",
+      "name": "John Deere (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=%22John+Deere%22+engine+OR+tractor+OR+combine+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_komatsu",
+      "name": "Komatsu (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=Komatsu+excavator+OR+mining+OR+engine+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_volvo_penta",
+      "name": "Volvo Penta (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=%22Volvo+Penta%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_detroit_diesel",
+      "name": "Detroit Diesel (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=%22Detroit+Diesel%22+OR+%22Detroit+DD13%22+OR+%22Detroit+DD15%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_isuzu",
+      "name": "Isuzu (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=Isuzu+truck+OR+engine+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_hino",
+      "name": "Hino (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=%22Hino+Motors%22+OR+%22Hino+trucks%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_paccar",
+      "name": "PACCAR / Kenworth / Peterbilt / DAF (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=PACCAR+OR+Kenworth+OR+Peterbilt+OR+%22DAF+Trucks%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_navistar",
+      "name": "Navistar / International (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=Navistar+OR+%22International+Trucks%22+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_yanmar",
+      "name": "Yanmar (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=Yanmar+engine+OR+tractor+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gn_deutz",
+      "name": "DEUTZ (Google News)",
+      "domain": "oem_engines_equipment",
+      "url": "https://news.google.com/rss/search?q=DEUTZ+engine+when%3A7d&hl=en-US&gl=US&ceid=US:en"
+    }
   ]
 }
