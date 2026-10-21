@@ -1,10 +1,11 @@
 // HERMES — weekly industry-intelligence digest.
 //
 // Informational only: built from industry-sweep candidates (category
-// `industry_sweep:*`), never staged for review, never written to catalogue,
-// Knowledge Center, Obsidian or PostgreSQL. The window is the 7 full UTC days
-// before the run date, so consecutive weekly runs never repeat an item and
-// never skip a day — no sent-ledger needed.
+// `industry_sweep:*`) plus zero-cost source-change signals (official pages
+// whose content changed; no LLM). Never staged for review, never written to
+// catalogue, Knowledge Center, Obsidian or PostgreSQL. Sweep findings use the
+// 7 full UTC days before the run date, so consecutive weekly runs never repeat
+// an item and never skip a day — no sent-ledger needed.
 import fs from 'node:fs';
 import path from 'node:path';
 import { validateCandidate } from './hermes-core.mjs';
@@ -33,7 +34,20 @@ export const DOMAIN_LABELS_ES = {
   industrial_water_treatment: 'Tratamiento de agua'
 };
 
+export const CATEGORY_LABELS_ES = {
+  oem_light_duty: 'OEM livianos', oem_heavy_duty: 'OEM pesados', oem_construction: 'OEM construcción',
+  oem_agriculture: 'OEM agrícola', oem_power_generation: 'Generación de energía', oem_marine: 'Marino',
+  oem_bus_coach: 'Buses', oem_railway: 'Ferroviario', oem_mining: 'Minería', oem_waste_municipal: 'Municipal',
+  filtration_competitor: 'Filtración', filtration_manufacturers: 'Filtración', filtration_components: 'Componentes de filtración',
+  filter_media: 'Media filtrante', standards: 'Normas', regulation: 'Regulación y emisiones',
+  technical_publication: 'Publicación técnica', technical_publications: 'Publicación técnica',
+  strategic_supplier: 'Proveedores', suppliers: 'Proveedores'
+};
+
 export const isIndustrySweepCandidate = (c) => String(c?.category || '').startsWith('industry_sweep:');
+const isSourceChangeSignal = (c) => c?.change_classification === 'CHANGE_DETECTED_REQUIRES_RESEARCH';
+const decodeEntities = (s) => String(s ?? '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+  .replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&');
 
 function readSweepSummary(file) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return null; }
@@ -70,6 +84,28 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
       why: rr.por_que_importa_es || rr.relevance || '',
       why_lang: rr.por_que_importa_es ? 'es' : 'en',
       url: rr.evidence_url || c.source_url
+    });
+  }
+  // Zero-cost, no-LLM signals: official pages whose content changed since the
+  // last harvest. The harvest state keeps a change from repeating next week.
+  const seenUrls = new Set(items.map((i) => i.url));
+  for (const c of candidates.filter(isSourceChangeSignal)) {
+    const captured = Date.parse(c.captured_at || '');
+    if (Number.isNaN(captured) || captured < start.getTime() || captured > now.getTime() || seenUrls.has(c.source_url)) continue;
+    if (validateCandidate(c).length) { invalid += 1; continue; }
+    seenUrls.add(c.source_url);
+    const domain = CATEGORY_LABELS_ES[c.category] || String(c.category || 'fuente vigilada').replaceAll('_', ' ');
+    items.push({
+      status: 'SEÑAL',
+      title: `Novedad en ${c.source_publisher}: ${decodeEntities(c.source_title)}`,
+      company: c.source_publisher,
+      date: new Date(captured).toISOString().slice(0, 10),
+      domain,
+      summary: 'HERMES detectó contenido nuevo en esta página oficial. Todavía no se investigó qué cambió.',
+      summary_lang: 'es',
+      why: `Fuente oficial vigilada (${domain}). Abre el enlace para ver la novedad.`,
+      why_lang: 'es',
+      url: c.source_url
     });
   }
   items.sort((a, b) => (a.status === b.status ? b.date.localeCompare(a.date) : a.status === 'VERIFICADO' ? -1 : 1));
