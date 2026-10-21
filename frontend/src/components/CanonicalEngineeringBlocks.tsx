@@ -1,6 +1,6 @@
 'use client';
 
-import Link from '@/components/LocalizedLink';
+import { PublicReferenceLink } from '@/components/PublicReferenceLink';
 import { usePathname } from 'next/navigation';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getRelatedEntities } from '@/lib/entity-graph';
@@ -72,7 +72,7 @@ export function CanonicalEngineeringBlocks() {
                 {block.links && block.links.length > 0 && (
                   <div className="canonical-engineering__links">
                     {block.links.map((link) => (
-                      <Link key={`${block.label}-${link.href}-${link.label}`} href={link.href}>{link.label}</Link>
+                      <PublicReferenceLink key={`${block.label}-${link.href}-${link.label}`} href={link.href}>{link.label}</PublicReferenceLink>
                     ))}
                   </div>
                 )}

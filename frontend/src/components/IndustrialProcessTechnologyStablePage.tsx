@@ -1,3 +1,5 @@
+import { ReviewedImage, ReviewedBreadcrumb } from '@/components/ReviewedMedia';
+import { ReviewedText } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import styles from './MacrocoreTechnologyPage.module.css';
@@ -120,12 +122,12 @@ export function IndustrialProcessTechnologyStablePage({
             <source src={technology.heroVideo} type="video/mp4" />
           </video>
         ) : (
-          <img className={styles.heroBackground} src={technology.heroImage} alt="" aria-hidden="true" />
+          <ReviewedImage className={styles.heroBackground} src={technology.heroImage} alt="" aria-hidden="true" />
         )}
         <div className={styles.heroShade} aria-hidden="true" />
-        <h1 id="industrial-tech-title" className={styles.srOnly}>{technology.name} {technology.title}</h1>
+        <h1 id="industrial-tech-title" className={styles.srOnly}>{technology.name} {technology.title === technology.name ? technology.name : <ReviewedText text={technology.title} />}</h1>
         {technology.heroMarkImage ? (
-          <img
+          <ReviewedImage
             className={styles.heroMark}
             src={technology.heroMarkImage}
             alt=""
@@ -136,51 +138,51 @@ export function IndustrialProcessTechnologyStablePage({
         )}
       </section>
 
-      <nav aria-label="Breadcrumb" style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
+      <ReviewedBreadcrumb  style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
         <div className={styles.inner} style={{display:'flex',gap:'.65rem',fontSize:'.72rem',letterSpacing:'.08em',flexWrap:'wrap'}}>
           <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link><span>→</span>
-          <Link href="/industrial-process/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>INDUSTRIAL &amp; PROCESS</Link><span>→</span>
+          <Link href="/industrial-process/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}><ReviewedText text={"INDUSTRIAL & PROCESS"} /></Link><span>→</span>
           <Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>{platform.name}</Link><span>→</span>
           <span style={{color:'#fff12d'}}>{technologyName(technology.name, technology.branded)}</span>
         </div>
-      </nav>
+      </ReviewedBreadcrumb>
 
       <section className={styles.introSection}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>{technology.branded ? 'FILTRATION TECHNOLOGY' : 'TREATMENT FAMILY'}</p>
+          <p className={styles.eyebrow}><ReviewedText text={technology.branded ? 'FILTRATION TECHNOLOGY' : 'TREATMENT FAMILY'} /></p>
           <h2 className={styles.displayTitle}>{technologyName(technology.name, technology.branded)}</h2>
-          <p className={styles.applicationLine}><strong>{technology.title}</strong></p>
-          <p className={styles.lead}>{technology.summary}</p>
-          <p className={styles.bodyWide}>{technology.treatmentFunction}</p>
+          <p className={styles.applicationLine}><strong>{technology.title === technology.name ? technology.name : <ReviewedText text={technology.title} />}</strong></p>
+          <p className={styles.lead}><ReviewedText text={technology.summary} /></p>
+          <p className={styles.bodyWide}><ReviewedText text={technology.treatmentFunction} /></p>
 
           <div className={styles.mediaGrid}>
             <div className={styles.mediaCopy}>
               <div className={styles.metaStack}>
-                <p><span>{technology.branded ? 'Technology:' : 'Treatment family:'}</span> {technologyName(technology.name, technology.branded)}</p>
-                <p><span>Platform:</span> {platform.name} — {platform.descriptor}</p>
-                <p><span>Engineering core:</span> {coreLabel(technology.technologyCore)}</p>
+                <p><span><ReviewedText text={technology.branded ? 'Technology:' : 'Treatment family:'} /></span> {technologyName(technology.name, technology.branded)}</p>
+                <p><span><ReviewedText text={"Platform:"} /></span> {platform.name} — <ReviewedText text={platform.descriptor} /></p>
+                <p><span><ReviewedText text={"Engineering core:"} /></span> {coreLabel(technology.technologyCore)}</p>
               </div>
-              <p className={styles.eyebrow}>DESCRIPTION</p>
-              <h3 className={styles.featureTitle}>{technology.title}</h3>
-              <p className={styles.lead}>{technology.treatmentFunction}</p>
+              <p className={styles.eyebrow}><ReviewedText text={"DESCRIPTION"} /></p>
+              <h3 className={styles.featureTitle}>{technology.title === technology.name ? technology.name : <ReviewedText text={technology.title} />}</h3>
+              <p className={styles.lead}><ReviewedText text={technology.treatmentFunction} /></p>
             </div>
             <figure className={styles.mediaFigure}>
-              <img
+              <ReviewedImage
                 className={styles.mediaImage}
                 src={technology.mediaImage}
                 alt={`${technology.name} ${technology.title} filtration or treatment elements`}
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific.</figcaption>
+              <figcaption><ReviewedText text={"Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific."} /></figcaption>
             </figure>
           </div>
 
           <div className={styles.twoColumnNotes}>
             {technology.mechanisms.map((item, index) => (
               <article className={styles.noteBlock} key={item}>
-                <h3 className={styles.h3}>{String(index + 1).padStart(2, '0')} / {item}</h3>
-                <p className={styles.body}>This mechanism is evaluated together with the operating envelope, contamination load, compatibility and required treatment outcome.</p>
+                <h3 className={styles.h3}>{String(index + 1).padStart(2, '0')} / <ReviewedText text={item} /></h3>
+                <p className={styles.body}><ReviewedText text={"This mechanism is evaluated together with the operating envelope, contamination load, compatibility and required treatment outcome."} /></p>
               </article>
             ))}
           </div>
@@ -188,76 +190,76 @@ export function IndustrialProcessTechnologyStablePage({
       </section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>OPERATING REALITY</p>
-        <h2 className={styles.h2}>Treatment performance depends on the complete process boundary.</h2>
-        <p className={styles.lead}>The filtration, separation or treatment element/media is one part of the complete process result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance.</p>
+        <p className={styles.eyebrow}><ReviewedText text={"OPERATING REALITY"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Treatment performance depends on the complete process boundary."} /></h2>
+        <p className={styles.lead}><ReviewedText text={"The filtration, separation or treatment element/media is one part of the complete process result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance."} /></p>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every replacement element or treatment medium inside that category technically interchangeable.</p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Evidence before claims</h3><p className={styles.body}>Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"A useful distinction"} /></h3><p className={styles.body}>{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"identifies a treatment function. It does not make every replacement element or treatment medium inside that category technically interchangeable."} /></p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Evidence before claims"} /></h3><p className={styles.body}><ReviewedText text={"Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence."} /></p></article>
         </div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>ELIMFILTERS PRODUCT SCOPE</p>
-        <h2 className={styles.h2}>Replacement treatment media and elements remain distinct from the surrounding equipment.</h2>
-        <p className={styles.lead}>For this Industrial &amp; Process family, the ELIMFILTERS commercial focus is the validated filtration, separation or treatment medium and replaceable element appropriate to the application. Existing housings, vessels, collectors, skids, pumps, fans, ductwork, controls and other plant equipment define interfaces and operating conditions; they are not presented as ELIMFILTERS-manufactured equipment unless separately approved.</p>
+        <p className={styles.eyebrow}><ReviewedText text={"ELIMFILTERS PRODUCT SCOPE"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Replacement treatment media and elements remain distinct from the surrounding equipment."} /></h2>
+        <p className={styles.lead}><ReviewedText text={"For this Industrial & Process family, the ELIMFILTERS commercial focus is the validated filtration, separation or treatment medium and replaceable element appropriate to the application. Existing housings, vessels, collectors, skids, pumps, fans, ductwork, controls and other plant equipment define interfaces and operating conditions; they are not presented as ELIMFILTERS-manufactured equipment unless separately approved."} /></p>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>APPLICATION ENVIRONMENT</p>
-        <h2 className={styles.h2}>Where {technologyName(technology.name, technology.branded)} belongs</h2>
+        <p className={styles.eyebrow}><ReviewedText text={"APPLICATION ENVIRONMENT"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Where"} />{' '}{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"belongs"} /></h2>
         <div className={styles.editorialColumns}>
-          <div><h3 className={styles.h3}>Application positions</h3><ul className={styles.list}>{technology.applications.map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Conditions that change treatment duty</h3><ul className={styles.list}>{technology.conditions.map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Platform context</h3><ul className={styles.list}><li>{platform.name}</li><li>{platform.descriptor}</li><li>Industrial &amp; Process</li><li>Application-specific engineering validation</li></ul></div>
+          <div><h3 className={styles.h3}><ReviewedText text={"Application positions"} /></h3><ul className={styles.list}>{technology.applications.map((x)=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
+          <div><h3 className={styles.h3}><ReviewedText text={"Conditions that change treatment duty"} /></h3><ul className={styles.list}>{technology.conditions.map((x)=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
+          <div><h3 className={styles.h3}><ReviewedText text={"Platform context"} /></h3><ul className={styles.list}><li>{platform.name}</li><li><ReviewedText text={platform.descriptor} /></li><li><ReviewedText text={"Industrial & Process"} /></li><li><ReviewedText text={"Application-specific engineering validation"} /></li></ul></div>
         </div>
       </div></section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>SPECIFICATION &amp; SELECTION</p>
-        <h2 className={styles.h2}>Questions before specifying {technology.title.toLowerCase()}</h2>
+        <p className={styles.eyebrow}><ReviewedText text={"SPECIFICATION & SELECTION"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Questions before specifying"} />{' '}<ReviewedText text={technology.title.toLowerCase()} /></h2>
         <div className={styles.editorialColumns}>
-          <div><h3 className={styles.h3}>Key engineering inputs</h3><ul className={styles.list}>{technology.selectionInputs.slice(0,4).map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>System compatibility</h3><ul className={styles.list}>{technology.selectionInputs.slice(4).map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Common selection errors</h3><ul className={styles.list}>{['Choosing by nominal category alone','Ignoring operating-envelope limits','Using unvalidated performance claims','Treating cross-reference as complete application validation'].map((x)=><li key={x}>{x}</li>)}</ul></div>
+          <div><h3 className={styles.h3}><ReviewedText text={"Key engineering inputs"} /></h3><ul className={styles.list}>{technology.selectionInputs.slice(0,4).map((x)=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
+          <div><h3 className={styles.h3}><ReviewedText text={"System compatibility"} /></h3><ul className={styles.list}>{technology.selectionInputs.slice(4).map((x)=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
+          <div><h3 className={styles.h3}><ReviewedText text={"Common selection errors"} /></h3><ul className={styles.list}>{['Choosing by nominal category alone','Ignoring operating-envelope limits','Using unvalidated performance claims','Treating cross-reference as complete application validation'].map((x)=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
         </div>
         <div className={styles.inlineCta}>
-          <p><strong>Known project conditions?</strong> Send the operating data. <strong>Uncertain process or treatment path?</strong> Use the engineering review.</p>
-          <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support">TECHNICAL REVIEW</a></div>
+          <p><strong><ReviewedText text={"Known project conditions?"} /></strong>{' '}<ReviewedText text={"Send the operating data."} />{' '}<strong><ReviewedText text={"Uncertain process or treatment path?"} /></strong>{' '}<ReviewedText text={"Use the engineering review."} /></p>
+          <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support"><ReviewedText text={"TECHNICAL REVIEW"} /></a></div>
         </div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>HOW THE SYSTEM BEHAVES</p>
-        <h2 className={styles.h2}>Mechanism, loading and process conditions have to be resolved together.</h2>
-        <p className={styles.lead}>{technology.treatmentFunction}</p>
+        <p className={styles.eyebrow}><ReviewedText text={"HOW THE SYSTEM BEHAVES"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Mechanism, loading and process conditions have to be resolved together."} /></h2>
+        <p className={styles.lead}><ReviewedText text={technology.treatmentFunction} /></p>
         <div className={styles.twoColumnNotes}>
           {technology.mechanisms.map((item) => (
-            <article className={styles.noteBlock} key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>Final design depends on the project operating window and the validated configuration selected for the application.</p></article>
+            <article className={styles.noteBlock} key={item}><h3 className={styles.h3}><ReviewedText text={item} /></h3><p className={styles.body}><ReviewedText text={"Final design depends on the project operating window and the validated configuration selected for the application."} /></p></article>
           ))}
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Protected process outcome</h3><p className={styles.body}>The objective is controlled contamination or conditioning performance at the required process boundary—not simply installation of a familiar filter form.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Protected process outcome"} /></h3><p className={styles.body}><ReviewedText text={"The objective is controlled contamination or conditioning performance at the required process boundary—not simply installation of a familiar filter form."} /></p></article>
         </div>
       </div></section>
 
       {technology.subfamilies?.length ? (
         <section className={styles.band}><div className={styles.inner}>
-          <p className={styles.eyebrow}>DESCRIPTIVE SUBFAMILIES</p>
-          <h2 className={styles.h2}>{technologyName(technology.name, technology.branded)} includes distinct engineering paths.</h2>
+          <p className={styles.eyebrow}><ReviewedText text={"DESCRIPTIVE SUBFAMILIES"} /></p>
+          <h2 className={styles.h2}>{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"includes distinct engineering paths."} /></h2>
           <div className={styles.editorialColumns}>
-            {technology.subfamilies.map((item) => <div key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>Descriptive engineering subfamily beneath {technologyName(technology.name, technology.branded)}; it does not create an additional independent ELIMFILTERS technology mark.</p></div>)}
+            {technology.subfamilies.map((item) => <div key={item}><h3 className={styles.h3}><ReviewedText text={item} /></h3><p className={styles.body}><ReviewedText text={"Descriptive engineering subfamily beneath"} />{' '}{technologyName(technology.name, technology.branded)}<ReviewedText text={"; it does not create an additional independent ELIMFILTERS technology mark."} /></p></div>)}
           </div>
         </div></section>
       ) : null}
 
       {technology.engineeringNotes?.length ? (
         <section className={styles.bandAlt}><div className={styles.inner}>
-          <p className={styles.eyebrow}>ENGINEERING GUIDANCE</p>
-          <h2 className={styles.h2}>What matters in {technology.title.toLowerCase()}</h2>
+          <p className={styles.eyebrow}><ReviewedText text={"ENGINEERING GUIDANCE"} /></p>
+          <h2 className={styles.h2}><ReviewedText text={"What matters in"} />{' '}<ReviewedText text={technology.title.toLowerCase()} /></h2>
           <div className={styles.twoColumnNotes}>
             {technology.engineeringNotes.map((note) => (
               <article className={styles.noteBlock} key={note.title}>
-                <h3 className={styles.h3}>{note.title}</h3>
-                <p className={styles.body}>{note.body}</p>
+                <h3 className={styles.h3}><ReviewedText text={note.title} /></h3>
+                <p className={styles.body}><ReviewedText text={note.body} /></p>
               </article>
             ))}
           </div>
@@ -265,75 +267,75 @@ export function IndustrialProcessTechnologyStablePage({
       ) : null}
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>SERVICE &amp; DIAGNOSIS</p>
-        <h2 className={styles.h2}>What abnormal treatment behavior may be telling you</h2>
-        <ul className={`${styles.list} ${styles.serviceList}`}>{technology.serviceSignals.map((x)=><li key={x}>{x}</li>)}</ul>
-        <div className={styles.inlineCta}><p>Repeated breakthrough, pressure-drop problems, unstable outlet quality or short service intervals justify reviewing the whole process boundary.</p><a href={inquiryHref} data-conversion-action="application-support">REQUEST PROCESS REVIEW</a></div>
+        <p className={styles.eyebrow}><ReviewedText text={"SERVICE & DIAGNOSIS"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"What abnormal treatment behavior may be telling you"} /></h2>
+        <ul className={`${styles.list} ${styles.serviceList}`}>{technology.serviceSignals.map((x)=><li key={x}><ReviewedText text={x} /></li>)}</ul>
+        <div className={styles.inlineCta}><p><ReviewedText text={"Repeated breakthrough, pressure-drop problems, unstable outlet quality or short service intervals justify reviewing the whole process boundary."} /></p><a href={inquiryHref} data-conversion-action="application-support"><ReviewedText text={"REQUEST PROCESS REVIEW"} /></a></div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>QUESTIONS FROM THE FIELD</p>
-        <h2 className={styles.h2}>Direct answers before an Industrial &amp; Process selection.</h2>
-        <div className={styles.faqList}>{faqs.map(([q,a])=><details className={styles.faqItem} key={q}><summary>{q}</summary><p>{a}</p></details>)}</div>
+        <p className={styles.eyebrow}><ReviewedText text={"QUESTIONS FROM THE FIELD"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Direct answers before an Industrial & Process selection."} /></h2>
+        <div className={styles.faqList}>{faqs.map(([q,a])=><details className={styles.faqItem} key={q}><summary><ReviewedText text={q} /></summary><p><ReviewedText text={a} /></p></details>)}</div>
       </div></section>
 
       {standards.length ? (
         <section className={styles.bandAlt}><div className={styles.inner}>
-          <p className={styles.eyebrow}>STANDARDS &amp; TEST GOVERNANCE</p>
-          <h2 className={styles.h2}>Applicable standards and test methods</h2>
-          <p className={styles.lead}>The standards below are resolved from the governed ELIMFILTERS Knowledge Center for this treatment family. Applicability remains product-, fluid-, contaminant- and duty-specific.</p>
-          <ul className={`${styles.list} ${styles.serviceList}`}>{standards.map((standard)=><li key={standard}>{standard}</li>)}</ul>
-          <p className={styles.bodyWide}>A listed standard identifies a relevant engineering or verification method. It does not mean every {technology.name} element is certified, qualified or tested to every listed method. Product claims require the corresponding validated test evidence.</p>
-          {technology.knowledgeCenterSlug ? <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>OPEN GOVERNED STANDARD CONTEXT →</Link></div> : null}
+          <p className={styles.eyebrow}><ReviewedText text={"STANDARDS & TEST GOVERNANCE"} /></p>
+          <h2 className={styles.h2}><ReviewedText text={"Applicable standards and test methods"} /></h2>
+          <p className={styles.lead}><ReviewedText text={"The standards below are resolved from the governed ELIMFILTERS Knowledge Center for this treatment family. Applicability remains product-, fluid-, contaminant- and duty-specific."} /></p>
+          <ul className={`${styles.list} ${styles.serviceList}`}>{standards.map((standard)=><li key={standard}><ReviewedText text={standard} /></li>)}</ul>
+          <p className={styles.bodyWide}><ReviewedText text={"A listed standard identifies a relevant engineering or verification method. It does not mean every"} />{' '}{technology.name}{' '}<ReviewedText text={"element is certified, qualified or tested to every listed method. Product claims require the corresponding validated test evidence."} /></p>
+          {technology.knowledgeCenterSlug ? <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}><ReviewedText text={"OPEN GOVERNED STANDARD CONTEXT →"} /></Link></div> : null}
         </div></section>
       ) : null}
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>TECHNICAL BASIS</p>
-        <h2 className={styles.h2}>Technical reference and claim governance</h2>
+        <p className={styles.eyebrow}><ReviewedText text={"TECHNICAL BASIS"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Technical reference and claim governance"} /></h2>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Engineering core</h3><p className={styles.body}>{coreLabel(technology.technologyCore)} remains the mechanism-level engineering identifier behind the customer-facing family.</p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Claim governance</h3><p className={styles.body}>No universal efficiency, capacity, micron rating, separation percentage, service-life multiplier or outlet-quality value is assigned across {technologyName(technology.name, technology.branded)} without validated evidence for the specific product or project.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Engineering core"} /></h3><p className={styles.body}>{coreLabel(technology.technologyCore)}{' '}<ReviewedText text={"remains the mechanism-level engineering identifier behind the customer-facing family."} /></p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Claim governance"} /></h3><p className={styles.body}><ReviewedText text={"No universal efficiency, capacity, micron rating, separation percentage, service-life multiplier or outlet-quality value is assigned across"} />{' '}{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"without validated evidence for the specific product or project."} /></p></article>
           {technology.knowledgeCenterSlug ? (
             <article className={styles.noteBlock}>
-              <h3 className={styles.h3}>Canonical Knowledge Center reference</h3>
-              <p className={styles.body}>Approved engineering relationships, operating conditions and diagnostic guidance for {technologyName(technology.name, technology.branded)} are maintained in the governed ELIMFILTERS Knowledge Center.</p>
-              <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>OPEN ENGINEERING REFERENCE →</Link></div>
+              <h3 className={styles.h3}><ReviewedText text={"Canonical Knowledge Center reference"} /></h3>
+              <p className={styles.body}><ReviewedText text={"Approved engineering relationships, operating conditions and diagnostic guidance for"} />{' '}{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"are maintained in the governed ELIMFILTERS Knowledge Center."} /></p>
+              <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}><ReviewedText text={"OPEN ENGINEERING REFERENCE →"} /></Link></div>
             </article>
           ) : null}
         </div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>WHEN A TECHNICAL REVIEW MAKES SENSE</p>
-        <h2 className={styles.h2}>When the treatment problem is larger than the element itself</h2>
-        <p className={styles.lead}>Repeated failures, unstable process quality, short service intervals, unexpected pressure drop, contamination breakthrough or uncertain compatibility justify reviewing the complete operating environment and treatment architecture.</p>
+        <p className={styles.eyebrow}><ReviewedText text={"WHEN A TECHNICAL REVIEW MAKES SENSE"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"When the treatment problem is larger than the element itself"} /></h2>
+        <p className={styles.lead}><ReviewedText text={"Repeated failures, unstable process quality, short service intervals, unexpected pressure drop, contamination breakthrough or uncertain compatibility justify reviewing the complete operating environment and treatment architecture."} /></p>
       </div></section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>PLATFORM INTEGRATION</p>
-        <h2 className={styles.h2}>{platform.name} — {platform.descriptor}</h2>
+        <p className={styles.eyebrow}><ReviewedText text={"PLATFORM INTEGRATION"} /></p>
+        <h2 className={styles.h2}>{platform.name} — <ReviewedText text={platform.descriptor} /></h2>
         <div className={styles.systemGrid}>
-          <div><p className={styles.lead}>{platform.summary}</p><Link className={styles.systemButton} href={industrialProcessPlatformUrl(platform.slug)}>EXPLORE PLATFORM</Link></div>
-          <p className={styles.bodyWide}>{technologyName(technology.name, technology.branded)} is resolved inside the {platform.name} platform. Final selection connects the treatment mechanism to operating conditions, contamination load, compatibility, required outcome and validated product evidence.</p>
+          <div><p className={styles.lead}><ReviewedText text={platform.summary} /></p><Link className={styles.systemButton} href={industrialProcessPlatformUrl(platform.slug)}><ReviewedText text={"EXPLORE PLATFORM"} /></Link></div>
+          <p className={styles.bodyWide}>{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"is resolved inside the"} />{' '}{platform.name}{' '}<ReviewedText text={"platform. Final selection connects the treatment mechanism to operating conditions, contamination load, compatibility, required outcome and validated product evidence."} /></p>
         </div>
       </div></section>
 
       <section className={styles.ctaSection}><div className={styles.inner}>
-        <p className={styles.eyebrow}>APPLICATION SUPPORT</p>
-        <h2 className={styles.h2}>Bring us the process conditions and required outcome — not just a generic filter description.</h2>
-        <p className={styles.lead}>Industrial &amp; Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and system compatibility before the physical solution is selected.</p>
-        <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support">TECHNICAL REVIEW PATH</a></div>
+        <p className={styles.eyebrow}><ReviewedText text={"APPLICATION SUPPORT"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Bring us the process conditions and required outcome — not just a generic filter description."} /></h2>
+        <p className={styles.lead}><ReviewedText text={"Industrial & Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and system compatibility before the physical solution is selected."} /></p>
+        <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support"><ReviewedText text={"TECHNICAL REVIEW PATH"} /></a></div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>EXPLORE RELATED TECHNOLOGIES</p>
-        <h2 className={styles.h2}>Continue within {platform.name}.</h2>
+        <p className={styles.eyebrow}><ReviewedText text={"EXPLORE RELATED TECHNOLOGIES"} /></p>
+        <h2 className={styles.h2}><ReviewedText text={"Continue within"} />{' '}{platform.name}.</h2>
         <div className={styles.editorialColumns}>
           {related.slice(0,3).map((item) => (
-            <div key={item.slug}><h3 className={styles.h3}><Link href={industrialProcessTechnologyUrl(platform.slug,item.slug)} style={{color:'#fff',textDecoration:'none'}}>{technologyName(item.name, item.branded)}</Link></h3><p className={styles.body}>{item.title}</p></div>
+            <div key={item.slug}><h3 className={styles.h3}><Link href={industrialProcessTechnologyUrl(platform.slug,item.slug)} style={{color:'#fff',textDecoration:'none'}}>{technologyName(item.name, item.branded)}</Link></h3><p className={styles.body}><ReviewedText text={item.title} /></p></div>
           ))}
-          {related.length === 0 ? <div><h3 className={styles.h3}><Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'#fff',textDecoration:'none'}}>Back to {platform.name}</Link></h3><p className={styles.body}>Review the platform context and engineering qualification path.</p></div> : null}
+          {related.length === 0 ? <div><h3 className={styles.h3}><Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'#fff',textDecoration:'none'}}><ReviewedText text={"Back to"} />{' '}{platform.name}</Link></h3><p className={styles.body}><ReviewedText text={"Review the platform context and engineering qualification path."} /></p></div> : null}
         </div>
       </div></section>
     </main>
