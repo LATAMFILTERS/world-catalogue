@@ -36,9 +36,11 @@ test('industry sweep creates one verified candidate and suppresses repeated evid
   // real scheduled sweep believe production work for this cycle was already done (2026-09-10 incident).
   process.env.HERMES_STATE_ROOT = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-state-'));
   let groqCalls = 0;
-  const fakeFetch = async (url) => {
+  const fakeFetch = async (url, init) => {
     if (String(url).includes('api.groq.com')) {
       groqCalls += 1;
+      // Groq rejects JSON mode combined with browser_search (HTTP 400); see #992.
+      assert.equal(JSON.parse(init.body).response_format, undefined);
       const finding = groqCalls === 1 ? {
         domain_id: 'filter_media_materials',
         finding_type: 'FILTER_MEDIA',
