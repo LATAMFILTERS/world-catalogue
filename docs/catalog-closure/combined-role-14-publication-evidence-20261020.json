@@ -1,0 +1,455 @@
+{
+  "at": "2026-10-20T19:22:03.928Z",
+  "scope": "Audit evidence for 14 missing static pages. Documentary closure and publication eligibility; no physical performance, engine compatibility or origin certification.",
+  "audit": {
+    "at": "2026-10-20T19:13:48.139Z",
+    "active": 13390,
+    "certified": 4824,
+    "pending": 8566
+  },
+  "catalogue_closure": {
+    "plan_sha256": "fa3863f91c165ae9a631b0cdf4d753e51ec8c21b717d83d95a2287bad8b27a68",
+    "rollback_verified": true,
+    "post_commit_verified": true,
+    "certification_backup_sha256": "80660501d81a7f3c8b497c27f218cbfa2215d6fbe0e9e65fded7d0ff1579731c"
+  },
+  "public_before": {
+    "at": "2026-10-20T19:11:47.050Z",
+    "http_404": 14,
+    "http_200": 0
+  },
+  "publication": {
+    "previous_records_preserved": 147,
+    "added_records": 14,
+    "published_applications_per_added_record": 0,
+    "performance_publication_enabled": false,
+    "legacy_redirects_added": 0
+  },
+  "cases": [
+    {
+      "sku": "EH61525",
+      "canonical_code": "P171525",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "7a117bfad0076d71c687d2016999006facac7567fe7a6ba69fad6b834efdcac1",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "DRE2C",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DTE2C",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE15FD1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61560",
+      "canonical_code": "P171560",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "210d8b8c7d2205faa2035ce7d4ffec12c26fb71f7ea08f4872811dd8d9d73b78",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "D10300FN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE100MCV1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61564",
+      "canonical_code": "P171564",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "2e07a9879f773da5cab9bd1ac9023be86d9a0efe8cde6c2e452893ee4762c44e",
+      "proofs": [
+        {
+          "brand": "MODINA",
+          "code": "48157",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DME5B",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DRE5B",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DTE5B",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE100CV1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61576",
+      "canonical_code": "P171576",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "40607732071cf93f3a39572e27f58002c652d4dd72ec4310d62962c57ba39ea1",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "D10600BN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DRE6B",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE160CV1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61579",
+      "canonical_code": "P171579",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "57b7fc1f3a33e44cba4acd5394e3bc947ff8573a15e71f3295c57cea7c18de88",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "DRE7C",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE200FD1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61581",
+      "canonical_code": "P171581",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "87bc6993060026eb679135438bd29b7dafbf4aaeeccf8846141b48d4b7ee302f",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "D10800AN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DRE7A",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE200CD1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61582",
+      "canonical_code": "P171582",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "1af3521feecfb0c3d45fd4643d4280b7896b354c2717c3dfdc5cd88700eab951",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "D10800BN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DRE7B",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE200CV1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61583",
+      "canonical_code": "P171583",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "0f0f8bda759980f4890de71e53bb495ae405c63c7e43c6d9846d419ce6597201",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "D10800FN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE200MCV1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        },
+        {
+          "brand": "MODINA",
+          "code": "RE200MS1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61588",
+      "canonical_code": "P171588",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "c6cb585e3f8ebb0aeff3c0f28b4c12ca096575e717a0e133d60c0381b8c753e9",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "DME3B",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "MODINA",
+          "code": "TE55CV1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH61606",
+      "canonical_code": "P171606",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "315f878b4be8ba14c914ab0eef5a126abdf0d9cce7225367c3ac1f7799dd8351",
+      "proofs": [
+        {
+          "brand": "MODINA",
+          "code": "CA151CV1",
+          "role": "FILTER",
+          "role_url": "https://cdn.mscdirect.com/global/images/ProductDataSheet/pds_sku_1708458_productbrochure_unclassified.pdf",
+          "role_sha256": "9d116835938f86ecd3d2c3f0d6c9b0366e50ed4edb4a1f45c18ece831c24ad23"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DMS05BN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH63596",
+      "canonical_code": "P173596",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "f59703d4df6e1e45c93ad4465df358bc55ea20b6d8b77e1697d038ff71953d6f",
+      "proofs": [
+        {
+          "brand": "ROSAEN",
+          "code": "10S20C",
+          "role": "FILTER",
+          "role_url": "https://www.vogel-gruppe.de/fileadmin/user_upload/Unternehmen/Parker/Geschichte/Parker%20Hannifin%20A%20Winning%20Heritage.pdf",
+          "role_sha256": "25559856b559b80bcf117d83382752ecf52ed6b5ea96fcd75b40826136d49980"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH63597",
+      "canonical_code": "P173597",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "db3681844ade99650e4bddf998be1449f82d927398fe7e6b9c74f07232607aa8",
+      "proofs": [
+        {
+          "brand": "ROSAEN",
+          "code": "10S10C",
+          "role": "FILTER",
+          "role_url": "https://www.vogel-gruppe.de/fileadmin/user_upload/Unternehmen/Parker/Geschichte/Parker%20Hannifin%20A%20Winning%20Heritage.pdf",
+          "role_sha256": "25559856b559b80bcf117d83382752ecf52ed6b5ea96fcd75b40826136d49980"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH65059",
+      "canonical_code": "P565059",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "626925ccbebcab765ad75b893f0a911f85b0c2c5af5408d3296036cf4e6c4cef",
+      "proofs": [
+        {
+          "brand": "DMIC",
+          "code": "DMS07AN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "WESTERN",
+          "code": "E0121B2P10",
+          "role": "FILTER",
+          "role_url": "https://www.sec.gov/Archives/edgar/data/29644/000089710108002062/donaldson084257_ex99-1.htm",
+          "role_sha256": "c565014219164c8fce20a45812c33e410bb23439e9869bfb40ff9e1e65e55e70"
+        },
+        {
+          "brand": "FPC",
+          "code": "FPE4010N",
+          "role": "FILTER",
+          "role_url": "https://www.maradyne.com/wp-content/uploads/2017/05/Maradyn-Fluid-Power-Group-TEXT-040717.pdf",
+          "role_sha256": "92c6c31402fc0d059ad43678d9e10afd94c875759435d05540df8946ea38cc6c"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    },
+    {
+      "sku": "EH65060",
+      "canonical_code": "P565060",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "source_record_sha256": "1299c05b484df3b62e26dd546aab0f6a5f0942c730401b7189c9cfd86d709b78",
+      "proofs": [
+        {
+          "brand": "WESTERN",
+          "code": "E0121B2P20",
+          "role": "FILTER",
+          "role_url": "https://www.sec.gov/Archives/edgar/data/29644/000089710108002062/donaldson084257_ex99-1.htm",
+          "role_sha256": "c565014219164c8fce20a45812c33e410bb23439e9869bfb40ff9e1e65e55e70"
+        },
+        {
+          "brand": "DMIC",
+          "code": "DMS07BN",
+          "role": "FILTER",
+          "role_url": "https://www.royalhydraulics.com/productsPDF/filtration/DMIC/DMIC-DMSelements.pdf",
+          "role_sha256": "bed11e54cf8737cfbe9bdd36f13a640457094e8ae712f0b718e475dcaafab566"
+        },
+        {
+          "brand": "FPC",
+          "code": "FPE4025N",
+          "role": "FILTER",
+          "role_url": "https://www.maradyne.com/wp-content/uploads/2017/05/Maradyn-Fluid-Power-Group-TEXT-040717.pdf",
+          "role_sha256": "92c6c31402fc0d059ad43678d9e10afd94c875759435d05540df8946ea38cc6c"
+        },
+        {
+          "brand": "CURTISTOLEDO",
+          "code": "RN28201",
+          "role": "EQUIPMENT",
+          "role_url": "https://us.fscurtis.com/about/our-story/",
+          "role_sha256": "578b61e3bfc8266072b041072042e5d352535e9239ac6eb76626ab2c6235dcfe"
+        }
+      ],
+      "native_093v7_blockers": [],
+      "native_273_blockers": []
+    }
+  ],
+  "dimension_recovery": {
+    "sku": "EH63596",
+    "canonical_code": "P173596",
+    "field": "inner_diameter_mm",
+    "before": null,
+    "after": 43,
+    "source_capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+    "source_record_sha256": "f59703d4df6e1e45c93ad4465df358bc55ea20b6d8b77e1697d038ff71953d6f",
+    "published_attribute": "Inner Diameter: 1.69 inch (43 mm)",
+    "rollback_verified": true,
+    "post_commit_verified": true
+  }
+}
