@@ -59,7 +59,7 @@ function translateCandidateType(type) {
   return labels[type] || type;
 }
 
-function buildSpanishExecutiveReport(data, fallbackText) {
+function buildSpanishExecutiveReport(data, fallbackText, digestOptions = {}) {
   if (!data || typeof data !== 'object') {
     return {
       text: `Resumen ejecutivo no disponible en formato estructurado.\n\n${fallbackText}`,
@@ -72,7 +72,7 @@ function buildSpanishExecutiveReport(data, fallbackText) {
   const pending = Array.isArray(data.research_pending) ? data.research_pending : [];
   const duplicates = Array.isArray(data.duplicates) ? data.duplicates : [];
   const invalid = Array.isArray(data.invalid) ? data.invalid : [];
-  const digest = renderIndustryDigest(data.industry_digest);
+  const digest = renderIndustryDigest(data.industry_digest, digestOptions);
 
   const text = [];
   text.push('HERMES — Revisión Semanal de Inteligencia', '');
@@ -162,11 +162,11 @@ function buildSpanishExecutiveReport(data, fallbackText) {
   return { text: text.join('\n'), html };
 }
 
-export function buildMessage(report, config) {
+export function buildMessage(report, config, digestOptions = {}) {
   const date = report.name.match(/\d{4}-\d{2}-\d{2}/)?.[0] || 'current';
   const subject = `[HERMES] Revisión Semanal de Inteligencia — ${date}`;
   const notice = 'Informe de candidatos para revisión. Ningún cambio en el catálogo o Knowledge Center se aplica sin la aprobación explícita de Victor Abreu.';
-  const executive = buildSpanishExecutiveReport(report.data, report.text);
+  const executive = buildSpanishExecutiveReport(report.data, report.text, digestOptions);
   return {
     from: config.senderEmail ? `${config.senderName} <${config.senderEmail}>` : undefined,
     to: config.recipient,

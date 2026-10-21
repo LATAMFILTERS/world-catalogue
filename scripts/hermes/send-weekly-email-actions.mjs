@@ -40,7 +40,7 @@ function actionConfig(env = process.env) {
   const runId = String(env.HERMES_REVIEW_RUN_ID || env.GITHUB_RUN_ID || '').trim();
   const dryRun = String(env.HERMES_COLLECTION_DRY_RUN || 'true').toLowerCase() === 'true';
   const ttlDays = Math.max(1, Math.min(30, Number(env.HERMES_REVIEW_LINK_TTL_DAYS || 14)));
-  return { baseUrl, secret, runId, dryRun, ttlDays, enabled: Boolean(baseUrl && secret && /^\d+$/.test(runId) && !dryRun) };
+  return { baseUrl, secret, runId, dryRun, ttlDays, enabled: Boolean(baseUrl && secret && /^\d+$/.test(runId) && (!dryRun || String(env.HERMES_REVIEW_ACTIONS_ENABLED || '').toLowerCase() === 'true')) };
 }
 
 function actionButtons(candidate, cfg) {
@@ -90,7 +90,7 @@ function buildExecutiveMessage(report, env = process.env) {
   const text = [];
   text.push('HERMES — Inteligencia lista para revisión', '');
   text.push(`Listos para revisión: ${totals.review_ready ?? 0}`, '');
-  const digest = renderIndustryDigest(data.industry_digest);
+  const digest = renderIndustryDigest(data.industry_digest, { actionsFor: cfg.enabled ? (code) => actionButtons({ entity_code: code }, cfg) : null });
   if (digest.text) text.push(digest.text);
 
   for (const [type, candidates] of Object.entries(groups).sort()) {
@@ -138,7 +138,7 @@ function buildExecutiveMessage(report, env = process.env) {
   return { date, subject, text: finalText, html };
 }
 
-export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env = process.env, gmailTransportFactory = null, outlookFactory = null } = {}) {
+export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env = process.env, gmailTransportFactory = null, outlookFactory = null, stage = stageCandidates } = {}) {
   const config = resolveMailConfig(env);
   const report = latestWeeklyReport(reportsDir);
   const contract = validateWeeklyEmailContract(report.data);
@@ -147,22 +147,28 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
   // Signed review actions need the Review Center config and the review queue (catalogue DB).
   // When either is missing (e.g. the Lenovo dry-run runtime), deliver the informational digest
   // with the candidates instead of failing the whole weekly email.
+  // Verified industry-sweep findings are approvable too (ACEPTAR / ELIMINAR in the digest).
+  const digestReview = Array.isArray(report.data?.industry_digest?.review_candidates) ? report.data.industry_digest.review_candidates : [];
   let fallbackReason = null;
-  if (hasReviewReady) {
+  let digestActions = null;
+  if (hasReviewReady || digestReview.length) {
     if (!env.HERMES_REVIEW_RUN_ID) env.HERMES_REVIEW_RUN_ID = String(env.GITHUB_RUN_ID || Date.now());
     const cfg = actionConfig(env);
     if (!cfg.enabled) fallbackReason = 'REVIEW_ACTIONS_UNAVAILABLE';
     else {
-      try { await stageCandidates(reviewCandidates(report.data), { cycleId: cfg.runId, env }); }
-      catch (error) { fallbackReason = `REVIEW_STAGING_FAILED: ${error.message}`; }
+      try {
+        await stage([...reviewCandidates(report.data), ...digestReview], { cycleId: cfg.runId, env });
+        digestActions = (code) => actionButtons({ entity_code: code }, cfg);
+      } catch (error) { fallbackReason = `REVIEW_STAGING_FAILED: ${error.message}`; }
     }
+    if (!hasReviewReady) fallbackReason = null; // nothing in the catalogue queue: no warning banner
   }
 
   if (!hasReviewReady || fallbackReason) {
     // Weekly intelligence delivery is mandatory even when all findings are still pending
     // research. Returning success without sending caused the Lenovo scheduler to mark a week
     // as sent while Victor received no HERMES email.
-    const digest = buildMessage(report, config);
+    const digest = buildMessage(report, config, { actionsFor: digestActions });
     if (fallbackReason) {
       const notice = 'Hay candidatos listos para revisión, pero los botones de aprobación no están disponibles en esta corrida. Revísalos abajo; ningún cambio se aplica sin tu aprobación explícita.';
       digest.html = `<p style="background:#FFF12D;padding:10px;border-radius:6px"><strong>${esc(notice)}</strong></p>${digest.html}`;
