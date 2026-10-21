@@ -16871,6 +16871,62 @@
     "kind": "catalogue-db",
     "table": "elimfilters_catalog"
    }
+  },
+  {
+   "sku": "EH61454",
+   "slug": "eh61454",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61454 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "374.39 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "111.51 mm"
+    },
+    {
+     "name": "Inner diameter",
+     "value": "56.26 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "100 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171454"
+    }
+   ],
+   "crossRefsTotal": 1,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
   }
  ],
  "blocked": []

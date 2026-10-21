@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-21T19:32:10.594Z",
-  "scope": "Three static product additions after documentary catalogue closure. No physical testing, performance, universal application or regional-origin claim.",
+  "at": "2026-10-21T20:24:40.215Z",
+  "scope": "Four static product additions after documentary catalogue closure. No physical testing, performance, universal application or regional-origin claim.",
   "certification": {
     "rollback_verified": true,
     "persisted_verified": true,
@@ -12,12 +12,14 @@
   },
   "publication": {
     "previous_records_preserved": 161,
-    "added": 3,
+    "added": 4,
     "published_application_claims": 0,
     "performance_publication": false,
     "redirects_added": 0,
     "backup_sha256": "cd17f2378065a7eb7efe2257c4e7266239de7d607e0d17c9c367b945460fb1a7",
-    "restoration_probe_verified": true
+    "restoration_probe_verified": true,
+    "final_records": 165,
+    "hydraulic_addition_backup_sha256": "e70fafa31880e54b52e31fe48fbc0ad94b1412454ada2fbe9ad29b4121cb79c1"
   },
   "cases": [
     {
@@ -80,6 +82,28 @@
           "role_url": "https://www.mann-filter.com/content/dam/mann-filter/communication-media/brochures-catalogs/mann-filter-cross-reference-list-2024-26-interactive.pdf",
           "role_pdf_page": 153,
           "role_sha256": "0a3fa63cebb7c30dfa292be6124b5845b49801c4c7081884d3f5ac6c6515f6f3"
+        }
+      ]
+    },
+    {
+      "sku": "EH61454",
+      "canonical_code": "P171454",
+      "source_capture": "scripts/donaldson_hydraulic_results.json",
+      "capture_sha256": "14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76",
+      "record_sha256": "a5ed4266d60761e9b4c8553e0e4bbf86cf92748a74902b1b81c5c23f972a2700",
+      "documented_component_role": "HYDRAULIC_FILTER_CARTRIDGE",
+      "public_family": "hydraulic-filters",
+      "recovered_inner_diameter_mm": 56.26,
+      "dimension_backup_sha256": "2829160284c7079db534ecaa316517e4629230f1aef32dcb4771842c74cc8571",
+      "certification_backup_sha256": "acbf5609990234f8dc610f54701d33e9f841d6b7124650fd2bc81a13efda740b",
+      "reference_role_proofs": [
+        {
+          "manufacturer": "P-H",
+          "code": "45Z459",
+          "role": "OEM equipment maker",
+          "role_url": "https://www.komatsu.com/content/dam/komatsu/sales-and-marketing-documents/brochures/mining-parts/loadingtoolselectionguide-brochure-english-en-ltsgbr01-0522-v3.pdf",
+          "role_pdf_page": 6,
+          "role_sha256": "8fe763e5bf47215fe9f4e4ff956c827a45bfc19a2ae1e2013c3346f9c9d2dab5"
         }
       ]
     }
