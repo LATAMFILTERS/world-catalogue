@@ -6,6 +6,7 @@ import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { latestWeeklyReport, resolveMailConfig, buildMessage } from './send-weekly-email.mjs';
 import { validateWeeklyEmailContract, validateRenderedWeeklyEmail } from './weekly-email-integrity.mjs';
+import { renderIndustryDigest } from './industry-digest.mjs';
 
 const require = createRequire(import.meta.url);
 const { buildReviewUrl } = require('../../lib/hermes-review-token');
@@ -89,6 +90,8 @@ function buildExecutiveMessage(report, env = process.env) {
   const text = [];
   text.push('HERMES — Inteligencia lista para revisión', '');
   text.push(`Listos para revisión: ${totals.review_ready ?? 0}`, '');
+  const digest = renderIndustryDigest(data.industry_digest);
+  if (digest.text) text.push(digest.text);
 
   for (const [type, candidates] of Object.entries(groups).sort()) {
     for (const c of candidates) {
@@ -124,6 +127,8 @@ function buildExecutiveMessage(report, env = process.env) {
       Listos para revisión: ${esc(totals.review_ready ?? cards.length)}
     </div>
     <p><strong>${esc(notice)}</strong></p>
+    ${digest.html}
+    ${digest.html ? '<h3>Candidatos para catálogo / Knowledge Center</h3>' : ''}
     ${cards.join('\n')}
     <hr><p style="font-size:12px;color:#666">HERMES no modifica catálogo, Knowledge Center, Obsidian ni PostgreSQL sin aprobación explícita.</p>
   </div>`;

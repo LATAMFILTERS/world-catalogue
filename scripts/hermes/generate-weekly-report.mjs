@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { analyzeCandidates, loadCandidates, resolveRealCandidatesInputDir, isResearchResolved, isRealHermesCandidate } from './hermes-core.mjs';
+import { buildIndustryDigest, isIndustrySweepCandidate } from './industry-digest.mjs';
 
 const rawArg = process.argv[2];
 const input = rawArg === '--auto' ? resolveRealCandidatesInputDir() : (rawArg || 'hermes/test-candidates');
@@ -42,7 +43,11 @@ const now = new Date();
 const end = now.toISOString();
 const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
-const results = analyzeCandidates(loadCandidates(input));
+// Industry-sweep findings are informational: they feed the weekly digest
+// only, never the catalogue/Knowledge Center review queues.
+const loaded = loadCandidates(input);
+const industryDigest = buildIndustryDigest(loaded.map((r) => r.candidate), { now });
+const results = analyzeCandidates(loaded.filter((r) => !isIndustrySweepCandidate(r.candidate)));
 const duplicates = results.filter((r) => r.duplicateOf);
 const invalid = results.filter((r) => !r.valid && !r.duplicateOf);
 const valid = results.filter((r) => r.valid);
@@ -112,6 +117,7 @@ const packageData = {
     candidates_written: promotionSummary.candidates_written ?? 0,
     writes_outside_baseline: promotionSummary.writes_outside_baseline ?? 0
   } : null,
+  industry_digest: industryDigest,
   publication_boundary: 'NO_DATABASE_WRITES',
   approval_authority: 'Victor Abreu'
 };
@@ -173,6 +179,11 @@ if (packageData.baseline_promotion) {
     `- Writes outside the baseline file: ${bp.writes_outside_baseline}`, ''
   );
 }
+
+lines.push('## Industry intelligence of the week (informational)', '', `- Window: ${industryDigest.window.start} — ${industryDigest.window.end}`);
+if (!industryDigest.items.length) lines.push(`- No new industry findings. ${industryDigest.empty_reason || ''}`.trim());
+for (const i of industryDigest.items) lines.push(`- [${i.status}] ${i.title} — ${i.company}, ${i.date}, ${i.domain} — ${i.url}`);
+lines.push('');
 
 for (const [type, candidates] of Object.entries(groups).sort()) {
   lines.push(`## ${type.replaceAll('_', ' ')}`, '');

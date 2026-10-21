@@ -22,6 +22,7 @@ jobs:
       HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
       HERMES_BASELINE_MODE: 'false'
       HERMES_MAX_SOURCES_PER_RUN: ${{ vars.HERMES_MAX_SOURCES_PER_RUN || '35' }}
+      HERMES_GROQ_FREE_TIER_CONFIRMED: ${{ vars.HERMES_GROQ_FREE_TIER_CONFIRMED || 'false' }}
       GH_TOKEN: ${{ github.token }}
 
     steps:

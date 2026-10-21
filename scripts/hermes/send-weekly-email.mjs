@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
+import { renderIndustryDigest } from './industry-digest.mjs';
 
 const require = createRequire(import.meta.url);
 
@@ -71,6 +72,7 @@ function buildSpanishExecutiveReport(data, fallbackText) {
   const pending = Array.isArray(data.research_pending) ? data.research_pending : [];
   const duplicates = Array.isArray(data.duplicates) ? data.duplicates : [];
   const invalid = Array.isArray(data.invalid) ? data.invalid : [];
+  const digest = renderIndustryDigest(data.industry_digest);
 
   const text = [];
   text.push('HERMES — Revisión Semanal de Inteligencia', '');
@@ -84,6 +86,7 @@ function buildSpanishExecutiveReport(data, fallbackText) {
   text.push(`- Duplicados suprimidos: ${totals.duplicates_suppressed ?? 0}`);
   text.push(`- Candidatos inválidos: ${totals.invalid ?? 0}`, '');
   text.push('Este informe es solo para revisión. HERMES no modifica el catálogo, Knowledge Center, Obsidian ni PostgreSQL sin tu aprobación explícita.', '');
+  if (digest.text) text.push(digest.text);
 
   for (const [type, candidates] of Object.entries(groups).sort()) {
     text.push(translateCandidateType(type).toUpperCase(), '');
@@ -149,6 +152,8 @@ function buildSpanishExecutiveReport(data, fallbackText) {
       Candidatos analizados: ${esc(totals.scanned ?? 0)} · Cambios detectados: ${esc(totals.source_changes_detected ?? 0)} · Resueltos por Groq: ${esc(totals.groq_resolved ?? 0)} · Listos para revisión: ${esc(totals.review_ready ?? 0)} · Requieren investigación: ${esc(totals.needs_research ?? 0)}
     </div>
     <p><strong>Este informe es solo para revisión.</strong> HERMES no modifica el catálogo, Knowledge Center, Obsidian ni PostgreSQL sin tu aprobación explícita.</p>
+    ${digest.html}
+    ${digest.html ? '<h3>Candidatos para catálogo / Knowledge Center</h3>' : ''}
     ${cards.join('\n') || '<p>No hay hallazgos listos para revisión en este ciclo.</p>'}
     ${pending.length ? `<h3>Requieren más investigación</h3><ul>${pending.map((item) => `<li>${esc(item.entity_code)}: ${esc(item.reason || 'RESEARCH_NOT_RESOLVED')}</li>`).join('')}</ul>` : ''}
     <hr><p><strong>Autoridad de decisión:</strong> solo Victor Abreu puede aprobar, rechazar o solicitar investigación adicional.</p>
