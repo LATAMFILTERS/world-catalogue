@@ -31,6 +31,10 @@ import path from 'node:path';
 import { createResilientFetch, _resetQuotaStateForTests } from '../../scripts/hermes/industry-sweep-reliable.mjs';
 import { runIndustrySweep } from '../../scripts/hermes/industry-sweep-compound.mjs';
 
+// Isolated from the real hermes/state/ directory -- sweep checkpoints written there could make
+// the real scheduled sweep believe this cycle's work was already done (2026-09-10 incident).
+process.env.HERMES_STATE_ROOT = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-quota-state-'));
+
 // fatalDailyQuota/quotaState/exhaustedModels are deliberately module-scoped
 // (run-scoped, not per-call) in industry-sweep-reliable.mjs — see item 3.
 // That means every test() below in this file shares that state unless
