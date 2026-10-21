@@ -79,3 +79,22 @@ test('zero-cost source-change signals appear as SEÑAL, once per URL, without fi
   assert.equal(d.items[0].domain, 'OEM pesados');
   assert.match(renderIndustryDigest(d).html, /News &amp; insights – Volvo/);
 });
+
+test('headlines the local model had no time for are listed as links grouped by source, also on an empty week', () => {
+  const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-annex-')), 'newsroom-unreviewed.json');
+  fs.writeFileSync(file, JSON.stringify({ items: [
+    { source: 'Toyota / Lexus', published_at: '2026-10-22T10:00:00Z', headline: 'Toyota shows new hybrid engine', url: 'https://news.example.com/a' },
+    { source: 'Toyota / Lexus', published_at: '2026-10-22T10:00:00Z', headline: 'Duplicate link', url: 'https://news.example.com/a' },
+    { source: 'Ford', published_at: '2026-10-24T10:00:00Z', headline: 'Ford &amp; partners update V8', url: 'https://news.example.com/b' },
+    { source: 'Ford', published_at: '2026-10-01T10:00:00Z', headline: 'Old item outside the window', url: 'https://news.example.com/c' },
+    { source: 'Ford', published_at: '2026-10-24T10:00:00Z', headline: 'Unsafe link', url: 'javascript:alert(1)' }
+  ] }));
+  const digest = buildIndustryDigest([], { now, sweepSummaryPath: noSummary, unreviewedPath: file });
+  assert.deepEqual(digest.link_annex.map((g) => [g.source, g.items.length]), [['Toyota / Lexus', 1], ['Ford', 1]]);
+  const out = renderIndustryDigest(digest);
+  assert.match(out.text, /Sin novedades de industria/);
+  assert.match(out.text, /ANEXO: ENLACES SIN REVISAR\n2 titulares/);
+  assert.match(out.html, /<a href="https:\/\/news\.example\.com\/b">Ford &amp; partners update V8<\/a>/);
+  assert.doesNotMatch(out.html, /javascript:|Old item/);
+  assert.equal(buildIndustryDigest([], { now, sweepSummaryPath: noSummary, unreviewedPath: file + '.missing' }).link_annex.length, 0);
+});
