@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-21T19:32:10.594Z",
+  "scope": "Three static product additions after documentary catalogue closure. No physical testing, performance, universal application or regional-origin claim.",
+  "certification": {
+    "rollback_verified": true,
+    "persisted_verified": true,
+    "backup_sha256": "e60692452f6716d37680a762ea288f5bb28f4febea2555bb1d3dab503452e6c0",
+    "native_checks": [
+      "093 with resolver v7",
+      "273"
+    ]
+  },
+  "publication": {
+    "previous_records_preserved": 161,
+    "added": 3,
+    "published_application_claims": 0,
+    "performance_publication": false,
+    "redirects_added": 0,
+    "backup_sha256": "cd17f2378065a7eb7efe2257c4e7266239de7d607e0d17c9c367b945460fb1a7",
+    "restoration_probe_verified": true
+  },
+  "cases": [
+    {
+      "sku": "EA10960",
+      "canonical_code": "P770960",
+      "source_capture": "scripts/donaldson_air_results.json",
+      "capture_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+      "record_sha256": "5b31d26b207e9926422d9feec256d82a6cccab3498b3ee4ac06c531f5309b2e3",
+      "documented_component_role": "SAFETY_FILTER_ELEMENT",
+      "public_family": "secondary-air",
+      "recovered_inner_diameter_mm": 74.47,
+      "dimension_backup_sha256": "723c3551a3785a572a4e120f4aa175c94379369e3f3ef49828131769e6cb316c",
+      "reference_role_proofs": [
+        {
+          "manufacturer": "O-K",
+          "code": "1450013",
+          "role": "OEM equipment maker",
+          "role_url": "https://www.mann-filter.com/content/dam/mann-filter/communication-media/brochures-catalogs/mann-filter-cross-reference-list-2024-26-interactive.pdf",
+          "role_pdf_page": 153,
+          "role_sha256": "0a3fa63cebb7c30dfa292be6124b5845b49801c4c7081884d3f5ac6c6515f6f3"
+        }
+      ]
+    },
+    {
+      "sku": "EA18678",
+      "canonical_code": "P158678",
+      "source_capture": "scripts/donaldson_air_results.json",
+      "capture_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+      "record_sha256": "d60b805ff9a973fdbafa042806d505ba8848d265230c57b5655078a1b0af4715",
+      "documented_component_role": "SAFETY_FILTER_ELEMENT",
+      "public_family": "secondary-air",
+      "recovered_inner_diameter_mm": 91.2,
+      "dimension_backup_sha256": "723c3551a3785a572a4e120f4aa175c94379369e3f3ef49828131769e6cb316c",
+      "reference_role_proofs": [
+        {
+          "manufacturer": "O-K",
+          "code": "1454262",
+          "role": "OEM equipment maker",
+          "role_url": "https://www.mann-filter.com/content/dam/mann-filter/communication-media/brochures-catalogs/mann-filter-cross-reference-list-2024-26-interactive.pdf",
+          "role_pdf_page": 153,
+          "role_sha256": "0a3fa63cebb7c30dfa292be6124b5845b49801c4c7081884d3f5ac6c6515f6f3"
+        }
+      ]
+    },
+    {
+      "sku": "EA18905",
+      "canonical_code": "P778905",
+      "source_capture": "scripts/donaldson_air_results.json",
+      "capture_sha256": "5349ff2fccae14487a9e00bb88127eec3fdb9461bffe7dc42c00feacff7b6217",
+      "record_sha256": "392e9d4ba7db00ad6c3ee36fddb1906525db4ab973738cab032f9bd91f7b83a5",
+      "documented_component_role": "PRIMARY_FILTER_ELEMENT",
+      "public_family": "primary-air",
+      "recovered_inner_diameter_mm": 130.9,
+      "dimension_backup_sha256": "723c3551a3785a572a4e120f4aa175c94379369e3f3ef49828131769e6cb316c",
+      "reference_role_proofs": [
+        {
+          "manufacturer": "O-K",
+          "code": "1487627",
+          "role": "OEM equipment maker",
+          "role_url": "https://www.mann-filter.com/content/dam/mann-filter/communication-media/brochures-catalogs/mann-filter-cross-reference-list-2024-26-interactive.pdf",
+          "role_pdf_page": 153,
+          "role_sha256": "0a3fa63cebb7c30dfa292be6124b5845b49801c4c7081884d3f5ac6c6515f6f3"
+        }
+      ]
+    }
+  ],
+  "production_before": {
+    "all_three_http_404": true,
+    "report_sha256": "6c9077fbaab92ef533e973b1062095e1f9bcb3b687edea509491797edac271cf"
+  }
+}
