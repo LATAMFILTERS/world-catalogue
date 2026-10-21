@@ -162,7 +162,7 @@ export const PLAUSIBLE = /\b(engines?|diesel|gas(?:oline)?|natural gas|hydrogen|
 
 function itemsFromFeed(xml, source, now) {
   const since = now.getTime() - 7 * DAY_MS;
-  return parseRssItems(xml, 80).map((i) => ({
+  return parseRssItems(xml, source.max_items || 80).map((i) => ({
     headline: decode(i.title.replace(/<!\[CDATA\[|\]\]>/g, '')).trim(), description: decode(i.description || '').slice(0, 500),
     published_at: Number.isNaN(Date.parse(i.pubDate)) ? null : new Date(Date.parse(i.pubDate)).toISOString(), url: decode(i.link || source.url).trim()
   })).filter((i) => i.headline.length >= 15 && i.published_at && Date.parse(i.published_at) >= since && /^https:\/\//.test(i.url));
