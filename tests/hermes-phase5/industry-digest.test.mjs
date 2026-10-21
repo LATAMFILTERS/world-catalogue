@@ -60,3 +60,22 @@ test('empty week says so explicitly with the sweep reason', () => {
   assert.match(r.text, /Sin novedades de industria esta semana\. Barrido de industria: 6 de 76 lotes completados \(TPD exhausted\)\./);
   assert.match(renderIndustryDigest(buildIndustryDigest([], { now, sweepSummaryPath: noSummary })).html, /no se ejecutó/);
 });
+
+test('zero-cost source-change signals appear as SEÑAL, once per URL, without first harvests', () => {
+  const signal = (code, url, extra = {}) => ({
+    ...sweep({ code, published: null, url }), category: 'oem_heavy_duty', entity_code: `HERMES_REAL_VOLVO_${code}`,
+    workflow_status: 'NEEDS_RESEARCH', confidence: 0.4, source_publisher: 'Volvo Trucks', source_title: 'News &amp; insights &#8211; Volvo',
+    captured_at: '2026-10-26T14:00:00.000Z', change_classification: 'CHANGE_DETECTED_REQUIRES_RESEARCH', research_resolution: { status: 'UNRESOLVED' }, ...extra
+  });
+  const d = buildIndustryDigest([
+    signal('A', 'https://www.volvotrucks.com/news'),
+    signal('B', 'https://www.volvotrucks.com/news'),
+    signal('C', 'https://example.com/first', { change_classification: 'FIRST_SEMANTIC_HARVEST' }),
+    signal('D', 'https://example.com/old', { captured_at: '2026-10-10T00:00:00.000Z' })
+  ], { now, sweepSummaryPath: noSummary });
+  assert.equal(d.items.length, 1);
+  assert.equal(d.items[0].status, 'SEÑAL');
+  assert.equal(d.items[0].title, 'Novedad en Volvo Trucks: News & insights – Volvo');
+  assert.equal(d.items[0].domain, 'OEM pesados');
+  assert.match(renderIndustryDigest(d).html, /News &amp; insights – Volvo/);
+});
