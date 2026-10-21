@@ -41,7 +41,7 @@ describe('Five industrial platform language presentations',()=>{
     expect(html).toContain(text('COMMERCIAL TECHNOLOGY PLATFORM'));
     expect(html).toContain(text(platform.descriptor));
     for(const group of platform.qualificationGroups||[])expect(html).toContain(text(group.title));
-    for(const t of platform.technologies){expect(html).toContain(t.name);expect(html).toContain(`href="${industrialProcessTechnologyUrl(platform.slug,t.slug)}"`);}
+    for(const t of platform.technologies){expect(html).toContain(t.branded ? t.name : text(t.name));expect(html).toContain(`href="${industrialProcessTechnologyUrl(platform.slug,t.slug)}"`);}
     expect(html).toContain(`href="mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${platform.name} Industrial & Process Platform Review`)}"`);
     expect(html).toContain('data-conversion-action="application-support"');
     expect(html).toContain(`href="${lang==='en'?'/':'/'+lang+'/'}"`);

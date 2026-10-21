@@ -154,11 +154,6 @@
       "count": 1
     }
   },
-  "src/components/HomePage.tsx": {
-    "react-hooks/set-state-in-effect": {
-      "count": 1
-    }
-  },
   "src/components/MacrocoreMediaEngineeringPortal.tsx": {
     "react-hooks/set-state-in-effect": {
       "count": 1

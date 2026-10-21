@@ -16,7 +16,7 @@ function coreLabel(core: string | readonly string[]) {
 }
 
 function technologyName(name: string, branded: boolean) {
-  return branded ? <span className={styles.technologyName}>{name}</span> : name;
+  return branded ? <span className={styles.technologyName}>{name}</span> : <ReviewedText text={name} />;
 }
 
 function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialProcessTechnology) {
@@ -125,7 +125,7 @@ export function IndustrialProcessTechnologyStablePage({
           <ReviewedImage className={styles.heroBackground} src={technology.heroImage} alt="" aria-hidden="true" />
         )}
         <div className={styles.heroShade} aria-hidden="true" />
-        <h1 id="industrial-tech-title" className={styles.srOnly}>{technology.name} {technology.title === technology.name ? technology.name : <ReviewedText text={technology.title} />}</h1>
+        <h1 id="industrial-tech-title" className={styles.srOnly}>{technologyName(technology.name, technology.branded)}{technology.title !== technology.name ? <> <ReviewedText text={technology.title} /></> : null}</h1>
         {technology.heroMarkImage ? (
           <ReviewedImage
             className={styles.heroMark}
@@ -151,7 +151,7 @@ export function IndustrialProcessTechnologyStablePage({
         <div className={styles.inner}>
           <p className={styles.eyebrow}><ReviewedText text={technology.branded ? 'FILTRATION TECHNOLOGY' : 'TREATMENT FAMILY'} /></p>
           <h2 className={styles.displayTitle}>{technologyName(technology.name, technology.branded)}</h2>
-          <p className={styles.applicationLine}><strong>{technology.title === technology.name ? technology.name : <ReviewedText text={technology.title} />}</strong></p>
+          <p className={styles.applicationLine}><strong>{<ReviewedText text={technology.title} />}</strong></p>
           <p className={styles.lead}><ReviewedText text={technology.summary} /></p>
           <p className={styles.bodyWide}><ReviewedText text={technology.treatmentFunction} /></p>
 
@@ -163,7 +163,7 @@ export function IndustrialProcessTechnologyStablePage({
                 <p><span><ReviewedText text={"Engineering core:"} /></span> {coreLabel(technology.technologyCore)}</p>
               </div>
               <p className={styles.eyebrow}><ReviewedText text={"DESCRIPTION"} /></p>
-              <h3 className={styles.featureTitle}>{technology.title === technology.name ? technology.name : <ReviewedText text={technology.title} />}</h3>
+              <h3 className={styles.featureTitle}>{<ReviewedText text={technology.title} />}</h3>
               <p className={styles.lead}><ReviewedText text={technology.treatmentFunction} /></p>
             </div>
             <figure className={styles.mediaFigure}>
@@ -285,7 +285,7 @@ export function IndustrialProcessTechnologyStablePage({
           <h2 className={styles.h2}><ReviewedText text={"Applicable standards and test methods"} /></h2>
           <p className={styles.lead}><ReviewedText text={"The standards below are resolved from the governed ELIMFILTERS Knowledge Center for this treatment family. Applicability remains product-, fluid-, contaminant- and duty-specific."} /></p>
           <ul className={`${styles.list} ${styles.serviceList}`}>{standards.map((standard)=><li key={standard}><ReviewedText text={standard} /></li>)}</ul>
-          <p className={styles.bodyWide}><ReviewedText text={"A listed standard identifies a relevant engineering or verification method. It does not mean every"} />{' '}{technology.name}{' '}<ReviewedText text={"element is certified, qualified or tested to every listed method. Product claims require the corresponding validated test evidence."} /></p>
+          <p className={styles.bodyWide}><ReviewedText text={"A listed standard identifies a relevant engineering or verification method. It does not mean every"} />{' '}{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"element is certified, qualified or tested to every listed method. Product claims require the corresponding validated test evidence."} /></p>
           {technology.knowledgeCenterSlug ? <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}><ReviewedText text={"OPEN GOVERNED STANDARD CONTEXT →"} /></Link></div> : null}
         </div></section>
       ) : null}

@@ -25,11 +25,15 @@ test('Industrial & Process root plus every internal page resolves to approved ca
   assert.deepEqual(platformSlugs, ['aeremis', 'partion', 'coalvex', 'flurexis', 'aquvexis']);
 
   const techMatches = [...architecture.matchAll(/\.\.\.tech\(\s*\n\s*'([^']+)'/g)];
-  assert.equal(techMatches.length, 15);
+  assert.deepEqual(techMatches.map((match) => match[1]), [
+    'general-air-filtration', 'he-criva', 'ma-trea', 'fumevra',
+    'coaleris', 'gas-liquid-separation', 'hyltris', 'lubreva',
+    'dewatis', 'oilrevex', 'depth-filtration', 'adsovex', 'membravex', 'ionvexa',
+  ]);
 
   const kcMatches = [...architecture.matchAll(/knowledgeCenterSlug: '([^']+)'/g)].map((match) => match[1]);
-  // 5 platform references + 15 technology references.
-  assert.equal(kcMatches.length, 20);
+  // Five platforms and the fourteen published technology/family routes.
+  assert.equal(kcMatches.length, platformSlugs.length + techMatches.length);
   for (const slug of kcMatches) assert.ok(canonicalSlugs.has(slug), `missing canonical knowledge for ${slug}`);
 });
 

@@ -15,7 +15,7 @@ function DustIngestionContent() {
 
       {/* Navigation */}
       <div style={{ padding: '1.5rem 2rem 0', maxWidth: '920px', margin: '0 auto' }}>
-        <Link href="/engineering" style={{
+        <Link href="/knowledge-center/engineering/" style={{
           fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
           color: 'rgba(255,255,255,0.35)', textDecoration: 'none', letterSpacing: '0.08em',
         }}><PublicUiText textKey="publicUi.text34">{"← ENGINEERING INTELLIGENCE"}</PublicUiText></Link>

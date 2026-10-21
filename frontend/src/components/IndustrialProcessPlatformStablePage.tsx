@@ -105,8 +105,8 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <div className={styles.editorialColumns}>
           {platform.technologies.map((technology) => (
             <div key={technology.slug}>
-              <h3 className={styles.h3}><Link href={industrialProcessTechnologyUrl(platform.slug, technology.slug)} style={{color:'#fff',textDecoration:'none'}}>{technology.name}</Link></h3>
-              <p className={styles.body}><strong style={{color:'#fff'}}>{technology.name === technology.title ? technology.title : <ReviewedText text={technology.title} />}</strong></p>
+              <h3 className={styles.h3}><Link href={industrialProcessTechnologyUrl(platform.slug, technology.slug)} style={{color:'#fff',textDecoration:'none'}}>{technology.branded ? technology.name : <ReviewedText text={technology.name} />}</Link></h3>
+              <p className={styles.body}><strong style={{color:'#fff'}}>{<ReviewedText text={technology.title} />}</strong></p>
               <p className={styles.body}><ReviewedText text={technology.summary} /></p>
               <div className={styles.textLinks}><Link href={industrialProcessTechnologyUrl(platform.slug, technology.slug)}><PublicUiText textKey="publicUi.text18">{"EXPLORE TECHNOLOGY →"}</PublicUiText></Link></div>
             </div>

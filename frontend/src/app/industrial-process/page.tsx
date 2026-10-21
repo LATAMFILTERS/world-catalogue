@@ -254,7 +254,7 @@ export default function IndustrialProcessPage() {
                         href={industrialProcessTechnologyUrl(platform.slug, technology.slug)}
                         style={{ ...familyRow, display: 'block', textDecoration: 'none' }}
                       >
-                        {technology.name === technology.title ? technology.name : <>{technology.name} — <ReviewedText text={technology.title} /></>}
+                        {technology.name === technology.title ? <ReviewedText text={technology.name} /> : <><ReviewedText text={technology.name} /> — <ReviewedText text={technology.title} /></>}
                       </Link>
                     ))}
                   </div>

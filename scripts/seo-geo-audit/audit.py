@@ -782,7 +782,7 @@ def write_summary_md(records, findings, seo_score, geo_summary, category_stats, 
     lines.append(f"Target: {BASE_URL} (sitemap: {SITEMAP_URL})")
     lines.append("")
     lines.append("This audit was produced by an automated, read-only script "
-                  "(`scripts/seo-geo-audit/audit.py`) run inside GitHub Actions. "
+                  "(`scripts/seo-geo-audit/audit.py`) executed in the audit environment. "
                   "It made real HTTP requests against production. No results below are invented.")
     lines.append("")
 

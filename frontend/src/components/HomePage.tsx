@@ -254,7 +254,7 @@ function EngineeringEntrySection() {
           <EngineeringSearchBar onResult={handleResult} placeholder={t('home.engineeringEntry.search', 'Part number, symptom, failure mode, standard...')} />
         </motion.div>
 
-        {/* Journey cards â€” 2x2 grid */}
+        {/* Journey cards — 2x2 grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -331,7 +331,6 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    setProgress(0);
     const start = Date.now();
     const raf = { id: 0 };
     const tick = () => {
@@ -343,7 +342,7 @@ export default function Home() {
     };
     raf.id = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf.id);
-  }, [activeSlide]);
+  }, [activeSlide, CTA_SLIDES.length]);
 
   return (
     <ConversionProvider>
@@ -397,7 +396,7 @@ export default function Home() {
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{ color: 'var(--ink-2)', fontSize: '1.05rem', marginBottom: '2.5rem', lineHeight: 1.75, fontFamily: 'Barlow, Arial, sans-serif' }}>
-                  {t('home.problemIntro', 'Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components â€” bearing surfaces, injector orifices, hydraulic spools.')}
+                  {t('home.problemIntro', 'Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.')}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {(Array.isArray(failModes) ? failModes : []).map((item, idx) => (
@@ -516,7 +515,7 @@ export default function Home() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {(Array.isArray(whyCardItems) ? whyCardItems : []).map((item, i) => (
                       <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', paddingLeft: '1.5rem', position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>â†’</span>
+                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>→</span>
                         {item}
                       </li>
                     ))}
