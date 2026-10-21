@@ -31,15 +31,35 @@ test('weekly email contract blocks summary/detail mismatch', async () => {
   const { validateWeeklyEmailContract } = await loadIntegrity();
   const data = pendingFixture(32);
   data.research_pending.pop();
-  assert.throws(() => validateWeeklyEmailContract(data), /needs_research=32.*31 detailed/);
+  const assertMismatch = actual => assert.throws(() => validateWeeklyEmailContract(data), error => {
+    assert.ok(error instanceof Error);
+    assert.match(error.message, /^HERMES_EMAIL_INTEGRITY: needs_research=32\b/);
+    assert.match(error.message, new RegExp(`research_pending contains ${actual}\\b`));
+    return true;
+  });
+  assertMismatch(31);
+  data.research_pending.push({ entity_code: 'HERMES_EXTRA_01' }, { entity_code: 'HERMES_EXTRA_02' });
+  assertMismatch(33);
 });
 
-test('rendered email contract blocks omitted pending candidates', async () => {
+test('rendered review contract rejects empty queues, omitted review findings and leaked pending candidates', async () => {
   const { validateRenderedWeeklyEmail } = await loadIntegrity();
   const data = pendingFixture(2);
+  const body = 'Hallazgos de revisión con fuente documentada, hechos técnicos, relevancia y acción propuesta para evaluación humana. Este cuerpo tiene el contenido suficiente para comprobar la integridad de la presentación.';
   const message = {
-    html: '<div>Requiere más investigación HERMES_PENDING_01 con información suficiente para superar la validación básica del cuerpo del correo y permitir verificar integridad.</div>',
-    text: 'Requiere más investigación HERMES_PENDING_01 con información suficiente para superar la validación básica del cuerpo del correo y permitir verificar integridad.',
+    html: `<div>${body} HERMES_REVIEW_01 HERMES_REVIEW_02</div>`,
+    text: `${body} HERMES_REVIEW_01 HERMES_REVIEW_02`,
   };
-  assert.throws(() => validateRenderedWeeklyEmail(data, message), /omitted detailed candidate HERMES_PENDING_02/);
+  assert.throws(() => validateRenderedWeeklyEmail(data, message), /review email cannot be rendered when review_ready=0/);
+
+  data.totals.scanned = 4;
+  data.totals.review_ready = 2;
+  data.groups = { technical_bulletin: [{ entity_code: 'HERMES_REVIEW_01' }, { entity_code: 'HERMES_REVIEW_02' }] };
+  assert.equal(validateRenderedWeeklyEmail(data, message).review_ready, 2);
+  for (const channel of ['html', 'text']) {
+    const omitted = { ...message, [channel]: message[channel].replace('HERMES_REVIEW_02', '') };
+    assert.throws(() => validateRenderedWeeklyEmail(data, omitted), /omitted review-ready candidate HERMES_REVIEW_02/);
+    const leaked = { ...message, [channel]: `${message[channel]} HERMES_PENDING_01` };
+    assert.throws(() => validateRenderedWeeklyEmail(data, leaked), /leaked internal pending candidate HERMES_PENDING_01/);
+  }
 });

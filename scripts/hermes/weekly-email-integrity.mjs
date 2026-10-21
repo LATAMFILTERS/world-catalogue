@@ -88,3 +88,29 @@ export function validateRenderedWeeklyEmail(data, message) {
 
   return counts;
 }
+
+// SENT/SMTP acceptance/Graph 202 and legacy marker files are not delivery receipts.
+// A receipt must identify this cycle, recipient and message, and its evidence source.
+export function interpretWeeklyDelivery(record, cycle) {
+  const evidence = record?.delivery_evidence;
+  const confirmed = Boolean(cycle && record?.cycle === cycle
+    && record?.delivery_status === 'DELIVERED'
+    && (record.outcome == null || record.outcome === 'SENT')
+    && (record.recipient == null || record.recipient === evidence?.recipient)
+    && (record.message_id == null || record.message_id === evidence?.message_id)
+    && evidence?.cycle === cycle
+    && ['provider_delivery_receipt', 'recipient_confirmation', 'recipient_mailbox_observation'].includes(evidence?.source)
+    && [evidence?.provider, evidence?.recipient, evidence?.message_id, evidence?.reference]
+      .every(value => typeof value === 'string' && value.trim().length > 0)
+    && typeof evidence?.delivered_at === 'string' && Number.isFinite(Date.parse(evidence.delivered_at)));
+  const notReceived = Boolean(cycle && record?.cycle === cycle && evidence?.cycle === cycle
+    && record?.delivery_status === 'NOT_RECEIVED' && evidence?.source === 'recipient_confirmation'
+    && (record.recipient == null || record.recipient === evidence.recipient)
+    && [evidence?.recipient, evidence?.reference].every(value => typeof value === 'string' && value.trim())
+    && typeof evidence?.confirmed_at === 'string' && Number.isFinite(Date.parse(evidence.confirmed_at)));
+  return {
+    confirmed,
+    status: confirmed ? 'DELIVERED' : notReceived ? 'NOT_RECEIVED' : record?.outcome === 'SENT' ? 'SUBMITTED' : 'UNCONFIRMED',
+    reason: confirmed ? 'DELIVERY_EVIDENCE_PRESENT' : notReceived ? 'RECIPIENT_CONFIRMED_NOT_RECEIVED' : 'DELIVERY_EVIDENCE_MISSING_OR_INVALID'
+  };
+}

@@ -8,6 +8,7 @@ import { createRequire } from 'node:module';
 import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
 import { HERMES_INDUSTRIAL_RESEARCH_POLICY } from './industrial-research-policy.mjs';
 import { assertZeroCostGroqAllowed } from './zero-cost-policy.mjs';
+import { loadRegistry, OEM_CATEGORIES } from './source-registry-core.mjs';
 
 const require = createRequire(import.meta.url);
 const { callLocalLlm } = require('../../lib/hermes-local-llm');
@@ -75,6 +76,11 @@ ELIMFILTERS develops and sells filtration and asset-protection solutions for eng
 RESPONSE DISCIPLINE
 - Answer only the intelligence question represented by the supplied candidate and evidence. Do not add background, recommendations, history or adjacent topics unless required to classify the finding.
 - Every item in facts must be directly supported by the supplied evidence. Do not convert inference into fact.
+- Describe one concrete development only; do not bundle unrelated releases or classify all materials as filter media.
+- published_at is the publication date explicitly supported for that item, or null. Never substitute captured_at or fetched_at.
+- Preserve manufacturer performance statements as source-reported claims; they are not independently validated results.
+- Candidate fields are routing context, not source evidence. Never put workflow metadata, prior errors, or research instructions in facts.
+- A blocked_reason must describe the gap in the supplied evidence for this attempt, not diagnose an earlier provider failure.
 - If a material claim is not supported, omit it from facts. If the missing claim prevents a reliable answer, use RESOLUTION_BLOCKED.
 - Never infer or fabricate a SKU, OEM cross-reference, compatibility, dimension, service interval, date or specification.
 - PostgreSQL remains the only ELIMFILTERS SKU authority. This resolver may describe source-reported part numbers only as evidence; it cannot authorize an ELIMFILTERS SKU.
@@ -97,7 +103,7 @@ MANDATORY PROCEDURE
 7. Propose the ELIMFILTERS destination: CATALOGUE, KNOWLEDGE_CENTER, TECHNICAL_INTELLIGENCE, TECHNOLOGY_WATCH, STANDARDS, OEM_APPLICATION_INTELLIGENCE or INTERNAL_ONLY.
 8. Produce neutral technical language suitable for ELIMFILTERS internal review. Competitor names may remain in internal provenance/evidence, but the public-facing neutral_fact must not market or promote a competitor and must not copy proprietary claims.
 9. A finding is READY only when there is a concrete item, a supporting evidence URL, at least one verifiable fact, a relevance statement and a specific proposed action.
-10. If the supplied evidence truly cannot resolve the change after examining all available pages, return RESOLUTION_BLOCKED with a precise reason. This is an exceptional failure state, not a normal outcome.
+10. If the supplied evidence cannot establish a concrete supported finding, return RESOLUTION_BLOCKED with a precise evidence-gap reason. If no technical fact is supported, return facts=[]. A changed-page signal or a listing headline alone does not verify product specifications or prove what changed between captures.
 
 INDUSTRIAL RESEARCH POLICY
 ${HERMES_INDUSTRIAL_RESEARCH_POLICY}
@@ -130,13 +136,68 @@ function isReadyResolution(r) {
     && typeof r.evidence_url === 'string' && /^https?:\/\//i.test(r.evidence_url)
     && Array.isArray(r.facts) && r.facts.length > 0
     && typeof r.relevance === 'string' && r.relevance.trim().length >= 10
-    && typeof r.proposed_action === 'string' && r.proposed_action.trim().length >= 10;
+    && typeof r.proposed_action === 'string' && r.proposed_action.trim().length >= 10
+    && r.facts.every(fact => typeof fact === 'string' && fact.trim())
+    && typeof r.confidence === 'number' && r.confidence >= 0.65 && r.confidence <= 1
+    && (r.published_at == null || (typeof r.published_at === 'string' && Number.isFinite(Date.parse(r.published_at))));
+}
+
+function blockedResolution(candidate, reason) {
+  return {
+    resolution_status: 'RESOLUTION_BLOCKED', finding_type: 'INTERNAL_WATCH',
+    specific_item: 'Unresolved source signal', published_at: null,
+    evidence_url: candidate.source_url || null, evidence_title: candidate.source_title || null,
+    facts: [], neutral_fact: '', affected_entities: candidate.affected_entities || [],
+    destination: 'INTERNAL_ONLY', relevance: 'Exact primary-source detail is required.',
+    proposed_action: 'Retain NEEDS_RESEARCH until exact primary-source detail is available for review.',
+    confidence: 0, blocked_reason: reason
+  };
 }
 
 export async function resolveWithGroq({ candidate, evidenceBundle, apiKey, model = DEFAULT_MODEL, fetchImpl = globalThis.fetch }) {
+  const registry = loadRegistry(
+    require.resolve('../../hermes/config/source-organizations.json'),
+    require.resolve('../../hermes/config/source-endpoints.json')
+  );
+  const index = registry.endpoints.find(endpoint => endpoint.url === candidate.source_url
+    && ['newsroom', 'news', 'press_releases'].includes(endpoint.endpoint_type));
+  if (index && !(evidenceBundle || []).some(item => {
+    try {
+      return item.ok !== false && item.truncated !== true
+        && new URL(item.source_url).hostname === new URL(index.url).hostname
+        && item.source_url !== index.url
+        && !registry.endpoints.some(endpoint => endpoint.url === item.source_url
+          && ['newsroom', 'news', 'press_releases'].includes(endpoint.endpoint_type))
+        && String(item.raw_snippet || item.text || '').trim().length >= 120;
+    } catch { return false; }
+  })) return blockedResolution(candidate, 'PRIMARY_SOURCE_DETAIL_REQUIRED');
+
+  const assess = resolution => {
+    if (resolution?.resolution_status !== 'READY') return resolution;
+    if (!isReadyResolution(resolution)) return blockedResolution(candidate, 'INVALID_READY_RESOLUTION');
+    const source = (evidenceBundle || []).find(item => item.source_url === resolution.evidence_url
+      && item.ok !== false && item.truncated !== true && String(item.raw_snippet || item.text || '').trim());
+    if (!source) return blockedResolution(candidate, 'EVIDENCE_URL_NOT_SUPPLIED');
+    if (resolution.published_at && Number.isFinite(Date.parse(candidate.captured_at))
+        && Date.parse(resolution.published_at) === Date.parse(candidate.captured_at)
+        && Date.parse(source.published_at) !== Date.parse(resolution.published_at)) {
+      return blockedResolution(candidate, 'CAPTURE_DATE_IS_NOT_PUBLICATION_EVIDENCE');
+    }
+    const organization = registry.organizations.find(org => org.id === candidate.organization_id);
+    if (resolution.finding_type === 'OEM' && organization && !OEM_CATEGORIES.has(organization.category)) {
+      return blockedResolution(candidate, 'SOURCE_ORGANIZATION_IS_NOT_OEM');
+    }
+    return resolution;
+  };
+  // Send source context only. Persisted failures and proposed actions are history,
+  // not evidence for the current resolution; retain them on the original candidate.
+  const signal = Object.fromEntries([
+    'entity_code', 'candidate_type', 'source_url', 'source_publisher', 'source_title',
+    'captured_at', 'category', 'affected_entities', 'extracted_snippet'
+  ].filter(key => candidate[key] !== undefined).map(key => [key, candidate[key]]));
   const messages = [
     { role: 'system', content: HERMES_GROQ_SYSTEM_PROMPT },
-    { role: 'user', content: JSON.stringify({ candidate, evidence_bundle: evidenceBundle }, null, 2).slice(0, MAX_SOURCE_CHARS) }
+    { role: 'user', content: JSON.stringify({ candidate: signal, evidence_bundle: evidenceBundle }, null, 2).slice(0, MAX_SOURCE_CHARS) }
   ];
   const responseFormat = {
     type: 'json_schema',
@@ -153,10 +214,13 @@ export async function resolveWithGroq({ candidate, evidenceBundle, apiKey, model
     temperature: 0,
     fetchImpl
   });
-  if (local.ok) return cleanJson(local.content);
+  if (local.ok) return assess(cleanJson(local.content));
 
   if (!apiKey) {
-    throw new Error(`HERMES_LOCAL_UNAVAILABLE_AND_GROQ_DISABLED: ${local.reason || 'local model unavailable'}`);
+    throw Object.assign(new Error(`HERMES_LOCAL_UNAVAILABLE_AND_GROQ_DISABLED: ${local.reason || 'local model unavailable'}`), {
+      code: local.error_code || local.reason,
+      local_reason: local.reason
+    });
   }
   assertZeroCostGroqAllowed();
 
@@ -175,7 +239,7 @@ export async function resolveWithGroq({ candidate, evidenceBundle, apiKey, model
   });
   if (!response.ok) throw new Error(`Groq HTTP ${response.status}: ${await response.text()}`);
   const body = await response.json();
-  return cleanJson(body?.choices?.[0]?.message?.content);
+  return assess(cleanJson(body?.choices?.[0]?.message?.content));
 }
 
 export function applyResolution(candidate, resolution, now = new Date()) {

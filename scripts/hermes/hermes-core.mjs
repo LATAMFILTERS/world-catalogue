@@ -27,6 +27,17 @@ export function isRealHermesCandidate(candidate) {
   return String(candidate?.entity_code || '').startsWith('HERMES_REAL_');
 }
 
+// Interpret legacy checkpoints without rewriting their status, reason or timestamps.
+export function classifyResearchItem(item) {
+  if (item?.status === 'RESOLVED') return 'RESOLVED';
+  if (item?.terminal === true) return 'TERMINAL';
+  const reason = String(item?.reason || '');
+  if (['EXTERNAL_RESEARCH_DISABLED', 'HERMES_ZERO_COST_BLOCK'].includes(reason)
+      || item?.status === 'SKIPPED_POLICY') return 'SKIPPED_POLICY';
+  if (/^GROQ_(SEARCH_FAILED|RATE_LIMITED|API_KEY_MISSING)$/.test(reason)) return 'HISTORICAL_PROVIDER_ERROR';
+  return 'PENDING';
+}
+
 export function isResearchResolved(candidate) {
   if (!isRealHermesCandidate(candidate)) return true;
   const resolution = candidate?.research_resolution;

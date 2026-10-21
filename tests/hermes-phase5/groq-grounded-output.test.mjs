@@ -118,7 +118,7 @@ test('grounding contract forbids fabrication, repetition and parallel truth', ()
   assert.match(HERMES_GROQ_SYSTEM_PROMPT, /Every item in facts must be directly supported/i);
   assert.match(HERMES_GROQ_SYSTEM_PROMPT, /One decision, no essay/i);
   assert.match(HERMES_GROQ_SYSTEM_PROMPT, /PostgreSQL remains the only ELIMFILTERS SKU authority/i);
-  assert.match(HERMES_GROQ_GROUNDING_CONTRACT, /do not create duplicate knowledge/i);
+  assert.match(HERMES_GROQ_GROUNDING_CONTRACT, /Do not create a second record, paraphrased duplicate, alias duplicate, or repeated finding/i);
   assert.match(HERMES_GROQ_GROUNDING_CONTRACT, /One canonical fact, one canonical knowledge record/i);
   assert.match(HERMES_GROQ_GROUNDING_CONTRACT, /customer-facing technical truth must come from the validated canonical knowledge base/i);
 });
@@ -210,4 +210,76 @@ test('CREATE_NEW is rejected when it repeats validated canonical material', () =
   assert.equal(errors.length, 1);
   assert.match(errors[0], /canonical duplicate detected/i);
   assert.match(errors[0], /CREATE_NEW forbidden/i);
+});
+
+test('resolver excludes historical failures and workflow instructions from source evidence without mutating the candidate', async () => {
+  const candidate = {
+    entity_code: 'HERMES_REAL_HISTORY', source_url: 'https://example.test/news',
+    source_title: 'Stored source', affected_entities: ['FILTER_MEDIA'],
+    research_resolution: { status: 'UNRESOLVED', error: 'HISTORICAL_PROVIDER_MODEL_NOT_FOUND' },
+    groq_resolution: { blocked_reason: 'HISTORICAL_ALTERNATE_FAILURE' },
+    proposed_action: 'HISTORICAL_WORKFLOW_INSTRUCTIONS', workflow_status: 'NEEDS_RESEARCH'
+  };
+  const before = structuredClone(candidate);
+  const evidence = [{ source_url: candidate.source_url, raw_snippet: 'Stored primary-source text' }];
+  const blocked = { resolution_status: 'RESOLUTION_BLOCKED', facts: [], blocked_reason: 'Insufficient source evidence' };
+  const out = await resolveWithGroq({ candidate, evidenceBundle: evidence, apiKey: null,
+    fetchImpl: async (_url, init) => {
+      const request = JSON.parse(init.body);
+      const supplied = JSON.parse(request.messages[1].content);
+      assert.deepEqual(supplied.candidate, {
+        entity_code: candidate.entity_code, source_url: candidate.source_url,
+        source_title: candidate.source_title, affected_entities: candidate.affected_entities
+      });
+      assert.deepEqual(supplied.evidence_bundle, evidence);
+      assert.doesNotMatch(request.messages[1].content, /HISTORICAL_|NEEDS_RESEARCH/);
+      return { ok: true, json: async () => ({ choices: [{ message: { content: JSON.stringify(blocked) } }] }) };
+    }
+  });
+  assert.deepEqual(candidate, before);
+  assert.deepEqual(out, blocked);
+  assert.equal(applyResolution(candidate, out).workflow_status, 'NEEDS_RESEARCH');
+});
+
+
+test('registered newsroom without source detail fails closed before any inference', async () => {
+  const candidate = { entity_code: 'HERMES_REAL_INDEX', source_url: 'https://www.ahlstrom.com/Media/releases/',
+    organization_id: 'ahlstrom', workflow_status: 'NEEDS_RESEARCH' };
+  const out = await resolveWithGroq({ candidate, apiKey: null,
+    evidenceBundle: [{ source_url: candidate.source_url, raw_snippet: 'News listing '.repeat(40) }],
+    fetchImpl: async () => { assert.fail('index-only evidence must not trigger inference'); }
+  });
+  assert.equal(out.resolution_status, 'RESOLUTION_BLOCKED');
+  assert.equal(out.blocked_reason, 'PRIMARY_SOURCE_DETAIL_REQUIRED');
+  assert.deepEqual(out.facts, []);
+  assert.equal(applyResolution(candidate, out).workflow_status, 'NEEDS_RESEARCH');
+});
+
+test('source detail is required but never promoted automatically to VERIFIED', async () => {
+  const url = 'https://www.ahlstrom.com/technical/detail';
+  const candidate = { entity_code: 'HERMES_REAL_DETAIL', source_url: 'https://www.ahlstrom.com/Media/releases/',
+    organization_id: 'ahlstrom', captured_at: '2026-09-28T13:00:00Z' };
+  const ready = { resolution_status: 'READY', finding_type: 'FILTER_MEDIA', specific_item: 'Exact source detail',
+    evidence_url: url, facts: ['A source-supported finding'], relevance: 'Relevant to filtration intelligence',
+    proposed_action: 'Review the exact source evidence before any publication.', confidence: 0.8, published_at: null };
+  const evidenceBundle = [{ source_url: url, ok: true, raw_snippet: 'Exact primary source technical detail. '.repeat(8) }];
+  const run = resolution => resolveWithGroq({ candidate, evidenceBundle, apiKey: null,
+    fetchImpl: async () => ({ ok: true, json: async () => ({ choices: [{ message: { content: JSON.stringify(resolution) } }] }) })
+  });
+  assert.deepEqual(await run(ready), ready);
+  const { isResearchResolved } = await import('../../scripts/hermes/hermes-core.mjs');
+  assert.equal(isResearchResolved(applyResolution(candidate, ready)), false);
+  for (const [change, reason] of [
+    [{ published_at: candidate.captured_at }, 'CAPTURE_DATE_IS_NOT_PUBLICATION_EVIDENCE'],
+    [{ published_at: '2026-09-28T08:00:00-05:00' }, 'CAPTURE_DATE_IS_NOT_PUBLICATION_EVIDENCE'],
+    [{ published_at: 'not-a-date' }, 'INVALID_READY_RESOLUTION'],
+    [{ finding_type: 'OEM' }, 'SOURCE_ORGANIZATION_IS_NOT_OEM'],
+    [{ evidence_url: 'https://www.ahlstrom.com/not-supplied' }, 'EVIDENCE_URL_NOT_SUPPLIED'],
+    [{ confidence: 0.2 }, 'INVALID_READY_RESOLUTION']
+  ]) {
+    const out = await run({ ...ready, ...change });
+    assert.equal(out.resolution_status, 'RESOLUTION_BLOCKED');
+    assert.equal(out.blocked_reason, reason);
+    assert.deepEqual(out.facts, []);
+  }
 });

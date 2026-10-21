@@ -167,7 +167,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
       await transport.verify();
       const result = await transport.sendMail({ from: digest.from, to: digest.to, subject: digest.subject, text: digest.text, html: digest.html });
       return {
-        outcome: 'SENT', provider: 'gmail', recipient: config.recipient,
+        outcome: 'SENT', delivery_status: 'SUBMITTED', delivery_confirmed: false, provider: 'gmail', recipient: config.recipient,
         message_id: result.messageId || null, review_ready: 0,
         queued_pending: contract.needs_research, actionable: false,
         informational_digest: true,
@@ -180,7 +180,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
     if (config.senderEmail) mail.emailMap.default = config.senderEmail;
     await mail.send(config.recipient, digest.subject, digest.html, digest.text, 'default');
     return {
-      outcome: 'SENT', provider: 'outlook', recipient: config.recipient,
+      outcome: 'SENT', delivery_status: 'SUBMITTED', delivery_confirmed: false, provider: 'outlook', recipient: config.recipient,
       message_id: null, review_ready: 0, queued_pending: contract.needs_research,
       actionable: false, informational_digest: true,
     };
@@ -204,7 +204,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
     const transport = createTransport({ service: 'gmail', auth: { user: config.senderEmail, pass: config.gmailAppPassword } });
     await transport.verify();
     const result = await transport.sendMail({ from: config.senderEmail ? `${config.senderName} <${config.senderEmail}>` : undefined, to: config.recipient, subject: message.subject, text: message.text, html: message.html });
-    return { outcome: 'SENT', provider: 'gmail', recipient: config.recipient, message_id: result.messageId || null, review_ready: contract.review_ready, actionable: true };
+    return { outcome: 'SENT', delivery_status: 'SUBMITTED', delivery_confirmed: false, provider: 'gmail', recipient: config.recipient, message_id: result.messageId || null, review_ready: contract.review_ready, actionable: true };
   }
 
   const OutlookMailService = outlookFactory || require('../../lib/outlook-mail.js');
@@ -212,7 +212,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
   mail.validateConfig();
   if (config.senderEmail) mail.emailMap.default = config.senderEmail;
   await mail.send(config.recipient, message.subject, message.html, message.text, 'default');
-  return { outcome: 'SENT', provider: 'outlook', recipient: config.recipient, message_id: null, review_ready: contract.review_ready, actionable: true };
+  return { outcome: 'SENT', delivery_status: 'SUBMITTED', delivery_confirmed: false, provider: 'outlook', recipient: config.recipient, message_id: null, review_ready: contract.review_ready, actionable: true };
 }
 
 async function main() {
