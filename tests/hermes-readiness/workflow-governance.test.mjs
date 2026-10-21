@@ -15,9 +15,9 @@ test('workflow_dispatch trigger is present', () => {
   assert.match(workflowText, /\bworkflow_dispatch:/);
 });
 
-test('GitHub Actions schedules autonomous weekly collection on Mondays', () => {
-  assert.match(workflowText, /\bschedule:/);
-  assert.match(workflowText, /cron:\s*'17 14 \* \* 1'/);
+test('weekly schedule is owned by the Lenovo primary runtime; GitHub has no cron (no double send)', () => {
+  assert.doesNotMatch(workflowText, /^\s*schedule:/m);
+  assert.match(workflowText, /Lenovo primary runtime/);
 });
 
 test('Node 20 is pinned', () => {
