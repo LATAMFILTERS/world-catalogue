@@ -189,6 +189,9 @@ try {
 
   $critical=@('baseline','collect','seoImport','validate','report'); if($externalResearchEnabled){$critical+=@('sweep','research')}; $complete=@($critical|Where-Object{-not $status[$_]}).Count -eq 0
   $emailAttempted=$false; $status.email=$false
+  # One email per cycle: once the weekly email went out, Recovery only finishes the work; its findings roll into next week's email.
+  $weeklyAlreadySent=Test-Path (Join-Path $StateRoot "weekly-$cycle.sent.json")
+  if($Mode -eq 'Recovery' -and $complete -and $weeklyAlreadySent){ Remove-Item $pendingPath -Force -ErrorAction SilentlyContinue; Write-Log 'PIPELINE COMPLETE; weekly email already sent for this cycle, no second email'; exit 0 }
   if(($Mode -eq 'Weekly') -or (($plan -contains 'email') -and $complete)){ $emailAttempted=$true; $env:HERMES_EMAIL_LIVE='true'; $status.email=Invoke-LimitedProcess 'email' $npm @('run','hermes:email:real') 10; $env:HERMES_EMAIL_LIVE='false' }
   if($Mode -eq 'Weekly' -and $status.email){ @{cycle=$cycle;sentAt=(Get-Date).ToUniversalTime().ToString('o');complete=$complete}|ConvertTo-Json|Set-Content $sentPath -Encoding UTF8 }
   if($complete -and $status.email){ Remove-Item $pendingPath -Force -ErrorAction SilentlyContinue; Write-Log 'PIPELINE COMPLETE'; exit 0 }
