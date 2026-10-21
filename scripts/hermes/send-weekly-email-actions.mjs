@@ -143,18 +143,38 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
   const report = latestWeeklyReport(reportsDir);
   const contract = validateWeeklyEmailContract(report.data);
 
-  if (contract.review_ready === 0 || reviewReadyCount(report.data) === 0) {
+  const hasReviewReady = !(contract.review_ready === 0 || reviewReadyCount(report.data) === 0);
+  // Signed review actions need the Review Center config and the review queue (catalogue DB).
+  // When either is missing (e.g. the Lenovo dry-run runtime), deliver the informational digest
+  // with the candidates instead of failing the whole weekly email.
+  let fallbackReason = null;
+  if (hasReviewReady) {
+    if (!env.HERMES_REVIEW_RUN_ID) env.HERMES_REVIEW_RUN_ID = String(env.GITHUB_RUN_ID || Date.now());
+    const cfg = actionConfig(env);
+    if (!cfg.enabled) fallbackReason = 'REVIEW_ACTIONS_UNAVAILABLE';
+    else {
+      try { await stageCandidates(reviewCandidates(report.data), { cycleId: cfg.runId, env }); }
+      catch (error) { fallbackReason = `REVIEW_STAGING_FAILED: ${error.message}`; }
+    }
+  }
+
+  if (!hasReviewReady || fallbackReason) {
     // Weekly intelligence delivery is mandatory even when all findings are still pending
     // research. Returning success without sending caused the Lenovo scheduler to mark a week
     // as sent while Victor received no HERMES email.
     const digest = buildMessage(report, config);
+    if (fallbackReason) {
+      const notice = 'Hay candidatos listos para revisión, pero los botones de aprobación no están disponibles en esta corrida. Revísalos abajo; ningún cambio se aplica sin tu aprobación explícita.';
+      digest.html = `<p style="background:#FFF12D;padding:10px;border-radius:6px"><strong>${esc(notice)}</strong></p>${digest.html}`;
+      digest.text = `${notice}\n\n${digest.text}`;
+    }
 
     if (!config.live) {
       const preview = path.join(path.resolve(reportsDir), `hermes-weekly-digest-preview-${digest.date}.html`);
       fs.writeFileSync(preview, digest.html, 'utf8');
       return {
         outcome: 'DRY_RUN', preview, provider: config.provider,
-        recipient: config.recipient || null, review_ready: 0,
+        recipient: config.recipient || null, review_ready: contract.review_ready, fallback_reason: fallbackReason,
         queued_pending: contract.needs_research, duplicates: contract.duplicates,
         invalid: contract.invalid, report: report.name, actionable: false,
         informational_digest: true,
@@ -168,7 +188,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
       const result = await transport.sendMail({ from: digest.from, to: digest.to, subject: digest.subject, text: digest.text, html: digest.html });
       return {
         outcome: 'SENT', delivery_status: 'SUBMITTED', delivery_confirmed: false, provider: 'gmail', recipient: config.recipient,
-        message_id: result.messageId || null, review_ready: 0,
+        message_id: result.messageId || null, review_ready: contract.review_ready, fallback_reason: fallbackReason,
         queued_pending: contract.needs_research, actionable: false,
         informational_digest: true,
       };
@@ -181,15 +201,11 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
     await mail.send(config.recipient, digest.subject, digest.html, digest.text, 'default');
     return {
       outcome: 'SENT', delivery_status: 'SUBMITTED', delivery_confirmed: false, provider: 'outlook', recipient: config.recipient,
-      message_id: null, review_ready: 0, queued_pending: contract.needs_research,
+      message_id: null, review_ready: contract.review_ready, fallback_reason: fallbackReason, queued_pending: contract.needs_research,
       actionable: false, informational_digest: true,
     };
   }
 
-  if (!env.HERMES_REVIEW_RUN_ID) env.HERMES_REVIEW_RUN_ID = String(env.GITHUB_RUN_ID || Date.now());
-  const cfg = actionConfig(env);
-  if (!cfg.enabled) throw new Error('HERMES review-ready email cannot be sent without signed Review Center actions.');
-  await stageCandidates(reviewCandidates(report.data), { cycleId: cfg.runId, env });
 
   const message = buildExecutiveMessage(report, env);
 

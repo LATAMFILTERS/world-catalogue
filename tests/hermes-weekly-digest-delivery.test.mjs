@@ -54,3 +54,29 @@ test('weekly HERMES digest is sent even when nothing is review-ready', async()=>
   assert.match(sends[0].html,/HERMES_ENGINE_1/);
   assert.match(sends[0].html,/HERMES_MEDIA_1/);
 });
+
+test('review-ready week still emails the candidates when signed review actions are unavailable', async()=>{
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'hermes-weekly-review-fallback-'));
+  const candidate={entity_code:'HERMES_REAL_OEM_READY_1',source_publisher:'OEM',source_url:'https://example.test/oem',research_resolution:{status:'VERIFIED',finding_title:'Verified OEM finding'}};
+  fs.writeFileSync(path.join(dir,'hermes-weekly-2026-10-26.md'),'# weekly','utf8');
+  fs.writeFileSync(path.join(dir,'hermes-weekly-2026-10-26.json'),JSON.stringify({
+    reporting_period:{start:'2026-10-19',end:'2026-10-26'},
+    totals:{scanned:1,review_ready:1,needs_research:0},
+    groups:{oem_update:[candidate]}, research_pending:[], duplicates:[], invalid:[]
+  }),'utf8');
+  const sends=[];
+  class FakeOutlook { constructor(){ this.emailMap={}; } validateConfig(){} async send(to,subject,html,text){ sends.push({html,text}); } }
+  // Lenovo runtime shape: collection dry-run, no Review Center secret, no catalogue DB.
+  const result=await sendWeeklyActionEmail({
+    reportsDir:dir,
+    env:{HERMES_EMAIL_PROVIDER:'outlook',HERMES_EMAIL_LIVE:'true',HERMES_REVIEW_EMAIL:'vabreu@elimfilters.com',HERMES_COLLECTION_DRY_RUN:'true'},
+    outlookFactory:FakeOutlook
+  });
+  assert.equal(result.outcome,'SENT');
+  assert.equal(result.review_ready,1);
+  assert.equal(result.fallback_reason,'REVIEW_ACTIONS_UNAVAILABLE');
+  assert.equal(sends.length,1);
+  assert.match(sends[0].html,/botones de aprobación no están disponibles/);
+  assert.match(sends[0].html,/HERMES_REAL_OEM_READY_1/);
+  assert.match(sends[0].text,/Verified OEM finding/);
+});
