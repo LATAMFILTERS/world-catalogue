@@ -1,0 +1,31 @@
+{
+  "schema": "hermes.sku_research.v1",
+  "case_id": "volvo-vnx-d13-2027",
+  "source_candidate": "HERMES_REAL_SWEEP_OEM_ENGINES_EQUIPMENT_0123456789AB",
+  "equipment": { "brand": "VOLVO", "model": "VNX", "engine": "D13", "years": "2026-2027" },
+  "researched_by": "Codex research session",
+  "researched_at": "2026-10-28T15:00:00Z",
+  "positions": [
+    {
+      "position": "engine oil full flow",
+      "duty": "HEAVY_DUTY",
+      "prefix": "EL8",
+      "oem": { "manufacturer": "VOLVO", "code": "21707134", "evidence_url": "https://oem-parts-catalogue.example.com/21707134", "evidence_sha256": "0000000000000000000000000000000000000000000000000000000000000000" },
+      "donaldson": { "code": "P550000", "evidence_url": "https://shop.donaldson.com/store/en-us/product/P550000", "evidence_sha256": "1111111111111111111111111111111111111111111111111111111111111111" }
+    },
+    {
+      "position": "fuel primary water separator",
+      "duty": "HEAVY_DUTY",
+      "prefix": "ES9",
+      "oem": { "manufacturer": "VOLVO", "code": "23658092", "evidence_url": "https://oem-parts-catalogue.example.com/23658092", "evidence_sha256": "2222222222222222222222222222222222222222222222222222222222222222" },
+      "donaldson_absence_verified": true,
+      "fleetguard": { "code": "FS20000", "evidence_url": "https://www.fleetguard.com/s/searchResults?propertyVal=FS20000", "evidence_sha256": "3333333333333333333333333333333333333333333333333333333333333333" }
+    }
+  ],
+  "_notes": [
+    "One file per equipment; drop it in <HERMES_STATE_ROOT>/sku-research/. HERMES proposes SKUs in the Thursday review email.",
+    "duty: HEAVY_DUTY or LIGHT_DUTY. LIGHT_DUTY also needs origin EUROPEAN (MANN-FILTER base, key 'mann') or NON_EUROPEAN (FRAM base, key 'fram').",
+    "Every code needs an https evidence_url and the sha256 of the evidence captured. A missing reference is NOT proof of absence: set donaldson_absence_verified / fleetguard_absence_verified / primary_absence_verified only with evidence.",
+    "ET9 (turbines, fuel processors) and kits are out of scope: they follow operator rulings and are handled manually."
+  ]
+}

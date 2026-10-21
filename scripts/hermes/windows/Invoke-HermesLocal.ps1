@@ -137,10 +137,14 @@ function Set-ReviewEnvironment($vault) {
 function Invoke-ReviewDecisions {
   Set-ReviewEnvironment (Import-Clixml $VaultPath)
   if (-not $env:CATALOG_DATABASE_URL) { Write-Log 'SKIP review decisions: CATALOG_DATABASE_URL missing from vault'; return }
+  $env:HERMES_STATE_ROOT = $StateRoot
   $null = Invoke-LimitedProcess 'review-decisions' $node @('scripts/hermes/apply-review-decisions-from-db.mjs') 10
   # Approved NEW knowledge -> Knowledge Center PR; Victor gets an email with the link and merges it.
-  $env:HERMES_STATE_ROOT = $StateRoot
   $null = Invoke-LimitedProcess 'kc-publish' $node @('scripts/hermes/publish-approved-knowledge.mjs','--live') 15
+  # Thursday SKU review email: the script sends only Thu >= 06:00 (Fri-Sun catch-up), once per ISO week.
+  $env:HERMES_EMAIL_LIVE = 'true'
+  $null = Invoke-LimitedProcess 'sku-review' $node @('scripts/hermes/send-sku-review-email.mjs') 10
+  $env:HERMES_EMAIL_LIVE = 'false'
 }
 
 function Stop-RecoveryAtFailure([string]$Stage) {

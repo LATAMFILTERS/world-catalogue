@@ -87,6 +87,19 @@ export function applyDecision(row) {
 
 const { needsOemResearch, queueApprovedResearch } = require('./approved-intelligence-to-catalogue.js');
 
+// Thursday SKU authorizations: recorded only. Creating the SKU stays in the governed catalogue process.
+export function applySkuDecision(row, { stateRoot = process.env.HERMES_STATE_ROOT || 'hermes/state' } = {}) {
+  const proposal = row.candidate || {};
+  const decision = String(row.decision || '').toLowerCase();
+  if (proposal.entity_code !== row.candidate_code || proposal.approval_required !== true) throw new Error(`review snapshot mismatch for ${row.candidate_code}`);
+  if (decision === 'approve' && proposal.state !== 'READY_FOR_AUTHORIZATION') throw new Error(`${row.candidate_code} is ${proposal.state}, not authorizable`);
+  if (!['approve', 'reject'].includes(decision)) throw new Error(`unsupported SKU decision ${decision}`);
+  const record = { ...proposal, decision: decision === 'approve' ? 'AUTHORIZED' : 'REJECTED', decided_by: row.decided_by || 'Victor Abreu',
+    decided_at: row.decided_at || new Date().toISOString(), reason: String(row.decision_reason || '').trim() || null, catalogue_write: false };
+  atomic(path.resolve(stateRoot, 'sku-decisions', `${row.candidate_code}.json`), record);
+  return { candidate: row.candidate_code, decision, sku: proposal.proposed_sku, outcome: 'APPLIED' };
+}
+
 // ACEPTAR on an OEM/equipment finding also opens complete OEM research (option B).
 // If that request cannot be delivered, the decision stays unapplied and is retried next cycle;
 // re-applying is idempotent (same files, deduplicated research key).
@@ -94,6 +107,7 @@ export async function processDecisions({ fetch = fetchDecisions, mark = markAppl
   const results = [];
   for (const row of await fetch()) {
     try {
+      if (String(row.candidate_code).startsWith('HERMES_SKU_')) { const done = applySkuDecision(row); await mark(row.candidate_code); results.push(done); continue; }
       const result = applyDecision(row);
       if (result.decision === 'approve' && needsOemResearch(result.approved)) {
         const out = await research(result.approved);
