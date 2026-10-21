@@ -122,7 +122,7 @@ function Invoke-OperationalCertification {
 # Review Center actions + decision intake: catalogue DB (review queue), signing secret, and the local
 # knowledge-stack API used to open OEM research after an ACEPTAR. Missing pieces degrade to no buttons / retry later.
 function Set-ReviewEnvironment($vault) {
-  foreach ($name in 'CATALOG_DATABASE_URL','DATABASE_URL','HERMES_REVIEW_TOKEN_SECRET') {
+  foreach ($name in 'CATALOG_DATABASE_URL','DATABASE_URL','HERMES_REVIEW_TOKEN_SECRET','AZURE_CLIENT_ID','AZURE_TENANT_ID','AZURE_CLIENT_SECRET','HERMES_SENDER_EMAIL','HERMES_REVIEW_EMAIL') {
     if ($vault.PSObject.Properties[$name]) { Set-Item "Env:$name" (Convert-SecureValue $vault.$name) }
   }
   $env:HERMES_REVIEW_BASE_URL = 'https://part-search.elimfilters.com/hermes/review'
@@ -138,6 +138,9 @@ function Invoke-ReviewDecisions {
   Set-ReviewEnvironment (Import-Clixml $VaultPath)
   if (-not $env:CATALOG_DATABASE_URL) { Write-Log 'SKIP review decisions: CATALOG_DATABASE_URL missing from vault'; return }
   $null = Invoke-LimitedProcess 'review-decisions' $node @('scripts/hermes/apply-review-decisions-from-db.mjs') 10
+  # Approved NEW knowledge -> Knowledge Center PR; Victor gets an email with the link and merges it.
+  $env:HERMES_STATE_ROOT = $StateRoot
+  $null = Invoke-LimitedProcess 'kc-publish' $node @('scripts/hermes/publish-approved-knowledge.mjs','--live') 15
 }
 
 function Stop-RecoveryAtFailure([string]$Stage) {
