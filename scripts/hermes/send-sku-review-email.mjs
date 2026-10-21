@@ -13,6 +13,9 @@ import { pathToFileURL } from 'node:url';
 import { resolveMailConfig, deliverMessage } from './send-weekly-email.mjs';
 import { actionConfig } from './send-weekly-email-actions.mjs';
 import { runSkuProposals, indexCatalogue, readCatalogueRows } from './sku-proposals.mjs';
+import { isoWeek, readLedger, caseIdFor } from './oem-research-runner.mjs';
+
+export { isoWeek };
 
 const require = createRequire(import.meta.url);
 const { buildReviewUrl } = require('../../lib/hermes-review-token');
@@ -21,13 +24,6 @@ const { listPendingKnowledgeGaps } = require('../../lib/knowledge-governance/kno
 
 const esc = (v) => String(v ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 
-export function isoWeek(d) {
-  const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-  const day = t.getUTCDay() || 7;
-  t.setUTCDate(t.getUTCDate() + 4 - day);
-  const week = Math.ceil(((t - Date.UTC(t.getUTCFullYear(), 0, 1)) / 86400000 + 1) / 7);
-  return `${t.getUTCFullYear()}-W${String(week).padStart(2, '0')}`;
-}
 
 /** Thursday from 06:00 local (Recovery runs 06:17), or Fri/Sat/Sun as catch-up; once per ISO week. */
 export function shouldSend(now, sentWeek) {
@@ -105,7 +101,11 @@ export async function sendSkuReviewEmail({ now = new Date(), env = process.env, 
     .map((f) => { try { return JSON.parse(fs.readFileSync(path.join(decisionsDir, f), 'utf8')); } catch { return null; } })
     .filter((d) => d?.decision === 'AUTHORIZED' && !(index && index.occupied.has(String(d.proposed_sku).toUpperCase())));
   const gaps = await listGaps({ limit: 100 });
-  const openResearch = (gaps.gaps || []).filter((g) => g.channel === 'hermes_weekly_approved');
+  // Cases the Tuesday/Wednesday research already turned into a file leave the queue; failures show why.
+  const ledger = readLedger(stateRoot).cases || {};
+  const openResearch = (gaps.gaps || []).filter((g) => g.channel === 'hermes_weekly_approved')
+    .map((g) => { const c = ledger[caseIdFor(g.request_id)]; return c ? { ...g, status: `${c.status} (intento ${c.attempts}): ${c.detail || ''}`.slice(0, 200) } : g; })
+    .filter((g) => !String(g.status).startsWith('DONE'));
 
   if (!env.HERMES_REVIEW_RUN_ID) env.HERMES_REVIEW_RUN_ID = String(Math.floor(now.getTime() / 1000));
   let cfg = actionConfig(env);

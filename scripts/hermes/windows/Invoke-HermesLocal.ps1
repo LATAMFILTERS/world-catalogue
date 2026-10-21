@@ -141,6 +141,8 @@ function Invoke-ReviewDecisions {
   $null = Invoke-LimitedProcess 'review-decisions' $node @('scripts/hermes/apply-review-decisions-from-db.mjs') 10
   # Approved NEW knowledge -> Knowledge Center PR; Victor gets an email with the link and merges it.
   $null = Invoke-LimitedProcess 'kc-publish' $node @('scripts/hermes/publish-approved-knowledge.mjs','--live') 15
+  # Tue/Wed OEM research: headless Claude Code + real Chrome (VPN) write sku-research files; max 2 per run, 5 per week.
+  $null = Invoke-LimitedProcess 'oem-research' $node @('scripts/hermes/oem-research-runner.mjs') 130
   # Thursday SKU review email: the script sends only Thu >= 06:00 (Fri-Sun catch-up), once per ISO week.
   $env:HERMES_EMAIL_LIVE = 'true'
   $null = Invoke-LimitedProcess 'sku-review' $node @('scripts/hermes/send-sku-review-email.mjs') 10
