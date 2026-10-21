@@ -61,7 +61,21 @@ function emptyReason(summary) {
   return `Barrido de industria: ${done} de ${total} lotes completados${cause ? ` (${cause})` : ''}.`;
 }
 
-export function buildIndustryDigest(candidates, { now = new Date(), sweepSummaryPath = path.resolve('hermes/industry-sweep/last-run.json') } = {}) {
+// Headlines the local model had no capacity to judge: links only, grouped by source, for a human to skim.
+function readLinkAnnex(file, start, now) {
+  const data = readSweepSummary(file);
+  const groups = new Map(); const urls = new Set();
+  for (const i of Array.isArray(data?.items) ? data.items : []) {
+    const at = Date.parse(i?.published_at || '');
+    if (Number.isNaN(at) || at < start.getTime() || at > now.getTime() || !/^https:\/\//.test(i.url || '') || urls.has(i.url)) continue;
+    urls.add(i.url);
+    if (!groups.has(i.source)) groups.set(i.source, []);
+    groups.get(i.source).push({ title: decodeEntities(i.headline), date: new Date(at).toISOString().slice(0, 10), url: i.url });
+  }
+  return [...groups].map(([source, items]) => ({ source, items: items.sort((a, b) => b.date.localeCompare(a.date)) }));
+}
+
+export function buildIndustryDigest(candidates, { now = new Date(), sweepSummaryPath = path.resolve('hermes/industry-sweep/last-run.json'), unreviewedPath = path.resolve(process.env.HERMES_STATE_ROOT || 'hermes/state', 'newsroom-unreviewed.json') } = {}) {
   const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
   const start = new Date(end.getTime() - 7 * DAY_MS);
   const items = []; const reviewCandidates = [];
@@ -115,6 +129,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
     window: { start: start.toISOString().slice(0, 10), end: new Date(end.getTime() - DAY_MS).toISOString().slice(0, 10) },
     items,
     review_candidates: reviewCandidates,
+    link_annex: readLinkAnnex(unreviewedPath, start, now),
     excluded: { no_published_date: noDate, outside_window: outOfWindow, invalid },
     empty_reason: items.length ? null : emptyReason(readSweepSummary(sweepSummaryPath))
   };
@@ -124,10 +139,31 @@ const esc = (v) => String(v ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt
 const safeHref = (u) => { try { return ['http:', 'https:'].includes(new URL(u).protocol) ? u : null; } catch { return null; } };
 const en = (lang) => (lang === 'en' ? ' (EN)' : '');
 
+const ANNEX_PER_SOURCE = 30;
+
+function renderLinkAnnex(groups = []) {
+  if (!groups.length) return { text: '', html: '' };
+  const total = groups.reduce((n, g) => n + g.items.length, 0);
+  const intro = `${total} titulares que HERMES no alcanzó a resumir esta semana (sin revisar, solo enlaces).`;
+  const text = ['', 'ANEXO: ENLACES SIN REVISAR', intro];
+  const html = [`<h3>Anexo: enlaces sin revisar</h3><p style="font-size:12px;color:#666">${esc(intro)}</p>`];
+  for (const g of groups) {
+    const shown = g.items.slice(0, ANNEX_PER_SOURCE); const more = g.items.length - shown.length;
+    text.push('', `${g.source} (${g.items.length})`, ...shown.map((i) => `- ${i.date} ${i.title} ${i.url}`), ...(more > 0 ? [`- +${more} más`] : []));
+    html.push(`<h4 style="margin:12px 0 4px">${esc(g.source)} (${g.items.length})</h4><ul style="font-size:13px;margin:0;padding-left:18px">${shown.map((i) => `<li>${esc(i.date)} · <a href="${esc(i.url)}">${esc(i.title)}</a></li>`).join('')}${more > 0 ? `<li>+${more} más</li>` : ''}</ul>`);
+  }
+  return { text: text.join('\n'), html: html.join('\n') };
+}
+
 export function renderIndustryDigest(digest, { actionsFor = null } = {}) {
+  if (!digest) return { text: '', html: '' };
+  const main = renderDigestBody(digest, actionsFor); const annex = renderLinkAnnex(digest.link_annex);
+  return { text: main.text + annex.text, html: main.html + annex.html };
+}
+
+function renderDigestBody(digest, actionsFor) {
   const title = 'INTELIGENCIA DE INDUSTRIA DE LA SEMANA';
   const note = 'Sección informativa: no pasa por revisión ni modifica catálogo, Knowledge Center, Obsidian ni PostgreSQL.';
-  if (!digest) return { text: '', html: '' };
   const period = `Período: ${digest.window.start} a ${digest.window.end}`;
   if (!digest.items.length) {
     const msg = `Sin novedades de industria esta semana. ${digest.empty_reason || ''}`.trim();
