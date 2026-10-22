@@ -1,0 +1,297 @@
+{
+  "slug": "diesel-fuel-filtration",
+  "faqs": [
+    {
+      "question": "¿Cuáles son los requisitos de limpieza de partículas del combustible diésel que entra a una bomba common rail?",
+      "answer": "Las bombas de combustible de alta presión common rail (HPCR) requieren una limpieza del combustible de código ISO 4406 17/15/12 o mejor a la entrada de la bomba (según la documentación de servicio del sistema Bosch Common Rail y los requisitos de calificación de filtros de combustible). La holgura émbolo-cilindro de la bomba es de 1–3 µm; las partículas mayores a ese tamaño rayan las superficies de contacto de la bomba. Los métodos de ensayo de filtros de combustible y los requisitos de aplicación deben seleccionarse para el sistema aprobado: el nombre de la tecnología por sí solo no implica una clasificación en micras, eficiencia, capacidad o certificación universal. El medio de partículas SYNTAPORE está diseñado para la función de filtración primaria y secundaria en HPCR."
+    },
+    {
+      "question": "¿Qué eficiencia de separación de agua se exige a los separadores de agua y combustible diésel?",
+      "answer": "La eficiencia de separación de agua de los separadores de agua y combustible diésel se mide según ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) o SAE J1488 (Emulsified Water/Fuel Separation Test). La eficiencia de separación requerida en aplicaciones HPCR depende del elemento y la aplicación aprobados; el medio coalescente HYDROCORE está clasificado para el desempeño de separación requerido en estas condiciones de ensayo. El ensayo ISO 4020 usa una emulsión de agua en combustible con una distribución definida de tamaños de gota y mide el contenido de agua aguas abajo por titulación Karl Fischer. Los elementos que no alcanzan la clasificación requerida permiten que el agua libre se acumule a la entrada de la bomba common rail: el principal mecanismo de corrosión de la aguja del inyector y de propagación de la contaminación microbiana en el sistema de combustible."
+    },
+    {
+      "question": "¿Qué efecto tiene la formación de cristales de cera a baja temperatura en el desempeño del filtro de combustible?",
+      "answer": "Los cristales de cera del diésel se forman cuando la temperatura del combustible cae por debajo del punto de nube, normalmente de +2°C a +15°C en diésel de verano B0 y más alto en mezclas con biodiésel. Los cristales de cera (cadenas de parafina que precipitan como aglomerados sólidos) se acumulan en la superficie del medio filtrante, bloquean los poros y aumentan la restricción. Por debajo del punto de obstrucción de filtro en frío (CFPP, según EN 116), la restricción aumenta rápidamente y puede dejar al motor sin combustible en 30–60 minutos de exposición al frío. Los sistemas de calefacción del filtro (precalentadores eléctricos o intercambiadores de calor en el circuito de combustible) mantienen la temperatura del filtro por encima del CFPP. EN 590 especifica diésel de invierno con CFPP de hasta −44°C para mercados árticos, pero incluso un combustible que cumple la norma puede formar cristales de cera por debajo de su CFPP especificado. Los elementos de filtro con medio resistente a la cera (fibra sintética hidrofóbica) resisten mejor el bloqueo prematuro que la celulosa, que absorbe humedad y acelera la formación de cristales de hielo."
+    },
+    {
+      "question": "¿Cómo se dimensionan los filtros de combustible diésel en las etapas de filtración primaria y secundaria?",
+      "answer": "Los sistemas de filtración de combustible diésel usan dos etapas: primaria (remoción de contaminación gruesa, antes de la bomba) y secundaria (filtración fina, después de la bomba de transferencia y antes de los inyectores). Los filtros primarios tienen una clasificación de 30–100 µm para eliminar óxido, cascarilla y partículas gruesas de los tanques de almacenamiento, y protegen la bomba de transferencia del daño por partículas. Los filtros secundarios tienen una clasificación de 2–10 µm absolutos para lograr la limpieza que exige el HPCR (ISO 17/15/12 o mejor). El dimensionamiento del elemento se basa en el caudal de combustible nominal a la potencia máxima del motor (aproximadamente 5 veces el consumo del motor, para considerar el caudal de retorno de la bomba de alta presión), con una restricción limpia objetivo de 0.1–0.3 bar. Los intervalos de reemplazo suelen ser de 500 horas para los elementos secundarios y 1,000 horas para los primarios, o al primer aviso del indicador de restricción en entornos con suministro de combustible muy contaminado."
+    },
+    {
+      "question": "¿Qué materiales son compatibles con las mezclas de biodiésel en la construcción de filtros de combustible?",
+      "answer": "Las mezclas de biodiésel (FAME B5–B100) son químicamente más agresivas que el diésel mineral por su mayor polaridad y afinidad con el agua. Materiales compatibles: medio filtrante, poliéster o polipropileno sintéticos (la celulosa se degrada en B20 o superior en 500–1,000 horas); unión de tapas, epoxi o termosellado (el plastisol se degrada en FAME por encima de 40°C); sellos y juntas, FKM (Viton, compatible con B20 o más) o NBR con estabilizantes de amina (aceptable con reservas solo hasta B20); carcasa, polipropileno, poliamida (PA66) o acero inoxidable (la descincificación de la fundición de zinc se acelera con combinaciones de biodiésel y agua). EN 590 limita el FAME a B7 en el diésel de carretera europeo, pero en uso fuera de carretera y en agricultura puede usarse B20 o más. La compatibilidad del elemento debe verificarse con la materia prima específica del FAME (colza, soya, palma), porque la composición de ácidos grasos afecta la velocidad de ataque a los materiales."
+    },
+    {
+      "question": "¿Qué causa la derivación (bypass) del filtro de combustible diésel durante los arranques con frío?",
+      "answer": "La derivación del filtro durante los arranques con frío ocurre cuando la baja temperatura eleva la viscosidad del diésel: un diésel mineral ISO VG 5–8 a −20°C tiene una viscosidad cinemática 5–20 veces mayor que a temperatura de operación (40°C). Esa alta viscosidad genera una restricción en el elemento filtrante mucho mayor que en las condiciones nominales de operación. Si la restricción supera la presión de apertura de la válvula de derivación (normalmente 0.5–2.5 bar en filtros de combustible diésel), el combustible sin filtrar pasa directamente a la bomba de alta presión y arrastra partículas que antes retenía el medio filtrante. Las derivaciones de 30–60 segundos durante los arranques en frío son un modo de falla reconocido de los sistemas HPCR en climas fríos: durante estos eventos, el desgaste de los inyectores es de 10 a 50 veces el desgaste normal con combustible filtrado. Las aplicaciones en clima frío requieren precalentadores de filtro o calentamiento del circuito de combustible antes de arrancar con temperaturas inferiores a −10°C."
+    },
+    {
+      "question": "¿Qué importancia tiene la lubricidad del combustible y cómo la afecta la filtración?",
+      "answer": "La lubricidad del combustible describe la capacidad del diésel de dar lubricación hidrodinámica en las interfaces de contacto metal-metal de la bomba de combustible y los inyectores. El diésel de ultra bajo azufre (ULSD, <15 ppm de azufre) tiene menos lubricidad natural que los antiguos combustibles de alto azufre, porque los procesos de refinación que eliminan el azufre también eliminan compuestos polares que aportan lubricidad. Las bombas HPCR que trabajan con combustible por debajo de la lubricidad mínima (diámetro de huella HFRR >520 µm a 60°C según ISO 12156-1) muestran un desgaste acelerado del émbolo. La filtración no afecta directamente la lubricidad, pero la emulsión por contaminación con agua (>200 ppm Karl Fischer) rompe la película lubricante en las interfaces émbolo-cilindro incluso en combustibles que cumplen la especificación de lubricidad. El tratamiento con aditivos de lubricidad (adición de FAME a B1–B2 o mejoradores de lubricidad sintéticos) restablece la lubricidad HFRR mínima del ULSD sin afectar el desempeño del filtro de combustible."
+    },
+    {
+      "question": "¿En qué se diferencia el monitoreo de la condición del elemento con indicador de restricción entre aplicaciones de combustible e hidráulicas?",
+      "answer": "Los indicadores de restricción de los filtros de combustible diésel deben considerar la variación de viscosidad con la temperatura del combustible: el combustible frío (−20°C) genera una restricción 5–10 veces mayor que el combustible caliente (40°C) con la misma carga de partículas. Los indicadores de restricción con compensación de temperatura, que usan un resorte bimetálico para ajustar el umbral de alarma en sentido inverso a la temperatura, evitan falsas alarmas durante los arranques en frío y aseguran que la alarma refleje la carga real del elemento y no efectos de viscosidad. Los indicadores de restricción de los sistemas hidráulicos no compensan la temperatura, porque estos sistemas operan en un rango de temperatura más estrecho y estable (30–70°C). Las alarmas de restricción del filtro de combustible deben cruzarse con la temperatura del combustible al momento de activarse, para distinguir las alarmas transitorias por temperatura (que se reinician cuando el combustible se calienta) de las alarmas reales por carga del elemento (que siguen activas después del calentamiento)."
+    },
+    {
+      "question": "¿Cuál es el intervalo de servicio para drenar el vaso del separador de agua y combustible en aplicaciones diésel marinas?",
+      "answer": "Los intervalos de drenaje del vaso del separador de agua en sistemas de combustible diésel marinos dependen del estado del mar, la calidad del combustible suministrado y la ventilación de los tanques. Intervalos típicos: (1) Después de cada carga de combustible: las nuevas entregas pueden contener agua libre; drene de inmediato tras la decantación (1 hora por metro de profundidad del tanque). (2) Diariamente en climas tropicales de alta humedad: la condensación se acumula durante la noche. (3) Después de mar gruesa: el movimiento del combustible por el oleaje vuelve a poner en suspensión el agua y los sedimentos decantados, lo que aumenta el agua libre a la entrada del filtro. El vaso del separador HYDROCORE debe inspeccionarse visualmente en cada revisión previa al arranque del motor: una capa de agua visible por encima del punto de activación del drenaje inferior exige drenarla de inmediato y registrarlo en el libro de la sala de máquinas. Según la clase de buque y el sistema de descarga del separador, pueden aplicarse los requisitos del Anexo I de MARPOL de la OMI sobre contenido de aceite del agua drenada."
+    },
+    {
+      "question": "¿Cómo se valida el desempeño del filtro de combustible en sistemas common rail después de reemplazar el elemento?",
+      "answer": "Después de reemplazar el elemento del filtro de combustible en sistemas HPCR, la validación requiere: (1) Purgar el aire del sistema de combustible con la bomba de cebado o la bomba eléctrica de combustible (algunos diseños HPCR se purgan solos y otros requieren purga manual, según indique el manual de taller del fabricante). El aire sin purgar en el circuito impide que la presión del common rail alcance el umbral de inyección (normalmente 800–1,500 bar para arrancar el sistema). (2) Dar arranque al motor durante 15 segundos como máximo; si no arranca, investigar la integridad del circuito de combustible. (3) Revisar fugas de combustible en el montaje de la carcasa del filtro y en todas las conexiones de líneas que se intervinieron. (4) En sistemas instrumentados, verificar que la presión del riel alcance el valor objetivo dentro de los 5 segundos desde el inicio del arranque. (5) Tras 30 minutos de operación a temperatura normal, inspeccionar visualmente la carcasa del filtro en busca de filtraciones en la junta o en la unión del vaso. Cualquier filtración exige detener el sistema de inmediato e investigar."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4020:2001, Road Vehicles — Fuel Filters for Diesel Engines — Test Methods",
+      "relevance": "Métodos de ensayo de desempeño de filtros de combustible diésel, incluidos caída de presión, eficiencia de separación de agua y compatibilidad del medio."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12156-1:2018, Diesel Fuel — Assessment of Lubricity Using the High-Frequency Reciprocating Rig (HFRR)",
+      "relevance": "Norma de ensayo de lubricidad citada en las especificaciones de combustible diésel para verificar la protección de la bomba y los inyectores en aplicaciones con ULSD."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods",
+      "relevance": "Especificación europea de diésel que define los requisitos de CFPP, contenido de agua, contenido de FAME y lubricidad HFRR del combustible comercial."
+    },
+    {
+      "category": "specification",
+      "citation": "Robert Bosch GmbH, Common Rail System for Passenger Cars Maintenance Guide, Technical Documentation",
+      "relevance": "Documentación del fabricante que define los requisitos de limpieza del combustible, la especificación del filtro y los intervalos de reemplazo de los sistemas de inyección HPCR Bosch."
+    }
+  ],
+  "title": "Filtración de combustible diésel",
+  "subtitle": "Diseño del sistema de tres etapas, ISO 4020 y requisitos de limpieza HPCR",
+  "metaDescription": "Referencia de ingeniería para el diseño de sistemas de filtración de combustible diésel: arquitectura de tres etapas con prefiltro, filtro primario y filtro secundario; métodos de ensayo ISO 4020; requisitos de limpieza HPCR; separación de agua; e intervalos de servicio por condición.",
+  "category": "Ingeniería",
+  "readTime": "12 min",
+  "intro": "La filtración de combustible diésel protege los sistemas de inyección de la doble amenaza de las partículas y el agua libre. Los sistemas modernos de inyección de alta presión common rail (HPCR), que operan a 1,600–2,500 bar con holguras de tobera de 1–3 µm, requieren una filtración de combustible de varias etapas diseñada para eficiencias de remoción de partículas y tasas de separación de agua especificadas. La arquitectura de tres etapas (prefiltro grueso, filtro primario de partículas y separador de agua coalescente/filtro secundario) ataca cada modo de contaminación con la tecnología adecuada en el punto adecuado del circuito de combustible.",
+  "sections": [
+    {
+      "heading": "Arquitectura de filtración de combustible en tres etapas",
+      "body": "Un sistema completo de filtración de combustible diésel consta de tres etapas instaladas en serie en la línea de suministro, aguas arriba de la bomba de inyección. Etapa 1, prefiltro grueso (del tanque a la bomba de transferencia): elimina partículas ≥30–100 µm y separa el agua libre acumulada en el tanque. Suele ser un separador tipo vaso alimentado por gravedad con una malla de 30 µm. Protege la bomba de transferencia del desgaste abrasivo por partículas gruesas. Etapa 2, filtro primario de combustible (de la bomba de transferencia a la bomba de inyección): elimina partículas ≥5–10 µm y el agua emulsionada. Es la principal barrera contra partículas y la principal etapa de coalescencia del agua. Clasificación β₅(c) ≥ 20–200 según la sensibilidad del sistema de inyección. Aloja el sensor de agua en el combustible (WIF) y la válvula de drenaje manual. Etapa 3, filtro secundario (final) de combustible (de la bomba de inyección al riel): elimina partículas ≥2–5 µm en aplicaciones HPCR. No existe en todos los sistemas: se agrega en sistemas de inyección que operan por encima de 1,600 bar, donde la limpieza de la etapa final es crítica. Clasificación: β₂(c) ≥ 75 o mejor. Contenido total de agua a la entrada del riel en HPCR: ≤50 ppm disuelta; cero agua libre.",
+      "callout": [
+        {
+          "label": "Tamaño de corte de la etapa 1 (prefiltro)",
+          "value": "Malla de 30–100 µm"
+        },
+        {
+          "label": "Clasificación de la etapa 2 (primaria)",
+          "value": "β₅(c) ≥ 20–200 (según la aplicación)"
+        },
+        {
+          "label": "Etapa 3 (final) para HPCR",
+          "value": "β₂(c) ≥ 75 (sistemas ≥1,600 bar)"
+        }
+      ]
+    },
+    {
+      "heading": "Métodos de ensayo de filtros de combustible ISO 4020",
+      "body": "ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines — Test Methods) es la norma principal para evaluar el desempeño de los filtros de combustible diésel en vehículos de carretera. La norma cubre: eficiencia de filtración (métodos gravimétrico y por conteo de partículas), restricción inicial (caída de presión al caudal nominal), restricción final, presión de estallido (mínimo 6 veces la presión máxima de trabajo en carcasas), compatibilidad con tipos de combustible diésel, restricción en arranque en frío (restricción a −20°C para confirmar el flujo durante el arranque en frío) y eficiencia de separación de agua. La separación de agua se mide como el porcentaje del volumen de agua inyectada que se separa hacia el vaso de agua, normalmente a caudal fijo y con una distribución controlada del tamaño de gota del agua inyectada. Las condiciones de ensayo de ISO 4020 usan diésel estándar (similar a la especificación EN 590) a caudales y temperaturas especificados. Informe de eficiencia: gravimétrica (porcentaje de captura de masa total) para especificaciones de filtros primarios; por conteo de partículas para filtros secundarios de grado HPCR. ISO 19438 (Diesel Fuel and Petrol Filters for Internal Combustion Engines — Filtration Characteristics) amplía ISO 4020 con la medición de eficiencia fraccional en tamaños de partícula discretos, equivalente al enfoque de ISO 5011 para filtros de aire.",
+      "callout": [
+        {
+          "label": "Presión mínima de estallido de la carcasa",
+          "value": "6× la presión máxima de trabajo"
+        },
+        {
+          "label": "Temperatura del ensayo de restricción en frío",
+          "value": "−20°C"
+        },
+        {
+          "label": "Medición de la separación de agua",
+          "value": "% del agua inyectada recuperada"
+        }
+      ]
+    },
+    {
+      "heading": "Requisitos de limpieza del sistema de inyección HPCR",
+      "body": "Los fabricantes de sistemas de inyección de alta presión common rail especifican la contaminación máxima por partículas y el contenido de agua a la entrada del inyector. Objetivos de limpieza representativos según datos de los fabricantes: partículas ≥4 µm: ≤500/mL; partículas ≥6 µm: ≤50/mL; partículas ≥14 µm: ≤5/mL, equivalente aproximadamente a ISO 15/12/9. Contenido de agua en el inyector: ≤50 ppm disuelta. Algunos fabricantes especifican límites aún más estrictos para inyectores piezoeléctricos (≤200 partículas ≥4 µm/mL). Estos objetivos los fijan la holgura de guía de la aguja de la tobera (1–3 µm) y la geometría del elemento de accionamiento por solenoide o piezoeléctrico. Las partículas del tamaño de la holgura crítica (1–5 µm) que entran en la tobera a 2,000 bar no simplemente la atraviesan: son impulsadas a gran velocidad contra las superficies metálicas, causan desgaste erosivo y alteran la sincronización de la inyección. Los diagnósticos de las ECU modernas detectan cambios del 2–5% en el caudal de la tobera como deriva de la corrección de inyección; los cambios superiores al 10% activan un código de falla. El agua en la tobera a alta presión causa microdesprendimientos en las superficies de tobera con recubrimiento de carburo por el impacto hidráulico en los bordes de las picaduras.",
+      "callout": [
+        {
+          "label": "Objetivo HPCR (fabricante típico)",
+          "value": "ISO 15/12/9 a la entrada del inyector"
+        },
+        {
+          "label": "Límite de agua en el inyector",
+          "value": "≤50 ppm disuelta"
+        },
+        {
+          "label": "Alerta por deriva del caudal de la tobera",
+          "value": "±10% activa un código de falla de la ECU"
+        }
+      ]
+    },
+    {
+      "heading": "Elementos coalescentes de separación de agua",
+      "body": "La función coalescente del filtro primario de combustible la cumple una capa de fibra de vidrio hidrofílica o de medio sintético tratado que hace que las gotas de agua emulsionada migren a la superficie de las fibras y se fusionen. La eficiencia de coalescencia depende de la velocidad de cara (a menor velocidad, más tiempo de contacto; la velocidad de cara efectiva máxima suele ser de 0.05–0.10 m/s), de la distribución de tamaños de gota del agua emulsionada entrante (las gotas más pequeñas son más difíciles de coalescer) y de la energía superficial del medio (un medio hidrofílico atrae las gotas de agua con preferencia sobre el combustible). Tras la coalescencia, las gotas de agua de 100–500 µm decantan por gravedad al vaso de agua transparente en la base del filtro. Los sensores de agua en el combustible, de tipo capacitivo (cambio de constante dieléctrica) u óptico (cambio de refractividad), montados en el vaso de agua, activan un aviso en la cabina cuando el agua libre acumulada supera aproximadamente 50 mL. La mayoría de los fabricantes recomiendan inspeccionar y drenar el vaso de agua a diario en entornos de operación con alta humedad. En mezclas con biodiésel (B7, B20), la separación de agua es más difícil porque el biodiésel tiene más afinidad por el agua y la emulsión es más estable.",
+      "callout": [
+        {
+          "label": "Límite de velocidad de cara para la coalescencia",
+          "value": "≤0.10 m/s"
+        },
+        {
+          "label": "Tamaño de gota coalescida (decantada)",
+          "value": "100–500 µm"
+        },
+        {
+          "label": "Volumen de activación del sensor WIF",
+          "value": "≈50 mL de agua libre"
+        }
+      ]
+    },
+    {
+      "heading": "Desafíos de la filtración de combustible en clima frío",
+      "body": "La cristalización de cera parafínica en el diésel a temperaturas por debajo del punto de obstrucción de filtro en frío (CFPP) bloquea rápidamente los elementos del filtro primario: un elemento en buen estado puede quedar totalmente restringido en minutos con frío extremo. EN 590 especifica límites de CFPP por zona climática: Clase F (invierno ártico): CFPP ≤ −44°C; Clase E: ≤ −34°C; Clase D: ≤ −26°C; Clase B (invierno templado): ≤ −20°C. Las carcasas de filtro calefaccionadas (con refrigerante del motor o calentadores eléctricos) mantienen el combustible por encima del CFPP al calentarlo antes de que toque el medio filtrante, lo que evita la precipitación de cera en el filtro. Los calentadores de carcasa vienen de fábrica en equipos árticos y subárticos; existen kits de reacondicionamiento para equipos de clima templado que enfrentan episodios de frío severo. El combustible con cera modificada (diésel de invierno) contiene depresores del punto de fluidez y modificadores de cristales de cera que bajan el CFPP sin necesidad de filtración calefaccionada: verifique que el grado del combustible sea adecuado para la temperatura ambiente antes de atribuir al elemento filtrante la obstrucción en clima frío.",
+      "callout": [
+        {
+          "label": "CFPP (grado ártico, EN 590 Clase F)",
+          "value": "≤ −44°C"
+        },
+        {
+          "label": "CFPP (invierno templado, Clase B)",
+          "value": "≤ −20°C"
+        },
+        {
+          "label": "Mitigación en clima frío",
+          "value": "Carcasa de filtro calefaccionada + grado de combustible correcto"
+        }
+      ]
+    },
+    {
+      "heading": "Intervalos de servicio y gestión por condición",
+      "body": "En la mayoría de los programas de los fabricantes, los intervalos de servicio del filtro de combustible se basan sobre todo en kilometraje u horas: 500–1,000 horas o 20,000–40,000 km para los filtros primarios; 1,000–2,000 horas para los filtros secundarios en aplicaciones HPCR. Activadores por condición: el sensor de presión diferencial del filtro primario (indicador de restricción) señala el servicio cuando la caída de presión en el elemento supera el umbral (normalmente 0.3–0.7 bar a temperatura y caudal de operación). El aviso de agua en el combustible requiere atención inmediata: drene, inspeccione y, si el agua persiste después de drenar, reemplace el elemento e investigue el origen del ingreso. Los eventos de combustible contaminado (lote defectuoso, crecimiento microbiano, mucho sedimento) exigen reemplazar el elemento de inmediato, sin importar las horas de servicio, y luego inspeccionar el tanque, muestrear los sedimentos y, si corresponde, tratar con biocida. El reemplazo del filtro secundario en sistemas HPCR nunca debe postergarse: un elemento secundario cerca de su intervalo de servicio es la última línea de defensa entre la contaminación del sistema de combustible y el daño de los inyectores a más de 2,000 bar."
+    },
+    {
+      "heading": "Monitoreo y muestreo de la limpieza del combustible",
+      "body": "La limpieza del sistema de combustible puede evaluarse en tres puntos: el tanque (representa el historial de ingreso), la salida del filtro primario (eficacia del tratamiento del sistema) y el riel de inyectores (nivel final de protección). El muestreo en el riel o a la salida del filtro secundario se hace con una jeringa calibrada y un frasco prelimpiado, para un contador automático de partículas o un instrumento KFT de laboratorio. El conteo de partículas calibrado según ISO 11171 a la salida del riel debe cumplir el objetivo de limpieza HPCR especificado por el fabricante. La medición de agua KFT según ASTM D6304 en muestras del tanque identifica la acumulación de agua antes de que llegue al sistema de inyección; objetivo: ≤200 ppm en el tanque y ≤50 ppm en el riel. La ferrografía analítica del residuo del elemento del filtro primario (después del servicio) identifica la morfología de las partículas: las partículas metálicas de desgaste de la bomba de inyección indican daño en la bomba; las partículas de caucho o elastómero indican degradación de los sellos en las conexiones del sistema de combustible."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Presión en el riel HPCR",
+      "value": "1,600–2,500 bar"
+    },
+    {
+      "label": "Clasificación del filtro primario de la etapa 2",
+      "value": "β₅(c) ≥ 20–200"
+    },
+    {
+      "label": "Límite de agua en el inyector",
+      "value": "≤50 ppm disuelta"
+    },
+    {
+      "label": "Factor de seguridad de estallido de la carcasa",
+      "value": "6× la presión de trabajo (ISO 4020)"
+    }
+  ],
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "relatedSystems": [
+    "Fuel Cleanliness Protection"
+  ],
+  "keywords": [
+    "filtración de combustible diésel",
+    "ISO 4020",
+    "HPCR",
+    "separación de agua",
+    "filtro coalescente",
+    "limpieza del combustible",
+    "punto de obstrucción de filtro en frío",
+    "EN 590"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Restricción rápida del filtro primario: el elemento alcanza el ΔP final en el 50–70% del intervalo de servicio normal",
+      "Humo de escape blanco o gris a temperatura de operación: indica que un problema de agua o de calidad del combustible llega a la combustión",
+      "Testigo de agua en el combustible encendido: el agua libre supera el umbral del sensor en el vaso del filtro primario",
+      "Arranque difícil, oscilación de régimen o fallas de encendido: falta de suministro de combustible o desviación del caudal de los inyectores por cera o contaminación",
+      "Fallas de equilibrio de inyectores en la ECU: una corrección de combustible por cilindro superior a ±3 mg/carrera indica desgaste u obstrucción de la tobera"
+    ],
+    "probableCauses": [
+      "Biofilm microbiano (Cladosporium resinae) en el tanque que genera partículas de biomasa y tapa rápidamente el medio del elemento primario",
+      "Cristalización de cera por debajo del punto de obstrucción de filtro en frío: grado de combustible no adecuado a la temperatura ambiente",
+      "Ingreso de agua al tanque por condensación (tanque ventilado), entrega contaminada del camión cisterna o sello de la tapa de llenado dañado",
+      "Contaminación del lote de combustible: sedimentos, partículas de colorante o paquete de aditivos incompatible por producto incorrecto",
+      "Exceso de uso del filtro secundario, que deja degradar la limpieza a la entrada de los inyectores más allá de la especificación del fabricante"
+    ],
+    "inspectionMethods": [
+      "Corte el elemento primario e inspeccione la torta del medio: gris parduzco = carga normal de partículas; hilos negros = hifas microbianas; brillo metálico = partículas de desgaste de la bomba de inyección",
+      "Titulación Karl Fischer (ASTM D6304) de una muestra del fondo del tanque: ≥500 ppm indica que hay una capa de agua libre",
+      "Drene el vaso de agua en un recipiente transparente: agua gris turbia = crecimiento microbiano; agua clara = ingreso por condensación; agua rojiza = corrosión del tanque",
+      "Conteo de partículas ISO 4406 a la salida del filtro primario: el resultado debe cumplir el código de limpieza especificado por el fabricante",
+      "Clima frío: mida el CFPP del combustible según EN 116 y compárelo con la temperatura ambiente; un CFPP a menos de 5°C de la temperatura ambiente indica riesgo de cera"
+    ],
+    "correctiveActions": [
+      "Reemplace el elemento primario de inmediato ante cualquier evento de contaminación: no espere el intervalo programado",
+      "Drene el vaso de agua a diario en climas húmedos; si el agua reaparece, investigue y selle todas las vías de ingreso al tanque (tapa de llenado, respiradero, sellos de la carrocería)",
+      "Trate el tanque con un biocida aprobado según ASTM D4054 en la dosis correcta; limpie físicamente el tanque después del tratamiento (la biomasa muerta permanece y vuelve a tapar los elementos nuevos)",
+      "Para la obstrucción por cera en clima frío: use el grado climático correcto de combustible EN 590; instale una carcasa de filtro calefaccionada con refrigerante; no mezcle queroseno sin aprobación del fabricante",
+      "Después de eventos de contaminación, muestree a la salida del filtro secundario según ISO 4406 y confirme que se cumple el objetivo de limpieza HPCR antes de volver a la operación normal"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Desgaste de toberas de inyectores HPCR y desviación del caudal",
+      "standard": "ISO 4020, ASTM D6304",
+      "protectionSystem": "Protección de la limpieza del combustible",
+      "technology": "Filtración de partículas en dos etapas: primaria β₅(c) ≥ 75 + secundaria β₂(c) ≥ 75 para sistemas ≥1,600 bar",
+      "relatedArticles": [
+        "beta-ratio",
+        "water-contamination-fuel",
+        "iso-16889"
+      ]
+    },
+    {
+      "problem": "Acumulación de agua libre que causa corrosión de inyectores y pérdida de lubricación",
+      "standard": "ASTM D6304, ISO 12937",
+      "protectionSystem": "Protección de la limpieza del combustible",
+      "technology": "Elemento separador de agua coalescente en la carcasa del filtro primario; inspección y drenaje diario del vaso de agua",
+      "relatedArticles": [
+        "water-contamination-fuel",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "Obstrucción rápida del filtro primario por biofilm microbiano",
+      "standard": "ASTM D6304",
+      "protectionSystem": "Protección de la limpieza del combustible",
+      "technology": "Filtración en tres etapas con prefiltro grueso en el tanque que elimina la biomasa antes del elemento primario; tratamiento con biocida",
+      "relatedArticles": [
+        "water-contamination-fuel",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "Cristalización de cera en clima frío que bloquea el elemento primario",
+      "standard": "ISO 4020 (cold restriction test at −20°C), EN 116 (CFPP test)",
+      "protectionSystem": "Protección de la limpieza del combustible",
+      "technology": "Carcasa de filtro calefaccionada con refrigerante que mantiene el combustible por encima del CFPP; grado climático correcto de combustible EN 590",
+      "relatedArticles": [
+        "service-intervals",
+        "filter-media-science"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ASTM-D6304, STD-ISO-12937)",
+    "evidenceStatus": "ISO 4020:2001 verified; ISO 19438:2003 verified; ASTM D6304:2022 verified; EN 590:2022 verified"
+  },
+  "commonMistakes": [
+    "Usar un solo prefiltro grueso antes de una bomba HPCR sin un filtro de etapa final de 2–6 µm. Los sistemas de inyección HPCR requieren filtración final a la entrada de la bomba: el prefiltrado grueso por sí solo no protege los componentes del inyector y de la bomba con holguras de 1–3 µm.",
+    "No drenar los vasos de los separadores de agua con un programa por tiempo, independiente de los testigos de aviso. Los sensores capacitivos de agua en el combustible fallan con combustibles contaminados con tensoactivos o con mezclas de biodiésel: se requieren inspecciones visuales y drenajes manuales como respaldo.",
+    "Suponer que el punto de nube y el CFPP (punto de obstrucción de filtro en frío) son medidas equivalentes de la filtrabilidad en frío. El punto de nube es la temperatura a la que comienza la cristalización de la cera; el CFPP es la temperatura a la que los cristales bloquean un filtro: ambos difieren en 5–10°C y corresponden a modos de falla distintos."
+  ]
+}

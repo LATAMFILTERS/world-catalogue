@@ -1,0 +1,302 @@
+{
+  "slug": "hpcr-fuel-system-cleanliness",
+  "faqs": [
+    {
+      "question": "¿Qué nivel de limpieza requiere el combustible diésel en los sistemas de inyección HPCR?",
+      "answer": "Los sistemas de inyección HPCR suelen requerir una limpieza del combustible de clase ISO 4406 12/9/6 o mejor a la entrada del inyector, medida con contadores de partículas calibrados según ISO 11171. Las partículas mayores de 4 µm(c) representan el mayor riesgo para las holguras de 2 µm de las toberas de los inyectores. ISO 16332:2019 especifica los métodos de ensayo de eficiencia de filtros de combustible en estos tamaños de partícula críticos."
+    },
+    {
+      "question": "¿Cómo afecta la presión de inyección a la sensibilidad a la contaminación del combustible en los sistemas HPCR?",
+      "answer": "Los sistemas HPCR modernos operan con presiones de inyección de 1,600–2,200 bar. A estas presiones, las partículas mayores de 4 µm pueden causar desgaste abrasivo en superficies rectificadas de precisión con holguras de 1–3 µm. Una sola partícula dura de sílice de 10 µm que atraviesa una holgura de tobera de 2 µm genera una tensión de contacto superior a 500 MPa y acelera el desgaste por rozamiento de 10 a 30 veces frente a sistemas a presión ambiente."
+    },
+    {
+      "question": "¿Qué es el agarrotamiento (stiction) del inyector y cómo lo causa la contaminación del combustible?",
+      "answer": "El agarrotamiento del inyector es la falla por adherencia de la aguja o el pistón de la válvula de control debida a depósitos de laca en superficies deslizantes de precisión. Los polímeros asfalténicos cerosos se forman cuando los productos de oxidación del combustible se entrecruzan a temperaturas de superficie del inyector de 150–200 °C. Un combustible contaminado con índice de estabilidad a la oxidación deficiente (ASTM D525 < 60 min) acelera la deposición de laca, aumenta la energía de apertura de la aguja en un 15–40% y degrada la sincronización de la inyección."
+    },
+    {
+      "question": "¿Cómo daña el agua del combustible diésel los componentes HPCR?",
+      "answer": "Un contenido de agua superior a 200 ppm (ASTM D6304) causa tres modos de falla en los sistemas HPCR: bloqueo hidráulico en los alojamientos de la aguja con concentraciones superiores a 500 ppm, fragilización por hidrógeno de componentes de acero templado bajo carga de presión cíclica y crecimiento microbiano que forma películas de biofilm capaces de bloquear filtros de combustible de 5 µm en 30–60 días. El análisis Karl Fischer según ASTM D6304 debe verificar un contenido de agua inferior a 75 ppm en aplicaciones HPCR críticas."
+    },
+    {
+      "question": "¿Qué distribución de tamaños de partícula es la más importante al seleccionar filtros de combustible para aplicaciones HPCR?",
+      "answer": "La ventana crítica de partículas para HPCR es de 4–10 µm(c), según la calibración ISO 11171. Las partículas de este rango superan las holguras de las toberas de 1–3 µm, pero atraviesan los filtros primarios más gruesos de 25 µm. ISO 16332 especifica la medición de eficiencia Beta(4[c]) con polvo de ensayo fino ISO 12103-1 A1. Un filtro que logra Beta(4[c]) ≥ 200 (eficiencia del 99.5%) al caudal nominal reduce la población de partículas de 4 µm de 10 a 100 veces frente al combustible sin filtrar."
+    },
+    {
+      "question": "¿Cómo deben definirse los intervalos de cambio del filtro de combustible en motores HPCR?",
+      "answer": "Los intervalos de cambio del filtro de combustible en aplicaciones HPCR deben basarse en el monitoreo de la presión diferencial y no en un kilometraje fijo, porque la carga de contaminación varía mucho según el origen del combustible. Un interruptor de presión diferencial ajustado al 80% del ΔP final nominal (normalmente 200–300 mbar) activa el reemplazo. Cuando no hay monitoreo de ΔP, se aplican intervalos de respaldo por tiempo de 500 horas o 25,000 km. Los ensayos de restricción frente a caudal de ISO 16332 validan la capacidad del filtro en estas condiciones."
+    },
+    {
+      "question": "¿Qué papel cumple la lubricidad del combustible en la protección contra el desgaste del inyector?",
+      "answer": "La lubricidad del combustible se mide como el diámetro de la huella de desgaste en el ensayo HFRR (High Frequency Reciprocating Rig) según ISO 12156-1. El diésel de ultra bajo azufre (ULSD), con azufre < 10 ppm, pierde la lubricidad natural que aportan los compuestos de azufre, lo que aumenta el desgaste de la bomba de inyección en un 30–50% frente a un combustible con 500 ppm de azufre. El diámetro de la huella de desgaste HFRR debe mantenerse por debajo de 460 µm a 60 °C. Los aditivos de lubricidad restablecen el desempeño, pero pueden afectar la compatibilidad con el medio del filtro de combustible."
+    },
+    {
+      "question": "¿Cómo afecta la temperatura del combustible al desempeño del filtro en los sistemas HPCR?",
+      "answer": "Una temperatura elevada del combustible en los circuitos de retorno (60–80 °C) reduce su viscosidad en un 40–60% frente a la temperatura ambiente, lo que aumenta la velocidad de paso por el medio filtrante y reduce la eficiencia de captura de partículas. ISO 16332 especifica el ensayo de eficiencia con combustible a 40 °C; en instalaciones con temperaturas de retorno superiores a 60 °C debe aplicarse una reducción de eficiencia del 15–25%. Para una selección precisa del filtro se requiere el acondicionamiento térmico del combustible de ensayo según ISO 16332, Anexo A."
+    },
+    {
+      "question": "¿Qué relación hay entre la presión de colapso nominal del filtro de combustible y la confiabilidad del sistema HPCR?",
+      "answer": "Los sistemas de combustible HPCR generan picos de presión de 50–100 bar durante el arranque en frío y en transitorios rápidos del acelerador. Los elementos filtrantes deben resistir estos picos sin colapsar estructuralmente, lo que liberaría la contaminación retenida. ISO 16332 especifica como mínimo un ensayo de presión de colapso a 3 veces la presión diferencial nominal. Los elementos con colapso por ΔP > 10 bar son adecuados para aplicaciones HPCR; los filtros primarios de combustible deben tener una presión de colapso de 20 bar en aplicaciones de servicio pesado con muchos ciclos."
+    },
+    {
+      "question": "¿Cómo afecta el contenido de biodiésel al riesgo de contaminación del combustible en los sistemas HPCR?",
+      "answer": "Las mezclas de biodiésel (B5–B20) aumentan la higroscopicidad de 3 a 5 veces frente al ULSD: absorben humedad atmosférica y aceleran el crecimiento microbiano con actividad de agua superior a 0.6. Los ésteres metílicos de ácidos grasos (FAME) se oxidan a velocidad acelerada (periodo de inducción ASTM D525 < 30 min en B20 envejecido) y forman peróxidos y gomas que bloquean los filtros finos de combustible. Los sistemas HPCR que operan con B10 o más deben reducir los intervalos de cambio del filtro primario en un 30–50% y especificar medios aptos para biodiésel según ensayos complementarios de ISO 12103-1."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16332:2019, Diesel Engines — Fuel Filters — Test Methods",
+      "relevance": "Especifica el ensayo de eficiencia multipaso con polvo de ensayo ISO 12103-1 A1 en tamaños de partícula de 4, 6, 10 y 14 µm(c); define los protocolos de caudal nominal, ΔP final y presión de colapso para calificar filtros de combustible HPCR."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration",
+      "relevance": "Medición cuantitativa del contenido de agua en combustible diésel y fluidos del sistema de combustible; es crítica para proteger los inyectores HPCR, donde el contenido de agua debe mantenerse por debajo de 75–200 ppm para evitar bloqueo hidráulico y fragilización."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12156-1:2018, Diesel Fuel — Assessment of Lubricity Using the High-Frequency Reciprocating Rig (HFRR)",
+      "relevance": "Define el procedimiento de ensayo HFRR para medir la lubricidad del combustible diésel; el límite de diámetro de huella de 460 µm a 60 °C asegura una lubricación adecuada de la bomba de inyección con formulaciones ULSD en sistemas HPCR."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants — Part 1: Arizona Test Dust",
+      "relevance": "Especifica la composición química, la distribución de tamaños de partícula y la densidad de los contaminantes de ensayo estandarizados usados en el ensayo de eficiencia de filtros de combustible ISO 16332; el grado ISO A1 fino se usa para calificar filtros HPCR por debajo de 10 µm."
+    }
+  ],
+  "title": "Limpieza del sistema de combustible de alta presión common rail",
+  "subtitle": "Objetivos de partículas, requisitos de lubricidad y desempeño de filtros ISO 23369 para sistemas de inyección HPCR",
+  "metaDescription": "Los sistemas de inyección de alta presión common rail (HPCR) que operan a 1,800–2,500 bar requieren combustible limpio para evitar daños en la aguja del inyector. Esta referencia cubre el ensayo multipaso de filtros de combustible ISO 23369, los requisitos de lubricidad HFRR de ISO 12156-1, los límites de contenido de agua y los objetivos de limpieza de partículas para los sistemas de suministro de combustible HPCR.",
+  "category": "Ingeniería",
+  "readTime": "13 min",
+  "intro": "Los sistemas de inyección diésel de alta presión common rail (HPCR) operan con presiones de inyección de 1,800–2,500 bar y generan fuerzas hidráulicas que exigen holguras de 1–3 µm en la aguja del inyector para mantener la precisión de dosificación. Con estas holguras, las partículas más grandes que la holgura causan daño abrasivo directo en las agujas de los inyectores, las válvulas de control y los émbolos de la bomba de alta presión. La limpieza del combustible en HPCR difiere de raíz de la inyección convencional: la combinación de presión ultra alta, holguras finas y el doble papel del combustible como portador de energía y fluido hidráulico impone requisitos de partículas, agua y lubricidad que no aplicaban a los sistemas anteriores de bomba-línea-inyector. Este artículo cubre las normas que rigen la calidad del combustible y el desempeño de filtración en HPCR: ISO 23369 (ensayo multipaso de filtros de combustible), ISO 12156-1 (lubricidad HFRR), ASTM D6304 (contenido de agua Karl Fischer) y las especificaciones de calidad de combustible EN 590 y ASTM D975.",
+  "sections": [
+    {
+      "heading": "Ingeniería de presiones y holguras del sistema HPCR",
+      "body": "Los sistemas modernos de inyección diésel HPCR operan con presiones en el riel de 1,800–2,500 bar (261,000–362,500 psi), y algunos sistemas avanzados llegan a 2,700 bar. A estas presiones, el combustible actúa como medio hidráulico que transmite fuerza a los actuadores de la aguja. La holgura del asiento de la aguja del inyector es de 1–3 µm; la holgura pistón-alojamiento de la válvula de control es de 2–4 µm; la holgura émbolo-cilindro de la bomba de alta presión es de 1–3 µm. El principio crítico de daño por partículas: las partículas con diámetro igual o superior a la holgura provocan contacto directo entre superficies e inician el desgaste abrasivo; el rango de tamaño más dañino es aproximadamente 1–2 veces la holgura. La dureza de la sílice (≈1,000 HV Vickers) supera ampliamente la de los materiales de la aguja del inyector (normalmente 700–900 HV en acero para herramientas templado), por lo que las partículas de sílice de 1–5 µm pueden cortar las superficies del inyector y provocar fugas en la válvula y goteo de la tobera. Una sola partícula de 5 µm atrapada en el asiento de una aguja con holgura de 2 µm causa rayado inmediato.",
+      "callout": [
+        {
+          "label": "Presión de inyección HPCR",
+          "value": "1,800–2,500 bar (261,000–362,500 psi)"
+        },
+        {
+          "label": "Holgura de la aguja",
+          "value": "1–3 µm: umbral de daño por partículas"
+        },
+        {
+          "label": "Holgura de la válvula de control",
+          "value": "2–4 µm"
+        },
+        {
+          "label": "Rango crítico de partículas",
+          "value": "1–2× la holgura: la categoría de tamaño más dañina"
+        }
+      ]
+    },
+    {
+      "heading": "Ensayo multipaso de filtros de combustible ISO 23369",
+      "body": "ISO 23369:2021 (Hydraulic Fluid Power — Multi-Pass Method for Evaluating the Filtration Performance of a Filter Element for Liquid Fuel Used in Injection Engines) es la norma principal para caracterizar el desempeño de elementos de filtro de combustible en condiciones representativas de los sistemas HPCR. La metodología es análoga a ISO 16889 (multipaso para fluidos hidráulicos), pero usa combustible diésel (o un fluido de ensayo ISO representativo) en lugar de aceite mineral ISO VG 15. Parámetros del ensayo: el fluido es el combustible real de la aplicación o un fluido de ensayo especificado; la temperatura de ensayo es 40°C ±2°C; la concentración de contaminación aguas arriba es 5 mg/L (±10%) de polvo de ensayo ISO 12103-1 A3 medio grueso; las relaciones Beta se informan a ≥4, ≥6, ≥10 y ≥14 µm(c); la presión diferencial final es 0.5 bar (según la aplicación). Los elementos de filtro de combustible para sistemas HPCR suelen alcanzar Beta₄₍c₎ ≥ 200 (eficiencia de filtración >99.5% a ≥4 µm(c)) para proteger las holguras de 1–3 µm de la aguja del inyector de las partículas que superan esas dimensiones.",
+      "callout": [
+        {
+          "label": "Norma",
+          "value": "ISO 23369:2021: ensayo multipaso de filtros de combustible"
+        },
+        {
+          "label": "Temperatura de ensayo",
+          "value": "40°C ±2°C para el ensayo con combustible"
+        },
+        {
+          "label": "Concentración aguas arriba",
+          "value": "5 mg/L ±10% ISO 12103-1 A3 medio grueso"
+        },
+        {
+          "label": "Eficiencia objetivo HPCR",
+          "value": "Beta₄₍c₎ ≥ 200: >99.5% a ≥4 µm(c)"
+        }
+      ]
+    },
+    {
+      "heading": "Lubricidad del combustible: ensayo HFRR ISO 12156-1",
+      "body": "El ensayo HFRR (High Frequency Reciprocating Rig) según ISO 12156-1:2006 mide la lubricidad del combustible diésel haciendo oscilar una bola de acero de 6 mm sobre un disco de acero fijo a 50 Hz, con carga de 1 N, a 60°C, durante 75 minutos dentro del combustible de ensayo. El diámetro de la huella de desgaste (WSD) resultante en la bola, medido con microscopía óptica, cuantifica la lubricidad del combustible. El límite de especificación de EN 590:2022 y ASTM D975 es un diámetro de huella corregido ≤460 µm a 60°C. Los combustibles con WSD superior a 460 µm lubrican de forma insuficiente los émbolos de la bomba HPCR y las válvulas de control de los inyectores, que dependen de la película de combustible en holguras de 1–3 µm. El diésel de ultra bajo azufre (ULSD, S ≤10 ppm según EN 590) tiene menor lubricidad que los combustibles antiguos de alto azufre porque se eliminaron los compuestos de azufre que lubricaban de forma natural; la especificación EN 590 exige aditivos mejoradores de lubricidad. Los combustibles que no cumplen el criterio de ≤460 µm requieren tratamiento con aditivos antes de usarse en sistemas HPCR.",
+      "callout": [
+        {
+          "label": "Norma de ensayo",
+          "value": "Ensayo HFRR ISO 12156-1:2006: WSD a 60°C"
+        },
+        {
+          "label": "Límite de especificación",
+          "value": "WSD ≤460 µm: EN 590:2022 y ASTM D975"
+        },
+        {
+          "label": "Umbral de alerta temprana",
+          "value": "WSD >400 µm: considerar tratamiento con aditivos antes de superar el límite"
+        },
+        {
+          "label": "Problema de lubricidad del ULSD",
+          "value": "El ULSD con S ≤10 ppm pierde lubricidad natural: requiere aditivo según EN 590"
+        }
+      ]
+    },
+    {
+      "heading": "Límites de contenido de agua: ASTM D6304 Karl Fischer",
+      "body": "El agua libre y disuelta en el combustible diésel por encima de los límites definidos causa tres tipos de daño en los sistemas HPCR: corrosión hidráulica de las superficies de acero de alta presión; crecimiento microbiano en tanques y filtros que termina tapando los filtros; y vaporización instantánea en la punta de los inyectores cuando el combustible residual caliente posterior a la inyección entra en contacto con gotas de agua, lo que provoca erosión por cavitación de los orificios de la tobera. El contenido de agua se mide por titulación culombimétrica Karl Fischer según ASTM D6304 (o ASTM D1744 para concentraciones de agua más altas) y se expresa en miligramos de agua por kilogramo de combustible (mg/kg o ppm en masa). El límite para sistemas HPCR es ≤200 ppm de agua disuelta a la salida del filtro de combustible; el agua libre (gotas ≥0.1 µm) debe eliminarse por completo con filtración separadora de agua por coalescencia. EN 590:2022 especifica un contenido máximo de agua total de 200 mg/kg para el diésel en el punto de venta. Los filtros separadores de agua con medio coalescente separan las gotas de agua libre; los postfiltros de membrana hidrofóbica impiden que el agua coalescida vuelva a la corriente de combustible.",
+      "callout": [
+        {
+          "label": "Método de ensayo de agua",
+          "value": "ASTM D6304: titulación culombimétrica Karl Fischer (ppm en masa)"
+        },
+        {
+          "label": "Límite de agua HPCR",
+          "value": "≤200 ppm de agua total a la salida del filtro de combustible"
+        },
+        {
+          "label": "Límite EN 590:2022",
+          "value": "≤200 mg/kg en el punto de venta"
+        },
+        {
+          "label": "Requisito de agua libre",
+          "value": "Cero agua libre: separador de agua por coalescencia obligatorio en sistemas HPCR"
+        }
+      ]
+    },
+    {
+      "heading": "Normas de calidad del combustible: EN 590 y ASTM D975",
+      "body": "EN 590:2022 (especificación europea de diésel automotriz) y ASTM D975 (especificación norteamericana estándar para combustible diésel) definen los requisitos mínimos de calidad del diésel de carretera en el punto de venta. EN 590 permite hasta un 7% v/v de mezcla de ésteres metílicos de ácidos grasos (FAME / biodiésel) como diésel B7; ASTM D975 permite mezclas de biodiésel según la especificación separada ASTM D7467. El biodiésel introduce tendencia higroscópica (mayor absorción de agua), problemas de estabilidad a la oxidación (ASTM D2274 para estabilidad térmica) y deterioro del punto de obstrucción de filtro en frío (CFPP según EN 116) a bajas temperaturas. En sistemas HPCR que usan mezclas de biodiésel, la filtración debe considerar además el crecimiento microbiano asociado a la interfaz agua-biodiésel en los sistemas de almacenamiento. La limpieza del combustible a la entrada del filtro se rige por las especificaciones de contenido de partículas de EN 590; el elemento filtrante debe lograr a la salida la limpieza especificada por el fabricante del equipo para proteger los componentes HPCR.",
+      "callout": [
+        {
+          "label": "EN 590:2022",
+          "value": "Especificación europea de diésel de carretera: mezcla máxima de FAME B7"
+        },
+        {
+          "label": "ASTM D975",
+          "value": "Especificación norteamericana de diésel: biodiésel según ASTM D7467"
+        },
+        {
+          "label": "Riesgo de agua con biodiésel",
+          "value": "FAME higroscópico: mayor absorción de agua disuelta frente al diésel puro"
+        },
+        {
+          "label": "Norma CFPP",
+          "value": "EN 116: medición del punto de obstrucción de filtro en frío para operación invernal"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Presión de inyección HPCR",
+      "value": "1,800–2,500 bar (261,000–362,500 psi)"
+    },
+    {
+      "label": "Holgura de la aguja",
+      "value": "1–3 µm"
+    },
+    {
+      "label": "Beta objetivo ISO 23369",
+      "value": "Beta₄₍c₎ ≥ 200 (>99.5% a ≥4 µm(c))"
+    },
+    {
+      "label": "Límite de lubricidad HFRR",
+      "value": "WSD ≤460 µm a 60°C (EN 590 / ASTM D975)"
+    },
+    {
+      "label": "Límite de contenido de agua",
+      "value": "≤200 ppm a la salida del filtro de combustible (ASTM D6304)"
+    },
+    {
+      "label": "Mezcla máxima de biodiésel",
+      "value": "B7 (EN 590:2022)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 23369",
+    "ISO 12156-1",
+    "ASTM D6304",
+    "EN 590",
+    "ASTM D975",
+    "ISO 12937"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "relatedSystems": [
+    "Fuel Cleanliness Protection"
+  ],
+  "keywords": [
+    "sistema de combustible HPCR",
+    "inyección common rail",
+    "ISO 23369",
+    "ISO 12156-1 HFRR",
+    "relación beta del filtro de combustible",
+    "limpieza del combustible",
+    "contaminación del combustible por agua",
+    "ASTM D6304",
+    "EN 590",
+    "lubricidad del ULSD",
+    "limpieza de la inyección de combustible",
+    "especificación del combustible diésel"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Goteo de la tobera o patrón de pulverización deficiente: erosión de los orificios o daño en el asiento de la aguja",
+      "Falla prematura de la bomba HPCR con patrón de desgaste abrasivo en las superficies del émbolo y el cilindro",
+      "El elemento del filtro de combustible se carga más rápido que el intervalo de servicio previsto: alto ingreso de contaminación",
+      "Acumulación de agua en el vaso del filtro de combustible o encendido del testigo de agua en el combustible",
+      "Aumento del consumo de combustible sin cambio en el desempeño del motor: pérdida de precisión de dosificación del inyector"
+    ],
+    "probableCauses": [
+      "Contaminación por partículas: clasificación del filtro de combustible insuficiente para las holguras HPCR; ingreso de polvo ambiental al tanque durante la recarga sin filtración",
+      "Desgaste de la bomba HPCR: WSD del combustible superior a 460 µm en el punto de entrega, lubricidad inadecuada; ULSD sin tratamiento con aditivo de lubricidad",
+      "Carga alta del filtro: suministro de combustible a granel contaminado; muestree el combustible en la entrega y compárelo con la especificación de limpieza ISO 23369",
+      "Acumulación de agua: condensación en el tanque de almacenamiento; mezcla de biodiésel FAME que absorbe humedad atmosférica; válvula de drenaje automático de agua defectuosa",
+      "Degradación de la dosificación del inyector: partículas de sílice por ingreso de polvo ambiental que desgastan el asiento de la aguja y producen fugas"
+    ],
+    "inspectionMethods": [
+      "Muestree el combustible a la entrada del tanque y a la salida del filtro; mida el conteo de partículas con APC según ISO 11171 y compárelo con el objetivo de limpieza del sistema Beta₄₍c₎",
+      "Mida el contenido de agua del combustible según ASTM D6304 en muestras del almacenamiento a granel, del tanque diario y de la salida del filtro",
+      "Realice el ensayo de lubricidad HFRR según ISO 12156-1 en muestras de combustible; confirme WSD ≤460 µm a 60°C",
+      "Inspeccione al microscopio la morfología de las partículas retenidas en el elemento de filtro retirado: los cristales de sílice indican ingreso desde el ambiente; las partículas metálicas indican desgaste de la bomba",
+      "Mida el caudal de retorno de combustible de los inyectores: un retorno superior a la especificación del fabricante indica fuga en el asiento de la aguja"
+    ],
+    "correctiveActions": [
+      "Contaminación por partículas: actualice el filtro de combustible a Beta₄₍c₎ ≥ 200 según ISO 23369; agregue un respiradero desecante a la ventilación del tanque para evitar el ingreso de polvo ambiental",
+      "Falla de lubricidad: agregue aditivo mejorador de lubricidad según la especificación EN 590; verifique que la dosificación produzca WSD ≤400 µm para tener margen operativo",
+      "Agua en el combustible: drene el vaso del separador de agua; inspeccione y repare la válvula de drenaje automático; investigue la condensación del almacenamiento a granel e implemente calefacción del tanque o respiración con desecante",
+      "Suministro a granel contaminado: exija al proveedor de combustible una certificación de conteo de partículas antes de la entrega; instale filtración a granel en el punto de trasvase",
+      "Daño en inyectores: reemplace los inyectores; lave el sistema de combustible; asegure la verificación de limpieza antes del rearranque según el objetivo de salida de ISO 23369"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Desgaste prematuro de inyectores HPCR: goteo de tobera o dosificación imprecisa en las primeras 500 horas",
+      "standard": "ISO 23369:2021 — fuel filter performance; ISO 12156-1 — lubricity",
+      "protectionSystem": "Tratamiento del combustible en tres etapas: prefiltro para eliminar partículas a granel, separador de agua por coalescencia y filtro final de alta eficiencia con clasificación Beta₄₍c₎ ≥ 200",
+      "technology": "Filtración de combustible por etapas con medio coalescente para separar el agua libre hasta cero, seguida de un elemento filtrante de alta eficiencia con medio de gradiente que logra Beta₄₍c₎ ≥ 200 según ISO 23369, evitando la exposición a partículas en las holguras de 1–3 µm de la aguja del inyector HPCR",
+      "relatedArticles": [
+        "diesel-fuel-filtration",
+        "water-contamination-fuel",
+        "iso-16889-multipass-test",
+        "beta-ratio"
+      ]
+    },
+    {
+      "problem": "Alto contenido de agua en el combustible tras mezclarlo con biodiésel FAME: supera el límite de 200 ppm",
+      "standard": "ASTM D6304 — Karl Fischer water measurement; EN 590:2022 water limit",
+      "protectionSystem": "Separador de agua por coalescencia apto para mezclas de biodiésel, con postfiltro de membrana hidrofóbica que impide que el agua vuelva a arrastrarse",
+      "technology": "Separador de agua por coalescencia con medio coalescente de microfibra de vidrio y membrana de drenaje hidrofóbica de PTFE; medio coalescente validado para compatibilidad con biodiésel B7 según ISO 2943; válvula de drenaje automático para el agua libre acumulada",
+      "relatedArticles": [
+        "water-contamination-fuel",
+        "diesel-fuel-filtration",
+        "filter-element-integrity"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-23369)",
+    "evidenceStatus": "HPCR injection pressures 1,800–2,500 bar from published Bosch and Denso HPCR system technical data; needle valve clearance 1–3 µm from published injector engineering references (Bosch Automotive Handbook 10th Ed.); ISO 23369:2021 test methodology verified; ISO 12156-1:2006 HFRR method and ≤460 µm WSD limit from EN 590:2022 Table 2 and ASTM D975 Table 1; ≤200 ppm water limit from EN 590:2022 Table 2 and HPCR OEM service documentation; EN 590:2022 B7 biodiesel limit verified; ULSD lubricity additive requirement from EN 590:2022 Section 5 annotation; Karl Fischer ASTM D6304 method verified"
+  }
+}

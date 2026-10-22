@@ -1,0 +1,304 @@
+{
+  "slug": "lubrication-system-filtration",
+  "faqs": [
+    {
+      "question": "¿Cuál es el objetivo de limpieza ISO 4406 recomendado para el aceite lubricante de motores diésel de servicio pesado?",
+      "answer": "Los fabricantes de motores suelen especificar el objetivo de limpieza ISO 4406 del aceite lubricante de motores diésel de servicio pesado como código ISO 4406 18/16/13 en el suministro de aceite a los cojinetes de bancada: las holguras de los muñones (20–80 µm) son mucho mayores que las de los componentes hidráulicos, por lo que los sistemas de lubricación toleran una contaminación más gruesa que los circuitos hidráulicos. Sin embargo, los motores turboalimentados con actuadores VGT (turbocompresor de geometría variable), sistemas de distribución variable y mecanismos de avance de la inyección tienen actuadores hidráulicos internos que requieren una limpieza de 16/14/11 o mejor. Una filtración de lubricación orientada a una limpieza general del sistema de 17/15/12 protege adecuadamente todos los subsistemas del motor, incluidos estos actuadores de precisión, con elementos con medio SYNTRAX seleccionados según la relación Beta y el código de limpieza especificados para la aplicación aprobada."
+    },
+    {
+      "question": "¿Qué función cumple el limpiador centrífugo de aceite instalado en algunos motores de servicio pesado?",
+      "answer": "Los limpiadores centrífugos de aceite (centrífugas tipo roscado) usan la presión de aceite del cárter para hacer girar un rotor a 4,000–8,000 RPM, lo que genera una aceleración centrífuga de 2,000–4,000×g que separa del aceite partículas de hasta 1–2 µm. A diferencia de los filtros de flujo total, que procesan todo el caudal de aceite a alta velocidad, las centrífugas procesan una pequeña corriente de derivación (5–10% del caudal total a 1–3 bar). A 3,000×g, las partículas de densidad 2.7 g/cm3 (sílice) de 1 µm de diámetro se depositan en la pared del rotor en 0.2–0.5 segundos con el tiempo de residencia típico del rotor. El rotor de la centrífuga acumula una capa densa de lodo con metales de desgaste, carbón y sílice, y debe limpiarse cada 500–1,000 horas desmontándolo y lavándolo. El caudal de derivación de la centrífuga, sumado a la protección del filtro principal de flujo total, logra códigos ISO 1–2 unidades más limpios que la filtración de flujo total sola."
+    },
+    {
+      "question": "¿Cómo se selecciona la presión de apertura de la válvula de derivación del filtro de aceite en aplicaciones de clima frío?",
+      "answer": "La presión de apertura de la válvula de derivación en filtros de aceite para clima frío debe equilibrar dos requisitos: (1) Protección en el arranque en frío: a −40°C, la viscosidad de un aceite SAE 15W-40 es de aproximadamente 50,000 cSt (frente a 100 cSt a 40°C). La restricción del aceite frío a través de un elemento completamente cargado puede alcanzar 3–5 bar a los caudales de arranque, por lo que la válvula de derivación debe abrirse para evitar la cavitación de la bomba de aceite y la falta de aceite en el motor. (2) Protección con el motor caliente: a temperatura de operación, la derivación no debe abrirse salvo en una sobrerrestricción real (elemento cargado más allá del límite de servicio). El compromiso típico es una presión de apertura de 1.0–1.5 bar: lo bastante baja para abrirse en el arranque en frío (la restricción del elemento supera 1 bar a la velocidad de arranque) y lo bastante alta para mantenerse cerrada en la operación normal con el motor caliente (restricción del elemento normalmente de 0.2–0.5 bar al caudal nominal). En aplicaciones mineras árticas se usan sistemas de doble derivación (derivación de baja presión para el arranque en frío y derivación de alta presión para el motor caliente)."
+    },
+    {
+      "question": "¿Qué es una configuración de filtración de flujo total más derivación y cuál es su aplicación?",
+      "answer": "La configuración de flujo total más derivación (filtro de derivación) usa dos circuitos de filtración en paralelo: el filtro de flujo total procesa el 100% del caudal de la bomba de aceite con una eficiencia Beta moderada (β10(c) ≥ 20–100) para evitar la falta de aceite en el motor con restricción alta; el filtro de derivación procesa el 5–15% del caudal de aceite con alta eficiencia (β3(c) ≥ 200–1,000) para eliminar de forma continua las partículas finas que atraviesan el elemento de flujo total. El retorno de la derivación va directamente al cárter, no a los cojinetes del motor, así que la restricción del filtro de derivación no genera riesgo de falta de aceite. Esta configuración logra una limpieza del aceite comparable a la de un elemento de flujo total de alta eficiencia, sin el riesgo de derivación en el arranque en frío que tiene un solo elemento de flujo total de alta eficiencia. Se usa en motores diésel estacionarios de alto valor (generadores, estaciones de bombeo), donde se priorizan los intervalos de cambio extendidos y la limpieza de los componentes de precisión por encima de la reducción de peso y costo."
+    },
+    {
+      "question": "¿Qué relación hay entre la filtración del aceite, la velocidad de agotamiento del TBN y el intervalo de cambio?",
+      "answer": "La filtración de aceite de alta eficiencia no extiende directamente el intervalo de cambio de aceite basado solo en el TBN, porque el agotamiento del TBN lo controla la producción de ácidos de la combustión (contenido de azufre, tasa de blow-by) y no la filtración. Sin embargo, la filtración reduce la contaminación por partículas que cataliza la oxidación del aceite y el agotamiento de los aditivos: con una limpieza del aceite ISO 16/14/11 frente a ISO 20/18/15, la velocidad de oxidación es aproximadamente un 30–50% menor por la menor superficie de partículas metálicas catalíticas en contacto con el aceite. Los intervalos de cambio extendidos se justifican con un análisis de aceite combinado que muestre el TBN por encima del umbral de cambio Y el código ISO dentro de la especificación. La filtración sola, sin monitoreo del TBN, no basta para justificar un intervalo de cambio extendido: ambos parámetros deben estar dentro de la especificación para extender con seguridad más allá de los intervalos del fabricante."
+    },
+    {
+      "question": "¿Qué tipo de medio filtrante es el óptimo para eliminar los precursores de barniz en sistemas de lubricación de turbinas y de circulación?",
+      "answer": "La eliminación de precursores de barniz en sistemas de lubricación de alta temperatura (turbinas de gas, grandes generadores diésel) requiere medios electrostáticos o de fibra fina con carga en profundidad, y no medios de carga superficial. Los precursores de barniz son moléculas polares y productos de degradación oligoméricos, normalmente de 0.1–2 µm de diámetro equivalente. El medio electrostático (fibra cargada, similar al medio electrohilado HEPA) captura estas moléculas polares por atracción electrostática; la carga se mantiene durante 500–1,000 horas antes de que la neutralicen los productos polares de degradación del aceite. Como alternativa, la filtración kidney-loop con medio de carga en profundidad de alta eficiencia (un principio de configuración que la arquitectura SYNTRAX puede soportar aplicada a circuitos de aceite lubricante) más un medio de adsorción selectiva (diatomita o alúmina activada para especies polares) reduce el potencial de barniz (medido por MPC, Membrane Patch Colorimetry, ASTM D7843) de riesgo alto (parche MPC ΔE >40) a riesgo bajo (ΔE <15) en 200–500 horas de operación."
+    },
+    {
+      "question": "¿Cómo se verifica la integridad del sello de la carcasa del filtro de aceite sin desarmarla?",
+      "answer": "La verificación de la integridad del sello de la carcasa del filtro de aceite sin desarmar usa: (1) Monitoreo externo de presión: un manómetro a la salida del filtro confirma que la carcasa recibe presión de aceite; la ausencia de presión indica derivación o falla del sello. (2) Tendencia de partículas en el análisis de aceite: un aumento repentino de 2 o más unidades de código ISO entre muestras consecutivas sin cambios en la operación sugiere derivación del filtro o falla del sello, y no solo la acumulación normal de contaminación. (3) Inspección visual: filtraciones de aceite en la junta del filtro roscado, visibles como manchas de aceite marrón anaranjado bajo el filtro, indican un asentamiento incompleto del sello. (4) Indicador de restricción: si el indicador de restricción del filtro se activa con pocas horas de operación (mucho antes de la vida útil esperada), la causa más probable es la apertura de la válvula de derivación por un sello doblado (junta atrapada entre la carcasa y la cara del filtro). Ninguno de estos métodos es concluyente sin la verificación por análisis de aceite."
+    },
+    {
+      "question": "¿Para qué sirve la válvula de derivación térmica en los circuitos del enfriador de aceite del motor?",
+      "answer": "La válvula de derivación térmica (también llamada termostato de aceite) del circuito del enfriador de aceite desvía el aceite alrededor del enfriador cuando su temperatura está por debajo del umbral de operación (normalmente 70–80°C). Por debajo del umbral, el aceite pasa directamente a la galería principal sin pasar por el enfriador: se calienta más rápido y reduce el desgaste de los cojinetes en el arranque en frío por el cizallamiento del aceite. Por encima del umbral, el aceite pasa por el enfriador y mantiene la temperatura de operación en el rango de 80–100°C. Sin la derivación térmica, el aceite frío circularía por el enfriador y alargaría el calentamiento, lo que prolongaría el desgaste por lubricación límite al arrancar el motor. La válvula de derivación es un termostato de elemento de cera o bimetálico clasificado para la presión y temperatura del aceite lubricante: no afecta directamente el funcionamiento del filtro, pero asegura que el filtro trabaje a la temperatura correcta para medir la restricción con precisión."
+    },
+    {
+      "question": "¿Cuál es el procedimiento de prellenado de un filtro de aceite para evitar el desgaste por arranque en seco en frío?",
+      "answer": "Prellenar un filtro de aceite antes de instalarlo reduce el periodo de arranque en seco: el tiempo desde el arranque del motor hasta que el aceite llega a los cojinetes de bancada. En filtros roscados: llene el elemento con aceite de motor limpio por el orificio central de entrada antes de instalarlo, verifique que no se derrame aceite sobre la zona de asiento de la junta y luego apriete a mano más 270°. El prellenado aporta al sistema aproximadamente 0.5–1.5 L de aceite (el volumen del elemento) en el instante del arranque, en lugar de que la bomba tenga que llenar el elemento desde el cárter. En condiciones de frío, estos 0.5–1.5 L reducen el periodo de falta de aceite en los cojinetes de 5–8 segundos (filtro sin llenar) a 2–4 segundos. En filtros montados a distancia, con largas líneas de suministro desde el cárter, el beneficio es proporcionalmente mayor. El prellenado es obligatorio en motores grandes (locomotoras, camiones mineros), donde el tamaño de los cojinetes y el volumen de la galería de aceite alargan el periodo de arranque en seco sin filtro lleno a 15–30 segundos."
+    },
+    {
+      "question": "¿Cómo afecta la contaminación por gases de blow-by a los requisitos de filtración del aceite lubricante?",
+      "answer": "Los gases de blow-by, gases de combustión que pasan por los anillos del pistón hacia el cárter, introducen partículas de hollín (aglomerados de carbón de 0.1–1 µm), niebla de ácido sulfúrico (por el azufre de la combustión del combustible) e hidrocarburos no quemados. Las partículas de hollín en concentraciones superiores al 3% en peso (medidas por TGA, ASTM D5967) provocan espesamiento del aceite (aumento de viscosidad), obstrucción del medio filtrante (las partículas de hollín son submicrónicas y pueden bloquear parcialmente los poros en altas concentraciones) y agotamiento del TBN. Un blow-by excesivo por anillos desgastados multiplica la carga de hollín por 3–5 respecto de lo normal y reduce proporcionalmente la vida del elemento del filtro de aceite. Las pruebas de compresión diferencial de cilindros identifican los cilindros con alta tasa de blow-by: los cilindros por debajo del 80% de la presión de compresión especificada justifican el reemplazo de anillos para normalizar la contaminación por hollín. Los filtros de aceite de flujo total con alta capacidad de retención de hollín (medio SYNTRAX) mantienen la integridad de la filtración con blow-by elevado durante más tiempo que los elementos con medio de celulosa."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4548-1:1997, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 1: Differential Pressure/Flow Characteristics",
+      "relevance": "Método de ensayo de la caída de presión del filtro de aceite, la presión de apertura de la válvula de derivación y la integridad estructural."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4548-12, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 12: Self-Contained Spin-On Filters",
+      "relevance": "Métodos de ensayo específicos del formato de filtro de aceite roscado, incluidos la fuga de la válvula antidrenaje (ADBV), el sellado de la junta y la integridad de las tapas."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D5967, Standard Test Method for Evaluation of Diesel Engine Oils in T-8 Diesel Engine",
+      "relevance": "Método de ensayo en motor que mide la acumulación de hollín, el aumento de viscosidad y la tendencia a obstruir filtros de los aceites para motores diésel en condiciones controladas de blow-by."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Método de ensayo multipaso aplicado a elementos de filtro de aceite lubricante (adaptado de la norma hidráulica) para caracterizar la relación Beta y la capacidad de retención de suciedad."
+    }
+  ],
+  "title": "Filtración del sistema de lubricación",
+  "subtitle": "Arquitectura de flujo total y derivación, ingeniería de la válvula de derivación e integración con el análisis de aceite",
+  "metaDescription": "Referencia de ingeniería para la filtración de sistemas de lubricación de motores y cajas de engranajes: arquitectura de filtro de flujo total frente a derivación, comportamiento de la válvula de derivación en el arranque en frío, filtración centrífuga, integración del monitoreo de la condición del aceite y validación de intervalos de cambio extendidos.",
+  "category": "Ingeniería",
+  "readTime": "12 min",
+  "intro": "La filtración del sistema de lubricación protege los cojinetes del motor, las camisas de cilindro, los componentes del tren de válvulas y los engranajes de la caja de la contaminación por partículas generada por el desgaste normal, ingerida por la admisión de aire e introducida durante el mantenimiento. La arquitectura de filtración (filtro de flujo total, filtro de derivación y separador centrífugo) se diseña en torno a dos requisitos en tensión: mantener un caudal de aceite adecuado en todos los puntos de lubricación en cualquier condición de operación, y eliminar las partículas antes de que recirculen y causen más desgaste.",
+  "sections": [
+    {
+      "heading": "Arquitectura de filtración de flujo total",
+      "body": "Un filtro de aceite de flujo total se instala en serie con la galería principal de aceite: todo el aceite que entrega la bomba pasa por el filtro antes de llegar a los cojinetes y demás puntos de lubricación. Ubicación del filtro de flujo total: entre la salida de la bomba y el riel principal de aceite, aguas abajo de la válvula de alivio de presión. Presión de operación: 3–7 bar a temperatura de operación y caudal total; el arranque en frío puede producir picos momentáneos de 15–20 bar del lado de entrada. Especificación del filtro de flujo total: el elemento debe dejar pasar todo el caudal de la bomba (normalmente 60–200 L/min en un motor diésel) con una restricción limpia ≤ 0.3 bar a temperatura de operación y caudal nominal. Relación Beta de los filtros de motor de flujo total: ensayo ISO 16889 con caudal y viscosidad equivalentes. Especificación típica: β₁₀(c) ≥ 25–75 para motores estándar de pasajeros y comerciales; β₅(c) ≥ 75 para circuitos de lubricación de precisión y circuitos de cojinetes del turbocompresor. Intervalo de servicio: coincide con el intervalo de cambio de aceite (definido por la degradación del aceite y no solo por la carga del filtro). En motores con monitoreo de vida del aceite (General Motors Oil Life System, Ford Intelligent Oil Life Monitor), el intervalo de cambio del filtro sigue el cálculo de vida del aceite.",
+      "callout": [
+        {
+          "label": "Ubicación del filtro de flujo total",
+          "value": "Salida de la bomba → filtro → riel principal de aceite"
+        },
+        {
+          "label": "Presión de operación",
+          "value": "3–7 bar a temperatura de operación"
+        },
+        {
+          "label": "Pico de presión en el arranque en frío",
+          "value": "Hasta 15–20 bar"
+        }
+      ]
+    },
+    {
+      "heading": "Filtración de derivación",
+      "body": "Un filtro de derivación se conecta en paralelo con el caudal principal de aceite: toma una parte del aceite (normalmente el 5–10% del caudal total) de la salida de la bomba, la pasa por un filtro fino de alta eficiencia y la devuelve al cárter. El elemento de derivación trabaja a la presión total de la bomba pero solo deja pasar una fracción del caudal, lo que le permite tener un medio mucho más fino (β₂–₅(c) ≥ 1000) sin crear un problema de restricción en el circuito principal. El filtro de derivación no protege contra la falta de aceite en los arranques en frío: complementa al filtro de flujo total eliminando de forma continua las partículas finas que atraviesan su medio. Los elementos de derivación tienen una DHC alta (varios cientos de gramos, frente a 30–80 g de los elementos roscados típicos de flujo total) porque no están limitados por la caída de presión. Programas de intervalo de cambio extendido con filtración de derivación: algunos programas de fabricantes permiten duplicar o triplicar los intervalos de cambio de aceite (por ejemplo, de 500 a 1,500 horas) cuando se instala un filtro de derivación con medio fino de alta eficiencia y la tendencia del análisis de aceite confirma que el TAN, la viscosidad y los metales de desgaste se mantienen dentro de la especificación.",
+      "callout": [
+        {
+          "label": "Fracción del caudal de derivación",
+          "value": "5–10% del caudal total de aceite"
+        },
+        {
+          "label": "Clasificación Beta del filtro de derivación",
+          "value": "β₂–₅(c) ≥ 1000"
+        },
+        {
+          "label": "Ventaja de DHC del elemento de derivación",
+          "value": "5–10× la DHC del elemento de flujo total"
+        }
+      ]
+    },
+    {
+      "heading": "Ingeniería de la válvula de derivación y comportamiento en el arranque en frío",
+      "body": "La válvula de derivación de la carcasa del filtro de flujo total evita la falta de aceite cuando el elemento está muy restringido, ya sea en el arranque en frío (alta viscosidad del aceite) o cuando el elemento superó su servicio. Las válvulas de derivación son válvulas de asiento con resorte ajustadas para abrirse a una presión diferencial especificada en el elemento (normalmente 0.8–1.5 bar). Cuando la válvula se abre, el aceite sin filtrar pasa de la salida de la bomba directamente al riel principal, sin pasar por el elemento. Derivación en el arranque en frío: un aceite de motor SAE 15W-40 a −20°C tiene una viscosidad cinemática de aproximadamente 3,000–5,000 cSt (frente a ~100 cSt a 80°C). La restricción de un elemento limpio con la viscosidad en frío puede superar fácilmente la presión de apertura de la válvula de derivación en los primeros segundos del arranque en frío: el motor funciona con aceite sin filtrar durante 5–30 segundos hasta que sube la temperatura del aceite. No es una condición de falla, sino el comportamiento esperado. Usar el grado de viscosidad correcto para la temperatura ambiente (especificación de viscosidad SAE J300: 0W-20 para el Ártico, 15W-40 para climas moderados) reduce al mínimo la duración de la derivación en el arranque en frío.",
+      "callout": [
+        {
+          "label": "Presión de apertura de la válvula de derivación",
+          "value": "0.8–1.5 bar ΔP"
+        },
+        {
+          "label": "Viscosidad del SAE 15W-40 a −20°C",
+          "value": "~3,000–5,000 cSt"
+        },
+        {
+          "label": "Duración de la derivación en el arranque en frío",
+          "value": "5–30 segundos (según la temperatura)"
+        }
+      ]
+    },
+    {
+      "heading": "Condición del aceite y clasificación de servicio API",
+      "body": "El aceite de motor debe elegirse según la especificación de diseño del motor y el contenido de azufre del combustible. Categorías de servicio API (American Petroleum Institute) para aceite de motores diésel: API CK-4 (categoría vigente, introducida en 2016), formulada para motores diésel de cuatro tiempos de alta velocidad, compatible con mezclas de biodiésel de hasta B20 y con los requisitos de los sistemas de postratamiento de gases. API FA-4, categoría de viscosidad XW-30 para motores diseñados específicamente para ella; no es compatible con motores antiguos que requieren 15W-40. Los grados de viscosidad SAE J300 definen el rango de temperatura de cada grado: 0W-20, 5W-30, 10W-30, 15W-40, 20W-50, etc. El número W especifica el límite de viscosidad en frío (arranque y bombeo); el número de alta temperatura especifica la viscosidad cinemática a 100°C. Mezclar aceite API CJ-4 (generación anterior) con CK-4 es aceptable en una emergencia; la mezcla con aceites API CI-4 o CH-4 más antiguos debe evitarse en lo posible, porque los paquetes de aditivos son distintos. Usar un aceite con reserva alcalina (TBN) insuficiente para el contenido de azufre del combustible causa desgaste por ácidos en el recubrimiento de los cojinetes.",
+      "callout": [
+        {
+          "label": "Categoría vigente de aceite diésel",
+          "value": "API CK-4 (2016+)"
+        },
+        {
+          "label": "Compatibilidad con biodiésel",
+          "value": "API CK-4: apto para B20"
+        },
+        {
+          "label": "Alcance de SAE J300",
+          "value": "Clasificación de grados de viscosidad del aceite de motor"
+        }
+      ]
+    },
+    {
+      "heading": "Filtración centrífuga",
+      "body": "Los separadores centrífugos (centrífugas de aceite accionadas) eliminan partículas por fuerza centrífuga en lugar de filtrar con un medio, y funcionan sin elemento desechable. El aceite del circuito de derivación entra en un rotor que gira a 4,000–7,000 RPM (accionado por la reacción de los chorros de aceite que salen por la base del rotor o, en algunos diseños, por un motor eléctrico). A 6,000 RPM, la aceleración centrífuga en la pared del rotor es de aproximadamente 2,000 g, suficiente para separar partículas ≥1–2 µm del aceite a temperatura de operación. Las partículas acumuladas forman una torta dura en la pared interior del rotor, que se elimina desarmando y limpiando el rotor en el servicio. Ventajas de la centrífuga: no hay elementos desechables; es eficaz contra aglomerados de carbón blando y hollín que pueden tapar los medios de profundidad; es eficaz contra partículas ≤2 µm que atraviesan los filtros de medio convencionales. Limitaciones de la centrífuga: no elimina el agua; su eficiencia depende de mantener las RPM de diseño (verifique la velocidad del rotor observando el tiempo de giro libre después de detener el motor); no aporta datos de relación Beta verificados por medio para comparar especificaciones. La filtración centrífuga se usa con frecuencia en motores diésel de servicio pesado como complemento de la filtración roscada de flujo total, no como reemplazo.",
+      "callout": [
+        {
+          "label": "Velocidad del rotor de la centrífuga",
+          "value": "4,000–7,000 RPM"
+        },
+        {
+          "label": "Aceleración centrífuga",
+          "value": "~2,000 g en la pared del rotor"
+        },
+        {
+          "label": "Tamaño de partícula efectivo",
+          "value": "≥1–2 µm a temperatura de operación"
+        }
+      ]
+    },
+    {
+      "heading": "Ingeniería de intervalos de cambio extendidos",
+      "body": "Los intervalos de cambio extendidos se diseñan combinando aceite de alta calidad, filtración de derivación y tendencias del análisis de aceite, no simplemente por tiempo transcurrido. Base de ingeniería para la extensión: (1) El análisis de aceite en el intervalo actual debe confirmar TAN ≤ 2 veces el TAN del aceite nuevo, TBN ≥ 50% del TBN del aceite nuevo, viscosidad dentro de ±20% del grado del aceite nuevo, metales de desgaste (Fe, Cu, Al) por debajo de sus límites de alarma individuales y agua ≤ 0.1%. (2) El filtro de derivación debe recibir servicio en el intervalo actual o con mayor frecuencia. (3) La combinación de aceite y filtro debe validarse en la duración de cambio extendida propuesta con análisis de aceite secuenciales en incrementos del 20–30% del intervalo extendido. Consideraciones regulatorias y de garantía: en muchos mercados, la garantía del fabricante exige cambiar el aceite en intervalos especificados sin importar su condición; superar los intervalos del fabricante sin documentación de extensión aprobada por él puede anular la garantía. Los operadores de flotas deben obtener la aprobación escrita del fabricante o usar un programa de aceite de cambio extendido aprobado por él antes de ir más allá del intervalo de cambio base."
+    },
+    {
+      "heading": "Lubricación de cajas de engranajes y mandos finales",
+      "body": "Los sistemas de lubricación de cajas de engranajes y mandos finales usan aceite para engranajes (clasificación SAE J306: 70W, 75W, 80W-90, 85W-140, etc.) en lugar de aceite de motor, con requisitos de limpieza y enfoques de filtración distintos. API GL-5 es la especificación más común de aceite para engranajes hipoidales de servicio pesado. Objetivos de limpieza para cajas de engranajes: ISO 18/16/13 para cajas helicoidales estándar; ISO 17/15/12 para trenes de engranajes de alta precisión con paso fino y holguras estrechas. Filtración de cajas de engranajes: normalmente tapones de drenaje magnéticos (capturan partículas ferrosas ≥50–100 µm por retención magnética), complementados con filtros de aceite de engranajes de flujo total o de derivación en grandes cajas industriales. Análisis de aceite en cajas de engranajes: el plomo (Pb) indica desgaste del recubrimiento de cobre-plomo de los cojinetes de engranajes hipoidales; el hierro (Fe) indica desgaste de dientes y rodamientos; el silicio (Si) indica falla de los sellos de juntas e ingreso externo. En la mayoría de los programas de los fabricantes, los intervalos de cambio de aceite de cajas de engranajes se basan en kilometraje u horas (no en la condición), porque el menor volumen de aceite hace que la degradación llegue al límite de servicio de forma más predecible.",
+      "callout": [
+        {
+          "label": "Norma de aceite para engranajes",
+          "value": "SAE J306 (grados de viscosidad)"
+        },
+        {
+          "label": "Especificación de aceite para engranajes",
+          "value": "API GL-5 (engranajes hipoidales)"
+        },
+        {
+          "label": "Objetivo de limpieza para cajas de engranajes",
+          "value": "ISO 18/16/13 (helicoidales estándar)"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Clasificación Beta del filtro de flujo total",
+      "value": "β₁₀(c) ≥ 25–75"
+    },
+    {
+      "label": "Presión de apertura de la válvula de derivación",
+      "value": "0.8–1.5 bar"
+    },
+    {
+      "label": "Aceleración de la centrífuga",
+      "value": "~2,000 g en la pared del rotor"
+    },
+    {
+      "label": "Límite de TBN para cambio extendido",
+      "value": "≥50% del TBN del aceite nuevo"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4406",
+    "ASTM D6304"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "sistema de lubricación",
+    "filtro de flujo total",
+    "filtración de derivación",
+    "válvula de derivación",
+    "filtración centrífuga",
+    "API CK-4",
+    "SAE J300",
+    "intervalo de cambio extendido"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Testigo de presión de aceite encendido a temperatura normal de operación: el elemento filtrante está en la restricción final o la superó, y obliga a operar con la válvula de derivación totalmente abierta",
+      "Hierro (Fe) elevado en el análisis ICP del aceite: desgaste del recubrimiento de cojinetes o de camisas que genera partículas metálicas que circulan por el circuito de lubricación",
+      "TAN en aumento en muestras sucesivas: la velocidad de oxidación del aceite supera el agotamiento de la reserva alcalina del TBN, lo que indica una degradación acelerada",
+      "Residuos metálicos visibles en el tapón de drenaje magnético: partículas de desgaste grandes (>100 µm) que el medio de profundidad no captura, lo que indica un evento de desgaste agudo",
+      "Aumento del consumo de aceite >0.5 L/1,000 km: desgaste de camisas o falla del sello del turbocompresor que deja pasar aceite a la combustión o al escape"
+    ],
+    "probableCauses": [
+      "Elemento filtrante usado más allá de su intervalo de servicio: medio cargado por encima de su DHC y válvula de derivación abierta durante periodos prolongados, dejando pasar aceite sin filtrar",
+      "Especificación incorrecta de la válvula de derivación: presión de apertura demasiado baja respecto de la viscosidad en frío, lo que alarga la derivación en el arranque en frío",
+      "Viscosidad del aceite inadecuada para el filtro: aceite de grado SAE incorrecto que causa restricción excesiva en frío o película insuficiente a alta temperatura",
+      "Ingreso de refrigerante por falla de la junta de culata: agua en el aceite confirmada por el pico de glicol en FTIR (866 cm⁻¹) y el aumento del contenido de agua según ASTM D6304",
+      "Agotamiento del TBN por alto contenido de azufre del combustible (diésel fuera de carretera): los productos ácidos de la combustión del azufre consumen la reserva alcalina más rápido de lo que prevé el intervalo de cambio del fabricante"
+    ],
+    "inspectionMethods": [
+      "Corte el elemento de flujo total usado y examine el medio: brillo metálico en la cara de entrada = desgaste de cojinetes o camisas; torta carbonosa = carga normal de hollín; depósitos de color cobre = falla del recubrimiento de los cojinetes",
+      "Mida el TAN (ASTM D664) y el TBN (ASTM D2896) en una muestra de aceite usado: una relación TBN:TAN ≥1 es el mínimo aceptable; una relación <1 indica uso excesivo",
+      "FTIR del aceite usado: un pico de glicol a 866 cm⁻¹ confirma ingreso de refrigerante; un pico de oxidación a 1,700–1,760 cm⁻¹ por encima de 25 AU indica oxidación acelerada",
+      "Tendencia de metales de desgaste por ICP: Fe + Cr en aumento = desgaste de camisas/anillos; solo Fe en aumento = cigüeñal o árbol de levas; Cu en aumento = cojinete de bronce; Al en aumento = pistón o cárter de engranajes",
+      "Inspección del tapón de drenaje magnético en cada cambio de aceite: cuantifique y caracterice los residuos; una masa creciente en cada intervalo indica un evento de desgaste que se acelera"
+    ],
+    "correctiveActions": [
+      "Si la válvula de derivación está abierta en forma continua: reemplace el elemento de inmediato; investigue si se superó el intervalo de servicio o si el elemento estaba subdimensionado para el caudal de la aplicación",
+      "Si se confirma ingreso de refrigerante (glicol en FTIR): no haga funcionar el motor; drene el aceite, lave el circuito, identifique y repare la junta de culata o el enfriador de aceite, rellene con aceite nuevo y elemento nuevo; análisis de aceite a las 50 horas",
+      "Si la relación TBN:TAN es <1: es necesario cambiar el aceite sin importar las horas transcurridas; con combustible de alto azufre, pase a un aceite con mayor TBN inicial (el diésel fuera de carretera con >500 ppm de S requiere aceite nuevo con TBN ≥30)",
+      "Si hay un evento de desgaste agudo (partículas metálicas grandes en el tapón de drenaje): reduzca el servicio del filtro de derivación al 50% del intervalo normal; aumente la frecuencia del análisis de aceite a cada 100 horas hasta que se estabilice",
+      "Para un programa de cambio extendido: establezca como mínimo 3 datos secuenciales de análisis de aceite en el intervalo actual antes de extenderlo; no extienda sin confirmar TAN, TBN, viscosidad y metales de desgaste en cada paso"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Desgaste prematuro de cojinetes (Fe y Cu elevados en el análisis de aceite)",
+      "standard": "ISO 16889 (filter efficiency), ISO 4406 (lube cleanliness)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Filtro de flujo total β₁₀(c) ≥ 75 + filtro de derivación β₂(c) ≥ 1000 con un caudal de derivación del 5–10%",
+      "relatedArticles": [
+        "iso-16889",
+        "beta-ratio",
+        "oil-analysis-methods",
+        "contamination-control"
+      ]
+    },
+    {
+      "problem": "Degradación del aceite (aumento del TAN, agotamiento del TBN antes del intervalo de cambio)",
+      "standard": "ASTM D664 (TAN), ASTM D2896 (TBN)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Programa de análisis de aceite con protocolo de cambio al llegar al límite; uso de aceite API CK-4 con mayor TBN en aplicaciones con combustible de alto azufre",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "Derivación prolongada en el arranque en frío que deja llegar aceite sin filtrar a los cojinetes",
+      "standard": "ISO 16889 (bypass valve pressure specification)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Grado de viscosidad SAE J300 correcto para la temperatura ambiente; verifique que la presión de apertura de la derivación corresponda a la restricción del elemento con la viscosidad en frío",
+      "relatedArticles": [
+        "seal-integrity",
+        "filter-media-science",
+        "service-intervals"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "ISO 16889:2022 verified; API CK-4 specification verified; SAE J300:2021 verified; SAE J306:2019 verified; ASTM D664/D2896 verified"
+  },
+  "commonMistakes": [
+    "Elegir el grado de viscosidad del aceite de motor solo por la temperatura ambiente, sin considerar la viscosidad mínima que requiere la bomba de aceite a la temperatura máxima de operación del motor. Un aceite demasiado fluido a alta temperatura pierde espesor de película hidrodinámica en los cojinetes de bancada.",
+    "No tener en cuenta el índice de viscosidad (IV) al comparar aceites multigrado. Un 10W-40 con IV 130 mantiene una viscosidad mayor a la temperatura de operación del motor que un 10W-40 con IV 100: el grado SAE solo especifica la viscosidad en los puntos de referencia en frío y a 100°C, no la viscosidad real de operación.",
+    "Extender los intervalos de cambio de aceite sin datos de verificación por análisis de aceite. Los intervalos de cambio extendidos requieren evidencia del monitoreo de la condición de que el TAN, el TBN, la viscosidad y los metales de desgaste se mantienen dentro de la especificación: extender el intervalo de forma general sin análisis de aceite pone en riesgo los cojinetes y los anillos."
+  ]
+}

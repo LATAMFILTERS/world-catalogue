@@ -1,0 +1,297 @@
+{
+  "slug": "diesel-fuel-filtration",
+  "faqs": [
+    {
+      "question": "Quais são os requisitos de limpeza de partículas do combustível diesel que entra em uma bomba common rail?",
+      "answer": "As bombas de combustível de alta pressão common rail (HPCR) exigem limpeza do combustível de código ISO 4406 17/15/12 ou melhor na entrada da bomba (conforme a documentação de serviço do sistema Bosch Common Rail e os requisitos de qualificação de filtros de combustível). A folga êmbolo-cilindro da bomba é de 1–3 µm; partículas maiores que esse tamanho riscam as superfícies de contato da bomba. Os métodos de ensaio de filtros de combustível e os requisitos de aplicação devem ser selecionados para o sistema aprovado: o nome da tecnologia por si só não implica uma classificação em mícrons, eficiência, capacidade ou certificação universal. O meio de partículas SYNTAPORE é projetado para a função de filtração primária e secundária em HPCR."
+    },
+    {
+      "question": "Qual eficiência de separação de água é exigida dos separadores de água e combustível diesel?",
+      "answer": "A eficiência de separação de água dos separadores de água e combustível diesel é medida conforme a ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) ou a SAE J1488 (Emulsified Water/Fuel Separation Test). A eficiência de separação exigida em aplicações HPCR depende do elemento e da aplicação aprovados; o meio coalescente HYDROCORE é classificado para o desempenho de separação exigido nessas condições de ensaio. O ensaio ISO 4020 usa uma emulsão de água em combustível com distribuição definida de tamanhos de gota e mede o teor de água a jusante por titulação Karl Fischer. Elementos que não atingem a classificação exigida permitem o acúmulo de água livre na entrada da bomba common rail: o principal mecanismo de corrosão da agulha do injetor e de propagação da contaminação microbiana no sistema de combustível."
+    },
+    {
+      "question": "Qual é o efeito da formação de cristais de parafina em baixa temperatura no desempenho do filtro de combustível?",
+      "answer": "Os cristais de parafina do diesel se formam quando a temperatura do combustível cai abaixo do ponto de névoa, normalmente de +2°C a +15°C no diesel de verão B0 e mais alto em misturas com biodiesel. Os cristais de parafina (cadeias parafínicas que precipitam como aglomerados sólidos) se acumulam na superfície do meio filtrante, bloqueiam os poros e aumentam a restrição. Abaixo do ponto de entupimento de filtro a frio (CFPP, conforme a EN 116), a restrição aumenta rapidamente e pode deixar o motor sem combustível em 30–60 minutos de exposição ao frio. Sistemas de aquecimento do filtro (pré-aquecedores elétricos ou trocadores de calor no circuito de combustível) mantêm a temperatura do filtro acima do CFPP. A EN 590 especifica diesel de inverno com CFPP de até −44°C para mercados árticos, mas mesmo um combustível conforme pode formar cristais de parafina abaixo do CFPP especificado. Elementos de filtro com meio resistente à parafina (fibra sintética hidrofóbica) resistem melhor ao bloqueio prematuro do que a celulose, que absorve umidade e acelera a formação de cristais de gelo."
+    },
+    {
+      "question": "Como os filtros de combustível diesel são dimensionados para os estágios de filtração primária e secundária?",
+      "answer": "Os sistemas de filtração de combustível diesel usam dois estágios: primário (remoção da contaminação grossa, antes da bomba) e secundário (filtração fina, depois da bomba de alimentação e antes dos injetores). Os filtros primários têm classificação de 30–100 µm para remover ferrugem, carepa e partículas grossas dos tanques de armazenamento, protegendo a bomba de alimentação contra danos por partículas. Os filtros secundários têm classificação de 2–10 µm absolutos para atingir a limpeza exigida pelo HPCR (ISO 17/15/12 ou melhor). O dimensionamento do elemento se baseia na vazão de combustível nominal na potência máxima do motor (aproximadamente 5 vezes o consumo do motor, para considerar a vazão de retorno da bomba de alta pressão), com restrição limpa alvo de 0.1–0.3 bar. Os intervalos de substituição costumam ser de 500 horas para os elementos secundários e 1,000 horas para os primários, ou no primeiro acionamento do indicador de restrição em ambientes com fornecimento de combustível muito contaminado."
+    },
+    {
+      "question": "Quais materiais são compatíveis com misturas de biodiesel na construção de filtros de combustível?",
+      "answer": "As misturas de biodiesel (FAME B5–B100) são quimicamente mais agressivas que o diesel mineral por causa da maior polaridade e afinidade com a água. Materiais compatíveis: meio filtrante, poliéster ou polipropileno sintéticos (a celulose se degrada em B20 ou superior em 500–1,000 horas); colagem das tampas, epóxi ou termossoldagem (o plastisol se degrada em FAME acima de 40°C); vedações e juntas, FKM (Viton, compatível com B20 ou mais) ou NBR com estabilizantes de amina (aceitável com ressalvas apenas até B20); carcaça, polipropileno, poliamida (PA66) ou aço inoxidável (a dezincificação da fundição de zinco acelera com combinações de biodiesel e água). A EN 590 limita o FAME a B7 no diesel rodoviário europeu, mas o uso fora de estrada e a agricultura podem usar B20 ou mais. A compatibilidade do elemento deve ser verificada com a matéria-prima específica do FAME (colza, soja, palma), pois a composição de ácidos graxos afeta a velocidade de ataque aos materiais."
+    },
+    {
+      "question": "O que causa o bypass do filtro de combustível diesel durante partidas a frio?",
+      "answer": "O bypass do filtro durante partidas a frio ocorre quando a baixa temperatura eleva a viscosidade do diesel: um diesel mineral ISO VG 5–8 a −20°C tem viscosidade cinemática 5–20 vezes maior do que na temperatura de operação (40°C). Essa alta viscosidade gera uma restrição no elemento filtrante muito maior do que nas condições nominais de operação. Se a restrição exceder a pressão de abertura da válvula de bypass (normalmente 0.5–2.5 bar em filtros de combustível diesel), o combustível sem filtragem vai direto para a bomba de alta pressão, levando partículas antes retidas pelo meio filtrante. Bypass de 30–60 segundos durante partidas a frio é um modo de falha reconhecido dos sistemas HPCR em climas frios: durante esses eventos, o desgaste dos injetores é de 10 a 50 vezes o desgaste normal com combustível filtrado. Aplicações em clima frio exigem pré-aquecedores de filtro ou aquecimento do circuito de combustível antes da partida com temperaturas abaixo de −10°C."
+    },
+    {
+      "question": "Qual é a importância da lubricidade do combustível e como a filtração a afeta?",
+      "answer": "A lubricidade do combustível descreve a capacidade do diesel de fornecer lubrificação hidrodinâmica nas interfaces de contato metal-metal da bomba de combustível e dos injetores. O diesel de ultrabaixo teor de enxofre (ULSD, <15 ppm de enxofre) tem menos lubricidade natural que os antigos combustíveis de alto enxofre, porque os processos de refino que removem o enxofre também removem compostos polares que contribuem para a lubricidade. Bombas HPCR operando com combustível abaixo da lubricidade mínima (diâmetro da marca HFRR >520 µm a 60°C conforme a ISO 12156-1) apresentam desgaste acelerado do êmbolo. A filtração não afeta diretamente a lubricidade, mas a emulsão por contaminação com água (>200 ppm Karl Fischer) rompe o filme lubrificante nas interfaces êmbolo-cilindro, mesmo em combustíveis que atendem à especificação de lubricidade. O tratamento com aditivos de lubricidade (adição de FAME a B1–B2 ou melhoradores de lubricidade sintéticos) restaura a lubricidade HFRR mínima do ULSD sem afetar o desempenho do filtro de combustível."
+    },
+    {
+      "question": "Como o monitoramento da condição do elemento por indicador de restrição difere entre aplicações de combustível e hidráulicas?",
+      "answer": "Os indicadores de restrição de filtros de combustível diesel precisam considerar a variação da viscosidade com a temperatura do combustível: o combustível frio (−20°C) gera restrição 5–10 vezes maior do que o combustível quente (40°C) com a mesma carga de partículas. Indicadores de restrição com compensação de temperatura, que usam uma mola bimetálica para ajustar o limite de alarme de forma inversa à temperatura, evitam alarmes falsos nas partidas a frio e garantem que o alarme reflita a carga real do elemento e não efeitos de viscosidade. Os indicadores de restrição de sistemas hidráulicos não compensam a temperatura, porque esses sistemas operam em uma faixa de temperatura mais estreita e estável (30–70°C). Os alarmes de restrição do filtro de combustível devem ser cruzados com a temperatura do combustível no momento do acionamento, para distinguir alarmes transitórios por temperatura (que se desligam quando o combustível aquece) de alarmes reais por carga do elemento (que continuam ativos após o aquecimento)."
+    },
+    {
+      "question": "Qual é o intervalo de serviço para drenar o copo do separador de água e combustível em aplicações diesel marítimas?",
+      "answer": "Os intervalos de drenagem do copo do separador de água em sistemas de combustível diesel marítimos dependem das condições do mar, da qualidade do combustível fornecido e da ventilação dos tanques. Intervalos típicos: (1) Após cada abastecimento: as novas entregas podem conter água livre; drene imediatamente após a decantação (1 hora por metro de profundidade do tanque). (2) Diariamente em climas tropicais de alta umidade: a condensação se acumula durante a noite. (3) Após mar grosso: o movimento do combustível causado pelas ondas volta a suspender a água e os sedimentos decantados, aumentando a água livre na entrada do filtro. O copo do separador HYDROCORE deve ser inspecionado visualmente em cada verificação antes da partida do motor: uma camada de água visível acima do ponto de acionamento do dreno inferior exige drenagem imediata e registro no diário da praça de máquinas. Conforme a classe da embarcação e o sistema de descarga do separador, podem se aplicar os requisitos do Anexo I da MARPOL da IMO sobre o teor de óleo da água drenada."
+    },
+    {
+      "question": "Como o desempenho do filtro de combustível é validado em sistemas common rail após a substituição do elemento?",
+      "answer": "Após substituir o elemento do filtro de combustível em sistemas HPCR, a validação exige: (1) Sangrar o ar do sistema de combustível com a bomba de escorva ou a bomba elétrica de combustível (alguns projetos HPCR se autossangram e outros exigem sangria manual, conforme o manual de oficina do fabricante). Ar não sangrado no circuito impede que a pressão do common rail atinja o limite de injeção (normalmente 800–1,500 bar para a partida do sistema). (2) Dar partida no motor por no máximo 15 segundos; se não pegar, investigar a integridade do circuito de combustível. (3) Verificar vazamentos de combustível na montagem da carcaça do filtro e em todas as conexões de linha que foram mexidas. (4) Em sistemas instrumentados, verificar se a pressão do rail atinge o valor alvo em até 5 segundos do início da partida. (5) Após 30 minutos de operação em temperatura normal, inspecionar visualmente a carcaça do filtro em busca de vazamentos na junta ou na união do copo. Qualquer vazamento exige parar o sistema imediatamente e investigar."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4020:2001, Road Vehicles — Fuel Filters for Diesel Engines — Test Methods",
+      "relevance": "Métodos de ensaio de desempenho de filtros de combustível diesel, incluindo queda de pressão, eficiência de separação de água e compatibilidade do meio."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12156-1:2018, Diesel Fuel — Assessment of Lubricity Using the High-Frequency Reciprocating Rig (HFRR)",
+      "relevance": "Norma de ensaio de lubricidade citada nas especificações de combustível diesel para verificar a proteção da bomba e dos injetores em aplicações com ULSD."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods",
+      "relevance": "Especificação europeia de diesel que define os requisitos de CFPP, teor de água, teor de FAME e lubricidade HFRR do combustível comercial."
+    },
+    {
+      "category": "specification",
+      "citation": "Robert Bosch GmbH, Common Rail System for Passenger Cars Maintenance Guide, Technical Documentation",
+      "relevance": "Documentação do fabricante que define os requisitos de limpeza do combustível, a especificação do filtro e os intervalos de substituição dos sistemas de injeção HPCR Bosch."
+    }
+  ],
+  "title": "Filtração de combustível diesel",
+  "subtitle": "Projeto do sistema de três estágios, ISO 4020 e requisitos de limpeza HPCR",
+  "metaDescription": "Referência de engenharia para o projeto de sistemas de filtração de combustível diesel: arquitetura de três estágios com pré-filtro, filtro primário e filtro secundário; métodos de ensaio ISO 4020; requisitos de limpeza HPCR; separação de água; e intervalos de serviço por condição.",
+  "category": "Engenharia",
+  "readTime": "12 min",
+  "intro": "A filtração de combustível diesel protege os sistemas de injeção da dupla ameaça das partículas e da água livre. Os sistemas modernos de injeção common rail de alta pressão (HPCR), que operam a 1,600–2,500 bar com folgas de bico de 1–3 µm, exigem filtração de combustível em vários estágios projetada para eficiências de remoção de partículas e taxas de separação de água especificadas. A arquitetura de três estágios (pré-filtro grosso, filtro primário de partículas e separador de água coalescente/filtro secundário) trata cada modo de contaminação com a tecnologia adequada no ponto adequado do circuito de combustível.",
+  "sections": [
+    {
+      "heading": "Arquitetura de filtração de combustível em três estágios",
+      "body": "Um sistema completo de filtração de combustível diesel consiste em três estágios instalados em série na linha de alimentação, a montante da bomba injetora. Estágio 1, pré-filtro grosso (do tanque à bomba de alimentação): remove partículas ≥30–100 µm e separa a água livre acumulada no tanque. Normalmente é um separador tipo copo alimentado por gravidade com tela de 30 µm. Protege a bomba de alimentação do desgaste abrasivo por partículas grossas. Estágio 2, filtro primário de combustível (da bomba de alimentação à bomba injetora): remove partículas ≥5–10 µm e água emulsionada. É a principal barreira contra partículas e o principal estágio de coalescência da água. Classificação β₅(c) ≥ 20–200 conforme a sensibilidade do sistema de injeção. Abriga o sensor de água no combustível (WIF) e a válvula de dreno manual. Estágio 3, filtro secundário (final) de combustível (da bomba injetora ao rail): remove partículas ≥2–5 µm em aplicações HPCR. Não existe em todos os sistemas: é adicionado em sistemas de injeção que operam acima de 1,600 bar, nos quais a limpeza do estágio final é crítica. Classificação: β₂(c) ≥ 75 ou melhor. Teor total de água na entrada do rail em HPCR: ≤50 ppm dissolvida; zero água livre.",
+      "callout": [
+        {
+          "label": "Tamanho de corte do estágio 1 (pré-filtro)",
+          "value": "Tela de 30–100 µm"
+        },
+        {
+          "label": "Classificação do estágio 2 (primário)",
+          "value": "β₅(c) ≥ 20–200 (conforme a aplicação)"
+        },
+        {
+          "label": "Estágio 3 (final) para HPCR",
+          "value": "β₂(c) ≥ 75 (sistemas ≥1,600 bar)"
+        }
+      ]
+    },
+    {
+      "heading": "Métodos de ensaio de filtros de combustível ISO 4020",
+      "body": "A ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines — Test Methods) é a norma principal para avaliar o desempenho dos filtros de combustível diesel em veículos rodoviários. A norma cobre: eficiência de filtração (métodos gravimétrico e por contagem de partículas), restrição inicial (queda de pressão na vazão nominal), restrição final, pressão de ruptura (mínimo de 6 vezes a pressão máxima de trabalho em carcaças), compatibilidade com tipos de combustível diesel, restrição na partida a frio (restrição a −20°C para confirmar o fluxo durante a partida a frio) e eficiência de separação de água. A separação de água é medida como a porcentagem do volume de água injetada que é separada para o copo de água, normalmente em vazão fixa e com distribuição controlada do tamanho de gota da água injetada. As condições de ensaio da ISO 4020 usam diesel padrão (semelhante à especificação EN 590) em vazões e temperaturas especificadas. Relato da eficiência: gravimétrica (porcentagem de captura de massa total) para especificações de filtros primários; por contagem de partículas para filtros secundários de grau HPCR. A ISO 19438 (Diesel Fuel and Petrol Filters for Internal Combustion Engines — Filtration Characteristics) amplia a ISO 4020 com a medição de eficiência fracionada em tamanhos de partícula discretos, equivalente ao enfoque da ISO 5011 para filtros de ar.",
+      "callout": [
+        {
+          "label": "Pressão mínima de ruptura da carcaça",
+          "value": "6× a pressão máxima de trabalho"
+        },
+        {
+          "label": "Temperatura do ensaio de restrição a frio",
+          "value": "−20°C"
+        },
+        {
+          "label": "Medição da separação de água",
+          "value": "% da água injetada recuperada"
+        }
+      ]
+    },
+    {
+      "heading": "Requisitos de limpeza do sistema de injeção HPCR",
+      "body": "Os fabricantes de sistemas de injeção common rail de alta pressão especificam a contaminação máxima por partículas e o teor de água na entrada do injetor. Metas de limpeza representativas segundo dados dos fabricantes: partículas ≥4 µm: ≤500/mL; partículas ≥6 µm: ≤50/mL; partículas ≥14 µm: ≤5/mL, equivalente a aproximadamente ISO 15/12/9. Teor de água no injetor: ≤50 ppm dissolvida. Alguns fabricantes especificam limites ainda mais rigorosos para injetores piezoelétricos (≤200 partículas ≥4 µm/mL). Essas metas são definidas pela folga de guia da agulha do bico (1–3 µm) e pela geometria do elemento de acionamento por solenoide ou piezoelétrico. Partículas do tamanho da folga crítica (1–5 µm) que entram no bico a 2,000 bar não simplesmente o atravessam: são lançadas em alta velocidade contra as superfícies metálicas, causando desgaste erosivo e alterando a sincronização da injeção. Os diagnósticos das ECUs modernas detectam variações de 2–5% na vazão do bico como deriva da correção de injeção; variações acima de 10% acionam um código de falha. A água no bico em alta pressão causa microlascamentos nas superfícies de bico com revestimento de carboneto por impacto hidráulico nas bordas dos pites.",
+      "callout": [
+        {
+          "label": "Meta HPCR (fabricante típico)",
+          "value": "ISO 15/12/9 na entrada do injetor"
+        },
+        {
+          "label": "Limite de água no injetor",
+          "value": "≤50 ppm dissolvida"
+        },
+        {
+          "label": "Alerta de deriva da vazão do bico",
+          "value": "±10% aciona código de falha da ECU"
+        }
+      ]
+    },
+    {
+      "heading": "Elementos coalescentes de separação de água",
+      "body": "A função coalescente do filtro primário de combustível é desempenhada por uma camada de fibra de vidro hidrofílica ou de meio sintético tratado que faz as gotas de água emulsionada migrarem para a superfície das fibras e se unirem. A eficiência de coalescência depende da velocidade de face (velocidade menor permite mais tempo de contato; a velocidade de face efetiva máxima costuma ser de 0.05–0.10 m/s), da distribuição de tamanhos de gota da água emulsionada que entra (gotas menores são mais difíceis de coalescer) e da energia superficial do meio (meio hidrofílico atrai as gotas de água preferencialmente ao combustível). Após a coalescência, as gotas de água de 100–500 µm decantam por gravidade para o copo de água transparente na base do filtro. Os sensores de água no combustível, de tipo capacitivo (mudança da constante dielétrica) ou óptico (mudança de refratividade), montados no copo de água, acionam um aviso na cabine quando a água livre acumulada passa de aproximadamente 50 mL. A maioria dos fabricantes recomenda inspecionar e drenar o copo de água diariamente em ambientes de operação com alta umidade. Em misturas com biodiesel (B7, B20), a separação de água é mais difícil porque o biodiesel tem mais afinidade com a água e a emulsão é mais estável.",
+      "callout": [
+        {
+          "label": "Limite de velocidade de face para a coalescência",
+          "value": "≤0.10 m/s"
+        },
+        {
+          "label": "Tamanho da gota coalescida (decantada)",
+          "value": "100–500 µm"
+        },
+        {
+          "label": "Volume de acionamento do sensor WIF",
+          "value": "≈50 mL de água livre"
+        }
+      ]
+    },
+    {
+      "heading": "Desafios da filtração de combustível em clima frio",
+      "body": "A cristalização de parafina no diesel em temperaturas abaixo do ponto de entupimento de filtro a frio (CFPP) bloqueia rapidamente os elementos do filtro primário: um elemento em bom estado pode ficar totalmente restrito em minutos no frio extremo. A EN 590 especifica limites de CFPP por zona climática: Classe F (inverno ártico): CFPP ≤ −44°C; Classe E: ≤ −34°C; Classe D: ≤ −26°C; Classe B (inverno temperado): ≤ −20°C. Carcaças de filtro aquecidas (com líquido de arrefecimento do motor ou aquecedores elétricos) mantêm o combustível acima do CFPP aquecendo-o antes que toque o meio filtrante, evitando a precipitação de parafina no filtro. Os aquecedores de carcaça vêm de fábrica em equipamentos árticos e subárticos; há kits de adaptação para equipamentos de clima temperado que enfrentam episódios de frio severo. O combustível com parafina modificada (diesel de inverno) contém depressores do ponto de fluidez e modificadores de cristais de parafina que reduzem o CFPP sem exigir filtração aquecida: verifique se o grau do combustível é adequado à temperatura ambiente antes de atribuir ao elemento filtrante o entupimento em clima frio.",
+      "callout": [
+        {
+          "label": "CFPP (grau ártico, EN 590 Classe F)",
+          "value": "≤ −44°C"
+        },
+        {
+          "label": "CFPP (inverno temperado, Classe B)",
+          "value": "≤ −20°C"
+        },
+        {
+          "label": "Mitigação em clima frio",
+          "value": "Carcaça de filtro aquecida + grau de combustível correto"
+        }
+      ]
+    },
+    {
+      "heading": "Intervalos de serviço e gestão por condição",
+      "body": "Na maioria dos programas dos fabricantes, os intervalos de serviço do filtro de combustível são baseados principalmente em quilometragem ou horas: 500–1,000 horas ou 20,000–40,000 km para os filtros primários; 1,000–2,000 horas para os filtros secundários em aplicações HPCR. Acionadores por condição: o sensor de pressão diferencial do filtro primário (indicador de restrição) sinaliza o serviço quando a queda de pressão no elemento ultrapassa o limite (normalmente 0.3–0.7 bar na temperatura e vazão de operação). O aviso de água no combustível exige atenção imediata: drene, inspecione e, se a água persistir após a drenagem, substitua o elemento e investigue a origem da entrada. Eventos de combustível contaminado (lote ruim, crescimento microbiano, muito sedimento) exigem substituição imediata do elemento, independentemente das horas de serviço, seguida de inspeção do tanque, amostragem dos sedimentos e, se necessário, tratamento com biocida. A substituição do filtro secundário em sistemas HPCR nunca deve ser adiada: um elemento secundário perto do intervalo de serviço é a última linha de defesa entre a contaminação do sistema de combustível e o dano aos injetores a mais de 2,000 bar."
+    },
+    {
+      "heading": "Monitoramento e amostragem da limpeza do combustível",
+      "body": "A limpeza do sistema de combustível pode ser avaliada em três pontos: o tanque (representa o histórico de entrada), a saída do filtro primário (eficácia do tratamento do sistema) e o rail dos injetores (nível final de proteção). A amostragem no rail ou na saída do filtro secundário é feita com seringa calibrada e frasco pré-limpo, para um contador automático de partículas ou um instrumento KFT de laboratório. A contagem de partículas calibrada conforme a ISO 11171 na saída do rail deve atender à meta de limpeza HPCR especificada pelo fabricante. A medição de água KFT conforme a ASTM D6304 em amostras do tanque identifica o acúmulo de água antes que ele chegue ao sistema de injeção; meta: ≤200 ppm no tanque e ≤50 ppm no rail. A ferrografia analítica do resíduo do elemento do filtro primário (após o serviço) identifica a morfologia das partículas: partículas metálicas de desgaste da bomba injetora indicam dano à bomba; partículas de borracha ou elastômero indicam degradação das vedações nas conexões do sistema de combustível."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Pressão no rail HPCR",
+      "value": "1,600–2,500 bar"
+    },
+    {
+      "label": "Classificação do filtro primário do estágio 2",
+      "value": "β₅(c) ≥ 20–200"
+    },
+    {
+      "label": "Limite de água no injetor",
+      "value": "≤50 ppm dissolvida"
+    },
+    {
+      "label": "Fator de segurança de ruptura da carcaça",
+      "value": "6× a pressão de trabalho (ISO 4020)"
+    }
+  ],
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "relatedSystems": [
+    "Fuel Cleanliness Protection"
+  ],
+  "keywords": [
+    "filtração de combustível diesel",
+    "ISO 4020",
+    "HPCR",
+    "separação de água",
+    "filtro coalescente",
+    "limpeza do combustível",
+    "ponto de entupimento de filtro a frio",
+    "EN 590"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Restrição rápida do filtro primário: o elemento atinge o ΔP final em 50–70% do intervalo de serviço normal",
+      "Fumaça de escape branca ou cinza em temperatura de operação: indica que um problema de água ou de qualidade do combustível está chegando à combustão",
+      "Luz de água no combustível acesa: a água livre excede o limite do sensor no copo do filtro primário",
+      "Partida difícil, oscilação de rotação ou falhas de ignição: falta de alimentação de combustível ou desvio da vazão dos injetores por parafina ou contaminação",
+      "Falhas de balanceamento dos injetores na ECU: uma correção de combustível por cilindro acima de ±3 mg/curso indica desgaste ou obstrução do bico"
+    ],
+    "probableCauses": [
+      "Biofilme microbiano (Cladosporium resinae) no tanque gerando partículas de biomassa que entopem rapidamente o meio do elemento primário",
+      "Cristalização de parafina abaixo do ponto de entupimento de filtro a frio: grau do combustível inadequado à temperatura ambiente",
+      "Entrada de água no tanque por condensação (tanque ventilado), entrega contaminada do caminhão-tanque ou vedação da tampa do bocal danificada",
+      "Contaminação do lote de combustível: sedimentos, partículas de corante ou pacote de aditivos incompatível por produto incorreto",
+      "Uso excessivo do filtro secundário, permitindo que a limpeza na entrada dos injetores se degrade além da especificação do fabricante"
+    ],
+    "inspectionMethods": [
+      "Corte o elemento primário e inspecione a torta do meio: cinza-acastanhado = carga normal de partículas; fios pretos = hifas microbianas; brilho metálico = partículas de desgaste da bomba injetora",
+      "Titulação Karl Fischer (ASTM D6304) de amostra do fundo do tanque: ≥500 ppm indica presença de camada de água livre",
+      "Drene o copo de água em um recipiente transparente: água cinza turva = crescimento microbiano; água límpida = entrada por condensação; água avermelhada = corrosão do tanque",
+      "Contagem de partículas ISO 4406 na saída do filtro primário: o resultado deve atender ao código de limpeza especificado pelo fabricante",
+      "Clima frio: meça o CFPP do combustível conforme a EN 116 e compare com a temperatura ambiente; CFPP a menos de 5°C da temperatura ambiente indica risco de parafina"
+    ],
+    "correctiveActions": [
+      "Substitua o elemento primário imediatamente em qualquer evento de contaminação: não espere o intervalo programado",
+      "Drene o copo de água diariamente em climas úmidos; se a água voltar, investigue e vede todos os caminhos de entrada no tanque (tampa do bocal, respiro, vedações da carroceria)",
+      "Trate o tanque com biocida aprovado conforme a ASTM D4054 na dosagem correta; limpe fisicamente o tanque após o tratamento (a biomassa morta permanece e volta a entupir os elementos novos)",
+      "Para entupimento por parafina em clima frio: use o grau climático correto de combustível EN 590; instale carcaça de filtro aquecida com líquido de arrefecimento; não misture querosene sem aprovação do fabricante",
+      "Após eventos de contaminação, amostre na saída do filtro secundário conforme a ISO 4406 e confirme que a meta de limpeza HPCR foi atingida antes de voltar à operação normal"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Desgaste dos bicos dos injetores HPCR e desvio de vazão",
+      "standard": "ISO 4020, ASTM D6304",
+      "protectionSystem": "Proteção da limpeza do combustível",
+      "technology": "Filtração de partículas em dois estágios: primário β₅(c) ≥ 75 + secundário β₂(c) ≥ 75 para sistemas ≥1,600 bar",
+      "relatedArticles": [
+        "beta-ratio",
+        "water-contamination-fuel",
+        "iso-16889"
+      ]
+    },
+    {
+      "problem": "Acúmulo de água livre causando corrosão dos injetores e perda de lubrificação",
+      "standard": "ASTM D6304, ISO 12937",
+      "protectionSystem": "Proteção da limpeza do combustível",
+      "technology": "Elemento separador de água coalescente na carcaça do filtro primário; inspeção e drenagem diária do copo de água",
+      "relatedArticles": [
+        "water-contamination-fuel",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "Entupimento rápido do filtro primário por biofilme microbiano",
+      "standard": "ASTM D6304",
+      "protectionSystem": "Proteção da limpeza do combustível",
+      "technology": "Filtração em três estágios com pré-filtro grosso no tanque removendo a biomassa antes do elemento primário; tratamento com biocida",
+      "relatedArticles": [
+        "water-contamination-fuel",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "Cristalização de parafina em clima frio bloqueando o elemento primário",
+      "standard": "ISO 4020 (cold restriction test at −20°C), EN 116 (CFPP test)",
+      "protectionSystem": "Proteção da limpeza do combustível",
+      "technology": "Carcaça de filtro aquecida com líquido de arrefecimento mantendo o combustível acima do CFPP; grau climático correto de combustível EN 590",
+      "relatedArticles": [
+        "service-intervals",
+        "filter-media-science"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ASTM-D6304, STD-ISO-12937)",
+    "evidenceStatus": "ISO 4020:2001 verified; ISO 19438:2003 verified; ASTM D6304:2022 verified; EN 590:2022 verified"
+  },
+  "commonMistakes": [
+    "Usar apenas um pré-filtro grosso antes de uma bomba HPCR sem um filtro de estágio final de 2–6 µm. Os sistemas de injeção HPCR exigem filtração final na entrada da bomba: a pré-filtração grossa sozinha não protege os componentes do injetor e da bomba com folgas de 1–3 µm.",
+    "Não drenar os copos dos separadores de água em um programa por tempo, independente das luzes de aviso. Sensores capacitivos de água no combustível falham com combustíveis contaminados por surfactantes ou com misturas de biodiesel: inspeções visuais e drenagens manuais são necessárias como reserva.",
+    "Supor que o ponto de névoa e o CFPP (ponto de entupimento de filtro a frio) são medidas equivalentes da filtrabilidade a frio. O ponto de névoa é a temperatura em que a cristalização da parafina começa; o CFPP é a temperatura em que os cristais bloqueiam um filtro: os dois diferem em 5–10°C e tratam de modos de falha diferentes."
+  ]
+}

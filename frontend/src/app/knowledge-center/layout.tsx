@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ClientNav from './ClientNav';
+import { languageAlternates } from '@/lib/localized-routes';
 
 const BASE='https://elimfilters.com';
 const URL=`${BASE}/knowledge-center/`;
@@ -12,7 +13,7 @@ export const metadata:Metadata={
  description:DESCRIPTION,
  keywords:['industrial filtration knowledge','filtration engineering','contamination control','filtration standards','failure diagnosis','equipment reliability','fleet maintenance','asset protection systems','technical filtration FAQ','filtration technologies','air intake filtration','fuel filtration','lubrication filtration','hydraulic filtration','cooling system filtration'],
  robots:{index:true,follow:true},
- alternates:{canonical:URL},
+ alternates:{canonical:URL,languages:languageAlternates('/knowledge-center')},
  openGraph:{title:TITLE,description:DESCRIPTION,url:URL,type:'website',siteName:'ELIMFILTERS',locale:'en_US',images:[{url:IMAGE,width:1200,height:630,alt:'ELIMFILTERS industrial filtration Knowledge Center'}]},
  twitter:{card:'summary_large_image',title:TITLE,description:DESCRIPTION,images:[IMAGE]},
 };

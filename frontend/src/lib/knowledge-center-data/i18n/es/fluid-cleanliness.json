@@ -1,0 +1,143 @@
+{
+  "slug": "fluid-cleanliness",
+  "faqs": [
+    {
+      "question": "¿Qué representa cada número de un código de limpieza ISO 4406?",
+      "answer": "Un código ISO 4406 de tres números (por ejemplo, 17/15/12) informa el número de rango (RN) del conteo acumulado de partículas en tres umbrales de tamaño por mililitro: el primer número corresponde a partículas ≥4 µm(c), el segundo a ≥6 µm(c) y el tercero a ≥14 µm(c). Cada número de rango corresponde a un intervalo de conteo de partículas: RN 17 = 40,000–80,000 partículas/mL, RN 15 = 10,000–20,000 partículas/mL, RN 12 = 1,250–2,500 partículas/mL. Cada aumento de una unidad de RN duplica el conteo de partículas. Los tres umbrales de tamaño se eligieron porque corresponden al rango de holguras de los componentes hidráulicos más sensibles al daño por partículas: carretes de servoválvulas (holgura de 2–5 µm), patines de bombas de pistones (5–10 µm) y contactos de dientes de bombas de engranajes (15–30 µm)."
+    },
+    {
+      "question": "¿Por qué el aceite nuevo de un tambor sellado no cumple los requisitos de limpieza de los componentes hidráulicos sensibles?",
+      "answer": "El aceite nuevo de un tambor sellado suele presentar un código ISO 4406 de 18/16/13: de una a tres unidades de código más sucio que el objetivo para circuitos con válvulas proporcionales (ISO 16/14/11) y seis unidades más sucio que el objetivo para servoválvulas (ISO 14/12/9). Durante la fabricación, la mezcla y el llenado de tambores, el aceite queda expuesto a partículas atmosféricas, cascarilla de tuberías y contaminación del envase. Los envases sellados no impiden la migración de partículas desde las paredes del tambor, las roscas del tapón y los residuos de las bombas. El trasvase del tambor al depósito con embudos o mangueras sin limpiar agrega más contaminación. El aceite nuevo debe prefiltrarse con una unidad kidney-loop de alta eficiencia o una unidad de filtrado de trasvase (β10(c) ≥ 200) antes de introducirlo en circuitos hidráulicos o de lubricación de precisión."
+    },
+    {
+      "question": "¿En qué se diferencia el conteo de partículas de la espectroscopía elemental en el análisis de fluidos y cuándo debe usarse cada método?",
+      "answer": "El conteo de partículas (APC, según ISO 11171) mide la cantidad y la distribución de tamaños de todas las partículas mayores de 4 µm en el fluido, expresadas como códigos ISO 4406. Detecta tanto la contaminación dura (sílice, metal) como la blanda (caucho, carbón), sin distinguir su origen. La espectroscopía elemental (ICP-OES, según ASTM D5185) mide la concentración de metales disueltos y en suspensión en ppm, y cada elemento corresponde a un componente específico del sistema (hierro = componentes de acero, cobre = cojinetes de bronce, silicio = sílice/polvo ambiental, calcio/zinc = paquete de aditivos). El conteo de partículas es la herramienta principal para verificar el cumplimiento de la limpieza. El ICP-OES identifica el origen y el mecanismo de la contaminación. Ambos métodos son complementarios: un código ISO en aumento junto con hierro y silicio en aumento confirma que la contaminación supera los objetivos y que ya hay desgaste abrasivo."
+    },
+    {
+      "question": "¿Qué técnica de muestreo se requiere para obtener una muestra representativa de la limpieza del fluido?",
+      "answer": "El muestreo representativo de fluidos según ISO 3722 exige: tomar la muestra de una sección turbulenta de una línea de retorno con flujo activo o de una válvula de muestreo dedicada (no de líneas estancadas ni del fondo del depósito); purgar la válvula de muestreo con 250–500 mL de fluido antes de recoger la muestra de análisis, para eliminar la contaminación del volumen muerto; usar frascos de muestra prelimpiados y certificados a ISO 14/12/11 o mejor, para que las partículas del frasco no sesguen los resultados; y muestrear en condiciones normales de operación (temperatura de operación, caudal nominal). Un procedimiento de muestreo incorrecto es la causa más común de datos de limpieza erróneos: las muestras tomadas en puntos estancados pueden sobrestimar la contaminación en 2–4 unidades de código ISO, mientras que las muestras tomadas antes de la estabilización térmica subestiman el conteo, porque el aceite frío vuelve a disolver parte del material particulado."
+    },
+    {
+      "question": "¿Qué es un circuito de filtración kidney-loop (fuera de línea) y qué objetivos de limpieza ISO puede mantener?",
+      "answer": "Un kidney-loop es un circuito de filtración fuera de línea con accionamiento propio que pule continuamente el fluido de un depósito hidráulico, de forma independiente de la bomba y el caudal del sistema principal. El circuito toma fluido de un punto del depósito, lo pasa por un filtro de alta eficiencia (normalmente β10(c) ≥ 200) y devuelve el fluido limpio a otro punto del depósito. La tasa de filtración suele ser del 5–15% del volumen del depósito por minuto. Los kidney-loops son especialmente eficaces para eliminar partículas menores de 10 µm que los filtros de retorno, con el caudal del sistema principal, no capturan con eficiencia. Un kidney-loop bien dimensionado en un depósito hidráulico de 1,000 L puede alcanzar y mantener un código ISO 4406 de 16/14/11 en un sistema con ingreso moderado de partículas, y puede mantener ISO 15/13/10 en un sistema bien sellado."
+    },
+    {
+      "question": "¿Cómo se fijan los objetivos de limpieza ISO 4406 en circuitos mixtos con varios tipos de componentes?",
+      "answer": "Cuando un circuito hidráulico contiene varios tipos de componentes con distintos requisitos de limpieza, por ejemplo una bomba de engranajes (tolerancia ISO 19/17/14) que alimenta una válvula proporcional (requisito ISO 16/14/11) y una servoválvula (requisito ISO 14/12/9), todo el circuito debe mantenerse en el código más exigente (más bajo) que requiere el componente más sensible. La bomba de engranajes tolera el código más exigente sin consecuencias operativas. Sin embargo, aumentar la filtración para cumplir los requisitos de la servoválvula eleva el costo de filtros y la complejidad del sistema; el análisis económico puede favorecer la instalación de un circuito secundario de filtración fina específico para la sección de la servoválvula, en lugar de filtrar todo el sistema a ISO 14/12/9. Este es el enfoque de presupuesto de contaminación en el diseño de sistemas hidráulicos."
+    },
+    {
+      "question": "¿Qué importancia tiene el conteo ≥4 µm(c) en ISO 4406 y en qué se diferencia del conteo ≥6 µm(c)?",
+      "answer": "El conteo ≥4 µm(c) capta todas las partículas de la zona crítica de desgaste de los carretes de servoválvulas (holguras carrete-camisa de 1–4 µm). Estas partículas menores de 6 µm pueden entrar en las holguras del carrete y causar sedimentación (silting): la acumulación gradual de partículas finas en la holgura, que aumenta la fricción de la válvula, reduce la velocidad de respuesta y termina por trabar el carrete. El conteo ≥6 µm(c) cubre el rango de holguras de los patines de bombas de pistones y de las películas de los cojinetes. La diferencia matemática entre ambos conteos (partículas de entre 4 y 6 µm) es analíticamente significativa para el control de contaminación en servosistemas. ISO 4406:2021 informa ahora el conteo ≥4 µm(c) como primer número precisamente para abordar la sensibilidad de las servoválvulas a la contaminación, mientras que el antiguo código de dos números (≥5 µm, ≥15 µm) no cubría este rango de tamaño crítico."
+    },
+    {
+      "question": "¿Cómo afecta la temperatura de operación a las mediciones de conteo de partículas en el fluido hidráulico?",
+      "answer": "La temperatura de operación afecta la medición del conteo de partículas de dos formas. A alta temperatura (por encima de 70°C), algunos contaminantes que son sólidos a temperatura ambiente (precursores de barniz, cristales de cera, aglomerados de resina) se disuelven en el fluido y no aparecen como partículas en el conteo. La misma muestra analizada a temperatura de laboratorio (20°C) puede mostrar más partículas que a temperatura de operación, porque algunas especies disueltas precipitan al enfriarse. Por el contrario, en condiciones frías, la alta viscosidad del fluido impide una circulación eficiente de las partículas y se produce sedimentación en las líneas estancadas: las muestras de zonas con flujo activo subrepresentan la contaminación total del depósito. ISO 3722 recomienda muestrear a temperatura de operación (40–60°C en la mayoría de los sistemas hidráulicos) para obtener resultados representativos del sistema bajo carga."
+    },
+    {
+      "question": "¿Qué pasos de verificación confirman que un sistema hidráulico alcanzó su código de limpieza ISO 4406 objetivo después del lavado de puesta en marcha?",
+      "answer": "ISO 4413:2011 exige dos muestras consecutivas de conteo de partículas tomadas con 30 minutos de diferencia, y que ambas cumplan por separado el código de limpieza objetivo, antes de aprobar la puesta en marcha. Aceptar una sola muestra no es suficiente, porque el conteo puede variar ±1 unidad de código ISO entre muestras en la misma condición por la variación aleatoria del muestreo. Las muestras deben tomarse según ISO 3722 desde una válvula de muestreo aguas abajo en la línea de retorno, no desde el depósito, que puede tener contaminación estratificada. El contador APC debe estar calibrado según ISO 11171 con certificado vigente (intervalo de recalibración normalmente de 12 meses o 500 horas de operación). El informe de puesta en marcha debe incluir ambos certificados de conteo de partículas con la referencia de calibración del APC, la fecha y hora de la muestra y la comparación con el código objetivo."
+    },
+    {
+      "question": "¿Cómo contribuye la oxidación del aceite a la contaminación por partículas en sistemas de lubricación y cómo se mide?",
+      "answer": "La oxidación del aceite genera productos de degradación insolubles (compuestos polares, precursores de barniz y aglomerados de lodo) que aparecen como contaminación blanda en los conteos APC. La velocidad de oxidación se duplica aproximadamente por cada 10°C de aumento de la temperatura del aceite por encima de 90°C, según la relación de Arrhenius. El análisis FTIR (ASTM E2412) detecta la oxidación en etapa temprana al cuantificar la formación de grupos carbonilo (pico de absorción en el número de onda de 1,710 cm-1) antes de que se formen partículas. El número ácido total (TAN, ASTM D664) mide los subproductos ácidos de la oxidación: un aumento de 2 mg KOH/g sobre la línea base indica una oxidación significativa. En aceites muy oxidados (aumento del TAN >3 mg KOH/g), los productos de oxidación insolubles pueden representar el 30–50% del conteo total de partículas APC y ocultar el verdadero nivel de contaminación metálica en el análisis de desgaste."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Norma principal que define el sistema de codificación de limpieza de tres números, la tabla de números de rango y los requisitos de informe de la contaminación por partículas en fluidos."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 3722:1976, Hydraulic Fluid Power — Fluid Sample Containers — Qualifying and Controlling Cleaning Methods",
+      "relevance": "Define la preparación de los recipientes de muestreo, la verificación de su limpieza y los procedimientos de muestreo de fluidos necesarios para obtener datos válidos de conteo de partículas ISO 4406."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+      "relevance": "Norma de calibración de contadores APC con partículas de referencia trazables a NIST, que define la notación (c) que distingue los datos calibrados actuales de las mediciones antiguas."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021 Table 1 — Range Number Reference",
+      "relevance": "Tabla de referencia que convierte los conteos de partículas por mililitro en números de rango ISO 4406 en cada umbral de tamaño; es esencial para interpretar los resultados del APC y especificar objetivos de limpieza."
+    }
+  ],
+  "title": "Limpieza de fluidos",
+  "subtitle": "Códigos objetivo ISO 4406, conteo de partículas y análisis de aceite",
+  "metaDescription": "Gestión de la limpieza de fluidos industriales: códigos ISO 4406, metodología de conteo de partículas, buenas prácticas de muestreo de aceite y objetivos de limpieza para sistemas hidráulicos, de lubricación y de combustible.",
+  "category": "Ingeniería",
+  "readTime": "8 min",
+  "intro": "La limpieza de fluidos, medida con los códigos de limpieza ISO 4406, es el estado cuantificado de la contaminación por partículas en los fluidos industriales. Gestionar la limpieza de los fluidos según objetivos definidos prolonga la vida de los componentes, reduce la frecuencia de mantenimiento y avisa con anticipación de la degradación del sistema antes de que ocurra una falla catastrófica.",
+  "sections": [
+    {
+      "heading": "Selección del objetivo de limpieza",
+      "body": "Los códigos de limpieza objetivo los define el componente más sensible del circuito de fluido. Las válvulas hidráulicas proporcionales y servoválvulas (holguras de 1–3 µm) requieren ISO 16/14/11 o más exigente. Las bombas y motores de engranajes (holguras de 15–30 µm) toleran ISO 19/17/14. Los cojinetes de motor (holguras de 5–25 µm) apuntan a ISO 16/14/11. El objetivo establece la especificación de filtración (relación Beta y clasificación absoluta) necesaria para alcanzar y mantener el código de limpieza en condiciones normales de ingreso.",
+      "callout": [
+        {
+          "label": "Objetivo para servoválvulas",
+          "value": "ISO 14/12/9"
+        },
+        {
+          "label": "Objetivo para motores hidráulicos",
+          "value": "ISO 17/15/12"
+        },
+        {
+          "label": "Objetivo para lubricación de motor",
+          "value": "ISO 16/14/11"
+        },
+        {
+          "label": "Objetivo para bombas de engranajes",
+          "value": "ISO 19/17/14"
+        }
+      ]
+    },
+    {
+      "heading": "Métodos de conteo de partículas",
+      "body": "Los contadores automáticos de partículas (APC) usan oscurecimiento de luz para contar y medir las partículas de las muestras de fluido. ISO 11171 calibra los APC con partículas de referencia trazables a NIST para que los resultados sean consistentes entre instrumentos. Los frascos de muestreo de campo deben estar prelimpiados a ISO 14/12/11 o mejor para no contaminar la muestra con partículas del envase. Una técnica de muestreo incorrecta (tomar la muestra de líneas estancadas o usar frascos contaminados) es la fuente más común de datos de conteo de partículas erróneos."
+    },
+    {
+      "heading": "Programas de análisis de aceite",
+      "body": "El análisis de aceite combina el conteo de partículas, la espectroscopía elemental (ICP) y ensayos de propiedades físicas (viscosidad, TAN, TBN) para caracterizar tanto la contaminación como la degradación del aceite. La espectroscopía detecta los metales de desgaste (hierro, cromo, aluminio, cobre) generados por el desgaste interno de los componentes: cada patrón de elementos corresponde a un componente y un modo de falla específicos. Para que el análisis de tendencias tenga valor de diagnóstico, se requieren intervalos y puntos de muestreo constantes."
+    },
+    {
+      "heading": "Verificación y documentación de la limpieza",
+      "body": "Los sistemas hidráulicos nuevos deben lavarse hasta la especificación de limpieza antes de la puesta en marcha: la contaminación residual del ensamblaje (virutas metálicas, cascarilla de tuberías, partículas de elastómero) suele estar en ISO 22/20/17 o peor. Lavar hasta ISO 17/15/12 antes de la primera operación elimina la contaminación de fábrica y establece una línea base limpia. Documente los conteos de partículas en la puesta en marcha y en cada intervalo de servicio para construir un historial de contaminación de cada activo."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Limpieza típica del aceite nuevo",
+      "value": "ISO 18/16/13"
+    },
+    {
+      "label": "Objetivo para servoválvulas",
+      "value": "ISO 14/12/9"
+    },
+    {
+      "label": "Objetivo de lavado antes de la puesta en marcha",
+      "value": "ISO 17/15/12"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "limpieza de fluidos",
+    "ISO 4406",
+    "conteo de partículas",
+    "análisis de aceite",
+    "código de limpieza"
+  ]
+}

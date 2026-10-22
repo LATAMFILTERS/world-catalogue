@@ -1,0 +1,256 @@
+{
+  "slug": "water-contamination-fuel",
+  "faqs": [
+    {
+      "question": "¿Cuál es el contenido máximo admisible de agua disuelta en el combustible diésel para inyectores HPCR?",
+      "answer": "Los sistemas de inyección de alta presión common rail (HPCR) especifican un contenido máximo de agua disuelta de 200 ppm (0.02% en volumen) en el combustible suministrado. Por encima de 200 ppm de agua disuelta aumenta el riesgo de erosión por cavitación en los asientos de la aguja del inyector, porque el agua disuelta en el combustible se vaporiza con más facilidad en el punto de inyección a alta presión (1,500–2,500 bar). El agua libre por encima de 50 ppm (distinta del agua disuelta) es inaceptable, porque las gotas de agua libre desplazan la película lubricante de combustible en las superficies de inyección de precisión (holguras de 1–4 µm) y provocan contacto metal-metal y desgaste acelerado. La titulación culombimétrica Karl Fischer (ASTM D6304) es el método de medición estándar del agua total en el diésel y detecta desde 5 ppm hasta niveles de saturación."
+    },
+    {
+      "question": "¿Cómo favorece la contaminación con agua el crecimiento microbiano en los sistemas de combustible diésel?",
+      "answer": "La contaminación microbiana del diésel (bacterias y hongos) necesita una fase acuosa en la interfaz combustible-agua para colonizar. Una capa de agua libre de apenas 1 mm en el fondo de un tanque o de un tanque diario aporta el medio acuoso que necesitan para crecer las bacterias que degradan el combustible (Pseudomonas, Bacillus) y los hongos (Hormoconis resinae, el llamado \"diesel bug\"). A temperaturas de 15–30°C, las poblaciones microbianas pueden duplicarse cada 1–8 horas, producir biomasa que aparece como un lodo negro o marrón y generar ácidos orgánicos como subproductos metabólicos. Estos ácidos (acético, propiónico, butírico) bajan el pH del combustible de neutro a pH 3–5 y corroen los componentes de zinc y cobre del sistema de combustible. Los métodos ASTM D6974 e IP 385 detectan la contaminación microbiana; concentraciones superiores a 10,000 UFC/mL exigen desechar el combustible o tratarlo con biocida junto con la eliminación del agua."
+    },
+    {
+      "question": "¿Cuáles son las tres vías por las que el agua entra en un sistema de combustible diésel?",
+      "answer": "El agua entra en los sistemas de combustible diésel por tres vías principales. (1) Condensación: los ciclos diarios de temperatura en tanques parcialmente llenos hacen que el vapor de agua del aire del espacio superior se condense como agua líquida en las paredes del tanque y se acumule en el fondo: volúmenes de 0.1–2 L por día en tanques de 5,000 L en climas tropicales húmedos. (2) Entrega de combustible contaminado: el combustible a granel en el punto de entrega puede contener agua disuelta por encima de la especificación, sobre todo en cadenas de suministro con almacenamiento a la intemperie o mantenimiento deficiente de tanques. (3) Respiraderos del sistema: los tanques de combustible ventilados y los tanques diarios aspiran aire atmosférico húmedo por filtros de ventilación sin protección o deteriorados durante la contracción térmica; cada ciclo de contracción y expansión de un tanque de 10,000 L puede intercambiar 100–200 L de aire atmosférico. Los respiraderos desecantes de alta eficiencia (gel de sílice o tamiz molecular) en las ventilaciones de los tanques evitan el ingreso por condensación."
+    },
+    {
+      "question": "¿Qué es la titulación culombimétrica Karl Fischer y por qué se prefiere para medir bajos niveles de agua en el combustible?",
+      "answer": "La titulación culombimétrica Karl Fischer (ASTM D6304) hace reaccionar el agua de una muestra de combustible con yodo generado por electrólisis a partir de una solución de reactivo Karl Fischer. Cada mol de agua reacciona estequiométricamente con un mol de yodo, lo que permite calcular con precisión la masa de agua a partir de la carga eléctrica necesaria para generar el yodo. El método mide contenidos de agua desde 5 ppm hasta aproximadamente 1,000 ppm, con una precisión de ±2–5 ppm en concentraciones bajas. Detecta tanto el agua disuelta como el agua libre (que se disuelve en el reactivo Karl Fischer durante la medición). El método culombimétrico se prefiere al Karl Fischer volumétrico para contenidos de agua bajos porque no requiere una bureta de yodo calibrada: el yodo se genera con precisión en el lugar. ASTM D1744 (método gravimétrico más antiguo) no sirve para aplicaciones con inyectores HPCR, porque su límite de detección es de aproximadamente 0.05% (500 ppm), demasiado grueso para la especificación de 200 ppm."
+    },
+    {
+      "question": "¿En qué se diferencian los separadores centrífugos de agua y combustible de los filtros de combustible coalescentes en su mecanismo de remoción de agua?",
+      "answer": "Los separadores centrífugos usan el momento angular para separar el agua del diésel según la diferencia de densidad (agua 1.00 g/mL frente a diésel 0.82–0.85 g/mL). El campo rotacional genera una aceleración centrífuga de 50–500×g: las gotas de agua migran hacia afuera y se acumulan en un vaso periférico, mientras el combustible sale por el centro. Los separadores centrífugos son eficaces para separar gotas de agua libre de más de 50–100 µm de diámetro, pero casi no actúan sobre el agua emulsionada (gotas <10 µm) ni sobre el agua disuelta. Los filtros de combustible coalescentes usan un medio sintético hidrofóbico que hace que las gotas finas de agua se fusionen (coalescan) en gotas más grandes, que luego decantan por gravedad al vaso colector de agua. Los filtros coalescentes eliminan gotas de hasta 0.5 µm, por lo que son eficaces contra las emulsiones de combustible. HYDROCORE combina en un solo elemento filtrante un medio coalescente para eliminar el agua fina y una capa de filtración de sedimentos para capturar partículas."
+    },
+    {
+      "question": "¿Qué componentes del sistema de combustible son más vulnerables a las fallas causadas por el agua?",
+      "answer": "Los sistemas de inyección HPCR son los más vulnerables a las fallas causadas por el agua, por sus holguras extremadamente estrechas y sus altas presiones de operación. El asiento y la guía de la aguja del inyector (holgura de 1–4 µm, presión de inyección de 1,500–2,500 bar) sufren erosión directa por cavitación debido al cambio de fase del agua en el punto de inyección. Los reguladores de presión del common rail y los sensores de presión del riel contienen electrónica sensible a la corrosión electrolítica del combustible acidificado por el agua. Las bombas de combustible de alta presión (tipo émbolo y cilindro) se desgastan más rápido cuando el agua rompe la película lubricante del combustible: el desgaste del émbolo aumenta de 5 a 10 veces con un contenido de agua libre superior a 200 ppm. Las carcasas de filtro de fundición de zinc, los reguladores de presión del sistema de combustible y los racores de latón sufren corrosión por descincificación cuando el pH del combustible baja de 5.5 por los ácidos orgánicos generados por microorganismos."
+    },
+    {
+      "question": "¿Qué intervalo de mantenimiento se aplica al drenaje del separador de agua y combustible en equipos que operan en entornos de alta humedad?",
+      "answer": "En entornos de alta humedad (humedad relativa >80%, condiciones tropicales o costeras), el agua libre puede acumularse en los vasos de los separadores de agua y combustible en 8–24 horas de operación por el ingreso de condensación desde los sistemas de ventilación de los tanques. El drenaje diario del agua acumulada en el vaso del separador es el intervalo mínimo para estos entornos, verificado con inspección visual del vaso transparente o con una muestra del drenaje. Algunos sistemas instalan válvulas de drenaje automático que se abren cuando un sensor de flotador detecta agua por encima de un volumen de ajuste. Los respiraderos de ventilación de los tanques deben inspeccionarse cada mes, y el desecante de gel de sílice debe reemplazarse cuando el cambio de color del indicador señale saturación. Los sistemas sin drenaje automático deben incluir la revisión diaria de agua en el combustible como punto obligatorio de la inspección previa al turno, registrado en la bitácora de mantenimiento del equipo."
+    },
+    {
+      "question": "¿Cómo se diagnostica en campo la corrosión del sistema de combustible por contaminación con agua?",
+      "answer": "La corrosión del sistema de combustible causada por el agua se diagnostica con cuatro observaciones. (1) Visual: los elementos del filtro de combustible muestran manchas marrón-negras en la cara de salida (partículas de óxido de tanques o líneas de suministro corroídas), y los vasos del separador muestran agua libre con óxido o lodo biológico. (2) Análisis de combustible: contenido de agua Karl Fischer >200 ppm, TAN superior a 0.1 mg KOH/g y conteo microbiano superior a 1,000 UFC/mL. (3) Inspección de componentes: el combustible de la línea de retorno de los inyectores HPCR muestra partículas metálicas finas (el análisis espectrográfico detecta hierro, zinc o cobre por encima de la línea base), lo que indica corrosión de los materiales del sistema de combustible. (4) Desempeño: ralentí irregular, agarrotamiento del inyector (aguja que se traba) y valores de corrección de inyección elevados en los registros de la ECU, que indican depósitos o desgaste en los inyectores. El diagnóstico orienta la corrección: tratamiento con biocida para la contaminación microbiana, drenaje y lavado del tanque para la acumulación de agua libre, o reemplazo de inyectores por daño por desgaste."
+    },
+    {
+      "question": "¿Qué métodos de ensayo verifican el desempeño de separación de agua con mezclas de biodiésel?",
+      "answer": "Las mezclas de biodiésel (FAME, ésteres metílicos de ácidos grasos) tienen una afinidad por el agua mucho mayor que el diésel mineral: el biodiésel puede absorber hasta 1,500 ppm de agua disuelta, frente a 60–80 ppm del diésel mineral. Cuando el combustible mezclado con biodiésel (B5–B20) se enfría por debajo del punto de nube (más alto en el FAME que en el diésel mineral), el agua disuelta puede precipitar como agua libre y superar la capacidad del filtro coalescente. EN 12662 mide la contaminación total en mezclas de diésel, incluido el biodiésel, y ASTM D7261 mide el agua dispersa en mezclas de diésel y biodiésel. El desempeño de los filtros coalescentes con biodiésel debe validarse específicamente: algunos medios coalescentes ensayados según ISO 4020 (desempeño de filtros de combustible) muestran una reducción del 30–50% en la eficiencia de separación de agua con B20 frente al diésel mineral, lo que obliga a reformular el medio para elementos de filtro compatibles con biodiésel."
+    },
+    {
+      "question": "¿Qué papel cumple el muestreo de agua en el fondo de los tanques en los programas de control de contaminación de flotas?",
+      "answer": "El muestreo del fondo del tanque detecta la acumulación de agua libre y la contaminación microbiana antes de que la contaminación pase al suministro de combustible. El procedimiento toma combustible a menos de 50 mm del fondo del tanque (con un vaso de muestreo con lastre o una válvula de bola lateral instalada al construir el tanque), recoge 200–500 mL y los examina en busca de agua libre (separación de fases visible), color (marrón-negro indica óxido o material biológico) y crecimiento biológico (lodo, turbidez). Cada mes, las muestras se envían para análisis de agua Karl Fischer, conteo microbiano (ASTM D6974) y análisis elemental de corrosión. Los tanques con agua libre o conteos microbianos por encima del umbral activan de inmediato el drenaje y rellenado con combustible limpio, el tratamiento con biocida y un intervalo de inspección cada 2 semanas hasta obtener tres muestras limpias consecutivas. El muestreo del fondo del tanque es la alerta más temprana disponible antes de que los sistemas de filtración se vean superados."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration",
+      "relevance": "Método de ensayo principal para medir el contenido de agua del combustible diésel en niveles desde 5 ppm hasta la saturación."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4020:2001, Road Vehicles — Fuel Filters for Diesel Engines — Test Methods",
+      "relevance": "Métodos de ensayo de desempeño de filtros de combustible diésel, incluidos la eficiencia de separación de agua, la caída de presión y la compatibilidad del medio."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6974-09, Standard Practice for Enumeration of Viable Microbes in Petroleum and Petroleum Products by Epifluorescence Microscopy (EFM)",
+      "relevance": "Método para cuantificar la contaminación microbiana del combustible, usado para evaluar el riesgo de crecimiento biológico asociado al agua."
+    },
+    {
+      "category": "specification",
+      "citation": "EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods",
+      "relevance": "Especificación europea de combustible diésel que define el contenido máximo de agua (200 mg/kg) y los límites de contenido de FAME del diésel suministrado a vehículos y equipos."
+    }
+  ],
+  "title": "Contaminación por agua en sistemas de combustible",
+  "subtitle": "ASTM D6304, titulación Karl Fischer y protección de inyectores HPCR",
+  "metaDescription": "Referencia técnica sobre la contaminación por agua en sistemas de combustible diésel: estados del agua libre, disuelta y emulsionada, medición Karl Fischer según ASTM D6304, ISO 12937, crecimiento microbiano, holguras de inyectores HPCR y selección de filtros coalescentes.",
+  "category": "Ingeniería",
+  "readTime": "11 min",
+  "intro": "El agua es el contaminante no particulado más dañino en los sistemas de combustible diésel. Existe en tres estados físicos (disuelta, emulsionada y libre) y cada uno requiere estrategias distintas de detección y remoción. Los sistemas de inyección de alta presión common rail (HPCR), con presiones de hasta 2,500 bar y holguras de tobera de 1–3 µm, son muy sensibles a concentraciones de agua que no causarían ningún daño visible en sistemas de inyección más antiguos.",
+  "sections": [
+    {
+      "heading": "Los tres estados del agua en el combustible",
+      "body": "El agua disuelta se encuentra en solución molecular dentro de la matriz de hidrocarburos del combustible. A 20°C, el diésel puede contener aproximadamente 50–100 ppm de agua disuelta en saturación, según su composición y contenido aromático. El agua disuelta es invisible y no causa problemas operativos inmediatos. Cuando baja la temperatura o el agua supera la saturación, el agua disuelta precipita como agua emulsionada: gotas de escala micrométrica dispersas en el combustible que le dan un aspecto turbio. El agua libre se deposita en el punto más bajo del sistema de combustible como una capa acuosa diferenciada, normalmente en el fondo de los tanques, las carcasas de filtro y los cárteres de la bomba de inyección. El agua libre causa el daño más grave: corrosión, crecimiento bacteriano, formación de cristales de hielo y pérdida de lubricación en los componentes del sistema de inyección. Las transiciones entre estados son reversibles con la temperatura y la energía de mezcla, por lo que identificar agua libre en el fondo del tanque es un indicador confiable de la carga total de agua.",
+      "callout": [
+        {
+          "label": "Agua disuelta (saturación)",
+          "value": "50–100 ppm a 20°C en diésel"
+        },
+        {
+          "label": "Aspecto del agua emulsionada",
+          "value": "Combustible turbio, lechoso o nublado"
+        },
+        {
+          "label": "Ubicación del agua libre",
+          "value": "Fondo del tanque o de la carcasa (decantada)"
+        }
+      ]
+    },
+    {
+      "heading": "ASTM D6304 y titulación Karl Fischer",
+      "body": "ASTM D6304 (Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration) es el principal método de laboratorio para medir el contenido total de agua en el combustible. La reacción de Karl Fischer oxida el dióxido de azufre con yodo en presencia de agua: H₂O + I₂ + SO₂ + 3(RN) + CH₃OH → 2[RNH]I + [RNH]SO₄CH₃. La KFT culombimétrica genera yodo por electrólisis a partir de yoduro: un mol de yodo reacciona con un mol de agua, lo que permite calcular la masa de agua a partir de la carga eléctrica. Rango del método: 10–10,000 ppm de agua. Precisión: ±2 ppm en concentraciones inferiores a 100 ppm. ASTM D6304 mide simultáneamente los tres estados del agua. ISO 12937 (Petroleum Products — Determination of Water — Coulometric Karl Fischer Titration Method) cubre la misma reacción con un procedimiento armonizado para los mercados internacionales.",
+      "callout": [
+        {
+          "label": "Rango de ASTM D6304",
+          "value": "10–10,000 ppm"
+        },
+        {
+          "label": "Precisión a <100 ppm",
+          "value": "±2 ppm"
+        },
+        {
+          "label": "Equivalente ISO",
+          "value": "ISO 12937"
+        }
+      ]
+    },
+    {
+      "heading": "Especificación de calidad de combustible EN 590",
+      "body": "EN 590, la norma europea de calidad del combustible diésel, especifica un contenido máximo de agua de 200 mg/kg (aproximadamente 200 ppm en masa) en el punto de distribución. Este límite abarca los tres estados del agua y se mide con ASTM D6304 o una KFT culombimétrica equivalente. Sin embargo, 200 ppm en la terminal de distribución no significan 200 ppm en el tanque de combustible: el ingreso de agua durante el transporte (condensación en tanques ventilados, compartimentos de cisternas mal secados, boquillas de llenado contaminadas) y durante el almacenamiento en el vehículo (ciclos de temperatura en tanques parcialmente llenos) suele sumar 50–300 ppm al combustible antes de que llegue al sistema de inyección. En vehículos de flota con tanques de gran capacidad que operan en entornos húmedos, la acumulación de agua en el tanque puede alcanzar 500–2,000 ppm de agua total en las capas inferiores del combustible, con una capa medible de agua libre por encima del punto de drenaje del tanque.",
+      "callout": [
+        {
+          "label": "Límite de agua EN 590",
+          "value": "200 mg/kg (≈200 ppm)"
+        },
+        {
+          "label": "Acumulación en servicio",
+          "value": "50–300 ppm adicionales típicos"
+        },
+        {
+          "label": "Peor caso en tanques de flota",
+          "value": "500–2,000 ppm en las capas inferiores"
+        }
+      ]
+    },
+    {
+      "heading": "Sensibilidad de los inyectores HPCR al agua",
+      "body": "Los sistemas de inyección de alta presión common rail operan con presiones en el riel de 1,600–2,500 bar. Las holguras de la aguja de la tobera son de 1–3 µm, y las de las válvulas solenoide y piezoeléctricas de los inyectores son aún más estrechas. El agua en el sistema de inyección causa daño por tres mecanismos distintos. Corrosión: el agua en contacto con componentes ferrosos del sistema de combustible genera productos de corrosión de hidróxido de hierro (partículas de óxido); estas partículas, normalmente de 5–50 µm, causan desgaste abrasivo de las agujas y los asientos de tobera a la presión del riel. Pérdida de lubricación: el diésel aporta lubricación hidrodinámica a los émbolos de la bomba de inyección de alta presión (clasificación de lubricidad HFRR ≤ 460 µm). El agua libre desplaza la película de combustible y aumenta de 5 a 20 veces el desgaste de émbolos y cilindros en operación con agua. Bloqueo hidráulico y daño de la tobera: a temperaturas bajo cero, el agua disuelta que precipita en el orificio de la tobera de alta presión puede formar cristales de hielo que bloquean hidráulicamente la aguja abierta, con falla de la punta del inyector y erosión catastrófica del asiento de la tobera. Una concentración de 200 ppm de agua en el combustible HPCR, aunque está dentro de la especificación EN 590, se encuentra en el umbral de impacto sobre la vida útil de los inyectores en bombas que operan a ≥2,000 bar.",
+      "callout": [
+        {
+          "label": "Presión en el riel HPCR",
+          "value": "1,600–2,500 bar"
+        },
+        {
+          "label": "Holgura de la tobera del inyector",
+          "value": "1–3 µm"
+        },
+        {
+          "label": "Impacto del agua en la lubricación",
+          "value": "Desgaste de la bomba 5–20 veces mayor"
+        }
+      ]
+    },
+    {
+      "heading": "Contaminación microbiana y degradación del combustible",
+      "body": "El agua libre en la interfaz combustible–agua de los tanques de almacenamiento favorece la colonización microbiana. Cladosporium resinae (el \"hongo del queroseno\") y Pseudomonas aeruginosa son los microorganismos degradadores de combustible más comunes en el diésel. El biofilm microbiano crece en la interfaz combustible–agua, produce ácidos orgánicos que bajan el pH del combustible, genera biomasa particulada (hifas de hongos y agregados bacterianos de 5–50 µm) y acelera la corrosión de los metales por la producción de sulfuro de hidrógeno y ácidos orgánicos. En los tanques comerciales, la contaminación microbiana suele detectarse cuando el combustible se oscurece, forma sedimentos o tapa los filtros rápidamente. El tratamiento con biocida (biocidas aprobados según ASTM D4054) mata los microorganismos activos, pero no elimina las células muertas: un tanque tratado con biocida que ya tiene biofilm requiere lavado y limpieza física para recuperar la calidad del combustible. La prevención es más eficaz que la corrección: mantener el contenido de agua del tanque por debajo de 50 ppm evita la capa de agua libre necesaria para que se establezcan los microorganismos.",
+      "callout": [
+        {
+          "label": "Organismo principal",
+          "value": "Cladosporium resinae (hongo del diésel)"
+        },
+        {
+          "label": "Umbral de prevención",
+          "value": "Agua en el tanque <50 ppm (sin capa libre)"
+        },
+        {
+          "label": "Limitación del biocida",
+          "value": "Mata los organismos; no elimina la biomasa"
+        }
+      ]
+    },
+    {
+      "heading": "Tecnología de filtros coalescentes y remoción de agua",
+      "body": "Los separadores de agua de los filtros de combustible usan la coalescencia para eliminar el agua emulsionada y libre del combustible. El medio coalescente (fibra de vidrio o sintético hidrofílico con energía superficial controlada) hace que las gotas pequeñas de agua choquen, se adhieran y crezcan hasta formar gotas más grandes que decantan por gravedad al colector de agua. La eficiencia de separación se expresa como la tasa de separación de agua a un caudal de combustible y una concentración inicial de agua especificados. Etapa 1 (coalescedor): las gotas de agua emulsionada (1–10 µm) coalescen hasta >100 µm en la superficie del medio coalescente. Etapa 2 (cuerpo separador): las gotas coalescidas decantan por la zona de calma bajo el coalescedor hasta el vaso colector de agua. ASTM D7619 (Standard Test Method for Sizing and Characterization of Particles in Low-Sulfur Automotive-Grade Diesel Fuels) mide los niveles de partículas que acompañan los ensayos de separación de agua. La tecnología coalescente HYDROCORE™ combina la captura de partículas menores de 10 µm con la separación de agua en un solo elemento, lo que elimina la etapa secundaria separada en aplicaciones con poco espacio.",
+      "callout": [
+        {
+          "label": "Rango de gotas en la coalescencia",
+          "value": "1–10 µm (inicial) → >100 µm (coalescida)"
+        },
+        {
+          "label": "Mecanismo de separación",
+          "value": "Decantación por gravedad tras la coalescencia"
+        },
+        {
+          "label": "Norma de ensayo",
+          "value": "ASTM D7619 (dimensionamiento de partículas con agua)"
+        }
+      ]
+    },
+    {
+      "heading": "Detección y monitoreo en campo",
+      "body": "Los métodos de detección de agua en campo van de lo rudimentario a lo cuantitativo. Pasta detectora de agua (indicador de sulfato de cobre): se aplica a un tubo de muestreo y cambia de color al contacto con agua libre; sirve para el muestreo del fondo del tanque y confirmar si hay o no una capa de agua libre. Papel o cápsulas detectoras de agua: indicadores colorimétricos de un solo uso para confirmación en campo. Refractómetro portátil: mide el contenido de agua por el cambio del índice de refracción; aplica a fluidos solubles en agua (refrigerante, fluido hidráulico agua-glicol), pero no al diésel. Instrumentos KFT culombimétricos de campo: los equipos portátiles miden el agua en el combustible con precisión de ±10 ppm en concentraciones de 30–300 ppm, adecuados para la inspección previa a la entrega en flotas. Sensores capacitivos: los sensores de agua en combustible instalados en línea detectan el agua emulsionada por el cambio de constante dieléctrica; activan una alarma a una fracción de agua preajustada sin medir ppm. Inspección del drenaje: inspeccionar y drenar a diario los vasos de agua de los filtros es el protocolo mínimo de mantenimiento de flotas; el volumen drenado y el aspecto del agua dan una tendencia cualitativa de la contaminación."
+    },
+    {
+      "heading": "Señales operativas e impacto en la flota",
+      "body": "La señal operativa de contaminación del diésel con agua casi nunca es \"agua en el combustible\". Es una vida corta e inexplicable de los filtros: filtros de combustible que deberían durar 500 horas de operación se tapan a las 50–100 horas. Son fallas de inyectores fuera del programa normal de reemplazo. Son arranques difíciles del motor en mañanas frías, o pérdida de potencia bajo carga por restricción del flujo de combustible. Cuando el agua se confirma como diagnóstico, el sistema ya está degradado. El agua entra en el diésel por condensación en tanques de superficie parcialmente llenos, por la lluvia que ingresa por tapas de llenado mal selladas, por contaminación cruzada durante la entrega y por emulsión durante la agitación del combustible. Toda flota diésel que opera desde un almacenamiento a granel está expuesta de forma continua al menos a una de estas vías. Un tanque de almacenamiento a granel de 10,000 litros con un contenido de agua superior al 0.1% en volumen puede desarrollar contaminación microbiana activa en 30–60 días y dejar todo el volumen del tanque inutilizable sin tratamiento químico y filtración. En operaciones agrícolas que dependen de grandes reservas estacionales de combustible, un solo evento de contaminación puede afectar a varias máquinas a la vez en plena temporada.",
+      "callout": [
+        {
+          "label": "Reducción de la vida útil de los inyectores",
+          "value": "−40–70% con contaminación sostenida con agua por encima de 200 ppm"
+        },
+        {
+          "label": "Intervalo de servicio del filtro de combustible",
+          "value": "−60–80% por obstrucción con biomasa microbiana"
+        },
+        {
+          "label": "Costo de reemplazo del juego de inyectores",
+          "value": "$5,000–$30,000 por evento"
+        }
+      ]
+    },
+    {
+      "heading": "Cinco modos de falla por agua en el combustible diésel",
+      "body": "El agua en el combustible diésel existe en tres formas: disuelta (invisible, por debajo de la saturación, 50–200 ppm), libre (fase separada en el fondo del tanque, visible por encima de 500 ppm) y emulsionada (gotas suspendidas en el combustible por agitación o interacción con aditivos). Cada forma causa daños distintos por mecanismos distintos en todo el sistema de combustible. Erosión del inyector: el agua a 1,600–2,500 bar de presión de inyección se vaporiza bruscamente en los orificios de la punta del inyector y causa erosión hidráulica de la aguja y el asiento a 40–70 veces la velocidad que con combustible limpio. Las holguras de 1–3 µm de los inyectores se destruyen por erosión en decenas de minutos de exposición a una bolsa de agua. Crecimiento microbiano: las bacterias reductoras de sulfato y los hongos Hormoconis resinae proliferan en la interfaz agua-diésel de los tanques de almacenamiento. Las colonias producen subproductos metabólicos ácidos, forman capas de biomasa que tapan los filtros y aceleran la corrosión del tanque por picadura electroquímica. Una contaminación activa deja inutilizable un tanque de 10,000 L en 30–60 días. Obstrucción de filtros: las capas de biomasa microbiana tapan el medio del filtro de combustible con tamaños de partícula muy inferiores a la eficiencia nominal del filtro. Filtros clasificados para 500 horas pueden taparse en 50–100 horas con contaminación microbiana activa. Por debajo de −5°C, la formación de cristales de hielo se suma a la cristalización de cera del combustible frío y agrava la obstrucción. Cavitación de la bomba de combustible: el combustible contaminado con agua provoca cavitación por vapor en la bomba de alta presión durante las transiciones de presión de operación. El colapso de las burbujas erosiona las superficies del cilindro y el émbolo de la bomba y genera residuos metálicos que entran al circuito de combustible aguas abajo de la bomba. Corrosión del tanque: la picadura electroquímica por la producción de ácidos microbianos y la corrosión en la interfaz agua-diésel degradan las paredes de acero del tanque. Los residuos de corrosión se convierten en una fuente secundaria de contaminación y agregan partículas abrasivas de óxido de hierro a un suministro de combustible ya contaminado."
+    },
+    {
+      "heading": "Estrategia de control de la contaminación por agua",
+      "body": "El control de la contaminación por agua es más eficaz en la etapa de almacenamiento del combustible, donde el agua está presente a granel y se separa con facilidad, que en el filtro de combustible del motor, donde la eficiencia de coalescencia está limitada por el caudal de combustible y la biomasa microbiana puede ya haberse formado. Un suministro de combustible a granel contaminado vencerá a cualquier sistema de filtración en el motor si la tasa de contaminación de origen supera la capacidad de retención de agua del filtro. Protocolo de control: analice el combustible almacenado a granel cada trimestre con titulación Karl Fischer ASTM D6304 antes de que la contaminación sea visible; inspeccione y selle contra la lluvia todas las tapas de llenado, ventilaciones y tapas de inspección de los tanques; instale filtración con separación de agua en el trasvase antes de que el combustible entre a los tanques de los equipos; mantenga los tanques a granel lo más llenos posible para reducir el espacio libre disponible para la condensación; vigile los indicadores de contaminación microbiana (velocidad de obstrucción de filtros, turbidez del combustible, depósitos oscuros en la salida del tanque); aplique tratamiento con biocida cuando se confirme la contaminación microbiana (un resultado positivo de ASTM D6304 no distingue el agua microbiana de la de condensación); reemplace todos los filtros de combustible y lave el circuito después de un evento de contaminación por agua, y no vuelva a poner en servicio equipos con filtros que estuvieron en la vía contaminada."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Límite de agua EN 590",
+      "value": "200 mg/kg (ppm)"
+    },
+    {
+      "label": "Presión en el riel HPCR",
+      "value": "1,600–2,500 bar"
+    },
+    {
+      "label": "Precisión de ASTM D6304",
+      "value": "±2 ppm a <100 ppm"
+    },
+    {
+      "label": "Umbral de prevención microbiana",
+      "value": "<50 ppm de agua en el tanque"
+    }
+  ],
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedSystems": [
+    "Fuel Cleanliness Protection"
+  ],
+  "keywords": [
+    "contaminación por agua",
+    "sistemas de combustible",
+    "Karl Fischer",
+    "ASTM D6304",
+    "ISO 12937",
+    "HPCR",
+    "filtro coalescente",
+    "contaminación microbiana"
+  ],
+  "commonMistakes": [
+    "Suponer que drenar los vasos del separador de agua indica que el agua se eliminó con éxito. El agua libre drenada confirma que el separador funciona, pero no confirma que el agua disuelta (que atraviesa los separadores coalescentes) esté por debajo del umbral de protección HPCR de 200 ppm.",
+    "No analizar el agua cuando el combustible proviene de proveedores confiables. El ingreso de humedad atmosférica por la respiración del tanque y la condensación en sus paredes puede elevar el contenido de agua de <50 ppm (suministro a granel) a >500 ppm en los tanques de almacenamiento en pocas semanas.",
+    "Tratar la contaminación microbiana como un problema químico que se resuelve solo agregando biocida. Los biocidas atacan las colonias existentes, pero no evitan la recolonización por acumulación de agua: eliminar el agua libre del fondo del tanque es la principal medida de prevención."
+  ]
+}

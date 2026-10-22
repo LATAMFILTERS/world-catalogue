@@ -6,3 +6,9 @@ export function ReviewedText({ text, context, stripNumber = false }: { text: str
   const translated = t(reviewedCopyKey(text) + (context ? '_' + context : ''), { defaultValue: text });
   return <>{stripNumber ? translated.replace(/^\d+\.\s*/, '') : translated}</>;
 }
+
+/** Same lookup as <ReviewedText>, for strings used in props and attributes. */
+export function useReviewed() {
+  const { t } = useTranslation();
+  return (text: string) => t(reviewedCopyKey(text), { defaultValue: text });
+}

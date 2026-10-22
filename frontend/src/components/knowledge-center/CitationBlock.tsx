@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useReviewed } from '@/components/ReviewedText';
 
 export interface CitationBlockProps {
   title: string;
@@ -42,6 +43,7 @@ const FORMAT_LABELS = ['APA', 'IEEE', 'BibTeX', 'Chicago'] as const;
 type FormatKey = typeof FORMAT_LABELS[number];
 
 export default function CitationBlock(props: CitationBlockProps) {
+  const tr = useReviewed();
   const [activeFormat, setActiveFormat] = useState<FormatKey>('APA');
   const [copied, setCopied] = useState(false);
 
@@ -84,7 +86,7 @@ export default function CitationBlock(props: CitationBlockProps) {
           color: 'rgba(255,241,45,0.5)',
           margin: 0,
         }}>
-          CITE THIS PAGE
+          {tr('CITE THIS PAGE')}
         </p>
         <div style={{ display: 'flex', gap: '0.25rem' }}>
           {FORMAT_LABELS.map((fmt) => (
@@ -138,7 +140,7 @@ export default function CitationBlock(props: CitationBlockProps) {
             transition: 'all 0.2s',
           }}
         >
-          {copied ? 'COPIED' : 'COPY'}
+          {tr(copied ? 'COPIED' : 'COPY')}
         </button>
       </div>
     </div>
