@@ -59,7 +59,7 @@ describe('Leadership language coverage and preserved identity', () => {
       for (const heading of lang === 'pt' ? ['Liderança humana.', 'Execução nativa de IA.'] : lang === 'es' ? ['Liderazgo humano.', 'Ejecución nativa con IA.'] : ['Human leadership.', 'AI-native execution.']) expect(visible).toContain(heading);
       if (lang === 'pt') {
         for (const english of ['ELIMFILTERS · LEADERSHIP', 'FOUNDER &amp; CEO', 'EXECUTIVE AI LEADERSHIP', 'GOVERNANCE &amp; ACCOUNTABILITY', 'CAPABILITY BEFORE COMPLEXITY', 'Executive AI Agent', 'Chief Operating &amp; Supply Chain Agent', 'Human leadership.', 'Back to Who We Are']) expect(visible).not.toContain(english);
-        for (const translated of ['LIDERANÇA EXECUTIVA DE IA', 'GOVERNANÇA E RESPONSABILIDADE', 'CAPACIDADE ANTES DA COMPLEXIDADE', 'Agente executivo de IA', 'a responsabilidade final pelas decisões', 'permanecem sujeitas à autoridade humana', '2002', 'UCAT', 'URBE']) expect(visible).toContain(translated);
+        for (const translated of ['LIDERANÇA EXECUTIVA DE IA', 'GOVERNANÇA E RESPONSABILIDADE', 'CAPACIDADE ANTES DA COMPLEXIDADE', 'Agente executivo de IA', 'a responsabilidade final pelas decisões', 'permanecem sob responsabilidade humana', '2002', 'UCAT', 'URBE']) expect(visible).toContain(translated);
       }
       if (lang === 'es') {
         for (const approved of ['2000', '2004', '2015', 'ELIMPERCA', 'protección de activos', 'costo total de propiedad (TCO)', 'retorno sobre la inversión (ROI)', 'sin limitarse a países específicos', 'simetría de información']) expect(visible).toContain(approved);
