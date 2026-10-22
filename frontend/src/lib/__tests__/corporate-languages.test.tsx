@@ -24,7 +24,7 @@ describe('Corporate copy follows the selected language', () => {
       expect(html).toContain(lang === 'pt' ? 'Quem Somos' : lang === 'es' ? 'Quiénes Somos' : 'Who We Are');
       expect(html).toContain(lang === 'pt' ? 'PERFIL DA EMPRESA' : lang === 'es' ? 'PERFIL DE LA EMPRESA' : 'COMPANY PROFILE');
       for (const original of ['2015', '2020', 'Frisco, Texas', 'Kleo Technology LLC', 'Víctor Abreu']) expect(html).toContain(original);
-      expect(html).toContain('href="/distributor-application"');
+      expect(html).toContain('href="' + (lang === 'en' ? '' : '/' + lang) + '/distributor-application/"');
       expect(html).toContain('href="/about/leadership"');
       if (lang === 'pt') {
         for (const original of ['WHO WE ARE', 'Who We Are', 'COMPANY PROFILE', 'GLOBAL EXPANSION', 'ENVIRONMENTAL PROTECTION', 'ELIMFILTERS manufacturing facility']) expect(html).not.toContain(original);
