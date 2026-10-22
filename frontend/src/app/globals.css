@@ -174,8 +174,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Phase 2A — internal page hero typography normalization. */
 main > a[href="/"] + section h1,
 main > a[href="/"] + section h1 span,
-main > section:first-of-type h1,
-main > section:first-of-type h1 span {
+main:not(.leadership-page) > section:first-of-type h1,
+main:not(.leadership-page) > section:first-of-type h1 span {
   font-family: 'Chakra Petch', 'Arial Narrow', monospace !important;
   font-weight: 700 !important;
   letter-spacing: -0.06em !important;
@@ -184,13 +184,13 @@ main > section:first-of-type h1 span {
 }
 
 main > a[href="/"] + section h1,
-main > section:first-of-type h1 {
+main:not(.leadership-page) > section:first-of-type h1 {
   font-size: clamp(2.85rem, 6.2vw, 6.05rem) !important;
   max-width: 980px !important;
 }
 
 main > a[href="/"] + section h1 span,
-main > section:first-of-type h1 span {
+main:not(.leadership-page) > section:first-of-type h1 span {
   font-size: 0.94em !important;
 }
 

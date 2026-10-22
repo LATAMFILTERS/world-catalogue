@@ -181,17 +181,21 @@ export function LeadershipPageClient() {
       <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isPortuguese ? "Liderança" : isSpanish ? 'Liderazgo' : 'Leadership'} />
 
       <section className="leadership-hero">
-        <div className="leadership-wrap">
-          <p className="eyebrow"><ReviewedText text={"ELIMFILTERS · LEADERSHIP"} /></p>
-          <h1>
-            <span className="hero-title-line">{isPortuguese ? 'Liderança humana.' : isSpanish ? 'Liderazgo humano.' : 'Human leadership.'}</span>
-            <span className="hero-title-line">{isPortuguese ? 'Execução nativa de IA.' : isSpanish ? 'Ejecución nativa con IA.' : 'AI-native execution.'}</span>
-          </h1>
-          <p className="hero-copy">
-            {isPortuguese ? "A ELIMFILTERS combina autoridade executiva humana com funções executivas especializadas operadas por agentes de IA sob uma estrutura formal de responsabilidade, autoridade delegada, rastreabilidade e encaminhamento." : isSpanish
-              ? 'ELIMFILTERS combina autoridad ejecutiva humana con funciones ejecutivas especializadas operadas por agentes de IA bajo un marco formal de responsabilidad, autoridad delegada, trazabilidad y escalamiento.'
-              : 'ELIMFILTERS combines human executive authority with specialized executive functions operated by AI agents under a formal framework of accountability, delegated authority, traceability, and escalation.'}
-          </p>
+        <div className="leadership-wrap leadership-hero-grid">
+          <div className="leadership-hero-heading">
+            <p className="eyebrow"><ReviewedText text={"ELIMFILTERS · LEADERSHIP"} /></p>
+            <h1>
+              <span className="hero-title-line">{isPortuguese ? 'Liderança humana.' : isSpanish ? 'Liderazgo humano.' : 'Human leadership.'}</span>
+              <span className="hero-title-line hero-title-secondary">{isPortuguese ? 'Execução nativa de IA.' : isSpanish ? 'Ejecución nativa con IA.' : 'AI-native execution.'}</span>
+            </h1>
+          </div>
+          <div className="leadership-hero-support">
+            <p className="hero-copy">
+              {isPortuguese ? "A ELIMFILTERS combina autoridade executiva humana com funções executivas especializadas operadas por agentes de IA sob uma estrutura formal de responsabilidade, autoridade delegada, rastreabilidade e encaminhamento." : isSpanish
+                ? 'ELIMFILTERS combina autoridad ejecutiva humana con funciones ejecutivas especializadas operadas por agentes de IA bajo un marco formal de responsabilidad, autoridad delegada, trazabilidad y escalamiento.'
+                : 'ELIMFILTERS combines human executive authority with specialized executive functions operated by AI agents under a formal framework of accountability, delegated authority, traceability, and escalation.'}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -333,12 +337,18 @@ export function LeadershipPageClient() {
       <style jsx>{`
         .leadership-page{background:#000;color:#fff;min-height:100vh;font-family:var(--font-body)}
         .leadership-wrap{max-width:1180px;margin:0 auto;width:100%}
-        .leadership-hero{padding:clamp(7rem,9vw,8.5rem) clamp(1.25rem,5vw,5.5rem) clamp(3.5rem,6vw,5.5rem);background:radial-gradient(circle at 80% 0%,rgba(255,241,45,.12),transparent 32%),#000;border-bottom:1px solid rgba(255,255,255,.08)}
+        .leadership-hero{padding:clamp(6.5rem,8vw,8rem) clamp(1.25rem,5vw,5.5rem) clamp(3.25rem,5vw,5rem);background:radial-gradient(circle at 80% 0%,rgba(255,241,45,.10),transparent 34%),#000;border-bottom:1px solid rgba(255,255,255,.08)}
+        .leadership-hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(2.25rem,4vw,4rem);align-items:center}
+        .leadership-hero-heading,.leadership-hero-support{min-width:0}
+        .leadership-hero-support{padding-left:1.5rem;border-left:1px solid rgba(255,241,45,.38)}
         .eyebrow{color:#FFF12D;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.16em;margin:0 0 1rem;text-transform:uppercase}.eyebrow.dark{color:#6c6100}
         h1,h2,h3{font-family:var(--font-display)}
-        h1{font-weight:700;letter-spacing:-.045em;line-height:1.03;font-size:clamp(2.4rem,4vw,4.65rem);max-width:1110px;margin:0;text-transform:uppercase}
-        .hero-title-line{display:block;text-wrap:balance}
-        .hero-copy{max-width:760px;color:rgba(255,255,255,.78);font-size:clamp(1rem,1.2vw,1.16rem);line-height:1.7;margin:1.65rem 0 0}
+        .leadership-hero h1{font-weight:700;letter-spacing:-.04em;line-height:1.08;font-size:clamp(2.35rem,3.3vw,3.1rem);margin:0;text-transform:uppercase}
+        .leadership-hero .hero-title-line{display:block;white-space:nowrap}
+        .leadership-hero .hero-title-secondary{margin-top:.35rem;font-size:clamp(2rem,2.65vw,2.6rem);letter-spacing:-.035em}
+        .leadership-hero .hero-copy{max-width:480px;color:rgba(255,255,255,.78);font-size:clamp(1rem,1.1vw,1.125rem);line-height:1.72;margin:0}
+        @media(max-width:1100px){.leadership-hero-grid{grid-template-columns:1fr;gap:1.75rem}.leadership-hero-support{max-width:760px;padding-left:1.25rem}.leadership-hero h1{font-size:clamp(2.4rem,5.2vw,3.6rem)}.leadership-hero .hero-title-secondary{font-size:clamp(2rem,4.4vw,3rem)}.leadership-hero .hero-title-line{white-space:normal;text-wrap:balance}}
+        @media(max-width:560px){.leadership-hero-grid{gap:1.5rem}.leadership-hero h1{font-size:clamp(2.05rem,8vw,2.8rem);line-height:1.08}.leadership-hero .hero-title-secondary{font-size:clamp(1.8rem,6.5vw,2.3rem);margin-top:.55rem}.leadership-hero-support{padding-left:1rem}.leadership-hero .hero-copy{font-size:1rem;line-height:1.65}}
         .section-copy{max-width:830px;color:rgba(255,255,255,.74);font-size:clamp(1rem,1.3vw,1.13rem);line-height:1.72}
         .section-copy+.section-copy{margin-top:1.1rem}
         .agents-intro-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,5vw,5rem);row-gap:1.5rem;align-items:start;margin-top:1.75rem}
@@ -399,7 +409,7 @@ export function LeadershipPageClient() {
         .back-link{display:inline-block;margin-top:2rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em;text-underline-offset:.3em}
         .back-link:hover,.back-link:focus-visible{text-decoration:underline}
         @media(max-width:900px){.founder-grid,.governance-grid,.closing-grid,.agent-profile{grid-template-columns:1fr}.founder-rail{max-width:100%;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:1.5rem 2rem;align-items:start}.founder-photo-shell{width:100%;max-width:300px}.founder-timeline{margin-top:0}.founder-quote{grid-column:1/-1;margin-top:0}.agent-photo-shell{max-width:300px}}
-        @media(max-width:560px){.leadership-hero{padding-top:7rem;padding-bottom:3rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-rail{grid-template-columns:1fr;gap:1.5rem;max-width:420px;justify-self:center}.founder-photo-shell{width:78%;max-width:300px;margin:0 auto}.founder-timeline-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:0;border:0}.founder-timeline-item{padding:.9rem 0 0;border-top:1px solid #bdbbb0}.founder-timeline-item:before{left:0;top:-4px}.founder-timeline-year{font-size:.84rem}.founder-timeline-title{font-size:.92rem;overflow-wrap:anywhere}.founder-timeline-detail{font-size:.82rem}.founder-quote{grid-column:1;margin:0}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
+        @media(max-width:560px){.leadership-hero{padding-top:6.5rem;padding-bottom:3rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-rail{grid-template-columns:1fr;gap:1.5rem;max-width:420px;justify-self:center}.founder-photo-shell{width:78%;max-width:300px;margin:0 auto}.founder-timeline-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:0;border:0}.founder-timeline-item{padding:.9rem 0 0;border-top:1px solid #bdbbb0}.founder-timeline-item:before{left:0;top:-4px}.founder-timeline-year{font-size:.84rem}.founder-timeline-title{font-size:.92rem;overflow-wrap:anywhere}.founder-timeline-detail{font-size:.82rem}.founder-quote{grid-column:1;margin:0}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
       `}</style>
     </main>
   );
