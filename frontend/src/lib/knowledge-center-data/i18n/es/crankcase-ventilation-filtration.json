@@ -1,0 +1,298 @@
+{
+  "slug": "crankcase-ventilation-filtration",
+  "faqs": [
+    {
+      "question": "¿Qué son los gases de blow-by y por qué la ventilación del cárter requiere filtración?",
+      "answer": "Los gases de blow-by son productos de combustión que pasan por el paquete de anillos del pistón hacia el cárter: vapores de combustible sin quemar, CO2, vapor de agua y partículas de hollín en el rango de 0.1–5 µm. La ventilación positiva del cárter (PCV) hace recircular estos gases hacia el múltiple de admisión para evitar que el cárter se presurice. Sin separación del aerosol de aceite, la neblina de aceite del blow-by (diámetro de gota de 0.1–3 µm, concentración de 100–5,000 mg/m³) contamina la carga de aire, ensucia las válvulas EGR y se deposita en los compresores de los turbocompresores en 500–2,000 horas."
+    },
+    {
+      "question": "¿Qué eficiencia de filtración se requiere en los separadores de ventilación del cárter?",
+      "answer": "SAE J1277 especifica la eficiencia del separador de ventilación del cárter como la masa total de arrastre de aceite al caudal y la temperatura de aceite nominales. Los sistemas de ventilación cerrada del cárter (CCV) de los motores Euro VI / EPA 2010+ deben lograr un arrastre de aceite inferior a 1.0 g/kWh. Esto corresponde a una eficiencia del separador superior al 95% para gotas de 0.3 µm en ensayos equivalentes a ISO 29463. Los sistemas de ventilación abierta del cárter (OCV) con requisitos de emisiones en ruta suelen apuntar a una eficiencia del 90–95% para gotas de 1 µm."
+    },
+    {
+      "question": "¿Cómo funciona un separador coalescente en las aplicaciones de ventilación del cárter?",
+      "answer": "Un separador coalescente del cárter usa medio de fibra de vidrio de borosilicato con un diámetro de fibra de 0.5–5 µm. Las gotas de aerosol de aceite (0.1–3 µm) chocan con las fibras y se adhieren a ellas por mecanismos de impacto inercial y difusión. Las gotas adheridas coalescen sobre la superficie de las fibras en gotas más grandes (50–500 µm) que drenan del medio por gravedad. La tasa de drenaje debe superar la tasa de carga de aceite para evitar la inundación; la velocidad frontal del medio se limita a 0.05–0.20 m/s para mantener el equilibrio de drenaje y una eficiencia superior al 95%."
+    },
+    {
+      "question": "¿Qué relación hay entre el caudal de blow-by y el dimensionamiento del filtro de ventilación del cárter?",
+      "answer": "El caudal de blow-by aumenta con la carga y el desgaste del motor. Un motor diésel de servicio pesado nuevo produce 100–300 L/min de blow-by a plena carga; un motor desgastado, con desgaste de anillos, puede producir 500–800 L/min. Los separadores del cárter se dimensionan para el caudal de blow-by máximo esperado con un margen de seguridad del 20%. Los separadores subdimensionados operan por encima de la velocidad frontal nominal, lo que reduce la eficiencia un 15–30% y aumenta el arrastre de aceite. SAE J1277 exige medir la eficiencia al 100% y al 120% del caudal nominal."
+    },
+    {
+      "question": "¿Cómo afecta la temperatura del aceite al desempeño del separador de ventilación del cárter?",
+      "answer": "La viscosidad del aceite baja de 150 mPa·s a 40 °C a 10–15 mPa·s a 100 °C en un SAE 15W-40. La menor viscosidad a la temperatura de operación reduce la resistencia al drenaje a través del medio coalescente, pero aumenta el riesgo de rearrastre con velocidades frontales altas. SAE J1277 especifica ensayar el separador con el aceite a 100 °C, que representa las condiciones de operación en caliente. El desempeño en el arranque en frío (0–40 °C) rige la acumulación de condensado de aceite en los tubos del CCV y debe verificarse en aplicaciones árticas por debajo de −20 °C."
+    },
+    {
+      "question": "¿Qué consecuencias tiene la obstrucción del filtro de ventilación del cárter en los motores diésel?",
+      "answer": "Un separador CCV obstruido restringe el caudal de blow-by y aumenta la presión del cárter. Cuando la presión del cárter supera 50–75 mbar (límite del cárter de SAE J1277), el aceite sale forzado por los retenes del cigüeñal y los sellos de los vástagos de válvula, lo que aumenta el consumo de aceite externo en 0.5–2.0 L/100 h. Una sobrepresión sostenida por encima de 100 mbar acelera la falla de las juntas. Los sistemas ECU modernos monitorean la presión del cárter por la desviación del sensor MAP y generan códigos de falla cuando la restricción del CCV supera los límites de diseño."
+    },
+    {
+      "question": "¿Cómo deberían fijarse los intervalos de mantenimiento de los separadores CCV en aplicaciones de servicio pesado?",
+      "answer": "Los intervalos de mantenimiento de los separadores CCV suelen fijarse en el 50–75% de los intervalos de cambio de aceite del motor (500–1,500 horas en diésel de servicio pesado). El medio coalescente retiene partículas de hollín que aumentan la caída de presión con el tiempo; la mayoría de los separadores CCV especifican el reemplazo cuando la caída de presión supera 25–40 mbar al caudal nominal. El monitoreo del consumo de aceite da una señal indirecta: un aumento de más de 0.5 L/100 h sobre la línea base justifica inspeccionar el CCV. En aplicaciones de flota se recomienda la inspección del tapón de drenaje según SAE J1277 en cada cambio de aceite."
+    },
+    {
+      "question": "¿Qué exige la normativa de emisiones Euro VI para los sistemas de ventilación del cárter?",
+      "answer": "El Reglamento Euro VI (CE) 595/2009 y el Reglamento UN ECE 49 (Rev.06) exigen ventilación cerrada del cárter en todos los motores diésel de servicio pesado; los sistemas de cárter abierto están prohibidos. El sistema CCV debe llevar todos los gases de blow-by de vuelta a la admisión de aire del motor, sin ningún venteo directo a la atmósfera. El arrastre de aceite se regula de forma indirecta mediante los límites de emisión de PM2.5 por el escape de 10 mg/kWh (Euro VI), que incluyen el aporte de la neblina de aceite del CCV que entra a la combustión. Las normas de eficiencia CCV de SAE J1277 respaldan la verificación del cumplimiento."
+    },
+    {
+      "question": "¿Cómo afecta la interacción con la EGR a la carga de contaminación del filtro de ventilación del cárter?",
+      "answer": "La EGR hace recircular un 15–30% de los gases de escape (700–900 °C) hacia el múltiple de admisión, lo que aumenta la carga de hollín y partículas en la carga de aire de admisión 5–15× frente a los motores sin EGR. Las partículas de hollín que entran al cárter por el blow-by contaminan el aceite y el medio coalescente del CCV, y reducen la vida del medio un 30–50% en motores con EGR alta. El ensuciamiento del enfriador EGR (condensado de hidrocarburos + hollín) provoca eventos de desprendimiento que elevan temporalmente la contaminación a la entrada del CCV; la elección del filtro para motores con EGR debería especificar 2× la capacidad de hollín de los elementos CCV estándar."
+    },
+    {
+      "question": "¿Cuáles son los parámetros de diseño clave de la carcasa del separador CCV en aplicaciones turboalimentadas?",
+      "answer": "La ventilación del cárter en motores turboalimentados debe gestionar la separación del blow-by y, a la vez, evitar el ensuciamiento del compresor del turbocompresor. Requisitos de diseño de la carcasa: (1) puerto de drenaje ubicado por debajo del centroide del medio, con un 2–5% del volumen del medio como depósito de drenaje para evitar el rearrastre; (2) deflector de entrada para desacelerar el flujo de blow-by de 15–30 m/s de velocidad en la línea a 0.5–2 m/s de velocidad de aproximación al separador; (3) carcasa clasificada para 5× la presión diferencial de operación como seguridad frente al colapso; (4) integración con una válvula de retención que evite que el vacío del múltiple de admisión aspire aceite hacia el separador. SAE J1277 exige ensayar la orientación de la carcasa a 0°, ±30° y ±45° respecto del eje de diseño."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "SAE J1277:2015, Measurement of Crankcase Fumes Emitted from Diesel Engines",
+      "relevance": "Define el método de ensayo para medir el caudal másico de arrastre de aceite de los separadores de ventilación del cárter al caudal de blow-by y la temperatura de aceite nominales; especifica el cálculo de la eficiencia y los límites de arrastre admisibles para los sistemas de cárter abierto y cerrado."
+    },
+    {
+      "category": "regulation",
+      "citation": "UN ECE Regulation 49 Rev.06 (Euro VI), Uniform Provisions for Diesel Engine Emissions",
+      "relevance": "Prohíbe los sistemas de ventilación abierta del cárter en los motores diésel de servicio pesado Euro VI; exige que los sistemas CCV lleven todo el blow-by a la admisión de aire; el límite de emisión de PM de 10 mg/kWh incluye el aporte indirecto de la combustión del aerosol de aceite del CCV."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 29463-3:2011, High-Efficiency Air Filters (EPA, HEPA and ULPA) — Part 3: Testing Flat Sheet Filter Media",
+      "relevance": "Métodos de ensayo aplicables a la medición de la eficiencia del medio coalescente con gotas submicrónicas; la medición de la penetración a 0.1–0.3 µm da la base para la especificación de eficiencia del separador CCV en aplicaciones de alta eficiencia."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D7483-08, Standard Test Method for Determination of Dynamic Foam Properties of Engine Oils and Other Fluids",
+      "relevance": "Caracteriza la tendencia del aceite a formar espuma, pertinente para el desempeño del drenaje del separador CCV; los aceites con alta tendencia a la espuma (espuma ASTM secuencia I > 300 mL) dificultan el drenaje a través del medio coalescente y aumentan el arrastre de aceite por encima de los límites nominales."
+    }
+  ],
+  "title": "Ventilación del cárter y filtración de los gases de blow-by",
+  "subtitle": "Diseño del sistema CCV, desempeño del separador coalescente y medición del arrastre de aceite según SAE J1243",
+  "metaDescription": "Los sistemas de ventilación del cárter (CCV) hacen recircular los gases de blow-by del motor hacia la admisión después de eliminar el aerosol de aceite por separación coalescente. Esta referencia cubre el diseño de sistemas CCV cerrados, los mecanismos de captura del medio coalescente, el ensayo de desempeño SAE J1243, los límites de arrastre de aceite, los requisitos de caída de presión y el contexto normativo de las aplicaciones diésel de servicio pesado.",
+  "category": "Ingeniería",
+  "readTime": "12 min",
+  "intro": "El blow-by del cárter del motor está formado por los gases de combustión que pasan por el paquete de anillos del pistón durante las carreras de compresión y expansión y entran al cárter como una mezcla de aerosol cargada de aceite y a alta temperatura. Los gases de blow-by contienen vapor de combustible sin quemar, productos de combustión (NOₓ, CO, hidrocarburos), vapor de agua y gotas de aerosol de aceite generadas por el cizallamiento de la película de aceite en las paredes del cilindro y por las salpicaduras de aceite de los cojinetes de bancada y las bielas. En los sistemas de ventilación abierta del cárter, el blow-by se ventea directamente a la atmósfera, una práctica prohibida en los motores diésel de servicio pesado nuevos en la mayoría de las jurisdicciones desde la década de 1990. Los sistemas CCV cerrados hacen recircular el blow-by hacia la admisión del motor después de separar el aerosol de aceite con un elemento separador coalescente, para evitar que el turbocompresor y el sistema de admisión ingieran aceite. SAE J1243 define el método de ensayo de desempeño de los sistemas separadores CCV, que mide el arrastre de aceite (g/h), la caída de presión y la eficiencia del separador en todo el rango de caudal de blow-by.",
+  "sections": [
+    {
+      "heading": "Composición y caudales de los gases de blow-by",
+      "body": "El caudal de blow-by se expresa como un porcentaje de la cilindrada del motor por revolución. Los motores nuevos con holguras correctas en el paquete de anillos producen tasas de blow-by del 0.5–1.5% de la cilindrada por ciclo a carga nominal; los motores con anillos desgastados o camisas vitrificadas pueden producir un 3–5% o más. A la velocidad y carga nominales de un motor diésel de servicio pesado de 12 litros que produce 600 kW, una tasa de blow-by del 1% corresponde a aproximadamente 60 L/min de caudal de gases del cárter en condiciones estándar. La tasa de blow-by aumenta mucho con el desgaste del motor y se usa como indicador diagnóstico: un aumento sostenido de más del 50% sobre la tasa de blow-by de base de un motor nuevo en condiciones de operación equivalentes indica un deterioro del paquete de anillos o de las camisas que hay que investigar. La temperatura de los gases de blow-by a la entrada del separador suele ser de 80–120°C; las gotas de aerosol de aceite abarcan el rango submicrométrico (0.1–10 µm de diámetro), con el tamaño de partícula de aerosol más penetrante (MPPS) entre 0.1–0.3 µm para el medio coalescente, donde no predomina ni la difusión browniana ni el impacto inercial.",
+      "callout": [
+        {
+          "label": "Tasa de blow-by de un motor nuevo",
+          "value": "0.5–1.5% de la cilindrada por ciclo a carga nominal"
+        },
+        {
+          "label": "Tasa de blow-by de un motor desgastado",
+          "value": "3–5%+: umbral para investigar anillos o camisas"
+        },
+        {
+          "label": "Temperatura del blow-by",
+          "value": "80–120°C a la entrada del separador CCV"
+        },
+        {
+          "label": "MPPS del aerosol de aceite",
+          "value": "0.1–0.3 µm: tamaño de partícula más penetrante para el medio coalescente"
+        }
+      ]
+    },
+    {
+      "heading": "Mecanismos de captura del medio coalescente",
+      "body": "La separación del aerosol de aceite del CCV se basa en tres mecanismos de captura distintos que predominan en distintos rangos de tamaño de partícula. El impacto inercial predomina en las partículas mayores de 1 µm: las partículas con masa suficiente no pueden seguir las desviaciones de la corriente de aire alrededor de las fibras del medio y chocan contra la superficie de la fibra. La intercepción captura las partículas de 0.3–1 µm que siguen las líneas de corriente pero tocan la superficie de las fibras cuando su radio supera la distancia entre el centro de la partícula y la superficie de la fibra. La difusión browniana predomina por debajo de 0.3 µm: los impactos moleculares térmicos aleatorios desplazan a las partículas de las líneas de corriente y las hacen tocar las fibras de forma estocástica. La suma de los tres mecanismos define la curva de eficiencia de recolección, con un mínimo en el MPPS (0.1–0.3 µm), donde no predomina ningún mecanismo. El medio coalescente del CCV se diseña como microfibra de vidrio de borosilicato multicapa con gradientes de diámetro de fibra controlados: las capas aguas arriba, más gruesas, capturan las gotas más grandes por impacto, y las capas aguas abajo, más finas, se ocupan del rango submicrométrico. El aceite recolectado coalesce en gotas sobre la superficie de las fibras, migra por gravedad y tensión superficial hacia la parte inferior del elemento y drena por un circuito de retorno de aceite hacia el cárter.",
+      "callout": [
+        {
+          "label": "Rango del impacto inercial",
+          "value": ">1 µm de diámetro de partícula: mecanismo de captura predominante"
+        },
+        {
+          "label": "Rango de la intercepción",
+          "value": "0.3–1 µm: partículas que tocan las fibras siguiendo las líneas de corriente"
+        },
+        {
+          "label": "Rango de la difusión browniana",
+          "value": "<0.3 µm: desplazamiento térmico estocástico hacia la superficie de las fibras"
+        },
+        {
+          "label": "Mínimo del MPPS",
+          "value": "0.1–0.3 µm: el tamaño que se captura con menor eficiencia"
+        }
+      ]
+    },
+    {
+      "heading": "Método de ensayo de desempeño SAE J1243",
+      "body": "SAE J1243 (Crankcase Emission Control Test Code) define el procedimiento de ensayo para medir el desempeño de los separadores CCV. El circuito de ensayo genera gas de blow-by con temperatura, caudal y concentración de aerosol de aceite definidos, mediante un generador de aerosol calibrado que produce gotas representativas del aerosol del cárter del motor. Parámetros de ensayo: el caudal de blow-by va desde ralentí (10–20% del nominal) hasta el caudal de blow-by nominal del motor; temperatura de ensayo de 100°C ±5°C a la entrada del separador; concentración de aerosol de aceite de 5–15 g/m³ a la entrada. Métricas de desempeño medidas según SAE J1243: (1) tasa de arrastre de aceite aguas abajo del separador en g/h al caudal nominal; (2) caída de presión del separador en bar al caudal nominal; (3) eficiencia de recolección del separador como porcentaje de la masa de aceite de entrada retenida. El arrastre de aceite máximo admisible en las aplicaciones CCV de diésel de servicio pesado suele especificarlo el fabricante del motor según los límites de ensuciamiento del turbocompresor y de depósitos de aceite en el sistema de admisión, normalmente en el rango de 0.5–2.0 g/h al caudal de blow-by nominal.",
+      "callout": [
+        {
+          "label": "Norma de ensayo",
+          "value": "SAE J1243: desempeño de los sistemas de control de emisiones del cárter"
+        },
+        {
+          "label": "Temperatura de ensayo",
+          "value": "100°C ±5°C a la entrada del separador"
+        },
+        {
+          "label": "Límite típico de arrastre de aceite",
+          "value": "0.5–2.0 g/h al blow-by nominal: especificado por el fabricante"
+        },
+        {
+          "label": "Métricas clave",
+          "value": "Arrastre de aceite (g/h), caída de presión (bar), eficiencia de recolección (%)"
+        }
+      ]
+    },
+    {
+      "heading": "Caída de presión y gestión de la presión del cárter",
+      "body": "La caída de presión del separador CCV al caudal de blow-by nominal no debe superar la presión de venteo de diseño del cárter del motor, para evitar que el cárter se presurice. Una presión excesiva en el cárter provoca la extrusión de los retenes del cigüeñal y puede forzar el aceite a pasar por el retén trasero hacia la carcasa del volante. La caída de presión máxima admisible del separador CCV al blow-by nominal depende del motor, normalmente ≤0.05 bar (50 mbar) al caudal de blow-by nominal en los motores diésel de servicio pesado modernos. A medida que el elemento separador se carga de aceite y de las partículas sólidas acumuladas del blow-by (hollín, partículas de combustión), la caída de presión aumenta. Algunos diseños de separador CCV incorporan una válvula de derivación automática ajustada a la presión máxima admisible del cárter: si el elemento separador se bloquea, la derivación se abre y deja pasar el blow-by sin filtrar directamente a la admisión, lo que preserva la integridad de los retenes de aceite del motor a costa de un mayor consumo de aceite. Los elementos se reemplazan en intervalos definidos (normalmente 1,000–2,000 horas de operación) o ante la señal de un indicador de restricción.",
+      "callout": [
+        {
+          "label": "ΔP máxima del separador",
+          "value": "≤0.05 bar al caudal de blow-by nominal: límite de presión de los retenes del fabricante"
+        },
+        {
+          "label": "Riesgo de presión excesiva en el cárter",
+          "value": "Extrusión de los retenes del cigüeñal: falla del retén trasero y del retén delantero"
+        },
+        {
+          "label": "Función de derivación",
+          "value": "La derivación de alivio de presión preserva la integridad de los retenes si el elemento se bloquea"
+        },
+        {
+          "label": "Intervalo de reemplazo",
+          "value": "1,000–2,000 horas de operación o señal del indicador de restricción"
+        }
+      ]
+    },
+    {
+      "heading": "Contexto normativo y requisitos de CCV cerrado",
+      "body": "La ventilación abierta del cárter (el venteo directo del blow-by a la atmósfera) está prohibida en los motores diésel de servicio pesado nuevos según EPA 40 CFR Part 86 Subpart N en Norteamérica y según el Reglamento UE 2016/1628 (Stage V / equivalente a Euro 7 para maquinaria móvil no de carretera) en Europa. Estas normativas consideran las emisiones del cárter parte del inventario total de emisiones del motor; el venteo abierto permitiría que emisiones no controladas de hidrocarburos, partículas y NOₓ se salteen el sistema de postratamiento del escape. Los sistemas CCV cerrados deben llevar el gas de blow-by separado a la admisión del motor aguas arriba de la entrada del compresor del turbocompresor o directamente al múltiple de admisión; en los motores turboalimentados se prefiere llevarlo antes del compresor para evitar que el aerosol de aceite se deposite en los álabes del compresor. En las aplicaciones donde la recirculación cerrada no es viable (aplicaciones con caudal de blow-by muy alto), se permiten sistemas con venteo abierto con un separador de neblina de aceite que cumpla los límites de emisión reglamentarios, bajo exenciones específicas.",
+      "callout": [
+        {
+          "label": "Normativa norteamericana",
+          "value": "EPA 40 CFR Part 86: CCV cerrado obligatorio en diésel de servicio pesado nuevos"
+        },
+        {
+          "label": "Normativa de la UE",
+          "value": "UE 2016/1628 (Stage V): las emisiones del cárter cuentan en la certificación de emisiones totales"
+        },
+        {
+          "label": "Conducción a la admisión",
+          "value": "Aguas arriba de la entrada del compresor del turbocompresor: se prefiere para evitar el ensuciamiento de los álabes del compresor"
+        },
+        {
+          "label": "Exención de CCV abierto",
+          "value": "Requiere un separador de neblina de aceite que cumpla los límites de emisión reglamentarios"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Tasa de blow-by de un motor nuevo",
+      "value": "0.5–1.5% de la cilindrada por ciclo"
+    },
+    {
+      "label": "MPPS del aerosol de aceite",
+      "value": "0.1–0.3 µm: la menor eficiencia de recolección"
+    },
+    {
+      "label": "Temperatura de ensayo SAE J1243",
+      "value": "100°C ±5°C"
+    },
+    {
+      "label": "Arrastre de aceite máximo",
+      "value": "0.5–2.0 g/h al blow-by nominal (especificado por el fabricante)"
+    },
+    {
+      "label": "ΔP máxima del separador CCV",
+      "value": "≤0.05 bar al caudal de blow-by nominal"
+    },
+    {
+      "label": "Intervalo de reemplazo del elemento",
+      "value": "1,000–2,000 horas de operación"
+    }
+  ],
+  "relatedStandards": [
+    "SAE J1243",
+    "ISO 29463",
+    "ISO 5011"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ventilación del cárter",
+    "filtración del blow-by",
+    "separador CCV",
+    "SAE J1243",
+    "separador de aerosol de aceite",
+    "medio coalescente",
+    "MPPS",
+    "presión del cárter",
+    "CCV cerrado",
+    "EPA 40 CFR Part 86",
+    "arrastre de aceite",
+    "filtro coalescente"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Consumo de aceite excesivo que no se explica por fugas externas ni por la combustión: turbocompresor o sistema de admisión sucios con depósitos de aceite",
+      "Humo azul en el escape: aceite que pasa por el CCV hacia la admisión y se quema en el cilindro",
+      "El elemento separador CCV requiere reemplazo antes del intervalo especificado",
+      "La tapa de llenado de aceite del cárter salta por la presión: separador CCV bloqueado que provoca sobrepresión en el cárter",
+      "Aumento de la tasa de blow-by confirmado por la medición de la presión del cárter: se sospecha desgaste del paquete de anillos del motor"
+    ],
+    "probableCauses": [
+      "Elemento separador saturado: se excedió el intervalo de servicio del elemento separador; elemento cargado de hollín y partículas de combustión más allá de su capacidad de drenaje",
+      "Válvula de derivación trabada abierta: derivación abierta de forma permanente que saltea el separador; entra blow-by sin filtrar al sistema de admisión",
+      "Retorno de aceite bloqueado: aceite acumulado en la carcasa del separador por encima de la capacidad de retorno del drenaje; arrastre de aceite por la salida del separador",
+      "Desgaste del paquete de anillos: caudal de blow-by 50%+ sobre la línea base, que sobrecarga la capacidad del separador más allá del caudal de diseño",
+      "Presión alta en el cárter: elemento separador restringido; la presión supera el punto de ajuste de la válvula de derivación, pero la válvula está trabada cerrada"
+    ],
+    "inspectionMethods": [
+      "Medir la presión del cárter en la boca de llenado de aceite con el motor en ralentí nominal y a carga nominal; comparar con el límite máximo admisible del fabricante",
+      "Inspeccionar la carcasa del separador en busca de aceite acumulado por encima de la entrada del tubo de retorno del drenaje; confirma el bloqueo del retorno de aceite",
+      "Medir el caudal de blow-by a velocidad y carga nominales; comparar con el valor de base del fabricante para las horas de motor del paquete de anillos actual",
+      "Inspeccionar el funcionamiento de la válvula de derivación: retirar el elemento separador, aplicar presión de prueba y confirmar que la derivación se abre a la presión de apertura especificada",
+      "Inspeccionar la entrada y los álabes del compresor del turbocompresor en busca de depósitos de aceite; confirma que el separador CCV es insuficiente o está en derivación"
+    ],
+    "correctiveActions": [
+      "Elemento sobrecargado: reemplazar el elemento separador CCV; revisar el caudal de blow-by y, si está elevado, investigar el estado del paquete de anillos",
+      "Válvula de derivación trabada abierta: reemplazar el conjunto de la válvula de derivación; investigar por qué la carga del elemento activó la derivación",
+      "Retorno de aceite bloqueado: desarmar la carcasa del separador; despejar el tubo de drenaje; inspeccionar y reemplazar la válvula de retención si tiene",
+      "Desgaste del paquete de anillos confirmado: programar el reacondicionamiento; operar con blow-by elevado sobrecarga el separador CCV y reduce la vida del elemento separador",
+      "Sobrepresión en el cárter: reemplazar el elemento CCV de inmediato; inspeccionar los retenes delantero y trasero del cigüeñal en busca de daños por extrusión"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Arrastre de aceite excesivo a través del separador CCV: depósitos de aceite en los álabes del compresor del turbocompresor",
+      "standard": "SAE J1243 — oil carryover measurement; OEM maximum carryover specification",
+      "protectionSystem": "Separador coalescente de alta eficiencia con circuito de drenaje de aceite independiente y válvula de derivación ajustada por debajo de la presión de diseño del cárter",
+      "technology": "Elemento coalescente de microfibra de vidrio de borosilicato multicapa que captura el aerosol de aceite hasta 0.1 µm combinando impacto, intercepción y difusión browniana; un circuito de drenaje por gravedad dedicado devuelve el aceite coalescido al cárter sin rearrastre; válvula de derivación ajustada a 0.05 bar para proteger los retenes del cigüeñal si el elemento se bloquea",
+      "relatedArticles": [
+        "air-intake-system-design",
+        "particle-ingress-prevention",
+        "sae-j726-iso-5011-air-cleaner-test"
+      ]
+    },
+    {
+      "problem": "Intervalo de servicio del elemento separador CCV demasiado corto: frecuencia de mantenimiento excesiva en operación con mucho hollín",
+      "standard": "SAE J1243 — performance across blow-by flow range",
+      "protectionSystem": "Mayor capacidad de retención de suciedad del elemento separador con una etapa de preseparación de hollín antes del elemento coalescente",
+      "technology": "Separador CCV de dos etapas: un preseparador inercial o una etapa centrífuga inicial elimina los aglomerados pesados de hollín antes del elemento coalescente y extiende su vida útil al reducir la tasa de carga de hollín; coherente con los caudales de blow-by medidos según SAE J1243",
+      "relatedArticles": [
+        "particle-ingress-prevention",
+        "air-intake-system-design",
+        "filter-housing-design"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-SAE-J1243)",
+    "evidenceStatus": "SAE J1243 crankcase emission control test methodology verified; blow-by rate 0.5–1.5% of displacement from published engine engineering literature (Heywood Internal Combustion Engine Fundamentals, 2nd Ed.); oil aerosol MPPS 0.1–0.3 µm from coalescing filter aerosol physics literature (Brown - Air Filtration); maximum CCV ΔP ≤0.05 bar from published heavy-duty diesel CCV design guides (Cummins, Daimler); oil carryover 0.5–2.0 g/hr range from OEM service documentation; EPA 40 CFR Part 86 Subpart N crankcase requirement verified; EU Regulation 2016/1628 Stage V crankcase emission certification requirement verified"
+  }
+}

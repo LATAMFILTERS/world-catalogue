@@ -1,0 +1,217 @@
+{
+  "slug": "iso-16889",
+  "faqs": [
+    {
+      "question": "¿Qué es el método multipaso de ISO 16889 y por qué se prefiere al ensayo de un solo paso?",
+      "answer": "El ensayo multipaso ISO 16889 hace recircular ISO Medium Test Dust por el filtro ensayado, alimentando polvo nuevo a una tasa controlada mientras cuenta de forma continua las concentraciones de partículas aguas arriba y aguas abajo. A diferencia de los ensayos de un solo paso, que miden la eficiencia en un único estado de carga, el ensayo multipaso genera una relación Beta promediada en todo el ciclo de carga, desde limpio hasta la restricción terminal. Esto da una medida más representativa del desempeño en condiciones reales de servicio, porque la eficiencia del filtro suele mejorar mientras se forma la torta en la fase inicial de carga y luego baja cerca de la restricción terminal. Los valores resultantes de relación Beta y de capacidad de retención de suciedad (DHC) se usan directamente en el diseño de sistemas y en la elección de los objetivos de limpieza del fluido."
+    },
+    {
+      "question": "¿Qué calibración de los contadores de partículas exige el cumplimiento de ISO 16889?",
+      "answer": "ISO 16889 exige que los contadores automáticos de partículas (APC) usados para medir las concentraciones aguas arriba y aguas abajo estén calibrados según ISO 11171 con partículas de referencia trazables a NIST. La designación (c) en la notación de la relación Beta, β10(c), indica mediciones calibradas según ISO 11171, a diferencia de los valores Beta antiguos de ISO 4572 medidos con contadores sin calibrar. Los valores Beta antiguos β10 no pueden compararse directamente con los valores β10(c) actuales, porque los APC calibrados con las partículas de certificación ISO 11171 leen de forma sistemática conteos de partículas aproximadamente 1.5–2× mayores que los instrumentos sin calibrar: un filtro que lograba β10 = 200 con el ensayo antiguo puede mostrar solo β10(c) = 75–100 con la metodología de calibración actual."
+    },
+    {
+      "question": "¿Cómo se determina la capacidad de retención de suciedad (DHC) en un ensayo ISO 16889 y qué predice en servicio?",
+      "answer": "La DHC es la masa total (en gramos) de ISO MTD (Medium Test Dust, antes ISO A2 fine) inyectada aguas arriba del filtro cuando la presión diferencial llega al umbral de restricción terminal especificado para el ensayo, normalmente 6 bar en filtros hidráulicos. El ensayo se hace con caudal y concentración de alimentación constantes. La DHC predice directamente la vida útil cuando se combina con la tasa de ingreso de contaminación en campo: vida útil (horas) = DHC(g) / tasa de ingreso (mg/hora). A su vez, la tasa de ingreso depende de la eficacia del sellado del sistema, del desgaste de los sellos de vástago de los cilindros y de la concentración de partículas ambiental. Un filtro con 30 g de DHC en un sistema con un ingreso de 0.05 mg/minuto durará en teoría 10,000 minutos (167 horas) entre cambios."
+    },
+    {
+      "question": "¿Qué caudal se usa en el ensayo ISO 16889 y cómo se elige para un elemento determinado?",
+      "answer": "ISO 16889 especifica que el caudal de ensayo debe representar el caudal nominal de operación del elemento filtrante ensayado. La norma establece que el caudal de ensayo debe indicarse en el informe de ensayo y en la hoja de datos del elemento. En los elementos de filtros hidráulicos, el caudal nominal suele ser el caudal con el que la restricción del elemento limpio es de 0.35–0.7 bar, el rango en el que se caracteriza la eficiencia del filtro. Ensayar con caudales mucho más altos o más bajos produce relaciones Beta distintas, porque la eficiencia de captura inercial de partículas depende de la velocidad. A veces se hacen ensayos multipaso al 50% y al 150% del caudal nominal para caracterizar la estabilidad Beta en el rango de operación, sobre todo en equipos móviles con caudal de bomba variable."
+    },
+    {
+      "question": "¿Cómo se compara la composición del polvo de ensayo ISO 16889 con la contaminación real de los sistemas hidráulicos?",
+      "answer": "ISO 16889 usa ISO Medium Test Dust (MTD), polvo de ensayo de Arizona A2 fine según ISO 12103-1: un polvo natural a base de sílice con una distribución de tamaños de partícula D50 de aproximadamente 5–10 µm y una densidad de partícula de 2.65 g/cm3. La contaminación real de los sistemas hidráulicos está formada por tipos de partículas mezclados: sílice del ingreso externo, partículas ferrosas del desgaste de componentes, partículas de caucho de la degradación de sellos y partículas de carbón de la oxidación del aceite. Las partículas de sílice (dureza 7 Mohs) son más abrasivas que las de carbón o caucho y representan el peor caso para el desgaste de componentes. El ISO MTD se eligió a propósito para representar el tipo de partícula más dañino, el ingreso externo de sílice, lo que hace que las relaciones Beta de ISO 16889 sean conservadoras frente al desempeño real en sistemas con contaminación predominantemente blanda o metálica."
+    },
+    {
+      "question": "¿Qué importancia tiene la concentración de partículas aguas arriba en el ensayo ISO 16889?",
+      "answer": "ISO 16889 especifica una concentración de partículas aguas arriba de 3±0.3 mg/L en el punto de muestreo de la entrada del filtro. Esta concentración se mantiene controlando la tasa de inyección del alimentador de polvo y se verifica con conteo de partículas en línea y muestreo gravimétrico. La concentración debe mantenerse dentro de ±10% durante todo el ensayo para asegurar resultados reproducibles entre laboratorios. Concentraciones aguas arriba más altas aceleran la carga del filtro y pueden cambiar el perfil de eficiencia: cuando la concentración aguas arriba supera 3 mg/L, la filtración superficial gana cada vez más peso frente a la filtración en profundidad, lo que desplaza la medición de eficiencia. El objetivo especificado de 3 mg/L es un compromiso entre la velocidad del ensayo y condiciones de operación realistas, ya que los sistemas hidráulicos en campo rara vez ven concentraciones por encima de 0.5 mg/L en operación normal."
+    },
+    {
+      "question": "¿Cómo afecta la temperatura a los resultados del ensayo ISO 16889 y qué temperatura se especifica?",
+      "answer": "ISO 16889 especifica una temperatura del fluido de ensayo de 50±2°C con aceite hidráulico mineral ISO VG 46 o un fluido de ensayo equivalente con viscosidad cinemática de 46±2 cSt a 40°C. La temperatura afecta directamente la viscosidad del fluido, que a su vez afecta la velocidad de transporte de las partículas, el número de Reynolds en el medio filtrante y la eficiencia de captura inercial. Ensayar a temperaturas más bajas (mayor viscosidad) puede elevar artificialmente las relaciones Beta, porque la mayor viscosidad aumenta el arrastre sobre las partículas en relación con su inercia, lo que reduce la eficiencia por impacto inercial y sesga la medición hacia mayores tasas de captura por intercepción. Ensayar a temperaturas más altas (menor viscosidad) puede reducir las relaciones Beta al disminuir el mojado del medio y la resistencia a la filtración. La especificación de 50°C equilibra estos efectos y corresponde a las temperaturas de operación típicas de los sistemas hidráulicos."
+    },
+    {
+      "question": "¿Se pueden usar los resultados de ISO 16889 para comparar elementos filtrantes de distintos fabricantes?",
+      "answer": "Los resultados de ISO 16889 solo pueden usarse para comparar cuando los ensayos se hacen con el mismo caudal, con el mismo lote de polvo de ensayo, con un instrumento APC calibrado según ISO 11171, a la misma temperatura y con la restricción terminal fijada en el mismo valor. Las variaciones en cualquiera de estos parámetros pueden producir diferencias de relación Beta del 20–50% entre filtros que por lo demás son equivalentes. Los ensayos en laboratorios independientes eliminan el sesgo del fabricante en los valores Beta autodeclarados: ISO 16889 no exige una verificación independiente de las declaraciones de ensayo del fabricante. Las especificaciones de compra deberían indicar \"ensayo ISO 16889 realizado a [caudal] y [ΔP terminal]\" para asegurar comparaciones válidas. Los informes de ensayo deben incluir todas las condiciones especificadas en los anexos de la norma, no solo el valor principal de la relación Beta."
+    },
+    {
+      "question": "¿Qué relación hay entre la relación Beta y el porcentaje de eficiencia de un solo paso?",
+      "answer": "La eficiencia de un solo paso E en el tamaño de partícula x se calcula como E(x) = (1 - 1/β(x)) × 100%. Una relación Beta de β10(c) = 200 equivale a un 99.5% de eficiencia de un solo paso; β10(c) = 1000 equivale a un 99.9%. En las aplicaciones hidráulicas se prefiere la notación Beta porque es más sensible a las diferencias de alta eficiencia: la diferencia entre un 99.5% y un 99.9% de eficiencia representa una diferencia de 4× en las partículas que pasan, algo crítico para proteger servoválvulas que en una escala porcentual parece un cambio pequeño. En la filtración de aire se usa la eficiencia gravimétrica (porcentaje de la masa de polvo retenida) en lugar de la relación Beta, porque los filtros de aire suelen ensayarse con equivalentes Beta más bajos y la eficiencia en masa representa mejor la protección frente a la ingestión total de polvo que frente a clases de tamaño específicas."
+    },
+    {
+      "question": "¿Cómo se informan los resultados de ISO 16889 y qué información debe incluir el certificado de ensayo?",
+      "answer": "Los certificados de ensayo ISO 16889 deben incluir: los valores de relación Beta en cada umbral de tamaño de partícula ensayado (por ejemplo, β3(c), β6(c), β10(c), β14(c), β20(c)), cada uno con el caudal y la ΔP terminal con que se obtuvo; la capacidad de retención de suciedad en gramos; la presión diferencial inicial y terminal; la identificación y la viscosidad del fluido de ensayo; los datos de verificación de la concentración aguas arriba; la referencia del certificado de calibración del APC; y la identidad del laboratorio de ensayo y la fecha. Los certificados de ensayo incompletos, que informan solo los valores Beta principales sin las condiciones de ensayo, no son confiables para el diseño de sistemas hidráulicos. ISO 16889:2022 (la versión actual) agregó requisitos para informar la estabilidad Beta a lo largo del ciclo de carga, lo que da a los diseñadores información sobre cómo cambia la eficiencia del estado limpio al de carga terminal."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Norma de ensayo principal para medir el desempeño de los elementos de filtros hidráulicos, incluidos la relación Beta, la capacidad de retención de suciedad y la resistencia al colapso."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+      "relevance": "Norma de calibración que define la notación (c) y el requisito de calibración trazable a NIST de los instrumentos APC usados en el ensayo ISO 16889."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust",
+      "relevance": "Define el ISO Medium Test Dust (A2 fine) usado como contaminante estándar en el ensayo multipaso de filtros ISO 16889."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificación de la limpieza que se usa junto con ISO 16889 para fijar los niveles de contaminación objetivo que deben mantener los elementos filtrantes calificados según ISO 16889."
+    }
+  ],
+  "title": "ISO 16889",
+  "subtitle": "Método multipaso para evaluar el desempeño de los elementos filtrantes",
+  "metaDescription": "Referencia técnica completa de ISO 16889: circuito de ensayo multipaso, contaminante de ensayo ISO A2, calibración de los contadores de partículas según ISO 11171, cálculo de la relación Beta, medición de la capacidad de retención de suciedad y especificación del desempeño de filtros.",
+  "category": "Normas",
+  "readTime": "12 min",
+  "intro": "ISO 16889 define el método multipaso para determinar la eficiencia de filtración y la capacidad de retención de suciedad de los elementos de filtros hidráulicos. Es la base normativa internacional de las especificaciones de relación Beta y el ensayo de desempeño principal al que se hace referencia al especificar o comparar elementos de filtros hidráulicos y de aceite lubricante. Entender su circuito de ensayo, sus contaminantes, sus requisitos de calibración y sus métricas de resultado es un requisito previo para interpretar correctamente los datos de desempeño de los filtros.",
+  "sections": [
+    {
+      "heading": "Propósito y alcance",
+      "body": "ISO 16889 establece un ensayo multipaso de un solo elemento que mide a la vez dos parámetros de desempeño independientes: la eficiencia de filtración (expresada como relación Beta, β) en varios tamaños de partícula y la capacidad de retención de suciedad (DHC, en gramos) a la presión diferencial terminal. La norma se aplica a los elementos filtrantes usados en sistemas de potencia fluida hidráulica y en circuitos de aceite lubricante. No se aplica a filtros de aire (ISO 5011), filtros de combustible (ISO 16332) ni filtros coalescentes. El principio \"multipaso\" distingue este método de los ensayos de eficiencia de un solo paso: el fluido de ensayo recircula por el circuito, de modo que las partículas que atraviesan el filtro se acumulan en el circuito aguas abajo y suman a los conteos de partículas aguas abajo con el tiempo. Este enfoque de carga refleja las condiciones de campo con más precisión que los ensayos de laboratorio de un solo paso y produce en una sola corrida tanto los datos de eficiencia como la DHC."
+    },
+    {
+      "heading": "Arquitectura del circuito de ensayo",
+      "body": "El circuito de ensayo ISO 16889 está formado por un circuito de inyección aguas arriba y un circuito de recolección aguas abajo, conectados a través del elemento filtrante ensayado. El depósito aguas arriba contiene fluido de ensayo acondicionado al grado de viscosidad ISO especificado (normalmente aceite mineral ISO VG 15). Una bomba de desplazamiento constante mantiene el caudal especificado a través del elemento. El polvo de ensayo ISO A2 medium se inyecta aguas arriba a una tasa másica controlada con un alimentador gravimétrico calibrado. Los contadores automáticos de partículas (APC) muestrean de forma continua aguas arriba y aguas abajo. El ensayo sigue hasta llegar a la presión diferencial terminal, definida como 10× la presión diferencial inicial limpia o 6 bar (lo que ocurra primero). Todas las conexiones aguas abajo del elemento ensayado se mantienen en ISO 11/9/6 o mejor para evitar que la contaminación de fondo enmascare los conteos de partículas aguas abajo.",
+      "callout": [
+        {
+          "label": "Fluido de ensayo",
+          "value": "Aceite mineral ISO VG 15"
+        },
+        {
+          "label": "Temperatura de ensayo",
+          "value": "50°C ± 2°C"
+        },
+        {
+          "label": "Definición de la ΔP terminal",
+          "value": "10× la ΔP inicial o 6 bar"
+        }
+      ]
+    },
+    {
+      "heading": "Contaminante de ensayo: ISO 12103-1 A2 medium",
+      "body": "ISO 16889 especifica el polvo de ensayo ISO 12103-1 A2 medium como contaminante estándar. Este polvo sintético reproduce la composición y la distribución de tamaños del polvo atmosférico: aproximadamente un 68% de dióxido de silicio (cuarzo), un 14% de óxido de aluminio, un 8% de óxido de hierro, un 3% de óxido de calcio y trazas de óxido de magnesio y otros óxidos. La distribución de tamaños de partícula va de 0.5 a 180 µm, con un diámetro medio (D50) cercano a 10 µm. La composición y la distribución de tamaños controladas permiten resultados de ensayo reproducibles entre distintos laboratorios y fechas de ensayo, siempre que el lote de polvo provenga de un proveedor certificado y se almacene según la especificación (sellado, seco, ≤25°C). Usar otro polvo, incluida tierra recolectada en campo, invalida la comparación con los datos ISO 16889 publicados.",
+      "callout": [
+        {
+          "label": "Composición del polvo",
+          "value": "~68% SiO₂, ~14% Al₂O₃"
+        },
+        {
+          "label": "Rango de tamaños de partícula",
+          "value": "0.5–180 µm"
+        },
+        {
+          "label": "Diámetro medio (D50)",
+          "value": "~10 µm"
+        }
+      ]
+    },
+    {
+      "heading": "Conteo de partículas y calibración ISO 11171",
+      "body": "Los conteos de partículas aguas arriba y aguas abajo deben medirse con contadores automáticos de partículas (APC) calibrados según ISO 11171. Esta norma de calibración usa partículas de referencia primarias trazables a NIST para establecer la relación entre el tamaño de partícula y la señal de obscurecimiento de luz en cada instrumento. La calibración ISO 11171 reemplazó en 2000 el antiguo método de calibración de contadores de partículas con polvo AC fine. Los datos generados con la calibración antigua se indican como β₁₀ (sin sufijo); los generados con contadores calibrados según ISO 11171 se indican como β₁₀(c). Estos dos valores no son numéricamente equivalentes: un filtro con β₁₀ = 75 por el método antiguo puede dar β₁₀(c) = 10–12 con la calibración actual, una diferencia importante en la eficiencia informada. Todos los datos ISO 16889 actuales deben especificar β(c). Al comparar hojas de datos de distintos fabricantes o de distintas fechas, verifique la base de calibración antes de sacar conclusiones de desempeño.",
+      "callout": [
+        {
+          "label": "Norma de calibración actual",
+          "value": "ISO 11171 (trazable a NIST)"
+        },
+        {
+          "label": "Notación antigua",
+          "value": "β₁₀ (cal. con polvo AC fine)"
+        },
+        {
+          "label": "Notación actual",
+          "value": "β₁₀(c) (cal. ISO 11171)"
+        }
+      ]
+    },
+    {
+      "heading": "Cálculo de la relación Beta",
+      "body": "La relación Beta en un tamaño de partícula x se define como: β_x(c) = N_aguas arriba(≥x) / N_aguas abajo(≥x), donde N es el conteo acumulado de partículas por mililitro de tamaño igual o mayor que x. Ambos conteos se promedian en el tiempo en el mismo intervalo de muestreo durante la corrida de ensayo. Por ejemplo, si aguas arriba se cuentan 2,000 partículas ≥10 µm/mL y aguas abajo 10 partículas ≥10 µm/mL, entonces β₁₀(c) = 200. La eficiencia se deriva de la relación Beta: E(%) = (1 − 1/β) × 100. β₁₀(c) = 200 → E = (1 − 1/200) × 100 = 99.5%. β₁₀(c) = 1,000 → E = 99.9%. La relación no es lineal con valores Beta altos: mejorar de β = 100 a β = 200 duplica el rechazo de partículas, pero mejorar de β = 1,000 a β = 2,000 solo reduce a la mitad una fracción de penetración que ya es muy pequeña.",
+      "callout": [
+        {
+          "label": "Eficiencia con β₁₀(c) = 75",
+          "value": "98.7%"
+        },
+        {
+          "label": "Eficiencia con β₁₀(c) = 200",
+          "value": "99.5%"
+        },
+        {
+          "label": "Eficiencia con β₁₀(c) = 1000",
+          "value": "99.9%"
+        }
+      ]
+    },
+    {
+      "heading": "Capacidad de retención de suciedad",
+      "body": "La capacidad de retención de suciedad (DHC) se mide como la masa total de polvo de ensayo ISO A2 medium inyectada desde el inicio del ensayo hasta llegar a la presión diferencial terminal. La DHC se expresa en gramos y se informa al caudal y las condiciones de fluido específicos del ensayo. La DHC no es una propiedad fija del material: depende del caudal (velocidad frontal), de la viscosidad del fluido y de la concentración de polvo. Un elemento filtrante ensayado con un caudal mayor mostrará una DHC menor en gramos, porque la mayor velocidad frontal compacta más rápido la torta de polvo y la presión diferencial sube más rápido. Por eso los datos de DHC solo son directamente comparables cuando coinciden las condiciones de ensayo (caudal, fluido, concentración de polvo). Para predecir la vida útil en campo, la DHC debe combinarse con una medición de la concentración de polvo del sitio para estimar las horas hasta el servicio.",
+      "callout": [
+        {
+          "label": "Unidad de la DHC",
+          "value": "Gramos de polvo ISO A2 medium"
+        },
+        {
+          "label": "La DHC depende de",
+          "value": "Caudal, viscosidad, concentración de polvo"
+        },
+        {
+          "label": "Fórmula de vida en campo",
+          "value": "Horas = DHC(g) / ingreso de polvo (g/h)"
+        }
+      ]
+    },
+    {
+      "heading": "Interpretar y especificar el desempeño del filtro",
+      "body": "Una especificación de desempeño ISO 16889 completa de un elemento filtrante incluye: el tamaño de partícula en el que se especifica la Beta (por ejemplo, 10 µm), la relación Beta mínima en ese tamaño [por ejemplo, β₁₀(c) ≥ 200], la DHC mínima al caudal de ensayo especificado (por ejemplo, DHC ≥ 150 g a 40 L/min) y las condiciones de ensayo (ISO VG 15, 50°C, ISO A2 medium). Al evaluar productos de la competencia o equivalentes, pida los informes de ensayo ISO 16889 completos de laboratorios acreditados (ISO 17025), no hojas comerciales de resumen. Verifique la notación de calibración (sufijo c), que el caudal de ensayo coincida con el de su aplicación y la concentración de polvo usada. Un filtro puede cumplir los requisitos de ISO 16889 con una relación Beta mínima especificada sin garantía superior: un mínimo β₁₀(c) de 75 no impide que el filtro logre β₁₀(c) = 200 en la práctica, pero el mínimo es el compromiso contractual."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Viscosidad del fluido de ensayo",
+      "value": "ISO VG 15"
+    },
+    {
+      "label": "Temperatura de ensayo",
+      "value": "50°C ± 2°C"
+    },
+    {
+      "label": "ΔP terminal",
+      "value": "10× la ΔP inicial o 6 bar"
+    },
+    {
+      "label": "Contaminante de ensayo",
+      "value": "ISO 12103-1 A2 medium"
+    },
+    {
+      "label": "Norma de calibración",
+      "value": "ISO 11171"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 11171",
+    "ISO 4406"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ISO 16889",
+    "ensayo multipaso",
+    "relación Beta",
+    "capacidad de retención de suciedad",
+    "eficiencia del filtro",
+    "ISO 11171",
+    "conteo de partículas"
+  ]
+}

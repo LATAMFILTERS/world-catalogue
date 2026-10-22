@@ -1,0 +1,215 @@
+{
+  "slug": "oil-analysis-methods",
+  "faqs": [
+    {
+      "question": "Qual é a diferença entre a espectroscopia elementar e a contagem de partículas na análise de óleo?",
+      "answer": "A espectroscopia elementar (ICP-OES segundo a ASTM D5185) mede em ppm as concentrações de metais dissolvidos e finos em suspensão, e cada elemento indica uma fonte de componentes específica (ferro: rolamentos de aço e camisas de cilindro; cobre: buchas de bronze; silício: entrada de sílica; cálcio/zinco/fósforo: pacote de aditivos). Ela mede apenas os metais dissolvidos e as partículas abaixo de 5–10 µm detectáveis por espectroscopia. A contagem de partículas (APC, ISO 11171) mede todas as partículas ≥4 µm independentemente da composição, expressas como códigos ISO 4406. Os dois métodos se complementam: códigos APC em alta indicam aumento da contaminação total; valores de metais em alta identificam a fonte de desgaste. Um sistema com código APC alto, mas elementos metálicos baixos, sugere entrada de contaminação externa (sílica pelas vedações ou pelos respiros), e não desgaste de componentes."
+    },
+    {
+      "question": "Quais parâmetros a análise FTIR mede no óleo usado e quais modos de falha cada um indica?",
+      "answer": "A espectroscopia no infravermelho por transformada de Fourier (FTIR, ASTM E2412) identifica os grupos funcionais do óleo pelos seus comprimentos de onda de absorção no infravermelho. Parâmetros-chave: oxidação (pico de carbonila de 1,710 cm-1): degradação térmica do óleo, indica a taxa de oxidação e a reserva restante de inibidor de oxidação. Nitração (1,630 cm-1): produtos da contaminação do óleo lubrificante pelos gases de combustão do blow-by. Sulfatação (1,170 cm-1): subprodutos da combustão do enxofre, elevados com combustível de alto enxofre ou contaminação por EGR. Água (3,450 cm-1): água livre ou dissolvida, confirmada pelo ensaio Karl Fischer se estiver elevada. Glicol (950–1,070 cm-1): contaminação por líquido de arrefecimento por falha da junta do cabeçote ou do resfriador de óleo. A diluição por combustível é detectada comparando a viscosidade (ASTM D445), e não por FTIR. Cada parâmetro tem limites de alarme: por exemplo, um aumento da oxidação de 25 unidades de absorbância acima da linha de base dispara a recomendação de troca de óleo."
+    },
+    {
+      "question": "O que é o número de basicidade total (TBN) e como ele é usado para determinar os intervalos de troca de óleo?",
+      "answer": "O número de basicidade total (TBN, ASTM D2896 ou D4739) mede a reserva alcalina do óleo do motor disponível para neutralizar os subprodutos ácidos da combustão (ácido sulfúrico do combustível de alto enxofre, ácido nítrico dos gases de blow-by, ácidos orgânicos da oxidação do óleo). O óleo de motor API CK-4 novo para motores diesel modernos normalmente tem TBN de 12–14 mg KOH/g. À medida que o óleo neutraliza ácidos, o TBN se esgota. O ponto de troca de óleo costuma ser quando o TBN cai para 50% do TBN do óleo novo (6–7 mg KOH/g para um óleo novo de 12–14 mg/g) ou quando o número de acidez total (TAN, ASTM D664) sobe até igualar ou superar o TBN restante. Combustíveis de alto enxofre (acima de 500 ppm de enxofre, comuns em mercados emergentes) esgotam o TBN 3–5× mais rápido que o ULSD (<15 ppm de enxofre), o que exige intervalos de troca mais curtos ou óleos com TBN especificado mais alto."
+    },
+    {
+      "question": "Como a contagem de partículas é usada para monitorar o desempenho do elemento filtrante em serviço?",
+      "answer": "A contagem de partículas a montante e a jusante de um elemento filtrante em serviço acompanha a relação Beta real nas condições de operação reais, que pode diferir bastante das medições de laboratório ISO 16889 pelas pulsações de pressão, pelos ciclos de temperatura e pela composição real das partículas contaminantes. Se as leituras APC a jusante subirem com concentração a montante constante, a eficiência do filtro caiu: as causas possíveis incluem a abertura da válvula de bypass (a restrição do elemento supera a pressão de abertura), a falha da vedação da tampa ou o colapso do meio. Amostras sucessivas do ponto de amostragem a jusante, em condições de operação constantes e comparadas com a linha de base estabelecida no comissionamento, identificam a tendência antes da falha. Um aumento do código APC de 2 unidades ISO ou mais em amostras consecutivas, sem mudança correspondente nas condições de operação do sistema, indica que é preciso investigar a integridade do filtro."
+    },
+    {
+      "question": "Qual intervalo de amostragem é recomendado para a análise de óleo em sistemas hidráulicos de alta severidade?",
+      "answer": "Sistemas hidráulicos de alta severidade (com válvulas proporcionais ou servoválvulas sensíveis à contaminação, que operam em ambientes empoeirados ou com ciclos térmicos intensos) devem ser amostrados para análise de óleo a cada 250 horas no mínimo, ou mensalmente em sistemas de operação contínua. Sistemas com uma linha de base de análise estável estabelecida podem estender o intervalo para 500 horas depois que três análises consecutivas dentro da especificação confirmarem a estabilidade do sistema. Indicadores de serviço severo (pressão de operação sustentada acima de 80% da nominal, partidas a frio frequentes ou eventos de contaminação confirmados) devem disparar uma amostragem não programada. A ISO 4413:2011 exige pelo menos uma análise de amostra de fluido por intervalo de manutenção planejado, com o resultado avaliado em relação ao código de limpeza alvo especificado pelo fabricante antes de devolver o sistema ao serviço após a manutenção."
+    },
+    {
+      "question": "O que é a medição da viscosidade e por que ela é um indicador principal da condição do óleo?",
+      "answer": "A viscosidade cinemática (ASTM D445) mede o tempo que um volume fixo de óleo leva para fluir por um capilar calibrado a 40°C e 100°C. O número do grau ISO VG é a viscosidade cinemática nominal a 40°C em cSt. As mudanças de viscosidade do óleo indicam: diluição por combustível (grande queda da viscosidade, >1 cSt abaixo da especificação a 40°C); contaminação por glicol (pode aumentar a viscosidade pela formação de emulsões); oxidação severa (aumento da viscosidade >20% sobre a linha de base do óleo novo); ou degradação por cisalhamento do melhorador de viscosidade (queda da viscosidade nos óleos multigrau, indicando a quebra do aditivo polimérico). Uma variação de viscosidade de ±15% em relação à especificação do óleo novo a 40°C é um limite de alarme típico nos programas de análise de óleo. A viscosidade deve ser medida em uma amostra bem misturada e em temperatura controlada: medições com refratômetro em campo não bastam para uma avaliação precisa da viscosidade."
+    },
+    {
+      "question": "O que é a análise de partículas de desgaste e como a ferrografia analítica difere da análise espectrométrica?",
+      "answer": "A ferrografia analítica (ASTM D7690) separa magneticamente as partículas de desgaste do óleo e as deposita em uma lâmina de vidro para exame ao microscópio por tamanho, forma, morfologia e composição. Ela detecta partículas de 1 µm a 1,000 µm e capta as partículas grandes (>10 µm) que a análise espectrométrica não vê. A morfologia das partículas permite identificar o modo de desgaste: partículas planas e lisas (2–5 µm) indicam desgaste normal por atrito; partículas de corte (fitas curvas) indicam desgaste abrasivo por partículas duras; partículas esféricas (1–5 µm) indicam lascamento por fadiga em rolamentos; partículas escuras (óxidos) indicam eventos de desgaste em alta temperatura. A espectrometria ICP é mais quantitativa para a análise de metais em nível de ppm, mas é limitada a partículas abaixo de 10 µm. Combinar os dois métodos fornece dados elementares quantitativos e um diagnóstico qualitativo do modo de desgaste."
+    },
+    {
+      "question": "Como a contaminação por glicol no óleo do motor é diagnosticada e quantificada?",
+      "answer": "A contaminação por glicol pela entrada de líquido de arrefecimento (falha da junta do cabeçote, vazamento do resfriador de óleo, trinca na camisa de cilindro) é detectada por: análise FTIR com absorção em 950–1,070 cm-1; potássio (K) elevado por espectrometria, já que os inibidores do líquido de arrefecimento contêm boratos ou silicatos de potássio; sódio (Na) elevado pelos inibidores de corrosão do líquido de arrefecimento; e observação física de uma amostra de óleo leitosa ou gelatinosa. A medição quantitativa do glicol usa o método do refratômetro ou a ASTM D2982 (HPLC). Glicol em concentrações acima de 0.1% (1,000 ppm) provoca a formação de emulsões no óleo que impedem a formação do filme hidrodinâmico nos munhões dos mancais. Acima de 0.5% de glicol, a viscosidade do óleo do motor pode aumentar 5–10×, e os complexos de glicol e óleo formam depósitos gelatinosos que bloqueiam as galerias de óleo. Uma contaminação por glicol confirmada exige trocar o óleo imediatamente, fazer o flushing do sistema e reparar a fonte de entrada de líquido de arrefecimento antes de dar nova partida no motor."
+    },
+    {
+      "question": "Qual é a importância do silício na análise espectrométrica do óleo usado?",
+      "answer": "O silício (Si) na espectrometria do óleo usado tem duas fontes possíveis que precisam ser distinguidas: (1) Entrada de pó de sílica em suspensão: contaminação externa por vedações do filtro de ar com falha ou eventos de bypass, que indica proteção de filtração deficiente. O silício na forma de sílica (SiO2) é muito abrasivo (dureza 7 Mohs) e é a principal causa do desgaste abrasivo das camisas de cilindro e dos mancais. (2) Contaminação por selante de silicone ou por líquido de arrefecimento: os compostos de juntas de silicone ou os aditivos antiespumantes à base de silicone do líquido de arrefecimento contribuem Si ao óleo como um composto organossilícico não abrasivo. A distinção é feita cruzando o dado com o magnésio (Mg): os inibidores de silicato do líquido de arrefecimento contêm tanto Si quanto Mg. Si elevado sem Mg elevado indica entrada de sílica em suspensão. Os limites de alarme de Si no óleo de motor diesel são de 20–30 ppm acima da linha de base para contaminação em suspensão, ou qualquer Si detectável se o óleo novo de abastecimento tinha zero Si e não foram usados selantes de silicone na última manutenção."
+    },
+    {
+      "question": "Qual formato de relatório e qual metodologia de tendências um programa de análise de óleo eficaz usa?",
+      "answer": "Um programa de análise de óleo eficaz usa relatórios de tendência, acompanhando cada parâmetro em amostras consecutivas em um gráfico de série temporal, em vez de comparar um único ponto com um limite. A análise de tendências detecta a degradação gradual antes que os limites de alarme sejam atingidos: um aumento lento do Fe de 20 para 35 e para 50 ppm em três amostras consecutivas indica desgaste progressivo dos mancais, enquanto uma única leitura isolada de 50 ppm é ambígua. Os formatos de relatório incluem: gráficos de série temporal de cada parâmetro; alertas de taxa de variação (que sinalizam quando um parâmetro aumenta mais de X ppm a cada 250 horas); um resumo de status tipo semáforo (verde/âmbar/vermelho para cada grupo de parâmetros); e um índice de saúde da máquina derivado de uma combinação ponderada do status de todos os parâmetros. As etiquetas das amostras devem incluir o ID da máquina, o compartimento, o tipo de óleo, a data de abastecimento, as horas desde o abastecimento e as horas totais da máquina: sem esse contexto, a análise de tendências é impossível."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry (ICP-AES)",
+      "relevance": "Método principal de análise de metais elementares no óleo usado para monitorar as partículas de desgaste."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry",
+      "relevance": "Método FTIR para monitorar a oxidação, a nitração, a sulfatação, a água e a contaminação por glicol no óleo lubrificante usado."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D2896-15, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration",
+      "relevance": "Método de medição do TBN usado para acompanhar o esgotamento da reserva alcalina e orientar o momento da troca de óleo."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010",
+      "relevance": "Referência completa sobre procedimentos de amostragem, interpretação de parâmetros, metodologia de definição de alarmes e análise de tendências nos programas industriais de análise de óleo."
+    }
+  ],
+  "title": "Métodos de análise de óleo",
+  "subtitle": "Espectroscopia ICP, TAN/TBN, viscosidade e tendência de metais de desgaste",
+  "metaDescription": "Referência de engenharia para o monitoramento da condição do óleo: análise espectrométrica ICP de metais de desgaste, número de acidez total (ASTM D664), número de basicidade total (ASTM D2896), viscosidade cinemática (ASTM D445), espectroscopia FTIR e protocolos de amostragem para programas de manutenção de frotas.",
+  "category": "Engenharia",
+  "readTime": "10 min",
+  "intro": "A análise de óleo é a medição sistemática das propriedades físicas e químicas do óleo lubrificante em serviço para detectar o desgaste de componentes, monitorar a degradação do óleo e identificar a contaminação antes que haja danos. Aplicada com um cronograma de amostragem definido, a análise de óleo é um indicador antecipado de falha: normalmente identifica os problemas 200–500 horas de operação antes da falha mecânica, permitindo uma intervenção planejada em vez de uma quebra não planejada.",
+  "sections": [
+    {
+      "heading": "Análise espectrométrica ICP de metais de desgaste",
+      "body": "A espectrometria de plasma indutivamente acoplado (ICP) é o método padrão para medir os metais de desgaste dissolvidos e em partículas abaixo de 20 µm nos óleos de motor e hidráulicos. A ASTM D5185 (Multi-Element Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry) é o método de referência. Uma tocha de plasma a aproximadamente 10,000 K atomiza e excita os elementos da amostra de óleo; as linhas de emissão nos comprimentos de onda específicos de cada elemento são medidas simultaneamente. Elementos informados e sua importância diagnóstica: ferro (Fe): desgaste de camisas de cilindro, comando de válvulas e virabrequim; cromo (Cr): desgaste de anéis de pistão e camisas de cilindro; alumínio (Al): desgaste da coroa do pistão, da carcaça de mancais e da caixa de engrenagens; cobre (Cu): desgaste da camada superficial dos mancais (camadas Cu–Pb, Cu–Sn) e das buchas de bronze; chumbo (Pb): falha da camada superficial dos mancais; silício (Si): ingestão de pó em suspensão (sílica) OU líquido de arrefecimento anticongelante (aditivo de silicone); sódio (Na): entrada de líquido de arrefecimento (anticongelante de silicato de sódio); boro (B): entrada de líquido de arrefecimento (anticongelante de borato de sódio). O ICP detecta de forma confiável partículas abaixo de 7–10 µm; partículas de desgaste maiores (lascamento por fadiga, desgaste por cavacos) não são bem dissolvidas nem atomizadas e exigem contagem de partículas ou ferrografia analítica para serem detectadas.",
+      "callout": [
+        {
+          "label": "Ferro (Fe)",
+          "value": "Desgaste de camisas, virabrequim e comando de válvulas"
+        },
+        {
+          "label": "Silício (Si)",
+          "value": "Ingestão de pó OU líquido de arrefecimento (conforme o contexto)"
+        },
+        {
+          "label": "Limite de tamanho de partícula do ICP",
+          "value": "Eficaz até ~7–10 µm de diâmetro"
+        }
+      ]
+    },
+    {
+      "heading": "Número de acidez total e número de basicidade total",
+      "body": "O número de acidez total (TAN) mede a concentração de todos os componentes ácidos do óleo: produtos de oxidação, subprodutos ácidos da combustão e produtos de degradação dos aditivos esgotados. A ASTM D664 (método de titulação potenciométrica) expressa o TAN em mg de KOH por grama de óleo (mgKOH/g). O TAN do óleo de motor novo normalmente vai de 0.3–1.5 mgKOH/g. Uma tendência de alta do TAN indica oxidação acelerada ou contaminação ácida. Limite de alerta: TAN ≥ 2× o valor do óleo novo ou ≥ 2.0 mgKOH/g, conforme a especificação do fabricante. O número de basicidade total (TBN) mede a reserva alcalina do óleo, principalmente os aditivos detergentes e dispersantes que neutralizam os ácidos da combustão. ASTM D2896 (método de titulação potenciométrica com ácido perclórico). TBN do óleo novo para motores diesel: 10–30 mgKOH/g conforme a aplicação (diesel de mineração com 30+ de TBN para combustível de alto enxofre; diesel rodoviário com 10–14 de TBN com ULSD de baixo enxofre). À medida que o TBN se esgota em serviço, o TAN sobe. O limite de manutenção normalmente é TBN ≤ 50% do TBN do óleo novo, ou TAN se aproximando do TBN. Uma relação TBN:TAN ≥ 1 é o critério mínimo para manter uma proteção alcalina adequada.",
+      "callout": [
+        {
+          "label": "Método de ensaio do TAN",
+          "value": "ASTM D664 (mgKOH/g)"
+        },
+        {
+          "label": "Método de ensaio do TBN",
+          "value": "ASTM D2896 (mgKOH/g)"
+        },
+        {
+          "label": "Limite de manutenção (TBN)",
+          "value": "≤50% do TBN do óleo novo, ou TBN ≤ TAN"
+        }
+      ]
+    },
+    {
+      "heading": "Viscosidade cinemática",
+      "body": "A viscosidade cinemática é a propriedade física fundamental que rege a espessura do filme de óleo, a eficiência da bomba e a proteção dos mancais. A ASTM D445 (Standard Test Method for Kinematic Viscosity of Transparent and Opaque Liquids) mede a viscosidade cronometrando o escoamento do óleo por um tubo capilar calibrado a 40°C e 100°C. Os resultados são dados em centistokes (cSt = mm²/s). O índice de viscosidade (ASTM D2270) caracteriza a sensibilidade da viscosidade à temperatura: óleos de IV alto mantêm melhor a viscosidade em toda a faixa de temperatura. Queda da viscosidade em serviço (afinamento por cisalhamento): os melhoradores de IV dos óleos multigrau são polímeros de alto peso molecular que o esforço mecânico corta em cadeias mais curtas, reduzindo a viscosidade de forma permanente. Alerta: viscosidade ≥20% abaixo ou ≥30% acima do valor do óleo novo a 40°C. Aumento da viscosidade: a oxidação aumenta o peso molecular do óleo básico e cria precursores de borra. A diluição por combustível por vazamento dos injetores reduz a viscosidade de forma aguda (confirmada pelo ensaio de ponto de fulgor ASTM D92: o ponto de fulgor do óleo diluído com combustível cai abaixo de 160°C). A entrada de líquido de arrefecimento por falha da junta do cabeçote aumenta o teor de água e, após a emulsificação, a viscosidade aparente.",
+      "callout": [
+        {
+          "label": "Norma de ensaio",
+          "value": "ASTM D445 a 40°C e 100°C"
+        },
+        {
+          "label": "Alerta de queda de viscosidade",
+          "value": "≥20% abaixo da especificação do óleo novo"
+        },
+        {
+          "label": "Indicador de diluição por combustível",
+          "value": "Ponto de fulgor <160°C (ASTM D92)"
+        }
+      ]
+    },
+    {
+      "heading": "Espectroscopia FTIR para a condição do óleo",
+      "body": "A espectroscopia no infravermelho por transformada de Fourier (FTIR) identifica as espécies moleculares do óleo usado comparando seus espectros de absorção com um espectro de referência do óleo novo (sem uso) do mesmo grau. Os picos de absorbância em números de onda característicos indicam produtos de degradação específicos: produtos de oxidação (1,700–1,760 cm⁻¹, estiramento da carbonila); produtos de nitração (1,620 cm⁻¹, bandas de nitrila pela oxidação do nitrogênio nos gases de combustão); fuligem e partículas de combustão (elevação da linha de base em 2,000 cm⁻¹); água (3,400 cm⁻¹, estiramento OH, usado para detectar água quando não há KFT coulométrico disponível); líquido de arrefecimento de glicol (866 cm⁻¹, assinatura do etilenoglicol). O FTIR é informado em unidades de absorbância (AU) em relação à linha de base do óleo novo. Os limites de alerta variam conforme o fabricante: oxidação ≥ 25 AU e nitração ≥ 25 AU são valores de disparo comuns em frotas para óleo de motor diesel SAE 15W-40. O FTIR é uma técnica de triagem rápida e econômica: gera um espectro completo em menos de 2 minutos. Os contaminantes específicos identificados pelo FTIR são confirmados por métodos de ensaio dedicados (D664 para os ácidos de oxidação, D6304 para a água).",
+      "callout": [
+        {
+          "label": "Pico de oxidação",
+          "value": "1,700–1,760 cm⁻¹ (carbonila)"
+        },
+        {
+          "label": "Pico do líquido de arrefecimento de glicol",
+          "value": "866 cm⁻¹"
+        },
+        {
+          "label": "Limite de alerta de oxidação",
+          "value": "≥25 AU (em relação ao óleo novo)"
+        }
+      ]
+    },
+    {
+      "heading": "Contagem de partículas no óleo usado",
+      "body": "A contagem de partículas ISO 4406 aplicada ao óleo de motor ou hidráulico usado detecta cedo um aumento do desgaste interno antes que a espectroscopia ICP o detecte (o ICP é limitado a partículas ≤7–10 µm; partículas de fadiga superficial e lascamento normalmente medem 25–100 µm). Contadores automáticos de partículas calibrados segundo a ISO 11171 contam partículas de ≥4 µm, ≥6 µm e ≥14 µm. Estabelecer um código ISO de linha de base para cada tipo de máquina (por exemplo, ISO 17/15/12 para o circuito de lubrificação de um motor diesel saudável) permite detectar desvios: um deslocamento de duas unidades de código acima da linha de base indica que a taxa de geração de partículas dobrou. Quando as contagens de partículas sobem e o ICP não mostra aumento elementar correspondente, as partículas de origem são maiores que 10 µm e representam eventos de fadiga ou lascamento. Combinar ICP e contagem de partículas cobre toda a distribuição de tamanhos e fornece informações diagnósticas complementares: o ICP para o desgaste subsuperficial crônico e a contagem de partículas para os eventos mecânicos agudos.",
+      "callout": [
+        {
+          "label": "Limite de tamanho de partícula do ICP",
+          "value": "≤7–10 µm detectadas de forma confiável"
+        },
+        {
+          "label": "Tamanho das partículas de fadiga",
+          "value": "25–100 µm (o ICP não as detecta)"
+        },
+        {
+          "label": "Limite de alerta",
+          "value": "Aumento ≥2 unidades de código acima da linha de base própria"
+        }
+      ]
+    },
+    {
+      "heading": "Protocolos de amostragem e tendências",
+      "body": "O valor da análise de óleo é maximizado com protocolos de amostragem consistentes que permitam detectar tendências em vários pontos de dados. Requisitos-chave do protocolo: amostrar com horas de motor ou máquina consistentes e do mesmo ponto de amostragem em cada intervalo; usar tubos ou seringas de amostragem pré-limpos com uma válvula de amostragem dedicada (e não o bujão de dreno); amostrar na temperatura de operação com o sistema em carga normal; encher os frascos de amostra a 3/4 da capacidade para permitir misturar sem aerar. Intervalos recomendados: óleo de motor em caminhões de mineração, a cada 250 horas; óleo de motor em diesel rodoviário, a cada 500 horas; óleo hidráulico em equipamentos de construção, a cada 250–500 horas; óleo de turbina, a cada 1,000–2,000 horas. Uma única amostra é uma medição; três ou mais amostras da mesma máquina são uma tendência. Os limites de alerta de uma única amostra têm menos significado que uma tendência de alta: uma leitura de ferro de 80 ppm que antes era de 15 ppm indica que a taxa de desgaste acelerou 5×, mesmo que 80 ppm não tenha ultrapassado o limite de alerta absoluto."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Norma ICP",
+      "value": "ASTM D5185"
+    },
+    {
+      "label": "Norma TAN",
+      "value": "ASTM D664 (mgKOH/g)"
+    },
+    {
+      "label": "Limite de manutenção do TBN",
+      "value": "≤50% do TBN do óleo novo"
+    },
+    {
+      "label": "Norma de viscosidade",
+      "value": "ASTM D445 a 40°C e 100°C"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ASTM D6304"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "análise de óleo",
+    "espectroscopia ICP",
+    "metais de desgaste",
+    "TAN",
+    "TBN",
+    "viscosidade",
+    "FTIR",
+    "ASTM D5185",
+    "ASTM D664",
+    "monitoramento da condição do fluido"
+  ],
+  "commonMistakes": [
+    "Interpretar as concentrações de metais de desgaste de uma única amostra como indicadores definitivos da taxa de desgaste, sem contexto de taxa de variação. Uma leitura de silício alta pode refletir uma troca recente de vedações (contaminação de amaciamento), e não um desgaste abrasivo acelerado: tendências de 3+ amostras com intervalos de troca conhecidos distinguem os dois casos.",
+    "Não ajustar os resultados ICP-OES pelo intervalo de troca de óleo ao comparar amostras coletadas em intervalos diferentes. Uma leitura de ferro de 80 ppm às 500 horas representa uma taxa de desgaste maior que uma de 80 ppm às 250 horas: normalize para mg/hora ou mg/L para comparações válidas.",
+    "Depender apenas da espectroscopia ICP para detectar fadiga avançada de rolamentos. O ICP detecta de forma confiável partículas abaixo de 5–8 µm: a fadiga por lascamento produz partículas de desgaste grandes (20–100+ µm) que o ICP subnotifica. Para uma avaliação completa do desgaste, é necessária a contagem de partículas ou a análise ferrográfica."
+  ]
+}

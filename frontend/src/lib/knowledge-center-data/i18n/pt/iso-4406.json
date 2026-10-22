@@ -1,0 +1,216 @@
+{
+  "slug": "iso-4406",
+  "faqs": [
+    {
+      "question": "Por que a ISO 4406 usa números de faixa (RN) em vez de valores diretos de contagem de partículas?",
+      "answer": "Os números de faixa comprimem a enorme amplitude de contagens de partículas possíveis (de <1 a >80,000 partículas/mL) em uma escala manejável em que cada incremento representa dobrar a contagem de partículas. Essa compressão logarítmica torna intuitiva a comparação entre códigos: um sistema que passa de 18/16/13 para 16/14/11 reduziu 4× as contagens de partículas em cada limite de tamanho (dois passos de RN), independentemente dos valores absolutos de contagem. Se a ISO 4406 informasse contagens diretas, comparar 65,000 com 320,000 partículas/mL seria menos imediato que \"18 contra 20\" na notação RN. A estrutura de duplicação por passo também se ajusta bem à relação exponencial entre o nível de limpeza e a taxa de desgaste dos componentes nos sistemas hidráulicos de precisão."
+    },
+    {
+      "question": "Qual código de limpeza as válvulas de controle proporcional exigem?",
+      "answer": "As válvulas de controle proporcional (válvulas direcionais proporcionais, válvulas de alívio de pressão proporcionais) exigem fluido hidráulico mantido no código ISO 4406 16/14/11. Isso corresponde a no máximo 640 partículas/mL ≥6 µm(c) e no máximo 40 partículas/mL ≥14 µm(c). A folga entre carretel e camisa das válvulas proporcionais costuma ser de 5–15 µm, o que as torna sensíveis às partículas da faixa de 5–10 µm. Uma limpeza mais grosseira (17/15/12 ou pior) causa o assoreamento do carretel na camisa, aumentando a histerese da válvula e reduzindo a precisão do controle. Para as servoválvulas, com folgas entre carretel e camisa mais apertadas (2–5 µm), exige-se o código ISO 4406 14/12/9. A diferença entre as metas das válvulas proporcionais e das servoválvulas (duas unidades de código ISO) representa uma diferença de 4× na contagem de partículas em cada limite."
+    },
+    {
+      "question": "Como mudanças no método de amostragem afetam o código ISO 4406?",
+      "answer": "Os erros do método de amostragem são a maior fonte isolada de resultados ISO 4406 errados. Coletar a amostra de um trecho de linha estagnado ou de um volume morto frio pode dar resultados 2–4 unidades de código mais altos (mais sujos) que o estado real do fluido em circulação. Uma purga incompleta das válvulas de amostragem retém sedimento de amostras anteriores e desvia o resultado para cima em 1–3 unidades de código. Frascos de amostra contaminados (mal limpos ou guardados sem tampa) podem acrescentar 2–5 unidades de código ao resultado medido. A ISO 3722 define o protocolo de amostragem: usar frascos pré-limpos certificados em ISO 14/12/11, purgar a válvula de amostragem com 250–500 mL e amostrar apenas de linhas de retorno com fluxo ativo. Comparar amostras de vários pontos de amostragem na mesma condição de operação é um bom controle de qualidade: grandes discrepâncias indicam erros do procedimento de amostragem, e não gradientes reais de contaminação no sistema."
+    },
+    {
+      "question": "O que é o formato de código de três dígitos introduzido pela ISO 4406:1999 e o que ele substituiu?",
+      "answer": "A ISO 4406:1999 introduziu o formato de código de três dígitos que informa as contagens de partículas em ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c). A versão anterior, ISO 4406:1987, usava um código de dois dígitos que informava as contagens em ≥5 µm e ≥15 µm. A revisão de 1999 acrescentou a contagem de ≥4 µm(c) como primeiro dígito especificamente para tratar a sensibilidade das servoválvulas à contaminação: partículas da faixa de 4–6 µm ficam abaixo do limite de contagem de ≥6 µm, mas podem entrar e danificar os carretéis das servoválvulas com folgas de 2–4 µm. A notação (c) acrescentada em 1999 distingue as contagens de partículas de APCs calibrados segundo a ISO 11171 das medições não calibradas usadas antes de 1996. Dados de limpeza anteriores a 1996 não devem ser comparados diretamente com os códigos ISO 4406 atuais de três dígitos sem uma correção de calibração."
+    },
+    {
+      "question": "Como a amostragem do fluido no reservatório versus na linha de retorno afeta os resultados do código ISO 4406?",
+      "answer": "A amostragem na linha de retorno capta a distribuição de partículas que sai ativamente dos componentes do sistema sob carga: a saída da bomba proporcional, as vedações de haste dos cilindros e os filtros de retorno. Ela representa o nível de contaminação que os componentes estão enfrentando em tempo real. A amostragem no reservatório capta a distribuição de partículas em um fluido assentado ou estratificado: as partículas finas continuam em suspensão enquanto as grandes sedimentam, por isso amostras da superfície do reservatório podem parecer mais limpas que o fluido em circulação. A amostragem na linha de retorno na entrada do filtro (a montante do filtro de retorno) fornece a medida mais conservadora e representativa da carga de contaminação do sistema. A ISO 4413:2011 e a maioria dos procedimentos de comissionamento de sistemas hidráulicos especificam a amostragem na linha de retorno como ponto de medição de referência para verificar a limpeza."
+    },
+    {
+      "question": "Como se interpreta um código ISO 4406 de dois dígitos encontrado na documentação de equipamentos antigos?",
+      "answer": "A documentação de equipamentos antigos pode mostrar códigos ISO 4406 de dois dígitos (por exemplo, 16/13) com os limites de ≥5 µm e ≥15 µm da versão de 1987. Conversão aproximada para o sistema atual de três dígitos: somar um RN ao primeiro número (≥5 µm → ≥4 µm é um pouco mais inclusivo), e o segundo número (≥15 µm) corresponde aproximadamente ao terceiro dígito atual de ≥14 µm. Um código de dois dígitos 16/13 se converte aproximadamente em 17/16/13 no sistema atual, embora seja uma aproximação, porque a contagem de partículas em ≥5 µm (antiga) e em ≥4 µm (nova) difere sistematicamente pelas mudanças de calibração. Os dados de sistemas que usavam instrumentos APC calibrados antes de 1996 devem ser tratados apenas como indicativos e reamostrados com instrumentos calibrados atuais antes de tomar decisões de manutenção em que a limpeza seja crítica."
+    },
+    {
+      "question": "Como o código ISO 4406 se relaciona com os estudos de extensão da vida dos componentes?",
+      "answer": "Vários estudos de vida de rolamentos e componentes hidráulicos quantificaram a relação entre o nível de limpeza ISO 4406 e a vida dos componentes. Os dados de \"Machinery Lubrication\" da Noria Corporation, obtidos de estudos de campo, mostram que melhorar a limpeza de um sistema hidráulico de ISO 20/18/15 para ISO 16/14/11 estende a vida útil das válvulas proporcionais em 4–8×. Estudos de vida de rolamentos (baseados no cálculo de vida à fadiga ISO 281 com fator de ajuste por contaminação) mostram que melhorar a limpeza do óleo lubrificante de ISO 18/16/13 para ISO 15/13/10 pode estender a vida L10 dos rolamentos em 3–5×. Essas relações são a base de engenharia para justificar o investimento em filtração de alta eficiência: o custo do filtro costuma ser 1–3% do custo de manutenção do equipamento evitado ao atingir e manter os códigos de limpeza alvo."
+    },
+    {
+      "question": "Qual é o código de limpeza ISO 4406 mais baixo alcançável em um sistema hidráulico vedado com filtração em kidney-loop?",
+      "answer": "Em um sistema hidráulico excepcionalmente bem vedado (raspadores de haste em excelente estado, todas as proteções de haste intactas, todos os respiros do reservatório com filtros dessecantes de alta eficiência e nenhuma adição de fluido externo), com um circuito kidney-loop dedicado usando elementos de filtração β3(c) ≥ 200, é possível atingir códigos ISO 4406 de 12/10/7 ou melhores. Isso representa 80–160 partículas/mL ≥4 µm(c) e 5–10 partículas/mL ≥14 µm(c). Sistemas hidráulicos de fabricação de semicondutores atingem rotineiramente códigos ISO 4406 de 13/11/8 ou melhores. Em aplicações típicas de equipamentos móveis, o código ISO 4406 15/13/10 é um limite inferior prático com filtração convencional bem mantida, e códigos abaixo disso exigem filtração especial e procedimentos rigorosos de exclusão de contaminação."
+    },
+    {
+      "question": "Como a degradação do óleo afeta as medições de contagem de partículas ISO 4406?",
+      "answer": "Os produtos de degradação do óleo (precursores de verniz, aglomerados de borra e polímeros de oxidação) aparecem como partículas macias nas medições APC e elevam o código ISO 4406 mesmo quando a contaminação inorgânica (sílica, metal) está bem controlada. As partículas macias são deformáveis e em geral não causam o mesmo desgaste abrasivo das partículas duras de sílica ou metal, mas podem assorear servoválvulas, cegar o meio filtrante e se acumular nas zonas de baixa velocidade do sistema. Distinguir as partículas de degradação da contaminação dura exige análises complementares: o FTIR (ASTM E2412) detecta os produtos de oxidação, o TAN (ASTM D664) mede o aumento do número de acidez, e os resultados APC combinados com espectroscopia elementar (ASTM D5185) permitem separar as partículas metálicas de desgaste da contagem APC total. Sistemas com valores de TAN altos podem mostrar códigos ISO que exageram a contaminação por partículas duras."
+    },
+    {
+      "question": "Qual documentação é necessária para comprovar a conformidade da limpeza ISO 4406 na aprovação do comissionamento?",
+      "answer": "A documentação de limpeza de comissionamento segundo a ISO 4413:2011 exige: dois relatórios consecutivos de amostras APC no código de limpeza alvo, coletados com 30 minutos de intervalo na temperatura e na vazão de operação; um certificado de coleta de amostra que indique o ponto de amostragem, a data, a hora e o operador; o certificado de calibração do APC usado, com data de calibração dentro de 12 meses; uma declaração do tipo de fluido de ensaio, da temperatura e da vazão do sistema durante a amostragem; e uma tabela comparativa com o código alvo e o código atingido em cada limite de tamanho. O requisito de duas amostras evita aprovar com um único resultado favorável: duas amostras consecutivas que atendem à meta dão confiança estatística de que o sistema está realmente limpo, e não de que uma amostra favorável foi coletada de uma zona temporariamente limpa."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Revisão vigente da norma de codificação da limpeza, que define o formato de código de três dígitos e a tabela de números de faixa."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+      "relevance": "Define a metodologia de calibração dos APCs e a notação (c), que distingue os dados de contagem de partículas calibrados dos não calibrados."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 3722:1976, Hydraulic Fluid Power — Fluid Sample Containers — Qualifying and Controlling Cleaning Methods",
+      "relevance": "Norma de protocolo de amostragem necessária para obter medições ISO 4406 válidas."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de projeto e comissionamento de sistemas hidráulicos que exige verificar a limpeza ISO 4406 com duas amostras consecutivas aprovadas antes de aprovar o sistema."
+    }
+  ],
+  "title": "ISO 4406",
+  "subtitle": "Hydraulic Fluid Power — Method for Coding the Level of Contamination by Solid Particles",
+  "metaDescription": "Referência técnica da ISO 4406: código de limpeza de três números, faixas de contagem de partículas, importância de cada limite de tamanho, códigos alvo por tipo de componente, correlação entre desgaste e limpeza, protocolos de amostragem e comparação com a NAS 1638.",
+  "category": "Normas",
+  "readTime": "10 min",
+  "intro": "A ISO 4406 oferece um sistema de codificação padronizado para expressar o nível de contaminação por partículas sólidas em fluidos hidráulicos e lubrificantes. O código de três números converte os dados brutos dos contadores automáticos de partículas em um formato conciso e comparável usado por projetistas de sistemas, engenheiros de manutenção e fabricantes de filtros para especificar metas de limpeza e avaliar a condição do sistema.",
+  "sections": [
+    {
+      "heading": "O código de três números",
+      "body": "A ISO 4406 atribui três números de código separados por barras, cada um representando uma faixa de contagem de partículas em um de três limites de tamanho acumulados: ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c) por mililitro. O sufixo \"(c)\" indica que as contagens de partículas foram obtidas com um contador calibrado segundo a ISO 11171 com partículas de referência rastreáveis ao NIST. Um código 17/15/12 significa: a contagem de partículas de ≥4 µm está na faixa do código 17 (80,000–160,000 partículas/mL), a de ≥6 µm na faixa do código 15 (20,000–40,000 partículas/mL) e a de ≥14 µm na faixa do código 12 (2,500–5,000 partículas/mL). Os três limites foram escolhidos para coincidir com as zonas críticas de desgaste dos mancais e dos componentes hidráulicos (faixa de 4–6 µm) e para captar a cauda superior da distribuição de partículas que causam dano (≥14 µm).",
+      "callout": [
+        {
+          "label": "Tamanho 1: ≥4 µm(c)",
+          "value": "Indicador de contaminação total"
+        },
+        {
+          "label": "Tamanho 2: ≥6 µm(c)",
+          "value": "Faixa de folga dos mancais"
+        },
+        {
+          "label": "Tamanho 3: ≥14 µm(c)",
+          "value": "Indicador de partículas grandes"
+        }
+      ]
+    },
+    {
+      "heading": "Conversão de código para contagem",
+      "body": "Cada número de código ISO 4406 corresponde a uma faixa de contagens de partículas por mililitro. A escala de códigos é logarítmica, de base 2: cada incremento de uma unidade de código dobra o limite superior da contagem. Código 14: 2,000–4,000 partículas/mL. Código 15: 4,000–8,000. Código 16: 8,000–16,000. Código 17: 16,000–32,000. Código 18: 32,000–64,000. Código 19: 64,000–130,000. Código 20: 130,000–250,000. Código 21: 250,000–500,000. Código 22: 500,000–1,000,000. A consequência para a gestão da contaminação: melhorar de ISO 20 para ISO 16 em um tamanho dado reduz a contagem de partículas por um fator de aproximadamente 16 (quatro passos de unidade de código = 2⁴ = 16). Melhorar de ISO 16 para ISO 14 reduz por mais um fator de 4.",
+      "callout": [
+        {
+          "label": "Código 14",
+          "value": "2,000–4,000 partículas/mL"
+        },
+        {
+          "label": "Código 17",
+          "value": "16,000–32,000 partículas/mL"
+        },
+        {
+          "label": "Código 20",
+          "value": "130,000–250,000 partículas/mL"
+        }
+      ]
+    },
+    {
+      "heading": "Importância de cada limite de tamanho",
+      "body": "A contagem de ≥4 µm(c) (primeiro número do código) capta a carga total de contaminação em toda a faixa de tamanhos crítica e é o indicador mais sensível do desempenho da filtração. As partículas pequenas dessa faixa são as mais numerosas e as mais difíceis de remover. A contagem de ≥6 µm(c) (segundo número) mira a faixa de folga da maioria dos rolamentos de rolos (6–15 µm) e das faces dos dentes de engrenagens. É o indicador isolado mais usado da adequação da proteção dos mancais. A contagem de ≥14 µm(c) (terceiro número) capta as partículas maiores que podem riscar superfícies deslizantes e causar abrasão de três corpos nos contatos de engrenagens. As partículas dessa faixa são removidas com mais facilidade por filtros padrão de 10 µm absolutos, por isso servem para verificar falhas graves de filtração mais do que a limpeza fina. Sistemas com um terceiro número de código desproporcionalmente alto em relação aos dois primeiros (por exemplo, 16/15/14) podem indicar bypass do filtro ou uma fonte de contaminação específica que introduz partículas grossas."
+    },
+    {
+      "heading": "Códigos alvo por tipo de componente",
+      "body": "As metas de limpeza são determinadas pelo componente com a folga mais apertada do circuito. Diretrizes publicadas da ISO TR 10949 e de dados de serviço dos fabricantes: servoválvulas e válvulas proporcionais eletro-hidráulicas ISO 14/12/9 a 15/13/10; bombas e motores de pistões axiais ISO 16/14/11 a 17/15/12; bombas de palhetas ISO 16/14/11 a 17/15/12; bombas e motores de engrenagens ISO 18/16/13 a 19/17/14; cilindros hidráulicos ISO 18/16/13; mancais principais e de biela do motor ISO 16/14/11; mancais do comando de válvulas ISO 15/13/10; transmissões automáticas ISO 17/15/12; redutores industriais ISO 17/15/12 a 18/16/13. O fluido novo de um tambor lacrado costuma medir ISO 18/16/13: adequado para bombas de engrenagens, mas não para servoválvulas nem bombas de pistão sem filtração adicional.",
+      "callout": [
+        {
+          "label": "Servoválvula",
+          "value": "ISO 14/12/9"
+        },
+        {
+          "label": "Bomba/motor de pistões",
+          "value": "ISO 17/15/12"
+        },
+        {
+          "label": "Bomba de engrenagens",
+          "value": "ISO 19/17/14"
+        }
+      ]
+    },
+    {
+      "heading": "Correlação entre desgaste e limpeza",
+      "body": "A relação entre o código de limpeza e a vida dos componentes foi quantificada com estudos de frotas e ensaios de desgaste acelerado. Uma diferença de duas unidades de código em ≥6 µm(c) corresponde aproximadamente a um fator de 2 na vida dos mancais em condições de resto idênticas. Manter ISO 16/14/11 em vez de ISO 18/16/13 em uma bomba de pistões axiais estende a vida esperada da bomba em aproximadamente 2–4×. Por outro lado, deixar a limpeza se degradar duas unidades de código abaixo da meta acelera o desgaste proporcionalmente. A sensibilidade das servoválvulas é maior: com folgas de carretel de 1–3 µm, partículas da faixa de ≥4 µm podem causar travamento do carretel, mudanças no ganho de vazão e aumento da histerese em níveis de código que não causam nenhum dano visível às bombas de engrenagens. A ISO 4406 não define metas de limpeza: define como medir e informar a limpeza. As metas vêm das especificações dos fabricantes de componentes, da ISO TR 10949 e da análise específica do sistema."
+    },
+    {
+      "heading": "Protocolos de amostragem",
+      "body": "A qualidade da amostra de óleo é tão importante quanto a exatidão do contador de partículas. Amostragem correta: (1) coletar amostras representativas de zonas turbulentas (linhas de retorno, e não o fundo do reservatório nem trechos mortos); (2) usar frascos de amostra certificados segundo a ISO 11171, pré-limpos a ISO 11/9/6 ou melhor; (3) purgar a válvula de amostragem com 3–5 volumes antes de coletar a amostra; (4) encher o frasco a 75–80% da capacidade para permitir misturar sem aerar; (5) etiquetar imediatamente com o ID da máquina, o ponto de amostragem, as horas do óleo e a data. Erros comuns que invalidam os resultados: usar frascos não limpos (acrescenta 2–4 unidades de código de contaminação), amostrar de pontos estagnados (subestima a contaminação em circulação) e aerar a amostra ao amostrar em alta velocidade (quebra as partículas e gera contagens pequenas artificiais). Para análise de tendências, as amostras devem vir do mesmo ponto de amostragem e em condições de operação idênticas (temperatura, vazão, tempo desde a última troca).",
+      "callout": [
+        {
+          "label": "Limpeza exigida do frasco",
+          "value": "ISO 11/9/6 ou melhor"
+        },
+        {
+          "label": "Amostragem do reservatório",
+          "value": "NÃO representativa: evitar"
+        },
+        {
+          "label": "Purga da válvula antes da amostra",
+          "value": "3–5 volumes da válvula"
+        }
+      ]
+    },
+    {
+      "heading": "ISO 4406 versus NAS 1638",
+      "body": "A NAS 1638 (National Aerospace Standard) é uma norma norte-americana mais antiga de limpeza de fluidos hidráulicos. A NAS 1638 usa um único número de código (Classe 0 a Classe 12) baseado nas contagens de partículas em cinco faixas de tamanho: 5–15 µm, 15–25 µm, 25–50 µm, 50–100 µm e ≥100 µm. A classe NAS é determinada pela faixa de tamanho com pior resultado: uma faixa acima do limite da classe reprova a amostra inteira. A NAS 1638 usa contagens de partículas por 100 mL; a ISO 4406 usa contagens por mL. A Classe 8 da NAS 1638 corresponde aproximadamente a ISO 16/14/11, mas a equivalência é imprecisa porque as faixas de tamanho e os limites de contagem não coincidem exatamente. A NAS 1638 foi oficialmente retirada em 2001 e substituída pela ARP 598. A ISO 4406 é a norma internacional vigente e deve ser usada nas especificações novas. Ao converter sistemas existentes especificados pela NAS, verifique a conversão de cada faixa de tamanho em vez de aplicar uma tabela genérica de equivalência NAS-ISO.",
+      "callout": [
+        {
+          "label": "Situação da NAS 1638",
+          "value": "Retirada em 2001, substituída pela ARP 598"
+        },
+        {
+          "label": "NAS 8 ≈ ISO",
+          "value": "16/14/11 (aproximado, não exato)"
+        },
+        {
+          "label": "Norma vigente",
+          "value": "ISO 4406 (código de três números)"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Unidade de código = variação na contagem de partículas",
+      "value": "×2 por unidade"
+    },
+    {
+      "label": "Meta para servoválvulas",
+      "value": "ISO 14/12/9"
+    },
+    {
+      "label": "Óleo novo de tambor típico",
+      "value": "ISO 18/16/13"
+    },
+    {
+      "label": "Limpeza do frasco de amostra",
+      "value": "ISO 11/9/6 no mínimo"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ISO 4406",
+    "código de limpeza",
+    "contagem de partículas",
+    "limpeza hidráulica",
+    "NAS 1638",
+    "contaminação do fluido"
+  ],
+  "commonMistakes": [
+    "Interpretar os números de faixa da ISO 4406 como contagens diretas de partículas. O número de faixa 18 significa até 1,300 partículas/mL, e não 18 partículas: os números são identificadores de uma escala exponencial, e não contagens de partículas.",
+    "Não especificar os canais de tamanho de partícula ao citar um código ISO 4406. Um código de dois canais (por exemplo, 18/16) omite o canal de 14 µm, que identifica os resíduos de desgaste grandes, e impossibilita detectar uma falha acelerada de componentes por partículas de desgaste grossas."
+  ]
+}

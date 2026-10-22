@@ -1,0 +1,209 @@
+{
+  "slug": "compressed-air-purity",
+  "faqs": [
+    {
+      "question": "¿Cuáles son las tres clases de contaminación que define ISO 8573-1 para el aire comprimido?",
+      "answer": "ISO 8573-1 define clases de pureza independientes para tres tipos de contaminación: partículas sólidas (Clase 0–9), agua (Clase 0–9, que mide tanto el punto de rocío a presión como el contenido de agua líquida) y aceite (Clase 0–4, que mide el aerosol y el vapor de aceite totales). Cada clase se especifica por separado: un sistema puede ser Clase 1 en partículas y Clase 3 en agua, según el equilibrio entre los equipos de filtración y secado instalados. La Clase 0 en cada categoría significa que el usuario especifica una pureza más exigente que la Clase 1. La Clase 1 de partículas requiere ≤20,000 partículas/m3 de ≥0.1–0.5 µm (equivalente a los límites de concentración de ISO 8573-1:2010); la Clase 1 de agua requiere un punto de rocío a presión ≤−70°C; la Clase 1 de aceite requiere ≤0.01 mg/m3. Los requisitos en el punto de uso del aire de instrumentos, los controles neumáticos y el aire respirable se especifican con estas referencias de clase de tres dígitos."
+    },
+    {
+      "question": "¿Por qué importa más el punto de rocío a presión que el punto de rocío atmosférico en la calidad del aire comprimido?",
+      "answer": "El punto de rocío atmosférico es la temperatura a la que el vapor de agua se condensa a presión ambiente (1 bar absoluto). Cuando el aire se comprime a la presión de operación (7–10 bar manométricos en los sistemas industriales típicos), la presión parcial del vapor de agua aumenta en proporción: a 7 bar manométricos (8 bar absolutos), la presión parcial del agua es 8× mayor que a presión atmosférica. Esto significa que un aire que está holgadamente por encima del punto de rocío en condiciones atmosféricas puede estar saturado o sobresaturado a la presión de línea, y formar agua líquida en las tuberías de distribución. El punto de rocío a presión (PDP), el punto de rocío a la presión de línea, es el parámetro operativo pertinente. ISO 8573-1 especifica las clases de pureza en términos de PDP: Clase 4 = +3°C de PDP (condensación posible con tuberías por encima de 3°C), Clase 2 = −40°C de PDP (sin condensación con tuberías por encima de −40°C), Clase 1 = −70°C de PDP (ultraseco, grado farmacéutico y de semiconductores)."
+    },
+    {
+      "question": "¿En qué se diferencia un secador refrigerativo de un secador desecante en el desempeño de secado del aire comprimido?",
+      "answer": "Los secadores refrigerativos (también llamados secadores frigoríficos) enfrían el aire comprimido a 2–10°C con un circuito de refrigeración, condensan y drenan el vapor de agua y logran un punto de rocío a presión de normalmente +2 a +7°C. Esto basta para la mayoría de las aplicaciones neumáticas industriales generales (Clase 4 de agua de ISO 8573-1). Los secadores desecantes usan alúmina activada, gel de sílice o tamiz molecular como adsorbente para adsorber el vapor de agua del aire comprimido y logran un PDP de −20°C a −70°C según el tipo de adsorbente y el método de regeneración. Los secadores refrigerativos consumen menos energía (no gastan energía en regeneración), pero no pueden lograr un PDP por debajo de aproximadamente 0°C. Los secadores desecantes logran el desempeño ultraseco que exige el aire de instrumentos (Clase ISO 2 o Clase 1), pero requieren el 15–25% del caudal de aire comprimido para la regeneración en caliente (pérdida de aire de purga) y tienen un costo de capital mayor."
+    },
+    {
+      "question": "¿Qué fuentes de contaminación existen dentro de un sistema de aire comprimido, aparte de la entrada del compresor?",
+      "answer": "Las fuentes de contaminación dentro del sistema de distribución de aire comprimido incluyen: (1) Arrastre de aceite del compresor: el lubricante de los compresores de tornillo o de pistón entra a la corriente de aire como aerosol o vapor; el arrastre típico de compresores bien mantenidos es de 3–5 mg/m3 de aceite, que el separador coalescente y el filtro de carbón activado reducen a <0.01 mg/m3. (2) Cascarilla y óxido de las tuberías: las tuberías de distribución de acero al carbono se corroen en los puntos de condensación de humedad y liberan partículas de óxido (Fe2O3) y escamas de corrosión de hierro en el rango de 10–500 µm. (3) Partículas de polímero por la degradación de mangueras y accesorios: los revestimientos de las mangueras de aire comprimido y los sellos O-ring desprenden partículas al degradarse, que aparecen aguas abajo como partículas de caucho negras. (4) Contaminación biológica: el agua líquida en las líneas de distribución, en zonas con temperatura superior a la ambiente, crea condiciones para el crecimiento bacteriano; las biopelículas se desprenden como contaminación por partículas. Cada fuente requiere una filtración específica aguas arriba de las aplicaciones sensibles en el punto de uso."
+    },
+    {
+      "question": "¿Qué filtración en el punto de uso se requiere para el aire comprimido usado en el envasado neumático de alimentos?",
+      "answer": "Las aplicaciones de aire comprimido en contacto con alimentos requieren ISO 8573-1 Clase 1:2:1 o mejor en el punto de uso: partículas Clase 1 (≤20,000 partículas/m3 ≥0.1 µm), agua Clase 2 (PDP ≤−40°C), aceite Clase 1 (≤0.01 mg/m3). La razón de estas especificaciones tan exigentes es que el aire comprimido que toca los alimentos o las superficies en contacto con alimentos puede introducir partículas, residuos de aceite o agua que comprometen la inocuidad alimentaria y la calidad organoléptica. Los adsorbedores de carbón activado en el punto de uso reducen el vapor de aceite a <0.003 mg/m3. Para las aplicaciones de contacto directo con alimentos según el Reglamento CE 1935/2004 y la legislación nacional de inocuidad alimentaria correspondiente, se especifican filtros de grado estéril de alta eficiencia (eliminación ≥0.01 µm con un 99.9999% de eficiencia). Los compresores libres de aceite eliminan la fuente de aerosol de aceite, pero no la contaminación por partículas ni la humedad del proceso de compresión."
+    },
+    {
+      "question": "¿Cómo se cuantifica la contaminación por aceite del aire comprimido y cuáles son los límites para el aire de instrumentos?",
+      "answer": "La contaminación por aceite del aire comprimido se mide como concentración total de aceite (aerosol más vapor) en el punto de uso, expresada en mg/m3 a la presión y temperatura de medición. ISO 8573-3:2010 define los procedimientos de muestreo y análisis para medir el aerosol de aceite. La medición del vapor de aceite usa ASTM D3796 o tubos equivalentes de adsorción con carbón activado, seguidos de extracción con solvente y análisis gravimétrico o por cromatografía de gases. El aire de instrumentos para los sistemas de control neumático (normalmente ISO 8573-1 Clase 1 de aceite: ≤0.01 mg/m3) se especifica con este límite porque la contaminación por aceite de los actuadores de válvulas neumáticas provoca agarrotamiento (válvulas que se pegan), respuesta demorada y error de posición: fallas críticas en las aplicaciones de control de procesos, donde la exactitud de la posición de la válvula debe estar dentro de ±1% de la posición ordenada."
+    },
+    {
+      "question": "¿Qué tipos de elementos filtrantes se requieren en un tren típico de tratamiento de aire comprimido?",
+      "answer": "Un tren estándar de tratamiento de aire comprimido usa tres etapas de filtración en secuencia: (1) Prefiltro (separador de líquido a granel y de partículas gruesas): elimina gotas de agua líquida y partículas mayores de 3–5 µm del aire comprimido antes del posenfriador y el secador; normalmente un separador ciclónico combinado con un elemento coalescente. (2) Filtro coalescente (de uso general): elimina las gotas submicrónicas de aerosol de aceite y las partículas finas; normalmente clasificado para eliminar 0.1 µm al 99.9%, con lo que logra la Clase 2 ISO de aceite (≤0.1 mg/m3). (3) Adsorbedor de carbón activado: elimina el vapor de aceite y los olores que la filtración coalescente no capta; se clasifica por el tiempo de saturación a una concentración y temperatura especificadas. Se agrega una cuarta etapa, un filtro de membrana estéril de 0.01 µm, en aplicaciones farmacéuticas o de contacto con alimentos. Todos los elementos filtrantes tienen una vida útil finita: los coalescentes se cambian cuando la caída de presión aumenta 0.1 bar sobre la inicial, y los adsorbedores de carbón se cambian por tiempo o por saturación de concentración."
+    },
+    {
+      "question": "¿Qué hace que los filtros de aire comprimido muestren una concentración de aceite mayor aguas abajo que aguas arriba?",
+      "answer": "Una concentración de aceite aguas abajo mayor que aguas arriba indica que el elemento filtrante está saturado y que hay rearrastre de aceite líquido. Los elementos de filtro coalescente se saturan cuando se supera la capacidad de retención de aceite acumulado: la película de aceite líquido en el medio se vuelve inestable y la corriente de aire de alta velocidad la vuelve a arrastrar como gotas finas. Esto ocurre cuando: el elemento filtrante superó su vida útil; el sistema opera con caudales superiores a la capacidad nominal del elemento coalescente (velocidad demasiado alta para una coalescencia estable); o el filtro sufrió una inundación de líquido, es decir, un golpe repentino de agua o aceite líquido (por el drenaje de un enfriador o separador aguas abajo) que supera la capacidad del elemento. La caída de presión del filtro no es un buen indicador de saturación en los elementos coalescentes: un elemento saturado puede mostrar todavía una caída de presión aceptable mientras rearrastra aceite. Para detectar los eventos de saturación hace falta monitorear el aceite aguas abajo."
+    },
+    {
+      "question": "¿Qué procedimiento de mantenimiento se aplica a los tanques acumuladores de aire comprimido para evitar la corrosión interna?",
+      "answer": "Los tanques acumuladores de aire comprimido acumulan agua líquida en el fondo por el drenaje de los interenfriadores y posenfriadores, lo que crea un entorno de corrosión electrolítica. Requisitos de mantenimiento: (1) Las válvulas de drenaje manuales o automáticas deben descargar a diario el líquido acumulado: válvulas de drenaje automáticas temporizadas que se abren durante 5–30 segundos cada 2–4 horas durante la producción. (2) Inspección interna anual según los códigos de recipientes a presión aplicables (PED 2014/68/EU en Europa, ASME Section VIII en EE. UU.) para medir la velocidad de corrosión de la pared y verificar la integridad estructural. (3) Medición del pH del agua de drenaje: un pH inferior a 5.5 indica condensado ácido y exige investigar la contaminación aguas arriba (SO2 o NOx absorbidos de la atmósfera industrial). (4) Prueba de presión o inspección cada cinco años según los requisitos de registro de recipientes a presión. Los acumuladores sin gestión del drenaje desarrollan picaduras de corrosión que terminan perforando la pared: una falla catastrófica del acumulador es un riesgo de seguridad importante."
+    },
+    {
+      "question": "¿Qué diferencia hay entre las especificaciones de clase de partículas de ISO 8573-1 en sus dos revisiones (1991 y 2010)?",
+      "answer": "ISO 8573-1:1991 especificaba las clases de partículas con umbrales de tamaño de partícula de ≥1 µm, ≥5 µm y ≥40 µm. La revisión de 2010 cambió los umbrales a ≥0.1–0.5 µm, ≥0.5–1 µm y ≥1–5 µm, reflejando la mejor capacidad de la tecnología de conteo de partículas en tamaños submicrónicos. La Clase 1 de la versión de 1991 (≤100,000 partículas/m3 ≥1 µm) equivale aproximadamente a la Clase 3 de la versión de 2010 en partículas submicrónicas. Los sistemas especificados según la versión de 1991 no pueden compararse directamente con especificaciones de 2010 sin aclarar qué edición se aplica. Al especificar la pureza del aire comprimido en instalaciones nuevas, hay que citar de forma explícita ISO 8573-1:2010, y el formato de tres dígitos (por ejemplo, \"ISO 8573-1:2010 Clase 1:2:1\") debe incluir el año de la norma para evitar ambigüedades entre ediciones."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes",
+      "relevance": "Norma principal que define las clases de contaminación por partículas, agua (punto de rocío) y aceite en los sistemas de aire comprimido."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content",
+      "relevance": "Métodos de ensayo para medir el aerosol de aceite y la concentración de partículas en el aire comprimido con muestreo en el punto de uso."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-3:2010, Compressed Air — Part 3: Test Methods for Measurement of Humidity",
+      "relevance": "Métodos de ensayo para medir el punto de rocío a presión, usados para verificar el cumplimiento de la clase de agua de ISO 8573-1."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-7:2003, Compressed Air — Part 7: Test Methods for Viable Microbiological Contaminants",
+      "relevance": "Norma de ensayo microbiológico para el aire respirable y las aplicaciones de aire comprimido de grado farmacéutico."
+    }
+  ],
+  "title": "Pureza del aire comprimido",
+  "subtitle": "Clases de calidad ISO 8573-1, medición de la contaminación y diseño del sistema",
+  "metaDescription": "Referencia técnica sobre la pureza del aire comprimido: clases de calidad ISO 8573-1 para partículas, humedad y aceite; métodos de ensayo ISO 8573-2/3; medición del punto de rocío; y diseño de sistemas de filtración para aire neumático y de proceso.",
+  "category": "Ingeniería",
+  "readTime": "10 min",
+  "intro": "El aire comprimido contiene partículas, agua líquida, vapor de agua y aerosoles y vapor de aceite que se introducen durante la compresión y la distribución. ISO 8573-1 define clases de calidad para cada tipo de contaminante y ofrece un lenguaje de especificación normalizado para los sistemas de aire comprimido. Lograr la clase de pureza correcta requiere entender las fuentes de contaminación, los métodos de medición y las tecnologías de filtración y secado que controlan cada tipo de contaminante.",
+  "sections": [
+    {
+      "heading": "Clases de calidad ISO 8573-1",
+      "body": "ISO 8573-1 define clases de calidad de 0 a 6 para tres categorías de contaminación de forma independiente: partículas sólidas (por conteo y tamaño), humedad (por punto de rocío a presión, °C) y aceite total (aerosol más vapor, mg/m³). La Clase 0 la especifica el usuario y es más exigente que la Clase 1: no es un valor numérico definido en la norma. La Clase 1 es la mayor pureza definida por la norma; la Clase 6 es la menos exigente. Una especificación de calidad de aire comprimido escrita como ISO 8573-1:2010 [2:4:2] significa Clase 2 de partículas, Clase 4 de humedad y Clase 2 de aceite. Cada clase debe especificarse por separado, porque cada contaminante lo atiende una etapa de tratamiento distinta: un filtro de partículas muy eficiente no mejora el punto de rocío, y un secador refrigerativo reduce la humedad pero no elimina los aerosoles de aceite.",
+      "callout": [
+        {
+          "label": "Clase 0",
+          "value": "Definida por el usuario, más exigente que la Clase 1"
+        },
+        {
+          "label": "Contenido de aceite Clase 1",
+          "value": "≤0.01 mg/m³ (aceite total)"
+        },
+        {
+          "label": "Ejemplo de notación",
+          "value": "ISO 8573-1 [2:4:2] = partículas:humedad:aceite"
+        }
+      ]
+    },
+    {
+      "heading": "Clases de calidad de partículas",
+      "body": "Las clases de partículas de ISO 8573-1 se definen por el número máximo de partículas por metro cúbico en rangos de tamaño especificados. Clase 1 (partículas): ≤20,000 partículas/m³ de 0.1–0.5 µm; ≤400 de 0.5–1 µm; ≤10 de 1–5 µm; ninguna partícula ≥5 µm. Clase 2: ≤400,000 de 0.1–0.5 µm; ≤6,000 de 0.5–1 µm; ≤100 de 1–5 µm; ninguna partícula ≥5 µm. Clase 3: sin límite para <1 µm; ≤1,000 de 1–5 µm; ninguna partícula ≥5 µm. Las Clases 4 y 5 admiten partículas ≥5 µm en cantidades crecientes. La Clase 6 admite una concentración másica de partículas de hasta 10 mg/m³ sin límites de distribución de tamaños. Para la mayoría de los actuadores y herramientas neumáticas industriales, la Clase 3 o 4 de partículas es suficiente. El aire de instrumentos (instrumentos analíticos, transmisores de presión, válvulas de control) requiere Clase 1 o 2 de partículas para evitar bloqueos de los instrumentos y errores de medición.",
+      "callout": [
+        {
+          "label": "Clase 1 (partículas ≥5 µm)",
+          "value": "Ninguna permitida"
+        },
+        {
+          "label": "Clase 3 (1–5 µm)",
+          "value": "≤1,000 partículas/m³"
+        },
+        {
+          "label": "Clase del aire de instrumentos",
+          "value": "Clase 1 o 2"
+        }
+      ]
+    },
+    {
+      "heading": "Clases de humedad y punto de rocío a presión",
+      "body": "La humedad del aire comprimido se expresa como punto de rocío a presión (PDP): la temperatura a la que se produce la condensación a la presión de operación del sistema. Un PDP de −40°C a 7 bar significa que el aire contiene tan poca humedad que no habrá condensación hasta que la temperatura baje a −40°C, aun a 7 bar de presión de línea. Clases de humedad de ISO 8573-1: Clase 1: PDP ≤ −70°C; Clase 2: ≤ −40°C; Clase 3: ≤ −20°C; Clase 4: ≤ +3°C; Clase 5: ≤ +7°C; Clase 6: ≤ +10°C. Los secadores refrigerativos logran un PDP entre +2°C y +10°C (Clases 4–6). Los secadores de adsorción (desecantes) logran un PDP entre −20°C y −70°C (Clases 1–3). Convertir el PDP en contenido de agua en g/m³ en una condición de referencia permite calcular la humedad absoluta: con un PDP de −40°C y 7 bar, el contenido de agua es de aproximadamente 0.003 g/m³, frente a 1.4 g/m³ con un PDP de +7°C.",
+      "callout": [
+        {
+          "label": "PDP de la Clase 1",
+          "value": "≤ −70°C"
+        },
+        {
+          "label": "Rango de PDP del secador refrigerativo",
+          "value": "+2°C a +10°C (Clases 4–6)"
+        },
+        {
+          "label": "Rango de PDP del secador desecante",
+          "value": "−20°C a −70°C (Clases 1–3)"
+        }
+      ]
+    },
+    {
+      "heading": "Clases de contenido de aceite y medición",
+      "body": "El aceite del aire comprimido proviene del arrastre de lubricante de los compresores lubricados (en forma de aerosol y vapor) y de los vapores de hidrocarburos atmosféricos que se concentran durante la compresión. Clases de aceite total de ISO 8573-1 (aerosol + líquido + vapor, mg/m³): Clase 1: ≤0.01 mg/m³; Clase 2: ≤0.1 mg/m³; Clase 3: ≤1 mg/m³; Clase 4: ≤5 mg/m³. Los compresores libres de aceite (equipos Clase 0 según ISO 8573-7) siguen requiriendo filtración para eliminar aceite en aplicaciones de Clase 1 o Clase 2, porque los vapores de hidrocarburos atmosféricos que aspira la entrada del compresor se concentran hasta niveles medibles a la salida. ISO 8573-2 define el método de ensayo para medir el aceite en aerosol: impacto sobre un filtro de membrana con análisis gravimétrico. ISO 8573-5 define el método de medición del aceite en vapor con tubos de adsorción de carbón activado. Aceite total = aerosol (método ISO 8573-2) + vapor de aceite (método ISO 8573-5). Los filtros coalescentes eliminan el aceite en aerosol hasta la Clase 1; la adsorción con carbón activado elimina el aceite en vapor: las dos etapas son necesarias para lograr un cumplimiento verificado de la Clase 1.",
+      "callout": [
+        {
+          "label": "Contenido de aceite Clase 1",
+          "value": "≤0.01 mg/m³"
+        },
+        {
+          "label": "Eliminación del aerosol",
+          "value": "Filtro coalescente (ISO 8573-2)"
+        },
+        {
+          "label": "Eliminación del vapor",
+          "value": "Carbón activado (ISO 8573-5)"
+        }
+      ]
+    },
+    {
+      "heading": "Fuentes de contaminación durante la compresión",
+      "body": "El aire ambiente que aspira un compresor contiene partículas atmosféricas (polen, polvo y hollín de 0.1–10 µm), vapor de agua (humedad) y trazas de vapores de hidrocarburos. Durante la compresión, todos los componentes se concentran en proporción a la relación de compresión: a 7 bar manométricos (8 bar absolutos), el volumen se reduce a 1/8 y la masa de contaminante por volumen aumenta 8 veces. El posenfriamiento del aire comprimido (necesario para evitar daños térmicos en los equipos aguas abajo) hace que el aire comprimido y húmedo se enfríe rápidamente: el vapor de agua se condensa en agua líquida y gotas de aerosol. El posenfriador y el separador de condensado eliminan la mayor fracción de agua (normalmente el 70–90% del vapor de agua de entrada en condiciones ambientales tropicales), pero dejan una humedad residual importante que requiere secado. Los compresores lubricados inyectan aceite en la etapa de compresión para enfriar y sellar: el arrastre de aceite del separador y del filtro coalescente a la salida de la unidad compresora suele ser de 1–5 mg/m³ antes del tratamiento en el punto de uso."
+    },
+    {
+      "heading": "Diseño del sistema de filtración según las clases de calidad",
+      "body": "Un tren de tratamiento de aire comprimido se diseña por etapas, y cada una atiende una categoría de contaminación en las condiciones que deja la etapa anterior. Posenfriador + separador de condensado: elimina el agua líquida a granel y los aerosoles gruesos (humedad Etapas 4–5, partículas Clase 4–5). Filtro coalescente de uso general (elemento coalescente de 1 µm): elimina el aceite en aerosol líquido hasta 0.1 mg/m³ y las partículas ≥1 µm (partículas Clase 2–3, aceite Clase 2–3). Filtro coalescente de alta eficiencia (elemento coalescente de 0.01 µm): reduce el aerosol de aceite a 0.01 mg/m³ (aceite Clase 1). Adsorbedor de carbón activado: elimina el vapor de aceite por debajo de 0.003 mg/m³ (aceite Clase 1). Secador desecante: logra un PDP ≤ −40°C (humedad Clase 2). Filtro de partículas final (membrana de PTFE o fibra de borosilicato): asegura aire estéril o clasificado aguas abajo de todas las etapas de tratamiento (partículas Clase 1 o 2).",
+      "callout": [
+        {
+          "label": "El filtro coalescente logra",
+          "value": "Aceite Clase 2 (0.1 mg/m³)"
+        },
+        {
+          "label": "Coalescente de alta eficiencia",
+          "value": "Aceite Clase 1 (0.01 mg/m³)"
+        },
+        {
+          "label": "El carbón activado agrega",
+          "value": "Eliminación del vapor hasta el cumplimiento completo de la Clase 1"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Aceite ISO 8573-1 Clase 1",
+      "value": "≤0.01 mg/m³"
+    },
+    {
+      "label": "Punto de rocío a presión Clase 1",
+      "value": "≤ −70°C"
+    },
+    {
+      "label": "Partículas Clase 1 (≥5 µm)",
+      "value": "Ninguna permitida"
+    },
+    {
+      "label": "PDP del secador refrigerativo",
+      "value": "+2°C a +10°C"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 8573-1",
+    "ISO 29463"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "Compressed Air Protection"
+  ],
+  "keywords": [
+    "ISO 8573",
+    "pureza del aire comprimido",
+    "punto de rocío a presión",
+    "aerosol de aceite",
+    "clase de partículas",
+    "filtro coalescente",
+    "secador desecante"
+  ],
+  "commonMistakes": [
+    "Especificar una calidad de aire ISO 8573-1 Clase 0 cuando la aplicación solo requiere Clase 1 o Clase 2. La Clase 0 exige un compresor libre de aceite por diseño: aplicarla a sistemas alimentados por compresores lubricados obliga a reemplazar todo el sistema en lugar de tratar el aire aguas abajo.",
+    "Medir la calidad del aire comprimido solo a la salida del secador o del filtro. El aire comprimido toma contaminación de las tuberías de distribución: para verificar la calidad realmente entregada hacen falta mediciones en el punto de uso, en la conexión de la aplicación.",
+    "Confundir el punto de rocío a presión (PDP) con el punto de rocío atmosférico. Las clases de agua de ISO 8573-1 especifican el PDP a la presión de línea: un PDP de −40°C a 7 bar corresponde a un punto de rocío atmosférico de aproximadamente −27°C; las dos cifras no son intercambiables en las especificaciones."
+  ]
+}

@@ -48,7 +48,8 @@ describe('Knowledge Center engineering articles in Spanish and Portuguese', () =
         compare(en, tr, slug, problems);
         expect(problems).toEqual([]);
         for (const id of ['slug', 'relatedStandards', 'relatedTechnologies', 'relatedSystems'] as const) expect(tr[id]).toEqual(en[id]);
-        expect(tr.title).not.toBe(en.title);
+        // Standard codes (ISO 16889, ISO 4406...) keep their official title; the description is always translated.
+        expect(tr.metaDescription).not.toBe(en.metaDescription);
         expect(tr.sections.map((s) => s.heading)).not.toEqual(en.sections.map((s) => s.heading));
       });
     }
