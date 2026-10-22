@@ -32,7 +32,7 @@ main h2,
 main h3 {
   overflow-wrap: normal;
   word-break: normal;
-  hyphens: auto;
+  hyphens: none;
 }
 
 main p,
