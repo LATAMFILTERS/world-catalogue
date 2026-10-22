@@ -7,10 +7,18 @@ if (!fs.existsSync(out)) {
   process.exit(0);
 }
 
-const roots = [
-  path.join(out, 'knowledge-center'),
-  path.join(out, 'api', 'citation'),
-].filter(fs.existsSync);
+// Static export places localized routes under /es, /pt, etc. Saneamento
+// must cover the same surfaces checked by validate-public-governance.
+const localeRoots = fs.readdirSync(out, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory() && /^[a-z]{2}(?:-[a-z]{2})?$/i.test(entry.name))
+  .map((entry) => path.join(out, entry.name));
+
+const roots = [out, ...localeRoots]
+  .flatMap((siteRoot) => [
+    path.join(siteRoot, 'knowledge-center'),
+    path.join(siteRoot, 'api', 'citation'),
+  ])
+  .filter(fs.existsSync);
 
 const textExt = new Set(['.html', '.json', '.xml', '.txt']);
 const files = [];
@@ -61,12 +69,9 @@ for (const file of files) {
   // severity/status colors from KC HTML without altering the underlying meaning.
   if (file.endsWith('.html')) {
     text = text
-      .replaceAll('#ff4444', '#B8B8B8')
-      .replaceAll('#FF4444', '#B8B8B8')
-      .replaceAll('#ff8c00', '#D7D7D7')
-      .replaceAll('#FF8C00', '#D7D7D7')
-      .replaceAll('#44ff88', '#FFF12D')
-      .replaceAll('#44FF88', '#FFF12D');
+      .replace(/#ff4444/gi, '#B8B8B8')
+      .replace(/#ff8c00/gi, '#D7D7D7')
+      .replace(/#44ff88/gi, '#FFF12D');
   }
 
   if (text !== before) {
