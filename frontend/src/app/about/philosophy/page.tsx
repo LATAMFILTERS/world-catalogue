@@ -482,12 +482,12 @@ export default function OurPhilosophyPage() {
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%' };
-const heroSection: CSSProperties = { minHeight: 'clamp(490px,62vh,720px)', boxSizing:'border-box', position:'relative', overflow:'hidden', display:'flex', alignItems:'center', padding:'clamp(7rem,9vw,8.5rem) clamp(1.25rem,6vw,6rem) clamp(3.5rem,6vw,5rem)', isolation:'isolate' };
-const heroImage: CSSProperties = { position:'absolute', inset:0, backgroundImage:'url(/images/air-filters-lab.avif)', backgroundSize:'cover', backgroundPosition:'68% center', opacity:.55 };
-const heroOverlay: CSSProperties = { position:'absolute', inset:0, background:'linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.82) 48%,rgba(0,0,0,.62) 100%)' };
+const heroSection: CSSProperties = { minHeight: 'clamp(520px,66vh,760px)', boxSizing:'border-box', position:'relative', overflow:'hidden', display:'flex', alignItems:'center', padding:'clamp(7rem,9vw,8.5rem) clamp(1.25rem,6vw,6rem) clamp(3.5rem,6vw,5rem)', isolation:'isolate' };
+const heroImage: CSSProperties = { position:'absolute', inset:0, backgroundImage:'url(/images/banco-pruebas-filtros.png)', backgroundSize:'cover', backgroundPosition:'72% center', opacity:.82 };
+const heroOverlay: CSSProperties = { position:'absolute', inset:0, background:'linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.76) 42%,rgba(0,0,0,.38) 100%)' };
 const eyebrow: CSSProperties = { color:'#FFF12D', fontFamily:'var(--font-display)', fontSize:'.72rem', fontWeight:700, letterSpacing:'.16em', margin:'0 0 1.2rem', textTransform:'uppercase', position:'relative', zIndex:2 };
 const heroTitle: CSSProperties = { position:'relative', zIndex:2, fontFamily:'var(--font-display)', fontWeight:700, letterSpacing:'-.04em', lineHeight:1.08, fontSize:'clamp(2.25rem,3.75vw,3.75rem)', margin:0, textTransform:'uppercase', maxWidth:'650px' };
-const heroLead: CSSProperties = { position:'relative', zIndex:2, maxWidth:'650px', color:'rgba(255,255,255,.88)', fontSize:'clamp(1rem,1.18vw,1.12rem)', lineHeight:1.7, fontWeight:400, textAlign:'left' };
+const heroLead: CSSProperties = { position:'relative', zIndex:2, maxWidth:'650px', color:'rgba(255,255,255,.88)', fontSize:'clamp(1rem,1.18vw,1.12rem)', lineHeight:1.7, fontWeight:400, textAlign:'left', textShadow:'0 1px 5px rgba(0,0,0,.70)' };
 const altSection1: CSSProperties = { background:'#050505', color:'#fff', padding:'clamp(4rem,7vw,6.5rem) clamp(1.25rem,6vw,6rem)', borderTop:'1px solid rgba(255,255,255,.08)' };
 const altSection2: CSSProperties = { background:'#000', color:'#fff', padding:'clamp(4rem,7vw,6.5rem) clamp(1.25rem,6vw,6rem)', borderTop:'1px solid rgba(255,255,255,.08)' };
 const twoColGrid: CSSProperties = { maxWidth:'1180px', margin:'0 auto', display:'grid', gridTemplateColumns:'repeat(2,minmax(0,1fr))', gap:'clamp(2.5rem,6vw,5rem)' };
