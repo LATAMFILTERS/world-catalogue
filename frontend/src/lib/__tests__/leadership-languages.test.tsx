@@ -20,6 +20,10 @@ describe('Leadership language coverage and preserved identity', () => {
       expect((profile.match(/<p>/g) || []).length).toBe(5);
       expect((visible.match(/class="agent-profile"/g) || []).length).toBe(5);
       expect((visible.match(/class="agent-description"/g) || []).length).toBe(5);
+      expect(visible).toContain('class="leadership-wrap leadership-hero-grid');
+      expect(visible).toContain('class="leadership-hero-heading');
+      expect(visible).toContain('class="leadership-hero-support');
+      expect((visible.match(/class="hero-title-line/g) || []).length).toBe(2);
       expect(visible).toContain('class="agents-intro-grid"');
       expect((visible.match(/class="agents-intro-column"/g) || []).length).toBe(2);
       expect(visible).toContain('class="agents-model-statement"');
