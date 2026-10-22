@@ -1,4 +1,5 @@
 import React from 'react';
+import { readFileSync } from 'node:fs';
 import { describe, expect, it, vi } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { I18nextProvider } from 'react-i18next';
@@ -11,6 +12,13 @@ vi.mock('next/navigation', () => ({ usePathname: () => '/about/leadership/' }));
 vi.mock('next/link', () => ({ default: React.forwardRef<HTMLAnchorElement, React.ComponentProps<'a'>>(function TestLink(props, ref) { return <a ref={ref} {...props} />; }) }));
 
 describe('Leadership language coverage and preserved identity', () => {
+  it('does not inherit forced first-section title sizes from global styles', () => {
+    const css = readFileSync(new URL('../../app/globals.css', import.meta.url), 'utf8');
+    expect(css).toContain('main:not(.leadership-page) > section:first-of-type h1 {');
+    expect(css).toContain('main:not(.leadership-page) > section:first-of-type h1 span {');
+    expect(css).toContain('font-size: clamp(2.85rem, 6.2vw, 6.05rem) !important');
+  });
+
   for (const lang of ['en', 'es', 'pt'] as const) {
     it(lang + ' renders the founder, all five agents and language-specific navigation', () => {
       const instance = lang === 'en' ? i18n : localeInstances[lang];
