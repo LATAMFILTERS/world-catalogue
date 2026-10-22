@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import Link from '@/components/LocalizedLink';
 import { KC_CALCULATORS } from '@/lib/knowledge-center-data';
 
@@ -12,6 +13,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export default function CalculatorsHubPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -22,8 +24,8 @@ export default function CalculatorsHubPage() {
       }}>
         <nav style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           {[
-            { label: 'Knowledge Center', href: '/knowledge-center' },
-            { label: 'Engineering Calculators', href: undefined },
+            { label: tr('Knowledge Center'), href: '/knowledge-center' },
+            { label: tr('Engineering Calculators'), href: undefined },
           ].map((crumb, i) => (
             <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               {i > 0 && <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.7rem' }}>›</span>}
@@ -66,7 +68,7 @@ export default function CalculatorsHubPage() {
           marginBottom: '1.25rem',
           textTransform: 'uppercase',
         }}>
-          ENGINEERING CALCULATORS · 7 TOOLS
+          <ReviewedText text={"ENGINEERING CALCULATORS · 7 TOOLS"} />
         </p>
         <h1 style={{
           fontFamily: 'Outfit, sans-serif',
@@ -76,7 +78,7 @@ export default function CalculatorsHubPage() {
           marginBottom: '1.25rem',
           letterSpacing: '-0.02em',
         }}>
-          Standards-Based Filtration<br />Engineering Calculators
+          {tr("Standards-Based Filtration")}<br />{tr("Engineering Calculators")}
         </h1>
         <p style={{
           fontFamily: 'Inter, sans-serif',
@@ -85,9 +87,7 @@ export default function CalculatorsHubPage() {
           color: 'rgba(255,255,255,0.65)',
           maxWidth: '820px',
         }}>
-          Pure engineering tools derived from published ISO, SAE, and ASTM standards.
-          Each calculator implements the exact formula from the governing standard,
-          with worked examples and engineering notes. No approximations, no marketing claims.
+          <ReviewedText text={"Pure engineering tools derived from published ISO, SAE, and ASTM standards. Each calculator implements the exact formula from the governing standard, with worked examples and engineering notes. No approximations, no marketing claims."} />
         </p>
       </section>
 
@@ -129,7 +129,7 @@ export default function CalculatorsHubPage() {
                   color: 'rgba(255,241,45,0.45)',
                   textTransform: 'uppercase',
                 }}>
-                  {CATEGORY_LABELS[calc.category] ?? calc.category}
+                  {tr(CATEGORY_LABELS[calc.category] ?? calc.category)}
                 </p>
 
                 {/* Title */}
@@ -141,7 +141,7 @@ export default function CalculatorsHubPage() {
                   lineHeight: 1.3,
                   margin: 0,
                 }}>
-                  {calc.title}
+                  <ReviewedText text={calc.title} />
                 </h2>
 
                 {/* Description */}
@@ -153,7 +153,7 @@ export default function CalculatorsHubPage() {
                   margin: 0,
                   flex: 1,
                 }}>
-                  {calc.description}
+                  <ReviewedText text={calc.description} />
                 </p>
 
                 {/* Standard */}
@@ -179,7 +179,7 @@ export default function CalculatorsHubPage() {
                     color: 'rgba(255,241,45,0.5)',
                     letterSpacing: '0.08em',
                   }}>
-                    OPEN →
+                    <ReviewedText text={"OPEN →"} />
                   </span>
                 </div>
               </div>
@@ -206,10 +206,7 @@ export default function CalculatorsHubPage() {
             color: 'rgba(255,255,255,0.45)',
             margin: 0,
           }}>
-            All calculators implement published standard formulae exactly as specified.
-            Results are planning estimates suitable for engineering evaluation.
-            For certification, specification, or procurement decisions, refer to the
-            governing standard document directly.
+            <ReviewedText text={"All calculators implement published standard formulae exactly as specified. Results are planning estimates suitable for engineering evaluation. For certification, specification, or procurement decisions, refer to the governing standard document directly."} />
           </p>
         </div>
       </section>

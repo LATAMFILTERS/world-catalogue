@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { KC_COMPARISONS } from '@/lib/knowledge-center-data';
@@ -20,6 +21,7 @@ const CATEGORY_COLORS: Record<KCComparisonCategory, string> = {
 };
 
 export default function ComparisonsPage() {
+  const tr = useReviewed();
   const byCategory = {
     standards:   KC_COMPARISONS.filter(c => c.category === 'standards'),
     technology:  KC_COMPARISONS.filter(c => c.category === 'technology'),
@@ -51,7 +53,7 @@ export default function ComparisonsPage() {
             letterSpacing: '0.1em',
             marginBottom: '0.75rem',
           }}>
-            ENGINEERING COMPARISON ENGINE
+            <ReviewedText text={"ENGINEERING COMPARISON ENGINE"} />
           </p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
@@ -61,7 +63,7 @@ export default function ComparisonsPage() {
             margin: '0 0 1rem 0',
             lineHeight: 1.15,
           }}>
-            Engineering Comparisons
+            <ReviewedText text={"Engineering Comparisons"} />
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -70,9 +72,7 @@ export default function ComparisonsPage() {
             maxWidth: '780px',
             lineHeight: 1.7,
           }}>
-            Side-by-side technical comparisons across filtration standards, technologies,
-            system architectures, and test methods. Each comparison documents engineering
-            trade-offs, decision criteria, and governing standards references.
+            <ReviewedText text={"Side-by-side technical comparisons across filtration standards, technologies, system architectures, and test methods. Each comparison documents engineering trade-offs, decision criteria, and governing standards references."} />
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function ComparisonsPage() {
                 fontWeight: 700,
                 color: '#FFF12D',
               }}>
-                {stat.value}
+                <ReviewedText text={stat.value} />
               </div>
               <div style={{
                 fontFamily: 'JetBrains Mono, monospace',
@@ -107,7 +107,7 @@ export default function ComparisonsPage() {
                 letterSpacing: '0.06em',
                 marginTop: '0.1rem',
               }}>
-                {stat.label.toUpperCase()}
+                {tr(stat.label).toUpperCase()}
               </div>
             </div>
           ))}
@@ -132,14 +132,14 @@ export default function ComparisonsPage() {
                   padding: '0.2rem 0.5rem',
                   borderRadius: '2px',
                 }}>
-                  {CATEGORY_LABELS[cat]}
+                  {tr(CATEGORY_LABELS[cat])}
                 </span>
                 <span style={{
                   fontFamily: 'JetBrains Mono, monospace',
                   fontSize: '0.6rem',
                   color: 'rgba(255,255,255,0.2)',
                 }}>
-                  {items.length} comparison{items.length !== 1 ? 's' : ''}
+                  {items.length} {tr(items.length !== 1 ? 'comparisons' : 'comparison')}
                 </span>
               </div>
 
@@ -169,6 +169,7 @@ function ComparisonCard({
   comparison: typeof KC_COMPARISONS[number];
   categoryColor: string;
 }) {
+  const tr = useReviewed();
   return (
     <Link
       href={`/knowledge-center/comparisons/${comparison.slug}`}
@@ -205,14 +206,14 @@ function ComparisonCard({
             padding: '0.15rem 0.4rem',
             borderRadius: '2px',
           }}>
-            A vs B
+            <ReviewedText text={"A vs B"} />
           </span>
           <span style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.6rem',
             color: 'rgba(255,255,255,0.2)',
           }}>
-            {comparison.matrix.length} dimensions
+            {comparison.matrix.length} {tr('dimensions')}
           </span>
         </div>
 
@@ -224,7 +225,7 @@ function ComparisonCard({
           margin: '0 0 0.4rem 0',
           lineHeight: 1.3,
         }}>
-          {comparison.title}
+          <ReviewedText text={comparison.title} />
         </h3>
 
         <p style={{
@@ -234,7 +235,7 @@ function ComparisonCard({
           margin: '0 0 0.75rem 0',
           lineHeight: 1.5,
         }}>
-          {comparison.subtitle}
+          <ReviewedText text={comparison.subtitle} />
         </p>
 
         {/* Option pills */}
@@ -247,7 +248,7 @@ function ComparisonCard({
             padding: '0.2rem 0.45rem',
             borderRadius: '2px',
           }}>
-            A: {comparison.optionA.label}
+            A: {tr(comparison.optionA.label)}
           </span>
           <span style={{
             fontFamily: 'JetBrains Mono, monospace',
@@ -257,7 +258,7 @@ function ComparisonCard({
             padding: '0.2rem 0.45rem',
             borderRadius: '2px',
           }}>
-            B: {comparison.optionB.label}
+            B: {tr(comparison.optionB.label)}
           </span>
         </div>
 
@@ -268,7 +269,7 @@ function ComparisonCard({
           color: categoryColor,
           letterSpacing: '0.06em',
         }}>
-          COMPARE →
+          <ReviewedText text={"COMPARE →"} />
         </div>
       </div>
     </Link>

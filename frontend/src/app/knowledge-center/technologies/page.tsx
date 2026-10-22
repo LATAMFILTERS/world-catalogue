@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -7,6 +8,7 @@ import { KC_TECHNOLOGIES } from '@/lib/knowledge-center-data';
 import { heroBackgroundImage } from '@/lib/hero-media';
 
 export default function TechnologiesPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -46,7 +48,7 @@ export default function TechnologiesPage() {
               marginBottom: '1rem',
             }}
           >
-            05 / FILTRATION TECHNOLOGIES
+            <ReviewedText text={"05 / FILTRATION TECHNOLOGIES"} />
           </motion.p>
 
           <motion.h1
@@ -61,7 +63,7 @@ export default function TechnologiesPage() {
               marginBottom: '1.25rem',
             }}
           >
-            ELIMFILTERS Technology Registry
+            <ReviewedText text={"ELIMFILTERS Technology Registry"} />
           </motion.h1>
 
           <motion.p
@@ -76,7 +78,7 @@ export default function TechnologiesPage() {
               maxWidth: '820px',
             }}
           >
-            Ten canonical core filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the technical standards referenced where applicable, and the industrial protection system it supports.
+            <ReviewedText text={"Ten canonical core filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the technical standards referenced where applicable, and the industrial protection system it supports."} />
           </motion.p>
         </div>
       </section>
@@ -117,7 +119,7 @@ export default function TechnologiesPage() {
                   marginBottom: '0.5rem',
                   textTransform: 'uppercase',
                 }}>
-                  {tech.domain}
+                  {tr(tech.domain)}
                 </p>
 
                 <h2 style={{
@@ -128,7 +130,7 @@ export default function TechnologiesPage() {
                   marginBottom: '0.5rem',
                   letterSpacing: '0.02em',
                 }}>
-                  {tech.name}
+                  <ReviewedText text={tech.name} />
                 </h2>
 
                 <p style={{
@@ -138,7 +140,7 @@ export default function TechnologiesPage() {
                   color: 'rgba(255,255,255,0.55)',
                   marginBottom: '1.25rem',
                 }}>
-                  {tech.tagline}
+                  <ReviewedText text={tech.tagline} />
                 </p>
 
                 {tech.performanceSpecs.length > 0 && (
@@ -150,7 +152,7 @@ export default function TechnologiesPage() {
                       color: 'rgba(255,255,255,0.3)',
                       marginBottom: '0.5rem',
                     }}>
-                      GOVERNED SPEC
+                      <ReviewedText text={"GOVERNED SPEC"} />
                     </p>
                     <p style={{
                       fontFamily: 'JetBrains Mono, monospace',

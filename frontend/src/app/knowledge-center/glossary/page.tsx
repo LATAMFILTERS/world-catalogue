@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -8,6 +9,7 @@ import type { TermCategory } from '@/lib/knowledge-center';
 import { heroBackgroundImage } from '@/lib/hero-media';
 
 export default function GlossaryPage() {
+  const tr = useReviewed();
   const allTerms = getPublishedTerms(); // already sorted alphabetically
 
   // Group terms by category
@@ -58,7 +60,7 @@ export default function GlossaryPage() {
               textTransform: 'uppercase',
               marginBottom: '1.25rem',
             }}>
-              KC-00 — Terminology Registry
+              <ReviewedText text={"KC-00 — Terminology Registry"} />
             </p>
             <h1 style={{
               fontFamily: 'Outfit, sans-serif',
@@ -68,7 +70,7 @@ export default function GlossaryPage() {
               marginBottom: '1.25rem',
               color: '#fff',
             }}>
-              Engineering Terminology Glossary
+              <ReviewedText text={"Engineering Terminology Glossary"} />
             </h1>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -77,11 +79,10 @@ export default function GlossaryPage() {
               color: 'rgba(255,255,255,0.68)',
               maxWidth: '820px',
             }}>
-              {allTerms.length} canonical engineering terms across {byCategory.size} technical categories.
-              Each term carries a permanent{' '}
+              {tr(`${allTerms.length} canonical engineering terms across ${byCategory.size} technical categories.`)}
+              {' '}{tr('Each term carries a permanent')}{' '}
               <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem' }}>TERM-xxx</span>{' '}
-              identifier and is referenced by ID across all Knowledge Center articles — definitions
-              are never written inline.
+              {tr('identifier and is referenced by ID across all Knowledge Center articles — definitions are never written inline.')}
             </p>
           </motion.div>
 
@@ -107,7 +108,7 @@ export default function GlossaryPage() {
                   textDecoration: 'none',
                 }}
               >
-                {TERM_CATEGORY_LABELS[cat]} ({byCategory.get(cat)!.length})
+                {tr(TERM_CATEGORY_LABELS[cat])} ({byCategory.get(cat)!.length})
               </a>
             ))}
           </motion.div>
@@ -145,14 +146,14 @@ export default function GlossaryPage() {
                   fontSize: '1.15rem',
                   color: '#fff',
                 }}>
-                  {TERM_CATEGORY_LABELS[cat]}
+                  {tr(TERM_CATEGORY_LABELS[cat])}
                 </h2>
                 <span style={{
                   fontFamily: 'JetBrains Mono, monospace',
                   fontSize: '0.6rem',
                   color: 'rgba(255,255,255,0.2)',
                 }}>
-                  {catTerms.length} {catTerms.length === 1 ? 'term' : 'terms'}
+                  {catTerms.length} {tr(catTerms.length === 1 ? 'term' : 'terms')}
                 </span>
               </div>
 
@@ -183,13 +184,13 @@ export default function GlossaryPage() {
                           {term.id}
                         </span>
                         {term.aliases.slice(0, 2).map((alias) => (
-                          <span key={alias} style={{
+                          <span key={tr(alias)} style={{
                             fontFamily: 'JetBrains Mono, monospace',
                             fontSize: '0.58rem',
                             color: 'rgba(255,255,255,0.15)',
                             letterSpacing: '0.04em',
                           }}>
-                            {alias}
+                            {tr(alias)}
                           </span>
                         ))}
                       </div>
@@ -201,7 +202,7 @@ export default function GlossaryPage() {
                         color: '#fff',
                         marginBottom: '0.4rem',
                       }}>
-                        {term.term}
+                        {tr(term.term)}
                       </p>
 
                       <p style={{
@@ -214,7 +215,7 @@ export default function GlossaryPage() {
                         WebkitBoxOrient: 'vertical',
                         overflow: 'hidden',
                       }}>
-                        {term.definition}
+                        <ReviewedText text={term.definition} />
                       </p>
 
                       {term.applicableStandards.length > 0 && (
@@ -264,7 +265,7 @@ export default function GlossaryPage() {
               color: '#fff',
               letterSpacing: '0.01em',
             }}>
-              Go Deeper: Standards & Testing
+              <ReviewedText text={"Go Deeper: Standards & Testing"} />
             </h3>
             <p style={{
               marginBottom: '1.5rem',
@@ -273,7 +274,7 @@ export default function GlossaryPage() {
               fontSize: '1rem',
               lineHeight: 1.6,
             }}>
-              These definitions are used throughout our technical standards. Explore implementation methods, measurement techniques, and practical applications.
+              <ReviewedText text={"These definitions are used throughout our technical standards. Explore implementation methods, measurement techniques, and practical applications."} />
             </p>
             <Link href="/knowledge-center/engineering-reference/" style={{
               display: 'inline-block',
@@ -287,7 +288,7 @@ export default function GlossaryPage() {
               fontSize: '0.8rem',
               textTransform: 'uppercase',
             }}>
-              Explore ISO 16889 & Testing Standards →
+              <ReviewedText text={"Explore ISO 16889 & Testing Standards →"} />
             </Link>
           </motion.div>
         </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -27,6 +28,7 @@ const CATEGORY_DESCRIPTIONS: Record<ProblemCategory, string> = {
 };
 
 export default function ProblemsPage() {
+  const tr = useReviewed();
   const grouped = CATEGORY_ORDER.map((cat) => ({
     category: cat,
     label: PROBLEM_CATEGORY_LABELS[cat],
@@ -68,7 +70,7 @@ export default function ProblemsPage() {
               textTransform: 'uppercase',
               marginBottom: '1.25rem',
             }}>
-              KC-11 — Problem Graph
+              <ReviewedText text={"KC-11 — Problem Graph"} />
             </p>
             <h1 style={{
               fontFamily: 'Outfit, sans-serif',
@@ -78,7 +80,7 @@ export default function ProblemsPage() {
               marginBottom: '1.25rem',
               color: '#fff',
             }}>
-              Industrial Equipment Failure Problems
+              <ReviewedText text={"Industrial Equipment Failure Problems"} />
             </h1>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -87,9 +89,7 @@ export default function ProblemsPage() {
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '780px',
             }}>
-              {totalProblems} canonical failure problems across 5 categories. Each problem is a first-class
-              entity in the Knowledge Graph, linking contamination sources, affected components,
-              measurement standards, and filtration technologies.
+              {tr(`${totalProblems} canonical failure problems across 5 categories. Each problem is a first-class entity in the Knowledge Graph, linking contamination sources, affected components, measurement standards, and filtration technologies.`)}
             </p>
           </motion.div>
         </div>
@@ -120,7 +120,7 @@ export default function ProblemsPage() {
                 fontSize: '1.15rem',
                 color: '#fff',
               }}>
-                {group.label}
+                <ReviewedText text={group.label} />
               </h2>
               <span style={{
                 fontFamily: 'JetBrains Mono, monospace',
@@ -128,7 +128,7 @@ export default function ProblemsPage() {
                 color: 'rgba(255,255,255,0.35)',
                 letterSpacing: '0.06em',
               }}>
-                {group.problems.length} PROBLEM{group.problems.length !== 1 ? 'S' : ''}
+                {group.problems.length} {tr(group.problems.length !== 1 ? 'PROBLEMS' : 'PROBLEM')}
               </span>
             </div>
             <p style={{
@@ -138,7 +138,7 @@ export default function ProblemsPage() {
               marginBottom: '1.25rem',
               lineHeight: 1.6,
             }}>
-              {group.description}
+              <ReviewedText text={group.description} />
             </p>
 
             {/* Problem cards */}
@@ -177,6 +177,7 @@ export default function ProblemsPage() {
 }
 
 function ProblemCard({ problem }: { problem: ProblemStub }) {
+  const tr = useReviewed();
   const severityColor = PROBLEM_SEVERITY_COLORS[problem.severity as keyof typeof PROBLEM_SEVERITY_COLORS];
   const hasContent = Boolean(problem.definition || (problem.sections && problem.sections.length > 0));
 
@@ -215,7 +216,7 @@ function ProblemCard({ problem }: { problem: ProblemStub }) {
             borderRadius: '3px',
             padding: '1px 6px',
           }}>
-            {problem.severity}
+            {tr(problem.severity)}
           </span>
         </div>
 
@@ -227,7 +228,7 @@ function ProblemCard({ problem }: { problem: ProblemStub }) {
           color: '#fff',
           marginBottom: '0.5rem',
         }}>
-          {problem.name}
+          <ReviewedText text={problem.name} />
         </p>
 
         {/* Status */}
@@ -239,7 +240,7 @@ function ProblemCard({ problem }: { problem: ProblemStub }) {
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
           }}>
-            Engineering reference available
+            <ReviewedText text={"Engineering reference available"} />
           </span>
         ) : (
           <span style={{
@@ -249,7 +250,7 @@ function ProblemCard({ problem }: { problem: ProblemStub }) {
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
           }}>
-            Engineering content pending — Phase 3
+            <ReviewedText text={"Engineering content pending — Phase 3"} />
           </span>
         )}
       </Link>

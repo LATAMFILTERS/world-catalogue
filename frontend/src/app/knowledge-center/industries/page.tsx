@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -14,6 +15,7 @@ const DUST_COLORS: Record<string, string> = {
 };
 
 export default function IndustriesPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -53,7 +55,7 @@ export default function IndustriesPage() {
               marginBottom: '1rem',
             }}
           >
-            04 / INDUSTRY APPLICATIONS
+            <ReviewedText text={"04 / INDUSTRY APPLICATIONS"} />
           </motion.p>
 
           <motion.h1
@@ -68,7 +70,7 @@ export default function IndustriesPage() {
               marginBottom: '1.25rem',
             }}
           >
-            Industrial Application Profiles
+            <ReviewedText text={"Industrial Application Profiles"} />
           </motion.h1>
 
           <motion.p
@@ -83,7 +85,7 @@ export default function IndustriesPage() {
               maxWidth: '820px',
             }}
           >
-            Twelve industry-specific technical profiles connect contamination exposure, equipment duty, protected systems and application evidence across the complete ELIMFILTERS market portfolio, including Automotive &amp; Light Duty and Bus &amp; Coach.
+            {tr('Twelve industry-specific technical profiles connect contamination exposure, equipment duty, protected systems and application evidence across the complete ELIMFILTERS market portfolio, including Automotive & Light Duty and Bus & Coach.')}
           </motion.p>
 
           <p style={{
@@ -94,7 +96,7 @@ export default function IndustriesPage() {
             color: 'rgba(255,255,255,0.52)',
             maxWidth: '600px',
           }}>
-            Looking for commercial filtration solutions by industry? See <Link href="/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>ELIMFILTERS Industries</Link>.
+            {tr('Looking for commercial filtration solutions by industry? See')} <Link href="/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>{tr('ELIMFILTERS Industries')}</Link>.
           </p>
         </div>
       </section>
@@ -148,7 +150,7 @@ export default function IndustriesPage() {
                 marginBottom: '0.65rem',
                 lineHeight: 1.2,
               }}>
-                {industry.title}
+                <ReviewedText text={industry.title} />
               </h2>
 
               <p style={{
@@ -157,7 +159,7 @@ export default function IndustriesPage() {
                 lineHeight: 1.65,
                 color: 'rgba(255,255,255,0.5)',
               }}>
-                {industry.description}
+                <ReviewedText text={industry.description} />
               </p>
             </motion.div>
             </Link>
@@ -183,7 +185,7 @@ export default function IndustriesPage() {
             color: 'rgba(255,241,45,0.5)',
             marginBottom: '0.5rem',
           }}>
-            APPLICATION EVIDENCE BOUNDARY
+            <ReviewedText text={"APPLICATION EVIDENCE BOUNDARY"} />
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -191,7 +193,7 @@ export default function IndustriesPage() {
             color: 'rgba(255,255,255,0.5)',
             lineHeight: 1.65,
           }}>
-            Industry context identifies operating conditions; it does not by itself prove a product fit. Final service intervals, performance requirements and part selection must remain tied to validated equipment, protected system, duty cycle, OEM reference, dimensions and application evidence.
+            {tr('Industry context identifies operating conditions; it does not by itself prove a product fit. Final service intervals, performance requirements and part selection must remain tied to validated equipment, protected system, duty cycle, OEM reference, dimensions and application evidence.')}
           </p>
         </div>
       </section>

@@ -15,6 +15,12 @@ export const TRANSLATED_ARTICLE_SLUGS = [
   'cabin-air-filtration',
 ] as const;
 
+/** Knowledge Center section hubs with /es/ and /pt/ routes (metadata in app/knowledge-center/localized-hubs.ts). */
+export const TRANSLATED_HUB_SLUGS = [
+  'engineering', 'standards', 'problems', 'technologies', 'systems', 'fleet-optimization', 'glossary',
+  'comparisons', 'calculators', 'diagrams', 'engineering-reference', 'learning-paths', 'industries', 'technical-library',
+] as const;
+
 const TITLES: Record<'es' | 'pt', Record<string, string>> = {
   es: {
     'airflow-engineering': 'Ingeniería de flujo de aire',

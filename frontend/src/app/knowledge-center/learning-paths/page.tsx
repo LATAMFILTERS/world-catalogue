@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -25,6 +26,7 @@ function formatMinutes(min: number): string {
 }
 
 export default function LearningPathsPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -53,7 +55,7 @@ export default function LearningPathsPage() {
             color: 'rgba(255,241,45,0.5)',
             marginBottom: '1rem',
           }}>
-            ENGINEERING LEARNING PATHS
+            <ReviewedText text={"ENGINEERING LEARNING PATHS"} />
           </p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
@@ -63,7 +65,7 @@ export default function LearningPathsPage() {
             lineHeight: 1.1,
             marginBottom: '1.25rem',
           }}>
-            Structured Engineering<br />Learning Sequences
+            {tr("Structured Engineering")}<br />{tr("Learning Sequences")}
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -72,7 +74,7 @@ export default function LearningPathsPage() {
             color: 'rgba(255,255,255,0.55)',
             maxWidth: '780px',
           }}>
-            Curated sequences of articles, standards, diagrams, and calculators drawn from the Engineering Knowledge Graph. Each path builds understanding progressively from foundational concepts to applied engineering decisions.
+            <ReviewedText text={"Curated sequences of articles, standards, diagrams, and calculators drawn from the Engineering Knowledge Graph. Each path builds understanding progressively from foundational concepts to applied engineering decisions."} />
           </p>
         </motion.div>
       </section>
@@ -117,7 +119,7 @@ export default function LearningPathsPage() {
                       padding: '0.2rem 0.5rem',
                       background: `${DIFFICULTY_COLORS[path.difficulty]}10`,
                     }}>
-                      {DIFFICULTY_LABELS[path.difficulty].toUpperCase()}
+                      {tr(DIFFICULTY_LABELS[path.difficulty]).toUpperCase()}
                     </span>
                     <span style={{
                       fontFamily: 'JetBrains Mono, monospace',
@@ -125,7 +127,7 @@ export default function LearningPathsPage() {
                       color: 'rgba(255,255,255,0.3)',
                       whiteSpace: 'nowrap',
                     }}>
-                      {formatMinutes(path.totalMinutes)} · {path.steps.length} steps
+                      {formatMinutes(path.totalMinutes)} · {path.steps.length} {tr('steps')}
                     </span>
                   </div>
 
@@ -138,7 +140,7 @@ export default function LearningPathsPage() {
                       marginBottom: '0.4rem',
                       lineHeight: 1.2,
                     }}>
-                      {path.title}
+                      <ReviewedText text={path.title} />
                     </h2>
                     <p style={{
                       fontFamily: 'Inter, sans-serif',
@@ -146,7 +148,7 @@ export default function LearningPathsPage() {
                       color: 'rgba(255,241,45,0.6)',
                       lineHeight: 1.4,
                     }}>
-                      {path.subtitle}
+                      <ReviewedText text={path.subtitle} />
                     </p>
                   </div>
 
@@ -157,7 +159,7 @@ export default function LearningPathsPage() {
                     color: 'rgba(255,255,255,0.45)',
                     flexGrow: 1,
                   }}>
-                    {path.description}
+                    <ReviewedText text={path.description} />
                   </p>
 
                   <p style={{
@@ -166,7 +168,7 @@ export default function LearningPathsPage() {
                     letterSpacing: '0.08em',
                     color: 'rgba(255,241,45,0.4)',
                   }}>
-                    START PATH →
+                    <ReviewedText text={"START PATH →"} />
                   </p>
                 </motion.div>
               </Link>
