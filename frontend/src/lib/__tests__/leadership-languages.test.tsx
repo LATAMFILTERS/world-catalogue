@@ -17,21 +17,25 @@ describe('Leadership language coverage and preserved identity', () => {
       const html = renderToStaticMarkup(<I18nextProvider i18n={instance}><LeadershipPageClient /></I18nextProvider>);
       const visible = html.replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
       const profile = visible.match(/class="founder-profile">([\s\S]*?)<\/div>/)?.[1] || '';
-      expect((profile.match(/<p>/g) || []).length).toBe(lang === 'es' ? 4 : 8);
+      expect((profile.match(/<p>/g) || []).length).toBe(5);
       expect((visible.match(/class="agent-profile"/g) || []).length).toBe(5);
       expect((visible.match(/class="agent-description"/g) || []).length).toBe(5);
+      const agentDescriptions = [...visible.matchAll(/class="agent-description">([\s\S]*?)<\/div>/g)];
+      expect(agentDescriptions).toHaveLength(5);
+      for (const [, description] of agentDescriptions) expect((description.match(/<p>/g) || []).length).toBe(3);
       expect(visible).toContain(registry.founder.name);
       for (const person of [registry.founder, ...registry.agents]) expect(visible).toContain(person.image.replaceAll('&', '&amp;'));
-      for (const technology of ['MACROCORE™', 'HYDROCORE™', 'TURBOCORE™', 'FH/FG']) expect(visible).toContain(technology);
+      for (const technology of ['MACROCORE™', 'HYDROCORE™', 'TURBOCORE™', 'FH/FG']) expect(visible).not.toContain(technology);
       expect(visible).toContain('href="/about/who-we-are"');
       expect(visible).toContain('href="' + (lang === 'en' ? '/' : '/' + lang + '/') + '"');
-      expect(visible).toContain(lang === 'pt' ? 'Liderança humana. Execução nativa de IA.' : lang === 'es' ? 'Liderazgo humano. Ejecución AI-native.' : 'Human leadership. AI-native execution.');
+      for (const heading of lang === 'pt' ? ['Liderança humana.', 'Execução nativa de IA.'] : lang === 'es' ? ['Liderazgo humano.', 'Ejecución nativa con IA.'] : ['Human leadership.', 'AI-native execution.']) expect(visible).toContain(heading);
       if (lang === 'pt') {
         for (const english of ['ELIMFILTERS · LEADERSHIP', 'FOUNDER &amp; CEO', 'EXECUTIVE AI LEADERSHIP', 'GOVERNANCE &amp; ACCOUNTABILITY', 'CAPABILITY BEFORE COMPLEXITY', 'Executive AI Agent', 'Chief Operating &amp; Supply Chain Agent', 'Human leadership.', 'Back to Who We Are']) expect(visible).not.toContain(english);
-        for (const translated of ['LIDERANÇA EXECUTIVA DE IA', 'GOVERNANÇA E RESPONSABILIDADE', 'CAPACIDADE ANTES DA COMPLEXIDADE', 'Agente executivo de IA', 'não de funcionários humanos', 'permanecem sujeitas à autoridade humana', '2002', 'UCAT', 'URBE']) expect(visible).toContain(translated);
+        for (const translated of ['LIDERANÇA EXECUTIVA DE IA', 'GOVERNANÇA E RESPONSABILIDADE', 'CAPACIDADE ANTES DA COMPLEXIDADE', 'Agente executivo de IA', 'não funcionários humanos', 'permanecem sujeitas à autoridade humana', '2002', 'UCAT', 'URBE']) expect(visible).toContain(translated);
       }
       if (lang === 'es') {
-        for (const approved of ['2000', '2004', '2014', '2020', '18 contenedores HQ', 'ELIMPERCA', 'LATAMFILTERS PRO INC.']) expect(visible).toContain(approved);
+        for (const approved of ['2000', '2004', '2015', 'ELIMPERCA', 'protección de activos', 'costo total de propiedad (TCO)', 'retorno sobre la inversión (ROI)', 'sin limitarse a países específicos', 'simetría de información']) expect(visible).toContain(approved);
+        for (const removed of ['2014', '18 contenedores HQ', 'LATAMFILTERS PRO INC.', 'Colombia, República Dominicana, Venezuela y Estados Unidos']) expect(visible).not.toContain(removed);
         expect(visible).toContain('LIDERAZGO EJECUTIVO DE IA');
         expect(visible).toContain('Agente ejecutivo de IA');
       }
