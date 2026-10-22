@@ -24,8 +24,13 @@ describe('Philosophy approved doctrine and responsive presentation', () => {
       const visible = html.replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
       expect(visible).toContain('class="philosophy-page');
       expect(visible).toContain('class="philosophy-hero-inner');
-      expect(visible).toContain('air-filters-lab.avif');
+      expect(visible).toContain('banco-pruebas-filtros.png');
       expect(visible).not.toContain('grupo-filters.avif');
+      expect(visible).not.toContain('air-filters-lab.avif');
+      expect(visible).toContain('opacity:0.82');
+      const pageSource = readFileSync(new URL('../../app/about/philosophy/page.tsx', import.meta.url), 'utf8');
+      expect(pageSource).toContain('rgba(0,0,0,.38) 100%');
+      expect(pageSource).toContain("textShadow:'0 1px 5px rgba(0,0,0,.70)'");
       expect((visible.match(/class="philosophy-statement(?:\s|")/g) || []).length).toBe(6);
       expect((visible.match(/class="philosophy-principle-card(?:\s|")/g) || []).length).toBe(7);
       expect((visible.match(/class="philosophy-statement-lead(?:\s|")/g) || []).length).toBe(6);
