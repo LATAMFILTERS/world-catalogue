@@ -4,7 +4,6 @@ import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
-import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 const COPY_EN = {
   "heroTitle": "Understand the asset first. Then define its protection.",
@@ -388,7 +387,7 @@ export default function OurPhilosophyPage() {
     description: 'The official engineering philosophy of ELIMFILTERS. Guided by contamination science, international metrology standards, and system-level asset protection principles.',
     url: 'https://elimfilters.com/about/philosophy',
     author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-    dateModified: '2026-08-25',
+    dateModified: '2026-10-22',
   };
 
   const schemaBreadcrumb = {
@@ -402,101 +401,99 @@ export default function OurPhilosophyPage() {
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className="philosophy-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganization) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaPhilosophyPage) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
 
       <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isPortuguese ? 'Filosofia' : isSpanish ? 'Filosofía' : 'Philosophy'} />
 
-      <section style={heroSection}>
+      <section className="philosophy-hero" style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
         <div aria-hidden="true" style={heroOverlay} />
-        <div style={wrap}>
-          <p style={eyebrow}>{isPortuguese ? 'DOUTRINA DE ENGENHARIA' : isSpanish ? 'DOCTRINA DE INGENIERÍA' : 'ENGINEERING DOCTRINE'}</p>
-          <h1 style={heroTitle}>{copy.heroTitle}</h1>
-          <p style={heroLead}>{copy.heroLead}</p>
+        <div className="philosophy-hero-inner" style={wrap}>
+          <div className="philosophy-hero-heading">
+            <p style={eyebrow}>{copy.heroEyebrow}</p>
+            <h1 style={heroTitle}>{copy.heroTitle}</h1>
+          </div>
+          <div className="philosophy-hero-narrative">
+            {copy.heroParagraphs.map((paragraph) => <p key={paragraph} style={heroLead}>{paragraph}</p>)}
+          </div>
+          <p className="philosophy-hero-statement">{copy.heroStatement}</p>
         </div>
       </section>
 
-      <section style={altSection1}>
-        <div style={twoColGrid}>
-          <div>
-            <h2 style={sectionTitle}>{copy.s1Title}</h2>
-            <p style={sectionLead}>{copy.s1Body}</p>
+      {[copy.sections.slice(0, 2), copy.sections.slice(2, 4), copy.sections.slice(4, 6)].map((pair, groupIndex) => (
+        <section key={groupIndex} style={groupIndex % 2 === 0 ? altSection1 : altSection2} aria-label={isPortuguese ? `Filosofia de engenharia: partes ${groupIndex * 2 + 1} e ${groupIndex * 2 + 2}` : isSpanish ? `Filosofía de ingeniería: apartados ${groupIndex * 2 + 1} y ${groupIndex * 2 + 2}` : `Engineering philosophy sections ${groupIndex * 2 + 1} and ${groupIndex * 2 + 2}`}>
+          <div className="philosophy-sections-grid" style={twoColGrid}>
+            {pair.map((part) => (
+              <article className="philosophy-statement" key={part.title}>
+                <h2 style={sectionTitle}>{part.title}</h2>
+                <p className="philosophy-statement-lead">{part.lead}</p>
+                <div className="philosophy-statement-body">
+                  {part.paragraphs.map((paragraph) => <p key={paragraph} style={sectionLead}>{paragraph}</p>)}
+                </div>
+                <p className="philosophy-statement-closing">{part.closing}</p>
+              </article>
+            ))}
           </div>
-          <div>
-            <h2 style={sectionTitle}>{copy.s2Title}</h2>
-            <p style={sectionLead}>{copy.s2Body}</p>
-          </div>
-        </div>
-      </section>
-
-      <section style={altSection2}>
-        <div style={twoColGrid}>
-          <div>
-            <h2 style={sectionTitle}>{copy.s3Title}</h2>
-            <p style={sectionLead}>{copy.s3Body}</p>
-          </div>
-          <div>
-            <h2 style={sectionTitle}>{copy.s4Title}</h2>
-            <p style={sectionLead}>{copy.s4Body}</p>
-          </div>
-        </div>
-      </section>
-
-      <section style={altSection1}>
-        <div style={twoColGrid}>
-          <div>
-            <h2 style={sectionTitle}>{copy.s5Title}</h2>
-            <p style={sectionLead}>{copy.s5Body}</p>
-          </div>
-          <div>
-            <h2 style={sectionTitle}>{copy.s6Title}</h2>
-            <p style={sectionLead}>{copy.s6Body}</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <section style={altSection2}>
         <div style={wrap}>
           <p style={{ ...eyebrow, textAlign: 'center' }}>{copy.principlesEyebrow}</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '100%', margin: '0 auto 3rem' }}>{copy.principlesTitle}</h2>
-          <div style={principlesPyramid}>
-            {[principles.slice(0, 4), principles.slice(4, 6), principles.slice(6, 7)].map((row, i) => (
-              <div key={i} style={principlesRow}>
-                {row.map((pr) => (
-                  <div key={pr.num} style={principleCard}>
-                    <span style={principleNum}>{pr.num}</span>
-                    <h3 style={principleTitle}>{pr.title}</h3>
-                    <p style={principleDesc}>{pr.desc}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="philosophy-principles-grid">
+            {principles.map((pr) => (
+              <article key={pr.num} style={principleCard}>
+                <span style={principleNum}>{pr.num}</span>
+                <h3 style={principleTitle}>{pr.title}</h3>
+                <p style={principleDesc}>{pr.desc}</p>
+              </article>
             ))}
           </div>
+          <p className="philosophy-final-principle">{copy.heroStatement}</p>
         </div>
       </section>
+      <style jsx>{`
+        .philosophy-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.98fr) minmax(0,1.02fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+        .philosophy-hero-heading,.philosophy-hero-narrative{min-width:0}
+        .philosophy-hero-heading h1{font-size:clamp(2.25rem,3.75vw,3.75rem);line-height:1.08;max-width:650px;letter-spacing:-.04em}
+        .philosophy-hero-narrative{display:grid;gap:1rem;padding-top:1.75rem;max-width:650px}
+        .philosophy-hero-narrative p{margin:0;text-align:left}
+        .philosophy-hero-statement{grid-column:1/-1;color:#FFF12D;border-top:1px solid rgba(255,241,45,.45);padding-top:1.25rem;margin:.3rem 0 0;font-family:var(--font-display);font-size:clamp(1rem,1.45vw,1.35rem);font-weight:700;letter-spacing:-.015em;line-height:1.5;text-align:left}
+        .philosophy-sections-grid{align-items:start}
+        .philosophy-statement{min-width:0;max-width:560px}
+        .philosophy-statement h2{max-width:25ch;line-height:1.2}
+        .philosophy-statement-lead{color:#fff;font-weight:650;font-size:clamp(1.06rem,1.28vw,1.17rem);line-height:1.55;text-align:left;margin:0 0 1.4rem}
+        .philosophy-statement-body{display:grid;gap:1rem}
+        .philosophy-statement-body p{margin:0;text-align:left;line-height:1.75}
+        .philosophy-statement-closing{border-left:3px solid #FFF12D;padding:.2rem 0 .2rem 1rem;margin:1.5rem 0 0;color:#fff;font-weight:600;line-height:1.6;font-size:1.02rem;text-align:left}
+        .philosophy-principles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;max-width:1180px;margin:auto}
+        .philosophy-principles-grid article{max-width:none;min-width:0}
+        .philosophy-final-principle{text-align:center;margin:3rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,241,45,.35);max-width:850px;color:#FFF12D;font-family:var(--font-display);font-size:clamp(1.2rem,2vw,1.75rem);font-weight:700;line-height:1.4}
+        @media(max-width:900px){.philosophy-hero-inner{grid-template-columns:1fr;gap:1.5rem}.philosophy-hero-narrative{padding-top:0}.philosophy-sections-grid{grid-template-columns:1fr!important}.philosophy-statement{max-width:750px}}
+        @media(max-width:640px){.philosophy-hero-heading h1{font-size:clamp(2.1rem,8vw,3rem)}.philosophy-principles-grid{grid-template-columns:1fr}.philosophy-hero-statement{font-size:1.08rem}}
+      `}</style>
     </main>
   );
 }
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%' };
-const heroSection: CSSProperties = { minHeight: '58vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)' };
-const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundImage: 'url(/images/grupo-filters.avif)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
-const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', fontWeight: 700, letterSpacing: '.16em', margin: '0 0 1rem', textTransform: 'uppercase', position: 'relative', zIndex: 2 };
-const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: .92, fontSize: 'clamp(2.6rem,6vw,5.5rem)', margin: 0, textTransform: 'uppercase', maxWidth: '900px' };
-const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1.5rem', maxWidth: '820px', color: 'rgba(255,255,255,.82)', fontSize: 'clamp(1rem,1.5vw,1.25rem)', lineHeight: 1.75, fontWeight: 550 };
-const altSection1: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const altSection2: CSSProperties = { background: '#000', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const twoColGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(420px,100%),1fr))', gap: 'clamp(2.5rem,6vw,4rem)' };
-const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem,2.6vw,2rem)', lineHeight: 1.1, letterSpacing: '-.02em', margin: '0 0 1.25rem', textTransform: 'uppercase', color: '#FFF12D' };
-const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: '.98rem', margin: 0 };
-const principlesPyramid: CSSProperties = { display: 'flex', flexDirection: 'column', gap: '1px' };
-const principlesRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px' };
-const principleCard: CSSProperties = { background: '#080808', border: '1px solid rgba(255,255,255,.08)', padding: '2rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '.85rem', flex: '1 1 260px', maxWidth: '340px' };
-const principleNum: CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '.85rem', color: '#FFF12D' };
-const principleTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.05rem', lineHeight: 1.3, color: '#fff', margin: 0 };
-const principleDesc: CSSProperties = { fontSize: '.85rem', color: 'rgba(255,255,255,.55)', lineHeight: 1.65, margin: 0 };
+const heroSection: CSSProperties = { minHeight: 'clamp(490px,62vh,720px)', boxSizing:'border-box', position:'relative', overflow:'hidden', display:'flex', alignItems:'center', padding:'clamp(7rem,9vw,8.5rem) clamp(1.25rem,6vw,6rem) clamp(3.5rem,6vw,5rem)', isolation:'isolate' };
+const heroImage: CSSProperties = { position:'absolute', inset:0, backgroundImage:'url(/images/air-filters-lab.avif)', backgroundSize:'cover', backgroundPosition:'65% center', opacity:.34 };
+const heroOverlay: CSSProperties = { position:'absolute', inset:0, background:'linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.82) 48%,rgba(0,0,0,.75) 100%)' };
+const eyebrow: CSSProperties = { color:'#FFF12D', fontFamily:'var(--font-display)', fontSize:'.72rem', fontWeight:700, letterSpacing:'.16em', margin:'0 0 1.2rem', textTransform:'uppercase', position:'relative', zIndex:2 };
+const heroTitle: CSSProperties = { position:'relative', zIndex:2, fontFamily:'var(--font-display)', fontWeight:700, letterSpacing:'-.04em', lineHeight:1.08, fontSize:'clamp(2.25rem,3.75vw,3.75rem)', margin:0, textTransform:'uppercase', maxWidth:'650px' };
+const heroLead: CSSProperties = { position:'relative', zIndex:2, maxWidth:'650px', color:'rgba(255,255,255,.88)', fontSize:'clamp(1rem,1.18vw,1.12rem)', lineHeight:1.7, fontWeight:400, textAlign:'left' };
+const altSection1: CSSProperties = { background:'#050505', color:'#fff', padding:'clamp(4rem,7vw,6.5rem) clamp(1.25rem,6vw,6rem)', borderTop:'1px solid rgba(255,255,255,.08)' };
+const altSection2: CSSProperties = { background:'#000', color:'#fff', padding:'clamp(4rem,7vw,6.5rem) clamp(1.25rem,6vw,6rem)', borderTop:'1px solid rgba(255,255,255,.08)' };
+const twoColGrid: CSSProperties = { maxWidth:'1180px', margin:'0 auto', display:'grid', gridTemplateColumns:'repeat(2,minmax(0,1fr))', gap:'clamp(2.5rem,6vw,5rem)' };
+const sectionTitle: CSSProperties = { fontFamily:'var(--font-display)', fontSize:'clamp(1.5rem,2.45vw,2.12rem)', lineHeight:1.2, letterSpacing:'-.02em', margin:'0 0 1.25rem', textTransform:'uppercase', color:'#FFF12D' };
+const sectionLead: CSSProperties = { color:'rgba(255,255,255,.75)', lineHeight:1.75, fontSize:'1rem', margin:0, textAlign:'left' };
+const principleCard: CSSProperties = { background:'#080808', border:'1px solid rgba(255,255,255,.12)', padding:'clamp(1.4rem,3vw,2rem)', display:'flex', flexDirection:'column', gap:'.75rem', width:'100%' };
+const principleNum: CSSProperties = { fontFamily:'var(--font-display)', fontWeight:700, fontSize:'.85rem', color:'#FFF12D' };
+const principleTitle: CSSProperties = { fontFamily:'var(--font-display)', fontWeight:700, fontSize:'1.15rem', lineHeight:1.4, color:'#fff', margin:0 };
+const principleDesc: CSSProperties = { fontSize:'.98rem', color:'rgba(255,255,255,.7)', lineHeight:1.7, margin:0, textAlign:'left' };
