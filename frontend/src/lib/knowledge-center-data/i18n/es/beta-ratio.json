@@ -1,0 +1,223 @@
+{
+  "slug": "beta-ratio",
+  "title": "Relación Beta",
+  "subtitle": "Métrica de eficiencia del filtro: definición, medición y aplicación",
+  "metaDescription": "Referencia de ingeniería completa de la relación Beta: definición, obtención con el ensayo multipaso ISO 16889, notación calibrada (c), conversión de Beta a eficiencia, curvas de eficiencia de varios puntos, aplicación en el diseño de sistemas y por qué las clasificaciones nominales en micras son técnicamente insuficientes.",
+  "category": "Ingeniería",
+  "readTime": "9 min",
+  "intro": "La relación Beta (β) es la medida cuantitativa de la eficiencia de un elemento filtrante en un tamaño de partícula especificado. Se obtiene con el ensayo multipaso ISO 16889 y expresa la relación entre las concentraciones de partículas aguas arriba y aguas abajo en un umbral de tamaño acumulado dado. La relación Beta, y no la clasificación nominal en micras, es la base de ingeniería para elegir filtros en sistemas hidráulicos y de aceite lubricante: da una medida del desempeño de filtración trazable, calibrada y reproducible.",
+  "sections": [
+    {
+      "heading": "Definición y fórmula",
+      "body": "La relación Beta en el tamaño de partícula x se define como: β_x = N₁(≥x) / N₂(≥x), donde N₁ es el conteo de partículas aguas arriba por mL de tamaño ≥x y N₂ es el conteo de partículas aguas abajo por mL del mismo tamaño. La notación con subíndice β_x(c) indica que los conteos se obtuvieron con contadores automáticos de partículas calibrados según ISO 11171; el sufijo (c) es obligatorio en los datos de la norma vigente y los distingue de los resultados anteriores a 2000 con calibración con polvo AC fine. Una relación Beta de 1 significa que no hay filtración (conteos iguales aguas arriba y aguas abajo). Una relación Beta de 200 a 10 µm significa que, por cada 200 partículas ≥10 µm que entran al filtro, en promedio sale 1 aguas abajo: un 99.5% de eficiencia de captura en ese tamaño. La relación Beta no tiene límite superior teórico, aunque la medición práctica se vuelve difícil por encima de β = 10,000, porque los conteos aguas abajo se acercan al nivel de ruido de fondo del contador de partículas.",
+      "callout": [
+        {
+          "label": "Fórmula",
+          "value": "β_x = N₁(≥x) / N₂(≥x)"
+        },
+        {
+          "label": "β_x = 1",
+          "value": "Sin filtración (0% de eficiencia)"
+        },
+        {
+          "label": "β_x = 200",
+          "value": "99.5% de eficiencia en el tamaño x"
+        }
+      ]
+    },
+    {
+      "heading": "Obtención con el ensayo multipaso ISO 16889",
+      "body": "Los datos de relación Beta provienen del ensayo multipaso ISO 16889, no de una medición de eficiencia de un solo paso. En el circuito multipaso, las partículas que atraviesan el filtro quedan en el circuito de fluido de ensayo y se acumulan en la zona de muestreo aguas abajo. La concentración aguas arriba se mantiene elevada de forma continua con el polvo de ensayo inyectado. La relación entre los conteos aguas arriba y aguas abajo se mide de forma continua y se promedia en intervalos de tiempo definidos. Este enfoque multipaso refleja las condiciones reales de operación, en las que el fluido en circulación pasa una y otra vez por el mismo filtro. Los valores Beta resultantes son conservadores frente a un ensayo de un solo paso, porque las partículas que atraviesan y recirculan suman a los conteos aguas abajo. ISO 16889 exige informar las relaciones Beta como mínimo en los tamaños de partícula 2, 5, 10, 15, 20, 25 y 30 µm(c) para poder construir una curva de eficiencia fraccional. La mayoría de las especificaciones de filtros citan β₁₀(c) o β₁₂(c) como indicador de desempeño principal."
+    },
+    {
+      "heading": "La notación calibrada (c)",
+      "body": "El sufijo \"(c)\" en β₁₀(c) no es cosmético: indica una calibración específica y obligatoria del instrumento de conteo de partículas. ISO 11171 define el procedimiento de calibración con partículas de referencia trazables a NIST, certificadas por el National Institute of Standards and Technology. La calibración ISO 11171 reemplazó en 2000 la calibración con polvo AC fine (el \"método antiguo\"). El problema de la calibración antigua: las partículas de polvo AC fine de un tamaño dado se asignaban a los canales de tamaño de forma distinta que las partículas de referencia ISO 11171, porque sus propiedades ópticas difieren. El resultado: el mismo filtro físico medía β₁₀ = 200 con el método antiguo y β₁₀(c) = 75 o menos con la calibración ISO 11171; el contador de partículas informa tamaños menores para las mismas partículas físicas. Al comparar hojas de datos de filtros de distintas épocas o fabricantes, la presencia o ausencia del sufijo (c) es un calificador crítico. Mezclar valores β antiguos con valores β(c) nuevos para comparar filtros es un error sistemático que puede subestimar la diferencia de desempeño entre productos.",
+      "callout": [
+        {
+          "label": "Notación antigua (antes de 2000)",
+          "value": "β₁₀ (calibración con polvo AC fine)"
+        },
+        {
+          "label": "Notación actual",
+          "value": "β₁₀(c) (calibración ISO 11171)"
+        },
+        {
+          "label": "Relación aprox.",
+          "value": "β₁₀ = 200 antigua ≈ β₁₀(c) = 75–100 nueva"
+        }
+      ]
+    },
+    {
+      "heading": "Conversión de Beta a eficiencia",
+      "body": "La eficiencia de filtración E (%) en el tamaño x se obtiene directamente de la relación Beta: E(%) = (1 − 1/β_x) × 100 = (β_x − 1) / β_x × 100. Esta relación es estrictamente monótona: una Beta mayor siempre significa mayor eficiencia, con rendimientos decrecientes en valores Beta muy altos. Valores Beta prácticos y sus eficiencias: β₆(c) = 10 → E = 90.0%; β₁₀(c) = 75 → E = 98.7%; β₁₀(c) = 200 → E = 99.5%; β₁₀(c) = 1,000 → E = 99.9%; β₁₀(c) = 5,000 → E = 99.98%. La importancia de ingeniería de esta curva: pasar de β = 10 a β = 75 (una mejora de 7.5× en Beta) da una ganancia de eficiencia de 8.7 puntos porcentuales. Pasar de β = 1,000 a β = 5,000 (una mejora de 5× en Beta) da solo 0.08 puntos porcentuales. En los sistemas sensibles a la contaminación (servoválvulas, bombas de pistones), la diferencia entre β₁₀(c) = 75 y β₁₀(c) = 200 tiene peso: la penetración baja del 1.33% al 0.5%, una reducción de 2.7× en las partículas que escapan aguas abajo por unidad de tiempo.",
+      "callout": [
+        {
+          "label": "Eficiencia con β₁₀(c) = 10",
+          "value": "90.0%"
+        },
+        {
+          "label": "Eficiencia con β₁₀(c) = 75",
+          "value": "98.7%"
+        },
+        {
+          "label": "Eficiencia con β₁₀(c) = 200",
+          "value": "99.5%"
+        }
+      ]
+    },
+    {
+      "heading": "Curvas de eficiencia de varios puntos",
+      "body": "Un solo valor Beta (por ejemplo, β₁₀(c) = 200) describe la eficiencia en un solo tamaño de partícula. Una especificación de filtro completa incluye una curva de eficiencia de varios puntos: la relación Beta en todo el rango de tamaños de partícula. La curva suele tener forma sigmoide graficada sobre un eje de tamaño lineal: eficiencia baja en tamaños muy pequeños (por debajo del rango de captura efectivo del medio), una subida pronunciada en el tamaño de captura característico del medio y una eficiencia alta asintótica en tamaños grandes. La \"x\" de β_x(c) en la que la eficiencia pasa de menos del 50% a más del 99% a veces se llama informalmente clasificación \"absoluta\", aunque ISO 16889 no define este término. Las curvas de varios puntos importan cuando el sistema tiene componentes sensibles a distintos tamaños de partícula: una servoválvula sensible a partículas de ≥3 µm requiere especificar β₃(c) además de β₁₀(c)."
+    },
+    {
+      "heading": "Aplicación en el diseño de sistemas",
+      "body": "La relación Beta es el dato de diseño para calcular la limpieza que puede lograr un sistema con condiciones de ingreso y filtración especificadas. La limpieza en régimen estable de un sistema de fluido puede estimarse con el balance de contaminación: C_sistema = C_ingreso × V_sistema / (β_x × Q_filtro × t), donde V_sistema es el volumen del depósito, Q_filtro es el caudal del filtro y t es el tiempo de permanencia. Elegir la β_x necesaria para lograr un código de limpieza ISO 4406 objetivo implica despejar β con la tasa de ingreso (partículas/mL/h) y el volumen del sistema conocidos. Para un sistema hidráulico con objetivo ISO 16/14/11, un depósito de 500 L y un caudal de filtro de 100 L/min, mantener el código requiere β₁₀(c) ≥ 75 con ingreso moderado y β₁₀(c) ≥ 200 en aplicaciones de alto ingreso (equipos a la intemperie con sellos desgastados). Este cálculo demuestra que la elección de la relación Beta depende del sistema: el mismo elemento filtrante puede ser adecuado en una instalación e insuficiente en otra según la tasa de ingreso y el volumen del sistema.",
+      "callout": [
+        {
+          "label": "Ingreso bajo (equipos de oficina)",
+          "value": "β₁₀(c) ≥ 10–25 suele ser suficiente"
+        },
+        {
+          "label": "Ingreso moderado (equipos móviles)",
+          "value": "β₁₀(c) ≥ 75 suele ser necesario"
+        },
+        {
+          "label": "Ingreso alto (minería/intemperie)",
+          "value": "β₁₀(c) ≥ 200 recomendado"
+        }
+      ]
+    },
+    {
+      "heading": "Por qué las clasificaciones nominales en micras son insuficientes",
+      "body": "La clasificación nominal en micras (un solo número, como \"10 micras nominal\") fue la forma abreviada histórica del desempeño de un filtro, pero no tiene una definición normalizada. Cada fabricante define \"nominal\" a su manera: algunos con un 50% de eficiencia, otros con un 90% y otros con un 98% en el tamaño nominal. Un filtro \"10 micras nominal\" de un fabricante puede eliminar el 50% de las partículas de 10 µm; el de otro puede eliminar el 95%, y ambos cumplen técnicamente con su propia definición de \"nominal\". Esta ambigüedad hace que las clasificaciones nominales en micras no sirvan para comparaciones de ingeniería. La clasificación absoluta en micras es algo mejor, pero tampoco tiene un umbral de eficiencia normalizado: \"10 micras absoluto\" implica por convención una eficiencia ≥99.5% a 10 µm, que corresponde a β₁₀ ≥ 200, pero ISO no lo define. Solo la β_x(c) del ensayo ISO 16889 da un valor de eficiencia normalizado, reproducible y con instrumento calibrado que respalda los cálculos de diseño de ingeniería. Al especificar o comprar filtros hidráulicos o de lubricante, la clasificación nominal en micras debe reemplazarse por la especificación de relación Beta ISO 16889 en el tamaño de partícula pertinente."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Fórmula de la relación Beta",
+      "value": "β_x = N₁(≥x) / N₂(≥x)"
+    },
+    {
+      "label": "Eficiencia con β₁₀(c) = 200",
+      "value": "99.5%"
+    },
+    {
+      "label": "Método de ensayo",
+      "value": "Multipaso ISO 16889"
+    },
+    {
+      "label": "Norma de calibración",
+      "value": "ISO 11171 (actual); AC fine (antigua)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 11171",
+    "ISO 4406"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "relación Beta",
+    "eficiencia del filtro",
+    "ISO 16889",
+    "conteo de partículas",
+    "clasificación nominal en micras",
+    "ensayo multipaso",
+    "ISO 11171"
+  ],
+  "commonMistakes": [
+    "Interpretar la relación Beta como un porcentaje de eficiencia: β₁₀(c) = 200 es un 99.5% de eficiencia, no un 200%. La relación es el conteo de partículas aguas arriba dividido por el conteo de partículas aguas abajo en el tamaño indicado.",
+    "Usar las clasificaciones nominales en micras como especificaciones de ingeniería para el diseño de sistemas hidráulicos. Las clasificaciones nominales no tienen un nivel de eficiencia definido según ISO 16889 y varían entre fabricantes: la relación Beta de los informes de ensayo ISO 16889 es la única especificación de ingeniería válida.",
+    "Elegir elementos filtrantes por la relación Beta en un solo tamaño de partícula sin evaluar la capacidad de retención de suciedad. Un elemento con β₆(c) = 200 pero con DHC baja puede requerir intervalos de cambio 3× más frecuentes que un elemento con la misma eficiencia y mayor capacidad.",
+    "Comparar relaciones Beta de distintos fabricantes sin verificar que ambas se ensayaron según ISO 16889:2022 con contadores de partículas calibrados según ISO 11171. Los datos de ensayo anteriores a 2002 con calibración con polvo AC fine pueden mostrar valores β₁₀ 5–10× mayores que el valor β₁₀(c) equivalente, lo que hace engañosa la comparación.",
+    "Suponer que la relación Beta es constante con cualquier caudal y presión diferencial. Los ensayos multipaso ISO 16889 informan la relación Beta al caudal nominal: la Beta puede bajar mucho con caudales más altos o presiones diferenciales bajas, donde la velocidad en el medio cambia la dinámica de captura de partículas."
+  ],
+  "eeat": {
+    "reviewerName": "ELIMFILTERS Engineering Division",
+    "reviewerTitle": "Ingeniería de eficiencia de filtración y normas",
+    "organization": "ELIMFILTERS",
+    "lastReviewDate": "2026-06-15",
+    "nextReviewDate": "2027-06-15",
+    "discipline": "Ingeniería de filtración: ensayos de desempeño y medición de la eficiencia",
+    "standards": [
+      "ISO 16889:2022",
+      "ISO 11171:2016",
+      "ISO 4406:2021"
+    ],
+    "contentLevel": "advanced",
+    "contentType": "technical-article",
+    "version": "2.2",
+    "evidenceBase": "Definiciones del método de ensayo ISO 16889:2022; procedimiento de calibración ISO 11171:2016; datos publicados de ensayos multipaso del laboratorio de ELIMFILTERS y de laboratorios de ensayo independientes"
+  },
+  "faqs": [
+    {
+      "question": "¿Qué significa en términos de ingeniería una relación Beta de 200 a 10 µm?",
+      "answer": "Una relación Beta de β₁₀(c) = 200 significa que, por cada 200 partículas ≥10 µm(c) que entran al filtro aguas arriba, solo 1 pasa aguas abajo. Expresado como eficiencia: E = (1 − 1/β) × 100% = (1 − 1/200) × 100% = 99.5%. Es la especificación estándar de los filtros de retorno hidráulicos de alta eficiencia que protegen bombas de pistones axiales. El sufijo (c) indica que el ensayo se calibró según ISO 11171 con partículas de referencia trazables a NIST, algo esencial para comparar entre fabricantes."
+    },
+    {
+      "question": "¿Por qué el ensayo multipaso ISO 16889 informa más que un ensayo de eficiencia de un solo paso?",
+      "answer": "En un ensayo de un solo paso, las partículas atraviesan el filtro una vez y la eficiencia se mide en un instante sobre un elemento limpio. Esto sobrestima el desempeño real porque no considera la carga del filtro: a medida que el elemento acumula suciedad, cambian su eficiencia y sus características de flujo. El ensayo multipaso ISO 16889 hace recircular de forma continua el fluido contaminado y mide la relación Beta durante todo el ciclo de carga, hasta llegar a la presión diferencial terminal. Así se obtiene la relación Beta en función de la carga de suciedad, se capta a la vez la capacidad de retención de suciedad y se refleja el desempeño del filtro durante toda su vida útil, no solo cuando está limpio."
+    },
+    {
+      "question": "¿Qué relación Beta debería especificar para el filtro de retorno de una servoválvula?",
+      "answer": "Los circuitos con servoválvulas requieren una limpieza del fluido ISO 4406 de ISO 14/12/9 para proteger holguras de carrete de 1–4 µm. El sistema de filtración debe lograr este objetivo con la tasa de ingreso real del circuito. Para un filtro de retorno que protege un circuito con servoválvulas, especifique β₃(c) ≥ 200 (99.5% de eficiencia a ≥3 µm). Si se usa en paralelo un circuito kidney-loop fuera de línea, β₃(c) ≥ 1000 es adecuado para el filtro fuera de línea, lo que permite que el filtro de retorno maneje los transitorios de caudal mientras el kidney-loop mantiene la limpieza de base."
+    },
+    {
+      "question": "¿Qué diferencia hay entre β₁₀ y β₁₀(c) y por qué importa al comparar filtros?",
+      "answer": "β₁₀ usa la calibración antigua del conteo de partículas con polvo de ensayo AC fine, que cuenta de menos las partículas más pequeñas de forma sistemática. β₁₀(c) usa la calibración ISO 11171 con esferas de látex trazables a NIST de diámetro certificado, que produce conteos de partículas 5–10× mayores que el método antiguo en el mismo tamaño de partícula. Un filtro clasificado antes como β₁₀ = 200 puede dar β₁₀(c) = 20–40 al volver a ensayarlo según ISO 16889:2022. Esto significa que las especificaciones de relación Beta antiguas sobrestiman mucho el desempeño del filtro. Al comparar filtros o especificar reemplazos, use siempre valores β(c) de ISO 16889:2022 o ISO 16889:2008 (que también exige la calibración ISO 11171)."
+    },
+    {
+      "question": "¿Cómo se relaciona la relación Beta con el código de limpieza ISO 4406 que puedo lograr en mi sistema?",
+      "answer": "La relación es: concentración aguas abajo = concentración aguas arriba / β_x. En un circuito hidráulico con una tasa de ingreso que produce ISO 20/18/15 aguas arriba del filtro de retorno, un filtro β₁₀(c) = 200 reduce la contaminación aguas abajo en un factor de 200 en ≥10 µm. Esto no se traduce directamente en un código ISO 4406 predecible, porque la limpieza en régimen estable depende de la tasa de ingreso, del volumen del sistema, del caudal del filtro y de si hay circuitos de pulido fuera de línea. Lograr y verificar el código ISO objetivo requiere muestrear el aceite: la especificación de la relación Beta aporta el dato de desempeño del filtro a la ecuación de balance de contaminación, no un código garantizado."
+    },
+    {
+      "question": "¿Qué hace que la relación Beta se degrade a lo largo del intervalo de servicio de un filtro?",
+      "answer": "La relación Beta suele cambiar en dos fases durante el servicio. En la fase inicial de carga, la eficiencia a menudo aumenta un poco a medida que las partículas capturadas tapan algunos poros del medio y reducen el tamaño de poro efectivo. En la fase final de carga (normalmente por encima del 80% de la capacidad de retención de suciedad), la presión diferencial alta y la deformación del medio pueden reducir la eficiencia al desprenderse partículas de las zonas sobrecargadas del medio. El valor de eficiencia informado en los informes de ensayo ISO 16889 es el valor de eficiencia mínimo medido en todo el ensayo: el desempeño en el peor caso. Los intervalos de servicio deberían fijarse para reemplazar el elemento antes de que llegue a la fase final de carga, en la que empieza la degradación de la eficiencia."
+    },
+    {
+      "question": "¿Puedo usar clasificaciones nominales en micras para especificar un filtro que cumpla ISO 16889?",
+      "answer": "No. La clasificación nominal en micras no tiene una definición normalizada. Cada fabricante define \"10 µm nominal\" como lograr entre un 50% y un 98% de eficiencia a 10 µm, un rango que corresponde a valores β₁₀(c) de 2 a 50. Para el diseño de ingeniería, especifique la β_x(c) de los informes de ensayo ISO 16889. Si la especificación OEM usa la clasificación nominal en micras, pida al fabricante la relación Beta ISO 16889 correspondiente o ensaye el elemento de forma independiente. Esto es especialmente importante en los circuitos con servoválvulas, donde especificar \"10 µm nominal\" puede dar un desempeño de filtración real insuficiente para mantener la limpieza ISO 14/12/9."
+    },
+    {
+      "question": "¿Cuál es la capacidad de retención de suciedad mínima que debería exigir a un filtro de retorno hidráulico?",
+      "answer": "Los requisitos de capacidad de retención de suciedad (DHC) dependen de la tasa de ingreso del sistema y del intervalo de servicio deseado. En un sistema hidráulico móvil con una tasa de ingreso de 5 mg/h y un intervalo de servicio de 500 horas, el filtro de retorno debe acumular 2,500 mg de contaminación sin activar la válvula de derivación. Sume un factor de seguridad del 20% por las condiciones variables de ingreso: especifique una DHC mínima ≥3,000 mg. Los filtros de alta eficiencia con β₃(c) ≥ 200 capturan un rango más amplio de tamaños de partícula y por eso se cargan más rápido: la DHC debe evaluarse junto con la relación Beta, no por separado. Una DHC insuficiente con alta eficiencia provoca eventos de derivación tempranos y obliga a cambios de servicio frecuentes que debilitan la economía de la filtración de alto desempeño."
+    },
+    {
+      "question": "¿Cambia la relación Beta del filtro al operar con viscosidades mayores o menores que las del ensayo ISO 16889?",
+      "answer": "Los ensayos ISO 16889 se hacen con aceite ISO VG 15 a 40°C (viscosidad cinemática de aproximadamente 15 cSt). Los fluidos reales de operación pueden ir de ISO VG 32 a VG 68, y las temperaturas de operación de 30°C a 80°C, lo que corresponde a viscosidades de 10–150 cSt. Una viscosidad mayor aumenta la ΔP del filtro con un caudal dado y puede activar la derivación con cargas de contaminación menores. Una viscosidad menor aumenta la velocidad frontal y reduce el tiempo de captura de las partículas, lo que puede reducir la relación Beta. La mayoría de los fabricantes ensayan e informan las relaciones Beta solo en las condiciones de ISO 16889: la extrapolación a viscosidades muy distintas debe verificarse con el fabricante o con muestreo de aceite en sitio."
+    },
+    {
+      "question": "¿Por qué algunas especificaciones indican la relación Beta en varios tamaños de partícula en lugar de uno solo?",
+      "answer": "La relación Beta en un solo tamaño de partícula caracteriza la eficiencia del filtro solo en ese tamaño: un filtro con β₁₀(c) = 200 puede tener β₃(c) = 5 y casi no proteger frente a las partículas menores de 10 µm, que son las más numerosas y las más dañinas para los carretes de las servoválvulas. Especificar la relación Beta en varios tamaños (por ejemplo, β₃(c) ≥ 10, β₆(c) ≥ 75, β₁₀(c) ≥ 200) caracteriza el perfil de eficiencia del filtro en el rango de tamaños de partícula pertinente. En los circuitos servo de alta precisión con objetivo ISO 14/12/9, especifique la relación Beta en ≥3 µm y ≥6 µm además de ≥10 µm para asegurar una protección adecuada en todo el rango de holguras de los componentes más sensibles."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022 — Hydraulic fluid power — Filters — Multi-pass method for evaluating filtration performance of a filter element.",
+      "relevance": "La norma que rige la medición de la relación Beta y el ensayo de capacidad de retención de suciedad. Todos los valores β(c) citados en este artículo provienen de los procedimientos de ensayo de ISO 16889:2022."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016 — Hydraulic fluid power — Calibration of automatic particle counters for liquids.",
+      "relevance": "Define el procedimiento de calibración trazable a NIST de los contadores automáticos de partículas usados en el ensayo de relación Beta ISO 16889. El sufijo (c) en los valores β(c) indica que se usó la calibración ISO 11171."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021 — Hydraulic fluid power — Fluids — Method for coding the level of contamination by solid particles.",
+      "relevance": "Aporta los objetivos de código de limpieza que las especificaciones de relación Beta buscan lograr. La relación Beta y los objetivos ISO 4406 deben considerarse juntos en el diseño de sistemas de filtración."
+    },
+    {
+      "category": "handbook",
+      "citation": "Pall Corporation, \"Hydraulic Filtration — Engineering Guide to Beta Ratio and ISO 4406,\" Publication FiltFG-HYDENG (2018).",
+      "relevance": "Referencia de ingeniería para interpretar la relación Beta y elegir el objetivo de limpieza, con la ecuación de balance de contaminación y la metodología de dimensionamiento de filtros."
+    }
+  ]
+}

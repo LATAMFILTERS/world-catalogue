@@ -1,0 +1,209 @@
+{
+  "slug": "compressed-air-purity",
+  "faqs": [
+    {
+      "question": "Quais são as três classes de contaminação definidas pela ISO 8573-1 para o ar comprimido?",
+      "answer": "A ISO 8573-1 define classes de pureza independentes para três tipos de contaminação: partículas sólidas (Classe 0–9), água (Classe 0–9, que mede tanto o ponto de orvalho sob pressão quanto o teor de água líquida) e óleo (Classe 0–4, que mede o aerossol e o vapor de óleo totais). Cada classe é especificada separadamente: um sistema pode ser Classe 1 em partículas e Classe 3 em água, conforme o equilíbrio entre os equipamentos de filtração e secagem instalados. A Classe 0 em cada categoria significa que o usuário especifica uma pureza mais rigorosa que a Classe 1. A Classe 1 de partículas exige ≤20,000 partículas/m3 de ≥0.1–0.5 µm (equivalente aos limites de concentração da ISO 8573-1:2010); a Classe 1 de água exige ponto de orvalho sob pressão ≤−70°C; a Classe 1 de óleo exige ≤0.01 mg/m3. Os requisitos no ponto de uso do ar de instrumentos, dos controles pneumáticos e do ar respirável são especificados com essas referências de classe de três dígitos."
+    },
+    {
+      "question": "Por que o ponto de orvalho sob pressão importa mais que o ponto de orvalho atmosférico na qualidade do ar comprimido?",
+      "answer": "O ponto de orvalho atmosférico é a temperatura na qual o vapor de água se condensa à pressão ambiente (1 bar absoluto). Quando o ar é comprimido até a pressão de operação (7–10 bar manométricos nos sistemas industriais típicos), a pressão parcial do vapor de água aumenta proporcionalmente: a 7 bar manométricos (8 bar absolutos), a pressão parcial da água é 8× maior que na pressão atmosférica. Isso significa que um ar bem acima do ponto de orvalho em condições atmosféricas pode estar saturado ou supersaturado na pressão de linha, formando água líquida na tubulação de distribuição. O ponto de orvalho sob pressão (PDP), o ponto de orvalho na pressão de linha, é o parâmetro operacional relevante. A ISO 8573-1 especifica as classes de pureza em termos de PDP: Classe 4 = +3°C de PDP (condensação possível com tubulação acima de 3°C), Classe 2 = −40°C de PDP (sem condensação com tubulação acima de −40°C), Classe 1 = −70°C de PDP (ultrasseco, grau farmacêutico e de semicondutores)."
+    },
+    {
+      "question": "Como um secador por refrigeração difere de um secador por adsorção no desempenho de secagem do ar comprimido?",
+      "answer": "Os secadores por refrigeração (também chamados de secadores frigoríficos) resfriam o ar comprimido a 2–10°C com um circuito de refrigeração, condensam e drenam o vapor de água e atingem um ponto de orvalho sob pressão normalmente de +2 a +7°C. Isso basta para a maioria das aplicações pneumáticas industriais gerais (Classe 4 de água da ISO 8573-1). Os secadores por adsorção usam alumina ativada, sílica gel ou peneira molecular como adsorvente para reter o vapor de água do ar comprimido e atingem PDP de −20°C a −70°C, conforme o tipo de adsorvente e o método de regeneração. Os secadores por refrigeração consomem menos energia (não gastam energia com regeneração), mas não conseguem atingir PDP abaixo de aproximadamente 0°C. Os secadores por adsorção atingem o desempenho ultrasseco exigido pelo ar de instrumentos (Classe ISO 2 ou Classe 1), mas exigem 15–25% da vazão de ar comprimido para a regeneração a quente (perda de ar de purga) e têm custo de capital maior."
+    },
+    {
+      "question": "Quais fontes de contaminação existem dentro de um sistema de ar comprimido, além da entrada do compressor?",
+      "answer": "As fontes de contaminação dentro do sistema de distribuição de ar comprimido incluem: (1) Arraste de óleo do compressor: o lubrificante dos compressores de parafuso ou de pistão entra na corrente de ar como aerossol ou vapor; o arraste típico de compressores bem mantidos é de 3–5 mg/m3 de óleo, reduzido a <0.01 mg/m3 pelo separador coalescente e pelo filtro de carvão ativado. (2) Carepa e ferrugem das tubulações: as tubulações de distribuição de aço-carbono corroem nos pontos de condensação de umidade e liberam partículas de ferrugem (Fe2O3) e escamas de corrosão de ferro na faixa de 10–500 µm. (3) Partículas de polímero pela degradação de mangueiras e conexões: os revestimentos das mangueiras de ar comprimido e as vedações O-ring desprendem partículas ao se degradarem, que aparecem a jusante como partículas de borracha pretas. (4) Contaminação biológica: a água líquida nas linhas de distribuição, em zonas com temperatura acima da ambiente, cria condições para o crescimento bacteriano; os biofilmes se desprendem como contaminação por partículas. Cada fonte exige uma filtração específica a montante das aplicações sensíveis no ponto de uso."
+    },
+    {
+      "question": "Qual filtração no ponto de uso é exigida para o ar comprimido usado em embalagem pneumática de alimentos?",
+      "answer": "As aplicações de ar comprimido em contato com alimentos exigem ISO 8573-1 Classe 1:2:1 ou melhor no ponto de uso: partículas Classe 1 (≤20,000 partículas/m3 ≥0.1 µm), água Classe 2 (PDP ≤−40°C), óleo Classe 1 (≤0.01 mg/m3). A razão dessas especificações rigorosas é que o ar comprimido que toca os alimentos ou as superfícies em contato com alimentos pode introduzir partículas, resíduos de óleo ou água que comprometem a segurança alimentar e a qualidade organoléptica. Os adsorvedores de carvão ativado no ponto de uso reduzem o vapor de óleo a <0.003 mg/m3. Para aplicações de contato direto com alimentos segundo o Regulamento CE 1935/2004 e a legislação nacional de segurança alimentar aplicável, especificam-se filtros de grau estéril de alta eficiência (remoção ≥0.01 µm com 99.9999% de eficiência). Os compressores isentos de óleo eliminam a fonte de aerossol de óleo, mas não a contaminação por partículas nem a umidade do processo de compressão."
+    },
+    {
+      "question": "Como a contaminação por óleo do ar comprimido é quantificada e quais são os limites para o ar de instrumentos?",
+      "answer": "A contaminação por óleo do ar comprimido é medida como concentração total de óleo (aerossol mais vapor) no ponto de uso, expressa em mg/m3 na pressão e temperatura de medição. A ISO 8573-3:2010 define os procedimentos de amostragem e análise para medir o aerossol de óleo. A medição do vapor de óleo usa a ASTM D3796 ou tubos equivalentes de adsorção com carvão ativado, seguidos de extração com solvente e análise gravimétrica ou por cromatografia gasosa. O ar de instrumentos para sistemas de controle pneumático (normalmente ISO 8573-1 Classe 1 de óleo: ≤0.01 mg/m3) é especificado com esse limite porque a contaminação por óleo dos atuadores de válvulas pneumáticas causa travamento (válvulas que grudam), resposta atrasada e erro de posição: falhas críticas em aplicações de controle de processo, em que a exatidão da posição da válvula deve ficar dentro de ±1% da posição comandada."
+    },
+    {
+      "question": "Quais tipos de elementos filtrantes são necessários em um trem típico de tratamento de ar comprimido?",
+      "answer": "Um trem padrão de tratamento de ar comprimido usa três estágios de filtração em sequência: (1) Pré-filtro (separador de líquido a granel e de partículas grossas): remove gotas de água líquida e partículas acima de 3–5 µm do ar comprimido antes do pós-resfriador e do secador; normalmente um separador ciclônico combinado com um elemento coalescente. (2) Filtro coalescente (de uso geral): remove as gotículas submicrométricas de aerossol de óleo e as partículas finas; normalmente classificado para remover 0.1 µm a 99.9%, atingindo a Classe 2 ISO de óleo (≤0.1 mg/m3). (3) Adsorvedor de carvão ativado: remove o vapor de óleo e os odores que a filtração coalescente não capta; é classificado pelo tempo de saturação em uma concentração e temperatura especificadas. Um quarto estágio, um filtro de membrana estéril de 0.01 µm, é acrescentado em aplicações farmacêuticas ou de contato com alimentos. Todos os elementos filtrantes têm vida útil finita: os coalescentes são trocados quando a queda de pressão aumenta 0.1 bar acima da inicial, e os adsorvedores de carvão são trocados por tempo ou por saturação de concentração."
+    },
+    {
+      "question": "O que faz os filtros de ar comprimido apresentarem concentração de óleo maior a jusante que a montante?",
+      "answer": "Uma concentração de óleo a jusante maior que a montante indica que o elemento filtrante está saturado e que há rearraste de óleo líquido. Os elementos de filtro coalescente saturam quando a capacidade de retenção de óleo acumulado é excedida: o filme de óleo líquido no meio fica instável e é arrastado de novo pela corrente de ar de alta velocidade como gotículas finas. Isso ocorre quando: o elemento filtrante ultrapassou a vida útil; o sistema opera com vazões acima da capacidade nominal do elemento coalescente (velocidade alta demais para uma coalescência estável); ou o filtro sofreu uma inundação de líquido, isto é, um golpe repentino de água ou óleo líquido (pela drenagem de um resfriador ou separador a jusante) que supera a capacidade do elemento. A queda de pressão do filtro não é um bom indicador de saturação nos elementos coalescentes: um elemento saturado ainda pode mostrar queda de pressão aceitável enquanto rearrasta óleo. Para detectar os eventos de saturação, é necessário monitorar o óleo a jusante."
+    },
+    {
+      "question": "Qual procedimento de manutenção se aplica aos reservatórios de ar comprimido para evitar a corrosão interna?",
+      "answer": "Os reservatórios de ar comprimido acumulam água líquida no fundo pela drenagem dos inter-resfriadores e pós-resfriadores, criando um ambiente de corrosão eletrolítica. Requisitos de manutenção: (1) As válvulas de dreno manuais ou automáticas devem descarregar diariamente o líquido acumulado: válvulas de dreno automáticas temporizadas que abrem por 5–30 segundos a cada 2–4 horas durante a produção. (2) Inspeção interna anual segundo os códigos de vasos de pressão aplicáveis (PED 2014/68/EU na Europa, ASME Section VIII nos EUA) para medir a taxa de corrosão da parede e verificar a integridade estrutural. (3) Medição do pH da água de drenagem: um pH abaixo de 5.5 indica condensado ácido e exige investigar a contaminação a montante (SO2 ou NOx absorvidos da atmosfera industrial). (4) Teste de pressão ou inspeção a cada cinco anos conforme os requisitos de registro de vasos de pressão. Reservatórios sem gestão da drenagem desenvolvem pites de corrosão que acabam perfurando a parede: uma falha catastrófica do reservatório é um risco de segurança significativo."
+    },
+    {
+      "question": "Qual é a diferença entre as especificações de classe de partículas da ISO 8573-1 nas duas revisões (1991 e 2010)?",
+      "answer": "A ISO 8573-1:1991 especificava as classes de partículas com limites de tamanho de partícula de ≥1 µm, ≥5 µm e ≥40 µm. A revisão de 2010 mudou os limites para ≥0.1–0.5 µm, ≥0.5–1 µm e ≥1–5 µm, refletindo a melhor capacidade da tecnologia de contagem de partículas em tamanhos submicrométricos. A Classe 1 da versão de 1991 (≤100,000 partículas/m3 ≥1 µm) equivale aproximadamente à Classe 3 da versão de 2010 para partículas submicrométricas. Sistemas especificados pela versão de 1991 não podem ser comparados diretamente com especificações de 2010 sem esclarecer qual edição se aplica. Ao especificar a pureza do ar comprimido em instalações novas, a ISO 8573-1:2010 deve ser citada de forma explícita, e o formato de três dígitos (por exemplo, \"ISO 8573-1:2010 Classe 1:2:1\") deve incluir o ano da norma para evitar ambiguidade entre edições."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes",
+      "relevance": "Norma principal que define as classes de contaminação por partículas, água (ponto de orvalho) e óleo nos sistemas de ar comprimido."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content",
+      "relevance": "Métodos de ensaio para medir o aerossol de óleo e a concentração de partículas no ar comprimido com amostragem no ponto de uso."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-3:2010, Compressed Air — Part 3: Test Methods for Measurement of Humidity",
+      "relevance": "Métodos de ensaio para medir o ponto de orvalho sob pressão, usados para verificar a conformidade com a classe de água da ISO 8573-1."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-7:2003, Compressed Air — Part 7: Test Methods for Viable Microbiological Contaminants",
+      "relevance": "Norma de ensaio microbiológico para ar respirável e aplicações de ar comprimido de grau farmacêutico."
+    }
+  ],
+  "title": "Pureza do ar comprimido",
+  "subtitle": "Classes de qualidade ISO 8573-1, medição da contaminação e projeto do sistema",
+  "metaDescription": "Referência técnica sobre a pureza do ar comprimido: classes de qualidade ISO 8573-1 para partículas, umidade e óleo; métodos de ensaio ISO 8573-2/3; medição do ponto de orvalho; e projeto de sistemas de filtração para ar pneumático e de processo.",
+  "category": "Engenharia",
+  "readTime": "10 min",
+  "intro": "O ar comprimido contém partículas, água líquida, vapor de água e aerossóis e vapor de óleo introduzidos durante a compressão e a distribuição. A ISO 8573-1 define classes de qualidade para cada tipo de contaminante e oferece uma linguagem de especificação padronizada para os sistemas de ar comprimido. Atingir a classe de pureza correta exige entender as fontes de contaminação, os métodos de medição e as tecnologias de filtração e secagem que controlam cada tipo de contaminante.",
+  "sections": [
+    {
+      "heading": "Classes de qualidade ISO 8573-1",
+      "body": "A ISO 8573-1 define classes de qualidade de 0 a 6 para três categorias de contaminação de forma independente: partículas sólidas (por contagem e tamanho), umidade (por ponto de orvalho sob pressão, °C) e óleo total (aerossol mais vapor, mg/m³). A Classe 0 é especificada pelo usuário e é mais rigorosa que a Classe 1: não é um valor numérico definido na norma. A Classe 1 é a maior pureza definida pela norma; a Classe 6 é a menos rigorosa. Uma especificação de qualidade de ar comprimido escrita como ISO 8573-1:2010 [2:4:2] significa Classe 2 de partículas, Classe 4 de umidade e Classe 2 de óleo. Cada classe deve ser especificada separadamente, porque cada contaminante é tratado por um estágio de tratamento diferente: um filtro de partículas muito eficiente não melhora o ponto de orvalho, e um secador por refrigeração reduz a umidade, mas não remove os aerossóis de óleo.",
+      "callout": [
+        {
+          "label": "Classe 0",
+          "value": "Definida pelo usuário, mais rigorosa que a Classe 1"
+        },
+        {
+          "label": "Teor de óleo Classe 1",
+          "value": "≤0.01 mg/m³ (óleo total)"
+        },
+        {
+          "label": "Exemplo de notação",
+          "value": "ISO 8573-1 [2:4:2] = partículas:umidade:óleo"
+        }
+      ]
+    },
+    {
+      "heading": "Classes de qualidade de partículas",
+      "body": "As classes de partículas da ISO 8573-1 são definidas pelo número máximo de partículas por metro cúbico em faixas de tamanho especificadas. Classe 1 (partículas): ≤20,000 partículas/m³ de 0.1–0.5 µm; ≤400 de 0.5–1 µm; ≤10 de 1–5 µm; nenhuma partícula ≥5 µm. Classe 2: ≤400,000 de 0.1–0.5 µm; ≤6,000 de 0.5–1 µm; ≤100 de 1–5 µm; nenhuma partícula ≥5 µm. Classe 3: sem limite para <1 µm; ≤1,000 de 1–5 µm; nenhuma partícula ≥5 µm. As Classes 4 e 5 admitem partículas ≥5 µm em quantidades crescentes. A Classe 6 admite concentração mássica de partículas de até 10 mg/m³ sem limites de distribuição de tamanhos. Para a maioria dos atuadores e ferramentas pneumáticas industriais, a Classe 3 ou 4 de partículas é suficiente. O ar de instrumentos (instrumentos analíticos, transmissores de pressão, válvulas de controle) exige Classe 1 ou 2 de partículas para evitar bloqueio dos instrumentos e erros de medição.",
+      "callout": [
+        {
+          "label": "Classe 1 (partículas ≥5 µm)",
+          "value": "Nenhuma permitida"
+        },
+        {
+          "label": "Classe 3 (1–5 µm)",
+          "value": "≤1,000 partículas/m³"
+        },
+        {
+          "label": "Classe do ar de instrumentos",
+          "value": "Classe 1 ou 2"
+        }
+      ]
+    },
+    {
+      "heading": "Classes de umidade e ponto de orvalho sob pressão",
+      "body": "A umidade do ar comprimido é expressa como ponto de orvalho sob pressão (PDP): a temperatura na qual ocorre a condensação na pressão de operação do sistema. Um PDP de −40°C a 7 bar significa que o ar contém tão pouca umidade que não haverá condensação até a temperatura cair para −40°C, mesmo a 7 bar de pressão de linha. Classes de umidade da ISO 8573-1: Classe 1: PDP ≤ −70°C; Classe 2: ≤ −40°C; Classe 3: ≤ −20°C; Classe 4: ≤ +3°C; Classe 5: ≤ +7°C; Classe 6: ≤ +10°C. Os secadores por refrigeração atingem PDP entre +2°C e +10°C (Classes 4–6). Os secadores por adsorção (dessecantes) atingem PDP entre −20°C e −70°C (Classes 1–3). Converter o PDP em teor de água em g/m³ em uma condição de referência permite calcular a umidade absoluta: com PDP de −40°C e 7 bar, o teor de água é de aproximadamente 0.003 g/m³, contra 1.4 g/m³ com PDP de +7°C.",
+      "callout": [
+        {
+          "label": "PDP da Classe 1",
+          "value": "≤ −70°C"
+        },
+        {
+          "label": "Faixa de PDP do secador por refrigeração",
+          "value": "+2°C a +10°C (Classes 4–6)"
+        },
+        {
+          "label": "Faixa de PDP do secador por adsorção",
+          "value": "−20°C a −70°C (Classes 1–3)"
+        }
+      ]
+    },
+    {
+      "heading": "Classes de teor de óleo e medição",
+      "body": "O óleo do ar comprimido vem do arraste de lubrificante dos compressores lubrificados (na forma de aerossol e vapor) e dos vapores de hidrocarbonetos atmosféricos que se concentram durante a compressão. Classes de óleo total da ISO 8573-1 (aerossol + líquido + vapor, mg/m³): Classe 1: ≤0.01 mg/m³; Classe 2: ≤0.1 mg/m³; Classe 3: ≤1 mg/m³; Classe 4: ≤5 mg/m³. Os compressores isentos de óleo (equipamentos Classe 0 segundo a ISO 8573-7) ainda exigem filtração para remover óleo em aplicações de Classe 1 ou Classe 2, porque os vapores de hidrocarbonetos atmosféricos aspirados pela entrada do compressor se concentram até níveis mensuráveis na saída. A ISO 8573-2 define o método de ensaio para medir o óleo em aerossol: impacto sobre um filtro de membrana com análise gravimétrica. A ISO 8573-5 define o método de medição do óleo em vapor com tubos de adsorção de carvão ativado. Óleo total = aerossol (método ISO 8573-2) + vapor de óleo (método ISO 8573-5). Os filtros coalescentes removem o óleo em aerossol até a Classe 1; a adsorção com carvão ativado remove o óleo em vapor: os dois estágios são necessários para atingir uma conformidade verificada com a Classe 1.",
+      "callout": [
+        {
+          "label": "Teor de óleo Classe 1",
+          "value": "≤0.01 mg/m³"
+        },
+        {
+          "label": "Remoção do aerossol",
+          "value": "Filtro coalescente (ISO 8573-2)"
+        },
+        {
+          "label": "Remoção do vapor",
+          "value": "Carvão ativado (ISO 8573-5)"
+        }
+      ]
+    },
+    {
+      "heading": "Fontes de contaminação durante a compressão",
+      "body": "O ar ambiente aspirado por um compressor contém partículas atmosféricas (pólen, pó e fuligem de 0.1–10 µm), vapor de água (umidade) e traços de vapores de hidrocarbonetos. Durante a compressão, todos os componentes se concentram em proporção à relação de compressão: a 7 bar manométricos (8 bar absolutos), o volume se reduz a 1/8 e a massa de contaminante por volume aumenta 8 vezes. O pós-resfriamento do ar comprimido (necessário para evitar danos térmicos aos equipamentos a jusante) faz o ar comprimido e úmido esfriar rapidamente: o vapor de água se condensa em água líquida e gotículas de aerossol. O pós-resfriador e o separador de condensado removem a maior fração de água (normalmente 70–90% do vapor de água de entrada em condições ambientais tropicais), mas deixam uma umidade residual significativa que exige secagem. Os compressores lubrificados injetam óleo no estágio de compressão para resfriar e vedar: o arraste de óleo do separador e do filtro coalescente na saída da unidade compressora costuma ser de 1–5 mg/m³ antes do tratamento no ponto de uso."
+    },
+    {
+      "heading": "Projeto do sistema de filtração conforme as classes de qualidade",
+      "body": "Um trem de tratamento de ar comprimido é projetado em estágios, e cada um trata uma categoria de contaminação nas condições deixadas pelo estágio anterior. Pós-resfriador + separador de condensado: remove a água líquida a granel e os aerossóis grossos (umidade Estágios 4–5, partículas Classe 4–5). Filtro coalescente de uso geral (elemento coalescente de 1 µm): remove o óleo em aerossol líquido até 0.1 mg/m³ e as partículas ≥1 µm (partículas Classe 2–3, óleo Classe 2–3). Filtro coalescente de alta eficiência (elemento coalescente de 0.01 µm): reduz o aerossol de óleo a 0.01 mg/m³ (óleo Classe 1). Adsorvedor de carvão ativado: remove o vapor de óleo abaixo de 0.003 mg/m³ (óleo Classe 1). Secador por adsorção: atinge PDP ≤ −40°C (umidade Classe 2). Filtro de partículas final (membrana de PTFE ou fibra de borossilicato): garante ar estéril ou classificado a jusante de todos os estágios de tratamento (partículas Classe 1 ou 2).",
+      "callout": [
+        {
+          "label": "O filtro coalescente atinge",
+          "value": "Óleo Classe 2 (0.1 mg/m³)"
+        },
+        {
+          "label": "Coalescente de alta eficiência",
+          "value": "Óleo Classe 1 (0.01 mg/m³)"
+        },
+        {
+          "label": "O carvão ativado acrescenta",
+          "value": "Remoção do vapor até a conformidade completa com a Classe 1"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Óleo ISO 8573-1 Classe 1",
+      "value": "≤0.01 mg/m³"
+    },
+    {
+      "label": "Ponto de orvalho sob pressão Classe 1",
+      "value": "≤ −70°C"
+    },
+    {
+      "label": "Partículas Classe 1 (≥5 µm)",
+      "value": "Nenhuma permitida"
+    },
+    {
+      "label": "PDP do secador por refrigeração",
+      "value": "+2°C a +10°C"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 8573-1",
+    "ISO 29463"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "Compressed Air Protection"
+  ],
+  "keywords": [
+    "ISO 8573",
+    "pureza do ar comprimido",
+    "ponto de orvalho sob pressão",
+    "aerossol de óleo",
+    "classe de partículas",
+    "filtro coalescente",
+    "secador por adsorção"
+  ],
+  "commonMistakes": [
+    "Especificar qualidade de ar ISO 8573-1 Classe 0 quando a aplicação só exige Classe 1 ou Classe 2. A Classe 0 exige um compressor isento de óleo por projeto: aplicá-la a sistemas alimentados por compressores lubrificados obriga a substituir todo o sistema em vez de tratar o ar a jusante.",
+    "Medir a qualidade do ar comprimido apenas na saída do secador ou do filtro. O ar comprimido pega contaminação da tubulação de distribuição: para verificar a qualidade realmente entregue, são necessárias medições no ponto de uso, na conexão da aplicação.",
+    "Confundir o ponto de orvalho sob pressão (PDP) com o ponto de orvalho atmosférico. As classes de água da ISO 8573-1 especificam o PDP na pressão de linha: um PDP de −40°C a 7 bar corresponde a um ponto de orvalho atmosférico de aproximadamente −27°C; os dois números não são intercambiáveis nas especificações."
+  ]
+}

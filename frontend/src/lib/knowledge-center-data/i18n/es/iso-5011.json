@@ -1,0 +1,210 @@
+{
+  "slug": "iso-5011",
+  "faqs": [
+    {
+      "question": "¿Cuáles son los tres parámetros de desempeño principales que se miden en el ensayo de elementos filtrantes ISO 5011?",
+      "answer": "ISO 5011 mide tres parámetros principales: (1) Eficiencia de filtración gravimétrica: el porcentaje de la masa total de polvo inyectado que captura el elemento, normalmente informado como eficiencia global en todo el ciclo de carga, desde limpio hasta la restricción terminal; (2) Capacidad de retención de suciedad (DHC): el total de gramos de polvo de ensayo ISO A2 fine que el elemento retiene desde la instalación hasta la restricción terminal al caudal de aire nominal; (3) Restricción inicial y terminal: la presión diferencial al caudal de aire nominal en estado limpio y en el punto final de servicio definido. En conjunto, estos tres parámetros caracterizan el rango de desempeño de un elemento de filtro de aire: qué tan bien protege el motor (eficiencia), cuánto durará en servicio (DHC) y cómo afecta la respiración del motor (restricción)."
+    },
+    {
+      "question": "¿Qué es el polvo de ensayo ISO A2 fine y cómo se relaciona su distribución de tamaños con los riesgos reales de ingestión en el motor?",
+      "answer": "El polvo de ensayo ISO A2 fine (según ISO 12103-1) es polvo de caminos de Arizona procesado hasta una distribución de tamaños de partícula específica, con D10 de aproximadamente 0.9 µm, D50 de aproximadamente 5 µm y D90 de aproximadamente 25 µm, con una densidad aparente de 0.6–0.7 g/mL y una densidad específica de 2.65 g/cm3. El contenido de sílice es de 68–76% de SiO2, lo que lo hace representativo del componente abrasivo del polvo de caminos, del campo y de las obras de construcción. El diámetro medio de 5 µm se eligió porque las partículas del rango de 2–15 µm tienen el mayor potencial de depósito en el motor: son lo bastante grandes para provocar abrasión de los anillos de pistón y de las camisas de cilindro, pero lo bastante pequeñas para atravesar en parte los prefiltros inerciales. Las partículas mayores de 30 µm las capturan eficazmente todos los tipos de medio filtrante y representan un riesgo bajo."
+    },
+    {
+      "question": "¿Cómo se mide la eficiencia gravimétrica en ISO 5011 y qué valores de eficiencia son típicos en los distintos grados de medio?",
+      "answer": "La eficiencia gravimétrica en ISO 5011 se mide pesando el total de polvo inyectado aguas arriba durante el ensayo (siguiendo la masa del recipiente de alimentación) y comparándolo con el total de polvo capturado en el elemento filtrante (pesado después de retirarlo con cuidado y secarlo). Eficiencia (%) = (masa capturada / masa inyectada) × 100. Todos los medios filtrantes usados en la admisión de aire de motores deben lograr una eficiencia gravimétrica global ISO 5011 superior al 99.5% para considerarse aceptables para proteger el motor. El medio sintético MACROCORE logra un 99.9% o más, lo que reduce el paso de polvo al 0.1% frente al 0.5% de un medio de celulosa con la especificación mínima. En 5,000 horas de operación con 0.1 mg/m3 de polvo ambiental y un caudal de motor de 10 m3/min, la diferencia entre un 99.5% y un 99.9% de eficiencia equivale a 1.5 gramos de sílice que llegan a los cilindros del motor: suficiente para provocar un desgaste acelerado medible de las camisas de cilindro."
+    },
+    {
+      "question": "¿Qué requisitos de diseño de la carcasa especifica ISO 5011 y cómo afectan a los ensayos reales?",
+      "answer": "ISO 5011 especifica que los elementos filtrantes deben ensayarse en una carcasa de ensayo normalizada que reproduzca la geometría de la carcasa de producción: usar otra geometría de carcasa puede dar resultados de restricción y eficiencia que no representan el desempeño instalado. La norma define las dimensiones del ducto de entrada (normalmente 1.5× el diámetro de entrada del elemento), la ubicación de los puntos de muestreo (100 mm aguas arriba y aguas abajo de la cara de montaje del elemento) y los requisitos de enderezadores de flujo para asegurar una distribución uniforme del flujo en la cara del filtro. Ensayar en ductos subdimensionados o con condiciones de entrada no normalizadas produce una restricción artificialmente alta y posiblemente una eficiencia menor por la carga no uniforme de la cara. ISO 5011:2014 incluye especificaciones revisadas de la geometría de la carcasa que mejoraron la reproducibilidad de los ensayos frente a las versiones anteriores."
+    },
+    {
+      "question": "¿Qué diferencia hay entre la restricción al caudal de aire nominal y la restricción a un caudal mayor en el ensayo ISO 5011?",
+      "answer": "ISO 5011 especifica ensayar al caudal de aire nominal del elemento filtrante, el caudal para el que está diseñado. Con caudales por encima de la capacidad nominal, la restricción aumenta de forma no lineal (aproximadamente con el cuadrado de la velocidad del flujo), porque tanto la caída de presión del medio como las pérdidas de entrada y salida de la carcasa escalan con el cuadrado de la velocidad. Un filtro clasificado con 200 mbar de restricción a 15 m3/min suele mostrar 450–600 mbar a 22 m3/min (un aumento de caudal de 1.47×). Esto importa en los motores turboalimentados, que aspiran bastante más aire que el valor nominal durante los eventos transitorios de sobrealimentación. Los ensayos ISO 5011 al caudal nominal no captan estos picos transitorios de restricción por alto caudal, y por eso SAE J1539 especifica además ensayos del sistema montado al caudal de aire máximo del motor, incluidas las condiciones de sobrealimentación del turbocompresor."
+    },
+    {
+      "question": "¿Cómo define ISO 5011 la restricción terminal y qué protocolo se sigue cuando el ensayo termina antes de llegar a ella?",
+      "answer": "ISO 5011 define la restricción terminal como la restricción máxima admisible al caudal de aire nominal especificada por el fabricante del elemento filtrante o por la especificación del equipo OEM: normalmente 25 mbar en aplicaciones de aspiración natural y 37.5–62.5 mbar en turboalimentadas. Si se agota el polvo disponible antes de llegar a la restricción terminal (la DHC del elemento supera la cantidad de polvo de ensayo disponible), el ensayo se registra como \"ensayo interrumpido: no se alcanzó la restricción terminal\" y la DHC se informa como \"mayor que X gramos\", donde X es la cantidad total inyectada. Esto ocurre con elementos de capacidad muy alta diseñados para equipos de minería o construcción, donde la DHC puede superar 1,000 gramos. En esos casos se hacen ensayos complementarios con una concentración de polvo ambiental elevada para completar la medición de capacidad en un tiempo de ensayo práctico."
+    },
+    {
+      "question": "¿Qué desafío de contaminación se usa en el ensayo ISO 5011 de los elementos secundarios (de seguridad)?",
+      "answer": "El ensayo de los elementos de seguridad según ISO 5011 usa el mismo polvo de ensayo ISO A2 fine que el del elemento primario, pero somete al elemento de seguridad a una concentración aguas arriba mayor después de retirar el elemento primario, simulando el peor caso en que el elemento de seguridad actúa solo. El elemento de seguridad debe lograr la misma eficiencia gravimétrica mínima que el primario (>99.5%) con un desempeño de restricción similar. Como los elementos de seguridad suelen usar medios más densos y finos que los primarios, su restricción es mayor con el mismo caudal. ISO 5011 incluye disposiciones para ensayar el sistema completo de dos etapas (primario más seguridad en serie) y verificar la eficiencia y la restricción totales del sistema en la condición combinada instalada. Los resultados de ensayo de los elementos de seguridad suelen ser bastante mejores que las especificaciones de los elementos primarios, porque los elementos de seguridad usan fibra de vidrio o medios de electrohilado en lugar de celulosa."
+    },
+    {
+      "question": "¿Cómo se mide la eficiencia del elemento filtrante durante el ciclo de carga frente a la del final del ensayo ISO 5011?",
+      "answer": "La eficiencia gravimétrica ISO 5011 es el resultado de un balance de masa acumulado, no una medición de eficiencia instantánea. Al inicio del ciclo de ensayo (filtro limpio), la eficiencia de captura es la más baja, porque todavía no se formó la torta que mejora la eficiencia en la fase de carga en profundidad. A medida que avanza la carga de polvo, la torta que se forma actúa como una capa de filtración adicional y mejora la eficiencia. Cerca de la restricción terminal, la torta totalmente cargada reduce la velocidad del flujo por las zonas permeables restantes, lo que mejora aún más la eficiencia instantánea. La eficiencia gravimétrica final informada representa el promedio integrado de todos los estados de carga. Los contadores de partículas aguas abajo usados junto con el ensayo gravimétrico pueden captar el perfil de eficiencia instantánea (que muestra la caída de eficiencia al inicio de la carga y la mejora a medida que se forma la torta), algo más valioso para el análisis de la protección del motor."
+    },
+    {
+      "question": "¿Cuáles son las clases de eficiencia de ISO 5011 y cómo se aplican en las especificaciones de motores OEM?",
+      "answer": "ISO 5011 no define clases de eficiencia formales con designaciones por letras (a diferencia de ISO 16889 para los elementos hidráulicos). En cambio, las especificaciones de motores OEM citan directamente ISO 5011 como método de ensayo y especifican requisitos mínimos de eficiencia gravimétrica global: normalmente ≥99.9% para motores diésel turboalimentados y ≥99.5% para aplicaciones de aspiración natural o menos sensibles. Algunos fabricantes especifican requisitos mínimos de eficiencia inicial además de la eficiencia global, y exigen que el filtro capture un porcentaje mínimo de partículas durante el primer 10% de su carga de DHC. Así se detectan los tipos de medio que dependen mucho de la formación de la torta para lograr alta eficiencia, pero que protegen mal en la fase inicial de servicio, cuando el filtro está limpio y el motor corre el mayor riesgo por las partículas ingeridas."
+    },
+    {
+      "question": "¿Cómo afecta la uniformidad de la velocidad frontal a las mediciones de eficiencia ISO 5011?",
+      "answer": "Una velocidad frontal no uniforme (causada por la geometría de la carcasa, codos en el ducto de entrada u obstrucciones del flujo cerca del elemento filtrante) crea zonas de velocidad local alta y baja en la cara del filtro. Las zonas de alta velocidad se cargan más rápido y llegan antes a la restricción terminal, lo que provoca una derivación temprana o la apertura de la válvula de derivación mientras el resto del elemento todavía está poco cargado. Las zonas de baja velocidad aportan menos a la eficiencia total, porque el impacto inercial de las partículas es proporcional a la velocidad. ISO 5011 especifica enderezadores de flujo en el ducto de ensayo para minimizar la mala distribución de la velocidad, pero la geometría de la carcasa de producción en campo puede no reproducir las condiciones del ducto de ensayo. El diseño del prefiltro y la geometría de entrada de la carcasa pueden crear una variación de hasta el 30% de la velocidad frontal en la cara del filtro, lo que reduce bastante la DHC y la eficiencia efectivas frente a los valores nominales de ISO 5011."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing",
+      "relevance": "Norma principal que define el procedimiento de ensayo, la especificación del polvo, la medición de la restricción y el informe de eficiencia de los elementos de filtros de admisión de aire."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust",
+      "relevance": "Define el polvo ISO A2 fine y otros polvos de ensayo usados en los ensayos de eficiencia y capacidad de retención de suciedad ISO 5011."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Evaluation",
+      "relevance": "Norma SAE complementaria a ISO 5011 que especifica los procedimientos de ensayo de eficiencia gravimétrica y el informe de desempeño de los depuradores de aire automotrices e industriales."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J1539, Air Cleaner Test Code",
+      "relevance": "Código de ensayo SAE para sistemas de depurador de aire montados, que incluye límites de restricción específicos para motores turboalimentados y factores de corrección por altitud, citado junto con los datos de elementos ISO 5011."
+    }
+  ],
+  "title": "ISO 5011",
+  "subtitle": "Inlet Air Cleaning Equipment for Internal Combustion Engines — Performance Testing",
+  "metaDescription": "Referencia técnica de ISO 5011: alcance, especificación del polvo de ensayo, medición de la eficiencia inicial, curvas de restricción, capacidad de retención de polvo, eficiencia fraccional, ensayo del elemento de seguridad y comparación con SAE J1539.",
+  "category": "Normas",
+  "readTime": "10 min",
+  "intro": "ISO 5011 define los métodos de ensayo de desempeño de los equipos de depuración del aire de admisión usados en motores de combustión interna y compresores. Establece las condiciones de ensayo, los contaminantes, los procedimientos de medición y los requisitos de informe de tres parámetros de desempeño clave: la eficiencia inicial de separación de partículas, la restricción (presión diferencial) en función de la carga de polvo y la capacidad de retención de polvo. Los elementos filtrantes para motores de gasolina, motores diésel, motores turboalimentados y compresores industriales están todos dentro del alcance.",
+  "sections": [
+    {
+      "heading": "Alcance y aplicación",
+      "body": "ISO 5011 se aplica a los equipos de depuración del aire de admisión de tipo seco: elementos filtrantes primarios (medio de papel, sintético o de fibra de vidrio), elementos de seguridad o secundarios, prefiltros y conjuntos completos de depurador de aire. Los depuradores de tipo húmedo (baño de aceite) quedan excluidos. La norma cubre la eficiencia inicial y con carga, el aumento de la restricción con carga continua de polvo y la masa total de polvo retenida antes de la restricción terminal. ISO 5011 no define objetivos de limpieza de aprobación o rechazo: es solo un protocolo de medición. Las especificaciones de limpieza y los límites de servicio los fija el fabricante del motor en sus datos técnicos. Una distinción común: ISO 5011 es la norma europea e internacional; SAE J1539 es la norma más antigua del mercado estadounidense. Ambas cubren parámetros similares, pero difieren en la especificación del polvo de ensayo y en algunos detalles de procedimiento."
+    },
+    {
+      "heading": "Especificación del polvo de ensayo",
+      "body": "ISO 5011 usa el polvo de ensayo ISO 12103-1 A2 fine como medio de carga estándar. Este polvo sintético representa la fracción mineral fina del polvo atmosférico con una composición controlada: aproximadamente 68% de SiO₂, 14% de Al₂O₃, 8% de Fe₂O₃, 3% de CaO y trazas de óxidos. La distribución de tamaños de partícula va de 0 a 200 µm, con un diámetro medio en masa cercano a 23 µm. La tasa de alimentación de polvo se expresa en gramos por kilogramo de aire (g/kg de aire) o en gramos por metro cúbico (g/m³). Las concentraciones de ensayo suelen ir de 1 a 10 g/m³ según el protocolo de ensayo y la aplicación prevista. El polvo controlado permite comparar directamente los datos de restricción y DHC entre fabricantes, siempre que también coincidan el caudal de aire, la temperatura y la humedad del ensayo.",
+      "callout": [
+        {
+          "label": "Polvo de ensayo",
+          "value": "ISO 12103-1 A2 fine"
+        },
+        {
+          "label": "Composición del polvo",
+          "value": "~68% SiO₂, ~14% Al₂O₃"
+        },
+        {
+          "label": "Rango de tamaños de partícula",
+          "value": "0–200 µm"
+        }
+      ]
+    },
+    {
+      "heading": "Medición de la eficiencia inicial",
+      "body": "La eficiencia inicial se mide en un elemento limpio al inicio del ensayo, antes de cualquier carga de polvo. Una sonda de muestreo isocinético aguas arriba y una sonda aguas abajo toman muestras simultáneas a través de contadores ópticos de partículas o muestreadores gravimétricos. La eficiencia fraccional (la eficiencia en cada tamaño de partícula) se mide con contadores de partículas en el rango de 0.5 a 80 µm. Penetración en cada tamaño = (conteo aguas abajo / conteo aguas arriba) × 100%. En los medios de filtración en profundidad (celulosa), la eficiencia inicial siempre es más alta que con carga parcial, ya que la formación de la torta de polvo aumenta la eficiencia a medida que el elemento se carga. En los medios de filtración superficial (tipo membrana), las eficiencias inicial y con carga son más parecidas, porque la captura superficial predomina desde el primer contacto. ISO 5011 exige informar la eficiencia fraccional como mínimo a 0.5, 1, 2, 3, 5, 7, 10, 20, 40 y 80 µm.",
+      "callout": [
+        {
+          "label": "Tamaños de eficiencia informados",
+          "value": "0.5, 1, 2, 3, 5, 7, 10, 20, 40, 80 µm"
+        },
+        {
+          "label": "Tendencia de eficiencia del medio en profundidad",
+          "value": "Aumenta con la formación de la torta de polvo"
+        },
+        {
+          "label": "Eficiencia del medio superficial",
+          "value": "Estable de limpio a cargado"
+        }
+      ]
+    },
+    {
+      "heading": "Curva de restricción y evolución de la ΔP",
+      "body": "La restricción (la presión diferencial en el elemento filtrante) se mide de forma continua durante todo el ensayo a medida que se acumula polvo. La curva de restricción grafica la ΔP (en Pa o mbar) frente a la masa acumulada de polvo alimentado (en gramos). La restricción inicial es la ΔP a través de un elemento limpio al caudal de aire de ensayo. A medida que se acumula polvo, la restricción sube. En el medio de celulosa, la restricción aumenta despacio al principio (capa superficial suelta, baja densidad de empaquetamiento) y luego se acelera a medida que la torta de polvo se compacta y tapa los poros. El medio sintético muestra características de carga distintas según el diámetro y la disposición de las fibras. La restricción terminal del ensayo ISO 5011 suele definirse como un valor absoluto fijado de común acuerdo (normalmente 2,500–4,000 Pa en elementos primarios, o el límite de servicio del fabricante). La DHC es la masa acumulada de polvo en la restricción terminal.",
+      "callout": [
+        {
+          "label": "Unidad de restricción",
+          "value": "Pa o mbar"
+        },
+        {
+          "label": "Restricción terminal típica",
+          "value": "2,500–4,000 Pa (elementos primarios)"
+        },
+        {
+          "label": "Objetivo de restricción limpia",
+          "value": "<500 Pa al caudal de aire nominal"
+        }
+      ]
+    },
+    {
+      "heading": "Capacidad de retención de polvo",
+      "body": "La capacidad de retención de polvo (DHC) es la masa total de polvo de ensayo retenida en el elemento filtrante en la restricción terminal, medida pesando el elemento antes y después del ensayo. La DHC es el principal indicador del potencial de vida útil: una DHC mayor con eficiencia y restricción equivalentes significa intervalos más largos entre cambios de elemento. La DHC depende del área de medio del elemento (área total de filtración en cm²), del tipo y la porosidad del medio, de la geometría de los pliegues y de la velocidad frontal del ensayo. Con todo lo demás igual, duplicar el área de medio duplica aproximadamente la DHC. El medio sintético MACROCORE™ logra una DHC mayor que la celulosa con un área de medio equivalente, porque las fibras sintéticas tienen una fracción de huecos mayor y aceptan más polvo antes de que la torta selle. Aplicar la DHC en campo requiere una medición de la concentración de polvo del sitio: vida útil esperada (horas) = DHC (gramos) / (concentración de polvo g/m³ × caudal de aire m³/h).",
+      "callout": [
+        {
+          "label": "Unidades de la DHC",
+          "value": "Gramos de polvo ISO A2 fine"
+        },
+        {
+          "label": "Fórmula de vida en campo",
+          "value": "DHC(g) / (conc. × caudal de aire)"
+        },
+        {
+          "label": "Duplicar el área de medio aumenta la DHC",
+          "value": "~2× (aproximadamente lineal)"
+        }
+      ]
+    },
+    {
+      "heading": "Cómo leer las hojas de datos ISO 5011",
+      "body": "Una hoja de datos ISO 5011 válida informa: (1) el caudal de aire de ensayo en m³/h o kg/h; (2) la temperatura y la humedad del ensayo; (3) el tipo de polvo (A2 fine u otro); (4) la concentración de polvo en g/m³; (5) la restricción inicial en Pa al caudal de aire de ensayo; (6) la curva de eficiencia fraccional o los valores tabulados en los tamaños especificados; (7) la definición de restricción terminal usada; (8) la DHC en gramos en la restricción terminal; (9) la eficiencia gravimétrica inicial global (masa total capturada / masa total alimentada × 100%). Las hojas de datos sin la especificación del caudal de aire de ensayo no sirven para comparar, porque la restricción y la DHC dependen del caudal de aire. Al comparar dos elementos, asegúrese de que el caudal de aire de ensayo coincida con el caudal nominal de su aplicación: los datos de DHC tomados a 500 m³/h no se aplican a un elemento instalado en un depurador de aire de 1,000 m³/h."
+    },
+    {
+      "heading": "ISO 5011 frente a SAE J1539",
+      "body": "SAE J1539 (Air Cleaner Test Code — Engine Intake Air Cleaning Equipment) es la norma comparable del mercado estadounidense. Diferencias clave: ISO 5011 usa unidades SI en todo momento (Pa, m³/h, g/m³); SAE J1539 usa unidades mixtas de EE. UU. y SI. ISO 5011 especifica el polvo ISO 12103-1 A2 fine; SAE J1539 especifica los polvos de ensayo SAE fine y SAE coarse, que tienen distribuciones de tamaño de partícula distintas a las del ISO A2 fine. La eficiencia medida con SAE coarse será numéricamente más alta que con ISO A2 fine, porque el polvo más grueso es más fácil de capturar. ISO 5011 exige medir la eficiencia fraccional en toda la distribución de tamaños; SAE J1539 se centró históricamente en la eficiencia gravimétrica total. Los fabricantes que atienden mercados globales suelen informar datos ISO 5011; los productos orientados a fabricantes norteamericanos suelen incluir datos SAE J1539. Para comparar entre fabricantes, verifique el protocolo de ensayo y el tipo de polvo antes de sacar conclusiones.",
+      "callout": [
+        {
+          "label": "Polvo de ISO 5011",
+          "value": "ISO 12103-1 A2 fine"
+        },
+        {
+          "label": "Polvo de SAE J1539",
+          "value": "SAE fine o SAE coarse"
+        },
+        {
+          "label": "Unidades",
+          "value": "ISO 5011 = SI; J1539 = mixtas"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Polvo de ensayo",
+      "value": "ISO 12103-1 A2 fine"
+    },
+    {
+      "label": "Tamaños de eficiencia fraccional",
+      "value": "0.5–80 µm (10 puntos como mínimo)"
+    },
+    {
+      "label": "Restricción terminal (típica)",
+      "value": "2,500–4,000 Pa"
+    },
+    {
+      "label": "Unidad de la DHC",
+      "value": "Gramos en la restricción terminal"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 5011",
+    "ISO 29463"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "ISO 5011",
+    "ensayo de filtros de aire",
+    "capacidad de retención de polvo",
+    "depuración del aire de admisión",
+    "eficiencia del filtro",
+    "SAE J1539",
+    "curva de restricción"
+  ]
+}

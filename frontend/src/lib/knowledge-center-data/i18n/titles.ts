@@ -22,6 +22,13 @@ export const TRANSLATED_ARTICLE_SLUGS = [
   'oem-engineering',
   'asset-protection-engineering',
   'materials-engineering',
+  'iso-16889',
+  'iso-4406',
+  'iso-5011',
+  'beta-ratio',
+  'compressed-air-purity',
+  'oil-analysis-methods',
+  'crankcase-ventilation-filtration',
 ] as const;
 
 /** Knowledge Center section hubs with /es/ and /pt/ routes (metadata in app/knowledge-center/localized-hubs.ts). */
@@ -82,7 +89,7 @@ const TITLES: Record<'es' | 'pt', Record<string, string>> = {
     'iso-16889-multipass-test': 'Ensayo multipaso ISO 16889: diseño del circuito y protocolo de ejecución',
     'compressed-air-quality-verification': 'Verificación de la calidad del aire comprimido: ISO 8573-4, -5 y -7',
     'hpcr-fuel-system-cleanliness': 'Limpieza del sistema de combustible de alta presión common rail',
-    'crankcase-ventilation-filtration': 'Ventilación del cárter y filtración de gases de blow-by',
+    'crankcase-ventilation-filtration': 'Ventilación del cárter y filtración de los gases de blow-by',
     'fleet-oil-sampling-protocol': 'Diseño de protocolos de muestreo de aceite para flotas',
   },
   pt: {

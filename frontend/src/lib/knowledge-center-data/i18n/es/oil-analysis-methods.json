@@ -1,0 +1,215 @@
+{
+  "slug": "oil-analysis-methods",
+  "faqs": [
+    {
+      "question": "¿Qué diferencia hay entre la espectroscopia elemental y el conteo de partículas en el análisis de aceite?",
+      "answer": "La espectroscopia elemental (ICP-OES según ASTM D5185) mide en ppm las concentraciones de metales disueltos y finos en suspensión, y cada elemento indica una fuente de componentes específica (hierro: cojinetes de acero y camisas de cilindro; cobre: bujes de bronce; silicio: ingreso de sílice; calcio/zinc/fósforo: paquete de aditivos). Mide solo los metales disueltos y las partículas por debajo de 5–10 µm detectables por espectroscopia. El conteo de partículas (APC, ISO 11171) mide todas las partículas ≥4 µm sin importar su composición, expresadas como códigos ISO 4406. Los dos métodos se complementan: los códigos APC en aumento indican un aumento de la contaminación total; los valores de metales en aumento identifican la fuente de desgaste. Un sistema con código APC alto pero elementos metálicos bajos sugiere un ingreso de contaminación externa (sílice por los sellos o los respiraderos) y no desgaste de componentes."
+    },
+    {
+      "question": "¿Qué parámetros mide el análisis FTIR en el aceite usado y qué modos de falla indica cada uno?",
+      "answer": "La espectroscopia infrarroja por transformada de Fourier (FTIR, ASTM E2412) identifica los grupos funcionales del aceite por sus longitudes de onda de absorción infrarroja. Parámetros clave: oxidación (pico de carbonilo de 1,710 cm-1): degradación térmica del aceite, indica la velocidad de oxidación y la reserva restante de inhibidor de oxidación. Nitración (1,630 cm-1): productos de la contaminación del aceite lubricante por los gases de combustión del blow-by. Sulfatación (1,170 cm-1): subproductos de la combustión del azufre, elevados con combustible de alto azufre o contaminación por EGR. Agua (3,450 cm-1): agua libre o disuelta, que se confirma con el ensayo Karl Fischer si está elevada. Glicol (950–1,070 cm-1): contaminación por refrigerante por falla de la junta de culata o del enfriador de aceite. La dilución por combustible se detecta comparando la viscosidad (ASTM D445) y no por FTIR. Cada parámetro tiene umbrales de alarma: por ejemplo, un aumento de la oxidación de 25 unidades de absorbancia sobre la línea base dispara la recomendación de cambio de aceite."
+    },
+    {
+      "question": "¿Qué es el número básico total (TBN) y cómo se usa para determinar los intervalos de cambio de aceite?",
+      "answer": "El número básico total (TBN, ASTM D2896 o D4739) mide la reserva alcalina del aceite de motor disponible para neutralizar los subproductos ácidos de la combustión (ácido sulfúrico del combustible de alto azufre, ácido nítrico de los gases de blow-by, ácidos orgánicos de la oxidación del aceite). El aceite de motor API CK-4 nuevo para motores diésel modernos suele tener un TBN de 12–14 mg KOH/g. A medida que el aceite neutraliza ácidos, el TBN se agota. El punto de cambio de aceite suele ser cuando el TBN cae al 50% del TBN del aceite nuevo (6–7 mg KOH/g para un aceite nuevo de 12–14 mg/g) o cuando el número ácido total (TAN, ASTM D664) sube hasta igualar o superar el TBN restante. Los combustibles de alto azufre (más de 500 ppm de azufre, comunes en mercados emergentes) agotan el TBN 3–5× más rápido que el ULSD (<15 ppm de azufre), lo que exige intervalos de cambio más cortos o aceites con un TBN especificado más alto."
+    },
+    {
+      "question": "¿Cómo se usa el conteo de partículas para monitorear el desempeño del elemento filtrante en servicio?",
+      "answer": "El conteo de partículas aguas arriba y aguas abajo de un elemento filtrante en servicio sigue la relación Beta real en las condiciones de operación reales, que puede diferir mucho de las mediciones de laboratorio ISO 16889 por las pulsaciones de presión, los ciclos de temperatura y la composición real de las partículas contaminantes. Si las lecturas APC aguas abajo suben con una concentración aguas arriba constante, la eficiencia del filtro bajó: las causas posibles incluyen la apertura de la válvula de derivación (la restricción del elemento supera la presión de apertura), la falla del sello de la tapa o el colapso del medio. Las muestras sucesivas del punto de muestreo aguas abajo, en condiciones de operación constantes y comparadas con la línea base establecida en la puesta en marcha, identifican la tendencia antes de la falla. Un aumento del código APC de 2 unidades ISO o más en muestras consecutivas, sin un cambio correspondiente en las condiciones de operación del sistema, indica que hay que investigar la integridad del filtro."
+    },
+    {
+      "question": "¿Qué intervalo de muestreo se recomienda para el análisis de aceite en sistemas hidráulicos de alta severidad?",
+      "answer": "Los sistemas hidráulicos de alta severidad (con válvulas proporcionales o servoválvulas sensibles a la contaminación, que operan en entornos polvorientos o con ciclos térmicos intensos) deberían muestrearse para análisis de aceite cada 250 horas como mínimo, o una vez por mes en los sistemas de operación continua. Los sistemas con una línea base de análisis estable establecida pueden extender el intervalo a 500 horas una vez que tres análisis consecutivos dentro de la especificación confirmen la estabilidad del sistema. Los indicadores de servicio severo (presión de operación sostenida por encima del 80% de la nominal, arranques en frío frecuentes o eventos de contaminación confirmados) deberían disparar un muestreo no programado. ISO 4413:2011 exige al menos un análisis de muestra de fluido por cada intervalo de mantenimiento planificado, con el resultado evaluado frente al código de limpieza objetivo especificado por el fabricante antes de devolver el sistema al servicio después del mantenimiento."
+    },
+    {
+      "question": "¿Qué es la medición de la viscosidad y por qué es un indicador principal del estado del aceite?",
+      "answer": "La viscosidad cinemática (ASTM D445) mide el tiempo que tarda un volumen fijo de aceite en fluir por un capilar calibrado a 40°C y 100°C. El número de grado ISO VG es la viscosidad cinemática nominal a 40°C en cSt. Los cambios de viscosidad del aceite indican: dilución por combustible (gran disminución de la viscosidad, >1 cSt por debajo de la especificación a 40°C); contaminación por glicol (puede aumentar la viscosidad por la formación de emulsiones); oxidación severa (aumento de la viscosidad >20% sobre la línea base del aceite nuevo); o degradación por cizallamiento del mejorador de viscosidad (disminución de la viscosidad en los aceites multigrado, que indica la ruptura del aditivo polimérico). Un cambio de viscosidad de ±15% respecto de la especificación del aceite nuevo a 40°C es un umbral de alarma típico en los programas de análisis de aceite. La viscosidad debe medirse en una muestra bien mezclada y a temperatura controlada: las mediciones con refractómetro en campo no alcanzan para una evaluación precisa de la viscosidad."
+    },
+    {
+      "question": "¿Qué es el análisis de partículas de desgaste y en qué se diferencia la ferrografía analítica del análisis espectrométrico?",
+      "answer": "La ferrografía analítica (ASTM D7690) separa magnéticamente las partículas de desgaste del aceite y las deposita en un portaobjetos de vidrio para examinarlas al microscopio por tamaño, forma, morfología y composición. Detecta partículas de 1 µm a 1,000 µm y capta las partículas grandes (>10 µm) que el análisis espectrométrico no ve. La morfología de las partículas permite identificar el modo de desgaste: las partículas planas y lisas (2–5 µm) indican desgaste normal por roce; las partículas de corte (cintas curvas) indican desgaste abrasivo por partículas duras; las partículas esféricas (1–5 µm) indican desprendimiento por fatiga en rodamientos; las partículas oscuras (óxidos) indican eventos de desgaste a alta temperatura. La espectrometría ICP es más cuantitativa para el análisis de metales a nivel de ppm, pero está limitada a partículas menores de 10 µm. Combinar ambos métodos da datos elementales cuantitativos y un diagnóstico cualitativo del modo de desgaste."
+    },
+    {
+      "question": "¿Cómo se diagnostica y cuantifica la contaminación por glicol en el aceite de motor?",
+      "answer": "La contaminación por glicol por ingreso de refrigerante (falla de la junta de culata, fuga del enfriador de aceite, grieta en la camisa de cilindro) se detecta por: análisis FTIR con absorción en 950–1,070 cm-1; potasio (K) elevado por espectrometría, ya que los inhibidores del refrigerante contienen boratos o silicatos de potasio; sodio (Na) elevado por los inhibidores de corrosión del refrigerante; y observación física de una muestra de aceite lechosa o gelatinosa. La medición cuantitativa del glicol usa el método del refractómetro o ASTM D2982 (HPLC). El glicol en concentraciones superiores al 0.1% (1,000 ppm) provoca la formación de emulsiones en el aceite que impiden que se forme la película hidrodinámica en los muñones de los cojinetes. Por encima del 0.5% de glicol, la viscosidad del aceite de motor puede aumentar 5–10×, y los complejos de glicol y aceite forman depósitos gelatinosos que bloquean las galerías de aceite. Una contaminación por glicol confirmada exige cambiar el aceite de inmediato, lavar el sistema y reparar la fuente de ingreso de refrigerante antes de volver a arrancar el motor."
+    },
+    {
+      "question": "¿Qué importancia tiene el silicio en el análisis espectrométrico del aceite usado?",
+      "answer": "El silicio (Si) en la espectrometría del aceite usado tiene dos fuentes posibles que hay que distinguir: (1) Ingreso de polvo de sílice en suspensión: contaminación externa por sellos del filtro de aire fallados o eventos de derivación, que indica una protección de filtración deficiente. El silicio en forma de sílice (SiO2) es muy abrasivo (dureza 7 Mohs) y es la causa principal del desgaste abrasivo de las camisas de cilindro y los cojinetes. (2) Contaminación por sellador de silicona o por refrigerante: los compuestos de juntas de silicona o los aditivos antiespumantes a base de silicona del refrigerante aportan Si al aceite como un compuesto organosilícico no abrasivo. Se distinguen cruzando el dato con el magnesio (Mg): los inhibidores de silicato del refrigerante contienen tanto Si como Mg. Un Si elevado sin Mg elevado indica ingreso de sílice en suspensión. Los umbrales de alarma de Si en el aceite de motor diésel son de 20–30 ppm sobre la línea base para contaminación en suspensión, o cualquier Si detectable si el aceite nuevo de llenado tenía cero Si y no se usaron selladores de silicona en el último servicio."
+    },
+    {
+      "question": "¿Qué formato de informe y qué metodología de tendencias usa un programa de análisis de aceite eficaz?",
+      "answer": "Un programa de análisis de aceite eficaz usa informes de tendencia, siguiendo cada parámetro en muestras consecutivas en un gráfico de serie temporal, en lugar de comparar un solo punto con un umbral. El análisis de tendencias detecta la degradación gradual antes de llegar a los umbrales de alarma: un aumento lento del Fe de 20 a 35 y a 50 ppm en tres muestras consecutivas indica un desgaste progresivo de los cojinetes, mientras que una sola lectura aislada de 50 ppm es ambigua. Los formatos de informe incluyen: gráficos de serie temporal de cada parámetro; alertas de velocidad de cambio (que señalan cuando un parámetro aumenta más de X ppm cada 250 horas); un resumen de estado tipo semáforo (verde/ámbar/rojo para cada grupo de parámetros); y un índice de salud de la máquina derivado de una combinación ponderada del estado de todos los parámetros. Las etiquetas de las muestras deben incluir el ID de la máquina, el compartimento, el tipo de aceite, la fecha de llenado, las horas desde el llenado y las horas totales de la máquina: sin este contexto, el análisis de tendencias es imposible."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry (ICP-AES)",
+      "relevance": "Método principal de análisis de metales elementales en el aceite usado para monitorear las partículas de desgaste."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry",
+      "relevance": "Método FTIR para monitorear la oxidación, la nitración, la sulfatación, el agua y la contaminación por glicol en el aceite lubricante usado."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D2896-15, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration",
+      "relevance": "Método de medición del TBN usado para seguir el agotamiento de la reserva alcalina y orientar el momento del cambio de aceite."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010",
+      "relevance": "Referencia completa sobre procedimientos de muestreo, interpretación de parámetros, metodología para fijar alarmas y análisis de tendencias en los programas industriales de análisis de aceite."
+    }
+  ],
+  "title": "Métodos de análisis de aceite",
+  "subtitle": "Espectroscopia ICP, TAN/TBN, viscosidad y tendencia de metales de desgaste",
+  "metaDescription": "Referencia de ingeniería para el monitoreo del estado del aceite: análisis espectrométrico ICP de metales de desgaste, número ácido total (ASTM D664), número básico total (ASTM D2896), viscosidad cinemática (ASTM D445), espectroscopia FTIR y protocolos de muestreo para programas de mantenimiento de flotas.",
+  "category": "Ingeniería",
+  "readTime": "10 min",
+  "intro": "El análisis de aceite es la medición sistemática de las propiedades físicas y químicas del aceite lubricante en servicio para detectar el desgaste de componentes, monitorear la degradación del aceite e identificar la contaminación antes de que haya daños. Aplicado con un calendario de muestreo definido, el análisis de aceite es un indicador anticipado de falla: suele identificar los problemas 200–500 horas de operación antes de la falla mecánica, lo que permite intervenir de forma planificada en lugar de sufrir una avería no planificada.",
+  "sections": [
+    {
+      "heading": "Análisis espectrométrico ICP de metales de desgaste",
+      "body": "La espectrometría de plasma acoplado inductivamente (ICP) es el método estándar para medir los metales de desgaste disueltos y en partículas menores de 20 µm en los aceites de motor e hidráulicos. ASTM D5185 (Multi-Element Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry) es el método de referencia. Una antorcha de plasma a aproximadamente 10,000 K atomiza y excita los elementos de la muestra de aceite; las líneas de emisión en las longitudes de onda propias de cada elemento se miden a la vez. Elementos informados y su importancia diagnóstica: hierro (Fe): desgaste de camisas de cilindro, árbol de levas y cigüeñal; cromo (Cr): desgaste de anillos de pistón y camisas de cilindro; aluminio (Al): desgaste de la corona del pistón, la carcasa de cojinetes y la caja de engranajes; cobre (Cu): desgaste de la capa superficial de los cojinetes (capas Cu–Pb, Cu–Sn) y de los bujes de bronce; plomo (Pb): falla de la capa superficial de los cojinetes; silicio (Si): ingestión de polvo en suspensión (sílice) O refrigerante anticongelante (aditivo de silicona); sodio (Na): ingreso de refrigerante (anticongelante de silicato de sodio); boro (B): ingreso de refrigerante (anticongelante de borato de sodio). El ICP detecta de forma confiable las partículas menores de 7–10 µm; las partículas de desgaste más grandes (desprendimiento por fatiga, desgaste por virutas) no se disuelven ni se atomizan bien y requieren conteo de partículas o ferrografía analítica para detectarlas.",
+      "callout": [
+        {
+          "label": "Hierro (Fe)",
+          "value": "Desgaste de camisas, cigüeñal y árbol de levas"
+        },
+        {
+          "label": "Silicio (Si)",
+          "value": "Ingestión de polvo O refrigerante (según el contexto)"
+        },
+        {
+          "label": "Límite de tamaño de partícula del ICP",
+          "value": "Eficaz hasta ~7–10 µm de diámetro"
+        }
+      ]
+    },
+    {
+      "heading": "Número ácido total y número básico total",
+      "body": "El número ácido total (TAN) mide la concentración de todos los componentes ácidos del aceite: productos de oxidación, subproductos ácidos de la combustión y productos de degradación de los aditivos agotados. ASTM D664 (método de titulación potenciométrica) expresa el TAN en mg de KOH por gramo de aceite (mgKOH/g). El TAN del aceite de motor nuevo suele ir de 0.3–1.5 mgKOH/g. Una tendencia creciente del TAN indica una oxidación acelerada o contaminación ácida. Límite de alerta: TAN ≥ 2× el valor del aceite nuevo o ≥ 2.0 mgKOH/g, según la especificación del fabricante. El número básico total (TBN) mide la reserva alcalina del aceite, principalmente los aditivos detergentes y dispersantes que neutralizan los ácidos de la combustión. ASTM D2896 (método de titulación potenciométrica con ácido perclórico). TBN del aceite nuevo para motores diésel: 10–30 mgKOH/g según la aplicación (diésel de minería con 30+ de TBN para combustible de alto azufre; diésel de ruta con 10–14 de TBN con ULSD de bajo azufre). A medida que el TBN se agota en servicio, el TAN sube. El límite de servicio suele ser un TBN ≤ 50% del TBN del aceite nuevo, o un TAN que se acerca al TBN. Una relación TBN:TAN ≥ 1 es el criterio mínimo para mantener una amortiguación alcalina protectora.",
+      "callout": [
+        {
+          "label": "Método de ensayo del TAN",
+          "value": "ASTM D664 (mgKOH/g)"
+        },
+        {
+          "label": "Método de ensayo del TBN",
+          "value": "ASTM D2896 (mgKOH/g)"
+        },
+        {
+          "label": "Límite de servicio (TBN)",
+          "value": "≤50% del TBN del aceite nuevo, o TBN ≤ TAN"
+        }
+      ]
+    },
+    {
+      "heading": "Viscosidad cinemática",
+      "body": "La viscosidad cinemática es la propiedad física fundamental que rige el espesor de la película de aceite, la eficiencia de la bomba y la protección de los cojinetes. ASTM D445 (Standard Test Method for Kinematic Viscosity of Transparent and Opaque Liquids) mide la viscosidad cronometrando el flujo del aceite por un tubo capilar calibrado a 40°C y 100°C. Los resultados se dan en centistokes (cSt = mm²/s). El índice de viscosidad (ASTM D2270) caracteriza la sensibilidad de la viscosidad a la temperatura: los aceites de IV alto mantienen mejor la viscosidad en todo el rango de temperatura. Disminución de la viscosidad en servicio (adelgazamiento por cizallamiento): los mejoradores de IV de los aceites multigrado son polímeros de alto peso molecular que el esfuerzo mecánico corta en cadenas más cortas, lo que reduce la viscosidad de forma permanente. Alerta: viscosidad ≥20% por debajo o ≥30% por encima del valor del aceite nuevo a 40°C. Aumento de la viscosidad: la oxidación aumenta el peso molecular del aceite base y crea precursores de lodo. La dilución por combustible por fugas de los inyectores reduce la viscosidad de forma aguda (se confirma con el ensayo de punto de inflamación ASTM D92: el punto de inflamación del aceite diluido con combustible cae por debajo de 160°C). El ingreso de refrigerante por falla de la junta de culata aumenta el contenido de agua y, tras la emulsión, la viscosidad aparente.",
+      "callout": [
+        {
+          "label": "Norma de ensayo",
+          "value": "ASTM D445 a 40°C y 100°C"
+        },
+        {
+          "label": "Alerta por disminución de viscosidad",
+          "value": "≥20% por debajo de la especificación del aceite nuevo"
+        },
+        {
+          "label": "Indicador de dilución por combustible",
+          "value": "Punto de inflamación <160°C (ASTM D92)"
+        }
+      ]
+    },
+    {
+      "heading": "Espectroscopia FTIR para el estado del aceite",
+      "body": "La espectroscopia infrarroja por transformada de Fourier (FTIR) identifica las especies moleculares del aceite usado comparando sus espectros de absorción con un espectro de referencia del aceite nuevo (sin uso) del mismo grado. Los picos de absorbancia en números de onda característicos indican productos de degradación específicos: productos de oxidación (1,700–1,760 cm⁻¹, estiramiento del carbonilo); productos de nitración (1,620 cm⁻¹, bandas de nitrilo por la oxidación del nitrógeno en los gases de combustión); hollín y partículas de combustión (elevación de la línea base en 2,000 cm⁻¹); agua (3,400 cm⁻¹, estiramiento OH, usado para detectar agua cuando no se dispone de KFT coulométrico); refrigerante de glicol (866 cm⁻¹, firma del etilenglicol). El FTIR se informa en unidades de absorbancia (AU) respecto de la línea base del aceite nuevo. Los límites de alerta varían según el fabricante: oxidación ≥ 25 AU y nitración ≥ 25 AU son valores de disparo comunes en flotas para aceite de motor diésel SAE 15W-40. El FTIR es una técnica de detección rápida y económica: genera un espectro completo en menos de 2 minutos. Los contaminantes específicos identificados por FTIR se confirman con métodos de ensayo dedicados (D664 para los ácidos de oxidación, D6304 para el agua).",
+      "callout": [
+        {
+          "label": "Pico de oxidación",
+          "value": "1,700–1,760 cm⁻¹ (carbonilo)"
+        },
+        {
+          "label": "Pico del refrigerante de glicol",
+          "value": "866 cm⁻¹"
+        },
+        {
+          "label": "Límite de alerta de oxidación",
+          "value": "≥25 AU (respecto del aceite nuevo)"
+        }
+      ]
+    },
+    {
+      "heading": "Conteo de partículas en el aceite usado",
+      "body": "El conteo de partículas ISO 4406 aplicado al aceite de motor o hidráulico usado detecta temprano un aumento del desgaste interno antes de que lo detecte la espectroscopia ICP (el ICP está limitado a partículas ≤7–10 µm; las partículas de fatiga superficial y desprendimiento suelen medir 25–100 µm). Los contadores automáticos de partículas calibrados según ISO 11171 cuentan partículas de ≥4 µm, ≥6 µm y ≥14 µm. Establecer un código ISO de línea base para cada tipo de máquina (por ejemplo, ISO 17/15/12 para el circuito de lubricación de un motor diésel sano) permite detectar desviaciones: un desplazamiento de dos unidades de código sobre la línea base indica que se duplicó la tasa de generación de partículas. Cuando los conteos de partículas suben y el ICP no muestra un aumento elemental correspondiente, las partículas de origen son mayores de 10 µm y representan eventos de fatiga o desprendimiento. Combinar ICP y conteo de partículas cubre toda la distribución de tamaños y aporta información diagnóstica complementaria: el ICP para el desgaste subsuperficial crónico y el conteo de partículas para los eventos mecánicos agudos.",
+      "callout": [
+        {
+          "label": "Límite de tamaño de partícula del ICP",
+          "value": "≤7–10 µm detectadas de forma confiable"
+        },
+        {
+          "label": "Tamaño de las partículas de fatiga",
+          "value": "25–100 µm (el ICP no las detecta)"
+        },
+        {
+          "label": "Umbral de alerta",
+          "value": "Aumento ≥2 unidades de código sobre la línea base propia"
+        }
+      ]
+    },
+    {
+      "heading": "Protocolos de muestreo y tendencias",
+      "body": "El valor del análisis de aceite se maximiza con protocolos de muestreo constantes que permitan detectar tendencias en varios datos. Requisitos clave del protocolo: muestrear con horas de motor o máquina constantes y desde el mismo punto de muestreo en cada intervalo; usar tubos o jeringas de muestreo prelimpiados con una válvula de muestreo dedicada (no el tapón de drenaje); muestrear a la temperatura de operación con el sistema a carga normal; llenar los frascos de muestra a 3/4 de su capacidad para permitir mezclar sin airear. Intervalos recomendados: aceite de motor en camiones mineros, cada 250 horas; aceite de motor en diésel de ruta, cada 500 horas; aceite hidráulico en equipos de construcción, cada 250–500 horas; aceite de turbina, cada 1,000–2,000 horas. Una sola muestra es una medición; tres o más muestras de la misma máquina son una tendencia. Los límites de alerta de una sola muestra tienen menos sentido que una tendencia en aumento: una lectura de hierro de 80 ppm que antes era de 15 ppm indica que la tasa de desgaste se aceleró 5×, aunque 80 ppm no haya cruzado el límite de alerta absoluto."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Norma ICP",
+      "value": "ASTM D5185"
+    },
+    {
+      "label": "Norma TAN",
+      "value": "ASTM D664 (mgKOH/g)"
+    },
+    {
+      "label": "Límite de servicio del TBN",
+      "value": "≤50% del TBN del aceite nuevo"
+    },
+    {
+      "label": "Norma de viscosidad",
+      "value": "ASTM D445 a 40°C y 100°C"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ASTM D6304"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "análisis de aceite",
+    "espectroscopia ICP",
+    "metales de desgaste",
+    "TAN",
+    "TBN",
+    "viscosidad",
+    "FTIR",
+    "ASTM D5185",
+    "ASTM D664",
+    "monitoreo del estado del fluido"
+  ],
+  "commonMistakes": [
+    "Interpretar las concentraciones de metales de desgaste de una sola muestra como indicadores definitivos de la tasa de desgaste, sin contexto de velocidad de cambio. Una lectura de silicio alta puede reflejar un cambio reciente de sellos (contaminación de asentamiento) y no un desgaste abrasivo acelerado: las tendencias de 3+ muestras con intervalos de cambio conocidos distinguen ambos casos.",
+    "No ajustar los resultados ICP-OES por el intervalo de cambio de aceite al comparar muestras tomadas en intervalos distintos. Una lectura de hierro de 80 ppm a las 500 horas representa una tasa de desgaste mayor que una de 80 ppm a las 250 horas: normalice a mg/hora o mg/L para comparaciones válidas.",
+    "Depender solo de la espectroscopia ICP para detectar una fatiga avanzada de cojinetes. El ICP detecta de forma confiable las partículas menores de 5–8 µm: la fatiga por desprendimiento produce partículas de desgaste grandes (20–100+ µm) que el ICP informa de menos. Para una evaluación completa del desgaste se requiere conteo de partículas o análisis ferrográfico."
+  ]
+}
