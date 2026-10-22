@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.035em;
   overflow-wrap: normal;
   word-break: normal;
-  hyphens: auto;
+  hyphens: none;
 }
 
 /* Phase 2A — internal page hero typography normalization. */
@@ -373,7 +373,7 @@ main a h3 {
   letter-spacing: -0.025em !important;
   overflow-wrap: break-word;
   word-break: normal;
-  hyphens: auto;
+  hyphens: none;
 }
 
 main a p,
