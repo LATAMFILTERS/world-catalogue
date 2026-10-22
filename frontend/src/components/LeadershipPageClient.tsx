@@ -130,6 +130,29 @@ export function LeadershipPageClient() {
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
   const founder = registry.founder;
   const founderProfile = isPortuguese ? FOUNDER_PROFILE_PT : isSpanish ? FOUNDER_PROFILE.es : FOUNDER_PROFILE.en;
+  const founderMilestones = isPortuguese
+    ? [
+        { year: '2004', title: 'ELIMPERCA', detail: 'Início da trajetória em filtração.' },
+        { year: '2015', title: 'ELIMFILTERS®', detail: 'Criação da marca independente.' },
+        { year: 'HOJE', title: 'Proteção de ativos', detail: 'Desenvolvimento da plataforma de inteligência em filtração.' },
+      ]
+    : isSpanish
+      ? [
+          { year: '2004', title: 'ELIMPERCA', detail: 'Inicio de su trayectoria en filtración.' },
+          { year: '2015', title: 'ELIMFILTERS®', detail: 'Creación de la marca independiente.' },
+          { year: 'HOY', title: 'Protección de activos', detail: 'Desarrollo de la plataforma de inteligencia en filtración.' },
+        ]
+      : [
+          { year: '2004', title: 'ELIMPERCA', detail: 'Beginning of his filtration career.' },
+          { year: '2015', title: 'ELIMFILTERS®', detail: 'Launch of an independent brand.' },
+          { year: 'TODAY', title: 'Asset protection', detail: 'Development of the filtration intelligence platform.' },
+        ];
+  const founderTimelineLabel = isPortuguese ? 'Marcos da trajetória' : isSpanish ? 'Hitos de trayectoria' : 'Career milestones';
+  const founderPhilosophy = isPortuguese
+    ? 'O filtro é o meio. A proteção dos ativos é o objetivo.'
+    : isSpanish
+      ? 'El filtro es el medio. La protección de los activos es el objetivo.'
+      : 'The filter is the means. Asset protection is the objective.';
 
   return (
     <main className="leadership-page">
@@ -152,9 +175,24 @@ export function LeadershipPageClient() {
 
       <section className="founder-section">
         <div className="founder-grid">
-          <div className="founder-photo-shell">
-            <ReviewedImage src={founder.image} alt={founder.alt} className="founder-photo" />
-          </div>
+          <aside className="founder-rail" aria-label={founderTimelineLabel}>
+            <div className="founder-photo-shell">
+              <ReviewedImage src={founder.image} alt={founder.alt} className="founder-photo" />
+            </div>
+            <div className="founder-timeline">
+              <h3 className="founder-timeline-heading">{founderTimelineLabel}</h3>
+              <ol className="founder-timeline-list">
+                {founderMilestones.map(({ year, title, detail }) => (
+                  <li className="founder-timeline-item" key={year}>
+                    <span className="founder-timeline-year">{year}</span>
+                    <strong className="founder-timeline-title">{title}</strong>
+                    <span className="founder-timeline-detail">{detail}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <blockquote className="founder-quote">{founderPhilosophy}</blockquote>
+          </aside>
           <div className="founder-copy">
             <p className="eyebrow dark"><ReviewedText text={"FOUNDER & CEO"} /></p>
             <h2>{founder.name}</h2>
@@ -246,8 +284,23 @@ export function LeadershipPageClient() {
         .section-copy+.section-copy{margin-top:1.1rem}
         .founder-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}
         .founder-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
-        .founder-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111;width:100%;max-width:340px;justify-self:center}.founder-photo{width:100%;height:100%;object-fit:cover;display:block}
-        .founder-copy h2{font-size:clamp(2.3rem,3.6vw,3.75rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 .6rem}.founder-role{color:#6c6100;font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 1.5rem}.founder-profile{display:grid;gap:1rem}.founder-profile p{color:#3f3f3b;font-size:1.02rem;line-height:1.72;margin:0}
+        .founder-rail{width:100%;min-width:0;max-width:360px;justify-self:start}
+        .founder-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111;width:100%;max-width:360px}.founder-photo{width:100%;height:100%;object-fit:cover;display:block}
+        .founder-timeline{margin-top:2.25rem}
+        .founder-timeline-heading{color:#635a17;font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 1.3rem}
+        .founder-timeline-list{list-style:none;margin:0;padding:0 0 0 1.3rem;border-left:1px solid #bdbbb0}
+        .founder-timeline-item{position:relative;padding:0 0 1.55rem;min-width:0}
+        .founder-timeline-item:last-child{padding-bottom:0}
+        .founder-timeline-item:before{content:"";position:absolute;left:calc(-1.3rem - 4px);top:.38rem;width:7px;height:7px;background:#857600;border:1px solid #f2f2ef;border-radius:50%}
+        .founder-timeline-year{display:block;color:#756800;font-family:var(--font-display);font-size:.95rem;font-weight:700;line-height:1.25;margin-bottom:.24rem}
+        .founder-timeline-title{display:block;color:#191919;font-family:var(--font-display);font-size:1.07rem;font-weight:700;line-height:1.32}
+        .founder-timeline-detail{display:block;color:#54544d;font-size:.92rem;line-height:1.55;margin-top:.3rem}
+        .founder-quote{margin:2rem 0 0;padding:1.15rem 0 0;border-top:1px solid #d5d3ca;color:#2e2e27;font-family:var(--font-display);font-size:clamp(1.2rem,1.5vw,1.6rem);font-weight:650;line-height:1.32;letter-spacing:-.018em}
+        .founder-copy{min-width:0}
+        .founder-copy h2{font-size:clamp(2.3rem,3.6vw,3.75rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 .6rem}
+        .founder-role{color:#6c6100;font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 1.5rem}
+        .founder-profile{display:grid;gap:1.15rem;max-width:69ch;text-align:left}
+        .founder-profile p{color:#373731;font-size:1.02rem;line-height:1.75;letter-spacing:normal;word-spacing:normal;text-align:left;margin:0}
         .agents-section,.closing-section{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.agents-section{background:#050505}.closing-section{background:#050505}
         .agents-section h2,.closing-section h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.06;letter-spacing:-.035em;margin:0 0 1.2rem;text-transform:uppercase;max-width:880px}
         .agent-list{margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.12)}
@@ -258,8 +311,8 @@ export function LeadershipPageClient() {
         .agent-contact a{color:#FFF12D;font-family:var(--font-display);font-weight:700;font-size:.95rem;letter-spacing:.02em;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
         .agent-contact a:hover{color:#fff}
         .governance-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.governance-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}.governance-grid h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.07;letter-spacing:-.035em;margin:0}.governance-grid>p{color:#3f3f3b;font-size:1.04rem;line-height:1.78;margin:0}.back-link{display:inline-block;margin-top:1.25rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em}
-        @media(max-width:900px){.founder-grid,.governance-grid,.agent-profile{grid-template-columns:1fr}.founder-photo-shell{width:70%;max-width:340px}.agent-photo-shell{max-width:300px}}
-        @media(max-width:560px){.leadership-hero{padding-top:7rem;padding-bottom:3rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-photo-shell{width:78%;max-width:300px}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
+        @media(max-width:900px){.founder-grid,.governance-grid,.agent-profile{grid-template-columns:1fr}.founder-rail{max-width:100%;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:1.5rem 2rem;align-items:start}.founder-photo-shell{width:100%;max-width:300px}.founder-timeline{margin-top:0}.founder-quote{grid-column:1/-1;margin-top:0}.agent-photo-shell{max-width:300px}}
+        @media(max-width:560px){.leadership-hero{padding-top:7rem;padding-bottom:3rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-rail{grid-template-columns:1fr;gap:1.5rem;max-width:420px;justify-self:center}.founder-photo-shell{width:78%;max-width:300px;margin:0 auto}.founder-timeline-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:0;border:0}.founder-timeline-item{padding:.9rem 0 0;border-top:1px solid #bdbbb0}.founder-timeline-item:before{left:0;top:-4px}.founder-timeline-year{font-size:.84rem}.founder-timeline-title{font-size:.92rem;overflow-wrap:anywhere}.founder-timeline-detail{font-size:.82rem}.founder-quote{grid-column:1;margin:0}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
       `}</style>
     </main>
   );

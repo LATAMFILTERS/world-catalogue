@@ -24,6 +24,11 @@ describe('Leadership language coverage and preserved identity', () => {
       expect(agentDescriptions).toHaveLength(5);
       for (const [, description] of agentDescriptions) expect((description.match(/<p>/g) || []).length).toBe(3);
       expect(visible).toContain(registry.founder.name);
+      expect((visible.match(/class="founder-timeline-item"/g) || []).length).toBe(3);
+      expect(visible).toContain('2004');
+      expect(visible).toContain('2015');
+      expect(visible).toContain(lang === 'pt' ? 'Marcos da trajetória' : lang === 'es' ? 'Hitos de trayectoria' : 'Career milestones');
+      expect(visible).toContain(lang === 'pt' ? 'Desenvolvimento da plataforma de inteligência em filtração.' : lang === 'es' ? 'Desarrollo de la plataforma de inteligencia en filtración.' : 'Development of the filtration intelligence platform.');
       for (const person of [registry.founder, ...registry.agents]) expect(visible).toContain(person.image.replaceAll('&', '&amp;'));
       for (const technology of ['MACROCORE™', 'HYDROCORE™', 'TURBOCORE™', 'FH/FG']) expect(visible).not.toContain(technology);
       expect(visible).toContain('href="/about/who-we-are"');
