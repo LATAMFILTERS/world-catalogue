@@ -29,6 +29,19 @@ describe('Leadership language coverage and preserved identity', () => {
       expect(visible).toContain('2015');
       expect(visible).toContain(lang === 'pt' ? 'Marcos da trajetória' : lang === 'es' ? 'Hitos de trayectoria' : 'Career milestones');
       expect(visible).toContain(lang === 'pt' ? 'Desenvolvimento da plataforma de inteligência em filtração.' : lang === 'es' ? 'Desarrollo de la plataforma de inteligencia en filtración.' : 'Development of the filtration intelligence platform.');
+      const governanceLabels = lang === 'pt'
+        ? ['Responsabilidade delimitada', 'Evidências e rastreabilidade', 'Intervenção humana']
+        : lang === 'es'
+          ? ['Responsabilidad delimitada', 'Evidencia y trazabilidad', 'Intervención humana']
+          : ['Defined accountability', 'Evidence and traceability', 'Human intervention'];
+      const capacityLabels = lang === 'pt'
+        ? ['Especialização com propósito', 'Coordenação, não burocracia', 'Escala responsável']
+        : lang === 'es'
+          ? ['Especialización con propósito', 'Coordinación, no burocracia', 'Escala responsable']
+          : ['Purposeful specialization', 'Coordination, not bureaucracy', 'Responsible scale'];
+      for (const label of [...governanceLabels, ...capacityLabels]) expect(visible).toContain(label);
+      expect(visible).toContain('id="governance-title"');
+      expect(visible).toContain('id="capacity-title"');
       for (const person of [registry.founder, ...registry.agents]) expect(visible).toContain(person.image.replaceAll('&', '&amp;'));
       for (const technology of ['MACROCORE™', 'HYDROCORE™', 'TURBOCORE™', 'FH/FG']) expect(visible).not.toContain(technology);
       expect(visible).toContain('href="/about/who-we-are"');
