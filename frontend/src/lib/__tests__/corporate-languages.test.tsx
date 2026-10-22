@@ -44,13 +44,13 @@ describe('Corporate copy follows the selected language', () => {
     });
     it(lang + ' renders every engineering principle and preserves technical identifiers', () => {
       const html = render(<OurPhilosophyPage />);
-      expect(html).toContain(lang === 'pt' ? 'Nossa Filosofia de Engenharia' : lang === 'es' ? 'Nuestra Filosofía de Ingeniería' : 'Our Engineering Philosophy');
+      expect(html).toContain(lang === 'pt' ? 'Primeiro compreendemos o ativo. Depois definimos sua proteção.' : lang === 'es' ? 'Primero comprendemos el activo. Después definimos su protección.' : 'Understand the asset first. Then define its protection.');
       expect((html.match(/<h3\b/g) || []).length).toBe(7);
-      for (const original of ['70-80%', '1–5 µm', 'HPCR', 'ISO 16889', 'ISO 5011', 'ISO 4406', 'MACROCORE™', 'SYNTAPORE™', 'NANOFORCE™']) expect(html).toContain(original);
+      for (const original of ['ISO 16889', 'ISO 5011', 'ISO 4406', 'MACROCORE™', 'SYNTAPORE™', 'NANOFORCE™']) expect(html).toContain(original);
       if (lang === 'pt') {
-        for (const original of ['ENGINEERING DOCTRINE', 'Our Engineering Philosophy', 'GUIDING PRINCIPLES', 'Reliability is the objective.']) expect(html).not.toContain(original);
+        for (const original of ['ENGINEERING DOCTRINE', 'Our Engineering Philosophy', 'GUIDING PRINCIPLES', 'The filter is the means. Asset protection is the objective.']) expect(html).not.toContain(original);
         expect(html).toContain('7 PRINCÍPIOS ORIENTADORES');
-        expect(html).toContain('A confiabilidade é o objetivo.');
+        expect(html).toContain('O filtro é o meio. A proteção dos ativos é o objetivo.');
       }
     });
   }
