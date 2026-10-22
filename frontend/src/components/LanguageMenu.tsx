@@ -23,7 +23,7 @@ const CSS = `
 .ef-lang>summary:focus-visible{outline:2px solid #fff12d;outline-offset:2px}
 .ef-lang svg{display:block;flex:none}
 .ef-lang-list{position:absolute;top:calc(100% + 6px);right:0;z-index:300;min-width:11rem;margin:0;padding:.3rem 0;list-style:none;background:rgba(8,8,8,.98);border:1px solid rgba(255,255,255,.16);box-shadow:0 12px 32px rgba(0,0,0,.55)}
-.ef-lang-list a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem .95rem;color:rgba(255,255,255,.82);text-decoration:none;font-weight:600;font-size:.88rem;letter-spacing:.03em;white-space:nowrap}
+.ef-lang-list a{touch-action:manipulation;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem .95rem;color:rgba(255,255,255,.82);text-decoration:none;font-weight:600;font-size:.88rem;letter-spacing:.03em;white-space:nowrap}
 .ef-lang-list a:hover{background:rgba(255,241,45,.08);color:#fff}
 .ef-lang-list a:focus-visible{outline:2px solid #fff12d;outline-offset:-2px}
 .ef-lang-list a[aria-current="true"]{color:#fff12d}
@@ -81,7 +81,11 @@ export function LanguageMenu({ style, registers = true }: { style?: CSSPropertie
     }
     event.preventDefault();
     if (ref.current) ref.current.open = false;
-    if (lang !== current) void applyLanguageInPlace(lang);
+    // Use the active provider instance: on locale pages, the global English instance is not rendered.
+    // Apply even when the label appears unchanged so manual selection can repair stale state.
+    void applyLanguageInPlace(lang, i18n).then(() => {
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    });
   };
 
   return (
@@ -89,9 +93,6 @@ export function LanguageMenu({ style, registers = true }: { style?: CSSPropertie
       ref={ref}
       className="ef-lang"
       style={style}
-      onBlur={(event) => {
-        if (ref.current?.open && !ref.current.contains(event.relatedTarget as Node | null)) ref.current.open = false;
-      }}
     >
       <style>{CSS}</style>
       <summary aria-label={t('a11y.language', 'Language')}>
