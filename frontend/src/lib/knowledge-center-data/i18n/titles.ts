@@ -13,6 +13,15 @@ export const TRANSLATED_ARTICLE_SLUGS = [
   'hpcr-fuel-system-cleanliness',
   'water-contamination-fuel',
   'cabin-air-filtration',
+  'seal-integrity',
+  'filter-media-science',
+  'air-restriction',
+  'dust-holding-capacity',
+  'failure-analysis',
+  'testing-and-validation',
+  'oem-engineering',
+  'asset-protection-engineering',
+  'materials-engineering',
 ] as const;
 
 /** Knowledge Center section hubs with /es/ and /pt/ routes (metadata in app/knowledge-center/localized-hubs.ts). */
@@ -24,7 +33,7 @@ export const TRANSLATED_HUB_SLUGS = [
 const TITLES: Record<'es' | 'pt', Record<string, string>> = {
   es: {
     'airflow-engineering': 'Ingeniería de flujo de aire',
-    'seal-integrity': 'Integridad del sellado',
+    'seal-integrity': 'Integridad del sello',
     'contamination-control': 'Control de contaminación',
     'filter-media-science': 'Ciencia de los medios filtrantes',
     'fluid-cleanliness': 'Limpieza de fluidos',
@@ -83,7 +92,7 @@ const TITLES: Record<'es' | 'pt', Record<string, string>> = {
     'filter-media-science': 'Ciência dos meios filtrantes',
     'fluid-cleanliness': 'Limpeza de fluidos',
     'air-restriction': 'Restrição de ar',
-    'dust-holding-capacity': 'Capacidade de retenção de poeira',
+    'dust-holding-capacity': 'Capacidade de retenção de pó',
     'service-intervals': 'Intervalos de serviço',
     'total-cost-of-ownership': 'Custo total de propriedade',
     'failure-analysis': 'Análise de falhas',

@@ -1,0 +1,131 @@
+{
+  "slug": "air-restriction",
+  "faqs": [
+    {
+      "question": "¿Cuál es el límite de restricción de los motores de aspiración natural y cómo se mide?",
+      "answer": "Los motores diésel de aspiración natural operan con una restricción de admisión máxima admisible de 25 mbar (10 inH2O) al caudal de aire nominal. Este límite marca el punto a partir del cual la pérdida de eficiencia volumétrica del cilindro reduce la potencia más allá del margen aceptable (normalmente 1–3%). La restricción se mide como la diferencia de presión estática entre el ambiente (aguas arriba de la carcasa del depurador de aire) y el múltiple de admisión del motor. SAE J1539 define el procedimiento de medición de los sistemas de depurador de aire montados, incluidos todos los ductos, codos e indicadores de restricción. La medición se hace al caudal de aire nominal del motor, normalmente expresado en m3/minuto, en la cara de entrada del depurador de aire y no en el elemento filtrante en sí: así se incluyen en el valor total de restricción todas las pérdidas de la carcasa y los ductos."
+    },
+    {
+      "question": "¿Cómo funcionan los indicadores de restricción y cuáles son los dos tipos principales que se usan en equipos industriales?",
+      "answer": "Los indicadores de restricción mecánicos usan un pistón con resorte detrás de una mirilla transparente. A medida que aumenta la restricción en el filtro de aire (carga del filtro), la presión diferencial actúa sobre la cara del pistón. Cuando la presión diferencial llega al punto de ajuste calibrado (normalmente 25 mbar en aspiración natural o 62.5 mbar en turboalimentados), el pistón llega a una banda de color visible a través del vidrio y queda trabado mecánicamente en posición de alarma. El indicador sigue en alarma aun después de detener el motor, lo que permite revisarlo en la parada. Los sensores electrónicos de presión diferencial, conectados a la ECU por bus CAN, registran la restricción de forma digital y continua. Pueden generar alertas con fecha y hora, permiten ver tendencias y admiten algoritmos de servicio predictivo que estiman la vida restante del filtro según la velocidad de cambio de la restricción."
+    },
+    {
+      "question": "¿Cómo afecta el aumento de la restricción de admisión a la eficiencia del compresor del turbocompresor?",
+      "answer": "La eficiencia del compresor del turbocompresor se representa en un mapa de desempeño del compresor como curvas de eficiencia que relacionan la relación de presiones con el caudal másico corregido. El punto de operación se desplaza sobre una línea de velocidad constante cuando cambian las condiciones. Una mayor restricción de admisión eleva la relación de presiones necesaria para lograr la misma presión de sobrealimentación, porque el compresor debe vencer tanto el aumento de presión del ambiente a la sobrealimentación como la depresión adicional que causa la restricción del filtro. En el punto de operación MAP de un turbocompresor diésel típico de servicio pesado, cada 10 mbar de restricción adicional en la entrada desplaza el punto de operación aproximadamente un 1.5–2% hacia la zona de bombeo y reduce la eficiencia isentrópica un 0.5–1%. Con 50 mbar de restricción, la temperatura de descarga del compresor puede subir 15–25°C por encima del punto de diseño, lo que eleva la temperatura de la carga y aumenta el riesgo de detonación."
+    },
+    {
+      "question": "¿Qué hace que la restricción aumente más rápido de lo previsto en entornos de minería y construcción?",
+      "answer": "La velocidad de aumento de la restricción (mbar por hora de operación) depende de la concentración de polvo ambiental (mg/m3), de la demanda de aire del equipo (m3/h) y de la capacidad de retención de suciedad del elemento filtrante (g). En las zonas de voladura de las canteras, el polvo ambiental puede subir a 50–100 mg/m3 durante 30–60 minutos después de cada voladura, lo que carga un filtro de 500 gramos de capacidad en 6–10 horas en lugar del intervalo teórico de 500 horas con una base de 0.1 mg/m3. Los prefiltros (separadores ciclónicos) reducen la tasa efectiva de ingreso al elemento primario un 70–90%, pero su eficiencia depende de un mantenimiento regular de la válvula eyectora. Las válvulas eyectoras obstruidas retienen el polvo separado en el vaso del prefiltro y lo vuelven a arrastrar hacia la corriente de aire del elemento primario, con lo que se pierde la ventaja de capacidad del prefiltro."
+    },
+    {
+      "question": "¿Se puede reemplazar el indicador de restricción por un intervalo de servicio fijo y qué riesgos tiene?",
+      "answer": "Los intervalos de servicio fijos pueden reemplazar al servicio por restricción solo cuando el entorno de operación es estable y está bien caracterizado: concentración de polvo constante, caudal de aire constante y ciclo de trabajo del equipo uniforme. Los camiones mineros de acarreo que operan en zonas de polvo variable (exposición a voladuras, distintas profundidades de tajo y tipos de material) pueden tener una variación de 5–10× en la velocidad de carga del filtro entre períodos de operación. Un intervalo fijo calculado para las peores condiciones hace que el 70–90% de los elementos se reemplace antes de tiempo en condiciones típicas (no extremas). Un intervalo fijo calculado para condiciones promedio hace que el 10–20% de los elementos llegue a la restricción antes del cambio programado, lo que crea períodos intermitentes sin protección. SAE J1539 recomienda el servicio por restricción como método principal, con intervalos fijos como respaldo en los equipos sin indicador de restricción."
+    },
+    {
+      "question": "¿Cómo afecta la altitud a la restricción de admisión y al dimensionamiento del filtro de aire?",
+      "answer": "Con la altitud, la densidad del aire disminuye: a 3,000 m sobre el nivel del mar, la densidad del aire es aproximadamente el 69% del valor a nivel del mar. El caudal de aire del motor (en kg/hora) disminuye en proporción para mantener la combustión estequiométrica, pero el caudal volumétrico (m3/hora) se mantiene aproximadamente constante en los motores turboalimentados que sostienen la presión de sobrealimentación. En los motores de aspiración natural en altura, el motor produce menos potencia por la menor masa de aire por ciclo, y la menor densidad del aire da una menor caída de presión en el filtro con el mismo caudal volumétrico: los indicadores de restricción ajustados para el nivel del mar marcan por debajo del estado real de restricción en altura. SAE J1539 incluye factores de corrección por altitud para la medición de la restricción, y los sistemas de filtración diseñados para operar en altura (por encima de 2,000 m) se dimensionan para los mayores caudales volumétricos necesarios para compensar la baja densidad del aire."
+    },
+    {
+      "question": "¿Qué es la restricción terminal en los ensayos de filtros de aire y cómo se usa para calcular el intervalo de servicio en campo?",
+      "answer": "La restricción terminal es la caída de presión máxima admisible en un elemento filtrante al caudal de aire nominal: pasado este punto, el elemento se considera totalmente cargado y debe reemplazarse. En el ensayo ISO 5011, la restricción terminal se alcanza cuando la presión diferencial llega al límite de servicio especificado por el fabricante (25 mbar o 62.5 mbar). En la restricción terminal, la masa total de polvo inyectada durante el ensayo es igual a la capacidad de retención de polvo (DHC) del elemento. El intervalo de servicio en campo se calcula así: Horas = DHC(g) / (concentración de polvo ambiental (mg/m3) × caudal de aire del equipo (m3/h) × factor de ajuste por eficiencia del prefiltro). Este cálculo da solo una primera estimación: los intervalos reales deben verificarse con las lecturas del indicador de restricción en la puesta en marcha, porque la distribución de tamaños de las partículas de polvo reales difiere del polvo de ensayo ISO A2."
+    },
+    {
+      "question": "¿Cómo afecta el funcionamiento de la válvula de derivación a la protección del motor durante los eventos de restricción?",
+      "answer": "Cuando la restricción supera la presión de apertura de la válvula de derivación en los filtros de lubricante, entra aceite sin filtrar al motor. Los sistemas de admisión de aire no tienen válvulas de derivación: una restricción excesiva priva de aire al motor, pero no se saltea la protección de filtración. En cambio, los motores de aspiración natural pierden potencia a medida que baja la densidad del aire, y los turboalimentados activan las rutinas de protección de presión de sobrealimentación de la ECU. El sistema de admisión de aire protege hasta que se dispara el indicador de restricción. Algunos sistemas de dos etapas con elemento de seguridad (secundario) dan una capa adicional de protección: si el elemento primario colapsa por exceso de restricción o está mal instalado, el elemento de seguridad captura las partículas antes de que lleguen al motor. Los elementos de seguridad no tienen válvula de derivación; mantienen la filtración completa a costa de duplicar la restricción total hasta que se reemplaza el elemento primario."
+    },
+    {
+      "question": "¿A qué presión diferencial corresponde el punto de ajuste del indicador de restricción en un diésel turboalimentado de servicio pesado?",
+      "answer": "Los motores diésel turboalimentados de servicio pesado (vehículos comerciales, equipo minero, maquinaria de construcción) especifican indicadores de restricción ajustados a 62.5 mbar (25 inH2O). Esto corresponde a la restricción máxima admisible del sistema montado según SAE J1539 al caudal de aire nominal. El punto de ajuste de 62.5 mbar incluye todas las pérdidas de la carcasa y los ductos además de la restricción del elemento filtrante: el elemento solo, con carga terminal, puede aportar 40–50 mbar, y 12–22 mbar corresponden a la carcasa, los codos y los ductos. Los indicadores de restricción deben calibrarse al caudal de aire correcto de cada instalación de motor: un indicador calibrado a 10,000 m3/h indicará mal si se instala en un motor con un caudal nominal de 8,000 m3/h, porque la restricción depende tanto de la carga del elemento como del caudal de aire."
+    },
+    {
+      "question": "¿Qué penalización de consumo tiene operar un motor con el filtro de aire totalmente cargado en el límite de servicio por restricción?",
+      "answer": "En el límite de servicio por restricción (25 mbar en motores de aspiración natural, 62.5 mbar en turboalimentados), la penalización de consumo de combustible frente a un filtro limpio es del 1–3% en aspiración natural y del 2–5% en aplicaciones turboalimentadas. Para un motor de aspiración natural de 250 kW que consume 60 L/hora de diésel a carga nominal, la penalización del 3% equivale a 1.8 L/hora de consumo adicional. En un intervalo de 250 horas (de limpio a restricción terminal en un entorno moderadamente polvoriento), la penalización acumulada es de aproximadamente 450 L: a USD 1.20/L, equivale a USD 540 de combustible extra por cada ciclo de cambio de elemento, solo por operar con restricción elevada. Esta penalización justifica el servicio por condición, que reemplaza los elementos antes de operar mucho tiempo con la restricción máxima."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing",
+      "relevance": "Define la metodología de medición de la restricción, las condiciones de ensayo de la restricción terminal y el formato de informe de desempeño de los sistemas de filtración de admisión de aire."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J1539, Air Cleaner Test Code",
+      "relevance": "Norma SAE que define los límites de restricción del sistema montado según el tipo de motor, la metodología de corrección por altitud y los requisitos de calibración de los indicadores de restricción."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Evaluation",
+      "relevance": "Complementa SAE J1539 con los procedimientos de ensayo de eficiencia gravimétrica y capacidad de retención de polvo usados para caracterizar el desempeño del elemento filtrante en condiciones de ensayo de restricción."
+    },
+    {
+      "category": "handbook",
+      "citation": "Donaldson Company, Engine Air Filtration Technical Reference, Bulletin A11-0175",
+      "relevance": "Guía técnica de aplicación sobre la elección del punto de ajuste del indicador de restricción, los efectos de la altitud en la restricción, el cálculo de la eficiencia del prefiltro y la determinación del intervalo de servicio en campo."
+    }
+  ],
+  "title": "Restricción de aire",
+  "subtitle": "Indicadores de servicio, umbrales de restricción e impacto en el motor",
+  "metaDescription": "Medición de la restricción del filtro de aire, ingeniería de los indicadores de servicio, umbrales de restricción en motores de aspiración natural y turboalimentados, e impacto en el consumo de combustible y la vida del motor.",
+  "category": "Ingeniería",
+  "readTime": "6 min",
+  "intro": "La restricción de aire es la diferencia de presión medible que se genera cuando el aire atraviesa el elemento filtrante. Mantener la restricción dentro de los umbrales especificados asegura la eficiencia volumétrica del motor, el desempeño del turbocompresor y la eficacia de la filtración durante todo el intervalo de servicio.",
+  "sections": [
+    {
+      "heading": "Unidades de medición de la restricción",
+      "body": "La restricción se expresa en milibares (mbar), pascales (Pa) o pulgadas de columna de agua (inH₂O). Conversión: 1 inH₂O = 2.49 mbar = 249 Pa. La mayoría de los fabricantes de motores especifican los límites de restricción en inH₂O (mercado norteamericano) o en mbar (mercado europeo e internacional). Los indicadores de servicio se calibran en las mismas unidades que la especificación del fabricante.",
+      "callout": [
+        {
+          "label": "1 inH₂O =",
+          "value": "2.49 mbar = 249 Pa"
+        },
+        {
+          "label": "Límite en motor de aspiración natural",
+          "value": "10 inH₂O / 25 mbar"
+        },
+        {
+          "label": "Límite en motor turboalimentado",
+          "value": "25 inH₂O / 62.5 mbar"
+        }
+      ]
+    },
+    {
+      "heading": "Tipos de indicador de servicio",
+      "body": "Los indicadores de restricción mecánicos usan un pistón con resorte detrás de una mirilla. A medida que aumenta la restricción, el pistón se desplaza y cambia el color visible del indicador (normalmente rojo/amarillo). El indicador se traba en la restricción máxima y debe restablecerse a mano después del cambio del elemento. Los sensores electrónicos de presión diferencial conectados a la ECU registran la restricción en tiempo real y de forma continua, lo que permite un servicio predictivo basado en la tendencia de la restricción y no solo en el umbral."
+    },
+    {
+      "heading": "Consideraciones para motores turboalimentados",
+      "body": "En los motores turboalimentados, la restricción de admisión afecta el punto de operación en el mapa del compresor. Una restricción mayor desplaza la operación hacia la zona de bombeo, reduce la eficiencia del compresor y aumenta la temperatura de descarga. Cada 1 mbar de aumento de la depresión en la entrada del compresor (restricción) aumenta la velocidad del turbocompresor aproximadamente un 0.5% con presión de sobrealimentación constante, lo que acelera el desgaste de los cojinetes. La eficacia del intercooler también se degrada a medida que sube la temperatura de la carga por la pérdida de eficiencia del compresor."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Límite de servicio en motor de aspiración natural",
+      "value": "25 mbar / 10 inH₂O"
+    },
+    {
+      "label": "Límite de servicio en motor turboalimentado",
+      "value": "62.5 mbar / 25 inH₂O"
+    },
+    {
+      "label": "Penalización de combustible por cada 25 mbar de exceso",
+      "value": "1–3%"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 5011"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "restricción de aire",
+    "caída de presión",
+    "indicador de servicio",
+    "restricción de admisión",
+    "motor turboalimentado"
+  ]
+}

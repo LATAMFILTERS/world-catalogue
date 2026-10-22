@@ -14,8 +14,8 @@ vi.mock('next/link', () => ({ default: React.forwardRef<HTMLAnchorElement, React
 describe('Leadership language coverage and preserved identity', () => {
   it('does not inherit forced first-section title sizes from global styles', () => {
     const css = readFileSync(new URL('../../app/globals.css', import.meta.url), 'utf8');
-    expect(css).toContain('main:not(.leadership-page) > section:first-of-type h1 {');
-    expect(css).toContain('main:not(.leadership-page) > section:first-of-type h1 span {');
+    expect(css).toContain('main:not(.leadership-page):not(.philosophy-page) > section:first-of-type h1 {');
+    expect(css).toContain('main:not(.leadership-page):not(.philosophy-page) > section:first-of-type h1 span {');
     expect(css).toContain('font-size: clamp(2.85rem, 6.2vw, 6.05rem) !important');
   });
 

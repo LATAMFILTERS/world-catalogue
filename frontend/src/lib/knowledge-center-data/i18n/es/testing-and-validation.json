@@ -1,0 +1,137 @@
+{
+  "slug": "testing-and-validation",
+  "faqs": [
+    {
+      "question": "¿Para qué sirve la configuración de ensayo multipaso de ISO 16889 y por qué el ensayo de un solo paso no alcanza?",
+      "answer": "La configuración multipaso hace recircular el fluido de ensayo contaminado por el circuito del filtro, de modo que las partículas que atraviesan el elemento quedan en el circuito aguas abajo y se cuentan de forma continua durante todo el ensayo. Este enfoque de carga cumple dos fines: produce datos de relación Beta realistas en distintos estados de carga (elemento limpio frente a elemento cargado progresivamente) y, al mismo tiempo, mide la capacidad de retención de suciedad acumulando la masa total inyectada hasta llegar a la presión diferencial terminal. El ensayo de un solo paso, en el que el fluido contaminado pasa una vez y se descarta, mide solo la eficiencia inicial de un elemento limpio, que no representa las condiciones de campo. Los filtros en campo operan en distintos estados de carga a lo largo de su vida útil; la relación Beta promedio multipaso de ISO 16889 representa mejor la eficiencia promedio en el tiempo que un filtro da en servicio."
+    },
+    {
+      "question": "¿Qué diferencia hay entre la clasificación en micras nominal y la absoluta, y por qué siempre hay que especificar la absoluta?",
+      "answer": "La clasificación en micras nominal es una designación informal, no normalizada, que describe el tamaño de partícula en el que un filtro retiene \"la mayoría\" de las partículas: el porcentaje no está definido y varía entre fabricantes (distintos proveedores usan 50%, 80% o 90% como umbral \"nominal\"). La clasificación en micras absoluta con una relación Beta especificada es la alternativa normalizada y comparable: un elemento clasificado como \"10 µm absoluto, β10(c) ≥ 200\" significa que su relación Beta a 10 µm, medida según ISO 16889 con APC calibrado según ISO 11171, es de al menos 200, lo que corresponde a una eficiencia de un solo paso del 99.5%. Especificar la clasificación nominal permite a los fabricantes declarar 10 µm nominales con un 50% de eficiencia, lo que representa un control de contaminación muy pobre. Las especificaciones de compra de filtros industriales hidráulicos y de lubricante deben exigir la notación β(c) con un valor Beta mínimo definido para asegurar una comparación de desempeño con sentido."
+    },
+    {
+      "question": "¿Cómo se mide la capacidad de retención de suciedad (DHC) durante el ensayo ISO 16889 y en qué unidades?",
+      "answer": "La DHC es la masa acumulada de polvo de ensayo ISO A2 medium inyectada aguas arriba desde el inicio del ensayo hasta llegar a la presión diferencial terminal. La ΔP terminal se define como 10× la ΔP inicial del elemento limpio o 6 bar, lo que ocurra primero. La DHC se expresa en gramos de polvo de ensayo por elemento ensayado al caudal específico. El ensayo ISO 16889 mide a la vez la relación Beta (con los conteos de partículas APC aguas arriba y aguas abajo) y la DHC (con la salida total del alimentador gravimétrico de polvo). Los datos de DHC de ISO 16889 solo son directamente comparables entre elementos cuando el caudal de ensayo es idéntico: la DHC baja al aumentar el caudal, porque la mayor velocidad frontal compacta más rápido la torta de polvo. La DHC debe indicarse con el caudal de ensayo y la viscosidad del fluido correspondientes para que los datos se puedan interpretar."
+    },
+    {
+      "question": "¿Qué requisitos de calibración se aplican a los contadores automáticos de partículas usados en el ensayo ISO 16889?",
+      "answer": "Los contadores automáticos de partículas usados en el ensayo ISO 16889 deben calibrarse según ISO 11171 con partículas de referencia de esferas de látex de poliestireno (PSL) trazables a NIST. ISO 11171 define el procedimiento de calibración, los tamaños de las partículas de referencia (rango de 1–25 µm cubierto por distintos estándares PSL) y el intervalo de recalibración (normalmente cada 12 meses o 500 horas de operación). La calibración establece los umbrales de tamaño de los canales del APC que corresponden a los tamaños reales de partícula: sin calibración, distintos APC en distintos laboratorios informarán conteos de partículas diferentes para muestras de fluido idénticas. Por eso los datos ISO 16889 anteriores a 2000 (con calibración con polvo AC fine) se indican como β sin el sufijo (c) y no pueden compararse directamente con los datos β(c) calibrados según ISO 11171 de los ensayos actuales."
+    },
+    {
+      "question": "¿Qué condiciones de ensayo deben coincidir al comparar los resultados ISO 16889 de elementos filtrantes de la competencia?",
+      "answer": "Una comparación válida de los datos ISO 16889 entre elementos de la competencia requiere que coincidan: (1) el caudal de ensayo (L/min): el mismo elemento a 2× el caudal mostrará una DHC menor; (2) el fluido de ensayo (ISO VG 15 a 50°C ± 2°C es el estándar de ISO 16889); (3) el polvo de ensayo (ISO 12103-1 A2 medium, lote certificado); (4) la notación de calibración del APC (el sufijo β(c) confirma la calibración ISO 11171; los datos sin (c) no son comparables); (5) la base de informe (algunos fabricantes informan el β mínimo y otros el β promedio: pida el informe de ensayo, no un resumen de especificación). Al pedir datos de ensayo ISO 16889 de terceros, exija el informe de ensayo completo de un laboratorio acreditado según ISO 17025, que incluye todas las condiciones de ensayo, los datos brutos de conteo de partículas y los valores Beta calculados en cada intervalo de muestreo."
+    },
+    {
+      "question": "¿En qué se diferencia el ensayo ISO 5011 del ensayo ISO 16889 en metodología y aplicación?",
+      "answer": "ISO 5011 rige el ensayo de elementos de filtros de aire: mide la eficiencia gravimétrica (porcentaje en masa del polvo inyectado que se retiene), la capacidad de retención de polvo, la curva de restricción y la resistencia al colapso, usando aire como medio con polvo de ensayo ISO A2 fine. ISO 16889 rige el ensayo de elementos de filtros hidráulicos y de aceite lubricante: mide la relación Beta (eficiencia por conteo de partículas en tamaños específicos) y la DHC, usando aceite mineral líquido ISO VG 15 con polvo de ensayo ISO A2 medium. La diferencia fundamental es el medio: la eficiencia de filtración de aire se expresa gravimétricamente (porcentaje de masa capturada), porque contar partículas con precisión en todo el rango de tamaños en aire no es práctico en los ensayos de producción estándar; la eficiencia de filtración hidráulica se expresa como relación Beta (relación de conteos de partículas) en tamaños específicos, porque el conteo de partículas es la medida directa del riesgo de daño a los componentes. Ninguna de las dos normas de ensayo se aplica al otro medio."
+    },
+    {
+      "question": "¿Qué importancia tiene ensayar la relación Beta en varios tamaños (β3, β6, β10, β12, β15) en las especificaciones de filtros hidráulicos?",
+      "answer": "Informar las relaciones Beta en varios tamaños de partícula da un perfil de eficiencia completo en lugar de una especificación de un solo punto. Un filtro puede lograr β6(c) = 200 (99.5% a 6 µm) pero β3(c) = 5 (80% a 3 µm), lo que da una protección insuficiente a servoválvulas con holguras de carrete de 1–4 µm. A la inversa, un filtro con β3(c) = 75 (98.7%) controla mejor las partículas menores de 5 µm que el elemento de clasificación más alta a 6 µm. Para la especificación de sistemas hidráulicos: los circuitos con servoválvulas requieren β3(c) o β6(c) ≥ 200; los circuitos con bombas de pistones, β10(c) ≥ 200; los circuitos con bombas de engranajes, β10(c) ≥ 75. NFPA T3.10.8 especifica los requisitos de notación de la relación Beta en las especificaciones de filtros hidráulicos para permitir una definición del desempeño sin ambigüedades."
+    },
+    {
+      "question": "¿Qué se le exige a un laboratorio de ensayo acreditado para validar las declaraciones de desempeño de un filtro?",
+      "answer": "La acreditación de laboratorios ISO 17025 es la norma internacional de competencia de los laboratorios de ensayo: verifica la trazabilidad de las mediciones, la calibración de los equipos, la calificación del personal y los sistemas de gestión de la calidad. Las declaraciones de desempeño de filtros respaldadas por informes de ensayo acreditados según ISO 17025 aportan: trazabilidad metrológica de los conteos de partículas a estándares nacionales (partículas de referencia NIST); calibración del APC documentada, con fecha y referencia del certificado de calibración; condiciones de ensayo completas (caudal, temperatura, lote de fluido, lote de polvo); y tablas de datos brutos que permiten verificar la relación Beta de forma independiente. Las hojas comerciales que dicen \"ensayado según ISO 16889\" sin un certificado de ensayo ISO 17025 no constituyen datos de desempeño validados. ELIMFILTERS publica informes de ensayo certificados según ISO 17025 de sus elementos filtrantes críticos para el desempeño."
+    },
+    {
+      "question": "¿Cómo se hace el ensayo de estabilidad de la relación Beta y qué revela que el ensayo multipaso estándar no muestra?",
+      "answer": "El ensayo de estabilidad de la relación Beta (también llamado ensayo de sensibilidad al caudal) mide la relación Beta a varios caudales, normalmente el 50%, 100% y 150% del caudal nominal, para caracterizar cómo cambia la eficiencia en el rango de operación. El ensayo ISO 16889 estándar mide la Beta promedio a un solo caudal nominal. El ensayo de estabilidad revela: (1) si la relación Beta cae mucho con caudales elevados (por ejemplo, durante los transitorios del sistema), lo que indicaría una protección insuficiente en los eventos de caudal máximo; (2) si la eficiencia aumenta con caudal reducido (algo normal en los elementos de filtración en profundidad al bajar la velocidad); (3) a qué caudal el elemento pasa del modo de filtración en profundidad al de filtración superficial. Para proteger servoválvulas en circuitos de caudal variable, la estabilidad Beta en todo el rango de caudal es tan importante como la Beta máxima al caudal nominal: un elemento con β10(c) = 200 al caudal nominal pero β10(c) = 15 al 150% del caudal da una protección insuficiente durante los transitorios de arranque de la bomba."
+    },
+    {
+      "question": "¿Qué garantiza la certificación ISO 16889 sobre un elemento filtrante y qué no garantiza?",
+      "answer": "La certificación ISO 16889 garantiza que los valores declarados de relación Beta y DHC se midieron en un ensayo normalizado en las condiciones especificadas. Garantiza la metodología de ensayo, el estándar de calibración usado y el formato de informe. NO garantiza: un desempeño equivalente entre distintos tamaños de elemento o carcasas (cada uno debe ensayarse por separado); la estabilidad de la relación Beta en condiciones dinámicas (flujo pulsante, ciclos de temperatura); el desempeño en fluidos distintos del aceite mineral ISO VG 15; el desempeño en condiciones de campo distintas de las de ensayo; ni el desempeño mínimo de los lotes de producción (salvo que la especificación incluya un requisito de promedio mínimo por lote). Tampoco garantiza que el elemento de producción coincida con el prototipo ensayado, salvo que el fabricante tenga un sistema de gestión de la calidad (ISO 9001 o ISO/TS 16949) que documente la relación entre el diseño ensayado y el lote de producción."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Norma principal que define el circuito de ensayo multipaso, el cálculo de la relación Beta, la medición de la DHC y el informe de desempeño de los elementos de filtros hidráulicos y de lubricante."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing",
+      "relevance": "Define los ensayos de eficiencia gravimétrica, capacidad de retención de polvo, curva de restricción y colapso de los elementos de filtros de aire."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+      "relevance": "Norma de calibración de los instrumentos APC, que define la notación con el sufijo (c) y los requisitos de acreditación de laboratorio ISO 17025 para una medición válida de la relación Beta."
+    },
+    {
+      "category": "standard",
+      "citation": "NFPA T3.10.8-2006, Hydraulic Fluid Power — Determination of Filter Element Performance — Multi-Pass Method for Determining Filtration Ratio and Dirt Holding Capacity",
+      "relevance": "Norma norteamericana de potencia fluida que complementa a ISO 16889 y especifica los requisitos de notación de la relación Beta y el formato de informe de desempeño de los elementos de filtros hidráulicos."
+    }
+  ],
+  "title": "Ensayos y validación",
+  "subtitle": "Métodos de ensayo ISO, ensayo multipaso y certificación del desempeño",
+  "metaDescription": "Metodología de ensayo de filtros industriales: ensayo multipaso ISO 16889, ensayo de filtros de aire ISO 5011, medición de la relación Beta, validación de la capacidad de retención de suciedad y normas de certificación del desempeño.",
+  "category": "Ingeniería",
+  "readTime": "8 min",
+  "intro": "Las declaraciones de desempeño de los filtros industriales deben estar respaldadas por ensayos normalizados realizados en condiciones controladas. Los métodos de ensayo ISO definen el fluido, el polvo de ensayo, las condiciones de flujo, los intervalos de medición y los requisitos de informe que permiten comparar de forma válida los datos de desempeño entre fabricantes y líneas de productos.",
+  "sections": [
+    {
+      "heading": "Ensayo multipaso ISO 16889",
+      "body": "ISO 16889 es el método de ensayo estándar de los elementos de filtros hidráulicos y de lubricante, y mide a la vez la relación Beta y la capacidad de retención de suciedad. El fluido de ensayo (aceite ISO VG 15) se contamina con polvo de ensayo ISO A2 medium a una concentración controlada. Los conteos de partículas se miden aguas arriba y aguas abajo con contadores automáticos de partículas calibrados (ISO 11171). Los valores Beta se calculan en cada tamaño de conteo durante todo el ensayo hasta llegar a la presión diferencial terminal. Multipaso se refiere a que el fluido contaminado recircula por el circuito de ensayo: las partículas que atraviesan el filtro quedan en el circuito y suman a los conteos aguas abajo."
+    },
+    {
+      "heading": "Ensayo de filtros de aire ISO 5011",
+      "body": "ISO 5011 cubre la eficiencia inicial, la capacidad de retención de polvo y la eficiencia fraccional de los filtros de aire. El polvo de ensayo (ISO A2 fine) se alimenta a una tasa controlada. La eficiencia se mide a 0.5, 1, 2, 3, 5, 7, 10, 20, 40 y 80 µm con contadores de partículas láser. La restricción se monitorea de forma continua. El ensayo se hace a uno o más caudales de aire; el desempeño al caudal de aire nominal es el punto de especificación principal. El ensayo del elemento de seguridad sigue al del elemento primario para verificar el desempeño total del sistema."
+    },
+    {
+      "heading": "Beta(c) frente a la clasificación Beta",
+      "body": "Los valores Beta llevan un sufijo que indica el estándar de calibración del conteo de partículas usado. β₁₀ usa la calibración antigua con polvo de ensayo AC fine, hoy obsoleta. β₁₀(c) usa el conteo de partículas calibrado según ISO 11171, el estándar actual. β₁₀ y β₁₀(c) NO son directamente comparables. Un filtro clasificado como β₁₀ = 75 puede tener un β₁₀(c) = 10: una diferencia importante. Especifique siempre β(c) al comparar datos de desempeño de filtros de distintos fabricantes.",
+      "callout": [
+        {
+          "label": "Eficiencia con β₁₀(c) = 75",
+          "value": "98.7%"
+        },
+        {
+          "label": "Eficiencia con β₁₀(c) = 200",
+          "value": "99.5%"
+        },
+        {
+          "label": "Eficiencia con β₁₀(c) = 1000",
+          "value": "99.9%"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Fluido de ensayo ISO 16889",
+      "value": "Aceite ISO VG 15"
+    },
+    {
+      "label": "Polvo de ensayo ISO 5011",
+      "value": "ISO A2 fine"
+    },
+    {
+      "label": "Estándar β(c)",
+      "value": "Calibrado según ISO 11171"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 5011",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "MACROCORE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "ensayo de filtros",
+    "ISO 16889",
+    "ISO 5011",
+    "relación Beta",
+    "ensayo multipaso",
+    "certificación del desempeño"
+  ]
+}

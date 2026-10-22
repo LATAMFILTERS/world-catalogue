@@ -1,0 +1,139 @@
+{
+  "slug": "asset-protection-engineering",
+  "faqs": [
+    {
+      "question": "¿Qué es la metodología del presupuesto de contaminación y cómo se aplica a la protección de activos industriales?",
+      "answer": "Un presupuesto de contaminación es un cálculo de balance de masa que cuantifica la tasa de ingreso de contaminación (partículas por hora que entran al sistema) frente a la tasa de eliminación (partículas por hora que captura la filtración). En régimen estable, la tasa de eliminación debe igualar o superar la de ingreso para mantener el código de limpieza ISO 4406 objetivo. La metodología requiere: (1) identificar todas las vías de ingreso (respiraderos del depósito, sellos de eje, sellos de vástago de cilindros, puntos de llenado, condensación atmosférica); (2) cuantificar la tasa de ingreso de cada vía (valores típicos: respiradero sin filtro = 10–50 mg/h, sello de labio desgastado = 1–10 mg/h, sello de vástago = 1–5 mg/h por cilindro); (3) sumar la carga total de ingreso; (4) especificar una capacidad de eliminación del sistema de filtración que supere el ingreso total; (5) verificar con muestreo APC en régimen estable. El análisis identifica qué vía de ingreso ofrece la mayor reducción de contaminación por cada inversión en mantenimiento."
+    },
+    {
+      "question": "¿Cuántos circuitos de control de contaminación hay que gestionar a la vez en un camión minero de acarreo de servicio pesado?",
+      "answer": "Un camión minero de acarreo de servicio pesado requiere controlar la contaminación a la vez en 6–8 circuitos de fluidos y de aire distintos: (1) admisión de aire (elemento primario + elemento de seguridad + prefiltro que protegen el motor y el turbocompresor); (2) sistema de lubricación del motor (filtro de flujo total + filtro de derivación que protegen cojinetes, muñones y tren de válvulas); (3) sistema de combustible (prefiltro + filtro primario + separador de agua coalescente que protegen los inyectores HPCR); (4) hidráulico de la transmisión (filtro de flujo total que protege los paquetes de embrague y las válvulas de cambio); (5) hidráulico de dirección (filtro de retorno que protege servoválvulas y cilindros); (6) hidráulico de frenos (filtro fino que protege las válvulas solenoides del ABS); (7) sistema de enfriamiento (filtro de refrigerante + dosificación de SCA que protegen la bomba de agua y el intercambiador de calor); (8) aire de cabina HVAC (filtro de partículas y de carbón activado que protege la salud del operador según ISO 11155). Cada circuito tiene sus propios objetivos de limpieza, vías de ingreso y especificaciones de filtración."
+    },
+    {
+      "question": "¿Cuál es la jerarquía de arquitectura de información que usa ELIMFILTERS para estructurar la protección de activos industriales?",
+      "answer": "La jerarquía de arquitectura de información de ELIMFILTERS ordena toda la cadena de conocimiento de ingeniería para la protección de activos industriales: (1) Contaminación: identificar las fuentes raíz de contaminación (sílice de la admisión de aire, agua de la condensación, partículas metálicas de desgaste, productos de degradación química); (2) Degradación del activo: mapear cómo cada tipo de contaminación degrada componentes específicos (desgaste abrasivo de las superficies de los cojinetes, corrosión de los asientos de válvula, formación de laca en los carretes de las servoválvulas); (3) Normas y medición: aplicar ISO 4406, ISO 5011, ISO 8573 y normas relacionadas para cuantificar la contaminación y fijar objetivos; (4) Tecnologías de protección: elegir las tecnologías ELIMFILTERS MACROCORE, SYNTRAX, NANOFORCE, SYNTAPORE, DRYCORE y MICROKAPPA adecuadas a cada desafío de contaminación; (5) Implementación del producto: especificar el elemento filtrante correcto para cada posición del circuito; (6) Optimización de flotas: aplicar monitoreo de condición y optimización de intervalos en toda la flota de activos; (7) Impacto en sostenibilidad: cuantificar el aporte del control de contaminación a la longevidad de los equipos, la reducción del consumo de aceite y la minimización de residuos."
+    },
+    {
+      "question": "¿Cómo se propaga en cascada una falla de contaminación de varios circuitos en una excavadora hidráulica minera?",
+      "answer": "La cascada de contaminación en una excavadora hidráulica minera empieza con la falla de un solo circuito que va comprometiendo los sistemas vecinos. Ejemplo: una brecha en el sello de la admisión de aire introduce partículas de sílice en la cámara de combustión → productos de combustión con SiC y compuestos de silicio elevados → el blow-by que pasa por los anillos de pistón desgastados contamina el aceite lubricante → el silicio elevado en el aceite ataca las superficies de los cojinetes (diagnóstico: silicio por ICP-OES >25 ppm, hierro en aumento) → el aumento de la holgura de los cojinetes hace caer la presión de aceite en los muñones → la baja presión de aceite activa la alarma de la ECU → parada no planificada del motor. Junto con la cascada del sistema de lubricación, el circuito hidráulico puede contaminarse por errores de mantenimiento durante la parada no planificada: puertos hidráulicos abiertos que se contaminan durante la reparación de emergencia. Esta cascada justifica monitorear todos los circuitos a la vez en lugar de reaccionar solo ante el circuito que falla primero."
+    },
+    {
+      "question": "¿Qué enfoque de sistema extiende la vida de los equipos un 30–50% frente a una selección de filtros como commodity?",
+      "answer": "Extender la vida de los equipos un 30–50% mediante un control de contaminación basado en el sistema requiere aplicar a la vez seis prácticas integradas: (1) Todos los circuitos mantenidos de forma continua en los códigos de limpieza ISO 4406 objetivo (no recuperados después de excederlos); (2) Lavado de puesta en marcha completado antes de la primera operación para eliminar la contaminación de fabricación; (3) Todas las vías de ingreso selladas: respiraderos mejorados a respiraderos desecantes con filtro de 3 µm, sellos de eje monitoreados y reemplazados ante la primera fuga; (4) Intervalos de servicio por condición en lugar de intervalos fijos: cada circuito se atiende cuando su indicador o el análisis de aceite llegan al disparador; (5) Disciplina en los puntos de llenado: todas las transferencias de fluido a través de carros de transferencia con filtración previa β3(c) ≥ 200; (6) Tendencias de análisis de aceite monitoreadas en todos los circuitos, con 5+ datos por circuito por año. La cifra de 30–50% de extensión de vida surge de combinar una vida de cojinetes 2–3× mayor (con limpieza ISO 16/14/11 frente a ISO 19/17/14) en todos los tipos de circuito a la vez."
+    },
+    {
+      "question": "¿Cómo se diseña un sistema de filtración para mantener una limpieza ISO 16/14/11 en un circuito hidráulico con alto ingreso?",
+      "answer": "Diseñar para ISO 16/14/11 en un circuito con alto ingreso requiere calcular la relación Beta de filtración necesaria a partir del presupuesto de contaminación. Si la tasa de ingreso del circuito es de 500 partículas/mL-hora de ≥6 µm y el objetivo es el código ISO 4406 14 en ≥6 µm (80–160 partículas/mL), el sistema debe eliminar partículas a una tasa que mantenga el equilibrio por debajo de 160 partículas/mL. Un filtro de retorno clasificado β6(c) = 200 a 100 L/min elimina el 99.5% de las partículas entrantes de ≥6 µm por paso. Una filtración adicional en kidney-loop fuera de línea a 15 L/min con un elemento β3(c) = 200 se ocupa de las partículas menores de 6 µm, que predominan en las holguras de las servoválvulas. El diseño del sistema también debe atender las vías de ingreso: cambiar un venteo abierto por un respiradero desecante con filtro reduce la tasa de ingreso un 80–95%, y es la mejora individual más rentable en cualquier sistema hidráulico con depósito abierto."
+    },
+    {
+      "question": "¿Cuál es la diferencia de costo total entre un enfoque de sistema y un enfoque de filtros como commodity en 10 años de vida del equipo?",
+      "answer": "Para un camión minero de acarreo de servicio pesado con 10 años de vida operativa, la comparación de costo total muestra la ventaja del enfoque de sistema: Enfoque commodity: filtros comprados al menor precio, intervalos fijos, sin análisis de aceite. Costo anual de filtros: USD 8,000. Reemplazo de componentes (cojinetes, componentes hidráulicos, inyectores) con el doble de frecuencia que en el enfoque de sistema: USD 120,000/año. Paradas no planificadas: 150 horas/año a USD 20,000/hora de producción perdida = USD 3,000,000/año. Total en diez años: USD 30,128,000. Enfoque de sistema: especificación de filtros ELIMFILTERS adecuada a cada circuito, intervalos por condición, análisis de aceite trimestral. Costo anual de filtros: USD 12,000. Reemplazo de componentes a la mitad de frecuencia: USD 60,000/año. Paradas no planificadas: 40 horas/año a USD 20,000/hora = USD 800,000/año. Total en diez años: USD 8,720,000. Ventaja del enfoque de sistema: USD 21.4M por máquina en 10 años. La diferencia de costo de filtros (USD 40,000) es el 0.19% de la ventaja total."
+    },
+    {
+      "question": "¿Qué papel cumplen los filtros respiraderos desecantes en la ingeniería de protección de activos?",
+      "answer": "Los filtros respiraderos desecantes reemplazan los respiraderos convencionales de venteo abierto del depósito para eliminar las dos principales vías de contaminación atmosférica: el ingreso de partículas y el ingreso de humedad. Los respiraderos convencionales de venteo abierto aspiran aire sin filtrar al depósito cuando baja el nivel de fluido durante el accionamiento: 10–50 mg/hora de ingreso de polvo según la concentración de polvo ambiental. Los respiraderos desecantes aportan: (1) filtración de partículas a 3 µm absoluto, que elimina el polvo en suspensión antes de que entre al depósito; (2) desecante de gel de sílice o tamiz molecular que adsorbe la humedad del aire entrante, mantiene la humedad relativa del depósito por debajo del 30% y evita la acumulación de agua libre. Para un depósito hidráulico de 500 L que respira con un caudal de aire de 10 L/min en un entorno con 2 mg/m3 de polvo, reemplazar un respiradero abierto por un respiradero desecante de 3 µm reduce el ingreso de partículas un 95% y elimina prácticamente el agua libre por condensación: las dos mayores fuentes de ingreso de contaminación combinadas."
+    },
+    {
+      "question": "¿Cómo afectan los ciclos térmicos al ingreso de contaminación en los sistemas hidráulicos?",
+      "answer": "Los ciclos térmicos del depósito hidráulico (de la temperatura ambiente en la parada a la temperatura de operación, 40–70°C, en funcionamiento) crean un ciclo de respiración volumétrica, porque la dilatación y la contracción térmica del fluido desplazan aire hacia adentro y hacia afuera por el venteo del depósito. Cada ciclo térmico puede intercambiar un 2–5% del volumen del depósito como aire. Con una variación de temperatura de 20°C en un depósito de 500 L, pasan por el respiradero aproximadamente 10–25 L de aire por ciclo de operación. Con 1 mg/m3 de polvo ambiental, esto intercambia 0.01–0.025 g de polvo por ciclo. En un equipo que hace 3 ciclos por día (calentamiento al arrancar a la mañana, pico al mediodía, enfriamiento a la tarde), el ingreso anual de polvo solo por ciclos térmicos es de 10–27 g, equivalente a la carga de contaminación de todo un sistema en un circuito servo de precisión. Los acumuladores de vejiga sellados o los depósitos presurizados eliminan el ingreso por respiración térmica en los circuitos hidráulicos más críticos frente a la contaminación."
+    },
+    {
+      "question": "¿Qué pasos de verificación del desempeño confirman que un sistema de protección de activos cumple sus objetivos de control de contaminación?",
+      "answer": "Verificar el desempeño de un sistema de protección de activos requiere cuatro controles independientes con un calendario definido. Mensual: muestreo de fluido según ISO 3722 en cada circuito con conteo de partículas APC, para confirmar que todos los circuitos están en el código ISO 4406 objetivo o mejor. Trimestral: análisis de aceite (ICP-OES, TAN, TBN, FTIR, viscosidad) para verificar que no haya tendencias anormales de elementos de desgaste y que el estado del fluido esté dentro de la especificación. En cada cambio de filtro: inspección visual del estado del elemento (aspecto del medio, tipo y distribución de partículas con aumento, estado del sello de la tapa). Anual: revisión de los registros de mantenimiento no planificado: si las fallas de componentes relacionadas con la contaminación superan el 5% del total de eventos de mantenimiento, hay que revisar el cálculo del ingreso o de la capacidad de filtración. Este enfoque estructurado de verificación distingue un programa de control de contaminación gestionado de los cambios de filtro de rutina: en los dos se cambian filtros, pero solo el programa gestionado detecta fallas del sistema de control de contaminación antes de que dañen los componentes."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Norma de base para fijar y medir los objetivos de limpieza en todos los circuitos de fluidos dentro del marco de ingeniería de protección de activos."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Define las especificaciones de relación Beta y DHC de los elementos de filtros hidráulicos y de lubricante elegidos dentro del diseño del sistema de filtración de protección de activos."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 17359:2018, Condition Monitoring and Diagnostics of Machines — General Guidelines",
+      "relevance": "Marco de los programas de mantenimiento por condición que forman la capa de monitoreo y verificación del sistema de ingeniería de protección de activos."
+    },
+    {
+      "category": "handbook",
+      "citation": "Henke, R.W., Fluid Power Systems and Circuits, Hydraulic and Pneumatic Equipment Service Guide, Parker Hannifin Technical Handbook",
+      "relevance": "Referencia de ingeniería sobre la metodología del presupuesto de contaminación, el diseño de sistemas de filtración y los requisitos de lavado de puesta en marcha de los sistemas industriales hidráulicos y de lubricación."
+    }
+  ],
+  "title": "Ingeniería de protección de activos",
+  "subtitle": "Diseño de sistemas, presupuestos de contaminación y arquitectura de protección",
+  "metaDescription": "Marco de ingeniería para proteger activos industriales mediante el control de contaminación: metodología de diseño de sistemas, cálculo del presupuesto de contaminación, arquitectura de protección y verificación del desempeño.",
+  "category": "Ingeniería",
+  "readTime": "10 min",
+  "intro": "La ingeniería de protección de activos aplica de forma sistemática los principios de control de contaminación en todos los circuitos de fluidos y de aire de un activo industrial. El objetivo no es elegir filtros sueltos, sino diseñar un sistema de control de contaminación que mantenga todos los circuitos dentro de las especificaciones de limpieza durante toda la vida operativa del activo.",
+  "sections": [
+    {
+      "heading": "Arquitectura del sistema de protección",
+      "body": "La arquitectura de protección de activos identifica cada circuito que requiere control de contaminación: admisión de aire (elementos primario + de seguridad + prefiltro), sistema de lubricación (flujo total + filtro de derivación), sistema de combustible (primario + secundario + separador de agua), sistema hidráulico (línea de presión + línea de retorno + circuito fuera de línea), sistema de enfriamiento (dosificación de SCA + filtro de refrigerante) y aire de cabina (filtro HVAC + carbón activado). Cada circuito tiene un objetivo de limpieza, una tasa de ingreso de contaminación y una especificación de filtro derivada del objetivo y de la tasa de ingreso."
+    },
+    {
+      "heading": "Metodología del presupuesto de contaminación",
+      "body": "Un presupuesto de contaminación calcula el balance entre la tasa de ingreso de contaminación (partículas por hora que entran al sistema) y la tasa de eliminación por filtración (partículas por hora que capturan los filtros). En régimen estable, la tasa de ingreso = la tasa de filtración y la limpieza del sistema es constante. Si la tasa de ingreso supera la capacidad de filtración, la limpieza se degrada. El presupuesto de contaminación identifica el circuito con la mayor relación ingreso/filtración y prioriza las mejoras de filtración en consecuencia.",
+      "callout": [
+        {
+          "label": "Balance del presupuesto",
+          "value": "Tasa de ingreso = tasa de eliminación"
+        },
+        {
+          "label": "Resultado del déficit",
+          "value": "Degradación de la limpieza"
+        },
+        {
+          "label": "Circuito prioritario",
+          "value": "Mayor relación ingreso/filtración"
+        }
+      ]
+    },
+    {
+      "heading": "Integración de varios circuitos",
+      "body": "No proteger un circuito debilita todo el activo. Una brecha en la admisión de aire introduce sílice en el sistema de lubricación; el agua en el combustible afecta al fluido hidráulico por contaminación cruzada; la falla de un sello del refrigerante introduce agua en el aceite lubricante. Un programa integrado de control de contaminación cubre todos los circuitos a la vez: monitorea, muestrea y optimiza cada circuito como parte de un único sistema de protección."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Circuitos de protección por activo pesado",
+      "value": "5–7"
+    },
+    {
+      "label": "Extensión de vida con enfoque de sistema",
+      "value": "30–50%"
+    },
+    {
+      "label": "Programa integrado frente a commodity",
+      "value": "3–5× menos paradas"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 5011"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™",
+    "SYNTRAX™",
+    "NANOFORCE™",
+    "SYNTAPORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection",
+    "Lubrication Protection",
+    "Hydraulic Protection",
+    "Fuel Cleanliness Protection"
+  ],
+  "keywords": [
+    "protección de activos",
+    "presupuesto de contaminación",
+    "arquitectura de protección",
+    "diseño de sistemas",
+    "control de contaminación"
+  ]
+}

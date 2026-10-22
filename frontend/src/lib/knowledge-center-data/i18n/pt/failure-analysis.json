@@ -1,0 +1,138 @@
+{
+  "slug": "failure-analysis",
+  "faqs": [
+    {
+      "question": "Quais são as quatro categorias de morfologia de partículas de desgaste visíveis na análise de óleo usado?",
+      "answer": "As partículas de desgaste são classificadas pela morfologia em quatro categorias: (1) Partículas de fadiga: plaquetas lisas e planas de 5–15 µm formadas por fratura por esforço cíclico das pistas dos rolamentos; uma concentração alta indica fadiga superficial em rolamentos. (2) Partículas abrasivas: formas angulosas e irregulares com bordas afiadas; formam-se quando uma partícula dura (sílica, carboneto) corta superfícies mais macias; são o principal indicador de violação da admissão de ar ou entrada de pó. (3) Partículas de desgaste adesivo (desgaste por atrito): formas lisas e irregulares sem marcas direcionais; formam-se por contato metal com metal em lubrificação limite; indicam ruptura do filme ou sobrecarga. (4) Partículas de desgaste por corte: formas longas tipo fita ou enroladas; formam-se quando uma saliência dura corta uma superfície mais macia; indicam condição abrasiva severa. A análise da morfologia das partículas por ferrografia identifica o mecanismo de falha, o que a espectroscopia elementar sozinha não permite."
+    },
+    {
+      "question": "Como a inspeção do elemento filtrante aberto contribui para a análise de causa raiz?",
+      "answer": "Abrir um elemento de filtro de lubrificante usado fornece evidência direta do tipo e da severidade da contaminação. O exame com ampliação revela: partículas ferrosas (atraídas por ímã, aparência cinza metálica), que indicam desgaste de componentes de aço; partículas de cobre ou bronze (cor dourada, não magnéticas), que indicam desgaste de buchas de mancal ou arruelas de encosto; fragmentos de borracha ou elastômero (flexíveis, deformáveis), que indicam degradação de vedações; aglomerados de carbono (pretos, frágeis), que indicam degradação térmica do óleo ou contaminação pela combustão do diesel; e partículas de sílica (incolores ou brancas, muito duras), que indicam bypass na admissão de ar. A distribuição espacial das partículas na superfície do meio também traz informação diagnóstica: partículas concentradas nas cristas externas das pregas indicam um padrão de fluxo em bypass ao redor de uma vedação de tampa danificada; uma distribuição uniforme indica fluxo filtrado normal."
+    },
+    {
+      "question": "Quais padrões de espectroscopia elementar indicam modos de falha de componentes específicos no óleo do motor?",
+      "answer": "A análise elementar ICP-OES do óleo do motor relaciona os elementos de desgaste a componentes específicos. Ferro >100 ppm (ou subindo rapidamente acima da linha de base) indica desgaste de camisas de cilindro, de cames do comando ou de munhões dos mancais do virabrequim. Cobre >50 ppm indica desgaste de buchas de bronze ou arruelas de encosto, ou erosão dos tubos de cobre do resfriador de óleo. Alumínio >30 ppm indica desgaste da saia do pistão ou erosão de carcaças de alumínio. Silício >25 ppm (que não vem de componentes do motor) indica ingestão de sílica pela admissão de ar: é o diagnóstico mais conclusivo de violação do filtro de ar. Cromo >10 ppm indica desgaste de anéis de pistão cromados. Sódio e potássio juntos (>50 ppm) indicam contaminação por líquido de arrefecimento por falha da junta do cabeçote. O esgotamento conjunto de zinco e fósforo (>20% abaixo da concentração do óleo novo) indica esgotamento do aditivo ZDDP: a capacidade de proteção do lubrificante está reduzida."
+    },
+    {
+      "question": "Quais são as principais causas raiz da falha prematura de vedações de cilindros hidráulicos e como cada uma é diagnosticada?",
+      "answer": "A falha prematura da vedação da haste de um cilindro hidráulico tem três causas raiz principais. (1) Contaminação por partículas: partículas abrasivas no fluido hidráulico desgastam o lábio da vedação a cada curso, produzindo um padrão de desgaste em espiral visível na superfície da haste e um desgaste festonado no lábio da vedação. Diagnóstico: código ISO 4406 elevado no fluido do sistema e partículas ferrosas na análise de óleo. (2) Contaminação do fluido por fluidos incompatíveis: a mistura de diferentes tipos de fluido hidráulico (óleo mineral contaminado com água-glicol) causa inchamento ou degradação química do material da vedação, visível como crescimento dimensional e trincas superficiais. Diagnóstico: análise do fluido que mostra química misturada (FTIR). (3) Carga lateral: carga radial excessiva sobre a haste (por desalinhamento ou carga descentralizada) acelera o desgaste em um quadrante da circunferência da vedação. Diagnóstico: padrão de desgaste assimétrico na haste e na vedação."
+    },
+    {
+      "question": "Como uma falha por bypass do filtro de óleo é distinguida de uma falha do meio filtrante na análise de causa raiz?",
+      "answer": "A falha por bypass e a falha do meio produzem o mesmo resultado observável (partículas de desgaste chegando aos componentes a jusante), mas exigem ações corretivas diferentes. A falha por bypass ocorre quando a válvula de bypass se abre em condições normais de operação (partida a frio, elemento restrito ou falha da mola da válvula com ajuste baixo). Diagnóstico: uma amostra de óleo coletada logo após uma partida a frio (nos primeiros 30 segundos) mostra contagens de partículas elevadas; a pressão de abertura da válvula de bypass medida está abaixo da especificação; o alarme do indicador de restrição dispara antes do intervalo de manutenção programado. A falha do meio ocorre quando o meio filtrante desenvolve um furo, uma trinca ou uma descolagem da tampa. Diagnóstico: a distribuição de tamanhos de partícula na análise de óleo a jusante mostra partículas maiores que o tamanho de poro nominal do meio; a inspeção do elemento aberto revela dano no meio; um novo ensaio multipass ISO 16889 de amostras de elementos retidos mostra relação Beta abaixo da especificação."
+    },
+    {
+      "question": "Qual padrão de distribuição de tamanhos de partícula na análise de óleo indica violação da admissão de ar?",
+      "answer": "Uma violação da admissão de ar introduz partículas atmosféricas de sílica (dióxido de silício) e alumina no óleo do motor por meio do processo de combustão. O padrão característico é: (1) silício por ICP-OES subindo acima de 25 ppm (nível de alerta da ASTM D5185), vindo do pó atmosférico, que contém 60–70% de SiO2; (2) aumento simultâneo do alumínio acima de 30 ppm, vindo do componente de alumina (Al2O3) do pó atmosférico; (3) contagem de partículas (APC) com contagens elevadas em 5–20 µm, a faixa de tamanhos das partículas de sílica em suspensão que atravessam a violação do filtro; (4) ausência de aumento de cobre ou cromo (o que confirma que a fonte de contaminação é externa, e não o desgaste de componentes internos). Silício e alumínio subindo juntos sem aumento simultâneo do ferro é o padrão clássico. Um aumento apenas do silício, sem alumínio, pode indicar esgotamento do aditivo antiespumante de silicone, e não violação da admissão de ar."
+    },
+    {
+      "question": "Quais falhas de comissionamento causam desgaste prematuro de componentes hidráulicos nas primeiras 500 horas de operação?",
+      "answer": "O desgaste prematuro de componentes nas primeiras 500 horas de operação quase sempre é causado por flushing de comissionamento inadequado. Circuitos hidráulicos novos contêm resíduos de fabricação: cavacos do acabamento do furo dos cilindros (normalmente partículas de aço e ferro fundido de 50–200 µm), carepa das tubulações hidráulicas (óxido de ferro de 20–100 µm), rebarbas de elastômero das vedações novas (partículas de borracha de 10–50 µm) e contaminação da montagem (areia, pó metálico do ambiente de montagem). Sem flushing de comissionamento até o código ISO 4406 alvo antes da primeira operação, essas partículas carregam o filtro do sistema imediatamente na partida e causam eventos de bypass nas primeiras 10–50 horas, levando contaminação não filtrada às sapatas da bomba e às folgas das servoválvulas. Um relatório de flushing de comissionamento com dois certificados de amostra APC é a única verificação aceitável de que a contaminação de fabricação foi removida."
+    },
+    {
+      "question": "Como a formação de verniz nos sistemas hidráulicos se manifesta na análise de falhas e o que a causa?",
+      "answer": "O verniz nos sistemas hidráulicos aparece como um depósito fino, semelhante a laca, nos furos dos carretéis de válvula, nas bordas de dosagem das servoválvulas e nas paredes do reservatório, normalmente de cor bege, marrom ou laranja. Ele se forma quando moléculas de óleo degradadas térmica ou oxidativamente (compostos polares, espécies carbonílicas) se depositam nas superfícies metálicas. O depósito reduz a folga do carretel da servoválvula dos 2–8 µm nominais para apenas 1–3 µm, aumentando o atrito e causando comportamento de agarra-desliza nas válvulas proporcionais e servoválvulas. Na análise de falhas, a formação de verniz é diagnosticada por: FTIR que detecta índice de carbonila alto (subproduto da oxidação); MPC (colorimetria de membrana, ASTM D7843) com índice de potencial de verniz elevado (VPR >40 indica risco alto); e inspeção física que mostra descoloração nos furos das válvulas e nas superfícies internas do reservatório. A causa raiz é a degradação térmica do fluido acima de 80°C contínuos ou um tempo de permanência do fluido superior à vida de projeto."
+    },
+    {
+      "question": "O que é ferrografia e como ela complementa a espectroscopia ICP-OES na análise de falhas?",
+      "answer": "A ferrografia separa as partículas das amostras de óleo por gradiente magnético e as dispõe sobre um substrato de vidro (ferrograma) para exame ao microscópio. A ferrografia analítica classifica as partículas por tamanho, morfologia e textura superficial para identificar mecanismos de falha específicos. As partículas ferrosas (aço, ferro) se alinham primeiro no ferrograma; as não ferrosas (cobre, alumínio, bronze) ficam dispersas. A espectroscopia ICP-OES informa as concentrações de elementos dissolvidos e finos em suspensão (faixa de tamanho de partícula <5–8 µm), enquanto a ferrografia capta partículas maiores (faixa de 5–1,000 µm) e fornece evidência morfológica. Os dois métodos se complementam: o ICP-OES dá um alerta precoce do aumento da concentração de elementos antes que as partículas sejam grandes o bastante para a análise ferrográfica; a ferrografia identifica o mecanismo de falha pela morfologia das partículas quando o ICP-OES mostra concentrações elevadas. Juntos, fornecem evidência de \"quanto\" e de \"por quê\" para determinar a causa raiz."
+    },
+    {
+      "question": "Como uma falha de rolamento por contaminação é distinguida de uma falha por fadiga na análise de falhas em campo?",
+      "answer": "A falha de rolamento por contaminação produz características que a distinguem da fadiga: (1) Vários pontos de desgaste nas pistas, muitas vezes distribuídos por toda a circunferência (contra os pites de fadiga localizados na zona carregada); (2) Superfícies riscadas ou sulcadas com marcas direcionais de partículas abrasivas (contra os lascamentos lisos da fadiga, com padrão de fratura conchoidal); (3) Análise de óleo com contagem de partículas acima do código ISO alvo ANTES do evento de falha: a falha por contaminação segue um código de limpeza elevado; a falha por fadiga pode ocorrer com óleo limpo no fim da vida L10 calculada do rolamento. (4) Morfologia das partículas na última amostra de óleo antes da falha: partículas abrasivas (sílica angulosa, cavacos metálicos) na falha por contaminação contra plaquetas de fadiga na falha por fadiga. A tendência do código ISO 4406 nas 500–1,000 horas anteriores à falha é o diferenciador diagnóstico mais confiável entre a falha de rolamento induzida por contaminação e a induzida por ciclos de esforço."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry",
+      "relevance": "Método principal para quantificar metais de desgaste, elementos de aditivos e elementos contaminantes nas amostras de óleo usadas no diagnóstico de falhas."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Método de contagem de partículas usado para estabelecer o histórico de contaminação antes dos eventos de falha e verificar a recuperação da limpeza após a ação corretiva."
+    },
+    {
+      "category": "handbook",
+      "citation": "Machinery Lubrication, Wear Debris Analysis in Industrial Applications, ASTM International Technical Reference",
+      "relevance": "Referência técnica sobre a classificação da morfologia das partículas de desgaste, a interpretação da ferrografia e a identificação de mecanismos de falha a partir dos dados de análise de óleo."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D7843-12, Standard Test Method for Measurement of Lubricant Generated Insoluble Color Bodies in In-Service Turbine Oils Using Colorimetry (MPC)",
+      "relevance": "Ensaio de índice de potencial de verniz usado para diagnosticar a degradação térmica e a formação de verniz na análise de falhas de óleos hidráulicos e de turbinas."
+    }
+  ],
+  "title": "Análise de falhas",
+  "subtitle": "Identificação da causa raiz, padrões de desgaste e diagnóstico da contaminação",
+  "metaDescription": "Metodologia de análise de falhas na filtração industrial: identificar as causas raiz por meio da análise de padrões de desgaste, da morfologia das partículas, da análise de óleo e das técnicas de inspeção de elementos filtrantes.",
+  "category": "Engenharia",
+  "readTime": "8 min",
+  "intro": "A análise de falhas determina a causa raiz de uma falha mecânica para evitar que ela se repita. Nas falhas relacionadas à contaminação, a cadeia de evidências inclui os padrões de desgaste dos componentes, as tendências da análise de óleo, a condição do elemento filtrante, a morfologia das partículas e o histórico de operação do sistema. O objetivo é identificar corretamente a fonte de contaminação, e não apenas o modo de falha.",
+  "sections": [
+    {
+      "heading": "Inspeção do elemento filtrante",
+      "body": "Um elemento filtrante usado é um registro diagnóstico. Abrir um filtro de lubrificante usado e examinar o meio com ampliação revela: partículas ferrosas (magnéticas, brilho metálico = desgaste de ferro), partículas metálicas não ferrosas (cobre/bronze = desgaste de mancais, alumínio = desgaste da saia do pistão), material elastomérico (degradação de vedações) e aglomerados de carbono (degradação térmica do óleo). A distribuição de tamanhos de partícula informa a severidade e a duração do evento de desgaste. Partículas metálicas grandes (>100 µm) indicam desgaste agudo; partículas finas (<25 µm) indicam desgaste crônico.",
+      "callout": [
+        {
+          "label": "Partículas de ferro",
+          "value": "Desgaste de componentes de aço"
+        },
+        {
+          "label": "Partículas de cobre/bronze",
+          "value": "Desgaste de mancais"
+        },
+        {
+          "label": "Partículas de alumínio",
+          "value": "Desgaste de pistão/carcaça"
+        },
+        {
+          "label": "Aglomerados de carbono",
+          "value": "Degradação do óleo"
+        }
+      ]
+    },
+    {
+      "heading": "Classificação da morfologia das partículas",
+      "body": "As partículas de desgaste abrasivo são angulosas, irregulares e duras (a ingestão de sílica produz partículas de quartzo distinguíveis por espectroscopia de energia dispersiva). As partículas de desgaste por fadiga são planas, lisas e de tamanho uniforme, produzidas pela fadiga superficial das pistas dos rolamentos. As partículas de desgaste adesivo (desgaste por deslizamento) são placas sem características com bordas lisas. As partículas de desgaste por corte são longas, tipo fita, e indicam que uma partícula dura cortou uma superfície macia."
+    },
+    {
+      "heading": "Estrutura para identificar a causa raiz",
+      "body": "Causas raiz das falhas por contaminação: (1) falha de vedações que permite entrada acima da capacidade de filtração, (2) bypass do elemento filtrante por exceder o intervalo de manutenção, (3) falha da válvula de bypass que permanece aberta, (4) especificação incorreta do filtro, (5) contaminação de comissionamento que nunca passou por flushing. Para cada falha, identifique o caminho de contaminação, a lacuna na proteção e a mudança no sistema necessária para evitar a recorrência."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Causa das partículas de sílica",
+      "value": "Violação da admissão de ar"
+    },
+    {
+      "label": "Causa das partículas de cobre",
+      "value": "Desgaste de mancais"
+    },
+    {
+      "label": "Causa dos aglomerados de carbono",
+      "value": "Degradação do óleo / sobretemperatura"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "NANOFORCE™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "análise de falhas",
+    "causa raiz",
+    "padrões de desgaste",
+    "morfologia de partículas",
+    "diagnóstico de contaminação"
+  ]
+}

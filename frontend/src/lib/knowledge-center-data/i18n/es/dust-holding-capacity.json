@@ -1,0 +1,131 @@
+{
+  "slug": "dust-holding-capacity",
+  "faqs": [
+    {
+      "question": "¿Cómo se mide la capacidad de retención de polvo en el ensayo ISO 5011?",
+      "answer": "ISO 5011 mide la capacidad de retención de polvo (DHC) inyectando de forma continua polvo de ensayo ISO A2 fine aguas arriba del elemento filtrante a una tasa másica controlada (normalmente 0.1–2 g/min según el tamaño del elemento), manteniendo el caudal de aire nominal. Un alimentador gravimétrico de polvo entrega la tasa de polvo controlada a la corriente de aire aguas arriba. La restricción se mide de forma continua; el ensayo sigue hasta llegar a la restricción terminal (límite de servicio del fabricante). La DHC es la masa total de polvo inyectada desde el inicio del ensayo hasta la restricción terminal, expresada en gramos. La DHC no es una propiedad fija: varía con el caudal de aire (velocidad frontal) y con la distribución de tamaños de las partículas de polvo. Un filtro ensayado con mayor caudal de aire mostrará una DHC menor, porque la mayor velocidad frontal compacta más rápido la torta de polvo y hace que la restricción suba más rápido por cada gramo de polvo inyectado."
+    },
+    {
+      "question": "¿Cómo afecta la distribución de tamaños del polvo ambiental a la vida útil real del filtro frente a los resultados del ensayo ISO 5011?",
+      "answer": "El polvo de ensayo ISO A2 fine tiene una distribución de tamaños de partícula definida (0.5–180 µm, mediana ~10 µm) según ISO 12103-1. El polvo real varía mucho: las voladuras en canteras generan partículas grandes (25–500 µm) que cargan rápido los filtros por gramo pero con un conteo de partículas bajo; la construcción de caminos genera partículas finas PM10 (1–10 µm) que penetran más en el medio antes de ser capturadas y elevan la restricción más rápido por gramo que el polvo grueso. Un filtro que logra 500 g de DHC en el ensayo ISO 5011 puede dar solo 250 g de DHC efectiva en un entorno con polvo PM2.5 fino predominante. El cálculo del intervalo de servicio debe aplicar un factor de corrección por entorno: los entornos de polvo grueso (voladuras mineras, manejo de áridos) suelen lograr el 120–150% de la DHC ISO 5011, mientras que los de polvo fino (manejo de granos, cemento) logran el 60–80% de la DHC de ensayo."
+    },
+    {
+      "question": "¿Qué relación hay entre el número de pliegues, la altura de los pliegues y la capacidad de retención de polvo?",
+      "answer": "La capacidad de retención de polvo escala de forma aproximadamente lineal con el área total de medio disponible, que es igual al número de pliegues multiplicado por la altura del pliegue multiplicado por el ancho activo del pliegue. Duplicar el número de pliegues con la misma altura duplica el área de medio y aproximadamente la DHC, siempre que los pliegues no se puenteen con la carga de polvo. Duplicar la altura del pliegue con el mismo número tiene el mismo efecto sobre el área, pero requiere soporte estructural para evitar que los pliegues altos colapsen. Límites prácticos: aumentar el número de pliegues más allá de una densidad en la que la separación entre pliegues es menor que 2× el espesor esperado de la torta de polvo provoca puenteo: dos pliegues adyacentes se unen en una torta de polvo sólida y anulan el medio entre ellos. La densidad óptima de pliegues en aplicaciones de polvo seco es de 8–14 pliegues por centímetro de circunferencia del elemento, con una separación entre pliegues de 4–8 mm."
+    },
+    {
+      "question": "¿Cómo multiplica la eficiencia de separación del prefiltro la capacidad de retención de polvo del elemento primario?",
+      "answer": "Los prefiltros usan separación centrífuga (ciclón o vórtice) para eliminar partículas por fuerza inercial sin filtración mecánica. Un prefiltro con 85% de eficiencia de separación para partículas mayores de 10 µm reduce un 85% el ingreso de masa de partículas gruesas al elemento primario y extiende su vida útil aproximadamente 6× (100% / (100% - 85%) = 6.7). En la práctica, la eficiencia del prefiltro baja a medida que se obstruyen las válvulas eyectoras, que expulsan el polvo separado del vaso del ciclón, y porque las partículas finas menores de 10 µm no se separan. Para mantener la extensión de vida útil prometida hace falta un mantenimiento eficaz del prefiltro (inspección de la válvula eyectora en cada cambio de aceite, limpieza del vaso). Los fabricantes de equipo minero especifican la eficiencia de separación del prefiltro como parte de la especificación del sistema de admisión de aire."
+    },
+    {
+      "question": "¿Cuál es la restricción terminal que se usa en el ensayo ISO 5011 y cómo se fija para los distintos tipos de motor?",
+      "answer": "La restricción terminal de ISO 5011 es la presión diferencial a la que se detiene el ensayo de DHC, y corresponde al límite de servicio especificado por el fabricante para la aplicación del motor. Los procedimientos de ensayo usan 25 mbar (10 inH2O) como restricción terminal en aplicaciones de aspiración natural y 37.5–62.5 mbar (15–25 inH2O) en aplicaciones turboalimentadas. Fijar la restricción terminal en 62.5 mbar en lugar de 25 mbar significa que el filtro puede acumular mucha más masa de polvo antes de que se detenga el ensayo, porque la restricción sube de forma más gradual con la mayor velocidad frontal que exigen las aplicaciones turboalimentadas. Un elemento ensayado hasta 62.5 mbar de restricción terminal informará una DHC 2–4× mayor que el mismo elemento ensayado hasta 25 mbar: los números no son directamente comparables si no se conoce el valor de restricción terminal usado."
+    },
+    {
+      "question": "¿Cómo se calcula el intervalo de servicio en campo a partir de la capacidad de retención de polvo y la concentración de polvo ambiental?",
+      "answer": "Intervalo de servicio en campo (horas) = DHC (gramos) / [concentración de polvo ambiental (mg/m3) × caudal de aire del equipo (m3/h) × factor del prefiltro (adimensional) / 1,000,000]. Para una excavadora minera con un caudal de aire de 2,000 m3/h, una DHC de 400 g y un factor de prefiltro de 0.15 (85% de eficiencia del prefiltro), operando con 0.5 mg/m3 de polvo ambiental: intervalo de servicio = 400 / (0.5 × 2,000 × 0.15 / 1,000,000) × 1,000,000 = 400 / 0.15 = 2,667 horas. Sin embargo, la concentración de polvo rara vez es constante: los picos durante las voladuras o el manejo de material pueden ser 10–50× la base. Los intervalos de servicio calculados con concentraciones promedio deben validarse con las lecturas del indicador de restricción en las primeras 500 horas de operación."
+    },
+    {
+      "question": "¿Por qué baja la capacidad de retención de polvo cuando un elemento de filtro de aire se limpia por soplado inverso?",
+      "answer": "Los elementos de filtro de aire pueden limpiarse con pulsos inversos de aire comprimido (soplado inverso) para quitar la torta de polvo acumulada en la superficie y recuperar la restricción. Pero cada ciclo de limpieza provoca dos formas de degradación irreversible: las partículas de polvo finas (menores de 5 µm) que al principio estaban sobre la superficie aguas arriba son empujadas hacia la estructura del medio por la presión del soplado, tapan los poros de forma permanente y reducen el área abierta efectiva; y la fatiga mecánica de los pulsos de presión repetidos provoca microfracturas en el medio de fibra de vidrio y en las uniones de las fibras del medio de celulosa. Después de 5–10 ciclos de limpieza, la DHC efectiva cae al 40–60% de la capacidad de un elemento nuevo. Los elementos limpiados más allá de este límite dan intervalos de servicio más cortos por ciclo de limpieza y terminan sin cumplir las especificaciones de eficiencia Beta. El medio sintético MACROCORE resiste mejor que la celulosa la degradación por soplado inverso y conserva el 70–80% de la DHC original después de 10 ciclos de limpieza."
+    },
+    {
+      "question": "¿Qué importancia tiene la tasa de inyección de polvo en el ensayo ISO 5011?",
+      "answer": "La tasa de inyección de polvo del ensayo ISO 5011 (gramos de polvo por minuto alimentados aguas arriba) afecta la velocidad de carga y, por lo tanto, el tiempo hasta la restricción terminal, pero no afecta directamente el valor de DHC informado: la DHC es la masa total acumulada sin importar la tasa de inyección. Sin embargo, la tasa de inyección afecta cómo se forma la estructura de la torta de polvo: las tasas de inyección altas crean tortas más densas y menos porosas, que aumentan la restricción más rápido por gramo que las tasas bajas, con las que la torta se forma más suelta. ISO 5011 especifica la tasa de inyección en relación con el tamaño del elemento para asegurar condiciones de ensayo constantes. En campo, la tasa de ingreso de polvo puede ser 100× menor que la tasa de inyección del ensayo: la carga en campo produce una torta de polvo más suelta y permeable, y la DHC real en campo suele ser un 15–30% mayor que la DHC informada por ISO 5011 en motores de aspiración natural."
+    },
+    {
+      "question": "¿Cómo logra el medio sintético una mayor capacidad de retención de polvo por unidad de área que el medio de celulosa?",
+      "answer": "El medio sintético meltblown logra una mayor DHC por unidad de área por dos mecanismos. Primero, el diámetro de fibra controlado (1–10 µm frente a 10–40 µm de la celulosa) crea una estructura de poros tridimensional más abierta que puede atrapar más masa de polvo en su profundidad antes de que se tape la superficie. La filtración en profundidad captura partículas en todo el espesor del medio y no solo en la torta superficial. Segundo, las fibras sintéticas no absorben humedad ni se hinchan: la estructura de poros se mantiene estable en condiciones de alta humedad. En los elementos MACROCORE, esto se traduce en una DHC por cm2 de área de medio un 40–70% mayor que la de elementos de celulosa de la misma área con la misma restricción terminal, lo que permite elementos más pequeños con la misma vida útil o intervalos de servicio más largos con las mismas dimensiones."
+    },
+    {
+      "question": "¿Qué ensayos se usan para verificar la capacidad de retención de polvo en aplicaciones específicas de equipo pesado?",
+      "answer": "Los ensayos de calificación de los fabricantes para filtros de aire de equipo pesado exigen ensayos ISO 5011 al caudal de aire, la temperatura y la configuración de entrada específicos de la aplicación, no solo en las condiciones estándar del banco de ensayo. Puede usarse polvo específico del equipo (muestreado en el sitio a concentraciones ambientales representativas) junto con el polvo ISO A2 fine para caracterizar el desempeño en las condiciones de la aplicación. Los fabricantes mineros exigen datos de DHC tanto al caudal de aire nominal máximo como al caudal típico de operación a carga parcial, porque las curvas de restricción frente a capacidad difieren a carga parcial. Los ensayos de calificación OEM de ELIMFILTERS incluyen la DHC medida al 60%, 80% y 100% del caudal de aire nominal, lo que da predicciones del intervalo de servicio en todo el ciclo de trabajo. Los datos de ensayo de calificación OEM requieren un laboratorio acreditado según ISO 17025."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing",
+      "relevance": "Define la metodología de ensayo de capacidad de retención de polvo, los procedimientos de inyección de polvo, las definiciones de restricción terminal y los requisitos de informe de los elementos de filtro de aire."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust",
+      "relevance": "Especifica las propiedades físicas y químicas del polvo ISO A2 fine y de otros polvos de ensayo estándar usados en el ensayo de DHC, incluidas la distribución de tamaños y la composición."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Evaluation",
+      "relevance": "Norma de ensayo SAE equivalente para evaluar la DHC y la eficiencia de los filtros de aire, que especifica los grados de polvo de ensayo SAE Fine y Coarse y los protocolos de ensayo usados por los fabricantes de equipos norteamericanos."
+    },
+    {
+      "category": "handbook",
+      "citation": "Parker Hannifin, Filtration Division, Air Filter Element Selection Guide — Technical Reference 933864",
+      "relevance": "Manual de aplicación sobre la metodología de cálculo de la DHC, la elección del prefiltro, la medición de la concentración de polvo ambiental y la estimación del intervalo de servicio en campo."
+    }
+  ],
+  "title": "Capacidad de retención de polvo",
+  "subtitle": "Carga del filtro, ensayo de capacidad de suciedad y predicción de la vida útil",
+  "metaDescription": "Análisis de ingeniería de la capacidad de retención de polvo (DHC) del filtro: polvo de ensayo ISO 5011, curvas de carga, medición de la capacidad en gramos y cómo la capacidad determina el intervalo de servicio en entornos contaminados.",
+  "category": "Ingeniería",
+  "readTime": "7 min",
+  "intro": "La capacidad de retención de polvo (DHC), medida en gramos de polvo de ensayo normalizado retenido antes de llegar a la caída de presión terminal, determina directamente la vida útil en entornos contaminados. Una mayor capacidad extiende los intervalos de servicio, reduce la frecuencia de cambio de filtros y baja el costo total de la filtración.",
+  "sections": [
+    {
+      "heading": "Metodología de medición de la DHC",
+      "body": "ISO 5011 define el método de ensayo estándar del desempeño de los filtros de aire, incluida la DHC. El polvo de ensayo (polvo ISO A2 fine o ISO coarse) se alimenta en el lado aguas arriba del filtro a una tasa y un caudal de aire controlados. La restricción se mide de forma continua. La DHC se registra como el total de gramos inyectados al llegar a la restricción terminal. Las condiciones de ensayo deben coincidir con el caudal de aire de la aplicación: la DHC no es una propiedad fija independiente de la velocidad frontal."
+    },
+    {
+      "heading": "Curvas de carga y predicción del servicio",
+      "body": "La velocidad de carga real depende de la concentración de polvo ambiental, de las horas de operación del equipo y del caudal de aire por hora. Un camión minero de acarreo que opera en un entorno con 1 mg/m³ de polvo con un caudal de aire de 1,000 m³/h ingiere 1 gramo de polvo por hora. Un elemento con 500g de DHC tiene una capacidad teórica de 500 horas en estas condiciones. Sin embargo, la restricción aumenta de forma no lineal con la carga: el último 20% de la capacidad provoca el 50% del aumento total de la restricción. Los intervalos de servicio deberían fijarse en el 80–85% de la capacidad teórica.",
+      "callout": [
+        {
+          "label": "Concentración de polvo en minería",
+          "value": "0.1–5 mg/m³"
+        },
+        {
+          "label": "Punto de servicio",
+          "value": "80–85% de la DHC"
+        },
+        {
+          "label": "Ventaja de DHC de MACROCORE™",
+          "value": "Hasta 2× la celulosa"
+        }
+      ]
+    },
+    {
+      "heading": "Sistemas de prelimpieza",
+      "body": "Los prefiltros (separadores ciclónicos, tubos de prefiltrado o deflectores tipo gorro de lluvia) eliminan las partículas gruesas antes de que lleguen al elemento filtrante primario. Un prefiltro que separa el 80% del polvo entrante de ≥10 µm multiplica en la práctica la vida útil del elemento primario por 5×. Los sistemas de filtración de varias etapas (prefiltro + primario + elemento de seguridad) son estándar en los equipos mineros donde la concentración de polvo supera 0.5 mg/m³."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Norma de ensayo",
+      "value": "ISO 5011"
+    },
+    {
+      "label": "Umbral de servicio",
+      "value": "80–85% de la DHC"
+    },
+    {
+      "label": "Eficiencia del prefiltro",
+      "value": "70–95% a ≥10 µm"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 5011"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "capacidad de retención de polvo",
+    "DHC",
+    "carga del filtro",
+    "vida útil",
+    "ISO 5011"
+  ]
+}

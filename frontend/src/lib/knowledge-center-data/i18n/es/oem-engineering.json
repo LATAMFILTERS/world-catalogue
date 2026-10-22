@@ -1,0 +1,130 @@
+{
+  "slug": "oem-engineering",
+  "faqs": [
+    {
+      "question": "¿Qué parámetros de ingeniería definen la equivalencia con el filtro OEM más allá de las dimensiones físicas?",
+      "answer": "La equivalencia con el filtro OEM exige igualar cinco parámetros de ingeniería además del ajuste físico: (1) la presión de apertura de la válvula de derivación (rango típico de 0.8–1.5 bar: una presión de apertura distinta cambia el umbral de ΔP por encima del cual entra aceite sin filtrar al motor); (2) la relación Beta del medio en el tamaño que especifica el fabricante (por ejemplo, β10(c) ≥ 75 en lubricación de motores diésel: un elemento de reposición con β10(c) = 10 no da un control de contaminación equivalente); (3) la capacidad de retención de suciedad al caudal nominal (determina si el elemento puede cumplir el intervalo de servicio especificado por el fabricante sin superar la presión de derivación); (4) el desempeño de la válvula antidrenaje (tasa de fuga <1 mL/min durante 60 minutos); y (5) la compatibilidad de los elastómeros con el fluido especificado (NBR para aceite mineral, FKM para lubricantes sintéticos por encima de 150°C)."
+    },
+    {
+      "question": "¿Cómo se derivan las especificaciones de filtros OEM de los requisitos de ingeniería del motor y del sistema?",
+      "answer": "Las especificaciones de filtros OEM nacen de los requisitos de ingeniería de diseño del motor en cuanto a: (1) Objetivos de limpieza de los componentes: el código ISO 4406 requerido para los cojinetes del motor y los componentes de precisión, que define la relación Beta mínima del filtro; (2) Volumen y caudal de aceite: determinan el tamaño del filtro, el área de medio y la DHC necesarias para cumplir el intervalo de cambio al caudal nominal del motor; (3) Viscosidad del aceite en el arranque en frío: a −20°C, la viscosidad de un aceite de motor ISO VG 15W-40 puede superar 1,500 cSt, lo que exige una presión de apertura de la válvula de derivación que proteja contra la falta de aceite por la restricción en el arranque en frío; (4) Rango de temperatura de operación: determina la especificación de temperatura del elastómero y del medio. Los fabricantes de motores validan las especificaciones de filtración con datos de desgaste del motor de ensayos de vida acelerada, con la contaminación del aceite mantenida en códigos ISO 4406 de ISO 16/14/11 a ISO 19/17/14 para acotar el rango de protección aceptable."
+    },
+    {
+      "question": "¿Cuál es la situación legal de los filtros de reposición frente al cumplimiento de la garantía OEM?",
+      "answer": "En la mayoría de los grandes mercados, los filtros de reposición pueden usarse sin anular la garantía del fabricante si igualan o superan sus especificaciones de desempeño. El Reglamento de Exención por Categorías de la UE (EU BER 461/2010) permite expresamente usar repuestos de calidad equivalente sin anular la garantía, siempre que el proveedor de reposición pueda demostrar la equivalencia. En los mercados norteamericanos, la Ley de Garantías Magnuson-Moss (15 U.S.C. § 2302) prohíbe atar la garantía a repuestos de marca específicos, salvo que el fabricante los suministre gratis. Sin embargo, la carga de la prueba de la equivalencia recae en el proveedor de reposición: si surge un reclamo de garantía, el dueño del equipo y el proveedor de reposición deben demostrar que el filtro igualaba o superaba las especificaciones del fabricante. Los informes de ensayo ISO 16889 y los datos de desempeño ISO 4548-12 de laboratorios acreditados son el formato de evidencia estándar para las declaraciones de equivalencia."
+    },
+    {
+      "question": "¿Qué es un número de referencia cruzada y qué validación de ingeniería se necesita antes de publicarlo?",
+      "answer": "Una referencia cruzada (o número de intercambio) vincula un número de parte de filtro OEM con un equivalente de reposición. Publicar una referencia cruzada afirma que el elemento de reposición es dimensional y funcionalmente equivalente a la parte OEM para la aplicación. La validación de ingeniería requiere: medición dimensional del diámetro y el paso de la rosca, del diámetro exterior y la altura del elemento, del diámetro exterior de la junta y de la ubicación de la válvula de derivación; medición de la presión de apertura de la válvula de derivación y de la fuga de la válvula ADB; ensayo de eficiencia del medio ISO 16889 o ISO 4548-12 al caudal y al objetivo de relación Beta especificados por el fabricante; y verificación de la compatibilidad de los elastómeros y del medio con el tipo de fluido especificado por el fabricante. Las referencias cruzadas publicadas sin datos de desempeño que las respalden exponen al proveedor de reposición a responsabilidad de garantía si el filtro no da una protección equivalente en servicio."
+    },
+    {
+      "question": "¿Por qué algunas especificaciones de filtros OEM incluyen una relación Beta máxima además de una mínima?",
+      "answer": "Algunas especificaciones de filtros OEM incluyen una relación Beta máxima (por ejemplo, β10(c) entre 75 y 200) para evitar dos problemas. Primero, una relación Beta extremadamente alta (β10(c) > 1,000) puede indicar una filtración muy fina que captura partículas que el paquete de aditivos aporta como complemento de lubricación límite: algunos paquetes de aditivos de extrema presión de los aceites API CJ-4 y CK-4 incluyen complejos organometálicos de 0.5–5 µm con comportamiento de partícula. Segundo, una relación Beta muy alta suele corresponder a una restricción limpia alta, lo que acelera la apertura de la válvula de derivación en los arranques en frío y reduce el tiempo efectivo de filtración. Las especificaciones OEM fijan una Beta mínima para el control de contaminación y una Beta máxima para la compatibilidad con los aditivos y el desempeño en el arranque en frío. Esta especificación por rango es más común en sistemas hidráulicos, donde los requisitos de las válvulas proporcionales (β3(c) ≥ 200) y los de la válvula de derivación en el arranque en frío (derivación a 1.5 bar como máximo) crean restricciones que compiten entre sí."
+    },
+    {
+      "question": "¿Cómo deben evaluar los compradores de filtros de reposición los informes de ensayo ISO 16889 que dan los proveedores?",
+      "answer": "Evaluar los informes de ensayo ISO 16889 de un proveedor requiere revisar cinco elementos: (1) Acreditación del laboratorio: confirmar que el laboratorio de ensayo tiene una acreditación ISO 17025 vigente para ensayo de filtros (número de certificado de acreditación, alcance y fecha de vencimiento); (2) Condiciones de ensayo: confirmar que el caudal de ensayo coincide con el de la aplicación, que el fluido es ISO VG 15 a 50°C y que el polvo es ISO 12103-1 A2 medium (y no otro contaminante de ensayo); (3) Notación Beta: confirmar que está el sufijo β(c), que confirma el conteo de partículas calibrado según ISO 11171; (4) Identificación del elemento: confirmar que el informe identifica el número de parte específico del elemento, con la revisión del plano o el número de versión; (5) Coherencia de la declaración: confirmar que la especificación del catálogo del proveedor coincide con los datos del informe de ensayo (la Beta mínima en el tamaño especificado debe coincidir con el valor del informe). Los informes a los que les falte cualquiera de estos elementos no pueden respaldar una declaración de equivalencia válida."
+    },
+    {
+      "question": "¿Qué especificaciones de rosca OEM se usan en los filtros de lubricante roscados y por qué importan?",
+      "answer": "Las especificaciones de rosca de los filtros de lubricante roscados están normalizadas según ISO 965-1 (serie de roscas métricas): M20×1.5 (motores de gasolina livianos), M22×1.5 (diésel comerciales livianos y de servicio liviano), M26×1.5 (motores diésel de servicio mediano, muchas aplicaciones europeas) y M28×1.5 (diésel de servicio pesado, vehículos comerciales). Las aplicaciones pesadas norteamericanas usan la serie de roscas UN (1-12 UNF es la más común). El paso de la rosca es tan importante como el diámetro: M22×1.5 y M22×1.0 empiezan a roscar las dos, pero el paso más grueso (1.5 mm) hace tope antes de llegar al torque de sellado en un cabezal de paso 1.0 mm, lo que crea una vía de fuga. Los filtros de reposición deben coincidir con precisión en el diámetro y el paso de la rosca. Las referencias cruzadas de ELIMFILTERS especifican la especificación de rosca completa (diámetro, paso, perfil de rosca) para cada aplicación."
+    },
+    {
+      "question": "¿Qué importancia de ingeniería tiene la especificación de presión de estallido de la carcasa del filtro?",
+      "answer": "La especificación de presión de estallido de la carcasa del filtro es la presión a la que la carcasa falla estructuralmente: normalmente 2× la presión máxima de trabajo admisible (MAWP) en filtros hidráulicos y 4× en filtros de lubricante. Una carcasa de filtro de lubricante clasificada para 10 bar de MAWP debe soportar un ensayo de estallido de 40 bar según ISO 4548-1. El margen de seguridad al estallido considera: los picos de presión durante los transitorios del sistema (el arranque de la bomba puede generar 1.5–2× la presión de operación durante 50–200 milisegundos); la variación de presión por temperatura (los sistemas hidráulicos de circuito cerrado pueden tener aumentos de presión del 15–25% entre el arranque en frío y la temperatura de operación); la variación de fabricación en el espesor de pared de la carcasa; y la acumulación de fatiga a lo largo de más de 500 ciclos de servicio. Las carcasas de reposición fabricadas con acero de menor calibre y sin un ensayo de estallido equivalente pueden ser intercambiables dimensionalmente, pero estructuralmente inseguras para el entorno de presión de la aplicación."
+    },
+    {
+      "question": "¿Cómo encara ELIMFILTERS la validación de referencias cruzadas de reposición en aplicaciones pesadas?",
+      "answer": "La validación de referencias cruzadas de reposición de ELIMFILTERS sigue un proceso de cuatro etapas en las aplicaciones de filtros de servicio pesado. Etapa 1: Equivalencia dimensional: medición al 100% de la especificación de rosca, las dimensiones de la carcasa, el diámetro exterior de la junta, la ubicación de la válvula de derivación y la configuración de las tapas frente a los elementos OEM de referencia. Etapa 2: Equivalencia funcional: presión de apertura de la válvula de derivación medida a 20°C y 80°C; fuga de la válvula ADB medida con 0.5 bar de columna estática; carga axial de las tapas según ISO 3723. Etapa 3: Equivalencia de desempeño: ensayo multipaso ISO 16889 al caudal de la aplicación OEM, con el resultado de relación Beta comparado con el mínimo de la especificación OEM; ensayo de estallido ISO 4548-12. Etapa 4: Compatibilidad de fluidos: ensayo de inmersión de los elastómeros a 120°C durante 1,000 horas con el fluido especificado por el fabricante, midiendo el cambio dimensional y la dureza. Las referencias cruzadas se publican solo después de superar y documentar las cuatro etapas."
+    },
+    {
+      "question": "¿Qué papel cumple la certificación ISO 9001 en el aseguramiento de la calidad de los filtros de reposición?",
+      "answer": "La certificación del sistema de gestión de la calidad ISO 9001 exige que un proveedor documente y controle de forma constante todos los procesos que afectan la calidad del producto, desde la especificación de la materia prima, pasando por el control del proceso de fabricación, hasta la inspección del producto terminado. En los elementos filtrantes, ISO 9001 exige: una especificación documentada del medio (diámetro de fibra, gramaje, relación Beta por lote de producción); un proceso controlado de unión de las tapas (tipo de adhesivo, tiempo y temperatura de curado, inspección de la resistencia de la unión); una frecuencia de inspección y criterios de aceptación de la presión de apertura de la válvula de derivación; y la trazabilidad del elemento filtrante terminado hasta el lote de producción del medio. La certificación ISO 9001 no garantiza que el elemento cumpla una norma de desempeño específica: garantiza que el proceso de producción fabrica de forma constante elementos iguales al diseño calificado. Junto con los datos de ensayo ISO 17025 del diseño, ISO 9001 asegura que los elementos de producción coinciden con el diseño ensayado."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Norma de desempeño principal usada para validar la equivalencia de los elementos filtrantes de reposición con las especificaciones OEM de relación Beta y DHC."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4548-1:1997, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 1: Differential Pressure / Flow Characteristics",
+      "relevance": "Rige los ensayos de presión diferencial, presión de apertura de la válvula de derivación y presión de estallido de los filtros de aceite lubricante roscados."
+    },
+    {
+      "category": "regulation",
+      "citation": "Regulation (EU) 461/2010 on the Application of Article 101(3) TFEU to Categories of Vertical Agreements in the Motor Vehicle Sector (EU Block Exemption Regulation)",
+      "relevance": "Reglamento europeo que permite usar repuestos de reposición equivalentes sin anular la garantía OEM y define el marco legal de los programas de referencias cruzadas de filtros de reposición."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 9001:2015, Quality Management Systems — Requirements",
+      "relevance": "Norma de gestión de la calidad aplicada a la fabricación de filtros para asegurar la consistencia de la producción entre el diseño ensayado y los elementos de producción."
+    }
+  ],
+  "title": "Ingeniería OEM",
+  "subtitle": "Especificaciones de filtración OEM, referencias cruzadas y equivalencia de reposición",
+  "metaDescription": "Requisitos de ingeniería de filtración OEM: cómo se determinan las especificaciones OEM, qué parámetros definen la equivalencia y criterios de ingeniería para validar filtros de reposición.",
+  "category": "Ingeniería",
+  "readTime": "7 min",
+  "intro": "Las especificaciones de filtración OEM definen los requisitos mínimos de desempeño para una aplicación de motor o de sistema determinada. Entender la base de ingeniería de las especificaciones OEM permite elegir correctamente los equivalentes de reposición: igualar o superar los parámetros que protegen el activo, no solo igualar las dimensiones físicas.",
+  "sections": [
+    {
+      "heading": "Parámetros de la especificación OEM",
+      "body": "Las especificaciones de filtros OEM definen: tamaño y paso de la rosca (M20×1.5, M22×1.5, M26×1.5 típicos), dimensiones de la carcasa (diámetro exterior, altura, diámetro de la junta), presión de apertura de la válvula de derivación (0.8–1.5 bar típicos), caudal de la válvula antidrenaje, eficiencia del medio (relación Beta en un tamaño de partícula especificado) y capacidad de retención de suciedad. La coincidencia de rosca y dimensiones asegura la instalación física. Los parámetros de la válvula de derivación y del medio aseguran la equivalencia de desempeño.",
+      "callout": [
+        {
+          "label": "Roscas de lubricante comunes",
+          "value": "M20×1.5, M22×1.5, M26×1.5"
+        },
+        {
+          "label": "Rango de la válvula de derivación",
+          "value": "0.8–1.5 bar"
+        },
+        {
+          "label": "Coincidencia de eficiencia del medio",
+          "value": "β₁₀(c) ≥ especificación OEM"
+        }
+      ]
+    },
+    {
+      "heading": "Criterios de equivalencia de reposición",
+      "body": "La equivalencia dimensional (ajuste físico) es necesaria pero no suficiente. La equivalencia de desempeño exige igualar o superar la relación Beta, la capacidad de retención de suciedad y la especificación de la válvula de derivación del elemento OEM. Un filtro de reposición con una relación Beta menor que la especificación OEM no mantiene el objetivo de limpieza para el que se diseñó el sistema OEM, aunque se instale físicamente bien. La ingeniería de ELIMFILTERS valida el desempeño del medio frente a las especificaciones Beta OEM antes de publicar referencias cruzadas."
+    },
+    {
+      "heading": "Consideraciones de garantía",
+      "body": "Los requisitos de garantía OEM especifican el uso de filtros aprobados durante el período de garantía. En muchos mercados, la normativa permite usar filtros de reposición equivalentes sin anular la garantía, siempre que el filtro de reposición iguale o supere las especificaciones de desempeño OEM. La carga de la prueba de la equivalencia recae en el proveedor de reposición. La documentación de desempeño (informes de ensayo ISO 16889, hojas de datos β(c)) es el formato de evidencia estándar."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Base de equivalencia",
+      "value": "β(c) + válvula de derivación + dimensiones"
+    },
+    {
+      "label": "Norma de rosca",
+      "value": "ISO 965-1 métrica fina"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 5011"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "ingeniería OEM",
+    "especificación de filtros",
+    "equivalencia de reposición",
+    "referencia cruzada",
+    "garantía"
+  ]
+}

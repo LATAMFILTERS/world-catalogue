@@ -1,0 +1,138 @@
+{
+  "slug": "failure-analysis",
+  "faqs": [
+    {
+      "question": "¿Cuáles son las cuatro categorías de morfología de partículas de desgaste visibles en el análisis de aceite usado?",
+      "answer": "Las partículas de desgaste se clasifican por su morfología en cuatro categorías: (1) Partículas de fatiga: plaquetas lisas y planas de 5–15 µm formadas por fractura por esfuerzo cíclico de las pistas de rodadura de los cojinetes; una concentración alta indica fatiga superficial en los rodamientos. (2) Partículas abrasivas: formas angulosas e irregulares con bordes filosos; se forman cuando una partícula dura (sílice, carburo) corta superficies más blandas; son el indicador principal de una brecha en la admisión de aire o de ingreso de polvo. (3) Partículas de desgaste adhesivo (desgaste por roce): formas lisas e irregulares sin marcas direccionales; se forman por contacto metal con metal en lubricación límite; indican ruptura de la película o sobrecarga. (4) Partículas de desgaste por corte: formas largas tipo cinta o enrolladas; se forman cuando una saliente dura corta una superficie más blanda; indican una condición abrasiva severa. El análisis de la morfología de las partículas por ferrografía identifica el mecanismo de falla, algo que la espectroscopia elemental sola no permite."
+    },
+    {
+      "question": "¿Cómo contribuye la inspección del elemento filtrante abierto al análisis de causa raíz?",
+      "answer": "Abrir un elemento de filtro de lubricante usado da evidencia directa del tipo y la severidad de la contaminación. El examen con aumento revela: partículas ferrosas (atraídas por un imán, aspecto gris metálico), que indican desgaste de componentes de acero; partículas de cobre o bronce (color dorado, no magnéticas), que indican desgaste de bujes de cojinete o arandelas de empuje; fragmentos de caucho o elastómero (flexibles, deformables), que indican degradación de sellos; aglomerados de carbón (negros, frágiles), que indican degradación térmica del aceite o contaminación por la combustión del diésel; y partículas de sílice (incoloras o blancas, muy duras), que indican derivación en la admisión de aire. La distribución espacial de las partículas sobre la superficie del medio también aporta información diagnóstica: partículas concentradas en las crestas exteriores de los pliegues indican un patrón de flujo en derivación alrededor de un sello de tapa dañado; una distribución uniforme indica un flujo filtrado normal."
+    },
+    {
+      "question": "¿Qué patrones de espectroscopia elemental indican modos de falla de componentes específicos en el aceite de motor?",
+      "answer": "El análisis elemental ICP-OES del aceite de motor relaciona los elementos de desgaste con componentes específicos. Hierro >100 ppm (o en rápido aumento sobre la línea base) indica desgaste de camisas de cilindro, de levas del árbol o de muñones de cojinetes del cigüeñal. Cobre >50 ppm indica desgaste de bujes de bronce o arandelas de empuje, o erosión de los tubos de cobre del enfriador de aceite. Aluminio >30 ppm indica desgaste de la falda del pistón o erosión de carcasas de aluminio. Silicio >25 ppm (que no proviene de componentes del motor) indica ingestión de sílice por la admisión de aire: es el diagnóstico más concluyente de una brecha en el filtro de aire. Cromo >10 ppm indica desgaste de anillos de pistón cromados. Sodio y potasio juntos (>50 ppm) indican contaminación por refrigerante por falla de la junta de culata. El agotamiento conjunto de zinc y fósforo (>20% por debajo de la concentración del aceite nuevo) indica agotamiento del aditivo ZDDP: la capacidad de protección del lubricante está reducida."
+    },
+    {
+      "question": "¿Cuáles son las principales causas raíz de la falla prematura de sellos de cilindros hidráulicos y cómo se diagnostica cada una?",
+      "answer": "La falla prematura del sello del vástago de un cilindro hidráulico tiene tres causas raíz principales. (1) Contaminación por partículas: las partículas abrasivas del fluido hidráulico desgastan el labio del sello en cada carrera, lo que produce un patrón de desgaste en espiral visible en la superficie del vástago y un desgaste festoneado en el labio del sello. Diagnóstico: código ISO 4406 elevado en el fluido del sistema y partículas ferrosas en el análisis de aceite. (2) Contaminación del fluido con fluidos incompatibles: la mezcla de distintos tipos de fluido hidráulico (aceite mineral contaminado con agua-glicol) hincha o degrada químicamente el material del sello, lo que se ve como crecimiento dimensional y grietas superficiales. Diagnóstico: análisis del fluido que muestra química mezclada (FTIR). (3) Carga lateral: una carga radial excesiva sobre el vástago (por desalineación o carga descentrada) acelera el desgaste en un cuadrante de la circunferencia del sello. Diagnóstico: patrón de desgaste asimétrico en el vástago y el sello."
+    },
+    {
+      "question": "¿Cómo se distingue en el análisis de causa raíz una falla por derivación del filtro de aceite de una falla del medio filtrante?",
+      "answer": "La falla por derivación y la falla del medio producen el mismo resultado observable (partículas de desgaste que llegan a los componentes aguas abajo), pero requieren acciones correctivas distintas. La falla por derivación ocurre cuando la válvula de derivación se abre en condiciones normales de operación (arranque en frío, elemento restringido o falla del resorte de la válvula con un ajuste bajo). Diagnóstico: una muestra de aceite tomada inmediatamente después de un arranque en frío (dentro de los primeros 30 segundos) muestra conteos de partículas elevados; la presión de apertura de la válvula de derivación medida está por debajo de la especificación; la alarma del indicador de restricción se activa antes del intervalo de servicio programado. La falla del medio ocurre cuando el medio filtrante desarrolla un agujero, una grieta o un despegue de la tapa. Diagnóstico: la distribución de tamaños de partícula en el análisis de aceite aguas abajo muestra partículas mayores que el tamaño de poro nominal del medio; la inspección del elemento abierto revela daño en el medio; un nuevo ensayo multipaso ISO 16889 de muestras de elementos retenidos muestra una relación Beta por debajo de la especificación."
+    },
+    {
+      "question": "¿Qué patrón de distribución de tamaños de partícula en el análisis de aceite indica una brecha en la admisión de aire?",
+      "answer": "Una brecha en la admisión de aire introduce partículas atmosféricas de sílice (dióxido de silicio) y alúmina en el aceite del motor a través del proceso de combustión. El patrón característico es: (1) silicio por ICP-OES que sube por encima de 25 ppm (nivel de alerta de ASTM D5185), procedente del polvo atmosférico, que contiene un 60–70% de SiO2; (2) aumento simultáneo del aluminio por encima de 30 ppm, procedente del componente de alúmina (Al2O3) del polvo atmosférico; (3) conteo de partículas (APC) con conteos elevados en 5–20 µm, el rango de tamaños de las partículas de sílice en suspensión que atraviesan la brecha del filtro; (4) ausencia de aumento de cobre o cromo (lo que confirma que la fuente de contaminación es externa y no el desgaste de componentes internos). Silicio y aluminio que suben juntos sin un aumento simultáneo del hierro es el patrón clásico. Un aumento solo del silicio, sin aluminio, puede indicar agotamiento del aditivo antiespumante de silicona y no una brecha en la admisión de aire."
+    },
+    {
+      "question": "¿Qué fallas de puesta en marcha provocan desgaste prematuro de componentes hidráulicos en las primeras 500 horas de operación?",
+      "answer": "El desgaste prematuro de componentes en las primeras 500 horas de operación casi siempre se debe a un lavado de puesta en marcha insuficiente. Los circuitos hidráulicos nuevos contienen residuos de fabricación: virutas del acabado del barreno de los cilindros (normalmente partículas de acero y hierro fundido de 50–200 µm), cascarilla de las tuberías hidráulicas (óxido de hierro de 20–100 µm), rebabas de elastómero de los sellos nuevos (partículas de caucho de 10–50 µm) y contaminación del montaje (arenilla, polvo metálico del entorno de montaje). Sin un lavado de puesta en marcha hasta el código ISO 4406 objetivo antes de la primera operación, estas partículas cargan el filtro del sistema de inmediato durante el arranque y provocan eventos de derivación en las primeras 10–50 horas, que llevan contaminación sin filtrar a las zapatas de la bomba y a las holguras de las servoválvulas. Un informe de lavado de puesta en marcha con dos certificados de muestra APC es la única verificación aceptable de que se eliminó la contaminación de fabricación."
+    },
+    {
+      "question": "¿Cómo se manifiesta la formación de barniz en los sistemas hidráulicos en el análisis de fallas y qué la provoca?",
+      "answer": "El barniz en los sistemas hidráulicos aparece como un depósito fino, parecido a una laca, en los barrenos de los carretes de válvula, los bordes de dosificación de las servoválvulas y las paredes del depósito, normalmente de color tostado, marrón o naranja. Se forma cuando moléculas de aceite degradadas térmica u oxidativamente (compuestos polares, especies carbonílicas) se depositan sobre las superficies metálicas. El depósito reduce la holgura del carrete de la servoválvula de los 2–8 µm nominales a tan solo 1–3 µm, lo que aumenta la fricción y provoca un comportamiento de agarre-deslizamiento en las válvulas proporcionales y servoválvulas. En el análisis de fallas, la formación de barniz se diagnostica por: FTIR que detecta un índice de carbonilo alto (subproducto de la oxidación); MPC (colorimetría de parche de membrana, ASTM D7843) con un índice de potencial de barniz elevado (VPR >40 indica riesgo alto); e inspección física que muestra decoloración en los barrenos de las válvulas y en las superficies internas del depósito. La causa raíz es la degradación térmica del fluido por encima de 80°C continuos o un tiempo de permanencia del fluido mayor que la vida de diseño."
+    },
+    {
+      "question": "¿Qué es la ferrografía y cómo complementa a la espectroscopia ICP-OES en el análisis de fallas?",
+      "answer": "La ferrografía separa las partículas de las muestras de aceite mediante un gradiente magnético y las dispone sobre un sustrato de vidrio (ferrograma) para examinarlas al microscopio. La ferrografía analítica clasifica las partículas por tamaño, morfología y textura superficial para identificar mecanismos de falla específicos. Las partículas ferrosas (acero, hierro) se alinean primero en el ferrograma; las no ferrosas (cobre, aluminio, bronce) quedan dispersas. La espectroscopia ICP-OES informa las concentraciones de elementos disueltos y finos en suspensión (rango de tamaño de partícula <5–8 µm), mientras que la ferrografía capta partículas más grandes (rango de 5–1,000 µm) y aporta evidencia morfológica. Los dos métodos se complementan: ICP-OES da una alerta temprana del aumento de la concentración de elementos antes de que las partículas sean lo bastante grandes para el análisis ferrográfico; la ferrografía identifica el mecanismo de falla por la morfología de las partículas cuando ICP-OES muestra concentraciones elevadas. Juntos aportan evidencia de \"cuánto\" y de \"por qué\" para determinar la causa raíz."
+    },
+    {
+      "question": "¿Cómo se distingue en el análisis de fallas en campo una falla de cojinete por contaminación de una falla por fatiga?",
+      "answer": "La falla de cojinete por contaminación produce rasgos característicos que se distinguen de la fatiga: (1) Varios puntos de desgaste en las pistas, a menudo distribuidos en toda la circunferencia (frente a las picaduras de fatiga localizadas en la zona cargada); (2) Superficies rayadas o surcadas con marcas direccionales de partículas abrasivas (frente a los desprendimientos lisos de la fatiga, con patrón de fractura concoidea); (3) Análisis de aceite con conteo de partículas por encima del código ISO objetivo ANTES del evento de falla: la falla por contaminación sigue a un código de limpieza elevado; la falla por fatiga puede ocurrir con aceite limpio al final de la vida L10 calculada del cojinete. (4) Morfología de las partículas en la última muestra de aceite previa a la falla: partículas abrasivas (sílice angulosa, virutas metálicas) en la falla por contaminación frente a plaquetas de fatiga en la falla por fatiga. La tendencia del código ISO 4406 en las 500–1,000 horas previas a la falla es el diferenciador diagnóstico más confiable entre la falla de cojinete inducida por contaminación y la inducida por ciclos de esfuerzo."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry",
+      "relevance": "Método principal para cuantificar los metales de desgaste, los elementos de aditivos y los elementos contaminantes en las muestras de aceite usadas para el diagnóstico de fallas."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Método de conteo de partículas usado para establecer el historial de contaminación antes de los eventos de falla y para verificar la recuperación de la limpieza después de la acción correctiva."
+    },
+    {
+      "category": "handbook",
+      "citation": "Machinery Lubrication, Wear Debris Analysis in Industrial Applications, ASTM International Technical Reference",
+      "relevance": "Referencia técnica sobre la clasificación de la morfología de las partículas de desgaste, la interpretación de la ferrografía y la identificación de mecanismos de falla a partir de los datos de análisis de aceite."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D7843-12, Standard Test Method for Measurement of Lubricant Generated Insoluble Color Bodies in In-Service Turbine Oils Using Colorimetry (MPC)",
+      "relevance": "Ensayo de índice de potencial de barniz usado para diagnosticar la degradación térmica y la formación de barniz en el análisis de fallas de aceites hidráulicos y de turbinas."
+    }
+  ],
+  "title": "Análisis de fallas",
+  "subtitle": "Identificación de la causa raíz, patrones de desgaste y diagnóstico de la contaminación",
+  "metaDescription": "Metodología de análisis de fallas en la filtración industrial: identificar las causas raíz mediante el análisis de patrones de desgaste, la morfología de las partículas, el análisis de aceite y las técnicas de inspección de elementos filtrantes.",
+  "category": "Ingeniería",
+  "readTime": "8 min",
+  "intro": "El análisis de fallas determina la causa raíz de una falla mecánica para evitar que se repita. En las fallas relacionadas con la contaminación, la cadena de evidencia incluye los patrones de desgaste de los componentes, las tendencias del análisis de aceite, el estado del elemento filtrante, la morfología de las partículas y el historial de operación del sistema. El objetivo es identificar correctamente la fuente de contaminación, no solo el modo de falla.",
+  "sections": [
+    {
+      "heading": "Inspección del elemento filtrante",
+      "body": "Un elemento filtrante usado es un registro diagnóstico. Abrir un filtro de lubricante usado y examinar el medio con aumento revela: partículas ferrosas (magnéticas, brillo metálico = desgaste de hierro), partículas metálicas no ferrosas (cobre/bronce = desgaste de cojinetes, aluminio = desgaste de la falda del pistón), material elastomérico (degradación de sellos) y aglomerados de carbón (degradación térmica del aceite). La distribución de tamaños de partícula informa sobre la severidad y la duración del evento de desgaste. Las partículas metálicas grandes (>100 µm) indican desgaste agudo; las partículas finas (<25 µm) indican desgaste crónico.",
+      "callout": [
+        {
+          "label": "Partículas de hierro",
+          "value": "Desgaste de componentes de acero"
+        },
+        {
+          "label": "Partículas de cobre/bronce",
+          "value": "Desgaste de cojinetes"
+        },
+        {
+          "label": "Partículas de aluminio",
+          "value": "Desgaste de pistón/carcasa"
+        },
+        {
+          "label": "Aglomerados de carbón",
+          "value": "Degradación del aceite"
+        }
+      ]
+    },
+    {
+      "heading": "Clasificación de la morfología de las partículas",
+      "body": "Las partículas de desgaste abrasivo son angulosas, irregulares y duras (la ingestión de sílice produce partículas de cuarzo que se distinguen por espectroscopia de energía dispersiva). Las partículas de desgaste por fatiga son planas, lisas y de tamaño uniforme, producidas por la fatiga superficial de las pistas de rodadura de los cojinetes. Las partículas de desgaste adhesivo (desgaste por deslizamiento) son placas sin rasgos con bordes lisos. Las partículas de desgaste por corte son largas, tipo cinta, e indican que una partícula dura cortó una superficie blanda."
+    },
+    {
+      "heading": "Marco para identificar la causa raíz",
+      "body": "Causas raíz de las fallas por contaminación: (1) falla de sellos que permite un ingreso mayor que la capacidad de filtración, (2) derivación del elemento filtrante por exceder el intervalo de servicio, (3) falla de la válvula de derivación que queda abierta, (4) especificación incorrecta del filtro, (5) contaminación de puesta en marcha que nunca se lavó. Para cada falla, identifique la vía de contaminación, el hueco en la protección y el cambio en el sistema necesario para evitar que se repita."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Causa de las partículas de sílice",
+      "value": "Brecha en la admisión de aire"
+    },
+    {
+      "label": "Causa de las partículas de cobre",
+      "value": "Desgaste de cojinetes"
+    },
+    {
+      "label": "Causa de los aglomerados de carbón",
+      "value": "Degradación del aceite / sobretemperatura"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "NANOFORCE™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "análisis de fallas",
+    "causa raíz",
+    "patrones de desgaste",
+    "morfología de partículas",
+    "diagnóstico de contaminación"
+  ]
+}
