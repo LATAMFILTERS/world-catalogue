@@ -13,6 +13,8 @@ export const OG_LOCALE: Record<PageLang, string> = { en: 'en_US', es: 'es_419', 
 export const LOCALIZED_ROUTES: readonly string[] = [
   '/',
   '/contact',
+  '/partners',
+  '/distributor-application',
   '/industries',
   '/industries/mining',
   '/industries/agriculture',
