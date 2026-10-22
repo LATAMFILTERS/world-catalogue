@@ -33,6 +33,7 @@ export const LOCALIZED_ROUTES: readonly string[] = [
   ...PRODUCT_FAMILY_LIST.map((family) => `/families/${family.slug}`),
   '/knowledge-center',
   ...TRANSLATED_HUB_SLUGS.map((hub) => `/knowledge-center/${hub}`),
+  '/knowledge-center/faq',
   ...TRANSLATED_ARTICLE_SLUGS.map((slug) => `/knowledge-center/engineering/${slug}`),
 ];
 
