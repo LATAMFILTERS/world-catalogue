@@ -36,7 +36,8 @@ describe('Distributor public language coverage', () => {
       const html = renderToStaticMarkup(<I18nextProvider i18n={instance}><DistributorsPage /></I18nextProvider>).replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
       expect(html).toContain(lang === 'es' ? 'Red de socios comerciales autorizados' : lang === 'pt' ? 'Rede de parceiros comerciais autorizados' : 'Authorized Commercial Partner Network');
       for (const identity of ['TROY, SRL', 'COLSAISA', 'ELIMPERCA', 'Ave. Las Palmas #64, Santo Domingo, Dominican Republic 10905', 'Cl. 17 #82 - 67, Fontibon, Bogota, Colombia', 'Frisco, Texas, United States', '+57 310 611 2190', '80%', '20%']) expect(html).toContain(identity);
-      for (const href of ['https://part-search.elimfilters.com', 'https://www.instagram.com/troydominicana/', 'tel:+573106112190', '/distributor-application', '#authorized-distributors']) expect(html).toContain('href="' + href + '"');
+      for (const href of ['https://part-search.elimfilters.com', 'https://www.instagram.com/troydominicana/', 'tel:+573106112190', '#authorized-distributors']) expect(html).toContain('href="' + href + '"');
+      expect(html).toContain('href="' + (lang === 'en' ? '' : '/' + lang) + '/distributor-application/"');
       expect(html).toContain('href="' + (lang === 'en' ? '' : '/' + lang) + '/contact/"');
       for (const action of ['distributor-locator', 'partner-application', 'product-intelligence', 'application-support']) expect(html).toContain('data-conversion-action="' + action + '"');
       if (lang !== 'en') for (const text of ['Authorized Commercial Partner Network', 'Find an ELIMFILTERS authorized distributor', 'Regional Coverage.', 'Partner Standards', 'ELIMFILTERS AUTHORIZED DISTRIBUTOR', 'Need a Distributor, a Product Match']) expect(html).not.toContain(text);
