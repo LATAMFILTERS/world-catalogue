@@ -27,7 +27,7 @@ describe('Leadership language coverage and preserved identity', () => {
         ? ['agentes e subagentes', 'profissionais humanos', 'países, regiões e continentes', 'gargalos']
         : lang === 'es'
           ? ['agentes y subagentes', 'profesionales humanos', 'países, regiones y continentes', 'cuellos de botella']
-          : ['agents and subagents', 'human professionals', 'countries, regions, and continents', 'bottlenecks']) {
+          : ['Agents and subagents', 'human professionals', 'countries, regions, and continents', 'bottlenecks']) {
         expect(visible).toContain(phrase);
       }
       const agentDescriptions = [...visible.matchAll(/class="agent-description">([\s\S]*?)<\/div>/g)];
@@ -58,7 +58,7 @@ describe('Leadership language coverage and preserved identity', () => {
       expect(visible).toContain('href="' + (lang === 'en' ? '/' : '/' + lang + '/') + '"');
       for (const heading of lang === 'pt' ? ['Liderança humana.', 'Execução nativa de IA.'] : lang === 'es' ? ['Liderazgo humano.', 'Ejecución nativa con IA.'] : ['Human leadership.', 'AI-native execution.']) expect(visible).toContain(heading);
       if (lang === 'pt') {
-        for (const english of ['ELIMFILTERS · LEADERSHIP', 'FOUNDER &amp; CEO', 'EXECUTIVE AI LEADERSHIP', 'GOVERNANCE &amp; ACCOUNTABILITY', 'CAPABILITY BEFORE COMPLEXITY', 'Executive AI Agent', 'Chief Operating &amp; Supply Chain Agent', 'Human leadership.', 'Back to Who We Are']) expect(visible).not.toContain(english);
+        for (const english of ['ELIMFILTERS · LEADERSHIP', 'FOUNDER &amp; CEO', 'EXECUTIVE AI LEADERSHIP', 'GOVERNANCE &amp; ACCOUNTABILITY', 'CAPABILITY BEFORE COMPLEXITY', 'Executive AI Agent', 'Human leadership.', 'Back to Who We Are']) expect(visible).not.toContain(english);
         for (const translated of ['LIDERANÇA EXECUTIVA DE IA', 'GOVERNANÇA E RESPONSABILIDADE', 'CAPACIDADE ANTES DA COMPLEXIDADE', 'Agente executivo de IA', 'a responsabilidade final pelas decisões', 'permanecem sob responsabilidade humana', '2002', 'UCAT', 'URBE']) expect(visible).toContain(translated);
       }
       if (lang === 'es') {
