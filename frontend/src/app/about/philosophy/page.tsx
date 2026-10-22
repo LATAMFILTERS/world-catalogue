@@ -446,7 +446,7 @@ export default function OurPhilosophyPage() {
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '100%', margin: '0 auto 3rem' }}>{copy.principlesTitle}</h2>
           <div className="philosophy-principles-grid">
             {principles.map((pr) => (
-              <article key={pr.num} style={principleCard}>
+              <article className="philosophy-principle-card" key={pr.num} style={principleCard}>
                 <span style={principleNum}>{pr.num}</span>
                 <h3 style={principleTitle}>{pr.title}</h3>
                 <p style={principleDesc}>{pr.desc}</p>
