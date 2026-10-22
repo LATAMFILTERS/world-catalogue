@@ -16504,6 +16504,429 @@
     "kind": "catalogue-db",
     "table": "elimfilters_catalog"
    }
+  },
+  {
+   "sku": "EA10960",
+   "slug": "ea10960",
+   "family": "secondary-air",
+   "duty": "Heavy Duty",
+   "title": "Air Filter",
+   "technology": "MACROCORE",
+   "description": "EA10960 is an ELIMFILTERS air filter protected by MACROCORE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "329.54 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "85.34 mm"
+    },
+    {
+     "name": "Inner diameter",
+     "value": "74.47 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "3I1418"
+    },
+    {
+     "brand": "John Deere",
+     "code": "CE16309"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AL34832"
+    },
+    {
+     "brand": "John Deere",
+     "code": "L34832"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AL30395"
+    }
+   ],
+   "oemTotal": 5,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P770960"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "AF4626"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PA2644"
+    },
+    {
+     "brand": "WIX",
+     "code": "46549"
+    },
+    {
+     "brand": "WIX",
+     "code": "546549"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "CF930"
+    },
+    {
+     "brand": "Purolator",
+     "code": "A34511"
+    },
+    {
+     "brand": "Purolator",
+     "code": "AF4511"
+    }
+   ],
+   "crossRefsTotal": 8,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EA18678",
+   "slug": "ea18678",
+   "family": "secondary-air",
+   "duty": "Heavy Duty",
+   "title": "Air Filter",
+   "technology": "MACROCORE",
+   "description": "EA18678 is an ELIMFILTERS air filter protected by MACROCORE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "304.8 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "121.3 mm"
+    },
+    {
+     "name": "Inner diameter",
+     "value": "91.2 mm"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "ISO 5011"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "7E5374"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1W7364"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "7C4428"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "7C6376"
+    },
+    {
+     "brand": "Ford",
+     "code": "9576P158678"
+    }
+   ],
+   "oemTotal": 8,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P158678"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "AF4639"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "AK00009"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "AK9"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PA2719"
+    },
+    {
+     "brand": "WIX",
+     "code": "46511"
+    },
+    {
+     "brand": "WIX",
+     "code": "546511"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "C1371"
+    },
+    {
+     "brand": "Hengst",
+     "code": "E1622LS"
+    },
+    {
+     "brand": "Hengst",
+     "code": "E584LS"
+    },
+    {
+     "brand": "Purolator",
+     "code": "6949687"
+    },
+    {
+     "brand": "Purolator",
+     "code": "A54437"
+    },
+    {
+     "brand": "Purolator",
+     "code": "AF4437"
+    }
+   ],
+   "crossRefsTotal": 15,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EA18905",
+   "slug": "ea18905",
+   "family": "primary-air",
+   "duty": "Heavy Duty",
+   "title": "Air Filter",
+   "technology": "MACROCORE",
+   "description": "EA18905 is an ELIMFILTERS air filter protected by MACROCORE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "461 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "237 mm"
+    },
+    {
+     "name": "Inner diameter",
+     "value": "130.9 mm"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "ISO 5011"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "AT196824"
+    },
+    {
+     "brand": "John Deere",
+     "code": "F044978"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "41901H0P10"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "5036781"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "41901HOP10"
+    },
+    {
+     "brand": "Volvo",
+     "code": "11110175"
+    },
+    {
+     "brand": "Volvo",
+     "code": "111101754"
+    },
+    {
+     "brand": "Volvo",
+     "code": "15193224"
+    },
+    {
+     "brand": "Volvo",
+     "code": "VOE11110175"
+    },
+    {
+     "brand": "Jcb",
+     "code": "32925404"
+    },
+    {
+     "brand": "Liebherr",
+     "code": "7623371"
+    },
+    {
+     "brand": "New Holland",
+     "code": "73187602"
+    },
+    {
+     "brand": "Case",
+     "code": "73187602"
+    }
+   ],
+   "oemTotal": 13,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P778905"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "AF25748"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "RS4620"
+    },
+    {
+     "brand": "WIX",
+     "code": "49075E"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "C24904/1"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "C24904/2"
+    },
+    {
+     "brand": "Hengst",
+     "code": "E1507L"
+    },
+    {
+     "brand": "Sakura",
+     "code": "A7106"
+    },
+    {
+     "brand": "Filtron",
+     "code": "AR3504"
+    }
+   ],
+   "crossRefsTotal": 9,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
+  },
+  {
+   "sku": "EH61454",
+   "slug": "eh61454",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Cartridge",
+   "technology": "NANOFORCE",
+   "description": "EH61454 is an ELIMFILTERS cartridge protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "374.39 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "111.51 mm"
+    },
+    {
+     "name": "Inner diameter",
+     "value": "56.26 mm"
+    },
+    {
+     "name": "Filter media",
+     "value": "GENUINE FILTER MEDIA"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "100 psi"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P171454"
+    }
+   ],
+   "crossRefsTotal": 1,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db",
+    "table": "elimfilters_catalog"
+   }
   }
  ],
  "blocked": []
