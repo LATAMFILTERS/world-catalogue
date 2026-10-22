@@ -36,7 +36,7 @@ test('KC sanitizer governs default, Spanish and Portuguese export paths without 
   assert.equal(run.status, 0, run.stderr || run.stdout);
   for (const rel of paths) {
     const outputText = fs.readFileSync(path.join(output, rel), 'utf8');
-    assert.doesNotMatch(outputText, /\\bDonaldson\\b|#(?:ff4444|ff8c00|44ff88)/i, rel);
+    assert.doesNotMatch(outputText, /\bDonaldson\b|#(?:ff4444|ff8c00|44ff88)/i, rel);
     assert.match(outputText, /external manufacturer/, rel);
   }
   assert.equal(fs.readFileSync(unrelated, 'utf8'), prohibited, 'Non-KC routes must not be altered');
