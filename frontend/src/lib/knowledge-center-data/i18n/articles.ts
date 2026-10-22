@@ -6,3 +6,13 @@ import type { KCArticle } from '../types';
 export function translatedArticle(slug: string, lang: 'es' | 'pt'): KCArticle {
   return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, `${slug}.json`), 'utf8'));
 }
+
+export interface TranslatedFAQ {
+  questions: Record<string, { question: string; answer: string }>;
+  topics: Record<string, string>;
+  categories: Record<string, string>;
+}
+
+export function translatedFAQ(lang: 'es' | 'pt'): TranslatedFAQ {
+  return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'faq.json'), 'utf8'));
+}
