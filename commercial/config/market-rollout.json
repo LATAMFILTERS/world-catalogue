@@ -6,25 +6,98 @@
     {
       "id": "south-cone-lab",
       "markets": [
-        {"country": "Paraguay", "role": "laboratory", "status": "ACTIVE"},
-        {"country": "Uruguay", "role": "reproducibility", "status": "LOCKED"}
+        {
+          "country": "Paraguay",
+          "role": "laboratory",
+          "status": "ACTIVE"
+        },
+        {
+          "country": "Uruguay",
+          "role": "reproducibility",
+          "status": "LOCKED"
+        }
       ]
     },
     {
       "id": "south-cone-scale",
       "markets": [
-        {"country": "Argentina", "role": "scale", "status": "LOCKED"}
+        {
+          "country": "Argentina",
+          "role": "scale",
+          "status": "LOCKED"
+        }
       ]
     },
     {
       "id": "spanish-south-america-expansion",
       "markets": [
-        {"country": "Chile", "status": "LOCKED"},
-        {"country": "Bolivia", "status": "LOCKED"},
-        {"country": "Peru", "status": "LOCKED"},
-        {"country": "Ecuador", "status": "LOCKED"},
-        {"country": "Colombia", "status": "LOCKED"},
-        {"country": "Venezuela", "status": "LOCKED"}
+        {
+          "country": "Bolivia",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Chile",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Peru",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Ecuador",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Colombia",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Venezuela",
+          "status": "LOCKED"
+        }
+      ]
+    },
+    {
+      "id": "central-america-north",
+      "markets": [
+        {
+          "country": "Panama",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Costa Rica",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Nicaragua",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Honduras",
+          "status": "LOCKED"
+        },
+        {
+          "country": "El Salvador",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Guatemala",
+          "status": "LOCKED"
+        },
+        {
+          "country": "Mexico",
+          "status": "LOCKED"
+        }
+      ]
+    },
+    {
+      "id": "usa-goal",
+      "markets": [
+        {
+          "country": "USA",
+          "role": "primary_goal",
+          "status": "LOCKED"
+        }
       ]
     }
   ],
