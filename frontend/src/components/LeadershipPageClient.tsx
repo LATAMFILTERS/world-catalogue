@@ -123,7 +123,10 @@ export function LeadershipPageClient() {
       <section className="leadership-hero">
         <div className="leadership-wrap">
           <p className="eyebrow"><ReviewedText text={"ELIMFILTERS · LEADERSHIP"} /></p>
-          <h1>{isPortuguese ? "Liderança humana. Execução nativa de IA." : isSpanish ? 'Liderazgo humano. Ejecución AI-native.' : 'Human leadership. AI-native execution.'}</h1>
+          <h1>
+            <span className="hero-title-line">{isPortuguese ? 'Liderança humana.' : isSpanish ? 'Liderazgo humano.' : 'Human leadership.'}</span>
+            <span className="hero-title-line">{isPortuguese ? 'Execução nativa de IA.' : isSpanish ? 'Ejecución nativa con IA.' : 'AI-native execution.'}</span>
+          </h1>
           <p className="hero-copy">
             {isPortuguese ? "A ELIMFILTERS combina autoridade executiva humana com funções executivas especializadas operadas por agentes de IA sob uma estrutura formal de responsabilidade, autoridade delegada, rastreabilidade e encaminhamento." : isSpanish
               ? 'ELIMFILTERS combina autoridad ejecutiva humana con funciones ejecutivas especializadas operadas por agentes de IA bajo un marco formal de responsabilidad, autoridad delegada, trazabilidad y escalamiento.'
@@ -222,19 +225,20 @@ export function LeadershipPageClient() {
       <style jsx>{`
         .leadership-page{background:#000;color:#fff;min-height:100vh;font-family:var(--font-body)}
         .leadership-wrap{max-width:1180px;margin:0 auto;width:100%}
-        .leadership-hero{padding:clamp(7rem,12vw,10rem) clamp(1.25rem,6vw,6rem) clamp(4rem,8vw,7rem);background:radial-gradient(circle at 80% 0%,rgba(255,241,45,.16),transparent 28%),#000;border-bottom:1px solid rgba(255,255,255,.08)}
+        .leadership-hero{padding:clamp(7rem,9vw,8.5rem) clamp(1.25rem,5vw,5.5rem) clamp(3.5rem,6vw,5.5rem);background:radial-gradient(circle at 80% 0%,rgba(255,241,45,.12),transparent 32%),#000;border-bottom:1px solid rgba(255,255,255,.08)}
         .eyebrow{color:#FFF12D;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.16em;margin:0 0 1rem;text-transform:uppercase}.eyebrow.dark{color:#6c6100}
         h1,h2,h3{font-family:var(--font-display)}
-        h1{font-weight:700;letter-spacing:-.05em;line-height:.92;font-size:clamp(3rem,6.6vw,6.6rem);max-width:1050px;margin:0;text-transform:uppercase}
-        .hero-copy{max-width:900px;color:rgba(255,255,255,.72);font-size:clamp(1rem,1.5vw,1.23rem);line-height:1.75}
-        .section-copy{max-width:100%;color:rgba(255,255,255,.72);font-size:clamp(1rem,1.5vw,1.23rem);line-height:1.75}
+        h1{font-weight:700;letter-spacing:-.045em;line-height:1.03;font-size:clamp(2.4rem,4vw,4.65rem);max-width:1110px;margin:0;text-transform:uppercase}
+        .hero-title-line{display:block;text-wrap:balance}
+        .hero-copy{max-width:760px;color:rgba(255,255,255,.78);font-size:clamp(1rem,1.2vw,1.16rem);line-height:1.7;margin:1.65rem 0 0}
+        .section-copy{max-width:830px;color:rgba(255,255,255,.74);font-size:clamp(1rem,1.3vw,1.13rem);line-height:1.72}
         .section-copy+.section-copy{margin-top:1.1rem}
         .founder-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}
-        .founder-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(230px,.63fr) minmax(420px,1.37fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+        .founder-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
         .founder-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111;width:100%;max-width:340px;justify-self:center}.founder-photo{width:100%;height:100%;object-fit:cover;display:block}
-        .founder-copy h2{font-size:clamp(2.5rem,5vw,5rem);line-height:.95;letter-spacing:-.04em;margin:0 0 .6rem}.founder-role{color:#6c6100;font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 1.5rem}.founder-profile{display:grid;gap:1rem}.founder-profile p{color:#3f3f3b;font-size:1.02rem;line-height:1.72;margin:0}
+        .founder-copy h2{font-size:clamp(2.3rem,3.6vw,3.75rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 .6rem}.founder-role{color:#6c6100;font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 1.5rem}.founder-profile{display:grid;gap:1rem}.founder-profile p{color:#3f3f3b;font-size:1.02rem;line-height:1.72;margin:0}
         .agents-section,.closing-section{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.agents-section{background:#050505}.closing-section{background:#050505}
-        .agents-section h2,.closing-section h2{font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:0 0 1rem;text-transform:uppercase;max-width:950px}
+        .agents-section h2,.closing-section h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.06;letter-spacing:-.035em;margin:0 0 1.2rem;text-transform:uppercase;max-width:880px}
         .agent-list{margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.12)}
         .agent-profile{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:clamp(2rem,6vw,5rem);padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid rgba(255,255,255,.12);align-items:start}
         .agent-identity{min-width:0}.agent-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111;width:100%;max-width:320px;margin-bottom:1.35rem}.agent-photo{width:100%;height:100%;object-fit:cover;display:block}.ai-label{color:#FFF12D;font-family:var(--font-display);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.agent-identity h3{font-size:clamp(1.4rem,2.3vw,2.2rem);line-height:1.08;margin:.75rem 0 0;letter-spacing:-.025em}.agent-description{padding-top:.15rem;display:grid;gap:1.1rem}.agent-description p{color:rgba(255,255,255,.72);font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.78;margin:0;max-width:760px}
@@ -242,9 +246,9 @@ export function LeadershipPageClient() {
         .agent-contact span{color:rgba(255,255,255,.5);font-family:var(--font-display);font-weight:700;font-size:.66rem;letter-spacing:.14em}
         .agent-contact a{color:#FFF12D;font-family:var(--font-display);font-weight:700;font-size:.95rem;letter-spacing:.02em;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
         .agent-contact a:hover{color:#fff}
-        .governance-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.governance-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}.governance-grid h2{font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:0}.governance-grid>p{color:#3f3f3b;font-size:1.04rem;line-height:1.78;margin:0}.back-link{display:inline-block;margin-top:1.25rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em}
+        .governance-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.governance-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}.governance-grid h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.07;letter-spacing:-.035em;margin:0}.governance-grid>p{color:#3f3f3b;font-size:1.04rem;line-height:1.78;margin:0}.back-link{display:inline-block;margin-top:1.25rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em}
         @media(max-width:900px){.founder-grid,.governance-grid,.agent-profile{grid-template-columns:1fr}.founder-photo-shell{width:70%;max-width:340px}.agent-photo-shell{max-width:300px}}
-        @media(max-width:560px){.leadership-hero{padding-top:8.5rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-photo-shell{width:78%;max-width:300px}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
+        @media(max-width:560px){.leadership-hero{padding-top:7rem;padding-bottom:3rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-photo-shell{width:78%;max-width:300px}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
       `}</style>
     </main>
   );

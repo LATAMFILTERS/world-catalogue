@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import LeadershipTitleNormalizer from './LeadershipTitleNormalizer';
 
 export const metadata: Metadata = {
   title: 'Leadership — ELIMFILTERS Human-Governed AI Executive Model',
@@ -15,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function LeadershipLayout({ children }: { children: React.ReactNode }) {
-  return <><LeadershipTitleNormalizer />{children}</>;
+  return <>{children}</>;
 }

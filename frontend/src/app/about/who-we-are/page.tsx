@@ -95,54 +95,72 @@ export default function WhoWeArePage() {
       </section>
 
       <section style={globalSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.globalEyebrow}</p>
-          <h2 style={sectionTitle}>{copy.globalTitle}</h2>
-          <p style={sectionLead}>{copy.globalBody}</p>
-          <Link href="/distributor-application" style={textLink}>{copy.globalLink}</Link>
+        <div style={wrap} className="who-editorial-grid">
+          <div>
+            <p style={eyebrow}>{copy.globalEyebrow}</p>
+            <h2 style={sectionTitle}>{copy.globalTitle}</h2>
+          </div>
+          <div className="who-editorial-copy">
+            <p style={sectionLead}>{copy.globalBody}</p>
+            <Link href="/distributor-application" style={textLink}>{copy.globalLink}</Link>
+          </div>
         </div>
       </section>
 
       <section style={darkSectionDivided}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.builtEyebrow}</p>
-          <h2 style={sectionTitle}>{copy.builtTitle}</h2>
-          <p style={sectionLead}>{copy.builtBody}</p>
-          <Link href="/about/leadership" style={textLink}>{copy.builtLink}</Link>
+        <div style={wrap} className="who-editorial-grid">
+          <div>
+            <p style={eyebrow}>{copy.builtEyebrow}</p>
+            <h2 style={sectionTitle}>{copy.builtTitle}</h2>
+          </div>
+          <div className="who-editorial-copy">
+            <p style={sectionLead}>{copy.builtBody}</p>
+            <Link href="/about/leadership" style={textLink}>{copy.builtLink}</Link>
+          </div>
         </div>
       </section>
 
       <section style={closingSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.purposeEyebrow}</p>
-          <h2 style={closingTitle}>{copy.purposeTitle}</h2>
-          <p style={closingBody}>{copy.purposeBody}</p>
+        <div style={wrap} className="who-editorial-grid">
+          <div>
+            <p style={eyebrow}>{copy.purposeEyebrow}</p>
+            <h2 style={closingTitle}>{copy.purposeTitle}</h2>
+          </div>
+          <div className="who-editorial-copy">
+            <p style={closingBody}>{copy.purposeBody}</p>
+          </div>
         </div>
       </section>
+      <style jsx>{`
+        .who-editorial-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+        .who-editorial-grid > div{min-width:0}
+        .who-editorial-copy p{margin:0}
+        @media(max-width:900px){.who-editorial-grid{grid-template-columns:1fr;gap:1rem}}
+      `}</style>
     </main>
   );
 }
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%' };
-const heroSection: CSSProperties = { minHeight: '76vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)' };
+const heroSection: CSSProperties = { minHeight: 'clamp(430px,60vh,600px)', boxSizing: 'border-box', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(7rem,9vw,8rem) clamp(1.25rem,5vw,5.5rem) clamp(3.5rem,6vw,5.5rem)' };
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundImage: 'url(/images/grupo-filters.avif)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity };
 const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', fontWeight: 700, letterSpacing: '.16em', margin: '0 0 1rem', textTransform: 'uppercase', position: 'relative', zIndex: 2 };
 const darkEyebrow: CSSProperties = { ...eyebrow, color: '#6c6100' };
-const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: .92, fontSize: 'clamp(3.2rem,7vw,7rem)', margin: 0, textTransform: 'uppercase' };
-const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1.5rem', maxWidth: '900px', color: 'rgba(255,255,255,.82)', fontSize: 'clamp(1rem,1.5vw,1.25rem)', lineHeight: 1.75, fontWeight: 550 };
-const lightSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const identityGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
+const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: 1.02, fontSize: 'clamp(2.6rem,5vw,5rem)', margin: 0, textTransform: 'uppercase' };
+const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1.5rem', maxWidth: '740px', color: 'rgba(255,255,255,.82)', fontSize: 'clamp(1rem,1.2vw,1.16rem)', lineHeight: 1.7, fontWeight: 550 };
+const lightSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(3.75rem,6.5vw,6rem) clamp(1.25rem,5vw,5.5rem)' };
+const identityGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,300px),1fr))', gap: 'clamp(2rem,5vw,4.5rem)', alignItems: 'center' };
 const identityPhotoShell: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#111', border: '1px solid rgba(255,255,255,0.1)' };
 const portraitImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover', display: 'block' };
-const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '850px', margin: '0 0 1.5rem', textTransform: 'uppercase' };
+const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,3.3vw,3.3rem)', lineHeight: 1.08, letterSpacing: '-.035em', maxWidth: '700px', margin: '0 0 1.5rem', textTransform: 'uppercase' };
 const darkBody: CSSProperties = { maxWidth: '880px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, fontSize: '1.05rem' };
-const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '950px', margin: '0 0 1rem', textTransform: 'uppercase' };
-const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.68)', lineHeight: 1.75, maxWidth: '900px', fontSize: '1.03rem' };
-const globalSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const darkSectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.9rem,3.25vw,3.25rem)', lineHeight: 1.08, letterSpacing: '-.035em', maxWidth: '780px', margin: '0 0 1rem', textTransform: 'uppercase' };
+const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.76)', lineHeight: 1.72, maxWidth: '780px', fontSize: 'clamp(1rem,1.15vw,1.12rem)' };
+const globalSection: CSSProperties = { background: '#000', padding: 'clamp(3.75rem,6.5vw,6rem) clamp(1.25rem,5vw,5.5rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const darkSectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(3.75rem,6.5vw,6rem) clamp(1.25rem,5vw,5.5rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const textLink: CSSProperties = { display: 'inline-block', marginTop: '1.5rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
-const closingSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,241,45,.16)' };
+const closingSection: CSSProperties = { background: '#000', padding: 'clamp(3.75rem,6.5vw,6rem) clamp(1.25rem,5vw,5.5rem)', borderTop: '1px solid rgba(255,241,45,.16)' };
 const closingTitle: CSSProperties = { ...sectionTitle, maxWidth: '900px' };
 const closingBody: CSSProperties = { ...sectionLead, maxWidth: '850px' };
