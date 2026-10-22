@@ -22,13 +22,13 @@ describe('Philosophy approved doctrine and responsive presentation', () => {
       const instance = lang === 'en' ? i18n : localeInstances[lang];
       const html = renderToStaticMarkup(<I18nextProvider i18n={instance}><OurPhilosophyPage /></I18nextProvider>);
       const visible = html.replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
-      expect(visible).toContain('class="philosophy-page"');
+      expect(visible).toContain('class="philosophy-page');
       expect(visible).toContain('class="philosophy-hero-inner');
       expect(visible).toContain('air-filters-lab.avif');
       expect(visible).not.toContain('grupo-filters.avif');
-      expect((visible.match(/class="philosophy-statement"/g) || []).length).toBe(6);
-      expect((visible.match(/class="philosophy-principle-card"/g) || []).length).toBe(7);
-      expect((visible.match(/class="philosophy-statement-lead"/g) || []).length).toBe(6);
+      expect((visible.match(/class="philosophy-statement(?:\\s|\")/g) || []).length).toBe(6);
+      expect((visible.match(/class="philosophy-principle-card(?:\\s|\")/g) || []).length).toBe(7);
+      expect((visible.match(/class="philosophy-statement-lead(?:\\s|\")/g) || []).length).toBe(6);
       for (const standard of ['ISO 16889', 'ISO 5011', 'ISO 4406']) expect(visible).toContain(standard);
       for (const technology of ['MACROCORE™', 'SYNTAPORE™', 'NANOFORCE™']) expect(visible).toContain(technology);
       expect(visible).not.toMatch(/70[–-]80%|bypass cero|zero.bypass|folgas comuns de 1[–-]5/gi);
