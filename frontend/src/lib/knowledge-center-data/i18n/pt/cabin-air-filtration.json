@@ -1,0 +1,208 @@
+{
+  "slug": "cabin-air-filtration",
+  "faqs": [
+    {
+      "question": "Qual faixa de tamanho de partícula a ISO 11155 regula para o ensaio de filtros de ar de cabine?",
+      "answer": "A ISO 11155-1 (veículos rodoviários) especifica a medição da eficiência do filtro com partículas na faixa de 0.3–10 µm, com foco principal em PM10 (partículas ≤10 µm de diâmetro aerodinâmico) e PM2.5 (partículas ≤2.5 µm). O limite inferior de 0.3 µm corresponde ao tamanho de partícula mais penetrante (MPPS) em meios filtrantes fibrosos: o tamanho em que a eficiência combinada de captura por impactação inercial e por difusão é mínima. A ISO 11155-1 usa partículas de ensaio de aerossol DEHS, contadas por um contador óptico de partículas (OPC), para medir a eficiência de filtração nessa faixa. No ensaio da função de recirculação aplica-se a mesma faixa de tamanhos. A eficiência contra partículas biológicas (pólen, bactérias, esporos de mofo) é caracterizada separadamente com métodos de ensaio de pólen, nos quais o meio de carvão ativado MICROKAPPA também é ensaiado quanto ao desempenho de adsorção de gases e odores."
+    },
+    {
+      "question": "Quais gases o meio de carvão ativado dos filtros de cabine adsorve e qual é a limitação de sua vida útil?",
+      "answer": "O carvão ativado dos filtros de cabine combinados adsorve compostos orgânicos voláteis (COV: benzeno, tolueno, formaldeído, xileno), ozônio (O3 do smog fotoquímico), dióxido de nitrogênio (NO2), dióxido de enxofre (SO2) e sulfeto de hidrogênio (H2S). O carvão ativado funciona por adsorção física: a atração de Van der Waals das moléculas de gás pela superfície interna dos microporos do carvão (área superficial de 500–1,200 m2/g BET). A vida útil é limitada pela saturação de adsorção: cada grânulo de carvão tem uma capacidade de adsorção finita, depois da qual as moléculas de gás passam sem retenção. As camadas típicas de carvão ativado em filtros de cabine automotivos têm 20–50 g de carvão por elemento, o suficiente para 6–18 meses em operação urbana típica com os níveis de CO/NOx definidos nas normas de ar ambiente urbano EN 481. Em ambientes muito poluídos (centros urbanos, túneis), a capacidade do carvão se esgota em 3–6 meses. O carvão saturado não pode ser regenerado no local e o elemento deve ser substituído."
+    },
+    {
+      "question": "Como a ISO 11155 define a classificação dos tipos de filtro de ar de cabine?",
+      "answer": "A ISO 11155-1 classifica os filtros de ar de cabine em três tipos: Tipo A, filtros de partículas (sem meio de adsorção de gases); Tipo AC, filtros combinados (partículas mais carvão ativado para remover gases e odores); Tipo ACM, filtros combinados com meio adicional (carvão ativado mais permanganato de potássio ou outros adsorventes químicos específicos para correntes de gás definidas, como H2S ou NH3). A designação do tipo aparece na embalagem do elemento e na documentação técnica. Em cabines de operadores de mineração, agricultura e plantas químicas, são necessários filtros Tipo ACM com adsorventes químicos específicos: o carvão padrão Tipo AC é insuficiente para H2S ou amônia nas concentrações encontradas nesses ambientes. A DIN 71460 (a série alemã de normas de filtros de ar de cabine) cobre o mesmo âmbito de filtração de partículas e gases e é citada ao lado da ISO 11155 no mercado alemão."
+    },
+    {
+      "question": "Que eficiência mínima de filtração um filtro de ar de cabine precisa ter para proteger os operadores do PM2.5 em ambientes de mineração?",
+      "answer": "Para proteger os operadores em ambientes de mineração contra o PM2.5 (poeira respirável contendo sílica cristalina), a eficiência de filtração do ar da cabine deve superar 95% para partículas ≥0.3 µm na velocidade de face nominal, medida conforme a ISO 11155-1. Isso corresponde à classe F7 ou superior do sistema de classificação EN 779:2012 usado em HVAC de edifícios (embora a EN 779 tenha sido substituída pela ISO 16890 em HVAC, seus valores de eficiência servem de referência). O NIOSH e as normas nacionais de saúde ocupacional aplicáveis fixam limites de exposição permissíveis (PEL) para sílica cristalina respirável em 0.025–0.05 mg/m3 (média ponderada de 8 horas). Sistemas de filtração de cabine com eficiência >95% em PM2.5 reduzem a exposição do condutor, a partir de concentrações externas que podem chegar a 5–20 mg/m3 perto de detonações ativas, para abaixo do PEL do NIOSH quando combinados com pressurização positiva da cabine."
+    },
+    {
+      "question": "O que é a pressurização positiva da cabine e por que ela é necessária em ambientes com muita poeira?",
+      "answer": "A pressurização positiva da cabine mantém dentro da cabine do operador uma pressão de ar maior que a atmosférica. Isso cria um fluxo de ar para fora por todas as frestas e passagens da cabine (vedações de portas, prensa-cabos, juntas de dutos do HVAC), impedindo que o ar ambiente carregado de poeira e sem filtragem se infiltre por essas frestas quando o ventilador do HVAC está desligado ou em baixa velocidade. Para cabines de mineração e construção, especifica-se normalmente uma pressurização positiva de 10–25 Pa acima do ambiente. A pressurização é gerada pelo ventilador do HVAC ao circular ar filtrado dentro do volume vedado da cabine. A inspeção regular das vedações de portas e janelas (a cada turno em zonas de detonação ativa) garante a manutenção da pressurização. O ensaio de integridade do recinto da cabine ROPS mede a taxa de perda de pressão com todas as aberturas vedadas: um vazamento excessivo indica vedações deterioradas, que devem ser substituídas antes que a cabine consiga manter a pressurização especificada."
+    },
+    {
+      "question": "Quais são as consequências para a saúde de uma filtração insuficiente do ar da cabine em equipamentos agrícolas?",
+      "answer": "Uma filtração insuficiente do ar da cabine em equipamentos agrícolas expõe os operadores a: (1) Aerossóis e vapores de agrotóxicos: os agrotóxicos organofosforados e piretroides aplicados durante a pulverização apresentam risco de toxicidade colinérgica aguda em concentrações acima de 0.1 mg/m3; para trabalhos de aplicação por pulverização são necessários filtros Tipo ACM com adsorventes químicos específicos. (2) Síndrome tóxica da poeira orgânica (ODTS): esporos de fungos e endotoxinas na poeira de grãos em concentrações acima de 1,000 unidades de endotoxina/m3 causam resposta inflamatória pulmonar aguda. (3) Doença pulmonar obstrutiva crônica (DPOC): a exposição acumulada a PM2.5 acima do PEL ocupacional ao longo dos anos causa dano pulmonar irreversível. (4) Rinite alérgica e asma: os picos sazonais de pólen em ambientes agrícolas ultrapassam 1,000 grãos de pólen/m3 durante a colheita; são necessários filtros Tipo AC com eficiência de captura de pólen >99.9% a 15–30 µm (faixa de diâmetro do pólen)."
+    },
+    {
+      "question": "Com que frequência os filtros de ar de cabine devem ser substituídos em ambientes com muita poeira e o que indica que a troca é necessária?",
+      "answer": "Em ambientes com muita poeira (minas em operação, zonas de detonação em pedreiras, colheita de grãos), os intervalos de substituição do filtro de ar de cabine costumam ser de 250–500 horas ou 3 meses, o que ocorrer primeiro. Indicadores que exigem substituição imediata, independentemente do intervalo: (1) Passagem visível de poeira na saída do HVAC (depósito de partículas de poeira no painel, visível para o operador); (2) Vazão de ar do HVAC reduzida (mais de 20% abaixo da especificação de projeto, indicando restrição do filtro); (3) Aumento da concentração de poeira na cabine, medida por um monitor de partículas interno, acima do limite (especificado na ISO 11155); (4) Crescimento biológico visível no meio filtrante (mofo preto ou branco na superfície do elemento). Além de substituir o elemento, as vedações da carcaça devem ser inspecionadas e substituídas se estiverem deformadas, o interior da carcaça deve ser limpo da poeira acumulada e o torque ou a trava de instalação do elemento devem ser verificados para garantir a integridade da vedação entre carcaça e elemento."
+    },
+    {
+      "question": "Qual é a diferença entre o modo de recirculação e o modo de ar fresco no HVAC da cabine e como cada modo afeta os requisitos de filtração?",
+      "answer": "No modo de ar fresco, o sistema HVAC capta ar ambiente pelo filtro de cabine, condiciona-o e distribui-o na cabine. O filtro precisa suportar toda a carga ambiental de partículas e gases: o pior cenário em ambientes empoeirados ou poluídos. No modo de recirculação, o HVAC recircula o ar que já está dentro da cabine pelo mesmo filtro, reduzindo a entrada de novas partículas, mas causando acúmulo de CO2 pela respiração dos ocupantes (o CO2 passa de 1,000 ppm em 15 minutos em uma cabine vedada com um ocupante). A ISO 11155-1 especifica a medição de eficiência nos dois modos porque a distribuição de tamanhos de partícula do ar recirculado (dominada por bioaerossóis gerados pelos ocupantes) difere da do ar externo. Os sistemas de controle automático de recirculação detectam altas concentrações de poeira externa e passam para o modo de recirculação; durante a recirculação, o filtro de cabine continua ativo, removendo as partículas residuais do ar em circulação."
+    },
+    {
+      "question": "Que marcação de certificação é exigida nos elementos de filtro de ar de cabine conforme a ISO 11155?",
+      "answer": "A ISO 11155 não exige uma marcação de certificação de terceiros específica, mas os elementos vendidos para aplicações veiculares devem indicar: tipo de filtro (A, AC ou ACM); classe ou classificação de eficiência de filtração; vazão de ar nominal em m3/hora; faixa de temperatura de serviço; e a referência à norma aplicável. Na UE, filtros comercializados com alegações de eficiência devem demonstrar conformidade com o método de ensaio ISO 11155-1 por meio de documentação, que pode ser autocertificação do fabricante ou ensaios de laboratório independente. Em filtros para aplicação agrícola por pulverização com alegação de proteção contra agrotóxicos, os filtros Tipo ACM exigem certificação de eficiência em condições de ensaio de exposição ocupacional pertinentes. Os elementos MICROKAPPA incluem na documentação do produto dados de ensaio ISO 11155-1 que cobrem tanto a eficiência contra partículas quanto a capacidade de adsorção de gases do carvão ativado para produtos químicos agrícolas comuns."
+    },
+    {
+      "question": "Qual é a função da junta da carcaça do filtro de ar de cabine e quais materiais são usados?",
+      "answer": "A junta da carcaça do filtro de cabine veda a interface entre a tampa do elemento e a face de montagem da carcaça, impedindo que o ar sem filtragem contorne as bordas do elemento. Materiais de junta para cabines: espuma de poliuretano (espuma PU), conformável e adequada para carcaças com trava de baixa força de fixação, com temperatura de serviço até 80°C; borracha EPDM, com excelente resistência ao ozônio e aos raios UV para carcaças expostas aos ciclos térmicos do compartimento do motor, com temperatura de serviço até 120°C; neoprene (CR), elastômero de uso geral com boa resistência a óleo e intempéries. A carga de vedação da junta deve ser verificada durante a instalação: uma junta pouco comprimida (trava mal engatada) permite passagem de partículas equivalente a uma redução de eficiência de 10% ou pior. Em carcaças com manutenção, as juntas devem ser substituídas a cada troca de elemento; juntas comprimidas ou deformadas de um serviço anterior não podem ser reutilizadas e vedam de forma inadequada."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 11155-1:2009, Road Vehicles — Air Filters for Passenger Compartments — Part 1: Discharge Test for Particulate Filtration",
+      "relevance": "Norma de ensaio principal que define a medição da eficiência contra partículas dos filtros de ar de cabine e do habitáculo com aerossol DEHS."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11155-2:2009, Road Vehicles — Air Filters for Passenger Compartments — Part 2: Test for Gaseous Filtration",
+      "relevance": "Norma complementar que define o ensaio de eficiência e capacidade de adsorção de gases (carvão ativado) dos filtros de cabine Tipo AC e ACM."
+    },
+    {
+      "category": "standard",
+      "citation": "DIN 71460-1:2006, Road Vehicles — Air Filters for Passenger Compartments — Part 1: Test for Particulate Filtration",
+      "relevance": "Norma alemã que cobre o mesmo âmbito de filtração de partículas do ar de cabine que a ISO 11155, publicada antes da ISO 11155-1:2009 e citada ao lado dela no mercado alemão."
+    },
+    {
+      "category": "standard",
+      "citation": "EN ISO 16890:2016, Air Filters for General Ventilation — Parts 1–4",
+      "relevance": "Sistema de classificação de eficiência de filtros de HVAC com categorias de eficiência fracionada PM1, PM2.5 e PM10, que serve de comparação de referência para as classificações de desempenho de filtros de cabine."
+    }
+  ],
+  "title": "Filtração de ar de cabine",
+  "subtitle": "ISO 11155, limites de exposição a partículas e proteção da saúde do operador",
+  "metaDescription": "Referência técnica sobre filtração do ar de cabine em equipamentos móveis: normas de ensaio ISO 11155, limites de exposição ocupacional a PM10 e PM2.5, carvão ativado para contaminantes gasosos, integração com o HVAC e classificação DIN 71460.",
+  "category": "Engenharia",
+  "readTime": "9 min",
+  "intro": "A filtração do ar de cabine em equipamentos móveis protege os operadores contra partículas em suspensão, vapores químicos e contaminantes biológicos gerados pelo ambiente de operação. Para operadores de equipamentos de mineração, construção e agricultura que trabalham 2,000–5,000 horas por ano, a filtração da cabine determina diretamente a dose crônica de partículas recebida durante a exposição ocupacional. A ISO 11155 fornece a estrutura para ensaiar e especificar o desempenho dos filtros de ar de cabine; as normas de saúde ocupacional definem os limites de dose que os sistemas de cabine devem manter.",
+  "sections": [
+    {
+      "heading": "Limites de exposição ocupacional a partículas",
+      "body": "Os limites regulatórios de exposição à poeira respirável no trabalho são definidos por órgãos nacionais e internacionais. As Diretrizes de Qualidade do Ar da OMS (2021) definem para PM2.5 um valor de referência de média anual de 5 µg/m³ e de 24 horas de 15 µg/m³; para PM10, média anual de 15 µg/m³ e de 24 horas de 45 µg/m³. Limites específicos de mineração: poeira de carvão (MSHA, EUA) em 1.5 mg/m³ de poeira total; sílica (quartzo) em 0.05 mg/m³ de fração respirável, o limite mais rigoroso entre as poeiras minerais, porque a sílica cristalina causa silicose com exposições crônicas acima de 0.025 mg/m³ ao longo de uma vida de trabalho. As normas de ar de cabine para equipamentos móveis de mineração costumam ter como meta uma relação cabine/ambiente (CAR) de 0.05 ou melhor: a concentração de PM10 dentro da cabine não deve passar de 5% da concentração ambiente fora da máquina. Atingir CAR ≤ 0.05 em um ambiente com 10 mg/m³ de poeira produz uma concentração interna ≤0.5 mg/m³, compatível com a proteção da saúde durante um turno completo.",
+      "callout": [
+        {
+          "label": "Diretriz da OMS para PM2.5 (anual)",
+          "value": "5 µg/m³"
+        },
+        {
+          "label": "Limite de exposição ocupacional à sílica cristalina",
+          "value": "0.05 mg/m³ respirável"
+        },
+        {
+          "label": "Meta para cabines de mineração (CAR)",
+          "value": "≤0.05 (5% do ambiente)"
+        }
+      ]
+    },
+    {
+      "heading": "ISO 11155: norma de filtração do ar de cabine",
+      "body": "A ISO 11155 (Road Vehicles — Air Filters for Passenger Compartments) tem duas partes: a ISO 11155-1 define os requisitos gerais, as condições de ensaio, os parâmetros de desempenho e os requisitos de marcação; a ISO 11155-2 define o método de ensaio para avaliar a eficiência de filtração de partículas de aerossol e a resistência ao fluxo de ar. O ensaio mede a eficiência de filtração em partículas de 0.4 µm com um aerossol de ftalato de dioctila (DOP) ou sebacato de dioctila (DOS) e um contador óptico de partículas. O desempenho é classificado pela eficiência de remoção a 0.4 µm: filtro de cabine padrão (ISO 11155 Classe 1) ≥ 10% de eficiência; filtro antipólen (Classe 2) ≥ 80%; filtro de carvão ativado (Classe 3): atende à eficiência de partículas da Classe 2 e também remove contaminantes gasosos. A DIN 71460 cobre o mesmo âmbito de filtração do ar de cabine no mercado alemão: a DIN 71460-1:2006 (partículas) é anterior à ISO 11155-1:2009, e a série DIN 71460 continua citada nas especificações de fabricantes alemães e europeus ao lado da ISO 11155. Em equipamentos móveis pesados (mineração, construção), as condições de ensaio da ISO 11155 podem não reproduzir totalmente a pressurização da cabine, as vazões de ar e as concentrações de poeira ambiente; para aplicações críticas, recomendam-se ensaios específicos do equipamento.",
+      "callout": [
+        {
+          "label": "Aerossol de ensaio ISO 11155",
+          "value": "DOP ou DOS a 0.4 µm"
+        },
+        {
+          "label": "Eficiência Classe 2 (0.4 µm)",
+          "value": "≥80%"
+        },
+        {
+          "label": "Classe 3 (filtro de carvão)",
+          "value": "Classe 2 + remoção de gases"
+        }
+      ]
+    },
+    {
+      "heading": "Mecanismos de captura de partículas em filtros de cabine",
+      "body": "Os elementos de filtro de ar de cabine usam os mesmos mecanismos de captura de partículas da filtração industrial: impactação inercial (partículas pesadas >5 µm se desviam das linhas de fluxo e colidem com as fibras), interceptação (partículas de 1–5 µm seguem as linhas de fluxo, mas tocam as fibras por causa do seu tamanho físico), difusão (o movimento browniano faz partículas abaixo de 1 µm se desviarem das linhas de fluxo e tocarem as fibras, com efeito que aumenta quanto menor o tamanho) e atração eletrostática (meios carregados ou partículas carregadas melhoram a captura por interceptação e difusão). Meios de carga em profundidade (celulose, poliéster) capturam partículas em toda a espessura; meios de membrana com carga superficial (PTFE) capturam as partículas na face de entrada. Os filtros de cabine recebem concentrações de poeira moderadas em comparação com os filtros de ar do motor, normalmente 0.01–10 mg/m³ no ambiente, o que resulta em aumento lento da queda de pressão e longos intervalos de serviço (um filtro por temporada ou conforme o intervalo do fabricante). Camadas de carvão ativado adicionadas aos elementos de cabine capturam contaminantes gasosos (NOx, SO₂, O₃, COV) por adsorção; a área superficial do carvão (800–1,200 m²/g no carvão ativado) determina a capacidade. O esgotamento da camada de carvão não é detectável pelo monitoramento de restrição: depende do tempo e da exposição.",
+      "callout": [
+        {
+          "label": "Remoção de partículas grossas (>5 µm)",
+          "value": "Impactação inercial"
+        },
+        {
+          "label": "Remoção de partículas submicrométricas",
+          "value": "Difusão (aumenta com o menor tamanho)"
+        },
+        {
+          "label": "Área superficial do carvão ativado",
+          "value": "800–1,200 m²/g"
+        }
+      ]
+    },
+    {
+      "heading": "Pressurização da cabine e controle da entrada",
+      "body": "Um filtro de ar de cabine sozinho não consegue atingir relações cabine/ambiente baixas se a estrutura da cabine tiver caminhos de vazamento sem controle. Uma vedação eficaz da cabine exige pressurização positiva: manter a pressão interna da cabine 10–30 Pa acima do ambiente. A pressão positiva impede que a poeira ambiente entre pelas vedações das portas, passagens de cabos, juntas do piso e uniões estruturais. A pressurização é mantida fornecendo ar filtrado a uma vazão maior que a taxa de vazamento da cabine. Medição da taxa de vazamento: com o ventilador do HVAC ligado e todas as aberturas fechadas (portas fechadas, saídas de ar fechadas), meça o decaimento de pressão por 60 segundos com o ventilador desligado. Uma cabine bem vedada retém ≥50% da pressurização após 60 segundos. Cabines mal vedadas, com portas, juntas ou vedações de passagem em mau estado, não conseguem atingir CAR ≤ 0.05, independentemente da eficiência do filtro: o elemento filtrante não é o fator limitante. O ensaio de integridade da cabine deve preceder ou acompanhar qualquer melhoria na especificação do filtro em equipamentos com alta contaminação.",
+      "callout": [
+        {
+          "label": "Meta de pressurização positiva",
+          "value": "10–30 Pa acima do ambiente"
+        },
+        {
+          "label": "Retenção de pressão (cabine bem vedada)",
+          "value": "≥50% após 60 segundos"
+        },
+        {
+          "label": "Fator limitante de uma CAR ruim",
+          "value": "Vazamentos da cabine, não a eficiência do filtro"
+        }
+      ]
+    },
+    {
+      "heading": "Seleção de filtros para equipamentos de mineração e construção",
+      "body": "Os requisitos de filtração de cabine em equipamentos de mineração e construção diferem dos de automóveis em concentração de poeira, volume de ar e duração do turno. Parâmetros-chave de seleção: (1) Eficiência nos tamanhos PM10 e PM2.5, e não apenas a métrica DOP de 0.4 µm da ISO 11155; solicite dados de eficiência fracionada a 1, 2.5, 5 e 10 µm para a proteção da saúde contra partículas. (2) Capacidade de retenção de poeira em gramas: ambientes severos exigem elementos de alta capacidade para manter a vazão de ar durante todo o turno sem perda de desempenho. (3) Massa de carvão ativado, especificada em gramas e não apenas como \"com carvão\": 100 g de carvão têm capacidade muito diferente de 20 g. (4) Compatibilidade química: as camadas de carvão são seletivas; o carvão ativado para remoção de NOx/SO₂ (carvão impregnado) é diferente do carvão padrão para remoção de COV. Os elementos de filtro de cabine MICROKAPPA™ combinam alta eficiência contra partículas com alta carga de carvão ativado, otimizada para os perfis de contaminantes ambientais de mineração e construção.",
+      "callout": [
+        {
+          "label": "Tamanhos de eficiência-chave para a saúde",
+          "value": "1, 2.5, 5, 10 µm"
+        },
+        {
+          "label": "Indicador de capacidade do carvão",
+          "value": "Massa total de carvão (gramas)"
+        },
+        {
+          "label": "Tipos de carvão ativado",
+          "value": "Padrão (COV) versus impregnado (NOx/SO₂)"
+        }
+      ]
+    },
+    {
+      "heading": "Manutenção e intervalos de serviço",
+      "body": "Os intervalos de serviço do filtro de ar de cabine são determinados pelo aumento da restrição (redução da vazão de ar) e pelo total de horas de operação, não pela passagem de partículas. O aumento da restrição degrada a pressurização da cabine: à medida que o filtro se carrega, o ventilador do HVAC trabalha com menor eficiência, a pressão da cabine cai e aumenta a entrada de poeira ambiente. Faça o serviço quando o indicador de restrição (se instalado) atingir o ponto de ajuste, ou no intervalo programado pelo fabricante, o que ocorrer primeiro. Elementos de carvão ativado devem ser substituídos por tempo mesmo que a restrição por partículas não tenha atingido o ponto de serviço, porque o esgotamento do carvão é invisível ao monitoramento de restrição. Elementos de carvão muito contaminados podem dessorver os gases adsorvidos quando as condições ambientais mudam (temperatura elevada), liberando temporariamente os contaminantes acumulados no ar da cabine: esse é o modo de falha crítico dos elementos de carvão usados além da vida útil. A inspeção visual de um filtro de cabine usado fornece informações úteis: um padrão de carga uniforme cinza-acastanhado indica poeira ambiente normal; manchas escuras localizadas podem indicar proximidade de uma fonte de contaminação específica (escapamento diesel, armazenamento de produtos químicos); cores incomuns indicam exposição química que exige investigação."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Diretriz da OMS para PM2.5 (anual)",
+      "value": "5 µg/m³"
+    },
+    {
+      "label": "Meta CAR para cabines de mineração",
+      "value": "≤0.05"
+    },
+    {
+      "label": "Eficiência ISO 11155 Classe 2",
+      "value": "≥80% a 0.4 µm"
+    },
+    {
+      "label": "Meta de pressurização da cabine",
+      "value": "10–30 Pa acima do ambiente"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 11155",
+    "DIN 71460"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedSystems": [
+    "Cabin Air Protection"
+  ],
+  "keywords": [
+    "filtração de ar de cabine",
+    "ISO 11155",
+    "DIN 71460",
+    "PM10",
+    "PM2.5",
+    "carvão ativado",
+    "pressurização da cabine",
+    "saúde do operador",
+    "MICROKAPPA"
+  ]
+}

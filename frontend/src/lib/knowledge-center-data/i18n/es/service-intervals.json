@@ -1,0 +1,132 @@
+{
+  "slug": "service-intervals",
+  "faqs": [
+    {
+      "question": "¿Cuál es la base de ingeniería de los intervalos fijos de servicio de filtros especificados por el fabricante (OEM)?",
+      "answer": "Los intervalos fijos del fabricante (como 500 horas de operación o 10,000 km) se derivan de la combinación más desfavorable de entorno de operación (máxima concentración de polvo), velocidad de degradación del fluido (máxima carga térmica) y margen mínimo aceptable de protección (capacidad del filtro al 85–90% de la restricción final o calidad del aceite con un 90% de agotamiento del TBN). Los intervalos fijos garantizan una protección adecuada en las peores condiciones, pero hacen que los filtros se cambien mucho antes de lo necesario en entornos moderados. Para un camión de acarreo que opera en una cantera con 2 mg/m3 de polvo, el intervalo de 500 horas del filtro de aire puede estar bien dimensionado. El mismo camión operando en un camino de acarreo pavimentado con 0.1 mg/m3 de polvo podría trabajar con seguridad 2,000–3,000 horas con el mismo elemento: el intervalo fijo obliga a reemplazos innecesarios."
+    },
+    {
+      "question": "¿Qué parámetros de condición se monitorean en el servicio por condición del filtro de aceite lubricante?",
+      "answer": "El servicio por condición del filtro de aceite lubricante monitorea tres parámetros independientes: (1) presión diferencial del filtro, medida con un indicador de ΔP en línea; el servicio se activa cuando se acerca el umbral de apertura de la válvula de derivación, normalmente a 0.7–0.9 bar de ΔP; (2) resultados del análisis de aceite: un aumento del TAN (número ácido total, ASTM D664) de 2 mg KOH/g sobre la línea base indica acumulación de ácidos; un agotamiento del TBN (número básico total, ASTM D2896) por debajo del 50% del valor del aceite nuevo indica capacidad de neutralización agotada; un cambio de viscosidad (ASTM D445) de ±20% respecto del punto medio del grado indica dilución o espesamiento; y (3) tendencia de metales de desgaste: un aumento de hierro (>50 ppm de incremento por cada 250 horas), cobre (>25 ppm) o silicio (>20 ppm) activa una investigación temprana. El servicio se realiza cuando cualquier parámetro alcanza su umbral de alerta."
+    },
+    {
+      "question": "¿Cuánto pueden extenderse los intervalos de servicio al cambiar de medio de celulosa a medio sintético?",
+      "answer": "Cambiar de celulosa a medio sintético permite extender los intervalos de servicio mediante dos mecanismos: mayor capacidad de retención de suciedad (DHC) por unidad de área (40–70% más en el medio sintético meltblown frente a la celulosa con igual volumen de elemento), que extiende los intervalos del filtro de aire; y mejor compatibilidad con formulaciones de aceite de drenaje extendido (API CK-4, ACEA E9) a altas temperaturas, que permite intervalos más largos del filtro de aceite. Pasar a elementos sintéticos de lubricación SYNTRAX con el mismo intervalo de cambio puede reducir los eventos de derivación causados por el filtro al alargar el tiempo antes de alcanzar el ΔP final; cualquier extensión específica del intervalo de drenaje debe validarse contra la aplicación aprobada y confirmarse con monitoreo por análisis de aceite, no asumirse de forma general. Los intervalos del filtro de aire suelen extenderse un 30–50% con elementos sintéticos MACROCORE frente a celulosa con el mismo límite de restricción de servicio."
+    },
+    {
+      "question": "¿Cuáles son las consecuencias económicas de cambiar los filtros antes de tiempo en una flota grande?",
+      "answer": "Cambiar filtros antes de que alcancen su límite funcional de servicio genera costos directos e indirectos. Costos directos: el precio de compra de los elementos (en una flota de 200 camiones de acarreo con 5 posiciones de filtro cada uno, a USD 25–150 por filtro, un exceso de servicio del 50% desperdicia USD 12,500–75,000 por año en reemplazos prematuros); la mano de obra de cambios innecesarios (2 horas por camión × 200 camiones × USD 80/hora × 1 cambio extra por año = USD 32,000); y el costo de disposición del aceite usado (en filtros de aceite cambiados antes de tiempo). Costos indirectos: tiempo del equipo de mantenimiento desviado de actividades productivas, mayor volumen de aceite residual y costo ambiental de disposición de filtros. Un programa sistemático de optimización de intervalos para una flota de 200 camiones suele identificar USD 150,000–500,000 por año en costos recuperables por exceso de servicio, sin reducir el nivel de protección."
+    },
+    {
+      "question": "¿Qué factores de ajuste se aplican a los intervalos base del fabricante en entornos de servicio severo?",
+      "answer": "Los factores de ajuste para servicio severo se aplican como multiplicadores de los intervalos base del fabricante. Filtros de aire: zona de voladura en cantera (polvo ambiental >2 mg/m3) = 0.1–0.25× el intervalo base; movimiento de tierras general (0.5–2 mg/m3) = 0.25–0.5×; camino de acarreo pavimentado (<0.1 mg/m3) = 1.0–2.0×. Intervalos de aceite lubricante: operación continua con el cárter por encima de 100°C = 0.5× base; alta fracción de ralentí (>30% del tiempo) = 1.2× base (menor ciclado térmico); frecuencia de arranques en frío (>3 arranques en frío por día por debajo de −20°C) = 0.7× base. Filtros hidráulicos: ingreso severo de partículas (múltiples sellos de vástago de cilindro, operación a la intemperie) = 0.5× base; operación en interior con bajo ingreso = 1.5–2.0×. Al combinar varios factores se usa el factor individual más restrictivo, no su producto."
+    },
+    {
+      "question": "¿Cómo permite el análisis de aceite por condición extender el intervalo de drenaje de 500 a 750 horas?",
+      "answer": "Extender los intervalos de drenaje del aceite de motor exige demostrar que las propiedades físicas y químicas del aceite se mantienen dentro de especificación en el punto de extensión propuesto. ISO 17359:2018 define el proceso estadístico: realizar 10 ciclos de drenaje consecutivos con el intervalo actual (500 horas), con análisis de aceite a las 250, 375 y 500 horas en cada ciclo. Si el TAN se mantiene por debajo de la línea base +2.0 mg KOH/g, el TBN por encima del 50% del valor del aceite nuevo, la viscosidad dentro de ±15% del punto medio del grado y los metales de desgaste sin tendencia ascendente estadísticamente significativa en los 10 ciclos, comienza el ensayo de extensión: 10 ciclos a 625 horas con el mismo protocolo de muestreo. Si todos los parámetros aprueban a 625 horas durante 10 ciclos, se extiende a 750 horas y se repite. Cada etapa requiere 10 ciclos: aproximadamente 2–3 años por etapa para equipos con intervalos de 500 horas."
+    },
+    {
+      "question": "¿Qué es un ensayo de extensión del intervalo de drenaje y cuánto tarda su calificación?",
+      "answer": "Un ensayo de extensión del intervalo de drenaje (DIE) es un programa estadísticamente riguroso para validar que el aceite de motor mantiene las propiedades de desempeño requeridas en un intervalo de drenaje extendido propuesto. ISO 17359:2018, Anexo B, especifica los requisitos mínimos de datos: 10 ciclos de drenaje consecutivos con el intervalo aprobado actual, con muestras de aceite al 50%, 75% y 100% del intervalo; seguidos de 10 ciclos consecutivos con el intervalo extendido propuesto y el mismo protocolo de muestreo. Todas las muestras deben mostrar: aumento del TAN <2 mg KOH/g sobre el aceite nuevo, TBN >50% del aceite nuevo, viscosidad dentro de ±20% del punto medio del grado, metales de desgaste por debajo de los límites de alarma del fabricante y ninguna tendencia ascendente estadísticamente significativa en ningún parámetro. Para equipos con intervalos de 500 horas, 10 ciclos equivalen a 5,000 horas (aproximadamente 2.5 años de operación antes de contar con los datos del ensayo de extensión)."
+    },
+    {
+      "question": "¿Qué papel cumple el laboratorio de análisis de aceite en la definición de intervalos de servicio por condición?",
+      "answer": "El laboratorio de análisis de aceite aporta los datos cuantitativos que hacen posibles los intervalos por condición. Los laboratorios acreditados (ISO 17025) que realizan análisis elemental ASTM D5185, TAN ASTM D664, TBN ASTM D2896, viscosidad ASTM D445 y análisis infrarrojo FTIR ASTM E2412 entregan resultados en 24–48 horas desde la recepción de la muestra. El laboratorio establece valores de línea base específicos de cada equipo a partir de las primeras 5–10 muestras y aplica control estadístico de procesos (SPC) para identificar tendencias. Un nivel de hierro creciente en muestras consecutivas puede activar una alerta antes de alcanzar el umbral de alarma de una sola muestra. Para que un programa por condición tenga sentido, el laboratorio debe seguir cada unidad individual, no la clase genérica de equipo, y entregar una interpretación basada en tendencias en lugar de resultados de aprobado/rechazado por muestra."
+    },
+    {
+      "question": "¿Cómo deben fijarse los intervalos de servicio de filtros en equipos que operan en entornos de polvo muy variables?",
+      "answer": "Los equipos que operan en entornos de polvo muy variables, pasando de operaciones que generan polvo (voladura, trituración) a operaciones con poco polvo (acarreo, tránsito por carretera), requieren una estrategia de intervalos conservadora. El enfoque adecuado es instalar indicadores de restricción del filtro de aire y dar servicio cuando el indicador se active (sin importar las horas de operación); NO usar un intervalo fijo en horas, porque las horas desde la última lectura del indicador no dicen nada sobre la capacidad restante del filtro. En la gestión de flotas, los indicadores de restricción en todos los equipos regulan solos el intervalo de servicio: las operaciones con mucho polvo generan cambios más frecuentes de forma automática. Los sensores electrónicos de restricción permiten registrar datos que identifican qué posiciones de equipo, zonas del tajo y fases operativas generan las mayores tasas de carga del filtro, para optimizar rutas y programación."
+    },
+    {
+      "question": "¿Cuál es el número mínimo de datos de análisis de aceite necesario para establecer un intervalo de drenaje confiable?",
+      "answer": "ISO 17359:2018 exige un mínimo de cinco datos por parámetro antes de usar el análisis de tendencias para decisiones de mantenimiento. Menos de cinco puntos son ruido, no tendencia. Para decisiones de intervalo de drenaje (extender del intervalo actual al propuesto), se requieren 10 datos consecutivos con el intervalo actual para establecer estabilidad estadística antes de iniciar el ensayo de extensión. Cada dato debe provenir del mismo punto de muestreo y de la misma unidad, y tomarse en la misma posición relativa dentro del intervalo de drenaje (por ejemplo, siempre al 50% y al 90% del intervalo). Los laboratorios deben entregar gráficos de tendencia con límites de control superior (UCL) e inferior (LCL) para cada parámetro monitoreado, de modo que la deriva se identifique visualmente antes de alcanzar los umbrales de alarma."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 17359:2018, Condition Monitoring and Diagnostics of Machines — General Guidelines",
+      "relevance": "Define los requisitos estadísticos de los programas de mantenimiento por condición, incluidos el número mínimo de datos, la fijación de niveles de alarma y la metodología del ensayo de extensión del intervalo de drenaje."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Se usa para fijar los puntos de activación del servicio de filtros hidráulicos según el monitoreo del código de limpieza ISO, en lugar de intervalos de tiempo fijos."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D664-17, Standard Test Method for Acid Number of Petroleum Products by Potentiometric Titration",
+      "relevance": "Método de medición del TAN, usado como indicador principal de la condición del aceite para definir el intervalo del filtro de aceite en programas de servicio por condición."
+    },
+    {
+      "category": "handbook",
+      "citation": "Society of Tribologists and Lubrication Engineers (STLE), Oil Analysis Handbook, 3rd Edition, 2017",
+      "relevance": "Referencia integral de la industria sobre mantenimiento por condición: fijación de niveles de alarma, metodología del ensayo de extensión del intervalo de drenaje y control estadístico de procesos para datos de análisis de aceite."
+    }
+  ],
+  "title": "Intervalos de servicio",
+  "subtitle": "Intervalos por condición frente a intervalos fijos, optimización de intervalos e impacto en el TCO",
+  "metaDescription": "Metodología de ingeniería para definir intervalos de servicio de filtros: monitoreo por condición, recomendaciones del fabricante, factores de ajuste por entorno e impacto en el costo total de propiedad.",
+  "category": "Ingeniería",
+  "readTime": "7 min",
+  "intro": "La estrategia de intervalos de servicio define cuándo se reemplazan los filtros: según programas fijos de tiempo o kilometraje, o según las condiciones reales de operación. El servicio por condición (reemplazar cuando se alcanza el umbral de restricción o los límites del análisis de aceite) suele extender los intervalos entre un 30 y un 200% en entornos de servicio ligero, manteniendo niveles de protección equivalentes.",
+  "sections": [
+    {
+      "heading": "Limitaciones de los intervalos fijos",
+      "body": "Los intervalos fijos del fabricante (500 horas, 10,000 km) están diseñados para las peores condiciones de operación: máximo polvo, máxima carga térmica y mínima calidad de mantenimiento. Los equipos que operan en entornos moderados reemplazan los elementos antes de que alcancen su límite funcional y desperdician capacidad de filtración. Los equipos que operan en entornos severos pueden alcanzar los límites antes del intervalo programado y quedar con un vacío de protección."
+    },
+    {
+      "heading": "Criterios de servicio por condición",
+      "body": "Filtros de aire: servicio cuando se activa el indicador de restricción (en el umbral de restricción nominal). Filtros de aceite: servicio cuando el análisis de aceite indica degradación (aumento del TAN, cambio de viscosidad, tendencia de metales de desgaste). Filtros hidráulicos: servicio cuando el indicador de restricción en línea alcanza el punto de ajuste o el conteo de partículas supera el código de limpieza objetivo. Filtros de combustible: servicio a intervalo fijo en entornos con mucha agua; por condición (indicador de presión diferencial) en entornos secos.",
+      "callout": [
+        {
+          "label": "Activación del filtro de aire",
+          "value": "Indicador de restricción (mbar)"
+        },
+        {
+          "label": "Activación del filtro de aceite",
+          "value": "Análisis de aceite: TAN / viscosidad"
+        },
+        {
+          "label": "Activación hidráulica",
+          "value": "Indicador de ΔP / conteo de partículas"
+        }
+      ]
+    },
+    {
+      "heading": "Factores de ajuste por entorno",
+      "body": "Los multiplicadores por entorno ajustan los intervalos base del fabricante a las condiciones reales de operación. Factor de polvo: 0.25–1.0 (minería severa = 0.25×, interior limpio = 1.0×). Factor de temperatura: 0.5–1.0 (alta temperatura continua = 0.5×). Factor de ralentí: 0.5–1.5 (una alta fracción de ralentí reduce el estrés por ciclado térmico y permite intervalos de aceite más largos). Aplicar los factores de ajuste correctos permite identificar en las flotas existentes tanto el exceso de servicio (desperdicio de costos) como la falta de servicio (vacío de protección)."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Ahorro de los intervalos por condición frente a fijos",
+      "value": "15–40%"
+    },
+    {
+      "label": "Ajuste por polvo severo",
+      "value": "0.25× el intervalo base"
+    },
+    {
+      "label": "Ajuste por alta temperatura",
+      "value": "0.5× el intervalo base"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406"
+  ],
+  "relatedTechnologies": [
+    "DURATECH™",
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "intervalos de servicio",
+    "mantenimiento por condición",
+    "optimización de intervalos",
+    "reemplazo de filtros"
+  ]
+}

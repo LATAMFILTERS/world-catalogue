@@ -1,6 +1,10 @@
 'use client';
 
 import { PublicUiText } from '@/components/PublicUiText';
+import { useReviewed } from '@/components/ReviewedText';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { articleTitle } from '@/lib/knowledge-center-data/i18n/titles';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { useState } from 'react';
@@ -110,6 +114,7 @@ function FaqAccordion({ question, answer }: { question: string; answer: string }
 }
 
 function DecisionGuideWidget({ nodes, startNode }: { nodes: KCDecisionNode[]; startNode: string }) {
+  const tr = useReviewed();
   const [currentId, setCurrentId] = useState(startNode);
   const nodeMap = Object.fromEntries(nodes.map((n) => [n.id, n]));
   const current = nodeMap[currentId];
@@ -138,7 +143,7 @@ function DecisionGuideWidget({ nodes, startNode }: { nodes: KCDecisionNode[]; st
               color: '#44ff88',
               marginBottom: '0.5rem',
             }}>
-              RECOMMENDATION
+              {tr("RECOMMENDATION")}
             </p>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -208,7 +213,7 @@ function DecisionGuideWidget({ nodes, startNode }: { nodes: KCDecisionNode[]; st
                 transition: 'all 0.2s',
               }}
             >
-              YES →
+              {tr("YES →")}
             </motion.button>
           )}
           {current.no && (
@@ -227,7 +232,7 @@ function DecisionGuideWidget({ nodes, startNode }: { nodes: KCDecisionNode[]; st
                 transition: 'all 0.2s',
               }}
             >
-              NO →
+              {tr("NO →")}
             </motion.button>
           )}
         </div>
@@ -247,7 +252,7 @@ function DecisionGuideWidget({ nodes, startNode }: { nodes: KCDecisionNode[]; st
             padding: '0.25rem 0',
           }}
         >
-          ↩ RESTART
+          {tr("↩ RESTART")}
         </button>
       )}
     </div>
@@ -255,6 +260,9 @@ function DecisionGuideWidget({ nodes, startNode }: { nodes: KCDecisionNode[]; st
 }
 
 export default function ArticleContent({ article }: { article: KCArticle }) {
+  const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   const sidebarData = getArticleSidebarData(article.slug);
   const relatedDiagrams = getDiagramsForArticle(article.slug);
 
@@ -269,7 +277,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            RELEVANT STANDARDS
+            {tr("RELEVANT STANDARDS")}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {sidebarData.relatedStandards.map((std) => (
@@ -292,7 +300,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            ELIMFILTERS TECHNOLOGIES
+            {tr("ELIMFILTERS TECHNOLOGIES")}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {sidebarData.relatedTechnologies.map((tech) => (
@@ -311,7 +319,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            PROTECTION SYSTEMS
+            {tr("PROTECTION SYSTEMS")}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {sidebarData.relatedSystems.map((sys) => (
@@ -344,7 +352,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            RELATED FAILURE MODES
+            {tr("RELATED FAILURE MODES")}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {sidebarData.relatedProblems.map((prob) => (
@@ -378,7 +386,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            RELATED ARTICLES
+            {tr("RELATED ARTICLES")}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
             {sidebarData.relatedArticles.map((rel) => (
@@ -395,7 +403,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
                     transition: 'all 0.15s',
                   }}
                 >
-                  {rel.title}
+                  {articleTitle(rel.slug, lang, rel.title)}
                 </motion.div>
               </Link>
             ))}
@@ -412,7 +420,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            TOPICS
+            {tr("TOPICS")}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
             {article.keywords.map((kw) => (
@@ -437,8 +445,8 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
       <ArticleBreadcrumb items={[
-        { label: 'Knowledge Center', href: '/knowledge-center' },
-        { label: 'Engineering', href: '/knowledge-center/engineering' },
+        { label: tr('Knowledge Center'), href: '/knowledge-center' },
+        { label: tr('Engineering'), href: '/knowledge-center/engineering' },
         { label: article.title },
       ]} />
 
@@ -472,7 +480,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             marginBottom: '0.5rem',
           }}>
             <div>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>REVIEWED BY</p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>{tr("REVIEWED BY")}</p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.3 }}>
                 {article.eeat.reviewerName}
               </p>
@@ -481,11 +489,11 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               </p>
             </div>
             <div>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>DISCIPLINE</p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>{tr("DISCIPLINE")}</p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)' }}>{article.eeat.discipline}</p>
             </div>
             <div>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>LEVEL</p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>{tr("LEVEL")}</p>
               <span style={{
                 fontFamily: 'JetBrains Mono, monospace',
                 fontSize: '0.6rem',
@@ -495,19 +503,19 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
                 padding: '0.15rem 0.5rem',
                 background: `${CONTENT_LEVEL_COLOR[article.eeat.contentLevel]}0a`,
               }}>
-                {CONTENT_LEVEL_LABEL[article.eeat.contentLevel]}
+                {tr(CONTENT_LEVEL_LABEL[article.eeat.contentLevel])}
               </span>
             </div>
             <div>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>LAST REVIEW</p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>{tr("LAST REVIEW")}</p>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>{article.eeat.lastReviewDate}</p>
             </div>
             <div>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>NEXT REVIEW</p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>{tr("NEXT REVIEW")}</p>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>{article.eeat.nextReviewDate}</p>
             </div>
             <div>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>VERSION</p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.25)', marginBottom: '0.2rem' }}>{tr("VERSION")}</p>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>v{article.eeat.version}</p>
             </div>
           </div>
@@ -587,7 +595,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               color: 'rgba(255,241,45,0.5)',
               marginBottom: '1.25rem',
             }}>
-              ENGINEERING DIAGRAMS
+              {tr("ENGINEERING DIAGRAMS")}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               {relatedDiagrams.map((diagram) => (
@@ -609,7 +617,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
                       textDecoration: 'none',
                     }}
                   >
-                    VIEW FULL DIAGRAM →
+                    {tr("VIEW FULL DIAGRAM →")}
                   </Link>
                 </div>
               ))}
@@ -632,7 +640,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '1rem',
             }}>
-              COMMON ENGINEERING MISTAKES
+              {tr("COMMON ENGINEERING MISTAKES")}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {article.commonMistakes.map((mistake, i) => (
@@ -672,7 +680,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               color: 'rgba(255,241,45,0.5)',
               marginBottom: '0.5rem',
             }}>
-              ENGINEERING DECISION GUIDE
+              {tr("ENGINEERING DECISION GUIDE")}
             </p>
             <h3 style={{
               fontFamily: 'Outfit, sans-serif',
@@ -714,7 +722,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '1rem',
             }}>
-              ENGINEERING REFERENCES
+              {tr("ENGINEERING REFERENCES")}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {article.engineeringReferences.map((ref, i) => (
@@ -734,7 +742,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
                       padding: '0.1rem 0.4rem',
                       background: 'rgba(255,241,45,0.04)',
                     }}>
-                      {REF_CATEGORY_LABEL[ref.category] ?? ref.category.toUpperCase()}
+                      {tr(REF_CATEGORY_LABEL[ref.category] ?? ref.category.toUpperCase())}
                     </span>
                   </div>
                   <p style={{
@@ -785,11 +793,11 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
         )}
 
         <RelatedArticles
-          title="RELATED ENGINEERING TOPICS"
+          title={tr('RELATED ENGINEERING TOPICS')}
           items={sidebarData.relatedArticles.map((rel) => ({
-            title: rel.title,
+            title: articleTitle(rel.slug, lang, rel.title),
             href: `/knowledge-center/engineering/${rel.slug}`,
-            description: rel.category,
+            description: tr(rel.category),
           }))}
         />
 

@@ -1,0 +1,302 @@
+{
+  "slug": "hpcr-fuel-system-cleanliness",
+  "faqs": [
+    {
+      "question": "Que nível de limpeza o combustível diesel exige nos sistemas de injeção HPCR?",
+      "answer": "Os sistemas de injeção HPCR normalmente exigem limpeza do combustível de classe ISO 4406 12/9/6 ou melhor na entrada do injetor, medida com contadores de partículas calibrados conforme a ISO 11171. As partículas acima de 4 µm(c) representam o maior risco para as folgas de 2 µm dos bicos injetores. A ISO 16332:2019 especifica os métodos de ensaio de eficiência de filtros de combustível nesses tamanhos de partícula críticos."
+    },
+    {
+      "question": "Como a pressão de injeção afeta a sensibilidade à contaminação do combustível nos sistemas HPCR?",
+      "answer": "Os sistemas HPCR modernos operam com pressões de injeção de 1,600–2,200 bar. Nessas pressões, partículas acima de 4 µm podem causar desgaste abrasivo em superfícies retificadas de precisão com folgas de 1–3 µm. Uma única partícula dura de sílica de 10 µm que atravessa uma folga de bico de 2 µm gera uma tensão de contato acima de 500 MPa e acelera o desgaste por atrito de 10 a 30 vezes em relação a sistemas à pressão ambiente."
+    },
+    {
+      "question": "O que é o travamento (stiction) do injetor e como a contaminação do combustível o causa?",
+      "answer": "O travamento do injetor é a falha por aderência da agulha ou do pistão da válvula de controle devido a depósitos de laca em superfícies deslizantes de precisão. Polímeros asfaltênicos cerosos se formam quando os produtos de oxidação do combustível se reticulam em temperaturas de superfície do injetor de 150–200 °C. Um combustível contaminado com índice de estabilidade à oxidação deficiente (ASTM D525 < 60 min) acelera a deposição de laca, aumenta a energia de abertura da agulha em 15–40% e degrada a sincronização da injeção."
+    },
+    {
+      "question": "Como a água no combustível diesel danifica os componentes HPCR?",
+      "answer": "Um teor de água acima de 200 ppm (ASTM D6304) causa três modos de falha nos sistemas HPCR: bloqueio hidráulico nos alojamentos da agulha com concentrações acima de 500 ppm, fragilização por hidrogênio de componentes de aço temperado sob carga de pressão cíclica e crescimento microbiano que forma camadas de biofilme capazes de bloquear filtros de combustível de 5 µm em 30–60 dias. A análise Karl Fischer conforme a ASTM D6304 deve verificar teor de água abaixo de 75 ppm em aplicações HPCR críticas."
+    },
+    {
+      "question": "Qual distribuição de tamanhos de partícula é a mais importante na seleção de filtros de combustível para aplicações HPCR?",
+      "answer": "A janela crítica de partículas para HPCR é de 4–10 µm(c), conforme a calibração ISO 11171. As partículas nessa faixa excedem as folgas dos bicos de 1–3 µm, mas atravessam os filtros primários mais grossos de 25 µm. A ISO 16332 especifica a medição de eficiência Beta(4[c]) com poeira de ensaio fina ISO 12103-1 A1. Um filtro que atinge Beta(4[c]) ≥ 200 (eficiência de 99.5%) na vazão nominal reduz a população de partículas de 4 µm de 10 a 100 vezes em relação ao combustível sem filtragem."
+    },
+    {
+      "question": "Como devem ser definidos os intervalos de troca do filtro de combustível em motores HPCR?",
+      "answer": "Os intervalos de troca do filtro de combustível em aplicações HPCR devem se basear no monitoramento da pressão diferencial e não em quilometragem fixa, pois a carga de contaminação varia muito conforme a origem do combustível. Um pressostato diferencial ajustado a 80% do ΔP final nominal (normalmente 200–300 mbar) aciona a substituição. Na ausência de monitoramento de ΔP, aplicam-se intervalos de segurança por tempo de 500 horas ou 25,000 km. Os ensaios de restrição versus vazão da ISO 16332 validam a capacidade do filtro nessas condições."
+    },
+    {
+      "question": "Qual é o papel da lubricidade do combustível na proteção contra o desgaste do injetor?",
+      "answer": "A lubricidade do combustível é medida pelo diâmetro da marca de desgaste no ensaio HFRR (High Frequency Reciprocating Rig) conforme a ISO 12156-1. O diesel de ultrabaixo teor de enxofre (ULSD), com enxofre < 10 ppm, perde a lubricidade natural fornecida pelos compostos de enxofre, aumentando o desgaste da bomba injetora em 30–50% em relação a um combustível com 500 ppm de enxofre. O diâmetro da marca de desgaste HFRR deve permanecer abaixo de 460 µm a 60 °C. Aditivos de lubricidade restauram o desempenho, mas podem afetar a compatibilidade com o meio do filtro de combustível."
+    },
+    {
+      "question": "Como a temperatura do combustível afeta o desempenho do filtro nos sistemas HPCR?",
+      "answer": "A temperatura elevada do combustível nos circuitos de retorno (60–80 °C) reduz sua viscosidade em 40–60% em relação à temperatura ambiente, aumentando a velocidade de passagem pelo meio filtrante e reduzindo a eficiência de captura de partículas. A ISO 16332 especifica o ensaio de eficiência com combustível a 40 °C; instalações com temperaturas de retorno acima de 60 °C devem aplicar uma redução de eficiência de 15–25%. Para uma seleção precisa do filtro, é necessário o condicionamento térmico do combustível de ensaio conforme a ISO 16332, Anexo A."
+    },
+    {
+      "question": "Qual é a relação entre a pressão de colapso nominal do filtro de combustível e a confiabilidade do sistema HPCR?",
+      "answer": "Os sistemas de combustível HPCR geram picos de pressão de 50–100 bar durante a partida a frio e em transientes rápidos do acelerador. Os elementos filtrantes devem suportar esses picos sem colapso estrutural, o que liberaria a contaminação retida. A ISO 16332 especifica, no mínimo, um ensaio de pressão de colapso a 3 vezes a pressão diferencial nominal. Elementos com colapso por ΔP > 10 bar são adequados para aplicações HPCR; os filtros primários de combustível devem ter pressão de colapso de 20 bar em aplicações de serviço pesado com muitos ciclos."
+    },
+    {
+      "question": "Como o teor de biodiesel afeta o risco de contaminação do combustível nos sistemas HPCR?",
+      "answer": "As misturas de biodiesel (B5–B20) aumentam a higroscopicidade de 3 a 5 vezes em relação ao ULSD: absorvem umidade atmosférica e aceleram o crescimento microbiano com atividade de água acima de 0.6. Os ésteres metílicos de ácidos graxos (FAME) oxidam em ritmo acelerado (período de indução ASTM D525 < 30 min em B20 envelhecido), formando peróxidos e gomas que bloqueiam os filtros finos de combustível. Sistemas HPCR que operam com B10 ou mais devem reduzir os intervalos de troca do filtro primário em 30–50% e especificar meios compatíveis com biodiesel conforme ensaios complementares da ISO 12103-1."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16332:2019, Diesel Engines — Fuel Filters — Test Methods",
+      "relevance": "Especifica o ensaio de eficiência multipass com poeira de ensaio ISO 12103-1 A1 nos tamanhos de partícula de 4, 6, 10 e 14 µm(c); define os protocolos de vazão nominal, ΔP final e pressão de colapso para qualificar filtros de combustível HPCR."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration",
+      "relevance": "Medição quantitativa do teor de água em combustível diesel e fluidos do sistema de combustível; é crítica para proteger os injetores HPCR, nos quais o teor de água deve permanecer abaixo de 75–200 ppm para evitar bloqueio hidráulico e fragilização."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12156-1:2018, Diesel Fuel — Assessment of Lubricity Using the High-Frequency Reciprocating Rig (HFRR)",
+      "relevance": "Define o procedimento de ensaio HFRR para medir a lubricidade do combustível diesel; o limite de diâmetro da marca de desgaste de 460 µm a 60 °C garante lubrificação adequada da bomba injetora com formulações ULSD em sistemas HPCR."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants — Part 1: Arizona Test Dust",
+      "relevance": "Especifica a composição química, a distribuição de tamanhos de partícula e a densidade dos contaminantes de ensaio padronizados usados no ensaio de eficiência de filtros de combustível ISO 16332; o grau ISO A1 fino é usado para qualificar filtros HPCR abaixo de 10 µm."
+    }
+  ],
+  "title": "Limpeza do sistema de combustível common rail de alta pressão",
+  "subtitle": "Metas de partículas, requisitos de lubricidade e desempenho de filtros ISO 23369 para sistemas de injeção HPCR",
+  "metaDescription": "Os sistemas de injeção common rail de alta pressão (HPCR) que operam a 1,800–2,500 bar exigem combustível limpo para evitar danos à agulha do injetor. Esta referência cobre o ensaio multipass de filtros de combustível ISO 23369, os requisitos de lubricidade HFRR da ISO 12156-1, os limites de teor de água e as metas de limpeza de partículas para os sistemas de alimentação de combustível HPCR.",
+  "category": "Engenharia",
+  "readTime": "13 min",
+  "intro": "Os sistemas de injeção diesel common rail de alta pressão (HPCR) operam com pressões de injeção de 1,800–2,500 bar e geram forças hidráulicas que exigem folgas de 1–3 µm na agulha do injetor para manter a precisão de dosagem. Com essas folgas, partículas maiores que a folga causam dano abrasivo direto às agulhas dos injetores, às válvulas de controle e aos êmbolos da bomba de alta pressão. A limpeza do combustível no HPCR difere fundamentalmente da injeção convencional: a combinação de pressão ultra-alta, folgas finas e o duplo papel do combustível como portador de energia e fluido hidráulico impõe requisitos de partículas, água e lubricidade que não se aplicavam aos sistemas anteriores de bomba-linha-bico. Este artigo cobre as normas que regem a qualidade do combustível e o desempenho da filtração em HPCR: ISO 23369 (ensaio multipass de filtros de combustível), ISO 12156-1 (lubricidade HFRR), ASTM D6304 (teor de água Karl Fischer) e as especificações de qualidade de combustível EN 590 e ASTM D975.",
+  "sections": [
+    {
+      "heading": "Engenharia de pressões e folgas do sistema HPCR",
+      "body": "Os sistemas modernos de injeção diesel HPCR operam com pressões no rail de 1,800–2,500 bar (261,000–362,500 psi), e alguns sistemas avançados chegam a 2,700 bar. Nessas pressões, o combustível atua como meio hidráulico que transmite força aos atuadores da agulha. A folga do assento da agulha do injetor é de 1–3 µm; a folga pistão-alojamento da válvula de controle é de 2–4 µm; a folga êmbolo-cilindro da bomba de alta pressão é de 1–3 µm. O princípio crítico de dano por partículas: partículas com diâmetro igual ou superior à folga provocam contato direto entre as superfícies e iniciam o desgaste abrasivo; a faixa de tamanho mais danosa é de aproximadamente 1–2 vezes a folga. A dureza da sílica (≈1,000 HV Vickers) supera em muito a dos materiais da agulha do injetor (normalmente 700–900 HV em aço ferramenta temperado), permitindo que partículas de sílica de 1–5 µm cortem as superfícies do injetor e provoquem vazamento na válvula e gotejamento do bico. Uma única partícula de 5 µm presa no assento de uma agulha com folga de 2 µm causa riscos imediatos.",
+      "callout": [
+        {
+          "label": "Pressão de injeção HPCR",
+          "value": "1,800–2,500 bar (261,000–362,500 psi)"
+        },
+        {
+          "label": "Folga da agulha",
+          "value": "1–3 µm: limite de dano por partículas"
+        },
+        {
+          "label": "Folga da válvula de controle",
+          "value": "2–4 µm"
+        },
+        {
+          "label": "Faixa crítica de partículas",
+          "value": "1–2× a folga: a categoria de tamanho mais danosa"
+        }
+      ]
+    },
+    {
+      "heading": "Ensaio multipass de filtros de combustível ISO 23369",
+      "body": "A ISO 23369:2021 (Hydraulic Fluid Power — Multi-Pass Method for Evaluating the Filtration Performance of a Filter Element for Liquid Fuel Used in Injection Engines) é a norma principal para caracterizar o desempenho de elementos de filtro de combustível em condições representativas dos sistemas HPCR. A metodologia é análoga à ISO 16889 (multipass para fluidos hidráulicos), mas usa combustível diesel (ou um fluido de ensaio ISO representativo) em vez de óleo mineral ISO VG 15. Parâmetros do ensaio: o fluido é o combustível real da aplicação ou um fluido de ensaio especificado; a temperatura de ensaio é 40°C ±2°C; a concentração de contaminação a montante é 5 mg/L (±10%) de poeira de ensaio ISO 12103-1 A3 média grossa; as relações Beta são informadas a ≥4, ≥6, ≥10 e ≥14 µm(c); a pressão diferencial final é 0.5 bar (conforme a aplicação). Os elementos de filtro de combustível para sistemas HPCR costumam atingir Beta₄₍c₎ ≥ 200 (eficiência de filtração >99.5% a ≥4 µm(c)) para proteger as folgas de 1–3 µm da agulha do injetor contra partículas que excedem essas dimensões.",
+      "callout": [
+        {
+          "label": "Norma",
+          "value": "ISO 23369:2021: ensaio multipass de filtros de combustível"
+        },
+        {
+          "label": "Temperatura de ensaio",
+          "value": "40°C ±2°C para o ensaio com combustível"
+        },
+        {
+          "label": "Concentração a montante",
+          "value": "5 mg/L ±10% ISO 12103-1 A3 média grossa"
+        },
+        {
+          "label": "Eficiência alvo HPCR",
+          "value": "Beta₄₍c₎ ≥ 200: >99.5% a ≥4 µm(c)"
+        }
+      ]
+    },
+    {
+      "heading": "Lubricidade do combustível: ensaio HFRR ISO 12156-1",
+      "body": "O ensaio HFRR (High Frequency Reciprocating Rig) conforme a ISO 12156-1:2006 mede a lubricidade do combustível diesel fazendo uma esfera de aço de 6 mm oscilar sobre um disco de aço fixo a 50 Hz, com carga de 1 N, a 60°C, durante 75 minutos no combustível de ensaio. O diâmetro da marca de desgaste (WSD) resultante na esfera, medido por microscopia óptica, quantifica a lubricidade do combustível. O limite de especificação da EN 590:2022 e da ASTM D975 é um diâmetro de marca corrigido ≤460 µm a 60°C. Combustíveis com WSD acima de 460 µm lubrificam de forma insuficiente os êmbolos da bomba HPCR e as válvulas de controle dos injetores, que dependem do filme de combustível em folgas de 1–3 µm. O diesel de ultrabaixo teor de enxofre (ULSD, S ≤10 ppm conforme a EN 590) tem lubricidade menor que os antigos combustíveis de alto enxofre porque foram removidos os compostos de enxofre que lubrificavam naturalmente; a especificação EN 590 exige aditivos melhoradores de lubricidade. Combustíveis que não atendem ao critério de ≤460 µm exigem tratamento com aditivos antes do uso em sistemas HPCR.",
+      "callout": [
+        {
+          "label": "Norma de ensaio",
+          "value": "Ensaio HFRR ISO 12156-1:2006: WSD a 60°C"
+        },
+        {
+          "label": "Limite de especificação",
+          "value": "WSD ≤460 µm: EN 590:2022 e ASTM D975"
+        },
+        {
+          "label": "Limite de alerta antecipado",
+          "value": "WSD >400 µm: considerar tratamento com aditivos antes de ultrapassar o limite"
+        },
+        {
+          "label": "Problema de lubricidade do ULSD",
+          "value": "O ULSD com S ≤10 ppm perde lubricidade natural: exige aditivo conforme a EN 590"
+        }
+      ]
+    },
+    {
+      "heading": "Limites de teor de água: ASTM D6304 Karl Fischer",
+      "body": "A água livre e dissolvida no combustível diesel acima dos limites definidos causa três tipos de dano nos sistemas HPCR: corrosão hidráulica das superfícies de aço de alta pressão; crescimento microbiano em tanques e filtros que leva ao entupimento dos filtros; e vaporização instantânea na ponta dos injetores quando o combustível residual quente após a injeção entra em contato com gotas de água, provocando erosão por cavitação dos furos do bico. O teor de água é medido por titulação coulométrica Karl Fischer conforme a ASTM D6304 (ou ASTM D1744 para concentrações de água mais altas) e expresso em miligramas de água por quilograma de combustível (mg/kg ou ppm em massa). O limite para sistemas HPCR é ≤200 ppm de água dissolvida na saída do filtro de combustível; a água livre (gotas ≥0.1 µm) deve ser totalmente removida por filtração separadora de água por coalescência. A EN 590:2022 especifica um teor máximo de água total de 200 mg/kg para o diesel no ponto de venda. Filtros separadores de água com meio coalescente separam as gotas de água livre; pós-filtros de membrana hidrofóbica impedem que a água coalescida volte à corrente de combustível.",
+      "callout": [
+        {
+          "label": "Método de ensaio de água",
+          "value": "ASTM D6304: titulação coulométrica Karl Fischer (ppm em massa)"
+        },
+        {
+          "label": "Limite de água HPCR",
+          "value": "≤200 ppm de água total na saída do filtro de combustível"
+        },
+        {
+          "label": "Limite EN 590:2022",
+          "value": "≤200 mg/kg no ponto de venda"
+        },
+        {
+          "label": "Requisito de água livre",
+          "value": "Zero água livre: separador de água por coalescência obrigatório em sistemas HPCR"
+        }
+      ]
+    },
+    {
+      "heading": "Normas de qualidade do combustível: EN 590 e ASTM D975",
+      "body": "A EN 590:2022 (especificação europeia de diesel automotivo) e a ASTM D975 (especificação norte-americana padrão para combustível diesel) definem os requisitos mínimos de qualidade do diesel rodoviário no ponto de venda. A EN 590 permite até 7% v/v de mistura de ésteres metílicos de ácidos graxos (FAME / biodiesel) como diesel B7; a ASTM D975 permite misturas de biodiesel conforme a especificação separada ASTM D7467. O biodiesel introduz tendência higroscópica (maior absorção de água), desafios de estabilidade à oxidação (ASTM D2274 para estabilidade térmica) e deterioração do ponto de entupimento de filtro a frio (CFPP conforme a EN 116) em baixas temperaturas. Em sistemas HPCR que usam misturas de biodiesel, a filtração deve considerar também o crescimento microbiano associado à interface água-biodiesel nos sistemas de armazenamento. A limpeza do combustível na entrada do filtro é regida pelas especificações de teor de partículas da EN 590; o elemento filtrante deve atingir na saída a limpeza especificada pelo fabricante do equipamento para proteger os componentes HPCR.",
+      "callout": [
+        {
+          "label": "EN 590:2022",
+          "value": "Especificação europeia de diesel rodoviário: mistura máxima de FAME B7"
+        },
+        {
+          "label": "ASTM D975",
+          "value": "Especificação norte-americana de diesel: biodiesel conforme a ASTM D7467"
+        },
+        {
+          "label": "Risco de água com biodiesel",
+          "value": "FAME higroscópico: maior absorção de água dissolvida em relação ao diesel puro"
+        },
+        {
+          "label": "Norma CFPP",
+          "value": "EN 116: medição do ponto de entupimento de filtro a frio para operação no inverno"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Pressão de injeção HPCR",
+      "value": "1,800–2,500 bar (261,000–362,500 psi)"
+    },
+    {
+      "label": "Folga da agulha",
+      "value": "1–3 µm"
+    },
+    {
+      "label": "Beta alvo ISO 23369",
+      "value": "Beta₄₍c₎ ≥ 200 (>99.5% a ≥4 µm(c))"
+    },
+    {
+      "label": "Limite de lubricidade HFRR",
+      "value": "WSD ≤460 µm a 60°C (EN 590 / ASTM D975)"
+    },
+    {
+      "label": "Limite de teor de água",
+      "value": "≤200 ppm na saída do filtro de combustível (ASTM D6304)"
+    },
+    {
+      "label": "Mistura máxima de biodiesel",
+      "value": "B7 (EN 590:2022)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 23369",
+    "ISO 12156-1",
+    "ASTM D6304",
+    "EN 590",
+    "ASTM D975",
+    "ISO 12937"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "relatedSystems": [
+    "Fuel Cleanliness Protection"
+  ],
+  "keywords": [
+    "sistema de combustível HPCR",
+    "injeção common rail",
+    "ISO 23369",
+    "ISO 12156-1 HFRR",
+    "relação beta do filtro de combustível",
+    "limpeza do combustível",
+    "contaminação do combustível por água",
+    "ASTM D6304",
+    "EN 590",
+    "lubricidade do ULSD",
+    "limpeza da injeção de combustível",
+    "especificação do combustível diesel"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Gotejamento do bico ou padrão de pulverização ruim: erosão dos furos ou dano no assento da agulha",
+      "Falha prematura da bomba HPCR com padrão de desgaste abrasivo nas superfícies do êmbolo e do cilindro",
+      "O elemento do filtro de combustível satura antes do intervalo de serviço previsto: alta entrada de contaminação",
+      "Acúmulo de água no copo do filtro de combustível ou acionamento da luz de água no combustível",
+      "Aumento do consumo de combustível sem mudança no desempenho do motor: perda de precisão de dosagem do injetor"
+    ],
+    "probableCauses": [
+      "Contaminação por partículas: classificação do filtro de combustível insuficiente para as folgas HPCR; entrada de poeira do ar no tanque durante o abastecimento sem filtração",
+      "Desgaste da bomba HPCR: WSD do combustível acima de 460 µm no ponto de entrega, lubricidade inadequada; ULSD sem tratamento com aditivo de lubricidade",
+      "Saturação rápida do filtro: fornecimento de combustível a granel contaminado; amostre o combustível na entrega e compare com a especificação de limpeza ISO 23369",
+      "Acúmulo de água: condensação no tanque de armazenamento; mistura de biodiesel FAME absorvendo umidade atmosférica; válvula de dreno automático de água com defeito",
+      "Degradação da dosagem do injetor: partículas de sílica da entrada de poeira do ar desgastando o assento da agulha e produzindo vazamento"
+    ],
+    "inspectionMethods": [
+      "Amostre o combustível na entrada do tanque e na saída do filtro; meça a contagem de partículas com APC conforme a ISO 11171 e compare com a meta de limpeza do sistema Beta₄₍c₎",
+      "Meça o teor de água do combustível conforme a ASTM D6304 em amostras do armazenamento a granel, do tanque diário e da saída do filtro",
+      "Realize o ensaio de lubricidade HFRR conforme a ISO 12156-1 em amostras de combustível; confirme WSD ≤460 µm a 60°C",
+      "Inspecione ao microscópio a morfologia das partículas retidas no elemento de filtro removido: cristais de sílica indicam entrada pelo ar; partículas metálicas indicam desgaste da bomba",
+      "Meça a vazão de retorno de combustível dos injetores: retorno acima da especificação do fabricante indica vazamento no assento da agulha"
+    ],
+    "correctiveActions": [
+      "Contaminação por partículas: atualize o filtro de combustível para Beta₄₍c₎ ≥ 200 conforme a ISO 23369; adicione um respiro dessecante ao suspiro do tanque para evitar a entrada de poeira do ar",
+      "Falha de lubricidade: adicione aditivo melhorador de lubricidade conforme a especificação EN 590; verifique se a dosagem produz WSD ≤400 µm para ter margem operacional",
+      "Água no combustível: drene o copo do separador de água; inspecione e repare a válvula de dreno automático; investigue a condensação no armazenamento a granel e implemente aquecimento do tanque ou respiro com dessecante",
+      "Fornecimento a granel contaminado: exija do fornecedor de combustível certificação de contagem de partículas antes da entrega; instale filtração a granel no ponto de transferência",
+      "Dano aos injetores: substitua os injetores; faça o flushing do sistema de combustível; garanta a verificação de limpeza antes da nova partida conforme a meta de saída da ISO 23369"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Desgaste prematuro de injetores HPCR: gotejamento do bico ou dosagem imprecisa nas primeiras 500 horas",
+      "standard": "ISO 23369:2021 — fuel filter performance; ISO 12156-1 — lubricity",
+      "protectionSystem": "Tratamento do combustível em três estágios: pré-filtro para remoção de partículas a granel, separador de água por coalescência e filtro final de alta eficiência com classificação Beta₄₍c₎ ≥ 200",
+      "technology": "Filtração de combustível em estágios com meio coalescente para separar a água livre até zero, seguida de um elemento filtrante de alta eficiência com meio de gradiente que atinge Beta₄₍c₎ ≥ 200 conforme a ISO 23369, evitando a exposição a partículas nas folgas de 1–3 µm da agulha do injetor HPCR",
+      "relatedArticles": [
+        "diesel-fuel-filtration",
+        "water-contamination-fuel",
+        "iso-16889-multipass-test",
+        "beta-ratio"
+      ]
+    },
+    {
+      "problem": "Alto teor de água no combustível após a mistura com biodiesel FAME: acima do limite de 200 ppm",
+      "standard": "ASTM D6304 — Karl Fischer water measurement; EN 590:2022 water limit",
+      "protectionSystem": "Separador de água por coalescência adequado para misturas de biodiesel, com pós-filtro de membrana hidrofóbica que impede o novo arraste de água",
+      "technology": "Separador de água por coalescência com meio coalescente de microfibra de vidro e membrana de drenagem hidrofóbica de PTFE; meio coalescente validado para compatibilidade com biodiesel B7 conforme a ISO 2943; válvula de dreno automático para a água livre acumulada",
+      "relatedArticles": [
+        "water-contamination-fuel",
+        "diesel-fuel-filtration",
+        "filter-element-integrity"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-23369)",
+    "evidenceStatus": "HPCR injection pressures 1,800–2,500 bar from published Bosch and Denso HPCR system technical data; needle valve clearance 1–3 µm from published injector engineering references (Bosch Automotive Handbook 10th Ed.); ISO 23369:2021 test methodology verified; ISO 12156-1:2006 HFRR method and ≤460 µm WSD limit from EN 590:2022 Table 2 and ASTM D975 Table 1; ≤200 ppm water limit from EN 590:2022 Table 2 and HPCR OEM service documentation; EN 590:2022 B7 biodiesel limit verified; ULSD lubricity additive requirement from EN 590:2022 Section 5 annotation; Karl Fischer ASTM D6304 method verified"
+  }
+}

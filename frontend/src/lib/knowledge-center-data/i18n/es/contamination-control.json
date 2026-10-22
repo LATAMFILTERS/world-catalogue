@@ -1,0 +1,299 @@
+{
+  "slug": "contamination-control",
+  "title": "Control de contaminación",
+  "subtitle": "Tres categorías de contaminación, fijación de objetivos ISO 4406 y diseño del sistema",
+  "metaDescription": "Marco de ingeniería para el control de contaminación en sistemas de fluidos industriales: tres categorías de contaminación, el rango crítico de partículas de 5–15 µm, fijación de objetivos ISO 4406, estimación del ingreso, diseño del sistema de filtración, lavado de puesta en marcha y monitoreo continuo.",
+  "category": "Ingeniería",
+  "readTime": "12 min",
+  "intro": "El control de contaminación es la disciplina de ingeniería sistemática que mantiene las concentraciones de partículas, agua y químicos dentro de límites especificados en los sistemas de fluidos industriales. Comienza por identificar las fuentes de contaminación y cuantificar las tasas de ingreso, y continúa con la selección del objetivo de limpieza, el diseño del sistema de filtración, el lavado de puesta en marcha y el monitoreo continuo. Si falla cualquiera de estos pasos, la contaminación se acumula y acelera el desgaste de los componentes.",
+  "sections": [
+    {
+      "heading": "Tres categorías de contaminación",
+      "body": "La contaminación de los fluidos industriales se divide en tres categorías con estrategias de control distintas. La contaminación de origen proviene de la fabricación: virutas de mecanizado, arena de fundición, cascarilla de tuberías, rebabas de elastómero y residuos de ensamblaje. Un sistema hidráulico nuevo sin lavado de puesta en marcha puede presentar ISO 22/20/17 o peor antes de la primera operación. La contaminación por ingreso entra durante la operación: polvo ambiental que pasa por sellos de eje desgastados o por los respiraderos, agua por condensación en depósitos ventilados y partículas introducidas durante el mantenimiento (equipos de llenado contaminados, puntos de llenado abiertos). La contaminación generada se produce internamente por desgaste, erosión por cavitación, degradación térmica del fluido y oxidación. La contaminación generada es a la vez consecuencia de la contaminación ya presente y causa de más desgaste. Las tres categorías deben controlarse en orden: eliminar con lavado la contaminación de origen, sellar contra el ingreso y monitorear la contaminación generada.",
+      "callout": [
+        {
+          "label": "Sistema hidráulico nuevo (sin lavado)",
+          "value": "ISO 22/20/17 típico"
+        },
+        {
+          "label": "Vía principal de ingreso",
+          "value": "Respiraderos y sellos de eje"
+        },
+        {
+          "label": "Las partículas generadas indican",
+          "value": "Desgaste en curso"
+        }
+      ]
+    },
+    {
+      "heading": "El rango crítico de partículas de 5–15 µm",
+      "body": "La distribución de tamaños de partícula en un fluido contaminado sigue una relación inversa: las partículas pequeñas son órdenes de magnitud más numerosas que las grandes. Por cada partícula de 100 µm hay aproximadamente 10,000 partículas de 10 µm y 1,000,000 de 2 µm. La importancia del rango de 5–15 µm para la ingeniería viene de su relación con las holguras de funcionamiento de los componentes: los cojinetes de bancada del motor trabajan con holguras de 5–15 µm, los dientes de engranajes con 5–25 µm, los carretes de servoválvulas con 1–4 µm y las puntas de paletas de bombas de paletas con 2–5 µm. Las partículas dentro del rango de la holgura no quedan simplemente atrapadas: son arrastradas a través de ella, desgastan ambas superficies y generan residuos de desgaste secundarios. Las partículas mucho más grandes que la holgura quedan bloqueadas en la entrada y causan un daño relativamente limitado. ISO 4406 informa los conteos a ≥4 µm, ≥6 µm y ≥14 µm precisamente porque este rango abarca la zona crítica de desgaste.",
+      "callout": [
+        {
+          "label": "Holgura de cojinetes de bancada",
+          "value": "5–15 µm"
+        },
+        {
+          "label": "Holgura del carrete de servoválvula",
+          "value": "1–4 µm"
+        },
+        {
+          "label": "Tamaños de conteo ISO 4406",
+          "value": "≥4 µm, ≥6 µm, ≥14 µm"
+        }
+      ]
+    },
+    {
+      "heading": "Fijación del objetivo ISO 4406",
+      "body": "Los códigos de limpieza objetivo los define el componente más sensible (el de menor holgura) del circuito de fluido. El código de tres números (por ejemplo, 16/14/11) informa los rangos de conteo de partículas a ≥4 µm, ≥6 µm y ≥14 µm por mililitro. Cada aumento de una unidad de código duplica el conteo de partículas; dos unidades de código equivalen a un cambio de 4 veces en el nivel de contaminación. Códigos objetivo representativos por tipo de componente: servoválvulas y válvulas proporcionales, ISO 14/12/9 a 16/14/11; bombas y motores de pistones, ISO 17/15/12; bombas de paletas, ISO 17/15/12; bombas de engranajes, ISO 18/16/13; cojinetes de motor, ISO 16/14/11; cajas de engranajes, ISO 18/16/13. El aceite nuevo del tambor suele presentar ISO 18/16/13: no cumple la especificación de los circuitos sensibles sin filtración adicional. Operar dos o más unidades por encima del código objetivo (por ejemplo, trabajar en ISO 18/16/13 en lugar de ISO 16/14/11) reduce la vida de los cojinetes aproximadamente un 50%.",
+      "callout": [
+        {
+          "label": "Objetivo para servoválvulas",
+          "value": "ISO 14/12/9"
+        },
+        {
+          "label": "Objetivo para bombas de pistones",
+          "value": "ISO 17/15/12"
+        },
+        {
+          "label": "Aceite nuevo de tambor típico",
+          "value": "ISO 18/16/13"
+        }
+      ]
+    },
+    {
+      "heading": "Puntos de ingreso y estimación de la tasa",
+      "body": "Cuantificar la tasa de ingreso permite dimensionar el sistema de filtración para mantener el código de limpieza objetivo en operación estable. Vías de ingreso y tasas típicas: respiraderos de depósito (sin filtrar), 10–50 mg/h según el polvo ambiente y los ciclos de presión; sellos de eje (sellos de labio desgastados), 1–10 mg/h por sello; puntos de llenado en mantenimiento (baldes abiertos, boquillas contaminadas), 50–500 mg por cada llenado; sellos de vástago de cilindros (carrera extendida), 1–5 mg/h por cilindro. La suma de todas las tasas de ingreso define la carga de contaminación que el sistema de filtración debe igualar o superar en tasa de remoción para mantener la limpieza estable. Este análisis identifica qué puntos de ingreso tienen el mayor impacto marginal: con frecuencia, cambiar un respiradero abierto por un filtro de 3 µm es la medida que más reduce la contaminación por cada dólar invertido."
+    },
+    {
+      "heading": "Diseño del sistema de filtración",
+      "body": "El diseño del sistema de filtración traduce el presupuesto de contaminación en especificaciones de filtro. La relación Beta necesaria en cada tamaño de partícula se deriva del código de limpieza objetivo y de la tasa de ingreso en régimen estable. La relación fundamental es: C_downstream = C_upstream / β_x, donde C es el conteo de partículas en el tamaño x. En un circuito hidráulico con objetivo ISO 16/14/11 y filtro de retorno, la relación Beta del filtro debe ser suficiente para reducir el fluido que entra al retorno desde su nivel de contaminación hasta el objetivo. Los filtros de retorno de alta eficiencia con β₁₀(c) ≥ 200 son estándar en circuitos con servoválvulas. Los circuitos kidney-loop fuera de línea con altas relaciones Beta pulen el fluido de forma continua sin depender de la operación del sistema, y son especialmente eficaces para eliminar partículas menores de 10 µm que los caudales de retorno no capturan con eficiencia. El área del filtro (número de pliegues × altura × densidad de pliegues) determina la capacidad de retención de suciedad y, por lo tanto, el intervalo de servicio: los filtros subdimensionados se cargan rápido y pueden aumentar los eventos de derivación.",
+      "callout": [
+        {
+          "label": "Filtro de retorno en circuito con servoválvulas",
+          "value": "β₁₀(c) ≥ 200"
+        },
+        {
+          "label": "Intervalo del kidney-loop",
+          "value": "Pulido continuo fuera de línea"
+        },
+        {
+          "label": "Caudal del circuito fuera de línea",
+          "value": "5–15% del volumen del sistema/min"
+        }
+      ]
+    },
+    {
+      "heading": "Protocolo de lavado de puesta en marcha",
+      "body": "El lavado de puesta en marcha elimina la contaminación de origen de los sistemas nuevos o reconstruidos antes de la primera operación con carga. Sin lavado, los residuos de mecanizado y la contaminación del ensamblaje cargan de inmediato los filtros del sistema, provocan derivaciones tempranas y pueden rayar los carretes de las servoválvulas y las superficies de las bombas antes de alcanzar la operación estable. Procedimiento de lavado: llenar el sistema con fluido de lavado (el mismo fluido de operación o un aceite de lavado compatible), instalar placas de derivación temporales en los componentes sensibles (servoválvulas, válvulas proporcionales), circular a 1.5–2 veces el caudal de operación para lograr un lavado turbulento, muestrear y analizar cada 2 horas, y continuar hasta que dos muestras consecutivas cumplan el código de limpieza objetivo. En un sistema hidráulico típico, el lavado de puesta en marcha dura 4–16 horas. Los filtros de retorno temporales de alta capacidad (10 µm absolutos) durante el lavado evitan que se carguen los filtros del sistema en la fase de remoción de contaminantes.",
+      "callout": [
+        {
+          "label": "Caudal de lavado",
+          "value": "1.5–2× el caudal de operación"
+        },
+        {
+          "label": "Duración del lavado",
+          "value": "4–16 horas típico"
+        },
+        {
+          "label": "Criterio de aceptación",
+          "value": "2 muestras consecutivas en el código objetivo"
+        }
+      ]
+    },
+    {
+      "heading": "Monitoreo continuo",
+      "body": "El monitoreo continuo de la contaminación avisa con anticipación de la degradación del sistema antes de que cause la falla de un componente. Frecuencia de muestreo de aceite: una vez cada 250–500 horas en sistemas hidráulicos; una vez cada 250 horas en circuitos de lubricación críticos de motores; y después de cualquier evento de mantenimiento o cambio de componente. La selección del punto de muestreo es crítica: tome la muestra de zonas turbulentas en las líneas de retorno o de válvulas de muestreo dedicadas, no de ramales estancados ni del fondo de los depósitos. Use frascos prelimpiados (ISO 14/12/11 o mejor) para que la contaminación del frasco no sesgue los resultados. La tendencia informa más que las lecturas individuales: un código ISO que sube en muestras sucesivas indica más ingreso o una filtración que falla antes de que el componente llegue al umbral de daño. La espectroscopía elemental (ICP) del aceite lubricante agrega la tendencia de metales de desgaste: el hierro en aumento indica desgaste de cojinetes o camisas; el silicio en aumento indica ingreso de polvo; el cobre en aumento indica falla del recubrimiento de los cojinetes."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Rango crítico de partículas de desgaste",
+      "value": "5–15 µm"
+    },
+    {
+      "label": "Objetivo ISO para servoválvulas",
+      "value": "14/12/9"
+    },
+    {
+      "label": "Duración del lavado de puesta en marcha",
+      "value": "4–16 horas"
+    },
+    {
+      "label": "Degradación de dos unidades de código",
+      "value": "~50% menos vida de cojinetes"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "control de contaminación",
+    "ISO 4406",
+    "tamaño de partícula",
+    "código de limpieza",
+    "relación Beta",
+    "lavado de puesta en marcha",
+    "control del ingreso"
+  ],
+  "commonMistakes": [
+    "Centrar el control de contaminación solo en la selección del elemento filtrante e ignorar las tasas de ingreso. Un filtro de 10 µm(c) absolutos no puede mantener ISO 16/14/11 si el sistema ingiere contaminación a 5 veces la tasa de captura del filtro.",
+    "No lavar los sistemas nuevos antes de la puesta en marcha. Los componentes hidráulicos nuevos contienen residuos de fabricación (virutas metálicas, partículas de sellos, escoria de soldadura) que superan el código de limpieza objetivo: poner en marcha sin lavado introduce una contaminación que supera de inmediato los objetivos del sistema.",
+    "Tomar una sola medición de limpieza como representativa de la condición del sistema. El conteo de partículas varía con el caudal, la temperatura y los mantenimientos recientes: el monitoreo de tendencia durante 3 o más intervalos de muestreo da una evaluación confiable del control de contaminación.",
+    "Especificar el objetivo de limpieza por tipo de circuito y no por el componente individual más sensible. Un circuito que combina bombas de engranajes y una sola válvula proporcional debe especificarse según el requisito de limpieza de la válvula proporcional (ISO 16/14/11 o más exigente), no según la tolerancia más amplia de la bomba de engranajes.",
+    "Suponer que agregar un filtro más fino siempre mejora la limpieza del sistema. Si la tasa de ingreso supera la capacidad de filtración, cambiar la clasificación Beta sin atacar la vía de ingreso (respiradero desgastado, sello de eje dañado) no logrará el código de limpieza objetivo.",
+    "Usar equipos de llenado contaminados al completar el nivel de los depósitos hidráulicos. El aceite nuevo de un tambor introducido con una manguera y una boquilla sin limpiar puede presentar ISO 20/18/15 o peor, y degradar de inmediato un sistema que se mantenía en ISO 16/14/11."
+  ],
+  "eeat": {
+    "reviewerName": "ELIMFILTERS Engineering Division",
+    "reviewerTitle": "Ingeniería de potencia fluida y control de contaminación",
+    "organization": "ELIMFILTERS",
+    "lastReviewDate": "2026-06-15",
+    "nextReviewDate": "2027-06-15",
+    "discipline": "Ingeniería de potencia fluida — Control de contaminación",
+    "standards": [
+      "ISO 4406:2021",
+      "ISO 16889:2022",
+      "ISO 11171:2016",
+      "ISO 11500:2008"
+    ],
+    "contentLevel": "advanced",
+    "contentType": "technical-article",
+    "version": "3.1",
+    "evidenceBase": "Tabla de rangos de ISO 4406:2021; datos de ensayo multipaso de ISO 16889:2022; estudios publicados sobre vida de cojinetes; análisis de fallas en campo a partir de datos de flotas de minería y construcción"
+  },
+  "faqs": [
+    {
+      "question": "¿Cuál es la causa más común de falla de componentes hidráulicos en equipos de minería y construcción?",
+      "answer": "La contaminación por partículas del fluido hidráulico es responsable del 70–80% de las fallas prematuras de componentes hidráulicos en la industria pesada. Las partículas de 5–15 µm, que coinciden con las holguras de funcionamiento típicas de los componentes hidráulicos, son las que causan más daño porque entran y desgastan directamente las superficies de contacto. Los carretes de servoválvulas trabajan con holguras de 1–4 µm, los patines de bombas de pistones con 5–10 µm y los contactos de dientes de bombas de engranajes con 15–30 µm. Mantener el fluido en el código de limpieza ISO 4406 objetivo elimina este modo de falla como causa habitual de mantenimiento."
+    },
+    {
+      "question": "¿Cómo funciona el código de limpieza ISO 4406 y qué significa 16/14/11?",
+      "answer": "ISO 4406 usa un código de tres números para informar los niveles de contaminación por partículas por mililitro de fluido en tres umbrales de tamaño: ≥4 µm(c), ≥6 µm(c) y ≥14 µm(c). Cada número es un número de rango (RN) que corresponde a un intervalo de conteo de partículas. RN 16 = 320 a 640 partículas/mL; RN 14 = 80 a 160 partículas/mL; RN 11 = 10 a 20 partículas/mL. Cada aumento de una unidad de RN duplica el conteo de partículas, por lo que pasar de ISO 18/16/13 a ISO 16/14/11 es una reducción de 4 veces en la contaminación en cada umbral de tamaño. ISO 16/14/11 es el objetivo estándar para cojinetes de motor y bombas de pistones; los circuitos con servoválvulas suelen requerir ISO 14/12/9 o más exigente."
+    },
+    {
+      "question": "¿Puedo usar aceite nuevo directamente del tambor en circuitos hidráulicos con servoválvulas?",
+      "answer": "No. El aceite nuevo de un tambor sellado suele presentar ISO 18/16/13, que está 16 veces más contaminado que el objetivo ISO 16/14/11 de los circuitos con bombas de pistones y 256 veces más contaminado que el objetivo ISO 14/12/9 de los circuitos con servoválvulas. El aceite nuevo debe filtrarse con filtración kidney-loop fuera de línea o con un carro de trasvase dedicado con filtro de ≤3 µm(c) absolutos antes de introducirlo en circuitos con servoválvulas y válvulas proporcionales. Esta es una fuente común de falla prematura de servoválvulas, sobre todo durante la puesta en marcha inicial."
+    },
+    {
+      "question": "¿Cuánto debe durar el lavado de puesta en marcha de un sistema hidráulico nuevo?",
+      "answer": "La duración del lavado de puesta en marcha depende del volumen del sistema, la geometría del circuito y el nivel de contaminación inicial. En un sistema hidráulico industrial típico, lave a 1.5–2 veces el caudal de operación con placas de derivación temporales en las servoválvulas y válvulas proporcionales. Tome muestras de conteo de partículas cada 2 horas. El lavado termina cuando dos muestras consecutivas tomadas con 30 minutos de diferencia cumplen el código de limpieza objetivo. En la práctica, esto lleva 4–16 horas en un sistema nuevo y 8–24 horas en un sistema reconstruido tras la falla de un componente importante que liberó contaminación."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre β₁₀ y β₁₀(c) en las especificaciones de relación Beta?",
+      "answer": "β₁₀ es la relación Beta medida con el antiguo método de calibración con polvo de ensayo AC grueso. β₁₀(c) usa conteo de partículas calibrado según ISO 11171:2016 con partículas de referencia trazables a NIST. Las dos clasificaciones no son directamente comparables: un filtro con β₁₀ = 75 puede tener un valor β₁₀(c) de solo 10–15 por diferencias en la calibración del tamaño de partícula. ISO 16889:2022 exige la notación β(c). Especifique siempre β(c) al comparar el desempeño de filtros y solicite a los fabricantes informes de ensayo calibrados según ISO 11171."
+    },
+    {
+      "question": "¿Con qué frecuencia debe muestrearse el fluido hidráulico para analizar su contaminación?",
+      "answer": "En sistemas hidráulicos de equipos pesados de minería o construcción: muestree cada 250–500 horas de operación en condiciones normales, cada 100 horas después de la puesta en marcha de un sistema nuevo o de un mantenimiento importante, y de inmediato tras cualquier activación inesperada del indicador de restricción o ruido inusual. En circuitos hidráulicos de precisión que controlan servoválvulas o válvulas proporcionales, un contador de partículas en línea continuo es más eficaz que el muestreo periódico. El punto de muestreo debe estar en la línea de retorno, en una zona turbulenta, con una válvula de muestreo limpia según ISO dedicada; nunca en un tapón de drenaje ni en un ramal estancado."
+    },
+    {
+      "question": "¿Qué vía de ingreso suele aportar la mayor contaminación a un depósito hidráulico?",
+      "answer": "Los respiraderos del depósito son la principal vía de ingreso de contaminación en la mayoría de los sistemas hidráulicos móviles e industriales. Un respiradero sin filtro en un depósito ventilado deja entrar polvo ambiental en cada ciclo de respiración, a medida que cambia la temperatura del fluido. Con 1 mg/m³ de polvo ambiente y un depósito de 200 L que respira 50 L/h, el respiradero aporta 50 µg/h de contaminación, suficiente para llevar en pocas horas un sistema bien mantenido por encima de su objetivo de limpieza. Reemplazar los respiraderos abiertos por filtros de respiradero de 3 µm(c) absolutos suele ser la acción de control de contaminación de mayor impacto, muchas veces con un costo mínimo."
+    },
+    {
+      "question": "¿Cómo dimensiono un circuito de filtración kidney-loop fuera de línea para mi sistema hidráulico?",
+      "answer": "Un circuito kidney-loop debe renovar el volumen del sistema a una tasa suficiente para mantener el código de limpieza objetivo en condiciones normales de ingreso. La regla práctica es hacer circular todo el volumen del depósito una vez por hora (caudal = volumen del depósito en litros / 60 minutos). Para un depósito de 500 L, es adecuado un circuito fuera de línea de 8–10 L/min con filtro β₃(c) ≥ 200. En entornos con alto ingreso (minería con sellos de eje desgastados), aumente la renovación a 2–3 volúmenes del depósito por hora. El circuito fuera de línea funciona sin depender de la carga del sistema: filtra durante los periodos de inactividad y durante los ciclos de alta carga, cuando el caudal del circuito principal deriva la filtración."
+    },
+    {
+      "question": "¿Qué indica un aumento de hierro y silicio en el análisis de aceite?",
+      "answer": "Un aumento de la concentración de hierro en la espectroscopía ICP (tendencia en ppm en muestras sucesivas) indica desgaste de componentes ferrosos: camisas de cilindros, vástagos de válvulas, dientes de engranajes, cilindros de bombas o pistas de rodamientos. El silicio en aumento es el principal indicador de ingestión de polvo: la sílice del suelo y la roca entra por sellos de admisión de aire dañados, sellos de eje desgastados o equipos de llenado contaminados. Si el silicio y el hierro suben juntos, las partículas abrasivas de sílice están desgastando activamente los componentes ferrosos. Esa combinación exige investigar de inmediato la integridad del sistema de admisión de aire y el estado de los respiraderos. Si sube solo el hierro, sin silicio, suele indicar desgaste por fatiga o adhesivo y no abrasivo."
+    },
+    {
+      "question": "¿Cuál es el impacto económico de dejar que la limpieza hidráulica se degrade dos números de rango ISO?",
+      "answer": "Degradar la limpieza del fluido en dos números de rango ISO, por ejemplo de ISO 16/14/11 a ISO 18/16/13, duplica aproximadamente el conteo de partículas en cada umbral de tamaño y multiplica por 2–4 la tasa de desgaste en las superficies de cojinetes y patines. Los estudios de laboratorio lo correlacionan con una reducción del 40–50% en la vida útil de los componentes hidráulicos. En una flota de 20 excavadoras con un ciclo de reemplazo de bomba hidráulica de 5,000 horas a ISO 16/14/11, degradarse a ISO 18/16/13 acorta los intervalos de reemplazo a unas 2,500–3,000 horas: duplica la frecuencia de reemplazo de bombas y suma USD $30,000–60,000 por año en costos de bombas en toda la flota, sin contar mano de obra ni paradas."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021 — Hydraulic fluid power — Fluids — Method for coding the level of contamination by solid particles.",
+      "relevance": "Define el sistema de codificación por números de rango de tres canales usado para especificar y medir la limpieza del fluido hidráulico. Norma que rige todos los objetivos de limpieza citados en este artículo."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022 — Hydraulic fluid power — Filters — Multi-pass method for evaluating filtration performance of a filter element.",
+      "relevance": "Define el método de ensayo de la relación Beta β(c) y el procedimiento de medición de la capacidad de retención de suciedad. Aporta los datos de eficiencia de filtración necesarios para dimensionar filtros según objetivos de limpieza especificados."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016 — Hydraulic fluid power — Calibration of automatic particle counters for liquids.",
+      "relevance": "Norma de calibración de contadores de partículas trazable a NIST en la que se basa la notación β(c). Necesaria para comparar de forma válida datos de contaminación entre laboratorios y fabricantes."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11500:2008 — Hydraulic fluid power — Determination of the particulate contamination level of a liquid sample by automatic particle counting using the light-extinction principle.",
+      "relevance": "Define el procedimiento de muestreo, medición e informe de los resultados de conteo de partículas usados para obtener códigos ISO 4406 a partir de muestras de campo."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, E.C. & Troyer, D.E., \"Hydraulic System Contamination Control,\" Noria Corporation, 5th ed. (2004).",
+      "relevance": "Referencia de ingeniería integral sobre análisis de vías de ingreso, presupuesto de contaminación y metodología de diseño de sistemas de filtración."
+    },
+    {
+      "category": "research",
+      "citation": "Barringer, H.P., \"Contamination control reliability engineering — the link between ISO 4406 and component failure rates,\" Proc. IMC Lubrication Conference (2003).",
+      "relevance": "Establece la relación cuantitativa entre la degradación del código de limpieza ISO y la tasa de falla de componentes hidráulicos usada para calcular el impacto económico en este artículo."
+    }
+  ],
+  "decisionGuide": {
+    "title": "Selección del objetivo de limpieza del sistema hidráulico",
+    "description": "Seleccione el objetivo de limpieza ISO 4406 correcto para su circuito hidráulico según el componente más sensible a la contaminación que tenga.",
+    "startNode": "q1",
+    "nodes": [
+      {
+        "id": "q1",
+        "question": "¿El circuito hidráulico tiene servoválvulas o válvulas direccionales proporcionales electrohidráulicas (holgura del carrete de 1–4 µm)?",
+        "note": "Las servoválvulas incluyen válvulas con control por realimentación, válvulas servoproporcionales y válvulas proporcionales de alta respuesta con electrónica integrada.",
+        "yes": "r-servo",
+        "no": "q2"
+      },
+      {
+        "id": "r-servo",
+        "question": "",
+        "result": "Objetivo: ISO 14/12/9. Los carretes de servoválvulas y válvulas proporcionales trabajan con holguras de 1–4 µm. Especifique filtro de retorno β₃(c) ≥ 200 y filtración kidney-loop fuera de línea. El aceite nuevo debe prefiltrarse a ≤ ISO 16/14/11 antes de introducirlo. Muestree como mínimo cada trimestre.",
+        "note": "ISO 14/12/9 es un objetivo exigente que requiere filtración fuera de línea de alta eficiencia y un control riguroso del ingreso en todos los puntos de acceso al depósito."
+      },
+      {
+        "id": "q2",
+        "question": "¿El circuito tiene bombas o motores de pistones axiales de cilindrada variable (holgura carrete/cilindro de 5–15 µm)?",
+        "yes": "r-piston",
+        "no": "q3"
+      },
+      {
+        "id": "r-piston",
+        "question": "",
+        "result": "Objetivo: ISO 16/14/11 a ISO 17/15/12. Los componentes de pistones axiales requieren alta limpieza del fluido para evitar el desgaste de patines y cilindros. Filtro de retorno β₁₀(c) ≥ 75 como mínimo. Filtro de respiradero ≤ 3 µm(c) obligatorio. Muestree cada 250–500 horas.",
+        "note": "ISO 17/15/12 es aceptable para bombas de pistones en circuitos de presión moderada (≤ 200 bar). En circuitos de alta presión (> 250 bar) se requiere ISO 16/14/11 o más exigente."
+      },
+      {
+        "id": "q3",
+        "question": "¿El circuito usa solo bombas de paletas, bombas de engranajes o cilindros (holguras de 15–30 µm)?",
+        "yes": "r-gear",
+        "no": "r-cylinder"
+      },
+      {
+        "id": "r-gear",
+        "question": "",
+        "result": "Objetivo: ISO 18/16/13 a ISO 19/17/14. Las bombas de engranajes y de paletas toleran niveles de contaminación más altos por sus mayores holguras de funcionamiento. Filtro de retorno β₁₀(c) ≥ 25 aceptable. Se sigue recomendando el monitoreo para servicio por condición.",
+        "note": "Incluso en ISO 18/16/13, un respiradero sin filtro elevará los niveles de contaminación en entornos polvorientos. La filtración del respiradero sigue siendo importante sin importar el tipo de bomba."
+      },
+      {
+        "id": "r-cylinder",
+        "question": "",
+        "result": "Objetivo: ISO 20/18/15 aceptable para circuitos solo con cilindros, sin válvulas ni bombas sensibles. Filtración de retorno estándar β₆(c) ≥ 10. Inspeccione con regularidad los sellos de vástago para evitar la contaminación por ingreso.",
+        "note": "Los sellos de vástago de los cilindros son una vía de ingreso importante en equipos móviles: los vástagos contaminados arrastran suciedad hacia el cilindro al retraerse."
+      }
+    ]
+  }
+}
