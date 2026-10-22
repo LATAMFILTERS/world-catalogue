@@ -153,6 +153,28 @@ export function LeadershipPageClient() {
     : isSpanish
       ? 'El filtro es el medio. La protección de los activos es el objetivo.'
       : 'The filter is the means. Asset protection is the objective.';
+  const governancePrinciples = isPortuguese
+    ? [{ title: "Responsabilidade delimitada", description: "Cada agente tem uma função e limites de atuação definidos. Exceções e compromissos sensíveis são encaminhados para aprovação." },
+      { title: "Evidências e rastreabilidade", description: "As propostas devem deixar claros seus fundamentos, os riscos considerados e a responsabilidade pela decisão final." },
+      { title: "Intervenção humana", description: "O CEO ou a autoridade humana designada decide questões estratégicas, materiais, excepcionais, irreversíveis ou de alto risco." }]
+    : isSpanish
+      ? [{ title: "Responsabilidad delimitada", description: "Cada agente tiene una función y límites de actuación definidos. Las excepciones y los compromisos sensibles se elevan para su autorización." },
+      { title: "Evidencia y trazabilidad", description: "Las propuestas deben permitir conocer su fundamento, los riesgos considerados y la responsabilidad sobre la decisión final." },
+      { title: "Intervención humana", description: "El CEO o la autoridad humana designada decide en asuntos estratégicos, materiales, excepcionales, irreversibles o de alto riesgo." }]
+      : [{ title: "Defined accountability", description: "Each agent has a defined remit and authority limits. Exceptions and sensitive commitments are escalated for approval." },
+      { title: "Evidence and traceability", description: "Proposals must make their basis, considered risks, and responsibility for the final decision clear." },
+      { title: "Human intervention", description: "The CEO or designated human authority decides strategic, material, exceptional, irreversible, or high-risk matters." }];
+  const capacityPrinciples = isPortuguese
+    ? [{ title: "Especialização com propósito", description: "Cada função contribui com conhecimento específico para problemas reais de clientes, distribuidores e operações." },
+      { title: "Coordenação, não burocracia", description: "As informações são conectadas entre áreas para reduzir duplicações e levar propostas integradas ao CEO." },
+      { title: "Escala responsável", description: "Pessoas, ferramentas e automação são incorporadas conforme necessidades reais, controles e resultados verificáveis." }]
+    : isSpanish
+      ? [{ title: "Especialización con propósito", description: "Cada función aporta conocimiento específico a problemas concretos de clientes, distribuidores y operaciones." },
+      { title: "Coordinación, no burocracia", description: "La información se conecta entre áreas para reducir duplicaciones y elevar propuestas integradas al CEO." },
+      { title: "Escala responsable", description: "La incorporación de personas, herramientas o automatización responde a necesidades reales, controles y resultados verificables." }]
+      : [{ title: "Purposeful specialization", description: "Each function contributes specific expertise to real problems faced by customers, distributors, and operations." },
+      { title: "Coordination, not bureaucracy", description: "Information is connected across functions to reduce duplication and bring integrated proposals to the CEO." },
+      { title: "Responsible scale", description: "People, tools, and automation are added in response to real needs, controls, and verifiable results." }];
 
   return (
     <main className="leadership-page">
@@ -244,30 +266,62 @@ export function LeadershipPageClient() {
         </div>
       </section>
 
-      <section className="governance-section">
+      <section className="governance-section" aria-labelledby="governance-title">
         <div className="governance-grid">
           <div>
             <p className="eyebrow dark"><ReviewedText text={"GOVERNANCE & ACCOUNTABILITY"} /></p>
-            <h2>{isPortuguese ? "A responsabilidade nunca se torna artificial." : isSpanish ? 'La responsabilidad nunca se vuelve artificial.' : 'Accountability never becomes artificial.'}</h2>
+            <h2 id="governance-title">{isPortuguese ? "A responsabilidade nunca se torna artificial." : isSpanish ? 'La responsabilidad nunca se vuelve artificial.' : 'Accountability never becomes artificial.'}</h2>
           </div>
-          <p>
-            {isPortuguese ? "A inteligência artificial pode exercer autoridade delegada dentro da ELIMFILTERS, mas as decisões estratégicas, materiais, excepcionais, irreversíveis ou de alto risco permanecem sujeitas à autoridade humana." : isSpanish
-              ? 'La inteligencia artificial puede ejercer autoridad delegada dentro de ELIMFILTERS, pero las decisiones estratégicas, materiales, excepcionales, irreversibles o de alto riesgo permanecen sujetas a autoridad humana.'
-              : 'Artificial intelligence may exercise delegated authority within ELIMFILTERS, but strategic, material, exceptional, irreversible, or high-risk decisions remain subject to human authority.'}
-          </p>
+          <div className="governance-content">
+            <p className="governance-lead">
+              {isPortuguese
+                ? 'Na ELIMFILTERS, a inteligência artificial apoia a análise, a coordenação e a preparação de propostas, mas não substitui a prestação de contas. O modelo atribui a cada função um escopo e limites de autoridade sob supervisão do CEO. Decisões estratégicas, materiais, excepcionais, irreversíveis ou de alto risco permanecem sob responsabilidade humana.'
+                : isSpanish
+                  ? 'En ELIMFILTERS, la inteligencia artificial apoya el análisis, la coordinación y la preparación de propuestas, pero no sustituye la responsabilidad ejecutiva. El modelo asigna a cada función un ámbito y límites de autoridad bajo supervisión del CEO. Las decisiones estratégicas, materiales, excepcionales, irreversibles o de alto riesgo permanecen bajo responsabilidad humana.'
+                  : 'At ELIMFILTERS, artificial intelligence supports analysis, coordination, and the preparation of proposals, but does not replace executive accountability. The model assigns every function a scope and authority limits under CEO oversight. Strategic, material, exceptional, irreversible, or high-risk decisions remain a human responsibility.'}
+            </p>
+            <ol className="executive-principles governance-principles">
+              {governancePrinciples.map(({ title, description }, index) => (
+                <li key={title}>
+                  <span className="principle-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3 className="principle-title">{title}</h3>
+                    <p className="principle-description">{description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 
-      <section className="closing-section">
-        <div className="leadership-wrap">
-          <p className="eyebrow"><ReviewedText text={"CAPABILITY BEFORE COMPLEXITY"} /></p>
-          <h2>{isPortuguese ? "Construídos para capacidade, não para aparentar tamanho." : isSpanish ? 'Construidos para capacidad, no para aparentar tamaño.' : 'Built for capability, not apparent headcount.'}</h2>
-          <p className="section-copy">
-            {isPortuguese ? "A ELIMFILTERS utiliza agentes, automação, sistemas e profissionais humanos onde cada mecanismo acrescenta maior competência. A escala organizacional cresce pela necessidade real, não para simular uma estrutura maior." : isSpanish
-              ? 'ELIMFILTERS utiliza agentes, automatización, sistemas y profesionales humanos donde cada mecanismo aporta mayor competencia. La escala organizacional crece por necesidad real, no para simular una estructura mayor.'
-              : 'ELIMFILTERS uses agents, automation, systems, and human professionals where each mechanism adds the greatest competence. Organizational scale grows from real need, not to simulate a larger structure.'}
-          </p>
-          <Link href="/about/who-we-are" className="back-link">{isPortuguese ? "Voltar a Quem Somos →" : isSpanish ? 'Volver a Quiénes Somos →' : 'Back to Who We Are →'}</Link>
+      <section className="closing-section" aria-labelledby="capacity-title">
+        <div className="leadership-wrap closing-grid">
+          <div>
+            <p className="eyebrow"><ReviewedText text={"CAPABILITY BEFORE COMPLEXITY"} /></p>
+            <h2 id="capacity-title">{isPortuguese ? "Construídos para capacidade, não para aparentar tamanho." : isSpanish ? 'Construidos para capacidad, no para aparentar tamaño.' : 'Built for capability, not apparent headcount.'}</h2>
+          </div>
+          <div className="closing-content">
+            <p className="section-copy">
+              {isPortuguese
+                ? 'A estrutura da ELIMFILTERS foi concebida para somar competências, não cargos. Reúne conhecimento humano, agentes especializados, automação e sistemas sob responsabilidades claras. Seu objetivo é melhorar a qualidade das decisões, a continuidade operacional e a capacidade de atender clientes e distribuidores — não ampliar artificialmente o organograma.'
+                : isSpanish
+                  ? 'La estructura de ELIMFILTERS está concebida para sumar capacidades, no cargos. Combina conocimiento humano, agentes especializados, automatización y sistemas bajo responsabilidades claras. Su propósito es mejorar la calidad de las decisiones, la continuidad operativa y la capacidad de atender a clientes y distribuidores, no ampliar artificialmente el organigrama.'
+                  : 'ELIMFILTERS is structured to add capabilities, not titles. It combines human expertise, specialized agents, automation, and systems under clear responsibilities. Its purpose is to improve decision quality, operational continuity, and service to customers and distributors—not to inflate the organizational chart.'}
+            </p>
+            <ul className="executive-principles capacity-principles">
+              {capacityPrinciples.map(({ title, description }, index) => (
+                <li key={title}>
+                  <span className="principle-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3 className="principle-title">{title}</h3>
+                    <p className="principle-description">{description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <Link href="/about/who-we-are" className="back-link">{isPortuguese ? "Voltar a Quem Somos →" : isSpanish ? 'Volver a Quiénes Somos →' : 'Back to Who We Are →'}</Link>
+          </div>
         </div>
       </section>
 
@@ -310,8 +364,31 @@ export function LeadershipPageClient() {
         .agent-contact span{color:rgba(255,255,255,.5);font-family:var(--font-display);font-weight:700;font-size:.66rem;letter-spacing:.14em}
         .agent-contact a{color:#FFF12D;font-family:var(--font-display);font-weight:700;font-size:.95rem;letter-spacing:.02em;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
         .agent-contact a:hover{color:#fff}
-        .governance-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.governance-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}.governance-grid h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.07;letter-spacing:-.035em;margin:0}.governance-grid>p{color:#3f3f3b;font-size:1.04rem;line-height:1.78;margin:0}.back-link{display:inline-block;margin-top:1.25rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em}
-        @media(max-width:900px){.founder-grid,.governance-grid,.agent-profile{grid-template-columns:1fr}.founder-rail{max-width:100%;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:1.5rem 2rem;align-items:start}.founder-photo-shell{width:100%;max-width:300px}.founder-timeline{margin-top:0}.founder-quote{grid-column:1/-1;margin-top:0}.agent-photo-shell{max-width:300px}}
+        .governance-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}
+        .governance-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+        .governance-grid h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.07;letter-spacing:-.035em;margin:0}
+        .governance-content,.closing-content{min-width:0}
+        .governance-lead{color:#3f3f3b;font-size:clamp(1rem,1.15vw,1.1rem);line-height:1.75;margin:0;max-width:690px}
+        .closing-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+        .closing-grid h2{font-size:clamp(2rem,3.2vw,3.4rem);max-width:570px}
+        .closing-content .section-copy{max-width:690px;margin:0}
+        .executive-principles{list-style:none;padding:0;margin:2rem 0 0;display:grid}
+        .executive-principles li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.8rem;padding:1rem 0;border-top:1px solid}
+        .executive-principles li:last-child{padding-bottom:0}
+        .principle-index{font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.07em;padding-top:.2rem}
+        .principle-title{font-size:1.02rem;line-height:1.35;letter-spacing:0;margin:0 0 .25rem;font-weight:700;text-transform:none}
+        .principle-description{font-size:.96rem;line-height:1.65;margin:0}
+        .governance-principles li{border-color:#d5d3ca}
+        .governance-principles .principle-index{color:#756800}
+        .governance-principles .principle-title{color:#171715}
+        .governance-principles .principle-description{color:#55544e}
+        .capacity-principles li{border-color:rgba(255,255,255,.16)}
+        .capacity-principles .principle-index{color:#FFF12D}
+        .capacity-principles .principle-title{color:#fff}
+        .capacity-principles .principle-description{color:rgba(255,255,255,.7)}
+        .back-link{display:inline-block;margin-top:2rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em;text-underline-offset:.3em}
+        .back-link:hover,.back-link:focus-visible{text-decoration:underline}
+        @media(max-width:900px){.founder-grid,.governance-grid,.closing-grid,.agent-profile{grid-template-columns:1fr}.founder-rail{max-width:100%;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:1.5rem 2rem;align-items:start}.founder-photo-shell{width:100%;max-width:300px}.founder-timeline{margin-top:0}.founder-quote{grid-column:1/-1;margin-top:0}.agent-photo-shell{max-width:300px}}
         @media(max-width:560px){.leadership-hero{padding-top:7rem;padding-bottom:3rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-rail{grid-template-columns:1fr;gap:1.5rem;max-width:420px;justify-self:center}.founder-photo-shell{width:78%;max-width:300px;margin:0 auto}.founder-timeline-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;padding:0;border:0}.founder-timeline-item{padding:.9rem 0 0;border-top:1px solid #bdbbb0}.founder-timeline-item:before{left:0;top:-4px}.founder-timeline-year{font-size:.84rem}.founder-timeline-title{font-size:.92rem;overflow-wrap:anywhere}.founder-timeline-detail{font-size:.82rem}.founder-quote{grid-column:1;margin:0}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
       `}</style>
     </main>
