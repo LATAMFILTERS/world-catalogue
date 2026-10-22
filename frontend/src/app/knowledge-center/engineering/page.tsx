@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -72,7 +73,7 @@ export default function EngineeringHubPage() {
               marginBottom: '1rem',
             }}
           >
-            01 / ENGINEERING PRINCIPLES
+            <ReviewedText text={"01 / ENGINEERING PRINCIPLES"} />
           </motion.p>
 
           <motion.h1
@@ -88,7 +89,7 @@ export default function EngineeringHubPage() {
               marginBottom: '1.25rem',
             }}
           >
-            Filtration Engineering Articles
+            <ReviewedText text={"Filtration Engineering Articles"} />
           </motion.h1>
 
           <motion.p
@@ -104,7 +105,7 @@ export default function EngineeringHubPage() {
               maxWidth: '820px',
             }}
           >
-            Technical references covering filtration theory, contamination modes, fluid mechanics, asset protection and system engineering for heavy equipment and industrial applications.
+            <ReviewedText text={"Technical references covering filtration theory, contamination modes, fluid mechanics, asset protection and system engineering for heavy equipment and industrial applications."} />
           </motion.p>
         </div>
       </section>
@@ -122,7 +123,7 @@ export default function EngineeringHubPage() {
             color: '#FFF12D',
             margin: '0 0 0.8rem',
           }}>
-            MINING CONTAMINATION SERIES
+            <ReviewedText text={"MINING CONTAMINATION SERIES"} />
           </p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
@@ -131,7 +132,7 @@ export default function EngineeringHubPage() {
             margin: '0 0 0.9rem',
             maxWidth: '760px',
           }}>
-            From dust exposure to reliability, availability and lifecycle cost.
+            <ReviewedText text={"From dust exposure to reliability, availability and lifecycle cost."} />
           </h2>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -140,7 +141,7 @@ export default function EngineeringHubPage() {
             maxWidth: '720px',
             margin: '0 0 2rem',
           }}>
-            A focused engineering path for maintenance, reliability and asset-management teams working in severe-duty mining environments.
+            <ReviewedText text={"A focused engineering path for maintenance, reliability and asset-management teams working in severe-duty mining environments."} />
           </p>
           <div style={{
             display: 'grid',
@@ -178,7 +179,7 @@ export default function EngineeringHubPage() {
                   lineHeight: 1.25,
                   marginTop: '1rem',
                 }}>
-                  {item.title}
+                  <ReviewedText text={item.title} />
                 </strong>
                 <span style={{
                   fontFamily: 'Inter, sans-serif',
@@ -187,7 +188,7 @@ export default function EngineeringHubPage() {
                   fontSize: '0.82rem',
                   marginTop: '0.65rem',
                 }}>
-                  {item.description}
+                  <ReviewedText text={item.description} />
                 </span>
                 <span style={{
                   fontFamily: 'JetBrains Mono, monospace',
@@ -197,7 +198,7 @@ export default function EngineeringHubPage() {
                   marginTop: 'auto',
                   paddingTop: '1rem',
                 }}>
-                  READ GUIDE →
+                  <ReviewedText text={"READ GUIDE →"} />
                 </span>
               </Link>
             ))}
@@ -246,7 +247,7 @@ export default function EngineeringHubPage() {
                       opacity: 0.7,
                       textTransform: 'uppercase',
                     }}>
-                      {article.category}
+                      <ReviewedText text={article.category} />
                     </p>
                     <p style={{
                       fontFamily: 'JetBrains Mono, monospace',
@@ -267,7 +268,7 @@ export default function EngineeringHubPage() {
                     lineHeight: 1.25,
                     textAlign: 'left',
                   }}>
-                    {article.title}
+                    <ReviewedText text={article.title} />
                   </h2>
 
                   <p style={{
@@ -278,7 +279,7 @@ export default function EngineeringHubPage() {
                     textAlign: 'left',
                     marginBottom: '1rem',
                   }}>
-                    {article.subtitle}
+                    <ReviewedText text={article.subtitle} />
                   </p>
 
                   {article.relatedStandards.length > 0 && (

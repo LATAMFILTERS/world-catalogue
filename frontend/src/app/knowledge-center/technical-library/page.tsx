@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -57,6 +58,7 @@ const LIBRARY_DOCS = [
 ];
 
 export default function TechnicalLibraryPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -96,7 +98,7 @@ export default function TechnicalLibraryPage() {
               marginBottom: '1rem',
             }}
           >
-            05 / TECHNICAL LIBRARY
+            <ReviewedText text={"05 / TECHNICAL LIBRARY"} />
           </motion.p>
 
           <motion.h1
@@ -112,7 +114,7 @@ export default function TechnicalLibraryPage() {
               maxWidth: '760px',
             }}
           >
-            Technical Reference Library
+            <ReviewedText text={"Technical Reference Library"} />
           </motion.h1>
 
           <motion.p
@@ -127,7 +129,7 @@ export default function TechnicalLibraryPage() {
               maxWidth: '820px',
             }}
           >
-            Selection guides, failure analysis matrices, commissioning procedures, and assessment methodologies for filtration engineering teams and equipment maintenance operations.
+            <ReviewedText text={"Selection guides, failure analysis matrices, commissioning procedures, and assessment methodologies for filtration engineering teams and equipment maintenance operations."} />
           </motion.p>
         </div>
       </section>
@@ -168,7 +170,7 @@ export default function TechnicalLibraryPage() {
                   color: '#FFF12D',
                   opacity: 0.7,
                 }}>
-                  {doc.type}
+                  {tr(doc.type)}
                 </p>
                 <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                   {doc.standards.map((std) => (
@@ -194,7 +196,7 @@ export default function TechnicalLibraryPage() {
                 marginBottom: '0.5rem',
                 lineHeight: 1.2,
               }}>
-                {doc.title}
+                <ReviewedText text={doc.title} />
               </h2>
 
               <p style={{
@@ -205,7 +207,7 @@ export default function TechnicalLibraryPage() {
                 marginBottom: '1.25rem',
                 maxWidth: '640px',
               }}>
-                {doc.subtitle}
+                <ReviewedText text={doc.subtitle} />
               </p>
 
               <div>
@@ -216,7 +218,7 @@ export default function TechnicalLibraryPage() {
                   color: 'rgba(255,255,255,0.25)',
                   marginBottom: '0.5rem',
                 }}>
-                  CONTENTS
+                  <ReviewedText text={"CONTENTS"} />
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                   {doc.sections.map((sec) => (
@@ -228,7 +230,7 @@ export default function TechnicalLibraryPage() {
                       border: '1px solid rgba(255,255,255,0.06)',
                       padding: '0.2rem 0.6rem',
                     }}>
-                      {sec}
+                      {tr(sec)}
                     </span>
                   ))}
                 </div>
@@ -262,14 +264,14 @@ export default function TechnicalLibraryPage() {
               color: '#fff',
               marginBottom: '0.35rem',
             }}>
-              Engineering Reference Articles
+              <ReviewedText text={"Engineering Reference Articles"} />
             </p>
             <p style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.85rem',
               color: 'rgba(255,255,255,0.45)',
             }}>
-              14 technical articles covering filtration theory, media science, and contamination control.
+              <ReviewedText text={"14 technical articles covering filtration theory, media science, and contamination control."} />
             </p>
           </div>
           <Link href="/knowledge-center/engineering" style={{
@@ -283,7 +285,7 @@ export default function TechnicalLibraryPage() {
             whiteSpace: 'nowrap',
             letterSpacing: '0.02em',
           }}>
-            Engineering Articles →
+            <ReviewedText text={"Engineering Articles →"} />
           </Link>
         </div>
       </section>

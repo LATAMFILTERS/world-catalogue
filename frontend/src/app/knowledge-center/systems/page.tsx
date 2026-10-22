@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -7,6 +8,7 @@ import { KC_SYSTEMS } from '@/lib/knowledge-center-data';
 import { heroBackgroundImage } from '@/lib/hero-media';
 
 export default function SystemsPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -46,7 +48,7 @@ export default function SystemsPage() {
               marginBottom: '1rem',
             }}
           >
-            03 / PROTECTION SYSTEMS
+            <ReviewedText text={"03 / PROTECTION SYSTEMS"} />
           </motion.p>
 
           <motion.h1
@@ -61,7 +63,7 @@ export default function SystemsPage() {
               marginBottom: '1.25rem',
             }}
           >
-            Filtration Protection Systems
+            <ReviewedText text={"Filtration Protection Systems"} />
           </motion.h1>
 
           <motion.p
@@ -76,7 +78,7 @@ export default function SystemsPage() {
               maxWidth: '820px',
             }}
           >
-            Six asset protection domains covering air intake, fuel, lubrication, hydraulics, cooling, and cabin air. Each domain maps contamination targets, applicable standards, and the ELIMFILTERS technologies engineered to address specific failure mechanisms.
+            <ReviewedText text={"Six asset protection domains covering air intake, fuel, lubrication, hydraulics, cooling, and cabin air. Each domain maps contamination targets, applicable standards, and the ELIMFILTERS technologies engineered to address specific failure mechanisms."} />
           </motion.p>
         </div>
       </section>
@@ -125,7 +127,7 @@ export default function SystemsPage() {
               marginBottom: '0.75rem',
               lineHeight: 1.2,
             }}>
-              {system.title}
+              <ReviewedText text={system.title} />
             </h2>
 
             <p style={{
@@ -135,7 +137,7 @@ export default function SystemsPage() {
               color: 'rgba(255,255,255,0.55)',
               marginBottom: '1.5rem',
             }}>
-              {system.description}
+              <ReviewedText text={system.description} />
             </p>
 
             {system.technologies.length > 0 && (
@@ -158,7 +160,7 @@ export default function SystemsPage() {
                       padding: '0.2rem 0.5rem',
                       border: '1px solid rgba(255,241,45,0.2)',
                     }}>
-                      {tech}
+                      {tr(tech)}
                     </span>
                   ))}
                 </div>
@@ -174,12 +176,12 @@ export default function SystemsPage() {
                   color: 'rgba(255,255,255,0.3)',
                   marginBottom: '0.5rem',
                 }}>
-                  COMMERCIAL KITS
+                  <ReviewedText text={"COMMERCIAL KITS"} />
                 </p>
                 <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                   {system.kits.map((kit) => (
                     <Link
-                      key={kit}
+                      key={tr(kit)}
                       href={`/commercial-lines/${kit.replace('™', '').toLowerCase()}`}
                       style={{
                         textDecoration: 'none',
@@ -192,7 +194,7 @@ export default function SystemsPage() {
                         border: '1px solid rgba(102,204,255,0.2)',
                       }}
                     >
-                      {kit}
+                      {tr(kit)}
                     </Link>
                   ))}
                 </div>
@@ -208,7 +210,7 @@ export default function SystemsPage() {
                   color: 'rgba(255,255,255,0.3)',
                   marginBottom: '0.5rem',
                 }}>
-                  STANDARDS
+                  <ReviewedText text={"STANDARDS"} />
                 </p>
                 <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                   {system.standards.map((std) => (
@@ -235,7 +237,7 @@ export default function SystemsPage() {
                 color: 'rgba(255,255,255,0.3)',
                 marginBottom: '0.5rem',
               }}>
-                CONTAMINATION CHALLENGES
+                <ReviewedText text={"CONTAMINATION CHALLENGES"} />
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                 {system.challenges.map((ch) => (
@@ -246,7 +248,7 @@ export default function SystemsPage() {
                     paddingLeft: '0.75rem',
                     borderLeft: '2px solid rgba(255,255,255,0.1)',
                   }}>
-                    {ch}
+                    {tr(ch)}
                   </p>
                 ))}
               </div>

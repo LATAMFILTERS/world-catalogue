@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -59,13 +60,13 @@ function MicronScaleGraphic() {
       }}
     >
       <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.12em', color: '#FFF12D' }}>
-        PARTICLE SIZE REFERENCE
+        <ReviewedText text={"PARTICLE SIZE REFERENCE"} />
       </span>
 
       <div style={{ marginTop: '1.6rem', display: 'flex', flexDirection: 'column', gap: '0.95rem' }}>
         {MICRON_SCALE.map((item) => (
           <div key={item.label} style={{ display: 'grid', gridTemplateColumns: '1fr 90px 46px', alignItems: 'center', gap: '0.85rem' }}>
-            <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.7)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.label}</span>
+            <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.7)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}><ReviewedText text={item.label} /></span>
             <div style={{ width: '90px', height: '9px', borderRadius: '5px', background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}>
               <div style={{
                 width: `${Math.max(8, (parseFloat(item.value.replace('~', '').replace(' µm', '')) / max) * 100)}%`,
@@ -74,19 +75,20 @@ function MicronScaleGraphic() {
                 background: 'linear-gradient(90deg, rgba(255,241,45,0.35), #FFF12D)',
               }} />
             </div>
-            <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', textAlign: 'right' }}>{item.value}</span>
+            <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', textAlign: 'right' }}><ReviewedText text={item.value} /></span>
           </div>
         ))}
       </div>
 
       <p style={{ marginTop: '1.6rem', fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.32)' }}>
-        Most hydraulic and lubrication wear begins below the threshold of visibility — which is why filtration standards measure capture efficiency at 4, 6, and 14 µm rather than relying on what can be seen.
+        <ReviewedText text={"Most hydraulic and lubrication wear begins below the threshold of visibility — which is why filtration standards measure capture efficiency at 4, 6, and 14 µm rather than relying on what can be seen."} />
       </p>
     </div>
   );
 }
 
 export default function StandardsHubPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -119,7 +121,7 @@ export default function StandardsHubPage() {
                 marginBottom: '1.25rem',
               }}
             >
-              Industrial Filtration Standards
+              <ReviewedText text={"Industrial Filtration Standards"} />
             </motion.h1>
 
             <motion.p
@@ -133,7 +135,7 @@ export default function StandardsHubPage() {
                 color: 'rgba(255,255,255,0.6)',
               }}
             >
-              ISO, ASTM, SAE, and NAS filtration standards explained with test methodology, acceptance criteria, parameter tables, and industrial application context. Standards are not isolated specifications — each entry explains how the standard functions within a contamination control system.
+              <ReviewedText text={"ISO, ASTM, SAE, and NAS filtration standards explained with test methodology, acceptance criteria, parameter tables, and industrial application context. Standards are not isolated specifications — each entry explains how the standard functions within a contamination control system."} />
             </motion.p>
           </div>
 
@@ -152,14 +154,14 @@ export default function StandardsHubPage() {
         {GROUPS.map((group, groupIdx) => {
           const color = FAMILY_COLOR[group.family] || DEFAULT_COLOR;
           return (
-            <div key={group.family} style={{ marginTop: groupIdx === 0 ? 0 : 'clamp(2.5rem, 5vw, 4rem)' }}>
+            <div key={tr(group.family)} style={{ marginTop: groupIdx === 0 ? 0 : 'clamp(2.5rem, 5vw, 4rem)' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem', marginBottom: '1.1rem' }}>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: color, display: 'inline-block' }} />
                 <h2 style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', color, margin: 0 }}>
-                  {group.family}
+                  {tr(group.family)}
                 </h2>
                 <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>
-                  {group.standards.length} standard{group.standards.length === 1 ? '' : 's'}
+                  {group.standards.length} {tr(group.standards.length === 1 ? 'standard' : 'standards')}
                 </span>
               </div>
 
@@ -224,7 +226,7 @@ export default function StandardsHubPage() {
                             color: 'rgba(255,255,255,0.4)',
                             lineHeight: 1.5,
                           }}>
-                            {std.scope}
+                            {tr(std.scope)}
                           </p>
                         </div>
 

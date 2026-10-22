@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { ENGINEERING_DIAGRAMS } from '@/lib/knowledge-center-data';
@@ -15,6 +16,7 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 export default function DiagramsHubPage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -25,8 +27,8 @@ export default function DiagramsHubPage() {
       }}>
         <nav style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           {[
-            { label: 'Knowledge Center', href: '/knowledge-center' },
-            { label: 'Engineering Diagrams', href: undefined },
+            { label: tr('Knowledge Center'), href: '/knowledge-center' },
+            { label: tr('Engineering Diagrams'), href: undefined },
           ].map((crumb, i) => (
             <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               {i > 0 && <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.7rem' }}>›</span>}
@@ -73,7 +75,7 @@ export default function DiagramsHubPage() {
             color: 'rgba(255,241,45,0.6)',
             marginBottom: '1.25rem',
           }}>
-            KNOWLEDGE CENTER · ENGINEERING DIAGRAMS
+            <ReviewedText text={"KNOWLEDGE CENTER · ENGINEERING DIAGRAMS"} />
           </p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
@@ -83,7 +85,7 @@ export default function DiagramsHubPage() {
             marginBottom: '1.5rem',
             letterSpacing: '-0.02em',
           }}>
-            Engineering Diagrams
+            <ReviewedText text={"Engineering Diagrams"} />
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -92,10 +94,7 @@ export default function DiagramsHubPage() {
             color: 'rgba(255,255,255,0.6)',
             maxWidth: '820px',
           }}>
-            Standards-accurate engineering diagrams covering ISO 16889 test circuits, ISO 4406 cleanliness
-            scales, hydraulic contamination paths, lubrication oil circuits, fuel filtration stages,
-            compressed air treatment trains, and particle wear mechanisms. Each diagram is governed by
-            the applicable industrial standard and linked to related engineering articles.
+            <ReviewedText text={"Standards-accurate engineering diagrams covering ISO 16889 test circuits, ISO 4406 cleanliness scales, hydraulic contamination paths, lubrication oil circuits, fuel filtration stages, compressed air treatment trains, and particle wear mechanisms. Each diagram is governed by the applicable industrial standard and linked to related engineering articles."} />
           </p>
 
           <div style={{ marginTop: '2rem' }}>
@@ -115,7 +114,7 @@ export default function DiagramsHubPage() {
               color: 'rgba(255,255,255,0.3)',
               marginTop: '0.3rem',
             }}>
-              DIAGRAMS
+              <ReviewedText text={"DIAGRAMS"} />
             </p>
           </div>
         </motion.div>
@@ -164,7 +163,7 @@ export default function DiagramsHubPage() {
                     padding: '0.2rem 0.5rem',
                     border: '1px solid rgba(255,241,45,0.2)',
                   }}>
-                    {TYPE_LABELS[diagram.diagramType] ?? diagram.diagramType.toUpperCase()}
+                    {tr(TYPE_LABELS[diagram.diagramType] ?? diagram.diagramType.toUpperCase())}
                   </span>
                   <span style={{
                     fontFamily: 'JetBrains Mono, monospace',
@@ -184,7 +183,7 @@ export default function DiagramsHubPage() {
                   lineHeight: 1.3,
                   margin: 0,
                 }}>
-                  {diagram.title}
+                  <ReviewedText text={diagram.title} />
                 </h2>
 
                 <p style={{
@@ -195,7 +194,7 @@ export default function DiagramsHubPage() {
                   margin: 0,
                   flexGrow: 1,
                 }}>
-                  {diagram.engineeringPurpose.slice(0, 140)}…
+                  {tr(diagram.engineeringPurpose).slice(0, 140)}…
                 </p>
 
                 {diagram.governingStandards.length > 0 && (

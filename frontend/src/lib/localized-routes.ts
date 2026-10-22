@@ -1,5 +1,5 @@
 import { PRODUCT_FAMILY_LIST } from './product-families-data';
-import { TRANSLATED_ARTICLE_SLUGS } from './knowledge-center-data/i18n/titles';
+import { TRANSLATED_ARTICLE_SLUGS, TRANSLATED_HUB_SLUGS } from './knowledge-center-data/i18n/titles';
 
 const BASE_URL = 'https://elimfilters.com';
 
@@ -32,6 +32,7 @@ export const LOCALIZED_ROUTES: readonly string[] = [
   '/technologies/hydrocore',
   ...PRODUCT_FAMILY_LIST.map((family) => `/families/${family.slug}`),
   '/knowledge-center',
+  ...TRANSLATED_HUB_SLUGS.map((hub) => `/knowledge-center/${hub}`),
   ...TRANSLATED_ARTICLE_SLUGS.map((slug) => `/knowledge-center/engineering/${slug}`),
 ];
 

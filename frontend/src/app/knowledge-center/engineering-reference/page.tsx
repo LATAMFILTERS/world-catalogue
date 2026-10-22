@@ -1,5 +1,6 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
@@ -17,6 +18,7 @@ const CARD_OVERRIDES: Record<string, string> = {
 };
 
 export default function EngineeringReferencePage() {
+  const tr = useReviewed();
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
@@ -94,9 +96,9 @@ export default function EngineeringReferencePage() {
               textShadow: '0 4px 22px rgba(0,0,0,0.45)',
             }}
           >
-            Engineering
+            <ReviewedText text={"Engineering"} />
             <br />
-            <span style={{ color: '#FFF12D' }}>Reference Library</span>
+            <span style={{ color: '#FFF12D' }}>{tr("Reference Library")}</span>
           </motion.h1>
 
           <motion.p
@@ -113,8 +115,7 @@ export default function EngineeringReferencePage() {
               textShadow: '0 2px 14px rgba(0,0,0,0.42)',
             }}
           >
-            Structured technical references for filtration standards, particle control, contamination mechanisms, test methods,
-            materials engineering, and reliability analysis.
+            <ReviewedText text={"Structured technical references for filtration standards, particle control, contamination mechanisms, test methods, materials engineering, and reliability analysis."} />
           </motion.p>
         </div>
       </section>
@@ -167,7 +168,7 @@ export default function EngineeringReferencePage() {
                           textTransform: 'uppercase',
                         }}
                       >
-                        {section.title}
+                        <ReviewedText text={section.title} />
                       </h2>
 
                       <p
@@ -183,7 +184,7 @@ export default function EngineeringReferencePage() {
                           overflow: 'hidden',
                         }}
                       >
-                        {cardBody}
+                        {tr(cardBody)}
                       </p>
 
                       <span
@@ -197,7 +198,7 @@ export default function EngineeringReferencePage() {
                           textTransform: 'uppercase',
                         }}
                       >
-                        OPEN REFERENCE
+                        <ReviewedText text={"OPEN REFERENCE"} />
                       </span>
                     </motion.div>
                   </Link>
@@ -231,7 +232,7 @@ export default function EngineeringReferencePage() {
               color: '#fff',
               letterSpacing: '0.01em',
             }}>
-              Key Terms Reference
+              <ReviewedText text={"Key Terms Reference"} />
             </h3>
             <p style={{
               marginBottom: '1.5rem',
@@ -241,7 +242,7 @@ export default function EngineeringReferencePage() {
               lineHeight: 1.6,
               maxWidth: '680px',
             }}>
-              Don't know a term? Check our complete technical glossary with canonical definitions for filtration, contamination control, and engineering terminology.
+              <ReviewedText text={"Don't know a term? Check our complete technical glossary with canonical definitions for filtration, contamination control, and engineering terminology."} />
             </p>
             <Link href="/knowledge-center/glossary/" style={{
               display: 'inline-block',
@@ -255,7 +256,7 @@ export default function EngineeringReferencePage() {
               fontSize: '0.8rem',
               textTransform: 'uppercase',
             }}>
-              Browse Technical Glossary →
+              <ReviewedText text={"Browse Technical Glossary →"} />
             </Link>
           </motion.div>
         </div>

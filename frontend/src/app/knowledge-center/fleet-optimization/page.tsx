@@ -1,10 +1,12 @@
 'use client';
 
+import { ReviewedText, useReviewed } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 
 export default function FleetOptimizationHub() {
+  const tr = useReviewed();
   const pages = [
     {
       title: 'Asset Protection System',
@@ -63,7 +65,7 @@ export default function FleetOptimizationHub() {
         letterSpacing: '0.08em',
         margin: '2rem 2rem 0',
       }}>
-        ← KNOWLEDGE SYSTEM
+        <ReviewedText text={"← KNOWLEDGE SYSTEM"} />
       </Link>
 
       <section style={{
@@ -84,7 +86,7 @@ export default function FleetOptimizationHub() {
               textTransform: 'uppercase',
               marginBottom: '1.25rem',
             }}>
-              KNOWLEDGE SYSTEM · OPERATIONAL STRATEGY
+              <ReviewedText text={"KNOWLEDGE SYSTEM · OPERATIONAL STRATEGY"} />
             </p>
             <h1 style={{
               fontFamily: 'Outfit, sans-serif',
@@ -93,7 +95,7 @@ export default function FleetOptimizationHub() {
               lineHeight: 1.15,
               marginBottom: '1.5rem',
             }}>
-              Fleet Optimization
+              <ReviewedText text={"Fleet Optimization"} />
             </h1>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -102,7 +104,7 @@ export default function FleetOptimizationHub() {
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '820px',
             }}>
-              Fleet Optimization translates contamination control principles into operational strategies. This section connects industrial asset protection (Standards → Contamination → Technologies) to practical fleet management: equipment lifecycle planning, condition-based maintenance scheduling, predictive monitoring, and regional deployment strategies. The result: equipment operating 3–5× longer, 90% fewer unplanned failures, 60% lower total cost of ownership.
+              <ReviewedText text={"Fleet Optimization translates contamination control principles into operational strategies. This section connects industrial asset protection (Standards → Contamination → Technologies) to practical fleet management: equipment lifecycle planning, condition-based maintenance scheduling, predictive monitoring, and regional deployment strategies. The result: equipment operating 3–5× longer, 90% fewer unplanned failures, 60% lower total cost of ownership."} />
             </p>
           </motion.div>
         </div>
@@ -123,7 +125,7 @@ export default function FleetOptimizationHub() {
             textTransform: 'uppercase',
             marginBottom: '2rem',
           }}>
-            FLEET OPTIMIZATION FRAMEWORK
+            <ReviewedText text={"FLEET OPTIMIZATION FRAMEWORK"} />
           </p>
           <div style={{
             display: 'grid',
@@ -170,7 +172,7 @@ export default function FleetOptimizationHub() {
                     marginBottom: '0.75rem',
                     color: '#FFF12D',
                   }}>
-                    {page.title}
+                    <ReviewedText text={page.title} />
                   </h3>
                   <p style={{
                     fontFamily: 'Inter, sans-serif',
@@ -179,7 +181,7 @@ export default function FleetOptimizationHub() {
                     color: 'rgba(255,255,255,0.65)',
                     flex: 1,
                   }}>
-                    {page.description}
+                    <ReviewedText text={page.description} />
                   </p>
                   <div style={{
                     marginTop: '1rem',
@@ -214,7 +216,7 @@ export default function FleetOptimizationHub() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            INFORMATION ARCHITECTURE
+            <ReviewedText text={"INFORMATION ARCHITECTURE"} />
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -222,7 +224,7 @@ export default function FleetOptimizationHub() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
           }}>
-            Fleet Optimization sits at the operational apex of ELIMFILTERS Knowledge System. The hierarchy flows: <strong>Contamination</strong> (root cause) → <strong>Asset Degradation</strong> (impact) → <strong>Standards & Measurement</strong> (assessment via ISO 4406, ISO 16889, ASTM D6304) → <strong>Protection Technologies</strong> (MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE) → <strong>Product Implementation</strong> (specific filters and systems) → <strong>Fleet Optimization</strong> (operational strategy). Fleet Optimization pages translate technical knowledge into business outcomes: extend equipment life, reduce failures, lower total cost of ownership.
+            {tr('Fleet Optimization sits at the operational apex of ELIMFILTERS Knowledge System. The hierarchy flows:')} <strong>{tr('Contamination')}</strong> {tr('(root cause)')} → <strong>{tr('Asset Degradation')}</strong> {tr('(impact)')} → <strong>{tr('Standards & Measurement')}</strong> {tr('(assessment via ISO 4406, ISO 16889, ASTM D6304)')} → <strong>{tr('Protection Technologies')}</strong> (MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE) → <strong>{tr('Product Implementation')}</strong> {tr('(specific filters and systems)')} → <strong>{tr('Fleet Optimization')}</strong> {tr('(operational strategy)')}. {tr('Fleet Optimization pages translate technical knowledge into business outcomes: extend equipment life, reduce failures, lower total cost of ownership.')}
           </p>
         </motion.section>
       </div>
@@ -240,7 +242,7 @@ export default function FleetOptimizationHub() {
           color: 'rgba(255,255,255,0.5)',
           marginBottom: '1.5rem',
         }}>
-          Related Knowledge System sections
+          <ReviewedText text={"Related Knowledge System sections"} />
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href="/knowledge-center/standards/" style={{
@@ -254,7 +256,7 @@ export default function FleetOptimizationHub() {
             fontSize: '0.85rem',
             fontWeight: 500,
           }}>
-            Industrial Standards →
+            <ReviewedText text={"Industrial Standards →"} />
           </Link>
           <Link href="/knowledge-center/engineering/" style={{
             padding: '0.75rem 1.5rem',
@@ -267,7 +269,7 @@ export default function FleetOptimizationHub() {
             fontSize: '0.85rem',
             fontWeight: 500,
           }}>
-            Contamination Analysis →
+            <ReviewedText text={"Contamination Analysis →"} />
           </Link>
           <Link href="/knowledge-center/problems" style={{
             padding: '0.75rem 1.5rem',
@@ -280,7 +282,7 @@ export default function FleetOptimizationHub() {
             fontSize: '0.85rem',
             fontWeight: 500,
           }}>
-            Problem Analysis →
+            <ReviewedText text={"Problem Analysis →"} />
           </Link>
         </div>
       </section>
