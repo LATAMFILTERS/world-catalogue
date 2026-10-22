@@ -42,39 +42,75 @@ export function AboutStrategicModel() {
   ];
 
   return (
-    <section style={section}>
+    <section className="about-strategic-model" style={section} aria-labelledby="strategic-model-title">
       <div style={wrap}>
-        <p style={eyebrow}>ELIMFILTERS · ASSET PROTECTION SYSTEMS</p>
-        <h2 style={title}>{copy.title}</h2>
-        <div style={introGrid}>
-          <p style={lead}>{copy.intro1}</p>
-          <p style={body}>{copy.intro2}</p>
-        </div>
+        <header className="strategic-header">
+          <p style={eyebrow}>ELIMFILTERS · ASSET PROTECTION SYSTEMS</p>
+          <h2 id="strategic-model-title" style={title}>{copy.title}</h2>
+          <div className="strategic-intro-grid">
+            <p style={lead}>{copy.intro1}</p>
+            <p style={body}>{copy.intro2}</p>
+          </div>
+        </header>
 
-        <div style={statement}>
+        <div className="strategic-statement">
           <strong>{copy.statement1}</strong>
           <span>{copy.statement2}</span>
         </div>
 
-        <div style={sectionGrid}>
+        <div className="strategic-rows">
           {sections.map(([num, heading, p1, p2, p3]) => (
-            <article key={heading} style={card}>
-              <div style={cardTop}>
-                <span style={number}>{num}</span>
-                <h3 style={cardTitle}>{heading}</h3>
+            <article className="strategic-row" key={num}>
+              <div className="strategic-row-heading">
+                <span className="strategic-number">{num}</span>
+                <h3 className="strategic-row-title">{heading}</h3>
               </div>
-              <p style={body}>{p1}</p>
-              <p style={body}>{p2}</p>
-              <p style={body}>{p3}</p>
+              <div className="strategic-row-copy">
+                {[p1, p2, p3].filter(Boolean).map((paragraph, index) => (
+                  <p key={index} style={body}>{paragraph}</p>
+                ))}
+              </div>
             </article>
           ))}
         </div>
 
-        <div style={closing}>
+        <div className="strategic-conclusion">
           <strong>{copy.closing1}</strong>
           <span>{copy.closing2}</span>
         </div>
       </div>
+
+      <style jsx>{`
+        .strategic-header{min-width:0}
+        .strategic-intro-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:start;gap:clamp(2rem,5vw,4.5rem);margin-top:clamp(1.5rem,3vw,2.5rem)}
+        .strategic-intro-grid p{margin:0;min-width:0;max-width:68ch}
+        .strategic-statement{display:grid;gap:.3rem;margin-top:clamp(2.3rem,5vw,4rem);padding:1.35rem 0 1.35rem 1.6rem;border-left:3px solid #FFF12D;background:linear-gradient(90deg,rgba(255,241,45,.05),transparent 80%);font-family:var(--font-display);line-height:1.35;font-size:clamp(1.18rem,2vw,1.85rem);letter-spacing:-.015em}
+        .strategic-statement strong{color:#fff}
+        .strategic-statement span{color:#FFF12D}
+        .strategic-rows{margin-top:clamp(2.5rem,5vw,4.5rem);border-bottom:1px solid rgba(255,255,255,.16)}
+        .strategic-row{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,5rem);align-items:start;padding:clamp(2.2rem,4.4vw,3.8rem) 0;border-top:1px solid rgba(255,255,255,.16)}
+        .strategic-row-heading{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:clamp(.75rem,2vw,1.4rem);align-items:start;min-width:0}
+        .strategic-number{color:#FFF12D;font:700 .86rem/1.4 var(--font-display);letter-spacing:.13em;padding-top:.2rem}
+        .strategic-row-title{font-family:var(--font-display);font-size:clamp(1.4rem,2.05vw,2.2rem);line-height:1.16;letter-spacing:-.02em;text-transform:uppercase;margin:0;max-width:22ch;overflow-wrap:normal}
+        .strategic-row-copy{min-width:0;max-width:69ch}
+        .strategic-row-copy p{margin:0;text-align:left}
+        .strategic-row-copy p+p{margin-top:1.25rem}
+        .strategic-conclusion{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:clamp(2rem,5vw,5rem);padding-top:clamp(2.5rem,5vw,4rem);font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,2.5rem);line-height:1.16;letter-spacing:-.02em}
+        .strategic-conclusion strong{color:#fff;font-weight:700}
+        .strategic-conclusion span{color:#FFF12D;font-weight:700}
+        @media(max-width:900px){
+          .strategic-intro-grid,.strategic-row,.strategic-conclusion{grid-template-columns:1fr;gap:1.2rem}
+          .strategic-row-title{max-width:40ch}
+          .strategic-row-copy{max-width:75ch}
+          .strategic-row{padding:2.5rem 0}
+        }
+        @media(max-width:560px){
+          .strategic-row-heading{grid-template-columns:2rem minmax(0,1fr);gap:.75rem}
+          .strategic-row-title{font-size:clamp(1.4rem,6vw,1.8rem)}
+          .strategic-statement{padding-left:1rem}
+          .strategic-conclusion{font-size:clamp(1.35rem,6vw,1.85rem)}
+        }
+      `}</style>
     </section>
   );
 }
@@ -85,16 +121,8 @@ const section: CSSProperties = {
   borderBottom: '1px solid rgba(255,255,255,0.08)',
   background: 'linear-gradient(180deg, #050505 0%, #000 100%)',
 };
-const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const wrap: CSSProperties = { maxWidth: '1240px', margin: '0 auto', width: '100%' };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.16em', margin: '0 0 1rem', textTransform: 'uppercase' };
-const title: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 4.8vw, 4.5rem)', lineHeight: 0.94, letterSpacing: '-0.03em', margin: 0, textTransform: 'uppercase', maxWidth: '1000px' };
-const introGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(1.5rem, 4vw, 3rem)', marginTop: '1.5rem' };
-const lead: CSSProperties = { color: 'rgba(255,255,255,0.84)', fontSize: 'clamp(1.05rem, 1.55vw, 1.3rem)', lineHeight: 1.72, fontWeight: 600, margin: 0, textAlign: 'justify' };
-const body: CSSProperties = { color: 'rgba(255,255,255,0.64)', fontSize: '1rem', lineHeight: 1.76, textAlign: 'justify' };
-const statement: CSSProperties = { marginTop: '2rem', display: 'grid', gap: '0.35rem', borderLeft: '3px solid #FFF12D', padding: '1.2rem 1.5rem', background: 'rgba(255,241,45,0.035)', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 2.5vw, 2.2rem)', textTransform: 'uppercase' };
-const sectionGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1rem', marginTop: '2.25rem' };
-const card: CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', padding: 'clamp(1.4rem, 3vw, 2rem)', background: 'rgba(255,255,255,0.02)' };
-const cardTop: CSSProperties = { display: 'grid', gridTemplateColumns: '55px minmax(0, 1fr)', gap: '1rem', alignItems: 'start', marginBottom: '0.85rem' };
-const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.14em', fontSize: '0.8rem', paddingTop: '0.3rem' };
-const cardTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.45rem, 2.6vw, 2.4rem)', lineHeight: 1, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase' };
-const closing: CSSProperties = { marginTop: '2.25rem', borderTop: '1px solid rgba(255,241,45,0.28)', paddingTop: '1.5rem', display: 'grid', gap: '0.45rem', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3vw, 2.8rem)', textTransform: 'uppercase' };
+const title: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.05rem, 3.45vw, 3.65rem)', lineHeight: 1.08, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', maxWidth: '1050px' };
+const lead: CSSProperties = { color: 'rgba(255,255,255,0.9)', fontSize: 'clamp(1.04rem, 1.3vw, 1.17rem)', lineHeight: 1.72, fontWeight: 600, margin: 0, textAlign: 'left' };
+const body: CSSProperties = { color: 'rgba(255,255,255,0.76)', fontSize: 'clamp(.98rem, 1.08vw, 1.075rem)', lineHeight: 1.78, margin: 0, textAlign: 'left' };
