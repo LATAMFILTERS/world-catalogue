@@ -6,7 +6,7 @@ import { KC_SYSTEMS, KC_SYSTEM_DETAILS, KC_TECHNOLOGIES, KCSystemDetail } from '
 import { getSystemSidebarData } from '@/lib/knowledge-center/navigation-index';
 import { useTranslation } from 'react-i18next';
 import { siteLangFromTag } from '@/lib/language-preference';
-import { articleTitle, systemTitle } from '@/lib/knowledge-center-data/i18n/titles';
+import { articleTitle, systemTitle, technologyText } from '@/lib/knowledge-center-data/i18n/titles';
 
 type KCSystem = typeof KC_SYSTEMS[number];
 
@@ -290,7 +290,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                       style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '1.1rem', transition: 'border-color 0.2s' }}
                     >
                       <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.95rem', color: '#FFF12D', marginBottom: '0.25rem' }}>{t.name}</p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>{t.tagline}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>{technologyText(t.slug, 'tagline', lang, t.tagline)}</p>
                     </motion.div>
                   </Link>
                 ))}

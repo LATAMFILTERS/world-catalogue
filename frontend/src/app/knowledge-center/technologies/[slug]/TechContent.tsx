@@ -6,6 +6,9 @@ import { KC_TECHNOLOGIES, KCTechnology } from '@/lib/knowledge-center-data';
 import { getTechSidebarData } from '@/lib/knowledge-center/navigation-index';
 import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 import HowItWorks from './HowItWorks';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { articleTitle, systemTitle, technologyText } from '@/lib/knowledge-center-data/i18n/titles';
 
 const TECHS = KC_TECHNOLOGIES;
 
@@ -51,11 +54,26 @@ const INDUSTRY_LABELS: Record<string, string> = {
   'waste-municipal': 'Waste & Municipal',
 };
 
+const COPY = {
+  en: { kc: 'Knowledge Center', technologies: 'Technologies', contamination: 'Contamination Modes Controlled', selection: 'Application Selection', evidence: 'Evidence Boundary', reviewEyebrow: 'TECHNICAL REVIEW & PUBLISHING GOVERNANCE', reviewedBy: 'Reviewed by', reviewRole: ', Founder & CEO of ELIMFILTERS. Product-level ratings and application decisions remain subject to verified technical evidence.', systems: 'Protection Systems', viewSystem: 'VIEW SYSTEM →', industries: 'Industry Applications', complementary: 'COMPLEMENTARY TECHNOLOGIES', standards: 'GOVERNING STANDARDS', all: 'ALL TECHNOLOGIES', articles: 'REFERENCING ARTICLES' },
+  es: { kc: 'Centro de Conocimiento', technologies: 'Tecnologías', contamination: 'Modos de contaminación controlados', selection: 'Selección para la aplicación', evidence: 'Límite de la evidencia', reviewEyebrow: 'REVISIÓN TÉCNICA Y GOBERNANZA DE PUBLICACIÓN', reviewedBy: 'Revisado por', reviewRole: ', fundador y CEO de ELIMFILTERS. Las clasificaciones a nivel de producto y las decisiones de aplicación siguen sujetas a evidencia técnica verificada.', systems: 'Sistemas de protección', viewSystem: 'VER SISTEMA →', industries: 'Aplicaciones por industria', complementary: 'TECNOLOGÍAS COMPLEMENTARIAS', standards: 'NORMAS APLICABLES', all: 'TODAS LAS TECNOLOGÍAS', articles: 'ARTÍCULOS RELACIONADOS' },
+  pt: { kc: 'Centro de Conhecimento', technologies: 'Tecnologias', contamination: 'Modos de contaminação controlados', selection: 'Seleção para a aplicação', evidence: 'Limite da evidência', reviewEyebrow: 'REVISÃO TÉCNICA E GOVERNANÇA DE PUBLICAÇÃO', reviewedBy: 'Revisado por', reviewRole: ', fundador e CEO da ELIMFILTERS. As classificações em nível de produto e as decisões de aplicação continuam sujeitas a evidência técnica verificada.', systems: 'Sistemas de proteção', viewSystem: 'VER SISTEMA →', industries: 'Aplicações por setor', complementary: 'TECNOLOGIAS COMPLEMENTARES', standards: 'NORMAS APLICÁVEIS', all: 'TODAS AS TECNOLOGIAS', articles: 'ARTIGOS RELACIONADOS' },
+} as const;
+
+const INDUSTRY_TR: Record<'es' | 'pt', Record<string, string>> = {
+  es: { mining: 'Minería', construction: 'Construcción', agriculture: 'Agricultura', 'truck-fleets': 'Flotas de camiones', marine: 'Marina', 'oil-gas': 'Petróleo y gas', manufacturing: 'Manufactura', 'power-generation': 'Generación de energía', railway: 'Ferrocarril', 'waste-municipal': 'Residuos y municipal' },
+  pt: { mining: 'Mineração', construction: 'Construção', agriculture: 'Agricultura', 'truck-fleets': 'Frotas de caminhões', marine: 'Marítimo', 'oil-gas': 'Petróleo e gás', manufacturing: 'Manufatura', 'power-generation': 'Geração de energia', railway: 'Ferroviário', 'waste-municipal': 'Resíduos e municipal' },
+};
+
 export default function TechContent({ tech }: { tech: KCTechnology }) {
   const relatedTechs = TECHS.filter(
     (t) => t.slug !== tech.slug && tech.worksWith.some((w) => w === t.name)
   );
   const { referencingArticles } = getTechSidebarData(tech.slug);
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
+  const tr = lang === 'es' || lang === 'pt' ? lang : null;
+  const c = COPY[tr ?? 'en'];
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
@@ -66,9 +84,9 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Knowledge Center</Link>
+          <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.kc}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
-          <Link href="/knowledge-center/technologies" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Technologies</Link>
+          <Link href="/knowledge-center/technologies" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.technologies}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)' }}>{tech.name}</span>
         </div>
@@ -217,7 +235,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               color: '#fff',
               marginBottom: '1rem',
             }}>
-              Contamination Modes Controlled
+              {c.contamination}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {tech.contamination.map((c, i) => (
@@ -245,15 +263,15 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
             style={{ marginBottom: '3rem' }}
           >
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.6rem' }}>02 /</p>
-            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>Application Selection</h2>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>{c.selection}</h2>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)', marginBottom: '1.25rem' }}>{tech.selectionGuidance}</p>
-            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>Evidence Boundary</h2>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>{c.evidence}</h2>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)' }}>{tech.evidenceBoundary}</p>
           </motion.section>
 
           <section aria-label="Technical review" style={{ marginBottom: '3rem', padding: '1.1rem 1.25rem', border: '1px solid rgba(255,241,45,0.16)', background: 'rgba(255,241,45,0.025)' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: '#FFF12D', marginBottom: '0.5rem' }}>TECHNICAL REVIEW &amp; PUBLISHING GOVERNANCE</p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.62)', margin: 0 }}>Reviewed by <Link href="/about/leadership/" style={{ color: '#FFF12D' }}>Víctor Abreu</Link>, Founder &amp; CEO of ELIMFILTERS. Product-level ratings and application decisions remain subject to verified technical evidence.</p>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: '#FFF12D', marginBottom: '0.5rem' }}>{c.reviewEyebrow}</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.62)', margin: 0 }}>{c.reviewedBy} <Link href="/about/leadership/" style={{ color: '#FFF12D' }}>Víctor Abreu</Link>{c.reviewRole}</p>
           </section>
 
           {/* Protected Systems */}
@@ -280,7 +298,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                 color: '#fff',
                 marginBottom: '1rem',
               }}>
-                Protection Systems
+                {c.systems}
               </h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
                 {tech.relatedSystems.map((sys) => (
@@ -290,9 +308,9 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                       style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '1rem 1.25rem', transition: 'border-color 0.2s' }}
                     >
                       <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.2rem' }}>
-                        {SYSTEM_LABELS[sys] || sys}
+                        {systemTitle(sys, lang, SYSTEM_LABELS[sys] || sys)}
                       </p>
-                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: '#FFF12D' }}>VIEW SYSTEM →</p>
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: '#FFF12D' }}>{c.viewSystem}</p>
                     </motion.div>
                   </Link>
                 ))}
@@ -324,7 +342,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                 color: '#fff',
                 marginBottom: '1rem',
               }}>
-                Industry Applications
+                {c.industries}
               </h2>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {tech.relatedIndustries.map((ind) => (
@@ -342,7 +360,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                         transition: 'all 0.2s',
                       }}
                     >
-                      {INDUSTRY_LABELS[ind] || ind}
+                      {(tr && INDUSTRY_TR[tr][ind]) || INDUSTRY_LABELS[ind] || ind}
                     </motion.span>
                   </Link>
                 ))}
@@ -360,7 +378,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                 color: 'rgba(255,255,255,0.3)',
                 marginBottom: '1.25rem',
               }}>
-                COMPLEMENTARY TECHNOLOGIES
+                {c.complementary}
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
                 {relatedTechs.map((t) => (
@@ -370,7 +388,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                       style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '1.1rem', transition: 'border-color 0.2s' }}
                     >
                       <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.95rem', color: '#FFF12D', marginBottom: '0.25rem' }}>{t.name}</p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>{t.domain}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>{technologyText(t.slug, 'domain', lang, t.domain)}</p>
                     </motion.div>
                   </Link>
                 ))}
@@ -384,7 +402,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
           {tech.standards.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                GOVERNING STANDARDS
+                {c.standards}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {tech.standards.map((std) => {
@@ -410,7 +428,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
 
           <div style={{ marginBottom: '1.5rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-              ALL TECHNOLOGIES
+              {c.all}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
               {KC_TECHNOLOGIES.map((t) => (
@@ -437,7 +455,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
           {referencingArticles.length > 0 && (
             <div>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                REFERENCING ARTICLES
+                {c.articles}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                 {referencingArticles.slice(0, 6).map((a) => (
@@ -454,7 +472,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                         transition: 'all 0.15s',
                       }}
                     >
-                      {a.title}
+                      {articleTitle(a.slug, lang, a.title)}
                     </motion.div>
                   </Link>
                 ))}

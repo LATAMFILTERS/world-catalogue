@@ -1,0 +1,369 @@
+{
+  "slug": "intekcore",
+  "name": "INTEKCORE™",
+  "domain": "Proteção da admissão e do fluxo de ar",
+  "tagline": "Tecnologia de carcaças de admissão de ar para fluxo de ar controlado e integridade da vedação.",
+  "engineeringPrinciple": "INTEKCORE™ integra a geometria da carcaça, a retenção do elemento e a vedação para preservar o limite de admissão protegido.",
+  "selectionGuidance": "A seleção e a inspeção da carcaça devem resolver a demanda de fluxo de ar, a orientação da entrada, as cargas de montagem, a retenção do elemento e a integridade de cada vedação entre o lado de ar sujo e o de ar limpo. Tampas deformadas, roscas danificadas, travas ausentes, dutos trincados ou elementos incorretos podem criar um bypass de ar não filtrado mesmo com a mídia intacta. A revisão deve incluir o tubo de ar limpo, a conexão do indicador de restrição e as abraçadeiras a jusante, porque a contaminação pode entrar em qualquer ponto depois do filtro. A troca do elemento deve preservar a compressão e a geometria de assentamento de projeto, em vez de depender apenas de as dimensões externas coincidirem.",
+  "evidenceBoundary": "INTEKCORE™ é uma arquitetura de carcaça e vedação, não uma especificação universal de fluxo de ar ou de eficiência. O ensaio ISO 5011 só faz sentido para a configuração de filtro de ar avaliada. As afirmações de produto devem permanecer vinculadas à carcaça, ao elemento e à condição de operação aprovados, e a aceitação da instalação exige encaixe verificado, retenção segura e limite de ar limpo intacto.",
+  "contamination": [
+    "Risco de bypass de ar não filtrado"
+  ],
+  "performanceSpecs": [],
+  "standards": [
+    "ISO 5011"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedIndustries": [],
+  "worksWith": [
+    "MACROCORE™"
+  ],
+  "figures": [
+    {
+      "href": "/knowledge-center/figures/air-intake.html",
+      "preview": "/knowledge-center/figures/air-intake.webp",
+      "title": "Carcaça do filtro de ar, dutos e indicador de restrição",
+      "caption": "A carcaça, a tampa e os dutos mantêm vedado o limite de ar limpo ao redor dos elementos. No serviço, a tampa e o elemento primário são retirados; o elemento de segurança permanece no lugar.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/air-intake-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/air-intake-pt.html"
+        }
+      ]
+    }
+  ],
+  "howItWorks": {
+    "en": {
+      "overview": [
+        "An air filter element only protects the engine if every bit of air passes through it. INTEKCORE™ is the ELIMFILTERS architecture for the air-intake housing: the geometry, element retention and sealing that keep the dirty side and the clean side separated all the way to the engine. A leak anywhere after the element is worse than a weak element, because the air that enters there is not filtered at all.",
+        "The housing does several jobs at once. It holds the elements in their designed position against vibration and handling; its geometry and the cover deliver the compression the element seal was designed for; it separates the incoming dirty air from the clean outlet; and it carries the tap for the restriction indicator. Deformed covers, damaged threads, missing latches or a cracked body can open a path around the element even when the media itself is intact.",
+        "The clean-air boundary does not end at the housing. The clean-air duct, its couplings and clamps, and the restriction-indicator connection are all part of it: contamination can enter anywhere downstream of the filter. Each element change is also a moment when the boundary is opened, so the housing has to be inspected every time it is closed again.",
+        "A replacement element has to preserve the designed seating and seal compression, not just match the external dimensions. ISO 5011 testing is meaningful only for the evaluated air cleaner configuration, and product claims stay tied to the approved housing, element and operating condition. The elements themselves are governed by MACROCORE™."
+      ],
+      "figures": {
+        "air-intake": {
+          "title": "Air cleaner housing, ducts and restriction indicator",
+          "caption": "The housing, cover and ducts keep the clean-air boundary sealed around the elements. At service the cover and the primary come off; the safety element stays in place.",
+          "steps": [
+            {
+              "part": "Head",
+              "text": "The cast head, bolted to the wall through its ears, carries the inlet, the outlet and the restriction indicator. It is the fixed top of the housing."
+            },
+            {
+              "part": "Dirty side",
+              "text": "Dirty air enters through the inlet duct on the left and fills the space around the primary element. Everything on this side may carry dust."
+            },
+            {
+              "part": "Housing body",
+              "text": "Drawn in section, with only its back wall shown, the housing keeps the elements in place and separates the dirty side from the clean side."
+            },
+            {
+              "part": "Cover and latch",
+              "text": "The cover closes the bottom of the housing and holds the primary up against the head, so the element seal is compressed as designed."
+            },
+            {
+              "part": "Clean side and outlet",
+              "text": "Clean air leaves through the outlet duct on the right toward the engine. Any opening on this side lets unfiltered air in."
+            },
+            {
+              "part": "Restriction indicator",
+              "text": "Its tap reads the clean side; it rises as the elements load and is only accurate if the clean side is sealed."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the cover and the primary come off, while the head, housing, ducts and the safety element stay in place and the clean side stays closed."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Head",
+          "role": "The fixed casting that mounts the air cleaner and carries the inlet, the outlet and the indicator connection."
+        },
+        {
+          "name": "Housing body",
+          "role": "Holds the elements in their designed position and separates the dirty side from the clean side. Cracks or deformation can open a bypass."
+        },
+        {
+          "name": "Cover with latch",
+          "role": "Closes the housing and delivers the element's seal compression. It has to close fully without force; if it does not, the element or the cover is wrong or damaged."
+        },
+        {
+          "name": "Seal interfaces",
+          "role": "The surfaces where the element seals against the housing. They must be clean and undamaged at every service."
+        },
+        {
+          "name": "Clean-air duct, couplings and clamps",
+          "role": "Carry filtered air to the engine. They are part of the clean-air boundary and a common source of leaks."
+        },
+        {
+          "name": "Restriction indicator and its tap",
+          "role": "Show the restriction on the clean side; a blocked or disconnected tap gives a false reading."
+        },
+        {
+          "name": "Mounting bracket",
+          "role": "Holds the air cleaner against vibration; a loose mounting can damage the housing and the seals."
+        },
+        {
+          "name": "Dust evacuator valve (where fitted, not drawn)",
+          "role": "On housings that have one, lets separated dust out of the dirty side; it must not be cracked, missing or stuck."
+        }
+      ],
+      "service": [
+        "At every element change, inspect the housing and the cover for cracks, deformation, damaged threads and weak or missing latches.",
+        "Clean the sealing surfaces from the dirty side, never wiping dirt toward the outlet.",
+        "Fit only the element approved for that housing, seat it fully and close the cover: it must close without force and every latch must engage.",
+        "Check the clean-air duct, couplings and clamps down to the engine, and the restriction-indicator connection.",
+        "Where a dust evacuator valve is fitted, check that it is intact and free.",
+        "Check the mounting bracket and its fasteners."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "Dust traces past the seal or inside the outlet",
+          "check": "The sealing path has failed: element not fully seated, an incorrect element, or a damaged sealing surface on the housing."
+        },
+        {
+          "symptom": "The cover is hard to close or leaves a gap",
+          "check": "The element is incorrect or not seated, or the cover or housing is deformed. Do not force it closed."
+        },
+        {
+          "symptom": "Dust in the engine with a clean-looking filter",
+          "check": "Look downstream: cracked clean-air duct, loose clamps or a damaged coupling."
+        },
+        {
+          "symptom": "Restriction always reads low",
+          "check": "Check the indicator tap and connection; a leak on the clean side can also let air in without passing the elements, so the restriction reads lower than it should."
+        },
+        {
+          "symptom": "Wear marks or cracks near the mounting",
+          "check": "The air cleaner is moving under vibration. Check the bracket and fasteners before the housing or the seals are damaged."
+        }
+      ]
+    },
+    "es": {
+      "overview": [
+        "Un elemento de filtro de aire solo protege el motor si todo el aire pasa a través de él. INTEKCORE™ es la arquitectura ELIMFILTERS de la carcasa de admisión de aire: la geometría, la retención del elemento y el sellado que mantienen separados el lado sucio y el lado limpio hasta el motor. Una fuga en cualquier punto después del elemento es peor que un elemento débil, porque el aire que entra por ahí no se filtra en absoluto.",
+        "La carcasa cumple varias funciones a la vez. Mantiene los elementos en su posición de diseño frente a la vibración y la manipulación; su geometría y la tapa dan la compresión para la que se diseñó el sello del elemento; separa el aire sucio que entra de la salida limpia; y lleva la toma del indicador de restricción. Una tapa deformada, roscas dañadas, seguros faltantes o un cuerpo agrietado pueden abrir un paso alrededor del elemento aunque el medio esté intacto.",
+        "El límite del aire limpio no termina en la carcasa. El ducto de aire limpio, sus acoples y abrazaderas, y la conexión del indicador de restricción forman parte de él: la contaminación puede entrar en cualquier punto después del filtro. Cada cambio de elemento es además un momento en que ese límite se abre, por lo que la carcasa debe revisarse cada vez que se vuelve a cerrar.",
+        "Un elemento de repuesto debe conservar el asentamiento y la compresión del sello de diseño, no solo coincidir en dimensiones externas. Los ensayos ISO 5011 solo tienen sentido para la configuración de filtro de aire evaluada, y las afirmaciones de producto quedan ligadas a la carcasa, el elemento y la condición de operación aprobados. Los elementos corresponden a MACROCORE™."
+      ],
+      "figures": {
+        "air-intake": {
+          "title": "Carcasa del filtro de aire, ductos e indicador de restricción",
+          "caption": "La carcasa, la tapa y los ductos mantienen sellado el límite del aire limpio alrededor de los elementos. En el servicio salen la tapa y el primario; el elemento de seguridad permanece en su lugar.",
+          "steps": [
+            {
+              "part": "Cabezal",
+              "text": "El cabezal fundido, atornillado a la pared por sus orejas, lleva la entrada, la salida y el indicador de restricción. Es la parte superior fija de la carcasa."
+            },
+            {
+              "part": "Lado sucio",
+              "text": "El aire sucio entra por el ducto de entrada de la izquierda y llena el espacio alrededor del elemento primario. Todo lo que está de este lado puede llevar polvo."
+            },
+            {
+              "part": "Cuerpo de la carcasa",
+              "text": "En corte, con solo su pared trasera dibujada, la carcasa mantiene los elementos en su lugar y separa el lado sucio del lado limpio."
+            },
+            {
+              "part": "Tapa y seguro",
+              "text": "La tapa cierra la parte inferior de la carcasa y sostiene el primario contra el cabezal, de modo que el sello del elemento queda comprimido como fue diseñado."
+            },
+            {
+              "part": "Lado limpio y salida",
+              "text": "El aire limpio sale por el ducto de salida de la derecha hacia el motor. Cualquier abertura de este lado deja entrar aire sin filtrar."
+            },
+            {
+              "part": "Indicador de restricción",
+              "text": "Su toma mide el lado limpio; sube a medida que los elementos se cargan y solo es exacto si el lado limpio está sellado."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: salen la tapa y el primario, mientras el cabezal, la carcasa, los ductos y el elemento de seguridad permanecen en su lugar y el lado limpio sigue cerrado."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Cabezal",
+          "role": "La pieza fundida fija que monta el filtro de aire y lleva la entrada, la salida y la conexión del indicador."
+        },
+        {
+          "name": "Cuerpo de la carcasa",
+          "role": "Mantiene los elementos en su posición de diseño y separa el lado sucio del lado limpio. Las grietas o deformaciones pueden abrir un paso de aire sin filtrar."
+        },
+        {
+          "name": "Tapa con seguro",
+          "role": "Cierra la carcasa y da la compresión del sello del elemento. Debe cerrar por completo sin forzarla; si no cierra, el elemento o la tapa no son los correctos o están dañados."
+        },
+        {
+          "name": "Superficies de sellado",
+          "role": "Las superficies donde el elemento sella contra la carcasa. Deben estar limpias y sin daños en cada servicio."
+        },
+        {
+          "name": "Ducto de aire limpio, acoples y abrazaderas",
+          "role": "Llevan el aire filtrado al motor. Forman parte del límite del aire limpio y son una fuente común de fugas."
+        },
+        {
+          "name": "Indicador de restricción y su toma",
+          "role": "Muestran la restricción en el lado limpio; una toma tapada o desconectada da una lectura falsa."
+        },
+        {
+          "name": "Soporte de montaje",
+          "role": "Sostiene el filtro de aire frente a la vibración; un montaje flojo puede dañar la carcasa y los sellos."
+        },
+        {
+          "name": "Válvula de evacuación de polvo (cuando la tiene, no dibujada)",
+          "role": "En las carcasas que la tienen, deja salir el polvo separado del lado sucio; no debe estar agrietada, faltar ni quedar trabada."
+        }
+      ],
+      "service": [
+        "En cada cambio de elemento, revisar la carcasa y la tapa en busca de grietas, deformaciones, roscas dañadas y seguros débiles o faltantes.",
+        "Limpiar las superficies de sellado desde el lado sucio, sin arrastrar nunca suciedad hacia la salida.",
+        "Colocar solo el elemento aprobado para esa carcasa, asentarlo por completo y cerrar la tapa: debe cerrar sin forzarla y todos los seguros deben enganchar.",
+        "Revisar el ducto de aire limpio, los acoples y las abrazaderas hasta el motor, y la conexión del indicador de restricción.",
+        "Donde haya válvula de evacuación de polvo, verificar que esté entera y libre.",
+        "Revisar el soporte de montaje y sus fijaciones."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "Rastros de polvo pasando el sello o dentro de la salida",
+          "check": "Falló el camino de sellado: elemento mal asentado, un elemento incorrecto o una superficie de sellado dañada en la carcasa."
+        },
+        {
+          "symptom": "La tapa cuesta cerrarla o queda una abertura",
+          "check": "El elemento no es el correcto o no está asentado, o la tapa o la carcasa están deformadas. No forzarla para cerrarla."
+        },
+        {
+          "symptom": "Polvo en el motor con un filtro que se ve limpio",
+          "check": "Revisar después del filtro: ducto de aire limpio agrietado, abrazaderas flojas o un acople dañado."
+        },
+        {
+          "symptom": "La restricción siempre marca baja",
+          "check": "Revisar la toma y la conexión del indicador; una fuga en el lado limpio también puede dejar entrar aire sin pasar por los elementos, y la restricción marca menos de lo que debería."
+        },
+        {
+          "symptom": "Marcas de desgaste o grietas cerca del montaje",
+          "check": "El filtro de aire se está moviendo por la vibración. Revisar el soporte y las fijaciones antes de que se dañen la carcasa o los sellos."
+        }
+      ]
+    },
+    "pt": {
+      "overview": [
+        "Um elemento de filtro de ar só protege o motor se todo o ar passar por ele. INTEKCORE™ é a arquitetura ELIMFILTERS da carcaça de admissão de ar: a geometria, a retenção do elemento e a vedação que mantêm separados o lado sujo e o lado limpo até o motor. Um vazamento em qualquer ponto depois do elemento é pior do que um elemento fraco, porque o ar que entra por ali não é filtrado de forma alguma.",
+        "A carcaça cumpre várias funções ao mesmo tempo. Mantém os elementos na posição de projeto contra vibração e manuseio; sua geometria e a tampa dão a compressão para a qual a vedação do elemento foi projetada; separa o ar sujo que entra da saída limpa; e leva a tomada do indicador de restrição. Uma tampa deformada, roscas danificadas, travas faltando ou um corpo trincado podem abrir uma passagem ao redor do elemento mesmo com o meio intacto.",
+        "O limite do ar limpo não termina na carcaça. O duto de ar limpo, seus acoplamentos e abraçadeiras, e a conexão do indicador de restrição fazem parte dele: a contaminação pode entrar em qualquer ponto depois do filtro. Cada troca de elemento é também um momento em que esse limite se abre, por isso a carcaça deve ser inspecionada toda vez que é fechada de novo.",
+        "Um elemento de reposição deve preservar o assentamento e a compressão da vedação de projeto, não apenas coincidir nas dimensões externas. Os ensaios ISO 5011 só fazem sentido para a configuração de filtro de ar avaliada, e as afirmações de produto ficam ligadas à carcaça, ao elemento e à condição de operação aprovados. Os elementos pertencem ao MACROCORE™."
+      ],
+      "figures": {
+        "air-intake": {
+          "title": "Carcaça do filtro de ar, dutos e indicador de restrição",
+          "caption": "A carcaça, a tampa e os dutos mantêm vedado o limite do ar limpo ao redor dos elementos. Na manutenção saem a tampa e o primário; o elemento de segurança permanece no lugar.",
+          "steps": [
+            {
+              "part": "Cabeçote",
+              "text": "O cabeçote fundido, aparafusado à parede pelas orelhas, leva a entrada, a saída e o indicador de restrição. É a parte superior fixa da carcaça."
+            },
+            {
+              "part": "Lado sujo",
+              "text": "O ar sujo entra pelo duto de entrada da esquerda e preenche o espaço ao redor do elemento primário. Tudo deste lado pode carregar poeira."
+            },
+            {
+              "part": "Corpo da carcaça",
+              "text": "Em corte, com só a parede de trás desenhada, a carcaça mantém os elementos no lugar e separa o lado sujo do lado limpo."
+            },
+            {
+              "part": "Tampa e trava",
+              "text": "A tampa fecha a parte de baixo da carcaça e segura o primário contra o cabeçote, de modo que a vedação do elemento fica comprimida como foi projetada."
+            },
+            {
+              "part": "Lado limpo e saída",
+              "text": "O ar limpo sai pelo duto de saída da direita em direção ao motor. Qualquer abertura deste lado deixa entrar ar sem filtrar."
+            },
+            {
+              "part": "Indicador de restrição",
+              "text": "Sua tomada mede o lado limpo; sobe à medida que os elementos se carregam e só é exato se o lado limpo estiver vedado."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: saem a tampa e o primário, enquanto o cabeçote, a carcaça, os dutos e o elemento de segurança permanecem no lugar e o lado limpo continua fechado."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Cabeçote",
+          "role": "A peça fundida fixa que monta o filtro de ar e leva a entrada, a saída e a conexão do indicador."
+        },
+        {
+          "name": "Corpo da carcaça",
+          "role": "Mantém os elementos na posição de projeto e separa o lado sujo do lado limpo. Trincas ou deformações podem abrir uma passagem de ar sem filtrar."
+        },
+        {
+          "name": "Tampa com trava",
+          "role": "Fecha a carcaça e dá a compressão da vedação do elemento. Deve fechar totalmente sem ser forçada; se não fechar, o elemento ou a tampa estão errados ou danificados."
+        },
+        {
+          "name": "Superfícies de vedação",
+          "role": "As superfícies onde o elemento veda contra a carcaça. Devem estar limpas e sem danos em cada manutenção."
+        },
+        {
+          "name": "Duto de ar limpo, acoplamentos e abraçadeiras",
+          "role": "Levam o ar filtrado ao motor. Fazem parte do limite do ar limpo e são uma fonte comum de vazamentos."
+        },
+        {
+          "name": "Indicador de restrição e sua tomada",
+          "role": "Mostram a restrição no lado limpo; uma tomada entupida ou desconectada dá uma leitura falsa."
+        },
+        {
+          "name": "Suporte de montagem",
+          "role": "Segura o filtro de ar contra a vibração; uma montagem frouxa pode danificar a carcaça e as vedações."
+        },
+        {
+          "name": "Válvula de evacuação de poeira (quando existe, não desenhada)",
+          "role": "Nas carcaças que a têm, deixa sair a poeira separada do lado sujo; não pode estar trincada, faltando nem travada."
+        }
+      ],
+      "service": [
+        "Em cada troca de elemento, inspecionar a carcaça e a tampa em busca de trincas, deformações, roscas danificadas e travas fracas ou faltando.",
+        "Limpar as superfícies de vedação pelo lado sujo, nunca arrastando sujeira em direção à saída.",
+        "Instalar só o elemento aprovado para essa carcaça, assentá-lo totalmente e fechar a tampa: ela deve fechar sem ser forçada e todas as travas devem engatar.",
+        "Verificar o duto de ar limpo, os acoplamentos e as abraçadeiras até o motor, e a conexão do indicador de restrição.",
+        "Onde houver válvula de evacuação de poeira, verificar se está inteira e livre.",
+        "Verificar o suporte de montagem e suas fixações."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "Marcas de poeira passando a vedação ou dentro da saída",
+          "check": "O caminho de vedação falhou: elemento mal assentado, um elemento incorreto ou uma superfície de vedação danificada na carcaça."
+        },
+        {
+          "symptom": "A tampa é difícil de fechar ou deixa uma fresta",
+          "check": "O elemento não é o correto ou não está assentado, ou a tampa ou a carcaça estão deformadas. Não forçar o fechamento."
+        },
+        {
+          "symptom": "Poeira no motor com um filtro de aparência limpa",
+          "check": "Verificar depois do filtro: duto de ar limpo trincado, abraçadeiras frouxas ou um acoplamento danificado."
+        },
+        {
+          "symptom": "A restrição sempre marca baixa",
+          "check": "Verificar a tomada e a conexão do indicador; um vazamento no lado limpo também pode deixar entrar ar sem passar pelos elementos, e a restrição marca menos do que deveria."
+        },
+        {
+          "symptom": "Marcas de desgaste ou trincas perto da montagem",
+          "check": "O filtro de ar está se movendo com a vibração. Verificar o suporte e as fixações antes que a carcaça ou as vedações se danifiquem."
+        }
+      ]
+    }
+  }
+}

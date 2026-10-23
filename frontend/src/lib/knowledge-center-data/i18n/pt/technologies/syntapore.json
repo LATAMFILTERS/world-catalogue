@@ -1,0 +1,468 @@
+{
+  "slug": "syntapore",
+  "name": "SYNTAPORE™",
+  "domain": "Proteção da limpeza do combustível",
+  "tagline": "Arquitetura de filtração de combustível diesel para aplicações de filtros primários, secundários e de cartucho.",
+  "engineeringPrinciple": "SYNTAPORE™ é a arquitetura ELIMFILTERS de filtração de combustível diesel desenvolvida para aplicações de filtros primários, secundários e de cartucho. Apoia um controle escalonado de partículas antes que o combustível chegue às bombas de alta pressão, aos injetores e a outros componentes de precisão. A arquitetura permite compatibilizar cada posição de filtração com a eficiência, a capacidade de contaminantes, a vazão de combustível e as condições de queda de pressão exigidas. Essa abordagem específica de cada aplicação apoia uma proteção confiável do sistema de combustível em diferentes motores, ambientes de operação e estratégias de serviço. O desempenho em nível de produto e os intervalos de serviço são validados individualmente conforme o filtro, a aplicação e os requisitos de ensaio aplicáveis.",
+  "selectionGuidance": "A seleção começa por identificar se o elemento atende a uma posição primária, secundária ou de cartucho, e depois por compatibilizar a vazão de combustível, a sensibilidade do sistema de injeção, a carga de contaminantes, o comportamento a frio e a restrição admissível. Todo o caminho do combustível deve ser revisado quanto à contaminação no armazenamento, às práticas de transferência e à gestão da água a montante, porque um filtro final não consegue corrigir sozinho todas as condições de origem. Os materiais das vedações, as conexões e o comportamento do bypass devem corresponder à carcaça aprovada. Quando a restrição sobe antes do tempo, o diagnóstico deve distinguir contaminação anormal, qualidade do combustível, formação de parafinas em baixa temperatura e elemento incorreto antes de mudar o intervalo de manutenção.",
+  "evidenceBoundary": "SYNTAPORE™ não cria uma classificação em mícrons, eficiência, capacidade ou vida útil universais para todos os filtros diesel. As afirmações quantitativas exigem evidência em nível de produto segundo o método de ensaio aplicável e a aplicação aprovada. HYDROCORE™ continua sendo a arquitetura dos separadores de água padrão não turbina, enquanto TURBOCORE™ é reservado aos sistemas tipo turbina FH e FG aprovados; esses escopos não devem ser misturados.",
+  "contamination": [
+    "Contaminação por partículas no combustível"
+  ],
+  "performanceSpecs": [],
+  "standards": [],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedIndustries": [],
+  "worksWith": [
+    "HYDROCORE™",
+    "TURBOCORE™"
+  ],
+  "image": "/images/technologies/syntapore-media.png",
+  "figures": [
+    {
+      "href": "/knowledge-center/figures/syntapore.html",
+      "preview": "/knowledge-center/figures/syntapore.webp",
+      "title": "Filtros primário e secundário no circuito de combustível",
+      "caption": "O primário, no lado da sucção antes da bomba de transferência, retém as partículas maiores; o secundário, no motor antes do sistema de injeção, retém as mais finas. No serviço, cada spin-on é substituído.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/syntapore-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/syntapore-pt.html"
+        }
+      ]
+    },
+    {
+      "href": "/knowledge-center/figures/compare-syntapore.html",
+      "preview": "/knowledge-center/figures/compare-syntapore.webp",
+      "title": "Formatos spin-on e cartucho",
+      "caption": "Um spin-on é substituído inteiro, com a carcaça incluída. Em um cartucho, a carcaça permanece no equipamento: o copo é retirado e só o elemento é trocado.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/compare-syntapore-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/compare-syntapore-pt.html"
+        }
+      ]
+    }
+  ],
+  "howItWorks": {
+    "en": {
+      "overview": [
+        "Diesel fuel reaches the engine carrying hard particulate picked up during refining, storage, transfer and refuelling, and from the tank itself. The injection system (transfer pump, high-pressure pump and injectors) works with close internal clearances and relies on the fuel itself for lubrication, so particles that get past filtration act as an abrasive on exactly those surfaces. SYNTAPORE™ is the ELIMFILTERS architecture that controls this particulate before it reaches the injection system.",
+        "Instead of asking one filter to do everything, SYNTAPORE™ works in stages. The primary filter sits on the suction side, between the tank and the transfer pump. It holds the larger particles and the bulk of the contaminant load, protecting the transfer pump and keeping that load away from the next stage. Because it works under suction, its restriction has to stay low: a restricted suction-side filter can starve the pump of fuel.",
+        "The secondary filter sits on the pressure side, after the transfer pump and before the injection system. With the larger particles already held by the primary, it is configured to hold the finer particles the injection system is most sensitive to. Each position is matched individually to fuel flow, contaminant load and allowable pressure drop, which is why a primary and a secondary element are not interchangeable even when they look alike.",
+        "SYNTAPORE™ governs particulate filtration only. Where a position also has to separate water from the fuel, that function belongs to HYDROCORE™ (standard separators) or TURBOCORE™ (FH and FG turbine-style systems). The figures below show plain particulate filters."
+      ],
+      "figures": {
+        "syntapore": {
+          "title": "Primary and secondary filters in the fuel circuit",
+          "caption": "The primary, on the suction side before the transfer pump, holds the larger particles; the secondary, on the engine before the injection system, holds the finer ones. At service each spin-on is replaced.",
+          "steps": [
+            {
+              "part": "Tank",
+              "text": "Fuel leaves the tank through the suction line. The dark dots in the fuel represent the particulate it carries; moving the cursor sideways changes how much."
+            },
+            {
+              "part": "Primary spin-on, suction side",
+              "text": "The transfer pump draws the fuel through the first pleated SYNTAPORE™ element. The larger particles stay on the pleats, so this is the filter that takes most of the contaminant load."
+            },
+            {
+              "part": "Transfer pump",
+              "text": "The pump receives fuel that no longer carries the larger particles and sends it, now under pressure, toward the engine."
+            },
+            {
+              "part": "Secondary spin-on, pressure side",
+              "text": "The fuel crosses a second pleated SYNTAPORE™ element, which holds the finer particles. It is the last filtration stage before the injection system."
+            },
+            {
+              "part": "Injection rail and injectors",
+              "text": "The rail distributes the fuel to the four injectors: the components both stages exist to protect."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top of the figure, or pressing E, runs the service: both spin-ons come off their heads and new ones are fitted. Heads, lines and pump stay on the equipment."
+            }
+          ]
+        },
+        "compare-syntapore": {
+          "title": "Spin-on and cartridge formats",
+          "caption": "A spin-on is replaced whole, can included. In a cartridge the housing stays on the equipment: the bowl comes off and only the element is changed.",
+          "steps": [
+            {
+              "part": "Heads on the bracket",
+              "text": "Both filters hang from a fixed head with an inlet and an outlet port. The head belongs to the equipment and is never replaced at service."
+            },
+            {
+              "part": "Left: spin-on",
+              "text": "The pleated SYNTAPORE™ element is sealed inside its own can, which screws onto the head."
+            },
+            {
+              "part": "Right: cartridge",
+              "text": "A permanent bowl closes against the head and holds a pleated SYNTAPORE™ element that is replaced on its own."
+            },
+            {
+              "part": "Flow",
+              "text": "In both formats the fuel enters through the head, crosses the pleated media, where the particles are held, and leaves through the head toward the next component. The filtration principle is the same."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the spin-on comes off whole, can included; on the cartridge the bowl drops, the element is changed and the same bowl goes back."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Pleated SYNTAPORE™ element",
+          "role": "The filtration media, folded into pleats so a large media area fits in a compact element. It holds the particles and lets the fuel through; its configuration is what differs between a primary and a secondary position."
+        },
+        {
+          "name": "Filter head",
+          "role": "The fixed part on the engine or bracket. It carries the inlet and outlet ports and the sealing face the spin-on or the bowl seals against. It is not replaced at service."
+        },
+        {
+          "name": "Spin-on can",
+          "role": "A sealed metal can that contains the element and screws onto the head. Element, can and gasket are replaced together."
+        },
+        {
+          "name": "Cartridge bowl",
+          "role": "In the cartridge format, the reusable housing around the element. It comes off at service and is refitted with the new element and its new seals."
+        },
+        {
+          "name": "Transfer pump",
+          "role": "Draws the fuel from the tank through the primary and delivers it under pressure through the secondary. It is the component the primary protects directly."
+        },
+        {
+          "name": "Injection rail and injectors",
+          "role": "Deliver the fuel into the engine. They are the most sensitive components in the circuit and the reason the secondary stage exists."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "The element is built into its own sealed can. Service is quick and closed: the whole unit is unscrewed and a new one is screwed on, so the head's sealing face and the new gasket are the only interfaces to check. The complete can is discarded."
+        },
+        {
+          "name": "Cartridge",
+          "text": "The housing is a permanent part of the equipment and only the element is replaced, which reduces the material discarded at each service. It also puts more responsibility on the technician: the bowl and housing must be clean and undamaged, and the seals supplied with the element must be fitted, because a poorly seated element lets fuel bypass the media."
+        },
+        {
+          "name": "Which one applies",
+          "text": "The format is set by the engine or equipment design; the filtration principle is the same in both. The replacement is chosen by its position and approved housing, never by external dimensions alone."
+        }
+      ],
+      "service": [
+        "Identify the position (primary, secondary or cartridge) and confirm the replacement is the element approved for that position and housing.",
+        "Spin-on: unscrew the filter, check that the old gasket came off with it, clean the head's sealing face, lubricate the new gasket with clean fuel and tighten as the equipment maker specifies.",
+        "Cartridge: remove the bowl and the used element, clean the bowl, fit the new element with the new seals supplied with it and refit the bowl.",
+        "Bleed the air from the fuel system with the procedure the engine maker specifies. Do not fill a secondary filter with unfiltered fuel: that fuel would go straight to the injection system.",
+        "Start the engine and check every filter and connection for leaks. On the suction side a poor seal may draw in air instead of leaking fuel."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "The primary restricts sooner than expected",
+          "check": "Look upstream first: tank contamination, storage and transfer practices, or a poor fuel batch. The primary reports what the fuel carries; shortening the interval without finding the source only treats the symptom."
+        },
+        {
+          "symptom": "Restriction appears in cold weather and clears when warm",
+          "check": "Consider low-temperature waxing of the fuel on the media before treating it as dirt loading. Fuel grade and cold-weather practice are part of the diagnosis."
+        },
+        {
+          "symptom": "The secondary loads faster than the primary",
+          "check": "The primary may not be holding its share: check for an incorrect element in the primary position, a damaged seal or a bypass around the media, then the line between the two stages."
+        },
+        {
+          "symptom": "Hard starting or loss of power after service",
+          "check": "Look for air in the circuit: incomplete bleeding or a suction-side seal drawing air. Confirm the correct element was fitted in each position."
+        },
+        {
+          "symptom": "Water in the fuel or in the filters",
+          "check": "Water separation is outside SYNTAPORE™ scope. Review the water-separation stage and the upstream storage; a particulate filter is not built to manage free water."
+        }
+      ]
+    },
+    "es": {
+      "overview": [
+        "El combustible diésel llega al motor cargado de partículas duras que recoge durante la refinación, el almacenamiento, el trasvase y el reabastecimiento, y del propio tanque. El sistema de inyección (bomba de transferencia, bomba de alta presión e inyectores) trabaja con holguras internas muy estrechas y depende del mismo combustible para lubricarse, así que las partículas que superan la filtración actúan como abrasivo justamente sobre esas superficies. SYNTAPORE™ es la arquitectura ELIMFILTERS que controla esas partículas antes de que lleguen al sistema de inyección.",
+        "En lugar de pedirle a un solo filtro que lo haga todo, SYNTAPORE™ trabaja por etapas. El filtro primario va en el lado de succión, entre el tanque y la bomba de transferencia. Retiene las partículas más grandes y la mayor parte de la carga de contaminantes, protege la bomba de transferencia y aleja esa carga de la etapa siguiente. Como trabaja en succión, su restricción debe mantenerse baja: un filtro de succión restringido puede dejar a la bomba sin combustible.",
+        "El filtro secundario va en el lado de presión, después de la bomba de transferencia y antes del sistema de inyección. Como el primario ya retuvo las partículas grandes, el secundario se configura para retener las partículas finas, a las que el sistema de inyección es más sensible. Cada posición se ajusta por separado al caudal de combustible, la carga de contaminantes y la caída de presión admisible; por eso un elemento primario y uno secundario no son intercambiables aunque se parezcan.",
+        "SYNTAPORE™ cubre solo la filtración de partículas. Cuando una posición también debe separar el agua del combustible, esa función corresponde a HYDROCORE™ (separadores estándar) o a TURBOCORE™ (sistemas tipo turbina FH y FG). Las figuras de abajo muestran filtros de partículas sin separación de agua."
+      ],
+      "figures": {
+        "syntapore": {
+          "title": "Filtros primario y secundario en el circuito de combustible",
+          "caption": "El primario, en succión antes de la bomba de transferencia, retiene las partículas grandes; el secundario, en el motor antes del sistema de inyección, retiene las finas. En el servicio se reemplaza cada spin-on.",
+          "steps": [
+            {
+              "part": "Tanque",
+              "text": "El combustible sale del tanque por la línea de succión. Los puntos oscuros en el combustible representan las partículas que arrastra; al mover el cursor de lado a lado cambia la cantidad."
+            },
+            {
+              "part": "Spin-on primario, lado de succión",
+              "text": "La bomba de transferencia aspira el combustible a través del primer elemento plisado SYNTAPORE™. Las partículas más grandes quedan en los pliegues, por eso este es el filtro que recibe la mayor parte de la carga de contaminantes."
+            },
+            {
+              "part": "Bomba de transferencia",
+              "text": "La bomba recibe combustible que ya no lleva las partículas grandes y lo envía, ahora a presión, hacia el motor."
+            },
+            {
+              "part": "Spin-on secundario, lado de presión",
+              "text": "El combustible atraviesa un segundo elemento plisado SYNTAPORE™, que retiene las partículas finas. Es la última etapa de filtración antes del sistema de inyección."
+            },
+            {
+              "part": "Riel de inyección e inyectores",
+              "text": "El riel reparte el combustible a los cuatro inyectores: los componentes que ambas etapas existen para proteger."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor a la parte superior de la figura, o al pulsar E, se ejecuta el servicio: ambos spin-on salen de sus cabezales y se colocan nuevos. Cabezales, líneas y bomba permanecen en el equipo."
+            }
+          ]
+        },
+        "compare-syntapore": {
+          "title": "Formatos spin-on y cartucho",
+          "caption": "El spin-on se reemplaza completo, carcasa incluida. En el cartucho la carcasa queda en el equipo: se retira el vaso y solo se cambia el elemento.",
+          "steps": [
+            {
+              "part": "Cabezales en el soporte",
+              "text": "Ambos filtros cuelgan de un cabezal fijo con un puerto de entrada y uno de salida. El cabezal es parte del equipo y nunca se reemplaza en el servicio."
+            },
+            {
+              "part": "Izquierda: spin-on",
+              "text": "El elemento plisado SYNTAPORE™ va sellado dentro de su propia carcasa, que se enrosca en el cabezal."
+            },
+            {
+              "part": "Derecha: cartucho",
+              "text": "Un vaso permanente cierra contra el cabezal y aloja un elemento plisado SYNTAPORE™ que se reemplaza solo."
+            },
+            {
+              "part": "Flujo",
+              "text": "En ambos formatos el combustible entra por el cabezal, atraviesa el medio plisado, donde quedan retenidas las partículas, y sale por el cabezal hacia el siguiente componente. El principio de filtración es el mismo."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o al pulsar E, se ejecuta el servicio: el spin-on sale completo, carcasa incluida; en el cartucho baja el vaso, se cambia el elemento y se vuelve a montar el mismo vaso."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plisado SYNTAPORE™",
+          "role": "El medio filtrante, plegado en pliegues para que una gran superficie de filtración quepa en un elemento compacto. Retiene las partículas y deja pasar el combustible; su configuración es lo que cambia entre una posición primaria y una secundaria."
+        },
+        {
+          "name": "Cabezal del filtro",
+          "role": "La parte fija en el motor o en el soporte. Lleva los puertos de entrada y salida y la cara de sellado contra la que asienta el spin-on o el vaso. No se reemplaza en el servicio."
+        },
+        {
+          "name": "Carcasa del spin-on",
+          "role": "Un envase metálico sellado que contiene el elemento y se enrosca en el cabezal. Elemento, carcasa y empaque se reemplazan juntos."
+        },
+        {
+          "name": "Vaso del cartucho",
+          "role": "En el formato cartucho, la carcasa reutilizable que rodea al elemento. Se retira en el servicio y se vuelve a montar con el elemento nuevo y sus sellos nuevos."
+        },
+        {
+          "name": "Bomba de transferencia",
+          "role": "Aspira el combustible del tanque a través del primario y lo entrega a presión a través del secundario. Es el componente que el primario protege directamente."
+        },
+        {
+          "name": "Riel de inyección e inyectores",
+          "role": "Entregan el combustible al motor. Son los componentes más sensibles del circuito y la razón de ser de la etapa secundaria."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "El elemento viene integrado en su propia carcasa sellada. El servicio es rápido y cerrado: se desenrosca la unidad completa y se enrosca una nueva, de modo que la cara de sellado del cabezal y el empaque nuevo son las únicas interfaces que hay que revisar. Se desecha la carcasa completa."
+        },
+        {
+          "name": "Cartucho",
+          "text": "La carcasa es parte permanente del equipo y solo se reemplaza el elemento, lo que reduce el material desechado en cada servicio. También exige más al técnico: el vaso y la carcasa deben estar limpios y sin daños, y deben colocarse los sellos que vienen con el elemento, porque un elemento mal asentado deja que el combustible pase sin atravesar el medio."
+        },
+        {
+          "name": "Cuál corresponde",
+          "text": "El formato lo define el diseño del motor o del equipo; el principio de filtración es el mismo en ambos. El repuesto se elige por su posición y por la carcasa aprobada, nunca solo por sus dimensiones externas."
+        }
+      ],
+      "service": [
+        "Identificar la posición (primario, secundario o cartucho) y confirmar que el repuesto es el elemento aprobado para esa posición y esa carcasa.",
+        "Spin-on: desenroscar el filtro, verificar que el empaque viejo salió con él, limpiar la cara de sellado del cabezal, lubricar el empaque nuevo con combustible limpio y apretar como indica el fabricante del equipo.",
+        "Cartucho: retirar el vaso y el elemento usado, limpiar el vaso, colocar el elemento nuevo con los sellos nuevos que trae y volver a montar el vaso.",
+        "Purgar el aire del sistema de combustible con el procedimiento que indica el fabricante del motor. No llenar un filtro secundario con combustible sin filtrar: ese combustible iría directo al sistema de inyección.",
+        "Arrancar el motor y revisar fugas en cada filtro y conexión. En el lado de succión, un sello defectuoso puede aspirar aire en lugar de gotear combustible."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "El primario se restringe antes de lo esperado",
+          "check": "Revisar primero aguas arriba: contaminación del tanque, prácticas de almacenamiento y trasvase, o un lote de combustible de mala calidad. El primario refleja lo que trae el combustible; acortar el intervalo sin encontrar la fuente solo trata el síntoma."
+        },
+        {
+          "symptom": "La restricción aparece con frío y desaparece en caliente",
+          "check": "Considerar la formación de parafina (cera) del combustible sobre el medio a baja temperatura antes de tratarlo como carga de suciedad. El grado del combustible y las prácticas en clima frío forman parte del diagnóstico."
+        },
+        {
+          "symptom": "El secundario se carga más rápido que el primario",
+          "check": "El primario puede no estar haciendo su parte: revisar si hay un elemento incorrecto en la posición primaria, un sello dañado o un paso de combustible que evita el medio, y luego la línea entre las dos etapas."
+        },
+        {
+          "symptom": "Arranque difícil o pérdida de potencia después del servicio",
+          "check": "Buscar aire en el circuito: purga incompleta o un sello del lado de succión que aspira aire. Confirmar que se colocó el elemento correcto en cada posición."
+        },
+        {
+          "symptom": "Agua en el combustible o en los filtros",
+          "check": "La separación de agua está fuera del alcance de SYNTAPORE™. Revisar la etapa de separación de agua y el almacenamiento aguas arriba; un filtro de partículas no está hecho para manejar agua libre."
+        }
+      ]
+    },
+    "pt": {
+      "overview": [
+        "O diesel chega ao motor carregando partículas duras recolhidas durante o refino, o armazenamento, a transferência e o abastecimento, e do próprio tanque. O sistema de injeção (bomba de transferência, bomba de alta pressão e injetores) trabalha com folgas internas muito estreitas e depende do próprio combustível para se lubrificar, de modo que as partículas que passam pela filtração agem como abrasivo justamente nessas superfícies. SYNTAPORE™ é a arquitetura ELIMFILTERS que controla essas partículas antes que cheguem ao sistema de injeção.",
+        "Em vez de pedir a um único filtro que faça tudo, SYNTAPORE™ trabalha em etapas. O filtro primário fica no lado de sucção, entre o tanque e a bomba de transferência. Ele retém as partículas maiores e a maior parte da carga de contaminantes, protege a bomba de transferência e afasta essa carga da etapa seguinte. Como trabalha em sucção, sua restrição precisa continuar baixa: um filtro de sucção restringido pode deixar a bomba sem combustível.",
+        "O filtro secundário fica no lado de pressão, depois da bomba de transferência e antes do sistema de injeção. Como o primário já reteve as partículas maiores, o secundário é configurado para reter as partículas finas, às quais o sistema de injeção é mais sensível. Cada posição é ajustada separadamente à vazão de combustível, à carga de contaminantes e à perda de carga admissível; por isso um elemento primário e um secundário não são intercambiáveis, mesmo que pareçam iguais.",
+        "SYNTAPORE™ cobre apenas a filtração de partículas. Quando uma posição também precisa separar a água do combustível, essa função pertence ao HYDROCORE™ (separadores padrão) ou ao TURBOCORE™ (sistemas tipo turbina FH e FG). As figuras abaixo mostram filtros de partículas sem separação de água."
+      ],
+      "figures": {
+        "syntapore": {
+          "title": "Filtros primário e secundário no circuito de combustível",
+          "caption": "O primário, na sucção antes da bomba de transferência, retém as partículas maiores; o secundário, no motor antes do sistema de injeção, retém as finas. Na manutenção cada spin-on é substituído.",
+          "steps": [
+            {
+              "part": "Tanque",
+              "text": "O combustível sai do tanque pela linha de sucção. Os pontos escuros no combustível representam as partículas que ele carrega; mover o cursor para os lados muda a quantidade."
+            },
+            {
+              "part": "Spin-on primário, lado de sucção",
+              "text": "A bomba de transferência aspira o combustível através do primeiro elemento plissado SYNTAPORE™. As partículas maiores ficam nas pregas, por isso este é o filtro que recebe a maior parte da carga de contaminantes."
+            },
+            {
+              "part": "Bomba de transferência",
+              "text": "A bomba recebe combustível que já não carrega as partículas maiores e o envia, agora sob pressão, em direção ao motor."
+            },
+            {
+              "part": "Spin-on secundário, lado de pressão",
+              "text": "O combustível atravessa um segundo elemento plissado SYNTAPORE™, que retém as partículas finas. É a última etapa de filtração antes do sistema de injeção."
+            },
+            {
+              "part": "Rampa de injeção e injetores",
+              "text": "A rampa distribui o combustível aos quatro injetores: os componentes que as duas etapas existem para proteger."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo da figura, ou pressionar E, executa a manutenção: os dois spin-on saem dos cabeçotes e são instalados novos. Cabeçotes, linhas e bomba permanecem no equipamento."
+            }
+          ]
+        },
+        "compare-syntapore": {
+          "title": "Formatos spin-on e cartucho",
+          "caption": "O spin-on é substituído inteiro, carcaça incluída. No cartucho a carcaça fica no equipamento: retira-se o copo e troca-se apenas o elemento.",
+          "steps": [
+            {
+              "part": "Cabeçotes no suporte",
+              "text": "Os dois filtros ficam presos a um cabeçote fixo com uma porta de entrada e uma de saída. O cabeçote faz parte do equipamento e nunca é substituído na manutenção."
+            },
+            {
+              "part": "Esquerda: spin-on",
+              "text": "O elemento plissado SYNTAPORE™ vem selado dentro da sua própria carcaça, que é rosqueada no cabeçote."
+            },
+            {
+              "part": "Direita: cartucho",
+              "text": "Um copo permanente fecha contra o cabeçote e aloja um elemento plissado SYNTAPORE™ que é substituído sozinho."
+            },
+            {
+              "part": "Fluxo",
+              "text": "Nos dois formatos o combustível entra pelo cabeçote, atravessa o meio plissado, onde as partículas ficam retidas, e sai pelo cabeçote em direção ao próximo componente. O princípio de filtração é o mesmo."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o spin-on sai inteiro, carcaça incluída; no cartucho o copo desce, troca-se o elemento e o mesmo copo volta ao lugar."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plissado SYNTAPORE™",
+          "role": "O meio filtrante, dobrado em pregas para que uma grande área de filtração caiba em um elemento compacto. Retém as partículas e deixa o combustível passar; sua configuração é o que muda entre uma posição primária e uma secundária."
+        },
+        {
+          "name": "Cabeçote do filtro",
+          "role": "A parte fixa no motor ou no suporte. Tem as portas de entrada e saída e a face de vedação onde assenta o spin-on ou o copo. Não é substituído na manutenção."
+        },
+        {
+          "name": "Carcaça do spin-on",
+          "role": "Um invólucro metálico selado que contém o elemento e é rosqueado no cabeçote. Elemento, carcaça e junta são substituídos juntos."
+        },
+        {
+          "name": "Copo do cartucho",
+          "role": "No formato cartucho, a carcaça reutilizável que envolve o elemento. É retirado na manutenção e montado de volta com o elemento novo e suas vedações novas."
+        },
+        {
+          "name": "Bomba de transferência",
+          "role": "Aspira o combustível do tanque através do primário e o entrega sob pressão através do secundário. É o componente que o primário protege diretamente."
+        },
+        {
+          "name": "Rampa de injeção e injetores",
+          "role": "Entregam o combustível ao motor. São os componentes mais sensíveis do circuito e a razão de existir da etapa secundária."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "O elemento vem integrado à sua própria carcaça selada. A manutenção é rápida e fechada: a unidade inteira é desrosqueada e uma nova é rosqueada, de modo que a face de vedação do cabeçote e a junta nova são as únicas interfaces a verificar. A carcaça inteira é descartada."
+        },
+        {
+          "name": "Cartucho",
+          "text": "A carcaça é parte permanente do equipamento e só o elemento é substituído, o que reduz o material descartado em cada manutenção. Também exige mais do técnico: o copo e a carcaça devem estar limpos e sem danos, e as vedações que acompanham o elemento devem ser instaladas, porque um elemento mal assentado deixa o combustível passar sem atravessar o meio."
+        },
+        {
+          "name": "Qual se aplica",
+          "text": "O formato é definido pelo projeto do motor ou do equipamento; o princípio de filtração é o mesmo nos dois. A peça de reposição é escolhida pela sua posição e pela carcaça aprovada, nunca apenas pelas dimensões externas."
+        }
+      ],
+      "service": [
+        "Identificar a posição (primário, secundário ou cartucho) e confirmar que a reposição é o elemento aprovado para essa posição e essa carcaça.",
+        "Spin-on: desrosquear o filtro, verificar se a junta velha saiu com ele, limpar a face de vedação do cabeçote, lubrificar a junta nova com combustível limpo e apertar conforme indica o fabricante do equipamento.",
+        "Cartucho: retirar o copo e o elemento usado, limpar o copo, instalar o elemento novo com as vedações novas que o acompanham e montar o copo de volta.",
+        "Sangrar o ar do sistema de combustível com o procedimento indicado pelo fabricante do motor. Não encher um filtro secundário com combustível não filtrado: esse combustível iria direto para o sistema de injeção.",
+        "Ligar o motor e verificar vazamentos em cada filtro e conexão. No lado de sucção, uma vedação defeituosa pode aspirar ar em vez de vazar combustível."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "O primário restringe antes do esperado",
+          "check": "Verificar primeiro a montante: contaminação do tanque, práticas de armazenamento e transferência, ou um lote de combustível de má qualidade. O primário reflete o que o combustível traz; encurtar o intervalo sem encontrar a origem só trata o sintoma."
+        },
+        {
+          "symptom": "A restrição aparece no frio e desaparece a quente",
+          "check": "Considerar a formação de parafina do combustível sobre o meio em baixa temperatura antes de tratá-la como carga de sujeira. O tipo de combustível e as práticas em clima frio fazem parte do diagnóstico."
+        },
+        {
+          "symptom": "O secundário carrega mais rápido que o primário",
+          "check": "O primário pode não estar fazendo a sua parte: verificar se há um elemento incorreto na posição primária, uma vedação danificada ou uma passagem de combustível que contorna o meio, e depois a linha entre as duas etapas."
+        },
+        {
+          "symptom": "Partida difícil ou perda de potência após a manutenção",
+          "check": "Procurar ar no circuito: sangria incompleta ou uma vedação do lado de sucção aspirando ar. Confirmar que o elemento correto foi instalado em cada posição."
+        },
+        {
+          "symptom": "Água no combustível ou nos filtros",
+          "check": "A separação de água está fora do escopo do SYNTAPORE™. Verificar a etapa de separação de água e o armazenamento a montante; um filtro de partículas não foi feito para lidar com água livre."
+        }
+      ]
+    }
+  }
+}

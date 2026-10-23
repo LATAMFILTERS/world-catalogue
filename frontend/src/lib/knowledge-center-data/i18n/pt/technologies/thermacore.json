@@ -1,0 +1,329 @@
+{
+  "slug": "thermacore",
+  "name": "THERMACORE™",
+  "domain": "Proteção do sistema de arrefecimento",
+  "tagline": "Tecnologia de filtração do líquido de arrefecimento para a limpeza do sistema de arrefecimento e a proteção dos componentes.",
+  "engineeringPrinciple": "THERMACORE™ apoia a proteção do sistema de arrefecimento por meio de uma filtração do líquido de arrefecimento escolhida conforme o motor aprovado e os requisitos de manutenção.",
+  "selectionGuidance": "A filtração do sistema de arrefecimento deve ser avaliada junto com a especificação do líquido de arrefecimento, seu estado químico, a qualidade da água, os produtos de corrosão, as incrustações, o volume do sistema e a prática de manutenção do fabricante do motor. O filtro não consegue corrigir misturas de líquido de arrefecimento incompatíveis, vazamentos ativos de gases de combustão, inibidores esgotados nem água de reposição não tratada. Por isso, o diagnóstico deve distinguir resíduos em suspensão de precipitação química, corrosão e contaminação externa antes de mudar a estratégia de filtração. Quando um filtro de líquido de arrefecimento ou um elemento com aditivo é aprovado, sua química, rosca, vedação e características de liberação devem corresponder ao sistema instalado e à formulação atual do líquido de arrefecimento.",
+  "evidenceBoundary": "THERMACORE™ descreve uma arquitetura aprovada de proteção do sistema de arrefecimento; não estabelece uma única eficiência de filtração, carga de aditivo ou intervalo de troca para todos os motores. As afirmações quantitativas e a compatibilidade química devem ser respaldadas pela evidência de cada produto, líquido de arrefecimento e aplicação. Os requisitos do fabricante do equipamento e a análise do líquido de arrefecimento têm prioridade sobre programas generalizados, sobretudo após superaquecimento, troca de componentes ou mistura de líquidos de arrefecimento.",
+  "contamination": [
+    "Contaminação por partículas no sistema de arrefecimento"
+  ],
+  "performanceSpecs": [],
+  "standards": [],
+  "relatedSystems": [
+    "cooling-system-protection"
+  ],
+  "relatedIndustries": [],
+  "worksWith": [],
+  "figures": [
+    {
+      "href": "/knowledge-center/figures/thermacore.html",
+      "preview": "/knowledge-center/figures/thermacore.webp",
+      "title": "Spin-on de líquido de arrefecimento no circuito de arrefecimento",
+      "caption": "O filtro retém ferrugem, incrustações e outras partículas na mídia plissada. Quando um elemento com aditivo é aprovado, uma carga de aditivo sob o elemento se dissolve gradualmente no líquido de arrefecimento. No serviço, o spin-on é substituído.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/thermacore-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/thermacore-pt.html"
+        }
+      ]
+    }
+  ],
+  "howItWorks": {
+    "en": {
+      "overview": [
+        "Engine coolant carries heat from the cylinder liners and head to the radiator, but it also has to protect the metal it touches. Its inhibitors protect against corrosion and, in wet-liner diesel engines, against cavitation erosion: liner vibration creates vapour bubbles on the coolant side that collapse against the metal and, without protection, gradually pit it. At the same time the coolant picks up solid particles (rust, scale, casting residue and corrosion products) that wear the water-pump seal, block the narrow passages of the radiator and coolers, and settle as deposits that reduce heat transfer.",
+        "THERMACORE™ protects the cooling system on two fronts. The pleated element holds the particles circulating in the coolant. Where an additive-bearing element is approved for the system, a charge of supplemental coolant additive (SCA) under the element dissolves gradually, replenishing the inhibitors that the coolant consumes in service.",
+        "In many engines only part of the coolant flow passes through the filter on each circuit; because the coolant circulates continuously, the whole volume is filtered over time. The figure simplifies this as a single line from the pump through the filter to the water jacket.",
+        "The additive side requires care. Its chemistry, release characteristics, thread and seal must match the installed system and the current coolant formulation: too little inhibitor leaves corrosion and cavitation unchecked, while excess or incompatible chemistry can precipitate as deposits. Where an additive-bearing element is not approved for the coolant in use, a filter without additive is used. A filter cannot correct incompatible coolant mixtures, combustion-gas leakage, depleted inhibitors or untreated make-up water, and coolant analysis and the engine maker's requirements take precedence over general schedules."
+      ],
+      "figures": {
+        "thermacore": {
+          "title": "Coolant spin-on in the cooling circuit",
+          "caption": "The filter holds rust, scale and other particles on its pleated media. Where an additive-bearing element is approved, an additive charge under the element dissolves gradually into the coolant. At service the spin-on is replaced.",
+          "steps": [
+            {
+              "part": "Radiator",
+              "text": "The finned core between two tanks gives up the coolant's heat. Coolant leaves from the top outlet toward the pump and comes back through the return."
+            },
+            {
+              "part": "Water pump",
+              "text": "Driven by the engine, the pump keeps the coolant circulating through the filter and the engine."
+            },
+            {
+              "part": "THERMACORE™ spin-on",
+              "text": "Drawn in section, the pleated THERMACORE™ element holds the rust and scale particles. Moving the cursor sideways changes how much debris the coolant carries, and the readout shows the filter's load."
+            },
+            {
+              "part": "Additive charge",
+              "text": "The blue pellets under the element are the SCA charge, shown for the case where an additive-bearing element is approved. They shrink slowly and release wisps of additive into the coolant; the readout shows the remaining charge."
+            },
+            {
+              "part": "Water jacket and cylinder bores",
+              "text": "The coolant passes around the cylinders and through the head, where it picks up heat and where the inhibitors protect the liners."
+            },
+            {
+              "part": "Return and service",
+              "text": "The coolant returns to the radiator. Moving the cursor to the top, or pressing E, runs the service: the spin-on is replaced and the new one goes on clean, with a full additive charge."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Pleated THERMACORE™ element",
+          "role": "The filtration media that holds rust, scale and other particles circulating in the coolant before they deposit in the radiator, coolers and engine passages."
+        },
+        {
+          "name": "SCA additive charge (where an additive-bearing element is approved)",
+          "role": "A charge of supplemental coolant additive under the element that dissolves gradually, replenishing the inhibitors that protect against corrosion and liner cavitation. Its chemistry must match the coolant in use."
+        },
+        {
+          "name": "Filter head",
+          "role": "The fixed mount on the engine with the inlet, the outlet and the sealing face. Where the design includes shut-off valves (not drawn), the filter can be changed without draining the system."
+        },
+        {
+          "name": "Water pump",
+          "role": "Keeps the coolant circulating; its shaft seal is one of the components most exposed to abrasive particles."
+        },
+        {
+          "name": "Water jacket and cylinder liners",
+          "role": "Where the coolant picks up heat. On wet liners, the coolant side is where cavitation erosion acts if the inhibitors are depleted."
+        },
+        {
+          "name": "Radiator and return",
+          "role": "The radiator rejects the heat; its narrow tubes are among the first passages to block with debris and deposits."
+        }
+      ],
+      "service": [
+        "Let the engine cool. Never open a hot, pressurized cooling system.",
+        "Confirm that the replacement is the THERMACORE™ element approved for that engine and for the coolant in use, with or without additive as the system requires, with the correct thread and seal.",
+        "Close the shut-off valves if the head has them, unscrew the filter, check that the old gasket came off with it, clean the sealing face, lubricate the new gasket with coolant and tighten as specified. Open the valves again.",
+        "Top up only with the approved coolant at the correct mix, and never mix incompatible coolants or add untreated water.",
+        "Run the engine, bleed the air as the engine procedure specifies and check for leaks; check the level again with the engine cold.",
+        "Check the coolant condition (inhibitor level and analysis) as the maintenance program specifies, especially after overheating, component replacement or coolant mixing."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "The filter loads quickly with rust and scale",
+          "check": "Corrosion is active somewhere in the system. Analyse the coolant for depleted inhibitors, incompatible mixtures or untreated make-up water before changing the filtration strategy."
+        },
+        {
+          "symptom": "Gel, sludge or a crystalline deposit on the element",
+          "check": "Distinguish chemical precipitation from suspended debris: excess additive, an incompatible additive or mixed coolants can drop out of solution. The filter is showing a chemistry problem."
+        },
+        {
+          "symptom": "Traces of oil or fuel in the coolant",
+          "check": "External contamination, for example from a cooler or a gasket. The filter cannot correct it; the leak path has to be found and repaired."
+        },
+        {
+          "symptom": "Bubbles, pressure rise or coolant loss",
+          "check": "Possible combustion-gas leakage into the cooling system. It is a mechanical fault that filtration does not solve."
+        },
+        {
+          "symptom": "Liner pitting found at overhaul",
+          "check": "Cavitation protection was insufficient. Review the inhibitor maintenance, the coolant analysis history and whether the additive chemistry matched the coolant."
+        }
+      ]
+    },
+    "es": {
+      "overview": [
+        "El refrigerante del motor lleva el calor de las camisas de los cilindros y de la culata al radiador, pero además debe proteger el metal que toca. Sus inhibidores protegen contra la corrosión y, en los motores diésel de camisa húmeda, contra la erosión por cavitación: la vibración de la camisa forma burbujas de vapor en el lado del refrigerante que colapsan contra el metal y, sin protección, lo van picando. Al mismo tiempo, el refrigerante arrastra partículas sólidas (óxido, sarro, restos de fundición y productos de corrosión) que desgastan el sello de la bomba de agua, tapan los pasajes estrechos del radiador y de los enfriadores, y se depositan como capas que reducen la transferencia de calor.",
+        "THERMACORE™ protege el sistema de enfriamiento en dos frentes. El elemento plisado retiene las partículas que circulan en el refrigerante. Donde está aprobado un elemento con aditivo para el sistema, una carga de aditivo suplementario de refrigerante (SCA) bajo el elemento se disuelve gradualmente y repone los inhibidores que el refrigerante consume en servicio.",
+        "En muchos motores solo una parte del caudal de refrigerante pasa por el filtro en cada recorrido; como el refrigerante circula continuamente, con el tiempo se filtra todo el volumen. La figura lo simplifica como una sola línea de la bomba al filtro y a la camisa de agua.",
+        "El lado del aditivo exige cuidado. Su química, su forma de liberación, la rosca y el sello deben corresponder al sistema instalado y a la formulación actual del refrigerante: muy poco inhibidor deja sin control la corrosión y la cavitación, mientras que el exceso o una química incompatible puede precipitar como depósitos. Donde no hay un elemento con aditivo aprobado para el refrigerante en uso, se usa un filtro sin aditivo. Un filtro no puede corregir mezclas de refrigerantes incompatibles, fugas de gases de combustión, inhibidores agotados ni agua de reposición sin tratar, y el análisis del refrigerante y los requisitos del fabricante del motor tienen prioridad sobre los programas generales."
+      ],
+      "figures": {
+        "thermacore": {
+          "title": "Spin-on de refrigerante en el circuito de enfriamiento",
+          "caption": "El filtro retiene el óxido, el sarro y otras partículas en su medio plisado. Donde está aprobado un elemento con aditivo, una carga de aditivo bajo el elemento se disuelve gradualmente en el refrigerante. En el servicio se reemplaza el spin-on.",
+          "steps": [
+            {
+              "part": "Radiador",
+              "text": "El núcleo con aletas entre dos tanques cede el calor del refrigerante. El refrigerante sale por la salida superior hacia la bomba y vuelve por el retorno."
+            },
+            {
+              "part": "Bomba de agua",
+              "text": "Accionada por el motor, la bomba mantiene el refrigerante circulando por el filtro y el motor."
+            },
+            {
+              "part": "Spin-on THERMACORE™",
+              "text": "En corte, el elemento plisado THERMACORE™ retiene las partículas de óxido y sarro. Al mover el cursor de lado a lado cambia cuánta suciedad trae el refrigerante, y el indicador muestra la carga del filtro."
+            },
+            {
+              "part": "Carga de aditivo",
+              "text": "Las pastillas azules bajo el elemento son la carga de SCA, mostrada para el caso en que está aprobado un elemento con aditivo. Se van reduciendo lentamente y liberan estelas de aditivo en el refrigerante; el indicador muestra la carga que queda."
+            },
+            {
+              "part": "Camisa de agua y cilindros",
+              "text": "El refrigerante pasa alrededor de los cilindros y por la culata, donde toma el calor y donde los inhibidores protegen las camisas."
+            },
+            {
+              "part": "Retorno y servicio",
+              "text": "El refrigerante vuelve al radiador. Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: se reemplaza el spin-on y el nuevo entra limpio, con la carga de aditivo completa."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plisado THERMACORE™",
+          "role": "El medio filtrante que retiene el óxido, el sarro y otras partículas que circulan en el refrigerante antes de que se depositen en el radiador, los enfriadores y los pasajes del motor."
+        },
+        {
+          "name": "Carga de aditivo SCA (donde está aprobado un elemento con aditivo)",
+          "role": "Una carga de aditivo suplementario de refrigerante bajo el elemento que se disuelve gradualmente y repone los inhibidores que protegen contra la corrosión y la cavitación de las camisas. Su química debe corresponder al refrigerante en uso."
+        },
+        {
+          "name": "Cabezal del filtro",
+          "role": "El soporte fijo en el motor con la entrada, la salida y la cara de sellado. Donde el diseño incluye válvulas de cierre (no dibujadas), el filtro se puede cambiar sin drenar el sistema."
+        },
+        {
+          "name": "Bomba de agua",
+          "role": "Mantiene el refrigerante en circulación; el sello de su eje es uno de los componentes más expuestos a las partículas abrasivas."
+        },
+        {
+          "name": "Camisa de agua y camisas de los cilindros",
+          "role": "Donde el refrigerante toma el calor. En las camisas húmedas, el lado del refrigerante es donde actúa la erosión por cavitación si los inhibidores se agotan."
+        },
+        {
+          "name": "Radiador y retorno",
+          "role": "El radiador disipa el calor; sus tubos estrechos están entre los primeros pasajes que se tapan con suciedad y depósitos."
+        }
+      ],
+      "service": [
+        "Dejar que el motor se enfríe. Nunca abrir un sistema de enfriamiento caliente y presurizado.",
+        "Confirmar que el repuesto es el elemento THERMACORE™ aprobado para ese motor y para el refrigerante en uso, con o sin aditivo según lo requiera el sistema, con la rosca y el sello correctos.",
+        "Cerrar las válvulas de cierre si el cabezal las tiene, desenroscar el filtro, verificar que el empaque viejo salió con él, limpiar la cara de sellado, lubricar el empaque nuevo con refrigerante y apretar como se especifica. Volver a abrir las válvulas.",
+        "Rellenar solo con el refrigerante aprobado en la mezcla correcta, sin mezclar nunca refrigerantes incompatibles ni agregar agua sin tratar.",
+        "Arrancar el motor, purgar el aire según el procedimiento del motor y revisar fugas; volver a verificar el nivel con el motor frío.",
+        "Revisar el estado del refrigerante (nivel de inhibidores y análisis) como lo indica el programa de mantenimiento, sobre todo después de un sobrecalentamiento, un reemplazo de componentes o una mezcla de refrigerantes."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "El filtro se carga rápido de óxido y sarro",
+          "check": "Hay corrosión activa en algún punto del sistema. Analizar el refrigerante en busca de inhibidores agotados, mezclas incompatibles o agua de reposición sin tratar antes de cambiar la estrategia de filtración."
+        },
+        {
+          "symptom": "Gel, lodo o un depósito cristalino sobre el elemento",
+          "check": "Distinguir la precipitación química de la suciedad en suspensión: el exceso de aditivo, un aditivo incompatible o refrigerantes mezclados pueden salir de la solución. El filtro está mostrando un problema químico."
+        },
+        {
+          "symptom": "Rastros de aceite o combustible en el refrigerante",
+          "check": "Contaminación externa, por ejemplo de un enfriador o de una junta. El filtro no puede corregirla; hay que encontrar y reparar la vía de fuga."
+        },
+        {
+          "symptom": "Burbujas, aumento de presión o pérdida de refrigerante",
+          "check": "Posible fuga de gases de combustión hacia el sistema de enfriamiento. Es una falla mecánica que la filtración no resuelve."
+        },
+        {
+          "symptom": "Picaduras en las camisas encontradas en una reparación mayor",
+          "check": "La protección contra la cavitación fue insuficiente. Revisar el mantenimiento de los inhibidores, el historial de análisis del refrigerante y si la química del aditivo correspondía al refrigerante."
+        }
+      ]
+    },
+    "pt": {
+      "overview": [
+        "O líquido de arrefecimento do motor leva o calor das camisas dos cilindros e do cabeçote ao radiador, mas também precisa proteger o metal que toca. Seus inibidores protegem contra a corrosão e, nos motores diesel de camisa úmida, contra a erosão por cavitação: a vibração da camisa forma bolhas de vapor no lado do líquido que colapsam contra o metal e, sem proteção, vão criando cavidades. Ao mesmo tempo, o líquido carrega partículas sólidas (ferrugem, incrustação, resíduos de fundição e produtos de corrosão) que desgastam o selo da bomba d'água, entopem as passagens estreitas do radiador e dos resfriadores e se depositam como camadas que reduzem a troca de calor.",
+        "THERMACORE™ protege o sistema de arrefecimento em duas frentes. O elemento plissado retém as partículas que circulam no líquido. Onde um elemento com aditivo é aprovado para o sistema, uma carga de aditivo suplementar de arrefecimento (SCA) sob o elemento se dissolve gradualmente, repondo os inibidores que o líquido consome em serviço.",
+        "Em muitos motores, só uma parte da vazão de líquido passa pelo filtro a cada volta; como o líquido circula continuamente, todo o volume é filtrado ao longo do tempo. A figura simplifica isso como uma única linha da bomba para o filtro e para a camisa d'água.",
+        "O lado do aditivo exige cuidado. Sua química, sua forma de liberação, a rosca e a vedação devem corresponder ao sistema instalado e à formulação atual do líquido: pouco inibidor deixa a corrosão e a cavitação sem controle, enquanto o excesso ou uma química incompatível pode precipitar como depósitos. Onde não há um elemento com aditivo aprovado para o líquido em uso, usa-se um filtro sem aditivo. Um filtro não corrige misturas de líquidos incompatíveis, vazamento de gases de combustão, inibidores esgotados nem água de reposição sem tratamento, e a análise do líquido e os requisitos do fabricante do motor têm prioridade sobre programas gerais."
+      ],
+      "figures": {
+        "thermacore": {
+          "title": "Spin-on de líquido de arrefecimento no circuito",
+          "caption": "O filtro retém a ferrugem, a incrustação e outras partículas no seu meio plissado. Onde um elemento com aditivo é aprovado, uma carga de aditivo sob o elemento se dissolve gradualmente no líquido de arrefecimento. Na manutenção o spin-on é substituído.",
+          "steps": [
+            {
+              "part": "Radiador",
+              "text": "O núcleo aletado entre dois tanques dissipa o calor do líquido. O líquido sai pela saída superior em direção à bomba e volta pelo retorno."
+            },
+            {
+              "part": "Bomba d'água",
+              "text": "Acionada pelo motor, a bomba mantém o líquido circulando pelo filtro e pelo motor."
+            },
+            {
+              "part": "Spin-on THERMACORE™",
+              "text": "Em corte, o elemento plissado THERMACORE™ retém as partículas de ferrugem e incrustação. Mover o cursor para os lados muda quanta sujeira o líquido carrega, e o indicador mostra a carga do filtro."
+            },
+            {
+              "part": "Carga de aditivo",
+              "text": "As pastilhas azuis sob o elemento são a carga de SCA, mostrada para o caso em que um elemento com aditivo é aprovado. Elas diminuem lentamente e liberam traços de aditivo no líquido; o indicador mostra a carga restante."
+            },
+            {
+              "part": "Camisa d'água e cilindros",
+              "text": "O líquido passa ao redor dos cilindros e pelo cabeçote, onde recebe o calor e onde os inibidores protegem as camisas."
+            },
+            {
+              "part": "Retorno e manutenção",
+              "text": "O líquido volta ao radiador. Levar o cursor ao topo, ou pressionar E, executa a manutenção: o spin-on é substituído e o novo entra limpo, com a carga de aditivo completa."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plissado THERMACORE™",
+          "role": "O meio filtrante que retém a ferrugem, a incrustação e outras partículas que circulam no líquido antes que se depositem no radiador, nos resfriadores e nas passagens do motor."
+        },
+        {
+          "name": "Carga de aditivo SCA (onde um elemento com aditivo é aprovado)",
+          "role": "Uma carga de aditivo suplementar de arrefecimento sob o elemento que se dissolve gradualmente, repondo os inibidores que protegem contra a corrosão e a cavitação das camisas. Sua química deve corresponder ao líquido em uso."
+        },
+        {
+          "name": "Cabeçote do filtro",
+          "role": "O suporte fixo no motor com a entrada, a saída e a face de vedação. Onde o projeto inclui válvulas de fechamento (não desenhadas), o filtro pode ser trocado sem drenar o sistema."
+        },
+        {
+          "name": "Bomba d'água",
+          "role": "Mantém o líquido circulando; o selo do seu eixo é um dos componentes mais expostos às partículas abrasivas."
+        },
+        {
+          "name": "Camisa d'água e camisas dos cilindros",
+          "role": "Onde o líquido recebe o calor. Nas camisas úmidas, o lado do líquido é onde a erosão por cavitação age se os inibidores se esgotarem."
+        },
+        {
+          "name": "Radiador e retorno",
+          "role": "O radiador dissipa o calor; seus tubos estreitos estão entre as primeiras passagens a entupir com sujeira e depósitos."
+        }
+      ],
+      "service": [
+        "Deixar o motor esfriar. Nunca abrir um sistema de arrefecimento quente e pressurizado.",
+        "Confirmar que a reposição é o elemento THERMACORE™ aprovado para esse motor e para o líquido em uso, com ou sem aditivo conforme o sistema exige, com a rosca e a vedação corretas.",
+        "Fechar as válvulas de fechamento se o cabeçote as tiver, desrosquear o filtro, verificar se a junta velha saiu com ele, limpar a face de vedação, lubrificar a junta nova com líquido de arrefecimento e apertar conforme especificado. Abrir as válvulas de novo.",
+        "Completar apenas com o líquido aprovado na mistura correta, sem nunca misturar líquidos incompatíveis nem adicionar água sem tratamento.",
+        "Ligar o motor, sangrar o ar conforme o procedimento do motor e verificar vazamentos; conferir o nível de novo com o motor frio.",
+        "Verificar a condição do líquido (nível de inibidores e análise) conforme o programa de manutenção, especialmente após superaquecimento, troca de componentes ou mistura de líquidos."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "O filtro se carrega rápido de ferrugem e incrustação",
+          "check": "Há corrosão ativa em algum ponto do sistema. Analisar o líquido em busca de inibidores esgotados, misturas incompatíveis ou água de reposição sem tratamento antes de mudar a estratégia de filtração."
+        },
+        {
+          "symptom": "Gel, borra ou um depósito cristalino sobre o elemento",
+          "check": "Distinguir a precipitação química da sujeira em suspensão: excesso de aditivo, um aditivo incompatível ou líquidos misturados podem sair da solução. O filtro está mostrando um problema químico."
+        },
+        {
+          "symptom": "Traços de óleo ou combustível no líquido",
+          "check": "Contaminação externa, por exemplo de um resfriador ou de uma junta. O filtro não a corrige; é preciso encontrar e reparar o caminho do vazamento."
+        },
+        {
+          "symptom": "Bolhas, aumento de pressão ou perda de líquido",
+          "check": "Possível vazamento de gases de combustão para o sistema de arrefecimento. É uma falha mecânica que a filtração não resolve."
+        },
+        {
+          "symptom": "Cavidades nas camisas encontradas numa revisão",
+          "check": "A proteção contra a cavitação foi insuficiente. Revisar a manutenção dos inibidores, o histórico de análise do líquido e se a química do aditivo correspondia ao líquido."
+        }
+      ]
+    }
+  }
+}

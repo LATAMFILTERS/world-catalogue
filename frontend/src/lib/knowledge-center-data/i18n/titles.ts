@@ -203,3 +203,38 @@ const SYSTEM_TITLES: Record<'es' | 'pt', Record<string, string>> = {
 export function systemTitle(slug: string, lang: SiteLang, fallback: string): string {
   return lang === 'es' || lang === 'pt' ? SYSTEM_TITLES[lang][slug] ?? fallback : fallback;
 }
+
+// Technology detail pages with reviewed /es/ and /pt/ versions; tagline and protection domain in each language.
+export const TRANSLATED_TECHNOLOGY_SLUGS = ['drycore', 'hydrocore', 'intekcore', 'macrocore', 'microkappa', 'nanoforce', 'syntapore', 'syntrax', 'thermacore', 'turbocore'] as const;
+
+const TECH_TEXT: Record<'es' | 'pt', Record<string, { tagline: string; domain: string }>> = {
+  es: {
+    drycore: { tagline: 'Tecnología de filtración para secadores de aire que protege los sistemas de frenos neumáticos.', domain: 'Protección de admisión y flujo de aire' },
+    hydrocore: { tagline: 'Arquitectura de separación de combustible/agua para separadores estándar no turbina aprobados con configuraciones de drenaje o vaso transparente.', domain: 'Protección de la limpieza del combustible' },
+    intekcore: { tagline: 'Tecnología de carcasas de admisión de aire para un flujo de aire controlado y la integridad del sellado.', domain: 'Protección de admisión y flujo de aire' },
+    macrocore: { tagline: 'Arquitectura de protección de la admisión de aire del motor que integra medio, capacidad, restricción y sellado.', domain: 'Protección de admisión y flujo de aire' },
+    microkappa: { tagline: 'Tecnología de filtración del aire de cabina para proteger el entorno del operador.', domain: 'Protección de admisión y flujo de aire' },
+    nanoforce: { tagline: 'Arquitectura de filtración hidráulica para la limpieza del fluido según las tolerancias de bombas, válvulas y actuadores.', domain: 'Protección hidráulica' },
+    syntapore: { tagline: 'Arquitectura de filtración de combustible diésel para aplicaciones de filtros primarios, secundarios y de cartucho.', domain: 'Protección de la limpieza del combustible' },
+    syntrax: { tagline: 'Arquitectura de filtración de lubricación para controlar partículas de desgaste, aglomerados de hollín y contaminantes del aceite.', domain: 'Protección de la lubricación' },
+    thermacore: { tagline: 'Tecnología de filtración del refrigerante para la limpieza del sistema de refrigeración y la protección de los componentes.', domain: 'Protección del sistema de refrigeración' },
+    turbocore: { tagline: 'Arquitectura de separación de combustible/agua tipo turbina reservada a los sistemas de las series FH y FG aprobados.', domain: 'Protección de la limpieza del combustible' },
+  },
+  pt: {
+    drycore: { tagline: 'Tecnologia de filtração para secadores de ar que protege os sistemas de freio pneumáticos.', domain: 'Proteção da admissão e do fluxo de ar' },
+    hydrocore: { tagline: 'Arquitetura de separação de combustível/água para separadores padrão não turbina aprovados com configurações de dreno ou copo transparente.', domain: 'Proteção da limpeza do combustível' },
+    intekcore: { tagline: 'Tecnologia de carcaças de admissão de ar para fluxo de ar controlado e integridade da vedação.', domain: 'Proteção da admissão e do fluxo de ar' },
+    macrocore: { tagline: 'Arquitetura de proteção da admissão de ar do motor que integra mídia, capacidade, restrição e vedação.', domain: 'Proteção da admissão e do fluxo de ar' },
+    microkappa: { tagline: 'Tecnologia de filtração do ar da cabine para proteger o ambiente do operador.', domain: 'Proteção da admissão e do fluxo de ar' },
+    nanoforce: { tagline: 'Arquitetura de filtração hidráulica para a limpeza do fluido conforme as tolerâncias de bombas, válvulas e atuadores.', domain: 'Proteção hidráulica' },
+    syntapore: { tagline: 'Arquitetura de filtração de combustível diesel para aplicações de filtros primários, secundários e de cartucho.', domain: 'Proteção da limpeza do combustível' },
+    syntrax: { tagline: 'Arquitetura de filtração de lubrificação para controlar partículas de desgaste, aglomerados de fuligem e contaminantes do óleo.', domain: 'Proteção da lubrificação' },
+    thermacore: { tagline: 'Tecnologia de filtração do líquido de arrefecimento para a limpeza do sistema de arrefecimento e a proteção dos componentes.', domain: 'Proteção do sistema de arrefecimento' },
+    turbocore: { tagline: 'Arquitetura de separação de combustível/água tipo turbina reservada aos sistemas das séries FH e FG aprovados.', domain: 'Proteção da limpeza do combustível' },
+  },
+};
+
+/** Technology tagline or protection domain in the visitor's language; English (fallback) otherwise. */
+export function technologyText(slug: string, field: 'tagline' | 'domain', lang: SiteLang, fallback: string): string {
+  return lang === 'es' || lang === 'pt' ? TECH_TEXT[lang][slug]?.[field] ?? fallback : fallback;
+}

@@ -1,0 +1,579 @@
+{
+  "slug": "hydrocore",
+  "name": "HYDROCORE™",
+  "domain": "Proteção da limpeza do combustível",
+  "tagline": "Arquitetura de separação de combustível/água para separadores padrão não turbina aprovados com configurações de dreno ou copo transparente.",
+  "engineeringPrinciple": "HYDROCORE™ é a arquitetura ELIMFILTERS de separação de combustível/água para os filtros separadores padrão não turbina aprovados. Coordena a mídia de separação e a construção aprovada do separador conforme a vazão de combustível, a gestão da água, a drenagem, a configuração do copo e as condições de serviço. Os sistemas tipo turbina FH e FG estão excluídos e são regidos exclusivamente por TURBOCORE™. O desempenho de separação de água em nível de produto deve ser respaldado pela configuração validada e pelos requisitos de ensaio aplicáveis.",
+  "selectionGuidance": "Uma aplicação de separador deve ser avaliada a partir da condição da água de entrada, da vazão de combustível, do projeto da carcaça, do método de drenagem, da configuração do copo e do acesso para manutenção. O funcionamento eficaz depende de remover a água coletada antes que ela chegue ao volume de trabalho do elemento, manter as vedações intactas e evitar que práticas de transferência ou armazenamento contaminadas sobrecarreguem o sistema. A inspeção deve diferenciar água livre, água dispersa, resíduos microbianos e carga normal de partículas, porque cada condição muda a ação corretiva. A seleção também deve preservar o suprimento de combustível na demanda de pico do motor e continuar compatível com a carcaça de separador não turbina aprovada.",
+  "evidenceBoundary": "HYDROCORE™ se aplica apenas às configurações de separador padrão não turbina aprovadas. Não estabelece um único percentual de remoção de água, eficiência de partículas, capacidade ou intervalo de drenagem para todos os produtos. Esses valores exigem validação para cada elemento e conjunto. As arquiteturas tipo turbina FH e FG ficam expressamente fora desse escopo e são regidas por TURBOCORE™.",
+  "contamination": [
+    "Água livre no combustível diesel",
+    "Água dispersa ou emulsionada quando respaldada pela configuração de produto validada"
+  ],
+  "performanceSpecs": [],
+  "standards": [],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedIndustries": [],
+  "worksWith": [
+    "SYNTAPORE™",
+    "TURBOCORE™"
+  ],
+  "figures": [
+    {
+      "href": "/knowledge-center/figures/hydrocore.html",
+      "preview": "/knowledge-center/figures/hydrocore.webp",
+      "title": "Separador com copo transparente reutilizável",
+      "caption": "A água e os resíduos se depositam no copo e saem pelo dreno. No serviço, só o elemento é trocado; o mesmo copo é remontado.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/hydrocore-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/hydrocore-pt.html"
+        }
+      ]
+    },
+    {
+      "href": "/knowledge-center/figures/hydrocore-spinon.html",
+      "preview": "/knowledge-center/figures/hydrocore-spinon.webp",
+      "title": "Formato spin-on com dreno incorporado",
+      "caption": "A água e os resíduos se depositam no fundo do próprio cartucho. No serviço, o cartucho inteiro é substituído.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/hydrocore-spinon-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/hydrocore-spinon-pt.html"
+        }
+      ]
+    },
+    {
+      "href": "/knowledge-center/figures/hydrocore-housing.html",
+      "preview": "/knowledge-center/figures/hydrocore-housing.webp",
+      "title": "Formato cartucho: elemento dentro de um copo transparente",
+      "caption": "O elemento plissado fica dentro do copo sob uma cobertura permanente. No serviço, o copo é retirado, o elemento é trocado e o mesmo copo é remontado.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/hydrocore-housing-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/hydrocore-housing-pt.html"
+        }
+      ]
+    }
+  ],
+  "howItWorks": {
+    "en": {
+      "overview": [
+        "Diesel fuel always carries some water. It enters through condensation in tanks that breathe as they warm and cool, through contaminated deliveries, and during storage and transfer. Free water in the fuel causes corrosion, displaces the lubricating film the injection system depends on, and at the boundary between water and fuel it allows microbial growth that produces sludge. HYDROCORE™ is the ELIMFILTERS architecture for standard non-turbine fuel/water separators that remove this water before it reaches the pump and injectors.",
+        "Separation relies on two properties. First, the separation media in the element holds back water droplets at its surface, where they merge into larger drops while the fuel passes through. Second, water is denser than diesel, so those drops fall out of the flow and settle at the bottom of the bowl or sump, together with heavier residues. The fuel leaves through the centre of the element toward the engine.",
+        "Because the water is stored inside the separator, draining it is part of how the separator works, not an afterthought. Collected water has to be removed before its level reaches the element's working volume; otherwise the separator can no longer keep it out of the fuel. That is why every HYDROCORE™ configuration has a drain and, where the format allows it, a transparent bowl to see the level.",
+        "HYDROCORE™ governs standard spin-on and cartridge separators, with drain and transparent-bowl configurations. FH and FG turbine-style systems work on a different principle and are governed exclusively by TURBOCORE™. The three figures below show the three standard formats."
+      ],
+      "figures": {
+        "hydrocore": {
+          "title": "Separator with reusable transparent bowl",
+          "caption": "Water and residues settle in the bowl and leave through the drain. At service only the element is changed; the same bowl is refitted.",
+          "steps": [
+            {
+              "part": "Head",
+              "text": "The fixed head on the bracket carries the inlet and outlet, a hand primer pump to refill the circuit after service and a bleed screw to let the air out."
+            },
+            {
+              "part": "Spin-on element",
+              "text": "The fuel passes through the HYDROCORE™ separation element. Water drops form on the media and fall; moving the cursor sideways changes how much water the fuel carries."
+            },
+            {
+              "part": "Transparent bowl",
+              "text": "The bowl screwed under the element collects the water and the heavier residues. Because it is transparent, the level can be checked at a glance; the readout warns when it is near the limit."
+            },
+            {
+              "part": "Drain",
+              "text": "Clicking the figure, or pressing the space bar, opens the drain: the collected water runs into the catch cup and the level falls."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the element is replaced, and the same bowl is removed from the old element and fitted to the new one."
+            }
+          ]
+        },
+        "hydrocore-spinon": {
+          "title": "Spin-on format with built-in drain",
+          "caption": "Water and residues settle at the bottom of the cartridge itself. At service the whole cartridge is replaced.",
+          "steps": [
+            {
+              "part": "Head",
+              "text": "The same fixed head, with the inlet and outlet, the hand primer pump and the bleed screw."
+            },
+            {
+              "part": "Spin-on cartridge",
+              "text": "The HYDROCORE™ separation element and its sump are one sealed unit. The lower part is drawn in section so the inside can be seen."
+            },
+            {
+              "part": "Sump",
+              "text": "Separated water and residues settle at the bottom of the cartridge itself. With no transparent bowl, the level cannot be seen, so draining follows the maintenance routine."
+            },
+            {
+              "part": "Built-in drain",
+              "text": "Clicking the figure, or pressing the space bar, opens the drain at the bottom of the cartridge and releases the water into the catch cup."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the whole cartridge is replaced, drain included."
+            }
+          ]
+        },
+        "hydrocore-housing": {
+          "title": "Cartridge format: element inside a transparent bowl",
+          "caption": "The pleated element sits inside the bowl under a permanent shroud. At service the bowl comes off, the element is changed and the same bowl is refitted.",
+          "steps": [
+            {
+              "part": "Head and shroud",
+              "text": "The head and the metal shroud below it are permanent parts of the equipment. The bowl seals against the lip of the shroud."
+            },
+            {
+              "part": "Element inside the bowl",
+              "text": "The pleated HYDROCORE™ element sits inside a tall transparent bowl, so both the element and the collected water can be seen."
+            },
+            {
+              "part": "Seal",
+              "text": "The red ring marks the bowl seal. It has to be seated correctly at every service to keep the fuel in and the air out."
+            },
+            {
+              "part": "Water and drain",
+              "text": "Water and residues settle at the bottom of the bowl. Clicking the figure, or pressing the space bar, opens the drain into the catch cup."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the bowl comes down, the element is changed and the same bowl is refitted with its seal. Shroud and head stay in place."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "HYDROCORE™ separation element",
+          "role": "The media that holds back the water droplets so they merge and fall, while the fuel passes through. It also holds particulate, so it loads over time like any filter."
+        },
+        {
+          "name": "Head with primer pump and bleed screw",
+          "role": "The fixed part on the equipment, with the inlet and outlet. The hand primer pump refills the separator and the lines after service; the bleed screw lets the trapped air out."
+        },
+        {
+          "name": "Transparent bowl",
+          "role": "Collects the separated water and residues and lets the operator see the level. In Fig 1A it is transferred to each new element; in Fig 1C it holds the element itself."
+        },
+        {
+          "name": "Sump",
+          "role": "In the spin-on format, the lower part of the cartridge where the water settles. It is replaced with the cartridge."
+        },
+        {
+          "name": "Drain",
+          "role": "The valve at the lowest point. Opening it releases the collected water; it must be closed again and checked for leaks."
+        },
+        {
+          "name": "Bowl seal",
+          "role": "Closes the joint between the bowl and the element or shroud. A damaged or poorly seated seal lets fuel out or, on the suction side, air in."
+        },
+        {
+          "name": "Metal shroud",
+          "role": "In the cartridge format (Fig 1C), the permanent housing under the head that the bowl seals against. It is not a service part."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on with reusable transparent bowl (Fig 1A)",
+          "text": "The element is a spin-on, and a transparent bowl with the drain is screwed under it. The water level is visible. At service only the element is discarded: the bowl is cleaned, inspected and fitted to the new element with its new seal."
+        },
+        {
+          "name": "Spin-on with built-in drain (Fig 1B)",
+          "text": "Element, sump and drain form one sealed cartridge. Service is the simplest, since the whole unit is replaced, but the water level cannot be seen, so draining depends on the maintenance routine."
+        },
+        {
+          "name": "Element inside a transparent bowl (Fig 1C)",
+          "text": "The head and shroud are permanent; only the element inside the bowl is replaced. Both the element and the water can be seen, and less material is discarded at each service. It asks more of the technician: the bowl and its seal have to be clean, undamaged and seated correctly."
+        },
+        {
+          "name": "Which one applies",
+          "text": "The format is set by the approved housing on the equipment. All three work on the same separation principle; what changes is how the water is seen, how it is drained and what is replaced."
+        }
+      ],
+      "service": [
+        "With the engine off, open the drain and release the collected water into a container. Dispose of it as fuel-contaminated waste.",
+        "Confirm that the replacement is the HYDROCORE™ element approved for that non-turbine housing and format.",
+        "Fig 1A: unscrew the element, remove the bowl from it, clean and inspect the bowl, and fit it to the new element with the new seal. Fig 1B: replace the whole cartridge. Fig 1C: lower the bowl, change the element, clean the bowl and refit it with its new seal.",
+        "Check the bowl for cracks or damage before refitting it; a damaged bowl is replaced, not reused.",
+        "Open the bleed screw and operate the hand primer pump until fuel without air comes out, then close the bleed screw, following the engine maker's procedure.",
+        "Start the engine and check the bowl, the drain and every seal for leaks. Confirm the drain is closed."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "Water comes back quickly after every drain",
+          "check": "The separator is reporting what the fuel carries. Look upstream: tank condensation, water in deliveries, storage and transfer practices. Draining more often treats the symptom, not the source."
+        },
+        {
+          "symptom": "Dark sludge or slime at the water–fuel boundary in the bowl",
+          "check": "A sign of microbial growth. It has to be treated in the tank and fuel system; changing the element alone will not remove the source."
+        },
+        {
+          "symptom": "Hazy fuel in the bowl but little free water at the bottom",
+          "check": "The water may be dispersed in the fuel rather than free, and dispersed water does not settle in the same way. Review the fuel source and handling."
+        },
+        {
+          "symptom": "Water found downstream of the separator",
+          "check": "Check whether the drain was overdue and the water reached the element's working volume, whether the correct element is fitted, and whether a seal lets fuel bypass the media."
+        },
+        {
+          "symptom": "Loss of power or hard starting with little water in the bowl",
+          "check": "Consider particulate loading of the element or low-temperature waxing, and check for air entering at the bowl seal, the drain or the bleed screw."
+        }
+      ]
+    },
+    "es": {
+      "overview": [
+        "El diésel siempre trae algo de agua. Entra por condensación en tanques que respiran al calentarse y enfriarse, en entregas contaminadas y durante el almacenamiento y el trasvase. El agua libre en el combustible provoca corrosión, desplaza la película lubricante de la que depende el sistema de inyección y, en el límite entre agua y combustible, permite el crecimiento microbiano que produce lodos. HYDROCORE™ es la arquitectura ELIMFILTERS para separadores de combustible/agua estándar, no tipo turbina, que retiran esa agua antes de que llegue a la bomba y a los inyectores.",
+        "La separación se basa en dos propiedades. Primero, el medio separador del elemento retiene las gotas de agua en su superficie, donde se unen en gotas más grandes mientras el combustible pasa. Segundo, el agua es más densa que el diésel, así que esas gotas salen del flujo y se depositan en el fondo del vaso o del sumidero, junto con los residuos más pesados. El combustible sale por el centro del elemento hacia el motor.",
+        "Como el agua queda almacenada dentro del separador, purgarla es parte del funcionamiento del separador, no un detalle aparte. El agua acumulada debe retirarse antes de que su nivel llegue al volumen de trabajo del elemento; si no, el separador ya no puede mantenerla fuera del combustible. Por eso toda configuración HYDROCORE™ tiene un purgador y, cuando el formato lo permite, un vaso transparente para ver el nivel.",
+        "HYDROCORE™ cubre los separadores estándar spin-on y de cartucho, con purgador y con vaso transparente. Los sistemas tipo turbina FH y FG funcionan con otro principio y corresponden exclusivamente a TURBOCORE™. Las tres figuras de abajo muestran los tres formatos estándar."
+      ],
+      "figures": {
+        "hydrocore": {
+          "title": "Separador con vaso transparente reutilizable",
+          "caption": "El agua y los residuos se depositan en el vaso y salen por el purgador. En el servicio solo se cambia el elemento; se vuelve a montar el mismo vaso.",
+          "steps": [
+            {
+              "part": "Cabezal",
+              "text": "El cabezal fijo en el soporte tiene la entrada y la salida, una bomba manual de cebado para volver a llenar el circuito después del servicio y un tornillo de sangrado para sacar el aire."
+            },
+            {
+              "part": "Elemento spin-on",
+              "text": "El combustible atraviesa el elemento separador HYDROCORE™. En el medio se forman gotas de agua que caen; al mover el cursor de lado a lado cambia la cantidad de agua que trae el combustible."
+            },
+            {
+              "part": "Vaso transparente",
+              "text": "El vaso enroscado bajo el elemento recoge el agua y los residuos más pesados. Al ser transparente, el nivel se revisa de un vistazo; el indicador avisa cuando se acerca al límite."
+            },
+            {
+              "part": "Purgador",
+              "text": "Al hacer clic en la figura, o pulsar la barra espaciadora, se abre el purgador: el agua acumulada cae a la taza colectora y el nivel baja."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: se reemplaza el elemento, y el mismo vaso se retira del elemento viejo y se monta en el nuevo."
+            }
+          ]
+        },
+        "hydrocore-spinon": {
+          "title": "Formato spin-on con purgador incorporado",
+          "caption": "El agua y los residuos se depositan en el fondo del propio cartucho. En el servicio se reemplaza el cartucho completo.",
+          "steps": [
+            {
+              "part": "Cabezal",
+              "text": "El mismo cabezal fijo, con la entrada y la salida, la bomba manual de cebado y el tornillo de sangrado."
+            },
+            {
+              "part": "Cartucho spin-on",
+              "text": "El elemento separador HYDROCORE™ y su sumidero forman una sola unidad sellada. La parte inferior se ve en corte para mostrar el interior."
+            },
+            {
+              "part": "Sumidero",
+              "text": "El agua separada y los residuos se depositan en el fondo del propio cartucho. Sin vaso transparente el nivel no se ve, así que la purga sigue la rutina de mantenimiento."
+            },
+            {
+              "part": "Purgador incorporado",
+              "text": "Al hacer clic en la figura, o pulsar la barra espaciadora, se abre el purgador del fondo del cartucho y el agua sale a la taza colectora."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: se reemplaza el cartucho completo, purgador incluido."
+            }
+          ]
+        },
+        "hydrocore-housing": {
+          "title": "Formato cartucho: elemento dentro de un vaso transparente",
+          "caption": "El elemento plisado va dentro del vaso, bajo una carcasa metálica permanente. En el servicio se retira el vaso, se cambia el elemento y se vuelve a montar el mismo vaso.",
+          "steps": [
+            {
+              "part": "Cabezal y carcasa",
+              "text": "El cabezal y la carcasa metálica debajo de él son partes permanentes del equipo. El vaso sella contra el borde de la carcasa."
+            },
+            {
+              "part": "Elemento dentro del vaso",
+              "text": "El elemento plisado HYDROCORE™ va dentro de un vaso transparente alto, de modo que se ven tanto el elemento como el agua acumulada."
+            },
+            {
+              "part": "Sello",
+              "text": "El anillo rojo marca el sello del vaso. Debe quedar bien asentado en cada servicio para que no salga combustible ni entre aire."
+            },
+            {
+              "part": "Agua y purgador",
+              "text": "El agua y los residuos se depositan en el fondo del vaso. Al hacer clic en la figura, o pulsar la barra espaciadora, se abre el purgador hacia la taza colectora."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: el vaso baja, se cambia el elemento y se vuelve a montar el mismo vaso con su sello. La carcasa y el cabezal no se mueven."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento separador HYDROCORE™",
+          "role": "El medio que retiene las gotas de agua para que se unan y caigan, mientras el combustible pasa. También retiene partículas, así que se va cargando con el tiempo como cualquier filtro."
+        },
+        {
+          "name": "Cabezal con bomba de cebado y tornillo de sangrado",
+          "role": "La parte fija en el equipo, con la entrada y la salida. La bomba manual de cebado vuelve a llenar el separador y las líneas después del servicio; el tornillo de sangrado deja salir el aire atrapado."
+        },
+        {
+          "name": "Vaso transparente",
+          "role": "Recoge el agua separada y los residuos y deja ver el nivel. En la Fig 1A se pasa a cada elemento nuevo; en la Fig 1C contiene al propio elemento."
+        },
+        {
+          "name": "Sumidero",
+          "role": "En el formato spin-on, la parte inferior del cartucho donde se deposita el agua. Se reemplaza junto con el cartucho."
+        },
+        {
+          "name": "Purgador",
+          "role": "La válvula en el punto más bajo. Al abrirla sale el agua acumulada; hay que volver a cerrarla y comprobar que no gotee."
+        },
+        {
+          "name": "Sello del vaso",
+          "role": "Cierra la unión entre el vaso y el elemento o la carcasa. Un sello dañado o mal asentado deja salir combustible o, en el lado de succión, entrar aire."
+        },
+        {
+          "name": "Carcasa metálica",
+          "role": "En el formato cartucho (Fig 1C), la carcasa permanente bajo el cabezal contra la que sella el vaso. No es una pieza de servicio."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on con vaso transparente reutilizable (Fig 1A)",
+          "text": "El elemento es un spin-on, y bajo él va enroscado un vaso transparente con el purgador. El nivel de agua se ve. En el servicio solo se desecha el elemento: el vaso se limpia, se revisa y se monta en el elemento nuevo con su sello nuevo."
+        },
+        {
+          "name": "Spin-on con purgador incorporado (Fig 1B)",
+          "text": "Elemento, sumidero y purgador forman un solo cartucho sellado. Es el servicio más sencillo, porque se cambia la unidad completa, pero el nivel de agua no se ve, así que la purga depende de la rutina de mantenimiento."
+        },
+        {
+          "name": "Elemento dentro de un vaso transparente (Fig 1C)",
+          "text": "El cabezal y la carcasa son permanentes; solo se reemplaza el elemento que va dentro del vaso. Se ven el elemento y el agua, y en cada servicio se desecha menos material. Exige más al técnico: el vaso y su sello deben estar limpios, sin daños y bien asentados."
+        },
+        {
+          "name": "Cuál corresponde",
+          "text": "El formato lo define la carcasa aprobada del equipo. Los tres trabajan con el mismo principio de separación; lo que cambia es cómo se ve el agua, cómo se purga y qué se reemplaza."
+        }
+      ],
+      "service": [
+        "Con el motor apagado, abrir el purgador y sacar el agua acumulada a un recipiente. Desecharla como residuo contaminado con combustible.",
+        "Confirmar que el repuesto es el elemento HYDROCORE™ aprobado para esa carcasa no tipo turbina y ese formato.",
+        "Fig 1A: desenroscar el elemento, retirarle el vaso, limpiar y revisar el vaso, y montarlo en el elemento nuevo con el sello nuevo. Fig 1B: reemplazar el cartucho completo. Fig 1C: bajar el vaso, cambiar el elemento, limpiar el vaso y volver a montarlo con su sello nuevo.",
+        "Revisar que el vaso no tenga grietas ni daños antes de volver a montarlo; un vaso dañado se reemplaza, no se reutiliza.",
+        "Abrir el tornillo de sangrado y accionar la bomba manual de cebado hasta que salga combustible sin aire; luego cerrar el tornillo, siguiendo el procedimiento del fabricante del motor.",
+        "Arrancar el motor y revisar fugas en el vaso, el purgador y cada sello. Confirmar que el purgador quedó cerrado."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "El agua vuelve rápido después de cada purga",
+          "check": "El separador refleja lo que trae el combustible. Revisar aguas arriba: condensación en el tanque, agua en las entregas, prácticas de almacenamiento y trasvase. Purgar más seguido trata el síntoma, no la fuente."
+        },
+        {
+          "symptom": "Lodo oscuro o capa viscosa en el límite entre agua y combustible del vaso",
+          "check": "Es señal de crecimiento microbiano. Debe tratarse en el tanque y el sistema de combustible; cambiar solo el elemento no elimina la fuente."
+        },
+        {
+          "symptom": "Combustible turbio en el vaso pero poca agua libre en el fondo",
+          "check": "El agua puede estar dispersa en el combustible en lugar de libre, y el agua dispersa no se deposita de la misma forma. Revisar el origen y el manejo del combustible."
+        },
+        {
+          "symptom": "Aparece agua después del separador",
+          "check": "Verificar si la purga se atrasó y el agua llegó al volumen de trabajo del elemento, si el elemento instalado es el correcto y si algún sello deja pasar combustible sin atravesar el medio."
+        },
+        {
+          "symptom": "Pérdida de potencia o arranque difícil con poca agua en el vaso",
+          "check": "Considerar la carga de partículas en el elemento o la formación de parafina por frío, y revisar si entra aire por el sello del vaso, el purgador o el tornillo de sangrado."
+        }
+      ]
+    },
+    "pt": {
+      "overview": [
+        "O diesel sempre traz alguma água. Ela entra por condensação em tanques que respiram ao aquecer e esfriar, em entregas contaminadas e durante o armazenamento e a transferência. A água livre no combustível causa corrosão, desloca a película lubrificante da qual o sistema de injeção depende e, no limite entre água e combustível, permite o crescimento microbiano que produz borra. HYDROCORE™ é a arquitetura ELIMFILTERS para separadores de combustível/água padrão, não tipo turbina, que retiram essa água antes que ela chegue à bomba e aos injetores.",
+        "A separação se baseia em duas propriedades. Primeiro, o meio separador do elemento retém as gotas de água na sua superfície, onde elas se unem em gotas maiores enquanto o combustível passa. Segundo, a água é mais densa que o diesel, então essas gotas saem do fluxo e se depositam no fundo do copo ou do reservatório, junto com os resíduos mais pesados. O combustível sai pelo centro do elemento em direção ao motor.",
+        "Como a água fica armazenada dentro do separador, drená-la faz parte do funcionamento do separador, não é um detalhe à parte. A água acumulada precisa ser retirada antes que o nível chegue ao volume de trabalho do elemento; caso contrário, o separador já não consegue mantê-la fora do combustível. Por isso toda configuração HYDROCORE™ tem um dreno e, quando o formato permite, um copo transparente para ver o nível.",
+        "HYDROCORE™ cobre os separadores padrão spin-on e de cartucho, com dreno e com copo transparente. Os sistemas tipo turbina FH e FG funcionam com outro princípio e pertencem exclusivamente ao TURBOCORE™. As três figuras abaixo mostram os três formatos padrão."
+      ],
+      "figures": {
+        "hydrocore": {
+          "title": "Separador com copo transparente reutilizável",
+          "caption": "A água e os resíduos se depositam no copo e saem pelo dreno. Na manutenção troca-se apenas o elemento; o mesmo copo é montado de volta.",
+          "steps": [
+            {
+              "part": "Cabeçote",
+              "text": "O cabeçote fixo no suporte tem a entrada e a saída, uma bomba manual de escorva para reabastecer o circuito após a manutenção e um parafuso de sangria para tirar o ar."
+            },
+            {
+              "part": "Elemento spin-on",
+              "text": "O combustível atravessa o elemento separador HYDROCORE™. No meio se formam gotas de água que caem; mover o cursor para os lados muda a quantidade de água que o combustível traz."
+            },
+            {
+              "part": "Copo transparente",
+              "text": "O copo rosqueado sob o elemento recolhe a água e os resíduos mais pesados. Por ser transparente, o nível é verificado num relance; o indicador avisa quando se aproxima do limite."
+            },
+            {
+              "part": "Dreno",
+              "text": "Clicar na figura, ou pressionar a barra de espaço, abre o dreno: a água acumulada cai no copo coletor e o nível baixa."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o elemento é substituído, e o mesmo copo é retirado do elemento velho e montado no novo."
+            }
+          ]
+        },
+        "hydrocore-spinon": {
+          "title": "Formato spin-on com dreno integrado",
+          "caption": "A água e os resíduos se depositam no fundo do próprio cartucho. Na manutenção o cartucho inteiro é substituído.",
+          "steps": [
+            {
+              "part": "Cabeçote",
+              "text": "O mesmo cabeçote fixo, com a entrada e a saída, a bomba manual de escorva e o parafuso de sangria."
+            },
+            {
+              "part": "Cartucho spin-on",
+              "text": "O elemento separador HYDROCORE™ e seu reservatório formam uma única unidade selada. A parte inferior é vista em corte para mostrar o interior."
+            },
+            {
+              "part": "Reservatório",
+              "text": "A água separada e os resíduos se depositam no fundo do próprio cartucho. Sem copo transparente o nível não é visível, então a drenagem segue a rotina de manutenção."
+            },
+            {
+              "part": "Dreno integrado",
+              "text": "Clicar na figura, ou pressionar a barra de espaço, abre o dreno no fundo do cartucho e a água sai para o copo coletor."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o cartucho inteiro é substituído, dreno incluído."
+            }
+          ]
+        },
+        "hydrocore-housing": {
+          "title": "Formato cartucho: elemento dentro de um copo transparente",
+          "caption": "O elemento plissado fica dentro do copo, sob uma carcaça permanente. Na manutenção retira-se o copo, troca-se o elemento e o mesmo copo é montado de volta.",
+          "steps": [
+            {
+              "part": "Cabeçote e carcaça",
+              "text": "O cabeçote e a carcaça metálica abaixo dele são partes permanentes do equipamento. O copo veda contra a borda da carcaça."
+            },
+            {
+              "part": "Elemento dentro do copo",
+              "text": "O elemento plissado HYDROCORE™ fica dentro de um copo transparente alto, de modo que se veem tanto o elemento quanto a água acumulada."
+            },
+            {
+              "part": "Vedação",
+              "text": "O anel vermelho marca a vedação do copo. Ela precisa ficar bem assentada em cada manutenção para que não saia combustível nem entre ar."
+            },
+            {
+              "part": "Água e dreno",
+              "text": "A água e os resíduos se depositam no fundo do copo. Clicar na figura, ou pressionar a barra de espaço, abre o dreno para o copo coletor."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o copo desce, troca-se o elemento e o mesmo copo é montado de volta com sua vedação. A carcaça e o cabeçote não se movem."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento separador HYDROCORE™",
+          "role": "O meio que retém as gotas de água para que se unam e caiam, enquanto o combustível passa. Também retém partículas, por isso vai se carregando com o tempo como qualquer filtro."
+        },
+        {
+          "name": "Cabeçote com bomba de escorva e parafuso de sangria",
+          "role": "A parte fixa no equipamento, com a entrada e a saída. A bomba manual de escorva reabastece o separador e as linhas após a manutenção; o parafuso de sangria deixa sair o ar preso."
+        },
+        {
+          "name": "Copo transparente",
+          "role": "Recolhe a água separada e os resíduos e deixa ver o nível. Na Fig 1A passa para cada elemento novo; na Fig 1C contém o próprio elemento."
+        },
+        {
+          "name": "Reservatório",
+          "role": "No formato spin-on, a parte inferior do cartucho onde a água se deposita. É substituído junto com o cartucho."
+        },
+        {
+          "name": "Dreno",
+          "role": "A válvula no ponto mais baixo. Ao abri-la sai a água acumulada; é preciso fechá-la de novo e verificar que não pinga."
+        },
+        {
+          "name": "Vedação do copo",
+          "role": "Fecha a união entre o copo e o elemento ou a carcaça. Uma vedação danificada ou mal assentada deixa sair combustível ou, no lado de sucção, entrar ar."
+        },
+        {
+          "name": "Carcaça metálica",
+          "role": "No formato cartucho (Fig 1C), a carcaça permanente sob o cabeçote contra a qual o copo veda. Não é uma peça de manutenção."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on com copo transparente reutilizável (Fig 1A)",
+          "text": "O elemento é um spin-on, e sob ele fica rosqueado um copo transparente com o dreno. O nível de água é visível. Na manutenção só o elemento é descartado: o copo é limpo, inspecionado e montado no elemento novo com sua vedação nova."
+        },
+        {
+          "name": "Spin-on com dreno integrado (Fig 1B)",
+          "text": "Elemento, reservatório e dreno formam um único cartucho selado. É a manutenção mais simples, porque se troca a unidade inteira, mas o nível de água não é visível, então a drenagem depende da rotina de manutenção."
+        },
+        {
+          "name": "Elemento dentro de um copo transparente (Fig 1C)",
+          "text": "O cabeçote e a carcaça são permanentes; só o elemento dentro do copo é substituído. Veem-se o elemento e a água, e menos material é descartado em cada manutenção. Exige mais do técnico: o copo e sua vedação devem estar limpos, sem danos e bem assentados."
+        },
+        {
+          "name": "Qual se aplica",
+          "text": "O formato é definido pela carcaça aprovada do equipamento. Os três trabalham com o mesmo princípio de separação; o que muda é como a água é vista, como é drenada e o que é substituído."
+        }
+      ],
+      "service": [
+        "Com o motor desligado, abrir o dreno e retirar a água acumulada para um recipiente. Descartá-la como resíduo contaminado com combustível.",
+        "Confirmar que a reposição é o elemento HYDROCORE™ aprovado para essa carcaça não tipo turbina e esse formato.",
+        "Fig 1A: desrosquear o elemento, retirar o copo dele, limpar e inspecionar o copo e montá-lo no elemento novo com a vedação nova. Fig 1B: substituir o cartucho inteiro. Fig 1C: baixar o copo, trocar o elemento, limpar o copo e montá-lo de volta com sua vedação nova.",
+        "Verificar se o copo não tem trincas nem danos antes de montá-lo de volta; um copo danificado é substituído, não reutilizado.",
+        "Abrir o parafuso de sangria e acionar a bomba manual de escorva até sair combustível sem ar; depois fechar o parafuso, seguindo o procedimento do fabricante do motor.",
+        "Ligar o motor e verificar vazamentos no copo, no dreno e em cada vedação. Confirmar que o dreno ficou fechado."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "A água volta rápido depois de cada drenagem",
+          "check": "O separador reflete o que o combustível traz. Verificar a montante: condensação no tanque, água nas entregas, práticas de armazenamento e transferência. Drenar com mais frequência trata o sintoma, não a origem."
+        },
+        {
+          "symptom": "Borra escura ou camada viscosa no limite entre água e combustível no copo",
+          "check": "É sinal de crescimento microbiano. Deve ser tratado no tanque e no sistema de combustível; trocar só o elemento não elimina a origem."
+        },
+        {
+          "symptom": "Combustível turvo no copo, mas pouca água livre no fundo",
+          "check": "A água pode estar dispersa no combustível em vez de livre, e a água dispersa não se deposita da mesma forma. Verificar a origem e o manuseio do combustível."
+        },
+        {
+          "symptom": "Aparece água depois do separador",
+          "check": "Verificar se a drenagem atrasou e a água chegou ao volume de trabalho do elemento, se o elemento instalado é o correto e se alguma vedação deixa o combustível passar sem atravessar o meio."
+        },
+        {
+          "symptom": "Perda de potência ou partida difícil com pouca água no copo",
+          "check": "Considerar a carga de partículas no elemento ou a formação de parafina no frio, e verificar se entra ar pela vedação do copo, pelo dreno ou pelo parafuso de sangria."
+        }
+      ]
+    }
+  }
+}
