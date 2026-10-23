@@ -1,0 +1,374 @@
+{
+  "slug": "fleet-oil-sampling-protocol",
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4021:2021, Hydraulic Fluid Power — Particulate Contamination Analysis — Extraction of Fluid Samples from Lines of an Operating System",
+      "relevance": "Especifica o projeto e a instalação da válvula de amostragem de óleo, o procedimento de purga e o volume mínimo de amostra (100 mL) para amostras representativas de contagem de partículas; exige locais de amostragem isocinéticos ou de escoamento turbulento."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry",
+      "relevance": "Referência principal para a análise ICP de metais de desgaste em óleo usado; especifica a seleção de comprimentos de onda, a calibração e os limites de detecção de mais de 20 elementos; documenta a limitação por tamanho de partícula e a compara com o eletrodo de disco rotativo para detectar partículas grandes."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D7690-19, Standard Practice for Microscopic Characterization of Particles from In-Service Lubricants by Analytical Ferrography",
+      "relevance": "Especifica o procedimento de ferrografia analítica para identificar a morfologia das partículas de desgaste (atrito, corte, deslizamento severo, fadiga), a composição do material e a distribuição de tamanhos acima de 5 µm; permite um diagnóstico do modo de falha que o ICP sozinho não fornece."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 10012:2003, Measurement Management Systems — Requirements for Measurement Processes and Measuring Equipment",
+      "relevance": "Estrutura de gestão de medições de laboratório que inclui calibração, orçamentos de incerteza e ensaios de proficiência; aplica-se aos laboratórios de análise de óleo cujos resultados são usados nas decisões de manutenção de frotas."
+    }
+  ],
+  "title": "Projeto do protocolo de amostragem de óleo em nível de frota",
+  "subtitle": "Procedimento de amostragem ISO 3722, requisitos de cadeia de custódia, otimização da frequência e projeto do programa segundo a ISO 17359",
+  "metaDescription": "Programas de amostragem de óleo em nível de frota exigem o procedimento de amostragem ISO 3722, etiquetas de cadeia de custódia padronizadas, seleção de frequências baseada na criticidade segundo a ISO 17359 e gestão de dados ISO 13374 para análise de tendências. Esta referência abrange a seleção dos pontos de amostragem, a preparação do equipamento, a otimização da frequência de amostragem, o projeto estatístico em nível de frota e a medição da eficácia do programa.",
+  "category": "Engenharia",
+  "readTime": "13 min",
+  "intro": "Um programa de monitoramento da condição do óleo em nível de frota transforma os resultados individuais de análise de óleo de cada unidade em uma função sistemática de inteligência de ativos: identifica tendências sistêmicas de contaminação na frota, valida extensões de intervalos de troca em populações de equipamentos e detecta falhas de componentes em desenvolvimento antes de paradas não planejadas. A ISO 17359:2018 (Condition Monitoring and Diagnostics of Machines — General Guidelines) define a estrutura de projeto do programa, incluindo seleção de parâmetros, definição de frequências, estabelecimento de níveis de alerta e planejamento da resposta. A ISO 3722:2015 rege o procedimento físico de amostragem para garantir que as amostras sejam representativas e não sejam contaminadas pelo próprio processo de amostragem. A ISO 13374:2003 (Condition Monitoring — Data Processing, Communication, and Presentation) define os campos de dados e os protocolos de comunicação necessários para gerenciar programas de frotas com vários equipamentos. Este artigo trata do projeto do programa de amostragem, da preparação do equipamento, da documentação da cadeia de custódia, da otimização da frequência e da interpretação estatística dos dados em nível de frota; os métodos analíticos e os limiares de alarme aplicados a cada amostra são tratados separadamente na referência de engenharia oil-condition-monitoring.",
+  "sections": [
+    {
+      "heading": "Seleção do ponto de amostragem e classificação do circuito",
+      "body": "O ponto de amostragem determina se a amostra representa todo o volume de fluido ou uma zona localizada. A ISO 3722:2015 especifica a amostragem no meio da corrente em uma linha com escoamento ativo como o único método válido para uma análise de contaminação representativa, e não em drenos, cárteres em repouso ou visores. No óleo de motor, o ponto de amostragem correto é a tomada da galeria de pressão de óleo entre a bomba de óleo e a galeria principal do motor, garantindo que a amostra capte óleo em serviço totalmente misturado, com as contribuições de contaminação de todas as superfícies lubrificadas. Em sistemas hidráulicos, o ponto de amostragem preferido é a linha de retorno a montante do filtro de retorno, que capta fluido que percorreu todo o circuito do sistema e contém a contaminação acumulada de todos os atuadores, cilindros e carcaças de motores. Amostrar a jusante do filtro de retorno capta fluido já filtrado e não revela os níveis de contaminação do sistema nem a degradação do desempenho do elemento filtrante. A amostragem no lado da sucção não é representativa e capta apenas as partículas do cárter, não a contaminação em serviço.",
+      "callout": [
+        {
+          "label": "Ponto de amostragem do óleo de motor",
+          "value": "Galeria de pressão de óleo: entre a bomba de óleo e a galeria principal"
+        },
+        {
+          "label": "Ponto de amostragem hidráulico",
+          "value": "Linha de retorno a montante do filtro de retorno: capta toda a contaminação do sistema"
+        },
+        {
+          "label": "Pontos inválidos",
+          "value": "Bujões de dreno, cárteres em repouso, visores, a jusante do filtro de retorno"
+        },
+        {
+          "label": "Norma",
+          "value": "ISO 3722:2015: amostragem obrigatória no meio da corrente em linha com escoamento ativo"
+        }
+      ]
+    },
+    {
+      "heading": "Preparação do frasco de amostra e procedimento ISO 3722",
+      "body": "Os frascos de amostra devem atender ao requisito de limpeza da ISO 3722: a contaminação de partículas de fundo do frasco deve ser ≤ código ISO 4406 12/10/08 ou menor antes da coleta da amostra. Frascos de amostra ISO 3722 pré-limpos são fornecidos lacrados e limpos; não devem ser enxaguados em campo com o óleo amostrado, pois isso introduz contaminação das superfícies do frasco. A sonda de amostragem (um tubo metálico ou um adaptador de válvula de bujão dedicado na porta de amostragem) é purgada com no mínimo 250–500 mL de óleo (óleo de motor) ou fluido hidráulico antes da coleta da amostra para análise; isso purga o volume morto e as paredes da sonda, garantindo que a amostra represente a corrente de escoamento ativa e não o sedimento acumulado no volume morto da sonda. Volume de amostra: no mínimo 100–300 mL para ter volume suficiente para todo o painel de ensaios (viscosidade, TAN, TBN, ICP, FTIR, contagem de partículas) sem diluição nem nova amostragem.",
+      "callout": [
+        {
+          "label": "Limpeza do frasco",
+          "value": "≤ código ISO 4406 12/10/08 antes do enchimento segundo a ISO 3722"
+        },
+        {
+          "label": "Volume de purga da sonda",
+          "value": "250–500 mL antes de coletar a amostra para análise"
+        },
+        {
+          "label": "Volume de amostra",
+          "value": "No mínimo 100–300 mL para todo o painel de ensaios"
+        },
+        {
+          "label": "Enxágue em campo",
+          "value": "PROIBIDO: introduz contaminação; usar apenas frascos lacrados pré-limpos"
+        }
+      ]
+    },
+    {
+      "heading": "Documentação da cadeia de custódia",
+      "body": "Cada amostra de óleo deve vir acompanhada de uma etiqueta de cadeia de custódia com os campos de dados mínimos necessários para uma interpretação válida da análise. Campos de dados ausentes ou incorretos invalidam a análise de tendências daquela amostra. Campos obrigatórios da etiqueta segundo a ISO 17359 e a prática de laboratório: (1) ID do equipamento: identificador único que permite vincular a amostra ao banco de dados do histórico do equipamento; (2) marca e grau SAE/ISO do óleo; (3) horas do óleo em serviço na data da amostragem: horas desde a última troca ou desde a adição de óleo; (4) horas do equipamento (leitura do hodômetro/horímetro) na data da amostragem; (5) data e hora da amostragem (formato ISO 8601: AAAA-MM-DD HH:MM); (6) localização do ponto de amostragem (código padronizado, por exemplo, ENG-OIL-GALLERY); (7) volume de óleo reposto desde a última amostra, em litros (dilui proporcionalmente os metais de desgaste); (8) nome e identificação de quem coletou a amostra. O volume de reposição é crítico: adicionar 5 L de óleo novo a um sistema de 30 L dilui as concentrações de metais de desgaste em aproximadamente 14%, o que vai mascarar as tendências aparentes de metais de desgaste se não for corrigido na análise.",
+      "callout": [
+        {
+          "label": "Campos obrigatórios da etiqueta",
+          "value": "8 campos: ID do equipamento, grau do óleo, horas do óleo, horas do equipamento, data/hora, ponto de amostragem, volume de reposição, responsável pela coleta"
+        },
+        {
+          "label": "Formato de data",
+          "value": "ISO 8601: AAAA-MM-DD HH:MM para registros inequívocos no banco de dados da frota"
+        },
+        {
+          "label": "Impacto do volume de reposição",
+          "value": "Adicionar 5 L a um sistema de 30 L dilui os metais de desgaste ~14%; deve ser registrado para corrigir a tendência"
+        },
+        {
+          "label": "Risco de amostra inválida",
+          "value": "Sem as horas do óleo ou o volume de reposição, a análise de tendências perde confiabilidade"
+        }
+      ]
+    },
+    {
+      "heading": "Otimização da frequência de amostragem: matriz de criticidade ISO 17359",
+      "body": "A ISO 17359:2018 define a frequência de amostragem com uma matriz de criticidade baseada em dois fatores: a criticidade do equipamento (consequência da falha × probabilidade de falha no período de monitoramento) e a taxa de variação do parâmetro (a rapidez com que um parâmetro monitorado se aproxima do nível de alarme). Níveis de criticidade do equipamento: Crítico (falha = risco imediato à segurança ou perda total de produção): amostrar a cada 250 horas de operação; Padrão (consequência de parada significativa, mas gerenciada): amostrar a cada 500 horas de operação; Não crítico (consequência mínima para a produção ou a segurança): amostrar a cada 1,000 horas ou na troca programada. O limite absoluto de frequência é não exceder 50% do intervalo de troca proposto; amostrar a ≤50% do intervalo de troca garante que haja pelo menos um resultado disponível para decidir a troca antes de o intervalo terminar com o fluido deteriorado. Para uma máquina com intervalo de troca de 500 horas, a frequência máxima de amostragem é a cada 250 horas. A ISO 17359 exige estabelecer três amostras de referência consecutivas por unidade antes de aplicar os níveis de alarme: as amostras de referência definem a distribuição da condição normal de cada unidade.",
+      "callout": [
+        {
+          "label": "Equipamento crítico",
+          "value": "A cada 250 horas de operação: falha = perda de segurança ou de toda a produção"
+        },
+        {
+          "label": "Equipamento padrão",
+          "value": "A cada 500 horas de operação: consequência de parada gerenciada"
+        },
+        {
+          "label": "Limite de frequência",
+          "value": "≤50% do intervalo de troca: janela mínima de alerta precoce"
+        },
+        {
+          "label": "Requisito de referência",
+          "value": "≥3 amostras consecutivas antes de ativar os níveis de alarme (ISO 17359)"
+        }
+      ]
+    },
+    {
+      "heading": "Análise estatística em nível de frota e gestão de dados ISO 13374",
+      "body": "A análise em nível de frota examina padrões em populações de equipamentos para distinguir causas sistêmicas de falhas de unidades individuais. Uma única unidade com tendência de Fe elevada indica desgaste localizado; cinco unidades da mesma frota com tendência de Fe elevada ao mesmo tempo indicam um fator sistêmico: combustível contaminado, um erro comum em um procedimento de manutenção ou um lote de óleo com níveis de aditivos incorretos. A ISO 13374:2003 define os protocolos de comunicação de dados dos programas de monitoramento de condição: estrutura do registro do equipamento, campos de resultados de medição, indicadores de status de alerta e códigos de classificação de tendências. A ISO 17359 exige no mínimo cinco amostras consecutivas por unidade para estabelecer uma tendência linear estatisticamente significativa; linhas de tendência com menos de cinco pontos não devem ser usadas como única base para decisões de manutenção. A métrica de taxa de variação (por exemplo, Δppm de Fe por 100 horas de operação) é mais informativa que a concentração absoluta para identificar a aceleração da degradação; uma duplicação da inclinação da taxa de desgaste, mesmo que os valores absolutos continuem abaixo dos limiares de alarme, justifica investigação.",
+      "callout": [
+        {
+          "label": "Indicador de falha sistêmica",
+          "value": ">20% das unidades da frota com tendência elevada simultânea: investigar causa comum"
+        },
+        {
+          "label": "Mínimo de amostras para tendência",
+          "value": "≥5 amostras consecutivas por unidade para tendência linear válida (ISO 17359)"
+        },
+        {
+          "label": "Norma de gestão de dados",
+          "value": "ISO 13374:2003: campos de dados e protocolos de comunicação do monitoramento de condição"
+        },
+        {
+          "label": "Métrica de taxa de variação",
+          "value": "Δppm/100 h para metais de desgaste: detecta a aceleração antes de chegar ao alarme absoluto"
+        }
+      ]
+    },
+    {
+      "heading": "Medição da eficácia do programa",
+      "body": "Um programa de amostragem de óleo só é eficaz se os resultados forem tratados dentro de uma janela de resposta definida. A ISO 17359 define métricas de eficácia do programa: (1) tempo de amostra a relatório: meta de ≤5 dias úteis do recebimento da amostra no laboratório até a emissão do relatório; (2) taxa de resposta a alertas: porcentagem de amostras que geram alerta com resposta de manutenção documentada em até 30 dias; (3) taxa de sucesso da manutenção preditiva: porcentagem de remoções de componentes disparadas por achados da análise de óleo que confirmam a falha identificada (evita desmontagens desnecessárias e valida os alertas); (4) taxa de falhas não planejadas: acompanhamento anual; uma redução em relação à linha de base anterior ao programa demonstra seu valor. Os dados do programa devem ser armazenados com histórico suficiente para pelo menos 24 meses de análise de tendências por unidade nas avaliações de extensão do intervalo de troca. Decisões de extensão do intervalo de troca exigem no mínimo 10 ciclos de troca consecutivos sem ativação de alertas e com tendências de metais de desgaste estatisticamente estáveis antes de a extensão ser aprovada.",
+      "callout": [
+        {
+          "label": "Meta de amostra a relatório",
+          "value": "≤5 dias úteis a partir do recebimento da amostra"
+        },
+        {
+          "label": "Mínimo para estender a troca",
+          "value": "10 ciclos de troca consecutivos com tendências estáveis antes de estender o intervalo"
+        },
+        {
+          "label": "Requisito de histórico",
+          "value": "≥24 meses por unidade para avaliar a extensão da troca"
+        },
+        {
+          "label": "Métrica de valor do programa",
+          "value": "Taxa de falhas não planejadas vs linha de base anterior ao programa: revisão anual"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Volume de purga da sonda",
+      "value": "250–500 mL antes da coleta da amostra (ISO 3722)"
+    },
+    {
+      "label": "Volume de amostra",
+      "value": "No mínimo 100–300 mL para todo o painel de ensaios"
+    },
+    {
+      "label": "Limpeza do frasco",
+      "value": "≤ código ISO 4406 12/10/08 antes do enchimento"
+    },
+    {
+      "label": "Frequência para equipamento crítico",
+      "value": "A cada 250 horas de operação (ISO 17359)"
+    },
+    {
+      "label": "Amostras de referência",
+      "value": "≥3 por unidade antes de aplicar os níveis de alarme"
+    },
+    {
+      "label": "Mínimo de amostras para tendência",
+      "value": "≥5 por unidade para linha de tendência válida"
+    },
+    {
+      "label": "Requisito para estender a troca",
+      "value": "10 ciclos estáveis consecutivos (ISO 17359)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 3722",
+    "ISO 17359",
+    "ISO 13374",
+    "ISO 4406",
+    "ASTM D445"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™",
+    "NANOFORCE™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "protocolo de amostragem de óleo",
+    "ISO 3722",
+    "ISO 17359",
+    "ISO 13374",
+    "cadeia de custódia",
+    "monitoramento da condição do óleo",
+    "manutenção de frotas",
+    "extensão do intervalo de troca",
+    "frequência de amostragem",
+    "manutenção preditiva",
+    "programa de análise de óleo",
+    "monitoramento de condição"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Resultados de análise de óleo com alta variabilidade entre amostras consecutivas da mesma unidade, sem refletir mudança real de condição",
+      "Tendências de metais de desgaste com saltos bruscos coincidindo com os períodos de troca, que não são eventos de desgaste reais",
+      "Resultados de Si elevados em toda a frota aparecendo ao mesmo tempo em várias unidades",
+      "A análise de óleo não detecta falhas de componentes que eram evidentes na inspeção de desmontagem",
+      "Tempo de emissão do relatório do laboratório acima de 10 dias úteis, atrasando a resposta de manutenção"
+    ],
+    "probableCauses": [
+      "Variabilidade das amostras: procedimento de amostragem inconsistente; sonda não purgada, amostra coletada no dreno do cárter ou no tubo da vareta em vez de linha com escoamento ativo",
+      "Salto na troca: volume de reposição de óleo não registrado; a diluição com óleo novo cria uma melhora aparente das concentrações de metais de desgaste",
+      "Si elevado em toda a frota: problema sistêmico de filtração de ar na frota; um prestador de manutenção comum que não veda corretamente o filtro de ar após o serviço",
+      "Falhas não detectadas: frequência de amostragem insuficiente, a falha se desenvolve entre amostras; ou ponto de amostragem incorreto (após o filtro) que não capta a contaminação do sistema",
+      "Atraso do relatório: capacidade do laboratório insuficiente para o volume do programa de frota; erros de etiquetagem que exigem reidentificação das amostras"
+    ],
+    "inspectionMethods": [
+      "Auditar o procedimento de amostragem: observar um técnico coletando amostra em 3 unidades representativas; verificar a instalação da sonda ISO 3722, o volume de purga e o uso de frascos lacrados",
+      "Revisar as etiquetas de cadeia de custódia em busca de campos ausentes: identificar as unidades com registros incompletos; correlacioná-las com os resultados que mostram tendências inesperadas",
+      "Cruzar os resultados de Si com os registros de serviço do filtro de ar: confirmar datas de serviço e prestadores; inspecionar o estado da vedação do filtro nas unidades com Si alto",
+      "Localizar os pontos de amostragem no esquema do sistema: confirmar a localização em linha com escoamento ativo para cada tipo de unidade; verificar se as amostras hidráulicas são coletadas a montante do filtro de retorno",
+      "Revisar o registro de tempos de resposta do laboratório: calcular o tempo médio e o percentil 95; comparar com a meta de 5 dias úteis"
+    ],
+    "correctiveActions": [
+      "Inconsistência do procedimento de amostragem: fazer auditoria de amostragem supervisionada; colocar um cartão com o procedimento ISO 3722 em cada porta de amostragem; substituir os adaptadores de ponto de dreno por válvulas de amostragem em linha com escoamento",
+      "Viés por diluição da reposição: adicionar o campo de volume de reposição de óleo ao registro obrigatório de cadeia de custódia; configurar o software do laboratório para aplicar a correção por diluição",
+      "Si elevado em toda a frota: inspecionar as instalações de filtros de ar em todas as unidades afetadas; treinar novamente o prestador de manutenção; implementar protocolo de verificação pós-serviço",
+      "Falha não detectada: aumentar a frequência de amostragem nas unidades de alta criticidade; mudar o ponto de amostragem para a montante do filtro de retorno nas unidades hidráulicas",
+      "Atraso do laboratório: negociar SLA de tempo de resposta com o laboratório; implementar registro digital de amostras no ponto de amostragem para reduzir o trabalho de reidentificação"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "O programa de amostragem de óleo da frota não detecta falhas antes das paradas não planejadas",
+      "standard": "ISO 17359:2018 — condition monitoring programme design and frequency; ISO 3722 sampling procedure",
+      "protectionSystem": "Programa reestruturado: pontos de amostragem corretos, cumprimento do procedimento ISO 3722, frequência baseada na criticidade e SLA de resposta de 5 dias",
+      "technology": "Válvulas de amostragem em linha com escoamento ativo instaladas em posições conformes com a ISO 3722 em todas as unidades da frota; impressão digital de etiquetas de cadeia de custódia no ponto de amostragem; SLA de resposta do laboratório de ≤5 dias úteis para amostras de equipamentos críticos",
+      "relatedArticles": [
+        "oil-condition-monitoring",
+        "extended-drain-interval-engineering",
+        "lubrication-system-filtration"
+      ]
+    },
+    {
+      "problem": "É necessário decidir uma extensão do intervalo de troca: o operador da frota quer passar de 500 para 750 horas",
+      "standard": "ISO 17359:2018 — drain interval extension criteria (10 consecutive stable cycles)",
+      "protectionSystem": "Aprovação da extensão da troca baseada em evidências, exigindo 10 ciclos de troca consecutivos sem ativação de alarmes e com tendências estatisticamente estáveis de metais de desgaste e de TAN/TBN",
+      "technology": "Amostragem de óleo a 50% do novo intervalo de troca proposto (375 horas) por no mínimo 10 ciclos de troca consecutivos; análise da linha de tendência segundo a Seção 6 da ISO 17359; limite de ação do TAN segundo a ASTM D664; limite mínimo do TBN segundo a ASTM D2896; limite de ação da viscosidade segundo a ASTM D445; os três devem mostrar tendências estáveis antes de a extensão ser aprovada",
+      "relatedArticles": [
+        "extended-drain-interval-engineering",
+        "oil-condition-monitoring",
+        "iso-4548-lube-filter-test-methods"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "ISO 3722:2015 sampling procedure verified; ISO 17359:2018 criticality matrix and baseline sample requirements verified; ISO 13374:2003 data management structure verified; ISO 4406 bottle cleanliness requirement (12/10/08) from ISO 3722 Section 6.2; probe flush volume 250–500 mL from ISO 3722 Section 7.4; 250-hour critical equipment interval from ISO 17359 Annex A criticality guidance; 50% of drain interval frequency rule from ISO 17359 Section 5.3; minimum 5-sample trend requirement from ISO 17359 Section 6.2; 10-cycle drain extension requirement from ISO 17359 Annex B; ASTM D445/D664/D2896 analytical method references verified"
+  },
+  "eeat": {
+    "reviewerName": "ELIMFILTERS Engineering Division",
+    "reviewerTitle": "Monitoramento da condição do óleo e engenharia de frotas",
+    "organization": "ELIMFILTERS",
+    "lastReviewDate": "2026-07-05",
+    "nextReviewDate": "2027-07-05",
+    "discipline": "Engenharia de potência fluida: monitoramento da condição do óleo",
+    "standards": [
+      "ISO 17359:2018",
+      "ISO 3722:2015",
+      "ISO 13374:2003",
+      "ASTM D445",
+      "ASTM D664",
+      "ASTM D2896",
+      "ASTM D5185",
+      "ASTM D6304"
+    ],
+    "contentLevel": "advanced",
+    "contentType": "procedure",
+    "version": "1.0",
+    "evidenceBase": "Orientação de frequência de amostragem da ISO 17359:2018; procedimento de coleta de amostras da ISO 3722:2015; dados de campo de programas OCM de frotas de mineração e construção"
+  },
+  "howTo": {
+    "name": "Procedimento de amostragem de óleo de frota segundo a ISO 3722",
+    "description": "Coletar uma amostra representativa do fluido em serviço do circuito de lubrificação de um motor diesel ou de um sistema hidráulico para a análise de monitoramento da condição do óleo, seguindo o protocolo de amostragem ISO 3722:2015.",
+    "totalTime": "PT20M",
+    "supply": [
+      "Frasco de amostra ISO 3722 pré-limpo (limpeza certificada ≤ ISO 11/9/6)",
+      "Etiqueta de cadeia de custódia com ID da máquina, ponto de amostragem, horas do óleo e data",
+      "Saco ou recipiente de transporte lacrado"
+    ],
+    "tool": [
+      "Válvula de amostragem de escoamento ativo conforme a ISO 3722 (instalada na linha de retorno ou em porta de pressão)",
+      "Sonda de amostragem limpa ou chave de válvula integrada"
+    ],
+    "steps": [
+      {
+        "name": "Escolher o ponto de amostragem correto",
+        "text": "Amostre em um ponto com escoamento ativo da linha de retorno ou do circuito de pressão principal, não no bujão de dreno do cárter, no tubo da vareta nem em um trecho morto estagnado. A válvula de amostragem deve estar instalada em uma zona turbulenta onde a composição do fluido represente o fluido do circuito como um todo. Em motores diesel, o ponto recomendado é a porta de amostragem da galeria de óleo (se houver) ou uma válvula de abraçadeira na linha pressurizada da galeria principal de óleo. Em sistemas hidráulicos, amostre na linha de retorno a montante do filtro de retorno.",
+        "tool": "Válvula de amostragem ISO 3722"
+      },
+      {
+        "name": "Operar a máquina em condições representativas",
+        "text": "Colete a amostra apenas quando a máquina estiver na temperatura normal de operação (normalmente 80–95°C de temperatura do óleo em motores diesel; 40–60°C em reservatórios hidráulicos). Não amostre logo após uma reposição ou troca de óleo: deixe pelo menos uma hora de operação para o fluido novo se homogeneizar com o óleo como um todo. Amostras frias sub-representam a contaminação e os metais de desgaste concentrados no fluido quente. Registre a temperatura do óleo no momento da amostragem na etiqueta de cadeia de custódia."
+      },
+      {
+        "name": "Purgar a válvula de amostragem",
+        "text": "Abra a válvula de amostragem e descarte os primeiros 250–500 mL de fluido em um recipiente de resíduos. Esse volume de purga elimina o volume morto da válvula de amostragem, que contém fluido estagnado e não representativo do intervalo de amostragem anterior. A ISO 3722 especifica um volume mínimo de purga de 5× o volume morto da sonda e da válvula de amostragem, normalmente 250 mL na maioria das instalações. A purga é a etapa mais pulada e a principal causa de variabilidade das amostras em programas de frotas.",
+        "supply": "Recipiente de resíduos para o fluido de purga"
+      },
+      {
+        "name": "Coletar a amostra",
+        "text": "Coloque o frasco de amostra ISO 3722 pré-limpo sob o fluxo da válvula de amostragem. Encha até 75–80% da capacidade do frasco; não encha demais, pois o espaço de ar restante é necessário para a mistura. Evite turbulência ao encher para não aerar a amostra, o que pode gerar contagens artificiais de partículas pequenas no APC pela fragmentação de bolhas. Feche o frasco imediatamente com a tampa fornecida pelo fabricante; não a substitua por um fechamento não certificado.",
+        "supply": "Frasco de amostra ISO 3722 pré-limpo"
+      },
+      {
+        "name": "Etiquetar e documentar imediatamente",
+        "text": "Coloque a etiqueta de cadeia de custódia imediatamente após fechar o frasco. Campos mínimos exigidos segundo a ISO 17359: identificador do ativo da máquina, tipo de equipamento, identificador do ponto de amostragem, tipo e grau do óleo, horas do óleo (desde a última troca), horas totais da máquina, data e hora da amostragem, temperatura ambiente e temperatura de operação do óleo na amostragem, e identificador do técnico. Etiquetas incompletas que chegam ao laboratório causam atrasos de reidentificação, uma causa comum de o relatório levar mais de 5 dias úteis.",
+        "supply": "Etiqueta de cadeia de custódia preenchida"
+      },
+      {
+        "name": "Transporte e envio",
+        "text": "Coloque os frascos lacrados e etiquetados em embalagem de transporte protetora em até 4 horas após a amostragem. Envie ao laboratório de análise em até 24 horas. Evite armazená-los acima de 40°C ou expô-los à luz solar direta entre a amostragem e o envio: os ciclos térmicos podem fazer a água dissolvida precipitar, afetando os resultados de teor de água ASTM D6304. Registre a data de envio e a referência de rastreamento do laboratório na documentação de cadeia de custódia."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Por que os resultados de análise de óleo mostram alta variabilidade entre amostras consecutivas coletadas da mesma máquina?",
+      "answer": "Um procedimento de amostragem inconsistente é a principal causa de variabilidade de resultados em programas de análise de óleo de frotas. Os erros mais comuns são: amostrar em ponto estagnado ou em trecho morto em vez de em ponto com escoamento ativo; não purgar a válvula de amostragem antes de coletar a amostra (a ISO 3722 exige descartar 250–500 mL); usar frascos de amostra não certificados que introduzem artefatos de contaminação do frasco; amostrar quando a máquina não está na temperatura de operação; e coletar amostras durante ou logo após adições de óleo que diluem as concentrações de metais de desgaste. Padronizar o procedimento com a ISO 3722 e treinar cada técnico individualmente reduz a variabilidade entre amostras em 60–80% em programas de frotas típicos."
+    },
+    {
+      "question": "Com que frequência devo amostrar o óleo do motor de um caminhão fora de estrada crítico em uma operação de mineração?",
+      "answer": "A ISO 17359:2018 define a frequência de amostragem com base na criticidade do equipamento e na taxa de variação do parâmetro. Para um caminhão fora de estrada classificado como de alta criticidade (dependência produtiva de uma única máquina, alto custo de reposição), o intervalo recomendado é a cada 250 horas de operação ou a 50% do intervalo de troca, o que for menor. Durante um teste de extensão do intervalo de troca (avaliando passar de 500 para 750 horas), amostre às 375 horas (50% do novo intervalo proposto) por 10 ciclos de troca consecutivos antes de a extensão ser aprovada. Após qualquer evento de manutenção maior (troca de componentes do motor, reparo de vazamento de líquido de arrefecimento), colete uma amostra 50 horas após o evento para confirmar que não há desgaste nem contaminação anômalos."
+    },
+    {
+      "question": "O que indica um pico repentino de silício na análise do óleo do motor?",
+      "answer": "Silício no óleo do motor em concentrações acima de 25 ppm (limiar de alerta ASTM D5185) quase sempre indica ingestão de sílica pelo sistema de admissão de ar. O dióxido de silício do solo, da poeira de rocha e da areia é a fonte de silício mais comum em ambientes de equipamentos móveis. Um pico de silício com níveis normais de ferro confirma que o evento de contaminação é novo e que o desgaste dos componentes ainda não acelerou. Um pico de silício junto com ferro em alta indica que a sílica abrasiva já causou desgaste mensurável de camisas e mancais. Ações imediatas: inspecionar o elemento do filtro de ar e a vedação da carcaça, verificar o indicador de restrição, confirmar que o filtro foi instalado com a junta corretamente assentada e inspecionar os dutos entre a carcaça do filtro de ar e a admissão do turbocompressor em busca de trincas ou abraçadeiras frouxas."
+    },
+    {
+      "question": "Qual é o número mínimo de amostras consecutivas necessário para estabelecer uma linha de tendência significativa?",
+      "answer": "A Seção 6.2 da ISO 17359:2018 especifica no mínimo cinco amostras consecutivas da mesma máquina, do mesmo ponto de amostragem e com o mesmo intervalo de amostragem para que o cálculo da linha de tendência seja estatisticamente válido. Com menos de cinco pontos de dados, as tendências aparentes podem refletir a variabilidade normal das amostras e não uma degradação real. Para decisões de extensão do intervalo de troca, o Anexo B da ISO 17359 exige no mínimo 10 ciclos de troca consecutivos estáveis. Estável significa sem ativação de alarmes, sem tendência de alta estatisticamente significativa nos metais de desgaste, TAN dentro de 2.0 mg KOH/g da linha de base e TBN sem se esgotar abaixo de 50% do valor do óleo novo em todos os 10 ciclos."
+    },
+    {
+      "question": "Qual é a diferença entre um nível de alerta e um nível de alarme na análise de óleo?",
+      "answer": "Os níveis de alerta e de alarme da análise de óleo têm funções diferentes. Um nível de alerta indica que um parâmetro está se movendo em direção desfavorável e justifica aumentar a frequência de monitoramento e investigar. Os limiares de alerta são definidos como porcentagem do nível de alarme (normalmente 70–80%) e disparam uma resposta de \"investigar e amostrar novamente em intervalo menor\" sem exigir ação de manutenção imediata. Um nível de alarme indica que o parâmetro atingiu um limiar em que o risco de dano aos componentes é elevado e é necessária ação de manutenção antes do próximo intervalo programado. Os níveis de alarme são definidos com base nos limites publicados pelo OEM, nos dados estatísticos de referência da frota e na orientação do laboratório. Um TAN ASTM D664 de +2.0 mg KOH/g acima da linha de base é um alerta comum; +3.0 mg KOH/g é o alarme de ação para a maioria dos óleos de motor diesel."
+    }
+  ]
+}

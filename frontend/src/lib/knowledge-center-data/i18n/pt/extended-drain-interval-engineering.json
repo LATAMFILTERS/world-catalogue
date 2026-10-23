@@ -1,0 +1,243 @@
+{
+  "slug": "extended-drain-interval-engineering",
+  "faqs": [
+    {
+      "question": "Quais parâmetros da análise de óleo devem permanecer dentro da especificação para justificar a extensão de um intervalo de troca?",
+      "answer": "Justificar um intervalo de troca estendido (EDI) exige que TODOS os parâmetros a seguir estejam dentro da especificação ao mesmo tempo: (1) TBN acima de 50% do valor do óleo novo (ASTM D2896); (2) viscosidade cinemática a 100°C dentro dos limites do grau SAE (ASTM D445); (3) contagem de partículas ISO 4406 dentro do código alvo do sistema; (4) número de acidez total (TAN, ASTM D664) abaixo do TBN com margem mínima de 2 mg KOH/g; (5) reserva de antioxidantes por RULER (ASTM D6971) acima de 25% do valor do óleo novo; (6) teor de água abaixo de 0.1% (ASTM D6304); (7) diluição por combustível abaixo de 1.5% (ASTM D7279 ou cálculo por viscosidade); (8) nenhuma contaminação por glicol detectada. Todos os parâmetros devem ser aprovados, não apenas os mais medidos. Programas EDI que monitoram só o TBN e a viscosidade deixam passar 40–60% das falhas que só são detectáveis pelo monitoramento da reserva de antioxidantes e dos precursores de verniz."
+    },
+    {
+      "question": "O que é a abordagem de extensão por etapas para estabelecer intervalos de troca estendidos?",
+      "answer": "Protocolo de extensão por etapas dos programas EDI: (1) Fase de referência: amostrar no intervalo especificado pelo OEM por 3 trocas consecutivas para estabelecer os valores de referência específicos do equipamento e a taxa de variação de todos os parâmetros monitorados; (2) Primeira extensão: estender 25% além do intervalo do OEM; coletar amostras de óleo no intervalo do OEM e no intervalo estendido e compará-las; se todos os parâmetros estiverem dentro da especificação no intervalo estendido, prosseguir; (3) Segunda extensão: estender 50% além do intervalo do OEM; repetir o protocolo de amostragem; (4) Terceira extensão: estender 100% além do intervalo do OEM (2× OEM); repetir a verificação. Em cada etapa, se algum parâmetro falhar ou mostrar taxa de variação que sugira falha antes da próxima extensão, interromper o programa no nível de extensão anterior. O requisito estatístico é ter 3 extensões consecutivas aprovadas em cada nível antes de passar ao seguinte. A variação específica de cada equipamento obriga a estabelecer os níveis de EDI individualmente para cada máquina e configuração de motor."
+    },
+    {
+      "question": "Como o teor de enxofre do combustível afeta o intervalo de troca de óleo em motores diesel de serviço pesado?",
+      "answer": "O teor de enxofre do combustível afeta diretamente a taxa de esgotamento do TBN do óleo: os produtos de combustão do enxofre (SO2, SO3) se combinam com a água da combustão e formam ácido sulfúrico (H2SO4), neutralizado pelos aditivos do TBN. Taxa de esgotamento: com <15 ppm de enxofre (ULSD, EUA/UE), o esgotamento do TBN a cada 100 horas é de aproximadamente 0.3–0.5 mg KOH/g em um API CK-4 15W-40 (TBN inicial = 12). Com 500 ppm de enxofre (combustível padrão global em alguns mercados), a taxa de esgotamento é de 1.5–2.5 mg KOH/g a cada 100 horas, 5× mais rápida. Com 3,500 ppm de enxofre (combustível bunker de alto enxofre em alguns mercados em desenvolvimento), a taxa de esgotamento do TBN é de 5–10 mg KOH/g a cada 100 horas, exigindo troca de óleo a cada 100–150 horas para manter o TBN acima de 6 mg KOH/g (50% do óleo novo). Programas EDI válidos para motores com ULSD na UE/EUA não podem ser aplicados ao mesmo motor operando com combustível de alto enxofre em outros mercados: são necessários programas de intervalos separados."
+    },
+    {
+      "question": "Qual é o efeito da razão entre o volume de óleo e a cilindrada do motor nos intervalos de troca?",
+      "answer": "O intervalo de troca escala de forma aproximadamente proporcional à razão entre o volume da carga de óleo e o consumo de combustível do motor, porque essa razão determina a rapidez com que os produtos de oxidação e os ácidos se acumulam por litro de óleo. Um motor com cárter de 30 L consumindo 12 L/hora de combustível (2.5 L de óleo por L/h de combustível) esgota o TBN duas vezes mais rápido que o mesmo motor com cárter de 60 L no mesmo consumo de combustível (5.0 L de óleo por L/h de combustível). Essa relação sustenta o argumento econômico de reservatórios de óleo maiores e filtração em bypass complementar em aplicações de alta severidade: dobrar o volume do cárter dobra o intervalo de troca teórico (sujeito aos limites dos demais parâmetros). Em geradores diesel industriais estacionários, cárteres estendidos com capacidade de 3–5× a especificação do OEM são instalados justamente para sustentar programas EDI de 1,500–2,000 horas em geradores que, de outro modo, exigiriam intervalos de 500 horas."
+    },
+    {
+      "question": "Em que a manutenção baseada em condição difere da manutenção preditiva no contexto dos intervalos de troca?",
+      "answer": "A manutenção baseada em condição (CBM) troca o óleo quando os parâmetros medidos indicam que o fim da vida útil do óleo foi atingido: reage aos dados reais de condição. A manutenção preditiva usa modelos estatísticos das tendências de condição para prever quando os parâmetros vão atingir os limites de ação antes que isso aconteça, permitindo programar a manutenção com antecedência ao ponto de falha previsto. Para intervalos de troca de óleo: CBM = trocar o óleo quando o TBN cair abaixo de 6 mg KOH/g (observado); preditiva = amostrar às 300 horas, observar o TBN caindo 0.05 mg KOH/g por hora, projetar que o TBN chegará a 6 mg KOH/g às 440 horas e programar a troca às 400 horas (com 40 horas de margem). A manutenção preditiva permite programar paradas planejadas em vez de trocas emergenciais reativas e evita os 10–20% dos casos de CBM em que um parâmetro falha entre intervalos de amostragem e o equipamento opera sem detecção com óleo fora de especificação."
+    },
+    {
+      "question": "Qual é o papel da filtração em bypass na extensão dos intervalos de troca do óleo do motor?",
+      "answer": "A filtração em bypass (kidney loop de fluxo parcial a β3(c) ≥ 200) remove do óleo lubrificante as partículas abaixo de 3 µm, a contaminação que catalisa a oxidação do óleo por efeitos de superfície das partículas metálicas. Ao reduzir a concentração de catalisador, a filtração em bypass reduz a taxa de oxidação em 20–40%, com a correspondente redução da taxa de esgotamento do TBN e dos antioxidantes. Estudos de campo da Caterpillar Engineering (citados no documento técnico AEW-0086 da Caterpillar) em grandes motores de geradores diesel mostram que a filtração em bypass a 10% da vazão total de óleo, combinada com o monitoramento do TBN, estende os intervalos de troca de óleo em 40–100% em relação à filtração só de fluxo total com taxas de esgotamento do TBN equivalentes. Além disso, a filtração em bypass reduz os códigos ISO 4406 em 2–3 unidades em relação a sistemas só de fluxo total, reduzindo o desgaste dos componentes e adiando as trocas de componentes que o programa EDI busca evitar."
+    },
+    {
+      "question": "Qual é a justificativa econômica em nível de frota para um programa EDI baseado em análise de óleo?",
+      "answer": "Economia de um programa EDI em nível de frota para uma frota de mineração de 50 caminhões (SAE 15W-40, cárter de 30 L, intervalo do OEM de 250 horas): (1) Custo base do óleo: 50 caminhões × 30 L × 4 trocas/ano × AUD 5/L = AUD 30,000/ano de custo de óleo; (2) Mão de obra base: 50 × 4 × 1.5 horas × AUD 120/h = AUD 36,000/ano de mão de obra; (3) Parada base: 50 × 4 × 4 horas/troca × AUD 500/hora de custo de parada = AUD 400,000/ano de parada; (4) Total base: AUD 466,000/ano; (5) Custo do programa EDI: programa de análise de óleo de AUD 40/amostra × 4 amostras/troca × 50 caminhões = AUD 8,000/ano de amostragem; (6) Com o EDI estendido para 400 horas (60% de extensão): 2.5 trocas/ano × equivalente da base de AUD 466,000 = AUD 291,250, economizando AUD 174,750/ano antes do custo de amostragem (AUD 166,750 líquidos). O ponto de equilíbrio entre o custo do programa de amostragem e as economias de parada e óleo ocorre com aproximadamente 20% de extensão do intervalo, atingível na maioria das frotas bem mantidas."
+    },
+    {
+      "question": "Quais tipos de óleo base de alto desempenho permitem os intervalos de troca estendidos mais longos?",
+      "answer": "Capacidade de intervalo de troca estendido por tipo de óleo base: (1) Grupo I (mineral refinado por solvente, IV 95–105): capacidade EDI de base, normalmente 1.5–2× o intervalo do OEM com monitoramento; (2) Grupo II (hidroprocessado, IV 100–120): 2–3× o intervalo do OEM, melhor resistência à oxidação que o Grupo I; (3) Grupo III (altamente refinado, IV >120): 2–4× o intervalo do OEM, próximo do PAO em resistência à oxidação na maioria das aplicações; (4) Grupo IV (polialfaolefina, PAO): 3–5× o intervalo do OEM em aplicações estacionárias, excelente estabilidade térmica e à oxidação, IV natural acima de 140; (5) Bases éster do Grupo V (éster de poliol, éster TMP): até 8–10× o intervalo do OEM em aplicações industriais controladas, a maior resistência à oxidação e estabilidade térmica de todos os tipos de óleo base. Óleos PAO do Grupo IV e éster do Grupo V custam 3–10× mais por litro que o óleo mineral do Grupo I: a justificativa econômica exige quantificar o valor da extensão do intervalo em relação ao custo adicional do óleo."
+    },
+    {
+      "question": "Como a tecnologia EGR (recirculação dos gases de escape) do motor afeta os intervalos de troca de óleo?",
+      "answer": "A EGR (de alta e de baixa pressão) recircula uma fração dos gases de escape para o coletor de admissão para reduzir as emissões de NOx. O gás EGR contém: partículas de fuligem (PM) da combustão, SO2 do enxofre do combustível, NOx que forma ácido nitroso nos resfriadores EGR onde há condensação, e vapor d'água que condensa no resfriador EGR em carga parcial. Efeito do blow-by com EGR: (1) A taxa de carga de fuligem no óleo lubrificante aumenta 2–4× em motores com EGR em relação a motores equivalentes anteriores à EGR; fuligem acima de 3% em massa (TGA, ASTM D5967) acelera o aumento de viscosidade e o entupimento do filtro; (2) Os subprodutos de nitração (FTIR a 1,630 cm-1) se acumulam mais rápido, consumindo TBN; (3) O óleo de motores com EGR normalmente exige intervalos de troca 20–40% mais curtos que motores equivalentes sem EGR com a mesma especificação de óleo. A API CK-4 (norma atual de óleo diesel de serviço pesado) é formulada especificamente para motores com EGR, com maior capacidade de lidar com a fuligem e melhor resistência à oxidação que a formulação anterior API CJ-4."
+    },
+    {
+      "question": "Qual frequência mínima de amostragem é exigida para justificar um intervalo de troca estendido com confiança estatística?",
+      "answer": "A confiança estatística para justificar um EDI exige no mínimo 3 pontos de dados dentro de cada período de intervalo estendido para detectar: (1) tendências de degradação não lineares dos parâmetros (esgotamento acelerando perto do fim da vida do óleo); (2) eventos de contaminação com salto brusco (ingresso de líquido de arrefecimento, contaminação por combustível) que ocorrem entre os pontos de amostragem regulares; (3) o cálculo da taxa de variação com ±15% de exatidão. Para um programa de extensão de 500 horas: amostras às 0 horas (referência da troca de óleo), às 250 horas, às 400 horas e na troca de óleo (500 horas). A amostragem no meio do intervalo, às 250 horas, verifica se não houve contaminação inesperada e se a extrapolação inicial das tendências dos parâmetros é válida. Programas com apenas dois pontos de dados (troca de óleo e fim do intervalo) não têm poder estatístico suficiente para detectar a aceleração da degradação: a amostra de fim de intervalo pode mostrar parâmetros dentro da especificação enquanto a trajetória real de degradação excedeu os limites em algum ponto no meio do intervalo."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D2896-15, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration",
+      "relevance": "Método de medição do TBN: o principal parâmetro que dispara a troca de óleo em programas de intervalo de troca estendido."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6971-09, Standard Test Method for Measurement of Hindered Phenolic and Aromatic Amine Antioxidant Content in Non-Zinc Turbine Oils by Linear Sweep Voltammetry",
+      "relevance": "Medição da reserva de antioxidantes (ensaio RULER) para prever a vida útil restante do óleo em programas EDI."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry",
+      "relevance": "Método FTIR para monitorar oxidação, nitração, sulfatação, glicol e diluição por combustível: parâmetros essenciais do monitoramento de programas EDI."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010",
+      "relevance": "Referência abrangente sobre o projeto de programas de análise de óleo, a interpretação de parâmetros, a metodologia de frequência de amostragem e a justificativa econômica do intervalo de troca estendido."
+    }
+  ],
+  "title": "Engenharia de intervalos de troca estendidos: monitoramento da condição do óleo, definição de limites e gestão de risco",
+  "subtitle": "Metodologia para estabelecer e monitorar intervalos de troca de óleo estendidos: taxas de deterioração do óleo, limites de ação de TAN e viscosidade, gatilhos de troca por partículas, considerações do orçamento de contaminação e análise de compromisso entre TCO e risco.",
+  "metaDescription": "Referência de engenharia sobre a metodologia de intervalos de troca estendidos: monitoramento da deterioração do óleo (TAN, viscosidade, FTIR, contagem de partículas), definição de limites de intervalo de troca a partir de dados de condição, análise do orçamento de contaminação, capacidade de troca estendida API CK-4 e estrutura de compromisso entre custo total de propriedade e risco do equipamento.",
+  "category": "engenharia",
+  "readTime": "12 min",
+  "intro": "Os programas de intervalo de troca estendido (EDI) reduzem a frequência de troca de óleo além das recomendações padrão do OEM monitorando continuamente a condição do óleo e trocando-o quando os gatilhos de condição são atingidos, em vez de em intervalos fixos de tempo ou quilometragem. O EDI oferece menores custos de manutenção, menores volumes de óleo usado e potencialmente menor gasto com lubrificante. Projetar um programa EDI exige estabelecer limites de ação baseados na química e na contaminação, validá-los para a formulação de óleo e o ciclo de trabalho específicos do equipamento e gerenciar o risco residual de a condição do óleo sair da faixa entre intervalos de amostragem.",
+  "sections": [
+    {
+      "heading": "Fundamento e escopo do EDI",
+      "body": "Os intervalos de troca de óleo padrão do OEM são definidos de forma conservadora para cobrir a pior combinação de: severidade máxima do ciclo de trabalho (100% de carga, temperatura máxima), qualidade mínima da formulação do óleo (o óleo de menor categoria de serviço API que atenda) e intervalo máximo entre amostras de análise de óleo. Em frotas que fazem análise de óleo regularmente e cujos equipamentos operam em ciclos de trabalho moderados, a condição real do óleo no intervalo de troca do OEM muitas vezes está dentro de limites seguros: o óleo tem vida útil restante que é descartada com a troca. O EDI aproveita essa vida restante do óleo enquanto gerencia o risco de a deterioração da condição acelerar inesperadamente. O EDI é mais adequado para: cárteres de óleo grandes (o alto custo da troca de óleo justifica o investimento em análise), ciclos de trabalho com baixa fração de carga, temperaturas de operação controladas e operadores com programas de análise de óleo estabelecidos. O EDI é contraindicado para: operações com partidas a frio frequentes (risco de diluição por combustível), ciclos de trabalho desconhecidos, filtração de ar mal mantida (alto ingresso de contaminação por Si) e equipamentos com histórico de eventos de contaminação interna."
+    },
+    {
+      "heading": "Limites de ação da química do óleo",
+      "body": "Os gatilhos de troca baseados na química monitoram os produtos de degradação do óleo e o esgotamento dos aditivos. Viscosidade cinemática a 100°C (ASTM D445): limite de troca de ±15% em relação à referência do óleo novo; aumento indica espessamento oxidativo ou contaminação; redução indica diluição por combustível ou cisalhamento do VII. Número de acidez total (ASTM D664): limite de troca quando o TAN sobe 2.0 mg KOH/g acima da referência do óleo novo; limite absoluto normalmente de 5.0 mg KOH/g em bases do Grupo I/II e de 7.0 mg KOH/g em sintéticos do Grupo III/IV. Número de base total (ASTM D2896): limite de troca quando o TBN cai abaixo de 50% do TBN do óleo novo (o TBN novo de um óleo diesel de serviço pesado API CK-4 normalmente é de 12–15 mg KOH/g; trocar a ≤6 mg KOH/g). Oxidação por FTIR: não há limite universal; estabelecer a referência com o óleo novo e acompanhar o aumento do pico de oxidação (estiramento carbonílico de 1,700–1,750 cm⁻¹); cada aumento de 0.1 A/cm acima da referência representa avanço significativo da oxidação. Nitração (diesel): pico de nitração por FTIR (1,630 cm⁻¹); significativo a >20 A/cm. Fuligem (diesel): >3.5% de fuligem em massa (ASTM D5967 ou FTIR) aciona problemas de viscosidade e maior taxa de desgaste.",
+      "callout": [
+        {
+          "label": "Limite de ação de viscosidade",
+          "value": "±15% em relação ao óleo novo a 100°C"
+        },
+        {
+          "label": "Limite de variação do TAN",
+          "value": "+2.0 mg KOH/g acima da referência"
+        },
+        {
+          "label": "Limite mínimo do TBN",
+          "value": "≤50% do TBN novo (normalmente ≤6 mg KOH/g)"
+        }
+      ]
+    },
+    {
+      "heading": "Gatilhos de troca por contaminação",
+      "body": "Os gatilhos por contaminação monitoram a entrada de contaminantes externos: silício (Si) por ICP: Si >25 ppm em óleo usado indica ingestão significativa de poeira/sílica; a contaminação por poeira aumenta proporcionalmente o desgaste abrasivo; é um indicador de falha da filtração (filtro de ar ou ventilação do cárter), não de falha química do óleo. Investigue a filtração de ar antes de estender a troca. Sódio (Na) e potássio (K): Na >20 ppm ou K >20 ppm indica ingestão de líquido de arrefecimento (o líquido de arrefecimento de etilenoglicol contém inibidores de Na e K); drenar imediatamente, independentemente da química do óleo. Cobre (Cu): tendência de Cu em alta (>20 ppm em um intervalo de amostragem) indica desgaste de mancais de liga de cobre; investigar antes de continuar. Ferro (Fe): a tendência base de Fe estabelece a taxa de desgaste normal; uma inflexão (aumento da taxa além da tendência estabelecida) indica desgaste acelerado por contaminação ou dano a componentes. Teor de água (ASTM D6304): >0.1% de água dispara a troca; a água causa emulsificação, corrosão e crescimento bacteriano em óleos biodegradáveis. Diluição por combustível: teor de combustível >2% por GC (ASTM D3525) reduz a viscosidade abaixo do mínimo do grau e reduz a lubricidade."
+    },
+    {
+      "heading": "Metodologia de validação dos limites EDI",
+      "body": "Os limites EDI devem ser validados para a combinação específica de formulação de óleo, tipo de equipamento e ciclo de trabalho: não podem ser tirados de tabelas genéricas. Protocolo de validação: (1) identificar uma formulação de óleo candidata com certificação API CK-4 ou equivalente; (2) inscrever 10–20 unidades representativas em um programa de validação de 24 meses; (3) amostrar a 50% do EDI proposto e no EDI proposto em cada unidade; (4) no EDI proposto, drenar e enviar o óleo para análise completa, além de enviar óleo novo para comparação com a referência; (5) na revisão geral das unidades inscritas, registrar as medições de desgaste (folgas de mancais, folgas anel-canaleta, desgaste do cilindro) e comparar com a referência histórica da frota com intervalos de troca padrão; (6) se as taxas de desgaste forem equivalentes e nenhum limite químico for excedido no EDI proposto, o intervalo está validado para essa combinação de óleo, equipamento e ciclo de trabalho. Óleos de especificação API CK-4 são validados para sustentar intervalos de troca de até 2× os intervalos da API CJ-4 anterior em aplicações comparáveis, segundo o documento de fundamentação da especificação API."
+    },
+    {
+      "heading": "Requisitos de filtração para o EDI",
+      "body": "Intervalos de troca estendidos impõem exigências adicionais à filtração: (1) Capacidade de retenção de sujeira: o elemento filtrante não deve atingir a Δp que aciona o bypass antes do intervalo de troca estendido; cálculo da DHC: DHC ≥ (taxa de ingresso × horas do intervalo de troca) × fator de segurança de 2; para um sistema com 0.05 g/hora de geração de contaminação e troca a 500 horas, DHC ≥ 50 g; verificar contra a DHC ISO 4548-12 na vazão nominal. (2) Estabilidade da mídia: a mídia filtrante deve manter a eficiência β durante todo o intervalo de troca; os produtos de oxidação do óleo podem atacar os aglutinantes das mídias de celulose; mídias sintéticas (arquitetura SYNTRAX™) oferecem melhor resistência química para aplicações EDI. (3) Frequência da válvula de bypass: monitorar a frequência do indicador da válvula de bypass; se houver bypass (mesmo breve na partida a frio), a carga de contaminação durante os períodos de bypass deve ser somada ao orçamento de contaminação. (4) Compatibilidade da amostragem: o protocolo de amostragem da análise de óleo não deve introduzir contaminação que confunda os resultados; a preparação de frascos de amostra ISO 3722 é obrigatória."
+    },
+    {
+      "heading": "Estrutura de gestão de risco para o EDI",
+      "body": "O EDI introduz um risco residual de a condição do óleo se deteriorar além dos limites aceitáveis entre intervalos de amostragem. A gestão de risco exige: Frequência de amostragem: amostrar em intervalos não maiores que 50% do intervalo de troca proposto, garantindo a detecção de deterioração rápida antes de chegar ao ponto de troca. Plano de ação para violações: se qualquer limite de ação for excedido em uma amostra intermediária, trocar o óleo naquele intervalo (não no próximo ponto EDI programado); investigar a causa raiz antes de retomar o EDI. Avaliação de consequências: avaliar o custo da troca de mancais ou da reconstrução do motor se o EDI falhar; em equipamentos de alta consequência (mineração subterrânea, plataformas offshore, maquinário de produção crítico), o risco pode não justificar o EDI sem monitoramento da condição do óleo em tempo real. Sensores em tempo real: sensores de viscosidade (acústicos ou de micro-ondas), de TAN (eletroquímicos) ou contadores de partículas (laser em linha) podem fornecer monitoramento contínuo entre amostras programadas, reduzindo bastante a janela de risco. Os programas EDI devem ser reavaliados anualmente com base nos dados reais de condição do óleo e comparados com os registros de revisões gerais da frota."
+    },
+    {
+      "heading": "Análise de TCO para decisões de EDI",
+      "body": "Cálculo do benefício econômico do EDI: (a) redução do custo de compra de óleo = (1 − 1/interval_multiplier) × custo de óleo por troca × trocas/ano; (b) redução do custo de mão de obra = mesmo multiplicador × custo de mão de obra por troca × trocas/ano; (c) custo adicional de análise de óleo = custo de análise por amostra × (amostras/ano com EDI); (d) redução do custo de descarte de resíduos = proporcional à redução da frequência de troca de óleo. Economia líquida por unidade por ano = (a + b − c) líquida de qualquer diferença de custo incremental do filtro. O argumento econômico do EDI é mais forte com: grande capacidade de óleo (motores marítimos com 2,000 L por troca), alto custo do óleo (óleo sintético a 3–5× o custo do mineral), intervalos de troca normais frequentes (construção pesada a 250 horas) e onde o custo de mão de obra é significativo. O argumento econômico do EDI é mais fraco com: pequena capacidade de óleo (automóvel de passeio), baixo custo do óleo (base mineral) e ambientes de serviço com pouca mão de obra. É preciso estimar o custo do risco: probabilidade de desgaste acelerado por falha do EDI × custo do reparo resultante. Se o custo do risco por unidade por ano se aproximar da economia líquida ou a superar, o EDI não se justifica apenas pelo TCO."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Limite de ação de viscosidade",
+      "value": "±15% em relação ao óleo novo a 100°C (ASTM D445)"
+    },
+    {
+      "label": "Limite de variação do TAN",
+      "value": "+2.0 mg KOH/g acima da referência nova (ASTM D664)"
+    },
+    {
+      "label": "TBN mínimo",
+      "value": "≤50% do TBN novo (normalmente ≤6 mg KOH/g, ASTM D2896)"
+    },
+    {
+      "label": "Gatilho de contaminação por Si",
+      "value": ">25 ppm de Si em óleo usado: investigar a filtração de ar"
+    },
+    {
+      "label": "Frequência de amostragem",
+      "value": "≤50% do intervalo de troca proposto"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 17359",
+    "ASTM D445",
+    "ASTM D664",
+    "ASTM D2896",
+    "ASTM D6304",
+    "API CK-4",
+    "ISO 3722"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "intervalo de troca estendido",
+    "análise de óleo EDI",
+    "monitoramento da condição do óleo",
+    "limite de ação do TAN",
+    "esgotamento do TBN",
+    "ASTM D664",
+    "ASTM D2896",
+    "gatilho de troca",
+    "troca estendida API CK-4",
+    "análise de óleo por FTIR",
+    "teor de fuligem",
+    "diluição por combustível",
+    "TCO da troca de óleo",
+    "ISO 17359"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "A análise de óleo no EDI proposto mostra aumento do TAN >2.0 mg KOH/g acima da referência",
+      "A viscosidade a 100°C cai >15% abaixo da especificação do óleo novo",
+      "Silício (Si) em óleo usado acima de 25 ppm na amostra de meio de intervalo",
+      "O TBN cai abaixo de 6 mg KOH/g antes do intervalo de troca proposto",
+      "O pico de oxidação por FTIR sobe mais rápido que a tendência estabelecida em intervalos de troca anteriores"
+    ],
+    "probableCauses": [
+      "Aumento do TAN: acúmulo de ácidos oxidativos por temperaturas de operação elevadas; esgotamento de antioxidantes; confirmar com o aumento do pico de oxidação por FTIR; reduzir o intervalo de troca ou passar para uma formulação de óleo mais estável à oxidação",
+      "Redução da viscosidade: diluição por combustível (ensaio GC para confirmar combustível no óleo); degradação por cisalhamento do VII (permanente; o óleo deve ser trocado); verificar a estratégia de injeção na partida a frio e a vedação dos injetores",
+      "Si elevado: falha ou bypass da filtração de admissão de ar (verificar o estado e a restrição do filtro de ar); Si elevado não é falha química do óleo, mas falha de ingestão que exige investigar a filtração de ar antes de retomar o EDI",
+      "Esgotamento do TBN: ciclo de trabalho com alta carga ácida (o anda-e-para urbano com partidas a frio frequentes produz mais produtos ácidos de combustão); o óleo não consegue neutralizar a carga ácida no intervalo estendido; reduzir o intervalo ou passar para base com TBN maior",
+      "Aumento rápido da oxidação por FTIR: temperatura de operação acima da faixa de projeto (verificar o sistema de arrefecimento); contaminação por glicol (ASTM D2982 para confirmar); formulação de óleo inadequada para este ciclo de trabalho"
+    ],
+    "inspectionMethods": [
+      "Viscosidade cinemática ASTM D445 a 40°C e 100°C: comparar com a especificação do óleo novo; a tendência identifica a trajetória da viscosidade",
+      "TAN ASTM D664 e TBN ASTM D2896 a cada intervalo de análise de óleo: plotar a tendência para prever quando os limites serão atingidos",
+      "Análise FTIR de oxidação, nitração, fuligem, água e glicol: um único ensaio cobre vários modos de deterioração",
+      "Análise elementar ICP de Si, Na, K, Fe, Cu, Pb a cada intervalo: marcadores de contaminação e desgaste ao mesmo tempo",
+      "Teor de água Karl Fischer ASTM D6304: >0.1% dispara a troca imediata, independentemente da química"
+    ],
+    "correctiveActions": [
+      "Limite de TAN atingido no EDI: trocar o óleo imediatamente; investigar a causa: se for oxidativa (o FTIR confirma), reduzir o intervalo de troca em 20% e reavaliar após mais 3 intervalos de troca com amostragem mais próxima; se for induzida por contaminação, corrigir primeiro a fonte de contaminação",
+      "Diluição por combustível confirmada (redução de viscosidade + GC positivo): drenar imediatamente; investigar a vedação dos injetores, dos anéis ou das válvulas; a frequência de operação em partida a frio; o EDI é contraindicado até a causa da diluição por combustível ser corrigida",
+      "Si acima de 25 ppm: trocar o óleo imediatamente; inspecionar o filtro de admissão de ar (restrição, danos, vedação contra bypass); corrigir a filtração de ar antes de retomar o programa EDI",
+      "Esgotamento do TBN antes do EDI: reduzir o intervalo de troca até o ponto em que o TBN permaneça acima de 6 mg KOH/g; considerar óleo base de TBN maior para esta aplicação; confirmar a conformidade API CK-4 do óleo de reposição",
+      "Falha na validação do programa EDI: voltar ao intervalo de troca do OEM em todas as unidades inscritas enquanto a causa raiz é investigada; reiniciar a validação com as condições corrigidas após no mínimo 6 meses no intervalo padrão com monitoramento por análise de óleo"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Um operador de frota quer estender a troca de óleo de motores diesel de 250 para 500 horas em equipamentos de construção",
+      "standard": "ISO 17359 (condition monitoring), API CK-4 (oil specification), ASTM D664 (TAN)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "O óleo API CK-4 sustenta capacidade de troca estendida maior que o CJ-4; validar com programa de 24 meses: amostrar às 250, 400 e 500 horas em 10+ unidades; confirmar TAN <+2 mg KOH/g acima da referência; TBN >6 mg KOH/g; Si <25 ppm; viscosidade dentro de ±15%; tendência de Fe/Cu linear (sem inflexão); a DHC do elemento filtrante deve cobrir a carga de ingresso de 500 horas segundo a ISO 4548-12; verificar com o fornecedor do filtro para esta aplicação específica",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "lubrication-system-filtration",
+        "iso-4548-lube-filter-test-methods"
+      ]
+    },
+    {
+      "problem": "Motor marítimo com cárter de 2,000 L: a análise de óleo mostra esgotamento do TBN para 7 mg KOH/g às 1,500 horas (troca programada para 2,000 horas)",
+      "standard": "ISO 17359 (condition monitoring), ASTM D2896 (TBN), API CK-4",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "Com o TBN em 7 mg KOH/g e 500 horas restantes até a troca proposta, a trajetória prevê chegar a 6 mg KOH/g em aproximadamente 1,700 horas; programar a troca às 1,700 horas com base na tendência; avaliar uma reposição de óleo para restaurar o TBN (válida se o óleo de reposição for da mesma formulação e o volume de reposição for >10% da capacidade do cárter); no próximo intervalo, recalibrar para 1,700 horas como EDI de trabalho, a menos que uma ação corretiva resolva a taxa de esgotamento do TBN",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "service-intervals",
+        "total-cost-of-ownership"
+      ]
+    },
+    {
+      "problem": "Sistema hidráulico de uma frota de escavadeiras: a troca estendida pode ser aplicada ao fluido hidráulico?",
+      "standard": "ISO 4406 (particle cleanliness), ASTM D664 (TAN for hydraulic fluid), ISO 17359",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "O EDI do fluido hidráulico é viável, mas mais complexo que o do óleo de motor: o fluido hidráulico não tem mecanismo de esgotamento do TBN; os limites principais são o TAN (ácido oxidativo), a contagem de partículas (ISO 4406) e o teor de água (ASTM D6304); a taxa de ingresso de contaminação em sistemas hidráulicos móveis é alta, por isso a contagem de partículas ISO 4406 rege a vida do fluido hidráulico mais que a química; se a contagem de partículas exceder a meta do sistema a 50% do intervalo, corrigir o ingresso (respiro, vedações de eixo) antes de estender a troca; o intervalo de troca do fluido hidráulico é secundário em relação a manter o código de limpeza ISO 4406",
+      "relatedArticles": [
+        "contamination-ingression-modelling",
+        "oil-analysis-methods",
+        "hydraulic-power-unit-design"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "Viscosity ±15% action limit from Noria Corporation oil analysis guidelines and SAE J306; TAN +2.0 mg KOH/g from ASTM D664 application guidance; TBN 50% minimum from Shell Lubricants Technical Manual and ASTM D2896 application data; Si >25 ppm trigger from field correlation data in published oil analysis literature; API CK-4 extended drain capability from API 1509 Annex E; sampling frequency ≤50% from ISO 17359 condition monitoring guidance"
+  }
+}

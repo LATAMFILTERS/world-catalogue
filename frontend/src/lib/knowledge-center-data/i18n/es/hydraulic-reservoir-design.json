@@ -1,0 +1,333 @@
+{
+  "slug": "hydraulic-reservoir-design",
+  "faqs": [
+    {
+      "question": "¿Qué espacio libre mínimo se requiere en un depósito hidráulico y qué evita?",
+      "answer": "El espacio libre del depósito hidráulico (el espacio de aire vacío por encima del nivel máximo de fluido) debe ser como mínimo del 10–15% del volumen total del depósito. El espacio libre cumple tres funciones: (1) Absorbe el aumento de volumen del fluido por dilatación térmica (el aceite mineral se dilata aproximadamente un 7% por cada 100°C de aumento de temperatura; un depósito de 500 L con 30°C de aumento de temperatura suma 10.5 L de volumen; sin espacio libre, esto rebosaría por el respiradero); (2) Absorbe las oleadas de caudal de la línea de retorno durante la retracción rápida de los cilindros; (3) Aporta volumen de aire para el buen funcionamiento del respiradero, que iguala la presión interna con la atmósfera al cambiar el nivel del fluido. Los depósitos sin espacio libre suficiente rebosan aceite caliente por el respiradero en la operación normal, contaminan los equipos cercanos y crean riesgo de incendio (el aceite mineral caliente que se inflama sobre los componentes del escape es una de las principales causas de incendios en equipos móviles)."
+    },
+    {
+      "question": "¿Cómo se diseñan los deflectores del depósito hidráulico para evitar la cavitación de la bomba por la aireación de la línea de retorno?",
+      "answer": "Los deflectores del depósito impiden que el fluido aireado de la línea de retorno circule directamente hacia la succión de la bomba, lo que causaría cavitación y daños en la bomba. Principios de diseño del deflector: (1) La placa deflectora va desde el fondo del depósito hasta como mínimo el 75–80% del nivel de fluido de operación; los deflectores más altos separan mejor; (2) La entrada de la línea de retorno está a un lado del deflector y la salida de succión al lado opuesto; el fluido debe circular por debajo o alrededor del deflector, lo que da tiempo de sedimentación para que suban las burbujas de aire; (3) Difusor de la línea de retorno: una placa perforada o un tubo difusor en la entrada de retorno reparte el caudal de retorno de forma uniforme y reduce la turbulencia y la velocidad de arrastre de aire por debajo de la velocidad de ascenso de las burbujas (aproximadamente 0.1 m/s para burbujas de 1 mm de diámetro en aceite ISO VG 46 a 50°C); (4) Tiempo de permanencia mínimo desde la entrada de retorno hasta la salida de succión al caudal máximo del sistema: 90 segundos según la recomendación de la ISO 4413."
+    },
+    {
+      "question": "¿Qué materiales se usan para construir depósitos hidráulicos y cuáles son sus aplicaciones?",
+      "answer": "Materiales de construcción de depósitos hidráulicos: (1) Acero al carbono (ASTM A36 o equivalente, normalmente chapa de 4–8 mm): el más común en equipos industriales estacionarios; bajo costo; requiere protección interna contra la corrosión (pintura, fosfatado o granallado para quitar la cascarilla de laminación); estándar para presiones por encima de 1 bar manométrico; (2) Acero inoxidable (304L o 316L, chapa de 3–5 mm): necesario para fluidos hidráulicos de agua-glicol o aplicaciones en contacto con alimentos; costo bastante mayor; no requiere protección interna contra la corrosión; (3) Aleación de aluminio (EN AW-5083 o equivalente, chapa de 4–8 mm): preferida en equipos móviles (20–40% menos peso que el acero); no puede usarse con fluidos HFC de agua-glicol por encima de pH 9; requiere protección externa contra la corrosión en ambientes marinos; (4) Polietileno (HDPE, rotomoldeado): aplicaciones móviles donde el peso es crítico; excelente resistencia química; límite de temperatura de 60°C continuos; no apto para sistemas de alta presión con el depósito presurizado por encima de la atmosférica."
+    },
+    {
+      "question": "¿Qué riesgo de contaminación tiene una construcción de depósito hidráulico mal soldada?",
+      "answer": "La contaminación por soldadura en la construcción de depósitos hidráulicos es una de las principales causas de fallas en la puesta en marcha en campo. Riesgos: (1) Salpicaduras de soldadura: pequeños glóbulos metálicos expulsados en la soldadura MIG o TIG quedan poco adheridos a las superficies interiores y se liberan al fluido en la primera operación, lo que supera de inmediato el código ISO 4406; especificación: las superficies interiores soldadas deben limpiarse después de soldar por granallado o limpieza química; (2) Residuos de fundente: de la soldadura por arco con electrodo revestido (SMAW); el fundente es corrosivo y absorbe agua; la soldadura interior del depósito debe hacerse solo con MIG o TIG, no con SMAW; (3) Porosidad de la soldadura: las soldaduras porosas permiten la migración de fluido hacia el exterior y, con el tiempo, la falla estructural; en depósitos de alta presión se requiere calificación de la soldadura por inspección radiográfica (ASME Sección IX) o ensayo con líquidos penetrantes; (4) Distorsión por tratamiento térmico posterior a la soldadura: el alivio de tensiones en acero al carbono a 595°C puede deformar la geometría del depósito y dañar los deflectores internos; el diseño debe tener en cuenta la distorsión del tratamiento térmico."
+    },
+    {
+      "question": "¿Qué especificación de filtro de respiradero se requiere para un depósito hidráulico industrial?",
+      "answer": "Especificación del respiradero de un depósito hidráulico industrial: (1) Eficiencia de filtración: mínimo β10(c) ≥ 200 (igual o mejor que el filtro de retorno del sistema) para impedir que el polvo atmosférico entre al depósito durante la contracción térmica y la retracción de los cilindros; en sistemas con objetivo ISO 4406 15/13/10 o mejor, la eficiencia del respiradero debe estar a la altura del código más estricto; (2) Capacidad de flujo: clasificado para como mínimo el 100% del caudal máximo de retorno por retracción de cilindros más un 50% de margen de seguridad, para evitar cavitación por vacío en el depósito durante la retracción rápida de los cilindros; (3) Válvula antirretorno: una válvula antirretorno interna permite la salida de aire durante la dilatación térmica pero se cierra durante la contracción para obligar a que todo el aire aspirado pase por el elemento filtrante; (4) Opción desecante: en ambientes de alta humedad, los respiraderos desecantes (cartucho indicador de gel de sílice) adsorben la humedad del aire aspirado y evitan la acumulación de agua libre en el depósito por condensación atmosférica; (5) Indicador de servicio: un indicador visual (de presión diferencial o de saturación de humedad) señala el reemplazo del elemento antes de que se sature."
+    },
+    {
+      "question": "¿Cómo se calcula el diseño térmico del depósito en equipos hidráulicos móviles sin enfriador de aceite?",
+      "answer": "Cálculo de la capacidad térmica del depósito en sistemas sin enfriamiento: Q_storage = ρ × V × Cp × ΔT, donde ρ = densidad del aceite (860 kg/m3), V = volumen del depósito (L), Cp = calor específico del aceite (1.9 kJ/kg·K), ΔT = aumento de temperatura admisible (°C). Para un depósito de 200 L, con un ciclo de trabajo que permite 45 minutos de operación, 5 kW de calor a evacuar, temperatura máxima objetivo del aceite de 80°C y temperatura inicial de 25°C: Q_storage = 860 × 0.2 × 1.9 × (80-25) = 17,974 kJ = 4.99 kWh. Calor generado en 45 minutos a 5 kW = 5 × 0.75 = 3.75 kWh. El depósito de 200 L puede almacenar 4.99 kWh antes de llegar a 80°C, así que absorbe con margen el aporte de calor de 3.75 kWh de 45 minutos. Para ciclos de trabajo más largos o más calor a evacuar se requiere un enfriador de aceite: el depósito solo no puede absorber una generación de calor continua."
+    },
+    {
+      "question": "¿Qué características de drenaje y acceso para limpieza se requieren en el diseño del depósito hidráulico?",
+      "answer": "Drenaje y acceso para limpieza del depósito hidráulico: (1) Válvula de drenaje inferior: válvula de bola de paso total (mínimo 25 mm de paso para un depósito de 500 L, 50 mm de paso para 2,000 L o más) en el punto más bajo absoluto del fondo del depósito; permite el drenaje completo sin inclinarlo ni bombear; (2) Puerto de limpieza o boca de hombre: abertura de acceso de 200×300 mm como mínimo para la limpieza y la inspección internas; (3) Tapón de drenaje magnético: imán permanente en la válvula de drenaje que captura las partículas ferrosas que sedimentan en el punto más bajo; inspeccionarlo y limpiarlo en cada cambio de aceite; (4) Conexión a bandeja de drenaje: el drenaje del depósito debe conectarse a una bandeja o tambor de contención de aceite; drenar directamente al suelo infringe la gestión ambiental ISO 14001 y la normativa local; (5) Puertos de lavado: puntos de conexión para las mangueras de una unidad de lavado externa durante el lavado de puesta en marcha; puertos de entrada y retorno de lavado de 1/2 BSP como mínimo; (6) Válvula de muestreo: puerto de muestreo con válvula de aguja de 1/4 BSP en la línea de retorno activa, a un mínimo de 300 mm de la entrada al depósito, para tomar muestras de análisis de aceite."
+    },
+    {
+      "question": "¿Cuál es la distancia mínima requerida entre la entrada de retorno del fluido al depósito y la salida de succión?",
+      "answer": "La distancia mínima entre la entrada de la línea de retorno y la salida de succión la determina la distancia de sedimentación de partículas requerida, no un número fijo. La distancia de sedimentación debe bastar para que las partículas por encima del tamaño objetivo de eliminación sedimenten desde la trayectoria del flujo de retorno hasta el fondo del depósito antes de llegar a las cercanías de la salida de succión. Cálculo de diseño: velocidad de sedimentación V_s para el tamaño de partícula objetivo (por ejemplo, sílice de 10 µm en ISO VG 46 a 50°C) según la ley de Stokes ≈ 0.024 mm/min. Con una velocidad del flujo en el depósito de 1 mm/min (caudal total / sección del depósito), una partícula de 10 µm sedimenta 24 mm mientras recorre 1 mm en horizontal. En un depósito de 500 mm de profundidad (500 mm de trayectoria de sedimentación), la partícula recorre 500/24 = 21 mm en horizontal antes de llegar al fondo. La separación entre entrada y salida debe superar 21 mm, algo que la geometría real de los depósitos suele superar con creces. La restricción práctica es la altura del deflector, que debe ser suficiente para impedir que el flujo de retorno aireado llegue directamente al lado de succión."
+    },
+    {
+      "question": "¿Qué frecuencia de inspección se recomienda para la limpieza interior del depósito hidráulico?",
+      "answer": "Frecuencia de inspección y limpieza interior del depósito hidráulico: (1) Inspección interna anual: frecuencia mínima para todos los sistemas hidráulicos; inspeccionar la acumulación de lodos, la corrosión, la integridad de los deflectores, el estado del imán y los sedimentos; (2) Ante un evento de contaminación: cualquier evento de ingreso de contaminación confirmado (derrame de fluido, error de mantenimiento, derivación del filtro confirmada por un pico del código ISO) activa una inspección interna no programada; (3) En el cambio de aceite: al drenar para el cambio de aceite, inspeccionar el interior por la válvula de drenaje con una linterna antes de rellenar; cualquier capa de lodo de más de 5 mm requiere una limpieza a fondo antes de introducir el aceite nuevo; (4) Después del lavado de puesta en marcha: el lavado posterior a la puesta en marcha es el período de mayor contaminación; inspeccionar el interior del depósito al terminar el lavado para verificar que no quede contaminación residual de la construcción; (5) Máximo de cinco años en sistemas industriales: aun sin eventos de contaminación visibles, 5 años de operación sin inspección ni limpieza es el máximo práctico antes de que la corrosión, la acumulación de lodos y la degradación de los deflectores lleguen a niveles inaceptables."
+    },
+    {
+      "question": "¿Qué sistema de manto de nitrógeno se usa en depósitos hidráulicos sensibles y qué evita?",
+      "answer": "Los sistemas de manto de nitrógeno presurizan el espacio superior del depósito por encima del nivel de fluido con nitrógeno seco (normalmente 0.1–0.3 bar manométricos) para impedir el ingreso de contaminación atmosférica. Beneficios: (1) Evita el ingreso de humedad: el nitrógeno es seco (PDP ≤ −50°C en grado industrial); no hay condensación ni absorción de humedad en el fluido; (2) Evita el ingreso de partículas atmosféricas: 0.1 bar de presión de nitrógeno asegura que no haya entrada de aire ni siquiera durante la retracción rápida de los cilindros (la salida de nitrógeno sustituye a la entrada de aire); (3) Evita la oxidación del aceite: la atmósfera de nitrógeno elimina el contacto del oxígeno con la superficie del aceite y reduce la velocidad de oxidación en un 80–90%; (4) Reduce el riesgo de incendio: el espacio superior de un depósito con manto de nitrógeno no es inflamable (concentración de oxígeno <2% en el manto de nitrógeno). Diseño del sistema: un regulador de suministro de nitrógeno mantiene 0.1 bar de presión en el espacio superior; una válvula de alivio a 0.3 bar evita la sobrepresión; el consumo de nitrógeno es igual al cambio de volumen por dilatación/contracción térmica y por la operación de los cilindros. Los sistemas de manto de nitrógeno son estándar en los depósitos de lubricante de turbinas de gas y se usan cada vez más en sistemas hidráulicos de alto valor con intervalos de cambio de aceite extendidos."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de diseño de sistemas que cubre los requisitos de capacidad del depósito, el diseño de deflectores, el espacio libre y las características de control de la contaminación."
+    },
+    {
+      "category": "standard",
+      "citation": "NFPA T3.16.1, Hydraulic Fluid Power — Reservoir Design, Construction, and Testing",
+      "relevance": "Norma de diseño de depósitos que especifica los requisitos de construcción, los puertos de acceso, los procedimientos de ensayo y las normas de limpieza."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de limpieza usada para especificar la limpieza objetivo del depósito y verificar la idoneidad del diseño del depósito mediante el muestreo del sistema puesto en marcha."
+    },
+    {
+      "category": "handbook",
+      "citation": "Parker Hannifin Corporation, Hydraulic Fluid Power Systems — Reservoir Design Guide, Catalog HY14-2640",
+      "relevance": "Referencia de diseño que cubre el cálculo del volumen del depósito, el diseño de deflectores, la especificación del respiradero y el análisis térmico de unidades de potencia hidráulica industriales."
+    }
+  ],
+  "title": "Ingeniería de diseño de depósitos hidráulicos",
+  "subtitle": "Dimensionamiento del volumen, inmersión de la línea de retorno, deflectores, filtración del respiradero y cumplimiento de la ISO 4413",
+  "metaDescription": "El diseño del depósito hidráulico rige el tiempo de permanencia del fluido, la separación del aire, la disipación del calor y la prevención del ingreso de contaminación. Esta referencia cubre los requisitos de la ISO 4413 sobre el volumen del depósito, la profundidad de inmersión de la línea de retorno, el diseño de la placa deflectora, la filtración del respiradero, el dimensionamiento del colador de succión y la filtración de llenado en unidades de potencia hidráulica.",
+  "category": "Ingeniería",
+  "readTime": "13 min",
+  "intro": "El depósito hidráulico es el componente central de gestión del fluido de una unidad de potencia hidráulica (HPU) y cumple cuatro funciones esenciales: alimentar la succión de la bomba sin cavitación, recibir el fluido de retorno y eliminar el aire arrastrado y el calor antes de la recirculación, ofrecer un volumen de sedimentación y separación para la contaminación por partículas y agua, y actuar como amortiguador térmico para estabilizar la temperatura del fluido dentro del rango de operación. La ISO 4413:2011 (Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components) rige los requisitos de diseño del depósito, incluidos la inmersión de la línea de retorno, los requisitos de deflectores, la especificación del respiradero y la indicación del nivel de fluido. Las fallas de diseño del depósito (volumen subdimensionado, deflectores inadecuados, líneas de retorno no sumergidas o respiraderos mal filtrados) contribuyen directamente tanto a la contaminación del fluido como a su degradación térmica.",
+  "sections": [
+    {
+      "heading": "Dimensionamiento del volumen del depósito y tiempo de permanencia",
+      "body": "El volumen del depósito se expresa como múltiplo del caudal de salida de la bomba por minuto. El tiempo de permanencia (el tiempo disponible para que el fluido libere el aire arrastrado, permita la sedimentación de partículas y disipe el calor antes de volver a entrar a la bomba) se calcula como: t_d = V_res / Q_pump, donde V_res es el volumen del depósito en litros y Q_pump es el caudal de la bomba en litros por minuto, lo que da t_d en minutos. La ISO 4413 no especifica una relación volumen/caudal fija, pero la práctica de ingeniería derivada de los requisitos térmicos y de separación de aire establece un tiempo de permanencia mínimo de 3 minutos en sistemas con intercambiadores de calor y de 5 minutos en sistemas sin enfriamiento dedicado. Un tiempo de permanencia de 3 minutos permite que el aire libre suba a 0.1–0.2 m/min hasta la superficie del fluido y se disipe antes de que el fluido vuelva a la entrada de la bomba. Los sistemas con alta carga térmica requieren volumen adicional o capacidad de intercambiador de calor dedicada; el depósito no debe ser el mecanismo principal de enfriamiento en régimen estacionario.",
+      "callout": [
+        {
+          "label": "Fórmula del tiempo de permanencia",
+          "value": "t_d = V_res (L) / Q_pump (L/min): resultado en minutos"
+        },
+        {
+          "label": "Permanencia mínima (con enfriador)",
+          "value": "3 minutos: permite la separación del aire y la sedimentación de partículas"
+        },
+        {
+          "label": "Permanencia mínima (sin enfriador)",
+          "value": "5 minutos: requiere amortiguación térmica adicional"
+        },
+        {
+          "label": "Norma aplicable",
+          "value": "ISO 4413:2011: reglas generales para el diseño de sistemas hidráulicos"
+        }
+      ]
+    },
+    {
+      "heading": "Inmersión de la línea de retorno y diseño del difusor",
+      "body": "La ISO 4413:2011 exige que la salida de la línea de retorno esté sumergida por debajo del nivel mínimo de fluido para evitar que el aceite caiga en cascada sobre la superficie del fluido, lo que arrastra aire. La profundidad mínima de inmersión es de 75 mm por debajo del nivel mínimo de fluido de operación; en sistemas de alto caudal se prefiere una inmersión mayor (150–200 mm). La salida de la línea de retorno debe estar inclinada 45° hacia la pared del depósito, con la descarga orientada lejos de la conexión de succión de la bomba. Esta orientación crea un patrón de flujo que favorece la sedimentación de partículas hacia el fondo del depósito en lugar de su recirculación a la entrada de la bomba. Los difusores de retorno (placas difusoras perforadas o ranuradas) reducen la velocidad del fluido de retorno por debajo de 0.5 m/s en la zona del depósito, lo que favorece aún más la separación del aire y la sedimentación de partículas. Los chorros de retorno de alta velocidad crean turbulencia que vuelve a poner en suspensión la contaminación sedimentada e impide una separación eficaz del aire.",
+      "callout": [
+        {
+          "label": "Inmersión mínima",
+          "value": "75 mm por debajo del nivel mínimo de fluido (ISO 4413)"
+        },
+        {
+          "label": "Inmersión preferida",
+          "value": "150–200 mm: sistemas de alto caudal o gran volumen"
+        },
+        {
+          "label": "Orientación de la salida de retorno",
+          "value": "Ángulo de 45° hacia la pared del depósito; descarga lejos de la conexión de succión"
+        },
+        {
+          "label": "Velocidad máxima de retorno",
+          "value": "<0.5 m/s en la zona del difusor del depósito"
+        }
+      ]
+    },
+    {
+      "heading": "Diseño de la placa deflectora",
+      "body": "Una placa deflectora separa el depósito en una zona de retorno y una zona de succión e impide el flujo directo en cortocircuito de la línea de retorno a la succión de la bomba. La ISO 4413:2011 exige como mínimo una placa deflectora; su altura debe ir desde el fondo del depósito hasta al menos el 75% del nivel mínimo de fluido de operación, para obligar al fluido a pasar por debajo del deflector y por la zona de sedimentación antes de llegar a la conexión de succión. Los deflectores deben soldarse al fondo y a las paredes laterales del depósito sin dejar huecos. La conexión de succión se ubica al lado opuesto del deflector respecto de la conexión de retorno, a una altura de 50–75 mm sobre el fondo del depósito: por encima de la capa de contaminación sedimentada pero por debajo de la superficie del fluido. En términos de gestión térmica, el deflector también separa el fluido de retorno caliente de la zona de succión relativamente más fría, lo que reduce la temperatura del fluido que llega a la bomba. Los drenajes del depósito se ubican en el punto más bajo de cada zona para permitir el drenaje completo en los cambios de fluido.",
+      "callout": [
+        {
+          "label": "Altura del deflector",
+          "value": "≥75% del nivel mínimo de fluido de operación: ISO 4413"
+        },
+        {
+          "label": "Altura del puerto de succión",
+          "value": "50–75 mm sobre el fondo del depósito: por encima de la capa de contaminación sedimentada"
+        },
+        {
+          "label": "Función del deflector",
+          "value": "Evita el cortocircuito de retorno a succión; separa las zonas térmicas"
+        },
+        {
+          "label": "Ubicación del drenaje",
+          "value": "Punto más bajo de cada zona del depósito: se requiere drenaje completo"
+        }
+      ]
+    },
+    {
+      "heading": "Filtración y dimensionamiento del respiradero",
+      "body": "El respiradero del depósito compensa los cambios de nivel del fluido cuando los cilindros hidráulicos se extienden y se retraen, admitiendo y expulsando aire a través de un elemento filtrante. La ISO 4413:2011 exige que el elemento del respiradero dé una filtración equivalente o mejor que la del filtro de retorno del sistema. En sistemas con objetivo ISO 4406 17/15/12 o más limpio, el elemento del respiradero debe estar clasificado a ≤3 µm absoluto (β₃₍c₎ ≥ 200). La capacidad de flujo de aire del respiradero debe cubrir la tasa máxima de cambio del nivel de fluido: para un cilindro de 100 mm de diámetro que se extiende a 100 mm/s, el volumen de fluido desplazado es de aproximadamente 0.785 L/s, por lo que el respiradero debe dejar pasar 0.785 L/s de aire. Los respiraderos suelen dimensionarse a 1.5–2× el flujo de aire máximo calculado para dejar margen por la carga del elemento y por el aumento de la densidad del aire en clima frío. Los elementos de respiradero spin-on se reemplazan con el mismo intervalo que el filtro de retorno del sistema; monitorear la presión diferencial a través del respiradero no es práctica estándar, así que el reemplazo por intervalo es la acción de mantenimiento principal.",
+      "callout": [
+        {
+          "label": "Clasificación de filtración del respiradero",
+          "value": "≤3 µm absoluto (β₃₍c₎ ≥ 200) en sistemas ISO 17/15/12"
+        },
+        {
+          "label": "Dimensionamiento del respiradero",
+          "value": "1.5–2× el flujo de aire máximo calculado de respiración del depósito"
+        },
+        {
+          "label": "Ejemplo de cilindro",
+          "value": "100 mm de diámetro a 100 mm/s → 0.785 L/s de fluido desplazado → flujo de aire requerido en el respiradero"
+        },
+        {
+          "label": "Intervalo de reemplazo",
+          "value": "Igual que el filtro de retorno del sistema: por intervalo (sin monitoreo de ΔP)"
+        }
+      ]
+    },
+    {
+      "heading": "Colador de succión y filtración de llenado",
+      "body": "Un colador de succión en la entrada de la bomba da una filtración gruesa que protege la bomba de las partículas grandes que puedan entrar al depósito pese a la filtración de retorno. La malla del colador de succión suele ser de 74–149 µm (aproximadamente malla 100–200 US), más gruesa que la filtración principal del sistema, para minimizar la restricción en la entrada de la bomba y evitar la cavitación. El colador debe dimensionarse para que, incluso parcialmente cargado de contaminación, la restricción de entrada no supere el vacío de succión admisible especificado por el fabricante de la bomba (normalmente −0.3 bar absoluto como máximo a la velocidad nominal). El fluido hidráulico nuevo que se añade al depósito debe filtrarse a ≤3 µm absoluto durante la transferencia para no introducir contaminación por encima del código de limpieza objetivo del sistema: la Sección 5.2.3 de la ISO 4413:2011 trata expresamente la limpieza del fluido durante la puesta en marcha y la reposición. Los puertos de llenado deben incorporar filtración integrada o una unidad de filtro de transferencia separada de ≤3 µm absoluto.",
+      "callout": [
+        {
+          "label": "Malla del colador de succión",
+          "value": "74–149 µm (malla 100–200 US): solo protección gruesa"
+        },
+        {
+          "label": "Vacío de succión máximo",
+          "value": "−0.3 bar absoluto como máximo a la velocidad nominal de la bomba"
+        },
+        {
+          "label": "Requisito de filtración de llenado",
+          "value": "≤3 µm absoluto durante la transferencia de fluido (ISO 4413 Sección 5.2.3)"
+        },
+        {
+          "label": "Requisito del puerto de llenado",
+          "value": "Filtro integrado o unidad de filtro de transferencia dedicada en la conexión de llenado"
+        }
+      ]
+    },
+    {
+      "heading": "Gestión térmica, espacio superior e indicación de nivel",
+      "body": "El aceite hidráulico mineral debe operar por debajo de 80°C para limitar la velocidad de degradación oxidativa; la ISO 4413 recomienda monitorear y controlar la temperatura del fluido dentro del rango especificado por el OEM. El depósito debe incluir un termómetro o un sensor de temperatura con salida de alarma. Debe mantenerse un volumen de espacio superior de al menos el 10% del volumen total del depósito por encima del nivel máximo de fluido de operación para absorber la dilatación térmica (dilatación volumétrica del aceite mineral de aproximadamente 7 × 10⁻⁴ por °C) y dejar una superficie para la liberación del aire. La ISO 4413 exige un visor con marcas de nivel mínimo y máximo; las marcas deben verse desde la posición normal de acceso de servicio sin quitar cubiertas. Los tapones de drenaje magnéticos en el punto más bajo del depósito recogen las partículas de desgaste ferrosas en suspensión en el fluido y dan un indicador cualitativo de desgaste en cada cambio de fluido, que complementa el programa cuantitativo de OCM.",
+      "callout": [
+        {
+          "label": "Temperatura máxima de operación",
+          "value": "80°C: aceite mineral (recomendación ISO 4413)"
+        },
+        {
+          "label": "Coeficiente de dilatación térmica",
+          "value": "~7 × 10⁻⁴ por °C para aceite mineral"
+        },
+        {
+          "label": "Requisito de espacio superior",
+          "value": "≥10% del volumen total del depósito por encima del nivel máximo de fluido"
+        },
+        {
+          "label": "Tapón de drenaje magnético",
+          "value": "Recogida de partículas ferrosas en el punto más bajo: indicador cualitativo de desgaste"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Tiempo de permanencia mínimo (con enfriador)",
+      "value": "3 min: V_res / Q_pump"
+    },
+    {
+      "label": "Tiempo de permanencia mínimo (sin enfriador)",
+      "value": "5 min: V_res / Q_pump"
+    },
+    {
+      "label": "Inmersión de la línea de retorno",
+      "value": "≥75 mm por debajo del nivel mínimo de fluido (ISO 4413)"
+    },
+    {
+      "label": "Altura del deflector",
+      "value": "≥75% del nivel mínimo de fluido"
+    },
+    {
+      "label": "Colador de succión",
+      "value": "74–149 µm (malla 100–200)"
+    },
+    {
+      "label": "Filtración del respiradero",
+      "value": "≤3 µm absoluto (β₃₍c₎ ≥ 200)"
+    },
+    {
+      "label": "Temperatura máxima del aceite",
+      "value": "80°C: aceite mineral"
+    },
+    {
+      "label": "Margen de espacio superior",
+      "value": "≥10% del volumen del depósito"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4413",
+    "ISO 4406",
+    "ISO 11171",
+    "ISO 3722",
+    "ISO 2941"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "INTEKCORE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "diseño de depósitos hidráulicos",
+    "ISO 4413",
+    "tiempo de permanencia",
+    "inmersión de la línea de retorno",
+    "placa deflectora",
+    "filtración del respiradero",
+    "colador de succión",
+    "filtración de llenado",
+    "volumen del depósito",
+    "unidad de potencia hidráulica",
+    "gestión térmica",
+    "espacio superior",
+    "tapón de drenaje magnético"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Ruido de cavitación de la bomba, sobre todo en el arranque en frío o con nivel bajo de fluido",
+      "Fluido espumoso o aireado visible en el visor o en una muestra de fluido",
+      "Temperatura del fluido constantemente por encima de 80°C en régimen estacionario",
+      "El código de limpieza ISO 4406 empeora pese a que el filtro de retorno funciona",
+      "Contaminación rápida del sistema tras un llenado o una reposición reciente de fluido"
+    ],
+    "probableCauses": [
+      "Cavitación de la bomba: colador de succión parcialmente obstruido por la contaminación acumulada; nivel de fluido del depósito por debajo del mínimo; restricción en la línea de succión",
+      "Aireación del fluido: línea de retorno no sumergida por debajo del nivel mínimo de fluido; salpicadura en cascada que vuelve a arrastrar aire; tiempo de permanencia insuficiente por un depósito subdimensionado",
+      "Sobrecalentamiento: volumen del depósito insuficiente, tiempo de permanencia por debajo de 3 minutos; intercambiador de calor subdimensionado o sucio; temperatura ambiente por encima del supuesto de diseño",
+      "Empeoramiento de la limpieza: elemento del respiradero con el reemplazo vencido, ingreso de partículas por un respiradero degradado; deflector ausente o perforado, flujo en cortocircuito",
+      "Contaminación tras el llenado: puerto de llenado sin filtro de transferencia de ≤3 µm absoluto; fluido nuevo contaminado añadido sin filtrar"
+    ],
+    "inspectionMethods": [
+      "Calcular el tiempo de permanencia: medir el volumen del depósito y el caudal nominal de la bomba; confirmar que t_d = V_res / Q_pump ≥ 3 min (con enfriador)",
+      "Inspeccionar visualmente la salida de la línea de retorno: confirmar que esté sumergida ≥75 mm por debajo del nivel mínimo; confirmar la orientación de 45° hacia la pared",
+      "Inspeccionar el elemento del respiradero: retirarlo y examinar su carga de contaminación; comparar el registro de reemplazos con el programa de mantenimiento",
+      "Tomar muestras de fluido en el depósito antes y después de la bomba (APC según la ISO 11171): si la muestra aguas arriba es más limpia, es probable un cortocircuito de la línea de retorno o un daño del deflector",
+      "Medir el vacío de succión en el puerto de entrada de la bomba durante la operación: si supera la especificación del fabricante (normalmente −0.3 bar absoluto), indica restricción del colador"
+    ],
+    "correctiveActions": [
+      "Cavitación: limpiar o reemplazar el colador de succión; rellenar el depósito al nivel correcto; eliminar cualquier restricción de la línea de succión",
+      "Aireación: redirigir la línea de retorno para lograr una inmersión ≥75 mm; instalar un difusor de retorno para bajar la velocidad del fluido a menos de 0.5 m/s; verificar que el volumen del depósito cumpla el requisito de tiempo de permanencia",
+      "Sobrecalentamiento: aumentar el volumen del depósito o añadir un intercambiador de calor dedicado; reducir la generación de calor revisando los ajustes de las válvulas de alivio y las pérdidas por estrangulamiento",
+      "Empeoramiento de la limpieza: reemplazar el elemento del respiradero; inspeccionar y reparar la placa deflectora; tomar una muestra de fluido según la ISO 3722 y verificar el código ISO 4406",
+      "Contaminación tras el llenado: instalar un filtro de ≤3 µm absoluto en el puerto de llenado; drenar y reemplazar el fluido contaminado; volver a muestrear para confirmar la vuelta al código de limpieza objetivo"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Volumen del depósito insuficiente: tiempo de permanencia por debajo de 3 minutos que causa aireación y sobrecalentamiento",
+      "standard": "ISO 4413:2011 — reservoir design general rules",
+      "protectionSystem": "Aumento del volumen del depósito o intercambiador de calor complementario con un circuito de filtración fuera de línea dedicado",
+      "technology": "Circuito de filtración kidney-loop fuera de línea con intercambiador de calor: hace circular el fluido al 10–20% del caudal de la bomba con independencia del circuito principal, lo que da eliminación continua de partículas y gestión térmica sin aumentar el volumen del depósito",
+      "relatedArticles": [
+        "hydraulic-power-unit-design",
+        "filter-housing-design",
+        "hydraulic-system-flushing"
+      ]
+    },
+    {
+      "problem": "Ingreso de contaminación por el respiradero: la limpieza empeora sin una fuente de contaminación en la línea de retorno",
+      "standard": "ISO 4413:2011 Section 5.3 — breather filtration requirement",
+      "protectionSystem": "Elemento de respiradero de alta eficiencia clasificado a ≤3 µm absoluto con monitoreo de presión diferencial",
+      "technology": "Elemento de respiradero con sello radial de tapa moldeada que impide la derivación de aire, clasificado a ≤3 µm absoluto (β₃₍c₎ ≥ 200); indicador visual de restricción complementario para instalaciones sin monitoreo",
+      "relatedArticles": [
+        "filter-housing-design",
+        "contamination-control",
+        "nfpa-t2-14-hydraulic-cleanliness",
+        "hydraulic-system-flushing"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-4413)",
+    "evidenceStatus": "ISO 4413:2011 return line submergence (75 mm minimum) and baffle height (75% of minimum level) requirements verified from ISO 4413 Sections 5.3 and 5.4; dwell time 3–5 minute guidance from fluid power engineering literature (Parker Hydraulic Handbook, Vickers Industrial Hydraulics Manual 935100-A); suction strainer mesh range 74–149 µm from pump manufacturer specifications (Bosch Rexroth, Parker, Eaton Vickers); breather sizing factor 1.5–2× from ISO 4413 Annex informative guidance; thermal expansion coefficient 7 × 10⁻⁴ per °C for mineral oil from ISO 11158 density and thermal expansion data; 80°C maximum temperature from ISO 4413 and fluid manufacturer oxidation stability data; fill filtration ≤3 µm from ISO 4413:2011 Section 5.2.3"
+  }
+}

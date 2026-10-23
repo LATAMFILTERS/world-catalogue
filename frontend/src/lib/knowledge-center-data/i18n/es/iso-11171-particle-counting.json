@@ -1,0 +1,253 @@
+{
+  "slug": "iso-11171-particle-counting",
+  "faqs": [
+    {
+      "question": "¿Qué es la norma de calibración ISO 11171 y qué significa la notación (c)?",
+      "answer": "La ISO 11171 define el procedimiento de calibración de los contadores automáticos de partículas (APC) usados para medir la contaminación por partículas en fluidos hidráulicos. La calibración usa partículas de referencia trazables al NIST (esferas de látex de poliestireno de diámetro certificado, suspendidas en solvente a una concentración conocida) para establecer la función de respuesta por tamaño del APC. La notación (c) en los datos de conteo de partículas, como en el código ISO 4406 17/15/12 con relaciones Beta β10(c), indica que los datos se obtuvieron con un APC calibrado según la ISO 11171. Antes de que la ISO 11171 entrara en vigor (aproximadamente 1996–1999), los instrumentos APC no estaban calibrados o se calibraban con otros métodos, lo que daba datos de conteo de partículas que difieren sistemáticamente de los datos calibrados según la ISO 11171 en un factor de 1.5–3× con niveles de contaminación equivalentes. Los datos antiguos sin la notación (c) no pueden compararse de forma fiable con los datos calibrados según la ISO 11171."
+    },
+    {
+      "question": "¿Cómo funciona el conteo de partículas APC por extinción de luz?",
+      "answer": "Los instrumentos APC por extinción de luz (el tipo más común para analizar fluidos hidráulicos) hacen pasar la muestra de aceite por una celda de flujo donde un haz láser o LED colimado ilumina cada partícula. Al pasar por el haz, cada partícula bloquea (extingue) una cantidad proporcional de luz que deja de llegar al detector: la altura del pulso de la señal de extinción se correlaciona con el diámetro de la partícula. Las partículas más grandes crean pulsos de extinción más grandes. El APC clasifica cada pulso en canales de tamaño (por ejemplo, ≥4 µm, ≥6 µm, ≥10 µm, ≥14 µm) y cuenta el número de pulsos por mililitro de flujo de muestra. La calibración ISO 11171 establece la altura de pulso umbral correspondiente a cada canal de tamaño de partícula usando partículas de referencia certificadas. El factor de corrección de calibración (CF) derivado de la ISO 11171 convierte los datos de conteo brutos en datos calibrados ISO (c) teniendo en cuenta la respuesta óptica y las características del detector de cada instrumento."
+    },
+    {
+      "question": "¿Qué dilución de la muestra se requiere cuando la concentración de partículas supera los límites de coincidencia del APC?",
+      "answer": "Los contadores automáticos de partículas sufren errores de coincidencia cuando dos o más partículas ocupan a la vez el volumen de detección: el instrumento las cuenta como una sola partícula más grande, lo que subestima el conteo total y sobrestima el tamaño de las partículas a concentraciones altas. Los APC calificados según la ISO 11171 especifican un límite de concentración máxima (normalmente 8,000–12,000 partículas/mL para ≥4 µm) por encima del cual los errores de coincidencia superan los umbrales aceptables. Para muestras por encima de este límite se requiere dilución con diluyente limpio (solvente certificado libre de partículas en ISO 14/12/9 o más limpio). Los factores de dilución de 10:1 o 100:1 son comunes en muestras muy contaminadas (por ejemplo, aceite nuevo a granel de tambores en ISO 18/16/13, o sistemas hidráulicos muy sucios en lavado). Los resultados de las muestras diluidas deben multiplicarse por el factor de dilución para obtener la concentración real, y hay que verificar la limpieza del diluyente y restarla como corrección de fondo."
+    },
+    {
+      "question": "¿Qué procedimiento de limpieza de la celda de flujo se requiere entre muestras de aceite en el ensayo APC ISO 11171?",
+      "answer": "La limpieza de la celda de flujo entre muestras evita la contaminación cruzada, en la que partículas de una muestra muy contaminada aparecen en la medición de la siguiente muestra poco contaminada. Procedimiento de limpieza requerido: (1) Lavar con solvente libre de partículas (ISO 14/12/9 o mejor) con un mínimo de 3× el volumen de la celda de flujo; (2) Verificar el conteo de fondo tras el lavado: hacer una medición en blanco de solvente puro; el conteo de partículas debe estar por debajo del límite de fondo especificado del instrumento (normalmente <50 partículas/mL ≥4 µm); (3) Si el fondo supera el límite, hacer un lavado prolongado (5–10× el volumen) y volver a comprobar; un fondo elevado persistente indica contaminación de la celda de flujo que requiere desarmarla y limpiarla por ultrasonido; (4) En muestras con alto contenido de agua (>500 ppm por Karl Fischer), el agua puede adsorberse en las paredes de la celda de flujo y elevar el fondo; se requiere un enjuague adicional con alcohol seguido de un enjuague con solvente."
+    },
+    {
+      "question": "¿Qué intervalo de recalibración especifica la ISO 11171 y qué activa una recalibración fuera de intervalo?",
+      "answer": "La ISO 11171 especifica recalibrar el instrumento APC como mínimo cada 12 meses o cada 500 horas de operación, lo que ocurra primero. La calibración la hace un laboratorio acreditado con partículas de referencia certificadas trazables al NIST. La recalibración fuera de intervalo se activa por: (1) Cualquier reparación del instrumento, reemplazo de componentes ópticos o limpieza de la celda de flujo; (2) Caída o golpe mecánico del APC; (3) Conteo de fondo superior al 10% de la concentración de partículas de referencia de calibración en la misma clase de tamaño; (4) Resultados sospechosos: si muestras duplicadas muestran diferencias de conteo >30% en condiciones equivalentes; (5) Falla de una verificación externa de aseguramiento de la calidad: comparar los resultados del APC con una muestra de referencia certificada suministrada por un laboratorio externo. Los certificados de calibración deben acompañar todos los informes de limpieza ISO 4406 usados para aprobar la puesta en marcha de sistemas hidráulicos: los datos de APC sin certificar no son aceptables como documentación de puesta en marcha según la ISO 4413:2011."
+    },
+    {
+      "question": "¿Cómo afecta la temperatura del aceite a la exactitud del conteo de partículas del APC?",
+      "answer": "La temperatura de la muestra de aceite afecta la exactitud del conteo del APC por dos mecanismos: (1) Efecto de la viscosidad: a menor temperatura (por debajo de 20°C), la mayor viscosidad del aceite frena el paso de las partículas por la celda de flujo del APC, alarga la duración del pulso de extinción de luz y, en algunos diseños de instrumento, puede hacer que partículas individuales activen el umbral de coincidencia; la mayoría de los APC modernos compensan la viscosidad ajustando el caudal para mantener constante el tiempo de residencia; (2) Contaminación disuelta: algunos contaminantes (ceras, asfaltenos, polímeros de oxidación) disueltos en el aceite caliente (70°C) precipitan como partículas cuando el aceite se enfría a temperatura ambiente (20°C) antes del muestreo; esta precipitación aumenta artificialmente los conteos de partículas en el rango ≥4 µm en 1–3 unidades de código ISO. La ISO 11171 especifica que las muestras se analicen a una temperatura de 20–30°C tras una mezcla adecuada; el rango de ±2°C reduce el error inducido por la viscosidad a límites aceptables. Las muestras tomadas a temperatura elevada y enfriadas para el análisis deben mantenerse a temperatura ambiente un mínimo de 30 minutos antes del conteo."
+    },
+    {
+      "question": "¿Cuál es la sensibilidad de conteo (tamaño mínimo de partícula detectable) de los APC actuales calibrados según la ISO 11171?",
+      "answer": "Los APC actuales por extinción de luz calibrados según la ISO 11171 usados para monitorear la limpieza de fluidos hidráulicos tienen una sensibilidad de conteo (tamaño mínimo de partícula detectable) de 1–4 µm según el modelo de instrumento y la configuración óptica. Los umbrales de tamaño de partícula estándar de la ISO 4406 (≥4, ≥6, ≥14 µm) se eligieron en el tamaño mínimo de conteo fiable de los instrumentos comerciales en uso cuando se revisó la norma, o por encima. El conteo de partículas de menos de 4 µm (a ≥1, ≥2, ≥3 µm) es técnicamente posible, pero tiene mayor incertidumbre de conteo en esos tamaños porque: los efectos de difracción óptica alrededor de partículas de 1–3 µm crean formas de pulso ambiguas; y la distribución de objetos que no son partículas de menos de 4 µm (burbujas de aire, gotas de agua emulsionada, partículas de gel de aceite) es máxima en esos tamaños pequeños. Para aplicaciones de investigación de precisión que requieren caracterizar por debajo de 4 µm, la difracción láser (ASTM E1283) o la microscopía electrónica de barrido (SEM) con análisis de rayos X por energía dispersiva (EDX) dan datos más fiables de partículas de menos de 4 µm."
+    },
+    {
+      "question": "¿Cómo se comparan el APC en sitio y el APC de laboratorio, y cuándo debe usarse cada uno?",
+      "answer": "Los APC en sitio (instrumentos portátiles, instrumentos montados en panel en línea) dan datos de contaminación en tiempo real o de respuesta rápida, con tiempos de muestra a resultado de 5–30 minutos, lo que permite actuar de inmediato si la contaminación supera el objetivo. Limitaciones: requieren una limpieza cuidadosa entre muestras; verificar la calibración en sitio con muestras de referencia es más difícil que la calibración en laboratorio; la vibración y las variaciones de temperatura en las máquinas afectan la exactitud de la medición. Los APC de laboratorio dan mayor exactitud (ambiente controlado, calibrados según la ISO 11171, corrección de fondo posible), pero requieren transportar la muestra (1–5 días) y no detectan eventos de contaminación transitorios entre los envíos programados de muestras. Enfoque recomendado: APC de laboratorio para programas de monitoreo rutinario trimestral o mensual que den datos de tendencia exactos; APC en sitio para la verificación de la puesta en marcha (resultados inmediatos para el requisito de aprobación con dos muestras de la ISO 4413), la verificación posterior al mantenimiento y la resolución de eventos de contaminación donde la respuesta rápida es esencial."
+    },
+    {
+      "question": "¿Cómo se verifica la limpieza del frasco de muestra del APC y qué limpieza se requiere?",
+      "answer": "La ISO 3722 define los requisitos de limpieza de los contenedores de muestra y su verificación: los contenedores deben estar certificados en ISO 14/12/11 o mejor antes de usarse. Método de verificación: llenar el contenedor con solvente limpio certificado (ISO 12/10/8), agitar con fuerza para lavar todas las superficies y luego analizar el solvente con el APC. El conteo de fondo del contenedor no debe superar el límite: normalmente ≤20 partículas/mL ≥4 µm y ≤5 partículas/mL ≥6 µm en el solvente de lavado. Los contenedores prelimpiados y certificados de los proveedores de laboratorio vienen con certificados de limpieza por lote; no deben guardarse destapados ni reutilizarse sin volver a limpiarlos. Reutilizar contenedores que contuvieron muestras muy contaminadas (incluso después de lavarlos) introduce contaminación residual que sesga las muestras siguientes hacia conteos más altos. Para las muestras de aprobación de puesta en marcha según la ISO 4413:2011 se requieren contenedores certificados de un solo uso, con un costo aproximado de AUD 2–5 por contenedor."
+    },
+    {
+      "question": "¿Qué importancia tiene la corrección de coincidencia en los instrumentos APC modernos?",
+      "answer": "Los algoritmos de corrección de coincidencia de los APC modernos compensan matemáticamente los eventos en que dos o más partículas pasan a la vez por el volumen de detección y se cuentan como una sola partícula más grande. El modelo de corrección usa la probabilidad estadística conocida de coincidencia a la tasa de conteo medida: probabilidad de coincidencia = 1 - exp(-n × τ × Q), donde n = concentración real de partículas, τ = tiempo de tránsito, Q = caudal. Los APC modernos aplican esta corrección de forma automática y transparente: el conteo informado es el valor corregido. Con tasas de conteo por debajo del máximo especificado (normalmente 8,000 partículas/mL para ≥4 µm), la probabilidad de coincidencia es inferior al 5% y la corrección mejora la exactitud en menos de un 5%. Con tasas de conteo por encima de la especificación máxima, la probabilidad de coincidencia supera el 20% y las correcciones dejan de ser fiables: para contar con exactitud se requiere diluir la muestra en lugar de confiar solo en la corrección de coincidencia."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+      "relevance": "Norma de calibración principal de los APC usados en la medición de contaminación ISO 4406, que define el procedimiento de calibración trazable al NIST y la notación (c)."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificación de la contaminación que usa datos de APC calibrados según la ISO 11171 como base de medición para asignar los números de rango."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 3722:1976, Hydraulic Fluid Power — Fluid Sample Containers — Qualifying and Controlling Cleaning Methods",
+      "relevance": "Norma de requisitos de limpieza de los contenedores de muestra citada en la ISO 11171 para asegurar mediciones de conteo de partículas válidas."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 23309:2007, Hydraulic Fluid Power Systems and Components — Cleanliness Assessment of Parts and Systems Using Hydraulic Flushing",
+      "relevance": "Norma de evaluación del lavado que cita los requisitos de calibración de APC de la ISO 11171 para verificar la limpieza en la puesta en marcha."
+    }
+  ],
+  "title": "Calibración de contadores de partículas ISO 11171: metodología, trazabilidad y aplicación en servicio",
+  "subtitle": "Metodología de calibración de contadores automáticos de partículas ISO 11171, cadena de trazabilidad del material de referencia, error de coincidencia a concentraciones altas, preparación de frascos de muestra ISO 3722, muestreo en línea frente a frasco y selección del contador para el informe ISO 4406.",
+  "metaDescription": "Referencia de ingeniería para la calibración de contadores de partículas ISO 11171: material de referencia trazable al NIST, error de coincidencia y requisitos de dilución, preparación de frascos de muestra ISO 3722, comparación entre muestras en línea y en frasco, compatibilidad con fluidos hidráulicos y criterios de selección del APC para el informe de limpieza de fluidos ISO 4406.",
+  "category": "ingeniería",
+  "readTime": "11 min",
+  "intro": "Los códigos de limpieza ISO 4406 obtenidos por conteo de partículas son tan fiables como la calibración del contador automático de partículas (APC) que genera los datos de conteo. La ISO 11171 define la metodología de calibración de los APC usados para medir la limpieza de fluidos hidráulicos y establece una cadena de referencia trazable desde los patrones nacionales, pasando por materiales de referencia certificados, hasta los instrumentos de campo. Sin calibración ISO 11171, dos laboratorios distintos pueden informar códigos ISO 4406 distintos de la misma muestra de fluido, lo que hace que los datos de limpieza no sean comparables y que el cumplimiento de la especificación no pueda verificarse.",
+  "sections": [
+    {
+      "heading": "Por qué importa la calibración ISO 11171",
+      "body": "Antes de la ISO 11171 (y de su predecesora ISO/CD 11171, derivada de la era del ACFTD: Air Cleaner Fine Test Dust), los contadores automáticos de partículas se calibraban con suspensiones de ACFTD (AC Fine Test Dust). El ACFTD tenía una distribución de tamaños de partícula mal caracterizada y variable: distintos lotes de ACFTD producían respuestas de calibración distintas, y la asignación de tamaños de partícula era inconsistente entre laboratorios. Esto explicaba un fenómeno bien documentado: dos conteos de partículas ISO 4406 de la misma muestra enviada a laboratorios distintos podían diferir en 2–3 niveles de código ISO. La ISO 11171 reemplazó la calibración con ACFTD por un material de referencia (RM) trazable: el polvo de ensayo medio ISO (ISO 12103-1 A2 Fine), caracterizado por el NIST (National Institute of Standards and Technology) o un instituto nacional de metrología equivalente. La calibración ISO 11171 discrimina el tamaño de partícula en tamaños absolutos específicos (tipo c), y por eso la ISO 4406:1999 y posteriores usan el sufijo (c), que indica que el contador está calibrado según la ISO 11171."
+    },
+    {
+      "heading": "Material de referencia de calibración ISO 11171 y trazabilidad",
+      "body": "La ISO 11171 especifica la calibración con material de referencia primario (PRM): una suspensión de polvo de ensayo medio ISO (ISO 12103-1 A2 Fine, también conocido como SAE Fine) en aceite base mineral ISO VG 32 o ISO VG 46. El PRM se caracteriza por microscopía electrónica de barrido (SEM) para establecer la distribución real de tamaños de partícula; esta caracterización es trazable al NIST o a un laboratorio nacional de referencia equivalente. La cadena de trazabilidad: patrón NIST (referencia) → caracterización del fabricante del PRM → lote de material de referencia certificado (CRM) → suspensión de calibración de trabajo → calibración del APC. La calibración ISO 11171 se hace en los tamaños de partícula que informa la ISO 4406: ≥4 µm(c), ≥6 µm(c) y ≥14 µm(c). La designación \"(c)\" indica calibración según la ISO 11171, a diferencia de los conteos antiguos calibrados con ACFTD, que usaban umbrales de tamaño de partícula distintos (y no equivalentes). Una partícula informada como 5 µm(c) en un contador calibrado según la ISO 11171 corresponde a un tamaño físico distinto de 5 µm en un contador calibrado con ACFTD.",
+      "callout": [
+        {
+          "label": "Material de referencia",
+          "value": "ISO 12103-1 A2 Fine (caracterización por SEM trazable al NIST)"
+        },
+        {
+          "label": "Tamaños de calibración",
+          "value": "≥4 µm(c), ≥6 µm(c), ≥14 µm(c)"
+        },
+        {
+          "label": "Significado del sufijo (c)",
+          "value": "Contador calibrado según la ISO 11171 (no ACFTD)"
+        }
+      ]
+    },
+    {
+      "heading": "Error de coincidencia y límites de alta concentración",
+      "body": "El error de coincidencia ocurre cuando dos o más partículas pasan a la vez por la zona de detección: el APC las cuenta como una sola partícula más grande, lo que subestima el conteo en cada canal de tamaño y sobrestima el conteo en los canales de mayor tamaño. El límite de coincidencia es la concentración por encima de la cual el error supera un umbral definido (normalmente un 10% de error). La ISO 11171 especifica el límite de coincidencia del contador como parte de la calibración: el fabricante debe declararlo y debe verificarse. En la mayoría de los contadores láser comerciales, el límite de coincidencia es de aproximadamente 6,000–20,000 partículas/mL de concentración acumulada a ≥1 µm. Cuando la concentración del fluido supera el límite de coincidencia, hay que diluir antes de contar. Procedimiento de dilución: diluir con aceite base prefiltrado (conteo de partículas del diluyente por debajo del límite de detección); registrar la relación de dilución; multiplicar los conteos informados por la relación de dilución para obtener la concentración original. No diluir las muestras concentradas produce códigos ISO 4406 falsamente bajos y un falso cumplimiento de los objetivos de limpieza."
+    },
+    {
+      "heading": "Preparación de frascos de muestra ISO 3722",
+      "body": "El frasco de muestra es la fuente de contaminación más importante en el conteo de partículas en laboratorio. La ISO 3722 define el protocolo de preparación de los contenedores para muestreo de fluidos: frascos de vidrio (borosilicato) o frascos de plástico de baja extracción (HDPE, PTFE); capacidad mínima de 50 mL. Preparación: (1) enjuagar con solvente filtrado limpio (n-heptano, éter de petróleo o equivalente con limpieza ≤ ISO 4406 clase 14/12/9); (2) llenar con solvente prefiltrado; (3) cerrar con una tapa de polietileno limpia enjuagada con solvente; (4) verificar el conteo en blanco: contar el solvente prefiltrado del frasco preparado; el blanco debe estar por debajo del conteo más bajo esperado en la muestra; (5) guardarlo cerrado hasta su uso. Fuente de contaminación común: la contaminación del frasco de muestreo introduce partículas en el rango de 4–6 µm(c), justo el rango de informe de la ISO 4406; un frasco mal preparado desplaza los resultados ISO 4406 1–3 niveles de código hacia arriba. Los frascos del laboratorio deben volver a verificarse tras cualquier desviación del proceso y a intervalos regulares (normalmente cada 50 frascos o una vez al mes).",
+      "callout": [
+        {
+          "label": "Requisito de blanco ISO 3722",
+          "value": "Conteo en blanco por debajo del conteo de muestra más bajo esperado"
+        },
+        {
+          "label": "Riesgo de contaminación",
+          "value": "La contaminación del frasco suma 1–3 códigos ISO (rango de 4–6 µm)"
+        }
+      ]
+    },
+    {
+      "heading": "Muestreo en línea frente a frasco",
+      "body": "El conteo de partículas en línea usa un APC con una celda de detección de flujo continuo conectada directamente al circuito de fluido del sistema mediante una línea de muestra de alta presión y una válvula de control de caudal. El muestreo en frasco extrae una muestra de fluido a un frasco preparado según la ISO 3722 para su análisis en laboratorio. Ventajas del conteo en línea: monitoreo continuo en tiempo real; sin demora de muestreo; elimina la variable de contaminación del frasco; detecta eventos de contaminación transitorios (derivación del filtro, eventos de mantenimiento); se integra con los sistemas de monitoreo de condición y las alarmas. Desventajas del conteo en línea: requiere un APC compatible (celda clasificada para alta presión, hasta 420 bar en algunas aplicaciones hidráulicas); es sensible a las burbujas de aire (que se cuentan como partículas, por lo que la desgasificación es crítica); es sensible al caudal (debe controlarse dentro de ±5% del caudal nominal); no puede compartirse entre varias máquinas. Ventajas del muestreo en frasco: un solo instrumento de laboratorio sirve a muchas máquinas; es práctico para programas de monitoreo periódico; permite confirmar en laboratorio los resultados en línea. Desventaja del muestreo en frasco: la muestra se toma en un solo momento; no se detecta la contaminación entre muestras; la manipulación del frasco puede introducir contaminación externa. La calibración ISO 11171 se aplica a ambos métodos: los contadores en línea requieren la misma calibración que los instrumentos de laboratorio."
+    },
+    {
+      "heading": "Selección del APC y compatibilidad con el fluido",
+      "body": "Criterios de selección del APC para el informe de limpieza de fluidos hidráulicos ISO 4406: (1) Calibración: debe estar calibrado según la ISO 11171; obtener el certificado de calibración con declaración de trazabilidad a un patrón nacional; verificar que la fecha de calibración esté dentro del intervalo recomendado por el fabricante (normalmente 12 meses); (2) Compatibilidad con el fluido: la celda de flujo y los sellos del APC deben ser compatibles con el fluido a medir (aceite hidráulico, fluido de transmisión, aceite de turbinas, éster fosfato, agua-glicol); los sellos incompatibles se hinchan y desprenden partículas, lo que falsea los resultados; (3) Resolución de tamaño: el APC debe informar conteos a ≥4 µm(c), ≥6 µm(c) y ≥14 µm(c) según exige la ISO 4406; algunos APC también informan a ≥2 µm(c) para un análisis ampliado; (4) Límite de coincidencia: especificar el límite de coincidencia del certificado de calibración; verificar que supere la concentración máxima esperada de las muestras de la aplicación; (5) Volumen de muestra: el APC debe medir el volumen de muestra mínimo necesario para lograr validez estadística en el rango de concentración esperado; el informe ISO 4406 requiere un volumen de conteo suficiente para reducir la incertidumbre estadística a ≤1 nivel de código ISO; con un código de limpieza ISO 4406 de 14 (160–320 partículas/mL a ≥6 µm(c)), una muestra de 1 mL da estadísticas adecuadas; con el código 8 (1.3–2.5 partículas/mL), se requiere una muestra de 25 mL para una confianza aceptable."
+    },
+    {
+      "heading": "Intervalos de calibración y verificación en campo",
+      "body": "La ISO 11171 exige una calibración completa a intervalos definidos por el fabricante y la aplicación, normalmente 12 meses en la mayoría de los APC comerciales, o cuando ocurra cualquiera de lo siguiente: (1) servicio del contador o reemplazo de cualquier componente óptico; (2) detección de una fuga interna; (3) resultados inconsistentes con muestras de referencia conocidas; (4) caída del contador o exposición a un golpe. Verificación en campo entre calibraciones completas: (1) a diario o antes de cada sesión de medición, verificar con un fluido de verificación trazable (diluyente limpio preparado según la ISO 3722 en un frasco limpio verificado; el conteo en blanco debe estar por debajo del límite de detección); (2) comparación periódica entre laboratorios: enviar muestras divididas a un laboratorio de referencia para comparar el ISO 4406; los resultados deben coincidir dentro de ±1 nivel de código ISO; una discrepancia de >1 nivel de código activa una investigación y una recalibración. Indicadores de deriva de calibración: un contador que informa de forma sistemática ±2 niveles de código ISO distintos de un contador de referencia con la misma muestra requiere recalibración inmediata: una deriva de esta magnitud puede causar falsos cumplimientos o falsas superaciones y es significativa en ingeniería."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Tamaños de calibración ISO 11171",
+      "value": "≥4 µm(c), ≥6 µm(c), ≥14 µm(c)"
+    },
+    {
+      "label": "Límite de coincidencia (APC típico)",
+      "value": "6,000–20,000 partículas/mL a ≥1 µm"
+    },
+    {
+      "label": "Intervalo de calibración",
+      "value": "12 meses (o tras cualquier evento de mantenimiento)"
+    },
+    {
+      "label": "Límite de concordancia entre laboratorios",
+      "value": "±1 nivel de código ISO (investigar si es >1 nivel)"
+    },
+    {
+      "label": "Requisito de blanco ISO 3722",
+      "value": "Por debajo del conteo de muestra más bajo esperado"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 11171",
+    "ISO 4406",
+    "ISO 3722",
+    "ISO 12103-1",
+    "ISO 16889"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ISO 11171",
+    "calibración de contadores de partículas",
+    "conteo ISO 4406",
+    "calibración del APC",
+    "error de coincidencia",
+    "frasco de muestra ISO 3722",
+    "punto de rocío a presión",
+    "material de referencia",
+    "trazable al NIST",
+    "ISO 12103-1 A2 fine",
+    "conteo de partículas en línea",
+    "muestreo en frasco",
+    "medición de la limpieza",
+    "reemplazo del ACFTD",
+    "tamaño de partícula con sufijo c"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Dos laboratorios informan códigos ISO 4406 que difieren en más de 1 nivel de código para la misma muestra",
+      "El contador de partículas en línea muestra conteos erráticamente altos durante la operación normal",
+      "Los códigos ISO 4406 del mismo sistema suben de forma constante sin ningún cambio en el sistema",
+      "Pico del conteo de partículas tras el mantenimiento mucho mayor de lo esperado por la contaminación del mantenimiento",
+      "El contador lee sistemáticamente 2+ códigos más limpio que el laboratorio de referencia con la misma muestra"
+    ],
+    "probableCauses": [
+      "Discrepancia entre laboratorios >1 código: uno o ambos contadores no están calibrados según la ISO 11171; un contador usa calibración ACFTD (antigua); preparación de frascos inadecuada en un laboratorio (incumplimiento de la ISO 3722); viscosidades del fluido distintas en las celdas de conteo",
+      "Conteos en línea erráticos: burbujas de aire en el fluido (las burbujas se cuentan como partículas; revisar si hay cavitación de la bomba, aspiración de aire en el depósito o nivel bajo de fluido); caudal no controlado al caudal nominal del APC (la variación del caudal desplaza el conteo); revisar la válvula de control de caudal",
+      "Tendencia ascendente constante sin cambio en el sistema: deriva de la calibración del APC (programar recalibración); o aumento real de la contaminación del sistema (falla del respiradero, deterioro de sellos; investigar las vías de ingreso antes de suponer deriva del contador)",
+      "Pico grande tras el mantenimiento: ingreso por mantenimiento (herramientas, fluido de llenado, manipulación de componentes), normal; si es mucho mayor de lo esperado: contaminación del frasco durante el muestreo (verificación del blanco ISO 3722 en el frasco de muestreo)",
+      "Contador que lee más limpio que la referencia: error de coincidencia (muestra demasiado concentrada; diluir antes de contar; verificar la relación de dilución); caudal del APC demasiado bajo (subconteo); deriva de la calibración hacia arriba"
+    ],
+    "inspectionMethods": [
+      "Revisión del certificado de calibración ISO 11171: verificar la fecha de calibración, la declaración de trazabilidad, el límite de coincidencia declarado y los tamaños de partícula calibrados; rechazarlo si la calibración está vencida o falta la trazabilidad",
+      "Verificación del conteo en blanco según la ISO 3722: preparar el frasco según el procedimiento; contar el diluyente prefiltrado; el blanco debe estar por debajo de la detección para el sistema ensayado; si el blanco falla, volver a preparar los frascos antes de continuar",
+      "Comparación entre laboratorios: dividir una muestra de referencia de concentración conocida entre el APC del laboratorio y un laboratorio de referencia trazable al NIST; si los resultados difieren en >1 código ISO en cualquier tamaño, recalibrar el contador local",
+      "Validación del APC en línea: comparar el conteo en línea con una muestra en frasco simultánea del mismo punto de muestreo; los resultados deben coincidir dentro de ±1 código ISO; una diferencia sistemática indica un problema del contador en línea (burbujas, caudal, calibración)",
+      "Verificación de coincidencia: diluir la muestra 10:1 con diluyente limpio; si el conteo × 10 coincide dentro de ±20% con el conteo sin diluir, la muestra estaba por debajo del límite de coincidencia; si el resultado diluido ÷ 10 es bastante menor que el sin diluir, la coincidencia afectaba el conteo original"
+    ],
+    "correctiveActions": [
+      "Calibración vencida: devolver el APC al fabricante o a un laboratorio de calibración acreditado para la recalibración ISO 11171; no informar resultados ISO 4406 de un contador con el certificado de calibración vencido",
+      "Contaminación por burbujas en línea: subir el nivel de fluido del depósito por encima del mínimo; instalar un dispositivo desgasificador en la línea de muestra; revisar si el compresor o la bomba aspiran aire; reducir el caudal al APC si está dentro del rango de especificación",
+      "Falla de los frascos ISO 3722: reemplazar todo el lote de preparación de frascos; revisar el procedimiento: asegurar que el propio solvente de enjuague esté libre de partículas (verificarlo con el APC antes de usarlo); guardar cerrados los frascos preparados hasta su uso",
+      "Contador con sesgo sistemático frente a la referencia: recalibración ISO 11171 completa; si el sesgo persiste tras la calibración, inspeccionar la intensidad de la fuente láser (la degradación del láser desplaza las curvas de conteo) y la celda de flujo (depósitos en las paredes de la celda)",
+      "Contador ACFTD antiguo en servicio: reemplazarlo o recalibrarlo según la ISO 11171; documentar todos los datos históricos como anteriores a la ISO 11171 y no compararlos directamente con datos ISO 11171 (c) sin un factor de corrección validado para ese contador"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Código ISO 4406 de un sistema hidráulico informado como ISO 22/20/17 por el contador propio pero como ISO 19/17/14 por un laboratorio externo con la misma muestra",
+      "standard": "ISO 11171 (APC calibration), ISO 3722 (sample bottle), ISO 4406 (cleanliness reporting)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Una discrepancia de 3 códigos ISO requiere una investigación inmediata: (1) verificar que ambos contadores tengan certificados de calibración ISO 11171 vigentes; (2) revisar el blanco del frasco ISO 3722 propio; si el conteo en blanco es elevado, la contaminación del frasco explica el resultado propio inflado; (3) verificar que el contador propio cuente en los umbrales de tamaño ISO 4406 (c) (4, 6, 14 µm); algunos contadores antiguos siguen informando en tamaños ACFTD antiguos; (4) enviar a la vez una nueva muestra dividida a ambos laboratorios para confirmar la discrepancia; no tomar decisiones sobre el sistema con datos de un contador sin calibrar",
+      "relatedArticles": [
+        "iso-4406",
+        "contamination-ingression-modelling",
+        "hydraulic-power-unit-design"
+      ]
+    },
+    {
+      "problem": "Nuevo contador de partículas instalado para monitorear un sistema hidráulico de servoválvulas: verificar su idoneidad antes del primer uso",
+      "standard": "ISO 11171 (calibration), ISO 4406 (cleanliness code), NFPA T2.14 (servo valve target ISO 16/14/11)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Procedimiento de aceptación previo al uso: (1) verificar el certificado de calibración ISO 11171 con material de referencia trazable al NIST, fecha de calibración dentro de 12 meses y límite de coincidencia declarado ≥10,000 partículas/mL a ≥1 µm; (2) verificar un blanco de frasco ISO 3722 <1 partícula/mL a ≥6 µm(c) en 5 frascos preparados según el procedimiento; (3) contar una suspensión de referencia ISO 4406 de concentración conocida; compararla con el valor del certificado: debe coincidir dentro de ±1 código ISO; (4) documentar los resultados del ensayo de aceptación; archivarlos con el certificado de calibración antes del primer uso operativo",
+      "relatedArticles": [
+        "iso-4406",
+        "contamination-sensitivity-components",
+        "nfpa-t2-14-hydraulic-cleanliness"
+      ]
+    },
+    {
+      "problem": "Los códigos ISO 4406 de un sistema hidráulico en operación suben 1 código por mes durante 4 meses: determinar si es contaminación real o deriva del contador",
+      "standard": "ISO 11171 (calibration), ISO 4406 (trending), ISO 16889 (filter verification)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Distinguir la tendencia real de la deriva del contador: (1) enviar una muestra de cada uno de los últimos 3 meses de muestras guardadas (si se conservaron los frascos sellados) a un laboratorio de referencia calibrado según la ISO 11171; si la referencia confirma la tendencia ascendente, la contaminación es real; si la referencia muestra un código constante, el contador está derivando hacia arriba; (2) al mismo tiempo, recalibrar el contador; (3) si se confirma la tendencia de contaminación, ejecutar una auditoría de contaminación según el artículo contamination-ingression-modelling para identificar la vía de ingreso que se está acelerando",
+      "relatedArticles": [
+        "iso-4406",
+        "contamination-ingression-modelling",
+        "particle-ingress-prevention"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-11171)",
+    "evidenceStatus": "ISO 11171:2010 calibration methodology verified; ISO 3722:2015 sample bottle preparation verified; ISO 12103-1:2016 reference material specification verified; coincidence limit range from commercial APC manufacturer specifications (HACH, Parker Kittiwake, Hydac); inter-laboratory agreement limit from ISO 11171 Annex data; ACFTD replacement rationale from ISO TC 131/SC 6 technical report"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "slug": "contamination-sensitivity-components",
+  "faqs": [
+    {
+      "question": "Qual componente hidráulico tem a menor folga e a maior sensibilidade à contaminação?",
+      "answer": "Os conjuntos carretel-camisa das servoválvulas têm as menores folgas (1–5 µm) e a maior sensibilidade à contaminação de todos os componentes hidráulicos comuns. Uma única partícula de sílica de 5 µm alojada em uma folga de carretel de servoválvula de 2 µm cria naquele ponto uma tensão de contato acima do limite de escoamento do aço da válvula, causando microdesgaste imediato. A sensibilidade à contaminação das servoválvulas (exige-se código ISO 4406 14/12/9) decorre dessa especificação de folga mínima. Em comparação, as sapatas das bombas de pistões operam com folgas de 5–15 µm (tolera-se código ISO 4406 17/15/12), e os contatos entre dentes das bombas de engrenagens operam com folgas de 15–30 µm (tolera-se código ISO 19/17/14). A diferença de três ordens de grandeza na sensibilidade à contaminação entre bombas de engrenagens e servoválvulas orienta a abordagem de alocação do orçamento de contaminação: sistemas com os dois tipos de componente devem ser mantidos na especificação da servoválvula."
+    },
+    {
+      "question": "Qual é a classificação de sensibilidade à contaminação das bombas de pistões de deslocamento variável?",
+      "answer": "A sensibilidade das bombas de pistões de deslocamento variável é determinada por duas folgas críticas: (1) Folga pistão-cilindro (5–15 µm): partículas de sílica nessa faixa causam desgaste abrasivo na superfície de deslizamento do pistão; (2) Interface placa de distribuição-bloco de cilindros (1–5 µm nas janelas): a placa de distribuição distribui o fluido da janela de sucção para a de pressão; partículas na face da placa de distribuição desgastam diretamente a superfície lapidada de precisão. O código ISO 4406 17/15/12 é a especificação mínima para bombas de pistões de deslocamento variável; 16/14/11 é recomendado para estender a vida da bomba em aplicações de ciclo de trabalho intenso. Os mecanismos de controle do deslocamento variável (pistões servo, válvulas de controle proporcional dentro da bomba) são ainda mais sensíveis: os componentes de controle tipo servoválvula das bombas de pistões axiais modernas exigem para o circuito piloto a especificação ISO 14/12/9 equivalente à de uma servoválvula."
+    },
+    {
+      "question": "Como a dureza das partículas afeta o limiar de sensibilidade à contaminação para um dado tamanho de folga?",
+      "answer": "A dureza da partícula em relação ao metal do componente determina se a partícula causa abrasão, incrustação ou dano por fadiga. Partículas duras (sílica com 7 Mohs, alumina com 9 Mohs) acima da dimensão da folga causam abrasão de três corpos: a partícula dura é mais dura que as duas superfícies em contato e corta microssulcos em ambas. Partículas moles (carbono com 2 Mohs, borracha com <1 Mohs) acima do tamanho da folga causam travamento temporário do carretel e erros de comutação da válvula, mas desgaste abrasivo mínimo. Partículas de ferro (5–7 Mohs) dos detritos de desgaste são mais duras que metais mais moles (alumínio, bronze) e podem danificar essas superfícies por abrasão, mas menos o aço temperado. A meta de sensibilidade à contaminação (código ISO 4406) se baseia na contaminação por sílica como pior caso: em sistemas em que a fonte de contaminação confirmada são partículas orgânicas moles (borracha, carbono), o código de alarme de contaminação pode ser relaxado em 1–2 unidades sem risco equivalente de dano aos componentes."
+    },
+    {
+      "question": "Qual é a sensibilidade à contaminação dos injetores common rail e quais modos de falha a contaminação causa?",
+      "answer": "Os injetores common rail especificam contaminação máxima do combustível na entrada do injetor de código ISO 4406 17/15/12 ou melhor (conforme a documentação técnica de injetores HPCR da Bosch). A folga agulha-sede do injetor é de 1–3 µm no contato da sede da agulha; a folga da guia da agulha é de 3–6 µm. Partículas duras (sílica, metal) na faixa de 1–5 µm causam: (1) Erosão da ponta da agulha: o fluxo de injeção em alta velocidade (200–500 m/s) com partículas duras remove metal das superfícies da agulha e da sede em 500–1,000 horas, mudando o padrão de pulverização e aumentando a duração da injeção; (2) Vazamento agulha-sede: a erosão da área de contato da sede causa passagem de combustível na fase fechada, aumentando o consumo de combustível e gerando não conformidade de emissões; (3) Depósitos na ponta da agulha: partículas moles da degradação do combustível formam depósitos térmicos na ponta da agulha, alterando o ângulo do cone de pulverização e aumentando as emissões de fumaça."
+    },
+    {
+      "question": "Em que a sensibilidade à contaminação dos rolamentos difere entre aplicações em caixas de engrenagens e em motores hidráulicos?",
+      "answer": "A sensibilidade à contaminação dos rolamentos é caracterizada pelo fator de limpeza do rolamento λ: a razão entre a espessura do filme de lubrificante e a rugosidade superficial. Em rolamentos de caixas de engrenagens (óleo de engrenagens ISO VG 320, λ normalmente 0.4–1.5 na temperatura e rotação de operação), partículas acima de 5 µm podem amassar a pista do rolamento: uma partícula dura pressionada na pista cria uma concentração de tensões que inicia o lascamento por fadiga após 10–50% da vida L10 do rolamento. Em rolamentos de motores hidráulicos (fluido hidráulico ISO VG 46, λ normalmente 0.2–0.8 pela menor viscosidade do óleo), filmes de lubrificante mais finos tornam os rolamentos mais sensíveis à contaminação por partículas: código ISO 4406 17/15/12 para caixas de engrenagens contra 16/14/11 para rolamentos integrados de motores hidráulicos. A extensão da vida L10 dos rolamentos ao melhorar o código ISO em 2 unidades (por exemplo, de 18/16/13 para 16/14/11) vai de 2–5×, conforme o tamanho, a rotação e a carga do rolamento."
+    },
+    {
+      "question": "Qual é o limite de sensibilidade à contaminação das válvulas de alívio de pressão proporcionais?",
+      "answer": "As válvulas de alívio de pressão proporcionais controlam continuamente a pressão máxima do sistema por um sinal de comando eletrônico; sua sensibilidade à contaminação vem da válvula piloto acionada por solenoide proporcional que gera a pressão de referência. A folga do carretel da válvula piloto normalmente é de 5–15 µm, semelhante à de uma válvula proporcional industrial padrão. O código ISO 4406 16/14/11 é a especificação padrão. No entanto, as válvulas de alívio proporcionais têm um modo de falha adicional por contaminação: o travamento do carretel em posições de comando intermediárias causa oscilação de pressão: a válvula alterna entre o ponto de ajuste e o bypass, criando pulsações de vazão que se transmitem a todos os atuadores do circuito. Partículas de sílica abaixo de 10 µm em concentrações acima de ISO 4406 17/15/12 podem causar histerese detectável na função de transferência comando-pressão em 200–500 horas de operação. Em aplicações de fabricação de precisão, o travamento de uma válvula de alívio proporcional por contaminação pode ser diagnosticado pela análise da ondulação da corrente do servoacionamento sem intervir no sistema mecânico."
+    },
+    {
+      "question": "Qual limiar de dano a componentes em termos de código ISO 4406 se aplica aos sistemas de controle de bombas de palhetas?",
+      "answer": "As bombas de palhetas (tipo de deslocamento variável compensadas por pressão) são menos sensíveis à contaminação que as bombas de pistões, mas mais sensíveis que as bombas de engrenagens. A folga ponta da palheta-anel é de 3–8 µm; a folga da ranhura da palheta no rotor é de 5–15 µm. O código ISO 4406 18/16/13 é o mínimo de operação para circuitos de bombas de palhetas; 17/15/12 é recomendado para estender a vida útil. O mecanismo de controle (carretel do compensador de pressão) exige ISO 16/14/11 para o circuito piloto. Com códigos ISO acima de 19/17/14 (sistema sujo), as palhetas da bomba mostram desgaste acelerado da ponta por abrasão de partículas: a taxa de desgaste da ponta da palheta aumenta aproximadamente 3× a cada unidade de código ISO acima de 18/16/13 na interface ponta da palheta-anel. A vida da bomba de palhetas também é sensível à dureza das partículas no contato com o anel: partículas moles (carbono, borracha) com código ISO 19/17/14 causam desgaste mínimo, enquanto a sílica com o mesmo código causa desgaste significativo da ponta."
+    },
+    {
+      "question": "Como a sensibilidade à contaminação das válvulas de retenção pilotadas se compara à das válvulas de retenção de ação direta?",
+      "answer": "As válvulas de retenção de ação direta (obturador ou esfera com mola contra uma sede) têm sensibilidade à contaminação determinada pela geometria de contato obturador-sede: partículas duras na sede criam microamassados que permitem vazamento quando a válvula deveria estar fechada; o código ISO 4406 19/17/14 normalmente é suficiente para válvulas de retenção de ação direta. As válvulas de retenção pilotadas (POCV) incluem um pistão piloto que abre a válvula de retenção contra o fluxo reverso quando se aplica pressão piloto: o pistão piloto tem uma folga tipo carretel de 5–15 µm, o que torna o mecanismo de acionamento piloto mais sensível que o obturador principal. As POCVs especificam código ISO 4406 17/15/12 para o circuito piloto, mesmo que o circuito de retenção principal seja especificado em 19/17/14. Em sistemas com contaminação acima de ISO 17/15/12, os pistões piloto das POCVs podem travar: a válvula de retenção não abre ao comando piloto, bloqueando o atuador. Esse modo de falha é traiçoeiro porque a pressão principal do sistema e o funcionamento da válvula direcional não são afetados: só a POCV deixa de responder."
+    },
+    {
+      "question": "Qual é o efeito da concentração de partículas na eficiência volumétrica da bomba hidráulica?",
+      "answer": "A eficiência volumétrica da bomba hidráulica (razão entre a vazão de saída real e a vazão teórica de deslocamento) é afetada pela contaminação por partículas por dois mecanismos: (1) Desgaste da placa de distribuição e das sapatas: partículas acima de 5 µm na folga das sapatas (5–15 µm) removem metal por abrasão da face da sapata e do prato inclinado, aumentando a folga ao longo do tempo e deixando passar mais vazão de vazamento da janela de alta pressão para a de baixa; cada aumento de 1 µm na folga da sapata reduz a eficiência volumétrica em aproximadamente 0.3–1%, conforme a rotação e a pressão da bomba; (2) Vazamento face do tambor-placa de distribuição: o desgaste por abrasão de partículas da face lapidada da placa de distribuição (zona de contato de 4 componentes) aumenta o vazamento pela interface placa de distribuição-tambor; esse caminho de vazamento permite que o óleo em alta pressão vá para o dreno da carcaça sem realizar trabalho útil. Com código ISO 20/18/15 (muito contaminado), a eficiência volumétrica típica de uma bomba de pistões axiais de serviço pesado cai 2–5% abaixo da especificação nova em 2,000–3,000 horas."
+    },
+    {
+      "question": "Quais métodos de monitoramento detectam o desgaste incipiente de componentes por contaminação antes de uma falha catastrófica?",
+      "answer": "A detecção do desgaste incipiente por contaminação usa quatro métodos complementares: (1) Análise espectrométrica de óleo por ICP (ASTM D5185): concentração de ferro (Fe), cobre (Cu) ou silício (Si) em alta acima da linha de base indica desgaste ativo; ferro acima de 50 ppm no óleo hidráulico indica desgaste da placa de distribuição ou das sapatas; (2) Tendência da contagem de partículas (ISO 4406): código ISO em alta sem fonte de contaminação identificável indica desgaste interno gerando partículas; (3) Ferrografia (ASTM D7690): partículas grandes (>10 µm) de desgaste que o ICP não detecta; (4) Monitoramento do desempenho do sistema: a tendência da eficiência volumétrica a partir da medição de vazão na máquina identifica a deterioração da bomba sem amostrar o fluido. Combinados: Fe em alta por ICP + código APC em alta + queda da eficiência da bomba = desgaste ativo de sapatas/placa de distribuição da bomba de pistões por abrasão de partículas. O monitoramento com um único indicador deixa passar falhas incipientes que só se manifestam em uma fonte de dados."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificação da contaminação usada para especificar as metas de limpeza de cada tipo de componente com base nas dimensões de folga e na sensibilidade à contaminação."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de projeto de sistemas que cita os requisitos de sensibilidade à contaminação dos componentes e a metodologia de especificação da limpeza."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D7690-17, Standard Practice for Microscopic Characterization of Particles from In-Service Lubricants by Analytical Ferrography",
+      "relevance": "Método de análise de partículas de desgaste para identificar mecanismos de desgaste por partículas grandes que o ICP ou a contagem de partículas não detectam."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, J.C., Component Contamination Sensitivity and Hydraulic Cleanliness, Machinery Lubrication, Noria Corporation",
+      "relevance": "Guia de referência que relaciona as folgas dos componentes hidráulicos e de lubrificação aos limiares de sensibilidade à contaminação ISO 4406 e descreve os modos de falha."
+    }
+  ],
+  "title": "Sensibilidade à contaminação de componentes hidráulicos e de lubrificação: dados de folgas e metas ISO 4406",
+  "subtitle": "Dimensões das folgas internas dos componentes, limiares de dano por tamanho de partícula, metas de limpeza ISO 4406 e mecanismos de falha de bombas, motores, válvulas e cilindros hidráulicos e dos sistemas de mancais de motor.",
+  "metaDescription": "Referência de engenharia sobre a sensibilidade à contaminação de componentes hidráulicos e de lubrificação: folgas de carretel de servoválvula de 1–3 µm, válvula proporcional de 3–8 µm, bomba de pistões de 5–20 µm, bomba de engrenagens de 10–50 µm, folgas de mancais de deslizamento de 5–75 µm, metas de limpeza ISO 4406 por tipo de componente e relação entre tamanho de partícula e limiar de dano.",
+  "category": "engenharia",
+  "readTime": "13 min",
+  "intro": "A sensibilidade à contaminação de um componente hidráulico ou de lubrificação é determinada principalmente por suas folgas internas críticas: o espaço mínimo entre superfícies em movimento. Uma partícula maior que essa folga não consegue passar sem travar o componente (travamento da válvula) ou riscar as superfícies (desgaste abrasivo). Conhecer as dimensões de folga de cada tipo de componente permite aos engenheiros definir metas de limpeza ISO 4406 que protejam o componente mais sensível do circuito e prever quais componentes vão falhar primeiro quando um sistema opera acima da limpeza alvo.",
+  "sections": [
+    {
+      "heading": "Dimensões de folga por tipo de componente",
+      "body": "As folgas internas críticas definem os limiares de dano por tamanho de partícula de cada classe de componente. Servoválvulas eletro-hidráulicas: espaço bocal-palheta de 18–63 µm; folga radial carretel-furo de 1–4 µm; orifício do tubo de jato de 130–450 µm; a folga carretel-furo de 1–4 µm rege a sensibilidade. Válvulas direcionais proporcionais: folga radial carretel-furo de 3–8 µm. Bombas de pistões compensadas por pressão: folga radial pistão-cilindro de 5–10 µm; espaço da placa de distribuição de 0.5–5 µm (o espaço da placa de distribuição é a dimensão que rege a sensibilidade à limpeza da bomba de pistões). Bombas de palhetas: espaço ponta da palheta-anel de 0.5–1 µm; folga lateral do rotor de 10–25 µm; a folga da ponta da palheta é a dimensão mais sensível da máquina. Bombas de engrenagens: folga ponta da engrenagem-carcaça de 0.5–5 µm; folga face da engrenagem-placa de 5–25 µm; folga dos mancais de deslizamento de 10–50 µm. Cilindros hidráulicos: espaço vedação do pistão-cilindro (contato da vedação, sem folga dura); vedação da haste: acabamento Ra de 0.05–0.25 µm. Mancais de deslizamento do motor: espessura mínima do filme de óleo de 0.5–2 µm em plena carga; folga de operação de 5–75 µm (varia com o tamanho e a carga do mancal).",
+      "callout": [
+        {
+          "label": "Folga do carretel da servoválvula",
+          "value": "1–4 µm radial (a mais sensível)"
+        },
+        {
+          "label": "Espaço da placa de distribuição da bomba de pistões",
+          "value": "0.5–5 µm (rege a sensibilidade da bomba)"
+        },
+        {
+          "label": "Espaço ponta da palheta-anel",
+          "value": "0.5–1 µm (a máquina rotativa mais sensível)"
+        }
+      ]
+    },
+    {
+      "heading": "Relação entre tamanho de partícula e limiar de dano",
+      "body": "As partículas causam dano quando são maiores que a espessura mínima do filme, mas pequenas o suficiente para entrar na folga. Partículas menores que a espessura do filme passam arrastadas sem contato. Partículas maiores que a abertura da folga travam em vez de entrar, causando travamento da válvula e possível bloqueio hidráulico em vez de desgaste abrasivo. O tamanho de partícula mais danoso para uma dada folga é aproximadamente 1–2× a espessura mínima do filme: grande o suficiente para fazer ponte no espaço e causar contato abrasivo, e pequeno o suficiente para entrar e atravessar. Para uma folga de carretel de servoválvula de 2 µm, o tamanho de partícula mais danoso é de aproximadamente 2–6 µm. O relato ISO 4406 nos limiares de ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c) foi projetado para captar essas faixas de tamanho críticas. Partículas de ≥4 µm(c) regem a proteção de servoválvulas e bombas de palhetas. As de ≥6 µm(c) regem a proteção de válvulas proporcionais e bombas de pistões. As de ≥14 µm(c) regem a proteção de bombas de engrenagens e cilindros.",
+      "callout": [
+        {
+          "label": "Tamanho de partícula mais danoso",
+          "value": "~1–2× a espessura mínima do filme"
+        },
+        {
+          "label": "ISO 4406 ≥4 µm(c)",
+          "value": "Rege o código de servoválvulas / bombas de palhetas"
+        },
+        {
+          "label": "ISO 4406 ≥14 µm(c)",
+          "value": "Rege o código de bombas de engrenagens / cilindros"
+        }
+      ]
+    },
+    {
+      "heading": "Metas ISO 4406 por classe de componente",
+      "body": "Metas de limpeza do sistema ISO 4406 recomendadas (rege a meta do componente mais sensível presente): servoválvulas (folga de carretel de 1–4 µm): ISO 14/12/9 a ISO 16/14/11 conforme a criticidade da aplicação; aeroespacial e máquinas-ferramenta de precisão no extremo mais rigoroso; aplicações servo industriais normalmente ISO 16/14/11. Válvulas direcionais proporcionais: ISO 17/15/12. Bombas de pistões compensadas por pressão (alta pressão, pistões axiais): ISO 17/15/12; alguns fabricantes especificam ISO 16/14/11 para pressões acima de 280 bar. Bombas de palhetas: ISO 17/15/12 (apesar da folga submicrométrica da ponta, o mecanismo de dano é o desgaste e não o travamento, então rege a contagem de partículas a ≥6 µm(c)). Bombas de engrenagens (industriais padrão): ISO 18/16/13. Válvulas de controle direcional (carretel padrão, sem compensação): ISO 18/16/13. Cilindros hidráulicos (padrão): ISO 20/18/15 no mínimo; melhor prática ISO 18/16/13. Mancais de deslizamento de motor (automotivo): normalmente equivalente a ISO 17/15/12 no contexto do óleo lubrificante. Mancais de deslizamento de motor (diesel de grande diâmetro, marítimo): equivalente a ISO 16/14/11."
+    },
+    {
+      "heading": "Mecanismos de falha das servoválvulas",
+      "body": "As servoválvulas falham por contaminação por três mecanismos, em ordem crescente de dano: (1) Travamento do carretel: as partículas se depositam na folga carretel-furo e aumentam a força de desprendimento; detectado como deriva do ponto nulo e ganho reduzido; limpar e remontar pode restaurar o funcionamento. (2) Riscamento do carretel: partículas duras (sílica, carbonetos metálicos, detritos de desgaste) presas entre o diâmetro externo do carretel e o interior do furo criam riscos paralelos ao longo do ressalto de vedação crítico; uma vez riscado, o vazamento pelo ressalto do carretel aumenta e o ganho da válvula cai permanentemente: a válvula precisa ser trocada. (3) Obstrução do bocal: em servoválvulas de dois estágios bocal-palheta, partículas no orifício do bocal (normalmente de 130–450 µm de diâmetro) causam obstrução parcial ou total do orifício de controle, resultando em saturação do sinal de controle. Cada mecanismo exige diagnóstico e ação corretiva diferentes; a distribuição de tamanhos de partícula da contagem ISO 11171 ajuda a identificar qual mecanismo está ativo."
+    },
+    {
+      "heading": "Sensibilidade da bomba de pistões e progressão da falha",
+      "body": "As bombas de pistões axiais são a máquina hidráulica de alta pressão mais comum e a mais complexa do ponto de vista da contaminação. Três folgas críticas interagem: pistão-cilindro (5–10 µm): a contaminação nessa folga causa atrito de deslizamento intermitente do pistão e menor eficiência volumétrica; o riscamento aumenta o vazamento interno. Placa de distribuição-tambor (0.5–5 µm): esse filme hidrodinâmico é o mais fino da bomba; a contaminação causa pites por erosão de cavitação e riscamento da face, detectáveis como partículas metálicas no óleo e audíveis como mudança no ruído da bomba. Sapata-prato inclinado (2–8 µm): o riscamento das sapatas reduz a força de recolhimento do pistão e causa o arrancamento do pistão. Progressão da falha por contaminação da bomba de pistões: (1) perda de eficiência volumétrica (detectável pela medição de vazão); (2) vazamento elevado no dreno da carcaça (>10% da vazão nominal indica desgaste avançado); (3) ruído de alta frequência audível pelo riscamento da placa de distribuição; (4) falha catastrófica dos rolamentos pela mudança de carga do prato inclinado. O monitoramento por análise de óleo ICP (tendência de partículas de Fe) detecta a progressão dos estágios 1–2 antes do estágio 3."
+    },
+    {
+      "heading": "Sensibilidade dos mancais do motor e desgaste por contaminação",
+      "body": "A espessura mínima do filme de óleo dos mancais de deslizamento do motor em plena carga (filme hidrodinâmico) é o parâmetro crítico da sensibilidade dos mancais à contaminação. Na rotação e carga nominais, a espessura mínima do filme normalmente é de 0.5–2 µm nos mancais de cabeça de biela de motores de alta rotação. O número de Sommerfeld rege a espessura do filme: h_min ∝ (η × N × L × D) / (W × c), em que η é a viscosidade, N a rotação do eixo, L e D as dimensões do mancal, W a carga e c a folga radial. Partículas maiores que a espessura mínima do filme riscam as superfícies dos mancais. A liga dos mancais (Babbitt, cobre-chumbo, alumínio-estanho) tem dureza de aproximadamente 20–40 HV, mais mole que as partículas contaminantes típicas (sílica: ~1,000 HV; carboneto de ferro: ~1,500 HV). Essa diferença de dureza significa que toda partícula contaminante mais dura que a superfície do mancal causa desgaste mensurável a cada passagem. Análise de óleo ICP: Fe (desgaste dos munhões do virabrequim), Cu e Pb (desgaste de mancais de cobre-chumbo) e Sn (desgaste da camada de Babbitt) são os marcadores específicos da deterioração dos mancais por contaminação.",
+      "callout": [
+        {
+          "label": "Espessura mínima de filme do mancal",
+          "value": "0.5–2 µm em plena carga (motor de alta rotação)"
+        },
+        {
+          "label": "Dureza da sílica",
+          "value": "~1,000 HV vs Babbitt ~20–40 HV"
+        },
+        {
+          "label": "Marcadores de mancais de cobre-chumbo",
+          "value": "Cu + Pb na análise elementar ICP"
+        }
+      ]
+    },
+    {
+      "heading": "Sensibilidade específica de bombas de palhetas e motores de engrenagens",
+      "body": "As bombas de palhetas operam com as pontas das palhetas em contato com o anel de came com folga muito pequena (raio da ponta da palheta de 0.5–1 µm; o contato é nominalmente zero com sustentação hidrodinâmica em rotação). Em baixa rotação (abaixo da rotação mínima de filme hidrodinâmico), as pontas das palhetas operam em lubrificação limite: contato direto com a superfície do anel de came. Partículas contaminantes nessa interface riscam o anel de came, o que evolui para lascamento das pontas das palhetas e fratura catastrófica das palhetas sob cargas de alta pressão. A meta de limpeza ISO 17/15/12 para bombas de palhetas é conservadora, mas necessária: a experiência de campo mostra taxas de falha de bombas de palhetas 3–5× maiores com ISO 18/16/13 que com ISO 17/15/12. Os motores de engrenagens (internas e externas) sofrem dano por contaminação principalmente nas faces dos dentes e nos mancais de deslizamento. Partículas abrasivas na zona de contato dos dentes causam pites e lascamento, detectáveis como aumento de vibração e Fe/Cr elevados na análise de óleo. A tolerância à contaminação dos motores de engrenagens é maior que a das máquinas de pistões ou de palhetas porque a zona de contato dos dentes acomoda uma faixa de partículas relativamente ampla, mas motores de engrenagens de alta pressão (acima de 250 bar) mostram sensibilidade próxima à das bombas de pistões pela maior carga nas faces dos dentes."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Folga radial do carretel da servoválvula",
+      "value": "1–4 µm (a mais crítica)"
+    },
+    {
+      "label": "Folga da ponta da palheta",
+      "value": "0.5–1 µm (a máquina rotativa mais sensível)"
+    },
+    {
+      "label": "Espessura mínima de filme do mancal do motor",
+      "value": "0.5–2 µm na carga/rotação nominal"
+    },
+    {
+      "label": "Dureza da sílica vs Babbitt",
+      "value": "1,000 HV vs 20–40 HV"
+    },
+    {
+      "label": "Espaço da placa de distribuição da bomba de pistões",
+      "value": "0.5–5 µm (folga que rege)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171",
+    "NFPA T2.14",
+    "SAE J300"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "sensibilidade dos componentes à contaminação",
+    "folga da servoválvula",
+    "folga da bomba hidráulica",
+    "metas ISO 4406",
+    "sensibilidade da bomba de palhetas",
+    "desgaste da bomba de pistões",
+    "espessura de filme do mancal",
+    "contaminação da bomba de engrenagens",
+    "dano por tamanho de partícula",
+    "desgaste de mancais de deslizamento",
+    "níveis NFPA T2.14"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Deriva do ponto nulo da servoválvula: deslizamento da posição com sinal de comando zero",
+      "Perda de vazão da bomba hidráulica: redução medida da eficiência volumétrica >5% em relação à referência",
+      "Aumento do ruído audível da bomba de palhetas em operação em baixa rotação (abaixo de 500 rpm)",
+      "Cu e Pb elevados no ICP do óleo do motor: desgaste da camada de cobre-chumbo dos mancais",
+      "Aumento de vibração do motor de engrenagens sem mudança de carga ou rotação"
+    ],
+    "probableCauses": [
+      "Deriva do ponto nulo da servoválvula: depósito de partículas na folga carretel-furo (1–4 µm); código ISO 4406 acima da meta ISO 16/14/11; também é possível depósito de verniz no carretel detectado por MPC",
+      "Perda de vazão da bomba: desgaste pistão-cilindro (perda volumétrica por escorregamento do pistão); riscamento da placa de distribuição (progressivo; verificar primeiro a vazão do dreno da carcaça); código ISO 4406 com tendência acima de ISO 17/15/12",
+      "Ruído da bomba de palhetas em baixa rotação: riscamento do anel de came por lubrificação limite em baixa rotação com contaminação; código ISO 4406 acima de ISO 17/15/12; verificar o estado das pontas das palhetas na próxima inspeção programada",
+      "Cu+Pb elevados: desgaste da camada dos mancais por contaminação na espessura do filme ou abaixo dela; verificar o código ISO 4406 equivalente do óleo lubrificante; verificar se o grau de óleo atende ao mínimo HTHS do OEM",
+      "Vibração do motor de engrenagens: pites nos dentes por contaminação abrasiva (Fe, Cr na análise de óleo); confirmar com análise espectral para identificar o componente de frequência de engrenamento"
+    ],
+    "inspectionMethods": [
+      "Contagem de partículas ISO 11171 a montante e a jusante do circuito suspeito: comparar com a meta do componente; o desvio do código indica o nível de contaminação em relação à tolerância do componente",
+      "Eficiência volumétrica da bomba: medir a vazão real na rotação e na pressão nominais; comparar com a especificação de bomba nova; perda >5% é o limiar de investigação; perda >10% exige avaliação de reconstrução",
+      "Medição da vazão do dreno da carcaça: medidor de vazão de engrenagens na linha de dreno da carcaça; >10% da entrega nominal da bomba indica desgaste interno avançado",
+      "Análise de óleo ICP em intervalos de 250 horas: tendência de Fe (desgaste geral), Cu (mancal/bomba), Al (carcaça da servoválvula), Cr (haste do cilindro hidráulico, cromo do furo da válvula)",
+      "Ensaio de ponto nulo da servoválvula: comandar sinal zero; medir a posição de saída; deriva do ponto nulo >1% do curso total em 60 segundos indica contaminação ou riscamento do carretel"
+    ],
+    "correctiveActions": [
+      "Travamento do carretel da servoválvula: limpar conforme o procedimento do fabricante em fluido limpo; ISO 4406 em ISO 16/14/11 antes de reinstalar; se o carretel estiver riscado, a válvula deve ser trocada: a limpeza não restaura o desempenho",
+      "Perda de eficiência volumétrica da bomba: reduzir o nível de contaminação para ISO 17/15/12 com filtração kidney loop; programar a reconstrução na próxima manutenção planejada; não adiar além de 15% de perda de eficiência",
+      "Riscamento do anel de came da bomba de palhetas: remover e inspecionar no próximo serviço; medir a circularidade e a rugosidade superficial do anel de came; Ra >0.4 µm na superfície do came exige troca; corrigir o ISO 4406 para ISO 17/15/12 antes de remontar",
+      "Desgaste de mancais (Cu+Pb elevados): reduzir a contaminação do óleo a um equivalente de ISO 16/14/11 ou melhor; verificar a conformidade do grau de óleo (HTHS e viscosidade); inspecionar os mancais na revisão geral; o desgaste causado por contaminação não é recuperável: corrigir e evitar a recorrência",
+      "Vibração do motor de engrenagens: coletar amostra de óleo para ICP; se Fe+Cr estiverem elevados, programar inspeção de reconstrução; prevenir mantendo limpeza ISO 18/16/13 em aplicações de motores de engrenagens"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Circuito hidráulico misto com servoválvulas, válvulas proporcionais e bombas de engrenagens: definir uma única meta de limpeza do sistema",
+      "standard": "NFPA T2.14 (component tiers), ISO 4406 (cleanliness code), ISO 16889 (filter spec)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "Meta do sistema regida pelo componente mais sensível (servoválvula): ISO 16/14/11; filtrar todos os circuitos para essa meta, incluindo a alimentação da bomba de engrenagens; a bomba de engrenagens operará de forma conservadora nessa meta e com vida útil maior; especificação do filtro: β₃(c) ≥ 200 no circuito de alimentação da servoválvula; considerar uma linha de alimentação separada da servoválvula com filtro fino dedicado se a vazão da servoválvula for <10% da vazão total do sistema",
+      "relatedArticles": [
+        "nfpa-t2-14-hydraulic-cleanliness",
+        "hydraulic-power-unit-design",
+        "contamination-ingression-modelling"
+      ]
+    },
+    {
+      "problem": "Vazão do dreno da carcaça da bomba de pistões medida em 12% da entrega nominal: investigar se a causa é contaminação ou desgaste mecânico",
+      "standard": "ISO 4406 (system cleanliness), ISO 11171 (particle counting)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "Dreno da carcaça em 12% indica desgaste avançado; coletar amostra de óleo para ICP (Fe e Al elevados indicam desgaste da placa de distribuição e do tambor); coletar amostra de código ISO 4406: se o sistema esteve acima de ISO 17/15/12, a contaminação é provavelmente uma causa contribuinte; um flushing kidney loop até ISO 17/15/12 vai desacelerar, mas não reverter o desgaste existente; programar a reconstrução; corrigir a filtração do sistema antes de instalar a bomba reconstruída",
+      "relatedArticles": [
+        "contamination-ingression-modelling",
+        "oil-analysis-methods",
+        "hydraulic-power-unit-design"
+      ]
+    },
+    {
+      "problem": "Falhas de mancais de motores diesel às 4,000 horas em uma frota com intervalos de troca de óleo estendidos para 500 horas",
+      "standard": "SAE J300 (oil grade), ISO 4406 equivalent for lube oil, ISO 17359 (condition monitoring)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "Análise de óleo ICP para confirmar os metais de desgaste dos mancais (tendência de Cu, Pb, Sn); se a contagem de partículas equivalente estiver acima de ISO 16/14/11, o intervalo de troca estendido está permitindo o acúmulo de contaminação; passar para análise de óleo a cada 250 horas com contagem de partículas; se a degradação do TAN ou da viscosidade for confirmada, reduzir a troca para 300 horas até corrigir a causa raiz; verificar se a razão beta do filtro de óleo lubrificante atende à ISO 4548-12 para a DHC da troca estendida",
+      "relatedArticles": [
+        "lubrication-system-filtration",
+        "extended-drain-interval-engineering",
+        "oil-analysis-methods"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)",
+    "evidenceStatus": "Servo valve clearance data from electrohydraulic valve engineering references and Moog, Parker Hannifin published specifications; piston pump clearances from axial piston pump engineering literature; vane pump tip clearance from published fluid power engineering textbooks; bearing film thickness from journal bearing tribology literature (Hamrock, Schmid, Jacobson — Fundamentals of Machine Elements); particle hardness values from ASM Metals Handbook"
+  }
+}
