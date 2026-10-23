@@ -1,0 +1,297 @@
+{
+  "slug": "compressed-air-quality-verification",
+  "faqs": [
+    {
+      "question": "Qual é o procedimento de verificação da qualidade do ar comprimido no ponto de uso segundo a ISO 8573?",
+      "answer": "A ISO 8573-2:2018 (medição de óleo em aerossol e partículas) e a ISO 8573-3:2010 (umidade) definem os procedimentos de amostragem e medição no ponto de uso para verificar a qualidade do ar comprimido em relação às especificações de classe de pureza da ISO 8573-1. Procedimento de verificação: (1) Instalar sondas de amostragem no ponto de uso (conexão de processo), com a entrada da sonda voltada para o fluxo de ar; (2) Coletar a amostra de ar na vazão de amostragem especificada (ISO 8573-2: 10–30 L/min para a contagem de partículas); (3) Analisar dentro dos limites de tempo especificados para cada método de medição; (4) Relatar os resultados com a pressão do ar, a temperatura e a data da amostragem. A amostragem deve ser feita na pressão de trabalho: o ponto de orvalho à pressão atmosférica não representa o ponto de orvalho sob pressão nas condições da linha. A verificação no ponto de uso deve ser feita: no comissionamento inicial, após cada troca de elemento filtrante, anualmente durante a operação e após qualquer modificação do sistema que possa afetar a qualidade do ar."
+    },
+    {
+      "question": "Quais métodos de medição do ponto de orvalho em linha são usados no monitoramento contínuo da qualidade do ar comprimido?",
+      "answer": "Métodos de medição do ponto de orvalho em linha para o monitoramento contínuo da qualidade do ar comprimido: (1) Espelho resfriado (higrômetro): o espelho resfria até o orvalho condensar; o ponto de condensação é medido opticamente; exatidão ±0.1°C PDP; a maior exatidão, mas resposta lenta (1–5 min) e exige ar limpo sem contaminação por óleo; (2) Sensor capacitivo de polímero: uma película de óxido de alumínio ou de polímero muda a capacitância com a pressão parcial do vapor d'água; exatidão ±2°C PDP; resposta rápida (10–60 segundos); tolera contaminação por óleo de até 0.1 mg/m3; o método em linha mais comum; (3) Sensor eletrolítico (P2O5): a água é reduzida eletroliticamente; mede a umidade absoluta; exatidão ±1°C PDP; manutenção elevada (contaminação do sensor); (4) TDLAS (espectroscopia de absorção com laser de diodo sintonizável): mede a absorção do vapor d'água em um comprimento de onda laser específico; exatidão ±0.5°C PDP; sem partes móveis; adoção crescente em aplicações críticas. Em aplicações farmacêuticas e eletrônicas (água ISO Classe 1, PDP ≤ −70°C), exige-se medição por espelho resfriado ou TDLAS: os sensores capacitivos não têm exatidão suficiente nesses níveis baixos de ponto de orvalho."
+    },
+    {
+      "question": "Como o teor de partículas do ar comprimido é medido no ponto de uso segundo a ISO 8573-2?",
+      "answer": "A ISO 8573-2:2018 define dois métodos de ensaio para medir o teor de partículas do ar comprimido: (1) Método de concentração mássica (gravimétrico): a amostra de ar passa por um filtro de membrana pré-pesado; a membrana é pesada após a amostragem; os mg/m3 são calculados a partir do ganho de massa e do volume da amostra; sensibilidade mínima de aproximadamente 0.01 mg/m3; (2) Contagem de partículas: um instrumento APC calibrado conta partículas em limiares de tamanho de ≥0.1–0.5 µm; os resultados são expressos em partículas/m3 conforme os limites de classe de pureza da ISO 8573-1. Procedimento de amostragem: (1) Instalar a sonda voltada para o fluxo de ar, com comprimento de sonda ≥100 mm; (2) Usar materiais de linha de amostragem que não soltem partículas (tubo de aço inoxidável, não cobre nem plástico); (3) Purgar a sonda por no mínimo 2 minutos antes de iniciar a medição para eliminar a contaminação do volume morto; (4) Volume mínimo de amostra: 1,000 L para o método gravimétrico, 0.1 L por contagem para a contagem de partículas; (5) Registrar a pressão do ar, a temperatura, a vazão e o volume da amostra para normalizar os resultados às condições de referência padrão da ISO 8573-1 (1 bar, 20°C, 0% UR)."
+    },
+    {
+      "question": "Qual é o ensaio de verificação do teor de óleo do ar comprimido no ponto de uso?",
+      "answer": "Verificação do teor de óleo do ar comprimido segundo a ISO 8573-2:2018: (1) Tubo de adsorção de carvão ativado: o vapor de óleo é adsorvido no leito de carvão; é dessorvido e quantificado por GC (cromatografia gasosa) ou gravimetria; limite de detecção 0.001 mg/m3; mede apenas o óleo em fase vapor; (2) Amostragem com impinger: o aerossol de óleo fica retido em um solvente; análise gravimétrica; detecta gotículas de aerossol (não vapor); (3) Método combinado: um filtro coalescente (que coleta o aerossol) seguido de um tubo de carvão ativado (que coleta o vapor) em série; óleo total = aerossol + vapor; (4) PID (detector de fotoionização): medição em tempo real da concentração total de hidrocarbonetos; menos específico que a GC, mas dá uma indicação imediata. Tempo mínimo de amostragem: 30 minutos na vazão nominal para detectar concentrações no limite de óleo da Classe 1 da ISO 8573-1 (0.01 mg/m3) ou perto dele. A linha de amostragem e a sonda devem ser desengraxadas a fundo antes do ensaio: a contaminação por óleo do equipamento de amostragem dá leituras falsamente altas que não podem ser distinguidas da contaminação real do ar."
+    },
+    {
+      "question": "Qual frequência de verificação é especificada para a qualidade do ar comprimido farmacêutico?",
+      "answer": "O ar comprimido farmacêutico para contato com o produto ou aplicações críticas de processo (classificação do Anexo 1 das GMP da UE: ar comprimido de Grau A/B) exige: (1) Ensaios de qualificação inicial: antes do uso em produção; ensaio completo segundo a ISO 8573 em todos os pontos de uso; (2) Monitoramento de rotina: ensaio mensal do ponto de orvalho (PDP), do teor de óleo e da contagem de partículas nos pontos de uso críticos durante a produção; (3) Requalificação anual: ensaio completo em todos os pontos de uso; (4) Ensaios desencadeados: qualquer troca de elemento filtrante, manutenção do compressor ou modificação do sistema desencadeia uma requalificação na zona afetada; (5) Ensaios microbiológicos: trimestrais segundo a ISO 8573-7 nos pontos de contato direto com o produto. O Anexo 1 das GMP da UE (revisão de 2022) exige um plano formal de gestão da qualidade do ar comprimido como parte da estratégia de controle de contaminação: os resultados dos ensaios devem ser registrados e analisados em tendência, com procedimentos de controle de mudanças para qualquer modificação que afete a qualidade do ar."
+    },
+    {
+      "question": "Como a verificação da qualidade do ar comprimido é registrada para a documentação de conformidade com a ISO 8573?",
+      "answer": "Requisitos de documentação de conformidade com a ISO 8573: (1) Relatório de ensaio: informações de identificação (local, sistema, data, operador), identificação do ponto de amostragem, condições da amostra (pressão, temperatura, vazão de ar), método de medição e identificação do instrumento, referência de calibração do instrumento, resultados em unidades de classe da ISO 8573-1 e comparação com a especificação; (2) Registros de calibração dos instrumentos: certificado de calibração de cada instrumento de medição usado, com data dentro do intervalo de calibração do instrumento; (3) Cadeia de custódia da amostra: para amostras analisadas em laboratório, registro de coleta mostrando o ponto de coleta, o horário, o volume, a preservação, as condições de transporte e o recebimento no laboratório; (4) Registros de tendência: resultados de ensaios consecutivos em ordem cronológica para cada ponto de amostragem, permitindo análise de tendência para detectar a deterioração gradual da qualidade antes que os limites de ação sejam ultrapassados. Em aplicações farmacêuticas de Grau A/B, todos os registros devem estar em conformidade com o 21 CFR Part 11 (se eletrônicos) ou ser formalmente controlados conforme os procedimentos de gestão documental GMP."
+    },
+    {
+      "question": "Qual é o requisito de profundidade de inserção da sonda de amostragem para uma medição exata da qualidade do ar comprimido?",
+      "answer": "Requisitos de inserção e orientação da sonda de amostragem de ar comprimido: (1) Profundidade de inserção: no mínimo 1/3 do diâmetro do tubo para alcançar o núcleo do escoamento longe dos efeitos da camada-limite (a camada-limite da parede do tubo é empobrecida em partículas por deposição inercial); para um tubo de 50 mm, inserção mínima de 17 mm; (2) Orientação: a entrada da sonda voltada para o fluxo de ar (orientação isocinética), para que a velocidade de amostragem seja igual à velocidade do escoamento no tubo; a amostragem fora do eixo causa erros de contagem de partículas de 20–50% por efeitos não isocinéticos em partículas acima de 1 µm; (3) Localização: no mínimo 10 diâmetros de tubo a jusante de qualquer curva, válvula ou redução para garantir uma distribuição uniforme do escoamento na seção do tubo; 5 diâmetros de tubo a montante da próxima conexão; (4) Material da sonda: aço inoxidável (316L) para evitar que a corrosão da sonda libere partículas de ferro na amostra; não usar sondas de cobre para análise de óleo (o cobre se dissolve nas amostras em branco de adsorção com carvão ativado e distorce os resultados)."
+    },
+    {
+      "question": "Qual é o procedimento de ação quando a verificação da qualidade do ar comprimido falha?",
+      "answer": "Procedimento de ação em caso de verificação reprovada da qualidade do ar comprimido: (1) Imediato: isolar o processo ou sistema afetado do suprimento de ar comprimido; não usar ar fora de especificação em processos críticos até a qualidade ser restabelecida e verificada; (2) Investigação da causa raiz: identificar a fonte da falha: está a montante (falha do secador, bypass do pré-filtro) ou é local (falha do filtro do ponto de uso, tubulação contaminada)? Verificar todos os indicadores de restrição dos filtros a montante; (3) Ação corretiva: substituir o componente com falha (elemento filtrante, dessecante do secador ou vedação de válvula); verificar o reparo repetindo o ensaio de qualidade no ponto reprovado; (4) Ensaio de liberação: dois ensaios consecutivos aprovados antes de devolver o sistema ao serviço; (5) Avaliação de impacto: determinar qual produto ou processo foi exposto ao ar fora de especificação e avaliar o impacto; aplicações farmacêuticas exigem revisão de lotes e possível rejeição ou quarentena do produto afetado; (6) Ação preventiva: revisar a causa raiz para determinar se a frequência de monitoramento, os intervalos de troca de filtros ou os sistemas de alarme precisam de modificação para evitar a recorrência."
+    },
+    {
+      "question": "Como a qualidade microbiológica do ar comprimido é ensaiada e quais limites se aplicam?",
+      "answer": "Ensaio microbiológico do ar comprimido segundo a ISO 8573-7:2003: (1) Amostragem: coletar 1,000–3,000 L na pressão nominal do sistema através de um impinger ou de um dispositivo de amostragem por membrana contendo meio de captura (solução salina tamponada ou caldo de soja tríptica); (2) Incubação: cultivar os microrganismos capturados em meios de crescimento adequados (TSA para a contagem total de viáveis, SDA para fungos e leveduras) a 32°C e 22°C por 3 e 5 dias, respectivamente; (3) Contagem de colônias: expressar os resultados em unidades formadoras de colônias por metro cúbico (UFC/m3); (4) Limites por aplicação: Grau A farmacêutico (zonas críticas, contato com o produto): ≤1 UFC/m3; Grau B: ≤10 UFC/m3; ar comprimido geral: sem limite obrigatório na ISO 8573-7, é necessário um limite específico da aplicação. Melhoria da qualidade microbiológica: (1) filtro de membrana de ultrafiltração (≥0.01 µm) no ponto de uso para aplicações de Grau A; (2) irradiação germicida UV no comprimento de onda de 254 nm (elimina 99.9% das bactérias e fungos) antes do filtro terminal."
+    },
+    {
+      "question": "Qual ensaio de verificação confirma a integridade do sistema de ar comprimido após a parada de manutenção anual?",
+      "answer": "Verificação da qualidade do ar comprimido após a manutenção anual: (1) Ensaio de vazamento antes da partida: ensaio pneumático de vazamento a 1.1× a pressão de operação com nitrogênio ou ar após toda a manutenção; verificar todas as conexões mexidas com solução de sabão ou detector ultrassônico de vazamentos; (2) Purgar e verificar: após a partida, operar o compressor por no mínimo 30 minutos para estabilizar antes de coletar amostras de qualidade; purgar todos os pontos de amostragem por 2 minutos antes de coletar as amostras; (3) Verificação de todos os parâmetros: ensaiar todos os parâmetros da ISO 8573 (partículas, água, óleo) em todos os pontos de uso críticos; a verificação em um único ponto de um coletor central não confirma a qualidade nas pontas dos ramais; (4) Amostragem microbiológica: a intervenção no sistema durante a parada pode introduzir contaminação biológica pelas conexões abertas; em aplicações farmacêuticas, é obrigatório o ensaio microbiológico após qualquer manutenção do sistema; (5) Verificação dos instrumentos: verificar a calibração de todos os instrumentos em linha de ponto de orvalho e de monitoramento de óleo contra padrões de referência após a manutenção; confirmar que os pontos de ajuste dos alarmes estão configurados corretamente."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes",
+      "relevance": "Norma de especificação de classes de pureza que define as concentrações máximas admissíveis de partículas, água e óleo no ar comprimido."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content",
+      "relevance": "Métodos de ensaio de medição de óleo e partículas no ponto de uso, incluindo amostragem com impinger, adsorção com carvão ativado e procedimentos de contagem de partículas."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-3:2010, Compressed Air — Part 3: Test Methods for Measurement of Humidity",
+      "relevance": "Métodos de medição do ponto de orvalho e da umidade para verificar a conformidade com a classe de água da ISO 8573-1 no ponto de uso."
+    },
+    {
+      "category": "regulation",
+      "citation": "EU GMP Annex 1:2022, Manufacture of Sterile Medicinal Products (Compressed Air Section)",
+      "relevance": "Diretriz europeia de fabricação farmacêutica que exige planos de gestão da qualidade do ar comprimido, monitoramento contínuo e documentação formal para aplicações de ar farmacêutico de Grau A/B."
+    }
+  ],
+  "title": "Verificação da qualidade do ar comprimido: ISO 8573-4, -5 e -7",
+  "subtitle": "Métodos de medição de partículas sólidas, teor de óleo e contaminação microbiológica viável em sistemas de ar comprimido",
+  "metaDescription": "A ISO 8573-4, a ISO 8573-5 e a ISO 8573-7 definem os métodos de medição usados para verificar se o tratamento de ar comprimido instalado atinge as classes de pureza alvo especificadas da ISO 8573-1. Esta referência abrange a amostragem isocinética, a medição gravimétrica do aerossol de óleo, a análise GC-FID do vapor de óleo e a amostragem microbiológica para auditorias de qualidade do ar comprimido.",
+  "category": "Engenharia",
+  "readTime": "12 min",
+  "intro": "A ISO 8573-1:2010 estabelece o sistema de classes de pureza para a qualidade do ar comprimido. Verificar se os equipamentos instalados de filtração, secagem e tratamento atingem a classe de pureza especificada exige os métodos de medição definidos na série ISO 8573, da Parte 2 à Parte 7. Este artigo abrange as três disciplinas de medição mais relevantes para o comissionamento e a auditoria periódica de sistemas de ar comprimido: a medição do teor de partículas sólidas (ISO 8573-4:2019), a medição do teor de óleo em aerossol e em vapor (ISO 8573-2:2018 e ISO 8573-5:2001) e a medição da contaminação microbiológica viável (ISO 8573-7:2003). Cada método especifica condições de amostragem, requisitos de equipamentos e procedimentos de cálculo que devem ser seguidos para obter resultados válidos e comparáveis. O artigo relacionado sobre as classes de pureza da ISO 8573-1, a seleção de secadores e o projeto do sistema está disponível nas referências de engenharia compressed-air-purity e compressed-air-dryer-selection.",
+  "sections": [
+    {
+      "heading": "Amostragem isocinética: o requisito fundamental",
+      "body": "Todas as medições de qualidade do ar comprimido exigem amostragem isocinética: a velocidade do gás que entra na sonda de amostragem deve ser igual à velocidade da corrente de ar principal no ponto de amostragem. Quando a velocidade na sonda supera a da corrente de ar (superisocinética), as partículas maiores são desviadas ao redor da entrada da sonda e a contaminação pesada fica sub-representada. Quando a velocidade na sonda é menor que a da corrente de ar (subisocinética), as partículas maiores são coletadas em excesso. A ISO 8573-4 exige amostragem isocinética com correspondência de velocidade dentro de ±5% da velocidade da corrente principal. A profundidade de inserção da sonda isocinética deve posicionar a entrada da sonda no eixo do tubo para velocidades acima de 2 m/s. As linhas de amostragem devem ser aquecidas a pelo menos 5°C acima do ponto de orvalho sob pressão em todos os pontos entre a porta de amostragem e o instrumento de medição, para evitar condensação que distorceria as medições de óleo e umidade. Para as medições de teor de óleo segundo a ISO 8573-2, a temperatura da linha de amostragem deve superar o ponto de orvalho sob pressão em pelo menos 10°C.",
+      "callout": [
+        {
+          "label": "Tolerância isocinética",
+          "value": "±5% da velocidade da corrente de ar principal na entrada da sonda (ISO 8573-4)"
+        },
+        {
+          "label": "Posição da sonda",
+          "value": "Eixo do tubo: velocidades acima de 2 m/s"
+        },
+        {
+          "label": "Temperatura da linha de amostragem",
+          "value": "≥5°C acima do ponto de orvalho sob pressão em toda a linha de amostragem"
+        },
+        {
+          "label": "Linha de amostragem de óleo",
+          "value": "≥10°C acima do PDP: evita que a condensação distorça o teor de óleo"
+        }
+      ]
+    },
+    {
+      "heading": "Medição de partículas sólidas: ISO 8573-4",
+      "body": "A ISO 8573-4:2019 define dois métodos para medir o teor de partículas sólidas: gravimétrico (baseado em massa, Método A) e contagem de partículas (baseado em tamanho, Método B). O Método A coleta as partículas em um filtro de membrana pré-tarado com tamanho de poro conhecido (normalmente 0.8 µm); a massa coletada dividida pelo volume de ar amostrado dá a contaminação em mg/m³. Esse método mede a massa total de partículas sólidas acima do tamanho de poro de corte da membrana. O Método B usa um contador automático de partículas (APC) calibrado segundo a ISO 11171 para contar e dimensionar partículas em faixas de tamanho padrão. O Método B é usado quando a classe de pureza da ISO 8573-1 exige verificação contra limites de contagem de partículas (classes 1–4 para partículas sólidas). O volume de amostragem deve ser suficiente para uma medição confiável: a ISO 8573-4 recomenda no mínimo 1,000 L (em condições padrão de 20°C, 100 kPa absolutos) para a medição gravimétrica quando as concentrações estão perto do limite de detecção do filtro de membrana.",
+      "callout": [
+        {
+          "label": "Método A (gravimétrico)",
+          "value": "Filtro de membrana pré-tarado; resultado em mg/m³: massa total acima do tamanho de poro do filtro"
+        },
+        {
+          "label": "Método B (contagem de partículas)",
+          "value": "APC segundo a ISO 11171; conta em faixas de tamanho definidas: valida os limites numéricos"
+        },
+        {
+          "label": "Volume mínimo de amostra",
+          "value": "1,000 L em condições padrão (20°C, 100 kPa abs)"
+        },
+        {
+          "label": "Referência normativa",
+          "value": "ISO 8573-4:2019: substitui a edição de 2001"
+        }
+      ]
+    },
+    {
+      "heading": "Medição do aerossol de óleo: ISO 8573-2",
+      "body": "A ISO 8573-2:2018 define o método para medir o teor de aerossol de óleo no ar comprimido. O método coleta o aerossol de óleo em um filtro coalescente de lã de vidro ou de microfibra de vidro borossilicato; a massa de óleo coletada é determinada por extração com solvente seguida de análise gravimétrica ou GC-FID. A concentração mínima detectável com análise gravimétrica é de aproximadamente 0.03 mg/m³; para a verificação da Classe 1 da ISO 8573-1 (≤0.01 mg/m³), a análise GC-FID do extrato oferece a sensibilidade necessária. Volume mínimo de amostra para a medição de Classe 1: ≥10,000 L. O ar amostrado é conduzido por uma linha de amostragem aquecida até o coletor coalescente; a temperatura do coletor deve ser mantida acima do ponto de orvalho sob pressão do sistema. O resultado da medição é expresso em mg/m³ nas condições de referência (20°C, 100 kPa absolutos, 0% de umidade relativa). O teor de óleo combinado (aerossol mais vapor) é medido somando o resultado de aerossol da ISO 8573-2 ao resultado de vapor da ISO 8573-5.",
+      "callout": [
+        {
+          "label": "Norma",
+          "value": "ISO 8573-2:2018: filtro coalescente de aerossol de óleo + gravimetria/GC-FID"
+        },
+        {
+          "label": "Limite de detecção da Classe 1",
+          "value": "Gravimetria: ~0.03 mg/m³; GC-FID: suficiente para ≤0.01 mg/m³"
+        },
+        {
+          "label": "Volume de amostra (Classe 1)",
+          "value": "≥10,000 L nas condições de referência"
+        },
+        {
+          "label": "Condições de referência do resultado",
+          "value": "20°C, 100 kPa abs, 0% UR: conforme a definição da ISO 8573-1"
+        }
+      ]
+    },
+    {
+      "heading": "Medição do vapor de óleo: ISO 8573-5",
+      "body": "A ISO 8573-5:2001 define o método para medir o teor de vapor de óleo e de solventes orgânicos no ar comprimido. Os compostos de óleo em fase vapor (normalmente hidrocarbonetos C₁₁ a C₂₅ dos lubrificantes do compressor) são coletados fazendo a amostra de ar passar por um tubo preenchido com carvão ativado (adsorvente Tenax ou de carvão ativado). Após a amostragem, o adsorvente é dessorvido termicamente ou extraído com solvente, e o eluato é analisado por cromatografia gasosa com detecção por ionização de chama (GC-FID). Os resultados são expressos como concentração total de hidrocarbonetos em mg/m³ nas condições de referência. Para a verificação das Classes 1 e 2 da ISO 8573-1, o óleo total combinado (aerossol + vapor) não deve exceder 0.01 mg/m³ (Classe 1) nem 0.1 mg/m³ (Classe 2) como um único resultado combinado; os resultados de vapor da ISO 8573-5 e de aerossol da ISO 8573-2 são somados. A vazão de amostragem e o volume de amostra do tubo adsorvente devem ser validados para os compostos hidrocarbonetos específicos esperados da formulação do óleo do compressor em uso.",
+      "callout": [
+        {
+          "label": "Norma",
+          "value": "ISO 8573-5:2001: tubo de adsorção de carvão ativado + GC-FID"
+        },
+        {
+          "label": "Óleo combinado Classe 1",
+          "value": "≤0.01 mg/m³ total (aerossol + vapor segundo a ISO 8573-2 + ISO 8573-5)"
+        },
+        {
+          "label": "Óleo combinado Classe 2",
+          "value": "≤0.1 mg/m³ total (aerossol + vapor)"
+        },
+        {
+          "label": "Faixa de hidrocarbonetos",
+          "value": "C₁₁–C₂₅, espectro típico do óleo de compressor: adsorvente validado para a classe de compostos"
+        }
+      ]
+    },
+    {
+      "heading": "Contaminação microbiológica viável: ISO 8573-7",
+      "body": "A ISO 8573-7:2003 define o método para medir a contaminação microbiológica viável (bactérias e mofo) no ar comprimido. São especificados dois métodos de amostragem: um impactador em cascata Anderson (para caracterizar o aerossol viável por tamanho) e um impinger todo de vidro AGI-30 (para a contagem total de viáveis). Para a verificação de rotina de classe segundo a ISO 8573-1, o método do impinger é o mais usado. O impinger AGI-30 coleta as amostras de ar em um meio líquido de coleta estéril a 12.5 L/min; o volume mínimo de amostra é de 1,000 L (aproximadamente 80 minutos a 12.5 L/min). Após a amostragem, o meio de coleta é diluído em diluições seriadas e semeado em placas com ágar sangue como meio de crescimento; as placas são incubadas a 37°C ±1°C por 48 horas antes da contagem de colônias. Os resultados são expressos em unidades formadoras de colônias por metro cúbico (UFC/m³). Classes de pureza microbiológica da ISO 8573-7: W1 ≤0.1 UFC/m³, W2 ≤1 UFC/m³, W3 ≤10 UFC/m³. A amostragem microbiológica exige técnica asséptica o tempo todo; o equipamento de amostragem é autoclavado antes do uso e o líquido de coleta é estéril.",
+      "callout": [
+        {
+          "label": "Norma",
+          "value": "ISO 8573-7:2003: coleta com impinger + cultura em placa de ágar (UFC/m³)"
+        },
+        {
+          "label": "Classe W1",
+          "value": "≤0.1 UFC/m³: qualidade de ar farmacêutica e alimentícia"
+        },
+        {
+          "label": "Classe W2",
+          "value": "≤1 UFC/m³: ar médico e de processos sensíveis"
+        },
+        {
+          "label": "Volume de amostra",
+          "value": "≥1,000 L a 12.5 L/min (≈80 min de amostragem): mínimo para uma contagem confiável"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Tolerância de velocidade isocinética",
+      "value": "±5% da velocidade da corrente de ar principal (ISO 8573-4)"
+    },
+    {
+      "label": "Limite de aerossol de óleo Classe 1",
+      "value": "≤0.01 mg/m³ de óleo total (ISO 8573-1)"
+    },
+    {
+      "label": "Detecção de aerossol de óleo (GC-FID)",
+      "value": "Suficiente para a verificação da Classe 1 de ≤0.01 mg/m³"
+    },
+    {
+      "label": "Microbiológico Classe W1",
+      "value": "≤0.1 UFC/m³ (ISO 8573-7)"
+    },
+    {
+      "label": "Amostra microbiológica mínima",
+      "value": "≥1,000 L a 12.5 L/min"
+    },
+    {
+      "label": "Amostra mínima de partículas sólidas",
+      "value": "≥1,000 L gravimétrico (ISO 8573-4)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 8573-1",
+    "ISO 8573-2",
+    "ISO 8573-4",
+    "ISO 8573-7",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "qualidade do ar comprimido",
+    "ISO 8573-4",
+    "ISO 8573-5",
+    "ISO 8573-7",
+    "ISO 8573-2",
+    "medição de aerossol de óleo",
+    "vapor de óleo GC-FID",
+    "contaminação microbiológica",
+    "UFC por metro cúbico",
+    "amostragem isocinética",
+    "auditoria de ar comprimido",
+    "verificação ISO 8573-1"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Contaminação por óleo visível no equipamento pneumático ou no produto a jusante apesar do filtro coalescente instalado",
+      "Contaminação microbiológica detectada em ar comprimido usado em aplicações alimentícias, farmacêuticas ou médicas",
+      "Contagens de partículas sólidas acima da classe alvo da ISO 8573-1 apesar da filtração a jusante instalada",
+      "Resultados de medição do teor de óleo inconsistentes entre ensaios repetidos no mesmo ponto de amostragem",
+      "Contagens de partículas após o secador dessecante mais altas que a montante do secador: o desgaste do dessecante gera partículas"
+    ],
+    "probableCauses": [
+      "Arraste de óleo: elemento do filtro coalescente com troca vencida; sistema de drenagem de óleo bloqueado; a saturação de óleo causa rearraste",
+      "Contaminação microbiológica: água líquida acumulando na tubulação de distribuição a jusante e criando uma zona de crescimento de biofilme; purgadores de condensado com defeito",
+      "Geração de partículas sólidas: desgaste do secador dessecante; a degradação das esferas dessecantes gera partículas finas de sílica a jusante do secador",
+      "Inconsistência de medição: linha de amostragem não aquecida o suficiente acima do PDP; o óleo condensa na linha de amostragem antes do instrumento de medição",
+      "Amostragem subisocinética: vazão da sonda de amostragem baixa demais em relação à corrente de ar principal; coleta-se menos aerossol e menos partículas"
+    ],
+    "inspectionMethods": [
+      "Verificar a pressão diferencial do filtro coalescente: comparar com o ΔP limpo e o terminal; remover e inspecionar o copo de drenagem do elemento em busca de líquido acumulado",
+      "Coletar amostras de condensado de água dos drenos dos pontos baixos; cultivar em ágar sangue segundo um protocolo modificado da ISO 8573-7 para identificar a fonte de biofilme",
+      "Instalar um filtro de membrana temporário de 0.01 µm a jusante do secador dessecante; pesá-lo antes e depois de 1 hora de operação para quantificar a geração de partículas de dessecante",
+      "Verificar o perfil de temperatura da linha de amostragem com termopares de rastreamento: confirmar ≥10°C acima do PDP em todos os pontos para as medições de óleo",
+      "Recalcular a velocidade isocinética da sonda: medir a velocidade da corrente de ar principal com um tubo de Pitot; ajustar a vazão da bomba de amostragem para corresponder dentro de ±5%"
+    ],
+    "correctiveActions": [
+      "Arraste de óleo: substituir o elemento do filtro coalescente; inspecionar e limpar o reservatório de drenagem de óleo e a válvula de drenagem; verificar se o dreno funciona automaticamente",
+      "Contaminação microbiológica: drenar todo o condensado do sistema de distribuição; substituir os drenos automáticos com defeito; desinfetar os trechos de tubulação afetados conforme o procedimento do fabricante do sistema",
+      "Geração de partículas de dessecante: substituir a carga de dessecante; instalar um pós-filtro a jusante de ≤1 µm absoluto para capturar as partículas de desgaste",
+      "Condensação na linha de amostragem: aplicar aquecimento elétrico (heat tracing) às linhas de amostragem; aumentar o isolamento da linha de amostragem; verificar a temperatura da linha antes da amostragem",
+      "Erro isocinético: corrigir a vazão da bomba de amostragem; substituir a sonda de orifício fixo por uma sonda ajustável para velocidades variáveis da corrente de ar"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Teor de óleo acima da classe alvo da ISO 8573-1 no ponto de uso",
+      "standard": "ISO 8573-1:2010 Table 3 — oil class limits; ISO 8573-2:2018 — measurement method",
+      "protectionSystem": "Filtração coalescente em estágios, da remoção do aerossol em massa até a adsorção do vapor com carvão ativado",
+      "technology": "Sistema de coalescência e adsorção em dois estágios: um filtro coalescente de primeiro estágio que reduz o aerossol a ≤0.1 mg/m³ (Classe 2), seguido de um adsorvedor de carvão ativado que reduz o óleo total (aerossol + vapor) a ≤0.01 mg/m³ (Classe 1); verificado por medição segundo a ISO 8573-2 e a ISO 8573-5",
+      "relatedArticles": [
+        "compressed-air-purity",
+        "compressed-air-dryer-selection",
+        "iso-29463-hepa-ulpa-filters"
+      ]
+    },
+    {
+      "problem": "A contaminação microbiológica viável excede a classe alvo W2 no suprimento de ar alimentício ou farmacêutico",
+      "standard": "ISO 8573-7:2003 — microbiological measurement; ISO 8573-1 Class W1/W2 targets",
+      "protectionSystem": "Filtração terminal HEPA classificada ISO 29463 H13 ou superior, mais eliminação dos purgadores de condensado do sistema de distribuição",
+      "technology": "Filtro HEPA terminal classificado E10 ou superior segundo a ISO 29463 instalado no ponto de uso; elimina o aerossol microbiológico no ponto de uso final, independentemente da contaminação da distribuição a montante; gestão do condensado para eliminar as fontes de biofilme por água parada",
+      "relatedArticles": [
+        "compressed-air-purity",
+        "iso-29463-hepa-ulpa-filters",
+        "compressed-air-dryer-selection"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-8573)",
+    "evidenceStatus": "ISO 8573-1:2010 purity class limits verified; ISO 8573-2:2018 oil aerosol coalescing collection method verified; ISO 8573-4:2019 solid particle gravimetric and particle counting methods verified; ISO 8573-5:2001 oil vapour activated charcoal adsorption method verified; ISO 8573-7:2003 viable microbiological impinger method verified; isokinetic ±5% tolerance from ISO 8573-4 Section 7.2; AGI-30 impinger flow rate 12.5 L/min from ISO 8573-7 Section 8.2; incubation conditions 37°C/48 h from ISO 8573-7 Section 9.3; microbiological class limits W1/W2/W3 from ISO 8573-1:2010 Table 4"
+  }
+}

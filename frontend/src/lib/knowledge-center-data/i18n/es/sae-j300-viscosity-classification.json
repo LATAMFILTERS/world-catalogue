@@ -1,0 +1,257 @@
+{
+  "slug": "sae-j300-viscosity-classification",
+  "faqs": [
+    {
+      "question": "¿Qué parámetros de viscosidad especifica SAE J300 para cada grado de aceite de motor?",
+      "answer": "SAE J300 especifica tres parámetros para cada grado de aceite de motor: (1) Viscosidad de arranque en frío a baja temperatura (−10°C a −35°C según el grado), medida según ASTM D5293 con el simulador de arranque en frío (CCS), con valores máximos en mPa·s que definen el desempeño en el arranque; (2) Límite de bombeabilidad: viscosidad máxima para que el aceite se pueda bombear a baja temperatura, medida según ASTM D4684 con el minirrotoviscosímetro (MRV), que evita la gelificación o la formación de canales que dejarían sin aceite a la bomba en el arranque en frío; (3) Viscosidad cinemática a 100°C (ASTM D445), con límites mínimos y máximos en cSt que definen la clase de viscosidad de operación del aceite. Por ejemplo, el SAE 15W-40 especifica: CCS a −20°C ≤ 3,500 mPa·s; MRV a −25°C ≤ 60,000 mPa·s; KV100 = 12.5–16.3 cSt. El número W (15W) representa la clase de arranque en frío; el segundo número (40) representa la clase de viscosidad de operación."
+    },
+    {
+      "question": "¿Cómo se relaciona la viscosidad a alta temperatura y alto cizallamiento (HTHS) con el espesor de la película en los cojinetes del motor?",
+      "answer": "La viscosidad HTHS (ASTM D4683, medida a 150°C y con una velocidad de cizallamiento de 10^6 s-1) predice directamente el espesor de la película de aceite en las posiciones de cojinete más exigidas del motor: los muñones de los cojinetes de bancada y de biela, que operan a 130–160°C con carga dinámica. La viscosidad HTHS mínima de SAE J300 para los aceites de grado 40 es de 3.5 mPa·s; para los de grado 30, de 3.0 mPa·s. Por debajo de estos límites, la película hidrodinámica en los muñones de los cojinetes puede no sostener una lubricación de película completa con las cargas máximas de combustión, lo que aumenta el contacto en lubricación límite (metal con metal) y acelera el desgaste de los cojinetes. Algunas especificaciones de fabricantes de alto desempeño (VW 508.00/509.00, Dexos 2) fijan el HTHS mínimo en 2.6 mPa·s para reducir el consumo de combustible, especificando holguras de cojinete optimizadas para operar con menor viscosidad: estas especificaciones requieren diseños de holgura de cojinete adecuados y no son intercambiables con motores especificados para fluidos de HTHS estándar."
+    },
+    {
+      "question": "¿Qué papel cumplen los mejoradores del índice de viscosidad en los aceites de motor multigrado y cómo afectan la estabilidad al cizallamiento?",
+      "answer": "Los mejoradores del índice de viscosidad (VI) son aditivos poliméricos de alto peso molecular (polimetacrilato, copolímero de olefinas, poliisobutileno) que reducen la sensibilidad de la viscosidad del aceite base a la temperatura. A baja temperatura, los ovillos de polímero se contraen hasta un volumen hidrodinámico pequeño, con un efecto espesante mínimo. A alta temperatura, el polímero se extiende, aumenta la viscosidad del aceite por encima del valor del aceite base y mantiene la viscosidad cinemática objetivo a 100°C. La estabilidad al cizallamiento describe cuánto resisten estos polímeros la ruptura permanente con altos esfuerzos de cizallamiento. ASTM D6278 (ensayo de cizallamiento con rodamiento de rodillos cónicos KRL) y ASTM D5481 (estabilidad permanente al cizallamiento HTHS) miden la estabilidad al cizallamiento. Un aceite con poca estabilidad al cizallamiento se degrada de viscosidad de grado 40 a aproximadamente grado 30 en 15,000–25,000 km en servicio de alto cizallamiento (motores turboalimentados), y pierde protección de la película en los cojinetes sin que el análisis de aceite muestre indicadores de degradación evidentes aparte de la caída de viscosidad."
+    },
+    {
+      "question": "¿Cómo se relaciona la viscosidad con la separación de las superficies de los cojinetes y la curva de Stribeck?",
+      "answer": "La curva de Stribeck describe el coeficiente de fricción en el muñón de un cojinete en función de la relación (η × N / P), donde η = viscosidad del aceite (Pa·s), N = velocidad del eje (rev/s) y P = carga del cojinete por unidad de área (Pa). Existen tres regímenes: lubricación límite (ηN/P baja: contacto metal con metal, fricción alta, desgaste rápido); lubricación mixta (de transición); y lubricación hidrodinámica (ηN/P alta: separación total por la película de aceite, fricción baja, desgaste mínimo). La viscosidad mínima del aceite para una lubricación hidrodinámica completa es: η_min = (P × d_c) / (N × C), donde d_c = diámetro del cojinete y C = holgura del cojinete (derivación de Sommerfeld). Los motores que operan por debajo de la viscosidad mínima (por alta temperatura, dilución excesiva o grado de aceite incorrecto) pasan de lubricación hidrodinámica a mixta: las tasas de desgaste de los cojinetes aumentan 10–50× y la rugosidad superficial de los muñones aumenta progresivamente con las horas de servicio."
+    },
+    {
+      "question": "¿Qué diferencia hay entre la viscosidad cinemática y la dinámica, y cuál se usa en la clasificación SAE J300?",
+      "answer": "La viscosidad cinemática (KV) es la relación entre la viscosidad dinámica y la densidad del fluido: KV (cSt o mm2/s) = µ (Pa·s) / ρ (kg/m3). Representa la resistencia del fluido a fluir por gravedad y se mide cronometrando el flujo del aceite por un capilar de vidrio calibrado (ASTM D445). La viscosidad dinámica (µ, Pa·s o mPa·s) es el esfuerzo de cizallamiento necesario para mantener un gradiente de velocidad unitario en el fluido, medido directamente con viscosímetros rotacionales. SAE J300 usa la viscosidad cinemática a 100°C (ASTM D445) para el grado de viscosidad de operación (el número después de la W) y la viscosidad dinámica en frío (mPa·s) para el grado de baja temperatura (el número antes de la W), medida con el simulador de arranque en frío (ASTM D5293), que aplica una velocidad de cizallamiento que imita las condiciones reales del arranque. La distinción importa porque la densidad cambia con la temperatura: la viscosidad cinemática a 40°C se ve más afectada por la temperatura que la dinámica, porque los cambios de densidad entran en el cociente."
+    },
+    {
+      "question": "¿Cómo se elige el grado de aceite SAE para equipos que operan en rangos de temperatura extremos?",
+      "answer": "Las aplicaciones con rangos de temperatura extremos (minería ártica, construcción tropical, gran altitud) requieren elegir un grado de aceite que cumpla a la vez: (1) La viscosidad de arranque en frío para arrancar a la temperatura ambiente mínima: la tabla 1 de SAE J300 da los límites CCS por grado; el SAE 5W-30 permite arrancar a −30°C, mientras que el SAE 10W-30 se limita a −25°C; (2) La viscosidad cinemática mínima a 100°C para mantener la película en los cojinetes a la temperatura máxima del cárter: en motores con temperatura del cárter por encima de 120°C puede requerirse un grado SAE 40 o SAE 50; (3) La bombeabilidad a la temperatura ambiente mínima: hay que cumplir el límite MRV sin que se formen canales en el aceite que dejen sin aceite la galería de la bomba. Para un rango ambiente de −40°C a +50°C con una temperatura máxima del aceite de 130°C: el SAE 0W-40 es el único grado que cumple el arranque a −40°C (CCS a −35°C ≤ 3,250 mPa·s para 0W), da una viscosidad de operación de grado 40 a 100°C y cumple el HTHS mínimo de 3.5 mPa·s."
+    },
+    {
+      "question": "¿Qué importancia tienen los límites de viscosidad cinemática ASTM D445 de SAE J300 para verificar el grado de un aceite de motor?",
+      "answer": "La viscosidad cinemática a 100°C según ASTM D445 es la medición de verificación principal para confirmar que un aceite de motor cumple su grado SAE declarado, tanto en la certificación del aceite nuevo como en el monitoreo del estado del aceite usado. Los límites de SAE J300 (por ejemplo, 12.5–16.3 cSt para el grado 40) fijan los umbrales de aprobación para la certificación del grado y para las decisiones de servicio. Una muestra de aceite usado con una KV100 por debajo del límite inferior de la especificación (por ejemplo, <12.5 cSt para el grado 40) indica una pérdida del grado de viscosidad por: degradación por cizallamiento de los mejoradores de VI, dilución por combustible (la KV100 del diésel ≈ 3.5 cSt reduce mucho la viscosidad del aceite) o contaminación por solventes. A la inversa, una KV100 por encima del límite superior indica espesamiento del aceite por: oxidación severa, contaminación por glicol o acumulación de hollín en aplicaciones con mucho blow-by. Tanto superar el límite superior como bajar del inferior obligan a cambiar el aceite de inmediato, sin importar el TBN u otros indicadores de estado."
+    },
+    {
+      "question": "¿Qué efecto tiene el tipo de aceite base (Grupo I, II, III, IV) en el desempeño del grado SAE J300?",
+      "answer": "El grupo de aceite base API afecta el desempeño del grado SAE por la relación entre viscosidad y temperatura: (1) Grupo I (mineral refinado con solventes, VI 95–105): requiere agregar bastante mejorador de VI para lograr un desempeño multigrado; la cantidad de mejorador de VI reduce la estabilidad al cizallamiento; (2) Grupo II (mineral hidroprocesado, VI 100–120): mejor VI natural que el Grupo I, menor carga de mejorador de VI, mejor estabilidad al cizallamiento y resistencia a la oxidación; (3) Grupo III (hidroprocesado severo o cera isomerizada, VI >120): a menudo comercializado como \"sintético\", necesita menos mejorador de VI, excelente estabilidad al cizallamiento; puede lograr grados en frío 0W y 5W manteniendo el grado de operación 40 o 50; (4) Grupo IV (polialfaolefina, PAO, VI 120–150): el menor punto de fluidez, el mayor VI natural, necesita un mínimo de mejorador de VI; logra un punto de fluidez de −54°C para aplicaciones SAE 0W. Con grados SAE equivalentes, los aceites base de Grupo III y IV dan intervalos de cambio un 30–50% más largos que los aceites de Grupo I por su resistencia a la oxidación."
+    },
+    {
+      "question": "¿Cómo afecta la viscosidad del aceite de motor a la economía de combustible y qué grados SAE se especifican en las normativas de economía de combustible?",
+      "answer": "Reducir la viscosidad del aceite de motor reduce las pérdidas por fricción en los cojinetes, los paquetes de anillos y el tren de válvulas: cada cSt menos de KV100 corresponde aproximadamente a una mejora de la economía de combustible del 0.3–0.7% en aplicaciones livianas a la temperatura de operación típica en ruta. Las normativas de economía de combustible de la UE (objetivos de CO2 promedio de flota) llevaron las especificaciones de los fabricantes hacia grados de baja viscosidad (SAE 0W-20, 0W-16 e incluso 0W-8 en algunas especificaciones de fabricantes japoneses), con la viscosidad HTHS mínima reducida a 2.6 mPa·s. Con un HTHS de 2.6 mPa·s frente al estándar de 3.5 mPa·s, el espesor de la película hidrodinámica en los cojinetes se reduce en proporción: estos aceites requieren cambios de diseño complementarios en el motor (tolerancias de cojinete más ajustadas, mejor acabado superficial, recubrimientos que reducen la fricción) para mantener una durabilidad equivalente de los cojinetes. NO se permite intercambiar aceites entre las especificaciones HTHS 2.6 mPa·s y HTHS 3.5 mPa·s sin aprobación del fabricante."
+    },
+    {
+      "question": "¿Qué grados de aceite SAE se usan en los motores diésel de servicio pesado y qué distinciones de clase de viscosidad se aplican?",
+      "answer": "Las aplicaciones de motores diésel de servicio pesado usan: (1) SAE 15W-40: el estándar tradicional de servicio pesado; KV100 = 12.5–16.3 cSt; grado en frío clasificado para arrancar a −20°C; grado predominante en construcción, minería y agricultura por encima de −20°C; (2) SAE 10W-40: grado en frío clasificado para −25°C; se usa en aplicaciones de clima frío moderado; (3) SAE 5W-40: grado en frío clasificado para −30°C; adopción creciente en la minería con operación invernal; mejor bombeabilidad en frío que el 15W-40; (4) SAE 0W-40: grado en frío clasificado para −35°C a −40°C; equipo pesado ártico y subártico; (5) SAE 20W-50: aplicaciones de calor extremo (climas tropicales, generadores diésel estacionarios de alta carga); KV100 = 16.3–21.9 cSt. La elección entre estos grados la determinan la temperatura ambiente mínima de arranque y la temperatura máxima del aceite en servicio: las especificaciones de aceite del fabricante en el manual del motor definen el rango aprobado, normalmente como una tabla de temperaturas que relaciona la temperatura ambiente con el grado SAE requerido."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "SAE J300:2021, Engine Oil Viscosity Classification",
+      "relevance": "Norma principal de clasificación de viscosidad que define los límites del simulador de arranque en frío, los límites del minirrotoviscosímetro, los rangos de viscosidad cinemática y los mínimos de viscosidad HTHS de cada grado de aceite de motor SAE."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D445-21, Standard Test Method for Kinematic Viscosity of Transparent and Opaque Liquids (and Calculation of Dynamic Viscosity)",
+      "relevance": "Método de ensayo de viscosidad cinemática usado para verificar el cumplimiento del grado SAE y monitorear el estado del aceite usado."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D5293-15, Standard Test Method for Apparent Viscosity of Engine Oils and Base Stocks Between −5°C and −35°C Using the Cold-Cranking Simulator",
+      "relevance": "Método de ensayo de viscosidad de arranque en frío que define los límites de desempeño en el arranque a baja temperatura de SAE J300."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D4684-14a, Standard Test Method for Determination of Yield Stress and Apparent Viscosity of Engine Oils at Low Temperature",
+      "relevance": "Método de ensayo con minirrotoviscosímetro para la bombeabilidad del aceite a baja temperatura, el segundo límite de baja temperatura de SAE J300."
+    }
+  ],
+  "title": "Clasificación de viscosidad de aceites de motor SAE J300: ingeniería de arranque en frío, alta temperatura y multigrado",
+  "subtitle": "Sistema de grados de viscosidad SAE, límites de arranque en frío y bombeabilidad, viscosidad HTHS a 150°C, tecnología de aceites multigrado, punto de fluidez y elección del grado de viscosidad según el rango de temperatura de operación.",
+  "metaDescription": "Referencia de ingeniería sobre la clasificación de viscosidad de aceites de motor SAE J300: simulador de arranque en frío (ASTM D5293), bombeabilidad con minirrotoviscosímetro (ASTM D4684), viscosidad cinemática a 100°C (ASTM D445), HTHS a 150°C (ASTM D4683) y metodología de elección del grado de aceite multigrado.",
+  "category": "ingeniería",
+  "readTime": "11 min",
+  "intro": "La viscosidad del aceite de motor es el parámetro individual más importante para determinar el espesor de la película de aceite en las superficies de los cojinetes y los componentes del tren de válvulas. SAE J300 define el sistema de clasificación de viscosidad que permite a los fabricantes de motores especificar, y a los comercializadores de lubricantes certificar, las propiedades de viscosidad de los aceites de motor tanto en el arranque en frío como en la operación a alta temperatura. Una elección correcta del grado de viscosidad, adecuada tanto a la temperatura mínima de arranque como a la temperatura máxima de operación, es un requisito previo para mantener un espesor de película adecuado en los cojinetes en todo el rango de operación del motor.",
+  "sections": [
+    {
+      "heading": "Estructura de grados de SAE J300",
+      "body": "SAE J300 define dos conjuntos de grados de viscosidad de aceite de motor: (1) Grados de invierno (grados W: 0W, 5W, 10W, 15W, 20W, 25W): se definen por límites máximos de viscosidad de arranque en frío a baja temperatura, que aseguran un flujo de aceite suficiente a los cojinetes durante el arranque en frío antes de llegar a la temperatura de operación; (2) Grados de alta temperatura (20, 30, 40, 50, 60): se definen por la viscosidad cinemática mínima a 100°C (ASTM D445) y la viscosidad mínima a alta temperatura y alto cizallamiento (HTHS). Los aceites multigrado (por ejemplo, SAE 15W-40) deben cumplir tanto los límites de baja temperatura del grado W (como 15W) como los límites del grado de alta temperatura (como 40). Los aceites multigrado lo logran con mejoradores del índice de viscosidad (VII), aditivos poliméricos que reducen la pérdida de viscosidad a alta temperatura y permiten que un solo aceite cubra los requisitos de baja y de alta temperatura. Los aceites monogrado (SAE 40, SAE 50) no están clasificados para el desempeño a baja temperatura y no son adecuados para arrancar en frío a temperaturas por debajo de aproximadamente −5°C.",
+      "callout": [
+        {
+          "label": "Ejemplo de grado W",
+          "value": "SAE 15W: arranque en frío ≤3,500 cP a −20°C"
+        },
+        {
+          "label": "Grado de alta temperatura 40",
+          "value": "12.5–16.3 mm²/s de viscosidad cinemática a 100°C"
+        },
+        {
+          "label": "Multigrado 15W-40",
+          "value": "Cumple los límites de los grados 15W y 40"
+        }
+      ]
+    },
+    {
+      "heading": "Simulador de arranque en frío: ASTM D5293",
+      "body": "El ensayo con simulador de arranque en frío (CCS, ASTM D5293) mide la viscosidad aparente a baja temperatura con velocidades de cizallamiento altas que simulan la carga de los cojinetes del motor durante el arranque. La temperatura de ensayo depende del grado: 0W se ensaya a −35°C; 5W a −30°C; 10W a −25°C; 15W a −20°C; 20W a −15°C; 25W a −10°C. SAE J300 especifica la viscosidad CCS máxima de cada grado W; superar el límite significa que el motor de arranque no puede girar el motor a la velocidad nominal, lo que impide el encendido. El ensayo CCS mide la viscosidad aparente (no la newtoniana real) porque el aceite de motor es un fluido no newtoniano a baja temperatura: su viscosidad depende de la velocidad de cizallamiento por la formación de cristales de cera y el comportamiento de los aditivos poliméricos. Un aceite 0W-20 tiene un límite CCS de ≤6,200 mPa·s a −35°C; un 15W-40 tiene un límite CCS de ≤3,500 mPa·s a −20°C."
+    },
+    {
+      "heading": "Bombeabilidad con minirrotoviscosímetro: ASTM D4684",
+      "body": "La bombeabilidad en el arranque en frío se evalúa con el ensayo del minirrotoviscosímetro (MRV, ASTM D4684). El MRV mide la bombeabilidad del aceite a temperaturas 5°C más frías que la temperatura del ensayo CCS, simulando el aceite que debe bombearse desde el cárter hasta la aspiración de la bomba de aceite. SAE J300 fija una viscosidad MRV máxima (normalmente 60,000 mPa·s) y un esfuerzo de fluencia máximo (35 Pa) para cada grado W. Si se supera el límite de esfuerzo de fluencia, el aceite muestra un comportamiento tipo gel que impide que fluya hacia la aspiración de la bomba aunque la viscosidad CCS esté dentro de los límites: es el modo de falla de \"fluido estructurado\", en el que el aceite no puede bombearse aunque parezca un líquido. Una falla MRV en el límite de esfuerzo de fluencia deja sin aceite al motor a los pocos segundos del arranque: los cojinetes funcionan sin lubricación hasta que la bomba de aceite puede aspirar fluido del cárter. Los aceites base sintéticos (Grupos III, IV, V) muestran un desempeño MRV bastante mejor que los aceites minerales convencionales con un grado de viscosidad equivalente."
+    },
+    {
+      "heading": "Viscosidad a alta temperatura y alto cizallamiento: ASTM D4683",
+      "body": "La viscosidad a alta temperatura y alto cizallamiento (HTHS, ASTM D4683) mide la viscosidad del aceite de motor a 150°C y con una velocidad de cizallamiento de 10⁶ s⁻¹, condiciones representativas de las zonas de carga de los cojinetes de muñón en motores de alto rendimiento a plena temperatura de operación. La viscosidad HTHS es el predictor más directo del espesor de la película de aceite en las superficies de los cojinetes con carga alta. SAE J300 especifica la viscosidad HTHS mínima de cada grado de alta temperatura: SAE 20 requiere ≥2.6 mPa·s; SAE 30 requiere ≥2.9 mPa·s; SAE 40 (vehículos de pasajeros) requiere ≥3.5 mPa·s; SAE 40 (servicio pesado) requiere ≥3.7 mPa·s. La especificación API CK-4 (diésel de servicio pesado) exige un HTHS mínimo ≥3.5 mPa·s a 150°C. Las declaraciones de mejora de la economía de combustible basadas en aceites de menor viscosidad (por ejemplo, 0W-20 frente a 15W-40) se apoyan en la reducción de la viscosidad HTHS; esto debe equilibrarse con el espesor de película mínimo requerido para el diseño específico del motor: la especificación de aceite del fabricante del motor define el HTHS mínimo aceptable para esa aplicación.",
+      "callout": [
+        {
+          "label": "Mínimo HTHS de SAE 30",
+          "value": "2.9 mPa·s a 150°C, 10⁶ s⁻¹"
+        },
+        {
+          "label": "Mínimo de SAE 40 HD",
+          "value": "3.7 mPa·s a 150°C (API CK-4)"
+        },
+        {
+          "label": "Norma de ensayo HTHS",
+          "value": "ASTM D4683 (viscosímetro TBS)"
+        }
+      ]
+    },
+    {
+      "heading": "Metodología de elección del grado de viscosidad",
+      "body": "La elección del grado de viscosidad debe cumplir a la vez tres requisitos: (1) Capacidad de arranque en frío: el límite de arranque en frío del grado W debe estar dentro de la capacidad de torque del motor de arranque a la temperatura ambiente mínima esperada. SAE J300 da una recomendación de temperatura mínima para cada grado W (0W: −40°C; 5W: −35°C; 10W: −25°C; 15W: −20°C; 20W: −15°C); son pautas, no garantías: la temperatura mínima real depende del estado de la batería, de la clasificación del motor de arranque y de la relación de compresión del motor. (2) Espesor de película HTHS: el grado de alta temperatura debe dar una viscosidad HTHS que cumpla la especificación mínima del fabricante del motor. No baje a un grado HTHS menor sin aprobación escrita del fabricante; un menor espesor de película aumenta la tasa de desgaste de los cojinetes. (3) Capacidad de cambio extendido: en los programas de cambio extendido, el aceite debe mantener la viscosidad dentro de los límites del grado durante todo el intervalo; la tendencia de la viscosidad cinemática a 100°C en el análisis de aceite detecta la pérdida de viscosidad por degradación por cizallamiento de los VII o el espesamiento oxidativo."
+    },
+    {
+      "heading": "Aceites base sintéticos y semisintéticos",
+      "body": "Los grupos de aceite base API definen el nivel de refinación: Grupo I (mineral refinado con solventes), Grupo II (mineral hidrocraqueado, mejor estabilidad a la oxidación), Grupo III (hidrocraqueado severo, semisintético), Grupo IV (polialfaolefina, totalmente sintético), Grupo V (ésteres y otros sintéticos). Los aceites base de Grupo III y IV dan: menor punto de fluidez (normalmente −50°C a −60°C frente a −15°C del aceite mineral de Grupo I), mejor fluidez a baja temperatura (desempeño MRV), menor pérdida por evaporación (evaporación Noack según ASTM D5800) y mejor estabilidad a la oxidación a alta temperatura. En aplicaciones de clima frío por debajo de −25°C, se requieren aceites base de Grupo III o IV para cumplir los requisitos CCS y MRV en todo el rango de temperatura de operación. En los intervalos de cambio extendidos (>500 horas en motores industriales), la estabilidad a la oxidación de los Grupos III o IV da una operación más limpia del motor, con menores tasas de formación de barniz y lodo que los aceites de Grupo I/II con cambio extendido."
+    },
+    {
+      "heading": "Monitoreo de la viscosidad en servicio",
+      "body": "El monitoreo de la viscosidad del aceite usado mediante la viscosidad cinemática a 100°C (ASTM D445) detecta tres modos de falla: (1) aumento de la viscosidad: espesamiento oxidativo (deterioro del aceite), contaminación por refrigerante (el glicol en el aceite aumenta la viscosidad) o carga de hollín del combustible diésel (aceite espesado por hollín por encima del 3.5% de hollín en masa); (2) disminución de la viscosidad: dilución por combustible (el combustible del arranque en frío lava las paredes de los cilindros a baja temperatura), degradación por cizallamiento del aditivo polimérico VII (pérdida permanente de viscosidad en los multigrado) o contaminación por solventes; (3) superación del límite del grado: si la viscosidad cinemática a 100°C cae por debajo del mínimo del grado SAE declarado, el aceite ya no da el espesor de película nominal. Límite de acción: +/−15% respecto de la viscosidad del aceite nuevo a 100°C dispara la investigación del cambio de aceite sin importar el intervalo de cambio. Los datos de viscosidad siempre deben interpretarse junto con el TAN, el contenido de agua (ASTM D6304) y el análisis elemental ICP: la viscosidad sola no confirma el estado del aceite."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Límite CCS de SAE 15W",
+      "value": "≤3,500 mPa·s a −20°C (ASTM D5293)"
+    },
+    {
+      "label": "Esfuerzo de fluencia MRV máximo",
+      "value": "35 Pa (todos los grados W, SAE J300)"
+    },
+    {
+      "label": "Mínimo HTHS de SAE 40 HD",
+      "value": "3.7 mPa·s a 150°C (API CK-4)"
+    },
+    {
+      "label": "Límite de acción de viscosidad",
+      "value": "±15% respecto del aceite nuevo a 100°C"
+    },
+    {
+      "label": "Punto de fluidez del Grupo IV",
+      "value": "Normalmente −50°C a −60°C"
+    }
+  ],
+  "relatedStandards": [
+    "SAE J300",
+    "ASTM D445",
+    "ASTM D5293",
+    "ASTM D4684",
+    "ASTM D4683",
+    "API CK-4"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "SAE J300",
+    "viscosidad del aceite de motor",
+    "simulador de arranque en frío",
+    "ASTM D5293",
+    "bombeabilidad MRV",
+    "ASTM D4684",
+    "viscosidad HTHS",
+    "ASTM D4683",
+    "elección del grado de viscosidad",
+    "aceite multigrado",
+    "aceite base sintético",
+    "API CK-4",
+    "monitoreo de la viscosidad del aceite",
+    "dilución por combustible",
+    "pérdida de viscosidad"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Arranque en frío lento o fallido: el motor de arranque gira despacio o el motor no enciende",
+      "Luz de advertencia de presión de aceite en el arranque en frío que se apaga después de 10–30 segundos (llegada demorada del aceite)",
+      "Viscosidad del aceite a 100°C >15% por encima de la línea base del aceite nuevo en el análisis de aceite usado",
+      "Viscosidad del aceite a 100°C >15% por debajo de la línea base del aceite nuevo: riesgo de bajar del límite del grado",
+      "Metales de desgaste de los cojinetes (Fe, Cu, Pb) elevados en el análisis ICP con el intervalo de cambio correcto"
+    ],
+    "probableCauses": [
+      "Arranque en frío lento o fallido: grado W demasiado alto para la temperatura ambiente; se superó la recomendación de temperatura mínima de SAE J300; batería o motor de arranque con capacidad reducida que amplifica el efecto de la viscosidad",
+      "Presión de aceite demorada: comportamiento correcto en frío extremo si la válvula de derivación se está abriendo (el aceite frío fuerza la derivación); preocupante si ocurre por encima de −10°C con el grado W correcto: revisar la aspiración de la bomba en busca de una falla tipo esfuerzo de fluencia MRV (tapón de gel)",
+      "Aumento de la viscosidad >15%: degradación oxidativa del aceite (se superó el intervalo de cambio); contaminación por glicol (confirmar con ASTM D2982); carga de hollín en motores diésel que operan con carga baja",
+      "Disminución de la viscosidad >15%: dilución por combustible por el lavado de combustible en el arranque en frío (verificar combustible en el aceite con cromatografía de gases ASTM D3525); degradación por cizallamiento de los VII (permanente: hay que reemplazar el aceite); ingreso de solventes",
+      "Metales de desgaste elevados con el intervalo de cambio correcto: viscosidad HTHS demasiado baja para el requisito de los cojinetes del motor; verificar que la especificación del aceite cumpla el HTHS mínimo del fabricante del motor; puede indicar un grado especificado incorrecto"
+    ],
+    "inspectionMethods": [
+      "Viscosidad cinemática ASTM D445 a 40°C y 100°C: comparación con la línea base de la especificación del aceite nuevo",
+      "Ensayo CCS ASTM D5293 ante un problema sospechado a baja temperatura: requiere laboratorio; verificar el cumplimiento del grado a la temperatura ambiente mínima",
+      "Cromatografía de gases ASTM D3525 para diagnosticar combustible en el aceite: detecta componentes del combustible en el aceite por su volatilidad",
+      "Ensayo de glicol ASTM D2982 para investigar un aumento de viscosidad: ensayo colorimétrico rápido",
+      "Evaporación Noack ASTM D5800: una pérdida por evaporación excesiva provoca aumento de la viscosidad en servicio a alta temperatura"
+    ],
+    "correctiveActions": [
+      "Falla en el arranque en frío por desajuste del grado de viscosidad: pasar a un grado W menor (por ejemplo, 15W-40 → 10W-40 o 5W-40 sintético) clasificado para la temperatura ambiente mínima; drenar y volver a llenar, no solo completar el nivel",
+      "Aumento de la viscosidad por degradación oxidativa: reducir el intervalo de cambio; investigar si el motor funciona más caliente de lo normal (una temperatura alta del refrigerante acelera la oxidación); considerar un aceite base de Grupo III o IV por su mejor resistencia a la oxidación",
+      "Dilución por combustible confirmada: investigar la calibración de inyección en el arranque en frío; revisar el sellado de los inyectores (diésel) o la distribución de válvulas (gasolina); cambiar el aceite y el filtro de inmediato; controlar con una muestra de seguimiento a las 50 horas",
+      "Metales de desgaste elevados con el grado correcto: verificar que el aceite cumpla la especificación HTHS mínima del fabricante; revisar las holguras de los cojinetes en el próximo reacondicionamiento; pasar a un aceite de mayor grado HTHS si el fabricante lo permite",
+      "Pérdida por cizallamiento de los VII (viscosidad por debajo del mínimo del grado): reemplazar el aceite y el filtro; evaluar si el intervalo de cambio extendido provoca la degradación por cizallamiento; pasar a un aceite sin VII o con una formulación de VII de mayor peso molecular"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Una flota que opera con temperatura ambiente invernal de −25°C informa arranques en frío lentos y luces de advertencia de presión de aceite con SAE 15W-40",
+      "standard": "SAE J300 (minimum operating temperature per grade), ASTM D5293 (CCS verification)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "El SAE 15W-40 está clasificado para un mínimo de −20°C; a −25°C, la viscosidad CCS supera el límite y la bombeabilidad es marginal. Pasar a SAE 10W-40 (clasificado para −25°C) o SAE 5W-40 totalmente sintético (clasificado para −30°C); verificar que se mantenga la categoría de servicio API (CK-4 para diésel de servicio pesado); cambiar el aceite en todos los vehículos de la flota antes de la próxima temporada fría",
+      "relatedArticles": [
+        "lubrication-system-filtration",
+        "oil-analysis-methods",
+        "filter-element-integrity"
+      ]
+    },
+    {
+      "problem": "Un programa de intervalo de cambio extendido muestra un aumento de viscosidad >20% a las 500 horas en el análisis de aceite usado",
+      "standard": "SAE J300 (grade limits), ASTM D445 (kinematic viscosity), ASTM D943 (oxidation stability)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Un aumento de viscosidad >20% indica espesamiento oxidativo o contaminación; hacer el ensayo de glicol ASTM D2982 y el de combustible ASTM D3525 para descartar contaminación; si es oxidación del aceite solamente, evaluar un aceite sintético de Grupo III o IV con mejor estabilidad a la oxidación; reducir el intervalo de cambio extendido hasta que la viscosidad al cambio se mantenga dentro del 15% de la línea base",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "service-intervals",
+        "varnish-formation-lube-systems"
+      ]
+    },
+    {
+      "problem": "El fabricante del motor especifica un HTHS mínimo de 3.5 mPa·s, pero la flota usa un aceite de menor especificación para reducir el consumo de combustible",
+      "standard": "SAE J300 (HTHS grade limits), API CK-4 (HTHS minimum 3.5 mPa·s), ASTM D4683",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "La especificación HTHS mínima del fabricante del motor es un requisito de soporte de carga, no una recomendación: operar por debajo del HTHS mínimo aumenta la tasa de desgaste de los cojinetes. El beneficio en consumo de combustible de un aceite de menor HTHS debe compararse con la reducción de la vida de los cojinetes. Cuantificar el ahorro real de combustible (normalmente 0.5–1.5% como mucho) frente al costo de reemplazo de los cojinetes y las paradas. Si el fabricante aprueba un HTHS menor mediante un programa de prueba en campo, seguir adelante con monitoreo por análisis de aceite cada 100 horas para la tendencia de los metales de desgaste",
+      "relatedArticles": [
+        "lubrication-system-filtration",
+        "total-cost-of-ownership",
+        "oil-analysis-methods"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-SAE-J300)",
+    "evidenceStatus": "SAE J300:2021 verified; ASTM D5293 verified; ASTM D4684 verified; ASTM D4683 verified; ASTM D445 verified; API CK-4 HTHS minimum from API 1509 Annex E; base oil Group classifications from API 1509 Appendix E"
+  }
+}

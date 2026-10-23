@@ -1,0 +1,325 @@
+{
+  "slug": "iso-16889-multipass-test",
+  "faqs": [
+    {
+      "question": "Qual é o objetivo da configuração de ensaio multipass da ISO 16889?",
+      "answer": "A configuração multipass da ISO 16889 recircula o fluido de ensaio pelo filtro continuamente enquanto adiciona pó de ensaio novo a montante a uma taxa constante. Ao contrário dos ensaios de passagem única, que medem a eficiência em apenas um estado de carga, a configuração multipass acumula no circuito de ensaio uma população de partículas que representa o equilíbrio entre a adição de partículas, a filtração e a ressuspensão. Isso reflete as condições reais de um sistema hidráulico, em que a contaminação é gerada internamente de forma contínua (por desgaste e ingresso) enquanto a filtração a remove ao mesmo tempo. Por isso, a razão Beta medida no ensaio multipass é um valor médio no tempo que reflete o desempenho do filtro em todos os estados de carga, de limpo até a restrição terminal, oferecendo um indicador de desempenho mais representativo e conservador que as medições de eficiência máxima de passagem única."
+    },
+    {
+      "question": "Como a concentração de injeção do pó de ensaio é mantida constante durante o ensaio multipass ISO 16889?",
+      "answer": "A ISO 16889 especifica uma concentração de partículas a montante de 3±0.3 mg/L, mantida durante todo o ensaio por um dosador de pó com controle gravimétrico que injeta ISO MTD (pó de ensaio médio) no ponto de contagem de partículas a montante. A taxa do dosador é definida assim: (1) Calcular a taxa mássica de injeção alvo = concentração alvo × vazão do sistema = 3 mg/L × Q L/min; (2) Verificar a contagem real de partículas a montante em relação à concentração; (3) Ajustar a velocidade do parafuso do dosador ou a amplitude de vibração para manter a contagem de partículas especificada dentro de ±10%. Malhas de controle automático por realimentação ajustam a taxa do dosador com base nos dados do APC a montante em tempo real. A verificação manual da concentração por amostragem gravimétrica (ganho de massa da membrana filtrante por volume passado) é feita no início do ensaio e a cada hora de ensaio. Desvios de ±15% em relação aos 3 mg/L alvo provocam a parada do ensaio e a recalibração do sistema."
+    },
+    {
+      "question": "O que significa o critério de pressão diferencial terminal no ensaio ISO 16889?",
+      "answer": "A pressão diferencial terminal na ISO 16889 é a pressão diferencial predefinida através do elemento filtrante na qual o ensaio multipass é concluído. ΔP terminal padrão: 6 bar (87 PSI) para elementos filtrantes hidráulicos ensaiados na vazão nominal. Na ΔP terminal, a massa total de pó de ensaio injetada é igual à capacidade de retenção de sujeira (DHC) do elemento. O critério terminal de 6 bar representa um limite de serviço conservador: na maioria dos sistemas hidráulicos, as válvulas de bypass abrem a 0.7–1.5 bar de ΔP do elemento, o que significa que o elemento nunca chegaria perto de 6 bar em operação normal. A ΔP terminal alta é especificada para garantir um ponto final do ensaio padronizado, atingido de forma consistente em todos os tipos de elemento, e para fornecer o máximo de dados de DHC para fins de comparação. Não se espera que os elementos cheguem a 6 bar em serviço: o valor de ΔP terminal do relatório de ensaio é um critério de ensaio, não uma especificação de serviço."
+    },
+    {
+      "question": "Como a razão Beta da ISO 16889 se correlaciona com os dados de contagem de partículas de campo?",
+      "answer": "A razão Beta da ISO 16889, β(x) = contagem a montante / contagem a jusante no tamanho x, prevê a proporção em que o filtro reduz a limpeza do fluido em circulação. Para um sistema em regime permanente com ingresso constante e um filtro β10(c) = 200 na vazão nominal do sistema: concentração a jusante em regime permanente = concentração a montante / 200. Se a concentração a montante (antes do filtro) estiver em ISO 19/17/14 (80,000 partículas/mL ≥4 µm), a concentração na saída do filtro = 80,000/200 = 400 partículas/mL ≥4 µm ≈ ISO 15/13/10. Esse cálculo dá a limpeza mínima teórica alcançável com base apenas na razão Beta do filtro: a limpeza real depende também da mistura no sistema, de múltiplas fontes de contaminação e da sedimentação no reservatório. Os dados de contagem de partículas de campo confirmam de forma consistente que sistemas com filtros β10(c) ≥ 200 atingem códigos ISO 2–4 unidades melhores que sistemas com filtros β10(c) ≈ 10 em condições equivalentes de ingresso de contaminação."
+    },
+    {
+      "question": "Qual é a importância da frequência de medição da razão de concentrações a montante/a jusante na ISO 16889?",
+      "answer": "A ISO 16889 exige medições simultâneas de concentração a montante e a jusante em intervalos fixos de injeção acumulada de pó, normalmente a cada 2 g ou 5 g de pó de ensaio injetado. A frequência de medição é crítica porque: (1) Com frequência de medição alta, a série temporal da razão Beta capta a variação da eficiência nos estados de carga, mostrando a fase inicial de baixa eficiência (antes da formação da torta), a fase de eficiência máxima (torta estabelecida) e a fase de queda perto da restrição terminal; (2) O valor padrão da razão Beta é calculado como a média aritmética de todos os pares de medição, não como o valor máximo: a média de todos os estados de carga dá uma estimativa conservadora; (3) A medição de alta frequência permite calcular a estabilidade Beta (a variabilidade de Beta nos estados de carga), uma especificação complementar para elementos de circuitos de servoválvulas que devem manter eficiência constante em todos os estados de carga. A revisão ISO 16889:2022 acrescentou requisitos de relato da estabilidade Beta em resposta a casos documentados em que os elementos apresentavam Beta médio aceitável, mas eficiência ruim em estados de carga específicos."
+    },
+    {
+      "question": "Quais especificações de contador de partículas são exigidas nos circuitos de ensaio ISO 16889?",
+      "answer": "A ISO 16889 exige dois APCs: um a montante e outro a jusante do elemento filtrante. Especificações: (1) Calibração ISO 11171: ambos os APCs devem ter certificados de calibração vigentes com partículas de referência rastreáveis ao NIST; (2) Limite de coincidência: a concentração máxima mensurável sem erro de coincidência deve ser ≥10,000 partículas/mL no maior canal de tamanho medido (normalmente ≥4 µm); uma concentração a montante de 3 mg/L de ISO MTD normalmente dá uma contagem ≥4 µm de 50,000–100,000 partículas/mL, por isso é necessária diluição antes do APC a montante se a concentração exceder o limite de coincidência; (3) Vazão mínima pelo APC: 2 mL/min na entrada do APC, com volume de medição ≥1 mL por ciclo de contagem; (4) Tempo de resposta do APC: o atraso de medição entre a amostragem do fluido e a saída da contagem deve ser ≤5 minutos para sincronizar as medições a montante e a jusante e calcular a razão com exatidão."
+    },
+    {
+      "question": "Como a bancada de ensaio ISO 16889 é configurada para atender ao requisito de concentração a montante?",
+      "answer": "Configuração da bancada de ensaio ISO 16889 para gerenciar a concentração a montante: (1) Reservatório de mistura: um reservatório de mistura agitado (mínimo de 10 L) a montante do ponto de injeção de pó garante uma distribuição uniforme do pó injetado no fluido de ensaio antes de chegar ao APC a montante e à entrada do filtro; (2) Linhas de bypass/amostragem: linhas de bypass de pequeno diâmetro (1–5 mm de diâmetro interno) desviam uma fração da vazão para cada instrumento APC, mantendo a vazão nominal pelo elemento filtrante e fornecendo a vazão de amostra ao APC; (3) Localização do dosador de pó: injeção 1 metro a montante da entrada do reservatório de mistura para permitir a mistura completa antes da amostragem; (4) Controle de temperatura: um aquecedor com controle termostático mantém o fluido de ensaio a 50±2°C; a estabilidade da viscosidade é essencial para uma vazão e um transporte de partículas constantes; (5) Volume do sistema: volume total de fluido do sistema ≥5× a vazão nominal do filtro por minuto, oferecendo capacidade adequada de reservatório de mistura sem diluir em excesso a população de partículas."
+    },
+    {
+      "question": "O que é a razão DHC/vazão nominal usada na seleção de filtros em orçamentos de contaminação?",
+      "answer": "A razão DHC/vazão nominal oferece uma métrica simples de seleção de filtros para cálculos de orçamento de contaminação: razão = DHC (g) / Q_rated (L/min). Razão mais alta = mais contaminação absorvida por unidade de vazão = intervalos de serviço mais longos para uma dada taxa de ingresso. Valores ilustrativos: filtro de lubrificante de celulose β10(c) ≈ 20: razão DHC/Q de 0.3–0.8 g/L; um elemento filtrante de lubrificante sintético de alta eficiência (como a arquitetura SYNTRAX™, na razão Beta especificada para a aplicação aprovada) pode alcançar uma razão DHC/Q substancialmente maior; um elemento filtrante hidráulico NANOFORCE na razão Beta especificada para a aplicação aprovada pode alcançar uma razão DHC/Q na faixa típica das mídias hidráulicas sintéticas de alta eficiência. Para um cálculo de orçamento de contaminação com taxa de ingresso I = 0.3 mg/hora e intervalo de serviço alvo de 1,000 horas: DHC necessária = 0.3 × 1,000/1,000 × vazão nominal (g). Se a vazão nominal = 40 L/min, a DHC necessária = 12 g. Um elemento com razão DHC/Q = 0.5 g/L × 40 L/min = 20 g de DHC fornece 20/0.3 = 67 horas × vazão nominal... o cálculo ilustra que a razão DHC/Q escala diretamente o intervalo de serviço."
+    },
+    {
+      "question": "O que é o ensaio de pressão de colapso da ISO 16889:2022 e como ele é verificado?",
+      "answer": "A ISO 16889:2022 (atualizada a partir da versão de 2008) inclui o ensaio de pressão de colapso como ensaio complementar obrigatório de integridade estrutural do elemento, alinhando-se ao requisito equivalente NFPA T2.14.1, que antes só era especificado no mercado norte-americano. Procedimento de ensaio: (1) Pré-ensaio: realizar o ensaio multipass até a ΔP terminal (6 bar); (2) Aplicar a pressão de colapso: inverter o sentido da pressão (de fora para dentro em elementos com fluxo normal de dentro para fora) até 10× a pressão diferencial de operação nominal; (3) Manter por 1 minuto; (4) Voltar ao fluxo direto e fazer a medição APC pós-ensaio; (5) Critério de aceitação: razão Beta após o ensaio de colapso dentro de 10% da razão Beta anterior ao colapso; sem aumento do fluxo de bypass; sem mídia visível no caminho do fluxo a jusante. Os elementos reprovados no ensaio de colapso após atingir a restrição terminal demonstraram que carregar o elemento até o limite de DHC de serviço deixa margem estrutural insuficiente para transientes de pressão: esses elementos devem ser trocados em serviço em um limiar de DHC mais baixo."
+    },
+    {
+      "question": "Qual é o impacto da viscosidade do fluido de ensaio nos resultados de razão Beta da ISO 16889?",
+      "answer": "A ISO 16889 especifica viscosidade cinemática do fluido de ensaio de 46±2 cSt a 40°C (óleo hidráulico mineral ISO VG 46, ou fluido sintético equivalente na temperatura de ensaio de 50°C), equivalente a aproximadamente 10 cSt a 50°C. A viscosidade afeta diretamente a eficiência de captura de partículas na mídia filtrante: (1) Com viscosidade maior (temperatura menor), as forças de arrasto sobre as partículas são maiores em relação às forças inerciais, reduzindo a eficiência de impacto inercial, o mecanismo de captura dominante para partículas acima de 5 µm em mídias filtrantes hidráulicas; (2) Com viscosidade menor (temperatura maior), as partículas atravessam a mídia mais rápido, reduzindo o tempo de captura por difusão para partículas abaixo de 5 µm. A especificação ISO VG 46 equilibra esses efeitos na temperatura de ensaio de 50°C. Ensaiar com viscosidade muito diferente (por exemplo, fluido hidráulico ISO VG 22 usado em sistemas de clima frio) produz razões Beta diferentes para o mesmo elemento: para projetar sistemas com viscosidade abaixo de ISO VG 32, é necessário um ensaio separado na viscosidade da aplicação."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Norma completa de ensaio multipass para razão Beta, DHC e pressão de colapso de elementos filtrantes hidráulicos."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+      "relevance": "Norma de calibração de APC exigida para todas as medições de contagem de partículas no ensaio ISO 16889."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust",
+      "relevance": "Define o pó de ensaio ISO MTD (A2 fine) usado nos circuitos de ensaio multipass ISO 16889."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificação de limpeza usada junto com a ISO 16889 para definir a limpeza alvo do sistema que os elementos filtrantes qualificados pelo ensaio multipass devem manter."
+    }
+  ],
+  "title": "Ensaio multipass ISO 16889: projeto do circuito e protocolo de execução",
+  "subtitle": "Hardware do circuito de ensaio, validação da calibração do APC, cálculo da dosagem de contaminante e relato de dados segundo a ISO 16889:2022",
+  "metaDescription": "O ensaio de eficiência de filtros multipass ISO 16889 exige um circuito de ensaio específico, calibração do APC segundo a ISO 11171, concentração de dosagem de contaminante de 100 mg/L e medição gravimétrica da capacidade de retenção de sujeira. Esta referência de engenharia abrange o projeto do circuito, a verificação do ensaio em branco, o cálculo da razão Beta a partir de contagens integradas e os requisitos do relatório de ensaio.",
+  "category": "Engenharia",
+  "readTime": "13 min",
+  "intro": "A ISO 16889:2022 (4ª edição) especifica o método multipass para avaliar o desempenho de filtração de elementos filtrantes hidráulicos e de lubrificação pela medição da eficiência por razão Beta e da capacidade de retenção de sujeira (DHC). Este artigo trata do projeto e da validação do hardware do circuito de ensaio, dos requisitos de instalação e calibração do APC, do cálculo da concentração de dosagem de contaminante, do procedimento de ensaio em branco segundo a ISO 3722, do cálculo da razão Beta integrada a partir das contagens acumuladas de partículas a montante e a jusante, da determinação gravimétrica da DHC e dos requisitos de conteúdo do relatório de ensaio segundo a Seção 13 da ISO 16889. O artigo relacionado sobre o escopo da norma, a aplicação da razão Beta e as metas de limpeza do sistema ISO 4406 está disponível na referência de engenharia iso-16889.",
+  "sections": [
+    {
+      "heading": "Configuração do circuito de ensaio",
+      "body": "O circuito de ensaio ISO 16889 é composto por: um reservatório com o fluido de ensaio ISO VG 15, uma bomba de circulação de velocidade variável que fornece a vazão no valor nominal do elemento, um trocador de calor que mantém a temperatura do fluido a 60°C ±2°C (ν ≈ 13–15 cSt a 60°C), um subsistema de injeção de contaminação composto por um reservatório de mistura separado e uma bomba de injeção de deslocamento positivo que fornece uma suspensão de pó fino ISO 12103-1 A2 a uma taxa controlada, uma carcaça de ensaio do elemento filtrante com transdutores de pressão a montante e a jusante, e dois contadores automáticos de partículas (APCs) posicionados nas portas de amostragem a montante e a jusante. A porta de amostragem do APC a montante fica a jusante do ponto de injeção de pó e a montante da entrada do filtro, a uma distância de pelo menos 20 diâmetros de tubo do ponto de injeção para garantir a mistura completa. A porta de amostragem do APC a jusante fica a no máximo 10 diâmetros de tubo da saída da carcaça do filtro. Ambos os APCs amostram de forma simultânea e contínua durante todo o ensaio.",
+      "callout": [
+        {
+          "label": "Fluido de ensaio",
+          "value": "Óleo mineral ISO VG 15 a 60°C ±2°C: ν ≈ 13–15 cSt"
+        },
+        {
+          "label": "Posição do APC a montante",
+          "value": "≥20 diâmetros de tubo a jusante do ponto de injeção"
+        },
+        {
+          "label": "Posição do APC a jusante",
+          "value": "≤10 diâmetros de tubo da saída da carcaça do filtro"
+        },
+        {
+          "label": "Mistura de injeção",
+          "value": "Pó fino ISO 12103-1 A2 em suspensão de óleo: bomba de injeção de deslocamento positivo"
+        }
+      ]
+    },
+    {
+      "heading": "Cadeia de calibração do APC e verificação de coincidência",
+      "body": "Os APCs a montante e a jusante devem ser calibrados segundo a ISO 11171 com material de referência de contagem de partículas rastreável ao NIST derivado do pó de ensaio fino ISO 12103-1 A2. A calibração deve ser rastreável a um APC de referência calibrado segundo a ISO 11171; os intervalos de calibração não devem exceder 12 meses e devem ser renovados após qualquer serviço, impacto ou reparo do instrumento. Antes de cada ensaio, faz-se uma verificação de coincidência: uma amostra pré-diluída da suspensão de ensaio passa pelos dois APCs; se o APC a montante registrar mais de 8,000 partículas/mL a ≥1 µm(c), a suspensão deve ser diluída até não exceder o limiar de coincidência, ou deve-se instalar um circuito de diluição na linha de amostragem a montante. O erro de coincidência (a subcontagem de partículas em alta concentração quando duas ou mais partículas atravessam a zona de detecção ao mesmo tempo) causa contagens a montante artificialmente baixas e, portanto, valores de razão Beta artificialmente altos. Todo ensaio em que não se aplicou correção de coincidência com concentrações a montante acima de 8,000 partículas/mL a ≥1 µm(c) é declarado inválido segundo a Seção 10 da ISO 16889.",
+      "callout": [
+        {
+          "label": "Norma de calibração do APC",
+          "value": "ISO 11171: referência rastreável ao NIST, intervalo ≤12 meses"
+        },
+        {
+          "label": "Limiar de coincidência",
+          "value": "8,000 partículas/mL a ≥1 µm(c): diluir a montante se excedido"
+        },
+        {
+          "label": "Tamanhos de calibração",
+          "value": "≥4, ≥6, ≥14 µm(c) conforme os requisitos de relato da ISO 4406"
+        },
+        {
+          "label": "Condição de ensaio inválido",
+          "value": "Coincidência não corrigida acima do limiar: resultado do ensaio não relatável"
+        }
+      ]
+    },
+    {
+      "heading": "Concentração de dosagem de contaminante e cálculo da taxa de injeção",
+      "body": "A concentração nominal de contaminação a montante durante o ensaio é de 100 mg/L ±10%. A vazão da bomba de injeção de pó é calculada por: q_inject = (C_target × Q_system) / C_slurry, em que q_inject é a vazão volumétrica da bomba de injeção, C_target é a concentração alvo a montante (100 mg/L = 0.1 g/L), Q_system é a vazão de circulação do sistema e C_slurry é a concentração mássica do reservatório de suspensão de pó (normalmente 10–50 g/L). Exemplo: Q_system = 10 L/min, C_slurry = 25 g/L → q_inject = (0.1 × 10) / 25 = 0.04 L/min. O reservatório de suspensão deve ser agitado continuamente para evitar a sedimentação e manter a concentração de pó uniforme. O APC a montante mede a concentração real a montante durante todo o ensaio; o ensaio só é válido se a concentração a montante permanecer dentro de ±10% de 100 mg/L durante pelo menos 90% da duração do ensaio. Desvios fora dessa faixa devem ser documentados no relatório de ensaio.",
+      "callout": [
+        {
+          "label": "Concentração alvo a montante",
+          "value": "100 mg/L ±10% (pó fino ISO 12103-1 A2)"
+        },
+        {
+          "label": "Fórmula da taxa de injeção",
+          "value": "q_inject = (C_target × Q_system) / C_slurry"
+        },
+        {
+          "label": "Requisito da suspensão",
+          "value": "Agitação contínua: evita a sedimentação e a variação de concentração"
+        },
+        {
+          "label": "Critério de validade",
+          "value": "Concentração a montante dentro de ±10% de 100 mg/L durante ≥90% da duração do ensaio"
+        }
+      ]
+    },
+    {
+      "heading": "Procedimento de ensaio em branco",
+      "body": "Antes de cada ensaio de elemento e após a limpeza do circuito, realiza-se um ensaio em branco segundo a ISO 3722 para verificar se a contaminação de partículas de fundo do sistema está abaixo do nível que afetaria de forma significativa as leituras do APC a jusante. O ensaio em branco amostra a saída do APC a jusante sem elemento instalado e com o bypass totalmente aberto, medindo as contagens de partículas de fundo do próprio circuito (contaminação do reservatório, partículas da tubulação, fundo do APC). O critério de aceitação do ensaio em branco é: as contagens em branco a jusante em cada tamanho de partícula devem ser ≤10% das contagens a jusante esperadas do elemento durante o ensaio real. Os circuitos reprovados no ensaio em branco devem passar por flushing com fluido ISO VG 15 limpo através de um filtro temporário de ≤3 µm absoluto até atender aos critérios de aceitação do branco. Os registros do ensaio em branco são incluídos no relatório de ensaio.",
+      "callout": [
+        {
+          "label": "Norma do ensaio em branco",
+          "value": "ISO 3722: procedimento de amostra em branco de limpeza do fluido"
+        },
+        {
+          "label": "Critério de aceitação",
+          "value": "Contagens de fundo ≤10% das contagens a jusante esperadas do ensaio em cada tamanho"
+        },
+        {
+          "label": "Correção",
+          "value": "Flushing através de filtro de ≤3 µm absoluto até atender ao critério"
+        },
+        {
+          "label": "Documentação",
+          "value": "Registros do ensaio em branco obrigatórios no relatório de ensaio ISO 16889"
+        }
+      ]
+    },
+    {
+      "heading": "Cálculo da razão Beta a partir de contagens integradas",
+      "body": "A razão Beta no tamanho de partícula x em micrômetros (calibrados) é calculada a partir das contagens acumuladas de partículas registradas durante toda a duração do ensaio: Beta_x(c) = N_upstream(≥x µm(c)) / N_downstream(≥x µm(c)), em que N_upstream e N_downstream são as contagens totais acumuladas de partículas por unidade de volume a ≥x µm(c), integradas do início do ensaio até a pressão diferencial terminal. A ISO 16889:2022 exige relatar a razão Beta no mínimo nos tamanhos ≥3, ≥5, ≥10, ≥15, ≥20 e ≥25 µm(c). A eficiência de filtração em cada tamanho é calculada como: E_x = (1 − 1/Beta_x) × 100%. Um filtro com Beta₁₀₍c₎ = 200 tem eficiência de 99.5% a ≥10 µm(c); Beta₁₀₍c₎ = 1,000 corresponde a 99.9% de eficiência. Os intervalos de contagem normalmente são de 30–60 segundos; as contagens totais de partículas por intervalo devem exceder 400 no APC a jusante para atender ao limiar estatístico mínimo de contagem segundo a Seção 10 da ISO 16889.",
+      "callout": [
+        {
+          "label": "Fórmula de Beta",
+          "value": "Beta_x(c) = N_upstream(≥x) / N_downstream(≥x): contagens acumuladas"
+        },
+        {
+          "label": "Fórmula de eficiência",
+          "value": "E = (1 − 1/Beta_x) × 100%"
+        },
+        {
+          "label": "Tamanhos de relato",
+          "value": "≥3, ≥5, ≥10, ≥15, ≥20, ≥25 µm(c) no mínimo"
+        },
+        {
+          "label": "Limiar mínimo de contagem",
+          "value": "≥400 contagens por intervalo no APC a jusante"
+        }
+      ]
+    },
+    {
+      "heading": "Capacidade de retenção de sujeira e requisitos do relatório de ensaio",
+      "body": "A capacidade de retenção de sujeira (DHC) é medida gravimetricamente: é a massa total de pó fino ISO 12103-1 A2 injetada do início do ensaio até a pressão diferencial terminal (6.0 bar através do elemento, ou conforme especificado pelo fabricante da carcaça). DHC = Σ (q_inject × C_slurry × Δt) para todos os intervalos de tempo do início do ensaio até a ΔP terminal, expressa em gramas. O ensaio termina quando a pressão diferencial medida através do elemento atinge o valor terminal e permanece igual ou acima da ΔP terminal por 10 segundos. A Seção 13 da ISO 16889 especifica o conteúdo obrigatório do relatório de ensaio: identificação e dimensões do elemento, viscosidade do fluido de ensaio na temperatura de ensaio, vazão nominal, pressão diferencial inicial limpa, pressão diferencial terminal, grau do pó de ensaio (designação ISO 12103-1), perfil de concentração de pó a montante, razões Beta em todos os tamanhos especificados, DHC em gramas, dados de contagem dos APCs a montante e a jusante, resultados do ensaio em branco, certificados de calibração dos APCs e quaisquer anomalias ou desvios do procedimento padrão.",
+      "callout": [
+        {
+          "label": "ΔP terminal",
+          "value": "6.0 bar diferenciais através do elemento: manter ≥10 segundos"
+        },
+        {
+          "label": "Fórmula da DHC",
+          "value": "DHC (g) = Σ (q_inject × C_slurry × Δt): balanço de massa gravimétrico"
+        },
+        {
+          "label": "Norma do relatório de ensaio",
+          "value": "ISO 16889 Seção 13: conteúdo obrigatório do relatório"
+        },
+        {
+          "label": "Certificados exigidos",
+          "value": "Certificados de calibração dos APCs incluídos em cada pacote de relatório de ensaio"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Fluido de ensaio",
+      "value": "Óleo mineral ISO VG 15 a 60°C ±2°C"
+    },
+    {
+      "label": "Concentração a montante",
+      "value": "100 mg/L ±10% (ISO 12103-1 A2 fine)"
+    },
+    {
+      "label": "ΔP terminal",
+      "value": "6.0 bar através do elemento (ou especificação do fabricante)"
+    },
+    {
+      "label": "Limite de coincidência do APC",
+      "value": "8,000 partículas/mL a ≥1 µm(c)"
+    },
+    {
+      "label": "Contagem mínima a jusante",
+      "value": "≥400 contagens por intervalo de 30–60 s"
+    },
+    {
+      "label": "Critério do ensaio em branco",
+      "value": "Fundo ≤10% das contagens a jusante esperadas do ensaio"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 11171",
+    "ISO 12103-1",
+    "ISO 3722",
+    "ISO 4406"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ensaio multipass ISO 16889",
+    "cálculo da razão Beta",
+    "calibração do APC",
+    "capacidade de retenção de sujeira",
+    "ensaio de eficiência de filtros",
+    "ISO 11171",
+    "ISO 12103-1",
+    "concentração de dosagem de contaminante",
+    "erro de coincidência",
+    "ensaio em branco",
+    "ISO 3722",
+    "circuito de ensaio de filtros"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Dados publicados de razão Beta inconsistentes entre laboratórios para elementos nominalmente idênticos",
+      "Relatórios de ensaio com razões Beta acima dos limites físicos (>10,000), sugerindo erro de coincidência do APC",
+      "Valores de DHC que variam mais de ±15% entre ensaios repetidos do mesmo tipo de elemento",
+      "Concentração de partículas a montante fora de ±10% de 100 mg/L por períodos prolongados do ensaio",
+      "Ensaio em branco reprovado em circuitos de ensaio novos: contaminação de fundo acima do limiar de 10%"
+    ],
+    "probableCauses": [
+      "Variação entre laboratórios: instrumentos de referência de calibração do APC diferentes, procedimentos de purga da sonda de amostragem diferentes ou comprimentos de mistura no ponto de injeção diferentes",
+      "Erro de coincidência: concentração de partículas a montante alta demais; o APC subconta as partículas a montante e produz valores Beta inflados",
+      "Variação da DHC: mistura inconsistente da suspensão no reservatório de injeção de pó, causando concentração de injeção variável",
+      "Deriva da concentração a montante: sedimentação da suspensão de pó durante o ensaio por agitação insuficiente do reservatório de suspensão",
+      "Reprovação no ensaio em branco: flushing insuficiente do circuito após um ensaio anterior de alta contaminação; contaminação da tubulação pela montagem"
+    ],
+    "inspectionMethods": [
+      "Comparar os certificados de calibração dos APCs: verificar se os APCs a montante e a jusante foram calibrados pelo mesmo laboratório rastreável à ISO 11171 nos últimos 12 meses",
+      "Calcular a concentração de partículas a montante com os dados do APC: se a contagem a montante corresponder a >8,000 partículas/mL a ≥1 µm(c), é necessária correção de coincidência",
+      "Revisar o registro de operação do agitador do reservatório de suspensão: confirmar a operação contínua durante todo o período de ensaio",
+      "Plotar a concentração do APC a montante em função do tempo: identificar os períodos fora da faixa de tolerância de ±10% para avaliar a validade",
+      "Fazer um ensaio em branco no circuito limpo com fluido ISO VG 15 circulado por um filtro de ≤3 µm absoluto; comparar com o critério de aceitação"
+    ],
+    "correctiveActions": [
+      "Erro de coincidência confirmado: instalar um circuito de diluição de amostra na porta do APC a montante; repetir o ensaio com a amostra a montante diluída corrigida",
+      "Deriva da concentração da suspensão: aumentar a velocidade do agitador; reduzir o tamanho do lote de suspensão para encurtar o tempo de espera; recalibrar a vazão da bomba de injeção",
+      "Reprovação no ensaio em branco: fazer flushing do circuito com ISO VG 15 através de um filtro de ≤3 µm absoluto; repetir o ensaio em branco; investigar a fonte de contaminação da tubulação",
+      "Discrepância entre laboratórios: realizar um ensaio interlaboratorial com o mesmo lote de elementos conforme o Anexo da ISO 16889; identificar desvios na cadeia de calibração dos APCs",
+      "Repetibilidade ruim da DHC: verificar a calibração do sensor de ΔP terminal; revisar o controle da temperatura de ensaio (exige-se ±2°C)"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "A comparação da razão Beta entre tipos de elementos mostra resultados inconsistentes entre laboratórios",
+      "standard": "ISO 16889:2022 Section 10 — test validity requirements; ISO 11171 APC calibration",
+      "protectionSystem": "Circuitos de ensaio com calibração cruzada, APC de referência ISO 11171 comum e procedimento documentado de correção de coincidência",
+      "technology": "Instrumentos APC calibrados em uma cadeia de referência ISO 11171 comum; circuito de diluição da amostra a montante instalado de série para evitar o erro de coincidência acima de 8,000 partículas/mL a ≥1 µm(c)",
+      "relatedArticles": [
+        "iso-16889",
+        "beta-ratio",
+        "iso-11171-particle-counting",
+        "filter-element-integrity"
+      ]
+    },
+    {
+      "problem": "O elemento comprado não atinge a razão Beta publicada na amostragem de validação do sistema",
+      "standard": "ISO 16889:2022 — multi-pass test; ISO 4406 in-service cleanliness monitoring",
+      "protectionSystem": "Monitoramento da limpeza do fluido em serviço segundo a ISO 4406 e APC segundo a ISO 11171 para verificar o desempenho do sistema independentemente dos dados de ensaio de laboratório",
+      "technology": "Monitoramento APC contínuo ou periódico nas portas de entrada e saída da carcaça do filtro; cálculo da razão Beta em serviço a partir de dados ao vivo do sistema para verificar o desempenho do elemento em condições reais de operação",
+      "relatedArticles": [
+        "iso-16889",
+        "iso-4406",
+        "iso-11171-particle-counting",
+        "hydraulic-system-flushing"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-16889)",
+    "evidenceStatus": "ISO 16889:2022 (4th edition) test circuit requirements verified; 100 mg/L upstream concentration from ISO 16889:2022 Section 8.3; 60°C test temperature from ISO 16889:2022 Section 8.2; 8,000 particles/mL coincidence limit from ISO 11171:2010 Section 7.4; 10% blank test criterion from ISO 16889:2022 Section 9.2; minimum 400 downstream counts per interval from ISO 16889:2022 Section 10.3; terminal ΔP 6.0 bar from ISO 16889:2022 default specification; test report content from ISO 16889:2022 Section 13"
+  }
+}

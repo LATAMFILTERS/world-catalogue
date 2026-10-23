@@ -1,0 +1,325 @@
+{
+  "slug": "iso-16889-multipass-test",
+  "faqs": [
+    {
+      "question": "¿Cuál es el propósito de la configuración de ensayo multipaso de la ISO 16889?",
+      "answer": "La configuración multipaso de la ISO 16889 recircula el fluido de ensayo por el filtro de forma continua mientras añade polvo de ensayo nuevo aguas arriba a un ritmo constante. A diferencia de los ensayos de paso único, que miden la eficiencia solo en un estado de carga, la configuración multipaso acumula en el circuito de ensayo una población de partículas que representa el equilibrio entre la adición de partículas, la filtración y la resuspensión. Esto refleja las condiciones reales de un sistema hidráulico, donde la contaminación se genera internamente de forma continua (por desgaste e ingreso) mientras la filtración la elimina al mismo tiempo. Por eso, la relación Beta medida en el ensayo multipaso es un valor promediado en el tiempo que refleja el desempeño del filtro en todos los estados de carga, desde limpio hasta la restricción terminal, y ofrece un indicador de desempeño más representativo y conservador que las mediciones de eficiencia máxima de paso único."
+    },
+    {
+      "question": "¿Cómo se mantiene constante la concentración de inyección del polvo de ensayo durante el ensayo multipaso ISO 16889?",
+      "answer": "La ISO 16889 especifica una concentración de partículas aguas arriba de 3±0.3 mg/L, mantenida durante todo el ensayo por un dosificador de polvo con control gravimétrico que inyecta ISO MTD (polvo de ensayo medio) en el punto de conteo de partículas aguas arriba. El caudal del dosificador se fija así: (1) Calcular el caudal másico de inyección objetivo = concentración objetivo × caudal del sistema = 3 mg/L × Q L/min; (2) Verificar el conteo real de partículas aguas arriba frente a la concentración; (3) Ajustar la velocidad del tornillo del dosificador o la amplitud de vibración para mantener el conteo de partículas especificado dentro de ±10%. Los lazos de control automático por retroalimentación ajustan el caudal del dosificador con los datos del APC aguas arriba en tiempo real. La verificación manual de la concentración por muestreo gravimétrico (ganancia de masa de la membrana filtrante por volumen pasado) se hace al inicio del ensayo y cada hora de ensayo. Las desviaciones de ±15% respecto de los 3 mg/L objetivo provocan la detención del ensayo y la recalibración del sistema."
+    },
+    {
+      "question": "¿Qué significa el criterio de presión diferencial terminal en el ensayo ISO 16889?",
+      "answer": "La presión diferencial terminal en la ISO 16889 es la presión diferencial predefinida a través del elemento filtrante a la que concluye el ensayo multipaso. ΔP terminal estándar: 6 bar (87 PSI) para elementos filtrantes hidráulicos ensayados al caudal nominal. Al llegar a la ΔP terminal, la masa total de polvo de ensayo inyectada equivale a la capacidad de retención de suciedad (DHC) del elemento. El criterio terminal de 6 bar representa un límite de servicio conservador: en la mayoría de los sistemas hidráulicos, las válvulas de derivación se abren a 0.7–1.5 bar de ΔP del elemento, por lo que el elemento nunca se acercaría a 6 bar en operación normal. La ΔP terminal alta se especifica para asegurar un punto final del ensayo estandarizado que se alcance de forma constante en todos los tipos de elementos y para obtener el máximo de datos de DHC con fines comparativos. No se espera que los elementos lleguen a 6 bar en servicio: el valor de ΔP terminal del informe de ensayo es un criterio de ensayo, no una especificación de servicio."
+    },
+    {
+      "question": "¿Cómo se correlaciona la relación Beta de la ISO 16889 con los datos de conteo de partículas de campo?",
+      "answer": "La relación Beta de la ISO 16889, β(x) = conteo aguas arriba / conteo aguas abajo al tamaño x, predice la proporción en que el filtro reduce la limpieza del fluido en circulación. Para un sistema en régimen estacionario con ingreso constante y un filtro β10(c) = 200 al caudal nominal del sistema: concentración aguas abajo en régimen estacionario = concentración aguas arriba / 200. Si la concentración aguas arriba (antes del filtro) está en ISO 19/17/14 (80,000 partículas/mL ≥4 µm), la concentración a la salida del filtro = 80,000/200 = 400 partículas/mL ≥4 µm ≈ ISO 15/13/10. Este cálculo da la limpieza mínima teórica alcanzable basada solo en la relación Beta del filtro: la limpieza real depende además de la mezcla en el sistema, de múltiples fuentes de contaminación y de la sedimentación en el depósito. Los datos de conteo de partículas de campo confirman de forma constante que los sistemas con filtros β10(c) ≥ 200 logran códigos ISO 2–4 unidades mejores que los sistemas con filtros β10(c) ≈ 10 en condiciones equivalentes de ingreso de contaminación."
+    },
+    {
+      "question": "¿Qué importancia tiene la frecuencia de medición de la relación de concentraciones aguas arriba/aguas abajo en la ISO 16889?",
+      "answer": "La ISO 16889 exige mediciones simultáneas de concentración aguas arriba y aguas abajo a intervalos fijos de inyección acumulada de polvo, normalmente cada 2 g o 5 g de polvo de ensayo inyectado. La frecuencia de medición es crítica porque: (1) Con una frecuencia de medición alta, la serie temporal de la relación Beta capta la variación de la eficiencia en los distintos estados de carga y muestra la fase inicial de baja eficiencia (antes de formarse la torta), la fase de eficiencia máxima (torta establecida) y la fase descendente cerca de la restricción terminal; (2) El valor estándar de la relación Beta se calcula como la media aritmética de todos los pares de medición, no como el valor máximo: promediar todos los estados de carga da una estimación conservadora; (3) La medición de alta frecuencia permite calcular la estabilidad Beta (la variabilidad de Beta en los estados de carga), una especificación complementaria para elementos de circuitos de servoválvulas que deben mantener una eficiencia constante en todos los estados de carga. La revisión ISO 16889:2022 añadió requisitos de informe de la estabilidad Beta en respuesta a casos documentados en que los elementos mostraban un Beta medio aceptable pero una eficiencia deficiente en estados de carga específicos."
+    },
+    {
+      "question": "¿Qué especificaciones de contador de partículas se requieren en los circuitos de ensayo ISO 16889?",
+      "answer": "La ISO 16889 exige dos APC: uno aguas arriba y otro aguas abajo del elemento filtrante. Especificaciones: (1) Calibración ISO 11171: ambos APC deben tener certificados de calibración vigentes con partículas de referencia trazables al NIST; (2) Límite de coincidencia: la concentración máxima medible sin error de coincidencia debe ser ≥10,000 partículas/mL en el canal de mayor tamaño medido (normalmente ≥4 µm); una concentración aguas arriba de 3 mg/L de ISO MTD suele dar un conteo ≥4 µm de 50,000–100,000 partículas/mL, por lo que se requiere dilución antes del APC aguas arriba si la concentración supera el límite de coincidencia; (3) Caudal mínimo por el APC: 2 mL/min en la entrada del APC, con un volumen de medición ≥1 mL por ciclo de conteo; (4) Tiempo de respuesta del APC: el retardo de medición desde el muestreo del fluido hasta la salida del conteo debe ser ≤5 minutos para sincronizar las mediciones aguas arriba y aguas abajo y calcular la relación con exactitud."
+    },
+    {
+      "question": "¿Cómo se configura el banco de ensayo ISO 16889 para cumplir el requisito de concentración aguas arriba?",
+      "answer": "Configuración del banco de ensayo ISO 16889 para gestionar la concentración aguas arriba: (1) Depósito de mezcla: un depósito de mezcla agitado (mínimo 10 L) aguas arriba del punto de inyección de polvo asegura una distribución uniforme del polvo inyectado en el fluido de ensayo antes de llegar al APC aguas arriba y a la entrada del filtro; (2) Líneas de derivación/muestreo: líneas de derivación de pequeño diámetro (1–5 mm de diámetro interior) desvían una fracción del caudal a cada instrumento APC, manteniendo el caudal nominal por el elemento filtrante y aportando el caudal de muestra al APC; (3) Ubicación del dosificador de polvo: inyección 1 metro aguas arriba de la entrada del depósito de mezcla para permitir una mezcla completa antes del muestreo; (4) Control de temperatura: un calentador con control termostático mantiene el fluido de ensayo a 50±2°C; la estabilidad de la viscosidad es esencial para un caudal y un transporte de partículas constantes; (5) Volumen del sistema: volumen total de fluido del sistema ≥5× el caudal nominal del filtro por minuto, lo que da una capacidad de depósito de mezcla adecuada sin diluir en exceso la población de partículas."
+    },
+    {
+      "question": "¿Qué es la relación DHC/caudal nominal usada para seleccionar filtros en los presupuestos de contaminación?",
+      "answer": "La relación DHC/caudal nominal ofrece una métrica sencilla de selección de filtros para los cálculos de presupuesto de contaminación: relación = DHC (g) / Q_rated (L/min). Relación más alta = más contaminación absorbida por unidad de caudal = intervalos de servicio más largos a una tasa de ingreso dada. Valores ilustrativos: filtro de lubricante de celulosa β10(c) ≈ 20: relación DHC/Q de 0.3–0.8 g/L; un elemento filtrante de lubricante sintético de alta eficiencia (como la arquitectura SYNTRAX™, a la relación Beta especificada para la aplicación aprobada) puede lograr una relación DHC/Q sustancialmente mayor; un elemento filtrante hidráulico NANOFORCE a la relación Beta especificada para la aplicación aprobada puede lograr una relación DHC/Q en el rango típico de los medios hidráulicos sintéticos de alta eficiencia. Para un cálculo de presupuesto de contaminación con tasa de ingreso I = 0.3 mg/hora y un intervalo de servicio objetivo de 1,000 horas: DHC requerida = 0.3 × 1,000/1,000 × caudal nominal (g). Si el caudal nominal = 40 L/min, la DHC requerida = 12 g. Un elemento con relación DHC/Q = 0.5 g/L × 40 L/min = 20 g de DHC proporciona 20/0.3 = 67 horas × caudal nominal... el cálculo ilustra que la relación DHC/Q escala directamente el intervalo de servicio."
+    },
+    {
+      "question": "¿Qué es el ensayo de presión de colapso de la ISO 16889:2022 y cómo se verifica?",
+      "answer": "La ISO 16889:2022 (actualizada desde la versión de 2008) incluye el ensayo de presión de colapso como ensayo complementario obligatorio de integridad estructural del elemento, alineándose con el requisito equivalente NFPA T2.14.1, que antes solo se especificaba en el mercado norteamericano. Procedimiento de ensayo: (1) Preensayo: realizar el ensayo multipaso hasta la ΔP terminal (6 bar); (2) Aplicar la presión de colapso: invertir el sentido de la presión (de fuera hacia dentro en elementos con flujo normal de dentro hacia fuera) hasta 10× la presión diferencial de operación nominal; (3) Mantener durante 1 minuto; (4) Volver al flujo directo y hacer la medición APC posterior al ensayo; (5) Criterio de aceptación: relación Beta después del ensayo de colapso dentro del 10% de la relación Beta previa al colapso; sin aumento del flujo de derivación; sin medio visible en el recorrido del flujo aguas abajo. Los elementos que fallan el ensayo de colapso después de alcanzar la restricción terminal han demostrado que cargar el elemento hasta el límite de DHC de servicio deja un margen estructural insuficiente para los transitorios de presión: estos elementos deben reemplazarse en servicio a un umbral de DHC más bajo."
+    },
+    {
+      "question": "¿Qué impacto tiene la viscosidad del fluido de ensayo en los resultados de relación Beta de la ISO 16889?",
+      "answer": "La ISO 16889 especifica una viscosidad cinemática del fluido de ensayo de 46±2 cSt a 40°C (aceite hidráulico mineral ISO VG 46, o un fluido sintético equivalente a la temperatura de ensayo de 50°C), equivalente a aproximadamente 10 cSt a 50°C. La viscosidad afecta directamente la eficiencia de captura de partículas en el medio filtrante: (1) Con mayor viscosidad (menor temperatura), las fuerzas de arrastre sobre las partículas son mayores en relación con las fuerzas inerciales, lo que reduce la eficiencia de impacto inercial, el mecanismo de captura dominante para partículas de más de 5 µm en medios filtrantes hidráulicos; (2) Con menor viscosidad (mayor temperatura), las partículas atraviesan el medio más rápido, lo que reduce el tiempo de captura por difusión para partículas de menos de 5 µm. La especificación ISO VG 46 equilibra estos efectos a la temperatura de ensayo de 50°C. Ensayar con una viscosidad muy distinta (por ejemplo, fluido hidráulico ISO VG 22 usado en sistemas de clima frío) produce relaciones Beta diferentes para el mismo elemento: para diseñar sistemas con viscosidad inferior a ISO VG 32 se requiere un ensayo aparte a la viscosidad de la aplicación."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Norma completa de ensayo multipaso para la relación Beta, la DHC y la presión de colapso de elementos filtrantes hidráulicos."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+      "relevance": "Norma de calibración de APC exigida para todas las mediciones de conteo de partículas en el ensayo ISO 16889."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust",
+      "relevance": "Define el polvo de ensayo ISO MTD (A2 fine) usado en los circuitos de ensayo multipaso ISO 16889."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificación de limpieza usada junto con la ISO 16889 para definir la limpieza objetivo del sistema que deben mantener los elementos filtrantes cualificados por el ensayo multipaso."
+    }
+  ],
+  "title": "Ensayo multipaso ISO 16889: diseño del circuito y protocolo de ejecución",
+  "subtitle": "Hardware del circuito de ensayo, validación de la calibración del APC, cálculo de la dosificación de contaminante e informe de datos según la ISO 16889:2022",
+  "metaDescription": "El ensayo de eficiencia de filtros multipaso ISO 16889 requiere un circuito de ensayo específico, calibración del APC según la ISO 11171, una concentración de dosificación de contaminante de 100 mg/L y la medición gravimétrica de la capacidad de retención de suciedad. Esta referencia de ingeniería cubre el diseño del circuito, la verificación del ensayo en blanco, el cálculo de la relación Beta a partir de conteos integrados y los requisitos del informe de ensayo.",
+  "category": "Ingeniería",
+  "readTime": "13 min",
+  "intro": "La ISO 16889:2022 (4.ª edición) especifica el método multipaso para evaluar el desempeño de filtración de los elementos filtrantes hidráulicos y de lubricación mediante la medición de la eficiencia por relación Beta y de la capacidad de retención de suciedad (DHC). Este artículo trata el diseño y la validación del hardware del circuito de ensayo, los requisitos de instalación y calibración del APC, el cálculo de la concentración de dosificación de contaminante, el procedimiento de ensayo en blanco según la ISO 3722, el cálculo de la relación Beta integrada a partir de los conteos acumulados de partículas aguas arriba y aguas abajo, la determinación gravimétrica de la DHC y los requisitos de contenido del informe de ensayo según la Sección 13 de la ISO 16889. El artículo relacionado sobre el alcance de la norma, la aplicación de la relación Beta y los objetivos de limpieza del sistema ISO 4406 está disponible en la referencia de ingeniería iso-16889.",
+  "sections": [
+    {
+      "heading": "Configuración del circuito de ensayo",
+      "body": "El circuito de ensayo ISO 16889 consta de: un depósito con el fluido de ensayo ISO VG 15, una bomba de circulación de velocidad variable que entrega el caudal al valor nominal del elemento, un intercambiador de calor que mantiene la temperatura del fluido a 60°C ±2°C (ν ≈ 13–15 cSt a 60°C), un subsistema de inyección de contaminación formado por un depósito de mezcla separado y una bomba de inyección de desplazamiento positivo que entrega una suspensión de polvo fino ISO 12103-1 A2 a un caudal controlado, una carcasa de ensayo del elemento filtrante con transductores de presión aguas arriba y aguas abajo, y dos contadores automáticos de partículas (APC) situados en los puertos de muestreo aguas arriba y aguas abajo. El puerto de muestreo del APC aguas arriba está aguas abajo del punto de inyección de polvo y aguas arriba de la entrada del filtro, a una distancia de al menos 20 diámetros de tubería del punto de inyección para asegurar una mezcla completa. El puerto de muestreo del APC aguas abajo está a no más de 10 diámetros de tubería de la salida de la carcasa del filtro. Ambos APC muestrean de forma simultánea y continua durante todo el ensayo.",
+      "callout": [
+        {
+          "label": "Fluido de ensayo",
+          "value": "Aceite mineral ISO VG 15 a 60°C ±2°C: ν ≈ 13–15 cSt"
+        },
+        {
+          "label": "Posición del APC aguas arriba",
+          "value": "≥20 diámetros de tubería aguas abajo del punto de inyección"
+        },
+        {
+          "label": "Posición del APC aguas abajo",
+          "value": "≤10 diámetros de tubería desde la salida de la carcasa del filtro"
+        },
+        {
+          "label": "Mezcla de inyección",
+          "value": "Polvo fino ISO 12103-1 A2 en suspensión de aceite: bomba de inyección de desplazamiento positivo"
+        }
+      ]
+    },
+    {
+      "heading": "Cadena de calibración del APC y verificación de coincidencia",
+      "body": "Los APC aguas arriba y aguas abajo deben calibrarse según la ISO 11171 con material de referencia de conteo de partículas trazable al NIST derivado del polvo de ensayo fino ISO 12103-1 A2. La calibración debe ser trazable a un APC de referencia calibrado según la ISO 11171; los intervalos de calibración no deben superar 12 meses y deben renovarse tras cualquier servicio, golpe o reparación del instrumento. Antes de cada ensayo se hace una verificación de coincidencia: una muestra prediluida de la suspensión de ensayo pasa por ambos APC; si el APC aguas arriba registra más de 8,000 partículas/mL a ≥1 µm(c), la suspensión debe diluirse hasta no superar el umbral de coincidencia, o debe instalarse un circuito de dilución en la línea de muestreo aguas arriba. El error de coincidencia (el subconteo de partículas a alta concentración cuando dos o más partículas atraviesan la zona de detección a la vez) causa conteos aguas arriba artificialmente bajos y, por tanto, valores de relación Beta artificialmente altos. Todo ensayo en que no se aplicó corrección de coincidencia con concentraciones aguas arriba superiores a 8,000 partículas/mL a ≥1 µm(c) se declara inválido según la Sección 10 de la ISO 16889.",
+      "callout": [
+        {
+          "label": "Norma de calibración del APC",
+          "value": "ISO 11171: referencia trazable al NIST, intervalo ≤12 meses"
+        },
+        {
+          "label": "Umbral de coincidencia",
+          "value": "8,000 partículas/mL a ≥1 µm(c): diluir aguas arriba si se supera"
+        },
+        {
+          "label": "Tamaños de calibración",
+          "value": "≥4, ≥6, ≥14 µm(c) según los requisitos de informe de la ISO 4406"
+        },
+        {
+          "label": "Condición de ensayo inválido",
+          "value": "Coincidencia sin corregir por encima del umbral: resultado del ensayo no reportable"
+        }
+      ]
+    },
+    {
+      "heading": "Concentración de dosificación de contaminante y cálculo del caudal de inyección",
+      "body": "La concentración nominal de contaminación aguas arriba durante el ensayo es de 100 mg/L ±10%. El caudal de la bomba de inyección de polvo se calcula con: q_inject = (C_target × Q_system) / C_slurry, donde q_inject es el caudal volumétrico de la bomba de inyección, C_target es la concentración objetivo aguas arriba (100 mg/L = 0.1 g/L), Q_system es el caudal de circulación del sistema y C_slurry es la concentración másica del depósito de suspensión de polvo (normalmente 10–50 g/L). Ejemplo: Q_system = 10 L/min, C_slurry = 25 g/L → q_inject = (0.1 × 10) / 25 = 0.04 L/min. El depósito de suspensión debe agitarse de forma continua para evitar la sedimentación y mantener una concentración de polvo uniforme. El APC aguas arriba mide la concentración real aguas arriba durante todo el ensayo; el ensayo solo es válido si la concentración aguas arriba se mantiene dentro de ±10% de 100 mg/L durante al menos el 90% de la duración del ensayo. Las desviaciones fuera de esta banda deben documentarse en el informe de ensayo.",
+      "callout": [
+        {
+          "label": "Concentración objetivo aguas arriba",
+          "value": "100 mg/L ±10% (polvo fino ISO 12103-1 A2)"
+        },
+        {
+          "label": "Fórmula del caudal de inyección",
+          "value": "q_inject = (C_target × Q_system) / C_slurry"
+        },
+        {
+          "label": "Requisito de la suspensión",
+          "value": "Agitación continua: evita la sedimentación y la variación de concentración"
+        },
+        {
+          "label": "Criterio de validez",
+          "value": "Concentración aguas arriba dentro de ±10% de 100 mg/L durante ≥90% de la duración del ensayo"
+        }
+      ]
+    },
+    {
+      "heading": "Procedimiento de ensayo en blanco",
+      "body": "Antes de cada ensayo de elemento y después de limpiar el circuito se realiza un ensayo en blanco según la ISO 3722 para verificar que la contaminación de partículas de fondo del sistema está por debajo del nivel que afectaría de forma significativa las lecturas del APC aguas abajo. El ensayo en blanco muestrea la salida del APC aguas abajo sin elemento instalado y con la derivación totalmente abierta, midiendo los conteos de partículas de fondo del propio circuito (contaminación del depósito, partículas de la tubería, fondo del APC). El criterio de aceptación del ensayo en blanco es: los conteos en blanco aguas abajo en cada tamaño de partícula deben ser ≤10% de los conteos aguas abajo esperados del elemento durante el ensayo real. Los circuitos que no pasan el ensayo en blanco deben lavarse con fluido ISO VG 15 limpio a través de un filtro temporal de ≤3 µm absoluto hasta cumplir los criterios de aceptación del blanco. Los registros del ensayo en blanco se incluyen en el informe de ensayo.",
+      "callout": [
+        {
+          "label": "Norma del ensayo en blanco",
+          "value": "ISO 3722: procedimiento de muestra en blanco de limpieza del fluido"
+        },
+        {
+          "label": "Criterio de aceptación",
+          "value": "Conteos de fondo ≤10% de los conteos aguas abajo esperados del ensayo en cada tamaño"
+        },
+        {
+          "label": "Corrección",
+          "value": "Lavar a través de un filtro de ≤3 µm absoluto hasta cumplir el criterio"
+        },
+        {
+          "label": "Documentación",
+          "value": "Registros del ensayo en blanco obligatorios en el informe de ensayo ISO 16889"
+        }
+      ]
+    },
+    {
+      "heading": "Cálculo de la relación Beta a partir de conteos integrados",
+      "body": "La relación Beta al tamaño de partícula x en micrómetros (calibrados) se calcula a partir de los conteos acumulados de partículas registrados durante toda la duración del ensayo: Beta_x(c) = N_upstream(≥x µm(c)) / N_downstream(≥x µm(c)), donde N_upstream y N_downstream son los conteos totales acumulados de partículas por unidad de volumen a ≥x µm(c), integrados desde el inicio del ensayo hasta la presión diferencial terminal. La ISO 16889:2022 exige informar la relación Beta como mínimo en los tamaños ≥3, ≥5, ≥10, ≥15, ≥20 y ≥25 µm(c). La eficiencia de filtración en cada tamaño se calcula como: E_x = (1 − 1/Beta_x) × 100%. Un filtro con Beta₁₀₍c₎ = 200 tiene una eficiencia del 99.5% a ≥10 µm(c); Beta₁₀₍c₎ = 1,000 corresponde a una eficiencia del 99.9%. Los intervalos de conteo suelen ser de 30–60 segundos; los conteos totales de partículas por intervalo deben superar 400 en el APC aguas abajo para cumplir el umbral estadístico mínimo de conteo según la Sección 10 de la ISO 16889.",
+      "callout": [
+        {
+          "label": "Fórmula de Beta",
+          "value": "Beta_x(c) = N_upstream(≥x) / N_downstream(≥x): conteos acumulados"
+        },
+        {
+          "label": "Fórmula de eficiencia",
+          "value": "E = (1 − 1/Beta_x) × 100%"
+        },
+        {
+          "label": "Tamaños de informe",
+          "value": "≥3, ≥5, ≥10, ≥15, ≥20, ≥25 µm(c) como mínimo"
+        },
+        {
+          "label": "Umbral mínimo de conteo",
+          "value": "≥400 conteos por intervalo en el APC aguas abajo"
+        }
+      ]
+    },
+    {
+      "heading": "Capacidad de retención de suciedad y requisitos del informe de ensayo",
+      "body": "La capacidad de retención de suciedad (DHC) se mide gravimétricamente: es la masa total de polvo fino ISO 12103-1 A2 inyectada desde el inicio del ensayo hasta la presión diferencial terminal (6.0 bar a través del elemento, o lo que especifique el fabricante de la carcasa). DHC = Σ (q_inject × C_slurry × Δt) para todos los intervalos de tiempo desde el inicio del ensayo hasta la ΔP terminal, expresada en gramos. El ensayo termina cuando la presión diferencial medida a través del elemento alcanza el valor terminal y se mantiene igual o por encima de la ΔP terminal durante 10 segundos. La Sección 13 de la ISO 16889 especifica el contenido obligatorio del informe de ensayo: identificación y dimensiones del elemento, viscosidad del fluido de ensayo a la temperatura de ensayo, caudal nominal, presión diferencial inicial en limpio, presión diferencial terminal, grado del polvo de ensayo (designación ISO 12103-1), perfil de concentración de polvo aguas arriba, relaciones Beta en todos los tamaños especificados, DHC en gramos, datos de conteo de los APC aguas arriba y aguas abajo, resultados del ensayo en blanco, certificados de calibración de los APC y cualquier anomalía o desviación del procedimiento estándar.",
+      "callout": [
+        {
+          "label": "ΔP terminal",
+          "value": "6.0 bar diferenciales a través del elemento: mantener ≥10 segundos"
+        },
+        {
+          "label": "Fórmula de la DHC",
+          "value": "DHC (g) = Σ (q_inject × C_slurry × Δt): balance de masa gravimétrico"
+        },
+        {
+          "label": "Norma del informe de ensayo",
+          "value": "ISO 16889 Sección 13: contenido obligatorio del informe"
+        },
+        {
+          "label": "Certificados requeridos",
+          "value": "Certificados de calibración de los APC incluidos en cada paquete de informe de ensayo"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Fluido de ensayo",
+      "value": "Aceite mineral ISO VG 15 a 60°C ±2°C"
+    },
+    {
+      "label": "Concentración aguas arriba",
+      "value": "100 mg/L ±10% (ISO 12103-1 A2 fine)"
+    },
+    {
+      "label": "ΔP terminal",
+      "value": "6.0 bar a través del elemento (o especificación del fabricante)"
+    },
+    {
+      "label": "Límite de coincidencia del APC",
+      "value": "8,000 partículas/mL a ≥1 µm(c)"
+    },
+    {
+      "label": "Conteo mínimo aguas abajo",
+      "value": "≥400 conteos por intervalo de 30–60 s"
+    },
+    {
+      "label": "Criterio del ensayo en blanco",
+      "value": "Fondo ≤10% de los conteos aguas abajo esperados del ensayo"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 11171",
+    "ISO 12103-1",
+    "ISO 3722",
+    "ISO 4406"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ensayo multipaso ISO 16889",
+    "cálculo de la relación Beta",
+    "calibración del APC",
+    "capacidad de retención de suciedad",
+    "ensayo de eficiencia de filtros",
+    "ISO 11171",
+    "ISO 12103-1",
+    "concentración de dosificación de contaminante",
+    "error de coincidencia",
+    "ensayo en blanco",
+    "ISO 3722",
+    "circuito de ensayo de filtros"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Datos publicados de relación Beta inconsistentes entre laboratorios para elementos nominalmente idénticos",
+      "Informes de ensayo con relaciones Beta por encima de los límites físicos (>10,000) que sugieren error de coincidencia del APC",
+      "Valores de DHC que varían más de ±15% entre ensayos repetidos del mismo tipo de elemento",
+      "Concentración de partículas aguas arriba fuera de ±10% de 100 mg/L durante períodos prolongados del ensayo",
+      "Ensayo en blanco fallido en circuitos de ensayo nuevos: contaminación de fondo por encima del umbral del 10%"
+    ],
+    "probableCauses": [
+      "Variación entre laboratorios: distintos instrumentos de referencia de calibración del APC, distintos procedimientos de purga de la sonda de muestreo o distintas longitudes de mezcla en el punto de inyección",
+      "Error de coincidencia: concentración de partículas aguas arriba demasiado alta; el APC subcuenta las partículas aguas arriba y produce valores Beta inflados",
+      "Variación de la DHC: mezcla inconsistente de la suspensión en el depósito de inyección de polvo que causa una concentración de inyección variable",
+      "Deriva de la concentración aguas arriba: sedimentación de la suspensión de polvo durante el ensayo por agitación insuficiente del depósito de suspensión",
+      "Fallo del ensayo en blanco: lavado insuficiente del circuito tras un ensayo anterior de alta contaminación; contaminación de la tubería por el montaje"
+    ],
+    "inspectionMethods": [
+      "Comparar los certificados de calibración de los APC: verificar que los APC aguas arriba y aguas abajo fueron calibrados por el mismo laboratorio trazable a la ISO 11171 en los últimos 12 meses",
+      "Calcular la concentración de partículas aguas arriba con los datos del APC: si el conteo aguas arriba corresponde a >8,000 partículas/mL a ≥1 µm(c), se requiere corrección de coincidencia",
+      "Revisar el registro de operación del agitador del depósito de suspensión: confirmar la operación continua durante todo el período de ensayo",
+      "Graficar la concentración del APC aguas arriba frente al tiempo: identificar los períodos fuera de la banda de tolerancia de ±10% para evaluar la validez",
+      "Hacer un ensayo en blanco en el circuito limpio con fluido ISO VG 15 circulado por un filtro de ≤3 µm absoluto; comparar con el criterio de aceptación"
+    ],
+    "correctiveActions": [
+      "Error de coincidencia confirmado: instalar un circuito de dilución de muestra en el puerto del APC aguas arriba; repetir el ensayo con la muestra aguas arriba diluida corregida",
+      "Deriva de la concentración de la suspensión: aumentar la velocidad del agitador; reducir el tamaño del lote de suspensión para acortar el tiempo de espera; recalibrar el caudal de la bomba de inyección",
+      "Fallo del ensayo en blanco: lavar el circuito con ISO VG 15 a través de un filtro de ≤3 µm absoluto; repetir el ensayo en blanco; investigar la fuente de contaminación de la tubería",
+      "Discrepancia entre laboratorios: realizar un ensayo interlaboratorio con el mismo lote de elementos según el Anexo de la ISO 16889; identificar desviaciones en la cadena de calibración de los APC",
+      "Repetibilidad deficiente de la DHC: verificar la calibración del sensor de ΔP terminal; revisar el control de la temperatura de ensayo (se exige ±2°C)"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "La comparación de la relación Beta entre tipos de elementos muestra resultados inconsistentes entre laboratorios",
+      "standard": "ISO 16889:2022 Section 10 — test validity requirements; ISO 11171 APC calibration",
+      "protectionSystem": "Circuitos de ensayo con calibración cruzada, APC de referencia ISO 11171 común y procedimiento documentado de corrección de coincidencia",
+      "technology": "Instrumentos APC calibrados en una cadena de referencia ISO 11171 común; circuito de dilución de la muestra aguas arriba instalado de serie para evitar el error de coincidencia por encima de 8,000 partículas/mL a ≥1 µm(c)",
+      "relatedArticles": [
+        "iso-16889",
+        "beta-ratio",
+        "iso-11171-particle-counting",
+        "filter-element-integrity"
+      ]
+    },
+    {
+      "problem": "El elemento comprado no alcanza la relación Beta publicada en el muestreo de validación del sistema",
+      "standard": "ISO 16889:2022 — multi-pass test; ISO 4406 in-service cleanliness monitoring",
+      "protectionSystem": "Monitoreo de la limpieza del fluido en servicio según la ISO 4406 y APC según la ISO 11171 para verificar el desempeño del sistema con independencia de los datos de ensayo de laboratorio",
+      "technology": "Monitoreo APC continuo o periódico en los puertos de entrada y salida de la carcasa del filtro; cálculo de la relación Beta en servicio a partir de datos en vivo del sistema para verificar el desempeño del elemento en condiciones reales de operación",
+      "relatedArticles": [
+        "iso-16889",
+        "iso-4406",
+        "iso-11171-particle-counting",
+        "hydraulic-system-flushing"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-16889)",
+    "evidenceStatus": "ISO 16889:2022 (4th edition) test circuit requirements verified; 100 mg/L upstream concentration from ISO 16889:2022 Section 8.3; 60°C test temperature from ISO 16889:2022 Section 8.2; 8,000 particles/mL coincidence limit from ISO 11171:2010 Section 7.4; 10% blank test criterion from ISO 16889:2022 Section 9.2; minimum 400 downstream counts per interval from ISO 16889:2022 Section 10.3; terminal ΔP 6.0 bar from ISO 16889:2022 default specification; test report content from ISO 16889:2022 Section 13"
+  }
+}
