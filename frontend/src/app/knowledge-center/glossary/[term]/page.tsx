@@ -3,6 +3,17 @@ import { notFound } from 'next/navigation';
 import { TERMINOLOGY_REGISTRY, getPublishedTerms, termIdToSlug, slugToTermId } from '@/lib/knowledge-center';
 import GlossaryTermContent from './GlossaryTermContent';
 
+const CTR_1_METADATA: Record<string, { title: string; description: string }> = {
+  'restriction-indicator': {
+    title: "Air Restriction Indicator: When to Change Your Filter",
+    description: "Know when your air filter needs replacing. Learn how restriction indicators work, read in-H2O/kPa set points and avoid premature filter changes.",
+  },
+  'element-collapse': {
+    title: "Filter Element Collapse: Causes & How to Prevent It",
+    description: "Learn why filter elements collapse, the warning signs of excessive differential pressure and how service intervals and collapse ratings help prevent damage.",
+  },
+};
+
 const SEO_INTENT_OVERRIDES: Record<string, { title: string; description: string }> = {
   'beta-ratio': {
     title: 'Beta Ratio Definition — Filtration Glossary | ELIMFILTERS',
@@ -48,7 +59,7 @@ export async function generateMetadata({
   const entry = TERMINOLOGY_REGISTRY[id];
   if (!entry) return {};
   const isPublished = entry.status === 'published';
-  const override = SEO_INTENT_OVERRIDES[term];
+  const override = CTR_1_METADATA[term] ?? SEO_INTENT_OVERRIDES[term];
   return {
     title: override?.title || `${entry.term} — Glossary | ELIMFILTERS`,
     description: override?.description || entry.definition.slice(0, 160),
