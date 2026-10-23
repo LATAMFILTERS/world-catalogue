@@ -178,3 +178,28 @@ const TITLES: Record<'es' | 'pt', Record<string, string>> = {
 export function articleTitle(slug: string, lang: SiteLang, fallback: string): string {
   return lang === 'es' || lang === 'pt' ? TITLES[lang][slug] ?? fallback : fallback;
 }
+
+// Protection-system detail pages with reviewed /es/ and /pt/ versions, and their translated titles.
+export const TRANSLATED_SYSTEM_SLUGS = ['air-intake-protection', 'fuel-cleanliness-protection', 'lubrication-protection', 'hydraulic-protection', 'cooling-system-protection'] as const;
+
+const SYSTEM_TITLES: Record<'es' | 'pt', Record<string, string>> = {
+  es: {
+    'air-intake-protection': 'Protección de admisión y flujo de aire',
+    'fuel-cleanliness-protection': 'Protección de la limpieza del combustible',
+    'lubrication-protection': 'Protección de la lubricación',
+    'hydraulic-protection': 'Protección hidráulica',
+    'cooling-system-protection': 'Protección del sistema de refrigeración',
+  },
+  pt: {
+    'air-intake-protection': 'Proteção da admissão e do fluxo de ar',
+    'fuel-cleanliness-protection': 'Proteção da limpeza do combustível',
+    'lubrication-protection': 'Proteção da lubrificação',
+    'hydraulic-protection': 'Proteção hidráulica',
+    'cooling-system-protection': 'Proteção do sistema de arrefecimento',
+  },
+};
+
+/** Protection-system title in the visitor's language; English (fallback) otherwise. */
+export function systemTitle(slug: string, lang: SiteLang, fallback: string): string {
+  return lang === 'es' || lang === 'pt' ? SYSTEM_TITLES[lang][slug] ?? fallback : fallback;
+}

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { KC_SYSTEMS, KC_SYSTEM_DETAILS } from '@/lib/knowledge-center-data';
 import { notFound } from 'next/navigation';
 import SystemContent from './SystemContent';
+import { languageAlternates } from '@/lib/localized-routes';
+import { TRANSLATED_SYSTEM_SLUGS } from '@/lib/knowledge-center-data/i18n/titles';
 
 const SYSTEM_ALIASES: Record<string, string> = {
   'cabin-air-protection': 'air-intake-protection',
@@ -27,7 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: isAlias ? `${slug.replace(/-/g, ' ')} Legacy System` : `${system.title} System`,
     description: isAlias ? `Legacy protection-system route. Continue to the current ${system.title} page.` : system.description,
-    alternates: { canonical: url },
+    alternates: !isAlias && (TRANSLATED_SYSTEM_SLUGS as readonly string[]).includes(resolvedSlug)
+      ? { canonical: url, languages: languageAlternates(`/knowledge-center/systems/${resolvedSlug}`) }
+      : { canonical: url },
     robots: isAlias ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${system.title} System | ELIMFILTERS`,

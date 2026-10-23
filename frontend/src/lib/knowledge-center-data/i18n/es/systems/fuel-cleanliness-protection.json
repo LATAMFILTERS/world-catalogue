@@ -1,0 +1,69 @@
+{
+  "system": {
+    "slug": "fuel-cleanliness-protection",
+    "title": "Protección de la limpieza del combustible",
+    "description": "Protección coordinada del combustible diésel mediante filtración de partículas, separación de combustible/agua estándar no turbina aprobada y separación tipo turbina FH/FG aprobada.",
+    "icon": "⛽",
+    "technologies": [
+      "SYNTAPORE™",
+      "HYDROCORE™",
+      "TURBOCORE™"
+    ],
+    "kits": [
+      "DURATECH™",
+      "MARINECLEAN™"
+    ],
+    "standards": [
+      "ISO 12937",
+      "ASTM D6304"
+    ],
+    "challenges": [
+      "Contaminación por agua",
+      "Protección de inyectores HPCR",
+      "Crecimiento microbiano",
+      "Pulido del combustible"
+    ]
+  },
+  "detail": {
+    "slug": "fuel-cleanliness-protection",
+    "failureMechanism": "Las partículas y el agua que entran en los componentes de precisión del combustible diésel pueden contribuir al desgaste abrasivo, la corrosión, el atascamiento y la pérdida de control del sistema de inyección. Por eso la estrategia de protección debe atender la filtración de partículas y la gestión del agua sin mezclar las arquitecturas de separador estándar y tipo turbina.",
+    "contaminationTarget": "Contaminación por partículas y por agua del combustible diésel aguas arriba de las bombas de precisión, los inyectores y los componentes relacionados del sistema de combustible.",
+    "targetCleanliness": "Específico de la aplicación. La limpieza de partículas, los límites de agua, el desempeño de filtración y los intervalos de servicio deben vincularse al sistema de combustible protegido, a la configuración del producto y a la evidencia validada aplicable, en lugar de asignarse como un único objetivo universal de limpieza del combustible.",
+    "keyMetrics": [
+      {
+        "label": "Arquitectura de partículas",
+        "value": "SYNTAPORE™"
+      },
+      {
+        "label": "Separación estándar no turbina",
+        "value": "HYDROCORE™"
+      },
+      {
+        "label": "Separación tipo turbina FH/FG",
+        "value": "TURBOCORE™"
+      },
+      {
+        "label": "Selección final",
+        "value": "Validación específica de la aplicación"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Arquitectura de limpieza del combustible con tres tecnologías",
+        "body": "La protección de la limpieza del combustible usa tres tecnologías distintas. SYNTAPORE™ controla la contaminación por partículas en las posiciones aprobadas de filtración primaria, secundaria y de cartucho. HYDROCORE™ rige las aplicaciones aprobadas de separadores de combustible/agua estándar no turbina spin-on y de cartucho. TURBOCORE™ rige las carcasas de separación de combustible/agua tipo turbina FH/FG que apliquen y sus configuraciones de reemplazo dedicadas."
+      },
+      {
+        "heading": "Control de partículas: SYNTAPORE™",
+        "body": "La filtración de partículas se escalona según la arquitectura aprobada del sistema de combustible, el requisito de caudal, la exposición a la contaminación y la sensibilidad de los componentes aguas abajo. La eficiencia, la capacidad de contaminantes y la caída de presión a nivel de producto siguen vinculadas a cada filtro y aplicación validados."
+      },
+      {
+        "heading": "Separación estándar de combustible/agua: HYDROCORE™",
+        "body": "HYDROCORE™ se limita a los separadores de combustible/agua estándar no turbina aprobados, incluidas las configuraciones spin-on, de cartucho, con drenaje y con vaso transparente que apliquen. No debe usarse como identidad tecnológica de los sistemas tipo turbina FH o FG."
+      },
+      {
+        "heading": "Separación tipo turbina: TURBOCORE™",
+        "body": "TURBOCORE™ está reservado a los sistemas de separación de combustible/agua tipo turbina FH/FG que apliquen y a su arquitectura de reemplazo dedicada, incluidas las configuraciones aprobadas de las series 2010, 2020 y 2040. La carcasa, el elemento, los sellos, el recorrido del flujo y las condiciones de servicio deben tratarse como un único sistema aprobado específico de turbina."
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "system": {
+    "slug": "hydraulic-protection",
+    "title": "Proteção hidráulica",
+    "description": "Manter as metas de limpeza nos circuitos hidráulicos para proteger válvulas proporcionais, servoválvulas e bombas de alta pressão com tolerâncias de folga abaixo de 10 µm.",
+    "icon": "⚙️",
+    "technologies": [
+      "NANOFORCE™"
+    ],
+    "kits": [
+      "DURATECH™",
+      "MARINECLEAN™"
+    ],
+    "standards": [
+      "ISO 16889",
+      "ISO 4406",
+      "NAS 1638"
+    ],
+    "challenges": [
+      "Proteção de servoválvulas",
+      "Formação de verniz",
+      "Flushing de comissionamento",
+      "Controle do ingresso"
+    ]
+  },
+  "detail": {
+    "slug": "hydraulic-protection",
+    "failureMechanism": "Partículas na faixa de folga de 5–15 µm dos carretéis de válvulas proporcionais → travamento do carretel → erro de posição da válvula → instabilidade do controle de pressão e vazão → falhas de movimento da máquina → movimentos inesperados. Partículas duras >3 µm nas folgas de bombas de alta pressão → desgaste abrasivo → perda de eficiência da bomba → geração de calor → falha de vedações.",
+    "contaminationTarget": "Partículas duras na faixa de 1–15 µm, com meta ISO 4406 16/14/11 para sistemas proporcionais e ISO 18/16/13 no mínimo segundo a NFPA T2.14.",
+    "targetCleanliness": "ISO 4406 16/14/11 para sistemas de válvulas proporcionais; ISO 18/16/13 no mínimo (NFPA T2.14); ISO 15/13/10 para sistemas de servoválvulas.",
+    "keyMetrics": [
+      {
+        "label": "Folga da válvula proporcional",
+        "value": "5–10 µm"
+      },
+      {
+        "label": "Mínimo NFPA T2.14",
+        "value": "ISO 18/16/13"
+      },
+      {
+        "label": "Razão Beta NANOFORCE™",
+        "value": "Conforme a aplicação aprovada"
+      },
+      {
+        "label": "Impacto na disponibilidade do equipamento",
+        "value": "–15–30% sem controle"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Proteção de válvulas proporcionais",
+        "body": "As válvulas proporcionais e as servoválvulas controlam a vazão e a pressão hidráulicas em proporção direta a um sinal elétrico de entrada. As folgas carretel-furo de 5–10 µm as tornam muito sensíveis à contaminação por partículas. Partículas duras ficam presas entre o carretel e o furo, aumentam o atrito de desprendimento (travamento) e causam histerese de posição: a posição real da válvula fica atrasada em relação à posição comandada. A NFPA T2.14 exige limpeza mínima ISO 18/16/13 em sistemas com válvulas de controle proporcional.",
+        "callout": [
+          {
+            "label": "Folga da servoválvula",
+            "value": "2–5 µm"
+          },
+          {
+            "label": "Folga da válvula proporcional",
+            "value": "5–10 µm"
+          },
+          {
+            "label": "Folga da bomba de engrenagens",
+            "value": "10–25 µm"
+          }
+        ]
+      },
+      {
+        "heading": "Protocolo de flushing de comissionamento",
+        "body": "Sistemas hidráulicos novos contêm resíduos de fabricação (cavacos de usinagem, carepa de tubo, escória de solda, composto vedante). O flushing de comissionamento (circular óleo filtrado em vazão elevada por circuitos de flushing dedicados antes da primeira operação) é essencial para atingir a limpeza alvo. A limpeza do sistema deve ser verificada por contagem de partículas (APC calibrado segundo a ISO 11171) antes de conectar servoválvulas ou válvulas proporcionais."
+      },
+      {
+        "heading": "Filtração kidney loop off-line",
+        "body": "Os filtros kidney loop off-line (circuitos de filtração independentes que retiram e devolvem o fluido ao reservatório) removem partículas continuamente, independentemente da operação do sistema. Ao contrário dos filtros de pressão e de retorno, que só filtram com a máquina em operação, os kidney loops mantêm a limpeza do reservatório durante a espera. Vazão recomendada: 10–15% do volume do reservatório por hora para a filtração de manutenção em regime permanente."
+      }
+    ]
+  }
+}

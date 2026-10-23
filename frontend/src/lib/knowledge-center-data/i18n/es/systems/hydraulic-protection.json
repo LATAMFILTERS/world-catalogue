@@ -1,0 +1,78 @@
+{
+  "system": {
+    "slug": "hydraulic-protection",
+    "title": "Protección hidráulica",
+    "description": "Mantener los objetivos de limpieza en los circuitos hidráulicos para proteger válvulas proporcionales, servoválvulas y bombas de alta presión con tolerancias de holgura por debajo de 10 µm.",
+    "icon": "⚙️",
+    "technologies": [
+      "NANOFORCE™"
+    ],
+    "kits": [
+      "DURATECH™",
+      "MARINECLEAN™"
+    ],
+    "standards": [
+      "ISO 16889",
+      "ISO 4406",
+      "NAS 1638"
+    ],
+    "challenges": [
+      "Protección de servoválvulas",
+      "Formación de barniz",
+      "Lavado de puesta en marcha",
+      "Control del ingreso"
+    ]
+  },
+  "detail": {
+    "slug": "hydraulic-protection",
+    "failureMechanism": "Partículas en el rango de holgura de 5–15 µm de las correderas de válvulas proporcionales → atascamiento de la corredera → error de posición de la válvula → inestabilidad del control de presión y caudal → fallas de movimiento de la máquina → movimientos inesperados. Partículas duras >3 µm en las holguras de bombas de alta presión → desgaste abrasivo → pérdida de eficiencia de la bomba → generación de calor → falla de sellos.",
+    "contaminationTarget": "Partículas duras en el rango de 1–15 µm, con objetivo ISO 4406 16/14/11 para sistemas proporcionales e ISO 18/16/13 como mínimo según la NFPA T2.14.",
+    "targetCleanliness": "ISO 4406 16/14/11 para sistemas de válvulas proporcionales; ISO 18/16/13 como mínimo (NFPA T2.14); ISO 15/13/10 para sistemas de servoválvulas.",
+    "keyMetrics": [
+      {
+        "label": "Holgura de la válvula proporcional",
+        "value": "5–10 µm"
+      },
+      {
+        "label": "Mínimo NFPA T2.14",
+        "value": "ISO 18/16/13"
+      },
+      {
+        "label": "Relación Beta NANOFORCE™",
+        "value": "Según la aplicación aprobada"
+      },
+      {
+        "label": "Impacto en la disponibilidad del equipo",
+        "value": "–15–30% sin control"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Protección de válvulas proporcionales",
+        "body": "Las válvulas proporcionales y las servoválvulas controlan el caudal y la presión hidráulicos en proporción directa a una señal eléctrica de entrada. Sus holguras corredera-alojamiento de 5–10 µm las hacen muy sensibles a la contaminación por partículas. Las partículas duras quedan atrapadas entre la corredera y el alojamiento, aumentan la fricción de arranque (atascamiento) y causan histéresis de posición: la posición real de la válvula se retrasa respecto de la posición mandada. La NFPA T2.14 exige una limpieza mínima ISO 18/16/13 en los sistemas con válvulas de control proporcional.",
+        "callout": [
+          {
+            "label": "Holgura de la servoválvula",
+            "value": "2–5 µm"
+          },
+          {
+            "label": "Holgura de la válvula proporcional",
+            "value": "5–10 µm"
+          },
+          {
+            "label": "Holgura de la bomba de engranajes",
+            "value": "10–25 µm"
+          }
+        ]
+      },
+      {
+        "heading": "Protocolo de lavado de puesta en marcha",
+        "body": "Los sistemas hidráulicos nuevos contienen residuos de fabricación (virutas de mecanizado, cascarilla de tubería, escoria de soldadura, compuesto sellador). El lavado de puesta en marcha (hacer circular aceite filtrado a caudal elevado por circuitos de lavado dedicados antes de la primera operación) es esencial para alcanzar la limpieza objetivo. La limpieza del sistema debe verificarse con conteo de partículas (APC calibrado según la ISO 11171) antes de conectar servoválvulas o válvulas proporcionales."
+      },
+      {
+        "heading": "Filtración kidney-loop fuera de línea",
+        "body": "Los filtros kidney-loop fuera de línea (circuitos de filtración independientes que toman y devuelven el fluido al depósito) eliminan partículas de forma continua con independencia de la operación del sistema. A diferencia de los filtros de presión y de retorno, que solo filtran mientras la máquina opera, los kidney-loop mantienen la limpieza del depósito durante la espera. Caudal recomendado: 10–15% del volumen del depósito por hora para la filtración de mantenimiento en régimen estacionario."
+      }
+    ]
+  }
+}

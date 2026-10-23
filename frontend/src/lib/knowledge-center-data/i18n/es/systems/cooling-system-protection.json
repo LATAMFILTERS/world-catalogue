@@ -1,0 +1,49 @@
+{
+  "system": {
+    "slug": "cooling-system-protection",
+    "title": "Protección del sistema de refrigeración",
+    "description": "Control de la erosión por cavitación, la corrosión y la formación de incrustaciones en los sistemas de refrigeración de motores diésel mediante filtración con aditivo suplementario de refrigerante (SCA) y acondicionamiento del refrigerante.",
+    "icon": "🌡️",
+    "technologies": [
+      "THERMACORE™"
+    ],
+    "kits": [],
+    "standards": [],
+    "challenges": [
+      "Protección contra cavitación",
+      "Agotamiento del inhibidor de corrosión",
+      "Control del pH del refrigerante",
+      "Prevención de incrustaciones"
+    ]
+  },
+  "detail": {
+    "slug": "cooling-system-protection",
+    "failureMechanism": "Agotamiento del inhibidor SCA → erosión por cavitación de la pared de la camisa → contaminación del refrigerante con partículas de hierro fundido → corrosión de la camisa de refrigeración → falla de la junta de culata. Formación de incrustaciones → menor coeficiente de transferencia de calor → temperatura del refrigerante elevada → eventos de sobrecalentamiento.",
+    "contaminationTarget": "Concentración de SCA mantenida en la banda de 0.5–1.0 unidades/L; incrustaciones, productos de corrosión y gel de silicato por debajo del umbral de 20 µm.",
+    "targetCleanliness": "Concentración de SCA de 0.5–1.0 unidades por litro; pH 8.5–10.5; intervalo de cambio del refrigerante según la ASTM D6210.",
+    "keyMetrics": [
+      {
+        "label": "Concentración objetivo de SCA",
+        "value": "0.5–1.0 unidades/L"
+      },
+      {
+        "label": "Captura de partículas THERMACORE™",
+        "value": "Según la aplicación aprobada"
+      },
+      {
+        "label": "Mecanismo de erosión de la camisa",
+        "value": "Cavitación por colapso de burbujas de vapor"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Mecanismo de erosión por cavitación",
+        "body": "Las camisas de cilindro húmedas de los motores diésel vibran por los pulsos de presión de la combustión. Esta vibración crea zonas de baja presión en el lado del refrigerante de la camisa: cuando la presión baja de la presión de vapor del refrigerante, se forman burbujas de vapor. Cuando estas burbujas colapsan, microchorros de líquido golpean la superficie de la camisa a velocidades que erosionan el hierro fundido a un ritmo capaz de perforar la pared de una camisa en 2,000–5,000 horas sin una protección SCA adecuada. Los aditivos suplementarios de refrigerante (SCA) forman una película protectora en la superficie de la camisa que absorbe la energía de impacto del colapso de las burbujas."
+      },
+      {
+        "heading": "Gestión del SCA",
+        "body": "La concentración de SCA debe mantenerse dentro del rango especificado para la química del refrigerante y la aplicación aprobada. Por debajo del mínimo, la protección contra la erosión por cavitación es insuficiente; por encima del máximo, la precipitación del SCA puede formar gel y obstrucciones. THERMACORE™ está diseñado para liberar SCA a un ritmo controlado durante el intervalo de servicio y ayudar a mantener la concentración dentro del rango especificado. La concentración de SCA se verifica con tiras de ensayo o con refractómetro en cada intervalo de servicio del refrigerante."
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "system": {
+    "slug": "lubrication-protection",
+    "title": "Protección de la lubricación",
+    "description": "Mantener los códigos de limpieza ISO 4406 en los circuitos de lubricación del motor y de la transmisión. La contaminación por partículas en el aceite lubricante es la causa principal del desgaste de cojinetes y pistones.",
+    "icon": "🔧",
+    "technologies": [
+      "SYNTRAX™"
+    ],
+    "kits": [
+      "DURATECH™",
+      "MARINECLEAN™"
+    ],
+    "standards": [
+      "ISO 16889",
+      "ISO 4406",
+      "SAE J1858"
+    ],
+    "challenges": [
+      "Diseño de la válvula de derivación",
+      "Protección en arranque en frío",
+      "Intervalos de drenaje extendidos",
+      "Análisis de aceite"
+    ]
+  },
+  "detail": {
+    "slug": "lubrication-protection",
+    "failureMechanism": "Contaminación por partículas en el aceite lubricante → desgaste abrasivo de los muñones de cojinetes y de los anillos del pistón → la holgura del cojinete se abre → rotura de la película de aceite con la holgura alterada → agarrotamiento del cojinete. Apertura de la válvula de derivación en el arranque en frío → aceite sin filtrar a los cojinetes durante los primeros 30–60 segundos.",
+    "contaminationTarget": "Partículas sólidas (objetivo ISO 4406 16/14/11 con enfoque de sistema), agua (por fuga de refrigerante o condensación), dilución por combustible y hollín de oxidación.",
+    "targetCleanliness": "Código ISO 4406 16/14/11 para la protección con enfoque de sistema; especificación del OEM para el cumplimiento mínimo.",
+    "keyMetrics": [
+      {
+        "label": "Vida del cojinete con 16/14/11",
+        "value": "3–5× frente a 19/17/14"
+      },
+      {
+        "label": "β₁₀(c) típico de filtro de lubricante",
+        "value": "SYNTRAX™: ≥200"
+      },
+      {
+        "label": "ΔP de apertura de la válvula de derivación",
+        "value": "0.8–1.0 bar"
+      },
+      {
+        "label": "Especificación ADB en arranque en frío",
+        "value": "<1 mL/min de retorno"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Holgura de los cojinetes y contaminación",
+        "body": "Los muñones de los cojinetes del motor operan con holguras de 5–25 µm según el tamaño y el diseño del cojinete. Las partículas en este rango de tamaño, las más frecuentes en el aceite de motor usado, causan desgaste abrasivo de dos y tres cuerpos que aumenta progresivamente la holgura. Una holgura mayor reduce la presión de la película de aceite, lo que a su vez eleva la temperatura de operación del cojinete. El código de limpieza ISO 4406 16/14/11, alcanzable con SYNTRAX™, alarga la vida de los cojinetes 3–5× frente al enfoque genérico con 19/17/14."
+      },
+      {
+        "heading": "Diseño de la válvula de derivación",
+        "body": "Las válvulas de derivación de los filtros de lubricante se abren a 0.8–1.0 bar de presión diferencial para proteger el motor de la falta de aceite si el filtro se restringe mucho. Durante la derivación, el aceite sin filtrar evita el medio filtrante y entra en el circuito de lubricación. Esto es aceptable en arranques en frío breves, pero es un modo de falla si se prolonga. La constante del resorte de la válvula de derivación debe calibrarse para mantenerla cerrada en todo el rango de temperatura de operación: la relajación del resorte a temperatura elevada puede causar una derivación parcial por debajo del umbral nominal."
+      },
+      {
+        "heading": "Intervalos de drenaje extendidos",
+        "body": "Los programas de intervalo de drenaje extendido requieren análisis de aceite para monitorear la condición y el nivel de contaminación del aceite durante todo el intervalo. Los elementos SYNTRAX™ tienen mayor capacidad de retención de suciedad que la celulosa, lo que permite intervalos más largos en cuanto a restricción del filtro. Sin embargo, el intervalo de cambio del aceite lubricante lo rigen la oxidación del aceite, el agotamiento de los aditivos y el TAN (número de acidez total), no solo la restricción del filtro. Los programas de drenaje extendido sin análisis de aceite corren el riesgo de un desgaste acumulado de los cojinetes por aceite contaminado."
+      }
+    ]
+  }
+}
