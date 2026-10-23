@@ -1,0 +1,374 @@
+{
+  "slug": "fleet-oil-sampling-protocol",
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4021:2021, Hydraulic Fluid Power — Particulate Contamination Analysis — Extraction of Fluid Samples from Lines of an Operating System",
+      "relevance": "Especifica el diseño y la instalación de la válvula de muestreo de aceite, el procedimiento de purga y el volumen mínimo de muestra (100 mL) para muestras representativas de conteo de partículas; exige ubicaciones de muestreo isocinéticas o de flujo turbulento."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry",
+      "relevance": "Referencia principal para el análisis ICP de metales de desgaste en aceite usado; especifica la selección de longitudes de onda, la calibración y los límites de detección de más de 20 elementos; documenta la limitación por tamaño de partícula y la compara con el electrodo de disco rotatorio para detectar partículas grandes."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D7690-19, Standard Practice for Microscopic Characterization of Particles from In-Service Lubricants by Analytical Ferrography",
+      "relevance": "Especifica el procedimiento de ferrografía analítica para identificar la morfología de las partículas de desgaste (roce, corte, deslizamiento severo, fatiga), la composición del material y la distribución de tamaños por encima de 5 µm; permite un diagnóstico del modo de falla que el ICP solo no puede dar."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 10012:2003, Measurement Management Systems — Requirements for Measurement Processes and Measuring Equipment",
+      "relevance": "Marco de gestión de las mediciones de laboratorio que incluye calibración, presupuestos de incertidumbre y ensayos de aptitud; se aplica a los laboratorios de análisis de aceite cuyos resultados se usan en las decisiones de mantenimiento de flotas."
+    }
+  ],
+  "title": "Diseño del protocolo de muestreo de aceite a nivel de flota",
+  "subtitle": "Procedimiento de muestreo ISO 3722, requisitos de cadena de custodia, optimización de la frecuencia y diseño del programa según la ISO 17359",
+  "metaDescription": "Los programas de muestreo de aceite a nivel de flota requieren el procedimiento de muestreo ISO 3722, etiquetas de cadena de custodia estandarizadas, una selección de frecuencias basada en la criticidad según la ISO 17359 y gestión de datos ISO 13374 para el análisis de tendencias. Esta referencia cubre la selección de los puntos de muestreo, la preparación del equipo, la optimización de la frecuencia de muestreo, el diseño estadístico a nivel de flota y la medición de la eficacia del programa.",
+  "category": "Ingeniería",
+  "readTime": "13 min",
+  "intro": "Un programa de monitoreo de la condición del aceite a nivel de flota convierte los resultados individuales de análisis de aceite de cada unidad en una función sistemática de inteligencia de activos: identifica tendencias de contaminación sistémicas en la flota, valida extensiones de intervalos de drenaje en poblaciones de equipos y detecta fallas de componentes en desarrollo antes de que se produzcan paradas no planificadas. La ISO 17359:2018 (Condition Monitoring and Diagnostics of Machines — General Guidelines) define el marco de diseño del programa, incluidos la selección de parámetros, la fijación de frecuencias, el establecimiento de niveles de alerta y la planificación de la respuesta. La ISO 3722:2015 rige el procedimiento físico de muestreo para asegurar que las muestras sean representativas y que el propio proceso de muestreo no las contamine. La ISO 13374:2003 (Condition Monitoring — Data Processing, Communication, and Presentation) define los campos de datos y los protocolos de comunicación necesarios para gestionar programas de flotas con muchos equipos. Este artículo trata el diseño del programa de muestreo, la preparación del equipo, la documentación de la cadena de custodia, la optimización de la frecuencia y la interpretación estadística de los datos a nivel de flota; los métodos analíticos y los umbrales de alarma aplicados a cada muestra se tratan por separado en la referencia de ingeniería oil-condition-monitoring.",
+  "sections": [
+    {
+      "heading": "Selección del punto de muestreo y clasificación del circuito",
+      "body": "El punto de muestreo determina si la muestra representa todo el volumen de fluido o una zona localizada. La ISO 3722:2015 especifica el muestreo a mitad de corriente en una línea con flujo activo como el único método válido para un análisis de contaminación representativo, no desde drenajes, cárteres en reposo ni visores. En el aceite de motor, el punto de muestreo correcto es la toma de la galería de presión de aceite entre la bomba de aceite y la galería principal del motor, lo que asegura que la muestra capte aceite en servicio totalmente mezclado, con las contribuciones de contaminación de todas las superficies lubricadas. En los sistemas hidráulicos, el punto de muestreo preferido es la línea de retorno aguas arriba del filtro de retorno, que capta fluido que ha recorrido todo el circuito del sistema y contiene la contaminación acumulada de todos los actuadores, cilindros y carcasas de motores. Muestrear aguas abajo del filtro de retorno capta fluido ya filtrado y no revela los niveles de contaminación del sistema ni la degradación del desempeño del elemento filtrante. El muestreo en el lado de succión no es representativo y solo capta las partículas del cárter, no la contaminación en servicio.",
+      "callout": [
+        {
+          "label": "Punto de muestreo del aceite de motor",
+          "value": "Galería de presión de aceite: entre la bomba de aceite y la galería principal"
+        },
+        {
+          "label": "Punto de muestreo hidráulico",
+          "value": "Línea de retorno aguas arriba del filtro de retorno: capta toda la contaminación del sistema"
+        },
+        {
+          "label": "Puntos no válidos",
+          "value": "Tapones de drenaje, cárteres en reposo, visores, aguas abajo del filtro de retorno"
+        },
+        {
+          "label": "Norma",
+          "value": "ISO 3722:2015: muestreo obligatorio a mitad de corriente en línea con flujo activo"
+        }
+      ]
+    },
+    {
+      "heading": "Preparación del frasco de muestra y procedimiento ISO 3722",
+      "body": "Los frascos de muestra deben cumplir el requisito de limpieza de la ISO 3722: la contaminación de partículas de fondo del frasco debe ser ≤ código ISO 4406 12/10/08 o menor antes de tomar la muestra. Los frascos de muestra ISO 3722 prelimpiados se suministran sellados y limpios; no deben enjuagarse en campo con el aceite muestreado, porque eso introduce contaminación de las superficies del frasco. La sonda de muestreo (un tubo metálico o un adaptador de válvula de tapón dedicado en el puerto de muestreo) se purga con un mínimo de 250–500 mL de aceite (aceite de motor) o fluido hidráulico antes de tomar la muestra para análisis; esto purga el volumen muerto y las paredes de la sonda y asegura que la muestra represente la corriente de flujo activa y no el sedimento acumulado en el volumen muerto de la sonda. Volumen de muestra: 100–300 mL como mínimo para tener volumen suficiente para todo el panel de ensayos (viscosidad, TAN, TBN, ICP, FTIR, conteo de partículas) sin diluir ni volver a muestrear.",
+      "callout": [
+        {
+          "label": "Limpieza del frasco",
+          "value": "≤ código ISO 4406 12/10/08 antes del llenado según la ISO 3722"
+        },
+        {
+          "label": "Volumen de purga de la sonda",
+          "value": "250–500 mL antes de tomar la muestra para análisis"
+        },
+        {
+          "label": "Volumen de muestra",
+          "value": "100–300 mL como mínimo para todo el panel de ensayos"
+        },
+        {
+          "label": "Enjuague en campo",
+          "value": "PROHIBIDO: introduce contaminación; usar solo frascos sellados prelimpiados"
+        }
+      ]
+    },
+    {
+      "heading": "Documentación de la cadena de custodia",
+      "body": "Cada muestra de aceite debe ir acompañada de una etiqueta de cadena de custodia con los campos de datos mínimos necesarios para una interpretación válida del análisis. Los campos de datos faltantes o incorrectos invalidan el análisis de tendencias de esa muestra. Campos obligatorios de la etiqueta según la ISO 17359 y la práctica de laboratorio: (1) ID del equipo: identificador único que permite vincular la muestra con la base de datos del historial del equipo; (2) marca y grado SAE/ISO del aceite; (3) horas del aceite en servicio en la fecha de muestreo: horas desde el último drenaje o desde la adición de aceite; (4) horas del equipo (lectura del odómetro/horómetro) en la fecha de muestreo; (5) fecha y hora de muestreo (formato ISO 8601: AAAA-MM-DD HH:MM); (6) ubicación del punto de muestreo (código estandarizado, por ejemplo, ENG-OIL-GALLERY); (7) volumen de aceite repuesto desde la última muestra, en litros (diluye proporcionalmente los metales de desgaste); (8) nombre e identificación de quien toma la muestra. El volumen de reposición es crítico: añadir 5 L de aceite nuevo a un sistema de 30 L diluye las concentraciones de metales de desgaste en aproximadamente un 14%, lo que ocultará las tendencias aparentes de metales de desgaste si no se corrige en el análisis.",
+      "callout": [
+        {
+          "label": "Campos obligatorios de la etiqueta",
+          "value": "8 campos: ID del equipo, grado del aceite, horas del aceite, horas del equipo, fecha/hora, punto de muestreo, volumen de reposición, responsable del muestreo"
+        },
+        {
+          "label": "Formato de fecha",
+          "value": "ISO 8601: AAAA-MM-DD HH:MM para registros inequívocos en la base de datos de la flota"
+        },
+        {
+          "label": "Impacto del volumen de reposición",
+          "value": "Añadir 5 L a un sistema de 30 L diluye los metales de desgaste ~14%; debe registrarse para corregir la tendencia"
+        },
+        {
+          "label": "Riesgo de muestra no válida",
+          "value": "Si faltan las horas del aceite o el volumen de reposición, el análisis de tendencias pierde fiabilidad"
+        }
+      ]
+    },
+    {
+      "heading": "Optimización de la frecuencia de muestreo: matriz de criticidad ISO 17359",
+      "body": "La ISO 17359:2018 define la frecuencia de muestreo con una matriz de criticidad basada en dos factores: la criticidad del equipo (consecuencia de la falla × probabilidad de falla en el período de monitoreo) y la velocidad de cambio del parámetro (qué tan rápido se acerca un parámetro monitoreado a su nivel de alarma). Niveles de criticidad del equipo: Crítico (falla = riesgo inmediato para la seguridad o pérdida total de producción): muestrear cada 250 horas de operación; Estándar (consecuencia de parada importante pero gestionada): muestrear cada 500 horas de operación; No crítico (consecuencia mínima para la producción o la seguridad): muestrear cada 1,000 horas o en el drenaje programado. El límite absoluto de frecuencia es no superar el 50% del intervalo de drenaje propuesto; muestrear a ≤50% del intervalo de drenaje asegura que haya al menos un resultado disponible para decidir el drenaje antes de que el intervalo termine con el fluido deteriorado. Para una máquina con un intervalo de drenaje de 500 horas, la frecuencia de muestreo máxima es cada 250 horas. La ISO 17359 exige establecer tres muestras de referencia consecutivas por unidad antes de aplicar los niveles de alarma: las muestras de referencia definen la distribución de la condición normal de cada unidad.",
+      "callout": [
+        {
+          "label": "Equipo crítico",
+          "value": "Cada 250 horas de operación: falla = pérdida de seguridad o de toda la producción"
+        },
+        {
+          "label": "Equipo estándar",
+          "value": "Cada 500 horas de operación: consecuencia de parada gestionada"
+        },
+        {
+          "label": "Límite de frecuencia",
+          "value": "≤50% del intervalo de drenaje: ventana mínima de alerta temprana"
+        },
+        {
+          "label": "Requisito de referencia",
+          "value": "≥3 muestras consecutivas antes de activar los niveles de alarma (ISO 17359)"
+        }
+      ]
+    },
+    {
+      "heading": "Análisis estadístico a nivel de flota y gestión de datos ISO 13374",
+      "body": "El análisis a nivel de flota examina patrones en poblaciones de equipos para distinguir las causas sistémicas de las fallas de unidades individuales. Una sola unidad con tendencia de Fe elevada indica desgaste localizado; cinco unidades de la misma flota con tendencia de Fe elevada a la vez indican un factor sistémico: combustible contaminado, un error común en un procedimiento de mantenimiento o un lote de aceite con niveles de aditivos incorrectos. La ISO 13374:2003 define los protocolos de comunicación de datos de los programas de monitoreo de condición: estructura del registro del equipo, campos de resultados de medición, indicadores de estado de alerta y códigos de clasificación de tendencias. La ISO 17359 exige un mínimo de cinco muestras consecutivas por unidad para establecer una tendencia lineal estadísticamente significativa; las líneas de tendencia con menos de cinco puntos no deben usarse como única base para las decisiones de mantenimiento. La métrica de velocidad de cambio (por ejemplo, Δppm de Fe por cada 100 horas de operación) es más informativa que la concentración absoluta para identificar la aceleración de la degradación; una duplicación de la pendiente de la tasa de desgaste, aunque los valores absolutos sigan por debajo de los umbrales de alarma, justifica una investigación.",
+      "callout": [
+        {
+          "label": "Indicador de falla sistémica",
+          "value": ">20% de las unidades de la flota con tendencia elevada simultánea: investigar una causa común"
+        },
+        {
+          "label": "Mínimo de muestras para tendencia",
+          "value": "≥5 muestras consecutivas por unidad para una tendencia lineal válida (ISO 17359)"
+        },
+        {
+          "label": "Norma de gestión de datos",
+          "value": "ISO 13374:2003: campos de datos y protocolos de comunicación del monitoreo de condición"
+        },
+        {
+          "label": "Métrica de velocidad de cambio",
+          "value": "Δppm/100 h para metales de desgaste: detecta la aceleración antes de llegar a la alarma absoluta"
+        }
+      ]
+    },
+    {
+      "heading": "Medición de la eficacia del programa",
+      "body": "Un programa de muestreo de aceite solo es eficaz si se actúa sobre los resultados dentro de una ventana de respuesta definida. La ISO 17359 define métricas de eficacia del programa: (1) tiempo de muestra a informe: objetivo ≤5 días hábiles desde la recepción de la muestra en el laboratorio hasta la emisión del informe; (2) tasa de respuesta a alertas: porcentaje de muestras que generan una alerta con una respuesta de mantenimiento documentada dentro de los 30 días; (3) tasa de éxito del mantenimiento predictivo: porcentaje de desmontajes de componentes activados por hallazgos del análisis de aceite que confirman la falla identificada (evita desarmes innecesarios y valida las alertas); (4) tasa de fallas no planificadas: seguimiento anual; una reducción frente a la línea base anterior al programa demuestra su valor. Los datos del programa deben guardarse con historial suficiente para al menos 24 meses de análisis de tendencias por unidad en las evaluaciones de extensión del intervalo de drenaje. Las decisiones de extensión del intervalo de drenaje requieren un mínimo de 10 ciclos de drenaje consecutivos sin activación de alertas y con tendencias de metales de desgaste estadísticamente estables antes de aprobar la extensión.",
+      "callout": [
+        {
+          "label": "Objetivo de muestra a informe",
+          "value": "≤5 días hábiles desde la recepción de la muestra"
+        },
+        {
+          "label": "Mínimo para extender el drenaje",
+          "value": "10 ciclos de drenaje consecutivos con tendencias estables antes de extender el intervalo"
+        },
+        {
+          "label": "Requisito de historial",
+          "value": "≥24 meses por unidad para evaluar la extensión del drenaje"
+        },
+        {
+          "label": "Métrica de valor del programa",
+          "value": "Tasa de fallas no planificadas frente a la línea base anterior al programa: revisión anual"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Volumen de purga de la sonda",
+      "value": "250–500 mL antes de tomar la muestra (ISO 3722)"
+    },
+    {
+      "label": "Volumen de muestra",
+      "value": "100–300 mL como mínimo para todo el panel de ensayos"
+    },
+    {
+      "label": "Limpieza del frasco",
+      "value": "≤ código ISO 4406 12/10/08 antes del llenado"
+    },
+    {
+      "label": "Frecuencia para equipo crítico",
+      "value": "Cada 250 horas de operación (ISO 17359)"
+    },
+    {
+      "label": "Muestras de referencia",
+      "value": "≥3 por unidad antes de aplicar los niveles de alarma"
+    },
+    {
+      "label": "Mínimo de muestras para tendencia",
+      "value": "≥5 por unidad para una línea de tendencia válida"
+    },
+    {
+      "label": "Requisito para extender el drenaje",
+      "value": "10 ciclos estables consecutivos (ISO 17359)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 3722",
+    "ISO 17359",
+    "ISO 13374",
+    "ISO 4406",
+    "ASTM D445"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™",
+    "NANOFORCE™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "protocolo de muestreo de aceite",
+    "ISO 3722",
+    "ISO 17359",
+    "ISO 13374",
+    "cadena de custodia",
+    "monitoreo de la condición del aceite",
+    "mantenimiento de flotas",
+    "extensión del intervalo de drenaje",
+    "frecuencia de muestreo",
+    "mantenimiento predictivo",
+    "programa de análisis de aceite",
+    "monitoreo de condición"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Resultados de análisis de aceite con alta variabilidad entre muestras consecutivas de la misma unidad, que no reflejan un cambio real de condición",
+      "Tendencias de metales de desgaste con saltos bruscos que coinciden con los períodos de drenaje, que no son eventos de desgaste reales",
+      "Resultados de Si elevados en toda la flota que aparecen a la vez en varias unidades",
+      "El análisis de aceite no detecta fallas de componentes que eran evidentes en la inspección al desarmar",
+      "Tiempo de emisión del informe del laboratorio superior a 10 días hábiles, que retrasa la respuesta de mantenimiento"
+    ],
+    "probableCauses": [
+      "Variabilidad de las muestras: procedimiento de muestreo inconsistente; sonda sin purgar, muestra tomada del drenaje del cárter o del tubo de la varilla en lugar de una línea con flujo activo",
+      "Salto en el drenaje: volumen de reposición de aceite no registrado; la dilución con aceite nuevo crea una mejora aparente de las concentraciones de metales de desgaste",
+      "Si elevado en toda la flota: problema sistémico de filtración de aire en la flota; un contratista de mantenimiento común que no sella bien el filtro de aire después del servicio",
+      "Fallas no detectadas: frecuencia de muestreo insuficiente, la falla se desarrolla entre muestras; o punto de muestreo incorrecto (después del filtro) que no capta la contaminación del sistema",
+      "Retraso del informe: capacidad del laboratorio insuficiente para el volumen del programa de flota; errores de etiquetado que obligan a reidentificar las muestras"
+    ],
+    "inspectionMethods": [
+      "Auditar el procedimiento de muestreo: observar a un técnico tomando la muestra en 3 unidades representativas; verificar la instalación de la sonda ISO 3722, el volumen de purga y el uso de frascos sellados",
+      "Revisar las etiquetas de cadena de custodia en busca de campos faltantes: identificar las unidades con registros incompletos; correlacionarlas con los resultados que muestran tendencias inesperadas",
+      "Cruzar los resultados de Si con los registros de servicio del filtro de aire: confirmar fechas de servicio y contratistas; inspeccionar el estado del sello del filtro en las unidades con Si alto",
+      "Ubicar los puntos de muestreo en el esquema del sistema: confirmar la ubicación en línea con flujo activo para cada tipo de unidad; verificar que las muestras hidráulicas se tomen aguas arriba del filtro de retorno",
+      "Revisar el registro de tiempos de respuesta del laboratorio: calcular el tiempo medio y el percentil 95; compararlos con el objetivo de 5 días hábiles"
+    ],
+    "correctiveActions": [
+      "Inconsistencia del procedimiento de muestreo: hacer una auditoría de muestreo supervisada; colocar una tarjeta con el procedimiento ISO 3722 en cada puerto de muestreo; reemplazar los adaptadores de punto de drenaje por válvulas de muestreo en línea con flujo",
+      "Sesgo por dilución de la reposición: añadir el campo de volumen de reposición de aceite al registro obligatorio de cadena de custodia; configurar el software del laboratorio para aplicar la corrección por dilución",
+      "Si elevado en toda la flota: inspeccionar las instalaciones de filtros de aire en todas las unidades afectadas; volver a capacitar al contratista de mantenimiento; implementar un protocolo de verificación posterior al servicio",
+      "Falla no detectada: aumentar la frecuencia de muestreo en las unidades de alta criticidad; reubicar el punto de muestreo aguas arriba del filtro de retorno en las unidades hidráulicas",
+      "Retraso del laboratorio: negociar un SLA de tiempo de respuesta con el laboratorio; implementar el registro digital de muestras en el punto de muestreo para reducir el trabajo de reidentificación"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "El programa de muestreo de aceite de la flota no detecta fallas antes de las paradas no planificadas",
+      "standard": "ISO 17359:2018 — condition monitoring programme design and frequency; ISO 3722 sampling procedure",
+      "protectionSystem": "Programa reestructurado: puntos de muestreo correctos, cumplimiento del procedimiento ISO 3722, frecuencia basada en la criticidad y SLA de respuesta de 5 días",
+      "technology": "Válvulas de muestreo en línea con flujo activo instaladas en posiciones conformes con la ISO 3722 en todas las unidades de la flota; impresión digital de etiquetas de cadena de custodia en el punto de muestreo; SLA de respuesta del laboratorio de ≤5 días hábiles para las muestras de equipos críticos",
+      "relatedArticles": [
+        "oil-condition-monitoring",
+        "extended-drain-interval-engineering",
+        "lubrication-system-filtration"
+      ]
+    },
+    {
+      "problem": "Se requiere decidir una extensión del intervalo de drenaje: el operador de la flota quiere pasar de 500 a 750 horas",
+      "standard": "ISO 17359:2018 — drain interval extension criteria (10 consecutive stable cycles)",
+      "protectionSystem": "Aprobación de la extensión del drenaje basada en evidencia, que exige 10 ciclos de drenaje consecutivos sin activación de alarmas y con tendencias estadísticamente estables de metales de desgaste y de TAN/TBN",
+      "technology": "Muestreo de aceite al 50% del nuevo intervalo de drenaje propuesto (375 horas) durante un mínimo de 10 ciclos de drenaje consecutivos; análisis de la línea de tendencia según la Sección 6 de la ISO 17359; límite de acción del TAN según la ASTM D664; límite mínimo del TBN según la ASTM D2896; límite de acción de la viscosidad según la ASTM D445; los tres deben mostrar tendencias estables antes de aprobar la extensión",
+      "relatedArticles": [
+        "extended-drain-interval-engineering",
+        "oil-condition-monitoring",
+        "iso-4548-lube-filter-test-methods"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "ISO 3722:2015 sampling procedure verified; ISO 17359:2018 criticality matrix and baseline sample requirements verified; ISO 13374:2003 data management structure verified; ISO 4406 bottle cleanliness requirement (12/10/08) from ISO 3722 Section 6.2; probe flush volume 250–500 mL from ISO 3722 Section 7.4; 250-hour critical equipment interval from ISO 17359 Annex A criticality guidance; 50% of drain interval frequency rule from ISO 17359 Section 5.3; minimum 5-sample trend requirement from ISO 17359 Section 6.2; 10-cycle drain extension requirement from ISO 17359 Annex B; ASTM D445/D664/D2896 analytical method references verified"
+  },
+  "eeat": {
+    "reviewerName": "ELIMFILTERS Engineering Division",
+    "reviewerTitle": "Monitoreo de la condición del aceite e ingeniería de flotas",
+    "organization": "ELIMFILTERS",
+    "lastReviewDate": "2026-07-05",
+    "nextReviewDate": "2027-07-05",
+    "discipline": "Ingeniería de potencia fluida: monitoreo de la condición del aceite",
+    "standards": [
+      "ISO 17359:2018",
+      "ISO 3722:2015",
+      "ISO 13374:2003",
+      "ASTM D445",
+      "ASTM D664",
+      "ASTM D2896",
+      "ASTM D5185",
+      "ASTM D6304"
+    ],
+    "contentLevel": "advanced",
+    "contentType": "procedure",
+    "version": "1.0",
+    "evidenceBase": "Guía de frecuencia de muestreo de la ISO 17359:2018; procedimiento de toma de muestras de la ISO 3722:2015; datos de campo de programas OCM de flotas de minería y construcción"
+  },
+  "howTo": {
+    "name": "Procedimiento de muestreo de aceite de flota según la ISO 3722",
+    "description": "Tomar una muestra representativa del fluido en servicio del circuito de lubricación de un motor diésel o de un sistema hidráulico para el análisis de monitoreo de la condición del aceite, siguiendo el protocolo de muestreo ISO 3722:2015.",
+    "totalTime": "PT20M",
+    "supply": [
+      "Frasco de muestra ISO 3722 prelimpiado (limpieza certificada ≤ ISO 11/9/6)",
+      "Etiqueta de cadena de custodia con ID de la máquina, punto de muestreo, horas del aceite y fecha",
+      "Bolsa o contenedor de transporte sellado"
+    ],
+    "tool": [
+      "Válvula de muestreo de flujo activo conforme con la ISO 3722 (instalada en la línea de retorno o en un puerto de presión)",
+      "Sonda de muestreo limpia o llave de válvula integrada"
+    ],
+    "steps": [
+      {
+        "name": "Elegir el punto de muestreo correcto",
+        "text": "Muestree en un punto con flujo activo de la línea de retorno o del circuito de presión principal, no en el tapón de drenaje del cárter, el tubo de la varilla ni un tramo muerto estancado. La válvula de muestreo debe estar instalada en una zona turbulenta donde la composición del fluido represente el fluido del circuito en conjunto. En motores diésel, el punto recomendado es el puerto de muestreo de la galería de aceite (si lo hay) o una válvula de abrazadera en la línea presurizada de la galería principal de aceite. En sistemas hidráulicos, muestree en la línea de retorno aguas arriba del filtro de retorno.",
+        "tool": "Válvula de muestreo ISO 3722"
+      },
+      {
+        "name": "Operar la máquina en condiciones representativas",
+        "text": "Tome la muestra solo cuando la máquina esté a la temperatura normal de operación (normalmente 80–95°C de temperatura del aceite en motores diésel; 40–60°C en depósitos hidráulicos). No muestree justo después de una reposición o un cambio de aceite: deje al menos una hora de operación para que el fluido nuevo se homogeneice con el aceite en conjunto. Las muestras en frío subrepresentan la contaminación y los metales de desgaste concentrados en el fluido caliente. Registre la temperatura del aceite en el momento del muestreo en la etiqueta de cadena de custodia."
+      },
+      {
+        "name": "Purgar la válvula de muestreo",
+        "text": "Abra la válvula de muestreo y deseche los primeros 250–500 mL de fluido en un contenedor de residuos. Este volumen de purga elimina el volumen muerto de la válvula de muestreo, que contiene fluido estancado y no representativo del intervalo de muestreo anterior. La ISO 3722 especifica un volumen de purga mínimo de 5× el volumen muerto de la sonda y la válvula de muestreo, normalmente 250 mL en la mayoría de las instalaciones. La purga es el paso que más se omite y la principal causa de variabilidad de las muestras en los programas de flotas.",
+        "supply": "Contenedor de residuos para el fluido de purga"
+      },
+      {
+        "name": "Tomar la muestra",
+        "text": "Coloque el frasco de muestra ISO 3722 prelimpiado bajo el flujo de la válvula de muestreo. Llénelo al 75–80% de su capacidad; no lo llene de más, porque el espacio de aire restante es necesario para mezclar. Evite la turbulencia al llenar para no airear la muestra, lo que puede dar conteos de partículas pequeñas artificiales en el APC por la fragmentación de burbujas. Cierre el frasco de inmediato con la tapa suministrada por el fabricante; no la sustituya por un cierre no certificado.",
+        "supply": "Frasco de muestra ISO 3722 prelimpiado"
+      },
+      {
+        "name": "Etiquetar y documentar de inmediato",
+        "text": "Coloque la etiqueta de cadena de custodia inmediatamente después de cerrar el frasco. Campos mínimos requeridos según la ISO 17359: identificador del activo de la máquina, tipo de equipo, identificador del punto de muestreo, tipo y grado del aceite, horas del aceite (desde el último cambio), horas totales de la máquina, fecha y hora de muestreo, temperatura ambiente y temperatura de operación del aceite al muestrear, e identificador del técnico. Las etiquetas incompletas que llegan al laboratorio causan retrasos por reidentificación, una causa común de que la emisión del informe supere los 5 días hábiles.",
+        "supply": "Etiqueta de cadena de custodia completa"
+      },
+      {
+        "name": "Transporte y envío",
+        "text": "Coloque los frascos sellados y etiquetados en un embalaje de transporte protector dentro de las 4 horas siguientes al muestreo. Envíelos al laboratorio de análisis dentro de las 24 horas. Evite almacenarlos por encima de 40°C o exponerlos a la luz solar directa entre el muestreo y el envío: los ciclos térmicos pueden hacer precipitar el agua disuelta y afectar los resultados de contenido de agua ASTM D6304. Registre la fecha de envío y la referencia de seguimiento del laboratorio en la documentación de cadena de custodia."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Por qué los resultados de análisis de aceite muestran alta variabilidad entre muestras consecutivas tomadas de la misma máquina?",
+      "answer": "Un procedimiento de muestreo inconsistente es la principal causa de variabilidad de resultados en los programas de análisis de aceite de flotas. Los errores más comunes son: muestrear en un punto estancado o en un tramo muerto en lugar de en un punto con flujo activo; no purgar la válvula de muestreo antes de tomar la muestra (la ISO 3722 exige desechar 250–500 mL); usar frascos de muestra no certificados que introducen artefactos de contaminación del frasco; muestrear cuando la máquina no está a la temperatura de operación; y tomar muestras durante o justo después de adiciones de aceite que diluyen las concentraciones de metales de desgaste. Estandarizar el procedimiento con la ISO 3722 y capacitar a cada técnico de forma individual reduce la variabilidad entre muestras en un 60–80% en los programas de flotas típicos."
+    },
+    {
+      "question": "¿Con qué frecuencia debo muestrear el aceite del motor de un camión minero crítico?",
+      "answer": "La ISO 17359:2018 define la frecuencia de muestreo según la criticidad del equipo y la velocidad de cambio del parámetro. Para un camión minero clasificado como de alta criticidad (dependencia productiva de una sola máquina, alto costo de reemplazo), el intervalo recomendado es cada 250 horas de operación o al 50% del intervalo de drenaje, lo que sea más corto. Durante una prueba de extensión del intervalo de drenaje (evaluando pasar de 500 a 750 horas), muestree a las 375 horas (50% del nuevo intervalo propuesto) durante 10 ciclos de drenaje consecutivos antes de aprobar la extensión. Después de cualquier evento de mantenimiento mayor (reemplazo de componentes del motor, reparación de una fuga de refrigerante), tome una muestra a las 50 horas del evento para confirmar que no hay desgaste ni contaminación anómalos."
+    },
+    {
+      "question": "¿Qué indica un pico repentino de silicio en el análisis del aceite del motor?",
+      "answer": "El silicio en el aceite del motor en concentraciones superiores a 25 ppm (umbral de alerta ASTM D5185) casi siempre indica ingestión de sílice por el sistema de admisión de aire. El dióxido de silicio del suelo, el polvo de roca y la arena es la fuente de silicio más común en entornos de equipos móviles. Un pico de silicio con niveles normales de hierro confirma que el evento de contaminación es nuevo y que el desgaste de los componentes aún no se ha acelerado. Un pico de silicio junto con hierro en aumento indica que la sílice abrasiva ya causó un desgaste medible de camisas y cojinetes. Acciones inmediatas: inspeccionar el elemento del filtro de aire y el sello de la carcasa, revisar el indicador de restricción, confirmar que el filtro se instaló con la junta bien asentada e inspeccionar los conductos entre la carcasa del filtro de aire y la admisión del turbocompresor en busca de grietas o abrazaderas flojas."
+    },
+    {
+      "question": "¿Cuál es el número mínimo de muestras consecutivas necesario para establecer una línea de tendencia significativa?",
+      "answer": "La Sección 6.2 de la ISO 17359:2018 especifica un mínimo de cinco muestras consecutivas de la misma máquina, el mismo punto de muestreo y el mismo intervalo de muestreo para que el cálculo de la línea de tendencia sea estadísticamente válido. Con menos de cinco datos, las tendencias aparentes pueden reflejar la variabilidad normal de las muestras y no una degradación real. Para las decisiones de extensión del intervalo de drenaje, el Anexo B de la ISO 17359 exige un mínimo de 10 ciclos de drenaje consecutivos estables. Estable significa sin activación de alarmas, sin una tendencia ascendente estadísticamente significativa en los metales de desgaste, TAN dentro de 2.0 mg KOH/g de la línea base y TBN sin agotarse por debajo del 50% del valor del aceite nuevo en los 10 ciclos."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre un nivel de alerta y un nivel de alarma en el análisis de aceite?",
+      "answer": "Los niveles de alerta y de alarma del análisis de aceite cumplen funciones distintas. Un nivel de alerta indica que un parámetro se mueve en una dirección desfavorable y justifica aumentar la frecuencia de monitoreo e investigar. Los umbrales de alerta se fijan como un porcentaje del nivel de alarma (normalmente 70–80%) y activan una respuesta de \"investigar y volver a muestrear en un intervalo más corto\" sin exigir una acción de mantenimiento inmediata. Un nivel de alarma indica que el parámetro llegó a un umbral en el que el riesgo de daño de los componentes es elevado y se requiere una acción de mantenimiento antes del siguiente intervalo programado. Los niveles de alarma se fijan con los límites publicados por el OEM, los datos estadísticos de referencia de la flota y la orientación del laboratorio. Un TAN ASTM D664 de +2.0 mg KOH/g sobre la línea base es una alerta común; +3.0 mg KOH/g es la alarma de acción para la mayoría de los aceites de motor diésel."
+    }
+  ]
+}

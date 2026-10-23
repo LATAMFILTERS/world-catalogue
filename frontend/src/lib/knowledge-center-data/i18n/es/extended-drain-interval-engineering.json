@@ -1,0 +1,243 @@
+{
+  "slug": "extended-drain-interval-engineering",
+  "faqs": [
+    {
+      "question": "¿Qué parámetros del análisis de aceite deben mantenerse dentro de especificación para justificar la extensión de un intervalo de drenaje?",
+      "answer": "Justificar un intervalo de drenaje extendido (EDI) requiere que TODOS los parámetros siguientes estén dentro de especificación a la vez: (1) TBN por encima del 50% del valor del aceite nuevo (ASTM D2896); (2) viscosidad cinemática a 100°C dentro de los límites del grado SAE (ASTM D445); (3) conteo de partículas ISO 4406 dentro del código objetivo del sistema; (4) número de acidez total (TAN, ASTM D664) por debajo del TBN con un margen mínimo de 2 mg KOH/g; (5) reserva de antioxidantes por RULER (ASTM D6971) por encima del 25% del valor del aceite nuevo; (6) contenido de agua por debajo del 0.1% (ASTM D6304); (7) dilución por combustible por debajo del 1.5% (ASTM D7279 o cálculo por viscosidad); (8) sin contaminación por glicol detectada. Deben aprobarse todos los parámetros, no solo los más medidos. Los programas EDI que monitorean solo el TBN y la viscosidad pasan por alto el 40–60% de las fallas que solo se detectan con el monitoreo de la reserva de antioxidantes y de los precursores del barniz."
+    },
+    {
+      "question": "¿Qué es el enfoque de extensión por pasos para establecer intervalos de drenaje extendidos?",
+      "answer": "Protocolo de extensión por pasos de los programas EDI: (1) Fase de referencia: muestrear en el intervalo especificado por el OEM durante 3 cambios consecutivos para establecer los valores de referencia propios del equipo y la velocidad de cambio de todos los parámetros monitoreados; (2) Primera extensión: extender un 25% más allá del intervalo del OEM; tomar muestras de aceite en el intervalo del OEM y en el intervalo extendido y compararlas; si todos los parámetros están dentro de especificación en el intervalo extendido, continuar; (3) Segunda extensión: extender un 50% más allá del intervalo del OEM; repetir el protocolo de muestreo; (4) Tercera extensión: extender un 100% más allá del intervalo del OEM (2× OEM); repetir la verificación. En cada paso, si algún parámetro falla o muestra una velocidad de cambio que sugiere que fallará antes de la siguiente extensión, detener el programa en el nivel de extensión anterior. El requisito estadístico es tener 3 extensiones consecutivas aprobadas en cada nivel antes de pasar al siguiente. La variación propia de cada equipo obliga a establecer los niveles de EDI por separado para cada máquina y configuración de motor."
+    },
+    {
+      "question": "¿Cómo afecta el contenido de azufre del combustible al intervalo de drenaje del aceite en motores diésel de servicio pesado?",
+      "answer": "El contenido de azufre del combustible influye directamente en la velocidad de agotamiento del TBN del aceite: los productos de combustión del azufre (SO2, SO3) se combinan con el agua de la combustión y forman ácido sulfúrico (H2SO4), que neutralizan los aditivos del TBN. Velocidad de agotamiento: con <15 ppm de azufre (ULSD, EE. UU./UE), el agotamiento del TBN por cada 100 horas es de aproximadamente 0.3–0.5 mg KOH/g en un API CK-4 15W-40 (TBN inicial = 12). Con 500 ppm de azufre (combustible estándar global en algunos mercados), la velocidad de agotamiento es de 1.5–2.5 mg KOH/g por cada 100 horas, 5× más rápida. Con 3,500 ppm de azufre (combustible de búnker de alto azufre en algunos mercados en desarrollo), la velocidad de agotamiento del TBN es de 5–10 mg KOH/g por cada 100 horas, lo que exige cambiar el aceite cada 100–150 horas para mantener el TBN por encima de 6 mg KOH/g (50% del aceite nuevo). Los programas EDI válidos para motores con ULSD en la UE/EE. UU. no pueden aplicarse al mismo motor operando con combustible de alto azufre en otros mercados: se requieren programas de intervalos distintos."
+    },
+    {
+      "question": "¿Qué efecto tiene la relación entre el volumen de aceite y la cilindrada del motor en los intervalos de drenaje?",
+      "answer": "El intervalo de drenaje escala de forma aproximadamente proporcional a la relación entre el volumen de la carga de aceite y el consumo de combustible del motor, porque esa relación determina qué tan rápido se acumulan los productos de oxidación y los ácidos por litro de aceite. Un motor con un cárter de 30 L que consume 12 L/hora de combustible (2.5 L de aceite por L/h de combustible) agotará el TBN el doble de rápido que el mismo motor con un cárter de 60 L con el mismo consumo de combustible (5.0 L de aceite por L/h de combustible). Esta relación respalda el argumento económico de los depósitos de aceite más grandes y la filtración en derivación complementaria en aplicaciones de alta severidad: duplicar el volumen del cárter duplica el intervalo de drenaje teórico (sujeto a los límites de los demás parámetros). En los generadores diésel industriales estacionarios se instalan cárteres extendidos con capacidad de 3–5× la especificación del OEM precisamente para soportar programas EDI de 1,500–2,000 horas en generadores que de otro modo requerirían intervalos de 500 horas."
+    },
+    {
+      "question": "¿En qué se diferencia el mantenimiento según condición del mantenimiento predictivo en el contexto de los intervalos de drenaje?",
+      "answer": "El mantenimiento según condición (CBM) cambia el aceite cuando los parámetros medidos indican que se llegó al final de su vida útil: reacciona a los datos reales de condición. El mantenimiento predictivo usa modelos estadísticos de las tendencias de condición para prever cuándo los parámetros llegarán a los límites de acción antes de que ocurra, lo que permite programar el mantenimiento con antelación al punto de falla previsto. Para los intervalos de drenaje de aceite: CBM = cambiar el aceite cuando el TBN baja de 6 mg KOH/g (observado); predictivo = muestrear a las 300 horas, observar que el TBN baja 0.05 mg KOH/g por hora, proyectar que llegará a 6 mg KOH/g a las 440 horas y programar el cambio de aceite a las 400 horas (con 40 horas de margen). El mantenimiento predictivo permite programar paradas planificadas en lugar de cambios de emergencia reactivos, y evita el 10–20% de los casos de CBM en que un parámetro falla entre intervalos de muestreo y el equipo opera sin que se detecte con aceite fuera de especificación."
+    },
+    {
+      "question": "¿Qué papel tiene la filtración en derivación en la extensión de los intervalos de drenaje del aceite del motor?",
+      "answer": "La filtración en derivación (kidney-loop de flujo parcial a β3(c) ≥ 200) elimina del aceite lubricante las partículas de menos de 3 µm, la contaminación que cataliza la oxidación del aceite por efectos de superficie de las partículas metálicas. Al reducir la concentración de catalizador, la filtración en derivación reduce la velocidad de oxidación en un 20–40%, con la correspondiente reducción de la velocidad de agotamiento del TBN y de los antioxidantes. Estudios de campo de Caterpillar Engineering (citados en el documento técnico AEW-0086 de Caterpillar) en grandes motores de generadores diésel muestran que la filtración en derivación al 10% del caudal total de aceite, combinada con el monitoreo del TBN, alarga los intervalos de drenaje del aceite en un 40–100% frente a la filtración solo de flujo total con velocidades de agotamiento del TBN equivalentes. Además, la filtración en derivación reduce los códigos ISO 4406 en 2–3 unidades frente a los sistemas solo de flujo total, lo que reduce el desgaste de los componentes y posterga los reemplazos de componentes que el programa EDI busca evitar."
+    },
+    {
+      "question": "¿Cuál es la justificación económica a nivel de flota de un programa EDI basado en análisis de aceite?",
+      "answer": "Economía de un programa EDI a nivel de flota para una flota minera de 50 camiones (SAE 15W-40, cárter de 30 L, intervalo del OEM de 250 horas): (1) Costo base del aceite: 50 camiones × 30 L × 4 cambios/año × AUD 5/L = AUD 30,000/año de costo de aceite; (2) Mano de obra base: 50 × 4 × 1.5 horas × AUD 120/h = AUD 36,000/año de mano de obra; (3) Inactividad base: 50 × 4 × 4 horas/cambio × AUD 500/hora de costo de inactividad = AUD 400,000/año de inactividad; (4) Total base: AUD 466,000/año; (5) Costo del programa EDI: programa de análisis de aceite de AUD 40/muestra × 4 muestras/cambio × 50 camiones = AUD 8,000/año de muestreo; (6) Con el EDI extendido a 400 horas (60% de extensión): 2.5 cambios/año × equivalente de la base de AUD 466,000 = AUD 291,250, lo que ahorra AUD 174,750/año antes del costo de muestreo (AUD 166,750 netos). El punto de equilibrio entre el costo del programa de muestreo y los ahorros de inactividad y aceite se da con aproximadamente un 20% de extensión del intervalo, algo alcanzable en la mayoría de las flotas bien mantenidas."
+    },
+    {
+      "question": "¿Qué tipos de aceite base de alto desempeño permiten los intervalos de drenaje extendidos más largos?",
+      "answer": "Capacidad de intervalo de drenaje extendido por tipo de aceite base: (1) Grupo I (mineral refinado con solvente, VI 95–105): capacidad EDI base, normalmente 1.5–2× el intervalo del OEM con monitoreo; (2) Grupo II (hidroprocesado, VI 100–120): 2–3× el intervalo del OEM, mejor resistencia a la oxidación que el Grupo I; (3) Grupo III (altamente refinado, VI >120): 2–4× el intervalo del OEM, cercano al PAO en resistencia a la oxidación en la mayoría de las aplicaciones; (4) Grupo IV (polialfaolefina, PAO): 3–5× el intervalo del OEM en aplicaciones estacionarias, excelente estabilidad térmica y a la oxidación, VI natural por encima de 140; (5) Bases éster del Grupo V (éster de poliol, éster TMP): hasta 8–10× el intervalo del OEM en aplicaciones industriales controladas, la mayor resistencia a la oxidación y estabilidad térmica de todos los tipos de aceite base. Los aceites PAO del Grupo IV y éster del Grupo V cuestan 3–10× más por litro que el aceite mineral del Grupo I: la justificación económica exige cuantificar el valor de la extensión del intervalo frente al costo adicional del aceite."
+    },
+    {
+      "question": "¿Cómo afecta la tecnología EGR (recirculación de gases de escape) del motor a los intervalos de drenaje del aceite?",
+      "answer": "La EGR (de alta y baja presión) recircula una fracción de los gases de escape hacia el múltiple de admisión para reducir las emisiones de NOx. El gas EGR contiene: partículas de hollín (PM) de la combustión, SO2 del azufre del combustible, NOx que forma ácido nitroso en los enfriadores EGR donde se condensa, y vapor de agua que se condensa en el enfriador EGR a carga parcial. Efecto del blow-by con EGR: (1) La velocidad de carga de hollín en el aceite lubricante aumenta 2–4× en los motores con EGR frente a motores equivalentes anteriores a la EGR; el hollín por encima del 3% en peso (TGA, ASTM D5967) acelera el aumento de viscosidad y la obstrucción del filtro; (2) Los subproductos de nitración (FTIR a 1,630 cm-1) se acumulan más rápido y consumen TBN; (3) El aceite de motores con EGR suele requerir intervalos de drenaje un 20–40% más cortos que los motores equivalentes sin EGR con la misma especificación de aceite. La API CK-4 (norma actual de aceite diésel de servicio pesado) está formulada específicamente para motores con EGR, con mayor capacidad de manejo del hollín y mejor resistencia a la oxidación que la formulación anterior API CJ-4."
+    },
+    {
+      "question": "¿Qué frecuencia mínima de muestreo se requiere para justificar un intervalo de drenaje extendido con confianza estadística?",
+      "answer": "La confianza estadística para justificar un EDI requiere un mínimo de 3 datos dentro de cada período de intervalo extendido para detectar: (1) tendencias de degradación no lineales de los parámetros (agotamiento que se acelera cerca del final de la vida del aceite); (2) eventos de contaminación con salto brusco (ingreso de refrigerante, contaminación por combustible) que ocurren entre los puntos de muestreo regulares; (3) el cálculo de la velocidad de cambio con ±15% de exactitud. Para un programa de extensión a 500 horas: muestras a las 0 horas (referencia del cambio de aceite), a las 250 horas, a las 400 horas y en el cambio de aceite (500 horas). El muestreo a mitad de intervalo, a las 250 horas, verifica que no haya habido contaminación inesperada y que la extrapolación inicial de las tendencias de los parámetros sea válida. Los programas con solo dos datos (cambio de aceite y final del intervalo) no tienen potencia estadística suficiente para detectar la aceleración de la degradación: la muestra de final de intervalo puede mostrar parámetros dentro de especificación aunque la trayectoria real de degradación haya superado los límites en algún momento a mitad del intervalo."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D2896-15, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration",
+      "relevance": "Método de medición del TBN: el parámetro principal que activa el cambio de aceite en los programas de intervalo de drenaje extendido."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6971-09, Standard Test Method for Measurement of Hindered Phenolic and Aromatic Amine Antioxidant Content in Non-Zinc Turbine Oils by Linear Sweep Voltammetry",
+      "relevance": "Medición de la reserva de antioxidantes (ensayo RULER) para predecir la vida útil restante del aceite en programas EDI."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry",
+      "relevance": "Método FTIR para monitorear la oxidación, la nitración, la sulfatación, el glicol y la dilución por combustible: parámetros esenciales del monitoreo de programas EDI."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010",
+      "relevance": "Referencia integral sobre el diseño de programas de análisis de aceite, la interpretación de parámetros, la metodología de frecuencia de muestreo y la justificación económica del intervalo de drenaje extendido."
+    }
+  ],
+  "title": "Ingeniería de intervalos de drenaje extendidos: monitoreo de la condición del aceite, fijación de límites y gestión del riesgo",
+  "subtitle": "Metodología para establecer y monitorear intervalos de drenaje de aceite extendidos: velocidades de deterioro del aceite, límites de acción de TAN y viscosidad, disparadores de drenaje por partículas, consideraciones del presupuesto de contaminación y análisis de compromiso entre TCO y riesgo.",
+  "metaDescription": "Referencia de ingeniería sobre la metodología de intervalos de drenaje extendidos: monitoreo del deterioro del aceite (TAN, viscosidad, FTIR, conteo de partículas), fijación de límites de intervalo de drenaje a partir de datos de condición, análisis del presupuesto de contaminación, capacidad de drenaje extendido API CK-4 y marco de compromiso entre costo total de propiedad y riesgo del equipo.",
+  "category": "ingeniería",
+  "readTime": "12 min",
+  "intro": "Los programas de intervalo de drenaje extendido (EDI) reducen la frecuencia de cambio de aceite más allá de las recomendaciones estándar del OEM monitoreando la condición del aceite de forma continua y cambiándolo cuando se alcanzan los disparadores de condición, no a intervalos fijos de tiempo o kilometraje. El EDI ofrece menores costos de mantenimiento, menores volúmenes de aceite usado y potencialmente menor gasto en lubricante. Diseñar un programa EDI requiere establecer límites de acción basados en la química y en la contaminación, validarlos frente a la formulación de aceite y el ciclo de trabajo concretos del equipo, y gestionar el riesgo residual de que la condición del aceite se salga de rango entre intervalos de muestreo.",
+  "sections": [
+    {
+      "heading": "Fundamento y alcance del EDI",
+      "body": "Los intervalos de drenaje de aceite estándar del OEM se fijan de forma conservadora para cubrir la peor combinación de: máxima severidad del ciclo de trabajo (100% de carga, temperatura máxima), mínima calidad de la formulación del aceite (el aceite de menor categoría de servicio API que cumpla) y máximo intervalo entre muestras de análisis de aceite. En flotas que hacen análisis de aceite con regularidad y cuyos equipos operan con ciclos de trabajo moderados, la condición real del aceite en el intervalo de drenaje del OEM suele estar dentro de límites seguros: al aceite le queda vida útil que se desecha con el cambio. El EDI aprovecha esa vida restante del aceite a la vez que gestiona el riesgo de que el deterioro de la condición se acelere de forma inesperada. El EDI es más adecuado para: cárteres de aceite grandes (el alto costo del cambio de aceite justifica la inversión en análisis), ciclos de trabajo con baja fracción de carga, temperaturas de operación controladas y operadores con programas de análisis de aceite establecidos. El EDI está contraindicado para: operaciones con arranques en frío frecuentes (riesgo de dilución por combustible), ciclos de trabajo desconocidos, filtración de aire mal mantenida (alto ingreso de contaminación por Si) y equipos con antecedentes de eventos de contaminación interna."
+    },
+    {
+      "heading": "Límites de acción de la química del aceite",
+      "body": "Los disparadores de drenaje basados en la química monitorean los productos de degradación del aceite y el agotamiento de los aditivos. Viscosidad cinemática a 100°C (ASTM D445): límite de cambio de ±15% respecto de la referencia del aceite nuevo; un aumento indica espesamiento oxidativo o contaminación; una disminución indica dilución por combustible o cizallamiento del VII. Número de acidez total (ASTM D664): límite de cambio cuando el TAN sube 2.0 mg KOH/g sobre la referencia del aceite nuevo; límite absoluto normalmente de 5.0 mg KOH/g en bases del Grupo I/II y de 7.0 mg KOH/g en sintéticos del Grupo III/IV. Número de base total (ASTM D2896): límite de cambio cuando el TBN baja del 50% del TBN del aceite nuevo (el TBN nuevo de un aceite diésel de servicio pesado API CK-4 suele ser de 12–15 mg KOH/g; cambiar a ≤6 mg KOH/g). Oxidación por FTIR: no hay un límite universal; establecer la referencia con el aceite nuevo y seguir el aumento del pico de oxidación (estiramiento carbonílico de 1,700–1,750 cm⁻¹); cada aumento de 0.1 A/cm sobre la referencia representa un avance significativo de la oxidación. Nitración (diésel): pico de nitración por FTIR (1,630 cm⁻¹); significativo a >20 A/cm. Hollín (diésel): >3.5% de hollín en masa (ASTM D5967 o FTIR) activa problemas de viscosidad y mayor velocidad de desgaste.",
+      "callout": [
+        {
+          "label": "Límite de acción de viscosidad",
+          "value": "±15% respecto del aceite nuevo a 100°C"
+        },
+        {
+          "label": "Límite de cambio del TAN",
+          "value": "+2.0 mg KOH/g sobre la referencia"
+        },
+        {
+          "label": "Límite mínimo del TBN",
+          "value": "≤50% del TBN nuevo (normalmente ≤6 mg KOH/g)"
+        }
+      ]
+    },
+    {
+      "heading": "Disparadores de drenaje por contaminación",
+      "body": "Los disparadores por contaminación monitorean la entrada de contaminantes externos: silicio (Si) por ICP: Si >25 ppm en aceite usado indica una ingestión importante de polvo/sílice; la contaminación por polvo aumenta proporcionalmente el desgaste abrasivo; es un indicador de falla de la filtración (filtro de aire o ventilación del cárter), no de falla química del aceite. Investigue la filtración de aire antes de extender el drenaje. Sodio (Na) y potasio (K): Na >20 ppm o K >20 ppm indica ingestión de refrigerante (el refrigerante de etilenglicol contiene inhibidores de Na y K); drenar de inmediato sin importar la química del aceite. Cobre (Cu): una tendencia de Cu en aumento (>20 ppm en un intervalo de muestreo) indica desgaste de cojinetes de aleación de cobre; investigar antes de continuar. Hierro (Fe): la tendencia base de Fe establece la velocidad de desgaste normal; una inflexión (aumento de la velocidad más allá de la tendencia establecida) indica desgaste acelerado por contaminación o daño de componentes. Contenido de agua (ASTM D6304): >0.1% de agua activa el drenaje; el agua causa emulsión, corrosión y crecimiento bacteriano en aceites biodegradables. Dilución por combustible: un contenido de combustible >2% por GC (ASTM D3525) reduce la viscosidad por debajo del mínimo del grado y reduce la lubricidad."
+    },
+    {
+      "heading": "Metodología de validación de los límites EDI",
+      "body": "Los límites EDI deben validarse para la combinación concreta de formulación de aceite, tipo de equipo y ciclo de trabajo: no pueden tomarse de tablas genéricas. Protocolo de validación: (1) identificar una formulación de aceite candidata con certificación API CK-4 o equivalente; (2) inscribir 10–20 unidades representativas en un programa de validación de 24 meses; (3) muestrear al 50% del EDI propuesto y en el EDI propuesto en cada unidad; (4) en el EDI propuesto, drenar y enviar el aceite para análisis completo, además de enviar aceite nuevo para comparar con la referencia; (5) en la reparación mayor de las unidades inscritas, registrar las mediciones de desgaste (holguras de cojinetes, holguras anillo-ranura, desgaste del cilindro) y compararlas con la referencia histórica de la flota con intervalos de drenaje estándar; (6) si las velocidades de desgaste son equivalentes y no se superan límites químicos en el EDI propuesto, el intervalo queda validado para esa combinación de aceite, equipo y ciclo de trabajo. Los aceites de especificación API CK-4 están validados para soportar intervalos de drenaje de hasta 2× los intervalos de la API CJ-4 anterior en aplicaciones comparables, según el documento de fundamento de la especificación API."
+    },
+    {
+      "heading": "Requisitos de filtración para el EDI",
+      "body": "Los intervalos de drenaje extendidos imponen exigencias adicionales a la filtración: (1) Capacidad de retención de suciedad: el elemento filtrante no debe llegar a la Δp que activa la derivación antes del intervalo de drenaje extendido; cálculo de la DHC: DHC ≥ (tasa de ingreso × horas del intervalo de drenaje) × factor de seguridad de 2; para un sistema con 0.05 g/hora de generación de contaminación y drenaje a 500 horas, DHC ≥ 50 g; verificar frente a la DHC ISO 4548-12 al caudal nominal. (2) Estabilidad del medio: el medio filtrante debe mantener la eficiencia β durante todo el intervalo de drenaje; los productos de oxidación del aceite pueden atacar los aglutinantes de los medios de celulosa; los medios sintéticos (arquitectura SYNTRAX™) ofrecen mejor resistencia química para aplicaciones EDI. (3) Frecuencia de la válvula de derivación: monitorear la frecuencia del indicador de la válvula de derivación; si hay derivación (aunque sea breve en el arranque en frío), la carga de contaminación durante los períodos de derivación debe sumarse al presupuesto de contaminación. (4) Compatibilidad del muestreo: el protocolo de muestreo de análisis de aceite no debe introducir contaminación que confunda los resultados; la preparación de frascos de muestra ISO 3722 es obligatoria."
+    },
+    {
+      "heading": "Marco de gestión del riesgo para el EDI",
+      "body": "El EDI introduce un riesgo residual de que la condición del aceite se deteriore más allá de los límites aceptables entre intervalos de muestreo. La gestión del riesgo requiere: Frecuencia de muestreo: muestrear a intervalos no mayores del 50% del intervalo de drenaje propuesto, lo que asegura detectar un deterioro rápido antes de llegar al punto de drenaje. Plan de acción ante superaciones: si se supera cualquier límite de acción en una muestra intermedia, cambiar el aceite en ese intervalo (no en el siguiente punto EDI programado); investigar la causa raíz antes de reanudar el EDI. Evaluación de consecuencias: evaluar el costo de reemplazar cojinetes o reconstruir el motor si el EDI falla; en equipos de alta consecuencia (minería subterránea, plataformas marinas, maquinaria de producción crítica), el riesgo puede no justificar el EDI sin monitoreo de la condición del aceite en tiempo real. Sensores en tiempo real: los sensores de viscosidad (acústicos o de microondas), de TAN (electroquímicos) o los contadores de partículas (láser en línea) pueden dar monitoreo continuo entre muestras programadas, lo que reduce mucho la ventana de riesgo. Los programas EDI deben reevaluarse cada año frente a los datos reales de condición del aceite y compararse con los registros de reparaciones mayores de la flota."
+    },
+    {
+      "heading": "Análisis del TCO para las decisiones de EDI",
+      "body": "Cálculo del beneficio económico del EDI: (a) reducción del costo de compra de aceite = (1 − 1/interval_multiplier) × costo de aceite por cambio × cambios/año; (b) reducción del costo de mano de obra = mismo multiplicador × costo de mano de obra por cambio × cambios/año; (c) costo adicional de análisis de aceite = costo de análisis por muestra × (muestras/año con EDI); (d) reducción del costo de disposición de residuos = proporcional a la reducción de la frecuencia de cambio de aceite. Ahorro neto por unidad por año = (a + b − c) neto de cualquier diferencia de costo incremental del filtro. El argumento económico del EDI es más fuerte con: gran capacidad de aceite (motores marinos con 2,000 L por cambio), alto costo del aceite (aceite sintético a 3–5× el costo del mineral), intervalos de drenaje normales frecuentes (construcción pesada a 250 horas) y donde el costo de mano de obra es importante. El argumento económico del EDI es más débil con: poca capacidad de aceite (automóvil de pasajeros), bajo costo del aceite (base mineral) y entornos de servicio con poca mano de obra. Hay que estimar el costo del riesgo: probabilidad de desgaste acelerado por una falla del EDI × costo de la reparación consiguiente. Si el costo del riesgo por unidad por año se acerca al ahorro neto o lo supera, el EDI no se justifica solo por TCO."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Límite de acción de viscosidad",
+      "value": "±15% respecto del aceite nuevo a 100°C (ASTM D445)"
+    },
+    {
+      "label": "Límite de cambio del TAN",
+      "value": "+2.0 mg KOH/g sobre la referencia nueva (ASTM D664)"
+    },
+    {
+      "label": "TBN mínimo",
+      "value": "≤50% del TBN nuevo (normalmente ≤6 mg KOH/g, ASTM D2896)"
+    },
+    {
+      "label": "Disparador de contaminación por Si",
+      "value": ">25 ppm de Si en aceite usado: investigar la filtración de aire"
+    },
+    {
+      "label": "Frecuencia de muestreo",
+      "value": "≤50% del intervalo de drenaje propuesto"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 17359",
+    "ASTM D445",
+    "ASTM D664",
+    "ASTM D2896",
+    "ASTM D6304",
+    "API CK-4",
+    "ISO 3722"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "intervalo de drenaje extendido",
+    "análisis de aceite EDI",
+    "monitoreo de la condición del aceite",
+    "límite de acción del TAN",
+    "agotamiento del TBN",
+    "ASTM D664",
+    "ASTM D2896",
+    "disparador de drenaje",
+    "drenaje extendido API CK-4",
+    "análisis de aceite por FTIR",
+    "contenido de hollín",
+    "dilución por combustible",
+    "TCO del drenaje de aceite",
+    "ISO 17359"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "El análisis de aceite en el EDI propuesto muestra un aumento del TAN >2.0 mg KOH/g sobre la referencia",
+      "La viscosidad a 100°C baja >15% por debajo de la especificación del aceite nuevo",
+      "Silicio (Si) en aceite usado por encima de 25 ppm en la muestra de mitad de drenaje",
+      "El TBN baja de 6 mg KOH/g antes del intervalo de drenaje propuesto",
+      "El pico de oxidación por FTIR sube más rápido que la tendencia establecida en intervalos de drenaje anteriores"
+    ],
+    "probableCauses": [
+      "Aumento del TAN: acumulación de ácidos oxidativos por temperaturas de operación elevadas; agotamiento de antioxidantes; confirmar con el aumento del pico de oxidación por FTIR; reducir el intervalo de drenaje o pasar a una formulación de aceite más estable a la oxidación",
+      "Disminución de la viscosidad: dilución por combustible (ensayo GC para confirmar combustible en el aceite); degradación por cizallamiento del VII (permanente; hay que reemplazar el aceite); revisar la estrategia de inyección en el arranque en frío y el sellado de los inyectores",
+      "Si elevado: falla o derivación de la filtración de admisión de aire (revisar el estado y la restricción del filtro de aire); el Si elevado no es una falla química del aceite, sino una falla de ingestión que requiere investigar la filtración de aire antes de reanudar el EDI",
+      "Agotamiento del TBN: ciclo de trabajo con alta carga ácida (el arranque y parada urbano con arranques en frío frecuentes produce más productos ácidos de combustión); el aceite no puede neutralizar la carga ácida en el intervalo extendido; reducir el intervalo o pasar a una base con mayor TBN",
+      "Aumento rápido de la oxidación por FTIR: temperatura de operación por encima del rango de diseño (revisar el sistema de refrigeración); contaminación por glicol (ASTM D2982 para confirmar); formulación de aceite inadecuada para este ciclo de trabajo"
+    ],
+    "inspectionMethods": [
+      "Viscosidad cinemática ASTM D445 a 40°C y 100°C: comparar con la especificación del aceite nuevo; la tendencia identifica la trayectoria de la viscosidad",
+      "TAN ASTM D664 y TBN ASTM D2896 en cada intervalo de análisis de aceite: graficar la tendencia para predecir cuándo se llegará a los límites",
+      "Análisis FTIR de oxidación, nitración, hollín, agua y glicol: un solo ensayo cubre varios modos de deterioro",
+      "Análisis elemental ICP de Si, Na, K, Fe, Cu, Pb en cada intervalo: marcadores de contaminación y desgaste a la vez",
+      "Contenido de agua Karl Fischer ASTM D6304: >0.1% activa el drenaje inmediato sin importar la química"
+    ],
+    "correctiveActions": [
+      "Límite de TAN alcanzado en el EDI: cambiar el aceite de inmediato; investigar la causa: si es oxidativa (el FTIR lo confirma), reducir el intervalo de drenaje un 20% y reevaluar tras 3 intervalos de drenaje más con muestreo más cercano; si es inducida por contaminación, corregir primero la fuente de contaminación",
+      "Dilución por combustible confirmada (disminución de viscosidad + GC positivo): drenar de inmediato; investigar el sellado de los inyectores, los anillos o las válvulas; la frecuencia de operación en arranque en frío; el EDI está contraindicado hasta corregir la causa de la dilución por combustible",
+      "Si por encima de 25 ppm: cambiar el aceite de inmediato; inspeccionar el filtro de admisión de aire (restricción, daños, sellado contra derivación); corregir la filtración de aire antes de reanudar el programa EDI",
+      "Agotamiento del TBN antes del EDI: reducir el intervalo de drenaje hasta el punto en que el TBN se mantenga por encima de 6 mg KOH/g; considerar un aceite base de mayor TBN para esta aplicación; confirmar que el aceite de reemplazo cumpla la API CK-4",
+      "Fallo de la validación del programa EDI: volver al intervalo de drenaje del OEM en todas las unidades inscritas mientras se investiga la causa raíz; reiniciar la validación con las condiciones corregidas tras un mínimo de 6 meses en el intervalo estándar con monitoreo de análisis de aceite"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Un operador de flota quiere extender el drenaje de aceite de motores diésel de 250 a 500 horas en equipos de construcción",
+      "standard": "ISO 17359 (condition monitoring), API CK-4 (oil specification), ASTM D664 (TAN)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "El aceite API CK-4 soporta una capacidad de drenaje extendido mayor que el CJ-4; validar con un programa de 24 meses: muestrear a las 250, 400 y 500 horas en 10+ unidades; confirmar TAN <+2 mg KOH/g sobre la referencia; TBN >6 mg KOH/g; Si <25 ppm; viscosidad dentro de ±15%; tendencia de Fe/Cu lineal (sin inflexión); la DHC del elemento filtrante debe cubrir la carga de ingreso de 500 horas según la ISO 4548-12; verificarlo con el proveedor del filtro para esta aplicación concreta",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "lubrication-system-filtration",
+        "iso-4548-lube-filter-test-methods"
+      ]
+    },
+    {
+      "problem": "Motor marino con cárter de 2,000 L: el análisis de aceite muestra agotamiento del TBN a 7 mg KOH/g a las 1,500 horas (drenaje programado a las 2,000 horas)",
+      "standard": "ISO 17359 (condition monitoring), ASTM D2896 (TBN), API CK-4",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Con el TBN en 7 mg KOH/g y 500 horas por delante hasta el drenaje propuesto, la trayectoria prevé llegar a 6 mg KOH/g a aproximadamente 1,700 horas; programar el drenaje a las 1,700 horas según la tendencia; evaluar una reposición de aceite para restaurar el TBN (válida si el aceite de reposición es de la misma formulación y el volumen de reposición es >10% de la capacidad del cárter); en el siguiente intervalo, recalibrar a 1,700 horas como EDI de trabajo salvo que una acción correctiva corrija la velocidad de agotamiento del TBN",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "service-intervals",
+        "total-cost-of-ownership"
+      ]
+    },
+    {
+      "problem": "Sistema hidráulico de una flota de excavadoras: ¿puede aplicarse el drenaje extendido al fluido hidráulico?",
+      "standard": "ISO 4406 (particle cleanliness), ASTM D664 (TAN for hydraulic fluid), ISO 17359",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "El EDI del fluido hidráulico es factible pero más complejo que el del aceite de motor: el fluido hidráulico no tiene un mecanismo de agotamiento del TBN; los límites principales son el TAN (ácido oxidativo), el conteo de partículas (ISO 4406) y el contenido de agua (ASTM D6304); la tasa de ingreso de contaminación en los sistemas hidráulicos móviles es alta, por lo que el conteo de partículas ISO 4406 rige la vida del fluido hidráulico más que la química; si el conteo de partículas supera el objetivo del sistema al 50% del intervalo, corregir el ingreso (respiradero, sellos de eje) antes de extender el drenaje; el intervalo de drenaje del fluido hidráulico es secundario frente a mantener el código de limpieza ISO 4406",
+      "relatedArticles": [
+        "contamination-ingression-modelling",
+        "oil-analysis-methods",
+        "hydraulic-power-unit-design"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "Viscosity ±15% action limit from Noria Corporation oil analysis guidelines and SAE J306; TAN +2.0 mg KOH/g from ASTM D664 application guidance; TBN 50% minimum from Shell Lubricants Technical Manual and ASTM D2896 application data; Si >25 ppm trigger from field correlation data in published oil analysis literature; API CK-4 extended drain capability from API 1509 Annex E; sampling frequency ≤50% from ISO 17359 condition monitoring guidance"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "slug": "contamination-sensitivity-components",
+  "faqs": [
+    {
+      "question": "¿Qué componente hidráulico tiene la holgura más pequeña y la mayor sensibilidad a la contaminación?",
+      "answer": "Los conjuntos corredera-camisa de las servoválvulas tienen las holguras más pequeñas (1–5 µm) y la mayor sensibilidad a la contaminación de todos los componentes hidráulicos comunes. Una sola partícula de sílice de 5 µm alojada en una holgura de corredera de servoválvula de 2 µm crea en ese punto un esfuerzo de contacto que supera el límite elástico del acero de la válvula y causa microdesgaste inmediato. La sensibilidad a la contaminación de las servoválvulas (se exige código ISO 4406 14/12/9) se debe a esta especificación de holgura mínima. En comparación, los patines de las bombas de pistones operan con holguras de 5–15 µm (se tolera código ISO 4406 17/15/12), y los contactos entre dientes de las bombas de engranajes operan con holguras de 15–30 µm (se tolera código ISO 19/17/14). La diferencia de tres órdenes de magnitud en la sensibilidad a la contaminación entre bombas de engranajes y servoválvulas determina el enfoque de asignación del presupuesto de contaminación: los sistemas con ambos tipos de componente deben mantenerse con la especificación de la servoválvula."
+    },
+    {
+      "question": "¿Cuál es la clasificación de sensibilidad a la contaminación de las bombas de pistones de desplazamiento variable?",
+      "answer": "La sensibilidad de las bombas de pistones de desplazamiento variable la determinan dos holguras críticas: (1) Holgura pistón-cilindro (5–15 µm): las partículas de sílice en este rango causan desgaste abrasivo en la superficie de deslizamiento del pistón; (2) Interfaz placa de distribución-bloque de cilindros (1–5 µm en las lumbreras): la placa de distribución reparte el fluido de la lumbrera de succión a la de presión; las partículas en la cara de la placa de distribución desgastan directamente la superficie lapeada de precisión. El código ISO 4406 17/15/12 es la especificación mínima para bombas de pistones de desplazamiento variable; se recomienda 16/14/11 para alargar la vida de la bomba en aplicaciones de ciclo de trabajo intenso. Los mecanismos de control del desplazamiento variable (pistones servo, válvulas de control proporcional dentro de la bomba) son aún más sensibles: los componentes de control tipo servoválvula de las bombas de pistones axiales modernas requieren para el circuito piloto la especificación ISO 14/12/9 equivalente a la de una servoválvula."
+    },
+    {
+      "question": "¿Cómo afecta la dureza de las partículas al umbral de sensibilidad a la contaminación para un tamaño de holgura dado?",
+      "answer": "La dureza de la partícula respecto al metal del componente determina si la partícula causa abrasión, incrustación o daño por fatiga. Las partículas duras (sílice de 7 Mohs, alúmina de 9 Mohs) por encima de la dimensión de la holgura causan abrasión de tres cuerpos: la partícula dura es más dura que ambas superficies en contacto y corta microsurcos en las dos. Las partículas blandas (carbón de 2 Mohs, caucho de <1 Mohs) por encima del tamaño de la holgura causan atascamiento temporal de la corredera y errores de cambio de la válvula, pero un desgaste abrasivo mínimo. Las partículas de hierro (5–7 Mohs) de los residuos de desgaste son más duras que los metales más blandos (aluminio, bronce) y pueden dañar esas superficies por abrasión, pero menos el acero templado. El objetivo de sensibilidad a la contaminación (código ISO 4406) se basa en la contaminación por sílice como peor caso: en sistemas donde la fuente de contaminación confirmada son partículas orgánicas blandas (caucho, carbón), el código de alarma de contaminación puede relajarse en 1–2 unidades sin un riesgo equivalente de daño a los componentes."
+    },
+    {
+      "question": "¿Cuál es la sensibilidad a la contaminación de los inyectores de common rail y qué modos de falla causa la contaminación?",
+      "answer": "Los inyectores de common rail especifican una contaminación máxima del combustible en la entrada del inyector de código ISO 4406 17/15/12 o mejor (según la documentación técnica de inyectores HPCR de Bosch). La holgura aguja-asiento del inyector es de 1–3 µm en el contacto de asiento de la aguja; la holgura de la guía de la aguja es de 3–6 µm. Las partículas duras (sílice, metal) en el rango de 1–5 µm causan: (1) Erosión de la punta de la aguja: el flujo de inyección de alta velocidad (200–500 m/s) con partículas duras arranca metal de las superficies de la aguja y del asiento en 500–1,000 horas, lo que cambia el patrón de pulverización y aumenta la duración de la inyección; (2) Fuga aguja-asiento: la erosión del área de contacto del asiento causa paso de combustible durante la fase cerrada, lo que aumenta el consumo de combustible y provoca incumplimiento de emisiones; (3) Depósitos en la punta de la aguja: las partículas blandas de la degradación del combustible forman depósitos térmicos en la punta de la aguja, alteran el ángulo del cono de pulverización y aumentan las emisiones de humo."
+    },
+    {
+      "question": "¿En qué se diferencia la sensibilidad a la contaminación de los rodamientos entre aplicaciones de cajas de engranajes y de motores hidráulicos?",
+      "answer": "La sensibilidad a la contaminación de los rodamientos se caracteriza por el factor de limpieza del rodamiento λ: la relación entre el espesor de la película de lubricante y la rugosidad superficial. En los rodamientos de cajas de engranajes (aceite de engranajes ISO VG 320, λ normalmente 0.4–1.5 a la temperatura y velocidad de operación), las partículas de más de 5 µm pueden abollar la pista del rodamiento: una partícula dura presionada en la pista crea una concentración de esfuerzos que inicia el desprendimiento por fatiga tras el 10–50% de la vida L10 del rodamiento. En los rodamientos de motores hidráulicos (fluido hidráulico ISO VG 46, λ normalmente 0.2–0.8 por la menor viscosidad del aceite), las películas de lubricante más delgadas hacen a los rodamientos más sensibles a la contaminación por partículas: código ISO 4406 17/15/12 para cajas de engranajes frente a 16/14/11 para rodamientos integrados de motores hidráulicos. La extensión de la vida L10 de los rodamientos al mejorar el código ISO en 2 unidades (por ejemplo, de 18/16/13 a 16/14/11) va de 2–5× según el tamaño, la velocidad y la carga del rodamiento."
+    },
+    {
+      "question": "¿Cuál es el límite de sensibilidad a la contaminación de las válvulas de alivio de presión proporcionales?",
+      "answer": "Las válvulas de alivio de presión proporcionales controlan de forma continua la presión máxima del sistema mediante una señal de mando electrónica; su sensibilidad a la contaminación viene de la válvula piloto accionada por solenoide proporcional que genera la presión de referencia. La holgura de la corredera de la válvula piloto suele ser de 5–15 µm, similar a la de una válvula proporcional industrial estándar. El código ISO 4406 16/14/11 es la especificación estándar. Sin embargo, las válvulas de alivio proporcionales tienen un modo de falla adicional por contaminación: el atascamiento de la corredera en posiciones de mando intermedias causa oscilación de la presión: la válvula alterna entre el punto de ajuste y la derivación, lo que crea pulsaciones de caudal que se transmiten a todos los actuadores del circuito. Las partículas de sílice de menos de 10 µm en concentraciones por encima de ISO 4406 17/15/12 pueden causar una histéresis detectable en la función de transferencia mando-presión en 200–500 horas de operación. En aplicaciones de fabricación de precisión, el atascamiento de una válvula de alivio proporcional por contaminación se puede diagnosticar analizando el rizado de la corriente del servoaccionamiento sin intervenir en el sistema mecánico."
+    },
+    {
+      "question": "¿Qué umbral de daño de componentes en términos de código ISO 4406 se aplica a los sistemas de control de bombas de paletas?",
+      "answer": "Las bombas de paletas (tipo de desplazamiento variable compensadas por presión) son menos sensibles a la contaminación que las bombas de pistones, pero más que las bombas de engranajes. La holgura punta de paleta-anillo es de 3–8 µm; la holgura de la ranura de la paleta en el rotor es de 5–15 µm. El código ISO 4406 18/16/13 es el mínimo de operación para circuitos de bombas de paletas; se recomienda 17/15/12 para alargar la vida útil. El mecanismo de control (corredera del compensador de presión) requiere ISO 16/14/11 para el circuito piloto. Con códigos ISO por encima de 19/17/14 (sistema sucio), las paletas de la bomba muestran un desgaste acelerado de la punta por abrasión de partículas: la velocidad de desgaste de la punta de la paleta aumenta aproximadamente 3× por cada unidad de código ISO por encima de 18/16/13 en la interfaz punta de paleta-anillo. La vida de la bomba de paletas también es sensible a la dureza de las partículas en el contacto con el anillo: las partículas blandas (carbón, caucho) con código ISO 19/17/14 causan un desgaste mínimo, mientras que la sílice con el mismo código causa un desgaste importante de la punta."
+    },
+    {
+      "question": "¿Cómo se compara la sensibilidad a la contaminación de las válvulas antirretorno pilotadas con la de las válvulas antirretorno de acción directa?",
+      "answer": "Las válvulas antirretorno de acción directa (obturador o bola con resorte contra un asiento) tienen una sensibilidad a la contaminación determinada por la geometría de contacto obturador-asiento: las partículas duras en el asiento crean microabolladuras que permiten fugas cuando la válvula debería estar cerrada; el código ISO 4406 19/17/14 suele bastar para las válvulas antirretorno de acción directa. Las válvulas antirretorno pilotadas (POCV) incluyen un pistón piloto que abre la válvula antirretorno contra el flujo inverso cuando se aplica presión piloto: el pistón piloto tiene una holgura tipo corredera de 5–15 µm, lo que hace al mecanismo de accionamiento piloto más sensible que el obturador principal. Las POCV especifican código ISO 4406 17/15/12 para el circuito piloto, aunque el circuito antirretorno principal se especifique en 19/17/14. En sistemas con contaminación por encima de ISO 17/15/12, los pistones piloto de las POCV pueden atascarse: la válvula antirretorno no abre con el mando piloto y bloquea el actuador. Este modo de falla es insidioso porque la presión principal del sistema y el funcionamiento de la válvula direccional no se ven afectados: solo la POCV deja de responder."
+    },
+    {
+      "question": "¿Qué efecto tiene la concentración de partículas en la eficiencia volumétrica de la bomba hidráulica?",
+      "answer": "La eficiencia volumétrica de la bomba hidráulica (relación entre el caudal de salida real y el caudal teórico por desplazamiento) se ve afectada por la contaminación por partículas mediante dos mecanismos: (1) Desgaste de la placa de distribución y de los patines: las partículas de más de 5 µm en la holgura de los patines (5–15 µm) arrancan metal por abrasión de la cara del patín y del plato inclinado, lo que aumenta la holgura con el tiempo y deja pasar más caudal de fuga de la lumbrera de alta presión a la de baja; cada aumento de 1 µm en la holgura del patín reduce la eficiencia volumétrica en aproximadamente un 0.3–1% según la velocidad y la presión de la bomba; (2) Fuga entre la cara del barril y la placa de distribución: el desgaste por abrasión de partículas de la cara lapeada de la placa de distribución (zona de contacto de 4 componentes) aumenta la fuga por la interfaz placa de distribución-barril; esta vía de fuga deja que el aceite a alta presión vaya al drenaje de carcasa sin hacer trabajo útil. Con un código ISO 20/18/15 (muy contaminado), la eficiencia volumétrica típica de una bomba de pistones axiales de servicio pesado cae un 2–5% por debajo de la especificación nueva en 2,000–3,000 horas."
+    },
+    {
+      "question": "¿Qué métodos de monitoreo detectan el desgaste incipiente de componentes por contaminación antes de una falla catastrófica?",
+      "answer": "La detección del desgaste incipiente por contaminación usa cuatro métodos complementarios: (1) Análisis espectrométrico de aceite por ICP (ASTM D5185): una concentración de hierro (Fe), cobre (Cu) o silicio (Si) en aumento sobre la línea base indica desgaste activo; hierro por encima de 50 ppm en el aceite hidráulico indica desgaste de la placa de distribución o de los patines; (2) Tendencia del conteo de partículas (ISO 4406): un código ISO en aumento sin una fuente de contaminación identificable indica desgaste interno que genera partículas; (3) Ferrografía (ASTM D7690): partículas grandes (>10 µm) de desgaste que el ICP no detecta; (4) Monitoreo del desempeño del sistema: la tendencia de la eficiencia volumétrica a partir de la medición de caudal en la máquina identifica el deterioro de la bomba sin muestrear el fluido. Combinados: Fe en aumento por ICP + código APC en aumento + caída de la eficiencia de la bomba = desgaste activo de patines/placa de distribución de la bomba de pistones por abrasión de partículas. El monitoreo con un solo indicador pasa por alto las fallas incipientes que solo se manifiestan en una fuente de datos."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificación de la contaminación usada para especificar los objetivos de limpieza de cada tipo de componente según sus dimensiones de holgura y su sensibilidad a la contaminación."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de diseño de sistemas que cita los requisitos de sensibilidad a la contaminación de los componentes y la metodología de especificación de la limpieza."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D7690-17, Standard Practice for Microscopic Characterization of Particles from In-Service Lubricants by Analytical Ferrography",
+      "relevance": "Método de análisis de partículas de desgaste para identificar mecanismos de desgaste por partículas grandes que el ICP o el conteo de partículas no detectan."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, J.C., Component Contamination Sensitivity and Hydraulic Cleanliness, Machinery Lubrication, Noria Corporation",
+      "relevance": "Guía de referencia que relaciona las holguras de los componentes hidráulicos y de lubricación con los umbrales de sensibilidad a la contaminación ISO 4406 y describe los modos de falla."
+    }
+  ],
+  "title": "Sensibilidad a la contaminación de componentes hidráulicos y de lubricación: datos de holguras y objetivos ISO 4406",
+  "subtitle": "Dimensiones de las holguras internas de los componentes, umbrales de daño por tamaño de partícula, objetivos de limpieza ISO 4406 y mecanismos de falla de bombas, motores, válvulas y cilindros hidráulicos y de los sistemas de cojinetes de motor.",
+  "metaDescription": "Referencia de ingeniería sobre la sensibilidad a la contaminación de componentes hidráulicos y de lubricación: holguras de corredera de servoválvula de 1–3 µm, válvula proporcional de 3–8 µm, bomba de pistones de 5–20 µm, bomba de engranajes de 10–50 µm, holguras de cojinetes de deslizamiento de 5–75 µm, objetivos de limpieza ISO 4406 por tipo de componente y relación entre tamaño de partícula y umbral de daño.",
+  "category": "ingeniería",
+  "readTime": "13 min",
+  "intro": "La sensibilidad a la contaminación de un componente hidráulico o de lubricación la determinan sobre todo sus holguras internas críticas: el espacio mínimo entre superficies en movimiento. Una partícula mayor que esta holgura no puede pasar sin trabar el componente (atascamiento de la válvula) o rayar las superficies (desgaste abrasivo). Conocer las dimensiones de holgura de cada tipo de componente permite a los ingenieros fijar objetivos de limpieza ISO 4406 que protejan al componente más sensible del circuito y predecir qué componentes fallarán primero cuando un sistema opera por encima de la limpieza objetivo.",
+  "sections": [
+    {
+      "heading": "Dimensiones de holgura por tipo de componente",
+      "body": "Las holguras internas críticas definen los umbrales de daño por tamaño de partícula de cada clase de componente. Servoválvulas electrohidráulicas: espacio tobera-paleta de 18–63 µm; holgura radial corredera-alojamiento de 1–4 µm; orificio del tubo de chorro de 130–450 µm; la holgura corredera-alojamiento de 1–4 µm rige la sensibilidad. Válvulas direccionales proporcionales: holgura radial corredera-alojamiento de 3–8 µm. Bombas de pistones compensadas por presión: holgura radial pistón-cilindro de 5–10 µm; espacio de la placa de distribución de 0.5–5 µm (el espacio de la placa de distribución es la dimensión que rige la sensibilidad a la limpieza de la bomba de pistones). Bombas de paletas: espacio punta de paleta-anillo de 0.5–1 µm; holgura lateral del rotor de 10–25 µm; la holgura de la punta de la paleta es la dimensión más sensible de la máquina. Bombas de engranajes: holgura punta del engranaje-carcasa de 0.5–5 µm; holgura cara del engranaje-placa de 5–25 µm; holgura de los cojinetes de deslizamiento de 10–50 µm. Cilindros hidráulicos: espacio sello del pistón-cilindro (contacto del sello, sin holgura dura); sello del vástago: acabado Ra de 0.05–0.25 µm. Cojinetes de deslizamiento del motor: espesor de la película de aceite mínimo de 0.5–2 µm a plena carga; holgura de operación de 5–75 µm (varía según el tamaño y la carga del cojinete).",
+      "callout": [
+        {
+          "label": "Holgura de la corredera de la servoválvula",
+          "value": "1–4 µm radial (la más sensible)"
+        },
+        {
+          "label": "Espacio de la placa de distribución de la bomba de pistones",
+          "value": "0.5–5 µm (rige la sensibilidad de la bomba)"
+        },
+        {
+          "label": "Espacio punta de paleta-anillo",
+          "value": "0.5–1 µm (la máquina rotativa más sensible)"
+        }
+      ]
+    },
+    {
+      "heading": "Relación entre tamaño de partícula y umbral de daño",
+      "body": "Las partículas causan daño cuando son mayores que el espesor mínimo de la película pero lo bastante pequeñas para entrar en la holgura. Las partículas menores que el espesor de la película pasan arrastradas sin contacto. Las partículas mayores que la abertura de la holgura se traban en lugar de entrar, lo que causa atascamiento de la válvula y posible bloqueo hidráulico en lugar de desgaste abrasivo. El tamaño de partícula más dañino para una holgura dada es aproximadamente 1–2× el espesor mínimo de la película: lo bastante grande para puentear el espacio y causar contacto abrasivo, y lo bastante pequeño para entrar y atravesarlo. Para una holgura de corredera de servoválvula de 2 µm, el tamaño de partícula más dañino es de aproximadamente 2–6 µm. El informe ISO 4406 en los umbrales de ≥4 µm(c), ≥6 µm(c) y ≥14 µm(c) está diseñado para captar estos rangos de tamaño críticos. Las partículas de ≥4 µm(c) rigen la protección de servoválvulas y bombas de paletas. Las de ≥6 µm(c) rigen la protección de válvulas proporcionales y bombas de pistones. Las de ≥14 µm(c) rigen la protección de bombas de engranajes y cilindros.",
+      "callout": [
+        {
+          "label": "Tamaño de partícula más dañino",
+          "value": "~1–2× el espesor mínimo de la película"
+        },
+        {
+          "label": "ISO 4406 ≥4 µm(c)",
+          "value": "Rige el código de servoválvulas / bombas de paletas"
+        },
+        {
+          "label": "ISO 4406 ≥14 µm(c)",
+          "value": "Rige el código de bombas de engranajes / cilindros"
+        }
+      ]
+    },
+    {
+      "heading": "Objetivos ISO 4406 por clase de componente",
+      "body": "Objetivos de limpieza del sistema ISO 4406 recomendados (rige el objetivo del componente más sensible presente): servoválvulas (holgura de corredera de 1–4 µm): ISO 14/12/9 a ISO 16/14/11 según la criticidad de la aplicación; aeroespacial y máquinas herramienta de precisión en el extremo más estricto; aplicaciones servo industriales normalmente ISO 16/14/11. Válvulas direccionales proporcionales: ISO 17/15/12. Bombas de pistones compensadas por presión (alta presión, pistones axiales): ISO 17/15/12; algunos fabricantes especifican ISO 16/14/11 para presiones por encima de 280 bar. Bombas de paletas: ISO 17/15/12 (pese a la holgura submicrónica de la punta, el mecanismo de daño es el desgaste y no el atascamiento, así que rige el conteo de partículas a ≥6 µm(c)). Bombas de engranajes (industriales estándar): ISO 18/16/13. Válvulas de control direccional (corredera estándar, sin compensación): ISO 18/16/13. Cilindros hidráulicos (estándar): ISO 20/18/15 como mínimo; mejor práctica ISO 18/16/13. Cojinetes de deslizamiento de motor (automotriz): normalmente equivalente a ISO 17/15/12 en el contexto del aceite lubricante. Cojinetes de deslizamiento de motor (diésel de gran diámetro, marino): equivalente a ISO 16/14/11."
+    },
+    {
+      "heading": "Mecanismos de falla de las servoválvulas",
+      "body": "Las servoválvulas fallan por contaminación mediante tres mecanismos, ordenados de menor a mayor daño: (1) Atascamiento de la corredera: las partículas se depositan en la holgura corredera-alojamiento y aumentan la fuerza de arranque; se detecta como deriva del punto nulo y menor ganancia; limpiarla y volver a montarla puede restablecer su funcionamiento. (2) Rayado de la corredera: las partículas duras (sílice, carburos metálicos, residuos de desgaste) atrapadas entre el diámetro exterior de la corredera y el interior del alojamiento crean rayas paralelas a lo largo del resalte de sellado crítico; una vez rayada, la fuga a través del resalte de la corredera aumenta y la ganancia de la válvula baja de forma permanente: hay que reemplazar la válvula. (3) Obstrucción de la tobera: en las servoválvulas de dos etapas de tobera-paleta, las partículas en el orificio de la tobera (normalmente de 130–450 µm de diámetro) causan una obstrucción parcial o total del orificio de control, lo que provoca la saturación de la señal de control. Cada mecanismo requiere un diagnóstico y una acción correctiva distintos; la distribución de tamaños de partícula del conteo ISO 11171 ayuda a identificar qué mecanismo está activo."
+    },
+    {
+      "heading": "Sensibilidad de la bomba de pistones y progresión de la falla",
+      "body": "Las bombas de pistones axiales son la máquina hidráulica de alta presión más común y la más compleja desde el punto de vista de la contaminación. Interactúan tres holguras críticas: pistón-cilindro (5–10 µm): la contaminación en esta holgura causa fricción de deslizamiento intermitente del pistón y menor eficiencia volumétrica; el rayado aumenta la fuga interna. Placa de distribución-barril (0.5–5 µm): esta película hidrodinámica es la más delgada de la bomba; la contaminación causa picaduras por erosión de cavitación y rayado de la cara, detectables como partículas metálicas en el aceite y audibles como un cambio en el ruido de la bomba. Patín-plato inclinado (2–8 µm): el rayado de los patines reduce la fuerza de retracción del pistón y provoca el desprendimiento del pistón. Progresión de la falla por contaminación de la bomba de pistones: (1) pérdida de eficiencia volumétrica (detectable midiendo el caudal); (2) fuga de drenaje de carcasa elevada (>10% del caudal nominal indica desgaste avanzado); (3) ruido de alta frecuencia audible por el rayado de la placa de distribución; (4) falla catastrófica de cojinetes por el cambio de carga del plato inclinado. El monitoreo por análisis de aceite ICP (tendencia de partículas de Fe) detecta la progresión de las etapas 1–2 antes de la etapa 3."
+    },
+    {
+      "heading": "Sensibilidad de los cojinetes del motor y desgaste por contaminación",
+      "body": "El espesor mínimo de la película de aceite de los cojinetes de deslizamiento del motor a plena carga (película hidrodinámica) es el parámetro crítico de la sensibilidad de los cojinetes a la contaminación. A la velocidad y carga nominales, el espesor mínimo de la película suele ser de 0.5–2 µm en los cojinetes de cabeza de biela de los motores de alta velocidad. El número de Sommerfeld rige el espesor de la película: h_min ∝ (η × N × L × D) / (W × c), donde η es la viscosidad, N la velocidad del eje, L y D las dimensiones del cojinete, W la carga y c la holgura radial. Las partículas mayores que el espesor mínimo de la película rayan las superficies de los cojinetes. La aleación de los cojinetes (Babbitt, cobre-plomo, aluminio-estaño) tiene una dureza de aproximadamente 20–40 HV, más blanda que las partículas contaminantes típicas (sílice: ~1,000 HV; carburo de hierro: ~1,500 HV). Esta diferencia de dureza significa que cada partícula contaminante más dura que la superficie del cojinete causa un desgaste medible en cada paso. Análisis de aceite ICP: Fe (desgaste de los muñones del cigüeñal), Cu y Pb (desgaste de cojinetes de cobre-plomo) y Sn (desgaste de la capa de Babbitt) son los marcadores específicos del deterioro de los cojinetes por contaminación.",
+      "callout": [
+        {
+          "label": "Espesor mínimo de película del cojinete",
+          "value": "0.5–2 µm a plena carga (motor de alta velocidad)"
+        },
+        {
+          "label": "Dureza de la sílice",
+          "value": "~1,000 HV frente a Babbitt ~20–40 HV"
+        },
+        {
+          "label": "Marcadores de cojinetes de cobre-plomo",
+          "value": "Cu + Pb en el análisis elemental ICP"
+        }
+      ]
+    },
+    {
+      "heading": "Sensibilidad específica de bombas de paletas y motores de engranajes",
+      "body": "Las bombas de paletas operan con las puntas de las paletas en contacto con el anillo de leva con una holgura muy pequeña (radio de la punta de paleta de 0.5–1 µm; el contacto es nominalmente cero con sustentación hidrodinámica a velocidad). A baja velocidad (por debajo de la velocidad mínima de película hidrodinámica), las puntas de las paletas operan en lubricación límite: contacto directo con la superficie del anillo de leva. Las partículas contaminantes en esta interfaz rayan el anillo de leva, lo que avanza hasta el astillado de las puntas de las paletas y la fractura catastrófica de paletas con cargas de alta presión. El objetivo de limpieza ISO 17/15/12 para bombas de paletas es conservador pero necesario: la experiencia de campo muestra tasas de falla de bombas de paletas 3–5× mayores con ISO 18/16/13 que con ISO 17/15/12. Los motores de engranajes (internos y externos) sufren el daño por contaminación sobre todo en las caras de los dientes y en los cojinetes de deslizamiento. Las partículas abrasivas en la zona de contacto de los dientes causan picaduras y desprendimiento, detectables como aumento de vibración y Fe/Cr elevados en el análisis de aceite. La tolerancia a la contaminación de los motores de engranajes es mayor que la de las máquinas de pistones o de paletas porque la zona de contacto de los dientes admite un rango de partículas relativamente amplio, pero los motores de engranajes de alta presión (por encima de 250 bar) muestran una sensibilidad cercana a la de las bombas de pistones por la mayor carga en las caras de los dientes."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Holgura radial de la corredera de la servoválvula",
+      "value": "1–4 µm (la más crítica)"
+    },
+    {
+      "label": "Holgura de la punta de la paleta",
+      "value": "0.5–1 µm (la máquina rotativa más sensible)"
+    },
+    {
+      "label": "Espesor mínimo de película del cojinete del motor",
+      "value": "0.5–2 µm a carga/velocidad nominal"
+    },
+    {
+      "label": "Dureza de la sílice frente al Babbitt",
+      "value": "1,000 HV frente a 20–40 HV"
+    },
+    {
+      "label": "Espacio de la placa de distribución de la bomba de pistones",
+      "value": "0.5–5 µm (holgura que rige)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171",
+    "NFPA T2.14",
+    "SAE J300"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "sensibilidad de los componentes a la contaminación",
+    "holgura de la servoválvula",
+    "holgura de la bomba hidráulica",
+    "objetivos ISO 4406",
+    "sensibilidad de la bomba de paletas",
+    "desgaste de la bomba de pistones",
+    "espesor de película del cojinete",
+    "contaminación de la bomba de engranajes",
+    "daño por tamaño de partícula",
+    "desgaste de cojinetes de deslizamiento",
+    "niveles NFPA T2.14"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Deriva del punto nulo de la servoválvula: deslizamiento de la posición con señal de mando cero",
+      "Pérdida de caudal de la bomba hidráulica: disminución medida de la eficiencia volumétrica >5% respecto de la referencia",
+      "Aumento del ruido audible de la bomba de paletas en operación a baja velocidad (por debajo de 500 rpm)",
+      "Cu y Pb elevados en el ICP del aceite del motor: desgaste de la capa de cobre-plomo de los cojinetes",
+      "Aumento de vibración del motor de engranajes sin cambio de carga ni de velocidad"
+    ],
+    "probableCauses": [
+      "Deriva del punto nulo de la servoválvula: depósito de partículas en la holgura corredera-alojamiento (1–4 µm); código ISO 4406 por encima del objetivo ISO 16/14/11; también es posible un depósito de barniz en la corredera detectado por MPC",
+      "Pérdida de caudal de la bomba: desgaste pistón-cilindro (pérdida volumétrica por deslizamiento del pistón); rayado de la placa de distribución (progresivo; revisar primero el caudal de drenaje de carcasa); código ISO 4406 con tendencia por encima de ISO 17/15/12",
+      "Ruido de la bomba de paletas a baja velocidad: rayado del anillo de leva por lubricación límite a baja velocidad con contaminación; código ISO 4406 por encima de ISO 17/15/12; revisar el estado de las puntas de las paletas en la siguiente inspección programada",
+      "Cu+Pb elevados: desgaste de la capa de los cojinetes por contaminación en el espesor de película o por debajo; revisar el código ISO 4406 equivalente del aceite lubricante; verificar que el grado de aceite cumpla el mínimo HTHS del OEM",
+      "Vibración del motor de engranajes: picaduras en los dientes por contaminación abrasiva (Fe, Cr en el análisis de aceite); confirmar con análisis espectral para identificar la componente de frecuencia de engrane"
+    ],
+    "inspectionMethods": [
+      "Conteo de partículas ISO 11171 aguas arriba y aguas abajo del circuito sospechoso: comparar con el objetivo del componente; la desviación del código indica el nivel de contaminación frente a la tolerancia del componente",
+      "Eficiencia volumétrica de la bomba: medir el caudal real a la velocidad y presión nominales; compararlo con la especificación de bomba nueva; una pérdida >5% es el umbral de investigación; una pérdida >10% requiere evaluar la reconstrucción",
+      "Medición del caudal de drenaje de carcasa: caudalímetro de engranajes en la línea de drenaje de carcasa; >10% de la entrega nominal de la bomba indica desgaste interno avanzado",
+      "Análisis de aceite ICP a intervalos de 250 horas: tendencia de Fe (desgaste general), Cu (cojinete/bomba), Al (carcasa de la servoválvula), Cr (vástago del cilindro hidráulico, cromado del alojamiento de la válvula)",
+      "Ensayo de punto nulo de la servoválvula: mandar señal cero; medir la posición de salida; una deriva del punto nulo >1% de la carrera completa en 60 segundos indica contaminación o rayado de la corredera"
+    ],
+    "correctiveActions": [
+      "Atascamiento de la corredera de la servoválvula: limpiarla según el procedimiento del fabricante en fluido limpio; ISO 4406 en ISO 16/14/11 antes de reinstalarla; si la corredera está rayada, hay que reemplazar la válvula: la limpieza no restablecerá el desempeño",
+      "Pérdida de eficiencia volumétrica de la bomba: reducir el nivel de contaminación a ISO 17/15/12 con filtración kidney-loop; programar la reconstrucción en el siguiente mantenimiento planificado; no posponerla más allá del 15% de pérdida de eficiencia",
+      "Rayado del anillo de leva de la bomba de paletas: desmontarlo e inspeccionarlo en el siguiente servicio; medir la redondez y la rugosidad superficial del anillo de leva; un Ra >0.4 µm en la superficie de la leva requiere reemplazo; corregir el ISO 4406 a ISO 17/15/12 antes de volver a montarla",
+      "Desgaste de cojinetes (Cu+Pb elevados): reducir la contaminación del aceite a un equivalente de ISO 16/14/11 o mejor; verificar el cumplimiento del grado de aceite (HTHS y viscosidad); inspeccionar los cojinetes en la reparación mayor; el desgaste causado por contaminación no es recuperable: corregir y evitar que se repita",
+      "Vibración del motor de engranajes: tomar una muestra de aceite para ICP; si Fe+Cr están elevados, programar una inspección de reconstrucción; prevenirlo manteniendo una limpieza ISO 18/16/13 en las aplicaciones de motores de engranajes"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Circuito hidráulico mixto con servoválvulas, válvulas proporcionales y bombas de engranajes: fijar un único objetivo de limpieza del sistema",
+      "standard": "NFPA T2.14 (component tiers), ISO 4406 (cleanliness code), ISO 16889 (filter spec)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Objetivo del sistema regido por el componente más sensible (servoválvula): ISO 16/14/11; filtrar todos los circuitos a este objetivo, incluida la alimentación de la bomba de engranajes; la bomba de engranajes operará de forma conservadora con este objetivo y con mayor vida útil; especificación del filtro: β₃(c) ≥ 200 en el circuito de alimentación de la servoválvula; considerar una línea de alimentación de la servoválvula separada con un filtro fino dedicado si el caudal de la servoválvula es <10% del caudal total del sistema",
+      "relatedArticles": [
+        "nfpa-t2-14-hydraulic-cleanliness",
+        "hydraulic-power-unit-design",
+        "contamination-ingression-modelling"
+      ]
+    },
+    {
+      "problem": "Caudal de drenaje de carcasa de la bomba de pistones medido en el 12% de la entrega nominal: investigar si la causa es contaminación o desgaste mecánico",
+      "standard": "ISO 4406 (system cleanliness), ISO 11171 (particle counting)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Un drenaje de carcasa del 12% indica desgaste avanzado; tomar una muestra de aceite para ICP (Fe y Al elevados indican desgaste de la placa de distribución y del barril); tomar una muestra de código ISO 4406: si el sistema ha estado por encima de ISO 17/15/12, la contaminación es probablemente una causa contribuyente; un lavado kidney-loop hasta ISO 17/15/12 frenará pero no revertirá el desgaste existente; programar la reconstrucción; corregir la filtración del sistema antes de instalar la bomba reconstruida",
+      "relatedArticles": [
+        "contamination-ingression-modelling",
+        "oil-analysis-methods",
+        "hydraulic-power-unit-design"
+      ]
+    },
+    {
+      "problem": "Fallas de cojinetes de motores diésel a las 4,000 horas en una flota con intervalos de drenaje de aceite extendidos a 500 horas",
+      "standard": "SAE J300 (oil grade), ISO 4406 equivalent for lube oil, ISO 17359 (condition monitoring)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Análisis de aceite ICP para confirmar los metales de desgaste de los cojinetes (tendencia de Cu, Pb, Sn); si el conteo de partículas equivalente está por encima de ISO 16/14/11, el intervalo de drenaje extendido permite que se acumule la contaminación; pasar a análisis de aceite cada 250 horas con conteo de partículas; si se confirma degradación del TAN o de la viscosidad, reducir el drenaje a 300 horas hasta corregir la causa raíz; verificar que la relación beta del filtro de aceite lubricante cumpla la ISO 4548-12 para la DHC del drenaje extendido",
+      "relatedArticles": [
+        "lubrication-system-filtration",
+        "extended-drain-interval-engineering",
+        "oil-analysis-methods"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)",
+    "evidenceStatus": "Servo valve clearance data from electrohydraulic valve engineering references and Moog, Parker Hannifin published specifications; piston pump clearances from axial piston pump engineering literature; vane pump tip clearance from published fluid power engineering textbooks; bearing film thickness from journal bearing tribology literature (Hamrock, Schmid, Jacobson — Fundamentals of Machine Elements); particle hardness values from ASM Metals Handbook"
+  }
+}

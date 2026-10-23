@@ -1,0 +1,339 @@
+{
+  "slug": "oil-condition-monitoring",
+  "faqs": [
+    {
+      "question": "O que é o monitoramento da condição do óleo e em que ele difere da análise de óleo?",
+      "answer": "O monitoramento da condição do óleo (OCM) é um processo contínuo ou semicontínuo de acompanhamento do estado físico e químico do óleo lubrificante em serviço para determinar sua vida útil restante e detectar cedo as falhas da máquina. Análise de óleo é um termo mais amplo que inclui tanto o monitoramento de condição (do próprio óleo) quanto a análise de partículas de desgaste (do equipamento que gera o perfil de contaminação do óleo). O OCM se concentra nos indicadores de degradação do óleo: variação de viscosidade, razão TBN/TAN, esgotamento de antioxidantes (RULER), produtos de oxidação (pico de oxidação por FTIR) e contaminação por água ou glicol. A análise de partículas de desgaste se concentra nos indicadores de saúde dos componentes: concentrações de metais por ICP (Fe, Cu, Al), contagem de partículas (código ISO 4406) e morfologia das partículas (ferrografia). Juntos, fornecem um quadro completo da saúde do óleo e do equipamento a partir de uma única amostra."
+    },
+    {
+      "question": "Quais instrumentos de monitoramento da condição do óleo em campo estão disponíveis para programas de manutenção de frotas?",
+      "answer": "Instrumentos de OCM em campo para manutenção de frotas: (1) Viscosímetro portátil (equivalente ao método ASTM D7279): mede a viscosidade cinemática a 40°C e 100°C no local; detecta diluição por combustível (queda de viscosidade) e espessamento por oxidação ou contaminação em 5 minutos; (2) Kit de ensaio de TBN (colorimétrico, equivalente de campo da ASTM D2896): medição semiquantitativa rápida do TBN sem equipamento de laboratório; exatidão de ±10% do valor de laboratório; (3) Contador de partículas portátil (APC portátil equivalente à ISO 11171): fornece o código ISO 4406 em 15–30 minutos a partir do óleo coletado na máquina; (4) Refratômetro (para contaminação por glicol e líquido de arrefecimento no óleo): detecta o ingresso de líquido de arrefecimento como turbidez e deslocamento elevado do índice de refração; (5) Sensores de qualidade do óleo embarcados (integrados à galeria de óleo): sensores de capacitância ou impedância que medem continuamente a degradação do óleo; não exigem amostra. Cada método de campo dá retorno mais rápido que a análise de laboratório, ao custo de menor exatidão e menos parâmetros."
+    },
+    {
+      "question": "Quais métodos de controle estatístico de processo são aplicados aos dados de tendência da análise de óleo?",
+      "answer": "Controle estatístico de processo (CEP) aplicado às tendências da análise de óleo: (1) Gráficos de controle de Shewhart: plotam cada parâmetro em uma série temporal com limites de controle superior e inferior (LSC, LIC) definidos em média ± 3σ da população de referência; qualquer valor fora dos limites de controle dispara investigação; (2) Gráficos CUSUM (soma acumulada): somam os desvios em relação à média alvo em amostras consecutivas; detectam tendências pequenas, mas sustentadas (por exemplo, esgotamento lento do TBN de 0.1 mg KOH/g por amostra) que os gráficos de Shewhart não captam; (3) Alarme por taxa de variação: calcula a variação do parâmetro a cada 100 horas a partir de duas amostras consecutivas; sinaliza se a taxa exceder 2σ da distribuição histórica de taxas de variação; (4) Normalização de alarmes: ajusta os limiares de alarme conforme o tipo de óleo, a configuração da máquina e o ciclo de trabalho em vez de aplicar limites universais. Programas baseados em CEP reduzem os falsos alarmes em 50–70% em relação aos programas de limiar fixo, melhorando a adesão ao programa e a alocação de recursos."
+    },
+    {
+      "question": "Como a análise de óleo é usada para otimizar a programação da manutenção em uma frota mista?",
+      "answer": "A análise de óleo otimiza a programação da manutenção em frotas mistas ao substituir programas de intervalo fixo por intervalos baseados em condição próprios de cada máquina e contexto de operação. Processo: (1) Estabelecer uma análise de óleo de referência para cada tipo e configuração de máquina; (2) Acompanhar a taxa de variação dos parâmetros a cada 100 horas em cada máquina; (3) Calcular a vida útil restante do óleo: horas previstas até o limiar de alarme = (valor atual - limiar de alarme) / taxa de variação; (4) Programar a troca de óleo no fim de vida previsto menos uma margem de segurança (normalmente 50–100 horas); (5) Comparar as horas reais atingidas na frota: máquinas com intervalos consistentemente mais longos que a média indicam ciclos de trabalho menos severos; máquinas com intervalos consistentemente mais curtos identificam unidades de alta severidade que precisam de manutenção direcionada. A análise em nível de frota em 50 máquinas idênticas revela problemas sistemáticos (por exemplo, falhas da vedação da admissão de ar em lotes de produção específicos) que a análise de máquinas individuais não perceberia."
+    },
+    {
+      "question": "O que é manutenção preditiva com análise de óleo e como ela evita falhas catastróficas?",
+      "answer": "A manutenção preditiva com análise de óleo projeta as tendências dos parâmetros para frente no tempo para prever quando um parâmetro vai ultrapassar o limiar de ação, permitindo programar a manutenção em uma parada planejada antes da falha. O método de previsão: (1) Ajustar uma tendência linear ou polinomial aos últimos 3–5 pontos de análise de óleo; (2) Extrapolar até o valor do limiar de ação; (3) Subtrair uma margem de confiança (normalmente 10–20% do intervalo restante, conforme a variabilidade dos dados); (4) Gerar uma data de manutenção recomendada. Por exemplo: Fe subindo 5 ppm a cada 100 horas, valor atual de 30 ppm, limiar de alarme de 75 ppm; intervalo restante = (75-30)/5 × 100 = 900 horas. Com margem de confiança de 20%, a manutenção é sinalizada a 720 horas a partir de agora. Essa abordagem evita que padrões de desgaste crescentes terminem em falhas catastróficas de mancais ou bombas, o que em equipamentos de mineração de serviço pesado economiza AUD 50,000–500,000 por falha evitada (custos de reparo mais tempo de parada)."
+    },
+    {
+      "question": "Como a análise de óleo é integrada à telemetria das máquinas na gestão moderna de frotas?",
+      "answer": "A gestão moderna de frotas integra a análise de óleo aos dados de telemetria (dados da ECU do motor, horas de operação da máquina, fator de carga, ciclo de trabalho) para dar contexto à interpretação da condição do óleo. Arquitetura de integração: (1) O sistema de telemetria transmite as horas de operação, o fator de carga médio do motor e os dados de temperatura do líquido de arrefecimento e do óleo para o banco de dados de gestão da frota; (2) O laboratório de análise de óleo transmite os resultados para o mesmo banco de dados, com vinculação automática parâmetro-máquina pelo número de série da máquina; (3) A plataforma analítica combina as tendências da análise de óleo com os dados de operação para calcular a taxa de variação por hora de operação ajustada pelo fator de carga: máquinas com alto fator de carga esgotam o óleo mais rápido por hora de calendário que máquinas de baixa carga com as mesmas horas de operação; (4) Geração automática de alertas: o sistema calcula a data prevista de troca de óleo a partir dos dados combinados e agenda a manutenção automaticamente. Programas integrados reduzem em 80–90% as trocas de óleo atrasadas (máquinas operando com óleo fora de especificação) em relação a programas em papel de intervalo fixo."
+    },
+    {
+      "question": "Qual é o papel dos sensores de condição do óleo (sensores embarcados) em comparação com a análise de laboratório?",
+      "answer": "Os sensores embarcados de condição do óleo (capacitância, impedância, óptica NIR, viscosidade MEMS) fornecem dados contínuos em tempo real da condição do óleo sem amostragem: (1) Sensores de capacitância: medem a constante dielétrica do óleo, que muda com os produtos de oxidação, o teor de água e o esgotamento de aditivos; (2) Sensores de viscosidade MEMS: medem a viscosidade continuamente (±5% de exatidão) para detectar em tempo real a diluição por combustível (queda de viscosidade) e o espessamento por oxidação; (3) Sensores de espectroscopia NIR: medem os picos de oxidação e nitração em comprimentos de onda NIR sem extrair amostra. Limitações dos sensores embarcados: (1) Medem apenas um ou dois parâmetros; nenhum sensor cobre todos os parâmetros da análise de laboratório; (2) A exatidão é inferior à dos métodos de laboratório (±10–20% contra ±2–5% do laboratório); (3) Não fazem análise espectrométrica de metais de desgaste (ICP). Uso ideal: os sensores embarcados fazem uma triagem contínua que dispara amostragem de laboratório não programada quando os valores do sensor mostram anomalias, combinando a alta resolução temporal do sensoriamento embarcado com a capacidade analítica completa do laboratório."
+    },
+    {
+      "question": "Qual certificação de laboratório de referência é exigida para a análise de óleo usada nas decisões de manutenção de frotas?",
+      "answer": "Os laboratórios de análise de óleo para decisões de manutenção de frotas devem ter: (1) Acreditação ISO/IEC 17025:2017 para métodos de ensaio específicos (viscosidade ASTM D445, espectrometria ASTM D5185, FTIR ASTM E2412), a norma internacional de competência de laboratórios. Laboratórios acreditados pela ISO 17025 passam por ensaios de proficiência regulares de organismos de referência externos; (2) Participação no programa de proficiência em análise de óleo da ASTM International (OAPP): amostras cegas trimestrais ensaiadas contra valores de referência conhecidos; (3) Aprovações específicas de OEM: alguns OEMs de mineração e construção (Caterpillar, Komatsu, Volvo) exigem que a análise de óleo que fundamenta decisões de garantia seja feita por laboratórios aprovados pelo OEM. Laboratórios não acreditados podem fornecer dados de tendência úteis para programar a manutenção, mas seus resultados não servem para pedidos de garantia, fins de seguro nem documentação do estado de equipamentos admissível em juízo."
+    },
+    {
+      "question": "Quais níveis de ação de metais de desgaste por ICP disparam respostas de manutenção escalonadas?",
+      "answer": "Níveis de ação de metais de desgaste por ICP (motor diesel de serviço pesado típico): (1) Ferro (Fe): atenção >50 ppm/1,000 h de taxa; ação >100 ppm de concentração ou >20 ppm/100 h de taxa; indica desgaste de camisas de cilindro ou de mancais; (2) Cobre (Cu): atenção >30 ppm de concentração; ação >60 ppm; desgaste de buchas de bronze ou do núcleo do resfriador de óleo; (3) Alumínio (Al): atenção >20 ppm; ação >40 ppm; desgaste da saia do pistão ou da carcaça de alumínio do turbocompressor; (4) Silício (Si): atenção >20 ppm; ação >40 ppm acima da linha de base; ingresso de sílica por falha do filtro de ar; (5) Sódio (Na): qualquer detecção >5 ppm acima da linha de base do óleo; ingresso de líquido de arrefecimento por falha da junta do cabeçote ou do resfriador de óleo; (6) Cromo (Cr): atenção >10 ppm; ação >20 ppm; desgaste do cromo dos anéis do pistão. Amostras no nível de ação disparam: nova amostragem em até 25 horas, inspeção de componentes e investigação de causa raiz antes de liberar a continuidade da operação."
+    },
+    {
+      "question": "Como o intervalo de amostragem da análise de óleo afeta a probabilidade de detectar uma falha antes do dano catastrófico?",
+      "answer": "A probabilidade de detecção de falhas aumenta de forma não linear com a frequência de amostragem porque a progressão do desgaste costuma ser não linear: a taxa de desgaste acelera à medida que o dano ao componente se desenvolve. Modelagem estatística: se um componente mostra desgaste incipiente na hora 200, passa por desgaste detectável na hora 250 e chega à falha catastrófica na hora 300: (1) intervalo de amostragem de 500 horas: 50% de probabilidade de amostrar dentro da janela de detecção de 200–300 horas (uma amostra pode cair na hora 250, ou antes da 200 e só de novo depois da 300); (2) intervalo de amostragem de 250 horas: probabilidade de quase 100% de detectar a progressão se a amostragem cair exatamente na hora 250, ou de detectar na hora 500 se a falha ocorrer às 300; (3) intervalo de amostragem de 100 horas: duas amostras na janela de detecção, detecção praticamente garantida com capacidade de acompanhar a progressão. O intervalo de amostragem economicamente ótimo é determinado por: custo do evento de falha × probabilidade de não detecção − custo de amostragem por intervalo. Para eventos de falha de alta consequência (diferencial de caminhão fora de estrada, reparo de AUD 300,000), a amostragem a cada 100 horas se justifica mesmo com custo de AUD 100/amostra."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry",
+      "relevance": "Método de ensaio de análise de metais de desgaste usado como indicador principal do OCM para avaliar o estado dos componentes."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry",
+      "relevance": "Método de monitoramento da condição do óleo por FTIR que abrange a detecção de oxidação, nitração, sulfatação, glicol e diluição por combustível."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO/IEC 17025:2017, General Requirements for the Competence of Testing and Calibration Laboratories",
+      "relevance": "Norma de acreditação de laboratórios exigida para laboratórios de análise de óleo usados para apoiar decisões de garantia e de manutenção de frotas."
+    },
+    {
+      "category": "handbook",
+      "citation": "Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010",
+      "relevance": "Referência abrangente que cobre a metodologia de amostragem, a interpretação de parâmetros, a definição de alarmes, as tendências estatísticas e as aplicações de manutenção preditiva de programas de monitoramento da condição do óleo."
+    }
+  ],
+  "title": "Monitoramento da condição do óleo e manutenção preditiva",
+  "subtitle": "Métodos de análise de óleo usado, limiares de alarme e protocolo de amostragem para motores e sistemas hidráulicos",
+  "metaDescription": "O monitoramento da condição do óleo usa a viscosidade ASTM D445, o TAN D664, o TBN D2896, a análise elementar D5185, a espectroscopia FTIR E2412 e o MPC D7843 para detectar a degradação do fluido e o desgaste dos componentes antes da falha do equipamento. Esta referência abrange os métodos de ensaio, os limiares de alarme e o projeto do programa de amostragem ISO 17359.",
+  "category": "Engenharia",
+  "readTime": "14 min",
+  "intro": "O monitoramento da condição do óleo (OCM) é a coleta, a análise e a interpretação sistemáticas de amostras de lubrificante em serviço para detectar a degradação do fluido, o ingresso de contaminação e o desgaste anormal dos componentes antes da falha do equipamento. A ISO 17359:2018 (Condition Monitoring and Diagnostics of Machines — General Guidelines) fornece a estrutura para o projeto do programa de OCM, a seleção de parâmetros, a definição de níveis de alarme e o planejamento da resposta. Um programa de OCM substitui os intervalos de troca por calendário ou por horas fixas por decisões baseadas em evidências a partir da análise de vários parâmetros do fluido, estendendo a vida do equipamento e evitando intervalos de troca prematuros que descartam lubrificante ainda utilizável. Os métodos analíticos básicos (viscosidade ASTM D445, número de acidez ASTM D664, número de base ASTM D2896, análise elementar ASTM D5185 e espectroscopia FTIR ASTM E2412) detectam cada um mecanismos de degradação e modos de falha específicos com limiares de alarme definidos.",
+  "sections": [
+    {
+      "heading": "Estrutura do programa ISO 17359",
+      "body": "A ISO 17359:2018 define o projeto do programa de OCM como um processo de cinco etapas: (1) identificar os parâmetros críticos para a máquina e o tipo de lubrificante específicos; (2) estabelecer valores de referência a partir de fluido novo em serviço em uma máquina saudável; (3) definir níveis de alerta e de alarme relativos à referência (não valores absolutos); (4) definir ações de resposta para cada nível de alarme; (5) revisar a eficácia do programa pelos dados de tendência. Os parâmetros críticos do óleo de motor diesel incluem a viscosidade a 100°C, o TAN, o TBN, os metais de desgaste elementares (Fe, Cu, Al, Pb, Cr), o silício (indicador da filtração de ar) e o índice de oxidação por FTIR. Em sistemas hidráulicos: viscosidade a 40°C, código de limpeza ISO 4406, teor de água (Karl Fischer, ASTM D6304) e análise elementar de desgaste e de esgotamento de aditivos. A frequência de amostragem é determinada por uma matriz de criticidade: criticidade do equipamento (consequência da falha × probabilidade) × taxa de variação do parâmetro. Equipamentos críticos normalmente são amostrados a cada 250 horas de operação, ou em intervalos que não excedam 50% do intervalo de troca proposto.",
+      "callout": [
+        {
+          "label": "Norma aplicável",
+          "value": "ISO 17359:2018: diretrizes gerais de monitoramento de condição"
+        },
+        {
+          "label": "Frequência de amostragem",
+          "value": "250 h típicas em equipamentos críticos; ≤50% do intervalo de troca"
+        },
+        {
+          "label": "Referência de base",
+          "value": "Medida a partir de fluido novo em máquina saudável, não de valores nominais publicados"
+        },
+        {
+          "label": "Seleção de parâmetros",
+          "value": "Motor: viscosidade, TAN, TBN, metais de desgaste, Si, FTIR; hidráulico: viscosidade, ISO 4406, água, metais de desgaste"
+        }
+      ]
+    },
+    {
+      "heading": "Análise de viscosidade: ASTM D445",
+      "body": "A viscosidade cinemática é medida a 40°C (KV40) e a 100°C (KV100) em centistokes (cSt) com viscosímetros capilares de vidro calibrados ou instrumentos automáticos segundo a ASTM D445. O desvio da viscosidade em relação à especificação do óleo novo indica diluição (ingresso de combustível ou líquido de arrefecimento, que reduz a viscosidade) ou espessamento oxidativo (que a aumenta). Limites de ação relativos ao ponto médio do grau SAE do óleo novo: ±15% a 100°C para decidir a troca (motor); ±10% a 40°C em sistemas hidráulicos. Uma queda da viscosidade abaixo do mínimo do grau SAE a 100°C indica diluição por combustível e é um alarme de nível de parada que exige troca imediata e investigação da integridade do sistema de combustível. Um aumento da viscosidade acima de +25% a 100°C indica oxidação severa ou espessamento induzido pelo líquido de arrefecimento e também exige troca imediata.",
+      "callout": [
+        {
+          "label": "Método de ensaio",
+          "value": "ASTM D445: viscosidade cinemática a 40°C e 100°C (cSt)"
+        },
+        {
+          "label": "Limite de ação do motor",
+          "value": "±15% do KV100 do óleo novo: decisão de troca"
+        },
+        {
+          "label": "Limite de ação hidráulico",
+          "value": "±10% do KV40 do óleo novo: decisão de troca"
+        },
+        {
+          "label": "Viscosidade de parada",
+          "value": "< mínimo do grau SAE a 100°C (diluição por combustível) ou >+25% (oxidação severa)"
+        }
+      ]
+    },
+    {
+      "heading": "Número de acidez e número de base: ASTM D664 e D2896",
+      "body": "O número de acidez total (TAN) é medido pela ASTM D664 (titulação potenciométrica, mg KOH/g) e quantifica os produtos de degradação ácidos formados pela oxidação e pela nitração do óleo base e do pacote de aditivos. O limite de ação é um aumento de +2.0 mg KOH/g acima do TAN de referência do óleo novo; o alarme de decisão de troca dispara a +3.0 mg KOH/g acima da referência. O número de base total (TBN) é medido pela ASTM D2896 (titulação com ácido perclórico, mg KOH/g) e quantifica a reserva alcalina restante disponível para neutralizar os produtos ácidos do blow-by da combustão. O alarme de decisão de troca por TBN é o esgotamento a ≤50% do TBN do óleo novo; para um óleo de motor diesel API CK-4 típico com TBN novo de 12–14 mg KOH/g, o alarme dispara a ≤6–7 mg KOH/g. TAN e TBN devem ser interpretados juntos: TAN em alta junto com TBN em queda indica produção ativa de ácido sem capacidade de neutralização, a condição de degradação mais crítica.",
+      "callout": [
+        {
+          "label": "Método de ensaio do TAN",
+          "value": "ASTM D664: titulação potenciométrica (mg KOH/g)"
+        },
+        {
+          "label": "Limite de ação do TAN",
+          "value": "+2.0 mg KOH/g acima da referência nova; decisão de troca a +3.0"
+        },
+        {
+          "label": "Método de ensaio do TBN",
+          "value": "ASTM D2896: titulação com ácido perclórico (mg KOH/g)"
+        },
+        {
+          "label": "Limite de alarme do TBN",
+          "value": "≤50% do TBN novo (por exemplo, ≤6 mg KOH/g com TBN novo = 12)"
+        }
+      ]
+    },
+    {
+      "heading": "Análise elementar: ASTM D5185 ICP-OES",
+      "body": "A espectrometria de emissão óptica com plasma indutivamente acoplado (ICP-OES) segundo a ASTM D5185 mede simultaneamente em partes por milhão (ppm) em massa os metais de desgaste (Fe, Cu, Al, Pb, Cr, Ni, Sn, Ti), os elementos de aditivos (Ca, Mg, Zn, P, B, Mo) e os indicadores de contaminação (Si, Na, K). Silício acima de 25 ppm no óleo do motor é o principal indicador de brecha na filtração de ar e se correlaciona com o ingresso de sílica abrasiva. Ferro acima de 50 ppm (alerta) ou 100 ppm (crítico) em motores diesel indica desgaste abrasivo de camisas de cilindro, anéis ou munhões do virabrequim. Cobre acima de 30 ppm (alerta) indica desgaste de buchas de latão ou bronze, do núcleo do resfriador ou da liga dos mancais. Chumbo acima de 25 ppm indica degradação da liga Babbitt dos mancais ou desgaste de buchas de bronze com chumbo. Sódio acima de 50 ppm junto com aumento do teor de água indica contaminação por líquido de arrefecimento por falha da junta do cabeçote. As tendências dos elementos de aditivos (Ca, Mg, Zn, P em queda) quantificam a taxa de esgotamento dos aditivos e confirmam quando o esgotamento do TBN é iminente.",
+      "callout": [
+        {
+          "label": "Método de ensaio",
+          "value": "ASTM D5185: ICP-OES (ppm em massa)"
+        },
+        {
+          "label": "Alerta de Si (motor)",
+          "value": ">25 ppm: investigar imediatamente o sistema de filtração de ar"
+        },
+        {
+          "label": "Alerta / crítico de Fe (motor diesel)",
+          "value": ">50 ppm alerta / >100 ppm crítico: desgaste abrasivo"
+        },
+        {
+          "label": "Na >50 ppm + aumento de água",
+          "value": "Contaminação por líquido de arrefecimento: exige investigação da junta do cabeçote"
+        }
+      ]
+    },
+    {
+      "heading": "Espectroscopia FTIR: ASTM E2412",
+      "body": "A espectroscopia no infravermelho por transformada de Fourier (FTIR) segundo a ASTM E2412 detecta mudanças em nível molecular na composição do lubrificante medindo a absorção de luz infravermelha em números de onda característicos. Bandas de diagnóstico principais: produtos de oxidação (compostos carbonílicos) a 1,710 cm⁻¹ (alerta com absorbância > 25 A/cm, crítico > 40 A/cm); produtos de nitração a 1,630 cm⁻¹ (alerta > 15 A/cm); sulfatação a 1,170 cm⁻¹; contaminação por glicol (anticongelante do líquido de arrefecimento) a 1,074 cm⁻¹ (alerta com qualquer aumento mensurável acima da referência); marcador de diluição por combustível a 720 cm⁻¹ (alerta com >2% de diluição por combustível). O FTIR exige um espectro de referência da formulação do óleo novo para calcular as variações de absorbância (ΔA/cm). O esgotamento do aditivo antidesgaste (ditiofosfato de dialquila de zinco, ZDDP) aparece a 965 cm⁻¹; o esgotamento de ésteres fosfato em fluidos hidráulicos, a 1,000–1,100 cm⁻¹. Os resultados do FTIR são interpretados junto com a viscosidade e o TAN/TBN para confirmar o mecanismo de degradação.",
+      "callout": [
+        {
+          "label": "Método de ensaio",
+          "value": "ASTM E2412: espectroscopia FTIR (variação de absorbância em A/cm)"
+        },
+        {
+          "label": "Alerta / crítico de oxidação",
+          "value": ">25 A/cm a 1,710 cm⁻¹ alerta; >40 A/cm crítico"
+        },
+        {
+          "label": "Alerta de glicol",
+          "value": "Qualquer aumento mensurável a 1,074 cm⁻¹ acima da referência"
+        },
+        {
+          "label": "Alerta de diluição por combustível",
+          "value": ">2% em volume: a queda de viscosidade confirma"
+        }
+      ]
+    },
+    {
+      "heading": "Colorimetria de patch de membrana: ASTM D7843",
+      "body": "A colorimetria de patch de membrana (MPC) segundo a ASTM D7843 quantifica o potencial de formação de verniz em óleos de turbinas, fluidos hidráulicos e lubrificantes de turbinas a gás filtrando uma amostra de óleo diluída através de um patch de membrana de 0.8 µm e medindo a mudança de cor (ΔE) do patch com colorímetro ou espectrofotômetro. O valor ΔE se correlaciona com os produtos de oxidação dissolvidos e semissolúveis que com o tempo vão se depositar como verniz nos carretéis das válvulas, no interior das bombas e nas superfícies dos resfriadores. Limiares da prática do setor baseados na metodologia ASTM D7843: ΔE < 15, potencial de verniz baixo; ΔE 16–30, moderado: aumentar a frequência de monitoramento; ΔE 31–45, alto: planejar a remoção do verniz; ΔE > 45, crítico: limpeza imediata do sistema e troca do fluido. O MPC é especialmente relevante em sistemas que operam em temperaturas elevadas (>80°C) ou com intervalos de troca longos, em que os precursores de oxidação se acumulam.",
+      "callout": [
+        {
+          "label": "Método de ensaio",
+          "value": "ASTM D7843: colorimetria de patch de membrana (valor ΔE)"
+        },
+        {
+          "label": "Risco baixo",
+          "value": "ΔE < 15"
+        },
+        {
+          "label": "Risco alto",
+          "value": "ΔE 31–45: planejar a remoção do verniz"
+        },
+        {
+          "label": "Crítico",
+          "value": "ΔE > 45: troca imediata do fluido e limpeza do sistema"
+        }
+      ]
+    },
+    {
+      "heading": "Método de amostragem e ferrografia analítica",
+      "body": "As amostras de fluido para OCM são coletadas segundo a ISO 3722 com sonda no meio da corrente em linha com escoamento ativo, não em drenos, visores ou reservatórios em repouso. A sonda é purgada com no mínimo 500 mL de fluido antes da coleta da amostra para análise, para não amostrar sedimentos do reservatório nem fluido estagnado. A ferrografia analítica (ASTM D7690) separa as partículas de desgaste ferrosas da amostra de óleo com um gradiente magnético e as examina em um microscópio bicromático. A morfologia das partículas indica o modo de desgaste: partículas esféricas indicam lascamento por fadiga; partículas de corte indicam desgaste abrasivo; plaquetas indicam desgaste adesivo; partículas laminares indicam contato de deslizamento severo. O tamanho e a concentração das partículas indicam a severidade do desgaste. A ferrografia é usada quando a análise elementar ICP-OES mostra metais de desgaste elevados, mas não identifica o mecanismo de desgaste."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Limite de ação / troca do TAN",
+      "value": "+2.0 / +3.0 mg KOH/g acima da referência nova (ASTM D664)"
+    },
+    {
+      "label": "Limite de troca do TBN",
+      "value": "≤50% do TBN novo (ASTM D2896)"
+    },
+    {
+      "label": "Limite de ação de viscosidade (motor)",
+      "value": "±15% do KV100 novo (ASTM D445)"
+    },
+    {
+      "label": "Alerta de Si (motor)",
+      "value": ">25 ppm: indicador de brecha na filtração de ar (ASTM D5185)"
+    },
+    {
+      "label": "Alerta de Fe (motor diesel)",
+      "value": ">50 ppm alerta, >100 ppm crítico (ASTM D5185)"
+    },
+    {
+      "label": "Limiar crítico de MPC",
+      "value": "ΔE > 45: ação imediata necessária (ASTM D7843)"
+    },
+    {
+      "label": "Oxidação FTIR crítica",
+      "value": ">40 A/cm a 1,710 cm⁻¹ (ASTM E2412)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 17359",
+    "ASTM D445",
+    "ASTM D664",
+    "ASTM D2896",
+    "ASTM D5185",
+    "ASTM E2412",
+    "ASTM D7843",
+    "ISO 3722",
+    "ISO 4406",
+    "ASTM D6304"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™",
+    "NANOFORCE™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "monitoramento da condição do óleo",
+    "análise de óleo usado",
+    "ISO 17359",
+    "viscosidade ASTM D445",
+    "TAN ASTM D664",
+    "TBN ASTM D2896",
+    "ICP-OES ASTM D5185",
+    "FTIR ASTM E2412",
+    "MPC ASTM D7843",
+    "metais de desgaste",
+    "manutenção preditiva",
+    "análise de óleo",
+    "intervalo de troca estendido"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Tendência anormal de metais de desgaste (Fe, Cu, Al ou Pb em alta) em amostras de óleo consecutivas",
+      "A viscosidade sai da faixa de ação de ±15% a 100°C entre intervalos de amostragem",
+      "O TBN se esgota mais rápido que o esperado para o intervalo de troca em uso",
+      "Pico de silício acima de 25 ppm no óleo do motor sem mudança no ambiente de operação",
+      "O valor ΔE de MPC passa da categoria moderada para a alta em um único intervalo de troca"
+    ],
+    "probableCauses": [
+      "Desgaste acelerado: contaminação por partículas acima da meta de limpeza ISO causando dano abrasivo em mancais ou camisas de cilindro",
+      "Oxidação térmica: temperatura do óleo constantemente acima de 95°C no cárter ou de 80°C no reservatório hidráulico, acelerando a subida do TAN",
+      "Ingresso de líquido de arrefecimento por falha da junta do cabeçote ou do núcleo do resfriador: marcadores de sódio e glicol elevados ao mesmo tempo que a viscosidade muda",
+      "Brecha na filtração de ar: silício e alumínio elevados ao mesmo tempo; sílica entrando por vedação do filtro com falha",
+      "Diluição por combustível: viscosidade abaixo do mínimo do grau KV100 junto com absorção FTIR elevada a 720 cm⁻¹"
+    ],
+    "inspectionMethods": [
+      "Verificar o código de limpeza ISO 4406 da análise APC: confirmar se a contaminação por partículas contribui para o desgaste acelerado",
+      "Medir a temperatura do óleo do cárter ou do reservatório hidráulico sob carga representativa: comparar com os limiares de alarme térmico",
+      "Cruzar o Na da ASTM D5185 com o teor de água da ASTM D6304: se ambos estiverem elevados, ensaiar a pressão do sistema de arrefecimento e inspecionar a junta do cabeçote",
+      "Inspecionar o indicador de restrição do filtro de ar; remover o elemento e inspecionar as superfícies de vedação se for detectado Si > 25 ppm",
+      "Comparar a tendência da viscosidade com a absorção FTIR a 720 cm⁻¹: confirmar a diluição por combustível se o KV100 estiver abaixo do mínimo do grau"
+    ],
+    "correctiveActions": [
+      "Alarme de metais de desgaste: drenar e trocar o óleo; inspecionar os mancais e as superfícies de desgaste na próxima oportunidade de manutenção; investigar a fonte de contaminação",
+      "Viscosidade acima do limite de ação: drenar imediatamente; investigar a eficiência do sistema de arrefecimento e uma possível mistura de óleos; verificar se há superaquecimento",
+      "Ingresso de líquido de arrefecimento confirmado: drenar imediatamente, fazer flushing do sistema com óleo limpo e reparar o sistema de arrefecimento antes de dar nova partida",
+      "Si > 25 ppm: inspecionar e trocar o elemento do filtro de ar; inspecionar a vedação da carcaça; investigar a eficácia do pré-filtro",
+      "Esgotamento do TBN a ≤50%: fazer a troca de óleo independentemente dos outros parâmetros; reavaliar a adequação do intervalo de troca"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Metais de desgaste acelerados: Fe ou Cu com tendência de alta em amostras consecutivas",
+      "standard": "ISO 17359 — alarm response; ASTM D5185 elemental analysis",
+      "protectionSystem": "Melhor controle da limpeza do fluido até a meta ISO 4406 mais programa de OCM com intervalo de amostragem reduzido",
+      "technology": "Filtração do fluido em linha para atingir e manter a meta de limpeza ISO 4406; aumentar a frequência de amostragem do OCM para intervalos de 125 horas até confirmar a reversão da tendência de desgaste",
+      "relatedArticles": [
+        "contamination-control",
+        "extended-drain-interval-engineering",
+        "oil-analysis-methods",
+        "lubrication-system-filtration"
+      ]
+    },
+    {
+      "problem": "Potencial de verniz: o ΔE de MPC entra na categoria alta (31–45)",
+      "standard": "ASTM D7843 — MPC varnish potential measurement",
+      "protectionSystem": "Remoção do verniz por filtração kidney loop eletrostática ou de profundidade mais troca do fluido",
+      "technology": "Filtro kidney loop eletrostático ou de mídia carregada voltado aos produtos de oxidação solúveis (precursores do ΔE de MPC) abaixo de 0.2 µm; complementado por nova dosagem de aditivo antioxidante conforme a recomendação do OEM",
+      "relatedArticles": [
+        "varnish-formation-lube-systems",
+        "extended-drain-interval-engineering",
+        "lubrication-system-filtration"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "ISO 17359:2018 OCM framework verified; ASTM D445 viscosity method verified; ASTM D664 TAN action limits (+2.0/+3.0 mg KOH/g) from extended drain interval engineering practice aligned with API CK-4 guidance; ASTM D2896 TBN 50% depletion limit from ISO 17359 Annex and API lubricant specifications; ASTM D5185 wear metal thresholds from published fleet OCM programme data (JOAP guidelines, SAE 2007-01-4139 fleet data); ASTM E2412 FTIR absorption limits from published used oil analysis literature (Spectro Scientific, Analysts Inc.); ASTM D7843 MPC thresholds from ASTM STP 1536 varnish potential research"
+  }
+}
