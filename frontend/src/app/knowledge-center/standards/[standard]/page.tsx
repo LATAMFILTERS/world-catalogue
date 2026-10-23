@@ -51,6 +51,21 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   },
 };
 
+const CTR_1_METADATA: Record<string, { title: string; description: string }> = {
+  'iso-12937': {
+    title: "ISO 12937: What Water-in-Oil Test Results Mean",
+    description: "Interpret ISO 12937 water-in-oil results: what ppm means, how to assess action limits and how this Karl Fischer standard compares with ASTM D6304.",
+  },
+  'sae-j1858': {
+    title: "SAE J1858: Selecting a Full-Flow Engine Oil Filter",
+    description: "Selecting a full-flow oil filter? Understand SAE J1858 performance requirements and test methods for filters used in diesel and gasoline engines.",
+  },
+  'astm-d6304': {
+    title: "ASTM D6304: Karl Fischer Water Test Method Explained",
+    description: "Understand the ASTM D6304 coulometric Karl Fischer test for water in petroleum products: what the method measures and how it compares with ISO 12937.",
+  },
+};
+
 export function generateStaticParams() {
   return [
     ...KC_STANDARDS.map((s) => ({ standard: s.slug })),
@@ -73,8 +88,8 @@ export async function generateMetadata({ params }: { params: Promise<{ standard:
     : override?.description || std.metaDescription;
 
   return {
-    title,
-    description,
+    title: !isAlias ? CTR_1_METADATA[resolvedSlug]?.title ?? title : title,
+    description: !isAlias ? CTR_1_METADATA[resolvedSlug]?.description ?? description : description,
     alternates: { canonical: url },
     robots: isAlias ? { index: false, follow: true } : undefined,
     openGraph: {
