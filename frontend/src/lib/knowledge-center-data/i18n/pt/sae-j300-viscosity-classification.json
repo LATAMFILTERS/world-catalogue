@@ -1,0 +1,257 @@
+{
+  "slug": "sae-j300-viscosity-classification",
+  "faqs": [
+    {
+      "question": "Quais parâmetros de viscosidade a SAE J300 especifica para cada grau de óleo de motor?",
+      "answer": "A SAE J300 especifica três parâmetros para cada grau de óleo de motor: (1) Viscosidade de partida a frio em baixa temperatura (−10°C a −35°C conforme o grau), medida segundo a ASTM D5293 com o simulador de partida a frio (CCS), com valores máximos em mPa·s que definem o desempenho na partida; (2) Limite de bombeabilidade: viscosidade máxima para que o óleo possa ser bombeado em baixa temperatura, medida segundo a ASTM D4684 com o minirrotoviscosímetro (MRV), que evita a gelificação ou a formação de canais que deixariam a bomba sem óleo na partida a frio; (3) Viscosidade cinemática a 100°C (ASTM D445), com limites mínimos e máximos em cSt que definem a classe de viscosidade de operação do óleo. Por exemplo, o SAE 15W-40 especifica: CCS a −20°C ≤ 3,500 mPa·s; MRV a −25°C ≤ 60,000 mPa·s; KV100 = 12.5–16.3 cSt. O número W (15W) representa a classe de partida a frio; o segundo número (40) representa a classe de viscosidade de operação."
+    },
+    {
+      "question": "Como a viscosidade em alta temperatura e alto cisalhamento (HTHS) se relaciona com a espessura do filme nos mancais do motor?",
+      "answer": "A viscosidade HTHS (ASTM D4683, medida a 150°C e com taxa de cisalhamento de 10^6 s-1) prevê diretamente a espessura do filme de óleo nas posições de mancal mais exigidas do motor: os munhões dos mancais principais e de biela, que operam a 130–160°C sob carga dinâmica. A viscosidade HTHS mínima da SAE J300 para os óleos de grau 40 é de 3.5 mPa·s; para os de grau 30, de 3.0 mPa·s. Abaixo desses limites, o filme hidrodinâmico nos munhões dos mancais pode não sustentar uma lubrificação de filme completo sob as cargas máximas de combustão, aumentando o contato em lubrificação limite (metal com metal) e acelerando o desgaste dos mancais. Algumas especificações de fabricantes de alto desempenho (VW 508.00/509.00, Dexos 2) fixam o HTHS mínimo em 2.6 mPa·s para reduzir o consumo de combustível, especificando folgas de mancal otimizadas para operar com menor viscosidade: essas especificações exigem projetos de folga de mancal adequados e não são intercambiáveis com motores especificados para fluidos de HTHS padrão."
+    },
+    {
+      "question": "Qual é o papel dos melhoradores do índice de viscosidade nos óleos de motor multigrau e como eles afetam a estabilidade ao cisalhamento?",
+      "answer": "Os melhoradores do índice de viscosidade (VI) são aditivos poliméricos de alto peso molecular (polimetacrilato, copolímero de olefinas, poli-isobutileno) que reduzem a sensibilidade da viscosidade do óleo básico à temperatura. Em baixa temperatura, os novelos de polímero se contraem até um volume hidrodinâmico pequeno, com efeito espessante mínimo. Em alta temperatura, o polímero se estende, aumenta a viscosidade do óleo acima do valor do óleo básico e mantém a viscosidade cinemática alvo a 100°C. A estabilidade ao cisalhamento descreve quanto esses polímeros resistem à quebra permanente sob altos esforços de cisalhamento. A ASTM D6278 (ensaio de cisalhamento com rolamento de rolos cônicos KRL) e a ASTM D5481 (estabilidade permanente ao cisalhamento HTHS) medem a estabilidade ao cisalhamento. Um óleo com baixa estabilidade ao cisalhamento se degrada de viscosidade de grau 40 para aproximadamente grau 30 em 15,000–25,000 km em serviço de alto cisalhamento (motores turboalimentados), perdendo a proteção do filme nos mancais sem que a análise de óleo mostre indicadores de degradação evidentes além da queda de viscosidade."
+    },
+    {
+      "question": "Como a viscosidade se relaciona com a separação das superfícies dos mancais e com a curva de Stribeck?",
+      "answer": "A curva de Stribeck descreve o coeficiente de atrito no munhão de um mancal em função da relação (η × N / P), em que η = viscosidade do óleo (Pa·s), N = rotação do eixo (rev/s) e P = carga do mancal por unidade de área (Pa). Existem três regimes: lubrificação limite (ηN/P baixa: contato metal com metal, atrito alto, desgaste rápido); lubrificação mista (de transição); e lubrificação hidrodinâmica (ηN/P alta: separação total pelo filme de óleo, atrito baixo, desgaste mínimo). A viscosidade mínima do óleo para uma lubrificação hidrodinâmica completa é: η_min = (P × d_c) / (N × C), em que d_c = diâmetro do mancal e C = folga do mancal (derivação de Sommerfeld). Motores que operam abaixo da viscosidade mínima (por alta temperatura, diluição excessiva ou grau de óleo incorreto) passam da lubrificação hidrodinâmica para a mista: as taxas de desgaste dos mancais aumentam 10–50× e a rugosidade superficial dos munhões aumenta progressivamente com as horas de serviço."
+    },
+    {
+      "question": "Qual é a diferença entre a viscosidade cinemática e a dinâmica, e qual é usada na classificação SAE J300?",
+      "answer": "A viscosidade cinemática (KV) é a razão entre a viscosidade dinâmica e a densidade do fluido: KV (cSt ou mm2/s) = µ (Pa·s) / ρ (kg/m3). Ela representa a resistência do fluido a escoar por gravidade e é medida cronometrando o escoamento do óleo por um capilar de vidro calibrado (ASTM D445). A viscosidade dinâmica (µ, Pa·s ou mPa·s) é o esforço de cisalhamento necessário para manter um gradiente de velocidade unitário no fluido, medido diretamente com viscosímetros rotacionais. A SAE J300 usa a viscosidade cinemática a 100°C (ASTM D445) para o grau de viscosidade de operação (o número depois do W) e a viscosidade dinâmica a frio (mPa·s) para o grau de baixa temperatura (o número antes do W), medida com o simulador de partida a frio (ASTM D5293), que aplica uma taxa de cisalhamento que imita as condições reais da partida. A distinção importa porque a densidade muda com a temperatura: a viscosidade cinemática a 40°C é mais afetada pela temperatura que a dinâmica, porque as variações de densidade entram no quociente."
+    },
+    {
+      "question": "Como escolher o grau de óleo SAE para equipamentos que operam em faixas de temperatura extremas?",
+      "answer": "Aplicações com faixas de temperatura extremas (mineração ártica, construção tropical, grande altitude) exigem escolher um grau de óleo que atenda ao mesmo tempo: (1) A viscosidade de partida a frio para dar partida na temperatura ambiente mínima: a tabela 1 da SAE J300 fornece os limites CCS por grau; o SAE 5W-30 permite partida a −30°C, enquanto o SAE 10W-30 é limitado a −25°C; (2) A viscosidade cinemática mínima a 100°C para manter o filme nos mancais na temperatura máxima do cárter: em motores com temperatura do cárter acima de 120°C pode ser necessário um grau SAE 40 ou SAE 50; (3) A bombeabilidade na temperatura ambiente mínima: o limite MRV deve ser atendido sem que se formem canais no óleo que deixem sem óleo a galeria da bomba. Para uma faixa ambiente de −40°C a +50°C com temperatura máxima do óleo de 130°C: o SAE 0W-40 é o único grau que atende à partida a −40°C (CCS a −35°C ≤ 3,250 mPa·s para 0W), fornece viscosidade de operação de grau 40 a 100°C e atende ao HTHS mínimo de 3.5 mPa·s."
+    },
+    {
+      "question": "Qual é a importância dos limites de viscosidade cinemática ASTM D445 da SAE J300 para verificar o grau de um óleo de motor?",
+      "answer": "A viscosidade cinemática a 100°C segundo a ASTM D445 é a principal medição de verificação para confirmar que um óleo de motor atende ao grau SAE declarado, tanto na certificação do óleo novo quanto no monitoramento da condição do óleo usado. Os limites da SAE J300 (por exemplo, 12.5–16.3 cSt para o grau 40) estabelecem os limites de aprovação para a certificação do grau e para as decisões de manutenção. Uma amostra de óleo usado com KV100 abaixo do limite inferior da especificação (por exemplo, <12.5 cSt para o grau 40) indica perda do grau de viscosidade por: degradação por cisalhamento dos melhoradores de VI, diluição por combustível (a KV100 do diesel ≈ 3.5 cSt reduz muito a viscosidade do óleo) ou contaminação por solventes. Por outro lado, uma KV100 acima do limite superior indica espessamento do óleo por: oxidação severa, contaminação por glicol ou acúmulo de fuligem em aplicações com muito blow-by. Tanto ultrapassar o limite superior quanto ficar abaixo do inferior exigem troca imediata do óleo, independentemente do TBN ou de outros indicadores de condição."
+    },
+    {
+      "question": "Qual é o efeito do tipo de óleo básico (Grupo I, II, III, IV) no desempenho do grau SAE J300?",
+      "answer": "O grupo de óleo básico API afeta o desempenho do grau SAE pela relação entre viscosidade e temperatura: (1) Grupo I (mineral refinado com solventes, VI 95–105): exige adicionar bastante melhorador de VI para atingir desempenho multigrau; a quantidade de melhorador de VI reduz a estabilidade ao cisalhamento; (2) Grupo II (mineral hidroprocessado, VI 100–120): VI natural melhor que o Grupo I, menor carga de melhorador de VI, melhor estabilidade ao cisalhamento e resistência à oxidação; (3) Grupo III (hidroprocessado severo ou cera isomerizada, VI >120): muitas vezes comercializado como \"sintético\", precisa de menos melhorador de VI, excelente estabilidade ao cisalhamento; pode atingir graus a frio 0W e 5W mantendo o grau de operação 40 ou 50; (4) Grupo IV (polialfaolefina, PAO, VI 120–150): o menor ponto de fluidez, o maior VI natural, precisa de um mínimo de melhorador de VI; atinge ponto de fluidez de −54°C para aplicações SAE 0W. Com graus SAE equivalentes, os óleos básicos de Grupo III e IV oferecem intervalos de troca 30–50% mais longos que os óleos de Grupo I pela resistência à oxidação."
+    },
+    {
+      "question": "Como a viscosidade do óleo de motor afeta a economia de combustível e quais graus SAE são especificados nas regulamentações de economia de combustível?",
+      "answer": "Reduzir a viscosidade do óleo de motor reduz as perdas por atrito nos mancais, nos pacotes de anéis e no trem de válvulas: cada cSt a menos de KV100 corresponde aproximadamente a uma melhora da economia de combustível de 0.3–0.7% em aplicações leves na temperatura de operação típica em estrada. As regulamentações de economia de combustível da UE (metas de CO2 médio de frota) levaram as especificações dos fabricantes para graus de baixa viscosidade (SAE 0W-20, 0W-16 e até 0W-8 em algumas especificações de fabricantes japoneses), com a viscosidade HTHS mínima reduzida para 2.6 mPa·s. Com HTHS de 2.6 mPa·s em vez do padrão de 3.5 mPa·s, a espessura do filme hidrodinâmico nos mancais se reduz proporcionalmente: esses óleos exigem mudanças de projeto complementares no motor (tolerâncias de mancal mais apertadas, melhor acabamento superficial, revestimentos que reduzem o atrito) para manter durabilidade equivalente dos mancais. NÃO é permitido intercambiar óleos entre as especificações HTHS 2.6 mPa·s e HTHS 3.5 mPa·s sem aprovação do fabricante."
+    },
+    {
+      "question": "Quais graus de óleo SAE são usados em motores diesel de serviço pesado e quais distinções de classe de viscosidade se aplicam?",
+      "answer": "As aplicações de motores diesel de serviço pesado usam: (1) SAE 15W-40: o padrão tradicional de serviço pesado; KV100 = 12.5–16.3 cSt; grau a frio classificado para partida a −20°C; grau predominante em construção, mineração e agricultura acima de −20°C; (2) SAE 10W-40: grau a frio classificado para −25°C; usado em aplicações de clima frio moderado; (3) SAE 5W-40: grau a frio classificado para −30°C; adoção crescente na mineração com operação no inverno; melhor bombeabilidade a frio que o 15W-40; (4) SAE 0W-40: grau a frio classificado para −35°C a −40°C; equipamentos pesados árticos e subárticos; (5) SAE 20W-50: aplicações de calor extremo (climas tropicais, geradores diesel estacionários de alta carga); KV100 = 16.3–21.9 cSt. A escolha entre esses graus é determinada pela temperatura ambiente mínima de partida e pela temperatura máxima do óleo em serviço: as especificações de óleo do fabricante no manual do motor definem a faixa aprovada, normalmente como uma tabela de temperaturas que relaciona a temperatura ambiente ao grau SAE exigido."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "SAE J300:2021, Engine Oil Viscosity Classification",
+      "relevance": "Norma principal de classificação de viscosidade que define os limites do simulador de partida a frio, os limites do minirrotoviscosímetro, as faixas de viscosidade cinemática e os mínimos de viscosidade HTHS de cada grau de óleo de motor SAE."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D445-21, Standard Test Method for Kinematic Viscosity of Transparent and Opaque Liquids (and Calculation of Dynamic Viscosity)",
+      "relevance": "Método de ensaio de viscosidade cinemática usado para verificar a conformidade com o grau SAE e monitorar a condição do óleo usado."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D5293-15, Standard Test Method for Apparent Viscosity of Engine Oils and Base Stocks Between −5°C and −35°C Using the Cold-Cranking Simulator",
+      "relevance": "Método de ensaio de viscosidade de partida a frio que define os limites de desempenho na partida em baixa temperatura da SAE J300."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D4684-14a, Standard Test Method for Determination of Yield Stress and Apparent Viscosity of Engine Oils at Low Temperature",
+      "relevance": "Método de ensaio com minirrotoviscosímetro para a bombeabilidade do óleo em baixa temperatura, o segundo limite de baixa temperatura da SAE J300."
+    }
+  ],
+  "title": "Classificação de viscosidade de óleos de motor SAE J300: engenharia de partida a frio, alta temperatura e multigrau",
+  "subtitle": "Sistema de graus de viscosidade SAE, limites de partida a frio e bombeabilidade, viscosidade HTHS a 150°C, tecnologia de óleos multigrau, ponto de fluidez e escolha do grau de viscosidade conforme a faixa de temperatura de operação.",
+  "metaDescription": "Referência de engenharia sobre a classificação de viscosidade de óleos de motor SAE J300: simulador de partida a frio (ASTM D5293), bombeabilidade com minirrotoviscosímetro (ASTM D4684), viscosidade cinemática a 100°C (ASTM D445), HTHS a 150°C (ASTM D4683) e metodologia de escolha do grau de óleo multigrau.",
+  "category": "engenharia",
+  "readTime": "11 min",
+  "intro": "A viscosidade do óleo de motor é o parâmetro isolado mais importante para determinar a espessura do filme de óleo nas superfícies dos mancais e nos componentes do trem de válvulas. A SAE J300 define o sistema de classificação de viscosidade que permite aos fabricantes de motores especificar, e aos comercializadores de lubrificantes certificar, as propriedades de viscosidade dos óleos de motor tanto na partida a frio quanto na operação em alta temperatura. Uma escolha correta do grau de viscosidade, adequada tanto à temperatura mínima de partida quanto à temperatura máxima de operação, é pré-requisito para manter uma espessura de filme adequada nos mancais em toda a faixa de operação do motor.",
+  "sections": [
+    {
+      "heading": "Estrutura de graus da SAE J300",
+      "body": "A SAE J300 define dois conjuntos de graus de viscosidade de óleo de motor: (1) Graus de inverno (graus W: 0W, 5W, 10W, 15W, 20W, 25W): definidos por limites máximos de viscosidade de partida a frio em baixa temperatura, que garantem fluxo de óleo suficiente aos mancais durante a partida a frio antes de atingir a temperatura de operação; (2) Graus de alta temperatura (20, 30, 40, 50, 60): definidos pela viscosidade cinemática mínima a 100°C (ASTM D445) e pela viscosidade mínima em alta temperatura e alto cisalhamento (HTHS). Os óleos multigrau (por exemplo, SAE 15W-40) devem atender tanto aos limites de baixa temperatura do grau W (como 15W) quanto aos limites do grau de alta temperatura (como 40). Os óleos multigrau conseguem isso com melhoradores do índice de viscosidade (VII), aditivos poliméricos que reduzem a perda de viscosidade em alta temperatura e permitem que um único óleo cubra os requisitos de baixa e de alta temperatura. Os óleos monograu (SAE 40, SAE 50) não são classificados para desempenho em baixa temperatura e não são adequados para partida a frio em temperaturas abaixo de aproximadamente −5°C.",
+      "callout": [
+        {
+          "label": "Exemplo de grau W",
+          "value": "SAE 15W: partida a frio ≤3,500 cP a −20°C"
+        },
+        {
+          "label": "Grau de alta temperatura 40",
+          "value": "12.5–16.3 mm²/s de viscosidade cinemática a 100°C"
+        },
+        {
+          "label": "Multigrau 15W-40",
+          "value": "Atende aos limites dos graus 15W e 40"
+        }
+      ]
+    },
+    {
+      "heading": "Simulador de partida a frio: ASTM D5293",
+      "body": "O ensaio com simulador de partida a frio (CCS, ASTM D5293) mede a viscosidade aparente em baixa temperatura com altas taxas de cisalhamento que simulam a carga dos mancais do motor durante a partida. A temperatura de ensaio depende do grau: 0W é ensaiado a −35°C; 5W a −30°C; 10W a −25°C; 15W a −20°C; 20W a −15°C; 25W a −10°C. A SAE J300 especifica a viscosidade CCS máxima de cada grau W; ultrapassar o limite significa que o motor de partida não consegue girar o motor na rotação nominal, impedindo a ignição. O ensaio CCS mede a viscosidade aparente (e não a newtoniana real) porque o óleo de motor é um fluido não newtoniano em baixa temperatura: sua viscosidade depende da taxa de cisalhamento pela formação de cristais de cera e pelo comportamento dos aditivos poliméricos. Um óleo 0W-20 tem limite CCS de ≤6,200 mPa·s a −35°C; um 15W-40 tem limite CCS de ≤3,500 mPa·s a −20°C."
+    },
+    {
+      "heading": "Bombeabilidade com minirrotoviscosímetro: ASTM D4684",
+      "body": "A bombeabilidade na partida a frio é avaliada pelo ensaio do minirrotoviscosímetro (MRV, ASTM D4684). O MRV mede a bombeabilidade do óleo em temperaturas 5°C mais frias que a temperatura do ensaio CCS, simulando o óleo que precisa ser bombeado do cárter até a sucção da bomba de óleo. A SAE J300 fixa uma viscosidade MRV máxima (normalmente 60,000 mPa·s) e uma tensão de escoamento máxima (35 Pa) para cada grau W. Se o limite de tensão de escoamento for ultrapassado, o óleo apresenta comportamento tipo gel que impede o escoamento até a sucção da bomba mesmo que a viscosidade CCS esteja dentro dos limites: é o modo de falha de \"fluido estruturado\", em que o óleo não pode ser bombeado embora pareça um líquido. Uma falha MRV no limite de tensão de escoamento deixa o motor sem óleo poucos segundos após a partida: os mancais funcionam sem lubrificação até que a bomba de óleo consiga aspirar fluido do cárter. Os óleos básicos sintéticos (Grupos III, IV, V) apresentam desempenho MRV bem melhor que os óleos minerais convencionais com grau de viscosidade equivalente."
+    },
+    {
+      "heading": "Viscosidade em alta temperatura e alto cisalhamento: ASTM D4683",
+      "body": "A viscosidade em alta temperatura e alto cisalhamento (HTHS, ASTM D4683) mede a viscosidade do óleo de motor a 150°C e com taxa de cisalhamento de 10⁶ s⁻¹, condições representativas das zonas de carga dos mancais de munhão em motores de alto rendimento em plena temperatura de operação. A viscosidade HTHS é o preditor mais direto da espessura do filme de óleo nas superfícies dos mancais sob carga alta. A SAE J300 especifica a viscosidade HTHS mínima de cada grau de alta temperatura: SAE 20 exige ≥2.6 mPa·s; SAE 30 exige ≥2.9 mPa·s; SAE 40 (veículos de passeio) exige ≥3.5 mPa·s; SAE 40 (serviço pesado) exige ≥3.7 mPa·s. A especificação API CK-4 (diesel de serviço pesado) exige HTHS mínimo ≥3.5 mPa·s a 150°C. As alegações de melhora da economia de combustível baseadas em óleos de menor viscosidade (por exemplo, 0W-20 versus 15W-40) se apoiam na redução da viscosidade HTHS; isso deve ser equilibrado com a espessura de filme mínima exigida para o projeto específico do motor: a especificação de óleo do fabricante do motor define o HTHS mínimo aceitável para aquela aplicação.",
+      "callout": [
+        {
+          "label": "Mínimo HTHS do SAE 30",
+          "value": "2.9 mPa·s a 150°C, 10⁶ s⁻¹"
+        },
+        {
+          "label": "Mínimo do SAE 40 HD",
+          "value": "3.7 mPa·s a 150°C (API CK-4)"
+        },
+        {
+          "label": "Norma de ensaio HTHS",
+          "value": "ASTM D4683 (viscosímetro TBS)"
+        }
+      ]
+    },
+    {
+      "heading": "Metodologia de escolha do grau de viscosidade",
+      "body": "A escolha do grau de viscosidade deve atender a três requisitos ao mesmo tempo: (1) Capacidade de partida a frio: o limite de partida a frio do grau W deve estar dentro da capacidade de torque do motor de partida na temperatura ambiente mínima esperada. A SAE J300 fornece uma recomendação de temperatura mínima para cada grau W (0W: −40°C; 5W: −35°C; 10W: −25°C; 15W: −20°C; 20W: −15°C); são orientações, não garantias: a temperatura mínima real depende do estado da bateria, da classificação do motor de partida e da taxa de compressão do motor. (2) Espessura de filme HTHS: o grau de alta temperatura deve fornecer viscosidade HTHS que atenda à especificação mínima do fabricante do motor. Não passe para um grau HTHS menor sem aprovação por escrito do fabricante; uma espessura de filme menor aumenta a taxa de desgaste dos mancais. (3) Capacidade de troca estendida: nos programas de troca estendida, o óleo deve manter a viscosidade dentro dos limites do grau durante todo o intervalo; a tendência da viscosidade cinemática a 100°C na análise de óleo detecta a perda de viscosidade por degradação por cisalhamento dos VII ou o espessamento oxidativo."
+    },
+    {
+      "heading": "Óleos básicos sintéticos e semissintéticos",
+      "body": "Os grupos de óleo básico API definem o nível de refino: Grupo I (mineral refinado com solventes), Grupo II (mineral hidrocraqueado, melhor estabilidade à oxidação), Grupo III (hidrocraqueado severo, semissintético), Grupo IV (polialfaolefina, totalmente sintético), Grupo V (ésteres e outros sintéticos). Os óleos básicos de Grupo III e IV oferecem: menor ponto de fluidez (normalmente −50°C a −60°C contra −15°C do óleo mineral de Grupo I), melhor fluidez em baixa temperatura (desempenho MRV), menor perda por evaporação (evaporação Noack segundo a ASTM D5800) e melhor estabilidade à oxidação em alta temperatura. Em aplicações de clima frio abaixo de −25°C, óleos básicos de Grupo III ou IV são necessários para atender aos requisitos CCS e MRV em toda a faixa de temperatura de operação. Em intervalos de troca estendidos (>500 horas em motores industriais), a estabilidade à oxidação dos Grupos III ou IV proporciona operação mais limpa do motor, com menores taxas de formação de verniz e borra que os óleos de Grupo I/II com troca estendida."
+    },
+    {
+      "heading": "Monitoramento da viscosidade em serviço",
+      "body": "O monitoramento da viscosidade do óleo usado pela viscosidade cinemática a 100°C (ASTM D445) detecta três modos de falha: (1) aumento da viscosidade: espessamento oxidativo (deterioração do óleo), contaminação por líquido de arrefecimento (o glicol no óleo aumenta a viscosidade) ou carga de fuligem do diesel (óleo espessado por fuligem acima de 3.5% de fuligem em massa); (2) queda da viscosidade: diluição por combustível (o combustível da partida a frio lava as paredes dos cilindros em baixa temperatura), degradação por cisalhamento do aditivo polimérico VII (perda permanente de viscosidade nos multigraus) ou contaminação por solventes; (3) ultrapassagem do limite do grau: se a viscosidade cinemática a 100°C cair abaixo do mínimo do grau SAE declarado, o óleo deixa de fornecer a espessura de filme nominal. Limite de ação: +/−15% em relação à viscosidade do óleo novo a 100°C dispara a investigação da troca de óleo, independentemente do intervalo de troca. Os dados de viscosidade devem sempre ser interpretados junto com o TAN, o teor de água (ASTM D6304) e a análise elementar ICP: a viscosidade sozinha não confirma a condição do óleo."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Limite CCS do SAE 15W",
+      "value": "≤3,500 mPa·s a −20°C (ASTM D5293)"
+    },
+    {
+      "label": "Tensão de escoamento MRV máxima",
+      "value": "35 Pa (todos os graus W, SAE J300)"
+    },
+    {
+      "label": "Mínimo HTHS do SAE 40 HD",
+      "value": "3.7 mPa·s a 150°C (API CK-4)"
+    },
+    {
+      "label": "Limite de ação de viscosidade",
+      "value": "±15% em relação ao óleo novo a 100°C"
+    },
+    {
+      "label": "Ponto de fluidez do Grupo IV",
+      "value": "Normalmente −50°C a −60°C"
+    }
+  ],
+  "relatedStandards": [
+    "SAE J300",
+    "ASTM D445",
+    "ASTM D5293",
+    "ASTM D4684",
+    "ASTM D4683",
+    "API CK-4"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "SAE J300",
+    "viscosidade do óleo de motor",
+    "simulador de partida a frio",
+    "ASTM D5293",
+    "bombeabilidade MRV",
+    "ASTM D4684",
+    "viscosidade HTHS",
+    "ASTM D4683",
+    "escolha do grau de viscosidade",
+    "óleo multigrau",
+    "óleo básico sintético",
+    "API CK-4",
+    "monitoramento da viscosidade do óleo",
+    "diluição por combustível",
+    "perda de viscosidade"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Partida a frio lenta ou com falha: o motor de partida gira devagar ou o motor não pega",
+      "Luz de advertência de pressão de óleo na partida a frio que apaga após 10–30 segundos (chegada atrasada do óleo)",
+      "Viscosidade do óleo a 100°C >15% acima da linha de base do óleo novo na análise de óleo usado",
+      "Viscosidade do óleo a 100°C >15% abaixo da linha de base do óleo novo: risco de ficar abaixo do limite do grau",
+      "Metais de desgaste dos mancais (Fe, Cu, Pb) elevados na análise ICP com o intervalo de troca correto"
+    ],
+    "probableCauses": [
+      "Partida a frio lenta ou com falha: grau W alto demais para a temperatura ambiente; a recomendação de temperatura mínima da SAE J300 foi ultrapassada; bateria ou motor de partida com capacidade reduzida amplificando o efeito da viscosidade",
+      "Pressão de óleo atrasada: comportamento correto em frio extremo se a válvula de bypass estiver abrindo (o óleo frio força o bypass); preocupante se ocorrer acima de −10°C com o grau W correto: verificar a sucção da bomba em busca de falha tipo tensão de escoamento MRV (tampão de gel)",
+      "Aumento da viscosidade >15%: degradação oxidativa do óleo (intervalo de troca ultrapassado); contaminação por glicol (confirmar com a ASTM D2982); carga de fuligem em motores diesel operando com carga baixa",
+      "Queda da viscosidade >15%: diluição por combustível pela lavagem de combustível na partida a frio (verificar combustível no óleo por cromatografia gasosa ASTM D3525); degradação por cisalhamento dos VII (permanente: o óleo precisa ser trocado); entrada de solventes",
+      "Metais de desgaste elevados com o intervalo de troca correto: viscosidade HTHS baixa demais para a exigência dos mancais do motor; verificar se a especificação do óleo atende ao HTHS mínimo do fabricante do motor; pode indicar grau especificado incorreto"
+    ],
+    "inspectionMethods": [
+      "Viscosidade cinemática ASTM D445 a 40°C e 100°C: comparação com a linha de base da especificação do óleo novo",
+      "Ensaio CCS ASTM D5293 diante de suspeita de problema em baixa temperatura: exige laboratório; verificar a conformidade do grau na temperatura ambiente mínima",
+      "Cromatografia gasosa ASTM D3525 para diagnosticar combustível no óleo: detecta componentes do combustível no óleo pela volatilidade",
+      "Ensaio de glicol ASTM D2982 para investigar aumento de viscosidade: ensaio colorimétrico rápido",
+      "Evaporação Noack ASTM D5800: perda por evaporação excessiva causa aumento da viscosidade em serviço de alta temperatura"
+    ],
+    "correctiveActions": [
+      "Falha na partida a frio por grau de viscosidade inadequado: passar para um grau W menor (por exemplo, 15W-40 → 10W-40 ou 5W-40 sintético) classificado para a temperatura ambiente mínima; drenar e reabastecer, e não apenas completar o nível",
+      "Aumento da viscosidade por degradação oxidativa: reduzir o intervalo de troca; investigar se o motor está funcionando mais quente que o normal (temperatura alta do líquido de arrefecimento acelera a oxidação); considerar óleo básico de Grupo III ou IV pela melhor resistência à oxidação",
+      "Diluição por combustível confirmada: investigar a calibração de injeção na partida a frio; verificar a vedação dos injetores (diesel) ou o sincronismo das válvulas (gasolina); trocar o óleo e o filtro imediatamente; acompanhar com amostra de controle às 50 horas",
+      "Metais de desgaste elevados com o grau correto: verificar se o óleo atende à especificação HTHS mínima do fabricante; verificar as folgas dos mancais na próxima retífica; passar para um óleo de maior grau HTHS se o fabricante permitir",
+      "Perda por cisalhamento dos VII (viscosidade abaixo do mínimo do grau): trocar o óleo e o filtro; avaliar se o intervalo de troca estendido está causando a degradação por cisalhamento; passar para um óleo sem VII ou com formulação de VII de maior peso molecular"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Uma frota operando com temperatura ambiente de inverno de −25°C relata partidas a frio lentas e luzes de advertência de pressão de óleo com SAE 15W-40",
+      "standard": "SAE J300 (minimum operating temperature per grade), ASTM D5293 (CCS verification)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "O SAE 15W-40 é classificado para um mínimo de −20°C; a −25°C, a viscosidade CCS ultrapassa o limite e a bombeabilidade fica no limite. Passar para SAE 10W-40 (classificado para −25°C) ou SAE 5W-40 totalmente sintético (classificado para −30°C); verificar se a categoria de serviço API é mantida (CK-4 para diesel de serviço pesado); trocar o óleo em todos os veículos da frota antes da próxima estação fria",
+      "relatedArticles": [
+        "lubrication-system-filtration",
+        "oil-analysis-methods",
+        "filter-element-integrity"
+      ]
+    },
+    {
+      "problem": "Um programa de intervalo de troca estendido mostra aumento de viscosidade >20% às 500 horas na análise de óleo usado",
+      "standard": "SAE J300 (grade limits), ASTM D445 (kinematic viscosity), ASTM D943 (oxidation stability)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "Um aumento de viscosidade >20% indica espessamento oxidativo ou contaminação; fazer o ensaio de glicol ASTM D2982 e o de combustível ASTM D3525 para descartar contaminação; se for apenas oxidação do óleo, avaliar um óleo sintético de Grupo III ou IV com melhor estabilidade à oxidação; reduzir o intervalo de troca estendido até que a viscosidade na troca fique dentro de 15% da linha de base",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "service-intervals",
+        "varnish-formation-lube-systems"
+      ]
+    },
+    {
+      "problem": "O fabricante do motor especifica HTHS mínimo de 3.5 mPa·s, mas a frota usa um óleo de especificação menor para reduzir o consumo de combustível",
+      "standard": "SAE J300 (HTHS grade limits), API CK-4 (HTHS minimum 3.5 mPa·s), ASTM D4683",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "A especificação HTHS mínima do fabricante do motor é um requisito de suporte de carga, e não uma recomendação: operar abaixo do HTHS mínimo aumenta a taxa de desgaste dos mancais. O benefício em consumo de combustível de um óleo de menor HTHS deve ser comparado com a redução da vida dos mancais. Quantificar a economia real de combustível (normalmente 0.5–1.5% no máximo) em relação ao custo de troca dos mancais e às paradas. Se o fabricante aprovar um HTHS menor por meio de um programa de teste em campo, prosseguir com monitoramento por análise de óleo a cada 100 horas para a tendência dos metais de desgaste",
+      "relatedArticles": [
+        "lubrication-system-filtration",
+        "total-cost-of-ownership",
+        "oil-analysis-methods"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-SAE-J300)",
+    "evidenceStatus": "SAE J300:2021 verified; ASTM D5293 verified; ASTM D4684 verified; ASTM D4683 verified; ASTM D445 verified; API CK-4 HTHS minimum from API 1509 Annex E; base oil Group classifications from API 1509 Appendix E"
+  }
+}

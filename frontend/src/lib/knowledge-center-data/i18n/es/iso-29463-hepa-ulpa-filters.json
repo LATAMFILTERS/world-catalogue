@@ -1,0 +1,255 @@
+{
+  "slug": "iso-29463-hepa-ulpa-filters",
+  "faqs": [
+    {
+      "question": "¿Qué clases de eficiencia define ISO 29463 y cuál es la metodología de ensayo MPPS?",
+      "answer": "ISO 29463-1:2011 define las clases de eficiencia de los filtros de aire de alta eficiencia: clases EPA (Efficient Particulate Air) E10–E12, clases HEPA (High Efficiency Particulate Air) H13–H14 y clases ULPA (Ultra Low Penetration Air) U15–U17. El ensayo usa el tamaño de partícula más penetrante (MPPS): el tamaño de aerosol en el que la eficiencia global del filtro es mínima, normalmente 0.1–0.3 µm en los medios fibrosos. Se genera aerosol de DEHS (sebacato de dietilhexilo) o PAO (polialfaolefina) en el MPPS y se mide con fotómetro o con contador de partículas por condensación. Eficiencia mínima de la clase H13: 99.95% global (o 99.75% en cualquier posición de escaneo individual); clase H14: 99.995% global (99.975% local); clase U15: 99.9995% global; clase U16: 99.99995%; clase U17: 99.999995%. Estos límites representan una penetración máxima del 0.05%, 0.005%, 0.0005%, 0.00005% y 0.000005% respectivamente."
+    },
+    {
+      "question": "¿Por qué se usa el MPPS para ensayar filtros HEPA en lugar de un tamaño de partícula fijo?",
+      "answer": "Se usa el tamaño de partícula más penetrante porque la eficiencia de los filtros fibrosos no varía de forma monótona con el tamaño de partícula: es máxima para las partículas muy grandes (predomina el impacto inercial) y para las muy pequeñas (predomina la difusión), y es mínima en un tamaño intermedio en el que ningún mecanismo es óptimo. En un medio HEPA típico de fibra de vidrio a la velocidad frontal nominal, el mínimo de eficiencia (MPPS) se da con un diámetro de partícula DEHS de aproximadamente 0.1–0.3 µm. Un ensayo con un tamaño de partícula fijo sobrestimaría la eficiencia si el tamaño de ensayo quedara fuera del rango MPPS, y la subestimaría si la partícula de ensayo estuviera en el MPPS pero el MPPS real del medio estuviera en otro tamaño. Al ensayar en el MPPS real de cada tipo de medio, ISO 29463 asegura que se mida la eficiencia en el peor caso, sin importar la composición del medio ni la distribución de diámetros de fibra."
+    },
+    {
+      "question": "¿Qué diferencia hay entre los requisitos de eficiencia global y de penetración local (ensayo de escaneo) en ISO 29463?",
+      "answer": "ISO 29463 especifica tanto la eficiencia global del filtro (promedio ponderado en toda la cara del filtro) como la penetración local máxima (con una sonda que escanea toda el área de la cara). El requisito de eficiencia global es más permisivo: unos pocos poros de alta penetración aportan al promedio en proporción a su fracción de área, que es pequeña. El límite de penetración local máxima (expresado como una penetración local máxima que no debe superar 10× la penetración promedio) capta los poros y los defectos de derivación que quedarían ocultos en el promedio global. En la clase H14 (penetración promedio máxima del 0.005%), la penetración local máxima no debe superar el 0.05%: cualquier punto de la cara del filtro que deje pasar un 0.05% falla, aunque el promedio esté muy por debajo del 0.005%. El ensayo de escaneo se hace con una sonda de fotómetro calibrada que recorre la cara del filtro aguas abajo a 5 cm/min o más despacio."
+    },
+    {
+      "question": "¿Qué velocidad frontal especifica ISO 29463 para el ensayo y cómo afecta la velocidad frontal a la eficiencia del filtro HEPA?",
+      "answer": "ISO 29463-3:2011 (Methods of Test) especifica ensayar a la velocidad frontal nominal del filtro: el caudal por unidad de área frontal para el que está diseñado. Velocidad frontal nominal típica de los filtros HEPA: 0.25–0.50 m/s en salas limpias de semiconductores; 2.0–3.0 m/s en ventilación industrial. La eficiencia en el MPPS baja al aumentar la velocidad frontal porque: (1) La eficiencia por impacto inercial aumenta con la velocidad y compensa en parte; (2) La eficiencia de captura por difusión baja con la velocidad (menos tiempo de permanencia de las partículas en el medio); (3) Efecto neto: el MPPS se desplaza a tamaños de partícula algo menores con mayor velocidad, y la eficiencia mínima (en el MPPS) baja. Las aplicaciones de alta velocidad frontal requieren un medio más eficiente para lograr la misma clase ISO 29463: una clasificación H14 a 0.25 m/s de velocidad frontal puede dar solo un desempeño de clase H13 a 2.0 m/s si se usa el mismo medio."
+    },
+    {
+      "question": "¿Qué relación hay entre ISO 29463 y la norma HEPA anterior EN 1822?",
+      "answer": "ISO 29463 es la evolución internacional de EN 1822 (norma HEPA europea). EN 1822:2009 definía la misma estructura de clases E/H/U y la misma metodología de ensayo MPPS que ISO 29463, y las designaciones de clase y los límites de eficiencia son idénticos. Las principales diferencias son: ISO 29463 incorpora actualizaciones de las especificaciones del aerosol de ensayo (aclara el uso de DEHS y PAO), mejores especificaciones de la sonda del ensayo de escaneo y definiciones actualizadas de la velocidad frontal. EN 1822 se sigue citando en las especificaciones europeas de ventilación y salas limpias; ISO 29463 se prefiere en las especificaciones de compra internacionales. Para la elección práctica del filtro, un filtro H14 según EN 1822 equivale a uno H14 según ISO 29463: la metodología de ensayo y los criterios de aprobación son idénticos. Ambas normas se citan en ISO 14644 (clasificación de salas limpias) para especificar los filtros de suministro de aire."
+    },
+    {
+      "question": "¿Qué clase de filtro HEPA se requiere en los entornos de sala limpia farmacéutica ISO 5 (antes Clase 100)?",
+      "answer": "Las salas limpias ISO 14644-1 Clase 5 (antes US Federal Standard 209E Clase 100) requieren filtros terminales de suministro de aire de como mínimo HEPA clase H14 (99.995% de eficiencia en el MPPS) para lograr límites de partículas en el aire de ≤3,520 partículas/m3 ≥0.5 µm. En la práctica, la mayoría de las salas limpias farmacéuticas ISO Clase 5 usan filtros ULPA U15 (99.9995% en el MPPS) combinados con flujo unidireccional (laminar) a 0.45 m/s ±20% para lograr el conteo de partículas ISO 5 con un margen de seguridad adecuado. La instalación del filtro terminal debe ensayarse en sitio con el método de escaneo (ISO 14644-3, método B.6) después de instalarla: la certificación de fábrica del filtro HEPA no alcanza, porque la manipulación y la instalación pueden provocar derivación por daños en el sello del marco o deformación del medio. El ensayo en sitio confirma el desempeño instalado, incluidos todos los sellos entre carcasa y filtro."
+    },
+    {
+      "question": "¿Cómo se instalan los filtros HEPA en las salas limpias para asegurar la integridad del sello?",
+      "answer": "La instalación de filtros HEPA en salas limpias usa uno de tres métodos de sellado: (1) Sello de gel (cuchilla en gel): el marco del filtro se asienta en un canal lleno de gel de silicona viscoso; la cuchilla del filtro se sumerge en el gel y crea un sello estanco a los líquidos que absorbe pequeñas desalineaciones del marco y la dilatación térmica sin fugas; (2) Bag-in-bag-out (BIBO): para aplicaciones de contención de riesgo biológico; permite reemplazar el filtro sin contaminar la sala limpia, con una bolsa unida a la carcasa que contiene el filtro contaminado durante el retiro; (3) Junta de marco rígido: el marco del filtro comprime una junta de sellado a 50–100 N/m de perímetro; la compresión uniforme es crítica, y un torque insuficiente de los sujetadores crea derivación en los puntos de baja compresión. El ensayo de integridad en sitio se hace después de cada instalación de filtro y después de cualquier tarea de mantenimiento que altere el marco del filtro o la carcasa."
+    },
+    {
+      "question": "¿Qué mecanismo de paso de contaminación provoca la falla de un filtro HEPA sin daño visible del medio?",
+      "answer": "La falla de un filtro HEPA sin daño visible del medio ocurre por: (1) Falla del sello del marco: la junta de silicona o el sello de cuchilla en gel entre el marco del filtro y la carcasa desarrolla una separación por golpes mecánicos, ciclos térmicos o degradación del gel; las partículas saltean el medio por completo a través de esa separación. Los filtros HEPA asentados con junta deben revisarse en cuanto a la integridad del sello del marco en cada ensayo de escaneo en sitio. (2) Aparición de poros en el medio por fragilidad de las fibras: el medio HEPA de fibra de vidrio sufre daños mecánicos por vibración y golpes de manipulación; poros de apenas 0.1 mm permiten una penetración detectable en el ensayo de certificación de clase H14, pero pueden no verse a simple vista. (3) Derivación por carga del filtro: a medida que los filtros HEPA se cargan de partículas, la presión diferencial aumenta; en algunos estados de carga, una ΔP alta puede forzar el rearrastre de partículas a través del medio, en un fenómeno llamado \"blowthrough\", si la velocidad frontal supera la de diseño durante transitorios del HVAC."
+    },
+    {
+      "question": "¿Qué método de ensayo verifica la eficiencia en sitio de un sistema de filtros HEPA instalado?",
+      "answer": "El ensayo en sitio (instalado) de filtros HEPA según ISO 14644-3 método B.6 usa: (1) Inyección de aerosol de desafío aguas arriba del banco de filtros: aerosol de DEHS o PAO de 0.5–1.0 µm con una concentración de desafío de aproximadamente 20 µg/L (detectable por fotómetro con una señal >100× sobre el fondo); (2) Escaneo con sonda aguas abajo: una sonda de fotómetro recorre toda la cara del filtro aguas abajo y el área del marco de la carcasa a 5 cm/min o más despacio; (3) Límite de penetración: cualquier punto con una penetración superior al 0.01% de la concentración de desafío no cumple los requisitos de instalación de la clase H14 (equivalente a un 0.01% de penetración local); (4) Medición en punto fijo: la eficiencia global se mide en el punto central de la cara aguas abajo como un valor único representativo del desempeño promedio. El ensayo en sitio se hace después de la instalación, después de reemplazar el filtro y como mínimo cada 6 meses en las salas limpias farmacéuticas de grado A/B según EU GMP Annex 1."
+    },
+    {
+      "question": "¿Cómo se relaciona el límite de eficiencia de los filtros ULPA con la concentración de partículas en las salas limpias ISO 1?",
+      "answer": "Las salas limpias ISO 14644-1 Clase 1 (la clasificación más exigente) requieren concentraciones de partículas en el aire de ≤10 partículas/m3 ≥0.1 µm. Para lograrlo a partir de una concentración de partículas en el aire de suministro de aproximadamente 30,000 partículas/m3 ≥0.1 µm (pleno de suministro típico de sala limpia con ingreso de partículas), el filtro terminal de suministro debe lograr una eficiencia de eliminación mínima de (1 - 10/30,000) = 99.967% en ≥0.1 µm, lo que exige como mínimo un HEPA clase H14 para el tamaño de 0.1 µm. Sin embargo, las salas limpias ISO 1 exigen además ≤2 partículas/m3 ≥0.2 µm, lo que requiere como mínimo filtros terminales ULPA U16 (99.99995% en el MPPS ≈ 0.1–0.2 µm) para lograr este límite con margen suficiente. La ISO Clase 1 se usa en la litografía EUV de semiconductores, la fabricación de dispositivos cuánticos y los recubrimientos ópticos de precisión: aplicaciones en las que la contaminación por partículas menores de 100nm provoca defectos en el producto."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 29463-1:2011, High Efficiency Filters and Filter Media for Removing Particles in Air — Part 1: Classification, Performance Testing and Marking",
+      "relevance": "Norma internacional principal que define las clases de eficiencia EPA/HEPA/ULPA, la metodología de ensayo MPPS y los requisitos de eficiencia."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 29463-3:2011, High Efficiency Filters and Filter Media for Removing Particles in Air — Part 3: Test Methods for Flat Sheet Filter Media",
+      "relevance": "Métodos de ensayo para caracterizar el medio filtrante en lámina plana antes de fabricar el elemento."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 1822-1:2019, High Efficiency Air Filters (EPA, HEPA and ULPA) — Part 1: Classification, Performance Testing and Marking",
+      "relevance": "Norma europea equivalente a ISO 29463, que mantiene definiciones de clase y límites de eficiencia idénticos para el mercado europeo."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 14644-1:2015, Cleanrooms and Associated Controlled Environments — Part 1: Classification of Air Cleanliness by Particle Concentration",
+      "relevance": "Norma de clasificación de salas limpias que cita las clases de filtros HEPA/ULPA de ISO 29463 para especificar los requisitos de los filtros terminales de suministro."
+    }
+  ],
+  "title": "Filtros de aire de alta eficiencia ISO 29463: clasificación, ensayo y aplicación de HEPA y ULPA",
+  "subtitle": "Sistema de clases de eficiencia de filtros ISO 29463 (E10–U17), metodología de ensayo EN 1822, tamaño de partícula más penetrante (MPPS), ensayo de eficiencia por escaneo frente a integrado, y aplicaciones en seguridad de cabinas y aire comprimido.",
+  "metaDescription": "Referencia de ingeniería sobre la clasificación de filtros de aire de alta eficiencia ISO 29463 y EN 1822: clases de eficiencia E10 a U17, determinación del tamaño de partícula MPPS, ensayos de eficiencia por escaneo y global, aerosol de ensayo DEHS, y aplicación en la filtración de seguridad de cabinas (ISO 11155) y el aire de suministro de salas limpias.",
+  "category": "ingeniería",
+  "readTime": "11 min",
+  "intro": "ISO 29463 (Filters for the protection of persons — High-efficiency air filters) define los métodos de ensayo y el sistema de clasificación de eficiencia de los filtros HEPA (High-Efficiency Particulate Air) y ULPA (Ultra-Low Penetration Air) usados en protección personal, fabricación limpia y aire de cabinas. ISO 29463 reemplazó a EN 1822 como norma internacional (EN 1822 es hoy técnicamente equivalente y sigue siendo la adopción europea). Para la protección de cabinas de operadores industriales, ISO 11155-2 especifica la clase de eficiencia mínima requerida, e ISO 29463/EN 1822 define cómo se mide y se certifica esa eficiencia.",
+  "sections": [
+    {
+      "heading": "Sistema de clasificación ISO 29463",
+      "body": "La parte 1 de ISO 29463 define las clases de eficiencia de los filtros de aire de alta eficiencia según la penetración (P = 1 − E, donde E es la eficiencia) y el método de ensayo. Clases E10 a U17: clase E10: ≥85% de eficiencia global (penetración ≤15%); clase E11: ≥95% de eficiencia global; clase E12: ≥99.5% de eficiencia global; clase H13: ≥99.95% de eficiencia global (umbral HEPA); clase H14: ≥99.995% de eficiencia global; clase U15: ≥99.9995% de eficiencia global; clase U16: ≥99.99995% de eficiencia global; clase U17: ≥99.999995% de eficiencia global (ULPA). La clasificación se basa en la penetración global (integrada en toda el área del filtro), salvo en las clases H y U, que exigen límites tanto de penetración global COMO local (de escaneo), para asegurar que ningún punto del filtro tenga una vía de fuga aunque la eficiencia global cumpla.",
+      "callout": [
+        {
+          "label": "Umbral HEPA",
+          "value": "Clase H13: ≥99.95% de eficiencia"
+        },
+        {
+          "label": "Equivalencia con EN 1822",
+          "value": "Clases idénticas a ISO 29463"
+        },
+        {
+          "label": "ULPA comienza en",
+          "value": "Clase U15: ≥99.9995%"
+        }
+      ]
+    },
+    {
+      "heading": "Tamaño de partícula más penetrante (MPPS)",
+      "body": "Todos los mecanismos de captura de partículas (intercepción, impacto y difusión) varían con el tamaño de partícula, pero en sentidos opuestos: la eficiencia por impacto e intercepción aumenta con el tamaño de partícula; la eficiencia por difusión baja con el tamaño de partícula (las partículas más pequeñas se difunden más, lo que aumenta su captura). La curva de eficiencia combinada tiene un mínimo en el tamaño de partícula en el que ambos efectos se equilibran: el tamaño de partícula más penetrante (MPPS). En los medios fibrosos de filtros de aire, el MPPS suele estar en el rango de 0.1–0.3 µm (100–300 nm). ISO 29463 y EN 1822 exigen ensayar la eficiencia en el MPPS: es la condición de ensayo más exigente y asegura que la eficiencia nominal sea la del peor caso y no la del mejor. La eficiencia del filtro en otros tamaños de partícula (mayores o menores que el MPPS) siempre es mayor que la eficiencia nominal. Los filtros de aire de cabina ensayados según ISO 11155-2 deben clasificarse por eficiencia en el MPPS para asegurar la protección frente a PM₂.₅ (que incluye partículas cercanas al tamaño MPPS)."
+    },
+    {
+      "heading": "Aerosol de ensayo y metodología de medición",
+      "body": "La parte 2 de ISO 29463 define el aerosol de ensayo como DEHS (sebacato de dietilhexilo) o equivalente: un aceite de baja presión de vapor que forma gotas estables, esféricas y monodispersas al atomizarse. El aerosol de ensayo se genera con un atomizador y se acondiciona hasta una distribución de tamaños de partícula especificada centrada en el MPPS. La concentración de desafío se mide aguas arriba con un contador óptico de partículas o un contador de partículas por condensación (CPC); la concentración que penetra se mide aguas abajo; penetración P = conteo de partículas aguas abajo/aguas arriba. En los filtros de clase H y U, un fotómetro de escaneo mapea la penetración en toda la cara del filtro con una velocidad de escaneo y una posición del fotómetro prescritas: cualquier penetración local por encima del límite de la clase es una falla, aunque la penetración promedio global esté dentro de los límites. Los filtros de clase E solo requieren medir la eficiencia global (integrada); no se requiere escaneo."
+    },
+    {
+      "heading": "Aplicación en la seguridad de cabinas: ISO 11155",
+      "body": "ISO 11155-1 y -2 definen los requisitos del sistema de filtración de aire de cabina de los vehículos de ruta y equipos relacionados, citando las clases de eficiencia de filtros de ISO 29463/EN 1822. Requisitos mínimos de eficiencia para proteger al operador de las partículas finas (PM₂.₅) en entornos agrícolas y de construcción: filtro de aire de recirculación: clase E11 (≥95% de eficiencia en el MPPS); filtro de entrada de aire fresco: clase E12 (≥99.5% de eficiencia en el MPPS) cuando la cabina se usa para protegerse durante la aplicación de plaguicidas; o clase H13 (≥99.95%) cuando los sistemas de filtro de carbón requieren un prefiltro de alta eficiencia para evitar la derivación del lecho de carbón. Las PM₂.₅ penetran profundamente en el tejido pulmonar alveolar: las partículas de 0.1–2.5 µm de diámetro (que incluyen el rango MPPS) son el rango de tamaño más dañino. Una cabina presurizada con un filtro de clase E12 a una presión positiva de 10–30 Pa reduce la exposición del operador a PM₂.₅ en ≥99.5% frente al ambiente: el criterio de desempeño crítico para el cumplimiento de la salud ocupacional. La arquitectura de filtros de cabina MICROKAPPA™ está diseñada para cumplir la clase de eficiencia especificada para la aplicación aprobada, hasta la clase H13 en las aplicaciones de mayor protección.",
+      "callout": [
+        {
+          "label": "Mínimo de recirculación",
+          "value": "E11 (≥95% en el MPPS)"
+        },
+        {
+          "label": "Protección contra plaguicidas",
+          "value": "E12 (≥99.5% en el MPPS)"
+        },
+        {
+          "label": "Máxima protección",
+          "value": "H13 (≥99.95% en el MPPS)"
+        }
+      ]
+    },
+    {
+      "heading": "Ensayo de integridad del filtro en servicio",
+      "body": "La certificación de filtros ISO 29463 se hace en el punto de fabricación. Una vez que el filtro se instala en una carcasa y se usa en servicio, pueden aparecer fugas locales en las interfaces de sellado, en los puntos de deformación de la junta o en las zonas de contacto entre marco y carcasa. En las aplicaciones críticas (salas limpias, fabricación farmacéutica, protección de cabinas de operador con nivel H13), se requiere un ensayo de integridad del filtro instalado según ISO 14644-3 (ensayo de salas limpias) o la metodología de escaneo de EN 1822 en la puesta en marcha y en intervalos definidos. Método de ensayo: introducir aerosol de DEHS aguas arriba; escanear con fotómetro la cara del filtro aguas abajo; medir la penetración local; compararla con el límite de la clase del filtro. En las aplicaciones de aire de cabina, la integridad del sello del filtro instalado se evalúa con un ensayo de presurización de la cabina: una cabina sellada presurizada a 50 Pa debería mostrar una velocidad de caída de presión inferior al límite especificado, lo que indica que no hay fugas importantes por los sellos."
+    },
+    {
+      "heading": "Contexto de la filtración de aire comprimido",
+      "body": "Las clases de pureza de aire comprimido ISO 8573-1 para aerosol de aceite y partículas son independientes de ISO 29463 (que trata los filtros de aire fibrosos para protección de personas, no la filtración de aire comprimido). Sin embargo, el concepto de MPPS se aplica a ambos: las partículas submicrónicas de aerosol de aceite en el aire comprimido (0.1–1 µm) deben capturarse con filtros coalescentes en su MPPS, de forma análoga al MPPS de los filtros de partículas. Los elementos filtrantes ISO 29463/EN 1822 se usan en algunas aplicaciones de aire de suministro de salas limpias y en algunos sistemas de aire comprimido de alta pureza como filtros de partículas de etapa final cuando se requiere una pureza de partículas ISO 8573-1 Clase 1 o 2. En estas aplicaciones, la carcasa del filtro debe mantener la integridad del sello del marco del elemento con la presión diferencial y las condiciones de carga cíclica del servicio de aire comprimido, condiciones muy distintas de las condiciones de ensayo a presión ambiente de ISO 29463."
+    },
+    {
+      "heading": "Selección del filtro y verificación del desempeño",
+      "body": "Elegir filtros ISO 29463 requiere: (1) determinar el requisito de la aplicación (ISO 11155 para cabinas; ISO 14644 para salas limpias; ISO 8573-1 para partículas en aire comprimido); (2) identificar la clase de eficiencia mínima según la norma aplicable; (3) verificar que el certificado del filtro incluya datos de ensayo de eficiencia en el MPPS según la parte 2 de ISO 29463, y no solo una etiqueta \"HEPA\" que puede basarse en métodos de ensayo anteriores o no equivalentes; (4) en las clases H y U: exigir un certificado de ensayo de escaneo que muestre que no hay penetración local por encima del límite de la clase; (5) verificar la clasificación de caudal de aire a la velocidad frontal nominal: un filtro H13 operado a 2× la velocidad frontal nominal mostrará una penetración bastante mayor que en las condiciones nominales; (6) en aplicaciones de cabina: confirmar que las dimensiones del filtro y la especificación de la junta de sellado coincidan con el diseño de la carcasa. Un filtro H13 que cumple ISO 29463 y tiene un certificado de escaneo válido da un 99.95% de eficiencia en el MPPS durante la vigencia del certificado; el siguiente requisito es monitorear la degradación en campo."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Mínimo HEPA (H13)",
+      "value": "≥99.95% global + ≤0.25% de penetración local"
+    },
+    {
+      "label": "Rango MPPS (medio fibroso)",
+      "value": "0.1–0.3 µm (100–300 nm)"
+    },
+    {
+      "label": "Presión positiva de la cabina",
+      "value": "10–30 Pa (requisito de ISO 11155-2)"
+    },
+    {
+      "label": "Superposición de PM₂.₅ y MPPS",
+      "value": "Rango de tamaños de 0.1–2.5 µm"
+    },
+    {
+      "label": "Aerosol de ensayo DEHS",
+      "value": "Sebacato de dietilhexilo (ISO 29463-2)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 29463",
+    "EN 1822",
+    "ISO 11155",
+    "ISO 14644",
+    "ISO 8573-1"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "ISO 29463",
+    "EN 1822",
+    "filtro HEPA",
+    "filtro ULPA",
+    "MPPS tamaño de partícula más penetrante",
+    "filtro de aire de cabina",
+    "ISO 11155",
+    "clase de eficiencia del filtro",
+    "filtro H13",
+    "ensayo de escaneo",
+    "aerosol DEHS",
+    "MICROKAPPA",
+    "protección PM2.5",
+    "filtro de sala limpia",
+    "protección del operador"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Ingreso de polvo a la cabina aunque el filtro de aire de cabina muestra baja restricción (Δp baja)",
+      "Quejas respiratorias del operador en una cabina sellada con aire acondicionado funcionando",
+      "El ensayo de presurización de la cabina muestra una caída rápida de presión (falla de la integridad del sello)",
+      "El monitoreo de PM₂.₅ dentro de la cabina muestra partículas elevadas después de reemplazar el filtro",
+      "El filtro está físicamente intacto al retirarlo, pero el ensayo de eficiencia falla en una zona localizada"
+    ],
+    "probableCauses": [
+      "Δp baja pero con ingreso de polvo: falla del sello del filtro (separación en el contacto entre marco y carcasa); filtro instalado sin junta o con la junta dañada; sistema de presurización de la cabina inoperante",
+      "Quejas respiratorias: clase de filtro insuficiente para el tipo de contaminante (la neblina de plaguicidas requiere E12 como mínimo; algunos vapores químicos requieren una capa de carbón activado fuera del alcance del filtro de partículas); revisar el funcionamiento de la presión positiva",
+      "Caída rápida de presión: deterioro de los sellos de puertas o ventanas; separación en el sello de la entrada de aire fresco del HVAC; separación en el sello de la carcasa del filtro, no necesariamente el elemento filtrante en sí",
+      "PM₂.₅ elevadas después del reemplazo: se bajó la clase de eficiencia del filtro (se instaló una clase menor); instalación sin el asiento correcto de la junta; penetración en el MPPS por encima de la especificación (verificar el certificado del filtro)",
+      "Falla localizada en el escaneo: sello del marco en una esquina; defecto de pliegue del medio por daño de manipulación; poro de fabricación"
+    ],
+    "inspectionMethods": [
+      "Ensayo de presurización de la cabina: sellar todas las aberturas, presurizar a 50 Pa con un suministro de aire limpio y medir la velocidad de caída con un manómetro digital; una tasa de fuga por encima de la especificación indica falla de los sellos",
+      "Ensayo de escaneo con DEHS del filtro instalado (si se dispone del equipo): introducir aerosol de DEHS aguas arriba y escanear con fotómetro la cara del filtro aguas abajo; mapea la penetración local sobre el área del filtro",
+      "Inspección visual con una fuente de luz intensa: iluminar el filtro desde el lado aguas arriba con la cabina a oscuras; los puntos de transmisión de luz indican daño del medio",
+      "Verificación del certificado del filtro: confirmar que el certificado incluye datos de eficiencia en el MPPS según la parte 2 de ISO 29463 y datos del ensayo de escaneo para la clase H13",
+      "Monitoreo simultáneo de PM₂.₅ dentro y fuera de la cabina con un contador de partículas calibrado: relación = eficiencia del filtro + del sello de la cabina; una relación por debajo del objetivo indica un problema combinado de filtro y sello"
+    ],
+    "correctiveActions": [
+      "Falla del sello: reemplazar la junta de la carcasa del filtro; inspeccionar el marco del filtro en busca de deformación; verificar que el procedimiento de instalación especifique el torque o la distancia de compresión correctos para el diseño de la carcasa",
+      "Clase de filtro incorrecta: reemplazar por un filtro de la clase de eficiencia correcta según el requisito de la aplicación (ISO 11155 o especificación del fabricante); no sustituir por una clase menor para reducir costos",
+      "Falla de escaneo en un filtro nuevo: devolverlo al proveedor para su reemplazo; implementar un plan de muestreo de inspección de recepción (AQL según ISO 2859-1) en aplicaciones críticas",
+      "Sistema de presurización de la cabina inoperante: inspeccionar el motor del ventilador, los ductos y el control de la entrada de aire fresco; restablecer la presurización antes de que el operador ingrese a entornos de alta contaminación",
+      "Daño de manipulación: establecer un procedimiento de manipulación de los elementos H13 (sin contacto con la cara del medio filtrante; almacenarlos en posición horizontal y en su embalaje sellado hasta la instalación)"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "La cabina de operador para aplicación de plaguicidas requiere elegir un filtro que cumpla la normativa de salud ocupacional",
+      "standard": "ISO 11155-2 (cabin filtration), ISO 29463 (filter efficiency class), EN 15695 (tractor cab for plant protection)",
+      "protectionSystem": "Protección de la admisión de aire",
+      "technology": "EN 15695 Categoría 2 (plaguicidas líquidos) exige una cabina de Clase 4 (presión positiva + prefiltro E12 + carbón activado); E12 = ≥99.5% en el MPPS según ISO 29463; elegir un filtro con certificado según la parte 2 de ISO 29463; verificar la integridad del sello de la carcasa con un ensayo de presurización en la puesta en marcha y después de cada temporada; el lecho de carbón requiere un calendario de reemplazo aparte (la capacidad del carbón activado es finita)",
+      "relatedArticles": [
+        "cabin-air-filtration",
+        "air-intake-system-design",
+        "filter-media-engineering"
+      ]
+    },
+    {
+      "problem": "Operador de excavadora minera expuesto a sílice cristalina respirable (RCS): límite de acción reglamentario de 0.1 mg/m³ TWA",
+      "standard": "ISO 11155-2 (cabin filtration), ISO 29463 (H13 class efficiency)",
+      "protectionSystem": "Protección de la admisión de aire",
+      "technology": "Las partículas de RCS en el rango de tamaño respirable se superponen con el MPPS: se requiere la clase H13 (≥99.95% en el MPPS) para un control eficaz de la RCS en entornos de alta exposición; verificar que el sistema de presurización positiva de la cabina dé ≥25 Pa de presión positiva respecto del exterior; instalar un monitor ocupacional de PM₂.₅ dentro de la cabina para verificar el desempeño del filtro y del sistema de cabina; combinar con equipos de protección respiratoria (EPR) para las tareas de mantenimiento fuera de la cabina",
+      "relatedArticles": [
+        "cabin-air-filtration",
+        "filter-element-integrity",
+        "filter-housing-system-integration"
+      ]
+    },
+    {
+      "problem": "El filtro HVAC del aire de suministro de una sala limpia debe cumplir ISO 14644-1 Clase ISO 7 (concentración de partículas ≤352,000 partículas/m³ a ≥0.5 µm)",
+      "standard": "ISO 29463 (filter class), ISO 14644-3 (installed filter leakage test), ISO 14644-1 (cleanroom class)",
+      "protectionSystem": "Protección de la admisión de aire",
+      "technology": "El aire de suministro de una sala limpia ISO Clase 7 suele requerir filtros HEPA terminales de clase H14 (≥99.995% en el MPPS); se requiere un certificado ISO 29463 con datos de escaneo; ensayo de fugas de la instalación según ISO 14644-3 en la puesta en marcha y una vez por año; la carcasa debe admitir la sonda del fotómetro para el escaneo en sitio; un prefiltro (clase G4 o F7 según ISO 16890) aguas arriba del HEPA extiende su vida útil al capturar las partículas gruesas",
+      "relatedArticles": [
+        "air-intake-system-design",
+        "filter-media-engineering",
+        "filter-housing-system-integration"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-TECHNOLOGIES (TECH-MICROKAPPA)",
+    "evidenceStatus": "ISO 29463:2011 Parts 1–5 verified; EN 1822:2009 equivalence confirmed; ISO 11155-2:2009 cabin requirements verified; EN 15695:2009 tractor cab categories verified; MPPS range from published aerosol science literature; PM₂.₅ regulatory exposure limit references from OSHA and EU Directive 2017/2398"
+  }
+}

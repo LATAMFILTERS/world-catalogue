@@ -1,0 +1,255 @@
+{
+  "slug": "iso-29463-hepa-ulpa-filters",
+  "faqs": [
+    {
+      "question": "Quais classes de eficiência a ISO 29463 define e qual é a metodologia de ensaio MPPS?",
+      "answer": "A ISO 29463-1:2011 define as classes de eficiência dos filtros de ar de alta eficiência: classes EPA (Efficient Particulate Air) E10–E12, classes HEPA (High Efficiency Particulate Air) H13–H14 e classes ULPA (Ultra Low Penetration Air) U15–U17. O ensaio usa o tamanho de partícula mais penetrante (MPPS): o tamanho de aerossol em que a eficiência global do filtro é mínima, normalmente 0.1–0.3 µm nos meios fibrosos. Aerossol de DEHS (sebacato de dietil-hexila) ou PAO (polialfaolefina) é gerado no MPPS e medido por fotômetro ou contador de partículas por condensação. Eficiência mínima da classe H13: 99.95% global (ou 99.75% em qualquer posição de varredura isolada); classe H14: 99.995% global (99.975% local); classe U15: 99.9995% global; classe U16: 99.99995%; classe U17: 99.999995%. Esses limites representam penetração máxima de 0.05%, 0.005%, 0.0005%, 0.00005% e 0.000005%, respectivamente."
+    },
+    {
+      "question": "Por que o MPPS é usado no ensaio de filtros HEPA em vez de um tamanho de partícula fixo?",
+      "answer": "O tamanho de partícula mais penetrante é usado porque a eficiência dos filtros fibrosos não varia de forma monótona com o tamanho de partícula: é máxima para partículas muito grandes (predomina o impacto inercial) e para partículas muito pequenas (predomina a difusão), e é mínima em um tamanho intermediário em que nenhum mecanismo é ideal. Em um meio HEPA típico de fibra de vidro na velocidade frontal nominal, o mínimo de eficiência (MPPS) ocorre com diâmetro de partícula DEHS de aproximadamente 0.1–0.3 µm. Um ensaio com tamanho de partícula fixo superestimaria a eficiência se o tamanho de ensaio ficasse fora da faixa MPPS, e a subestimaria se a partícula de ensaio estivesse no MPPS, mas o MPPS real do meio estivesse em outro tamanho. Ao ensaiar no MPPS real de cada tipo de meio, a ISO 29463 garante que a eficiência no pior caso seja medida, independentemente da composição do meio ou da distribuição de diâmetros de fibra."
+    },
+    {
+      "question": "Qual é a diferença entre os requisitos de eficiência global e de penetração local (ensaio de varredura) da ISO 29463?",
+      "answer": "A ISO 29463 especifica tanto a eficiência global do filtro (média ponderada em toda a face do filtro) quanto a penetração local máxima (com uma sonda que varre toda a área da face). O requisito de eficiência global é mais permissivo: alguns furos de alta penetração contribuem para a média em proporção à sua fração de área, que é pequena. O limite de penetração local máxima (expresso como penetração local máxima que não deve superar 10× a penetração média) capta os furos e os defeitos de bypass que ficariam ocultos na média global. Na classe H14 (penetração média máxima de 0.005%), a penetração local máxima não deve superar 0.05%: qualquer ponto da face do filtro que deixe passar 0.05% é reprovado, mesmo que a média esteja bem abaixo de 0.005%. O ensaio de varredura é feito com uma sonda de fotômetro calibrada que percorre a face do filtro a jusante a 5 cm/min ou mais devagar."
+    },
+    {
+      "question": "Qual velocidade frontal a ISO 29463 especifica para o ensaio e como a velocidade frontal afeta a eficiência do filtro HEPA?",
+      "answer": "A ISO 29463-3:2011 (Methods of Test) especifica ensaiar na velocidade frontal nominal do filtro: a vazão por unidade de área frontal para a qual ele foi projetado. Velocidade frontal nominal típica dos filtros HEPA: 0.25–0.50 m/s em salas limpas de semicondutores; 2.0–3.0 m/s em ventilação industrial. A eficiência no MPPS cai com o aumento da velocidade frontal porque: (1) A eficiência por impacto inercial aumenta com a velocidade e compensa em parte; (2) A eficiência de captura por difusão cai com a velocidade (menos tempo de permanência das partículas no meio); (3) Efeito líquido: o MPPS se desloca para tamanhos de partícula um pouco menores com maior velocidade, e a eficiência mínima (no MPPS) cai. Aplicações de alta velocidade frontal exigem um meio mais eficiente para atingir a mesma classe ISO 29463: uma classificação H14 a 0.25 m/s de velocidade frontal pode resultar apenas em desempenho de classe H13 a 2.0 m/s se o mesmo meio for usado."
+    },
+    {
+      "question": "Qual é a relação entre a ISO 29463 e a norma HEPA anterior EN 1822?",
+      "answer": "A ISO 29463 é a evolução internacional da EN 1822 (norma HEPA europeia). A EN 1822:2009 definia a mesma estrutura de classes E/H/U e a mesma metodologia de ensaio MPPS da ISO 29463, e as designações de classe e os limites de eficiência são idênticos. As principais diferenças são: a ISO 29463 incorpora atualizações das especificações do aerossol de ensaio (esclarece o uso de DEHS e PAO), especificações melhores da sonda do ensaio de varredura e definições atualizadas da velocidade frontal. A EN 1822 continua sendo citada nas especificações europeias de ventilação e salas limpas; a ISO 29463 é preferida nas especificações de compra internacionais. Para a escolha prática do filtro, um filtro H14 segundo a EN 1822 equivale a um H14 segundo a ISO 29463: a metodologia de ensaio e os critérios de aprovação são idênticos. As duas normas são citadas na ISO 14644 (classificação de salas limpas) para especificar os filtros de suprimento de ar."
+    },
+    {
+      "question": "Qual classe de filtro HEPA é exigida em ambientes de sala limpa farmacêutica ISO 5 (antiga Classe 100)?",
+      "answer": "Salas limpas ISO 14644-1 Classe 5 (antiga US Federal Standard 209E Classe 100) exigem filtros terminais de suprimento de ar de no mínimo HEPA classe H14 (99.995% de eficiência no MPPS) para atingir limites de partículas no ar de ≤3,520 partículas/m3 ≥0.5 µm. Na prática, a maioria das salas limpas farmacêuticas ISO Classe 5 usa filtros ULPA U15 (99.9995% no MPPS) combinados com fluxo unidirecional (laminar) a 0.45 m/s ±20% para atingir a contagem de partículas ISO 5 com margem de segurança adequada. A instalação do filtro terminal deve ser ensaiada in loco pelo método de varredura (ISO 14644-3, método B.6) após a instalação: a certificação de fábrica do filtro HEPA não basta, porque o manuseio e a instalação podem causar bypass por danos na vedação do quadro ou deformação do meio. O ensaio in loco confirma o desempenho instalado, incluindo todas as vedações entre carcaça e filtro."
+    },
+    {
+      "question": "Como os filtros HEPA são instalados em salas limpas para garantir a integridade da vedação?",
+      "answer": "A instalação de filtros HEPA em salas limpas usa um de três métodos de vedação: (1) Vedação em gel (faca em gel): o quadro do filtro fica em um canal cheio de gel de silicone viscoso; a faca do filtro mergulha no gel e cria uma vedação estanque a líquidos que acomoda pequenos desalinhamentos do quadro e a dilatação térmica sem vazamento; (2) Bag-in-bag-out (BIBO): para aplicações de contenção de risco biológico; permite trocar o filtro sem contaminar a sala limpa, usando um saco preso à carcaça que contém o filtro contaminado durante a remoção; (3) Junta de quadro rígido: o quadro do filtro comprime uma junta de vedação a 50–100 N/m de perímetro; a compressão uniforme é crítica, e um torque insuficiente dos fixadores cria bypass nos pontos de baixa compressão. O ensaio de integridade in loco é feito após cada instalação de filtro e após qualquer atividade de manutenção que mexa no quadro do filtro ou na carcaça."
+    },
+    {
+      "question": "Qual mecanismo de passagem de contaminação causa falha do filtro HEPA sem dano visível do meio?",
+      "answer": "A falha de um filtro HEPA sem dano visível do meio ocorre por: (1) Falha da vedação do quadro: a junta de silicone ou a vedação de faca em gel entre o quadro do filtro e a carcaça desenvolve uma folga por choques mecânicos, ciclos térmicos ou degradação do gel; as partículas contornam totalmente o meio por essa folga. Filtros HEPA assentados com junta devem ter a integridade da vedação do quadro verificada a cada ensaio de varredura in loco. (2) Surgimento de furos no meio pela fragilidade das fibras: o meio HEPA de fibra de vidro sofre danos mecânicos por vibração e choques de manuseio; furos de apenas 0.1 mm permitem penetração detectável no ensaio de certificação de classe H14, mas podem não ser visíveis. (3) Bypass por carregamento do filtro: à medida que os filtros HEPA se carregam de partículas, a pressão diferencial aumenta; em alguns estados de carregamento, uma ΔP alta pode forçar o rearraste de partículas pelo meio, em um fenômeno chamado \"blowthrough\", se a velocidade frontal superar a de projeto durante transientes do HVAC."
+    },
+    {
+      "question": "Qual método de ensaio verifica a eficiência in loco de um sistema de filtros HEPA instalado?",
+      "answer": "O ensaio in loco (instalado) de filtros HEPA segundo a ISO 14644-3 método B.6 usa: (1) Injeção de aerossol de desafio a montante do banco de filtros: aerossol de DEHS ou PAO de 0.5–1.0 µm com concentração de desafio de aproximadamente 20 µg/L (detectável por fotômetro com sinal >100× acima do fundo); (2) Varredura com sonda a jusante: uma sonda de fotômetro percorre toda a face do filtro a jusante e a área do quadro da carcaça a 5 cm/min ou mais devagar; (3) Limite de penetração: qualquer ponto com penetração acima de 0.01% da concentração de desafio reprova os requisitos de instalação da classe H14 (equivalente a 0.01% de penetração local); (4) Medição em ponto fixo: a eficiência global é medida no ponto central da face a jusante como um valor único representativo do desempenho médio. O ensaio in loco é feito após a instalação, após a troca do filtro e no mínimo a cada 6 meses nas salas limpas farmacêuticas de grau A/B segundo o EU GMP Annex 1."
+    },
+    {
+      "question": "Como o limite de eficiência dos filtros ULPA se relaciona com a concentração de partículas em salas limpas ISO 1?",
+      "answer": "Salas limpas ISO 14644-1 Classe 1 (a classificação mais rigorosa) exigem concentrações de partículas no ar de ≤10 partículas/m3 ≥0.1 µm. Para atingir isso a partir de uma concentração de partículas no ar de suprimento de aproximadamente 30,000 partículas/m3 ≥0.1 µm (plenum de suprimento típico de sala limpa com entrada de partículas), o filtro terminal de suprimento precisa atingir eficiência de remoção mínima de (1 - 10/30,000) = 99.967% em ≥0.1 µm, o que exige no mínimo um HEPA classe H14 para o tamanho de 0.1 µm. No entanto, salas limpas ISO 1 exigem ainda ≤2 partículas/m3 ≥0.2 µm, o que requer no mínimo filtros terminais ULPA U16 (99.99995% no MPPS ≈ 0.1–0.2 µm) para atingir esse limite com margem adequada. A ISO Classe 1 é usada na litografia EUV de semicondutores, na fabricação de dispositivos quânticos e em revestimentos ópticos de precisão: aplicações em que a contaminação por partículas abaixo de 100nm causa defeitos no produto."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 29463-1:2011, High Efficiency Filters and Filter Media for Removing Particles in Air — Part 1: Classification, Performance Testing and Marking",
+      "relevance": "Norma internacional principal que define as classes de eficiência EPA/HEPA/ULPA, a metodologia de ensaio MPPS e os requisitos de eficiência."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 29463-3:2011, High Efficiency Filters and Filter Media for Removing Particles in Air — Part 3: Test Methods for Flat Sheet Filter Media",
+      "relevance": "Métodos de ensaio para caracterizar o meio filtrante em folha plana antes da fabricação do elemento."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 1822-1:2019, High Efficiency Air Filters (EPA, HEPA and ULPA) — Part 1: Classification, Performance Testing and Marking",
+      "relevance": "Norma europeia equivalente à ISO 29463, que mantém definições de classe e limites de eficiência idênticos para o mercado europeu."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 14644-1:2015, Cleanrooms and Associated Controlled Environments — Part 1: Classification of Air Cleanliness by Particle Concentration",
+      "relevance": "Norma de classificação de salas limpas que cita as classes de filtros HEPA/ULPA da ISO 29463 para especificar os requisitos dos filtros terminais de suprimento."
+    }
+  ],
+  "title": "Filtros de ar de alta eficiência ISO 29463: classificação, ensaio e aplicação de HEPA e ULPA",
+  "subtitle": "Sistema de classes de eficiência de filtros ISO 29463 (E10–U17), metodologia de ensaio EN 1822, tamanho de partícula mais penetrante (MPPS), ensaio de eficiência por varredura versus integrado, e aplicações em segurança de cabines e ar comprimido.",
+  "metaDescription": "Referência de engenharia sobre a classificação de filtros de ar de alta eficiência ISO 29463 e EN 1822: classes de eficiência E10 a U17, determinação do tamanho de partícula MPPS, ensaios de eficiência por varredura e global, aerossol de ensaio DEHS, e aplicação na filtração de segurança de cabines (ISO 11155) e no ar de suprimento de salas limpas.",
+  "category": "engenharia",
+  "readTime": "11 min",
+  "intro": "A ISO 29463 (Filters for the protection of persons — High-efficiency air filters) define os métodos de ensaio e o sistema de classificação de eficiência dos filtros HEPA (High-Efficiency Particulate Air) e ULPA (Ultra-Low Penetration Air) usados em proteção pessoal, fabricação limpa e ar de cabines. A ISO 29463 substituiu a EN 1822 como norma internacional (a EN 1822 é hoje tecnicamente equivalente e continua sendo a adoção europeia). Para a proteção de cabines de operadores industriais, a ISO 11155-2 especifica a classe de eficiência mínima exigida, e a ISO 29463/EN 1822 define como essa eficiência é medida e certificada.",
+  "sections": [
+    {
+      "heading": "Sistema de classificação ISO 29463",
+      "body": "A parte 1 da ISO 29463 define as classes de eficiência dos filtros de ar de alta eficiência com base na penetração (P = 1 − E, em que E é a eficiência) e no método de ensaio. Classes E10 a U17: classe E10: ≥85% de eficiência global (penetração ≤15%); classe E11: ≥95% de eficiência global; classe E12: ≥99.5% de eficiência global; classe H13: ≥99.95% de eficiência global (limiar HEPA); classe H14: ≥99.995% de eficiência global; classe U15: ≥99.9995% de eficiência global; classe U16: ≥99.99995% de eficiência global; classe U17: ≥99.999995% de eficiência global (ULPA). A classificação se baseia na penetração global (integrada em toda a área do filtro), exceto nas classes H e U, que exigem limites tanto de penetração global QUANTO local (de varredura), para garantir que nenhum ponto do filtro tenha um caminho de vazamento mesmo que a eficiência global esteja em conformidade.",
+      "callout": [
+        {
+          "label": "Limiar HEPA",
+          "value": "Classe H13: ≥99.95% de eficiência"
+        },
+        {
+          "label": "Equivalência com a EN 1822",
+          "value": "Classes idênticas às da ISO 29463"
+        },
+        {
+          "label": "ULPA começa em",
+          "value": "Classe U15: ≥99.9995%"
+        }
+      ]
+    },
+    {
+      "heading": "Tamanho de partícula mais penetrante (MPPS)",
+      "body": "Todos os mecanismos de captura de partículas (interceptação, impacto e difusão) variam com o tamanho de partícula, mas em sentidos opostos: a eficiência por impacto e interceptação aumenta com o tamanho de partícula; a eficiência por difusão diminui com o tamanho de partícula (partículas menores se difundem mais, aumentando sua captura). A curva de eficiência combinada tem um mínimo no tamanho de partícula em que os dois efeitos se equilibram: o tamanho de partícula mais penetrante (MPPS). Nos meios fibrosos de filtros de ar, o MPPS normalmente fica na faixa de 0.1–0.3 µm (100–300 nm). A ISO 29463 e a EN 1822 exigem ensaiar a eficiência no MPPS: é a condição de ensaio mais exigente e garante que a eficiência nominal seja a do pior caso, e não a do melhor. A eficiência do filtro em outros tamanhos de partícula (maiores ou menores que o MPPS) é sempre maior que a eficiência nominal. Filtros de ar de cabine ensaiados segundo a ISO 11155-2 devem ser classificados por eficiência no MPPS para garantir a proteção contra PM₂.₅ (que inclui partículas próximas do tamanho MPPS)."
+    },
+    {
+      "heading": "Aerossol de ensaio e metodologia de medição",
+      "body": "A parte 2 da ISO 29463 define o aerossol de ensaio como DEHS (sebacato de dietil-hexila) ou equivalente: um óleo de baixa pressão de vapor que forma gotículas estáveis, esféricas e monodispersas quando atomizado. O aerossol de ensaio é gerado por um atomizador e condicionado a uma distribuição de tamanhos de partícula especificada centrada no MPPS. A concentração de desafio é medida a montante com um contador óptico de partículas ou um contador de partículas por condensação (CPC); a concentração que penetra é medida a jusante; penetração P = contagem de partículas a jusante/a montante. Nos filtros de classe H e U, um fotômetro de varredura mapeia a penetração em toda a face do filtro com velocidade de varredura e posição do fotômetro prescritas: qualquer penetração local acima do limite da classe é uma falha, mesmo que a penetração média global esteja dentro dos limites. Os filtros de classe E exigem apenas a medição da eficiência global (integrada); a varredura não é exigida."
+    },
+    {
+      "heading": "Aplicação na segurança de cabines: ISO 11155",
+      "body": "A ISO 11155-1 e -2 definem os requisitos do sistema de filtração de ar de cabine dos veículos rodoviários e equipamentos relacionados, citando as classes de eficiência de filtros da ISO 29463/EN 1822. Requisitos mínimos de eficiência para proteger o operador das partículas finas (PM₂.₅) em ambientes agrícolas e de construção: filtro de ar de recirculação: classe E11 (≥95% de eficiência no MPPS); filtro de entrada de ar fresco: classe E12 (≥99.5% de eficiência no MPPS) quando a cabine é usada para proteção na aplicação de agrotóxicos; ou classe H13 (≥99.95%) quando os sistemas de filtro de carvão exigem um pré-filtro de alta eficiência para evitar o bypass do leito de carvão. As PM₂.₅ penetram profundamente no tecido pulmonar alveolar: partículas de 0.1–2.5 µm de diâmetro (que incluem a faixa MPPS) são a faixa de tamanho mais danosa. Uma cabine pressurizada com um filtro de classe E12 a uma pressão positiva de 10–30 Pa reduz a exposição do operador a PM₂.₅ em ≥99.5% em relação ao ambiente: o critério de desempenho crítico para a conformidade com a saúde ocupacional. A arquitetura de filtros de cabine MICROKAPPA™ é projetada para atender à classe de eficiência especificada para a aplicação aprovada, até a classe H13 nas aplicações de maior proteção.",
+      "callout": [
+        {
+          "label": "Mínimo de recirculação",
+          "value": "E11 (≥95% no MPPS)"
+        },
+        {
+          "label": "Proteção contra agrotóxicos",
+          "value": "E12 (≥99.5% no MPPS)"
+        },
+        {
+          "label": "Proteção máxima",
+          "value": "H13 (≥99.95% no MPPS)"
+        }
+      ]
+    },
+    {
+      "heading": "Ensaio de integridade do filtro em serviço",
+      "body": "A certificação de filtros ISO 29463 é feita no ponto de fabricação. Depois que o filtro é instalado em uma carcaça e usado em serviço, podem surgir vazamentos locais nas interfaces de vedação, nos pontos de deformação da junta ou nas áreas de contato entre quadro e carcaça. Em aplicações críticas (salas limpas, fabricação farmacêutica, proteção de cabines de operador com nível H13), exige-se ensaio de integridade do filtro instalado segundo a ISO 14644-3 (ensaio de salas limpas) ou a metodologia de varredura da EN 1822 no comissionamento e em intervalos definidos. Método de ensaio: introduzir aerossol de DEHS a montante; varrer com fotômetro a face do filtro a jusante; medir a penetração local; comparar com o limite da classe do filtro. Em aplicações de ar de cabine, a integridade da vedação do filtro instalado é avaliada por ensaio de pressurização da cabine: uma cabine vedada pressurizada a 50 Pa deve mostrar taxa de queda de pressão abaixo do limite especificado, indicando que não há vazamento significativo pelas vedações."
+    },
+    {
+      "heading": "Contexto da filtração de ar comprimido",
+      "body": "As classes de pureza de ar comprimido ISO 8573-1 para aerossol de óleo e partículas são independentes da ISO 29463 (que trata dos filtros de ar fibrosos para proteção de pessoas, e não da filtração de ar comprimido). No entanto, o conceito de MPPS se aplica aos dois: as partículas submicrométricas de aerossol de óleo no ar comprimido (0.1–1 µm) devem ser capturadas por filtros coalescentes no seu MPPS, de forma análoga ao MPPS dos filtros de partículas. Elementos filtrantes ISO 29463/EN 1822 são usados em algumas aplicações de ar de suprimento de salas limpas e em alguns sistemas de ar comprimido de alta pureza como filtros de partículas de estágio final quando se exige pureza de partículas ISO 8573-1 Classe 1 ou 2. Nessas aplicações, a carcaça do filtro deve manter a integridade da vedação do quadro do elemento sob a pressão diferencial e as condições de carregamento cíclico do serviço de ar comprimido, condições muito diferentes das condições de ensaio à pressão ambiente da ISO 29463."
+    },
+    {
+      "heading": "Seleção do filtro e verificação do desempenho",
+      "body": "Escolher filtros ISO 29463 exige: (1) determinar o requisito da aplicação (ISO 11155 para cabines; ISO 14644 para salas limpas; ISO 8573-1 para partículas em ar comprimido); (2) identificar a classe de eficiência mínima conforme a norma aplicável; (3) verificar se o certificado do filtro inclui dados de ensaio de eficiência no MPPS segundo a parte 2 da ISO 29463, e não apenas uma etiqueta \"HEPA\" que pode se basear em métodos de ensaio anteriores ou não equivalentes; (4) nas classes H e U: exigir certificado de ensaio de varredura mostrando que não há penetração local acima do limite da classe; (5) verificar a classificação de vazão de ar na velocidade frontal nominal: um filtro H13 operado a 2× a velocidade frontal nominal mostrará penetração bem maior que nas condições nominais; (6) em aplicações de cabine: confirmar se as dimensões do filtro e a especificação da junta de vedação correspondem ao projeto da carcaça. Um filtro H13 em conformidade com a ISO 29463 e com certificado de varredura válido oferece 99.95% de eficiência no MPPS durante a validade do certificado; o próximo requisito é monitorar a degradação em campo."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Mínimo HEPA (H13)",
+      "value": "≥99.95% global + ≤0.25% de penetração local"
+    },
+    {
+      "label": "Faixa MPPS (meio fibroso)",
+      "value": "0.1–0.3 µm (100–300 nm)"
+    },
+    {
+      "label": "Pressão positiva da cabine",
+      "value": "10–30 Pa (requisito da ISO 11155-2)"
+    },
+    {
+      "label": "Sobreposição de PM₂.₅ e MPPS",
+      "value": "Faixa de tamanhos de 0.1–2.5 µm"
+    },
+    {
+      "label": "Aerossol de ensaio DEHS",
+      "value": "Sebacato de dietil-hexila (ISO 29463-2)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 29463",
+    "EN 1822",
+    "ISO 11155",
+    "ISO 14644",
+    "ISO 8573-1"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "ISO 29463",
+    "EN 1822",
+    "filtro HEPA",
+    "filtro ULPA",
+    "MPPS tamanho de partícula mais penetrante",
+    "filtro de ar de cabine",
+    "ISO 11155",
+    "classe de eficiência do filtro",
+    "filtro H13",
+    "ensaio de varredura",
+    "aerossol DEHS",
+    "MICROKAPPA",
+    "proteção PM2.5",
+    "filtro de sala limpa",
+    "proteção do operador"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Entrada de pó na cabine embora o filtro de ar de cabine mostre baixa restrição (Δp baixa)",
+      "Queixas respiratórias do operador em cabine vedada com ar-condicionado funcionando",
+      "O ensaio de pressurização da cabine mostra queda rápida de pressão (falha da integridade da vedação)",
+      "O monitoramento de PM₂.₅ dentro da cabine mostra partículas elevadas após a troca do filtro",
+      "O filtro está fisicamente intacto na remoção, mas o ensaio de eficiência falha em uma área localizada"
+    ],
+    "probableCauses": [
+      "Δp baixa, mas com entrada de pó: falha da vedação do filtro (folga no contato entre quadro e carcaça); filtro instalado sem junta ou com junta danificada; sistema de pressurização da cabine inoperante",
+      "Queixas respiratórias: classe de filtro insuficiente para o tipo de contaminante (névoa de agrotóxicos exige E12 no mínimo; alguns vapores químicos exigem camada de carvão ativado além do escopo do filtro de partículas); verificar o funcionamento da pressão positiva",
+      "Queda rápida de pressão: deterioração das vedações de portas ou janelas; folga na vedação da entrada de ar fresco do HVAC; folga na vedação da carcaça do filtro, e não necessariamente o elemento filtrante em si",
+      "PM₂.₅ elevadas após a troca: a classe de eficiência do filtro foi rebaixada (classe menor instalada); instalação sem o assentamento correto da junta; penetração no MPPS acima da especificação (verificar o certificado do filtro)",
+      "Falha localizada na varredura: vedação do quadro em um canto; defeito de dobra do meio por dano de manuseio; furo de fabricação"
+    ],
+    "inspectionMethods": [
+      "Ensaio de pressurização da cabine: vedar todas as aberturas, pressurizar a 50 Pa com suprimento de ar limpo e medir a taxa de queda com manômetro digital; uma taxa de vazamento acima da especificação indica falha das vedações",
+      "Ensaio de varredura com DEHS do filtro instalado (se houver equipamento disponível): introduzir aerossol de DEHS a montante e varrer com fotômetro a face do filtro a jusante; mapeia a penetração local sobre a área do filtro",
+      "Inspeção visual com fonte de luz intensa: iluminar o filtro pelo lado a montante com a cabine no escuro; pontos de passagem de luz indicam dano no meio",
+      "Verificação do certificado do filtro: confirmar se o certificado inclui dados de eficiência no MPPS segundo a parte 2 da ISO 29463 e dados do ensaio de varredura para a classe H13",
+      "Monitoramento simultâneo de PM₂.₅ dentro e fora da cabine com contador de partículas calibrado: relação = eficiência do filtro + da vedação da cabine; relação abaixo da meta indica problema combinado de filtro e vedação"
+    ],
+    "correctiveActions": [
+      "Falha da vedação: trocar a junta da carcaça do filtro; inspecionar o quadro do filtro em busca de deformação; verificar se o procedimento de instalação especifica o torque ou a distância de compressão corretos para o projeto da carcaça",
+      "Classe de filtro incorreta: trocar por um filtro da classe de eficiência correta conforme o requisito da aplicação (ISO 11155 ou especificação do fabricante); não substituir por uma classe menor para reduzir custos",
+      "Falha de varredura em filtro novo: devolver ao fornecedor para troca; implementar plano de amostragem de inspeção de recebimento (AQL segundo a ISO 2859-1) em aplicações críticas",
+      "Sistema de pressurização da cabine inoperante: inspecionar o motor do ventilador, os dutos e o controle da entrada de ar fresco; restabelecer a pressurização antes que o operador entre em ambientes de alta contaminação",
+      "Dano de manuseio: estabelecer procedimento de manuseio dos elementos H13 (sem contato com a face do meio filtrante; armazenar na horizontal e na embalagem lacrada até a instalação)"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Cabine de operador para aplicação de agrotóxicos exige escolher um filtro que atenda à regulamentação de saúde ocupacional",
+      "standard": "ISO 11155-2 (cabin filtration), ISO 29463 (filter efficiency class), EN 15695 (tractor cab for plant protection)",
+      "protectionSystem": "Proteção da admissão de ar",
+      "technology": "A EN 15695 Categoria 2 (agrotóxicos líquidos) exige cabine de Classe 4 (pressão positiva + pré-filtro E12 + carvão ativado); E12 = ≥99.5% no MPPS segundo a ISO 29463; escolher filtro com certificado segundo a parte 2 da ISO 29463; verificar a integridade da vedação da carcaça com ensaio de pressurização no comissionamento e após cada safra; o leito de carvão exige cronograma de troca separado (a capacidade do carvão ativado é finita)",
+      "relatedArticles": [
+        "cabin-air-filtration",
+        "air-intake-system-design",
+        "filter-media-engineering"
+      ]
+    },
+    {
+      "problem": "Operador de escavadeira de mineração exposto à sílica cristalina respirável (RCS): limite de ação regulatório de 0.1 mg/m³ TWA",
+      "standard": "ISO 11155-2 (cabin filtration), ISO 29463 (H13 class efficiency)",
+      "protectionSystem": "Proteção da admissão de ar",
+      "technology": "As partículas de RCS na faixa de tamanho respirável se sobrepõem ao MPPS: é exigida a classe H13 (≥99.95% no MPPS) para um controle eficaz da RCS em ambientes de alta exposição; verificar se o sistema de pressurização positiva da cabine fornece ≥25 Pa de pressão positiva em relação ao exterior; instalar um monitor ocupacional de PM₂.₅ dentro da cabine para verificar o desempenho do filtro e do sistema da cabine; combinar com equipamentos de proteção respiratória (EPR) nas atividades de manutenção fora da cabine",
+      "relatedArticles": [
+        "cabin-air-filtration",
+        "filter-element-integrity",
+        "filter-housing-system-integration"
+      ]
+    },
+    {
+      "problem": "O filtro HVAC do ar de suprimento de uma sala limpa deve atender à ISO 14644-1 Classe ISO 7 (concentração de partículas ≤352,000 partículas/m³ a ≥0.5 µm)",
+      "standard": "ISO 29463 (filter class), ISO 14644-3 (installed filter leakage test), ISO 14644-1 (cleanroom class)",
+      "protectionSystem": "Proteção da admissão de ar",
+      "technology": "O ar de suprimento de uma sala limpa ISO Classe 7 normalmente exige filtros HEPA terminais de classe H14 (≥99.995% no MPPS); exige-se certificado ISO 29463 com dados de varredura; ensaio de vazamento da instalação segundo a ISO 14644-3 no comissionamento e anualmente; a carcaça deve aceitar a sonda do fotômetro para a varredura in loco; um pré-filtro (classe G4 ou F7 segundo a ISO 16890) a montante do HEPA estende sua vida útil ao capturar as partículas grossas",
+      "relatedArticles": [
+        "air-intake-system-design",
+        "filter-media-engineering",
+        "filter-housing-system-integration"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-TECHNOLOGIES (TECH-MICROKAPPA)",
+    "evidenceStatus": "ISO 29463:2011 Parts 1–5 verified; EN 1822:2009 equivalence confirmed; ISO 11155-2:2009 cabin requirements verified; EN 15695:2009 tractor cab categories verified; MPPS range from published aerosol science literature; PM₂.₅ regulatory exposure limit references from OSHA and EU Directive 2017/2398"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "slug": "cooling-system-contamination",
+  "faqs": [
+    {
+      "question": "Qual é a faixa de concentração de SCA (aditivo suplementar de líquido de arrefecimento) nos sistemas de arrefecimento de motores diesel?",
+      "answer": "Os aditivos suplementares de líquido de arrefecimento (SCA), inibidores de corrosão adicionados ao líquido de arrefecimento dos motores diesel, devem ser mantidos em uma faixa de concentração precisa: normalmente 0.5–1.5 unidade/L (uma \"unidade\" = 30 mL de concentrado de SCA segundo a ASTM D3306). Abaixo de 0.5 unidade/L, a proteção contra a corrosão das superfícies de ferro fundido e alumínio é insuficiente, causando erosão por cavitação das camisas d'água das camisas de cilindro (pitting de camisas úmidas) e corrosão das passagens de líquido de arrefecimento de alumínio. Acima de 3 unidades/L, o depósito de incrustações por superconcentração causa corrosão inversa (as incrustações de SCA se acumulam nas superfícies de troca de calor, reduzem a eficiência de arrefecimento e podem bloquear as passagens estreitas de líquido de arrefecimento). A manutenção do sistema de líquido de arrefecimento THERMACORE inclui o monitoramento da concentração de SCA com refratômetro (que mede o índice de refração correlacionado à concentração de SCA) ou com tiras de teste (indicador colorimétrico da concentração de SCA)."
+    },
+    {
+      "question": "O que é a erosão por cavitação das camisas de cilindro diesel e como ela é evitada?",
+      "answer": "A erosão por cavitação na superfície externa das camisas de cilindro diesel ocorre quando flutuações rápidas de pressão na camisa de arrefecimento fazem bolhas de vapor de água se formarem e colapsarem contra a parede da camisa. Cada colapso de bolha gera um pulso de pressão localizado de 100–500 MPa, que erode a superfície metálica por impactos repetidos. Nos motores diesel de serviço pesado, o movimento secundário do pistão (o pistão oscila sobre o eixo do pino no tempo de combustão) cria pulsos de pressão de alta frequência na galeria de arrefecimento vizinha: é a principal fonte de cavitação das camisas. Prevenção: (1) uma concentração de SCA dentro da faixa especificada fornece uma camada inibidora protetora nas superfícies metálicas; (2) uma velocidade do líquido de arrefecimento acima de 0.5 m/s nas galerias de arrefecimento das camisas evita a formação localizada de vapor; (3) uma pressão do sistema acima de 1 bar (especificação da tampa do radiador) eleva o limite de pressão de vapor; (4) o pacote de aditivos anticavitação THERMACORE inclui depressores da pressão de vapor e inibidores de incrustação."
+    },
+    {
+      "question": "Qual concentração de glicol é exigida no líquido de arrefecimento dos motores diesel e por que o teor de glicol é crítico?",
+      "answer": "A concentração de glicol (etilenoglicol ou propilenoglicol) do líquido de arrefecimento dos motores diesel deve ser mantida em 33–50% em volume: 33% dá proteção contra congelamento até −18°C, 50% até −37°C. Abaixo de 25% de glicol, a proteção contra a corrosão do sistema glicol-aditivos é insuficiente: o etilenoglicol em si é levemente inibidor de corrosão, mas o pacote de aditivos é projetado para a janela de concentração de glicol de 33–50%. Acima de 60% de glicol, a vantagem no ponto de ebulição diminui e a eficiência da troca de calor cai (o glicol tem calor específico menor que a água: uma mistura com 50% de glicol reduz a capacidade térmica em 15–20% em relação à água pura). A concentração de glicol é medida com um refratômetro calibrado para etileno- ou propilenoglicol; é necessária compensação de temperatura para leituras exatas em temperatura ambiente diferente da de calibração de 20°C."
+    },
+    {
+      "question": "Como se manifesta a contaminação do líquido de arrefecimento por gases de combustão (entrada de gases de escape) e o que ela indica?",
+      "answer": "A entrada de gases de combustão no sistema de arrefecimento se manifesta como: (1) Descoloração do líquido de arrefecimento: descoloração cinza-escura por partículas de carbono, gotas de óleo ou formação de ácidos no líquido de arrefecimento pelo CO2 e pelos NOx que nele se dissolvem; (2) Queda do pH do líquido de arrefecimento: a absorção de CO2 forma ácido carbônico, que baixa o pH do líquido de arrefecimento de 8.5–10.5 (normal) para 6.0–7.5; (3) Espuma no líquido de arrefecimento: os picos de pressão da combustão no sistema de arrefecimento criam espuma, sobretudo no reservatório de expansão; (4) Sobrepressão do sistema de arrefecimento: os gases de combustão elevam a pressão do sistema acima da especificação da tampa do radiador, causando alívio pela tampa e perda de líquido de arrefecimento; (5) Contaminação por hidrocarbonetos: contaminação por óleo a partir do caminho do respiro do cárter através do líquido de arrefecimento, detectável por teste de hidrocarbonetos em água (infravermelho). A entrada de gases de combustão indica falha da junta do cabeçote, cabeçote ou bloco trincados ou, no caso mais grave, uma camisa de cilindro trincada. É preciso parar o motor e fazer testes boroscópicos ou hidrostáticos para identificar a fonte da entrada."
+    },
+    {
+      "question": "Qual é o papel do filtro de líquido de arrefecimento na manutenção da qualidade do líquido de arrefecimento?",
+      "answer": "Os filtros de líquido de arrefecimento dos sistemas de motores diesel têm duas funções: remover partículas e dosar SCA. Os elementos de remoção de partículas capturam produtos de corrosão (escamas de ferrugem, fragmentos de incrustação, partículas de material de vedação) acima de 25–50 µm que se formam continuamente nos sistemas de líquido de arrefecimento usado. Essas partículas podem bloquear as passagens estreitas de líquido de arrefecimento dos resfriadores EGR (largura de passagem de 0.5–2 mm) e dos resfriadores de óleo do motor, causando pontos quentes localizados e desgaste acelerado das camisas. Os elementos dosadores de SCA contêm aditivo SCA impregnado que se dissolve lentamente no líquido de arrefecimento em circulação a uma taxa de liberação controlada, mantendo a concentração de SCA dentro da especificação entre as adições manuais de manutenção. Os elementos combinados de filtro e SCA são trocados a cada 250–500 horas ou quando a concentração de SCA cair abaixo da especificação, o que ocorrer primeiro. Filtros de líquido de arrefecimento apenas de partículas, sem SCA, devem ser trocados nos intervalos especificados pelo fabricante (normalmente 500–1,000 horas)."
+    },
+    {
+      "question": "Como a formação de incrustações nas passagens de líquido de arrefecimento reduz a eficiência da troca de calor?",
+      "answer": "Os depósitos de incrustação (carbonato de cálcio, sulfato de magnésio, incrustações de silicato dos aditivos do líquido de arrefecimento) nas superfícies internas de troca de calor reduzem a condutividade térmica. As incrustações de carbonato de cálcio do lado da água têm condutividade térmica de 2–3 W/m·K, contra 50 W/m·K do ferro fundido do bloco do motor e 0.6 W/m·K da água: a incrustação resiste mais à troca de calor que o próprio líquido de arrefecimento, mas isola menos que o ar ou que as camadas de produtos de corrosão. Uma camada de incrustação de 1 mm reduz o coeficiente de troca de calor em 15–30%, conforme sua composição. Em resfriadores EGR com passagens de água de 0.5 mm, uma incrustação de 0.1 mm reduz a seção da passagem em 40%, aumentando a velocidade do líquido de arrefecimento e a queda de pressão e reduzindo a capacidade térmica. Evitar incrustações exige concentração de SCA e pH do líquido de arrefecimento corretos: abaixo de pH 7.5 precipitam as incrustações de silicato; acima de pH 11, o cálcio precipita como incrustação de carbonato de cálcio."
+    },
+    {
+      "question": "Qual é a idade máxima do líquido de arrefecimento (vida útil) em um sistema de arrefecimento de motor diesel bem mantido?",
+      "answer": "A vida útil do líquido de arrefecimento depende da frequência de monitoramento do SCA e da reposição de aditivos: (1) Líquido de arrefecimento de longa duração (ELC, OAT: tecnologia de ácidos orgânicos) com anticongelante e sem SCA inorgânico: 5 anos/1,000,000 km em estrada, 6,000 horas fora de estrada (segundo a especificação ASTM D6210 de desempenho ELC). (2) Líquido de arrefecimento convencional com SCA inorgânico (inibidores de nitrito, molibdato, fosfato): 2 anos ou 500,000 km em estrada, 2,000 horas fora de estrada; o esgotamento do SCA é mais rápido. (3) Serviço pesado fora de estrada com SCA em clima quente e seco: no máximo 1,500–2,000 horas pela maior taxa de esgotamento da concentração por causa dos ciclos de temperatura. A decisão de trocar o líquido de arrefecimento deve se basear na análise química (concentração de SCA, pH, cloretos, metais), e não apenas no tempo de calendário: um líquido de arrefecimento bem mantido e testado regularmente pode superar a vida útil nominal em 20–30%, enquanto um líquido contaminado por gases de combustão ou diluído em glicol deve ser trocado imediatamente, independentemente da idade."
+    },
+    {
+      "question": "Qual limite de concentração de cloretos se aplica ao líquido de arrefecimento dos motores diesel e por que os cloretos são danosos?",
+      "answer": "A concentração máxima admissível de cloretos no líquido de arrefecimento dos motores diesel é de 25–40 mg/L (25–40 ppm) segundo a ASTM D3306, a D6210 e a maioria das especificações dos fabricantes de motores. Os cloretos no líquido de arrefecimento causam: (1) Corrosão em frestas nas passagens de arrefecimento de alumínio: os íons cloreto penetram e rompem a camada protetora de óxido de alumínio e iniciam corrosão localizada por pites; (2) Corrosão sob tensão (SCC) das conexões de cobre e latão: os cloretos aceleram a SCC das ligas de cobre submetidas a esforços de tração (pelos ciclos térmicos); (3) Aceleração da corrosão galvânica: os cloretos como eletrólito aumentam a corrente de acoplamento galvânico entre metais diferentes (ferro fundido, alumínio, cobre, solda no mesmo circuito de arrefecimento). Os cloretos entram nos sistemas de arrefecimento pela água da rede usada para misturar o líquido de arrefecimento (água de poço pode conter 100–500 ppm de Cl-); pela contaminação do líquido de arrefecimento com água do mar; e pela entrada de gases EGR que levam HCl dos produtos de combustão."
+    },
+    {
+      "question": "Quais ensaios analíticos compõem um programa completo de análise da qualidade do líquido de arrefecimento de motores diesel?",
+      "answer": "Um programa completo de análise de líquido de arrefecimento segundo a ASTM D7414 (monitoramento de condição de líquidos de arrefecimento) e os requisitos de manutenção do fabricante inclui: (1) pH: meta de 8.5–10.5; (2) Tipo e concentração de glicol: refratômetro para o nível de proteção contra congelamento, FTIR para identificar o tipo de glicol; (3) Concentração de SCA: tiras de teste colorimétricas ou calibração do refratômetro; (4) Alcalinidade de reserva: ASTM D1121, mede a capacidade tampão para resistir à queda de pH por contaminação ácida; (5) Cloretos: cromatografia iônica ou método colorimétrico (meta <40 mg/L); (6) Metais por ICP: alumínio (Al >30 ppm indica corrosão), cobre (Cu >0.5 ppm indica corrosão), ferro (Fe >20 ppm indica geração de ferrugem); (7) Nitritos: monitoramento do esgotamento dos componentes do SCA (meta >300 ppm em SCA à base de nitritos); (8) Sólidos dissolvidos totais (TDS): medição de condutividade, meta <800 µS/cm em líquido de arrefecimento mantido. Frequência: a cada 250 horas ou a cada intervalo de manutenção planejada."
+    },
+    {
+      "question": "Como a contaminação do sistema de arrefecimento por óleo do motor é distinguida de uma falha da junta do cabeçote?",
+      "answer": "Como distinguir as fontes de contaminação por óleo no líquido de arrefecimento: (1) Contaminação externa por óleo (enchimento excessivo, derramamento): gotas de óleo visíveis na superfície do líquido de arrefecimento sem aumento da linha de base de hidrocarbonetos dissolvidos; sem pressão de gases de combustão (a tampa de pressão funciona normalmente); pH do líquido de arrefecimento estável. (2) Falha da junta do cabeçote (entrada de gases de combustão no líquido de arrefecimento): o líquido de arrefecimento mostra hidrocarbonetos dissolvidos no teste de HC em água (infravermelho), CO2 elevado no espaço de ar do reservatório de expansão (análise de gases de combustão), ciclos de pressão do líquido de arrefecimento acima da pressão de alívio da tampa com o motor funcionando e borbulhamento no reservatório de expansão na partida do motor. (3) Falha do resfriador de óleo (óleo lubrificante no líquido de arrefecimento): o líquido de arrefecimento mostra metais elevados correspondentes à formulação do óleo lubrificante (Ca, Zn, P do pacote de aditivos por ICP), queda do TAN do líquido de arrefecimento (a alcalinidade do óleo lubrificante dilui o líquido de arrefecimento usado ácido) e o líquido de arrefecimento pode mostrar viscosidade maior se a contaminação cruzada óleo/líquido de arrefecimento for alta. Cada diagnóstico exige uma solução específica: contaminação por óleo → apenas flushing do óleo; falha da junta do cabeçote → reparo mecânico; falha do resfriador de óleo → troca do resfriador mais drenagem e reabastecimento do líquido de arrefecimento."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D3306-20, Standard Specification for Glycol Base Engine Coolant for Automobile and Light-Duty Service",
+      "relevance": "Especificação básica de qualidade do líquido de arrefecimento que abrange a concentração de glicol, os requisitos de proteção contra a corrosão e a compatibilidade com os SCA."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6210-20, Standard Specification for Fully-Formulated Glycol Base Engine Coolant for Heavy-Duty Engines",
+      "relevance": "Especificação de líquidos de arrefecimento de serviço pesado que inclui requisitos de prevenção do pitting de camisas (erosão por cavitação), faixas de concentração de SCA e classificações de líquidos de arrefecimento de longa duração (ELC)."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D7414-20, Standard Practice for Condition Monitoring of Used Coolants from the Cooling Systems of In-Service Equipment",
+      "relevance": "Norma de programa de análise de líquido de arrefecimento que define os ensaios analíticos, sua frequência e os limites de ação para monitorar a contaminação do sistema de arrefecimento de motores diesel."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D1121-20, Standard Test Method for Reserve Alkalinity of Engine Coolants and Antirusts",
+      "relevance": "Método de ensaio para medir a alcalinidade de reserva, um indicador principal da capacidade tampão do líquido de arrefecimento e da reserva de proteção contra a corrosão restante."
+    }
+  ],
+  "title": "Contaminação do sistema de arrefecimento do motor: pitting de camisas, degradação do líquido de arrefecimento e gestão do SCA",
+  "subtitle": "Erosão por cavitação das camisas de cilindro, mecanismos de corrosão eletroquímica, esgotamento do aditivo suplementar de líquido de arrefecimento (SCA) e contaminação por glicol no óleo lubrificante.",
+  "metaDescription": "Referência de engenharia sobre a contaminação do sistema de arrefecimento do motor: mecanismos de erosão por cavitação de camisas úmidas (ASTM D2570), química e taxas de esgotamento do SCA (ASTM D6210), detecção de glicol no óleo (ASTM D2982), corrosão eletroquímica em circuitos de arrefecimento de metais mistos e intervalos de monitoramento da condição do líquido de arrefecimento.",
+  "category": "engenharia",
+  "readTime": "12 min",
+  "intro": "A contaminação do sistema de arrefecimento danifica os motores por dois mecanismos principais: (1) a erosão por cavitação das camisas de cilindro úmidas, que perfura as camisas sem nenhuma falha mecânica, e (2) a degradação do líquido de arrefecimento, que permite a corrosão eletroquímica dos componentes de alumínio, cobre e ferro fundido nos circuitos de arrefecimento de metais mistos. Os dois mecanismos são controlados pela gestão do aditivo suplementar de líquido de arrefecimento (SCA) e pelo monitoramento de condição, e não apenas pela filtração. A arquitetura de filtração THERMACORE™ combina a filtração do líquido de arrefecimento com a dosagem integrada de SCA e o monitoramento de condição para aplicações diesel de serviço pesado.",
+  "sections": [
+    {
+      "heading": "Mecanismo de erosão por cavitação das camisas úmidas",
+      "body": "As camisas de cilindro úmidas tocam o líquido de arrefecimento diretamente pela superfície externa. A vibração da camisa (pelo impulso da combustão e pelo batimento do pistão) gera oscilações rápidas de pressão na película de líquido de arrefecimento vizinha. Onde a pressão cai abaixo da pressão de vapor do líquido de arrefecimento, formam-se microbolhas (início da cavitação). Quando o pulso de pressão se inverte, as bolhas colapsam de forma assimétrica contra a superfície da camisa e geram pressões localizadas de 400–600 MPa. Colapsos repetidos erodem progressivamente o material de ferro fundido da camisa no lado de empuxo a meio curso, o ponto de colapso mais próximo da parede da camisa. A erosão aparece como uma superfície com pites e áspera que acaba perfurando a camisa e deixando o líquido de arrefecimento entrar no cilindro. A taxa de erosão por cavitação é acelerada por: pH baixo do líquido de arrefecimento (abaixo de 7.5), concentração de SCA reduzida, velocidade do líquido de arrefecimento acima de 3 m/s em passagens estreitas e arraste de ar no líquido de arrefecimento.",
+      "callout": [
+        {
+          "label": "Pressão de colapso da cavitação",
+          "value": "400–600 MPa (localizada)"
+        },
+        {
+          "label": "pH crítico do líquido de arrefecimento",
+          "value": "<7.5 acelera a erosão"
+        },
+        {
+          "label": "Limite de velocidade do líquido de arrefecimento",
+          "value": ">3 m/s em passagens estreitas"
+        }
+      ]
+    },
+    {
+      "heading": "Aditivos suplementares de líquido de arrefecimento (SCA)",
+      "body": "Os SCA são pacotes químicos adicionados às misturas de líquido de arrefecimento de etilenoglicol e água para fornecer: (1) inibidores de corrosão: nitritos, molibdatos, silicatos ou inibidores de tecnologia de ácidos orgânicos (OAT) que formam películas protetoras nas superfícies metálicas; (2) proteção anticavitação: os SCA à base de nitritos formam uma camada protetora de óxido-nitreto de ferro nas superfícies das camisas, que endurece a superfície e reduz o pitting por cavitação; (3) tamponamento do pH: manter o pH do líquido de arrefecimento na faixa de 7.5–11 conforme os requisitos da ASTM D6210. A concentração de SCA é expressa em unidades por galão (EUA) ou por litro. A ASTM D6210 especifica as faixas de concentração mínima e máxima de SCA dos sistemas de líquido de arrefecimento diesel de serviço pesado. Uma concentração excessiva de SCA (sobrecorreção) causa gelificação de silicatos (nos SCA à base de silicato) ou pode aumentar a corrosão em algumas ligas; um SCA insuficiente permite a corrosão e o pitting das camisas. Medição da concentração: titulação segundo o anexo da ASTM D6210 ou teste com tiras de corrosão calibradas pela titulação.",
+      "callout": [
+        {
+          "label": "Faixa de pH alvo",
+          "value": "7.5–11.0 (ASTM D6210)"
+        },
+        {
+          "label": "Tipo de SCA para proteger as camisas",
+          "value": "À base de nitritos (conforme a ASTM D6210)"
+        },
+        {
+          "label": "Intervalo de monitoramento",
+          "value": "A cada 150–250 horas (tira de teste de líquido de arrefecimento)"
+        }
+      ]
+    },
+    {
+      "heading": "Corrosão eletroquímica em sistemas de metais mistos",
+      "body": "Os sistemas de arrefecimento diesel de serviço pesado modernos incorporam alumínio (cabeçotes, pós-resfriadores, radiadores), cobre-latão (colmeias de radiador em sistemas antigos), ferro fundido (bloco do motor, camisas de cilindro) e aço (carcaças de bombas d'água, carcaças de turbocompressores). Esses metais diferentes criam células eletroquímicas quando imersos em um eletrólito (o líquido de arrefecimento). A série galvânica em ambientes de líquido de arrefecimento coloca o alumínio como o metal mais anódico (de sacrifício) em relação ao cobre. A corrosão do alumínio em líquido de arrefecimento contaminado com cobre pode gerar taxas de perda de metal de 0.5–2 mm/ano. O cobre da solda ou das tubulações de cobre que corroem se deposita nas superfícies do motor e acelera o ataque ao alumínio. As formulações de líquido de arrefecimento OAT (tecnologia de ácidos orgânicos) e HOAT (OAT híbrida) usam inibidores aniônicos de carboxilato que oferecem proteção eficaz ao alumínio em sistemas de metais mistos sem risco de gelificação de silicatos. A SAE J1941 define as designações de tipo de líquido de arrefecimento; a ASTM D6868 define os requisitos da tecnologia de inibidores OAT."
+    },
+    {
+      "heading": "Contaminação por glicol no óleo do motor",
+      "body": "A entrada de líquido de arrefecimento no óleo do motor ocorre por: (1) falha da junta do cabeçote (o mais comum: a alta pressão de combustão empurra líquido de arrefecimento para as passagens de retorno de óleo); (2) perfuração das camisas por erosão por cavitação; (3) O-rings com falha nas instalações de camisas úmidas; (4) cabeçote trincado (por superaquecimento ou choque térmico). O glicol no óleo do motor é detectável a partir de 0.1% pela ASTM D2982 (teste de detecção de glicol) ou pela análise elementar por plasma indutivamente acoplado (ICP), que detecta os metais associados ao glicol (potássio, boro dos pacotes inibidores do líquido de arrefecimento). Com 0.5% de glicol no óleo, as superfícies dos mancais começam a sofrer corrosão acelerada. Com 1% de glicol, começa a emulsificação do óleo: a viscosidade pode parecer normal no início, mas a capacidade de carga fica muito comprometida. Os intervalos de análise de óleo devem detectar a entrada de glicol antes que o dano aos mancais se torne irreversível. Ação corretiva imediata: parar a operação, localizar e reparar a fonte, fazer o flushing do sistema de óleo e trocar a carga de óleo. Não continue operando com contaminação por glicol confirmada.",
+      "callout": [
+        {
+          "label": "Limite de detecção de glicol (ASTM D2982)",
+          "value": "0.1%"
+        },
+        {
+          "label": "Nível crítico de glicol",
+          "value": "0.5%: começa a corrosão acelerada"
+        },
+        {
+          "label": "Início da emulsificação",
+          "value": "~1% de glicol no óleo"
+        }
+      ]
+    },
+    {
+      "heading": "Filtração do líquido de arrefecimento e monitoramento de condição",
+      "body": "A filtração do líquido de arrefecimento tem duas funções: (1) remover partículas: resíduos de desgaste, ferrugem e incrustações que desgastam as vedações e as superfícies do rotor da bomba d'água e que atuam como pontos de nucleação para o depósito de incrustações; (2) dosar SCA: os elementos filtrantes com aditivo suplementar de líquido de arrefecimento são projetados para liberar SCA a uma taxa controlada à medida que o líquido de arrefecimento passa por eles, mantendo a concentração entre os intervalos de manutenção manual. Metas de filtração de partículas: a filtração de bypass do líquido de arrefecimento a 15–25 µm nominal é típica; uma filtração mais fina aumenta a taxa de esgotamento do SCA ao aumentar a taxa de filtração do líquido de arrefecimento. Os elementos filtrantes que liberam SCA (arquitetura THERMACORE™) são dimensionados para liberar SCA na taxa de dosagem especificada pelo fabricante do motor. Monitoramento de condição do líquido de arrefecimento segundo a ISO 17359 e a ASTM D6210: pH, concentração de SCA (nitritos no líquido de arrefecimento convencional, alcalinidade de reserva no OAT), teor de glicol (ponto de congelamento ASTM D1177, correlacionado à porcentagem de glicol) e inspeção visual em busca de descoloração, espuma ou contaminação oleosa."
+    },
+    {
+      "heading": "Prevenção de incrustações e incrustação biológica",
+      "body": "As incrustações minerais (carbonatos de cálcio e magnésio) se depositam nas superfícies de troca de calor: tubos do radiador, colmeias do pós-resfriador, camisas d'água do cabeçote. Uma camada de incrustação de 0.25 mm reduz o coeficiente de troca de calor em 20–30%. As incrustações se nucleiam nos pontos quentes (cavidades dos injetores, áreas de sede das válvulas de escape), onde a película de líquido de arrefecimento atinge a temperatura máxima. Prevenção: diluir com água deionizada ou destilada (dureza total <200 ppm como CaCO₃); a ASTM D6210 limita os sólidos dissolvidos totais no líquido de arrefecimento. A qualidade da água é o principal fator da taxa de formação de incrustações. Os inibidores de incrustação (fosfatos, polímeros) dos pacotes de SCA reduzem a taxa de nucleação de incrustações. As incrustações existentes não podem ser removidas apenas pela química do líquido de arrefecimento: é necessária uma desincrustação mecânica ou uma limpeza ácida (formulações de ácido fosfórico) seguidas de flushing completo do sistema de líquido de arrefecimento."
+    },
+    {
+      "heading": "Resumo dos modos de falha do sistema de arrefecimento",
+      "body": "As falhas do sistema de arrefecimento seguem padrões de escalada previsíveis: SCA insuficiente → o pH cai abaixo de 7.5 → começa a erosão por cavitação → o pitting das camisas avança → entrada de líquido de arrefecimento → glicol no óleo → corrosão dos mancais → falha do motor. Ou então: qualidade da água insuficiente → depósitos de incrustação → pontos quentes → ebulição do líquido de arrefecimento → fratura por esforço térmico → entrada de líquido de arrefecimento. O monitoramento de condição corta essa cadeia no pH/SCA do líquido de arrefecimento (intervenção precoce), no glicol no óleo (intervenção a meio da cadeia) e na contagem de partículas de ferro no líquido de arrefecimento (detecção precoce da erosão das camisas). Uma gestão proativa do SCA segundo o cronograma da ASTM D6210 e análises de óleo a cada 150–250 horas evitam que a cadeia avance além do ponto de intervenção precoce."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Pressão de colapso da cavitação",
+      "value": "400–600 MPa (localizada, segundo dados publicados)"
+    },
+    {
+      "label": "pH alvo do líquido de arrefecimento",
+      "value": "7.5–11.0 (ASTM D6210)"
+    },
+    {
+      "label": "Penalidade térmica da incrustação (0.25 mm)",
+      "value": "20–30% menos troca de calor"
+    },
+    {
+      "label": "Detecção de glicol (ASTM D2982)",
+      "value": "0.1% mínimo detectável"
+    },
+    {
+      "label": "Intervalo de monitoramento",
+      "value": "150–250 horas (tira de teste de líquido de arrefecimento)"
+    }
+  ],
+  "relatedStandards": [
+    "ASTM D6210",
+    "ASTM D2982",
+    "SAE J1941",
+    "ASTM D6868",
+    "ISO 17359"
+  ],
+  "relatedTechnologies": [
+    "THERMACORE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "contaminação do sistema de arrefecimento",
+    "erosão por cavitação de camisas",
+    "SCA aditivo suplementar de líquido de arrefecimento",
+    "glicol no óleo",
+    "ASTM D6210",
+    "THERMACORE",
+    "corrosão eletroquímica",
+    "filtração do líquido de arrefecimento",
+    "ASTM D2982",
+    "monitoramento da condição do líquido de arrefecimento",
+    "incrustação",
+    "camisa úmida",
+    "inibidor do líquido de arrefecimento"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Emulsão cor de creme na vareta de óleo ou na tampa de abastecimento de óleo: emulsão de glicol e água no óleo",
+      "Fumaça branca no escapamento sob carga (não condensação da partida a frio): líquido de arrefecimento entrando na câmara de combustão",
+      "Nível de líquido de arrefecimento caindo sem vazamento externo visível: caminho de vazamento interno para o óleo ou para a combustão",
+      "Advertência de pressão de óleo em marcha lenta a quente: perda de viscosidade do óleo por emulsificação com glicol",
+      "Temperatura do líquido de arrefecimento elevada com termostato funcionando normalmente: incrustação nas superfícies de troca de calor",
+      "Ruído ou gotejamento da vedação da bomba d'água: desgaste da vedação induzido por partículas"
+    ],
+    "probableCauses": [
+      "Emulsão creme: falha da junta do cabeçote; falha do O-ring da camisa úmida; cabeçote trincado por superaquecimento",
+      "Fumaça branca no escapamento sob carga: perfuração da camisa por erosão por cavitação (verificar a superfície da camisa em busca de pites); falha da junta do cabeçote do lado da camisa d'água",
+      "Queda do nível de líquido de arrefecimento (sem vazamento externo): confirmar com o teste de glicol ASTM D2982 em amostra de óleo; teste de gases de combustão no líquido de arrefecimento (teste indicador de CO₂)",
+      "Temperatura do óleo elevada: contaminação por glicol comprometendo o filme de óleo; verificar a calibração do sensor de pressão de óleo antes de condenar os mancais",
+      "Temperatura do líquido de arrefecimento elevada: depósitos de incrustação (inspecionar a colmeia do radiador e o pós-resfriador em busca de depósitos esbranquiçados); termostato travado parcialmente aberto; vazão de líquido de arrefecimento insuficiente (erosão do rotor da bomba)",
+      "Falha da vedação da bomba: contaminação por partículas no líquido de arrefecimento acima de 25 µm (inspecionar o elemento filtrante; verificar se o bypass está funcionando)"
+    ],
+    "inspectionMethods": [
+      "Teste de glicol ASTM D2982 em amostra de óleo: resultado em 30 minutos; resultado positivo (mudança de cor) confirma a presença de glicol acima de 0.1%",
+      "Teste de gases de combustão no líquido de arrefecimento: tubo detector de gases de combustão (o CO detecta vazamento de escape para o líquido de arrefecimento por falha da junta do cabeçote); uma leitura de CO persistente confirma falha da junta do cabeçote ou da camisa",
+      "pH e concentração de SCA do líquido de arrefecimento: tira de teste ou medidor de pH; titulação do SCA segundo a ASTM D6210; comparar com a especificação para o volume de líquido de arrefecimento do motor",
+      "Contagem de partículas do líquido de arrefecimento: enviar uma amostra de 100 mL de líquido de arrefecimento ao laboratório; contagem de partículas acima de 1,000 partículas/mL de >25 µm indica erosão ou corrosão anormal",
+      "Análise elementar ICP do líquido de arrefecimento: Fe elevado indica corrosão do ferro fundido; Al elevado indica corrosão do alumínio; Cu elevado indica dissolução da solda de cobre",
+      "Teste de pressão do sistema de arrefecimento a 1.0–1.5× a pressão nominal da tampa: vazamentos externos aparecem imediatamente; queda de pressão sem vazamento visível confirma um caminho de vazamento interno"
+    ],
+    "correctiveActions": [
+      "Glicol no óleo confirmado: parar a operação imediatamente; reparar a fonte (junta do cabeçote ou camisa) antes de dar nova partida; fazer o flushing do sistema de óleo; encher com óleo e filtro novos; reensaiar o óleo às 50 horas",
+      "Concentração de SCA abaixo do mínimo: adicionar SCA conforme o cálculo da ASTM D6210 para o volume do sistema; não ultrapassar a concentração máxima de SCA; reensaiar o pH e o SCA após misturar bem",
+      "Depósitos de incrustação: drenar o sistema de líquido de arrefecimento; fazer o flushing com desincrustante à base de ácido fosfórico (seguir a diluição e o tempo de contato do fabricante); enxaguar com água limpa; reabastecer com líquido de arrefecimento novo conforme a especificação ASTM D6210 usando água deionizada",
+      "Erosão por cavitação detectada (pites na superfície da camisa no lado de empuxo a meio curso): avaliar a espessura restante da camisa com medidor de espessura ultrassônico; camisas abaixo da espessura mínima exigem troca; corrigir a gestão do SCA para evitar recorrência",
+      "Falha da vedação da bomba d'água: trocar a vedação e o rotor; fazer o flushing do sistema para remover os resíduos da vedação; verificar se a filtração do líquido de arrefecimento está funcionando"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "O sistema de arrefecimento exige intervalos de manutenção estendidos, mas a concentração de SCA cai abaixo do mínimo entre as trocas de líquido de arrefecimento programadas",
+      "standard": "ASTM D6210 (SCA concentration specification)",
+      "protectionSystem": "Proteção da lubrificação (limite líquido de arrefecimento-óleo)",
+      "technology": "Instalar um elemento filtrante que libere SCA (dimensionado para fornecer SCA conforme vazão de líquido de arrefecimento × taxa de esgotamento); monitorar a concentração mensalmente; ajustar a taxa de dosagem do elemento à taxa de esgotamento específica do sistema medida nas primeiras 500 horas",
+      "relatedArticles": [
+        "service-intervals",
+        "oil-analysis-methods",
+        "total-cost-of-ownership"
+      ]
+    },
+    {
+      "problem": "Glicol detectado no óleo do motor (ASTM D2982 positivo): fonte ainda não identificada",
+      "standard": "ASTM D2982 (glycol detection), ISO 17359 (condition monitoring)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "Eliminação sistemática das fontes: (1) teste de pressão do sistema de arrefecimento, (2) teste de gases de combustão no líquido de arrefecimento, (3) inspeção dos O-rings das camisas (se o projeto for de camisa úmida), (4) inspeção do bujão magnético em busca de partículas de cobre/alumínio que indiquem corrosão interna; parar a operação até a fonte ser confirmada e reparada",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "lubrication-system-filtration",
+        "failure-analysis"
+      ]
+    },
+    {
+      "problem": "Pitting por cavitação de camisas úmidas observado na retífica em camisas com menos de 5,000 horas",
+      "standard": "ASTM D6210 (SCA management), ASTM D6868 (OAT inhibitor technology)",
+      "protectionSystem": "Proteção da lubrificação (proteção do motor)",
+      "technology": "Revisar os registros de manutenção do SCA de todo o período de serviço das camisas; instalar um monitor de pH do líquido de arrefecimento com registro de dados para identificar quedas abaixo de 7.5; passar para uma formulação de líquido de arrefecimento OAT ou HOAT com desempenho anticavitação documentado; implementar daqui em diante monitoramento com tiras de teste de líquido de arrefecimento a cada 150 horas",
+      "relatedArticles": [
+        "service-intervals",
+        "oil-analysis-methods",
+        "total-cost-of-ownership"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-TECHNOLOGIES (TECH-THERMACORE)",
+    "evidenceStatus": "ASTM D6210:2019 verified; ASTM D2982 verified; cavitation collapse pressure range from published tribology literature; scale thermal penalty from heat transfer engineering data; glycol detection threshold from ASTM D2982 method sensitivity"
+  }
+}

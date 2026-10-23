@@ -1,0 +1,271 @@
+{
+  "slug": "cooling-system-contamination",
+  "faqs": [
+    {
+      "question": "¿Cuál es el rango de concentración de SCA (aditivo suplementario de refrigerante) en los sistemas de enfriamiento de motores diésel?",
+      "answer": "Los aditivos suplementarios de refrigerante (SCA), inhibidores de corrosión que se agregan al refrigerante de los motores diésel, deben mantenerse en un rango de concentración preciso: normalmente 0.5–1.5 unidades/L (una \"unidad\" = 30 mL de concentrado de SCA según ASTM D3306). Por debajo de 0.5 unidades/L, la protección contra la corrosión de las superficies de hierro fundido y aluminio es insuficiente, lo que provoca erosión por cavitación de las camisas de agua de las camisas de cilindro (picado de camisas húmedas) y corrosión de los pasajes de refrigerante de aluminio. Por encima de 3 unidades/L, el depósito de incrustaciones por sobreconcentración provoca corrosión inversa (las incrustaciones de SCA se acumulan en las superficies de transferencia de calor, reducen la eficiencia de enfriamiento y pueden bloquear los pasajes estrechos de refrigerante). El mantenimiento del sistema de refrigerante THERMACORE incluye el monitoreo de la concentración de SCA con refractómetro (que mide el índice de refracción correlacionado con la concentración de SCA) o con tiras de ensayo (indicador colorimétrico de la concentración de SCA)."
+    },
+    {
+      "question": "¿Qué es la erosión por cavitación de las camisas de cilindro diésel y cómo se previene?",
+      "answer": "La erosión por cavitación en la superficie exterior de las camisas de cilindro diésel ocurre cuando las fluctuaciones rápidas de presión en la camisa de enfriamiento hacen que se formen burbujas de vapor de agua que colapsan contra la pared de la camisa. Cada colapso de burbuja genera un pulso de presión localizado de 100–500 MPa que erosiona la superficie metálica por impactos repetidos. En los motores diésel de servicio pesado, el movimiento secundario del pistón (el pistón bascula sobre el eje del bulón en la carrera de combustión) crea pulsos de presión de alta frecuencia en la galería de enfriamiento vecina: es la fuente principal de cavitación de las camisas. Prevención: (1) una concentración de SCA dentro del rango especificado da una capa inhibidora protectora en las superficies metálicas; (2) una velocidad del refrigerante superior a 0.5 m/s en las galerías de enfriamiento de las camisas evita la formación localizada de vapor; (3) una presión del sistema superior a 1 bar (especificación de la tapa del radiador) eleva el umbral de presión de vapor; (4) el paquete de aditivos anticavitación THERMACORE incluye depresores de la presión de vapor e inhibidores de incrustaciones."
+    },
+    {
+      "question": "¿Qué concentración de glicol se requiere en el refrigerante de los motores diésel y por qué es crítico el contenido de glicol?",
+      "answer": "La concentración de glicol (etilenglicol o propilenglicol) del refrigerante de los motores diésel debe mantenerse en un 33–50% en volumen: un 33% da protección contra la congelación hasta −18°C, un 50% hasta −37°C. Por debajo del 25% de glicol, la protección contra la corrosión del sistema glicol-aditivos es insuficiente: el etilenglicol en sí es levemente inhibidor de la corrosión, pero el paquete de aditivos está diseñado para la ventana de concentración de glicol del 33–50%. Por encima del 60% de glicol, la ventaja en el punto de ebullición disminuye y baja la eficiencia de transferencia de calor (el glicol tiene menor calor específico que el agua: una mezcla al 50% de glicol reduce la capacidad calorífica un 15–20% frente al agua pura). La concentración de glicol se mide con un refractómetro calibrado para etilen- o propilenglicol; se requiere compensación de temperatura para lecturas exactas a una temperatura ambiente distinta de la de calibración de 20°C."
+    },
+    {
+      "question": "¿Cómo se manifiesta la contaminación del refrigerante por gases de combustión (ingreso de gases de escape) y qué indica?",
+      "answer": "El ingreso de gases de combustión al sistema de enfriamiento se manifiesta como: (1) Decoloración del refrigerante: decoloración gris negruzca por partículas de carbón, gotas de aceite o formación de ácidos en el refrigerante por el CO2 y los NOx que se disuelven en él; (2) Caída del pH del refrigerante: la absorción de CO2 forma ácido carbónico, que baja el pH del refrigerante de 8.5–10.5 (normal) a 6.0–7.5; (3) Espuma en el refrigerante: los picos de presión de la combustión en el sistema de enfriamiento crean espuma, sobre todo en el tanque de expansión; (4) Sobrepresión del sistema de refrigerante: los gases de combustión elevan la presión del sistema por encima de la especificación de la tapa del radiador, lo que provoca el venteo de la tapa y pérdida de refrigerante; (5) Contaminación con hidrocarburos: contaminación por aceite desde el camino del respiradero del cárter a través del refrigerante, detectable con un ensayo de hidrocarburos en agua (infrarrojo). El ingreso de gases de combustión indica falla de la junta de culata, culata o bloque agrietados o, en el caso más grave, una camisa de cilindro agrietada. Hay que detener el motor y hacer pruebas boroscópicas o hidrostáticas para identificar la fuente del ingreso."
+    },
+    {
+      "question": "¿Qué papel cumple el filtro de refrigerante en el mantenimiento de la calidad del refrigerante?",
+      "answer": "Los filtros de refrigerante de los sistemas de motores diésel cumplen dos funciones: eliminar partículas y dosificar SCA. Los elementos de eliminación de partículas capturan productos de corrosión (escamas de óxido, fragmentos de incrustaciones, partículas de material de sellos) mayores de 25–50 µm que se forman de forma continua en los sistemas de refrigerante usado. Estas partículas pueden bloquear los pasajes estrechos de refrigerante de los enfriadores EGR (ancho de pasaje de 0.5–2 mm) y de los enfriadores de aceite del motor, lo que provoca puntos calientes localizados y un desgaste acelerado de las camisas. Los elementos dosificadores de SCA contienen aditivo SCA impregnado que se disuelve despacio en el refrigerante en circulación con una tasa de liberación controlada, y mantienen la concentración de SCA dentro de la especificación entre los agregados manuales de servicio. Los elementos combinados de filtro y SCA se cambian cada 250–500 horas o cuando la concentración de SCA baja de la especificación, lo que ocurra primero. Los filtros de refrigerante solo de partículas, sin SCA, deberían cambiarse en los intervalos especificados por el fabricante (normalmente 500–1,000 horas)."
+    },
+    {
+      "question": "¿Cómo reduce la formación de incrustaciones en los pasajes de refrigerante la eficiencia de transferencia de calor?",
+      "answer": "Los depósitos de incrustaciones (carbonato de calcio, sulfato de magnesio, incrustaciones de silicato de los aditivos del refrigerante) en las superficies internas de transferencia de calor reducen la conductividad térmica. Las incrustaciones de carbonato de calcio del lado del agua tienen una conductividad térmica de 2–3 W/m·K, frente a 50 W/m·K del hierro fundido del bloque del motor y 0.6 W/m·K del agua: la incrustación resiste más la transferencia de calor que el propio refrigerante, pero aísla menos que el aire o que las capas de productos de corrosión. Una capa de incrustación de 1 mm reduce el coeficiente de transferencia de calor un 15–30% según su composición. En los enfriadores EGR con pasajes de agua de 0.5 mm, una incrustación de 0.1 mm reduce la sección del pasaje un 40%, lo que aumenta la velocidad del refrigerante y la caída de presión y reduce la capacidad térmica. Evitar las incrustaciones requiere una concentración de SCA y un pH del refrigerante correctos: por debajo de pH 7.5 precipitan las incrustaciones de silicato; por encima de pH 11, el calcio precipita como incrustación de carbonato de calcio."
+    },
+    {
+      "question": "¿Cuál es la antigüedad máxima del refrigerante (vida útil) en un sistema de enfriamiento de motor diésel bien mantenido?",
+      "answer": "La vida útil del refrigerante depende de la frecuencia de monitoreo del SCA y de la reposición de aditivos: (1) Refrigerante de larga duración (ELC, OAT: tecnología de ácidos orgánicos) con anticongelante y sin SCA inorgánico: 5 años/1,000,000 km en ruta, 6,000 horas fuera de ruta (según la especificación ASTM D6210 de desempeño ELC). (2) Refrigerante convencional con SCA inorgánico (inhibidores de nitrito, molibdato, fosfato): 2 años o 500,000 km en ruta, 2,000 horas fuera de ruta; el agotamiento del SCA es más rápido. (3) Servicio pesado fuera de ruta con SCA en clima cálido y seco: 1,500–2,000 horas como máximo por la mayor tasa de agotamiento de la concentración por los ciclos de temperatura. La decisión de cambiar el refrigerante debería basarse en el análisis químico (concentración de SCA, pH, cloruros, metales) y no solo en el tiempo calendario: un refrigerante bien mantenido y ensayado con regularidad puede superar la vida útil nominal en un 20–30%, mientras que un refrigerante contaminado con gases de combustión o diluido en glicol debe cambiarse de inmediato sin importar su antigüedad."
+    },
+    {
+      "question": "¿Qué límite de concentración de cloruros se aplica al refrigerante de los motores diésel y por qué los cloruros son dañinos?",
+      "answer": "La concentración máxima admisible de cloruros en el refrigerante de los motores diésel es de 25–40 mg/L (25–40 ppm) según ASTM D3306, D6210 y la mayoría de las especificaciones de los fabricantes de motores. Los cloruros en el refrigerante provocan: (1) Corrosión por rendijas en los pasajes de enfriamiento de aluminio: los iones cloruro penetran y rompen la capa protectora de óxido de aluminio e inician corrosión localizada por picado; (2) Agrietamiento por corrosión bajo tensión (SCC) de los accesorios de cobre y latón: los cloruros aceleran el SCC de las aleaciones de cobre sometidas a esfuerzos de tracción (por los ciclos térmicos); (3) Aceleración de la corrosión galvánica: los cloruros como electrolito aumentan la corriente de acoplamiento galvánico entre metales distintos (hierro fundido, aluminio, cobre, soldadura en el mismo circuito de enfriamiento). Los cloruros entran a los sistemas de enfriamiento por: el agua de la red usada para mezclar el refrigerante (el agua de pozo puede contener 100–500 ppm de Cl-); la contaminación del refrigerante con agua de mar; y el ingreso de gases EGR que llevan HCl de los productos de combustión."
+    },
+    {
+      "question": "¿Qué ensayos analíticos forman un programa completo de análisis de la calidad del refrigerante de motores diésel?",
+      "answer": "Un programa completo de análisis de refrigerante según ASTM D7414 (monitoreo de condición de refrigerantes) y los requisitos de servicio del fabricante incluye: (1) pH: objetivo 8.5–10.5; (2) Tipo y concentración de glicol: refractómetro para el nivel de protección contra la congelación, FTIR para identificar el tipo de glicol; (3) Concentración de SCA: tiras de ensayo colorimétricas o calibración del refractómetro; (4) Alcalinidad de reserva: ASTM D1121, mide la capacidad amortiguadora para resistir la caída de pH por contaminación ácida; (5) Cloruros: cromatografía iónica o método colorimétrico (objetivo <40 mg/L); (6) Metales por ICP: aluminio (Al >30 ppm indica corrosión), cobre (Cu >0.5 ppm indica corrosión), hierro (Fe >20 ppm indica generación de óxido); (7) Nitritos: monitoreo del agotamiento de los componentes del SCA (objetivo >300 ppm en SCA a base de nitritos); (8) Sólidos disueltos totales (TDS): medición de conductividad, objetivo <800 µS/cm en refrigerante mantenido. Frecuencia: cada 250 horas o en cada intervalo de mantenimiento planificado."
+    },
+    {
+      "question": "¿Cómo se distingue la contaminación del sistema de refrigerante con aceite del motor de una falla de la junta de culata?",
+      "answer": "Cómo distinguir las fuentes de contaminación con aceite en el refrigerante: (1) Contaminación externa con aceite (sobrellenado, derrame): gotas de aceite visibles en la superficie del refrigerante sin aumento de la línea base de hidrocarburos disueltos; sin presión de gases de combustión (la tapa de presión funciona normal); pH del refrigerante estable. (2) Falla de la junta de culata (ingreso de gases de combustión al refrigerante): el refrigerante muestra hidrocarburos disueltos en el ensayo de HC en agua (infrarrojo), CO2 elevado en la cámara de aire del tanque de expansión (análisis de gases de combustión), ciclos de presión del refrigerante por encima de la presión de alivio de la tapa con el motor en marcha y burbujeo en el tanque de expansión al arrancar el motor. (3) Falla del enfriador de aceite (aceite lubricante al refrigerante): el refrigerante muestra metales elevados que coinciden con la formulación del aceite lubricante (Ca, Zn, P del paquete de aditivos por ICP), disminución del TAN del refrigerante (la alcalinidad del aceite lubricante diluye el refrigerante usado ácido) y el refrigerante puede mostrar mayor viscosidad si la contaminación cruzada aceite/refrigerante es alta. Cada diagnóstico requiere una solución específica: contaminación con aceite → solo lavado del aceite; falla de la junta de culata → reparación mecánica; falla del enfriador de aceite → reemplazo del enfriador más drenaje y llenado del refrigerante."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D3306-20, Standard Specification for Glycol Base Engine Coolant for Automobile and Light-Duty Service",
+      "relevance": "Especificación básica de calidad del refrigerante que cubre la concentración de glicol, los requisitos de protección contra la corrosión y la compatibilidad con los SCA."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6210-20, Standard Specification for Fully-Formulated Glycol Base Engine Coolant for Heavy-Duty Engines",
+      "relevance": "Especificación de refrigerantes de servicio pesado que incluye requisitos de prevención del picado de camisas (erosión por cavitación), rangos de concentración de SCA y clasificaciones de refrigerantes de larga duración (ELC)."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D7414-20, Standard Practice for Condition Monitoring of Used Coolants from the Cooling Systems of In-Service Equipment",
+      "relevance": "Norma de programa de análisis de refrigerante que define los ensayos analíticos, su frecuencia y los límites de acción para monitorear la contaminación del sistema de enfriamiento de motores diésel."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D1121-20, Standard Test Method for Reserve Alkalinity of Engine Coolants and Antirusts",
+      "relevance": "Método de ensayo para medir la alcalinidad de reserva, un indicador principal de la capacidad amortiguadora del refrigerante y de la reserva de protección contra la corrosión restante."
+    }
+  ],
+  "title": "Contaminación del sistema de enfriamiento del motor: picado de camisas, degradación del refrigerante y gestión del SCA",
+  "subtitle": "Erosión por cavitación de las camisas de cilindro, mecanismos de corrosión electroquímica, agotamiento del aditivo suplementario de refrigerante (SCA) y contaminación con glicol en el aceite lubricante.",
+  "metaDescription": "Referencia de ingeniería sobre la contaminación del sistema de enfriamiento del motor: mecanismos de erosión por cavitación de camisas húmedas (ASTM D2570), química y tasas de agotamiento del SCA (ASTM D6210), detección de glicol en el aceite (ASTM D2982), corrosión electroquímica en circuitos de enfriamiento de metales mixtos e intervalos de monitoreo del estado del refrigerante.",
+  "category": "ingeniería",
+  "readTime": "12 min",
+  "intro": "La contaminación del sistema de enfriamiento daña los motores por dos mecanismos principales: (1) la erosión por cavitación de las camisas de cilindro húmedas, que perfora las camisas sin que haya ninguna falla mecánica, y (2) la degradación del refrigerante, que permite la corrosión electroquímica de los componentes de aluminio, cobre y hierro fundido en los circuitos de enfriamiento de metales mixtos. Ambos mecanismos se controlan con la gestión del aditivo suplementario de refrigerante (SCA) y el monitoreo de condición, no solo con filtración. La arquitectura de filtración THERMACORE™ combina la filtración del refrigerante con la dosificación integrada de SCA y el monitoreo de condición para aplicaciones diésel de servicio pesado.",
+  "sections": [
+    {
+      "heading": "Mecanismo de erosión por cavitación de las camisas húmedas",
+      "body": "Las camisas de cilindro húmedas tocan el refrigerante directamente por su superficie exterior. La vibración de la camisa (por el impulso de la combustión y el golpeteo del pistón) genera oscilaciones rápidas de presión en la película de refrigerante vecina. Donde la presión baja de la presión de vapor del refrigerante, se forman microburbujas (inicio de la cavitación). Cuando el pulso de presión se invierte, las burbujas colapsan de forma asimétrica contra la superficie de la camisa y generan presiones localizadas de 400–600 MPa. Los colapsos repetidos erosionan progresivamente el material de hierro fundido de la camisa en el lado de empuje a mitad de carrera, el punto de colapso más cercano a la pared de la camisa. La erosión se ve como una superficie picada y rugosa que termina perforando la camisa y deja entrar refrigerante al cilindro. La tasa de erosión por cavitación se acelera con: un pH bajo del refrigerante (por debajo de 7.5), una concentración de SCA reducida, una velocidad del refrigerante superior a 3 m/s en pasajes estrechos y el arrastre de aire en el refrigerante.",
+      "callout": [
+        {
+          "label": "Presión de colapso de la cavitación",
+          "value": "400–600 MPa (localizada)"
+        },
+        {
+          "label": "pH crítico del refrigerante",
+          "value": "<7.5 acelera la erosión"
+        },
+        {
+          "label": "Umbral de velocidad del refrigerante",
+          "value": ">3 m/s en pasajes estrechos"
+        }
+      ]
+    },
+    {
+      "heading": "Aditivos suplementarios de refrigerante (SCA)",
+      "body": "Los SCA son paquetes químicos que se agregan a las mezclas de refrigerante de etilenglicol y agua para dar: (1) inhibidores de corrosión: nitritos, molibdatos, silicatos o inhibidores de tecnología de ácidos orgánicos (OAT) que forman películas protectoras en las superficies metálicas; (2) protección anticavitación: los SCA a base de nitritos forman una capa protectora de óxido-nitruro de hierro en las superficies de las camisas, que endurece la superficie y reduce el picado por cavitación; (3) amortiguación del pH: mantener el pH del refrigerante en el rango de 7.5–11 según los requisitos de ASTM D6210. La concentración de SCA se expresa en unidades por galón (EE. UU.) o por litro. ASTM D6210 especifica los rangos de concentración mínima y máxima de SCA de los sistemas de refrigerante diésel de servicio pesado. Una concentración excesiva de SCA (sobrecorrección) provoca gelificación de silicatos (en los SCA a base de silicato) o puede aumentar la corrosión en algunas aleaciones; un SCA insuficiente permite la corrosión y el picado de las camisas. Medición de la concentración: titulación según el anexo de ASTM D6210 o ensayo con tiras de corrosión calibradas frente a la titulación.",
+      "callout": [
+        {
+          "label": "Rango de pH objetivo",
+          "value": "7.5–11.0 (ASTM D6210)"
+        },
+        {
+          "label": "Tipo de SCA para proteger las camisas",
+          "value": "A base de nitritos (cumple ASTM D6210)"
+        },
+        {
+          "label": "Intervalo de monitoreo",
+          "value": "Cada 150–250 horas (tira de ensayo de refrigerante)"
+        }
+      ]
+    },
+    {
+      "heading": "Corrosión electroquímica en sistemas de metales mixtos",
+      "body": "Los sistemas de enfriamiento diésel de servicio pesado modernos incorporan aluminio (culatas, posenfriadores, radiadores), cobre-latón (núcleos de radiador en sistemas antiguos), hierro fundido (bloque del motor, camisas de cilindro) y acero (carcasas de bombas de agua, carcasas de turbocompresores). Estos metales distintos crean celdas electroquímicas al sumergirse en un electrolito (el refrigerante). La serie galvánica en entornos de refrigerante ubica al aluminio como el metal más anódico (de sacrificio) frente al cobre. La corrosión del aluminio en refrigerante contaminado con cobre puede generar tasas de pérdida de metal de 0.5–2 mm/año. El cobre de la soldadura o de las tuberías de cobre que se corroen se deposita en las superficies del motor y acelera el ataque al aluminio. Las formulaciones de refrigerante OAT (tecnología de ácidos orgánicos) y HOAT (OAT híbrida) usan inhibidores aniónicos de carboxilato que dan una protección eficaz al aluminio en sistemas de metales mixtos sin riesgo de gelificación de silicatos. SAE J1941 define las designaciones de tipo de refrigerante; ASTM D6868 define los requisitos de la tecnología de inhibidores OAT."
+    },
+    {
+      "heading": "Contaminación con glicol en el aceite del motor",
+      "body": "El ingreso de refrigerante al aceite del motor ocurre por: (1) falla de la junta de culata (lo más común: la alta presión de combustión empuja refrigerante hacia los pasajes de retorno de aceite); (2) perforación de las camisas por erosión por cavitación; (3) O-rings fallados en las instalaciones de camisas húmedas; (4) culata agrietada (por sobrecalentamiento o choque térmico). El glicol en el aceite del motor se detecta desde el 0.1% con ASTM D2982 (ensayo de detección de glicol) o con análisis elemental por plasma acoplado inductivamente (ICP), que detecta los metales asociados al glicol (potasio, boro de los paquetes inhibidores del refrigerante). Con un 0.5% de glicol en el aceite, las superficies de los cojinetes empiezan a sufrir corrosión acelerada. Con un 1% de glicol empieza la emulsión del aceite: la viscosidad puede parecer normal al principio, pero la capacidad de carga queda muy comprometida. Los intervalos de análisis de aceite deberían detectar el ingreso de glicol antes de que el daño a los cojinetes sea irreversible. Acción correctiva inmediata: detener la operación, localizar y reparar la fuente, lavar el sistema de aceite y reemplazar la carga de aceite. No siga operando con contaminación por glicol confirmada.",
+      "callout": [
+        {
+          "label": "Umbral de detección de glicol (ASTM D2982)",
+          "value": "0.1%"
+        },
+        {
+          "label": "Nivel crítico de glicol",
+          "value": "0.5%: empieza la corrosión acelerada"
+        },
+        {
+          "label": "Inicio de la emulsión",
+          "value": "~1% de glicol en el aceite"
+        }
+      ]
+    },
+    {
+      "heading": "Filtración del refrigerante y monitoreo de condición",
+      "body": "La filtración del refrigerante cumple dos funciones: (1) eliminar partículas: residuos de desgaste, óxido e incrustaciones que desgastan los sellos y las superficies del impulsor de la bomba de agua y que actúan como sitios de nucleación para el depósito de incrustaciones; (2) dosificar SCA: los elementos filtrantes con aditivo suplementario de refrigerante están diseñados para liberar SCA a una tasa controlada a medida que el refrigerante los atraviesa, y mantienen la concentración entre los intervalos de servicio manual. Objetivos de filtración de partículas: la filtración de derivación del refrigerante a 15–25 µm nominal es típica; una filtración más fina aumenta la tasa de agotamiento del SCA al aumentar la tasa de filtración del refrigerante. Los elementos filtrantes que liberan SCA (arquitectura THERMACORE™) se dimensionan para liberar SCA a la tasa de dosificación especificada por el fabricante del motor. Monitoreo de condición del refrigerante según ISO 17359 y ASTM D6210: pH, concentración de SCA (nitritos en refrigerante convencional, alcalinidad de reserva en OAT), contenido de glicol (punto de congelación ASTM D1177, correlacionado con el porcentaje de glicol) e inspección visual en busca de decoloración, espuma o contaminación aceitosa."
+    },
+    {
+      "heading": "Prevención de incrustaciones y ensuciamiento",
+      "body": "Las incrustaciones minerales (carbonatos de calcio y magnesio) se depositan en las superficies de transferencia de calor: tubos del radiador, núcleos del posenfriador, camisas de agua de la culata. Una capa de incrustación de 0.25 mm reduce el coeficiente de transferencia de calor un 20–30%. Las incrustaciones se nuclean en los puntos calientes (cavidades de los inyectores, zonas de asiento de las válvulas de escape), donde la película de refrigerante llega a su temperatura máxima. Prevención: diluir con agua desionizada o destilada (dureza total <200 ppm como CaCO₃); ASTM D6210 limita los sólidos disueltos totales en el refrigerante. La calidad del agua es el principal factor de la tasa de formación de incrustaciones. Los inhibidores de incrustaciones (fosfatos, polímeros) de los paquetes de SCA reducen la tasa de nucleación de incrustaciones. Las incrustaciones existentes no pueden eliminarse solo con la química del refrigerante: se requiere un desincrustado mecánico o una limpieza ácida (formulaciones de ácido fosfórico) seguidos de un lavado completo del sistema de refrigerante."
+    },
+    {
+      "heading": "Resumen de modos de falla del sistema de enfriamiento",
+      "body": "Las fallas del sistema de enfriamiento siguen patrones de escalada previsibles: SCA insuficiente → el pH baja de 7.5 → empieza la erosión por cavitación → avanza el picado de las camisas → ingreso de refrigerante → glicol en el aceite → corrosión de los cojinetes → falla del motor. O bien: calidad del agua insuficiente → depósitos de incrustaciones → puntos calientes → ebullición del refrigerante → fractura por esfuerzo térmico → ingreso de refrigerante. El monitoreo de condición corta esta cadena en el pH/SCA del refrigerante (intervención temprana), en el glicol en el aceite (intervención a mitad de la cadena) y en el conteo de partículas de hierro en el refrigerante (detección temprana de la erosión de las camisas). Una gestión proactiva del SCA según el calendario de ASTM D6210 y un análisis de aceite cada 150–250 horas evitan que la cadena avance más allá del punto de intervención temprana."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Presión de colapso de la cavitación",
+      "value": "400–600 MPa (localizada, según datos publicados)"
+    },
+    {
+      "label": "pH objetivo del refrigerante",
+      "value": "7.5–11.0 (ASTM D6210)"
+    },
+    {
+      "label": "Penalización térmica de la incrustación (0.25 mm)",
+      "value": "20–30% menos transferencia de calor"
+    },
+    {
+      "label": "Detección de glicol (ASTM D2982)",
+      "value": "0.1% mínimo detectable"
+    },
+    {
+      "label": "Intervalo de monitoreo",
+      "value": "150–250 horas (tira de ensayo de refrigerante)"
+    }
+  ],
+  "relatedStandards": [
+    "ASTM D6210",
+    "ASTM D2982",
+    "SAE J1941",
+    "ASTM D6868",
+    "ISO 17359"
+  ],
+  "relatedTechnologies": [
+    "THERMACORE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "contaminación del sistema de enfriamiento",
+    "erosión por cavitación de camisas",
+    "SCA aditivo suplementario de refrigerante",
+    "glicol en el aceite",
+    "ASTM D6210",
+    "THERMACORE",
+    "corrosión electroquímica",
+    "filtración del refrigerante",
+    "ASTM D2982",
+    "monitoreo del estado del refrigerante",
+    "ensuciamiento por incrustaciones",
+    "camisa húmeda",
+    "inhibidor del refrigerante"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Emulsión color crema en la varilla de aceite o en la tapa de llenado de aceite: emulsión de glicol y agua en el aceite",
+      "Humo blanco en el escape con carga (no condensación del arranque en frío): refrigerante que entra a la cámara de combustión",
+      "Baja el nivel de refrigerante sin fuga externa visible: vía de fuga interna hacia el aceite o la combustión",
+      "Advertencia de presión de aceite en ralentí en caliente: pérdida de viscosidad del aceite por emulsión con glicol",
+      "Temperatura del refrigerante elevada con el termostato funcionando normal: ensuciamiento por incrustaciones en las superficies de transferencia de calor",
+      "Ruido o goteo del sello de la bomba de agua: desgaste del sello inducido por partículas"
+    ],
+    "probableCauses": [
+      "Emulsión crema: falla de la junta de culata; falla del O-ring de la camisa húmeda; culata agrietada por un sobrecalentamiento",
+      "Humo blanco en el escape con carga: perforación de la camisa por erosión por cavitación (revisar la superficie de la camisa en busca de picado); falla de la junta de culata del lado de la camisa de agua",
+      "Baja del nivel de refrigerante (sin fuga externa): confirmar con el ensayo de glicol ASTM D2982 en una muestra de aceite; ensayo de gases de combustión en el refrigerante (ensayo indicador de CO₂)",
+      "Temperatura del aceite elevada: contaminación con glicol que compromete la película de aceite; verificar la calibración del sensor de presión de aceite antes de condenar los cojinetes",
+      "Temperatura del refrigerante elevada: depósitos de incrustaciones (inspeccionar el núcleo del radiador y el posenfriador en busca de depósitos blanquecinos); termostato trabado parcialmente abierto; caudal de refrigerante insuficiente (erosión del impulsor de la bomba)",
+      "Falla del sello de la bomba: contaminación por partículas en el refrigerante por encima de 25 µm (inspeccionar el elemento filtrante; comprobar si la derivación está funcionando)"
+    ],
+    "inspectionMethods": [
+      "Ensayo de glicol ASTM D2982 en una muestra de aceite: resultado en 30 minutos; un resultado positivo (cambio de color) confirma la presencia de glicol por encima del 0.1%",
+      "Ensayo de gases de combustión en el refrigerante: tubo detector de gases de combustión (el CO detecta fugas de escape al refrigerante por falla de la junta de culata); una lectura de CO persistente confirma falla de la junta de culata o de la camisa",
+      "pH y concentración de SCA del refrigerante: tira de ensayo o medidor de pH; titulación del SCA según ASTM D6210; comparar con la especificación para el volumen de refrigerante del motor",
+      "Conteo de partículas del refrigerante: enviar una muestra de 100 mL de refrigerante al laboratorio; un conteo de partículas superior a 1,000 partículas/mL de >25 µm indica erosión o corrosión anormal",
+      "Análisis elemental ICP del refrigerante: el Fe elevado indica corrosión del hierro fundido; el Al elevado indica corrosión del aluminio; el Cu elevado indica disolución de la soldadura de cobre",
+      "Prueba de presión del sistema de enfriamiento a 1.0–1.5× la presión nominal de la tapa: las fugas externas se ubican de inmediato; una caída de presión sin fuga visible confirma una vía de fuga interna"
+    ],
+    "correctiveActions": [
+      "Glicol en el aceite confirmado: detener la operación de inmediato; reparar la fuente (junta de culata o camisa) antes de volver a arrancar; lavar el sistema de aceite; llenar con aceite y filtro nuevos; volver a ensayar el aceite a las 50 horas",
+      "Concentración de SCA por debajo del mínimo: agregar SCA según el cálculo de ASTM D6210 para el volumen del sistema; no superar la concentración máxima de SCA; volver a ensayar el pH y el SCA después de mezclar bien",
+      "Depósitos de incrustaciones: drenar el sistema de refrigerante; lavar con un desincrustante a base de ácido fosfórico (seguir la dilución y el tiempo de contacto del fabricante); enjuagar con agua limpia; volver a llenar con refrigerante nuevo según la especificación ASTM D6210 usando agua desionizada",
+      "Erosión por cavitación detectada (picado en la superficie de la camisa en el lado de empuje a mitad de carrera): evaluar el espesor restante de la camisa con un medidor de espesor ultrasónico; las camisas por debajo del espesor mínimo requieren reemplazo; corregir la gestión del SCA para evitar que se repita",
+      "Falla del sello de la bomba de agua: reemplazar el sello y el impulsor; lavar el sistema para eliminar los residuos del sello; verificar que la filtración del refrigerante funcione"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "El sistema de enfriamiento requiere intervalos de mantenimiento extendidos, pero la concentración de SCA baja del mínimo entre los cambios de refrigerante programados",
+      "standard": "ASTM D6210 (SCA concentration specification)",
+      "protectionSystem": "Protección de la lubricación (límite refrigerante-aceite)",
+      "technology": "Instalar un elemento filtrante que libere SCA (dimensionado para entregar SCA según caudal de refrigerante × tasa de agotamiento); monitorear la concentración una vez por mes; ajustar la tasa de dosificación del elemento a la tasa de agotamiento específica del sistema medida en las primeras 500 horas",
+      "relatedArticles": [
+        "service-intervals",
+        "oil-analysis-methods",
+        "total-cost-of-ownership"
+      ]
+    },
+    {
+      "problem": "Glicol detectado en el aceite del motor (ASTM D2982 positivo): fuente aún no identificada",
+      "standard": "ASTM D2982 (glycol detection), ISO 17359 (condition monitoring)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Eliminación sistemática de fuentes: (1) prueba de presión del sistema de enfriamiento, (2) ensayo de gases de combustión en el refrigerante, (3) inspección de los O-rings de las camisas (si el diseño es de camisa húmeda), (4) inspección del tapón magnético en busca de partículas de cobre/aluminio que indiquen corrosión interna; detener la operación hasta confirmar y reparar la fuente",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "lubrication-system-filtration",
+        "failure-analysis"
+      ]
+    },
+    {
+      "problem": "Picado por cavitación de camisas húmedas observado en el reacondicionamiento en camisas de menos de 5,000 horas",
+      "standard": "ASTM D6210 (SCA management), ASTM D6868 (OAT inhibitor technology)",
+      "protectionSystem": "Protección de la lubricación (protección del motor)",
+      "technology": "Revisar los registros de mantenimiento del SCA de todo el período de servicio de las camisas; instalar un monitor de pH del refrigerante con registro de datos para identificar las bajadas por debajo de 7.5; pasar a una formulación de refrigerante OAT u HOAT con desempeño anticavitación documentado; implementar en adelante un monitoreo con tiras de ensayo de refrigerante cada 150 horas",
+      "relatedArticles": [
+        "service-intervals",
+        "oil-analysis-methods",
+        "total-cost-of-ownership"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-TECHNOLOGIES (TECH-THERMACORE)",
+    "evidenceStatus": "ASTM D6210:2019 verified; ASTM D2982 verified; cavitation collapse pressure range from published tribology literature; scale thermal penalty from heat transfer engineering data; glycol detection threshold from ASTM D2982 method sensitivity"
+  }
+}
