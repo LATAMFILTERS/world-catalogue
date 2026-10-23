@@ -1,0 +1,303 @@
+{
+  "slug": "hydraulic-power-unit-design",
+  "faqs": [
+    {
+      "question": "Qual é a regra de capacidade mínima do reservatório para unidades de potência hidráulica?",
+      "answer": "As regras padrão de projeto da capacidade do reservatório especificam um volume de reservatório igual a 3–5× a vazão da bomba em L/min, ou seja, uma bomba de 50 L/min exige um reservatório de 150–250 L. Essa regra fornece tempo de permanência adequado para que as bolhas de ar subam e saiam do fluido (mínimo de 90 segundos nas vazões típicas), oferece capacidade de amortecimento térmico para estabilizar a temperatura e absorve as variações de volume de cilindros e atuadores durante a operação da máquina. Equipamentos móveis compactos podem usar 1–2× a vazão da bomba com resfriamento adicional a ar ou a óleo para compensar a menor massa térmica. Um volume de reservatório abaixo de 1× a vazão da bomba resulta em descontrole térmico: o fluido circula rápido demais para dissipar o calor adequadamente, a temperatura do óleo passa de 80°C e a oxidação acelerada reduz a vida útil do fluido em 50–80%."
+    },
+    {
+      "question": "Como os respiros de reservatórios hidráulicos devem ser especificados para evitar o ingresso de contaminação?",
+      "answer": "Os respiros de reservatórios hidráulicos devem ser especificados para igualar ou superar a eficiência do filtro principal do sistema e a meta de limpeza esperada do sistema. Para um sistema com meta ISO 4406 16/14/11, o filtro do respiro deve atingir eficiência β10(c) ≥ 200, a mesma do filtro de retorno, porque o ar atmosférico aspirado durante o recolhimento dos cilindros e a contração térmica contém poeira ambiente em concentrações de 0.1–5 mg/m3. Um respiro mal especificado (eficiência <95% a ≥10 µm) pode introduzir 2–10 gramas de sílica por ano em um reservatório de 500 L, elevando o código ISO em 2–4 unidades e anulando todos os benefícios da filtração em linha de alta eficiência. Os intervalos de troca dos respiros não devem exceder 1,000 horas ou 12 meses; respiros dessecantes usados em ambientes úmidos exigem inspeção às 500 horas."
+    },
+    {
+      "question": "Qual configuração de filtração de retorno é a ideal para sistemas com bombas de pistões de alta pressão?",
+      "answer": "Sistemas com bombas de pistões de alta pressão geram vazão de retorno significativa em baixa pressão (normalmente 1–5 bar de pressão na linha de retorno). O filtro de retorno deve suportar toda a vazão de retorno (saída da bomba menos a vazão de alimentação dos cilindros consumida em trabalho, mais o retorno de vazamentos) em baixa pressão com alta eficiência Beta. Filtros de retorno duplex (carcaça dupla) com válvulas de comutação manuais ou automáticas permitem trocar o elemento em plena operação sem parar o sistema, o que é essencial em aplicações críticas para a produção. A classificação Beta do elemento β6(c) ≥ 200 é padrão em sistemas de válvulas proporcionais. Posicionamento: filtro de retorno montado na linha de retorno antes de o fluido voltar ao reservatório, com a entrada da carcaça acima do nível máximo de fluido para evitar sifonamento durante a troca do elemento. Um filtro de pressão complementar a 25–70 bar (entre a bomba e a válvula de controle) oferece proteção redundante às válvulas servo/proporcionais durante os transientes do sistema."
+    },
+    {
+      "question": "Qual é o critério de projeto para dimensionar a linha de entrada (sucção) da bomba hidráulica?",
+      "answer": "A linha de sucção da bomba hidráulica (da saída do reservatório até a entrada da bomba) deve ser dimensionada para manter a velocidade do fluido na entrada abaixo de 0.5–1.0 m/s e evitar cavitação. Velocidade acima de 1.5 m/s causa perda de carga na sucção que reduz a pressão de entrada abaixo da pressão de vapor do fluido na temperatura de operação: formam-se bolhas de vapor que colapsam na entrada da bomba e causam dano erosivo. Regras de projeto da linha de sucção: diâmetro interno mínimo tal que V = Q/(πD²/4) ≤ 0.8 m/s; sem filtros de sucção tipo coador (aumentam a restrição e o risco de cavitação; substituí-los por tela de sucção montada no tanque de no máximo 150–250 µm); a linha mais curta possível com o menor número de curvas; porta de entrada no mínimo 100 mm acima do fundo do tanque para não aspirar sedimentos; e uma válvula de esfera manual (não de retorno por mola) para permitir remover a bomba sem esvaziar o reservatório."
+    },
+    {
+      "question": "Como é calculado o dimensionamento do trocador de calor de um sistema hidráulico?",
+      "answer": "O dimensionamento do trocador de calor (resfriador de óleo) se baseia no calor a ser rejeitado: Q_heat = P_input × (1 - η_hydraulic), em que P_input é a potência do motor primário e η_hydraulic é a eficiência hidráulica global (normalmente 0.80–0.90 em sistemas modernos). Para uma bomba de 75 kW com 85% de eficiência, o calor a rejeitar = 75 × 0.15 = 11.25 kW. O trocador deve rejeitar 11.25 kW mantendo a temperatura do óleo abaixo de 70°C no máximo. Trocadores resfriados a ar com ar ambiente a 40°C normalmente exigem 0.3–0.5 kW/(°C de diferença de temperatura) de capacidade por kW de calor rejeitado para ter área de superfície adequada. O cálculo deve incluir uma margem de projeto de 20% para incrustação e condições ambientes variáveis. Resfriadores subdimensionados causam descontrole térmico, aceleram a oxidação do óleo e reduzem a vida útil do fluido e das vedações."
+    },
+    {
+      "question": "Qual é a finalidade de um acumulador hidráulico em uma unidade de potência e como ele afeta o dimensionamento do filtro?",
+      "answer": "Os acumuladores hidráulicos armazenam fluido pressurizado para: complementar a vazão da bomba em picos de alta demanda (reduzindo o tamanho de bomba necessário); manter a pressão do sistema durante paradas breves da bomba; e amortecer as pulsações de pressão de bombas de pistões. Do ponto de vista da filtração, os acumuladores trazem duas considerações: (1) Na descarga do acumulador, vazões instantâneas altas pelo sistema podem exceder a vazão nominal do filtro e reduzir temporariamente sua eficiência: os elementos filtrantes devem ser dimensionados para a vazão de pico de descarga do acumulador mais a vazão da bomba, não para a vazão média. (2) A contaminação presa na bexiga do acumulador ou no bypass do pistão pode ser liberada em rajadas quando o acumulador descarrega: a inspeção regular da bexiga do acumulador e a amostragem do fluido do circuito do acumulador fazem parte obrigatória do programa de gestão da contaminação."
+    },
+    {
+      "question": "Como o projeto do reservatório hidráulico é afetado pelos requisitos de análise de óleo em linha?",
+      "answer": "Reservatórios que suportam programas de análise de óleo exigem recursos de projeto específicos: (1) Válvulas de amostragem na linha de retorno: portas de amostragem com válvula de esfera, válvula agulha e conexão para tubo de 12 mm de DE instaladas na linha de retorno, em um trecho turbulento 300–500 mm a montante da entrada do reservatório, permitindo amostras representativas do circuito sem drenar o sistema; (2) Porta de amostragem de sedimentos do fundo: porta de dreno com válvula no ponto mais baixo do reservatório para coletar uma amostra das partículas sedimentadas; (3) Indicador de nível com porta de reposição equipada com filtro de abastecimento (β3(c) ≥ 200, engate rápido de tela fina) para garantir que todo fluido adicionado atenda ao padrão de limpeza do sistema; (4) Porta de conexão da sonda de temperatura do fluido no ponto de amostragem da linha de retorno, para correlacionar os dados da amostra com a temperatura de operação. Reservatórios sem esses recursos exigem adaptação ou métodos de amostragem alternativos (e menos representativos), como amostragem por mangueira a partir dos bujões de dreno."
+    },
+    {
+      "question": "Quais são as portas de acesso padrão do reservatório e quais são seus requisitos de vedação?",
+      "answer": "Portas de acesso padrão de um reservatório hidráulico: (1) Placa de acesso principal ou boca de visita: para inspeção e limpeza do interior do reservatório; vedada com junta de flange plana (Buna-N ou EPDM, 3–6 mm de espessura comprimida), normalmente de 300–600 mm × 200–400 mm; (2) Porta de abastecimento de fluido: porta roscada de 1/2 BSP a 2 BSP com tampa, equipada com filtro de abastecimento ou vedada quando não está em uso; (3) Indicador de nível: visor de tubo de vidro ou polímero transparente com conexões de 1/4 BSP; (4) Porta de dreno: válvula de esfera de passagem plena na base do reservatório para drenagem completa; (5) Flanges de entrada da linha de retorno: conexões flangeadas de 1 BSP a 3 BSP com vedação por junta de face completa; (6) Saída de sucção: conexão flangeada ou roscada. Todas as conexões roscadas de reservatórios hidráulicos usam vedação cônica BSP ou NPT com fita de PTFE ou vedante líquido; conexões ORFS não são usadas nas portas de baixa pressão do reservatório."
+    },
+    {
+      "question": "Qual cenário de ingresso de contaminação ocorre durante o recolhimento da haste do cilindro e como ele é mitigado?",
+      "answer": "Durante o recolhimento da haste, o pistão se move para o lado do fundo e o volume do lado da haste diminui. O fluido deslocado do lado da haste volta ao reservatório pela linha de retorno. Ao mesmo tempo, o lado do fundo precisa de fluido, que vem do reservatório pela linha de pressão. A haste, ao voltar para o corpo do cilindro, leva a poeira e os detritos acumulados por fora através da vedação raspadora da haste. O raspador remove a contaminação grossa, mas partículas finas (1–10 µm) podem passar pelo raspador e entrar no fluido hidráulico. A taxa de ingresso de contaminação pelos raspadores de haste é de aproximadamente 0.001–0.01 mg por curso da haste por unidade de comprimento exposto da haste (cm): um cilindro de 500 mm de curso que completa 100 cursos por hora introduz 0.5–5 mg/hora de sílica. Uma proteção abrangente da haste (foles de borracha ou coberturas rígidas contra poeira) reduz essa taxa de ingresso em 90% em ambientes poeirentos."
+    },
+    {
+      "question": "Quais riscos de incompatibilidade de tipo de fluido hidráulico existem ao converter um sistema de óleo mineral para fluido hidráulico biodegradável?",
+      "answer": "Converter um sistema hidráulico de óleo mineral para fluido biodegradável (HETG: éster vegetal; HEES: éster sintético; ou HEPG: poliglicol) exige: (1) Flushing completo do sistema para remover o óleo mineral residual (flushing ≥95%, ou seja, três abastecimentos e drenagens do reservatório); contaminação por óleo mineral acima de 5% em fluidos HEES acelera a hidrólise do éster. (2) Troca das vedações: vedações Buna-N compatíveis com óleo mineral são incompatíveis com fluidos de poliglicol (HEPG), que causam inchamento severo do NBR; vedações de FKM são necessárias para HEPG. (3) Compatibilidade do elemento filtrante: verificar a compatibilidade da mídia e da colagem das tampas com o fluido biodegradável específico; alguns ésteres biodegradáveis degradam a colagem de plastisol das tampas em 500 horas. (4) Troca dos elementos filtrantes: os elementos antigos contaminados com óleo mineral residual devem ser descartados; instalam-se elementos novos para o tipo de fluido convertido."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de projeto de sistemas que abrange o dimensionamento do reservatório, os requisitos de filtração, a compatibilidade de fluidos e os procedimentos de comissionamento de unidades de potência hidráulica."
+    },
+    {
+      "category": "standard",
+      "citation": "NFPA T3.16.1, Hydraulic Fluid Power — Reservoir Design, Construction, and Testing",
+      "relevance": "Norma de projeto de reservatórios que especifica os materiais de construção, os requisitos das portas de acesso e os procedimentos de validação da limpeza."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificação da limpeza usada para especificar e verificar as metas de contaminação no comissionamento e no serviço de unidades de potência hidráulica."
+    },
+    {
+      "category": "handbook",
+      "citation": "Hydraulics & Pneumatics, Hydraulic System Design Handbook, 7th Edition, Penton Media",
+      "relevance": "Referência abrangente de projeto que cobre as regras de dimensionamento do reservatório, os cálculos do trocador de calor, o projeto da sucção da bomba e a integração do sistema de controle de contaminação em unidades de potência hidráulica."
+    }
+  ],
+  "title": "Projeto de unidades de potência hidráulica",
+  "subtitle": "Filtração de retorno, de pressão e off-line: arquitetura do sistema e comissionamento",
+  "metaDescription": "Referência de engenharia para o projeto do sistema de filtração de unidades de potência hidráulica: dimensionamento do filtro de retorno, filtração de pressão para circuitos de servoválvulas, projeto do kidney loop off-line, controle da contaminação do reservatório, protocolo de flushing de comissionamento e verificação ISO 4406.",
+  "category": "Engenharia",
+  "readTime": "12 min",
+  "intro": "O projeto de uma unidade de potência hidráulica (HPU) integra três circuitos de filtração complementares (retorno, pressão e off-line) para manter a limpeza do sistema dentro do código ISO 4406 alvo exigido pelo componente mais sensível do circuito. Nenhuma etapa de filtração é suficiente sozinha; cada etapa trata de um caminho de contaminação e de uma faixa de tamanhos de partícula diferentes. O projeto do sistema, o protocolo de comissionamento e o monitoramento contínuo são igualmente importantes: um sistema de filtros perfeitamente especificado operado sem flushing de comissionamento nem monitoramento não vai atingir nem manter sua meta de limpeza.",
+  "sections": [
+    {
+      "heading": "Visão geral da arquitetura de filtração da HPU",
+      "body": "Um sistema de filtração completo de uma unidade de potência hidráulica trata de três fluxos de contaminação: (1) Ingresso de fontes externas (respiros, vedações de eixo, vedações de haste de cilindros, manutenção): controlado por filtros de respiro, seleção de vedações e disciplina nos pontos de abastecimento. (2) Contaminação recirculante (partículas geradas por desgaste que passam pelo filtro de retorno e se acumulam no reservatório): controlada por filtros de retorno e off-line. (3) Contaminação na saída da bomba (partículas de desgaste da própria bomba que chegam às válvulas sensíveis antes do filtro de retorno): controlada por filtros de pressão. A arquitetura de filtração é projetada em sequência: os filtros off-line reduzem a limpeza de base do reservatório; os filtros de retorno capturam as partículas recirculantes; os filtros de pressão dão a proteção final às válvulas sensíveis. As três etapas operam ao mesmo tempo e não são redundantes: remover qualquer uma degrada a proteção global. A limpeza do sistema é medida no componente mais sensível (entrada da servoválvula ou da válvula proporcional), não no reservatório.",
+      "callout": [
+        {
+          "label": "Função do filtro de retorno",
+          "value": "Captura as partículas recirculantes dos atuadores"
+        },
+        {
+          "label": "Função do filtro de pressão",
+          "value": "Protege as válvulas servo/proporcionais das partículas de desgaste da bomba"
+        },
+        {
+          "label": "Função do filtro off-line",
+          "value": "Faz o polimento contínuo do reservatório para reduzir a limpeza de base"
+        }
+      ]
+    },
+    {
+      "heading": "Dimensionamento e especificação do filtro de retorno",
+      "body": "O filtro de retorno trata todo o óleo que volta dos atuadores (cilindros, motores) para o reservatório. A vazão de retorno é igual à entrega da bomba mais qualquer descarga do acumulador; em sistemas com acumuladores grandes, a vazão de retorno de pico pode exceder 2–3× a entrega da bomba em regime permanente. O filtro deve ser dimensionado para a vazão de retorno de pico sem exceder sua pressão diferencial nominal na temperatura de operação. Subdimensioná-lo faz a válvula de bypass abrir nos picos de vazão de retorno, enviando óleo não filtrado diretamente ao reservatório. Especificação do filtro de retorno: (1) Capacidade de vazão: classificado para 120–150% da entrega da bomba, para cobrir a descarga do acumulador e os extremos de deslocamento variável. (2) Classificação Beta: β₁₀(c) ≥ 75 em sistemas hidráulicos padrão; β₁₀(c) ≥ 200 em circuitos de servoválvulas. (3) Pressão da válvula de bypass: normalmente 3.5–5 bar em filtros de retorno montados no topo do tanque. (4) Indicador de contaminação: indicador de pressão diferencial com sinal elétrico para o sistema de controle; não dependa de indicadores apenas visuais em sistemas que exigem monitoramento contínuo da limpeza. (5) Pressão nominal da carcaça do filtro: classificada para 1.5× a pressão máxima de operação no circuito de retorno (alguns circuitos têm pulsos de pressão pela desaceleração dos atuadores).",
+      "callout": [
+        {
+          "label": "Fator de dimensionamento",
+          "value": "120–150% da entrega de pico da bomba"
+        },
+        {
+          "label": "Classificação Beta (circuito servo)",
+          "value": "β₁₀(c) ≥ 200"
+        },
+        {
+          "label": "Pressão da válvula de bypass (linha de retorno)",
+          "value": "3.5–5 bar"
+        }
+      ]
+    },
+    {
+      "heading": "Filtração de pressão para circuitos de servoválvulas",
+      "body": "Os filtros de pressão são instalados a jusante da bomba e a montante das servoválvulas ou válvulas proporcionais para capturar as partículas de desgaste da bomba antes que entrem nos carretéis das válvulas. As partículas de desgaste da bomba (geradas pelas superfícies da placa de distribuição e das sapatas contra o prato inclinado das bombas de pistões axiais) normalmente são partículas metálicas angulosas de 5–25 µm, compatíveis com as folgas dos carretéis das servoválvulas. Especificação do filtro de pressão para proteger servoválvulas: β₃(c) ≥ 200 (remove ≥99.5% das partículas ≥3 µm, dentro da faixa de folgas do carretel servo); β₁(c) ≥ 75 em sistemas eletro-hidráulicos de precisão. Os filtros de pressão devem ser classificados para toda a pressão do sistema, inclusive picos de pressão: pressão nominal mínima da carcaça = MAWP do sistema × fator de segurança de 1.5. Filtros hidráulicos de alta pressão para sistemas de 350 bar exigem carcaças classificadas para no mínimo 525 bar. Elementos filtrantes para serviço de alta pressão devem suportar pressão diferencial de colapso acima de 350 bar sem falha estrutural do elemento. Intervalo de troca do filtro de pressão: baseado em condição pelo indicador de pressão diferencial, normalmente 1,000–3,000 horas em ambientes de operação limpos com pouco desgaste da bomba.",
+      "callout": [
+        {
+          "label": "Classificação para proteger servoválvulas",
+          "value": "β₃(c) ≥ 200"
+        },
+        {
+          "label": "Pressão nominal da carcaça",
+          "value": "MAWP do sistema × 1.5 no mínimo"
+        },
+        {
+          "label": "Classificação de colapso do elemento",
+          "value": "≥ pressão máxima do sistema"
+        }
+      ]
+    },
+    {
+      "heading": "Projeto do circuito kidney loop off-line",
+      "body": "Um circuito kidney loop off-line circula continuamente o fluido do reservatório por um filtro de alta eficiência e o devolve ao reservatório, independentemente do circuito hidráulico principal. O circuito off-line usa sua própria bomba pequena (normalmente 5–15% da vazão do sistema principal) e é a abordagem mais econômica para reduzir a concentração de partículas abaixo de 10 µm, a faixa fina que as vazões de retorno não capturam com eficiência. Parâmetros de projeto do kidney loop: (1) Vazão: 5–15% do volume total do sistema por minuto dá 6–20 renovações do fluido por hora, suficiente para atingir e manter os códigos de limpeza alvo na maioria dos sistemas. (2) Classificação do filtro: β₁₀(c) ≥ 200 em sistemas padrão; β₃(c) ≥ 200 para controle de partículas finas em circuitos servo. (3) Arranjo do circuito: tomada no fundo do reservatório (onde as partículas sedimentadas se concentram) e descarga acima da superfície do fluido para permitir a desaeração. (4) Trocador de calor: o circuito off-line é o local ideal para um resfriador de óleo, pois o circuito de baixa vazão e funcionamento contínuo oferece controle estável de temperatura sem problemas de queda de pressão. A filtração kidney loop é especialmente valiosa em sistemas com eventos intermitentes de alta contaminação (manutenção, troca de vedações): o circuito restabelece a limpeza alvo em 4–8 horas em vez de esperar a recirculação pelo circuito principal.",
+      "callout": [
+        {
+          "label": "Vazão do kidney loop",
+          "value": "5–15% do volume total do sistema/min"
+        },
+        {
+          "label": "Renovações do fluido por hora",
+          "value": "6–20 (com 5–15% de vazão)"
+        },
+        {
+          "label": "Tomada no reservatório",
+          "value": "Fundo do reservatório: recolhe as partículas sedimentadas"
+        }
+      ]
+    },
+    {
+      "heading": "Projeto do reservatório para controle de contaminação",
+      "body": "O projeto do reservatório afeta diretamente a limpeza do sistema por meio de: (1) Volume e tempo de permanência: tempo de permanência = volume do reservatório (L) / vazão da bomba (L/min). Tempo de permanência mínimo para desaeração: 3–5 minutos; mínimo para sedimentação de partículas: depende da densidade e do tamanho das partículas, mas 30 minutos no mínimo para partículas ≥25 µm em ISO VG 46 a 50°C. Meta de projeto: volume do reservatório ≥ 3× a vazão da bomba por minuto para tempo de permanência adequado. (2) Chicanas: uma chicana entre a porta de retorno e a porta de sucção impede que o fluido contaminado que retorna entre imediatamente na sucção da bomba. (3) Respiro: todos os reservatórios ventilados devem ter filtro de respiro dimensionado para a taxa máxima de entrada/saída de volume (avanço/recolhimento de cilindros) mais a respiração térmica. Classificação do filtro de respiro: 3–10 µm absoluto; respiro dessecante em sistemas em ambientes úmidos (as esferas dessecantes mudam de laranja para verde quando saturadas, servindo de indicador de condição). (4) Zona de sedimentação: o fundo do reservatório é uma zona de acúmulo de contaminação; a sucção do kidney loop recolhe as partículas sedimentadas; o filtro de sucção impede que partículas grandes entrem na bomba.",
+      "callout": [
+        {
+          "label": "Volume mínimo do reservatório",
+          "value": "≥3× a vazão da bomba (L/min) em litros"
+        },
+        {
+          "label": "Classificação do filtro de respiro",
+          "value": "3–10 µm absoluto"
+        },
+        {
+          "label": "Indicador de saturação do respiro dessecante",
+          "value": "Laranja = ativo; verde = saturado"
+        }
+      ]
+    },
+    {
+      "heading": "Protocolo de flushing de comissionamento",
+      "body": "O flushing de comissionamento do sistema remove a contaminação incorporada (resíduos de usinagem, carepa de solda, carepa de tubo, rebarbas de elastômero) de um circuito hidráulico novo ou reconstruído antes da primeira operação produtiva. Sem flushing de comissionamento, a contaminação incorporada normalmente fica em ISO 22/20/17 ou pior, muito acima do código alvo de circuitos de servoválvulas ou bombas de pistões. Procedimento de flushing: (1) Encher com fluido de flushing (do mesmo grau do fluido de operação ou um óleo de flushing compatível de menor viscosidade). (2) Instalar placas de bypass nas servoválvulas, válvulas proporcionais e outros componentes sensíveis: circular pelas portas dos atuadores, mas fazendo bypass dos carretéis das válvulas. (3) Instalar elementos filtrantes de retorno temporários de alta capacidade (10 µm absoluto, alta DHC) no lugar dos elementos do sistema para capturar a contaminação grossa sem sobrecarregar os elementos permanentes. (4) Circular a 1.5–2× a vazão nominal para obter flushing turbulento (número de Reynolds ≥4,000 em todos os trechos de tubo). (5) Amostrar a cada 2 horas; continuar até duas amostras consecutivas atenderem à meta de limpeza. (6) Substituir os elementos filtrantes temporários pelos do sistema, remover as placas de bypass e amostrar novamente no código alvo antes do comissionamento com carga.",
+      "callout": [
+        {
+          "label": "Limpeza típica antes do flushing",
+          "value": "ISO 22/20/17 ou pior"
+        },
+        {
+          "label": "Vazão alvo do flushing",
+          "value": "1.5–2× a vazão nominal de operação"
+        },
+        {
+          "label": "Critério de aceitação",
+          "value": "2 amostras consecutivas no código alvo"
+        }
+      ]
+    },
+    {
+      "heading": "Verificação e monitoramento da limpeza do sistema",
+      "body": "A verificação contínua da limpeza exige amostrar no ponto correto: a entrada do componente mais sensível (coletor de entrada da servoválvula ou saída da bomba de pistões), não o reservatório. Amostras do reservatório subestimam a contaminação em circulação porque as partículas sedimentadas não representam a população de partículas ativa. Programa de amostragem: comissionamento inicial (após o flushing); 50 horas após o comissionamento; depois trimestralmente ou a cada 500 horas. Qualquer evento de manutenção (troca de vedações, troca de componentes, reposição de fluido) dispara uma amostra não programada em até 50 horas. Contadores automáticos de partículas instalados em linha na linha de retorno fornecem monitoramento contínuo da limpeza com relato do código ISO 4406 ao SCADA ou ao CLP: os pontos de alerta podem ser configurados para disparar alarmes uma unidade de código acima da meta e bloqueios de parada duas unidades acima. Os sensores em linha complementam, mas não substituem, as amostras periódicas de laboratório: estas captam a distribuição completa de tamanhos e incluem espectroscopia ICP para acompanhar a tendência dos metais de desgaste."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Filtro de retorno (circuito servo)",
+      "value": "β₁₀(c) ≥ 200"
+    },
+    {
+      "label": "Filtro de pressão (circuito servo)",
+      "value": "β₃(c) ≥ 200"
+    },
+    {
+      "label": "Volume mínimo do reservatório",
+      "value": "≥3× a vazão da bomba (litros/L por min)"
+    },
+    {
+      "label": "Vazão do flushing de comissionamento",
+      "value": "1.5–2× a vazão nominal"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "unidade de potência hidráulica",
+    "projeto de HPU",
+    "filtro de retorno",
+    "filtro de pressão",
+    "kidney loop",
+    "flushing de comissionamento",
+    "projeto do reservatório",
+    "ISO 4406"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Oscilação ou deriva do ponto nulo da servoválvula: assoreamento do carretel pelo acúmulo de partículas finas na folga, aumentando a zona morta",
+      "Ruído da bomba de pistões (semelhante a cavitação) com redução de vazão: falta de alimentação na sucção por filtro de sucção entupido ou nível incorreto do reservatório",
+      "Temperatura do óleo alta sustentada acima de 70°C: capacidade de resfriamento insuficiente ou vazamento excessivo pelo dreno da carcaça indicando desgaste da bomba ou do motor",
+      "Indicador de pressão diferencial do filtro de retorno disparado entre intervalos normais de serviço: um evento de contaminação (manutenção, falha de vedação) carregando o elemento prematuramente",
+      "Deriva do cilindro hidráulico sob carga (sem comando de entrada): erosão da sede da válvula de controle direcional ou desgaste do carretel por contaminação"
+    ],
+    "probableCauses": [
+      "Flushing de comissionamento não realizado ou incompleto: a contaminação incorporada circula e carrega os elementos filtrantes do sistema nas primeiras 200 horas",
+      "Filtro do respiro saturado ou ausente: poeira ambiente entrando pela ventilação do reservatório a uma taxa acima da capacidade de filtração",
+      "Filtro de retorno subdimensionado para a vazão de retorno de pico: a válvula de bypass abre durante a descarga do acumulador, deixando passar a vazão em massa não filtrada para o reservatório",
+      "Falha da bomba do kidney loop ou válvula de bypass travada aberta: o circuito de polimento off-line não contribui para a manutenção da limpeza",
+      "Fluido de reposição contaminado adicionado: fluido de tambor novo em ISO 18/16/13 adicionando 3–5 unidades de código de contaminação a um sistema com meta ISO 16/14/11"
+    ],
+    "inspectionMethods": [
+      "Contagem de partículas ISO 4406 no coletor de entrada da servoválvula: o resultado em relação ao código alvo indica se a filtração está atingindo a limpeza de projeto",
+      "Verificação da pressão diferencial dos filtros de retorno, de pressão e off-line: qualquer elemento em condição de bypass não está filtrando",
+      "Inspeção do filtro do respiro: ensaio de vazão pelo respiro (verificação da resistência ao ar) e cor das esferas dessecantes (laranja = ativo; verde = troca necessária)",
+      "Verificação do nível do reservatório na temperatura de operação: nível baixo reduz o tempo de permanência e a desaeração, aumentando o óleo aerado recirculado para a sucção da bomba",
+      "Ensaio de desempenho da servoválvula: resposta ao degrau, limiar, histerese e deriva do ponto nulo; desvios em relação à referência do comissionamento indicam assoreamento ou desgaste do carretel"
+    ],
+    "correctiveActions": [
+      "Se a limpeza do sistema exceder a meta em >2 unidades de código: operar o kidney loop continuamente até duas amostras consecutivas atenderem à meta; investigar e vedar a fonte de ingresso antes de declarar o sistema limpo",
+      "Se o flushing de comissionamento foi insuficiente: drenar o fluido, substituí-lo por óleo de flushing limpo e repetir todo o procedimento de flushing, incluindo a instalação de elementos temporários de alta capacidade",
+      "Se o limiar da servoválvula aumentou >50%: fazer flushing do circuito de pressão a 2× a vazão nominal com elementos β₃(c) ≥ 200; a válvula pode precisar de limpeza especializada ou troca se o assoreamento for severo",
+      "Se o respiro estiver saturado: substituí-lo por respiro dessecante dimensionado para a taxa de respiração de pico (velocidade máxima de avanço/recolhimento do cilindro × área do diâmetro); inspecionar o reservatório em busca de acúmulo de água",
+      "Após qualquer evento de contaminação: aumentar a frequência de amostragem para a cada 50 horas até três amostras consecutivas confirmarem o retorno ao código alvo"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Assoreamento de servoválvulas aumentando o limiar e a histerese",
+      "standard": "ISO 4406 (ISO 14/12/9 target for servo circuits), ISO 16889 (filter β specification)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "Filtro de pressão β₃(c) ≥ 200 a montante da válvula + kidney loop off-line β₁₀(c) ≥ 200 a 10% da vazão do sistema",
+      "relatedArticles": [
+        "hydraulic-contamination-sensitivity",
+        "beta-ratio",
+        "contamination-control"
+      ]
+    },
+    {
+      "problem": "Pico de contaminação após o comissionamento: contaminação incorporada em sistema novo",
+      "standard": "ISO 4406 (verification) + ISO 16889 (flush filter specification)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "Flushing de comissionamento a 1.5–2× a vazão com elementos temporários β₁₀(c) ≥ 1000; aceitar com duas amostras consecutivas no código alvo",
+      "relatedArticles": [
+        "contamination-control",
+        "fluid-cleanliness",
+        "particle-ingress-prevention"
+      ]
+    },
+    {
+      "problem": "Ingresso de poeira ambiente elevando o código de limpeza do sistema",
+      "standard": "ISO 4406 (monitoring) + ISO 11171 (particle counter calibration)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "Troca do respiro dessecante + aumento da vazão do kidney loop off-line para 15% do volume do sistema/min",
+      "relatedArticles": [
+        "particle-ingress-prevention",
+        "fluid-cleanliness",
+        "service-intervals"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-HYDRAULIC)",
+    "evidenceStatus": "ISO 4406:2021 verified; ISO 16889:2022 verified; reservoir design data from ISO TR 10949; commissioning protocol from NFPA T2.14 guidelines"
+  },
+  "commonMistakes": [
+    "Dimensionar o volume do reservatório hidráulico pela saída da bomba em vez de pelo calor que o sistema precisa rejeitar. Um volume de reservatório de 3–5× a vazão da bomba por minuto é uma regra de gestão térmica, não uma convenção arbitrária: reservatórios subdimensionados causam superaquecimento do fluido e degradação por oxidação acelerada.",
+    "Não instalar um circuito de filtração kidney loop off-line em sistemas com servoválvulas ou válvulas proporcionais. Os filtros de pressão em linha operam na pressão do sistema; os filtros kidney loop off-line operam em baixa pressão, permitindo filtração mais fina (ISO 14/12/9 ou mais rigorosa) com menor risco de bypass.",
+    "Conectar os filtros de retorno diretamente no topo do reservatório sem um tubo difusor abaixo da superfície do fluido. O fluxo de retorno turbulento arrasta ar para o fluido: retornos submersos e chicanas difusoras são necessários para evitar a aeração que causa cavitação em bombas de pistões axiais."
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "slug": "hydraulic-power-unit-design",
+  "faqs": [
+    {
+      "question": "¿Cuál es la regla de capacidad mínima del depósito para las unidades de potencia hidráulica?",
+      "answer": "Las reglas estándar de diseño de la capacidad del depósito especifican un volumen de depósito igual a 3–5× el caudal de la bomba en L/min, así que una bomba de 50 L/min requiere un depósito de 150–250 L. Esta regla da un tiempo de permanencia adecuado para que las burbujas de aire suban y salgan del fluido (mínimo 90 segundos a los caudales típicos), aporta capacidad de amortiguación térmica para estabilizar la temperatura y absorbe los cambios de volumen de cilindros y actuadores durante la operación de la máquina. Los equipos móviles compactos pueden usar 1–2× el caudal de la bomba con enfriamiento adicional por aire o por aceite para compensar la menor masa térmica. Un volumen de depósito inferior a 1× el caudal de la bomba produce descontrol térmico: el fluido circula demasiado rápido para disipar bien el calor, la temperatura del aceite supera los 80°C y la oxidación acelerada reduce la vida útil del fluido en un 50–80%."
+    },
+    {
+      "question": "¿Cómo deben especificarse los respiraderos de los depósitos hidráulicos para evitar el ingreso de contaminación?",
+      "answer": "Los respiraderos de los depósitos hidráulicos deben especificarse para igualar o superar la eficiencia del filtro principal del sistema y el objetivo de limpieza esperado del sistema. Para un sistema con objetivo ISO 4406 16/14/11, el filtro del respiradero debe lograr una eficiencia β10(c) ≥ 200, la misma que el filtro de retorno, porque el aire atmosférico aspirado durante la retracción de los cilindros y la contracción térmica contiene polvo ambiental en concentraciones de 0.1–5 mg/m3. Un respiradero mal especificado (eficiencia <95% a ≥10 µm) puede introducir 2–10 gramos de sílice al año en un depósito de 500 L, lo que sube el código ISO en 2–4 unidades y anula todos los beneficios de la filtración en línea de alta eficiencia. Los intervalos de reemplazo de los respiraderos no deben superar las 1,000 horas o 12 meses; los respiraderos desecantes usados en ambientes húmedos requieren inspección a las 500 horas."
+    },
+    {
+      "question": "¿Qué configuración de filtración de retorno es la óptima para sistemas con bombas de pistones de alta presión?",
+      "answer": "Los sistemas con bombas de pistones de alta presión generan un caudal de retorno importante a baja presión (normalmente 1–5 bar de presión en la línea de retorno). El filtro de retorno debe manejar todo el caudal de retorno (salida de la bomba menos el caudal de alimentación de los cilindros consumido en trabajo, más el retorno de fugas) a baja presión con alta eficiencia Beta. Los filtros de retorno dúplex (doble carcasa) con válvulas de conmutación manuales o automáticas permiten reemplazar el elemento en plena operación sin parar el sistema, algo esencial en aplicaciones críticas para la producción. La clasificación Beta del elemento β6(c) ≥ 200 es estándar en sistemas de válvulas proporcionales. Ubicación: filtro de retorno montado en la línea de retorno antes de que el fluido vuelva a entrar al depósito, con la entrada de la carcasa por encima del nivel máximo de fluido para evitar el sifonamiento durante el cambio de elemento. Un filtro de presión complementario a 25–70 bar (entre la bomba y la válvula de control) da protección redundante a las válvulas servo/proporcionales durante los transitorios del sistema."
+    },
+    {
+      "question": "¿Cuál es el criterio de diseño para dimensionar la línea de entrada (succión) de la bomba hidráulica?",
+      "answer": "La línea de succión de la bomba hidráulica (de la salida del depósito a la entrada de la bomba) debe dimensionarse para mantener la velocidad del fluido en la entrada por debajo de 0.5–1.0 m/s y evitar la cavitación. Una velocidad superior a 1.5 m/s causa una pérdida de carga en la succión que baja la presión de entrada por debajo de la presión de vapor del fluido a la temperatura de operación: se forman burbujas de vapor que colapsan en la entrada de la bomba y causan daño erosivo. Reglas de diseño de la línea de succión: diámetro interior mínimo tal que V = Q/(πD²/4) ≤ 0.8 m/s; sin coladores de succión (añaden restricción y riesgo de cavitación; reemplazarlos por una malla de succión montada en el tanque de 150–250 µm como máximo); la línea más corta posible con el menor número de codos; puerto de entrada al menos 100 mm por encima del fondo del tanque para no aspirar sedimentos; y una válvula de bola manual (no de retorno por resorte) que permita retirar la bomba sin vaciar el depósito."
+    },
+    {
+      "question": "¿Cómo se calcula el dimensionamiento del intercambiador de calor de un sistema hidráulico?",
+      "answer": "El dimensionamiento del intercambiador de calor (enfriador de aceite) se basa en el calor que hay que evacuar: Q_heat = P_input × (1 - η_hydraulic), donde P_input es la potencia del motor primario y η_hydraulic es la eficiencia hidráulica global (normalmente 0.80–0.90 en sistemas modernos). Para una bomba de 75 kW con un 85% de eficiencia, el calor a evacuar = 75 × 0.15 = 11.25 kW. El intercambiador debe evacuar 11.25 kW manteniendo la temperatura del aceite por debajo de 70°C como máximo. Los intercambiadores enfriados por aire con aire ambiente a 40°C suelen requerir 0.3–0.5 kW/(°C de diferencia de temperatura) de capacidad por kW de calor evacuado para tener una superficie adecuada. El cálculo debe incluir un margen de diseño del 20% por ensuciamiento y condiciones ambientales variables. Los enfriadores subdimensionados causan descontrol térmico, aceleran la oxidación del aceite y reducen la vida útil del fluido y de los sellos."
+    },
+    {
+      "question": "¿Cuál es la función de un acumulador hidráulico en una unidad de potencia y cómo afecta al dimensionamiento del filtro?",
+      "answer": "Los acumuladores hidráulicos almacenan fluido a presión para: complementar el caudal de la bomba en los picos de alta demanda (lo que reduce el tamaño de bomba necesario); mantener la presión del sistema durante paradas breves de la bomba; y amortiguar las pulsaciones de presión de las bombas de pistones. Desde el punto de vista de la filtración, los acumuladores introducen dos consideraciones: (1) Durante la descarga del acumulador, los caudales instantáneos altos por el sistema pueden superar el caudal nominal del filtro y reducir temporalmente su eficiencia: los elementos filtrantes deben dimensionarse para el caudal pico de descarga del acumulador más el caudal de la bomba, no para el caudal medio. (2) La contaminación atrapada en la vejiga del acumulador o en la derivación del pistón puede liberarse en ráfagas cuando el acumulador descarga: la inspección periódica de la vejiga del acumulador y el muestreo del fluido del circuito del acumulador son parte necesaria del programa de gestión de la contaminación."
+    },
+    {
+      "question": "¿Cómo afectan al diseño del depósito hidráulico los requisitos para el análisis de aceite en línea?",
+      "answer": "Los depósitos que dan soporte a programas de análisis de aceite requieren características de diseño específicas: (1) Válvulas de muestreo en la línea de retorno: puertos de muestreo con válvula de bola, válvula de aguja y conexión para tubo de 12 mm de DE instalados en la línea de retorno, en un tramo turbulento 300–500 mm aguas arriba de la entrada del depósito, para tomar muestras representativas del circuito sin drenar el sistema; (2) Puerto de muestreo de sedimentos del fondo: puerto de drenaje con válvula en el punto más bajo del depósito para recoger una muestra de las partículas sedimentadas; (3) Indicador de nivel con puerto de reposición equipado con un filtro de llenado (β3(c) ≥ 200, acople rápido de malla fina) para asegurar que todo el fluido añadido cumpla la norma de limpieza del sistema; (4) Puerto de conexión de la sonda de temperatura del fluido en el punto de muestreo de la línea de retorno, para correlacionar los datos de la muestra con la temperatura de operación. Los depósitos sin estas características requieren una modificación o métodos de muestreo alternativos (y menos representativos), como el muestreo con manguera desde los tapones de drenaje."
+    },
+    {
+      "question": "¿Cuáles son los puertos de acceso estándar del depósito y cuáles son sus requisitos de sellado?",
+      "answer": "Puertos de acceso estándar de un depósito hidráulico: (1) Placa de acceso principal o boca de hombre: para inspeccionar y limpiar el interior del depósito; sellada con una junta de brida plana (Buna-N o EPDM, 3–6 mm de espesor comprimido), normalmente de 300–600 mm × 200–400 mm; (2) Puerto de llenado de fluido: puerto roscado de 1/2 BSP a 2 BSP con tapa, equipado con filtro de llenado o sellado cuando no se usa; (3) Indicador de nivel: visor de tubo de vidrio o polímero transparente con conexiones de 1/4 BSP; (4) Puerto de drenaje: válvula de bola de paso total en la base del depósito para el drenaje completo; (5) Bridas de entrada de la línea de retorno: conexiones bridadas de 1 BSP a 3 BSP con sellado de junta de cara completa; (6) Salida de succión: conexión bridada o roscada. Todas las conexiones roscadas de los depósitos hidráulicos usan sellos cónicos BSP o NPT con cinta de PTFE o sellador líquido; los conectores ORFS no se usan en los puertos de baja presión del depósito."
+    },
+    {
+      "question": "¿Qué escenario de ingreso de contaminación ocurre durante la retracción del vástago del cilindro y cómo se mitiga?",
+      "answer": "Durante la retracción del vástago, el pistón se mueve hacia el lado del fondo y el volumen del lado del vástago disminuye. El fluido desplazado del lado del vástago vuelve al depósito por la línea de retorno. Al mismo tiempo, el lado del fondo necesita fluido, que llega desde el depósito por la línea de presión. El vástago, al volver al cuerpo del cilindro, arrastra el polvo y los residuos acumulados por fuera a través del sello rascador del vástago. El rascador elimina la contaminación gruesa, pero las partículas finas (1–10 µm) pueden pasarlo y entrar en el fluido hidráulico. La tasa de ingreso de contaminación por los rascadores de vástago es de aproximadamente 0.001–0.01 mg por carrera del vástago por unidad de longitud expuesta del vástago (cm): un cilindro de 500 mm de carrera que completa 100 carreras por hora introduce 0.5–5 mg/hora de sílice. Una protección integral del vástago (fuelles de caucho o cubiertas rígidas contra el polvo) reduce esta tasa de ingreso en un 90% en ambientes polvorientos."
+    },
+    {
+      "question": "¿Qué riesgos de incompatibilidad de tipo de fluido hidráulico existen al convertir un sistema de aceite mineral a fluido hidráulico biodegradable?",
+      "answer": "Convertir un sistema hidráulico de aceite mineral a fluido biodegradable (HETG: éster vegetal; HEES: éster sintético; o HEPG: poliglicol) requiere: (1) Un lavado completo del sistema para eliminar el aceite mineral residual (lavado ≥95%, es decir, tres llenados y drenajes del depósito); una contaminación con aceite mineral superior al 5% en fluidos HEES acelera la hidrólisis del éster. (2) Reemplazo de sellos: los sellos Buna-N compatibles con aceite mineral son incompatibles con los fluidos de poliglicol (HEPG), que causan un hinchamiento severo del NBR; se requieren sellos de FKM para HEPG. (3) Compatibilidad del elemento filtrante: verificar la compatibilidad del medio y de la unión de las tapas con el fluido biodegradable específico; algunos ésteres biodegradables degradan la unión de plastisol de las tapas en 500 horas. (4) Reemplazo de los elementos filtrantes: los elementos viejos contaminados con aceite mineral residual deben desecharse; se instalan elementos nuevos para el tipo de fluido convertido."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de diseño de sistemas que cubre el dimensionamiento del depósito, los requisitos de filtración, la compatibilidad de fluidos y los procedimientos de puesta en marcha de las unidades de potencia hidráulica."
+    },
+    {
+      "category": "standard",
+      "citation": "NFPA T3.16.1, Hydraulic Fluid Power — Reservoir Design, Construction, and Testing",
+      "relevance": "Norma de diseño de depósitos que especifica los materiales de construcción, los requisitos de los puertos de acceso y los procedimientos de validación de la limpieza."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificación de la limpieza usada para especificar y verificar los objetivos de contaminación en la puesta en marcha y el servicio de las unidades de potencia hidráulica."
+    },
+    {
+      "category": "handbook",
+      "citation": "Hydraulics & Pneumatics, Hydraulic System Design Handbook, 7th Edition, Penton Media",
+      "relevance": "Referencia integral de diseño que cubre las reglas de dimensionamiento del depósito, los cálculos del intercambiador de calor, el diseño de la succión de la bomba y la integración del sistema de control de la contaminación en las unidades de potencia hidráulica."
+    }
+  ],
+  "title": "Diseño de unidades de potencia hidráulica",
+  "subtitle": "Filtración de retorno, de presión y fuera de línea: arquitectura del sistema y puesta en marcha",
+  "metaDescription": "Referencia de ingeniería para el diseño del sistema de filtración de unidades de potencia hidráulica: dimensionamiento del filtro de retorno, filtración de presión para circuitos de servoválvulas, diseño del kidney-loop fuera de línea, control de la contaminación del depósito, protocolo de lavado de puesta en marcha y verificación ISO 4406.",
+  "category": "Ingeniería",
+  "readTime": "12 min",
+  "intro": "El diseño de una unidad de potencia hidráulica (HPU) integra tres circuitos de filtración complementarios (retorno, presión y fuera de línea) para mantener la limpieza del sistema dentro del código ISO 4406 objetivo que exige el componente más sensible del circuito. Ninguna etapa de filtración basta por sí sola; cada etapa atiende una vía de contaminación y un rango de tamaños de partícula distintos. El diseño del sistema, el protocolo de puesta en marcha y el monitoreo continuo son igual de importantes: un sistema de filtros perfectamente especificado que opera sin lavado de puesta en marcha ni monitoreo no alcanzará ni mantendrá su objetivo de limpieza.",
+  "sections": [
+    {
+      "heading": "Visión general de la arquitectura de filtración de la HPU",
+      "body": "Un sistema de filtración completo de una unidad de potencia hidráulica atiende tres flujos de contaminación: (1) Ingreso desde fuentes externas (respiraderos, sellos de eje, sellos de vástago de cilindros, mantenimiento): se controla con filtros de respiradero, selección de sellos y disciplina en los puntos de llenado. (2) Contaminación recirculante (partículas generadas por desgaste que pasan por el filtro de retorno y se acumulan en el depósito): se controla con filtros de retorno y fuera de línea. (3) Contaminación a la salida de la bomba (partículas de desgaste de la propia bomba que llegan a las válvulas sensibles antes que al filtro de retorno): se controla con filtros de presión. La arquitectura de filtración se diseña en secuencia: los filtros fuera de línea reducen la limpieza base del depósito; los filtros de retorno capturan las partículas recirculantes; los filtros de presión dan la protección final a las válvulas sensibles. Las tres etapas funcionan a la vez y no son redundantes: quitar cualquiera degrada la protección global. La limpieza del sistema se mide en el componente más sensible (entrada de la servoválvula o de la válvula proporcional), no en el depósito.",
+      "callout": [
+        {
+          "label": "Función del filtro de retorno",
+          "value": "Captura las partículas recirculantes de los actuadores"
+        },
+        {
+          "label": "Función del filtro de presión",
+          "value": "Protege las válvulas servo/proporcionales de las partículas de desgaste de la bomba"
+        },
+        {
+          "label": "Función del filtro fuera de línea",
+          "value": "Pule el depósito de forma continua para reducir la limpieza base"
+        }
+      ]
+    },
+    {
+      "heading": "Dimensionamiento y especificación del filtro de retorno",
+      "body": "El filtro de retorno maneja todo el aceite que vuelve de los actuadores (cilindros, motores) al depósito. El caudal de retorno es igual a la entrega de la bomba más cualquier descarga del acumulador; en sistemas con acumuladores grandes, el caudal de retorno pico puede superar 2–3× la entrega de la bomba en régimen estacionario. El filtro debe dimensionarse para el caudal de retorno pico sin superar su presión diferencial nominal a la temperatura de operación. Subdimensionarlo hace que la válvula de derivación se abra con los picos de caudal de retorno y envíe aceite sin filtrar directamente al depósito. Especificación del filtro de retorno: (1) Capacidad de caudal: clasificado para el 120–150% de la entrega de la bomba, para cubrir la descarga del acumulador y los extremos de desplazamiento variable. (2) Clasificación Beta: β₁₀(c) ≥ 75 en sistemas hidráulicos estándar; β₁₀(c) ≥ 200 en circuitos de servoválvulas. (3) Presión de la válvula de derivación: normalmente 3.5–5 bar en filtros de retorno montados sobre el tanque. (4) Indicador de contaminación: indicador de presión diferencial con señal eléctrica al sistema de control; no dependa de indicadores solo visuales en sistemas que requieren monitoreo continuo de la limpieza. (5) Presión nominal de la carcasa del filtro: clasificada para 1.5× la presión máxima de operación del circuito de retorno (algunos circuitos tienen pulsos de presión por la desaceleración de los actuadores).",
+      "callout": [
+        {
+          "label": "Factor de dimensionamiento",
+          "value": "120–150% de la entrega pico de la bomba"
+        },
+        {
+          "label": "Clasificación Beta (circuito servo)",
+          "value": "β₁₀(c) ≥ 200"
+        },
+        {
+          "label": "Presión de la válvula de derivación (línea de retorno)",
+          "value": "3.5–5 bar"
+        }
+      ]
+    },
+    {
+      "heading": "Filtración de presión para circuitos de servoválvulas",
+      "body": "Los filtros de presión se instalan aguas abajo de la bomba y aguas arriba de las servoválvulas o válvulas proporcionales para capturar las partículas de desgaste de la bomba antes de que entren en las correderas de las válvulas. Las partículas de desgaste de la bomba (generadas por las superficies de la placa de distribución y de los patines contra el plato inclinado de las bombas de pistones axiales) suelen ser partículas metálicas angulosas de 5–25 µm, que coinciden con las holguras de las correderas de las servoválvulas. Especificación del filtro de presión para proteger servoválvulas: β₃(c) ≥ 200 (elimina ≥99.5% de las partículas ≥3 µm, dentro del rango de holguras de la corredera servo); β₁(c) ≥ 75 en sistemas electrohidráulicos de precisión. Los filtros de presión deben estar clasificados para toda la presión del sistema, incluidos los picos de presión: presión nominal mínima de la carcasa = MAWP del sistema × factor de seguridad de 1.5. Los filtros hidráulicos de alta presión para sistemas de 350 bar requieren carcasas clasificadas para 525 bar como mínimo. Los elementos filtrantes para servicio de alta presión deben soportar una presión diferencial de colapso superior a 350 bar sin falla estructural del elemento. Intervalo de cambio del filtro de presión: según condición por el indicador de presión diferencial, normalmente 1,000–3,000 horas en entornos de operación limpios con poco desgaste de la bomba.",
+      "callout": [
+        {
+          "label": "Clasificación para proteger servoválvulas",
+          "value": "β₃(c) ≥ 200"
+        },
+        {
+          "label": "Presión nominal de la carcasa",
+          "value": "MAWP del sistema × 1.5 como mínimo"
+        },
+        {
+          "label": "Clasificación de colapso del elemento",
+          "value": "≥ presión máxima del sistema"
+        }
+      ]
+    },
+    {
+      "heading": "Diseño del circuito kidney-loop fuera de línea",
+      "body": "Un circuito kidney-loop fuera de línea hace circular de forma continua el fluido del depósito por un filtro de alta eficiencia y lo devuelve al depósito, con independencia del circuito hidráulico principal. El circuito fuera de línea usa su propia bomba pequeña (normalmente 5–15% del caudal del sistema principal) y es el enfoque más rentable para reducir la concentración de partículas de menos de 10 µm, el rango fino que los caudales de retorno no capturan con eficiencia. Parámetros de diseño del kidney-loop: (1) Caudal: el 5–15% del volumen total del sistema por minuto da 6–20 renovaciones del fluido por hora, suficiente para alcanzar y mantener los códigos de limpieza objetivo en la mayoría de los sistemas. (2) Clasificación del filtro: β₁₀(c) ≥ 200 en sistemas estándar; β₃(c) ≥ 200 para controlar partículas finas en circuitos servo. (3) Disposición del circuito: toma desde el fondo del depósito (donde se concentran las partículas sedimentadas) y descarga por encima de la superficie del fluido para permitir la desaireación. (4) Intercambiador de calor: el circuito fuera de línea es la ubicación óptima para un enfriador de aceite, porque el circuito de bajo caudal y funcionamiento continuo da un control estable de la temperatura sin problemas de caída de presión. La filtración kidney-loop es especialmente valiosa en sistemas con eventos intermitentes de alta contaminación (mantenimiento, reemplazo de sellos): el circuito restablece la limpieza objetivo en 4–8 horas en lugar de esperar a la recirculación por el circuito principal.",
+      "callout": [
+        {
+          "label": "Caudal del kidney-loop",
+          "value": "5–15% del volumen total del sistema/min"
+        },
+        {
+          "label": "Renovaciones del fluido por hora",
+          "value": "6–20 (con 5–15% de caudal)"
+        },
+        {
+          "label": "Toma desde el depósito",
+          "value": "Fondo del depósito: recoge las partículas sedimentadas"
+        }
+      ]
+    },
+    {
+      "heading": "Diseño del depósito para el control de la contaminación",
+      "body": "El diseño del depósito influye directamente en la limpieza del sistema a través de: (1) Volumen y tiempo de permanencia: tiempo de permanencia = volumen del depósito (L) / caudal de la bomba (L/min). Tiempo de permanencia mínimo para la desaireación: 3–5 minutos; mínimo para la sedimentación de partículas: depende de la densidad y el tamaño de las partículas, pero 30 minutos como mínimo para partículas ≥25 µm en ISO VG 46 a 50°C. Objetivo de diseño: volumen del depósito ≥ 3× el caudal de la bomba por minuto para un tiempo de permanencia adecuado. (2) Deflectores: un deflector entre el puerto de retorno y el puerto de succión evita que el fluido contaminado que vuelve entre de inmediato en la succión de la bomba. (3) Respiradero: todos los depósitos ventilados deben tener un filtro de respiradero dimensionado para el caudal máximo de entrada/salida (extensión/retracción de cilindros) más la respiración térmica. Clasificación del filtro de respiradero: 3–10 µm absoluto; respiradero desecante en sistemas en ambientes húmedos (las perlas desecantes cambian de naranja a verde cuando se saturan, lo que sirve de indicador de condición). (4) Zona de sedimentación: el fondo del depósito es una zona de acumulación de contaminación; la succión del kidney-loop recoge las partículas sedimentadas; el colador de succión impide que las partículas grandes entren en la bomba.",
+      "callout": [
+        {
+          "label": "Volumen mínimo del depósito",
+          "value": "≥3× el caudal de la bomba (L/min) en litros"
+        },
+        {
+          "label": "Clasificación del filtro de respiradero",
+          "value": "3–10 µm absoluto"
+        },
+        {
+          "label": "Indicador de saturación del respiradero desecante",
+          "value": "Naranja = activo; verde = saturado"
+        }
+      ]
+    },
+    {
+      "heading": "Protocolo de lavado de puesta en marcha",
+      "body": "El lavado de puesta en marcha del sistema elimina la contaminación incorporada (residuos de mecanizado, cascarilla de soldadura, cascarilla de tubería, rebabas de elastómero) de un circuito hidráulico nuevo o reconstruido antes de la primera operación productiva. Sin lavado de puesta en marcha, la contaminación incorporada suele estar en ISO 22/20/17 o peor, muy por encima del código objetivo de los circuitos de servoválvulas o bombas de pistones. Procedimiento de lavado: (1) Llenar con fluido de lavado (del mismo grado que el fluido de operación o un aceite de lavado compatible de menor viscosidad). (2) Instalar placas de derivación en las servoválvulas, válvulas proporcionales y otros componentes sensibles: circular por los puertos de los actuadores pero derivando las correderas de las válvulas. (3) Instalar elementos filtrantes de retorno temporales de alta capacidad (10 µm absoluto, alta DHC) en lugar de los elementos del sistema para capturar la contaminación gruesa sin sobrecargar los elementos permanentes. (4) Circular a 1.5–2× el caudal nominal para lograr un lavado turbulento (número de Reynolds ≥4,000 en todos los tramos de tubería). (5) Muestrear cada 2 horas; continuar hasta que dos muestras consecutivas cumplan el objetivo de limpieza. (6) Reemplazar los elementos filtrantes temporales por los del sistema, retirar las placas de derivación y volver a muestrear en el código objetivo antes de la puesta en marcha con carga.",
+      "callout": [
+        {
+          "label": "Limpieza típica antes del lavado",
+          "value": "ISO 22/20/17 o peor"
+        },
+        {
+          "label": "Caudal objetivo del lavado",
+          "value": "1.5–2× el caudal nominal de operación"
+        },
+        {
+          "label": "Criterio de aceptación",
+          "value": "2 muestras consecutivas en el código objetivo"
+        }
+      ]
+    },
+    {
+      "heading": "Verificación y monitoreo de la limpieza del sistema",
+      "body": "La verificación continua de la limpieza requiere muestrear en el punto correcto: la entrada del componente más sensible (colector de entrada de la servoválvula o salida de la bomba de pistones), no el depósito. Las muestras del depósito subestiman la contaminación en circulación porque las partículas sedimentadas no representan la población de partículas activa. Programa de muestreo: puesta en marcha inicial (después del lavado); 50 horas después de la puesta en marcha; luego trimestralmente o cada 500 horas. Cualquier evento de mantenimiento (reemplazo de sellos, cambio de componentes, reposición de fluido) activa una muestra no programada dentro de las 50 horas. Los contadores automáticos de partículas instalados en línea en la línea de retorno dan monitoreo continuo de la limpieza con informe del código ISO 4406 al SCADA o al PLC: los puntos de alerta pueden configurarse para disparar alarmas a una unidad de código por encima del objetivo y bloqueos de parada a dos unidades por encima. Los sensores en línea complementan, pero no reemplazan, las muestras periódicas de laboratorio: estas captan la distribución completa de tamaños e incluyen espectroscopia ICP para seguir la tendencia de los metales de desgaste."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Filtro de retorno (circuito servo)",
+      "value": "β₁₀(c) ≥ 200"
+    },
+    {
+      "label": "Filtro de presión (circuito servo)",
+      "value": "β₃(c) ≥ 200"
+    },
+    {
+      "label": "Volumen mínimo del depósito",
+      "value": "≥3× el caudal de la bomba (litros/L por min)"
+    },
+    {
+      "label": "Caudal del lavado de puesta en marcha",
+      "value": "1.5–2× el caudal nominal"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "unidad de potencia hidráulica",
+    "diseño de HPU",
+    "filtro de retorno",
+    "filtro de presión",
+    "kidney-loop",
+    "lavado de puesta en marcha",
+    "diseño del depósito",
+    "ISO 4406"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Oscilación o deriva del punto nulo de la servoválvula: sedimentación en la corredera por acumulación de partículas finas en la holgura, que aumenta la zona muerta",
+      "Ruido de la bomba de pistones (parecido a cavitación) con reducción de caudal: falta de alimentación en la succión por un colador de succión obstruido o un nivel incorrecto del depósito",
+      "Temperatura del aceite alta sostenida por encima de 70°C: capacidad de enfriamiento insuficiente o fuga excesiva por el drenaje de carcasa que indica desgaste de la bomba o del motor",
+      "Indicador de presión diferencial del filtro de retorno activado entre intervalos de servicio normales: un evento de contaminación (mantenimiento, falla de sello) carga el elemento antes de tiempo",
+      "Deriva del cilindro hidráulico bajo carga (sin mando de entrada): erosión del asiento de la válvula de control direccional o desgaste de la corredera por contaminación"
+    ],
+    "probableCauses": [
+      "Lavado de puesta en marcha no realizado o incompleto: la contaminación incorporada circula y carga los elementos filtrantes del sistema en las primeras 200 horas",
+      "Filtro del respiradero saturado o ausente: el polvo ambiental entra por la ventilación del depósito a una tasa superior a la capacidad de filtración",
+      "Filtro de retorno subdimensionado para el caudal de retorno pico: la válvula de derivación se abre durante la descarga del acumulador y deja pasar el caudal masivo sin filtrar al depósito",
+      "Falla de la bomba del kidney-loop o válvula de derivación trabada abierta: el circuito de pulido fuera de línea no contribuye a mantener la limpieza",
+      "Fluido de reposición contaminado añadido: fluido de un tambor nuevo en ISO 18/16/13 que añade 3–5 unidades de código de contaminación a un sistema con objetivo ISO 16/14/11"
+    ],
+    "inspectionMethods": [
+      "Conteo de partículas ISO 4406 en el colector de entrada de la servoválvula: el resultado frente al código objetivo indica si la filtración logra la limpieza de diseño",
+      "Revisión de la presión diferencial de los filtros de retorno, de presión y fuera de línea: cualquier elemento en condición de derivación no está filtrando",
+      "Inspección del filtro del respiradero: ensayo de flujo a través del respiradero (verificación de la resistencia al aire) y color de las perlas desecantes (naranja = activo; verde = hay que cambiarlo)",
+      "Verificación del nivel del depósito a la temperatura de operación: un nivel bajo reduce el tiempo de permanencia y la desaireación, y aumenta el aceite aireado recirculado hacia la succión de la bomba",
+      "Ensayo de desempeño de la servoválvula: respuesta al escalón, umbral, histéresis y deriva del punto nulo; las desviaciones respecto de la referencia de puesta en marcha indican sedimentación o desgaste de la corredera"
+    ],
+    "correctiveActions": [
+      "Si la limpieza del sistema supera el objetivo en >2 unidades de código: hacer funcionar el kidney-loop de forma continua hasta que dos muestras consecutivas cumplan el objetivo; investigar y sellar la fuente de ingreso antes de declarar limpio el sistema",
+      "Si el lavado de puesta en marcha fue insuficiente: drenar el fluido, reemplazarlo por aceite de lavado limpio y repetir el procedimiento de lavado completo, incluida la instalación de elementos temporales de alta capacidad",
+      "Si el umbral de la servoválvula aumentó >50%: lavar el circuito de presión a 2× el caudal nominal con elementos β₃(c) ≥ 200; la válvula puede requerir limpieza especializada o reemplazo si la sedimentación es severa",
+      "Si el respiradero está saturado: reemplazarlo por un respiradero desecante dimensionado para la tasa pico de respiración (velocidad máxima de extensión/retracción del cilindro × área del diámetro); inspeccionar el depósito en busca de acumulación de agua",
+      "Después de cualquier evento de contaminación: aumentar la frecuencia de muestreo a cada 50 horas hasta que tres muestras consecutivas confirmen la vuelta al código objetivo"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Sedimentación en servoválvulas que aumenta el umbral y la histéresis",
+      "standard": "ISO 4406 (ISO 14/12/9 target for servo circuits), ISO 16889 (filter β specification)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Filtro de presión β₃(c) ≥ 200 aguas arriba de la válvula + kidney-loop fuera de línea β₁₀(c) ≥ 200 al 10% del caudal del sistema",
+      "relatedArticles": [
+        "hydraulic-contamination-sensitivity",
+        "beta-ratio",
+        "contamination-control"
+      ]
+    },
+    {
+      "problem": "Pico de contaminación tras la puesta en marcha: contaminación incorporada en un sistema nuevo",
+      "standard": "ISO 4406 (verification) + ISO 16889 (flush filter specification)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Lavado de puesta en marcha a 1.5–2× el caudal con elementos temporales β₁₀(c) ≥ 1000; aceptar con dos muestras consecutivas en el código objetivo",
+      "relatedArticles": [
+        "contamination-control",
+        "fluid-cleanliness",
+        "particle-ingress-prevention"
+      ]
+    },
+    {
+      "problem": "Ingreso de polvo ambiental que sube el código de limpieza del sistema",
+      "standard": "ISO 4406 (monitoring) + ISO 11171 (particle counter calibration)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "Reemplazo del respiradero desecante + aumento del caudal del kidney-loop fuera de línea al 15% del volumen del sistema/min",
+      "relatedArticles": [
+        "particle-ingress-prevention",
+        "fluid-cleanliness",
+        "service-intervals"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-HYDRAULIC)",
+    "evidenceStatus": "ISO 4406:2021 verified; ISO 16889:2022 verified; reservoir design data from ISO TR 10949; commissioning protocol from NFPA T2.14 guidelines"
+  },
+  "commonMistakes": [
+    "Dimensionar el volumen del depósito hidráulico según la salida de la bomba en lugar de según el calor que el sistema debe evacuar. Un volumen de depósito de 3–5× el caudal de la bomba por minuto es una regla de gestión térmica, no una convención arbitraria: los depósitos subdimensionados causan sobrecalentamiento del fluido y una degradación por oxidación acelerada.",
+    "No instalar un circuito de filtración kidney-loop fuera de línea en sistemas con servoválvulas o válvulas proporcionales. Los filtros de presión en línea operan a la presión del sistema; los filtros kidney-loop fuera de línea operan a baja presión, lo que permite una filtración más fina (ISO 14/12/9 o más estricta) con menor riesgo de derivación.",
+    "Conectar los filtros de retorno directamente a la parte superior del depósito sin un tubo difusor por debajo de la superficie del fluido. El flujo de retorno turbulento arrastra aire al fluido: se requieren retornos sumergidos y deflectores difusores para evitar la aireación que causa cavitación en las bombas de pistones axiales."
+  ]
+}
