@@ -1,0 +1,315 @@
+{
+  "slug": "sae-j726-iso-5011-air-cleaner-test",
+  "faqs": [
+    {
+      "question": "Como a SAE J726 complementa a ISO 5011 na avaliação de filtros de ar e em que elas diferem?",
+      "answer": "A SAE J726 (Air Cleaner Evaluation) era a contraparte norte-americana da ISO 5011 antes de as duas normas serem amplamente harmonizadas. A SAE J726 se concentra em: (1) Ensaio do conjunto do filtro de ar (carcaça mais elemento), e não apenas do elemento como na ISO 5011; (2) Inclui ensaios de restrição na vazão de ar nominal conforme os limites da SAE J1539; (3) Especifica o pó de ensaio SAE J726 (pó de estradas do Arizona, grau SAE J726), que tem distribuição de tamanhos de partícula um pouco diferente da do ISO 12103-1 A2 fine usado na ISO 5011: por isso os resultados de eficiência gravimétrica da SAE J726 e da ISO 5011 podem diferir em 1–3% para o mesmo elemento. Prática atual: a maioria dos fabricantes de motores de serviço pesado cita tanto a SAE J726 quanto a ISO 5011 nas especificações de filtros de ar para cobrir o mercado norte-americano e o internacional. A especificação do pó de ensaio é a principal diferença técnica; a metodologia de ensaio é essencialmente equivalente."
+    },
+    {
+      "question": "Qual é a concentração de alimentação de pó da SAE J726 e por que é importante controlá-la?",
+      "answer": "A SAE J726 especifica concentração de alimentação do pó de ensaio de 70 g/m2 de área frontal do filtro por minuto (aproximadamente equivalente à ISO 5011 na vazão de ar nominal com pó de ensaio A2 fine). Controlar a concentração é importante porque: (1) Os resultados de eficiência e DHC dependem da concentração: uma concentração de alimentação maior acelera o carregamento do filtro e pode comprimir a fase de filtração em profundidade do ciclo de carregamento, elevando artificialmente a eficiência inicial; (2) A reprodutibilidade entre laboratórios exige concentração idêntica, dentro de ±10% da especificação; (3) As concentrações reais de pó no ambiente variam muito (0.01 a 10 mg/m3); a concentração de ensaio padronizada fornece uma referência consistente que permite prever a vida útil com qualquer concentração ambiente pela relação: DHC(g) / (concentração(mg/m3) × vazão de ar(m3/h)) = horas de serviço."
+    },
+    {
+      "question": "Qual geometria de carcaça de ensaio a SAE J726 e a ISO 5011 especificam e por que ela importa?",
+      "answer": "A SAE J726 e a ISO 5011 especificam requisitos de geometria da carcaça de ensaio para garantir que o desempenho do elemento filtrante seja medido em uma instalação controlada e reprodutível que represente as carcaças reais típicas. As especificações incluem: diâmetro do duto de entrada = diâmetro de entrada do elemento (dentro de ±5%); comprimento do duto de entrada = mínimo de 3 diâmetros de duto antes da face de montagem do elemento (para estabelecer fluxo uniforme); ponto de injeção de pó = mínimo de 5 diâmetros de duto a montante do elemento (para garantir a mistura do pó); tomadas de amostragem de saída = 100 mm a montante e a jusante da face de montagem do elemento. Uma geometria de carcaça não padronizada (dutos subdimensionados, entrada abrupta) cria má distribuição do fluxo na face do filtro, reduzindo a área frontal efetiva e a DHC medida. Elementos ensaiados em carcaças SAE J726 padronizadas e depois instalados em carcaças de veículos com geometria desfavorável podem mostrar vida útil em campo 20–40% menor que o desempenho nominal."
+    },
+    {
+      "question": "Qual é a importância do ensaio de eficiência gravimétrica na qualificação de filtros de ar?",
+      "answer": "A eficiência gravimétrica (eficiência de filtração global, OFE) é o parâmetro de desempenho mais importante para qualificar filtros de admissão de ar, porque representa diretamente a fração da massa de contaminação que entra e é capturada antes de chegar ao motor. O método gravimétrico (pesar o pó total ingerido versus o pó total capturado) considera todos os tamanhos de partícula e todos os estados de carregamento do filtro, incluindo a fase inicial de carregamento em que a eficiência é mínima (a torta ainda não se formou), que é o período de maior risco para a proteção do motor. Os métodos de contagem de partículas (APC óptico) medem a eficiência em limites de tamanho específicos e em estados de carregamento específicos, mas não captam a eficiência integrada ponderada por massa. Uma OFE gravimétrica acima de 99.9% significa que, em 5,000 horas de operação com 0.1 mg/m3 de pó no ambiente e vazão de ar do motor de 10 m3/min, menos de 0.3 grama de sílica chega ao motor: não basta para causar desgaste detectável das camisas de cilindro."
+    },
+    {
+      "question": "Como o pó de ensaio SAE J726 é preparado e caracterizado?",
+      "answer": "O pó de ensaio SAE J726 (pó de estradas do Arizona, grau padronizado) é um pó natural à base de sílica do deserto do Arizona, classificado a ar até uma distribuição de tamanhos de partícula definida. Caracterização segundo a ISO 12103-1: D10 ≈ 1–3 µm, D50 ≈ 3–10 µm (conforme o grau), D90 ≈ 30–80 µm (conforme o grau), massa específica de 2.65 g/cm3. São definidos quatro graus: A1 (ultrafino), A2 (fino), A3 (médio), A4 (grosso). A ISO 5011 usa sobretudo o A2 fine; a SAE J726 especifica o grau SAE mais grosso, que inclui mais partículas acima de 10 µm (típico da exposição real ao pó de estradas). Os lotes de pó são caracterizados pela distribuição de tamanhos de partícula (difração a laser, ISO 13320) e pela densidade aparente antes do uso nos ensaios. A variação entre lotes na distribuição de tamanhos de partícula (dentro dos limites da ISO 12103-1) introduz uma variabilidade de ensaio de ±3–5% na DHC medida para o mesmo elemento filtrante."
+    },
+    {
+      "question": "Quais especificações de transdutor de pressão diferencial são exigidas para medir com exatidão a restrição segundo a SAE J726?",
+      "answer": "A medição da restrição segundo a SAE J726 exige transdutores de pressão diferencial com: exatidão de ±0.5% do fundo de escala ou ±0.5 mbar (o que for maior); tempo de resposta ≤0.1 segundo para medir a restrição dinâmica durante a alimentação de pó; coeficiente de temperatura ≤0.1%/°C na faixa ambiente de 15–35°C para evitar que a deriva térmica distorça as leituras de restrição; resolução mínima de 0.1 mbar para as medições de baixa restrição do elemento limpo. Calibração do transdutor no mínimo anual com um calibrador de peso morto ou uma fonte de pressão certificada (rastreável ao NIST). O sinal de restrição é amostrado no mínimo a 1 Hz durante o ensaio, e cada dado informado é a média de 10 amostras consecutivas. Os dados de restrição registrados em cada incremento definido de massa acumulada de pó injetado (por exemplo, a cada 50 g) geram a curva de restrição versus carga que define a vida útil do elemento com qualquer concentração de pó no ambiente."
+    },
+    {
+      "question": "Como os resultados de eficiência da SAE J726 são convertidos em equivalente de relação Beta para comparação com as normas de filtros hidráulicos?",
+      "answer": "A eficiência gravimétrica da SAE J726 não se converte diretamente em relação Beta, porque elas medem propriedades fundamentalmente diferentes: a eficiência gravimétrica é uma média acumulada em massa de todos os tamanhos de partícula; a relação Beta é uma razão de contagens de partículas em um limite de tamanho específico e em um estado de carregamento específico. As duas métricas não são intercambiáveis. No entanto, quando são necessários dados semelhantes à relação Beta para filtros de ar, a ISO 5011 pode ser complementada com contagem de partículas APC a jusante do elemento durante o ensaio gravimétrico, gerando dados de contagem de partículas em limites de tamanho específicos (por exemplo, ≥5 µm, ≥10 µm) à medida que o elemento carrega. Essa metodologia combinada fornece, na mesma execução de ensaio, a eficiência gravimétrica global (por balanço de massa) e a eficiência por contagem de partículas (por APC). Alguns fabricantes especificam eficiência mínima por contagem de partículas em ≥5 µm de ≥99.9% além da eficiência gravimétrica global ≥99.9% para os elementos de filtro de ar de motores turboalimentados, em que as partículas finas que atravessam o filtro têm impacto proporcionalmente maior no desgaste dos mancais do turbocompressor."
+    },
+    {
+      "question": "Qual é o procedimento de ensaio SAE J726 para sistemas completos de admissão de ar de veículos (e não apenas elementos)?",
+      "answer": "O ensaio do sistema montado segundo a SAE J726 ensaia o conjunto completo de admissão de ar do veículo (carcaça, elemento, dutos, pré-filtro e indicador de restrição) tal como instalado no veículo ou em uma bancada de ensaio equivalente. Procedimento: (1) Montar o conjunto completo na bancada de ensaio com um sistema calibrado de medição da vazão de ar (normalmente um bocal de fluxo crítico ou um elemento de fluxo laminar segundo a ASME MFC-3M); (2) Injetar pó de ensaio SAE J726 na vazão de ar nominal do motor; (3) Medir a restrição no ponto de conexão ao coletor de admissão do motor (e não apenas no elemento); (4) Medir a eficiência global do sistema por contagem de partículas ou coleta gravimétrica a jusante do conjunto completo (incluindo o pó que atravessar o pré-filtro). Os resultados do sistema montado consideram a ingestão do pré-filtro e qualquer bypass no nível da carcaça que o ensaio apenas do elemento não detectaria. A SAE J1539 cita a metodologia de ensaio do sistema montado da SAE J726 para definir os limites de restrição na vazão de ar nominal do motor."
+    },
+    {
+      "question": "Quais eventos de ingestão de contaminação a SAE J726 capta e o ensaio de elementos ISO 5011 não detecta?",
+      "answer": "O ensaio do sistema montado segundo a SAE J726 capta eventos de ingestão que não aparecem no ensaio apenas do elemento ISO 5011: (1) Bypass pela vedação da carcaça: uma vedação entre elemento e carcaça com vazamento deixa passar pó não filtrado diretamente para o motor; o ensaio apenas do elemento em uma carcaça de ensaio perfeita mostra zero bypass, enquanto o ensaio da carcaça montada com a disposição de vedação de produção pode mostrar 0.1–1% de bypass na vedação, revelando o nível de proteção real; (2) Integração da eficiência do pré-filtro: o ensaio montado SAE J726 mede que fração do pó total que entra é capturada pelo pré-filtro antes do elemento primário e que fração atravessa o pré-filtro e carrega o elemento; (3) Rearraste na carcaça: em carcaças mal projetadas, zonas de alta velocidade perto da saída podem rearrastar partículas parcialmente capturadas das paredes da carcaça a montante, algo visível apenas no ensaio do sistema montado. Para uma avaliação conservadora da proteção do motor, os resultados do ensaio do sistema montado SAE J726 são preferidos aos resultados apenas do elemento ISO 5011 quando os dois estão disponíveis."
+    },
+    {
+      "question": "Quais são os requisitos de relatório de um relatório de ensaio completo de filtro de ar SAE J726?",
+      "answer": "Os relatórios de ensaio SAE J726 devem incluir: (1) Descrição do elemento: número de peça OEM, dimensões (diâmetro, comprimento), tipo de meio, número e altura das pregas; (2) Condições de ensaio: vazão de ar (m3/min ou CFM), tipo e número de lote do pó, concentração de alimentação (g/m3), configuração da carcaça de ensaio; (3) Restrição inicial: ΔP do elemento limpo na vazão de ar nominal (mbar ou inH2O); (4) Restrição terminal: ΔP final em que o ensaio foi encerrado (conforme a especificação do fabricante ou no limite de manutenção do elemento); (5) Eficiência gravimétrica global: eficiência média ponderada por massa (%) com estimativa de incerteza (normalmente ±0.1–0.3%); (6) Capacidade de retenção de sujeira: total de pó injetado até a restrição terminal (gramas); (7) Curva de restrição versus carga acumulada de pó, em tabela ou gráfico; (8) Dados de contagem de partículas APC a jusante (se medidos); (9) Identificação do laboratório de ensaio, datas de calibração dos instrumentos e nome do operador. Relatórios incompletos, sem as curvas de restrição ou a incerteza da eficiência, não podem ser usados em submissões de qualificação aos fabricantes de motores."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Evaluation",
+      "relevance": "Norma SAE principal para avaliar elementos de filtros de ar e sistemas montados, incluindo os ensaios de eficiência gravimétrica, DHC e restrição."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing",
+      "relevance": "Equivalente internacional da SAE J726 usado nos mercados europeu e global, com metodologia essencialmente equivalente, mas com outra especificação do grau de pó de ensaio."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J1539, Air Cleaner Test Code",
+      "relevance": "Código de ensaio de sistemas de filtro de ar montados que cita a metodologia SAE J726 para verificar os limites de restrição na vazão de ar nominal específica de cada motor."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust",
+      "relevance": "Define o A2 fine e os demais graus de pó de estradas do Arizona usados nos ensaios de eficiência de filtros de ar SAE J726 e ISO 5011."
+    }
+  ],
+  "title": "Métodos de ensaio de filtros de ar SAE J726 e ISO 5011",
+  "subtitle": "Ensaios de desempenho de elementos de filtro de ar do tipo seco para motores de combustão interna",
+  "metaDescription": "A SAE J726 e a ISO 5011 definem os métodos de ensaio de restrição de ar, capacidade de retenção de pó e eficiência de filtração dos elementos de filtro de ar do tipo seco usados em motores de combustão interna. Esta referência abrange os parâmetros de ensaio, os critérios de aceitação e a calibração do indicador de restrição.",
+  "category": "Engenharia",
+  "readTime": "12 min",
+  "intro": "A SAE J726 (Air Cleaner Test Code) e a ISO 5011:2020 (Inlet Air Cleaning Equipment — Performance Testing) regem a avaliação do desempenho dos elementos filtrantes do tipo seco usados nos sistemas de admissão de ar dos motores de combustão interna. As duas normas definem três parâmetros de desempenho principais: a restrição de ar inicial na vazão nominal, a capacidade de retenção de pó em gramas de contaminante de ensaio padronizado e a eficiência de filtração medida gravimetricamente. As normas se complementam: a SAE J726 é muito especificada pelos fabricantes norte-americanos, e a ISO 5011 predomina nas especificações de equipamentos europeias e internacionais. A SAE J1669, um documento complementar da J726, define métodos de ensaio de eficiência por contagem de partículas que fornecem dados de eficiência por fração de tamanho e complementam os valores de eficiência gravimétrica da norma base.",
+  "sections": [
+    {
+      "heading": "Escopo e aplicabilidade da norma",
+      "body": "A SAE J726 se aplica aos conjuntos de filtro de ar e aos elementos filtrantes usados em motores de combustão interna, incluindo motores diesel e a gasolina de veículos rodoviários, equipamentos fora de estrada, máquinas agrícolas e geração de energia estacionária. A ISO 5011:2020 abrange o mesmo campo e inclui ainda os equipamentos de limpeza do ar de entrada dos compressores. As duas normas tratam de elementos filtrantes do tipo seco (meio pregueado de celulose, sintético ou compósito) que operam sem superfícies molhadas com óleo. Filtros de ar em banho de óleo ficam fora do escopo das duas normas. As normas especificam as bancadas de ensaio, os fluidos de ensaio, os contaminantes de ensaio, os instrumentos de medição e os requisitos de relatório para garantir a reprodutibilidade dos dados de desempenho entre laboratórios.",
+      "callout": [
+        {
+          "label": "Escopo da SAE J726",
+          "value": "Filtros de ar de motores: rodoviários, fora de estrada e estacionários"
+        },
+        {
+          "label": "Escopo da ISO 5011:2020",
+          "value": "Motores e compressores: equipamentos de limpeza do ar de entrada"
+        },
+        {
+          "label": "Norma complementar",
+          "value": "SAE J1669: complemento de eficiência por contagem de partículas"
+        },
+        {
+          "label": "Tipos de elemento",
+          "value": "Somente meio pregueado do tipo seco de celulose, sintético ou compósito"
+        }
+      ]
+    },
+    {
+      "heading": "Contaminantes de ensaio e condições de fluxo",
+      "body": "Tanto a SAE J726 quanto a ISO 5011 usam pós de ensaio padronizados ISO 12103-1. A ISO 5011 especifica A2 fine (diâmetro mediano aproximado de 5.5 µm em volume), A3 medium coarse (mediana de aproximadamente 28 µm) ou A4 coarse (mediana de aproximadamente 75 µm), conforme o tipo de ensaio e a aplicação do elemento. A SAE J726 citava historicamente o SAE Fine Test Dust, hoje alinhado ao ISO 12103-1 A2 fine nos ensaios modernos. A vazão de ensaio é definida no consumo de ar nominal do motor ou do compressor em plena carga, normalmente expresso em metros cúbicos por minuto em condições padrão (20°C, 101.325 kPa). A bancada de ensaio fornece o pó a uma taxa de alimentação controlada para manter concentração constante a montante durante todo o ensaio de capacidade, e mede a pressão diferencial a montante e a jusante do elemento.",
+      "callout": [
+        {
+          "label": "Pó de ensaio principal",
+          "value": "ISO 12103-1 A2 Fine: mediana ~5.5 µm (em volume)"
+        },
+        {
+          "label": "Condição de fluxo",
+          "value": "Consumo de ar nominal do motor em plena carga (m³/min em condições padrão)"
+        },
+        {
+          "label": "Taxa de alimentação de pó",
+          "value": "Controlada para manter concentração constante a montante"
+        },
+        {
+          "label": "Referência de temperatura",
+          "value": "Condições padrão de 20°C e 101.325 kPa"
+        }
+      ]
+    },
+    {
+      "heading": "Medição da restrição de ar",
+      "body": "A restrição de ar inicial é medida como a diferença de pressão no elemento na vazão de ar nominal com um elemento limpo instalado. A restrição é expressa em quilopascals (kPa) ou em polegadas de coluna d'água (in H2O). A restrição terminal define o critério de fim de serviço: quando a restrição atinge o valor terminal durante um ensaio de capacidade de pó, o ensaio é interrompido e a massa total de pó alimentado até esse ponto é a capacidade de retenção de pó do elemento. Os valores de restrição terminal dependem da aplicação e são definidos pelo fabricante do motor. Os limites típicos de restrição terminal são 6.2 kPa (25 in H2O) em motores diesel de serviço pesado e 3.1 kPa (12.5 in H2O) em motores de veículos de passeio leves. A ISO 5011 recomenda que o indicador de restrição seja acionado a 75% da restrição terminal, para dar um tempo de resposta de manutenção suficiente antes que ocorram condições de bypass ou degradação do desempenho.",
+      "callout": [
+        {
+          "label": "Restrição terminal em diesel HD",
+          "value": "6.2 kPa (25 in H2O)"
+        },
+        {
+          "label": "Restrição terminal em motor LD",
+          "value": "3.1 kPa (12.5 in H2O): valor OEM típico"
+        },
+        {
+          "label": "Ponto de ajuste do indicador",
+          "value": "75% da restrição terminal (orientação da ISO 5011)"
+        },
+        {
+          "label": "Acionamento do indicador em HD",
+          "value": "~4.65 kPa (18.8 in H2O) para restrição terminal de 6.2 kPa"
+        }
+      ]
+    },
+    {
+      "heading": "Capacidade de retenção de pó",
+      "body": "A capacidade de retenção de pó (DHC) é definida como a massa total de pó de ensaio ISO 12103-1 alimentada ao elemento desde o estado limpo até atingir a restrição terminal, expressa em gramas. A DHC é o principal indicador de vida útil com uma taxa de carregamento de pó dada: a DHC (g) dividida pela taxa de ingestão de pó em campo (g/hora) dá o intervalo de manutenção teórico em horas. A taxa de ingestão de pó varia muito conforme o ambiente: em operações no deserto ou em pedreiras os filtros podem carregar a 5–15 g/hora por motor, enquanto motores diesel rodoviários em condições limpas podem carregar a 0.1–0.5 g/hora. Pré-filtros (separadores inerciais) que alimentam um elemento primário podem remover 80–95% do pó que entra ponderado por massa, multiplicando na prática a vida útil do elemento por um fator de 5–20 em ambientes muito empoeirados.",
+      "callout": [
+        {
+          "label": "Fórmula da DHC",
+          "value": "DHC (g) = massa total alimentada na vazão nominal até a restrição terminal"
+        },
+        {
+          "label": "Taxa de carregamento no deserto",
+          "value": "5–15 g/h por motor: intervalos curtos sem pré-filtro"
+        },
+        {
+          "label": "Remoção pelo pré-filtro",
+          "value": "80–95% da massa de pó que entra: estende a vida do elemento 5–20×"
+        },
+        {
+          "label": "Carregamento em estrada limpa",
+          "value": "0.1–0.5 g/h: intervalos mais longos, o indicador de restrição é o gatilho principal"
+        }
+      ]
+    },
+    {
+      "heading": "Eficiência de filtração: métodos gravimétrico e de contagem de partículas",
+      "body": "A eficiência gravimétrica, especificada tanto na SAE J726 quanto na ISO 5011, mede a porcentagem da massa de pó de ensaio retida pelo elemento: E_grav = (1 − m_jusante / m_alimentada) × 100%. A ISO 5011 define classes de eficiência com base nos resultados gravimétricos; os elementos primários típicos de serviço pesado atingem eficiência gravimétrica >99.9% com pó ISO 12103-1 A2 fine. A SAE J1669 oferece um ensaio complementar de eficiência por contagem de partículas com um contador automático de partículas (APC) calibrado segundo a ISO 11171, que gera valores de relação Beta em tamanhos de partícula discretos (4, 6, 10, 14, 21 µm). A eficiência por contagem de partículas fornece dados de desempenho por fração de tamanho que o ensaio gravimétrico sozinho não dá, permitindo escolher elementos para aplicações com requisitos específicos de partículas submicrométricas ou finas que vão além do que a eficiência em massa caracteriza.",
+      "callout": [
+        {
+          "label": "Fórmula da eficiência gravimétrica",
+          "value": "E = (1 − m_jusante / m_alimentada) × 100%"
+        },
+        {
+          "label": "Elemento primário HD",
+          "value": ">99.9% gravimétrica com ISO 12103-1 A2 fine"
+        },
+        {
+          "label": "Método APC da SAE J1669",
+          "value": "Relações Beta a 4, 6, 10, 14, 21 µm por contagem de partículas"
+        },
+        {
+          "label": "Calibração do APC",
+          "value": "ISO 11171: material de referência rastreável ao NIST"
+        }
+      ]
+    },
+    {
+      "heading": "Calibração do indicador de restrição e prática de manutenção",
+      "body": "Os indicadores de restrição (do tipo mecânico de acionamento visual ou transdutor eletrônico) devem ser calibrados para acionar no limite de restrição especificado pelo fabricante do motor, sem ultrapassar 75% do valor de restrição terminal conforme a orientação da ISO 5011. Uma troca prematura guiada pelo tempo decorrido, e não pela medição da restrição, gera desperdício desnecessário; por outro lado, operar além da restrição terminal reduz a eficiência volumétrica do motor, aumenta o consumo de combustível proporcionalmente ao aumento da restrição de admissão e arrisca um bypass de pó se a vedação do elemento se degradar por excesso de pressão diferencial. A integridade da vedação do elemento (o ajuste com interferência entre a tampa do elemento e a superfície de vedação da carcaça) deve ser inspecionada a cada intervalo de manutenção. Os elementos de vedação radial vedados por O-rings comprimidos oferecem vedação mais consistente que os de compressão axial (junta plana), sobretudo após ciclos de serviço prolongados em que pode surgir deformação permanente por compressão da junta."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Restrição terminal em diesel HD",
+      "value": "6.2 kPa (25 in H2O)"
+    },
+    {
+      "label": "Restrição terminal em motor LD",
+      "value": "3.1 kPa (12.5 in H2O)"
+    },
+    {
+      "label": "Ponto de ajuste do indicador",
+      "value": "75% da restrição terminal"
+    },
+    {
+      "label": "Eficiência do elemento primário HD",
+      "value": ">99.9% gravimétrica (ISO 12103-1 A2 fine)"
+    },
+    {
+      "label": "Remoção de pó pelo pré-filtro",
+      "value": "80–95% em massa"
+    },
+    {
+      "label": "Tamanhos de contagem de partículas J1669",
+      "value": "4, 6, 10, 14, 21 µm(c)"
+    }
+  ],
+  "relatedStandards": [
+    "SAE J726",
+    "ISO 5011",
+    "SAE J1669",
+    "ISO 12103-1",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "SAE J726",
+    "ISO 5011",
+    "ensaio de filtros de ar",
+    "capacidade de retenção de pó",
+    "restrição de ar",
+    "eficiência de filtração",
+    "eficiência gravimétrica",
+    "contagem de partículas",
+    "SAE J1669",
+    "restrição terminal",
+    "indicador de restrição",
+    "pré-filtro",
+    "filtração do ar de admissão"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "O indicador de restrição aciona antes da hora, bem antes do intervalo de manutenção esperado",
+      "Aumento do consumo de combustível sem outra causa identificada",
+      "Pó visível no lado limpo do filtro de ar ou na entrada do corpo de borboleta",
+      "Vida útil do filtro excepcionalmente curta em ambiente de operação muito empoeirado",
+      "Degradação do desempenho do motor (menos potência, mais fumaça) com um elemento novo instalado"
+    ],
+    "probableCauses": [
+      "Indicador de restrição calibrado acima de 75% da restrição terminal: aciona tarde ou cedo demais",
+      "Filtro de ar subdimensionado para a demanda de vazão do motor: o elemento carrega rápido demais por falta de área de meio",
+      "Falha da vedação da tampa do elemento: forma-se um caminho de bypass entre o diâmetro externo do elemento e o furo da carcaça",
+      "Elemento incorreto instalado: geometria, classe de eficiência ou especificação de restrição terminal errada",
+      "Pré-filtro ausente ou ineficaz em ambiente muito empoeirado: elemento primário sobrecarregado"
+    ],
+    "inspectionMethods": [
+      "Medir a restrição real com um manômetro calibrado ou um sensor eletrônico na vazão de ar nominal do motor (e não em marcha lenta)",
+      "Remover o elemento e inspecionar as vedações das tampas e os O-rings em busca de deformação permanente por compressão, trincas ou deformação",
+      "Verificar o diâmetro externo do elemento em relação ao furo da carcaça: não é admitida nenhuma folga na interface da vedação",
+      "Verificar a calibração do indicador de restrição com um manômetro de referência sob fluxo controlado",
+      "Inspecionar o tubo de descarga do pré-filtro em busca de obstrução e verificar se os tubos de vórtice do pré-filtro funcionam"
+    ],
+    "correctiveActions": [
+      "Trocar o elemento no acionamento do indicador de restrição ou antes: não estender a manutenção por tempo se o indicador já acionou",
+      "Recalibrar ou trocar o indicador de restrição; ajustar o acionamento em 75% do valor de restrição terminal do fabricante",
+      "Instalar o elemento correto conforme a especificação do fabricante; confirmar a classe de eficiência pela tabela de aplicações da ISO 5011",
+      "Acrescentar um pré-filtro inercial em ambientes muito empoeirados para reduzir a taxa de carregamento de pó do elemento primário",
+      "Inspecionar a superfície de vedação da carcaça em busca de riscos ou contaminação; reparar ou trocar a carcaça se a superfície de vedação estiver danificada"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "O indicador de restrição aciona antes do intervalo de manutenção esperado",
+      "standard": "SAE J726 / ISO 5011",
+      "protectionSystem": "Filtro de ar bem dimensionado com pré-filtro inercial para ambientes muito empoeirados",
+      "technology": "Sistema de limpeza de ar de dois estágios: um pré-separador inercial que remove 80–95% da massa de pó de entrada, seguido de um elemento filtrante primário do tipo seco com a capacidade de retenção de pó nominal",
+      "relatedArticles": [
+        "air-intake-system-design",
+        "particle-ingress-prevention",
+        "iso-5011"
+      ]
+    },
+    {
+      "problem": "Bypass de pó confirmado: pó encontrado no lado limpo do filtro de ar",
+      "standard": "ISO 5011 seal integrity requirements",
+      "protectionSystem": "Elemento de vedação radial com compressão positiva do O-ring contra o furo da carcaça",
+      "technology": "Elemento filtrante de vedação radial com extremidades moldadas e O-ring de dimensões controladas vedando contra um furo de carcaça usinado: elimina o risco de deformação permanente por compressão das juntas de compressão axial",
+      "relatedArticles": [
+        "filter-element-integrity",
+        "air-intake-system-design",
+        "particle-ingress-prevention"
+      ]
+    },
+    {
+      "problem": "Eficiência insuficiente para uma aplicação de motor de alta precisão",
+      "standard": "ISO 5011 efficiency classification",
+      "protectionSystem": "Elemento compósito sintético de alta eficiência conforme a classe de eficiência da ISO 5011",
+      "technology": "Elemento de meio sintético multicamada de densidade graduada que atinge eficiência gravimétrica >99.95% com ISO 12103-1 A2 fine, com relações Beta por contagem de partículas segundo a SAE J1669",
+      "relatedArticles": [
+        "filter-media-engineering",
+        "beta-ratio",
+        "contamination-control"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-SAE-J726)",
+    "evidenceStatus": "SAE J726 terminal restriction values verified from SAE J726 Table 2 (heavy-duty 6.2 kPa, light-duty 3.1 kPa); ISO 5011:2020 scope and dust specification verified; 75% indicator set point from ISO 5011 Annex informative guidance; SAE J1669 particle counting supplement verified; ISO 12103-1 A2 fine test dust median diameter from ISO 12103-1:2016 Table 1; pre-cleaner removal efficiency range from published inertial separator performance data (Donaldson Engineering Data, Parker Global Engineering)"
+  }
+}

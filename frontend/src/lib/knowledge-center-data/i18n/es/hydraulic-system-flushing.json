@@ -1,0 +1,366 @@
+{
+  "slug": "hydraulic-system-flushing",
+  "title": "Lavado y puesta en marcha de unidades de potencia hidráulica",
+  "subtitle": "Cómo lograr los objetivos de limpieza ISO 4406 con un lavado turbulento estructurado antes de operar el sistema",
+  "metaDescription": "El lavado del sistema hidráulico establece la limpieza del fluido ISO 4406 antes de la primera operación. Esta referencia de ingeniería cubre los requisitos de número de Reynolds para el lavado turbulento, el diseño del circuito de lavado, la elección del filtro, el protocolo de muestreo según ISO 3722 y los criterios de aceptación para aprobar la puesta en marcha.",
+  "category": "Ingeniería",
+  "readTime": "13 min",
+  "intro": "El lavado de una unidad de potencia hidráulica (HPU) es el proceso controlado de hacer circular fluido por un sistema hidráulico nuevo o recién mantenido en condiciones de flujo turbulento para eliminar residuos de construcción, escoria de soldadura, cascarilla de tuberías, virutas de mecanizado y compuestos conservantes antes de la primera operación del sistema. ISO 4413:2011 establece el lavado como un paso obligatorio de la puesta en marcha; NFPA T2.12.10 define los requisitos de limpieza interna del sistema antes de la puesta en marcha. No lograr el código de limpieza ISO 4406 especificado antes del arranque lleva una contaminación de alta concentración directamente a los componentes hidráulicos de precisión (servoválvulas, válvulas proporcionales y bombas de pistones), cuyas holguras se miden en micrómetros de un solo dígito y cuyos umbrales de daño corresponden a partículas apenas mayores que la propia holgura.",
+  "sections": [
+    {
+      "heading": "Normas aplicables y objetivos de limpieza",
+      "body": "La sección 5.4 de ISO 4413:2011 exige que los sistemas hidráulicos se limpien hasta el nivel de limpieza del fluido que requiere el componente más sensible antes de la operación inicial. NFPA T2.12.10 especifica los requisitos de limpieza para la puesta en marcha del sistema y define el procedimiento de verificación de la limpieza y la documentación de aceptación. Los objetivos de limpieza se expresan como códigos ISO 4406: códigos de tres números que representan los conteos de partículas por mililitro en ≥4 µm(c), ≥6 µm(c) y ≥14 µm(c), medidos con un APC calibrado según ISO 11171. Objetivos típicos de puesta en marcha: los sistemas con servoválvulas requieren el código ISO 4406 16/14/11 o más limpio; los sistemas con válvulas proporcionales, 17/15/12; los sistemas industriales con bombas de engranajes y de pistones, 18/16/13. Estos objetivos deben lograrse y verificarse antes de instalar las válvulas de control de precisión.",
+      "callout": [
+        {
+          "label": "Norma aplicable",
+          "value": "ISO 4413:2011 sección 5.4: lavado de puesta en marcha obligatorio"
+        },
+        {
+          "label": "Objetivo para servoválvulas",
+          "value": "ISO 4406: 16/14/11 o más limpio"
+        },
+        {
+          "label": "Objetivo para válvulas proporcionales",
+          "value": "ISO 4406: 17/15/12 o más limpio"
+        },
+        {
+          "label": "Objetivo para sistemas industriales",
+          "value": "ISO 4406: 18/16/13 o más limpio"
+        }
+      ]
+    },
+    {
+      "heading": "Número de Reynolds y requisito de flujo turbulento",
+      "body": "Un transporte y una eliminación eficaces de las partículas durante el lavado requieren flujo turbulento en toda la red de tuberías. El flujo laminar deja que las partículas se asienten y queden atrapadas en las capas límite de baja velocidad cerca de las paredes de las tuberías. La transición de flujo laminar a turbulento ocurre con un número de Reynolds (Re) de aproximadamente 2,300; el flujo plenamente turbulento se establece por encima de Re 4,000. El número de Reynolds se calcula como: Re = (v × D) / ν, donde v es la velocidad media del flujo en m/s, D es el diámetro interior de la tubería en metros y ν es la viscosidad cinemática del fluido de lavado en m²/s. De forma equivalente, Re = (4 × Q) / (π × D × ν), donde Q es el caudal volumétrico en m³/s. Para lograr Re > 4,000 en líneas de diámetro pequeño (12–25 mm de diámetro interior), el caudal de lavado debe superar bastante el caudal normal de operación, normalmente 2–4 veces más. Usar aceite mineral ISO VG 32 a 50°C (ν ≈ 28 × 10⁻⁶ m²/s) en lugar del fluido de trabajo ISO VG 46 reduce la viscosidad y ayuda a lograr flujo turbulento con un menor caudal de la bomba de lavado.",
+      "callout": [
+        {
+          "label": "Umbral de flujo turbulento",
+          "value": "Se requiere Re > 4,000 para un transporte eficaz de partículas"
+        },
+        {
+          "label": "Fórmula de Re",
+          "value": "Re = (v × D) / ν = (4 × Q) / (π × D × ν)"
+        },
+        {
+          "label": "Fluido de lavado recomendado",
+          "value": "ISO VG 32 a 50°C: ν ≈ 28 × 10⁻⁶ m²/s"
+        },
+        {
+          "label": "Múltiplo del caudal de lavado",
+          "value": "2–4× el caudal de operación en secciones de diámetro pequeño para Re > 4,000"
+        }
+      ]
+    },
+    {
+      "heading": "Diseño del circuito de lavado y protección de las válvulas",
+      "body": "Las válvulas de control de precisión (válvulas proporcionales, servoválvulas y actuadores electrohidráulicos) deben reemplazarse por placas de lavado sólidas o carretes de derivación durante el lavado. Estos componentes tienen pasajes con orificios de 0.2–0.8 mm de diámetro que los residuos presentes antes del lavado obstruirían, y componentes internos con holguras de 1–8 µm que las partículas abrasivas en alta concentración dañarían de forma permanente. Las placas de lavado crean un camino de flujo directo que rodea las cavidades de las válvulas en el bloque, lo que permite el caudal de lavado completo por los pasajes del bloque y protege los componentes de precisión. La línea de retorno del lavado pasa por un filtro de lavado temporal (normalmente de 3–6 µm absoluto, β₃₍c₎ ≥ 200 o β₆₍c₎ ≥ 200), separado del filtro de retorno permanente del sistema para proteger a este último de la alta carga de contaminación inicial. Los intercambiadores de calor y los acumuladores deberían incorporarse al circuito de lavado para mantener la temperatura del fluido en 40–60°C, lo que reduce la viscosidad, mejora la turbulencia y ayuda a movilizar los compuestos conservantes.",
+      "callout": [
+        {
+          "label": "Riesgo para los orificios de las válvulas",
+          "value": "0.2–0.8 mm de diámetro: deben protegerse con placas de lavado"
+        },
+        {
+          "label": "Holgura de las servoválvulas",
+          "value": "1–8 µm: daño directo por los residuos sin lavar"
+        },
+        {
+          "label": "Clasificación del filtro de lavado",
+          "value": "3–6 µm absoluto (β₃₍c₎ ≥ 200 o β₆₍c₎ ≥ 200) en el retorno"
+        },
+        {
+          "label": "Temperatura objetivo del lavado",
+          "value": "40–60°C: reduce la viscosidad y moviliza los conservantes"
+        }
+      ]
+    },
+    {
+      "heading": "Procedimiento de lavado y protocolo de muestreo",
+      "body": "Después de llenar el depósito con fluido nuevo filtrado (≤3 µm absoluto durante la transferencia) e instalar las placas de lavado, se arranca la bomba de lavado y se hace circular al máximo caudal alcanzable. Las válvulas de cambio de dirección deberían accionarse cada 15–20 minutos para alternar el sentido del flujo en los circuitos derivados y evitar zonas estancadas. Las válvulas de purga de los puntos altos se abren durante el llenado inicial y el arranque del lavado para purgar el aire atrapado, que de lo contrario forma espuma e impide el transporte completo de las partículas. Las muestras de fluido se toman según ISO 3722: a mitad de la corriente, con una jeringa de vidrio o un frasco de muestra prelimpiado según ISO 3722, purgando la sonda de muestreo con al menos 500 mL de fluido antes de tomar la muestra de análisis. Duración mínima del lavado antes de la primera muestra: 4 horas de circulación turbulenta continua. Las muestras se analizan con APC según ISO 11171. La puesta en marcha se acepta cuando dos muestras consecutivas tomadas con 30 minutos de diferencia cumplen ambas el código ISO 4406 objetivo.",
+      "callout": [
+        {
+          "label": "Duración mínima antes de muestrear",
+          "value": "4 horas de circulación turbulenta continua"
+        },
+        {
+          "label": "Intervalo de inversión del sentido",
+          "value": "Cada 15–20 minutos para purgar las zonas estancadas de las derivaciones"
+        },
+        {
+          "label": "Norma de muestreo",
+          "value": "ISO 3722: purgar 500 mL antes de tomar la muestra"
+        },
+        {
+          "label": "Criterio de aceptación",
+          "value": "Dos muestras consecutivas con 30 min de diferencia que cumplan el objetivo ISO 4406"
+        }
+      ]
+    },
+    {
+      "heading": "Purga de aire en los puntos altos y puesta en marcha final",
+      "body": "El aire atrapado en las tuberías hidráulicas provoca efectos de compresibilidad, cavitación y un lavado incompleto en los puntos altos. ISO 4413 exige abrir y purgar todos los puntos de purga altos antes del lavado y durante él. Después de aceptar el lavado, se retiran las placas de lavado y se reemplazan por las válvulas de control de producción. Luego se vuelve a revisar el sistema en busca de fugas externas, se confirma el nivel de fluido y se vuelve a muestrear el depósito tras una corrida de producción corta con carga liviana (15–30 minutos) para verificar que la instalación de las válvulas no introdujo contaminación. La limpieza después de la instalación debe seguir cumpliendo el código ISO 4406 objetivo. El informe de lavado (con todos los resultados de las muestras, los registros de cambio de filtros, la duración del lavado, los caudales y los datos de temperatura) se conserva como parte de la documentación de puesta en marcha de la máquina."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Requisito de flujo turbulento",
+      "value": "Re > 4,000 en todas las secciones de tubería"
+    },
+    {
+      "label": "Fluido de lavado",
+      "value": "ISO VG 32 a 50°C: ν ≈ 28 × 10⁻⁶ m²/s"
+    },
+    {
+      "label": "Filtro de retorno del lavado",
+      "value": "3–6 µm absoluto (β₃₍c₎ ≥ 200)"
+    },
+    {
+      "label": "Duración mínima del lavado",
+      "value": "4 horas antes de la primera muestra"
+    },
+    {
+      "label": "Criterio de aceptación",
+      "value": "2 muestras consecutivas en el código ISO 4406 objetivo, con 30 min de diferencia"
+    },
+    {
+      "label": "Objetivo de puesta en marcha para servoválvulas",
+      "value": "ISO 4406: 16/14/11"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4413",
+    "ISO 4406",
+    "ISO 3722",
+    "ISO 11171",
+    "NFPA T2.12.10",
+    "ISO 16889"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "INTEKCORE™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "lavado hidráulico",
+    "puesta en marcha de HPU",
+    "número de Reynolds",
+    "lavado turbulento",
+    "ISO 4413",
+    "limpieza ISO 4406",
+    "placa de lavado",
+    "protección de servoválvulas",
+    "muestreo ISO 3722",
+    "limpieza de puesta en marcha",
+    "NFPA T2.12.10"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Falla de una servoválvula o válvula proporcional en las primeras 100 horas de operación después de la puesta en marcha",
+      "Muestra de fluido del sistema por encima del código ISO 4406 objetivo justo después del arranque",
+      "Caída de presión rápida en el filtro de retorno principal del sistema poco después de la puesta en marcha",
+      "Ruido o vibración de las válvulas de control direccional durante la operación inicial con carga baja",
+      "Respuesta pegajosa o lenta de los actuadores durante los ciclos de prueba de la puesta en marcha"
+    ],
+    "probableCauses": [
+      "Lavado omitido o abreviado: holguras de las válvulas de precisión contaminadas por residuos de construcción",
+      "Caudal de lavado insuficiente para lograr Re > 4,000: el flujo laminar dejó partículas adheridas a las paredes de las tuberías",
+      "Se omitió la purga de aire de los puntos altos: las bolsas de aire impidieron el transporte completo de partículas durante el lavado",
+      "El fluido nuevo no se filtró al llenar el depósito: introdujo un código de contaminación ISO muy por encima del objetivo",
+      "No se usaron placas de lavado: los orificios de las válvulas de control y los componentes de precisión quedaron expuestos a residuos sin lavar"
+    ],
+    "inspectionMethods": [
+      "Tomar una muestra de fluido según ISO 3722 y analizarla con APC según ISO 11171; compararla con el objetivo ISO 4406 de puesta en marcha requerido",
+      "Revisar los registros del lavado: caudal, duración, registro de temperatura y resultados de las muestras consecutivas",
+      "Calcular el Re de la sección de tubería de menor diámetro con el caudal de lavado registrado y la viscosidad del fluido a la temperatura medida",
+      "Inspeccionar la velocidad de carga de los elementos del filtro de lavado: una carga rápida confirma una contaminación inicial alta por un lavado insuficiente",
+      "Examinar con aumento el carrete y la camisa de la válvula fallada en busca de patrones de rayado abrasivo: confirma el rango de tamaño de partícula del daño"
+    ],
+    "correctiveActions": [
+      "Si no se cumple el objetivo ISO 4406: seguir lavando al máximo caudal alcanzable; reemplazar el filtro de lavado cargado; volver a muestrear cada 30 minutos",
+      "Si Re < 4,000: aumentar el caudal de la bomba de lavado; reducir la viscosidad del fluido de lavado subiendo la temperatura; dividir el sistema en zonas más pequeñas para concentrar el flujo",
+      "Si se sospecha contaminación del fluido nuevo: muestrear el depósito antes del arranque del sistema; filtrar el fluido de transferencia a ≤3 µm absoluto",
+      "Después de una falla de válvula: retirar la válvula, lavar el sistema hasta el objetivo de limpieza original, instalar la válvula de reemplazo y verificar la limpieza después de la instalación",
+      "Conservar todos los resultados de las muestras de lavado y los registros de cambio de filtros en la documentación de puesta en marcha"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Falla de válvulas después de la puesta en marcha en las primeras 100 horas",
+      "standard": "ISO 4413:2011 Section 5.4 — mandatory pre-commissioning flush",
+      "protectionSystem": "Circuito de lavado turbulento completo con placas de lavado que reemplazan todas las válvulas de control de precisión",
+      "technology": "Circuito de lavado de alto caudal con filtro de retorno de lavado dedicado de 3–6 µm absoluto (β₃₍c₎ ≥ 200) y muestreo a mitad de corriente según ISO 3722 para verificación con APC",
+      "relatedArticles": [
+        "hydraulic-power-unit-design",
+        "nfpa-t2-14-hydraulic-cleanliness",
+        "contamination-sensitivity-components",
+        "hydraulic-reservoir-design"
+      ]
+    },
+    {
+      "problem": "No se logra el objetivo ISO 4406 después de 4 horas de lavado",
+      "standard": "NFPA T2.12.10 cleanliness requirements — commissioning acceptance criteria",
+      "protectionSystem": "Lavado extendido con filtración de retorno cada vez más fina y ciclos de inversión del sentido",
+      "technology": "Enfoque de lavado por etapas: filtro de retorno inicial de 10 µm que pasa a 3 µm absoluto a medida que se elimina la contaminación a granel; ciclos de cambio de dirección cada 15 minutos para purgar los circuitos derivados",
+      "relatedArticles": [
+        "contamination-sensitivity-components",
+        "iso-4406",
+        "iso-11171-particle-counting",
+        "hydraulic-reservoir-design"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-4413)",
+    "evidenceStatus": "ISO 4413:2011 Section 5.4 flushing requirements verified; NFPA T2.12.10 commissioning cleanliness requirements verified; Re > 4,000 turbulent transition from fluid mechanics literature (Moody chart, ISO 4021 flow measurement background); ISO 3722:2015 sampling procedure verified; acceptance criterion (two consecutive samples at 30-min intervals) from ISO 4413 commissioning guidance; flushing fluid viscosity ISO VG 32 at 50°C from published kinematic viscosity charts (ISO 3448)"
+  },
+  "eeat": {
+    "reviewerName": "ELIMFILTERS Engineering Division",
+    "reviewerTitle": "Ingeniería de puesta en marcha de sistemas hidráulicos",
+    "organization": "ELIMFILTERS",
+    "lastReviewDate": "2026-07-05",
+    "nextReviewDate": "2027-07-05",
+    "discipline": "Ingeniería de potencia fluida: puesta en marcha y control de contaminación",
+    "standards": [
+      "ISO 4413:2011",
+      "NFPA T2.12.10",
+      "ISO 3722:2015",
+      "ISO 4406:2021",
+      "ISO 11171:2016"
+    ],
+    "contentLevel": "expert",
+    "contentType": "procedure",
+    "version": "1.0",
+    "evidenceBase": "Requisitos de lavado obligatorio de ISO 4413:2011; limpieza de puesta en marcha según NFPA T2.12.10; transición turbulenta por número de Reynolds (diagrama de Moody); protocolo de muestreo ISO 3722"
+  },
+  "faqs": [
+    {
+      "question": "¿Por qué hay que reemplazar las válvulas de control de precisión por placas de lavado durante el lavado de puesta en marcha?",
+      "answer": "Las servoválvulas y las válvulas proporcionales tienen pasajes internos de 0.2–0.8 mm de diámetro y holguras entre carrete y camisa de 1–8 µm. Los residuos de construcción, la escoria de soldadura y la cascarilla de tuberías presentes en un sistema hidráulico nuevo antes del lavado rayarían de forma permanente estas superficies u obstruirían los pasajes de los orificios. La sección 5.4 de ISO 4413:2011 exige retirar estos componentes e instalar placas de derivación sólidas hasta que el sistema cumpla el código de limpieza ISO 4406 objetivo."
+    },
+    {
+      "question": "¿Qué número de Reynolds se requiere para un lavado hidráulico eficaz y por qué?",
+      "answer": "Un lavado eficaz requiere Re > 4,000 en todas las secciones de tubería para asegurar un flujo plenamente turbulento. El flujo laminar (Re < 2,300) deja que las partículas se asienten en las capas límite de baja velocidad cerca de las paredes de las tuberías y permanezcan allí aunque el fluido circule. El flujo turbulento genera una mezcla radial que levanta las partículas asentadas hacia la corriente y las lleva al filtro de lavado. En una línea de retorno de 50 mm a 40°C con aceite ISO VG 32, lograr Re > 4,000 requiere aproximadamente 100 L/min de caudal de lavado."
+    },
+    {
+      "question": "¿Por qué usar aceite ISO VG 32 para el lavado en lugar del grado de fluido de operación del sistema?",
+      "answer": "El ISO VG 32 tiene una viscosidad cinemática menor que el ISO VG 46 o el ISO VG 68, lo que reduce la viscosidad y facilita lograr flujo turbulento (Re > 4,000) con caudales de bomba prácticos. A 50°C, el ISO VG 32 tiene una viscosidad cinemática de aproximadamente 28 × 10⁻⁶ m²/s. Si el ISO VG 32 es químicamente compatible con los sellos del sistema y con el fluido de operación (misma química de aceite base), puede usarse como medio de lavado y dejarse en el sistema como fluido de operación. Si no es compatible, hay que drenarlo y reemplazarlo después de aceptar el lavado."
+    },
+    {
+      "question": "¿Cuál es el criterio de aceptación para aprobar la puesta en marcha del lavado hidráulico?",
+      "answer": "ISO 4413:2011 exige que dos muestras de fluido consecutivas tomadas con 30 minutos de diferencia cumplan cada una por separado el código de limpieza ISO 4406 objetivo. Una sola muestra aprobada no alcanza: el criterio de dos muestras confirma que la limpieza es estable y no un resultado transitorio. Las muestras deben tomarse según ISO 3722 con un frasco de muestra prelimpiado, purgando 500 mL por la válvula de muestreo antes de tomar la muestra de análisis."
+    },
+    {
+      "question": "¿Qué objetivos de limpieza deben lograrse antes de instalar servoválvulas frente a válvulas proporcionales?",
+      "answer": "Antes de instalar servoválvulas (holguras de carrete de 1–4 µm), el sistema debe lograr el código ISO 4406 16/14/11 o más limpio, verificado con dos muestras APC consecutivas. Los sistemas con válvulas proporcionales requieren ISO 4406 17/15/12. Los sistemas hidráulicos industriales con bombas de engranajes y de pistones pero sin válvulas de alta sensibilidad apuntan a ISO 4406 18/16/13. Estos objetivos los fijan las dimensiones de holgura del componente más sensible del circuito."
+    },
+    {
+      "question": "¿Cómo deben lavarse los circuitos derivados y los tramos muertos para evitar zonas de contaminación estancada?",
+      "answer": "Los circuitos derivados requieren invertir el sentido del flujo para movilizar la contaminación de las zonas muertas. Durante el lavado, las válvulas de cambio de dirección conectadas al circuito de lavado (no las cavidades de las válvulas de precisión, que tienen placas de derivación instaladas) deberían accionarse cada 15–20 minutos. Cada ciclo dirige el caudal de lavado por un camino derivado distinto. Las válvulas de purga de los puntos altos deben abrirse durante el llenado inicial y el comienzo del lavado para purgar el aire atrapado, que de lo contrario impide el transporte completo de partículas en las secciones verticales."
+    },
+    {
+      "question": "¿Cuánto debe durar el lavado hidráulico antes de tomar la primera muestra de conteo de partículas?",
+      "answer": "Las pautas de ISO 4413 y la práctica de puesta en marcha de NFPA T2.12.10 exigen un mínimo de 4 horas de lavado turbulento continuo antes de la primera muestra APC. Este mínimo considera el tiempo necesario para movilizar y llevar la contaminación a granel de todas las secciones del circuito al filtro de lavado. En sistemas con mucha contaminación de construcción o tramos de tubería largos, la muestra inicial suele requerir varios cambios de filtro y ciclos de lavado adicionales antes de acercarse al objetivo de limpieza."
+    },
+    {
+      "question": "¿Qué clasificación de filtro de lavado debe usarse durante la puesta en marcha y cuándo debe cambiarse?",
+      "answer": "El lavado de puesta en marcha usa un filtro de lavado de retorno temporal, separado del filtro de retorno permanente del sistema. Etapa inicial: 10 µm absoluto nominal para capturar los residuos a granel sin obstrucción prematura. Se pasa a 3 µm absoluto (β₃(c) ≥ 200) cuando los conteos de partículas se acercan a dos unidades de código ISO del objetivo. El filtro de lavado debe cambiarse cada vez que la presión diferencial indique carga (normalmente cada 1–2 horas en las etapas iniciales). Una carga rápida del filtro es normal y confirma un transporte eficaz de partículas desde el circuito."
+    },
+    {
+      "question": "¿Qué hay que hacer si no se cumple el objetivo ISO 4406 después de 4 horas de lavado?",
+      "answer": "Siga lavando; no instale las válvulas de precisión. Revise la presión diferencial del filtro de lavado: un filtro totalmente cargado no elimina más contaminación y debe reemplazarse antes de continuar. Verifique que el caudal de lavado logre Re > 4,000 en las secciones de tubería de menor diámetro; aumente el caudal de la bomba o reduzca la zona de lavado para aumentar la velocidad local. Si la limpieza se estanca, pase a elementos de lavado de 3 µm absoluto para capturar las partículas menores de 10 µm. Suba la temperatura del fluido a 50–55°C para reducir la viscosidad y mejorar la turbulencia. Vuelva a muestrear cada 30 minutos después de cada medida correctiva."
+    },
+    {
+      "question": "¿Qué documentación se requiere para completar la aceptación de la puesta en marcha hidráulica?",
+      "answer": "El informe de lavado de puesta en marcha debe incluir: dos certificados de conteo de partículas APC (con fecha y hora, punto de muestreo, referencia del certificado de calibración del APC y código ISO 4406 resultante), los datos del fluido de lavado y el registro de temperatura, el registro del caudal que demuestra Re > 4,000, los registros de cambio del filtro de lavado, la duración total del lavado y el código ISO 4406 objetivo especificado por el diseño del sistema. Esta documentación se conserva como parte del paquete de puesta en marcha de la máquina y puede requerirse para reclamos de garantía o para la trazabilidad de la vida de los componentes."
+    }
+  ],
+  "howTo": {
+    "name": "Procedimiento de lavado de puesta en marcha de unidades de potencia hidráulica",
+    "description": "Lave una unidad de potencia hidráulica nueva o recién mantenida para lograr los objetivos de limpieza ISO 4406 antes de la primera operación, según la sección 5.4 de ISO 4413:2011.",
+    "totalTime": "PT16H",
+    "supply": [
+      "Fluido de lavado: aceite mineral ISO VG 32 (el mismo fluido de operación o un aceite de lavado compatible)",
+      "Frascos de muestra prelimpiados según ISO 3722 (≤ ISO 11/9/6)",
+      "Placas de derivación temporales para servoválvulas y válvulas proporcionales",
+      "Elementos de filtro de retorno temporales de alta capacidad (10 µm absoluto nominal)",
+      "Elementos de filtro temporales de etapa fina (3 µm absoluto, β₃(c) ≥ 200)"
+    ],
+    "tool": [
+      "Contador automático de partículas (APC) calibrado según ISO 11171",
+      "Válvula de muestreo instalada en una posición de la línea de retorno que cumpla ISO 3722",
+      "Caudalímetro y manómetros",
+      "Termómetro para controlar la temperatura del aceite del depósito"
+    ],
+    "steps": [
+      {
+        "name": "Instalar las placas de derivación y los filtros de lavado temporales",
+        "text": "Retire todas las servoválvulas, las válvulas proporcionales y las demás válvulas de control de precisión. Instale placas de derivación sólidas (placas de lavado) en cada ubicación de válvula para mantener la continuidad del circuito de fluido. Instale elementos de filtro de retorno temporales de alta capacidad de 10 µm absoluto clasificados para los caudales de lavado. Conecte la bomba de lavado a la línea de suministro.",
+        "tool": "Torquímetro, juego de placas de derivación",
+        "supply": "Placas de lavado dimensionadas para cada puerto de válvula"
+      },
+      {
+        "name": "Llenar el depósito con fluido de lavado y establecer la temperatura del circuito",
+        "text": "Llene el depósito hasta el nivel de operación con fluido de lavado. Arranque la bomba de lavado y haga circular hasta que la temperatura del depósito llegue a 40–55°C. A 40°C, el aceite ISO VG 32 tiene una viscosidad cinemática de aproximadamente 32 cSt, necesaria para lograr flujo turbulento (Re > 4,000) en las tuberías del circuito. No empiece a contar el tiempo de lavado hasta llegar a la temperatura de operación.",
+        "tool": "Termómetro, caudalímetro",
+        "supply": "Fluido de lavado ISO VG 32"
+      },
+      {
+        "name": "Establecer un caudal de lavado turbulento (Re > 4,000)",
+        "text": "Ajuste la bomba de lavado para lograr 1.5–2× el caudal normal de operación del sistema. Verifique que el número de Reynolds supere 4,000 en las líneas principales de suministro y retorno para asegurar un flujo turbulento que desprenda la contaminación asentada. Calcule Re = (velocidad × diámetro interior × densidad) / viscosidad. En una línea de retorno de 50 mm (2 in.) a 40°C con ISO VG 32, 100 L/min logran Re ≈ 6,500.",
+        "tool": "Caudalímetro, calculadora hidráulica"
+      },
+      {
+        "name": "Lavar todas las derivaciones del circuito con cambios de dirección",
+        "text": "Haga circular el fluido de lavado durante 2 horas con la bomba de lavado. Cada 15 minutos, accione los solenoides de control de dirección (conectados al circuito de lavado, no a las válvulas de precisión) para dirigir el flujo a cada circuito derivado y tramo muerto. Los ciclos de dirección aseguran que la contaminación de los circuitos derivados se movilice y la capture el filtro de retorno."
+      },
+      {
+        "name": "Tomar la muestra inicial de conteo de partículas",
+        "text": "Después de 2 horas de lavado turbulento, tome una muestra de fluido de la válvula de muestreo ISO 3722 de la línea de retorno. Purgue la válvula de muestreo con 3–5 volúmenes de frasco antes de recoger la muestra en un frasco prelimpiado según ISO 3722. Envíela a conteo de partículas APC según ISO 4406:2021. Compruebe si el resultado está a menos de dos unidades de código del código de limpieza objetivo.",
+        "tool": "Válvula de muestreo ISO 3722, APC calibrado",
+        "supply": "Frascos de muestra prelimpiados según ISO 3722"
+      },
+      {
+        "name": "Pasar a la filtración de etapa fina cuando los conteos iniciales se acerquen al objetivo",
+        "text": "Cuando los resultados APC muestren que el fluido está a menos de dos unidades de código del objetivo, reemplace los elementos de retorno temporales de 10 µm por elementos de 3 µm absoluto (β₃(c) ≥ 200). Siga lavando con el mismo caudal y la misma temperatura. Los elementos finos eliminarán las partículas restantes menores de 10 µm, que explican las últimas unidades de código de contaminación.",
+        "supply": "Elementos de filtro temporales de 3 µm absoluto (β₃(c) ≥ 200)"
+      },
+      {
+        "name": "Verificar los criterios de aceptación con dos muestras consecutivas",
+        "text": "Cuando el resultado APC cumpla por primera vez el código de limpieza ISO 4406 objetivo, tome una segunda muestra 30 minutos después sin cambiar ninguna condición del lavado. Ambas muestras deben cumplir por separado el código objetivo. Si alguna muestra no lo cumple, siga lavando y repita la verificación con dos muestras.",
+        "tool": "APC calibrado, temporizador",
+        "supply": "Frascos de muestra prelimpiados según ISO 3722"
+      },
+      {
+        "name": "Documentar e instalar las válvulas de precisión",
+        "text": "Registre los dos certificados de conteo de partículas en el formulario de aprobación de la puesta en marcha, con la fecha y la hora de la muestra, el punto de muestreo, la fecha de calibración del instrumento APC y el código ISO 4406 resultante. Drene el fluido de lavado solo si es distinto del fluido de operación. Instale las servoválvulas y las válvulas proporcionales. Llene con el fluido de operación (filtrado previamente a ≤ ISO 16/14/11 antes de introducirlo). El sistema está listo para la primera operación.",
+        "supply": "Formulario de documentación de la puesta en marcha, fluido de operación filtrado previamente a ISO 16/14/11"
+      }
+    ]
+  },
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 23309:2007, Hydraulic Fluid Power Systems — Systems Assembled from Commercially Available Components — Cleanliness Flushing",
+      "relevance": "Especifica los procedimientos de lavado, los requisitos de velocidad (Re > 4,000) y los métodos de verificación de la limpieza de los sistemas hidráulicos puestos en marcha; define los criterios de aceptación basados en los códigos de limpieza ISO 4406 objetivo."
+    },
+    {
+      "category": "specification",
+      "citation": "SAE AS4059 Rev.F, Aerospace Fluid Power — Cleanliness Classification for Hydraulic Fluids",
+      "relevance": "Sistema de clasificación de la limpieza de los fluidos hidráulicos usado en aplicaciones aeroespaciales e hidráulicas móviles de alta precisión; tabula los conteos máximos de partículas por mL en los tamaños de partícula de 4, 6, 14, 21, 38 y 70 µm."
+    },
+    {
+      "category": "test-method",
+      "citation": "ISO 11500:2008, Hydraulic Fluid Power — Determination of the Particulate Contamination Level of a Liquid Sample",
+      "relevance": "Especifica el procedimiento con contador óptico automático de partículas (APC) para contar y medir partículas en muestras de aceite hidráulico con calibración ISO 11171; rige el muestreo, la dilución y el informe de los códigos de limpieza ISO 4406 durante la verificación del lavado."
+    },
+    {
+      "category": "standard",
+      "citation": "NFPA T2.14.1-2020, Recommended Practice — Hydraulic Fluid Power — Minimizing Contamination in Hydraulic Systems",
+      "relevance": "Práctica recomendada de NFPA sobre fuentes de contaminación, limpieza del montaje y estrategia de lavado de sistemas hidráulicos móviles e industriales; cita los códigos ISO 4406 objetivo y la configuración del circuito de lavado multipaso."
+    }
+  ]
+}
