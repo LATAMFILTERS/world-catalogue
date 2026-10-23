@@ -34,6 +34,13 @@ const CTR_OVERRIDES: Record<string, { title: string; description: string }> = {
   },
 };
 
+const CTR_1_METADATA: Record<string, { title: string; description: string }> = {
+  'iso-4548-lube-filter-test-methods': {
+    title: "ISO 4548 Oil Filter Tests: Efficiency, Bypass & Burst",
+    description: "Compare oil filters using ISO 4548 results. Understand Part 12 efficiency, bypass-valve pressure, cold-start performance and burst strength.",
+  },
+};
+
 export function generateStaticParams() {
   return ENGINEERING_ARTICLES.map((a) => ({ topic: a.slug }));
 }
@@ -50,8 +57,8 @@ export async function generateMetadata({ params }: { params: Promise<{ topic: st
   const description = override?.description ?? article.metaDescription;
 
   return {
-    title,
-    description,
+    title: CTR_1_METADATA[topic]?.title ?? title,
+    description: CTR_1_METADATA[topic]?.description ?? description,
     keywords: article.keywords,
     alternates: {
       canonical: canonicalOwnerUrl ?? url,

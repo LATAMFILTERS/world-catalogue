@@ -11,9 +11,8 @@ import { INDUSTRIAL_PROCESS_ENTITY_NODES } from '@/lib/industrial-process-entity
 const BASE_URL = 'https://elimfilters.com';
 
 export const metadata: Metadata = {
-  title: 'Industrial & Process Filtration | ELIMFILTERS',
-  description:
-    'ELIMFILTERS Industrial & Process is the engineering entry point for high-value filtration, separation, fluid conditioning, gas conditioning, air treatment and industrial water projects.',
+  title: "Industrial Process Filtration & Membrane Systems",
+  description: "Explore engineered filtration for process plants: AQUVEXIS membrane separation, industrial water treatment, and fluid and gas conditioning systems.",
   alternates: { canonical: '/industrial-process/' },
   openGraph: {
     title: 'Industrial & Process Filtration | ELIMFILTERS',
@@ -86,7 +85,7 @@ export default function IndustrialProcessPage() {
     '@id': `${BASE_URL}/industrial-process/#page`,
     url: `${BASE_URL}/industrial-process/`,
     name: 'Industrial & Process Filtration | ELIMFILTERS',
-    description: metadata.description,
+    description: 'ELIMFILTERS Industrial & Process is the engineering entry point for high-value filtration, separation, fluid conditioning, gas conditioning, air treatment and industrial water projects.',
     isPartOf: { '@id': `${BASE_URL}/#website` },
     publisher: { '@id': `${BASE_URL}/#organization` },
     about: INDUSTRIAL_PROCESS_ENTITY_NODES
