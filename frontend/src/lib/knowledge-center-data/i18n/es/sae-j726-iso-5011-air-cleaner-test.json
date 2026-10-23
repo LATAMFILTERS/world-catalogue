@@ -1,0 +1,315 @@
+{
+  "slug": "sae-j726-iso-5011-air-cleaner-test",
+  "faqs": [
+    {
+      "question": "¿Cómo complementa SAE J726 a ISO 5011 en la evaluación de depuradores de aire y en qué se diferencian?",
+      "answer": "SAE J726 (Air Cleaner Evaluation) era la contraparte norteamericana de ISO 5011 antes de que las dos normas se armonizaran en buena medida. SAE J726 se centra en: (1) El ensayo del conjunto del depurador de aire (carcasa más elemento), no solo del elemento como en ISO 5011; (2) Incluye ensayos de restricción al caudal de aire nominal según los límites de SAE J1539; (3) Especifica el polvo de ensayo SAE J726 (polvo de caminos de Arizona, grado SAE J726), que tiene una distribución de tamaños de partícula algo distinta a la del ISO 12103-1 A2 fine usado en ISO 5011: por eso los resultados de eficiencia gravimétrica de SAE J726 e ISO 5011 pueden diferir un 1–3% para el mismo elemento. Práctica actual: la mayoría de los fabricantes de motores de servicio pesado citan tanto SAE J726 como ISO 5011 en sus especificaciones de filtros de aire para cubrir el mercado norteamericano y el internacional. La especificación del polvo de ensayo es la principal diferencia técnica; la metodología de ensayo es esencialmente equivalente."
+    },
+    {
+      "question": "¿Cuál es la concentración de alimentación de polvo de SAE J726 y por qué importa controlarla?",
+      "answer": "SAE J726 especifica una concentración de alimentación del polvo de ensayo de 70 g/m2 de área frontal del filtro por minuto (aproximadamente equivalente a ISO 5011 al caudal de aire nominal con polvo de ensayo A2 fine). Controlar la concentración es importante porque: (1) Los resultados de eficiencia y DHC dependen de la concentración: una concentración de alimentación mayor acelera la carga del filtro y puede comprimir la fase de filtración en profundidad del ciclo de carga, lo que eleva artificialmente la eficiencia inicial; (2) La reproducibilidad entre laboratorios requiere una concentración idéntica, dentro de ±10% de la especificación; (3) Las concentraciones de polvo ambiental reales varían mucho (0.01 a 10 mg/m3); la concentración de ensayo normalizada da una referencia constante que permite predecir la vida útil con cualquier concentración ambiental mediante la relación: DHC(g) / (concentración(mg/m3) × caudal de aire(m3/h)) = horas de servicio."
+    },
+    {
+      "question": "¿Qué geometría de carcasa de ensayo especifican SAE J726 e ISO 5011 y por qué importa?",
+      "answer": "SAE J726 e ISO 5011 especifican requisitos de geometría de la carcasa de ensayo para asegurar que el desempeño del elemento filtrante se mida en una instalación controlada y reproducible que represente las carcasas reales típicas. Las especificaciones incluyen: diámetro del ducto de entrada = diámetro de entrada del elemento (dentro de ±5%); longitud del ducto de entrada = mínimo 3 diámetros de ducto antes de la cara de montaje del elemento (para establecer un flujo uniforme); punto de inyección de polvo = mínimo 5 diámetros de ducto aguas arriba del elemento (para asegurar la mezcla del polvo); tomas de muestreo de salida = 100 mm aguas arriba y aguas abajo de la cara de montaje del elemento. Una geometría de carcasa no normalizada (ductos subdimensionados, entrada brusca) crea una mala distribución del flujo en la cara del filtro, lo que reduce el área frontal efectiva y la DHC medida. Los elementos ensayados en carcasas SAE J726 normalizadas y luego instalados en carcasas de vehículos con una geometría poco favorable pueden mostrar una vida útil en campo un 20–40% menor que el desempeño nominal."
+    },
+    {
+      "question": "¿Qué importancia tiene el ensayo de eficiencia gravimétrica en la calificación de filtros de aire?",
+      "answer": "La eficiencia gravimétrica (eficiencia de filtración global, OFE) es el parámetro de desempeño más importante para calificar filtros de admisión de aire, porque representa directamente la fracción de la masa de contaminación entrante que se captura antes de llegar al motor. El método gravimétrico (pesar el polvo total ingerido frente al polvo total capturado) considera todos los tamaños de partícula y todos los estados de carga del filtro, incluida la fase inicial de carga en la que la eficiencia es mínima (todavía no se formó la torta), que es el período de mayor riesgo para la protección del motor. Los métodos de conteo de partículas (APC óptico) miden la eficiencia en umbrales de tamaño específicos y en estados de carga específicos, pero no captan la eficiencia integrada ponderada por masa. Una OFE gravimétrica superior al 99.9% significa que, en 5,000 horas de operación con 0.1 mg/m3 de polvo ambiental y un caudal de aire del motor de 10 m3/min, llegan al motor menos de 0.3 gramos de sílice: no basta para provocar un desgaste detectable de las camisas de cilindro."
+    },
+    {
+      "question": "¿Cómo se prepara y caracteriza el polvo de ensayo SAE J726?",
+      "answer": "El polvo de ensayo SAE J726 (polvo de caminos de Arizona, grado normalizado) es un polvo natural a base de sílice del desierto de Arizona, clasificado por aire hasta una distribución de tamaños de partícula definida. Caracterización según ISO 12103-1: D10 ≈ 1–3 µm, D50 ≈ 3–10 µm (según el grado), D90 ≈ 30–80 µm (según el grado), densidad específica de 2.65 g/cm3. Se definen cuatro grados: A1 (ultrafino), A2 (fino), A3 (medio), A4 (grueso). ISO 5011 usa sobre todo A2 fine; SAE J726 especifica el grado SAE más grueso, que incluye más partículas por encima de 10 µm (típico de la exposición real al polvo de caminos). Los lotes de polvo se caracterizan por su distribución de tamaños de partícula (difracción láser, ISO 13320) y su densidad aparente antes de usarlos en los ensayos. La variación entre lotes en la distribución de tamaños de partícula (dentro de los límites de ISO 12103-1) introduce una variabilidad de ensayo de ±3–5% en la DHC medida para el mismo elemento filtrante."
+    },
+    {
+      "question": "¿Qué especificaciones de transductor de presión diferencial se requieren para medir con exactitud la restricción según SAE J726?",
+      "answer": "La medición de la restricción según SAE J726 requiere transductores de presión diferencial con: exactitud de ±0.5% de la escala completa o ±0.5 mbar (lo que sea mayor); tiempo de respuesta ≤0.1 segundos para medir la restricción dinámica durante la alimentación de polvo; coeficiente de temperatura ≤0.1%/°C en el rango ambiente de 15–35°C para evitar que la deriva térmica sesgue las lecturas de restricción; resolución mínima de 0.1 mbar para las mediciones de baja restricción del elemento limpio. Calibración del transductor como mínimo una vez por año con un probador de peso muerto o una fuente de presión certificada (trazable a NIST). La señal de restricción se muestrea como mínimo a 1 Hz durante el ensayo, y cada dato informado es el promedio de 10 muestras consecutivas. Los datos de restricción registrados en cada incremento definido de masa acumulada de polvo inyectado (por ejemplo, cada 50 g) generan la curva de restricción frente a carga que define la vida útil del elemento con cualquier concentración de polvo ambiental."
+    },
+    {
+      "question": "¿Cómo se convierten los resultados de eficiencia de SAE J726 en un equivalente de relación Beta para compararlos con las normas de filtros hidráulicos?",
+      "answer": "La eficiencia gravimétrica de SAE J726 no se convierte directamente en relación Beta, porque miden propiedades fundamentalmente distintas: la eficiencia gravimétrica es un promedio acumulado en masa de todos los tamaños de partícula; la relación Beta es una relación de conteos de partículas en un umbral de tamaño específico y en un estado de carga específico. Las dos métricas no son intercambiables. Sin embargo, cuando se necesitan datos similares a la relación Beta para filtros de aire, ISO 5011 puede complementarse con conteo de partículas APC aguas abajo del elemento durante el ensayo gravimétrico, lo que genera datos de conteo de partículas en umbrales de tamaño específicos (por ejemplo, ≥5 µm, ≥10 µm) a medida que el elemento se carga. Esta metodología combinada da, en la misma corrida de ensayo, la eficiencia gravimétrica global (por balance de masa) y la eficiencia por conteo de partículas (por APC). Algunos fabricantes especifican una eficiencia mínima por conteo de partículas en ≥5 µm de ≥99.9% además de una eficiencia gravimétrica global ≥99.9% para los elementos de filtro de aire de motores turboalimentados, donde las partículas finas que atraviesan el filtro tienen un impacto proporcionalmente mayor en el desgaste de los cojinetes del turbocompresor."
+    },
+    {
+      "question": "¿Cuál es el procedimiento de ensayo SAE J726 para sistemas completos de admisión de aire de vehículos (no solo elementos)?",
+      "answer": "El ensayo del sistema montado según SAE J726 ensaya el conjunto completo de admisión de aire del vehículo (carcasa, elemento, ductos, prefiltro e indicador de restricción) tal como se instala en el vehículo o en un banco de ensayo equivalente. Procedimiento: (1) Montar el conjunto completo en el banco de ensayo con un sistema calibrado de medición del caudal de aire (normalmente una tobera de flujo crítico o un elemento de flujo laminar según ASME MFC-3M); (2) Inyectar polvo de ensayo SAE J726 al caudal de aire nominal del motor; (3) Medir la restricción en el punto de conexión al múltiple de admisión del motor (no solo en el elemento); (4) Medir la eficiencia global del sistema por conteo de partículas o recolección gravimétrica aguas abajo del conjunto completo (incluido el polvo que atraviese el prefiltro). Los resultados del sistema montado consideran la ingestión del prefiltro y cualquier derivación a nivel de la carcasa que el ensayo solo del elemento no detectaría. SAE J1539 cita la metodología de ensayo del sistema montado de SAE J726 para fijar los límites de restricción al caudal de aire nominal del motor."
+    },
+    {
+      "question": "¿Qué eventos de ingestión de contaminación capta SAE J726 y no detecta el ensayo de elementos ISO 5011?",
+      "answer": "El ensayo del sistema montado según SAE J726 capta eventos de ingestión que no se ven en el ensayo solo del elemento ISO 5011: (1) Derivación por el sello de la carcasa: un sello entre elemento y carcasa con fugas deja pasar polvo sin filtrar directamente al motor; el ensayo solo del elemento en una carcasa de ensayo perfecta muestra cero derivación, mientras que el ensayo de la carcasa montada con la disposición de sello de producción puede mostrar un 0.1–1% de derivación en el sello, lo que revela el nivel de protección real; (2) Integración de la eficiencia del prefiltro: el ensayo montado SAE J726 mide qué fracción del polvo total entrante captura el prefiltro antes del elemento primario, y qué fracción atraviesa el prefiltro y carga el elemento; (3) Rearrastre en la carcasa: en carcasas mal diseñadas, las zonas de alta velocidad cerca de la salida pueden volver a arrastrar partículas parcialmente capturadas de las paredes de la carcasa aguas arriba, algo visible solo en el ensayo del sistema montado. Para una evaluación conservadora de la protección del motor, se prefieren los resultados del ensayo del sistema montado SAE J726 a los resultados solo del elemento ISO 5011 cuando se dispone de ambos."
+    },
+    {
+      "question": "¿Qué requisitos de informe tiene un informe de ensayo completo de filtro de aire SAE J726?",
+      "answer": "Los informes de ensayo SAE J726 deben incluir: (1) Descripción del elemento: número de parte OEM, dimensiones (diámetro, largo), tipo de medio, número y altura de los pliegues; (2) Condiciones de ensayo: caudal de aire (m3/min o CFM), tipo y número de lote del polvo, concentración de alimentación (g/m3), configuración de la carcasa de ensayo; (3) Restricción inicial: ΔP del elemento limpio al caudal de aire nominal (mbar o inH2O); (4) Restricción terminal: ΔP final con la que se terminó el ensayo (según la especificación del fabricante o en el límite de servicio del elemento); (5) Eficiencia gravimétrica global: eficiencia promedio ponderada por masa (%) con una estimación de la incertidumbre (normalmente ±0.1–0.3%); (6) Capacidad de retención de suciedad: total de polvo inyectado hasta la restricción terminal (gramos); (7) Curva de restricción frente a carga acumulada de polvo, en tabla o gráfico; (8) Datos de conteo de partículas APC aguas abajo (si se midieron); (9) Identificación del laboratorio de ensayo, fechas de calibración de los instrumentos y nombre del operador. Los informes incompletos a los que les faltan las curvas de restricción o la incertidumbre de la eficiencia no pueden usarse para presentaciones de calificación ante los fabricantes de motores."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Evaluation",
+      "relevance": "Norma SAE principal para evaluar elementos de depuradores de aire y sistemas montados, que incluye los ensayos de eficiencia gravimétrica, DHC y restricción."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing",
+      "relevance": "Equivalente internacional de SAE J726 usado en los mercados europeo y global, con una metodología esencialmente equivalente pero con otra especificación del grado de polvo de ensayo."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J1539, Air Cleaner Test Code",
+      "relevance": "Código de ensayo de sistemas de depurador de aire montados que cita la metodología SAE J726 para verificar los límites de restricción al caudal de aire nominal específico de cada motor."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust",
+      "relevance": "Define el A2 fine y los demás grados de polvo de caminos de Arizona usados en los ensayos de eficiencia de filtros de aire SAE J726 e ISO 5011."
+    }
+  ],
+  "title": "Métodos de ensayo de depuradores de aire SAE J726 e ISO 5011",
+  "subtitle": "Ensayos de desempeño de elementos depuradores de aire de tipo seco para motores de combustión interna",
+  "metaDescription": "SAE J726 e ISO 5011 definen los métodos de ensayo de restricción de aire, capacidad de retención de polvo y eficiencia de filtración de los elementos depuradores de aire de tipo seco usados en motores de combustión interna. Esta referencia cubre los parámetros de ensayo, los criterios de aceptación y la calibración del indicador de restricción.",
+  "category": "Ingeniería",
+  "readTime": "12 min",
+  "intro": "SAE J726 (Air Cleaner Test Code) e ISO 5011:2020 (Inlet Air Cleaning Equipment — Performance Testing) rigen la evaluación del desempeño de los elementos filtrantes de tipo seco usados en los sistemas de admisión de aire de los motores de combustión interna. Ambas normas definen tres parámetros de desempeño principales: la restricción de aire inicial al caudal nominal, la capacidad de retención de polvo en gramos de contaminante de ensayo normalizado y la eficiencia de filtración medida gravimétricamente. Las normas se complementan: SAE J726 la especifican mucho los fabricantes norteamericanos, e ISO 5011 predomina en las especificaciones de equipos europeas e internacionales. SAE J1669, un documento complementario de J726, define métodos de ensayo de eficiencia por conteo de partículas que aportan datos de eficiencia por fracción de tamaño y complementan los valores de eficiencia gravimétrica de la norma base.",
+  "sections": [
+    {
+      "heading": "Alcance y aplicabilidad de la norma",
+      "body": "SAE J726 se aplica a los conjuntos depuradores de aire y a los elementos filtrantes usados en motores de combustión interna, incluidos los motores diésel y de gasolina de vehículos de ruta, equipos fuera de ruta, maquinaria agrícola y generación de energía estacionaria. ISO 5011:2020 cubre el mismo ámbito e incluye además los equipos de depuración del aire de entrada de los compresores. Ambas normas abarcan los elementos filtrantes de tipo seco (medio plisado de celulosa, sintético o compuesto) que operan sin superficies mojadas con aceite. Los depuradores de aire de baño de aceite quedan fuera del alcance de ambas normas. Las normas especifican los bancos de ensayo, los fluidos de ensayo, los contaminantes de ensayo, los instrumentos de medición y los requisitos de informe para asegurar la reproducibilidad de los datos de desempeño entre laboratorios.",
+      "callout": [
+        {
+          "label": "Alcance de SAE J726",
+          "value": "Depuradores de aire de motores: de ruta, fuera de ruta y estacionarios"
+        },
+        {
+          "label": "Alcance de ISO 5011:2020",
+          "value": "Motores y compresores: equipos de depuración del aire de entrada"
+        },
+        {
+          "label": "Norma complementaria",
+          "value": "SAE J1669: complemento de eficiencia por conteo de partículas"
+        },
+        {
+          "label": "Tipos de elemento",
+          "value": "Solo medio plisado de tipo seco de celulosa, sintético o compuesto"
+        }
+      ]
+    },
+    {
+      "heading": "Contaminantes de ensayo y condiciones de flujo",
+      "body": "Tanto SAE J726 como ISO 5011 usan polvos de ensayo normalizados ISO 12103-1. ISO 5011 especifica A2 fine (diámetro medio aproximado de 5.5 µm en volumen), A3 medium coarse (mediana de aproximadamente 28 µm) o A4 coarse (mediana de aproximadamente 75 µm) según el tipo de ensayo y la aplicación del elemento. SAE J726 citaba históricamente el SAE Fine Test Dust, hoy alineado con el ISO 12103-1 A2 fine en los ensayos modernos. El caudal de ensayo se fija en el consumo de aire nominal del motor o del compresor a plena carga, normalmente expresado en metros cúbicos por minuto en condiciones estándar (20°C, 101.325 kPa). El banco de ensayo entrega el polvo a una tasa de alimentación controlada para mantener una concentración constante aguas arriba durante todo el ensayo de capacidad, y mide la presión diferencial aguas arriba y aguas abajo del elemento.",
+      "callout": [
+        {
+          "label": "Polvo de ensayo principal",
+          "value": "ISO 12103-1 A2 Fine: mediana ~5.5 µm (en volumen)"
+        },
+        {
+          "label": "Condición de flujo",
+          "value": "Consumo de aire nominal del motor a plena carga (m³/min en condiciones estándar)"
+        },
+        {
+          "label": "Tasa de alimentación de polvo",
+          "value": "Controlada para mantener una concentración constante aguas arriba"
+        },
+        {
+          "label": "Referencia de temperatura",
+          "value": "Condiciones estándar de 20°C y 101.325 kPa"
+        }
+      ]
+    },
+    {
+      "heading": "Medición de la restricción de aire",
+      "body": "La restricción de aire inicial se mide como la diferencia de presión en el elemento al caudal de aire nominal con un elemento limpio instalado. La restricción se expresa en kilopascales (kPa) o en pulgadas de columna de agua (in H2O). La restricción terminal define el criterio de fin de servicio: cuando la restricción llega al valor terminal durante un ensayo de capacidad de polvo, el ensayo se detiene y la masa total de polvo alimentado hasta ese punto es la capacidad de retención de polvo del elemento. Los valores de restricción terminal dependen de la aplicación y los fija el fabricante del motor. Los umbrales típicos de restricción terminal son 6.2 kPa (25 in H2O) en motores diésel de servicio pesado y 3.1 kPa (12.5 in H2O) en motores de vehículos de pasajeros livianos. ISO 5011 recomienda que el indicador de restricción se active al 75% de la restricción terminal, para dar un tiempo de respuesta de servicio suficiente antes de que se produzcan condiciones de derivación o una degradación del desempeño.",
+      "callout": [
+        {
+          "label": "Restricción terminal en diésel HD",
+          "value": "6.2 kPa (25 in H2O)"
+        },
+        {
+          "label": "Restricción terminal en motor LD",
+          "value": "3.1 kPa (12.5 in H2O): valor OEM típico"
+        },
+        {
+          "label": "Punto de ajuste del indicador",
+          "value": "75% de la restricción terminal (pauta de ISO 5011)"
+        },
+        {
+          "label": "Activación del indicador en HD",
+          "value": "~4.65 kPa (18.8 in H2O) para una restricción terminal de 6.2 kPa"
+        }
+      ]
+    },
+    {
+      "heading": "Capacidad de retención de polvo",
+      "body": "La capacidad de retención de polvo (DHC) se define como la masa total de polvo de ensayo ISO 12103-1 alimentada al elemento desde el estado limpio hasta llegar a la restricción terminal, expresada en gramos. La DHC es el principal indicador de vida útil con una tasa de carga de polvo dada: la DHC (g) dividida por la tasa de ingestión de polvo en campo (g/hora) da el intervalo de servicio teórico en horas. La tasa de ingestión de polvo varía mucho según el entorno: en operaciones en el desierto o en canteras los filtros pueden cargarse a 5–15 g/hora por motor, mientras que los motores diésel de ruta en condiciones limpias pueden cargarse a 0.1–0.5 g/hora. Los prefiltros (separadores inerciales) que alimentan un elemento primario pueden eliminar el 80–95% del polvo entrante ponderado por masa, lo que multiplica en la práctica la vida útil del elemento por un factor de 5–20 en entornos de mucho polvo.",
+      "callout": [
+        {
+          "label": "Fórmula de la DHC",
+          "value": "DHC (g) = masa total alimentada al caudal nominal hasta la restricción terminal"
+        },
+        {
+          "label": "Tasa de carga en el desierto",
+          "value": "5–15 g/h por motor: intervalos cortos sin prefiltro"
+        },
+        {
+          "label": "Eliminación por el prefiltro",
+          "value": "80–95% de la masa de polvo entrante: extiende la vida del elemento 5–20×"
+        },
+        {
+          "label": "Carga en ruta limpia",
+          "value": "0.1–0.5 g/h: intervalos más largos, el indicador de restricción es el disparador principal"
+        }
+      ]
+    },
+    {
+      "heading": "Eficiencia de filtración: métodos gravimétrico y de conteo de partículas",
+      "body": "La eficiencia gravimétrica, especificada tanto en SAE J726 como en ISO 5011, mide el porcentaje de la masa de polvo de ensayo que retiene el elemento: E_grav = (1 − m_aguas abajo / m_alimentada) × 100%. ISO 5011 define clases de eficiencia basadas en los resultados gravimétricos; los elementos primarios típicos de servicio pesado logran una eficiencia gravimétrica >99.9% con polvo ISO 12103-1 A2 fine. SAE J1669 ofrece un ensayo complementario de eficiencia por conteo de partículas con un contador automático de partículas (APC) calibrado según ISO 11171, que genera valores de relación Beta en tamaños de partícula discretos (4, 6, 10, 14, 21 µm). La eficiencia por conteo de partículas aporta datos de desempeño por fracción de tamaño que el ensayo gravimétrico solo no da, lo que permite elegir elementos para aplicaciones con requisitos específicos de partículas submicrónicas o finas que van más allá de lo que caracteriza la eficiencia en masa.",
+      "callout": [
+        {
+          "label": "Fórmula de la eficiencia gravimétrica",
+          "value": "E = (1 − m_aguas abajo / m_alimentada) × 100%"
+        },
+        {
+          "label": "Elemento primario HD",
+          "value": ">99.9% gravimétrica con ISO 12103-1 A2 fine"
+        },
+        {
+          "label": "Método APC de SAE J1669",
+          "value": "Relaciones Beta a 4, 6, 10, 14, 21 µm por conteo de partículas"
+        },
+        {
+          "label": "Calibración del APC",
+          "value": "ISO 11171: material de referencia trazable a NIST"
+        }
+      ]
+    },
+    {
+      "heading": "Calibración del indicador de restricción y práctica de servicio",
+      "body": "Los indicadores de restricción (de tipo mecánico emergente o transductor electrónico) deben calibrarse para activarse en el umbral de restricción especificado por el fabricante del motor, sin superar el 75% del valor de restricción terminal según la pauta de ISO 5011. Un reemplazo prematuro guiado por el tiempo transcurrido y no por la medición de la restricción genera desperdicio innecesario; a la inversa, operar más allá de la restricción terminal reduce la eficiencia volumétrica del motor, aumenta el consumo de combustible en proporción al aumento de la restricción de admisión y arriesga una derivación de polvo si el sellado del elemento se degrada por exceso de presión diferencial. La integridad del sello del elemento (el ajuste con interferencia entre la tapa del elemento y la superficie de sellado de la carcasa) debe inspeccionarse en cada intervalo de servicio. Los elementos de sello radial sellados por O-rings comprimidos dan un sellado más constante que los de compresión axial (junta plana), sobre todo después de ciclos de servicio prolongados en los que puede aparecer deformación permanente por compresión de la junta."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Restricción terminal en diésel HD",
+      "value": "6.2 kPa (25 in H2O)"
+    },
+    {
+      "label": "Restricción terminal en motor LD",
+      "value": "3.1 kPa (12.5 in H2O)"
+    },
+    {
+      "label": "Punto de ajuste del indicador",
+      "value": "75% de la restricción terminal"
+    },
+    {
+      "label": "Eficiencia del elemento primario HD",
+      "value": ">99.9% gravimétrica (ISO 12103-1 A2 fine)"
+    },
+    {
+      "label": "Eliminación de polvo por el prefiltro",
+      "value": "80–95% en masa"
+    },
+    {
+      "label": "Tamaños de conteo de partículas J1669",
+      "value": "4, 6, 10, 14, 21 µm(c)"
+    }
+  ],
+  "relatedStandards": [
+    "SAE J726",
+    "ISO 5011",
+    "SAE J1669",
+    "ISO 12103-1",
+    "ISO 11171"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "SAE J726",
+    "ISO 5011",
+    "ensayo de depuradores de aire",
+    "capacidad de retención de polvo",
+    "restricción de aire",
+    "eficiencia de filtración",
+    "eficiencia gravimétrica",
+    "conteo de partículas",
+    "SAE J1669",
+    "restricción terminal",
+    "indicador de restricción",
+    "prefiltro",
+    "filtración del aire de admisión"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "El indicador de restricción se activa antes de tiempo, mucho antes del intervalo de servicio esperado",
+      "Aumento del consumo de combustible sin otra causa identificada",
+      "Polvo visible en el lado limpio del depurador de aire o en la entrada del cuerpo de aceleración",
+      "Vida útil del filtro inusualmente corta en un entorno de operación con mucho polvo",
+      "Degradación del desempeño del motor (menos potencia, más humo) con un elemento nuevo instalado"
+    ],
+    "probableCauses": [
+      "Indicador de restricción calibrado por encima del 75% de la restricción terminal: se activa demasiado tarde o demasiado pronto",
+      "Depurador de aire subdimensionado para la demanda de caudal del motor: el elemento se carga demasiado rápido por falta de área de medio",
+      "Falla del sello de la tapa del elemento: se forma una vía de derivación entre el diámetro exterior del elemento y el barreno de la carcasa",
+      "Elemento incorrecto instalado: geometría, clase de eficiencia o especificación de restricción terminal equivocada",
+      "Prefiltro ausente o ineficaz en un entorno de mucho polvo: elemento primario sobrecargado"
+    ],
+    "inspectionMethods": [
+      "Medir la restricción real con un manómetro calibrado o un sensor electrónico al caudal de aire nominal del motor (no en ralentí)",
+      "Retirar el elemento e inspeccionar los sellos de las tapas y los O-rings en busca de deformación permanente por compresión, grietas o deformación",
+      "Verificar el diámetro exterior del elemento frente al barreno de la carcasa: no se admite ninguna separación en la interfaz del sello",
+      "Comprobar la calibración del indicador de restricción con un manómetro de referencia con flujo controlado",
+      "Inspeccionar el tubo de descarga del prefiltro en busca de obstrucciones y verificar que los tubos de vórtice del prefiltro funcionen"
+    ],
+    "correctiveActions": [
+      "Reemplazar el elemento al activarse el indicador de restricción o antes: no extender el servicio por tiempo si el indicador ya se activó",
+      "Recalibrar o reemplazar el indicador de restricción; ajustar la activación al 75% del valor de restricción terminal del fabricante",
+      "Instalar el elemento correcto según la especificación del fabricante; confirmar la clase de eficiencia según la tabla de aplicaciones de ISO 5011",
+      "Agregar un prefiltro inercial en entornos de mucho polvo para reducir la tasa de carga de polvo del elemento primario",
+      "Inspeccionar la superficie de sellado de la carcasa en busca de rayas o contaminación; reparar o reemplazar la carcasa si la superficie de sellado está dañada"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "El indicador de restricción se activa antes del intervalo de servicio esperado",
+      "standard": "SAE J726 / ISO 5011",
+      "protectionSystem": "Depurador de aire bien dimensionado con prefiltro inercial para entornos de mucho polvo",
+      "technology": "Sistema de depuración de aire de dos etapas: un preseparador inercial que elimina el 80–95% de la masa de polvo de entrada, seguido de un elemento filtrante primario de tipo seco con la capacidad de retención de polvo nominal",
+      "relatedArticles": [
+        "air-intake-system-design",
+        "particle-ingress-prevention",
+        "iso-5011"
+      ]
+    },
+    {
+      "problem": "Derivación de polvo confirmada: se encontró polvo en el lado limpio del depurador de aire",
+      "standard": "ISO 5011 seal integrity requirements",
+      "protectionSystem": "Elemento de sello radial con compresión positiva del O-ring contra el barreno de la carcasa",
+      "technology": "Elemento filtrante de sello radial con extremos moldeados y O-ring de dimensiones controladas que sella contra un barreno de carcasa mecanizado: elimina el riesgo de deformación permanente por compresión de las juntas de compresión axial",
+      "relatedArticles": [
+        "filter-element-integrity",
+        "air-intake-system-design",
+        "particle-ingress-prevention"
+      ]
+    },
+    {
+      "problem": "Eficiencia insuficiente para una aplicación de motor de alta precisión",
+      "standard": "ISO 5011 efficiency classification",
+      "protectionSystem": "Elemento compuesto sintético de alta eficiencia según la clase de eficiencia de ISO 5011",
+      "technology": "Elemento de medio sintético multicapa de densidad graduada que logra una eficiencia gravimétrica >99.95% con ISO 12103-1 A2 fine, con relaciones Beta por conteo de partículas según SAE J1669",
+      "relatedArticles": [
+        "filter-media-engineering",
+        "beta-ratio",
+        "contamination-control"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-SAE-J726)",
+    "evidenceStatus": "SAE J726 terminal restriction values verified from SAE J726 Table 2 (heavy-duty 6.2 kPa, light-duty 3.1 kPa); ISO 5011:2020 scope and dust specification verified; 75% indicator set point from ISO 5011 Annex informative guidance; SAE J1669 particle counting supplement verified; ISO 12103-1 A2 fine test dust median diameter from ISO 12103-1:2016 Table 1; pre-cleaner removal efficiency range from published inertial separator performance data (Donaldson Engineering Data, Parker Global Engineering)"
+  }
+}

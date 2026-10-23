@@ -1,0 +1,259 @@
+{
+  "slug": "marine-diesel-filtration",
+  "faqs": [
+    {
+      "question": "Quais especificações de limpeza do combustível se aplicam aos motores diesel marítimos de média rotação que usam óleo combustível pesado (HFO)?",
+      "answer": "Os motores diesel marítimos de média rotação que operam com óleo combustível pesado (HFO, ISO 8217 classe RMG ou RMK) exigem que o combustível que entra no sistema de injeção do motor seja mantido a 120–150°C (para reduzir a viscosidade a 10–15 cSt na injeção) e não contenha partículas acima de 25 µm na entrada da bomba injetora. As diretrizes MEPC do CIMAC (International Council on Combustion Engines) e os manuais dos fabricantes de motores (MAN B&W, Wärtsilä, Caterpillar) especificam filtração fina do combustível com β25 ≥ 75 em aplicações com HFO. Os purificadores centrífugos (purificadores e clarificadores) em configuração em cascata removem a água e os sedimentos antes da filtração fina; os filtros finos de HFO com classificação absoluta de 25–50 µm ficam logo antes das bombas injetoras. O MDO (Marine Diesel Oil, ISO 8217 DMA/DMB/DMC) exige filtração mais fina (β10 ≥ 75) nos motores de média rotação, porque sua menor viscosidade de operação aumenta a sensibilidade às partículas."
+    },
+    {
+      "question": "Por que a purificação centrífuga é obrigatória nos trens de tratamento de HFO dos navios de longo curso?",
+      "answer": "O HFO normalmente contém 0.1–0.5% de água em volume (tal como entregue), sódio (até 100 mg/kg), cálcio (até 30 mg/kg) dos aditivos de sulfonato de cálcio e finos catalíticos (partículas de Al+Si do catalisador FCC de refinaria, normalmente de 10–80 µm, com dureza de 7–8 Mohs, mais duras que os materiais dos injetores e das bombas do motor). Os purificadores centrífugos, operando a 3,000–5,000×g, separam do combustível em uma única passagem a água (incluindo o sódio e outros sais solúveis em água) e as partículas acima de 3–5 µm. Finos catalíticos acima de 60 mg/kg de Al+Si (máximo da ISO 8217) causam desgaste abrasivo severo dos êmbolos de injeção e das válvulas de combustível, destruindo o equipamento de injeção em 2,000–5,000 horas contra 20,000+ horas com purificação. A capacidade do purificador deve ser no mínimo 4× a taxa de consumo da caldeira para dar tempo de permanência suficiente (mínimo de 30 segundos na tigela da centrífuga) para uma separação eficaz."
+    },
+    {
+      "question": "Qual é o papel do filtro automático de retrolavagem nos sistemas de combustível marítimos?",
+      "answer": "Os filtros automáticos de retrolavagem no serviço de combustível marítimo fornecem filtração fina contínua do combustível (normalmente 25–50 µm para HFO, 10–25 µm para MDO) com autolimpeza, o que elimina a manutenção de troca de elementos durante as viagens. À medida que o elemento filtrante acumula carga de partículas, a pressão diferencial aumenta até o ponto de disparo da retrolavagem predefinido (normalmente 0.5–1.0 bar de ΔP). Uma válvula de controle motorizada inverte o fluxo em um segmento do elemento filtrante com combustível limpo de jusante, arrastando as partículas coletadas para um dreno de borra. O ciclo continua por vários segmentos do elemento até limpar todos. Os filtros de retrolavagem não substituem os purificadores centrífugos: são instalados a jusante dos purificadores como filtros de polimento e tratam as partículas finas residuais que atravessam a centrífuga. Os elementos de filtração MARINECLEAN são projetados para sistemas de retrolavagem, com meio reforçado que suporta os ciclos de limpeza com pressão reversa sem degradação estrutural."
+    },
+    {
+      "question": "Como a limpeza do óleo hidráulico dos motores diesel marítimos difere da dos sistemas hidráulicos industriais em terra?",
+      "answer": "Os sistemas hidráulicos dos motores diesel marítimos (reguladores de geradores acionados pelo motor, sistemas de hélice de passo variável (VPP) e sistemas de óleo dos mancais do tubo telescópico) especificam limpeza pelo código ISO 4406 de 16/14/11 a 15/13/10, igual aos sistemas industriais em terra com válvulas proporcionais. No entanto, o ambiente marítimo traz desafios de contaminação adicionais: (1) A entrada de água do mar pelas vedações do eixo nos sistemas do tubo telescópico exige amostrar o óleo regularmente para medir o teor de sal (concentração de íon cloreto por IC ou método colorimétrico); (2) A vibração pela cavitação da hélice e pelos pulsos de ignição do motor acelera a degradação por fadiga do meio filtrante: os elementos de filtros hidráulicos marítimos devem atender aos requisitos do ensaio de fadiga NFPA T2.14.1; (3) Os ciclos de temperatura entre viagens tropicais e árticas exigem materiais de vedação elastoméricos classificados para −20°C a 100°C contínuos. Os elementos MARINECLEAN atendem à IMO MARPOL: seus materiais de construção não são tóxicos e os elementos são certificados para descarte seguro conforme a regulamentação ambiental marítima."
+    },
+    {
+      "question": "Qual é a importância do Anexo VI da IMO MARPOL para os requisitos de filtração dos motores dos navios?",
+      "answer": "O Anexo VI da IMO MARPOL regula a poluição do ar por navios e fixa limites para as emissões de NOx e SOx dos motores diesel marítimos. Desde 2020 (IMO 2020), a regulamentação Sulphur Cap limita o teor de enxofre do combustível marítimo a 0.5% em todo o mundo (0.1% nas ECAs, Áreas de Controle de Emissões). Essa transição do HSFO (combustível de alto enxofre, 3.5% S) para o VLSFO (muito baixo enxofre, 0.5% S) e para o MGO/MDO (ultrabaixo enxofre, 0.1% S) tem implicações significativas para a filtração: o VLSFO tem viscosidade menor que o HSFO (exigindo outra geometria da tigela e outros ajustes de temperatura do purificador), maior teor de parafinas (risco de formação de cristais de cera em climas frios) e compatibilidade diferente com os materiais das vedações e das tigelas dos purificadores usados com HSFO. É preciso verificar a compatibilidade dos elementos filtrantes com as misturas de VLSFO: algumas formulações de VLSFO têm polaridade maior que o HSFO, o que afeta a compatibilidade da colagem das tampas."
+    },
+    {
+      "question": "Qual proteção anticorrosiva é exigida para as carcaças de filtros hidráulicos marítimos expostas a borrifos de água do mar?",
+      "answer": "As carcaças de filtros hidráulicos marítimos expostas a borrifos de água do mar (instalações no convés, sistemas do tubo telescópico, hidráulica dos propulsores) exigem: (1) Material da carcaça: liga de alumínio de grau naval (EN AW-5083) ou aço inoxidável (316L no mínimo) em instalações acima do convés ou na zona de respingos; as carcaças de aço-carbono exigem galvanização por imersão a quente mais uma camada de acabamento epóxi para proteção prolongada; (2) Fixadores: todos os fixadores externos em aço inoxidável A4 (ISO 3506 grau A4-70) para evitar a corrosão bimetálica com as carcaças de alumínio; (3) Vedações: EPDM pela resistência à água em instalações na temperatura da água do mar ambiente; FKM em instalações da praça de máquinas com exposição a água do mar contaminada com óleo; (4) Tratamento superficial: revestimento epóxi de grau naval (mínimo de 200 µm de espessura de película seca) em carcaças de aço; anodização tipo II ou dura no alumínio. Para qualificar a carcaça em aplicações marítimas, exige-se ensaio de corrosão por névoa salina de no mínimo 1,000 horas segundo a ASTM B117."
+    },
+    {
+      "question": "Como a manutenção dos trocadores de calor resfriados por água do mar afeta os sistemas de óleo hidráulico e lubrificante dos navios?",
+      "answer": "Os trocadores de calor resfriados por água do mar (resfriadores de quilha, resfriadores de caixa) que resfriam o óleo hidráulico e lubrificante dos navios são vulneráveis a: (1) Microincrustação por organismos marinhos (biofilme), que reduz a eficiência da transferência de calor, eleva a temperatura do óleo acima da meta e acelera sua oxidação; (2) Entrada de água do mar no circuito de óleo pela falha de um tubo em trocadores de casco e tubos: o cloreto da água do mar (35,000 ppm) é imediatamente tóxico aos mancais (o cloreto causa trincas por corrosão sob tensão nas superfícies de aço dos mancais e acelera sua fadiga); (3) Proteção catódica contra a corrosão: os anodos de zinco consumidos pela proteção galvânica dos materiais do trocador devem ser trocados anualmente ou quando restar menos de 50% da massa original. Qualquer suspeita de entrada de água do mar (amostra de óleo com sódio ou cloreto elevados, ou turbidez visual) exige parar o sistema imediatamente e analisar o óleo hidráulico antes de religar: contaminação por água do mar acima de 0.1% de teor de cloreto exige drenar todo o óleo e inspecionar o trocador."
+    },
+    {
+      "question": "Qual é o impacto do ciclo de trabalho na vida útil dos elementos filtrantes marítimos em comparação com equipamentos industriais estacionários?",
+      "answer": "Motores e sistemas hidráulicos marítimos têm ciclos de trabalho muito mais variáveis que equipamentos industriais estacionários, o que afeta a vida útil dos filtros de duas formas. (1) Transições entre porto e mar: os ciclos térmicos do frio (temperatura da água do mar ambiente, 2–28°C conforme a região) até a temperatura de operação (óleo a 70–100°C) a cada viagem geram fadiga térmica na colagem das tampas do elemento filtrante, sobretudo nas ligações entre tampas de aço e meio de polímero. Navios que fazem escala diariamente (cabotagem, balsas) acumulam 365 ciclos térmicos por ano, contra 24–52 ciclos de equipamentos industriais com paradas de manutenção sazonais. (2) Condições de mar grosso: a carga dinâmica pelo arfagem e pelo balanço do navio cria forças inerciais do fluido nos reservatórios hidráulicos que podem superar 2g laterais, lançando o fluido contra o meio do elemento filtrante em velocidades acima da velocidade frontal nominal. Os elementos filtrantes marítimos são ensaiados à fadiga a 2× a vazão nominal por 100,000 ciclos para verificar a integridade estrutural em condições dinâmicas."
+    },
+    {
+      "question": "Qual programa de monitoramento da contaminação é recomendado para navios que operam com HFO e combustíveis de transição?",
+      "answer": "Programa de monitoramento da contaminação em navios com HFO: (1) Análise do óleo combustível: ensaiar cada lote de combustível no porto de entrega com a verificação de compatibilidade ISO 8217 (cálculo do CCAI para a qualidade de ignição, teste de mancha para a compatibilidade do HFO com o combustível a bordo), finos catalíticos (Al+Si), água, viscosidade a 50°C e teor de enxofre. (2) Análise do óleo lubrificante do motor: espectrometria ICP, FTIR, TBN e contagem de partículas APC mensalmente ou a cada escala para o óleo do cárter do motor principal; o óleo lubrificante das cruzetas separadamente se o motor for de dois tempos. (3) Análise do óleo hidráulico: contagem de partículas ISO 4406 e FTIR a cada 500 horas de motor ou a cada 3 meses. (4) Análise da borra dos separadores: analisar mensalmente o teor de finos catalíticos da borra coletada dos purificadores centrífugos para verificar a eficiência do purificador; níveis de finos catalíticos acima de 15 mg/kg de Al+Si no combustível após o purificador indicam falha do purificador. Todos os resultados são registrados no sistema de manutenção planejada (PMS) do navio com sua tendência em relação à linha de base."
+    },
+    {
+      "question": "Qual é o limite máximo de finos catalíticos (Al+Si) do óleo combustível que entra nos motores diesel marítimos de média rotação?",
+      "answer": "O limite máximo de finos catalíticos (catfines, medidos como a concentração combinada de alumínio mais silício, Al+Si) do combustível que entra nas bombas injetoras dos motores diesel marítimos de média rotação é de 15 mg/kg (segundo a maioria dos boletins de serviço dos fabricantes de motores, incluindo MAN e Wärtsilä). A ISO 8217:2017 especifica no máximo 60 mg/kg de Al+Si no combustível entregue (antes da purificação). O trem de purificação (purificador mais filtro fino) deve reduzir os finos catalíticos da especificação de entrega para <15 mg/kg na entrada do motor. Finos catalíticos acima de 15 mg/kg no combustível de entrada do motor causam desgaste abrasivo dos êmbolos das bombas de combustível e das válvulas de injeção a taxas proporcionais à dureza e à concentração. Com 60 mg/kg de finos catalíticos na entrada, a vida útil dos êmbolos das bombas injetoras cai de 30,000–50,000 horas para 3,000–8,000 horas. O monitoramento da eficiência do purificador por análise semanal de amostras de combustível na entrada e na saída do separador é obrigatório para navios que abastecem HFO em vários portos."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 8217:2017, Petroleum Products — Fuels (Class F) — Specifications of Marine Fuels",
+      "relevance": "Norma de especificação de combustíveis marítimos que define os parâmetros de qualidade de todos os graus de combustível, do HFO ao MDO/MGO, incluindo os limites de finos catalíticos, o teor de água e os requisitos de viscosidade."
+    },
+    {
+      "category": "standard",
+      "citation": "CIMAC Recommendation No. 23:2008, Fuel Quality and Engine Lubrication in Large Diesel and Gas Engines",
+      "relevance": "Diretrizes do CIMAC (International Council on Combustion Engines) para o tratamento do combustível diesel marítimo, a eficiência de purificação e os programas de monitoramento da qualidade do combustível."
+    },
+    {
+      "category": "regulation",
+      "citation": "IMO MARPOL Annex VI, Prevention of Air Pollution from Ships (2019 Amendment — IMO 2020)",
+      "relevance": "Regulamentação marítima internacional de poluição do ar que fixa limites de teor de enxofre dos combustíveis marítimos em vigor desde 2020, com impacto nas transições de tipo de combustível e nos requisitos de compatibilidade da filtração."
+    },
+    {
+      "category": "specification",
+      "citation": "MAN Energy Solutions, Diesel Engine Service Letter SL2019-659 — Fuel Quality and HFO Treatment Requirements",
+      "relevance": "Especificação do fabricante para o tratamento do combustível do motor, que inclui os limites de finos catalíticos, os ajustes do purificador e os requisitos de filtro fino dos motores diesel marítimos MAN B&W."
+    }
+  ],
+  "title": "Filtração diesel marítima: qualidade do combustível, entrada de água salgada e contaminação microbiana",
+  "subtitle": "Controle de contaminação em sistemas diesel marítimos: especificações de combustível ISO 8217, mecanismos de corrosão por água salgada, limites de enxofre MARPOL e prevenção do crescimento microbiano.",
+  "metaDescription": "Referência de engenharia sobre filtração diesel marítima: especificações ISO 8217 de combustíveis destilados e residuais, caminhos de contaminação por água salgada, limites de teor de água segundo a ASTM D6304, mecanismos de crescimento microbiano e arquitetura de filtração de três estágios para motores marítimos HPCR.",
+  "category": "engenharia",
+  "readTime": "12 min",
+  "intro": "A filtração diesel marítima opera com condições de contaminação que não existem nas aplicações em terra: caminhos de entrada de água salgada, variabilidade da qualidade do combustível diesel marítimo (graus destilados ISO 8217 DMA, DMB, DMZ), contaminação microbiana em tanques de combustível que operam em ambientes quentes e úmidos, e a conformidade de enxofre da MARPOL 2020, que exige combustíveis misturados com características de estabilidade alteradas. A engenharia de filtração marítima precisa tratar todos esses mecanismos ao mesmo tempo, operando em ambientes com vibração, movimento e acesso limitado para manutenção.",
+  "sections": [
+    {
+      "heading": "Qualidade do combustível marítimo e ISO 8217",
+      "body": "A ISO 8217 classifica os combustíveis marítimos em graus destilados (série DM: DMA, DMB, DMZ) e graus residuais (série RM: de RMA a RMK). O gasóleo marítimo (MGO, grau DMA) é o combustível principal dos motores diesel marítimos de alta e média rotação equipados com sistemas de injeção HPCR. A ISO 8217:2017 define os limites do DMA: teor máximo de água de 200 mg/kg (ASTM D6304), sedimento total máximo ≤0.01% (ISO 10307-1), lubricidade HFRR com marca de desgaste ≤520 µm a 60°C (ISO 12156-1), ponto de fulgor mínimo de 60°C. A Regra 14 do Anexo VI da MARPOL (em vigor desde janeiro de 2020) limita o teor de enxofre nas Áreas de Controle de Emissões (ECA) a 0.1% m/m e globalmente a 0.5% m/m. As misturas de óleo combustível de muito baixo enxofre (VLSFO) em conformidade apresentam menor lubricidade e maior absorção de água que o óleo combustível pesado de alto enxofre, aumentando as exigências de filtração.",
+      "callout": [
+        {
+          "label": "Limite de água ISO 8217 DMA",
+          "value": "200 mg/kg máx. (ASTM D6304)"
+        },
+        {
+          "label": "Enxofre em ECA MARPOL 2020",
+          "value": "0.1% m/m máx."
+        },
+        {
+          "label": "Lubricidade HFRR do VLSFO",
+          "value": "Marca de desgaste ≤520 µm"
+        }
+      ]
+    },
+    {
+      "heading": "Caminhos de contaminação por água salgada",
+      "body": "A água salgada entra nos sistemas de combustível e óleo lubrificante marítimos por: (1) condensação: os ciclos de temperatura diurnos em tanques parcialmente cheios causam ciclos de ar e água; em ambientes marítimos, o ar úmido contém aerossol de sal dissolvido; (2) entrada pelas chapas do convés e pelos pontos de abastecimento: a água das ondas que varre o convés ou a chuva sobre pontos de abastecimento abertos introduzem água do mar diretamente; (3) vazamentos dos trocadores de calor: trocadores resfriados por água do mar com tubos com falha deixam a água do mar entrar nos circuitos de óleo lubrificante ou de líquido de arrefecimento com pressões diferenciais de até 3–5 bar; (4) entrada pelas vedações do eixo: as vedações do tubo telescópico e da madre do leme que operam na linha d'água podem deixar a água do mar entrar no óleo lubrificante quando desgastadas ou sob transientes de pressão. O sal dissolvido no combustível favorece a corrosão influenciada microbiologicamente (MIC) e fornece condutividade iônica que acelera a corrosão eletrolítica dos componentes de aço do sistema de combustível. Água do mar no óleo lubrificante acima de 0.1% causa emulsificação, corrosão das superfícies dos mancais e perda de resistência do filme de óleo."
+    },
+    {
+      "heading": "Contaminação microbiana no combustível marítimo",
+      "body": "Os tanques de combustível marítimo operam em temperaturas (10–40°C) dentro da faixa de crescimento das bactérias e fungos que degradam hidrocarbonetos. O crescimento microbiano exige água na interface combustível-água (e não água dissolvida); as bactérias produtoras de biossulfetos (Desulfovibrio, Desulfobacter) geram H₂S, que acelera a corrosão; o fungo Hormoconis resinae produz ácidos orgânicos e biomassa que entopem os filtros de combustível. A formação de biofilme nas paredes do tanque fornece uma colônia estável que não depende do teor de água do combustível a granel. Métodos de detecção: ASTM D7468 (contagem da carga biológica), teste rápido de bioluminescência ATP (≥10³ UFC/mL indica crescimento ativo). Prevenção: manter o teor de água do combustível abaixo do limite da ISO 8217 (200 mg/kg), aplicar tratamento biocida (Biobor JF ou equivalente a 50–100 ppm) e limpar os tanques no intervalo do fabricante. A arquitetura de filtração MARINECLEAN™ é projetada para os requisitos combinados de remoção de partículas, água e fragmentos de biofilme dos sistemas diesel marítimos.",
+      "callout": [
+        {
+          "label": "Faixa de crescimento microbiano",
+          "value": "10–40°C (típico em ambiente marítimo)"
+        },
+        {
+          "label": "Dose de tratamento biocida",
+          "value": "Biobor JF: 50–100 ppm"
+        },
+        {
+          "label": "Limite de detecção (ATP)",
+          "value": "≥10³ UFC/mL indica crescimento ativo"
+        }
+      ]
+    },
+    {
+      "heading": "Arquitetura de filtração de combustível marítimo de três estágios",
+      "body": "Os motores diesel marítimos HPCR exigem filtração escalonada do combustível do tanque até a injeção: Estágio 1: filtro da bomba de transferência (grosso, 30–100 µm nominal): remove os resíduos grandes e protege a bomba de transferência. Estágio 2: módulo de condicionamento do combustível: separador de água coalescente (atende ao limite de água da ISO 8217 DMA) e filtração primária de partículas (β₁₀ ≥ 12 nominal). Estágio 3: filtro fino (montado no motor): β₃(c) ≥ 200 para proteger os injetores HPCR; indicador de água; indicador de pressão diferencial. Disposições de filtro duplex (em paralelo) são obrigatórias em navios em que a manutenção do filtro exigiria parar o motor: uma válvula de comutação permite trocar o elemento sem parar o motor. A comutação duplex deve ser feita com cuidado: uma troca rápida introduz o fluido de enchimento da carcaça (ar), deixando os injetores sem combustível; uma troca lenta (de 30–60 segundos) permite equalizar a pressão gradualmente."
+    },
+    {
+      "heading": "Conformidade com a MARPOL e sistemas de limpeza de gases de escape",
+      "body": "Navios que operam em ECAs com sistemas de limpeza de gases de escape (scrubbers) podem usar óleo combustível de alto enxofre (HSFO) como alternativa ao VLSFO. Os requisitos de filtração do HSFO diferem muito dos do VLSFO: o HSFO de maior viscosidade (cSt a 50°C: 40–700 conforme o grau) exige aquecer o combustível até uma viscosidade bombeável (normalmente aquecer a 120–150°C para chegar a 10–15 cSt na injeção); a viscosidade alta exige purificação centrífuga (separador de combustível) antes da filtração fina para remover os asfaltenos e os finos catalíticos (cat fines), partículas de aluminossilicato do craqueamento catalítico que causam desgaste severo dos injetores e das bombas. A ISO 8217 limita os finos catalíticos a 60 mg/kg no máximo; no entanto, as amostras coletadas do fornecimento de combustível frequentemente superam esse limite. É necessária filtração fina (7–10 µm absoluto) antes dos sistemas HPCR alimentados com misturas de combustível compatíveis com HSFO."
+    },
+    {
+      "heading": "Prevenção da corrosão e gestão de inibidores",
+      "body": "Os sistemas de combustível marítimos são especialmente vulneráveis à corrosão por: (1) ácidos orgânicos produzidos pelo metabolismo microbiano; (2) combustíveis de baixo enxofre, com menor lubricidade natural e menores propriedades anticorrosivas; (3) contaminação por água salgada, que fornece um meio eletrolítico; (4) entrada de oxigênio no óleo diesel armazenado em tanques parcialmente cheios (a degradação oxidativa produz depósitos de goma e verniz). Os pacotes de inibidores de corrosão para os sistemas de combustível diesel marítimos devem ser compatíveis com os requisitos de estabilidade da ISO 8217 e com os combustíveis em conformidade com a MARPOL. Aditivos de combustível que ultrapassem os limites de água da ASTM D6304 ou reduzam o ponto de fulgor abaixo do mínimo da ISO 8217 não estão em conformidade. Os materiais do sistema de filtração devem ser compatíveis com os combustíveis marítimos, incluindo as misturas de VLSFO: alguns elastômeros sintéticos não são compatíveis com as misturas parafínicas de VLSFO; verifique a especificação do material dos O-rings em relação às propriedades do DMA da ISO 8217."
+    },
+    {
+      "heading": "Filtração do óleo lubrificante em motores marítimos",
+      "body": "A filtração do óleo lubrificante dos motores diesel marítimos enfrenta desafios de contaminação maiores: carbono dos subprodutos de combustão (blow-by pelos anéis de pistão) a taxas maiores que nos motores automotivos pelos diâmetros de cilindro maiores; entrada de água do mar pelas vedações do tubo telescópico e pelos vazamentos dos trocadores de calor; mais tempo de operação em carga alta; e intervalos de troca estendidos pelos sistemas de óleo de grande volume (um motor de média rotação pode ter 500–2,000 L de capacidade de óleo com trocas a cada 2,000+ horas). O monitoramento da condição do óleo lubrificante de motores marítimos segundo a ISO 17359 exige: viscosidade a 40°C e 100°C (ASTM D445), TAN (ASTM D664), teor de água (ASTM D6304 ou Karl Fischer), análise elementar ICP de metais de desgaste (Fe, Cu, Pb, Sn, Al) e indicadores de contaminação (Si, Na para líquido de arrefecimento ou água salgada). A filtração de óleo lubrificante de fluxo total com β₁₅(c) ≥ 12 é o requisito mínimo; uma filtração fina de bypass complementar com β₅(c) ≥ 200 estende os intervalos de troca e protege as superfícies dos mancais."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Limite de água ISO 8217 DMA",
+      "value": "200 mg/kg (ASTM D6304)"
+    },
+    {
+      "label": "Limite de enxofre em ECA MARPOL",
+      "value": "0.1% m/m (desde 2020)"
+    },
+    {
+      "label": "Limite de finos catalíticos ISO 8217",
+      "value": "60 mg/kg de Al + Si máx."
+    },
+    {
+      "label": "Meta de viscosidade de injeção do HSFO",
+      "value": "10–15 cSt (aquecer a 120–150°C)"
+    },
+    {
+      "label": "Troca de óleo de motor marítimo (grande diâmetro)",
+      "value": "2,000+ horas típico"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 8217",
+    "ASTM D6304",
+    "ISO 19438",
+    "ISO 4020",
+    "ISO 17359",
+    "ASTM D7468"
+  ],
+  "relatedTechnologies": [
+    "MARINECLEAN™",
+    "HYDROCORE™",
+    "SYNTAPORE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Fuel Cleanliness Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "filtração diesel marítima",
+    "ISO 8217",
+    "enxofre MARPOL",
+    "contaminação por água salgada",
+    "contaminação microbiana do combustível",
+    "filtração de VLSFO",
+    "finos catalíticos do HSFO",
+    "filtração de combustível marítimo",
+    "MARINECLEAN",
+    "filtro duplex",
+    "óleo de motor marítimo",
+    "corrosão por biossulfetos"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Entupimento prematuro dos filtros do sistema de combustível marítimo (intervalo de manutenção do elemento abaixo de 250 horas)",
+      "Lodo escuro visível ou material gelatinoso no elemento filtrante removido",
+      "Deterioração do desempenho dos injetores: partida difícil, funcionamento irregular, maior consumo de combustível",
+      "Na (sódio) elevado na análise do óleo lubrificante (>20 ppm indica entrada de água salgada)",
+      "O copo do separador de água enche rápido (>2× a taxa esperada)",
+      "Dano por finos catalíticos nos injetores e nas bombas de combustível: Al + Si elevados na análise do combustível"
+    ],
+    "probableCauses": [
+      "Entupimento rápido: fragmentos de biofilme microbiano; finos catalíticos na mistura de HSFO; precipitação de asfaltenos por misturas de combustível incompatíveis",
+      "Lodo escuro: crescimento do fungo Hormoconis resinae em combustível contaminado com água; confirmar com teste ATP",
+      "Deterioração dos injetores: contaminação por água acima do limite da ISO 8217 DMA; contaminação por partículas acima da meta de limpeza HPCR",
+      "Na elevado: falha da vedação do tubo telescópico; vazamento em um tubo do resfriador de água bruta; entrada de água salgada pelo ponto de abastecimento",
+      "Acúmulo rápido de água: condensação em tanques parcialmente cheios durante os ciclos de temperatura diurnos; vedação deficiente do ponto de abastecimento",
+      "Dano por finos catalíticos: o fornecedor de combustível entrega uma mistura de HSFO fora do limite de finos catalíticos da ISO 8217; bypass ou falha do purificador centrífugo"
+    ],
+    "inspectionMethods": [
+      "Análise de amostras de combustível: teor de água segundo a ASTM D6304, sedimento total segundo a ISO 10307-1, ICP para Al+Si (finos catalíticos)",
+      "Teste de bioluminescência ATP em amostra de combustível do fundo do tanque (a interface com água mais desfavorável): ATP ≥10³ UFC/mL indica crescimento microbiano ativo",
+      "ICP do óleo lubrificante: acompanhar a tendência do Na; um único resultado >20 ppm exige investigar a fonte imediatamente",
+      "Δp nos dois elementos do filtro duplex: compará-las; uma diferença significativa indica que um elemento tem problema de integridade do meio",
+      "Verificação da eficiência do purificador centrífugo: contagem de partículas antes e depois do purificador na vazão de processamento nominal"
+    ],
+    "correctiveActions": [
+      "Contaminação microbiana: aplicar o biocida Biobor JF a 50–100 ppm; limpar o tanque (retirar a água do fundo); trocar todos os elementos filtrantes; reensaiar após 100 horas",
+      "Água salgada no óleo lubrificante: localizar e reparar a fonte de entrada (inspeção da vedação do tubo telescópico, teste de vazamento dos tubos do trocador); drenar e fazer o flushing do sistema de óleo; trocar a carga de óleo",
+      "Dano por finos catalíticos: rejeitar o lote de combustível; inspecionar os injetores e os êmbolos da bomba de combustível; instalar pré-filtração adicional de 7 µm absoluto; confirmar o desempenho do purificador",
+      "Entupimento prematuro do filtro por precipitação de asfaltenos: verificar a compatibilidade da mistura de combustível (avaliação de compatibilidade ISO 4740); evitar misturar lotes de combustível incompatíveis",
+      "Tratamento biocida antes de armazenamento prolongado: tratar o tanque de combustível com a dose completa de biocida; manter o armazenamento livre de água"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Um navio que passa para VLSFO (conformidade com a MARPOL 2020) relata maior frequência de manutenção dos filtros",
+      "standard": "ISO 8217 (fuel specification), ISO 19438 (cleanliness target)",
+      "protectionSystem": "Proteção da limpeza do combustível",
+      "technology": "Avaliar a estabilidade da mistura de VLSFO (ISO 4740); instalar um pré-filtro coalescente reforçado com copo de maior capacidade para lidar com o maior teor de água; verificar a compatibilidade do material dos O-rings com a mistura parafínica de VLSFO",
+      "relatedArticles": [
+        "diesel-fuel-filtration",
+        "water-contamination-fuel",
+        "filter-media-engineering"
+      ]
+    },
+    {
+      "problem": "Navio abastecido com HSFO e com sistema scrubber sofrendo desgaste dos injetores por finos catalíticos",
+      "standard": "ISO 8217 (Al+Si ≤60 mg/kg), ISO 19438 (fuel particle cleanliness)",
+      "protectionSystem": "Proteção da limpeza do combustível",
+      "technology": "Verificar os parâmetros de operação do purificador centrífugo (vazão de processamento ≤75% da capacidade nominal para a eficiência de remoção de finos catalíticos); instalar um filtro fino de 7 µm absoluto após o purificador; solicitar a análise da amostra de combustível segundo a ISO 8217 antes de aceitá-lo",
+      "relatedArticles": [
+        "diesel-fuel-filtration",
+        "beta-ratio",
+        "filter-media-engineering"
+      ]
+    },
+    {
+      "problem": "Sódio (Na) elevado na análise do óleo lubrificante do motor marítimo: suspeita de entrada de água salgada",
+      "standard": "ISO 17359 (condition monitoring), ASTM D6304 (water content verification)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "Fazer teste de pressão em todos os trocadores de calor resfriados por água bruta na pressão diferencial de operação; inspecionar a folga da vedação do tubo telescópico e o estado do lábio; se for confirmado o vazamento de um tubo do trocador, o sistema de óleo deve passar por flushing e o óleo deve ser trocado antes de voltar ao serviço",
+      "relatedArticles": [
+        "lubrication-system-filtration",
+        "oil-analysis-methods",
+        "cooling-system-contamination"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-TECHNOLOGIES (TECH-MARINECLEAN)",
+    "evidenceStatus": "ISO 8217:2017 verified; MARPOL Annex VI Regulation 14 verified; ASTM D6304 verified; biocide treatment rates from Hammonds Fuel Additives Biobor JF datasheet; cat fines limit from ISO 8217:2017 Table 2"
+  }
+}

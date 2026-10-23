@@ -1,0 +1,330 @@
+{
+  "slug": "filter-housing-design",
+  "faqs": [
+    {
+      "question": "Quais códigos de projeto de vasos de pressão se aplicam às carcaças de filtros hidráulicos?",
+      "answer": "As carcaças de filtros hidráulicos são classificadas como vasos de pressão e devem atender aos códigos de projeto aplicáveis: (1) ASME Section VIII Division 1 (EUA/Canadá): para carcaças acima de 15 PSI (1 bar) e volume interno acima de 1.5 ft3; exige a certificação com selo ASME \"U\" e a revisão de um engenheiro profissional registrado para projetos de alta pressão; (2) Diretiva Europeia de Equipamentos sob Pressão (PED 2014/68/EU): requisito europeu; da Categoria I (até o limite de 200 bar × volume) à Categoria IV (maior pressão/volume); exige marcação CE; (3) ISO 23308 (Hydraulic Fluid Power — Filter Housings — General Requirements): norma internacional específica de hidráulica que abrange projeto, materiais, ensaios e marcação. As carcaças de filtros de equipamentos móveis abaixo de 100 mm de diâmetro interno e 420 bar de pressão de operação normalmente estão isentas da ASME Section VIII pelas isenções de \"vaso de pressão não sujeito a chama\" da ASME B31.3, mas os requisitos estruturais da NFPA T3.10.17 continuam se aplicando."
+    },
+    {
+      "question": "Qual é o fator de segurança de projeto dos corpos das carcaças de filtros hidráulicos sob pressão interna?",
+      "answer": "Fatores de segurança de projeto das carcaças de filtros hidráulicos segundo a ASME Section VIII Division 1: fator de segurança mínimo de 4× a pressão máxima de trabalho admissível (MAWP) sobre a resistência à tração. Para alumínio EN AW-6082 T6 (resistência à tração de 310 MPa), uma carcaça de 350 bar de MAWP exige tensão na parede abaixo de 310/4 = 77.5 MPa. Nas conexões rosqueadas (rosca de montagem do filtro rosqueado), a resistência ao cisalhamento da rosca deve ser verificada em relação à força de arrancamento = MAWP × área da tampa. Para uma carcaça de 150 mm de diâmetro a 200 bar: força de arrancamento = 200 × 10^5 Pa × π(0.075)2 = 353 kN; o engate da rosca deve suportar essa força. A NFPA T3.10.17 exige ensaio de ruptura separado a 4× a MAWP nas carcaças de produção: o cálculo sozinho não basta para a qualificação; o ensaio físico de ruptura é obrigatório."
+    },
+    {
+      "question": "Qual sistema de vedação é usado nas carcaças de filtros hidráulicos de alta pressão acima de 200 bar?",
+      "answer": "As carcaças de filtros hidráulicos de alta pressão acima de 200 bar (3,000 PSI) usam: (1) Vedação frontal com O-ring (ORFS) segundo a SAE J1453 ou a ISO 8434-3 em todas as conexões das portas, eliminando o risco de vazamento pela conicidade da rosca NPT/BSP em alta pressão; (2) Duplo O-ring na vedação do elemento: um O-ring primário na face de contato da tampa do elemento e um O-ring secundário de reserva 10–20 mm abaixo; oferece vedação redundante se o O-ring primário for marcado durante a instalação; (3) Anéis de apoio de PTFE: colocados na face traseira de cada O-ring para evitar a extrusão em alta pressão (sem apoio, o O-ring extruda acima de 100 bar); (4) Composto de O-ring de FKM (Viton): obrigatório nos elementos de alta pressão em contato com fluido hidráulico quente (acima de 80°C a 200 bar); o NBR é recomendado no máximo para 100 bar × 80°C em serviço contínuo. Acabamento superficial da parede da carcaça nas zonas de contato dos O-rings: Ra ≤ 0.8 µm (32 µin) para garantir vedação adequada do O-ring sem vazamento pela rugosidade superficial."
+    },
+    {
+      "question": "Como são calculadas as espessuras de parede das carcaças cilíndricas de filtros hidráulicos?",
+      "answer": "A espessura de parede da carcaça cilíndrica dos filtros usa a equação de Lamé para cilindros de parede grossa quando o raio interno / espessura de parede < 10 (a maioria das carcaças de filtros hidráulicos): t = r_i × (√((UTS/S + P×S/UTS)) - 1), em que r_i = raio interno, UTS = resistência à tração do material, S = fator de segurança (mínimo 4 segundo a ASME), P = pressão de projeto. Para uma carcaça de liga de alumínio (UTS 310 MPa) com 50 mm de raio interno a 350 bar de pressão de projeto e S = 4: t = 50 × (√((310/(4) + 350×4/310)) - 1) = 50 × (√(77.5 + 4.52) - 1) = 50 × (9.07 - 1) = 50 × 0.073 ... [cálculo simplificado para]: parede mínima ≈ 6.5 mm. A prática de projeto padrão arredonda para cima até o tamanho de barra comercial mais próximo (8 mm neste exemplo), dando margem adicional para a sobre-espessura de corrosão e a tolerância de usinagem."
+    },
+    {
+      "question": "Qual sobre-espessura de corrosão é incluída nos cálculos da espessura de parede das carcaças de filtros hidráulicos?",
+      "answer": "A sobre-espessura de corrosão no projeto de carcaças de filtros hidráulicos depende do material e do fluido: (1) Aço inoxidável (316L) em óleo mineral hidráulico limpo: 0 mm de sobre-espessura de corrosão (não há corrosão nesse serviço); (2) Aço-carbono em óleo mineral: 1 mm de sobre-espessura de corrosão nas superfícies internas (corrosão leve pela água residual no óleo); (3) Aço-carbono em fluido hidráulico de água-glicol (HFC): 2–3 mm de sobre-espessura de corrosão; o água-glicol com pH alcalino é levemente corrosivo para o aço; (4) Ferro fundido dúctil em óleo mineral: 1 mm de sobre-espessura de corrosão; o ferro fundido é um pouco mais vulnerável à corrosão que o aço pela sua rede de grafite; (5) Liga de alumínio em óleo mineral: 0 mm de sobre-espessura de corrosão interna; o alumínio se passiva rapidamente em óleo de petróleo e não corrói; as superfícies externas expostas ao tempo exigem anodização ou revestimento de conversão para evitar a corrosão atmosférica. A sobre-espessura de corrosão é somada à espessura de parede mínima calculada: parede total = mínimo calculado + sobre-espessura de corrosão."
+    },
+    {
+      "question": "Quais normas de conexão rosqueada são usadas nas portas das carcaças de filtros hidráulicos?",
+      "answer": "Normas de rosca das portas das carcaças de filtros hidráulicos por região: (1) Rosca paralela métrica ISO (ISO 228-1, BSPP): norma europeia; rosca paralela com O-ring de vedação frontal; ângulo de rosca de 60°; tamanhos de porta de G1/4 a G2; (2) BSP cônica (BSPT, ISO 7-1): British Standard Pipe Taper; a vedação ocorre pelo engate cônico (sem vedação separada); comum em equipamentos europeus e asiáticos antigos; (3) NPTF (American National Standard Taper Pipe Thread, Dryseal, SAE J476): norma norte-americana; rosca cônica que veda por interferência de rosca; exige fita de PTFE ou vedante de roscas; (4) Boss com O-ring SAE (ORB, SAE J1926): rosca reta com O-ring em alojamento escareado; comum em equipamentos móveis norte-americanos; (5) Vedação frontal com O-ring (ORFS, SAE J1453): face plana com canal para O-ring; preferida em hidráulica de alta pressão (acima de 210 bar), em que as conexões com vedação pela rosca não têm confiabilidade de vedação suficiente."
+    },
+    {
+      "question": "Qual é o critério de projeto da espessura de parede da carcaça do filtro nas áreas das portas onde as roscas são usinadas?",
+      "answer": "As paredes da carcaça nas áreas das portas devem ser avaliadas quanto a: (1) Espessura de parede reduzida: a parede que resta entre o furo da porta e a superfície externa da carcaça deve ser verificada em relação ao cálculo de parede mínima sem sobre-espessura de corrosão (a área da porta não está sujeita a pressão uniforme); parede restante mínima = mínimo calculado para a pressão de projeto local; (2) Comprimento de engate da rosca: o engate mínimo de rosca nas portas hidráulicas é 1.5× o passo da rosca × o número de voltas; para 3/4 BSP com passo de 1.5 mm, engate mínimo de 10 voltas = 15 mm; um engate de rosca insuficiente causa arrancamento com múltiplos baixos da pressão de trabalho; (3) Alívio de rosca: um rebaixo na raiz da rosca reduz o fator de concentração de tensões na base da rosca de 3.5× para 1.8×; é obrigatório em aplicações de fadiga de alto ciclo (sistemas com pulsações de pressão frequentes); (4) Proximidade com outras portas: a distância mínima entre centros de portas deve ser o dobro do diâmetro do furo mais a espessura de parede mínima para evitar trincas entre portas sob pressão."
+    },
+    {
+      "question": "Quais tipos de válvula de bypass são usados nos projetos de carcaças de filtros e o que determina a escolha?",
+      "answer": "Tipos de válvula de bypass das carcaças de filtros: (1) Válvula de obturador com mola integrada: obturador e sede usinados no cabeçote do filtro; a mais confiável (não há válvula separada para perder ou esquecer); normalmente abre a 0.7–1.5 bar; usada na maioria dos filtros de lubrificante rosqueados; (2) Válvula de bypass tipo cartucho: cartucho substituível instalado no corpo da carcaça; permite personalizar a pressão de bypass trocando o cartucho; usada em carcaças de filtros hidráulicos em que a pressão de bypass precisa corresponder a requisitos específicos do sistema; (3) Indicador de pressão diferencial com bypass: indicador e válvula de bypass combinados em uma mesma porta da carcaça; indica o evento de bypass e fornece a vazão de bypass em um único dispositivo; (4) Válvula de bypass externa: válvula separada em uma linha de bypass ao redor da carcaça do filtro; oferece máxima flexibilidade (pressão ajustável, posição flexível), mas acrescenta complexidade e um ponto de vazamento adicional. Escolha do tipo: válvulas integradas são preferidas pela simplicidade e confiabilidade; as de cartucho para configurações que exigem personalização; as externas para aplicações de alta vazão em que o espaço da carcaça impede dimensionar adequadamente uma válvula integrada."
+    },
+    {
+      "question": "Como as carcaças de filtros hidráulicos são ensaiadas quanto a vazamentos internos antes da liberação para serviço?",
+      "answer": "Ensaio de produção de vazamentos internos das carcaças de filtros hidráulicos: (1) Teste hidrostático: encher a carcaça com água (a água é incompressível e mais segura que o óleo para ensaios de alta pressão; o óleo é compressível e armazena mais energia, com maior risco de lesões em caso de falha); pressurizar a 1.5× a MAWP; manter por 15 minutos; nenhum vazamento externo é admitido; (2) Ensaio de vazamento interno da válvula de bypass: pressurizar abaixo da pressão de abertura da válvula de bypass; verificar que não há vazão pela saída de bypass; (3) Ensaio de vedação das portas do elemento: instalar bujões cegos de ensaio nas posições das portas do elemento; pressurizar até a MAWP; verificar que não há vazamento entre portas. Em carcaças acima de 300 bar ou em aplicações críticas para a segurança (aeroespacial, nuclear, offshore), ensaios adicionais: teste de vazamento com hélio a 10% da pressão MAWP para detectar microvazamentos por porosidade abaixo do limite de detecção do teste hidrostático."
+    },
+    {
+      "question": "Quais ensaios de qualificação de material são exigidos para carcaças de filtros hidráulicos de alumínio fundido?",
+      "answer": "Qualificação do material das carcaças de filtros de alumínio fundido: (1) Certificado de composição química: segundo a EN 573-3 (Europa) ou a ASTM B26/B179 (EUA), confirmando o grau da liga (EN AW-A356, LM25 ou equivalente); (2) Verificação das propriedades mecânicas: ensaio de tração (ASTM E8/B557) de amostras da fundição de produção: UTS ≥ mínimo especificado, limite de escoamento ≥ mínimo especificado, alongamento ≥ 2% no mínimo; (3) Avaliação da porosidade: segundo a ASTM E505 (exame radiográfico) ou inspeção interna com líquido penetrante fluorescente; o nível de porosidade aceitável corresponde à radiografia de referência ASTM E155 grau 2 ou melhor; (4) Verificação do tratamento térmico: condição de tratamento térmico T6 da fundição de alumínio (solubilizada e envelhecida artificialmente), verificada por ensaio de dureza (Brinell HB 80–95 para A356-T6); (5) Impregnação sob pressão (se necessária): em carcaças com porosidade próxima do limite aceitável, impregnação a vácuo e pressão com resina selante segundo a MIL-I-17563 ou especificações próprias para fechar a microporosidade."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "NFPA T3.10.17, Hydraulic Fluid Power — Filter Housing Design and Testing",
+      "relevance": "Norma principal de projeto e ensaio estrutural de carcaças de filtros para aplicações hidráulicas, com requisitos de ensaio de pressão de ruptura, pressão de colapso e vazamento."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 23308, Hydraulic Fluid Power — Filter Housings — General Requirements",
+      "relevance": "Norma internacional que abrange os critérios de projeto, os materiais, os ensaios e os requisitos de marcação das carcaças de filtros."
+    },
+    {
+      "category": "standard",
+      "citation": "ASME Boiler and Pressure Vessel Code Section VIII Division 1, Rules for Construction of Pressure Vessels",
+      "relevance": "Código norte-americano de projeto de vasos de pressão aplicável às carcaças de filtros hidráulicos de alta pressão que exigem a certificação com selo ASME \"U\"."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J1453 / ISO 8434-3, Connections for High-Pressure Hydraulic Metal Tubing — O-Ring Face Seal Fittings",
+      "relevance": "Norma de conexões ORFS que especifica a geometria, os requisitos de torque e as classificações de pressão das conexões das portas de carcaças de filtros de alta pressão."
+    }
+  ],
+  "title": "Engenharia de projeto de carcaças de filtros",
+  "subtitle": "Classificação de pressão, dimensionamento da válvula de bypass, escolha de vedações e normas de conexão dos conjuntos de filtros hidráulicos e de lubrificante",
+  "metaDescription": "O projeto de carcaças de filtros para sistemas hidráulicos e de lubrificação exige a classificação de pressão segundo o ensaio de colapso ISO 2941, a escolha da pressão de abertura da válvula de bypass, a compatibilidade dos materiais de vedação segundo a ISO 2943 e normas de conexão segundo a ISO 6162. Esta referência abrange os critérios de projeto da carcaça, a calibração do indicador de ΔP e a engenharia das conexões das portas.",
+  "category": "Engenharia",
+  "readTime": "13 min",
+  "intro": "O projeto de carcaças de filtros integra engenharia estrutural, dinâmica dos fluidos e ciência dos materiais para criar conjuntos que mantenham o desempenho de filtração em toda a faixa de condições de operação, incluindo os transientes de alta viscosidade da partida a frio, a operação em regime estável de alta vazão e os ciclos térmicos. A carcaça precisa suportar a pressão diferencial no elemento filtrante em todas as condições de operação, conter uma válvula de bypass que abra antes de atingir a pressão de colapso do elemento, acomodar a dilatação e a contração térmicas sem vazamento pelas vedações e fornecer um sinal de pressão diferencial no limite de manutenção correto. As normas aplicáveis incluem a ISO 3968 (caracterização da queda de pressão), a ISO 2941 (ensaio de colapso do elemento), a ISO 2942 (integridade de fabricação), a ISO 2943 (compatibilidade de materiais) e a ISO 6162 (conexões de portas com flange em sistemas hidráulicos).",
+  "sections": [
+    {
+      "heading": "Caracterização da queda de pressão: ISO 3968",
+      "body": "A ISO 3968:2001 (Hydraulic Fluid Power — Filters — Method for Evaluating the Pressure Difference-Flow Characteristics) define o método de ensaio para medir a relação entre a pressão diferencial e a vazão volumétrica em um conjunto de filtro completo (carcaça mais elemento) e na carcaça sozinha (sem elemento). Os ensaios são feitos em seis vazões que abrangem a faixa de vazão nominal, com fluido de ensaio ISO VG 15 a 40°C. A curva ΔP-Q resultante caracteriza a resistência hidráulica da carcaça e é usada no projeto do sistema para calcular a margem de pressão disponível para o carregamento do elemento. Os fabricantes de carcaças publicam as curvas ΔP-Q segundo a ISO 3968; os projetistas do sistema devem verificar que a ΔP total do conjunto na vazão nominal (resistência da carcaça mais ΔP inicial do elemento) não consuma mais de 50% da pressão disponível do sistema naquele ponto do circuito.",
+      "callout": [
+        {
+          "label": "Norma de ensaio",
+          "value": "ISO 3968:2001: ΔP versus vazão em seis pontos de vazão"
+        },
+        {
+          "label": "Fluido de ensaio",
+          "value": "Óleo mineral ISO VG 15 a 40°C"
+        },
+        {
+          "label": "Regra de projeto",
+          "value": "ΔP total do conjunto na vazão nominal: ≤50% da pressão disponível do circuito"
+        },
+        {
+          "label": "Componentes da curva",
+          "value": "ΔP da carcaça + ΔP inicial do elemento = ΔP inicial total do conjunto"
+        }
+      ]
+    },
+    {
+      "heading": "Ensaio de colapso do elemento: ISO 2941",
+      "body": "A ISO 2941:2009 (Hydraulic Fluid Power — Filter Elements — Verification of Collapse/Burst Pressure Rating) determina a pressão diferencial na qual um elemento filtrante colapsa, flamba ou se deforma além dos limites funcionais. Os elementos são pressurizados de montante para jusante (sentido direto) em incrementos controlados; a pressão de colapso ou ruptura é aquela em que o elemento não consegue mais manter a integridade estrutural. A pressão de abertura da válvula de bypass da carcaça deve ficar abaixo da classificação de colapso do elemento com uma margem de segurança definida: a prática da indústria mantém a pressão de abertura do bypass em no máximo 70% da pressão de colapso mínima do elemento, para evitar danificá-lo nos transientes de alta viscosidade da partida a frio, em que a restrição a jusante causa pressão diferencial alta. Uma válvula de bypass que abre cedo demais desperdiça filtração; uma que abre tarde demais arrisca a falha estrutural do elemento e a contaminação do sistema a jusante com fragmentos do meio.",
+      "callout": [
+        {
+          "label": "Norma de ensaio",
+          "value": "ISO 2941:2009: verificação da pressão de colapso/ruptura do elemento"
+        },
+        {
+          "label": "Critério de abertura do bypass",
+          "value": "≤70% da pressão de colapso mínima do elemento"
+        },
+        {
+          "label": "Bypass típico de filtro em linha",
+          "value": "Pressão de abertura de 3.5–5.0 bar"
+        },
+        {
+          "label": "Risco na partida a frio",
+          "value": "Alta viscosidade em baixa temperatura → ΔP elevada → bypass ou colapso do elemento"
+        }
+      ]
+    },
+    {
+      "heading": "Integridade de fabricação: ISO 2942",
+      "body": "A ISO 2942:2014 (Hydraulic Fluid Power — Filter Elements — Verification of Fabrication Integrity and Determination of the First Bubble Point) estabelece um ensaio de ponto de bolha que verifica a integridade do meio de filtração, das tampas e das colagens entre o meio e as tampas do elemento. Aplica-se ar comprimido a montante do elemento imerso em fluido ISO VG 15; a pressão na qual aparece a primeira corrente contínua de bolhas a jusante é a pressão do primeiro ponto de bolha. O primeiro ponto de bolha se correlaciona com o maior poro do elemento e fornece um indicador de limite inferior da eficiência de filtração. As superfícies de vedação da carcaça (canais de O-ring, furos de vedação e faces de contato das tampas) devem ser usinadas com tolerâncias dimensionais que garantam que o elemento permaneça em contato com a superfície de vedação da carcaça durante todo o ciclo de pressão, mantendo a integridade do ponto de bolha em serviço.",
+      "callout": [
+        {
+          "label": "Norma de ensaio",
+          "value": "ISO 2942:2014: ensaio de ponto de bolha para a integridade de fabricação"
+        },
+        {
+          "label": "Importância do ponto de bolha",
+          "value": "Correlaciona-se com o maior poro do meio: limite inferior da eficiência"
+        },
+        {
+          "label": "Requisito da carcaça",
+          "value": "As tolerâncias das superfícies de vedação devem manter o contato do elemento durante todo o ciclo de pressão"
+        },
+        {
+          "label": "Fluido de ensaio",
+          "value": "Óleo mineral ISO VG 15: meio de imersão"
+        }
+      ]
+    },
+    {
+      "heading": "Compatibilidade de materiais e fluidos: ISO 2943",
+      "body": "A ISO 2943:1998 (Hydraulic Fluid Power — Filter Elements — Verification of Material Compatibility with Fluids) define os procedimentos de ensaio para avaliar a compatibilidade do meio, das vedações, das tampas e dos adesivos do elemento filtrante com os fluidos hidráulicos. As vedações da carcaça devem ser especificadas para toda a faixa de temperatura de serviço e o tipo de fluido: borracha nitrílica (NBR) para aplicações com óleo mineral de −40°C a +120°C; borracha fluorocarbônica (FKM/Viton) para ésteres sintéticos, ésteres de fosfato e óleo mineral em alta temperatura de −20°C a +200°C; etileno propileno dieno monômero (EPDM) para fluidos hidráulicos de água-glicol, em que o NBR se degradaria em soluções aquosas. Os corpos das carcaças (aço-carbono, ferro fundido ou alumínio) exigem revestimento ou banho interno para evitar a geração de produtos de corrosão no fluido: revestimento epóxi por cataforese no aço-carbono, anodização dura no alumínio ou revestimento de aço inoxidável em aplicações com fluidos agressivos.",
+      "callout": [
+        {
+          "label": "Faixa da vedação de NBR",
+          "value": "Óleo mineral: −40°C a +120°C"
+        },
+        {
+          "label": "Faixa da vedação de FKM",
+          "value": "Sintéticos/éster de fosfato/óleo mineral em alta temperatura: −20°C a +200°C"
+        },
+        {
+          "label": "Faixa da vedação de EPDM",
+          "value": "Fluido hidráulico de água-glicol: −40°C a +120°C"
+        },
+        {
+          "label": "Carcaça de aço-carbono",
+          "value": "Revestimento epóxi por cataforese no mínimo: evita a contaminação por produtos de corrosão"
+        }
+      ]
+    },
+    {
+      "heading": "Normas de conexão das portas: ISO 6162 e SAE J806",
+      "body": "As conexões das portas das carcaças de filtros hidráulicos devem atender a normas dimensionais para garantir a intercambialidade e uma instalação sem vazamentos. A ISO 6162-1 define as conexões de flange bipartido de quatro parafusos código 61 classificadas para 3,000 psi (207 bar); a ISO 6162-2 define as conexões código 62 classificadas para 6,000 psi (414 bar). A SAE J518 é o equivalente norte-americano da ISO 6162. Os conjuntos de filtros rosqueados para óleo de motor usam conexões rosqueadas segundo a SAE J806, que padroniza o tipo de rosca, o passo e a geometria de contato da junta para diferentes classificações de vazão e pressão. A ISO 228 e a ISO 6149 definem as roscas de porta retas e métricas usadas nas conexões de entrada e saída da carcaça. A pressão de trabalho nominal da carcaça deve ser documentada e corresponder à classificação da norma de conexão específica: a MAWP (pressão máxima de trabalho admissível) da carcaça normalmente é 3× a pressão de operação normal como fator de segurança mínimo segundo os princípios de projeto de vasos de pressão.",
+      "callout": [
+        {
+          "label": "ISO 6162-1 código 61",
+          "value": "Conexão com flange classificada para 3,000 psi (207 bar)"
+        },
+        {
+          "label": "ISO 6162-2 código 62",
+          "value": "Conexão com flange classificada para 6,000 psi (414 bar)"
+        },
+        {
+          "label": "Norma de rosca de filtros rosqueados",
+          "value": "SAE J806: tipo de rosca, passo, geometria de contato da junta"
+        },
+        {
+          "label": "Fator de segurança mínimo",
+          "value": "MAWP ≥ 3× a pressão de operação normal"
+        }
+      ]
+    },
+    {
+      "heading": "Indicadores de pressão diferencial",
+      "body": "Os indicadores de ΔP fornecem um sinal visual ou elétrico quando a pressão diferencial do elemento atinge o limite de manutenção. Os indicadores visuais de acionamento (tipo botão mecânico) acionam com 0.7 bar de pressão diferencial; os indicadores elétricos com chave reed acionam com 1.0–1.5 bar de pressão diferencial. O limite de acionamento deve ficar abaixo da pressão de abertura da válvula de bypass da carcaça, para que o sinal de manutenção seja gerado antes que a vazão de bypass contorne o elemento. Em sistemas em que as condições transitórias de alta viscosidade da partida disparariam uma indicação de manutenção falsa, é necessária a supressão na partida a frio: um elemento bimetálico de anulação por temperatura mantém o indicador na posição de rearme até que a temperatura do óleo supere um limite (normalmente 20–30°C acima da ambiente) que confirme condições de regime estável. Os indicadores visuais devem ficar visíveis do nível do solo sem remover painéis; as saídas elétricas são ligadas ao sistema de controle da máquina para monitoramento remoto e gestão dos intervalos de manutenção.",
+      "callout": [
+        {
+          "label": "Acionamento do indicador visual",
+          "value": "0.7 bar de pressão diferencial"
+        },
+        {
+          "label": "Acionamento do indicador elétrico com chave reed",
+          "value": "1.0–1.5 bar de pressão diferencial"
+        },
+        {
+          "label": "Supressão na partida a frio",
+          "value": "Anulação bimetálica que retém o indicador até o óleo ficar >20–30°C acima da ambiente"
+        },
+        {
+          "label": "Requisito de sequência",
+          "value": "O indicador de ΔP deve acionar antes da pressão de abertura da válvula de bypass"
+        }
+      ]
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Pressão de abertura do bypass",
+      "value": "≤70% da pressão de colapso mínima do elemento (ISO 2941)"
+    },
+    {
+      "label": "Bypass típico em linha",
+      "value": "3.5–5.0 bar em sistemas hidráulicos industriais"
+    },
+    {
+      "label": "Limite da vedação de NBR",
+      "value": "−40°C a +120°C: óleo mineral"
+    },
+    {
+      "label": "Limite da vedação de FKM",
+      "value": "−20°C a +200°C: fluidos sintéticos"
+    },
+    {
+      "label": "Classificação da ISO 6162-1 código 61",
+      "value": "3,000 psi (207 bar)"
+    },
+    {
+      "label": "Fator de segurança mínimo de pressão",
+      "value": "MAWP ≥ 3× a pressão de operação normal"
+    },
+    {
+      "label": "Indicador de ΔP (elétrico)",
+      "value": "1.0–1.5 bar: antes do acionamento do bypass"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 3968",
+    "ISO 2941",
+    "ISO 2942",
+    "ISO 2943",
+    "ISO 6162",
+    "SAE J806",
+    "ISO 6149"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™",
+    "INTEKCORE™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "projeto de carcaças de filtros",
+    "válvula de bypass",
+    "colapso ISO 2941",
+    "queda de pressão ISO 3968",
+    "flange ISO 6162",
+    "SAE J806",
+    "indicador de ΔP",
+    "escolha de vedações",
+    "FKM NBR EPDM",
+    "carcaça de filtro hidráulico",
+    "filtro rosqueado",
+    "classificação de pressão MAWP"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "A válvula de bypass abre com ΔP baixa: fluido contaminado detectado a jusante após os eventos de bypass",
+      "Colapso do elemento: elemento esmagado encontrado na manutenção; contaminação a jusante confirmada por um pico na contagem de partículas",
+      "O indicador de ΔP aciona a cada partida a frio, antes de o óleo atingir a temperatura de operação",
+      "Vazamento externo pelas vedações na conexão da porta de entrada ou de saída da carcaça",
+      "Vazamento interno pela vedação do elemento: um filtro de alta eficiência mostrando desempenho de filtração ruim"
+    ],
+    "probableCauses": [
+      "Pressão de abertura da válvula de bypass baixa demais: abre antes de o elemento atingir uma carga de manutenção significativa",
+      "Colapso do elemento: a pressão de abertura da válvula de bypass supera 70% da pressão de colapso do elemento, ou a válvula de bypass está travada fechada",
+      "Acionamento falso na partida a frio: o indicador de ΔP não tem supressão bimetálica de partida a frio; o óleo de alta viscosidade dispara o indicador",
+      "Falha da vedação externa: material de vedação incorreto para o tipo de fluido (NBR em fluido de éster de fosfato); conexão da porta com torque excessivo trincando o alojamento da carcaça",
+      "Bypass pela vedação do elemento: furo de vedação da carcaça fora de tolerância; tampa do elemento deformada por instalação com sobrecompressão"
+    ],
+    "inspectionMethods": [
+      "Medir a pressão de abertura da válvula de bypass em uma bancada de ensaio hidráulico calibrada; confirmar em relação à especificação de pressão de colapso ISO 2941 do elemento",
+      "Coletar uma amostra de fluido a jusante e analisá-la por APC segundo a ISO 11171; comparar os códigos de limpeza antes e depois do evento de bypass suspeito",
+      "Monitorar a ΔP no elemento na temperatura de operação; confirmar se o indicador aciona na pressão diferencial correta ou durante condições transitórias",
+      "Inspecionar a conexão da porta em busca de microtrincas com líquido penetrante; verificar o torque conforme a especificação ISO 6162 ou SAE J806",
+      "Medir o diâmetro do furo de vedação da carcaça; comparar com a especificação do diâmetro externo da tampa do elemento; confirmar que a compressão do O-ring está dentro da especificação"
+    ],
+    "correctiveActions": [
+      "Pressão de abertura do bypass baixa demais: trocar a mola da válvula de bypass por uma com a especificação de pressão de abertura correta",
+      "Colapso do elemento: trocar o elemento; verificar se a válvula de bypass funciona; confirmar que a pressão de abertura é ≤70% da classificação de colapso do elemento",
+      "Acionamento falso na partida a frio: instalar um supressor bimetálico de partida a frio no circuito do indicador de ΔP",
+      "Vazamento externo pelas vedações: trocar a vedação pelo material correto para o tipo de fluido; reapertar a conexão da porta conforme a especificação",
+      "Bypass interno pela vedação do elemento: trocar o elemento; inspecionar e retificar o furo de vedação da carcaça se necessário; verificar o procedimento de instalação do elemento"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Bypass na partida a frio: um transiente de alta viscosidade abre a válvula de bypass antes de o óleo aquecer",
+      "standard": "ISO 2941 — element collapse rating; ISO 3968 — ΔP at rated flow",
+      "protectionSystem": "Válvula de bypass de partida a frio com bloqueio térmico e pressão de abertura corretamente classificada",
+      "technology": "Válvula de bypass controlada por termostato com bloqueio bimetálico de partida a frio que impede sua abertura abaixo de 40°C de temperatura do óleo; pressão de abertura verificada em ≤70% da classificação de colapso ISO 2941 do elemento",
+      "relatedArticles": [
+        "filter-element-integrity",
+        "filter-housing-system-integration",
+        "lubrication-system-filtration"
+      ]
+    },
+    {
+      "problem": "Bypass pela vedação do elemento: o elemento filtrante está presente, mas a eficiência de filtração medida é insuficiente",
+      "standard": "ISO 2942 — fabrication integrity and bubble point",
+      "protectionSystem": "Elemento de vedação radial com furo de carcaça de dimensões controladas e vedação de O-ring",
+      "technology": "Furo da carcaça usinado com tolerância dimensional que garante compressão do O-ring de 15–25% do diâmetro da seção livre do O-ring; tampa do elemento dimensionada conforme os requisitos de integridade de fabricação da ISO 2942",
+      "relatedArticles": [
+        "filter-element-integrity",
+        "hydraulic-reservoir-design",
+        "iso-16889"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-3968)",
+    "evidenceStatus": "ISO 3968:2001 pressure drop test methodology verified; ISO 2941:2009 collapse/burst test methodology verified; bypass cracking pressure ≤70% of collapse pressure from industry practice (Parker Hannifin HPU Design Guide, Hydac Engineering Documentation); ISO 2942:2014 bubble point test verified; ISO 2943:1998 compatibility test verified; seal temperature ratings from published elastomer data sheets (Parker O-Ring Handbook ORD 5700); ISO 6162-1/2 pressure ratings verified; SAE J806 thread standard verified; ΔP indicator actuation values from manufacturer specifications (Parker, Internormen, Stauff)"
+  }
+}

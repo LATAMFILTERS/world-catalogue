@@ -1,0 +1,366 @@
+{
+  "slug": "hydraulic-system-flushing",
+  "title": "Flushing e comissionamento de unidades de potência hidráulica",
+  "subtitle": "Como atingir as metas de limpeza ISO 4406 com flushing turbulento estruturado antes de operar o sistema",
+  "metaDescription": "O flushing do sistema hidráulico estabelece a limpeza do fluido ISO 4406 antes da primeira operação. Esta referência de engenharia abrange os requisitos de número de Reynolds para o flushing turbulento, o projeto do circuito de flushing, a escolha do filtro, o protocolo de amostragem segundo a ISO 3722 e os critérios de aceitação para aprovar o comissionamento.",
+  "category": "Engenharia",
+  "readTime": "13 min",
+  "intro": "O flushing de uma unidade de potência hidráulica (HPU) é o processo controlado de circular fluido por um sistema hidráulico novo ou recém-mantido em condições de fluxo turbulento para remover resíduos de construção, escória de solda, carepa de tubulação, cavacos de usinagem e compostos conservantes antes da primeira operação do sistema. A ISO 4413:2011 estabelece o flushing como etapa obrigatória do comissionamento; a NFPA T2.12.10 define os requisitos de limpeza interna do sistema antes do comissionamento. Não atingir o código de limpeza ISO 4406 especificado antes da partida leva contaminação de alta concentração diretamente aos componentes hidráulicos de precisão (servoválvulas, válvulas proporcionais e bombas de pistão), cujas folgas são medidas em micrômetros de um só dígito e cujos limites de dano correspondem a partículas apenas um pouco maiores que a própria folga.",
+  "sections": [
+    {
+      "heading": "Normas aplicáveis e metas de limpeza",
+      "body": "A seção 5.4 da ISO 4413:2011 exige que os sistemas hidráulicos sejam limpos até o nível de limpeza do fluido exigido pelo componente mais sensível antes da operação inicial. A NFPA T2.12.10 especifica os requisitos de limpeza para o comissionamento do sistema e define o procedimento de verificação da limpeza e a documentação de aceitação. As metas de limpeza são expressas como códigos ISO 4406: códigos de três números que representam as contagens de partículas por mililitro em ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c), medidas com um APC calibrado segundo a ISO 11171. Metas típicas de comissionamento: sistemas com servoválvulas exigem o código ISO 4406 16/14/11 ou mais limpo; sistemas com válvulas proporcionais, 17/15/12; sistemas industriais com bombas de engrenagens e de pistão, 18/16/13. Essas metas devem ser atingidas e verificadas antes de instalar as válvulas de controle de precisão.",
+      "callout": [
+        {
+          "label": "Norma aplicável",
+          "value": "ISO 4413:2011 seção 5.4: flushing de comissionamento obrigatório"
+        },
+        {
+          "label": "Meta para servoválvulas",
+          "value": "ISO 4406: 16/14/11 ou mais limpo"
+        },
+        {
+          "label": "Meta para válvulas proporcionais",
+          "value": "ISO 4406: 17/15/12 ou mais limpo"
+        },
+        {
+          "label": "Meta para sistemas industriais",
+          "value": "ISO 4406: 18/16/13 ou mais limpo"
+        }
+      ]
+    },
+    {
+      "heading": "Número de Reynolds e requisito de fluxo turbulento",
+      "body": "Um transporte e uma remoção eficazes das partículas durante o flushing exigem fluxo turbulento em toda a rede de tubulação. O fluxo laminar deixa as partículas se assentarem e ficarem presas nas camadas-limite de baixa velocidade perto das paredes da tubulação. A transição de fluxo laminar para turbulento ocorre com número de Reynolds (Re) de aproximadamente 2,300; o fluxo plenamente turbulento se estabelece acima de Re 4,000. O número de Reynolds é calculado como: Re = (v × D) / ν, em que v é a velocidade média do fluxo em m/s, D é o diâmetro interno da tubulação em metros e ν é a viscosidade cinemática do fluido de flushing em m²/s. De forma equivalente, Re = (4 × Q) / (π × D × ν), em que Q é a vazão volumétrica em m³/s. Para atingir Re > 4,000 em linhas de pequeno diâmetro (12–25 mm de diâmetro interno), a vazão de flushing precisa superar bastante a vazão normal de operação, normalmente 2–4 vezes mais. Usar óleo mineral ISO VG 32 a 50°C (ν ≈ 28 × 10⁻⁶ m²/s) em vez do fluido de trabalho ISO VG 46 reduz a viscosidade e ajuda a atingir fluxo turbulento com menor vazão da bomba de flushing.",
+      "callout": [
+        {
+          "label": "Limite de fluxo turbulento",
+          "value": "Re > 4,000 necessário para um transporte eficaz de partículas"
+        },
+        {
+          "label": "Fórmula de Re",
+          "value": "Re = (v × D) / ν = (4 × Q) / (π × D × ν)"
+        },
+        {
+          "label": "Fluido de flushing recomendado",
+          "value": "ISO VG 32 a 50°C: ν ≈ 28 × 10⁻⁶ m²/s"
+        },
+        {
+          "label": "Múltiplo da vazão de flushing",
+          "value": "2–4× a vazão de operação em seções de pequeno diâmetro para Re > 4,000"
+        }
+      ]
+    },
+    {
+      "heading": "Projeto do circuito de flushing e proteção das válvulas",
+      "body": "As válvulas de controle de precisão (válvulas proporcionais, servoválvulas e atuadores eletro-hidráulicos) devem ser substituídas por placas de flushing sólidas ou carretéis de bypass durante o flushing. Esses componentes têm passagens com orifícios de 0.2–0.8 mm de diâmetro que seriam bloqueadas pelos resíduos presentes antes do flushing, e componentes internos com folgas de 1–8 µm que seriam danificados permanentemente por partículas abrasivas em alta concentração. As placas de flushing criam um caminho de fluxo direto ao redor das cavidades das válvulas no bloco, permitindo a vazão de flushing total pelas passagens do bloco e protegendo os componentes de precisão. A linha de retorno do flushing passa por um filtro de flushing temporário (normalmente de 3–6 µm absoluto, β₃₍c₎ ≥ 200 ou β₆₍c₎ ≥ 200), separado do filtro de retorno permanente do sistema para protegê-lo da alta carga de contaminação inicial. Trocadores de calor e acumuladores devem ser incorporados ao circuito de flushing para manter a temperatura do fluido em 40–60°C, o que reduz a viscosidade, melhora a turbulência e ajuda a mobilizar os compostos conservantes.",
+      "callout": [
+        {
+          "label": "Risco para os orifícios das válvulas",
+          "value": "0.2–0.8 mm de diâmetro: devem ser protegidos com placas de flushing"
+        },
+        {
+          "label": "Folga das servoválvulas",
+          "value": "1–8 µm: dano direto pelos resíduos não removidos"
+        },
+        {
+          "label": "Classificação do filtro de flushing",
+          "value": "3–6 µm absoluto (β₃₍c₎ ≥ 200 ou β₆₍c₎ ≥ 200) no retorno"
+        },
+        {
+          "label": "Temperatura-alvo do flushing",
+          "value": "40–60°C: reduz a viscosidade e mobiliza os conservantes"
+        }
+      ]
+    },
+    {
+      "heading": "Procedimento de flushing e protocolo de amostragem",
+      "body": "Depois de encher o reservatório com fluido novo filtrado (≤3 µm absoluto durante a transferência) e instalar as placas de flushing, a bomba de flushing é ligada e o fluido circula na vazão máxima alcançável. As válvulas de mudança de direção devem ser acionadas a cada 15–20 minutos para alternar o sentido do fluxo nos circuitos derivados e evitar zonas estagnadas. As válvulas de purga dos pontos altos são abertas durante o enchimento inicial e a partida do flushing para purgar o ar preso, que de outra forma forma espuma e impede o transporte completo das partículas. As amostras de fluido são coletadas segundo a ISO 3722: no meio da corrente, com uma seringa de vidro ou um frasco de amostra pré-limpo segundo a ISO 3722, purgando a sonda de amostragem com pelo menos 500 mL de fluido antes de coletar a amostra de análise. Duração mínima do flushing antes da primeira amostra: 4 horas de circulação turbulenta contínua. As amostras são analisadas por APC segundo a ISO 11171. O comissionamento é aceito quando duas amostras consecutivas coletadas com 30 minutos de intervalo atendem ambas ao código ISO 4406 alvo.",
+      "callout": [
+        {
+          "label": "Duração mínima antes de amostrar",
+          "value": "4 horas de circulação turbulenta contínua"
+        },
+        {
+          "label": "Intervalo de inversão do sentido",
+          "value": "A cada 15–20 minutos para purgar as zonas estagnadas das derivações"
+        },
+        {
+          "label": "Norma de amostragem",
+          "value": "ISO 3722: purgar 500 mL antes de coletar a amostra"
+        },
+        {
+          "label": "Critério de aceitação",
+          "value": "Duas amostras consecutivas com 30 min de intervalo atendendo à meta ISO 4406"
+        }
+      ]
+    },
+    {
+      "heading": "Purga de ar nos pontos altos e comissionamento final",
+      "body": "O ar preso na tubulação hidráulica causa efeitos de compressibilidade, cavitação e flushing incompleto nos pontos altos. A ISO 4413 exige abrir e purgar todos os pontos de purga altos antes e durante o flushing. Depois da aceitação do flushing, as placas de flushing são removidas e substituídas pelas válvulas de controle de produção. Em seguida, o sistema é verificado novamente quanto a vazamentos externos, o nível de fluido é confirmado e o reservatório é amostrado de novo após uma breve operação de produção com carga leve (15–30 minutos) para verificar que a instalação das válvulas não introduziu contaminação. A limpeza após a instalação ainda deve atender ao código ISO 4406 alvo. O relatório de flushing (com todos os resultados das amostras, os registros de troca de filtros, a duração do flushing, as vazões e os dados de temperatura) é guardado como parte da documentação de comissionamento da máquina."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Requisito de fluxo turbulento",
+      "value": "Re > 4,000 em todas as seções de tubulação"
+    },
+    {
+      "label": "Fluido de flushing",
+      "value": "ISO VG 32 a 50°C: ν ≈ 28 × 10⁻⁶ m²/s"
+    },
+    {
+      "label": "Filtro de retorno do flushing",
+      "value": "3–6 µm absoluto (β₃₍c₎ ≥ 200)"
+    },
+    {
+      "label": "Duração mínima do flushing",
+      "value": "4 horas antes da primeira amostra"
+    },
+    {
+      "label": "Critério de aceitação",
+      "value": "2 amostras consecutivas no código ISO 4406 alvo, com 30 min de intervalo"
+    },
+    {
+      "label": "Meta de comissionamento para servoválvulas",
+      "value": "ISO 4406: 16/14/11"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4413",
+    "ISO 4406",
+    "ISO 3722",
+    "ISO 11171",
+    "NFPA T2.12.10",
+    "ISO 16889"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "INTEKCORE™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "flushing hidráulico",
+    "comissionamento de HPU",
+    "número de Reynolds",
+    "flushing turbulento",
+    "ISO 4413",
+    "limpeza ISO 4406",
+    "placa de flushing",
+    "proteção de servoválvulas",
+    "amostragem ISO 3722",
+    "limpeza de comissionamento",
+    "NFPA T2.12.10"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Falha de uma servoválvula ou válvula proporcional nas primeiras 100 horas de operação após o comissionamento",
+      "Amostra de fluido do sistema acima do código ISO 4406 alvo logo após a partida",
+      "Queda de pressão rápida no filtro de retorno principal do sistema pouco depois do comissionamento",
+      "Ruído ou trepidação das válvulas de controle direcional durante a operação inicial com carga baixa",
+      "Resposta pegajosa ou lenta dos atuadores durante os ciclos de teste do comissionamento"
+    ],
+    "probableCauses": [
+      "Flushing omitido ou abreviado: folgas das válvulas de precisão contaminadas por resíduos de construção",
+      "Vazão de flushing insuficiente para atingir Re > 4,000: o fluxo laminar deixou partículas aderidas às paredes da tubulação",
+      "A purga de ar dos pontos altos foi omitida: bolsas de ar impediram o transporte completo de partículas durante o flushing",
+      "O fluido novo não foi filtrado ao encher o reservatório: introduziu um código de contaminação ISO muito acima da meta",
+      "Não foram usadas placas de flushing: os orifícios das válvulas de controle e os componentes de precisão ficaram expostos a resíduos não removidos"
+    ],
+    "inspectionMethods": [
+      "Coletar uma amostra de fluido segundo a ISO 3722 e analisá-la por APC segundo a ISO 11171; comparar com a meta ISO 4406 de comissionamento exigida",
+      "Revisar os registros do flushing: vazão, duração, registro de temperatura e resultados das amostras consecutivas",
+      "Calcular o Re da seção de tubulação de menor diâmetro com a vazão de flushing registrada e a viscosidade do fluido na temperatura medida",
+      "Inspecionar a velocidade de carregamento dos elementos do filtro de flushing: um carregamento rápido confirma contaminação inicial alta por flushing insuficiente",
+      "Examinar com ampliação o carretel e a camisa da válvula com falha em busca de padrões de riscamento abrasivo: confirma a faixa de tamanho de partícula do dano"
+    ],
+    "correctiveActions": [
+      "Se a meta ISO 4406 não for atingida: continuar o flushing na vazão máxima alcançável; trocar o filtro de flushing carregado; reamostrar a cada 30 minutos",
+      "Se Re < 4,000: aumentar a vazão da bomba de flushing; reduzir a viscosidade do fluido de flushing elevando a temperatura; dividir o sistema em zonas menores para concentrar o fluxo",
+      "Se houver suspeita de contaminação do fluido novo: amostrar o reservatório antes da partida do sistema; filtrar o fluido de transferência a ≤3 µm absoluto",
+      "Após uma falha de válvula: remover a válvula, fazer o flushing do sistema até a meta de limpeza original, instalar a válvula de reposição e verificar a limpeza após a instalação",
+      "Guardar todos os resultados das amostras de flushing e os registros de troca de filtros na documentação de comissionamento"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Falha de válvulas após o comissionamento nas primeiras 100 horas",
+      "standard": "ISO 4413:2011 Section 5.4 — mandatory pre-commissioning flush",
+      "protectionSystem": "Circuito de flushing turbulento completo com placas de flushing substituindo todas as válvulas de controle de precisão",
+      "technology": "Circuito de flushing de alta vazão com filtro de retorno de flushing dedicado de 3–6 µm absoluto (β₃₍c₎ ≥ 200) e amostragem no meio da corrente segundo a ISO 3722 para verificação por APC",
+      "relatedArticles": [
+        "hydraulic-power-unit-design",
+        "nfpa-t2-14-hydraulic-cleanliness",
+        "contamination-sensitivity-components",
+        "hydraulic-reservoir-design"
+      ]
+    },
+    {
+      "problem": "Meta ISO 4406 não atingida após 4 horas de flushing",
+      "standard": "NFPA T2.12.10 cleanliness requirements — commissioning acceptance criteria",
+      "protectionSystem": "Flushing estendido com filtração de retorno progressivamente mais fina e ciclos de inversão do sentido",
+      "technology": "Abordagem de flushing por etapas: filtro de retorno inicial de 10 µm passando para 3 µm absoluto à medida que a contaminação a granel é removida; ciclos de mudança de direção a cada 15 minutos para purgar os circuitos derivados",
+      "relatedArticles": [
+        "contamination-sensitivity-components",
+        "iso-4406",
+        "iso-11171-particle-counting",
+        "hydraulic-reservoir-design"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-4413)",
+    "evidenceStatus": "ISO 4413:2011 Section 5.4 flushing requirements verified; NFPA T2.12.10 commissioning cleanliness requirements verified; Re > 4,000 turbulent transition from fluid mechanics literature (Moody chart, ISO 4021 flow measurement background); ISO 3722:2015 sampling procedure verified; acceptance criterion (two consecutive samples at 30-min intervals) from ISO 4413 commissioning guidance; flushing fluid viscosity ISO VG 32 at 50°C from published kinematic viscosity charts (ISO 3448)"
+  },
+  "eeat": {
+    "reviewerName": "ELIMFILTERS Engineering Division",
+    "reviewerTitle": "Engenharia de comissionamento de sistemas hidráulicos",
+    "organization": "ELIMFILTERS",
+    "lastReviewDate": "2026-07-05",
+    "nextReviewDate": "2027-07-05",
+    "discipline": "Engenharia de potência fluida: comissionamento e controle de contaminação",
+    "standards": [
+      "ISO 4413:2011",
+      "NFPA T2.12.10",
+      "ISO 3722:2015",
+      "ISO 4406:2021",
+      "ISO 11171:2016"
+    ],
+    "contentLevel": "expert",
+    "contentType": "procedure",
+    "version": "1.0",
+    "evidenceBase": "Requisitos de flushing obrigatório da ISO 4413:2011; limpeza de comissionamento segundo a NFPA T2.12.10; transição turbulenta por número de Reynolds (diagrama de Moody); protocolo de amostragem ISO 3722"
+  },
+  "faqs": [
+    {
+      "question": "Por que as válvulas de controle de precisão devem ser substituídas por placas de flushing durante o flushing de comissionamento?",
+      "answer": "As servoválvulas e as válvulas proporcionais têm passagens internas de 0.2–0.8 mm de diâmetro e folgas entre carretel e camisa de 1–8 µm. Os resíduos de construção, a escória de solda e a carepa de tubulação presentes em um sistema hidráulico novo antes do flushing riscariam permanentemente essas superfícies ou bloqueariam as passagens dos orifícios. A seção 5.4 da ISO 4413:2011 exige remover esses componentes e instalar placas de bypass sólidas até que o sistema atenda ao código de limpeza ISO 4406 alvo."
+    },
+    {
+      "question": "Qual número de Reynolds é necessário para um flushing hidráulico eficaz e por quê?",
+      "answer": "Um flushing eficaz exige Re > 4,000 em todas as seções de tubulação para garantir fluxo plenamente turbulento. O fluxo laminar (Re < 2,300) deixa as partículas se assentarem nas camadas-limite de baixa velocidade perto das paredes da tubulação e permanecerem ali mesmo com o fluido circulando. O fluxo turbulento gera mistura radial que levanta as partículas assentadas para a corrente e as leva ao filtro de flushing. Em uma linha de retorno de 50 mm a 40°C com óleo ISO VG 32, atingir Re > 4,000 exige aproximadamente 100 L/min de vazão de flushing."
+    },
+    {
+      "question": "Por que usar óleo ISO VG 32 no flushing em vez do grau de fluido de operação do sistema?",
+      "answer": "O ISO VG 32 tem viscosidade cinemática menor que o ISO VG 46 ou o ISO VG 68, o que reduz a viscosidade e facilita atingir fluxo turbulento (Re > 4,000) com vazões de bomba práticas. A 50°C, o ISO VG 32 tem viscosidade cinemática de aproximadamente 28 × 10⁻⁶ m²/s. Se o ISO VG 32 for quimicamente compatível com as vedações do sistema e com o fluido de operação (mesma química de óleo básico), pode ser usado como meio de flushing e deixado no sistema como fluido de operação. Se não for compatível, deve ser drenado e substituído após a aceitação do flushing."
+    },
+    {
+      "question": "Qual é o critério de aceitação para aprovar o comissionamento do flushing hidráulico?",
+      "answer": "A ISO 4413:2011 exige que duas amostras de fluido consecutivas coletadas com 30 minutos de intervalo atendam, cada uma, ao código de limpeza ISO 4406 alvo. Uma única amostra aprovada não basta: o critério de duas amostras confirma que a limpeza é estável, e não um resultado transitório. As amostras devem ser coletadas segundo a ISO 3722 com um frasco de amostra pré-limpo, purgando 500 mL pela válvula de amostragem antes de coletar a amostra de análise."
+    },
+    {
+      "question": "Quais metas de limpeza devem ser atingidas antes de instalar servoválvulas versus válvulas proporcionais?",
+      "answer": "Antes de instalar servoválvulas (folgas de carretel de 1–4 µm), o sistema deve atingir o código ISO 4406 16/14/11 ou mais limpo, verificado por duas amostras APC consecutivas. Sistemas com válvulas proporcionais exigem ISO 4406 17/15/12. Sistemas hidráulicos industriais com bombas de engrenagens e de pistão, mas sem válvulas de alta sensibilidade, visam ISO 4406 18/16/13. Essas metas são definidas pelas dimensões de folga do componente mais sensível do circuito."
+    },
+    {
+      "question": "Como os circuitos derivados e os trechos mortos devem passar por flushing para evitar zonas de contaminação estagnada?",
+      "answer": "Os circuitos derivados exigem inverter o sentido do fluxo para mobilizar a contaminação das zonas mortas. Durante o flushing, as válvulas de mudança de direção conectadas ao circuito de flushing (e não as cavidades das válvulas de precisão, que têm placas de bypass instaladas) devem ser acionadas a cada 15–20 minutos. Cada ciclo direciona a vazão de flushing para um caminho derivado diferente. As válvulas de purga dos pontos altos devem ser abertas durante o enchimento inicial e no começo do flushing para purgar o ar preso, que de outra forma impede o transporte completo de partículas nas seções verticais."
+    },
+    {
+      "question": "Quanto tempo o flushing hidráulico deve durar antes de coletar a primeira amostra de contagem de partículas?",
+      "answer": "As orientações da ISO 4413 e a prática de comissionamento da NFPA T2.12.10 exigem no mínimo 4 horas de flushing turbulento contínuo antes da primeira amostra APC. Esse mínimo considera o tempo necessário para mobilizar e levar a contaminação a granel de todas as seções do circuito até o filtro de flushing. Em sistemas com muita contaminação de construção ou trechos de tubulação longos, a amostra inicial normalmente exige várias trocas de filtro e ciclos de flushing adicionais antes de se aproximar da meta de limpeza."
+    },
+    {
+      "question": "Qual classificação de filtro de flushing deve ser usada durante o comissionamento e quando ele deve ser trocado?",
+      "answer": "O flushing de comissionamento usa um filtro de flushing de retorno temporário, separado do filtro de retorno permanente do sistema. Etapa inicial: 10 µm absoluto nominal para capturar os resíduos a granel sem entupimento prematuro. Passa-se para 3 µm absoluto (β₃(c) ≥ 200) quando as contagens de partículas chegam a duas unidades de código ISO da meta. O filtro de flushing deve ser trocado sempre que a pressão diferencial indicar carregamento (normalmente a cada 1–2 horas nas etapas iniciais). Um carregamento rápido do filtro é normal e confirma um transporte eficaz de partículas do circuito."
+    },
+    {
+      "question": "O que fazer se a meta ISO 4406 não for atingida após 4 horas de flushing?",
+      "answer": "Continue o flushing; não instale as válvulas de precisão. Verifique a pressão diferencial do filtro de flushing: um filtro totalmente carregado não remove mais contaminação e deve ser trocado antes de continuar. Verifique se a vazão de flushing atinge Re > 4,000 nas seções de tubulação de menor diâmetro; aumente a vazão da bomba ou reduza a zona de flushing para aumentar a velocidade local. Se a limpeza estagnar, passe para elementos de flushing de 3 µm absoluto para capturar as partículas abaixo de 10 µm. Eleve a temperatura do fluido para 50–55°C para reduzir a viscosidade e melhorar a turbulência. Reamostre a cada 30 minutos após cada medida corretiva."
+    },
+    {
+      "question": "Qual documentação é necessária para concluir a aceitação do comissionamento hidráulico?",
+      "answer": "O relatório de flushing de comissionamento deve incluir: dois certificados de contagem de partículas APC (com data e hora, ponto de amostragem, referência do certificado de calibração do APC e código ISO 4406 resultante), os dados do fluido de flushing e o registro de temperatura, o registro de vazão que demonstra Re > 4,000, os registros de troca do filtro de flushing, a duração total do flushing e o código ISO 4406 alvo especificado pelo projeto do sistema. Essa documentação é guardada como parte do pacote de comissionamento da máquina e pode ser exigida em reclamações de garantia ou na rastreabilidade da vida dos componentes."
+    }
+  ],
+  "howTo": {
+    "name": "Procedimento de flushing de comissionamento de unidades de potência hidráulica",
+    "description": "Faça o flushing de uma unidade de potência hidráulica nova ou recém-mantida para atingir as metas de limpeza ISO 4406 antes da primeira operação, segundo a seção 5.4 da ISO 4413:2011.",
+    "totalTime": "PT16H",
+    "supply": [
+      "Fluido de flushing: óleo mineral ISO VG 32 (o mesmo fluido de operação ou um óleo de flushing compatível)",
+      "Frascos de amostra pré-limpos segundo a ISO 3722 (≤ ISO 11/9/6)",
+      "Placas de bypass temporárias para servoválvulas e válvulas proporcionais",
+      "Elementos de filtro de retorno temporários de alta capacidade (10 µm absoluto nominal)",
+      "Elementos de filtro temporários de estágio fino (3 µm absoluto, β₃(c) ≥ 200)"
+    ],
+    "tool": [
+      "Contador automático de partículas (APC) calibrado segundo a ISO 11171",
+      "Válvula de amostragem instalada em posição da linha de retorno conforme a ISO 3722",
+      "Medidor de vazão e manômetros",
+      "Termômetro para monitorar a temperatura do óleo do reservatório"
+    ],
+    "steps": [
+      {
+        "name": "Instalar as placas de bypass e os filtros de flushing temporários",
+        "text": "Remova todas as servoválvulas, válvulas proporcionais e demais válvulas de controle de precisão. Instale placas de bypass sólidas (placas de flushing) em cada posição de válvula para manter a continuidade do circuito de fluido. Instale elementos de filtro de retorno temporários de alta capacidade de 10 µm absoluto classificados para as vazões de flushing. Conecte a bomba de flushing à linha de suprimento.",
+        "tool": "Torquímetro, jogo de placas de bypass",
+        "supply": "Placas de flushing dimensionadas para cada porta de válvula"
+      },
+      {
+        "name": "Encher o reservatório com fluido de flushing e estabelecer a temperatura do circuito",
+        "text": "Encha o reservatório até o nível de operação com fluido de flushing. Ligue a bomba de flushing e circule até a temperatura do reservatório chegar a 40–55°C. A 40°C, o óleo ISO VG 32 tem viscosidade cinemática de aproximadamente 32 cSt, necessária para atingir fluxo turbulento (Re > 4,000) na tubulação do circuito. Não comece a contar o tempo de flushing antes de atingir a temperatura de operação.",
+        "tool": "Termômetro, medidor de vazão",
+        "supply": "Fluido de flushing ISO VG 32"
+      },
+      {
+        "name": "Estabelecer vazão de flushing turbulenta (Re > 4,000)",
+        "text": "Ajuste a bomba de flushing para atingir 1.5–2× a vazão normal de operação do sistema. Verifique se o número de Reynolds supera 4,000 nas linhas principais de suprimento e retorno para garantir um fluxo turbulento que desprenda a contaminação assentada. Calcule Re = (velocidade × diâmetro interno × densidade) / viscosidade. Em uma linha de retorno de 50 mm (2 in.) a 40°C com ISO VG 32, 100 L/min atingem Re ≈ 6,500.",
+        "tool": "Medidor de vazão, calculadora hidráulica"
+      },
+      {
+        "name": "Fazer o flushing de todas as derivações do circuito com mudanças de direção",
+        "text": "Circule o fluido de flushing por 2 horas com a bomba de flushing. A cada 15 minutos, acione os solenoides de controle de direção (conectados ao circuito de flushing, e não às válvulas de precisão) para direcionar o fluxo para cada circuito derivado e trecho morto. Os ciclos de direção garantem que a contaminação dos circuitos derivados seja mobilizada e capturada pelo filtro de retorno."
+      },
+      {
+        "name": "Coletar a amostra inicial de contagem de partículas",
+        "text": "Após 2 horas de flushing turbulento, colete uma amostra de fluido pela válvula de amostragem ISO 3722 da linha de retorno. Purgue a válvula de amostragem com 3–5 volumes de frasco antes de coletar a amostra em um frasco pré-limpo segundo a ISO 3722. Envie para contagem de partículas APC segundo a ISO 4406:2021. Verifique se o resultado está a menos de duas unidades de código do código de limpeza alvo.",
+        "tool": "Válvula de amostragem ISO 3722, APC calibrado",
+        "supply": "Frascos de amostra pré-limpos segundo a ISO 3722"
+      },
+      {
+        "name": "Passar à filtração de estágio fino quando as contagens iniciais se aproximarem da meta",
+        "text": "Quando os resultados APC mostrarem que o fluido está a menos de duas unidades de código da meta, troque os elementos de retorno temporários de 10 µm por elementos de 3 µm absoluto (β₃(c) ≥ 200). Continue o flushing com a mesma vazão e a mesma temperatura. Os elementos finos removerão as partículas restantes abaixo de 10 µm, que respondem pelas últimas unidades de código de contaminação.",
+        "supply": "Elementos de filtro temporários de 3 µm absoluto (β₃(c) ≥ 200)"
+      },
+      {
+        "name": "Verificar os critérios de aceitação com duas amostras consecutivas",
+        "text": "Quando o resultado APC atender pela primeira vez ao código de limpeza ISO 4406 alvo, colete uma segunda amostra 30 minutos depois sem mudar nenhuma condição do flushing. As duas amostras devem atender separadamente ao código alvo. Se alguma amostra for reprovada, continue o flushing e repita a verificação com duas amostras.",
+        "tool": "APC calibrado, temporizador",
+        "supply": "Frascos de amostra pré-limpos segundo a ISO 3722"
+      },
+      {
+        "name": "Documentar e instalar as válvulas de precisão",
+        "text": "Registre os dois certificados de contagem de partículas no formulário de aprovação do comissionamento, com a data e a hora da amostra, o ponto de amostragem, a data de calibração do instrumento APC e o código ISO 4406 resultante. Drene o fluido de flushing apenas se for diferente do fluido de operação. Instale as servoválvulas e as válvulas proporcionais. Encha com o fluido de operação (pré-filtrado a ≤ ISO 16/14/11 antes da introdução). O sistema está pronto para a primeira operação.",
+        "supply": "Formulário de documentação do comissionamento, fluido de operação pré-filtrado a ISO 16/14/11"
+      }
+    ]
+  },
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 23309:2007, Hydraulic Fluid Power Systems — Systems Assembled from Commercially Available Components — Cleanliness Flushing",
+      "relevance": "Especifica os procedimentos de flushing, os requisitos de velocidade (Re > 4,000) e os métodos de verificação da limpeza dos sistemas hidráulicos comissionados; define os critérios de aceitação baseados nos códigos de limpeza ISO 4406 alvo."
+    },
+    {
+      "category": "specification",
+      "citation": "SAE AS4059 Rev.F, Aerospace Fluid Power — Cleanliness Classification for Hydraulic Fluids",
+      "relevance": "Sistema de classificação da limpeza dos fluidos hidráulicos usado em aplicações aeroespaciais e hidráulicas móveis de alta precisão; tabela as contagens máximas de partículas por mL nos tamanhos de partícula de 4, 6, 14, 21, 38 e 70 µm."
+    },
+    {
+      "category": "test-method",
+      "citation": "ISO 11500:2008, Hydraulic Fluid Power — Determination of the Particulate Contamination Level of a Liquid Sample",
+      "relevance": "Especifica o procedimento com contador óptico automático de partículas (APC) para contar e dimensionar partículas em amostras de óleo hidráulico com calibração ISO 11171; rege a amostragem, a diluição e o relatório dos códigos de limpeza ISO 4406 durante a verificação do flushing."
+    },
+    {
+      "category": "standard",
+      "citation": "NFPA T2.14.1-2020, Recommended Practice — Hydraulic Fluid Power — Minimizing Contamination in Hydraulic Systems",
+      "relevance": "Prática recomendada da NFPA sobre fontes de contaminação, limpeza da montagem e estratégia de flushing de sistemas hidráulicos móveis e industriais; cita os códigos ISO 4406 alvo e a configuração do circuito de flushing multipass."
+    }
+  ]
+}
