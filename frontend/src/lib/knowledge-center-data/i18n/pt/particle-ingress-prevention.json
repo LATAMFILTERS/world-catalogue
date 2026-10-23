@@ -1,0 +1,286 @@
+{
+  "slug": "particle-ingress-prevention",
+  "faqs": [
+    {
+      "question": "Quais são os principais caminhos de ingresso externo de partículas em um sistema hidráulico?",
+      "answer": "O ingresso externo de partículas entra nos sistemas hidráulicos por seis caminhos principais: (1) Raspadores de haste de cilindro: a fonte de ingresso mais importante em equipamentos móveis; 0.001–0.05 mg por curso por unidade de área da haste, conforme a concentração de poeira ambiente e o estado do raspador. (2) Respiros do reservatório: ar atmosférico aspirado durante a contração térmica e o recolhimento dos cilindros; respiros sujos ou degradados deixam passar livremente partículas ≥10 µm. (3) Reposição de fluido: óleo novo de recipientes contaminados ou sem pré-filtragem, normalmente ISO 18/16/13 a partir do armazenamento a granel. (4) Aberturas de manutenção: o acesso ao sistema para reparos, trocas de filtro e inspeção introduz contaminação atmosférica; cada desconexão de mangueira pode introduzir 0.1–1 g de partículas. (5) Ingresso em cilindros hidráulicos além das vedações de haste: vedações de lábio danificadas deixam passar partículas diretamente para o circuito do lado da haste. (6) Vedações de eixo de bombas hidráulicas: vedações de eixo desgastadas em sistemas de circuito aberto podem permitir a entrada de ar com partículas atmosféricas na carcaça de bombas de engrenagens."
+    },
+    {
+      "question": "Como a taxa de ingresso de contaminação pela haste do cilindro é quantificada para o projeto do sistema?",
+      "answer": "A taxa de ingresso de contaminação pela haste do cilindro (mg/hora) é estimada pela fórmula: I = C × A × L × n, em que C = concentração de poeira ambiente (mg/m3), A = fator de retenção do raspador da vedação da haste (normalmente 0.001–0.01, fração da contaminação superficial que passa pelo raspador a cada curso), L = comprimento da haste exposto por curso (m) e n = frequência de cursos (cursos/hora). Para um cilindro de 500 mm de curso a 60 cursos/hora em poeira ambiente de 1 mg/m3 com retenção do raspador de 0.005: I = 1 × 0.005 × 0.5 × 60 = 0.15 mg/hora. Essa taxa de ingresso é um dado de entrada do dimensionamento do filtro: DHC do filtro (g) / I (g/hora) = horas de serviço esperadas entre trocas de filtro. O fator de retenção do raspador de 0.001–0.01 representa a faixa entre um raspador novo (0.001) e um degradado que deixa passar 10× mais ingresso (0.01): a manutenção do raspador é a ação individual de maior impacto para estender a vida útil do filtro."
+    },
+    {
+      "question": "O que é o princípio de exclusão de contaminação e em que ele difere da remoção de contaminação?",
+      "answer": "A exclusão de contaminação impede que as partículas entrem no sistema; a remoção de contaminação captura as partículas que já estão no fluido. A exclusão é ordens de grandeza mais eficiente: impedir a entrada de 1 grama de sílica no sistema exige apenas um bom filtro de respiro (custo: AUD 50/ano), enquanto remover 1 grama de sílica do fluido hidráulico em circulação exige processar 10,000 L de fluido por um filtro β10(c) ≥ 200 (gerando custo de energia significativo pela queda de pressão e, por fim, o custo do elemento filtrante). A abordagem de orçamento de contaminação no projeto de sistemas hidráulicos quantifica tanto a taxa de ingresso quanto a taxa de remoção: o sistema atinge um código ISO de regime permanente em que a taxa de remoção é igual à de ingresso. Melhorar a exclusão (melhor proteção da haste, respiros melhorados, transferência vedada de fluido) desloca o código de regime permanente para valores mais limpos sem aumentar a capacidade de filtração."
+    },
+    {
+      "question": "Em que os dispositivos de exclusão para hastes de cilindros diferem entre aplicações agrícolas e de mineração?",
+      "answer": "As aplicações agrícolas exigem dispositivos de exclusão da haste que tolerem material de colheita (talos, sementes, palha) sem dano mecânico: foles de borracha tipo sanfona que se comprimem com a haste são preferidos às coberturas rígidas contra poeira, que seriam danificadas pelo contato com o material de colheita. Equipamentos de mineração exigem dispositivos de exclusão que suportem poeira de rocha abrasiva e possível impacto de material em queda: coberturas de poliuretano resistem melhor à abrasão que a borracha (5–10× mais vida útil em ambientes de alta abrasão), e placas de proteção metálicas protegem o fole do impacto de rochas em queda. Nas duas aplicações, a inspeção regular dos dispositivos de exclusão é mais importante que a escolha do material: um dispositivo de exclusão amassado ou rasgado aumenta o ingresso em 5–20× em relação à condição intacta. A inspeção dos dispositivos de exclusão a cada turno é prática padrão nos programas de manutenção de equipamentos de mineração de alto valor."
+    },
+    {
+      "question": "Qual procedimento de transferência de fluido minimiza o ingresso de contaminação durante a reposição de óleo?",
+      "answer": "A transferência de fluido que minimiza a contaminação segue este procedimento: (1) Usar uma unidade de transferência dedicada com filtro de transferência β3(c) ≥ 200; não despejar diretamente do tambor no reservatório. (2) Verificar o estado do elemento do filtro de transferência antes do uso: conferir o indicador de restrição e trocá-lo se tiver disparado. (3) Limpar o exterior da porta de abastecimento do reservatório com pano sem fiapos antes de remover a tampa. (4) Usar o engate rápido da unidade de transferência ou o filtro de abastecimento do reservatório (se houver); não usar funis abertos nem conexões de mangueira sujas. (5) Amostrar o óleo novo filtrado na saída da unidade de transferência a cada novo lote de tambores e verificar código ISO 4406 ≤ 14/12/9 antes de introduzi-lo no sistema. (6) Registrar no livro de manutenção o número do lote do tambor, a especificação do óleo, o volume adicionado e a data. A introdução de óleo novo contaminado responde por aproximadamente 30% dos eventos de contaminação em campo cuja fonte pode ser identificada com certeza."
+    },
+    {
+      "question": "Qual é o tamanho máximo aceitável de partícula que deve ser detectado nas amostras do flushing de comissionamento?",
+      "answer": "As amostras do flushing de comissionamento devem atingir o código ISO 4406 alvo do sistema antes da aprovação. Em sistemas de válvulas proporcionais com meta ISO 16/14/11, o código alvo limita as partículas ≥14 µm(c) a 40–80 partículas/mL, o que significa que não deve haver quantidades significativas de partículas acima de cerca de 50 µm, pois partículas grandes individuais elevam rapidamente a contagem ≥14 µm. A ISO 4413:2011 exige duas amostras consecutivas aprovadas. Além disso, alguns protocolos de comissionamento especificam um \"desafio de partículas\": verificar que não há partículas acima de 100 µm (detectadas por exame microscópico de um filtro de membrana após filtrar 100 mL através de uma membrana de 10 µm). O limiar de 100 µm corresponde ao tamanho mínimo capaz de travar ou danificar carretéis de válvulas direcionais proporcionais com folgas de 5–15 µm ao se alojar na folga em vez de desgastá-la ao passar."
+    },
+    {
+      "question": "Quais ações de manutenção reduzem o ingresso de partículas pelas vedações de haste dos cilindros hidráulicos?",
+      "answer": "Ações de manutenção das vedações de haste de cilindros hidráulicos para reduzir o ingresso: (1) Troca do raspador da haste ao primeiro sinal de acúmulo de sujeira na haste acima do ponto de entrada do raspador (faixa de contaminação preta ou escura visível na haste, indicando que o raspador não está mais limpando). (2) Troca da vedação da haste quando o vazamento interno exceder a especificação do OEM (normalmente vazamento da vedação da haste >1 mL/hora em cilindros abaixo de 100 mm de diâmetro). (3) Inspeção do cromo: pites na superfície de hastes cromadas (por corrosão ou desgaste abrasivo) aceleram a degradação do raspador; a especificação de recromagem normalmente é de 50 µm mínimo de espessura de cromo após o brunimento nas áreas danificadas. (4) Verificação do alinhamento da haste: cilindros operando com cargas laterais (cilindro que não avança/recolhe em linha pura) causam desgaste não uniforme do raspador e carga assimétrica na vedação; realinhar ou adicionar uma bucha de carga atrás do raspador reduz o desgaste da vedação por carga lateral."
+    },
+    {
+      "question": "Como os protocolos de ferramentas de manutenção e higiene de conexões evitam o ingresso de contaminação durante o serviço?",
+      "answer": "Higiene das ferramentas de manutenção: (1) Tampas contra poeira dos engates rápidos de mangueiras hidráulicas: todas as linhas hidráulicas desconectadas devem ser tampadas imediatamente com tampas contra poeira limpas e ajustadas, guardadas em um recipiente vedado; conexões destampadas em ambiente de mineração acumulam 0.5–2 g de contaminação em 10 minutos. (2) Limpeza das conexões hidráulicas: limpar as roscas e as faces de conexão com pano sem fiapos umedecido em fluido hidráulico limpo antes de qualquer conexão. (3) Contaminação da caixa de ferramentas: as ferramentas usadas em sistemas hidráulicos devem ser guardadas separadamente das ferramentas gerais da oficina e limpas antes do uso; cavacos metálicos de operações gerais de usinagem introduzidos pelas ferramentas causam picos imediatos do código ISO. (4) Preparação da área de trabalho: a manutenção hidráulica não deve ser feita ao lado de operações de esmerilhamento, soldagem ou usinagem; as partículas metálicas em suspensão no ar geradas por elas são muito abrasivas e contaminam conexões hidráulicas abertas em minutos."
+    },
+    {
+      "question": "Como o ingresso de partículas pelas vedações mecânicas de eixo de bombas de engrenagens é quantificado?",
+      "answer": "O ingresso pela vedação de eixo de uma bomba de engrenagens normalmente é <0.01 mg/hora em um sistema bem vedado com vedação de lábio nova, subindo para 0.1–1 mg/hora à medida que a vedação envelhece e o desgaste do lábio cria uma vedação dinâmica cada vez menos eficaz. O ingresso pela vedação de eixo aumenta de forma não linear com as horas de operação: a taxa de desgaste da vedação acelera à medida que a zona de contato inicial do lábio se desgasta (normalmente 500–2,000 horas em vedações de lábio NBR padrão com óleo derivado de petróleo). O ingresso pela vedação de eixo é quantificado indiretamente pela correlação com as variações da espectroscopia elementar: sem aumento de ferro (descartando desgaste interno), mas com silício em alta (sílica atmosférica) junto com código ISO em alta, aponta para ingresso externo pela vedação de eixo. A medição direta exige uma bancada de ensaio com ambiente controlado e contagem gravimétrica de partículas. Trocar as vedações de eixo em intervalos de 3,000–5,000 horas evita o aumento não linear do ingresso por vedações degradadas."
+    },
+    {
+      "question": "Qual é a contribuição das atividades típicas de manutenção hidráulica para a taxa de ingresso de contaminação?",
+      "answer": "Ingresso de contaminação por atividades de manutenção: (1) Troca de mangueiras hidráulicas: cada desconexão e reconexão de mangueira introduz aproximadamente 0.5–5 g de contaminação (carepa, partículas do interior da mangueira, poeira ambiente nas conexões) se os procedimentos de higiene padrão não forem seguidos; com o protocolo de tampas contra poeira e limpeza, isso cai para <0.05 g. (2) Troca de elemento filtrante: abrir a carcaça do filtro sem o protocolo de higiene ISO 4413 introduz 0.1–2 g; com o protocolo, <0.02 g. (3) Troca de cilindros: a troca de um cilindro em bancada em oficina introduz 0.5–2 g; a troca em campo sem a limpeza de uma oficina introduz 5–20 g. (4) Troca de bombas: cada desconexão e reconexão da linha de dreno da carcaça introduz 0.2–1 g; a própria carcaça da bomba (escorvada no último uso) carrega 0.5–5 g de contaminação se não for limpa antes da instalação. Medições do código ISO após a manutenção são necessárias para verificar se o sistema voltou à limpeza alvo."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de manutenção de sistemas e controle de contaminação que inclui inspeção das vedações de haste, especificação dos respiros e protocolos de reposição de fluido."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 23309:2007, Hydraulic Fluid Power Systems and Components — Cleanliness Assessment of Parts and Systems Using Hydraulic Flushing",
+      "relevance": "Norma de procedimento de flushing para remover a contaminação da construção de sistemas novos e atingir os códigos ISO 4406 alvo antes do comissionamento."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Norma de ensaio da razão Beta usada para especificar elementos filtrantes capazes de superar as taxas de ingresso de contaminação no cálculo do orçamento de contaminação."
+    },
+    {
+      "category": "handbook",
+      "citation": "Noria Corporation, Machinery Lubrication — Contamination Control Handbook",
+      "relevance": "Manual de referência do setor sobre a filosofia de exclusão de contaminação, a quantificação da taxa de ingresso e os cálculos de orçamento de contaminação para sistemas hidráulicos e de lubrificação."
+    }
+  ],
+  "title": "Prevenção do ingresso de partículas",
+  "subtitle": "Engenharia de respiros, seleção de vedações de eixo e metodologia do orçamento de contaminação",
+  "metaDescription": "Referência de engenharia para a prevenção do ingresso de partículas em sistemas hidráulicos e de lubrificação: classificação dos caminhos de ingresso, seleção de filtros de respiro, engenharia de vedações de eixo, controle da contaminação nos pontos de abastecimento, orçamento da taxa de ingresso e protocolos de monitoramento.",
+  "category": "Engenharia",
+  "readTime": "10 min",
+  "intro": "A prevenção do ingresso de partículas é a disciplina a montante do controle de contaminação: impedir que a contaminação entre no sistema antes que possa degradar a limpeza do fluido e danificar os componentes. A filtração sozinha não consegue atingir um código de limpeza ISO 4406 alvo se as taxas de ingresso excederem a capacidade de remoção da filtração. Identificar, quantificar e vedar os caminhos de ingresso é pré-requisito para manter a limpeza em ambientes de operação exigentes.",
+  "sections": [
+    {
+      "heading": "Caminhos de ingresso e classificação",
+      "body": "O ingresso de partículas em sistemas hidráulicos e de lubrificação ocorre por quatro categorias de caminhos. Ingresso atmosférico: poeira ambiente que entra pelos respiros do reservatório, pelas vedações de haste dos cilindros, pelas vedações de eixo e pelas folgas estruturais das carcaças. É a categoria de ingresso dominante em equipamentos móveis ao ar livre: o sistema hidráulico de uma escavadeira de mineração pode ingerir 50–200 mg de poeira por hora apenas por um respiro não filtrado em um ambiente de 1–5 mg/m³ de poeira. Ingresso por manutenção: partículas introduzidas durante a troca de componentes, a reposição de fluido e a amostragem: ferramentas contaminadas, reservatórios abertos, equipamentos de abastecimento contaminados e partículas desprendidas das roscas das conexões. Um único bico de abastecimento contaminado pode introduzir 500–2,000 mg em um abastecimento. Ingresso incorporado: resíduos de usinagem, carepa, escória de solda e resíduos de montagem presentes em componentes novos ou reconstruídos antes do primeiro abastecimento. Normalmente ISO 22/20/17 ou pior em um sistema novo sem flushing. Ingresso gerado: partículas produzidas por desgaste interno, erosão por cavitação e degradação de vedações; não são \"ingresso\" no sentido convencional, mas contribuem para a carga total de contaminação que o filtro precisa gerenciar. Ordem de severidade do ingresso: na maioria das aplicações industriais ao ar livre, atmosférico > manutenção > incorporado > gerado.",
+      "callout": [
+        {
+          "label": "Ingresso atmosférico (respiro não filtrado)",
+          "value": "50–200 mg/h em ambiente de 1–5 mg/m³ de poeira"
+        },
+        {
+          "label": "Ingresso por manutenção (bico de abastecimento contaminado)",
+          "value": "500–2,000 mg por evento"
+        },
+        {
+          "label": "Incorporado (sistema novo sem flushing)",
+          "value": "ISO 22/20/17 ou pior"
+        }
+      ]
+    },
+    {
+      "heading": "Engenharia de filtros de respiro",
+      "body": "Os respiros do reservatório equalizam a pressão quando o volume de fluido muda (dilatação/contração térmica, avanço/recolhimento de cilindros). Um respiro não filtrado ou subespecificado é o caminho de ingresso de maior vazão na maioria dos sistemas hidráulicos ao ar livre. Requisitos de engenharia: (1) Classificação de filtração: 3 µm absoluto no mínimo para sistemas com meta ISO 17/15/12 ou melhor; 1 µm absoluto para sistemas de servoválvulas com meta ISO 15/13/10 ou melhor. (2) Capacidade de vazão: o respiro deve deixar passar o volume máximo de respiração sem gerar pressão diferencial significativa; restrição excessiva causa ciclos de pressão no reservatório (cavitação na sucção, desaeração com pressão positiva). Volume máximo de respiração = área máxima do cilindro (cm²) × velocidade máxima de avanço da haste (cm/s). (3) Função dessecante: em ambientes úmidos, respiros dessecantes (sílica gel ou peneira molecular) adsorvem o vapor d'água do ar que entra, evitando o acúmulo de água no reservatório. A capacidade do dessecante é finita: a mudança de cor das esferas (de laranja para verde na sílica gel) indica saturação. (4) Orientação de montagem: horizontal ou voltada para cima para evitar acúmulo de chuva na membrana do respiro. (5) Proteção com pré-filtro: uma tela de pré-filtro grossa a montante da mídia fina evita entupimento rápido por insetos, detritos grandes e respingos de chuva.",
+      "callout": [
+        {
+          "label": "Classificação do respiro (meta ISO 17/15/12)",
+          "value": "3 µm absoluto"
+        },
+        {
+          "label": "Classificação do respiro (meta ISO 15/13/10)",
+          "value": "1 µm absoluto"
+        },
+        {
+          "label": "Indicador de saturação do dessecante",
+          "value": "Laranja (ativo) → verde (substituir)"
+        }
+      ]
+    },
+    {
+      "heading": "Engenharia de vedações de eixo para o controle do ingresso",
+      "body": "As vedações de eixo hidráulicas (vedações de lábio, vedações de PTFE, vedações de labirinto) evitam o vazamento de fluido para fora e o ingresso de poeira/água para dentro nas passagens de eixos rotativos (eixos de bombas, eixos de motores, extremidades de hastes de cilindros). Parâmetros de seleção da vedação: (1) Rugosidade da superfície do eixo: a vedação de lábio exige Ra do eixo ≤ 0.4 µm na faixa de contato da vedação; eixos rugosos causam desgaste acelerado do lábio e ingresso. (2) Batimento do eixo: leitura total do indicador ≤ 0.05 mm no local do lábio da vedação para eixos de ≤50 mm de diâmetro; batimento maior causa levantamentos periódicos do lábio durante a rotação, criando um caminho de ingresso momentâneo. (3) Compatibilidade do material da vedação com o fluido: NBR para fluido hidráulico derivado de petróleo até 80°C; FKM (Viton) para fluido sintético e temperaturas até 120°C; PTFE para resistência química. (4) Lábio de exclusão: vedações de duplo lábio com lábio de exclusão (externo) evitam o ingresso de partículas e água externas sem impedir a retenção de lubrificação no lábio interno. (5) Instalação da vedação: instalação incorreta (lábio torcido, supercomprimido, fora de esquadro) causa ingresso imediato e desgaste rápido; use ferramentas de instalação dimensionadas para o DE e o alojamento da vedação específica.",
+      "callout": [
+        {
+          "label": "Limite de rugosidade do eixo",
+          "value": "Ra ≤ 0.4 µm na faixa de contato da vedação"
+        },
+        {
+          "label": "Limite de batimento do eixo (≤50 mm de DE)",
+          "value": "TIR ≤ 0.05 mm"
+        },
+        {
+          "label": "Função da vedação de duplo lábio",
+          "value": "O lábio interno retém o fluido; o lábio externo exclui o ingresso"
+        }
+      ]
+    },
+    {
+      "heading": "Controle da contaminação nos pontos de abastecimento",
+      "body": "A reposição e a troca de fluido são a atividade de manutenção de maior risco de introdução de contaminação. O óleo novo de um tambor lacrado normalmente chega em ISO 18/16/13, já acima da meta dos circuitos de servoválvulas e bombas de pistões. Controle da contaminação nos pontos de abastecimento: (1) Carrinhos de abastecimento com pré-filtro: todo equipamento de abastecimento deve ter um filtro embarcado (β₁₀(c) ≥ 200) na linha de abastecimento, mantido em um programa de serviço próprio. Um carrinho de abastecimento contaminado pode piorar a limpeza do sistema em 3–4 unidades de código por reposição. (2) Sistemas de abastecimento fechados: engates rápidos de abastecimento dedicados com tampas contra poeira evitam abastecimentos com o reservatório aberto. Os engates se acoplam a uma conexão correspondente no carrinho de abastecimento: sem funis abertos nem reservatórios destampados. (3) Recipientes de transferência: transferir óleo em baldes abertos de um tambor para um reservatório pode introduzir 500–5,000 mg/L de contaminação, conforme a concentração de poeira ambiente e a limpeza do recipiente. Use sistemas de transferência de circuito fechado, vedados e pré-limpos. (4) Contaminação das roscas das conexões: as roscas das conexões hidráulicas contêm óleo de usinagem e partículas de fabricação; inspecione e limpe as conexões novas antes da montagem; o vedante de rosca (fita de PTFE ou vedante anaeróbico) evita que partículas se desprendam no aperto.",
+      "callout": [
+        {
+          "label": "Limpeza do óleo novo em tambor",
+          "value": "ISO 18/16/13 típico"
+        },
+        {
+          "label": "Filtro mínimo do carrinho de abastecimento",
+          "value": "β₁₀(c) ≥ 200 em linha"
+        },
+        {
+          "label": "Contaminação por transferência em balde aberto",
+          "value": "Até 500–5,000 mg/L"
+        }
+      ]
+    },
+    {
+      "heading": "Medição da taxa de ingresso e orçamento de contaminação",
+      "body": "O orçamento de contaminação quantifica o balanço entre a taxa de ingresso total (mg/h) e a taxa de remoção por filtração (mg/h) para prever se um sistema consegue atingir e manter seu código de limpeza alvo em regime permanente. Estimativa da taxa de ingresso: ingresso pelo respiro = concentração de poeira ambiente (mg/m³) × vazão de respiração (m³/h) × (1 − eficiência do respiro). Ingresso pela vedação de eixo = valor empírico de dados de vedações desgastadas (0.5–5 mg/h por vedação, conforme o estado da vedação, a rotação do eixo e as condições ambientes). Ingresso por abastecimentos = frequência de abastecimentos (eventos/h) × contaminação por evento (mg). Ingresso total = soma de todos os caminhos. Taxa de remoção por filtração = vazão pelo filtro (L/h) × concentração de partículas na entrada (mg/L) × eficiência do filtro (1 − 1/β). A limpeza em regime permanente é atingida quando a taxa de remoção ≥ taxa de ingresso. Um déficit no orçamento (remoção < ingresso) significa que a limpeza vai se degradar até o sistema chegar a um código de equilíbrio mais alto; a velocidade de degradação e o código de equilíbrio podem ser calculados pelo orçamento de contaminação. O orçamento identifica qual caminho de ingresso tem maior impacto por unidade de custo de redução: normalmente os caminhos do respiro e do ponto de abastecimento dominam.",
+      "callout": [
+        {
+          "label": "Condição de regime permanente",
+          "value": "Taxa de remoção por filtração ≥ taxa de ingresso total"
+        },
+        {
+          "label": "Consequência do déficit no orçamento",
+          "value": "A limpeza se degrada até um código de equilíbrio mais alto"
+        },
+        {
+          "label": "Redução de maior prioridade",
+          "value": "Respiro e ponto de abastecimento (normalmente os de mais mg/h)"
+        }
+      ]
+    },
+    {
+      "heading": "Monitoramento e tendências para detectar o ingresso",
+      "body": "Os eventos de ingresso são detectáveis pela tendência da contagem de partículas ISO 4406 antes de o código de limpeza chegar ao limiar de dano. Principais práticas de monitoramento: (1) Estabelecer um código de limpeza de referência para cada máquina em condições normais de operação: registrar 3 amostras sequenciais no mesmo ponto de amostragem e na mesma condição. (2) Definir limiares de alerta uma unidade de código acima da referência a ≥6 µm; definir limiares de ação duas unidades de código acima da referência. Uma unidade de código = variação de 2× na contagem de partículas, detectável com alta confiança. (3) Correlacionar as tendências do código com os registros de manutenção: uma subida de uma unidade de código após um evento de manutenção específico (troca da vedação da haste do cilindro, troca de motor hidráulico, reposição de fluido) identifica esse evento como a fonte do ingresso. (4) O teor de silício no óleo (ICP) subindo junto com a contagem de partículas indica ingresso de sílica transportada pelo ar: falha do respiro ou da vedação de eixo. O cobre subindo junto com a contagem de partículas indica desgaste de componentes internos contribuindo para a contaminação gerada. (5) Amostrar após cada evento de risco de contaminação (tempestade, submersão, manutenção) em até 24–48 horas após o retorno ao serviço."
+    },
+    {
+      "heading": "Metodologia de auditoria de ingresso no sistema",
+      "body": "Uma auditoria sistemática de ingresso identifica e prioriza todos os caminhos de contaminação de uma máquina ou instalação específica. Procedimento de auditoria: (1) Mapear todos os pontos de ingresso possíveis: respiros (quantidade, localização, classificação), vedações de eixo (quantidade, tipo, idade), pontos de abastecimento (configuração, disciplina), vedações de haste de cilindros (quantidade, comprimento de curso, condições ambientes), folgas estruturais (juntas de carcaças, passagens de cabos). (2) Classificar cada caminho pela taxa de ingresso estimada (mg/h) em condições normais de operação. (3) Calcular o orçamento total de ingresso e compará-lo com a capacidade de remoção da filtração instalada. (4) Priorizar as correções por custo-efetividade: redução da taxa de ingresso por dólar gasto. Achados típicos em ordem de custo-efetividade: (a) Substituir o respiro não filtrado por um respiro dessecante classificado: a maior redução de ingresso por dólar; (b) Instalar um sistema de abastecimento vedado: elimina a maior fonte de ingresso por evento; (c) Trocar as vedações de eixo desgastadas: melhoria moderada a custo moderado; (d) Aumentar a vazão do kidney loop: melhora a taxa de remoção sem reduzir o ingresso. Documente os achados da auditoria e os códigos de limpeza pós-correção como referência contínua."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Classificação do respiro (sistemas servo)",
+      "value": "1 µm absoluto"
+    },
+    {
+      "label": "Ingresso atmosférico (não filtrado)",
+      "value": "50–200 mg/h em ambiente com poeira"
+    },
+    {
+      "label": "Filtro mínimo do carrinho de abastecimento",
+      "value": "β₁₀(c) ≥ 200"
+    },
+    {
+      "label": "Limite de rugosidade do eixo",
+      "value": "Ra ≤ 0.4 µm (zona de contato da vedação)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 11171",
+    "ISO 16889"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ingresso de partículas",
+    "filtro de respiro",
+    "vedação de eixo",
+    "orçamento de contaminação",
+    "controle do ponto de abastecimento",
+    "taxa de ingresso",
+    "ISO 4406",
+    "respiro dessecante"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Subida inexplicada do código de limpeza ISO 4406 entre amostras consecutivas coletadas em condições idênticas: indica evento de ingresso ativo ou mudança na taxa de ingresso",
+      "Silício (Si) em alta na análise de óleo ICP: poeira de sílica transportada pelo ar entrando pelo respiro, pela vedação de eixo ou pela vedação da haste",
+      "O intervalo de serviço do filtro encurta progressivamente: a taxa de ingresso excede o pressuposto de projeto e carrega os elementos mais rápido que o previsto",
+      "Acúmulo de água no reservatório detectado por amostragem ou visor: ingresso de umidade atmosférica por respiro sem proteção ou condensação em reservatório ventilado",
+      "Subida do código de contagem de partículas logo após um evento de manutenção: evento de ingresso por manutenção rastreável a uma atividade específica"
+    ],
+    "probableCauses": [
+      "Filtro do respiro saturado (esferas dessecantes verdes, restrição elevada) ou respiro ausente/com bypass: ingresso atmosférico na taxa máxima",
+      "Vedação de eixo desgastada ou mal instalada: deixa entrar poeira e água junto ao eixo a 0.5–5 mg/h por vedação",
+      "Contaminação no ponto de abastecimento: porta de abastecimento destampada, transferência em balde aberto ou filtro do carrinho de abastecimento contaminado sem manutenção",
+      "Falha da vedação da haste do cilindro: dano na superfície da haste ou no lábio da vedação permitindo ingresso de partículas no curso de recolhimento",
+      "Folga estrutural na carcaça (tampa de inspeção solta, fundição danificada) criando uma conexão atmosférica não prevista"
+    ],
+    "inspectionMethods": [
+      "Inspeção do respiro: tentar soprar pelo respiro com a boca; se o ar não passar, a restrição está alta demais e ele deve ser substituído; verificar também a cor das esferas dessecantes",
+      "Inspeção visual da vedação de eixo: película de óleo no exterior do eixo do lado de dentro da vedação = vazamento para fora (vedação desgastada por dentro); acúmulo de poeira no eixo junto à vedação = caminho de ingresso para dentro confirmado",
+      "Contagem de partículas ISO 4406 com e sem um caminho específico bloqueado: instalar uma tampa de respiro temporária de 3 µm e amostrar após 4 horas; se o código melhorar, o respiro era a fonte de ingresso dominante",
+      "Tendência do teor de Si por ICP: uma subida de Si >5 ppm entre amostras consecutivas no mesmo intervalo é significativa; subida de Si correlacionada com a estação de operação poeirenta ou com um local específico confirma o ingresso pelo ar",
+      "Ensaio de limpeza do ponto de abastecimento: coletar uma amostra da saída do carrinho de abastecimento (com o carrinho funcionando) em frasco pré-limpo; a contagem ISO 4406 deve atender ou superar a meta do sistema; caso contrário, o carrinho de abastecimento é uma fonte de contaminação"
+    ],
+    "correctiveActions": [
+      "Substituir imediatamente o respiro por um respiro dessecante classificado; instalar com a capacidade de vazão correta para a taxa máxima de respiração; colocar tela de pré-filtro a montante do elemento principal",
+      "Instalar sistema de abastecimento vedado com filtro de carrinho de abastecimento em linha β₁₀(c) ≥ 200; implementar engate de abastecimento fechado no reservatório; auditar os registros de serviço do filtro do carrinho de abastecimento",
+      "Após qualquer evento de ingresso confirmado por subida da contagem de partículas: operar o kidney loop continuamente; amostrar às 50, 100 e 200 horas até a limpeza voltar à referência; documentar a causa raiz e a ação corretiva",
+      "Para ingresso pela vedação de eixo: inspecionar o eixo em busca de dano superficial na zona de contato da vedação (medição de Ra); reparar o eixo se o Ra for >0.4 µm antes de colocar a vedação nova; usar a ferramenta de instalação para evitar instalar o lábio torcido",
+      "Para pico de contaminação induzido por manutenção: implementar política de armazenamento de componentes pré-limpos; exigir amostragem ISO 4406 em até 48 horas após qualquer atividade de manutenção em sistema com componentes sensíveis"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Silício em alta na análise de óleo indicando ingresso de poeira transportada pelo ar",
+      "standard": "ASTM D5185 (ICP Si measurement), ISO 4406 (cleanliness code tracking)",
+      "protectionSystem": "Proteção hidráulica ou proteção da lubrificação",
+      "technology": "Respiro dessecante de 1–3 µm absoluto + inspeção e troca da vedação de eixo se estiver desgastada",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "contamination-control",
+        "fluid-cleanliness"
+      ]
+    },
+    {
+      "problem": "Subida do código de limpeza rastreável a eventos de reposição de fluido",
+      "standard": "ISO 4406 (system cleanliness), ISO 11171 (fill cart filter verification)",
+      "protectionSystem": "Proteção hidráulica ou proteção da lubrificação",
+      "technology": "Sistema de abastecimento vedado com filtro em linha β₁₀(c) ≥ 200; armazenamento a granel de fluido pré-filtrado",
+      "relatedArticles": [
+        "contamination-control",
+        "hydraulic-power-unit-design",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "O sistema não consegue manter a limpeza alvo apesar de uma especificação de filtração correta",
+      "standard": "ISO 4406 (monitoring), ISO 16889 (filter β verification)",
+      "protectionSystem": "Proteção hidráulica ou proteção da lubrificação",
+      "technology": "Auditoria do orçamento de contaminação: quantificar todos os caminhos de ingresso e compará-los com a capacidade de remoção da filtração; identificar e vedar o caminho de ingresso dominante",
+      "relatedArticles": [
+        "contamination-control",
+        "hydraulic-power-unit-design",
+        "fluid-cleanliness"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)",
+    "evidenceStatus": "ISO 4406:2021 verified; ISO 11171:2010 verified; shaft seal data from ISO 6194-1; ingress rate estimates from published contamination audit data"
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "slug": "contamination-ingression-modelling",
+  "faqs": [
+    {
+      "question": "O que é a equação de balanço de contaminação e como ela é usada no projeto de sistemas hidráulicos?",
+      "answer": "A equação de balanço de contaminação descreve a concentração de partículas em regime permanente de um sistema hidráulico: C_steady = I / (Q_filter × E_filter), em que I = taxa de ingresso de contaminação (partículas/hora no tamanho x), Q_filter = vazão do filtro (L/hora) e E_filter = eficiência de passagem única do filtro no tamanho x = (1 - 1/β(x)). Em regime permanente, as partículas removidas por hora são iguais às partículas adicionadas por hora. Essa equação permite calcular o dimensionamento do filtro: com uma taxa de ingresso conhecida e um código ISO 4406 alvo (que define a concentração máxima aceitável), é possível calcular a vazão e a eficiência de filtro necessárias. A equação pressupõe mistura perfeita no reservatório, ou seja, um único volume de fluido bem misturado. Sistemas reais podem ter zonas de contaminação estratificadas que exigem correção do ponto de amostragem."
+    },
+    {
+      "question": "Como a taxa de ingresso de contaminação pela vedação da haste de um cilindro hidráulico é quantificada para modelagem?",
+      "answer": "A taxa de ingresso pela vedação da haste é modelada como: I_rod = C_ambient × V_rod_face × A_rod_face × k_wiper, em que C_ambient = concentração ambiente de partículas (partículas/m3 no tamanho x), V_rod_face = velocidade de recolhimento da haste (m/s), A_rod_face = área da seção da haste (m2) e k_wiper = fator de eficiência do raspador (fração das partículas superficiais que entram no fluido, normalmente 0.001–0.05). Para uma haste de 50 mm recolhendo a 0.1 m/s em poeira ambiente de 1 mg/m3: I_rod a ≥10 µm (aproximadamente 5,000 partículas/mg) = 5,000,000 partículas/m3 × 0.1 m/s × π(0.025)2 m2 × 0.01 = 982 partículas/segundo = 3.5M partículas/hora a ≥10 µm. Esse é o dado de entrada dos cálculos de dimensionamento do filtro: o filtro deve remover ≥3.5M partículas/hora a ≥10 µm para manter a limpeza em regime permanente. O valor de k_wiper é a maior incerteza: medi-lo exige ensaios de ingresso controlado com partículas marcadas."
+    },
+    {
+      "question": "O que é o pressuposto de mistura no reservatório dos modelos de ingresso de contaminação e quando ele falha?",
+      "answer": "Os modelos de ingresso de contaminação pressupõem mistura completa e instantânea da contaminação em todo o volume do reservatório: cada partícula introduzida na entrada se distribui imediatamente de forma uniforme em todo o volume de fluido. Esse pressuposto vale para: reservatórios turbulentos com alta velocidade na linha de retorno; sistemas de pequeno volume (abaixo de 100 L), em que a convecção térmica fornece mistura adequada; e sistemas com placas difusoras na linha de retorno que espalham o fluxo de entrada por toda a seção do reservatório. O pressuposto de mistura falha em: reservatórios grandes (>1,000 L) com entrada de baixa velocidade; zonas mortas do reservatório abaixo da entrada da linha de retorno (as partículas sedimentam antes de chegar à zona misturada); e sistemas com filtro de retorno e filtro de sucção em extremidades opostas do reservatório (o fluido filtrado no retorno pode não circular até a extremidade de sucção). Quando a mistura falha, formam-se gradientes de contaminação (fundo do reservatório mais sujo que a superfície, zonas de estratificação ao redor das entradas) e a amostragem deve levar em conta os efeitos do gradiente."
+    },
+    {
+      "question": "Como a sedimentação de partículas em um reservatório hidráulico afeta as previsões do modelo de contaminação?",
+      "answer": "A velocidade de sedimentação das partículas é calculada pela lei de Stokes: V_settle = (2(ρ_particle - ρ_fluid)r²g) / (9µ), em que ρ_particle = densidade da partícula (kg/m3), ρ_fluid = densidade do óleo (normalmente 860 kg/m3), r = raio da partícula (m), g = 9.81 m/s2, µ = viscosidade dinâmica do óleo (Pa·s). Para uma partícula de sílica de 10 µm (ρ = 2,650 kg/m3) em óleo ISO VG 46 a 50°C (µ ≈ 0.04 Pa·s): V_settle = (2×(2650-860)×(5×10-6)²×9.81)/(9×0.04) = 2.4×10-7 m/s = 0.024 mm/min. Em um reservatório de 500 mm de profundidade, uma partícula de 10 µm leva aproximadamente 350 horas para chegar ao fundo. Partículas abaixo de 5 µm sedimentam de forma desprezível nos tempos de permanência no reservatório: continuam em suspensão independentemente da profundidade do reservatório. Modelos que ignoram a sedimentação superestimam a eficácia da filtração kidney loop para partículas grossas (>25 µm), que sedimentam antes de chegar à entrada do filtro."
+    },
+    {
+      "question": "Qual método estatístico é usado para converter dados de contagem de partículas ISO 4406 em taxa de ingresso de contaminação?",
+      "answer": "Converter dados de tendência ISO 4406 em taxa de ingresso exige: (1) Estabelecer a taxa de remoção por filtração: R = Q_filter × E_filter (partículas/hora removidas no tamanho x); (2) Se o código ISO do sistema estiver estável (amostras consecutivas dentro de ±1 unidade RN), o ingresso é igual à remoção: I = R; (3) Se o código ISO estiver subindo a uma taxa ΔRN/Δt (unidades RN por 100 horas), o ingresso excede a remoção: I = R + (ΔC/Δt × V_reservoir), em que ΔC/Δt = taxa de variação da concentração de partículas (partículas/mL por hora a partir da subida do código ISO). A conversão: um ΔRN de 1 unidade ≈ dobrar a contagem de partículas ≈ 1.7 mg/hora de aumento do ingresso para um sistema de 1,000 L. Isso permite calcular retrospectivamente a taxa de ingresso a partir de dados históricos de análise de óleo: uma tendência de piora da limpeza do óleo apesar de filtração adequada indica uma fonte de ingresso que está piorando e que deve ser identificada e corrigida."
+    },
+    {
+      "question": "Como o dimensionamento do filtro muda quando a concentração de poeira ambiente aumenta sazonalmente?",
+      "answer": "A variação sazonal da concentração de poeira (aragem na estação seca da primavera na agricultura, construção no inverno em climas de solo congelado) pode mudar a concentração ambiente de partículas em 5–20× em relação à linha de base. Dimensionar o filtro para a concentração ambiente do pior caso resulta em sistemas superfiltrados nas condições de base (maior queda de pressão, carga mais rápida do elemento filtrante nas estações de pouca poeira). Há duas abordagens para lidar com isso: (1) Dimensionamento dinâmico do filtro: instalar capacidade de duplo elemento com um coletor de bypass que possa acionar o segundo elemento quando a concentração ambiente subir acima de um limiar (detectado pelo indicador de restrição disparando antes do previsto). (2) Gestão de intervalos de base e de pico: projetar para a DHC do pior caso, mas ajustar os intervalos de serviço: calcular as horas esperadas até a restrição terminal em cada estação com base nos dados de monitoramento da poeira ambiente e definir o intervalo de serviço de acordo, em vez de usar intervalos de horas fixas."
+    },
+    {
+      "question": "O que é a abordagem de orçamento de contaminação no projeto de sistemas hidráulicos?",
+      "answer": "O método do orçamento de contaminação aloca o ingresso máximo admissível de partículas para cada fonte de modo que o ingresso total fique dentro da capacidade de remoção do sistema de filtração no código ISO 4406 alvo. Itens do orçamento: ingresso pelas vedações de haste (importante em equipamentos móveis), ingresso pelos respiros (moderado em reservatórios ventilados grandes), ingresso por manutenção (por evento: alto por evento, mas pouco frequente), adições de fluido (se não forem pré-filtradas) e partículas de desgaste por vazamento interno de bombas/motores (pequeno em sistemas novos, importante à medida que os componentes se desgastam). O orçamento é expresso em gramas de equivalente ISO MTD por hora por fonte de ingresso. O orçamento total deve ficar abaixo da taxa de remoção do filtro: Σ(I_n) ≤ Q_filter × E_filter × target_concentration. Se alguma fonte exceder 50% do orçamento total, ela é a prioridade da engenharia de exclusão: normalmente proteção da haste ou melhoria do respiro."
+    },
+    {
+      "question": "Qual modelo descreve a variação da concentração de partículas durante o flushing de comissionamento?",
+      "answer": "O decaimento da concentração de partículas no flushing de comissionamento segue um modelo exponencial: C(t) = C_initial × exp(-Q_filter × E_filter × t / V_system), em que C_initial = concentração inicial de partículas do sistema (partículas/mL), Q_filter = vazão do filtro (mL/hora), E_filter = eficiência de passagem única, t = tempo de flushing (horas) e V_system = volume total de fluido do sistema (mL). Para um sistema de 1,000 L com filtro de 100 L/min a E_filter = 0.995 (β10(c) = 200): tempo para reduzir 90% = -ln(0.1) × 1,000,000 / (100,000 × 0.995) = 23 horas. Esse modelo pressupõe mistura completa e nenhum ingresso externo durante o flushing (sistema isolado de todas as fontes de contaminação). A norma de flushing de comissionamento ISO 23309 usa esse modelo para prever o tempo mínimo de flushing necessário para atingir a limpeza alvo a partir dos níveis de contaminação da construção."
+    },
+    {
+      "question": "Como a troca de óleo afeta o balanço de contaminação e qual é a eficiência de limpeza da adição de óleo novo?",
+      "answer": "Adicionar óleo novo em uma troca parcial de óleo dilui a contaminação existente em proporção à fração substituída: C_after = C_before × (1 - f_change) + C_new × f_change, em que f_change = fração do volume total de óleo trocado e C_new = limpeza do óleo novo (normalmente ISO 18/16/13 sem pré-filtragem). Para um sistema em ISO 20/18/15 (C_before = ~160,000 partículas/mL ≥4 µm) que substitui 50% do fluido por óleo novo em ISO 18/16/13 (C_new = ~40,000 partículas/mL ≥4 µm): C_after = 160,000 × 0.5 + 40,000 × 0.5 = 100,000 partículas/mL ≈ ISO 19/17/14. A troca parcial de óleo dá um benefício de limpeza limitado: melhora o código em 1–2 unidades RN em vez de atingir a meta. Pré-filtrar o óleo novo a ≤ISO 14/12/9 antes da adição melhora o cálculo: C_after = 160,000 × 0.5 + 2,000 × 0.5 ≈ 81,000/mL ≈ ainda ISO 19/17/14; o efeito dominante é a contaminação existente, não a qualidade do óleo novo."
+    },
+    {
+      "question": "Qual é a importância da medição da distribuição de tamanhos de partícula na modelagem da contaminação?",
+      "answer": "A modelagem do ingresso de contaminação usa a contagem de partículas em limiares de tamanho específicos (ISO 4406 ≥4, ≥6, ≥14 µm), mas a distribuição completa de tamanhos de partícula (PSD) determina: (1) Qual valor de eficiência do filtro se aplica: a PSD determina a razão Beta real necessária em cada classe de tamanho com base na taxa de ingresso de cada tamanho de partícula; (2) A previsão da severidade do desgaste: as partículas na faixa de 5–15 µm (que correspondem às folgas dos mancais) são as mais danosas; uma alta concentração de partículas de 4 µm pode dar a mesma contagem ISO ≥4 µm que menos partículas de 15 µm, mas com implicações de desgaste diferentes; (3) A velocidade de formação da torta do filtro: partículas grossas (>25 µm) carregam rapidamente a superfície da mídia filtrante; partículas finas (<5 µm) penetram mais fundo na mídia e a carregam mais devagar. A análise completa da PSD com um instrumento APC calibrado segundo a ISO 11171 em 6–8 canais de tamanho de 2–25 µm fornece os dados para uma modelagem abrangente da contaminação além dos códigos ISO 4406 de três dígitos."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 23309:2007, Hydraulic Fluid Power Systems and Components — Cleanliness Assessment of Parts and Systems Using Hydraulic Flushing",
+      "relevance": "Norma de flushing que incorpora o modelo exponencial de decaimento da contaminação para calcular o tempo mínimo de flushing necessário para atingir os códigos ISO 4406 alvo."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de projeto de sistemas que incorpora a metodologia do orçamento de contaminação para dimensionar filtros e controlar as fontes de contaminação."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles",
+      "relevance": "Norma de codificação da contagem de partículas usada como estrutura de medição para os resultados da modelagem do ingresso de contaminação e a definição de metas."
+    },
+    {
+      "category": "research",
+      "citation": "Fitch, E.C., Fluid Contamination Control, FES Inc., Oklahoma, 1988",
+      "relevance": "Texto fundamental sobre o controle da contaminação hidráulica, incluindo a modelagem do ingresso de contaminação, a metodologia de dimensionamento de filtros e a dedução da equação de balanço de contaminação."
+    }
+  ],
+  "title": "Modelagem da taxa de ingresso de contaminação: metodologia de orçamento de limpeza para sistemas de fluidos",
+  "subtitle": "Quantificação dos caminhos de ingresso de contaminação, cálculo dos códigos de limpeza em regime permanente, dimensionamento de sistemas de filtração em relação a taxas de ingresso medidas e auditorias de contaminação de múltiplos caminhos.",
+  "metaDescription": "Referência de engenharia para a modelagem da taxa de ingresso de contaminação: quantificação dos caminhos de ingresso, cálculo do código ISO 4406 em regime permanente, dimensionamento de filtros em relação a taxas de ingresso medidas, metodologia de contagem de partículas ISO 11171 e procedimentos de auditoria de contaminação de múltiplos caminhos.",
+  "category": "engenharia",
+  "readTime": "13 min",
+  "intro": "O projeto de sistemas de filtração é, essencialmente, um problema de balanço: a taxa com que a contaminação entra em um sistema de fluido deve ser igualada pela taxa com que o sistema de filtração a remove. Sem um orçamento quantitativo de contaminação, o dimensionamento do filtro e do sistema se baseia em regras empíricas, e não na carga real de contaminação que o sistema enfrenta. A modelagem do ingresso de contaminação substitui pressupostos por medições: quantifica cada caminho de ingresso separadamente e calcula a especificação de filtração necessária para atingir e manter um código de limpeza alvo (ISO 4406).",
+  "sections": [
+    {
+      "heading": "A equação de balanço de contaminação",
+      "body": "Em regime permanente, a concentração de partículas em um sistema de fluido é determinada pelo balanço entre a taxa de ingresso de contaminação e a taxa de remoção de contaminação. A relação que a rege: C_ss = I / (Q × E), em que C_ss é a concentração de partículas em regime permanente (partículas/mL), I é a taxa de ingresso total (partículas/min), Q é a vazão do sistema através do filtro (mL/min) e E é a eficiência de passagem única do filtro no tamanho de partícula alvo (E = 1 − 1/β_x(c)). Essa equação mostra que, para uma dada taxa de ingresso, reduzir a eficiência do filtro pela metade dobra a concentração de partículas em regime permanente, o que eleva o código ISO 4406 em aproximadamente 1 nível. Rearranjando: a razão beta necessária do filtro = I / (Q × C_target × (1 − 1/β)), ou de forma equivalente β_required ≥ I / (Q × C_target) + 1. Esse cálculo pode ser feito para cada tamanho de partícula de interesse (normalmente 4, 6 e 14 µm(c) para o relato ISO 4406).",
+      "callout": [
+        {
+          "label": "Equação de regime permanente",
+          "value": "C_ss = I ÷ (Q × E)"
+        },
+        {
+          "label": "E (eficiência)",
+          "value": "E = 1 − 1/β_x(c)"
+        },
+        {
+          "label": "β₁₀(c) = 75 → E",
+          "value": "98.7% de eficiência de passagem única"
+        }
+      ]
+    },
+    {
+      "heading": "Classificação e quantificação dos caminhos de ingresso",
+      "body": "A contaminação entra em um sistema de fluido por quatro classes de caminhos: (1) Ingresso atmosférico: partículas arrastadas pelo ar que entra no sistema pelos respiros do reservatório, pelas vedações de eixo e pelas folgas das vedações de haste. Quantificação: medir a vazão de ar do respiro (função da taxa de ciclos térmicos e do volume de avanço/recolhimento da haste do pistão por ciclo) × concentração atmosférica de partículas (contador de partículas ISO 11171 na entrada do respiro); valores típicos de 10⁶–10⁸ partículas >4 µm por hora para um reservatório hidráulico de 500 L em ambiente agrícola. (2) Ingresso por manutenção: partículas introduzidas durante o abastecimento, a troca de elementos, a amostragem e a manutenção de componentes. Quantificação: medir a contagem de partículas do fluido de abastecimento; contar os abastecimentos por ano; estimar as partículas introduzidas pela manutenção em cada evento com dados do setor (abastecimento não controlado: 10⁸–10⁹ partículas por abastecimento; abastecimento controlado através de 3 µm absoluto: 10⁶–10⁷ partículas por abastecimento). (3) Contaminação incorporada: partículas presentes nos componentes novos do sistema após a fabricação. Quantificação: ensaios de limpeza de componentes segundo a ISO 16232 ou a SAE J1227. (4) Contaminação gerada: partículas de desgaste produzidas pelos contatos de deslizamento e rolamento dentro do sistema. Quantificação: tendência elementar ICP da análise de óleo (taxa de desgaste em mg/hora) convertida em contagem de partículas com densidade e distribuição de tamanhos presumidas das partículas de desgaste."
+    },
+    {
+      "heading": "Cálculo da taxa de ingresso atmosférico",
+      "body": "O ingresso atmosférico pelos respiros do reservatório costuma ser o caminho de ingresso dominante em sistemas hidráulicos de circuito aberto em ambientes industriais e agrícolas. Método de cálculo: (1) Determinar o volume de respiração do reservatório por ciclo (V_breath = área do pistão do atuador × comprimento do curso, para cada atuador do circuito). (2) Multiplicar pela frequência de ciclos para obter o volume total de ar por unidade de tempo. (3) Aplicar a concentração atmosférica de partículas medida segundo a ISO 11171 no local. (4) Aplicar a eficiência do filtro do respiro no tamanho de partícula alvo. Exemplo: reservatório de 500 L com taxa de respiração de 3 m³/hora, local agrícola ao ar livre (ambiente ISO 4406 ≈ 25/22/19 em ar não filtrado), filtro do respiro β₃(c) = 200: taxa de ingresso = 3×10⁶ mL/hora × C_atm × (1−0.995) ≈ um cálculo que mostra que a eficiência do filtro do respiro é a variável de controle dominante. Um respiro de 25 µm nominal e um de 3 µm absoluto podem diferir por um fator de 10³ na taxa de ingresso, o que equivale a aproximadamente 10 níveis do código ISO 4406.",
+      "callout": [
+        {
+          "label": "Ar ambiente agrícola",
+          "value": "~equivalente de partículas ISO 25/22/19"
+        },
+        {
+          "label": "Impacto do β do respiro",
+          "value": "25 µm vs 3 µm: ~10³× de diferença de ingresso"
+        }
+      ]
+    },
+    {
+      "heading": "Estimativa da taxa de contaminação gerada",
+      "body": "A geração de partículas de desgaste é ao mesmo tempo consequência da contaminação e contribuição para ela: um ciclo de realimentação positiva. Em um sistema bem controlado na limpeza alvo, as taxas de geração por desgaste são baixas (normalmente 0.1–0.5 mg Fe/hora para uma bomba hidráulica em bom estado com limpeza ISO 17/15/12). A taxa de desgaste aumenta aproximadamente com o quadrado da concentração de partículas acima da meta: um sistema operando 2 códigos ISO acima da meta gera desgaste a aproximadamente 4× a taxa de base. Esse mecanismo de realimentação explica por que a deterioração das máquinas induzida pela contaminação acelera de forma não linear quando o controle é perdido. Para a modelagem do ingresso, a taxa inicial de geração por desgaste é estimada com dados de análise de óleo de equipamentos semelhantes em serviço semelhante. Fazer análise elementar ICP em intervalos de 250 horas estabelece a tendência de desgaste; os mg/hora de ferro podem ser convertidos em uma contagem de partículas aproximada supondo densidade do ferro de 7.8 g/cm³ e distribuição lognormal de tamanhos de partícula com mediana de ~5 µm."
+    },
+    {
+      "heading": "Previsão do código de limpeza em regime permanente",
+      "body": "Depois de quantificadas todas as taxas de ingresso, soma-se a taxa de ingresso total I_total (partículas/min em cada limiar de tamanho de partícula) de todos os caminhos. A especificação de filtro necessária para atingir um código de limpeza alvo C_target na vazão do sistema Q é então: β_x(c) ≥ I_total / (Q × C_target). Esse cálculo é feito separadamente para cada um dos três limiares de tamanho de partícula da ISO 4406 (4, 6, 14 µm(c)). O requisito de β mais exigente dos três limiares rege a especificação do filtro. O cálculo também revela a contribuição relativa de cada caminho de ingresso: é a base para priorizar as medidas de controle de ingresso. Se o ingresso atmosférico pelo respiro responder por 90% da taxa de ingresso total, melhorar o filtro do respiro de β₂₅ para β₃(c) = 200 reduz o ingresso total em 90% e permite que um filtro com β bem menor atinja o mesmo código alvo, podendo reduzir a queda de pressão do filtro e o custo de energia enquanto melhora a limpeza."
+    },
+    {
+      "heading": "Procedimento de auditoria de contaminação",
+      "body": "Uma auditoria de contaminação estabelece a taxa de ingresso real de um sistema em operação. Protocolo: (1) atingir a meta de limpeza (ou usar uma condição de referência bem controlada); (2) isolar o sistema de ingressos adicionais (fechar o respiro, suspender a manutenção, medir apenas o ingresso operacional); (3) coletar amostras de contagem de partículas calibrada segundo a ISO 11171 em intervalos fixos (normalmente 0, 100, 250, 500 horas); (4) plotar a concentração de partículas em função do tempo: a inclinação da curva concentração-tempo em partículas/mL/hora é igual à taxa de ingresso líquida (ingresso menos remoção por filtração) naquele tamanho de partícula; (5) desativar brevemente a filtração (com o sistema em repouso) e repetir: a inclinação agora é igual à taxa de ingresso bruta; (6) a diferença = taxa de remoção do filtro, fornecendo verificação direta do β nas condições de operação. Essa abordagem de medição in situ oferece uma verificação da razão beta em nível de sistema que considera o bypass da carcaça, os vazamentos pelas tampas e a distribuição do escoamento, fatores que a certificação ISO 16889 em nível de elemento não capta sozinha."
+    },
+    {
+      "heading": "Eventos dinâmicos de contaminação e resposta transitória",
+      "body": "O modelo de regime permanente se aplica à operação contínua. Vários eventos operacionais geram picos transitórios de contaminação que devem ser considerados separadamente: (1) comissionamento do sistema: a contaminação incorporada dos componentes novos pode ser 100–1,000× a concentração de operação em regime permanente; o protocolo de flushing de comissionamento ISO 23309 é obrigatório antes de conectar os componentes sensíveis; (2) troca de componentes: contaminação incorporada do componente novo; fazer pré-flushing dos componentes novos em fluido limpo antes da instalação; (3) serviço do filtro: breve ingresso de contaminação da fase de manutenção durante a troca do elemento; arranjos duplex ou pré-flushing off-line dos elementos novos minimizam isso; (4) transiente de alta carga: aumento rápido da taxa de geração por desgaste em condições de sobrecarga; a análise de óleo com frequência maior após eventos de sobrecarga detecta isso antes que o dano se agrave. Cada evento transitório representa um desvio temporário do balanço em regime permanente; o tempo para voltar à limpeza alvo após um transiente depende do volume do sistema e da vazão do filtro: constante de tempo τ = V_system / (Q × E), em que V_system é o volume total de fluido."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Equação de regime permanente",
+      "value": "C_ss = I ÷ (Q × E)"
+    },
+    {
+      "label": "Ingresso pelo respiro agrícola",
+      "value": "10⁶–10⁸ partículas >4 µm/hora (sem filtragem)"
+    },
+    {
+      "label": "Constante de tempo do sistema",
+      "value": "τ = V_system ÷ (Q × E)"
+    },
+    {
+      "label": "Taxa de desgaste em ISO 17/15/12",
+      "value": "~0.1–0.5 mg Fe/hora (bomba hidráulica saudável)"
+    },
+    {
+      "label": "Fator de melhoria do respiro",
+      "value": "β₃ vs β₂₅: ~10³× de redução do ingresso"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 16889",
+    "ISO 11171",
+    "ISO 16232",
+    "ISO 23309"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™",
+    "MACROCORE™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection",
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "taxa de ingresso de contaminação",
+    "orçamento de limpeza",
+    "modelagem ISO 4406",
+    "dimensionamento de filtros",
+    "equação de balanço de contaminação",
+    "ingresso atmosférico",
+    "filtro do respiro",
+    "geração de partículas de desgaste",
+    "auditoria de contaminação",
+    "ISO 16232",
+    "limpeza em regime permanente",
+    "caminho de ingresso de partículas"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "O sistema não atinge o código de limpeza alvo apesar de uma especificação de filtro correta no papel",
+      "O código de limpeza sobe progressivamente ao longo de semanas ou meses sem falha de componentes",
+      "O código de contaminação tem picos após o serviço do elemento filtrante e depois se recupera",
+      "Um sistema novo no comissionamento não atinge o código alvo nem após operação prolongada",
+      "O código sobe nos meses de verão (temperatura ambiente maior) e se recupera no inverno"
+    ],
+    "probableCauses": [
+      "Não atinge a meta apesar da especificação correta: a taxa de ingresso real excede os pressupostos do modelo; filtro do respiro com bypass ou ausente; caminho de ingresso inesperado (vedação de eixo danificada, ponto de abastecimento aberto)",
+      "Subida progressiva do código: DHC do filtro esgotada sem o indicador de bypass disparar (indicador com defeito ou mal calibrado); taxa de desgaste acima do modelo (degradação de componentes em andamento)",
+      "Pico pós-serviço: ingresso por manutenção durante a troca do elemento; falha de integridade das tampas no elemento novo; contaminação da carcaça não purgada após o serviço",
+      "Falha do código no comissionamento: contaminação incorporada dos componentes (não conformidade com a ISO 16232); protocolo de flushing de comissionamento não seguido; componentes sensíveis conectados antes do fim do flushing",
+      "Variação sazonal: variação da taxa de respiração do reservatório pela temperatura; no verão, mais ciclos de respiração por dia; maior concentração ambiente de partículas na estação seca"
+    ],
+    "inspectionMethods": [
+      "Contador de partículas ISO 11171 na entrada e na saída do respiro: mede diretamente a eficiência do respiro e a taxa de ingresso atmosférico nas condições do local",
+      "Amostras ISO 4406 sequenciais em intervalos de 50 horas em um período operacional controlado: inclinação da curva concentração-tempo = taxa de ingresso líquida",
+      "Inspeção do estado do respiro: remover o filtro do respiro, inspecionar o elemento em busca de danos, medir a restrição (Δp na vazão nominal); comparar o β com a especificação",
+      "Auditoria do ponto de abastecimento: amostrar o fluido de abastecimento com contador ISO 11171; comparar a limpeza do fluido de abastecimento com a meta do sistema",
+      "Inspeção das vedações de eixo: corante traçador fluorescente no sistema de óleo + luz UV ao redor das áreas das vedações detecta vedações minando antes de vazamento visível"
+    ],
+    "correctiveActions": [
+      "Taxa de ingresso acima do modelo: identificar o caminho dominante (auditar cada um separadamente); se for o respiro, passar para um respiro absoluto β₃(c) ≥ 200; se for o ponto de abastecimento, implementar abastecimento controlado com unidade de transferência de 3 µm",
+      "Taxa de desgaste elevada subindo o código: programar análise de óleo ICP em intervalos de 100 horas; identificar os metais elevados (Fe: desgaste de bomba/motor hidráulico; Cu: mancal ou corpo de válvula); programar a inspeção de componentes",
+      "Código alvo não atingido no comissionamento: estender o ciclo de flushing; verificar se todos os caminhos de bypass estão fechados durante o flushing; amostrar em vários pontos do circuito para identificar a fonte de contaminação",
+      "Pico do código após o serviço: adotar manuseio de elementos em padrão de sala limpa (vedar as duas extremidades do elemento antes da instalação); fazer pré-flushing dos elementos novos em fluido limpo antes de instalá-los",
+      "Variação sazonal do código: instalar respiro com compensação de temperatura ou dessecante para reduzir o ingresso de umidade e partículas pelos ciclos de respiração térmica"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Sistema hidráulico em ISO 21/19/16, 4 níveis acima da meta ISO 17/15/12, com especificação de filtro aparentemente correta",
+      "standard": "ISO 4406 (monitoring), ISO 11171 (particle counting), ISO 16889 (β verification)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "Executar o protocolo de auditoria de contaminação: (1) medir a eficiência do respiro com contador de partículas in situ; (2) amostrar a limpeza do fluido de abastecimento; (3) registrar a tendência do código em intervalos de 50 horas; calcular a taxa de ingresso real; comparar com a capacidade de remoção do filtro na Q medida; identificar o caminho de ingresso dominante e corrigi-lo",
+      "relatedArticles": [
+        "iso-4406",
+        "iso-16889",
+        "particle-ingress-prevention",
+        "hydraulic-power-unit-design"
+      ]
+    },
+    {
+      "problem": "Uma prensa hidráulica nova no comissionamento não atinge ISO 17/15/12 após 200 horas de flushing",
+      "standard": "ISO 23309 (commissioning flush), ISO 16232 (component cleanliness), ISO 4406 (cleanliness target)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "Amostrar o fluido de cada ramal do circuito separadamente (ISO 11171) para localizar a fonte de contaminação; ensaiar cada componente novo quanto à conformidade com a ISO 16232 antes de montá-lo no circuito; se a fonte for um único componente (por exemplo, um bloco manifold contaminado), removê-lo, limpá-lo separadamente e remontá-lo; estender o flushing com vazão maior para atingir número de Reynolds >4000 em todas as linhas",
+      "relatedArticles": [
+        "filter-housing-system-integration",
+        "iso-4406",
+        "hydraulic-power-unit-design"
+      ]
+    },
+    {
+      "problem": "O código de limpeza do óleo do motor não pode ser monitorado porque não há contagem de partículas ISO 11171 disponível no local",
+      "standard": "ISO 4406 (cleanliness), ISO 17359 (condition monitoring), ASTM D445 (viscosity)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "Usar um serviço de laboratório de análise de óleo com relato de contagem de partículas segundo a ISO 4406; definir a frequência de amostragem (a cada 250 horas em máquinas de trabalho); usar colorimetria portátil de patch ou contagem de partículas ferrosas como indicador de campo da contagem de partículas enquanto os resultados do laboratório não chegam; acompanhar a tendência do Fe por ICP como substituto da taxa de geração de partículas de desgaste",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "lubrication-system-filtration",
+        "service-intervals"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)",
+    "evidenceStatus": "Contamination balance equation from ISO 16889 and fluid power engineering literature; atmospheric ingression rate estimates from published field studies; wear rate values from ICP trend data published in tribology literature; breather efficiency impact from filter manufacturer application engineering data"
+  },
+  "commonMistakes": [
+    "Modelar o balanço de contaminação em regime permanente sem incluir os eventos de ingresso em rajada por operações de manutenção, falhas de vedações e recolhimento da haste do cilindro. Eventos episódicos de alto ingresso dominam a carga total de contaminação em equipamentos móveis: os modelos de regime permanente subestimam a carga real dos filtros.",
+    "Usar contagens atmosféricas de partículas de um único local como linha de base da taxa de ingresso para todos os equipamentos de um site. As taxas de ingresso variam por um fator de 10–50× entre equipamentos operando em mineração a céu aberto e em ambientes fabris fechados: dados de entrada exatos para o modelo exigem medição específica do local.",
+    "Supor que o volume de óleo do sistema é o principal parâmetro que rege a concentração de contaminação. A taxa de captura do filtro, a taxa de ingresso e o volume de fluido afetam a limpeza em regime permanente: dobrar a vazão do filtro tem o mesmo efeito na limpeza que dobrar o volume de óleo do sistema na mesma taxa de ingresso."
+  ]
+}

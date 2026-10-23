@@ -1,0 +1,286 @@
+{
+  "slug": "particle-ingress-prevention",
+  "faqs": [
+    {
+      "question": "¿Cuáles son las principales vías de ingreso externo de partículas en un sistema hidráulico?",
+      "answer": "El ingreso externo de partículas entra en los sistemas hidráulicos por seis vías principales: (1) Rascadores de vástago de cilindro: la fuente de ingreso más importante en equipos móviles; 0.001–0.05 mg por carrera por unidad de superficie del vástago, según la concentración de polvo ambiental y el estado del rascador. (2) Respiraderos del depósito: aire atmosférico aspirado durante la contracción térmica y la retracción de los cilindros; los respiraderos sucios o degradados dejan pasar libremente partículas ≥10 µm. (3) Reposición de fluido: aceite nuevo de contenedores contaminados o sin prefiltrar, normalmente ISO 18/16/13 desde el almacenamiento a granel. (4) Aperturas de mantenimiento: el acceso al sistema para reparaciones, cambios de filtro e inspección introduce contaminación atmosférica; cada desconexión de manguera puede introducir 0.1–1 g de partículas. (5) Ingreso en cilindros hidráulicos más allá de los sellos de vástago: los sellos de labio dañados dejan pasar partículas directamente al circuito del lado del vástago. (6) Sellos de eje de bombas hidráulicas: los sellos de eje gastados en sistemas de circuito abierto pueden permitir la entrada de aire con partículas atmosféricas a la carcasa de las bombas de engranajes."
+    },
+    {
+      "question": "¿Cómo se cuantifica la tasa de ingreso de contaminación por el vástago del cilindro para el diseño del sistema?",
+      "answer": "La tasa de ingreso de contaminación por el vástago del cilindro (mg/hora) se estima con la fórmula: I = C × A × L × n, donde C = concentración de polvo ambiental (mg/m3), A = factor de retención del rascador del sello del vástago (normalmente 0.001–0.01, fracción de la contaminación superficial que supera el rascador en cada carrera), L = longitud del vástago expuesta por carrera (m) y n = frecuencia de carreras (carreras/hora). Para un cilindro de 500 mm de carrera a 60 carreras/hora en polvo ambiental de 1 mg/m3 con retención del rascador de 0.005: I = 1 × 0.005 × 0.5 × 60 = 0.15 mg/hora. Esta tasa de ingreso es un dato de entrada del dimensionamiento del filtro: DHC del filtro (g) / I (g/hora) = horas de servicio esperadas entre cambios de filtro. El factor de retención del rascador de 0.001–0.01 representa el rango desde un rascador nuevo (0.001) hasta uno degradado que deja pasar 10× más ingreso (0.01): el mantenimiento del rascador es la acción individual de mayor impacto para alargar la vida útil del filtro."
+    },
+    {
+      "question": "¿Qué es el principio de exclusión de contaminación y en qué se diferencia de la eliminación de contaminación?",
+      "answer": "La exclusión de contaminación evita que las partículas entren en el sistema; la eliminación de contaminación captura las partículas que ya están en el fluido. La exclusión es órdenes de magnitud más eficiente: impedir que entre 1 gramo de sílice en el sistema solo requiere un buen filtro de respiradero (costo: AUD 50/año), mientras que eliminar 1 gramo de sílice del fluido hidráulico en circulación requiere procesar 10,000 L de fluido por un filtro β10(c) ≥ 200 (con un costo energético importante por caída de presión y, al final, el costo del elemento filtrante). El enfoque del presupuesto de contaminación en el diseño de sistemas hidráulicos cuantifica tanto la tasa de ingreso como la tasa de eliminación: el sistema alcanza un código ISO de régimen estacionario en el que la tasa de eliminación iguala a la de ingreso. Mejorar la exclusión (mejor protección del vástago, respiraderos mejorados, transferencia sellada de fluido) baja el código de régimen estacionario a valores más limpios sin aumentar la capacidad de filtración."
+    },
+    {
+      "question": "¿En qué se diferencian los dispositivos de exclusión para vástagos de cilindros en aplicaciones agrícolas y mineras?",
+      "answer": "Las aplicaciones agrícolas requieren dispositivos de exclusión del vástago que toleren el material de cultivo (tallos, semillas, paja) sin daño mecánico: se prefieren los fuelles de caucho tipo acordeón que se comprimen con el vástago frente a las cubiertas rígidas contra el polvo, que se dañarían al engancharse con el material de cultivo. Los equipos mineros requieren dispositivos de exclusión que soporten el polvo de roca abrasivo y posibles impactos de material que cae: las cubiertas de poliuretano resisten la abrasión mejor que el caucho (5–10× más vida útil en entornos de alta abrasión), y las placas de protección metálicas protegen el fuelle del impacto de rocas que caen. En ambas aplicaciones, inspeccionar con regularidad los dispositivos de exclusión es más importante que el material elegido: un dispositivo de exclusión aplastado o roto aumenta el ingreso 5–20× respecto a su estado intacto. La inspección de los dispositivos de exclusión en cada turno es práctica estándar en los programas de mantenimiento de equipos mineros de alto valor."
+    },
+    {
+      "question": "¿Qué procedimiento de transferencia de fluido minimiza el ingreso de contaminación durante la reposición de aceite?",
+      "answer": "La transferencia de fluido que minimiza la contaminación sigue este procedimiento: (1) Usar una unidad de transferencia dedicada con un filtro de transferencia β3(c) ≥ 200; no verter directamente del tambor al depósito. (2) Verificar el estado del elemento del filtro de transferencia antes de usarlo: revisar el indicador de restricción y cambiarlo si se activó. (3) Limpiar el exterior del puerto de llenado del depósito con un paño sin pelusa antes de quitar la tapa. (4) Usar el acople rápido de la unidad de transferencia o el filtro de llenado del depósito (si lo tiene); no usar embudos abiertos ni conexiones de manguera sin limpiar. (5) Muestrear el aceite nuevo filtrado a la salida de la unidad de transferencia con cada lote de tambores nuevo y verificar un código ISO 4406 ≤ 14/12/9 antes de introducirlo en el sistema. (6) Registrar en el libro de mantenimiento el número de lote del tambor, la especificación del aceite, el volumen añadido y la fecha. La introducción de aceite nuevo contaminado es responsable de aproximadamente el 30% de los eventos de contaminación en campo cuya fuente puede identificarse con certeza."
+    },
+    {
+      "question": "¿Cuál es el tamaño máximo aceptable de partícula que debe detectarse en las muestras del lavado de puesta en marcha?",
+      "answer": "Las muestras del lavado de puesta en marcha deben alcanzar el código ISO 4406 objetivo del sistema antes de la aprobación. En sistemas de válvulas proporcionales con objetivo ISO 16/14/11, el código objetivo limita las partículas ≥14 µm(c) a 40–80 partículas/mL, lo que significa que no debe haber cantidades significativas de partículas por encima de unos 50 µm, porque las partículas grandes individuales elevan rápidamente el conteo ≥14 µm. La ISO 4413:2011 exige dos muestras consecutivas aprobadas. Además, algunos protocolos de puesta en marcha especifican un \"desafío de partículas\": verificar que no haya partículas de más de 100 µm (detectadas por examen microscópico de un filtro de membrana después de filtrar 100 mL a través de una membrana de 10 µm). El umbral de 100 µm corresponde al tamaño mínimo que puede trabar o dañar las correderas de válvulas direccionales proporcionales con holguras de 5–15 µm al alojarse en la holgura en lugar de desgastarla al pasar."
+    },
+    {
+      "question": "¿Qué acciones de mantenimiento reducen el ingreso de partículas por los sellos de vástago de los cilindros hidráulicos?",
+      "answer": "Acciones de mantenimiento de los sellos de vástago de cilindros hidráulicos para reducir el ingreso: (1) Reemplazo del rascador del vástago al primer signo de acumulación de suciedad en el vástago por encima del punto de entrada del rascador (banda de contaminación negra u oscura visible en el vástago, que indica que el rascador ya no limpia). (2) Reemplazo del sello del vástago cuando la fuga interna supera la especificación del OEM (normalmente fuga del sello del vástago >1 mL/hora en cilindros de menos de 100 mm de diámetro). (3) Inspección del cromado: las picaduras en la superficie de los vástagos cromados (por corrosión o desgaste abrasivo) aceleran la degradación del rascador; la especificación de recromado suele ser de 50 µm mínimo de espesor de cromo después del bruñido en las zonas dañadas. (4) Verificación de la alineación del vástago: los cilindros que trabajan con cargas laterales (cilindro que no extiende/retrae en línea pura) causan un desgaste no uniforme del rascador y una carga asimétrica del sello; realinear o añadir un buje de carga detrás del rascador reduce el desgaste del sello por carga lateral."
+    },
+    {
+      "question": "¿Cómo evitan los protocolos de herramientas de mantenimiento e higiene de conexiones el ingreso de contaminación durante el servicio?",
+      "answer": "Higiene de las herramientas de mantenimiento: (1) Tapas antipolvo de los acoples rápidos de mangueras hidráulicas: todas las líneas hidráulicas desconectadas deben taparse de inmediato con tapas antipolvo limpias y ajustadas guardadas en un contenedor sellado; las conexiones destapadas en un entorno minero acumulan 0.5–2 g de contaminación en 10 minutos. (2) Limpieza de los conectores hidráulicos: limpiar las roscas y las caras de conexión con un paño sin pelusa humedecido en fluido hidráulico limpio antes de cualquier conexión. (3) Contaminación de la caja de herramientas: las herramientas usadas en sistemas hidráulicos deben guardarse aparte de las herramientas generales del taller y limpiarse antes de usarlas; las virutas metálicas de operaciones generales de mecanizado introducidas con las herramientas causan picos inmediatos del código ISO. (4) Preparación de la zona de trabajo: el mantenimiento hidráulico no debe hacerse junto a operaciones de esmerilado, soldadura o mecanizado; las partículas metálicas en el aire que generan son muy abrasivas y contaminan las conexiones hidráulicas abiertas en minutos."
+    },
+    {
+      "question": "¿Cómo se cuantifica el ingreso de partículas por los sellos mecánicos de eje de las bombas de engranajes?",
+      "answer": "El ingreso por el sello de eje de una bomba de engranajes suele ser <0.01 mg/hora en un sistema bien sellado con un sello de labio nuevo, y sube a 0.1–1 mg/hora a medida que el sello envejece y el desgaste del labio crea un sello dinámico cada vez menos eficaz. El ingreso por el sello de eje aumenta de forma no lineal con las horas de operación: la velocidad de desgaste del sello se acelera a medida que se desgasta la zona de contacto inicial del labio (normalmente 500–2,000 horas en sellos de labio NBR estándar con aceite derivado del petróleo). El ingreso por el sello de eje se cuantifica de forma indirecta por correlación con los cambios de la espectroscopia elemental: sin aumento del hierro (lo que descarta desgaste interno) pero con silicio en aumento (sílice atmosférica) junto con un código ISO en aumento, apunta a ingreso externo por el sello de eje. La medición directa requiere un banco de ensayo con ambiente controlado y conteo gravimétrico de partículas. Reemplazar los sellos de eje a intervalos de 3,000–5,000 horas evita el aumento no lineal del ingreso por sellos degradados."
+    },
+    {
+      "question": "¿Cuál es la contribución a la tasa de ingreso de contaminación de las actividades típicas de mantenimiento hidráulico?",
+      "answer": "Ingreso de contaminación por actividades de mantenimiento: (1) Reemplazo de mangueras hidráulicas: cada desconexión y reconexión de manguera introduce aproximadamente 0.5–5 g de contaminación (cascarilla, partículas del interior de la manguera, polvo ambiental en los conectores) si no se siguen los procedimientos de higiene estándar; con el protocolo de tapas antipolvo y limpieza, se reduce a <0.05 g. (2) Cambio de elemento filtrante: abrir la carcasa del filtro sin el protocolo de higiene ISO 4413 introduce 0.1–2 g; con el protocolo, <0.02 g. (3) Reemplazo de cilindros: el reemplazo de un cilindro en banco en un taller introduce 0.5–2 g; el reemplazo en campo sin la limpieza de un taller introduce 5–20 g. (4) Reemplazo de bombas: cada desconexión y reconexión de la línea de drenaje de carcasa introduce 0.2–1 g; la propia carcasa de la bomba (cebada en su último uso) lleva 0.5–5 g de contaminación si no se limpia antes de la instalación. Se requieren mediciones del código ISO después del mantenimiento para verificar que el sistema volvió a la limpieza objetivo."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components",
+      "relevance": "Norma de mantenimiento de sistemas y control de la contaminación que incluye la inspección de los sellos de vástago, la especificación de los respiraderos y los protocolos de reposición de fluido."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 23309:2007, Hydraulic Fluid Power Systems and Components — Cleanliness Assessment of Parts and Systems Using Hydraulic Flushing",
+      "relevance": "Norma de procedimiento de lavado para eliminar la contaminación de la construcción de los sistemas nuevos y alcanzar los códigos ISO 4406 objetivo antes de la puesta en marcha."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element",
+      "relevance": "Norma de ensayo de la relación Beta usada para especificar elementos filtrantes capaces de superar las tasas de ingreso de contaminación en el cálculo del presupuesto de contaminación."
+    },
+    {
+      "category": "handbook",
+      "citation": "Noria Corporation, Machinery Lubrication — Contamination Control Handbook",
+      "relevance": "Manual de referencia de la industria sobre la filosofía de exclusión de la contaminación, la cuantificación de la tasa de ingreso y los cálculos de presupuesto de contaminación para sistemas hidráulicos y de lubricación."
+    }
+  ],
+  "title": "Prevención del ingreso de partículas",
+  "subtitle": "Ingeniería de respiraderos, selección de sellos de eje y metodología del presupuesto de contaminación",
+  "metaDescription": "Referencia de ingeniería para la prevención del ingreso de partículas en sistemas hidráulicos y de lubricación: clasificación de las vías de ingreso, selección de filtros de respiradero, ingeniería de sellos de eje, control de la contaminación en los puntos de llenado, presupuesto de la tasa de ingreso y protocolos de monitoreo.",
+  "category": "Ingeniería",
+  "readTime": "10 min",
+  "intro": "La prevención del ingreso de partículas es la disciplina aguas arriba del control de la contaminación: impedir que la contaminación entre en el sistema antes de que pueda degradar la limpieza del fluido y dañar los componentes. La filtración por sí sola no puede alcanzar un código de limpieza ISO 4406 objetivo si las tasas de ingreso superan la capacidad de eliminación de la filtración. Identificar, cuantificar y sellar las vías de ingreso es un requisito previo para mantener la limpieza en entornos de operación exigentes.",
+  "sections": [
+    {
+      "heading": "Vías de ingreso y clasificación",
+      "body": "El ingreso de partículas en los sistemas hidráulicos y de lubricación se produce por cuatro categorías de vías. Ingreso atmosférico: polvo ambiental que entra por los respiraderos del depósito, los sellos de vástago de los cilindros, los sellos de eje y las holguras estructurales de las carcasas. Es la categoría de ingreso dominante en los equipos móviles al aire libre: el sistema hidráulico de una pala minera puede ingerir 50–200 mg de polvo por hora solo por un respiradero sin filtrar en un ambiente de 1–5 mg/m³ de polvo. Ingreso por mantenimiento: partículas introducidas durante el reemplazo de componentes, la reposición de fluido y el muestreo: herramientas contaminadas, depósitos abiertos, equipos de llenado contaminados y partículas desprendidas de las roscas de los conectores. Una sola boquilla de llenado contaminada puede introducir 500–2,000 mg en un llenado. Ingreso incorporado: residuos de mecanizado, cascarilla, escoria de soldadura y restos de montaje presentes en componentes nuevos o reconstruidos antes del primer llenado. Normalmente ISO 22/20/17 o peor en un sistema nuevo sin lavar. Ingreso generado: partículas producidas por desgaste interno, erosión por cavitación y degradación de sellos; no son \"ingreso\" en el sentido convencional, pero contribuyen a la carga total de contaminación que el filtro debe manejar. Orden de severidad del ingreso: en la mayoría de las aplicaciones industriales al aire libre, atmosférico > mantenimiento > incorporado > generado.",
+      "callout": [
+        {
+          "label": "Ingreso atmosférico (respiradero sin filtrar)",
+          "value": "50–200 mg/h en un ambiente de 1–5 mg/m³ de polvo"
+        },
+        {
+          "label": "Ingreso por mantenimiento (boquilla de llenado contaminada)",
+          "value": "500–2,000 mg por evento"
+        },
+        {
+          "label": "Incorporado (sistema nuevo sin lavar)",
+          "value": "ISO 22/20/17 o peor"
+        }
+      ]
+    },
+    {
+      "heading": "Ingeniería de filtros de respiradero",
+      "body": "Los respiraderos del depósito igualan la presión cuando cambia el volumen de fluido (dilatación/contracción térmica, extensión/retracción de cilindros). Un respiradero sin filtrar o subespecificado es la vía de ingreso de mayor caudal en la mayoría de los sistemas hidráulicos al aire libre. Requisitos de ingeniería: (1) Clasificación de filtración: 3 µm absoluto como mínimo para sistemas con objetivo ISO 17/15/12 o mejor; 1 µm absoluto para sistemas de servoválvulas con objetivo ISO 15/13/10 o mejor. (2) Capacidad de flujo: el respiradero debe dejar pasar el volumen máximo de respiración sin generar una presión diferencial significativa; una restricción excesiva causa ciclos de presión en el depósito (cavitación en la succión, desaireación con presión positiva). Volumen máximo de respiración = área máxima del cilindro (cm²) × velocidad máxima de extensión del vástago (cm/s). (3) Función desecante: en ambientes húmedos, los respiraderos desecantes (gel de sílice o tamiz molecular) adsorben el vapor de agua del aire entrante y evitan la acumulación de agua en el depósito. La capacidad del desecante es finita: el cambio de color de las perlas (de naranja a verde en el gel de sílice) indica saturación. (4) Orientación de montaje: horizontal o hacia arriba para evitar que se acumule lluvia sobre la membrana del respiradero. (5) Protección con prefiltro: una malla de prefiltro gruesa aguas arriba del medio fino evita la obstrucción rápida por insectos, residuos grandes y salpicaduras de lluvia.",
+      "callout": [
+        {
+          "label": "Clasificación del respiradero (objetivo ISO 17/15/12)",
+          "value": "3 µm absoluto"
+        },
+        {
+          "label": "Clasificación del respiradero (objetivo ISO 15/13/10)",
+          "value": "1 µm absoluto"
+        },
+        {
+          "label": "Indicador de saturación del desecante",
+          "value": "Naranja (activo) → verde (reemplazar)"
+        }
+      ]
+    },
+    {
+      "heading": "Ingeniería de sellos de eje para el control del ingreso",
+      "body": "Los sellos de eje hidráulicos (sellos de labio, sellos de PTFE, sellos de laberinto) evitan la fuga de fluido hacia fuera y el ingreso de polvo/agua hacia dentro en los pasos de ejes rotativos (ejes de bombas, ejes de motores, extremos de vástagos de cilindros). Parámetros de selección del sello: (1) Rugosidad de la superficie del eje: el sellado con labio requiere un Ra del eje ≤ 0.4 µm en la banda de contacto del sello; los ejes rugosos causan desgaste acelerado del labio e ingreso. (2) Excentricidad del eje: lectura total del indicador ≤ 0.05 mm en la ubicación del labio del sello para ejes de ≤50 mm de diámetro; una excentricidad mayor provoca levantamientos periódicos del labio durante la rotación, lo que crea una vía de ingreso momentánea. (3) Compatibilidad del material del sello con el fluido: NBR para fluido hidráulico derivado del petróleo hasta 80°C; FKM (Viton) para fluido sintético y temperaturas de hasta 120°C; PTFE para resistencia química. (4) Labio de exclusión: los sellos de doble labio con un labio de exclusión (exterior) evitan el ingreso de partículas y agua externas sin impedir la retención de lubricación en el labio interior. (5) Instalación del sello: una instalación incorrecta (labio torcido, sobrecomprimido, fuera de escuadra) causa ingreso inmediato y desgaste rápido; use herramientas de instalación dimensionadas para el DE y el alojamiento del sello específico.",
+      "callout": [
+        {
+          "label": "Límite de rugosidad del eje",
+          "value": "Ra ≤ 0.4 µm en la banda de contacto del sello"
+        },
+        {
+          "label": "Límite de excentricidad del eje (≤50 mm de DE)",
+          "value": "TIR ≤ 0.05 mm"
+        },
+        {
+          "label": "Función del sello de doble labio",
+          "value": "El labio interior retiene el fluido; el labio exterior excluye el ingreso"
+        }
+      ]
+    },
+    {
+      "heading": "Control de la contaminación en los puntos de llenado",
+      "body": "La reposición y el reemplazo de fluido son la actividad de mantenimiento de mayor riesgo de introducción de contaminación. El aceite nuevo de un tambor sellado suele llegar en ISO 18/16/13, ya por encima del objetivo de los circuitos de servoválvulas y bombas de pistones. Control de la contaminación en los puntos de llenado: (1) Carros de llenado con prefiltro: todo equipo de llenado debe tener un filtro a bordo (β₁₀(c) ≥ 200) en la línea de llenado, con su propio programa de servicio. Un carro de llenado contaminado puede empeorar la limpieza del sistema en 3–4 unidades de código por reposición. (2) Sistemas de llenado cerrados: los acoples de llenado rápido dedicados con tapas antipolvo evitan los llenados con el depósito abierto. Los acoples se conectan a un conector correspondiente en el carro de llenado: sin embudos abiertos ni depósitos destapados. (3) Contenedores de transferencia: trasvasar aceite en baldes abiertos de un tambor a un depósito puede introducir 500–5,000 mg/L de contaminación según la concentración de polvo ambiental y la limpieza del contenedor. Use sistemas de transferencia de circuito cerrado, sellados y prelimpiados. (4) Contaminación de las roscas de los conectores: las roscas de los conectores hidráulicos tienen aceite de mecanizado y partículas de fabricación; inspeccione y limpie los conectores nuevos antes del montaje; el sellador de roscas (cinta de PTFE o sellador anaeróbico) evita que se desprendan partículas al apretar.",
+      "callout": [
+        {
+          "label": "Limpieza del aceite nuevo en tambor",
+          "value": "ISO 18/16/13 típico"
+        },
+        {
+          "label": "Filtro mínimo del carro de llenado",
+          "value": "β₁₀(c) ≥ 200 en línea"
+        },
+        {
+          "label": "Contaminación por trasvase en balde abierto",
+          "value": "Hasta 500–5,000 mg/L"
+        }
+      ]
+    },
+    {
+      "heading": "Medición de la tasa de ingreso y presupuesto de contaminación",
+      "body": "El presupuesto de contaminación cuantifica el balance entre la tasa de ingreso total (mg/h) y la tasa de eliminación por filtración (mg/h) para predecir si un sistema puede alcanzar y mantener su código de limpieza objetivo en régimen estacionario. Estimación de la tasa de ingreso: ingreso por respiradero = concentración de polvo ambiental (mg/m³) × caudal de respiración (m³/h) × (1 − eficiencia del respiradero). Ingreso por sello de eje = valor empírico de datos de sellos gastados (0.5–5 mg/h por sello, según el estado del sello, la velocidad del eje y las condiciones ambientales). Ingreso por llenados = frecuencia de llenados (eventos/h) × contaminación por evento (mg). Ingreso total = suma de todas las vías. Tasa de eliminación por filtración = caudal por el filtro (L/h) × concentración de partículas en la entrada (mg/L) × eficiencia del filtro (1 − 1/β). La limpieza en régimen estacionario se logra cuando la tasa de eliminación ≥ tasa de ingreso. Un déficit en el presupuesto (eliminación < ingreso) significa que la limpieza se degradará hasta que el sistema llegue a un código de equilibrio más alto; la velocidad de degradación y el código de equilibrio pueden calcularse con el presupuesto de contaminación. El presupuesto identifica qué vía de ingreso tiene mayor impacto por unidad de costo de reducción: normalmente dominan las vías del respiradero y del punto de llenado.",
+      "callout": [
+        {
+          "label": "Condición de régimen estacionario",
+          "value": "Tasa de eliminación por filtración ≥ tasa de ingreso total"
+        },
+        {
+          "label": "Consecuencia del déficit en el presupuesto",
+          "value": "La limpieza se degrada hasta un código de equilibrio más alto"
+        },
+        {
+          "label": "Reducción de máxima prioridad",
+          "value": "Respiradero y punto de llenado (normalmente los de más mg/h)"
+        }
+      ]
+    },
+    {
+      "heading": "Monitoreo y tendencias para detectar el ingreso",
+      "body": "Los eventos de ingreso son detectables mediante la tendencia del conteo de partículas ISO 4406 antes de que el código de limpieza llegue al umbral de daño. Prácticas clave de monitoreo: (1) Establecer un código de limpieza de referencia para cada máquina en condiciones normales de operación: registrar 3 muestras secuenciales en el mismo punto de muestreo y en la misma condición. (2) Fijar umbrales de alerta en una unidad de código por encima de la referencia a ≥6 µm; fijar umbrales de acción en dos unidades de código por encima de la referencia. Una unidad de código = cambio de 2× en el conteo de partículas, detectable con alta confianza. (3) Correlacionar las tendencias del código con los registros de mantenimiento: una subida de una unidad de código tras un evento de mantenimiento específico (reemplazo del sello de vástago del cilindro, cambio de motor hidráulico, reposición de fluido) identifica ese evento como la fuente del ingreso. (4) El contenido de silicio en el aceite (ICP) que sube junto con el conteo de partículas indica ingreso de sílice transportada por el aire: falla del respiradero o del sello de eje. El cobre que sube junto con el conteo de partículas indica desgaste de componentes internos que contribuye a la contaminación generada. (5) Muestrear después de cada evento de riesgo de contaminación (tormenta, inmersión, mantenimiento) dentro de las 24–48 horas siguientes a la vuelta al servicio."
+    },
+    {
+      "heading": "Metodología de auditoría del ingreso al sistema",
+      "body": "Una auditoría sistemática del ingreso identifica y prioriza todas las vías de contaminación de una máquina o instalación específica. Procedimiento de auditoría: (1) Mapear todos los puntos de ingreso posibles: respiraderos (cantidad, ubicación, clasificación), sellos de eje (cantidad, tipo, antigüedad), puntos de llenado (configuración, disciplina), sellos de vástago de cilindros (cantidad, longitud de carrera, condiciones ambientales), holguras estructurales (uniones de carcasas, pasos de cables). (2) Calificar cada vía por la tasa de ingreso estimada (mg/h) en condiciones normales de operación. (3) Calcular el presupuesto total de ingreso y compararlo con la capacidad de eliminación de la filtración instalada. (4) Priorizar las correcciones por costo-eficacia: reducción de la tasa de ingreso por dólar gastado. Hallazgos típicos ordenados por costo-eficacia: (a) Reemplazar el respiradero sin filtrar por un respiradero desecante clasificado: la mayor reducción de ingreso por dólar; (b) Instalar un sistema de llenado sellado: elimina la mayor fuente de ingreso por evento; (c) Reemplazar los sellos de eje gastados: mejora moderada a costo moderado; (d) Aumentar el caudal del kidney-loop: mejora la tasa de eliminación sin reducir el ingreso. Documente los hallazgos de la auditoría y los códigos de limpieza posteriores a la corrección como referencia continua."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Clasificación del respiradero (sistemas servo)",
+      "value": "1 µm absoluto"
+    },
+    {
+      "label": "Ingreso atmosférico (sin filtrar)",
+      "value": "50–200 mg/h en ambiente con polvo"
+    },
+    {
+      "label": "Filtro mínimo del carro de llenado",
+      "value": "β₁₀(c) ≥ 200"
+    },
+    {
+      "label": "Límite de rugosidad del eje",
+      "value": "Ra ≤ 0.4 µm (zona de contacto del sello)"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 4406",
+    "ISO 11171",
+    "ISO 16889"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Hydraulic Protection",
+    "Lubrication Protection"
+  ],
+  "keywords": [
+    "ingreso de partículas",
+    "filtro de respiradero",
+    "sello de eje",
+    "presupuesto de contaminación",
+    "control del punto de llenado",
+    "tasa de ingreso",
+    "ISO 4406",
+    "respiradero desecante"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Subida inexplicable del código de limpieza ISO 4406 entre muestras consecutivas tomadas en condiciones idénticas: indica un evento de ingreso activo o un cambio en la tasa de ingreso",
+      "Silicio (Si) en aumento en el análisis de aceite ICP: polvo de sílice transportado por el aire que entra por el respiradero, el sello de eje o el sello del vástago",
+      "El intervalo de servicio del filtro se acorta progresivamente: la tasa de ingreso supera el supuesto de diseño y carga los elementos más rápido de lo previsto",
+      "Acumulación de agua en el depósito detectada por muestreo o visor: ingreso de humedad atmosférica por un respiradero sin protección o condensación en un depósito ventilado",
+      "Subida del código de conteo de partículas justo después de un evento de mantenimiento: evento de ingreso por mantenimiento atribuible a una actividad específica"
+    ],
+    "probableCauses": [
+      "Filtro del respiradero saturado (perlas desecantes verdes, restricción elevada) o respiradero ausente/derivado: ingreso atmosférico a la tasa máxima",
+      "Sello de eje gastado o mal instalado: deja entrar polvo y agua junto al eje a 0.5–5 mg/h por sello",
+      "Contaminación en el punto de llenado: puerto de llenado destapado, trasvase con balde abierto o filtro del carro de llenado contaminado sin mantenimiento",
+      "Falla del sello del vástago del cilindro: daño en la superficie del vástago o en el labio del sello que deja entrar partículas durante la carrera de retracción",
+      "Holgura estructural en la carcasa (tapa de inspección floja, fundición dañada) que crea una conexión atmosférica no prevista"
+    ],
+    "inspectionMethods": [
+      "Inspección del respiradero: intentar soplar a través del respiradero con la boca; si no pasa aire, la restricción es demasiado alta y hay que reemplazarlo; revisar también el color de las perlas desecantes",
+      "Inspección visual del sello de eje: una película de aceite en el exterior del eje por dentro del sello = fuga hacia fuera (sello gastado desde dentro); acumulación de polvo en el eje junto al sello = vía de ingreso hacia dentro confirmada",
+      "Conteo de partículas ISO 4406 con y sin una vía específica bloqueada: instalar una tapa de respiradero temporal de 3 µm y muestrear a las 4 horas; si el código mejora, el respiradero era la fuente de ingreso dominante",
+      "Tendencia del contenido de Si por ICP: una subida de Si >5 ppm entre muestras consecutivas al mismo intervalo es significativa; una subida de Si correlacionada con la temporada de operación polvorienta o con un lugar específico confirma el ingreso por el aire",
+      "Ensayo de limpieza del punto de llenado: tomar una muestra de la salida del carro de llenado (con el carro funcionando) en un frasco prelimpiado; el conteo ISO 4406 debe cumplir o mejorar el objetivo del sistema; si no, el carro de llenado es una fuente de contaminación"
+    ],
+    "correctiveActions": [
+      "Reemplazar de inmediato el respiradero por un respiradero desecante clasificado; instalarlo con la capacidad de flujo correcta para la tasa máxima de respiración; colocar una malla de prefiltro aguas arriba del elemento principal",
+      "Instalar un sistema de llenado sellado con filtro de carro de llenado en línea β₁₀(c) ≥ 200; implementar un acople de llenado cerrado en el depósito; auditar los registros de servicio del filtro del carro de llenado",
+      "Después de cualquier evento de ingreso confirmado por una subida del conteo de partículas: hacer funcionar el kidney-loop de forma continua; muestrear a las 50, 100 y 200 horas hasta que la limpieza vuelva a la referencia; documentar la causa raíz y la acción correctiva",
+      "Para el ingreso por el sello de eje: inspeccionar el eje en busca de daños superficiales en la zona de contacto del sello (medición de Ra); reparar el eje si el Ra es >0.4 µm antes de colocar el sello nuevo; usar la herramienta de instalación para evitar instalar el labio torcido",
+      "Para un pico de contaminación inducido por mantenimiento: implementar una política de almacenamiento de componentes prelimpiados; exigir muestreo ISO 4406 dentro de las 48 horas siguientes a cualquier actividad de mantenimiento en un sistema con componentes sensibles"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Silicio en aumento en el análisis de aceite que indica ingreso de polvo transportado por el aire",
+      "standard": "ASTM D5185 (ICP Si measurement), ISO 4406 (cleanliness code tracking)",
+      "protectionSystem": "Protección hidráulica o protección de la lubricación",
+      "technology": "Respiradero desecante de 1–3 µm absoluto + inspección y reemplazo del sello de eje si está gastado",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "contamination-control",
+        "fluid-cleanliness"
+      ]
+    },
+    {
+      "problem": "Subida del código de limpieza atribuible a eventos de reposición de fluido",
+      "standard": "ISO 4406 (system cleanliness), ISO 11171 (fill cart filter verification)",
+      "protectionSystem": "Protección hidráulica o protección de la lubricación",
+      "technology": "Sistema de llenado sellado con filtro en línea β₁₀(c) ≥ 200; almacenamiento a granel de fluido prefiltrado",
+      "relatedArticles": [
+        "contamination-control",
+        "hydraulic-power-unit-design",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "El sistema no logra mantener la limpieza objetivo pese a una especificación de filtración correcta",
+      "standard": "ISO 4406 (monitoring), ISO 16889 (filter β verification)",
+      "protectionSystem": "Protección hidráulica o protección de la lubricación",
+      "technology": "Auditoría del presupuesto de contaminación: cuantificar todas las vías de ingreso y compararlas con la capacidad de eliminación de la filtración; identificar y sellar la vía de ingreso dominante",
+      "relatedArticles": [
+        "contamination-control",
+        "hydraulic-power-unit-design",
+        "fluid-cleanliness"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)",
+    "evidenceStatus": "ISO 4406:2021 verified; ISO 11171:2010 verified; shaft seal data from ISO 6194-1; ingress rate estimates from published contamination audit data"
+  }
+}

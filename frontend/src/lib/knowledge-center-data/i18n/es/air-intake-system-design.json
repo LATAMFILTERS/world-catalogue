@@ -1,0 +1,354 @@
+{
+  "slug": "air-intake-system-design",
+  "faqs": [
+    {
+      "question": "¿Cuáles son las cuatro zonas principales de un sistema de admisión de aire y qué hace cada una?",
+      "answer": "Los sistemas de admisión de aire tienen cuatro zonas funcionales: (1) Zona de entrada: punto de entrada del aire ambiente, ubicado para minimizar la aspiración de polvo a nivel del suelo (en camiones, normalmente elevado por encima de la línea del capó) y orientado lejos de las salidas de escape y de la descarga del aire de enfriamiento; (2) Zona de prelimpieza: separadores ciclónicos, tubos de prefiltro o separadores de vórtice eliminan las partículas gruesas (>10 µm) antes del elemento primario, lo que reduce la velocidad de carga del elemento en un 70–90%; (3) Zona de filtración primaria: la carcasa del elemento filtrante principal con el elemento reemplazable, dimensionada para el caudal de aire nominal del motor con un margen de capacidad del 20% en aplicaciones turboalimentadas; (4) Zona de distribución: conductos de aire limpio desde la salida del filtro hasta la entrada del turbocompresor o la admisión del motor, dimensionados para limitar la restricción del conducto por debajo de 5 mbar al caudal nominal y sellados contra fugas externas."
+    },
+    {
+      "question": "¿Cómo se especifica la ubicación de la entrada del sistema de admisión de aire para minimizar la aspiración de polvo?",
+      "answer": "La ubicación de la entrada sigue estos criterios de ingeniería: mínimo 500 mm sobre el nivel del suelo para evitar la zona de concentración de polvo de la capa límite (donde la concentración de partículas es 3–10× la ambiental por el movimiento del vehículo); ubicada a barlovento de la nube de polvo del eje trasero en vehículos que avanzan; separación horizontal mínima de 300 mm de la descarga del aire de enfriamiento del motor (que puede contener material particulado concentrado por el calor); y protegida del impacto directo del agua con un deflector de lluvia o una campana de preseparador. Las normas de geometría de carcasas ISO 5011 definen la ubicación de los puntos de medición, pero no especifican la geometría de instalación en el vehículo. Los manuales de instalación del OEM especifican distancias mínimas de instalación validadas con ensayos de restricción del sistema montado SAE J1539 en el modelo de vehículo concreto. Reubicar la entrada en el mercado de reposición por estética o espacio requiere volver a ensayar para verificar la tasa de ingreso de polvo y el cumplimiento de la restricción."
+    },
+    {
+      "question": "¿Cuál es la función del eyector del prelimpiador en un sistema de preseparador ciclónico?",
+      "answer": "El mecanismo eyector de un preseparador ciclónico usa gas de escape de la turbina, aire de derivación del compresor del turbocompresor o un sistema de succión mecánica para evacuar de forma continua la taza de polvo en la base de los tubos ciclónicos. Sin eyección, las partículas separadas se acumulan en la taza de polvo y vuelven a entrar en la corriente de aire cuando la taza se llena, lo que anula la ventaja de eficiencia del prelimpiador. Los sistemas eyectores que usan gas de escape con 5–20 mbar de diferencial crean presión negativa en la taza de polvo, extraen las partículas separadas y las descargan a la atmósfera. El mantenimiento de la válvula eyectora es el aspecto más descuidado de los sistemas de prelimpiador: un eyector obstruido reduce la eficiencia del prelimpiador del 90% a prácticamente cero y hace que la vida útil del elemento filtrante primario se desplome un 80–90%. La inspección de la válvula eyectora en cada cambio del elemento primario es obligatoria."
+    },
+    {
+      "question": "¿Cómo afecta la geometría del conducto entre la salida del filtro de aire y la entrada del turbocompresor al desempeño?",
+      "answer": "La geometría del conducto afecta la restricción del flujo de aire y el ruido. Minimizar la restricción requiere: superficies interiores del conducto lisas (la manguera corrugada añade un 15–30% más de restricción que una lisa equivalente); radio de curvatura mínimo de 3× el diámetro interior del conducto en cada curva de 90°; transiciones graduales entre diámetros de conducto con ángulos de conicidad inferiores a 7° (las expansiones bruscas crean turbulencia y pérdida de presión); y sección del conducto dimensionada para una velocidad máxima del aire inferior a 20 m/s al caudal nominal del motor. Consideraciones de ruido: las curvas cerradas y las transiciones estrechas crean resonancias de silbido que pueden parecer avisos de restricción del filtro. Los tramos de manguera flexible deben ser lisos por dentro y estar sujetos por fuera para evitar la reducción de diámetro inducida por la presión (colapso) que restringiría el flujo de aire. Todas las uniones deben sellarse con abrazaderas de tornillo sin fin apretadas según la especificación del OEM: las abrazaderas flojas son una de las principales causas de fugas de ingreso de aire sin filtrar."
+    },
+    {
+      "question": "¿Cuál es la metodología de dimensionamiento del elemento filtrante para una instalación diésel turboalimentada?",
+      "answer": "El dimensionamiento del elemento filtrante para diésel turboalimentado sigue tres pasos. (1) Definir el caudal de aire nominal del motor: normalmente 120–150% de la masa de aire estequiométrica teórica (exceso de lambda para la eficiencia de combustión) a la potencia nominal máxima. Para un motor diésel de 250 kW, el caudal de aire nominal es de aproximadamente 12–15 m3/min. (2) Elegir el área frontal del elemento: velocidad frontal objetivo de 0.05–0.12 m/s; área frontal del elemento = caudal de aire (m3/s) / velocidad frontal (m/s). Con 0.12 m3/s (7.2 m3/min) y 0.08 m/s de velocidad frontal, el área frontal requerida = 0.015 m2 = 15,000 mm2 (equivalente a aproximadamente 140 mm × 110 mm de área de medio). (3) Verificar la DHC del elemento y el intervalo de servicio: DHC(g) / (concentración de polvo ambiental mg/m3 × caudal de aire m3/h) = vida útil en horas. Dimensione el elemento para cumplir el intervalo de servicio especificado por el OEM con la concentración de polvo ambiental del peor caso de la aplicación objetivo."
+    },
+    {
+      "question": "¿Cómo protege la filtración de aire en dos etapas con elementos de seguridad contra errores de instalación?",
+      "answer": "Los elementos de seguridad (elementos secundarios) protegen contra tres modos de falla específicos. (1) Error de instalación del elemento primario: si la junta del elemento primario no sella bien, o si se omite el elemento en la carcasa durante un servicio en campo, el elemento de seguridad impide que el aire sin filtrar llegue al motor. (2) Falla estructural del elemento primario: si el elemento primario colapsa por exceso de restricción o rotura del medio, el elemento de seguridad da una barrera de filtración de respaldo. (3) Transitorio de servicio: durante el reemplazo del elemento primario, el motor no debe estar en marcha (el indicador de restricción lo confirma), pero si el elemento de seguridad no está instalado, una breve operación sin la protección del elemento primario es catastrófica para la vida del motor. Los elementos de seguridad NO deben usarse como elementos primarios: su alta restricción inicial (por el medio fino) causaría de inmediato una restricción excesiva. La SAE J1539 especifica que los elementos de seguridad se cambian cada dos cambios del elemento primario o una vez al año, y no se limpian."
+    },
+    {
+      "question": "¿Cuál es el criterio de diseño de la geometría de entrada de la carcasa del filtro de aire para evitar una mala distribución del flujo?",
+      "answer": "La geometría de entrada de la carcasa crea una mala distribución del flujo en la cara del elemento filtrante cuando la velocidad del chorro de entrada es alta respecto a la relación de expansión de la carcasa. Criterios de diseño: el volumen interno de la carcasa desde el puerto de entrada hasta la cara del elemento filtrante debe ofrecer al menos 3× el área de la sección del conducto de entrada para que el flujo se desacelere y se distribuya antes de llegar al filtro. La velocidad en el conducto de entrada no debe superar 10 m/s en la transición de entrada al filtro: por encima de eso, el chorro de alta velocidad crea una zona de carga concentrada en la cara del elemento justo frente a la entrada, lo que reduce la DHC efectiva hasta un 40%, porque esa zona llega a la restricción terminal mientras el resto del elemento está poco cargado. Los rectificadores de flujo (panal o haz de tubos) en la cara de entrada del filtro mejoran la distribución en carcasas con restricciones geométricas que impiden una distribución natural por expansión."
+    },
+    {
+      "question": "¿Cómo se sellan las conexiones de los conductos del sistema de admisión de aire y por qué requieren inspección periódica?",
+      "answer": "Las conexiones de los conductos de admisión de aire usan tramos de manguera de silicona o de caucho EPDM sujetos con abrazaderas de tornillo sin fin o de perno en T, o acoples de caucho moldeado con cordones de sujeción externos. Las especificaciones de torque de las abrazaderas (normalmente 3–5 Nm para tornillo sin fin, 8–12 Nm para perno en T) son críticas: las abrazaderas con poco torque permiten la fuga radial de aire ambiente directamente a la corriente de aire filtrado. En servicio, la vibración afloja los sujetadores de las abrazaderas en 500–1,000 horas, y los ciclos térmicos del material de la manguera de silicona o caucho causan deformación permanente (deformación por compresión), lo que reduce la presión de contacto de sellado por debajo del mínimo requerido. Se recomienda verificar una vez al año el torque de las abrazaderas en todas las conexiones aguas abajo del elemento filtrante primario. Los depósitos de hollín negro en la superficie exterior de las uniones de los conductos, o los rastros de polvo blanco en superficies limpias junto a las conexiones, indican una fuga activa que hay que corregir de inmediato."
+    },
+    {
+      "question": "¿Qué ensayo verifica la restricción total del sistema de admisión de aire montado en la instalación puesta en marcha?",
+      "answer": "El ensayo de restricción total del sistema montado usa un manómetro o transductor de presión calibrado conectado entre la entrada de aire ambiente y el punto de conexión al múltiple de admisión del motor (entrada del turbocompresor en motores turboalimentados, múltiple de admisión en motores de aspiración natural). La medición se hace con un elemento filtrante nuevo y limpio instalado, al caudal de aire nominal del motor (verificado con un medidor de caudal de aire o aproximado a partir de la velocidad del motor y la cilindrada a las RPM nominales). La restricción total del sistema al caudal nominal con un elemento limpio no debe superar el 50% de la restricción terminal especificada por el OEM, lo que deja un 50% de margen para la carga del elemento durante el servicio. Una instalación nueva que supera el 60% de la restricción terminal con un elemento limpio indica un problema de diseño de la carcasa, de geometría de los conductos o de dimensionamiento del elemento que debe corregirse antes de que el sistema entre en servicio."
+    },
+    {
+      "question": "¿Cuál es el argumento económico para especificar carcasas de filtro sobredimensionadas en aplicaciones mineras?",
+      "answer": "Las carcasas de filtro subdimensionadas (área frontal del elemento insuficiente) obligan a velocidades frontales altas que aceleran la carga del filtro y aumentan el consumo de DHC por unidad de tiempo. En un entorno minero con 2 mg/m3 de polvo ambiental, una carcasa bien dimensionada con un elemento de 400 g de DHC da intervalos de 200 horas; una carcasa subdimensionada con un elemento de 150 g de DHC da intervalos de 75 horas, lo que exige 2.7× más cambios de elemento por año de operación. Con AUD 150/elemento y 50 máquinas, especificar una carcasa sobredimensionada (que añade AUD 800/máquina de costo de capital) recupera su costo en 3–4 ciclos de cambio de elemento (75 días de operación) gracias a la menor frecuencia de servicio y al menor tiempo de inactividad asociado del vehículo. Además, la alta velocidad frontal en carcasas subdimensionadas reduce la relación Beta efectiva (menor eficiencia a alta velocidad frontal con un medio fijo), lo que reduce la calidad de protección del motor con independencia de la DHC."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing",
+      "relevance": "Norma de ensayo principal para el desempeño de los sistemas de filtración de admisión de aire, incluidas la restricción, la eficiencia y la capacidad de polvo."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J1539, Air Cleaner Test Code",
+      "relevance": "Código de ensayo de restricción y desempeño del sistema de admisión de aire montado, usado para validar que el sistema instalado cumple los requisitos del OEM del motor."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Evaluation",
+      "relevance": "Método de evaluación de la eficiencia gravimétrica y la capacidad de retención de polvo a nivel de elemento, usado en los cálculos de dimensionamiento del diseño del sistema de admisión de aire."
+    },
+    {
+      "category": "handbook",
+      "citation": "Donaldson Company, Air Filtration Systems Engineering Application Guide, Technical Reference TR-002",
+      "relevance": "Manual de aplicación de ingeniería que cubre la selección del prelimpiador, el dimensionamiento por velocidad frontal, la geometría de los conductos, la especificación de abrazaderas y el cálculo del intervalo de servicio de sistemas industriales de admisión de aire."
+    }
+  ],
+  "title": "Diseño de sistemas de admisión de aire",
+  "subtitle": "Selección del prelimpiador, filtración en dos etapas e ingeniería del indicador de servicio",
+  "metaDescription": "Referencia de ingeniería para el diseño del sistema de admisión de aire del motor: tecnología de prelimpiadores, especificación de los elementos primario y de seguridad, calibración del indicador de servicio, metodología de dimensionamiento del caudal de aire e integración de sistemas de varias etapas según la ISO 5011.",
+  "category": "Ingeniería",
+  "readTime": "11 min",
+  "intro": "Un sistema de filtración de admisión de aire del motor debe eliminar las partículas del aire hasta el límite de restricción y el nivel de limpieza especificados por el fabricante del motor durante todo el intervalo de servicio en el entorno de operación. El diseño del sistema, y no solo la selección del elemento, determina si se cumplen ambos objetivos a la vez. Un sistema bien diseñado dimensiona la carcasa por velocidad frontal, especifica el prelimpiador para alargar la vida útil del elemento primario, configura el elemento de seguridad como capa de protección de respaldo e instala un indicador de servicio calibrado al umbral de restricción del motor.",
+  "sections": [
+    {
+      "heading": "Arquitectura de admisión de aire en dos etapas",
+      "body": "Un sistema de admisión de aire completo consta como mínimo de dos etapas de filtración en serie. Etapa 1: elemento primario: el elemento principal de captura de partículas, normalmente de medio plisado de celulosa o sintético en configuración cilíndrica o de panel. Elimina las partículas ≥1 µm con alta eficiencia (según la curva de eficiencia fraccional ISO 5011) y está diseñado para reemplazarse en el intervalo de servicio. Etapa 2: elemento de seguridad (secundario): un elemento más pequeño instalado dentro o aguas abajo del elemento primario, visible solo al retirar el elemento primario. Protege el motor durante el reemplazo del elemento primario (hueco de instalación) y retiene las partículas liberadas si el elemento primario está dañado o mal asentado. El elemento de seguridad no es un filtro reemplazable de alta capacidad: tiene poca capacidad de suciedad y alta restricción. Debe reemplazarse en los intervalos especificados por el OEM (normalmente cada tercer cambio del elemento primario) sea cual sea su estado aparente. En aplicaciones de minería y construcción con mucho polvo, una etapa de prelimpiador aguas arriba del elemento primario alarga la vida del elemento primario 3–10× al eliminar las partículas gruesas (≥10–30 µm) antes de que lleguen al medio primario.",
+      "callout": [
+        {
+          "label": "Función del elemento primario",
+          "value": "Barrera principal de partículas; reemplazable"
+        },
+        {
+          "label": "Función del elemento de seguridad",
+          "value": "Protección de respaldo; sin capacidad de servicio"
+        },
+        {
+          "label": "Beneficio del prelimpiador",
+          "value": "Alarga 3–10× la vida del elemento primario"
+        }
+      ]
+    },
+    {
+      "heading": "Tecnología y selección de prelimpiadores",
+      "body": "Los prelimpiadores eliminan las partículas grandes (normalmente ≥10–30 µm) por separación inercial antes de que lleguen al elemento primario. Hay tres tipos de tecnología: los prelimpiadores centrífugos (ciclónicos) usan un flujo de aire radial para centrifugar las partículas hacia la pared de la carcasa, donde caen a una cámara de expulsión de polvo o a la taza del prelimpiador. Eficiencia: 80–99% a ≥10 µm según el diseño y el caudal de aire; la eficiencia cae bruscamente por debajo del caudal nominal y del tamaño de partícula de diseño. Haces de tubos de prelimpiador: muchos tubos ciclónicos de pequeño diámetro en paralelo, usados en aplicaciones industriales de gran caudal de aire donde un solo ciclón sería demasiado grande. Deflectores tipo sombrero de lluvia: desvían la lluvia y los impactos de residuos grandes lejos del elemento primario; no separan partículas, pero evitan el arrastre de agua y el daño por impacto de partículas grandes. La selección del prelimpiador requiere ajustar el caudal nominal a la demanda pico de aire del motor y verificar que el tamaño mínimo de partícula que separa con eficiencia sea adecuado para el polvo ambiental: un ciclón con 95% de eficiencia a ≥20 µm no protege contra la fracción de partículas de 5–15 µm responsable del desgaste abrasivo del motor.",
+      "callout": [
+        {
+          "label": "Eficiencia del prelimpiador ciclónico",
+          "value": "80–99% a ≥10 µm"
+        },
+        {
+          "label": "Criterio de dimensionamiento del prelimpiador",
+          "value": "Ajustado al caudal de aire pico del motor"
+        },
+        {
+          "label": "Limitación",
+          "value": "Baja eficiencia para partículas <10 µm"
+        }
+      ]
+    },
+    {
+      "heading": "Especificación del elemento primario",
+      "body": "La especificación del elemento primario requiere ajustar cuatro parámetros a la aplicación: (1) Capacidad de caudal de aire: el elemento debe dejar pasar el caudal de aire nominal del motor con una restricción inicial inferior a 500 Pa (5 mbar) en motores de aspiración natural e inferior a 1,250 Pa (12.5 mbar) en motores turboalimentados. La velocidad frontal al caudal nominal debe mantenerse entre 0.05–0.15 m/s en toda la cara del medio. (2) Capacidad de retención de polvo: la DHC con la concentración de polvo ambiental del sitio debe dar el intervalo de servicio requerido. Fórmula: intervalo (h) = DHC (g) / [concentración de polvo (g/m³) × caudal de aire (m³/h)]. (3) Eficiencia fraccional: el elemento debe cumplir o superar la eficiencia de eliminación de partículas exigida por el OEM del motor en los tamaños de partícula críticos (normalmente ≥5 µm en motores diésel, ≥3 µm en admisión de turbinas). (4) Compatibilidad dimensional: la geometría de la junta, el asiento de la carcasa y la orientación del elemento deben coincidir con la carcasa del depurador de aire sin crear vías de derivación alrededor del perímetro de la junta. La ISO 5011 da el marco de ensayo; la ficha técnica del elemento debe indicar el caudal de aire de ensayo, el polvo de ensayo y los tamaños de eficiencia.",
+      "callout": [
+        {
+          "label": "Límite de restricción inicial (motor NA)",
+          "value": "<500 Pa al caudal de aire nominal"
+        },
+        {
+          "label": "Límite de restricción inicial (turbo)",
+          "value": "<1,250 Pa al caudal de aire nominal"
+        },
+        {
+          "label": "Fórmula del intervalo de servicio",
+          "value": "DHC(g) / (conc. de polvo × caudal de aire)"
+        }
+      ]
+    },
+    {
+      "heading": "Ingeniería del elemento de seguridad",
+      "body": "El elemento de seguridad es solo un elemento de protección: no está diseñado para funcionar como elemento de filtración a largo plazo. Sus requisitos de ingeniería: (1) Restricción en limpio: debe ser lo bastante baja para que el indicador de restricción no se active en la operación normal con el elemento primario colocado. Normalmente la restricción inicial del elemento de seguridad es ≤ 10–15% de la restricción inicial total del sistema. (2) Restricción con el elemento primario retirado: el elemento de seguridad por sí solo debe ofrecer suficiente resistencia para limitar el caudal de aire e impedir que entre aire sin filtrar al motor, y a la vez ser lo bastante baja para que el motor pueda funcionar en ralentí para un reposicionamiento de emergencia. (3) Eficiencia de partículas: el elemento de seguridad debe capturar las partículas que el elemento primario capturaría normalmente durante su breve exposición a aire sin filtrar o parcialmente filtrado. Para los elementos de seguridad se usa normalmente medio de fibra de vidrio de alta eficiencia precisamente porque la eficiencia inicial es alta (≥99.9% a ≥10 µm) sin necesidad de que se forme una torta de polvo. (4) Intervalo de servicio: reemplazarlo según el programa del OEM, normalmente cada 2–4 cambios del elemento primario. Inspeccionarlo visualmente pero no limpiarlo; la limpieza daña la estructura de fibra de vidrio y compromete la eficiencia.",
+      "callout": [
+        {
+          "label": "Restricción inicial del elemento de seguridad",
+          "value": "≤10–15% de la restricción total del sistema"
+        },
+        {
+          "label": "Eficiencia del elemento de seguridad",
+          "value": "≥99.9% a ≥10 µm (fibra de vidrio)"
+        },
+        {
+          "label": "Intervalo de servicio",
+          "value": "Cada 2–4 cambios del elemento primario"
+        }
+      ]
+    },
+    {
+      "heading": "Ingeniería del indicador de servicio",
+      "body": "Los indicadores de servicio señalan cuándo el elemento primario ha llegado a la restricción terminal, lo que protege tanto contra el servicio tardío (operar con un elemento demasiado restringido, con pérdida de potencia) como contra el servicio prematuro (reemplazar elementos antes de que lleguen a su capacidad, desperdiciando margen de filtración). Indicadores de servicio mecánicos (tipo Magnahelic o tipo Vacuator): pistón con resorte detrás de un visor transparente. Al aumentar la restricción, el pistón comprime el resorte y se desplaza hasta dejar ver una banda indicadora roja. Estos indicadores quedan enclavados en la restricción máxima: siguen activados después de apagar el motor y requieren un restablecimiento manual tras el reemplazo del elemento. Están clasificados para un umbral de restricción específico; verifique que el punto de ajuste del indicador coincida con la especificación de restricción máxima de admisión del OEM del motor. Sensores electrónicos de restricción: transductores de presión diferencial o sensores de presión absoluta en la salida del filtro de aire conectados a la ECU del motor o a una unidad de monitoreo independiente. Registran la restricción en tiempo real, lo que permite el análisis de tendencias y la programación predictiva del servicio. El servicio según condición con sensores electrónicos suele alargar los intervalos medios de servicio del elemento un 15–40% frente al reemplazo a tiempo fijo en entornos de polvo variable.",
+      "callout": [
+        {
+          "label": "Límite de restricción del motor NA",
+          "value": "25 mbar (2,500 Pa) / 10 inH₂O"
+        },
+        {
+          "label": "Límite de restricción del motor turbo",
+          "value": "37.5–62.5 mbar / 15–25 inH₂O"
+        },
+        {
+          "label": "Beneficio del servicio según condición",
+          "value": "15–40% más de intervalo"
+        }
+      ]
+    },
+    {
+      "heading": "Dimensionamiento del caudal de aire y diseño de la carcasa",
+      "body": "El dimensionamiento de la carcasa del depurador de aire determina si el elemento primario opera dentro de su rango de velocidad frontal de diseño en toda la envolvente de temperatura ambiente y altitud de operación. La demanda de aire del motor aumenta a menor altitud (aire más denso, mayor caudal másico por unidad de volumen) y disminuye a gran altitud, pero el caudal volumétrico para dimensionar el depurador de aire se basa en el caudal de aire máximo del motor a la velocidad y la sobrealimentación nominales. Práctica estándar de dimensionamiento: el área de la sección interna de la carcasa del depurador de aire debe producir una velocidad frontal de 0.05–0.12 m/s al caudal de aire máximo del motor a través del elemento instalado. El volumen de la carcasa también determina la velocidad frontal media en el tiempo a través del elemento: las carcasas de mayor volumen permiten amortiguar el flujo durante los transitorios del turbocompresor. Dimensionamiento de la tubería entre la carcasa y la entrada del turbocompresor: la sección de la tubería debe limitar la velocidad del aire a ≤15 m/s al caudal de aire máximo para evitar la caída de presión inducida por la aceleración que se suma a la restricción del elemento. Orientación de la carcasa: con lluvia se prefiere el eje del elemento horizontal con la tapa hacia abajo, lo que evita que el agua de lluvia se acumule en la cara aguas arriba del elemento primario.",
+      "callout": [
+        {
+          "label": "Velocidad frontal objetivo de la carcasa",
+          "value": "0.05–0.12 m/s"
+        },
+        {
+          "label": "Límite de velocidad en la tubería de entrada",
+          "value": "≤15 m/s al caudal de aire máximo"
+        },
+        {
+          "label": "Orientación preferida de la carcasa",
+          "value": "Eje horizontal, tapa hacia abajo"
+        }
+      ]
+    },
+    {
+      "heading": "Protocolo de mantenimiento e inspección",
+      "body": "El mantenimiento del sistema de admisión de aire debe preservar el sello de la junta entre el elemento primario y el asiento de la carcasa: es el parámetro de instalación más crítico. Compresión de la junta: las instalaciones de elementos spin-on y de empuje axial requieren que la junta quede totalmente asentada antes del cierre. Inspeccione el asiento de la carcasa en busca de mellas, corrosión o deformación que creen un canal de derivación parcial. Tras instalar el elemento, intente girarlo con la mano: cualquier giro indica un asentamiento incompleto. Limpieza del interior de la carcasa: limpie con un paño húmedo limpio antes de instalar el elemento de reemplazo. No use aire comprimido dentro de la carcasa si falta el elemento de seguridad: las partículas serán empujadas aguas abajo. Limpieza del elemento (soplado con aire comprimido): solo se permite en elementos clasificados específicamente como lavables (prelimpiadores de espuma de poliuretano, algunos prefiltros de panel). Los elementos primarios de papel plisado o sintéticos no deben limpiarse: el aire comprimido empuja las partículas más adentro del medio, aumenta la restricción y crea microperforaciones. Inspección al desechar el elemento: antes de desechar el elemento primario usado, corte la tapa e inspeccione la cara aguas arriba del medio; los patrones de carga irregulares, los agujeros o los depósitos metálicos indican problemas de la carcasa o de la instalación que deben corregirse antes de instalar el elemento nuevo."
+    },
+    {
+      "heading": "Mecanismo de desgaste abrasivo: progresión de la falla por ingestión de polvo",
+      "body": "El mecanismo de falla es la abrasión mecánica regida por la diferencia de dureza Mohs entre el contaminante y la superficie del componente. La sílice (Mohs 7) es bastante más dura que el acero (Mohs 4–5). El polvo de minas de roca dura, la sílice de los cultivos y el polvo de las obras de construcción contienen sílice en concentraciones que hacen de cada metro cúbico de aire ambiente un abrasivo potencial. Cuando las partículas superan la filtración de admisión de aire y entran en la cámara de combustión, cada carrera del pistón introduce microcorte abrasivo entre las superficies de los anillos y la pared del cilindro. Progresión de la falla: las partículas finas de sílice (5–20 µm) superan el filtro o atraviesan un elemento al final de su vida; las partículas entran en la cámara de combustión por el múltiple de admisión; el contacto abrasivo con los anillos del pistón y la pared del cilindro se produce en cada carrera del pistón; la holgura anillo-pared aumenta por el microcorte acumulado; los gases de blow-by (con productos de combustión y sílice) entran en el cárter; el análisis de aceite muestra silicio (Si) y aluminio (Al) elevados, lo que confirma desgaste abrasivo activo; el aumento del blow-by acelera la oxidación del aceite y la pérdida de viscosidad; la pérdida de compresión reduce la potencia y aumenta el consumo de combustible; el desgaste de los cojinetes se acelera por el circuito de aceite contaminado con partículas; el motor requiere reparación mayor a las 3,000–5,000 horas frente a 15,000–25,000 horas con un programa de filtración de aire gestionado. Los cojinetes del turbocompresor giran a 80,000–150,000 RPM: el turbocompresor es el primer componente de alta velocidad en el recorrido del aire después de la filtración y suele ser la primera reparación catastrófica en un motor con contaminación en la admisión.",
+      "callout": [
+        {
+          "label": "Sílice (Mohs 7) frente a acero (Mohs 4–5)",
+          "value": "El abrasivo corta el acero en cada carrera del pistón"
+        },
+        {
+          "label": "Reparación mayor del motor (sin gestión)",
+          "value": "3,000–5,000 horas"
+        },
+        {
+          "label": "Reparación mayor del motor (con gestión)",
+          "value": "15,000–25,000 horas"
+        }
+      ]
+    },
+    {
+      "heading": "Consecuencias operativas de la ingestión de polvo",
+      "body": "El intervalo de reparación mayor del motor con ingestión de polvo no controlada es de 3,000–5,000 horas de operación, frente a 15,000–25,000 horas con un programa de filtración de aire gestionado. El costo de reconstrucción del motor por evento es de $25,000–$150,000+ según la clase de equipo. El reemplazo del turbocompresor cuesta $3,000–$15,000: el turbocompresor es el primer componente en el recorrido del aire después de la filtración y suele ser la primera falla catastrófica en un motor con contaminación en la admisión. Con tarifas de máquinas mineras de $180,000 por hora de operación, un evento de reparación mayor del motor de 5–14 días representa $21M–$60M+ de costo total del evento. La ingestión de polvo no requiere una falla visible del filtro. Los elementos que operan cerca o por encima de su capacidad nominal de retención de polvo dejan pasar progresivamente más partículas finas a medida que sube la presión diferencial. Esta ingestión al final de la vida útil (cuando el filtro está técnicamente en servicio pero ya no controla la contaminación) explica una fracción importante del desgaste prematuro de motores en flotas con mal cumplimiento de los intervalos de servicio. En entornos agrícolas, una reparación mayor del motor en plena cosecha supone no solo el costo de reparación sino la pérdida de productividad de la temporada: una reparación de 10 días en el pico de la cosecha puede causar pérdidas de cultivo superiores al valor total del equipo en algunas explotaciones.",
+      "callout": [
+        {
+          "label": "Intervalo de reparación mayor del motor (ingestión de polvo)",
+          "value": "3,000–5,000 horas frente a 15,000–25,000 con gestión"
+        },
+        {
+          "label": "Reemplazo del turbocompresor",
+          "value": "$3,000–$15,000 por evento"
+        },
+        {
+          "label": "Costo total del evento en clase minera",
+          "value": "$21M–$60M+ a $180,000/hora"
+        }
+      ]
+    },
+    {
+      "heading": "Selección de tecnología según el entorno de operación",
+      "body": "MACROCORE™ ofrece medio filtrante multicapa clasificado según la ISO 5011 para motores diésel fuera de carretera. Las capas exteriores capturan las partículas grandes y protegen el medio interior de alta eficiencia. La alta capacidad de retención de suciedad alarga los intervalos de servicio en entornos de polvo extremo. MACROCORE™ es la protección principal para motores de clase minera y agrícola. INTEKCORE™ es el sistema de carcasa de filtro diseñado para eliminar las vías de aire en derivación en las caras de asiento del elemento, las tapas y las uniones de la carcasa, lo que ataca la mayor fuente de contaminación por ingreso aparte de la falla del medio filtrante: la derivación por sellos y juntas que deja llegar aire sin filtrar al múltiple de admisión alrededor del perímetro del elemento.",
+      "callout": [
+        {
+          "label": "Eficiencia de MACROCORE™",
+          "value": "99.9%–99.98% (ISO 5011) para motores fuera de carretera"
+        },
+        {
+          "label": "Función de INTEKCORE™",
+          "value": "Integridad de carcasa sin derivación en las interfaces de sellado"
+        }
+      ]
+    },
+    {
+      "heading": "Estrategia de protección: cumplir el intervalo de servicio es un requisito técnico",
+      "body": "La protección más eficaz contra la ingestión de polvo es un elemento filtrante bien especificado y cambiado en el intervalo correcto. Un elemento sobreespecificado (eficiencia demasiado alta para la carga de polvo real) restringirá el flujo antes de tiempo y provocará eventos de derivación. Un elemento subespecificado (capacidad de polvo demasiado baja para la concentración ambiental) llegará pronto a su capacidad nominal y empezará a permitir ingestión al final de la vida útil. Ambas fallas son errores de especificación, no fallas de campo. Protocolo: especificar la capacidad de polvo del elemento según la concentración de polvo ambiental medida en el entorno de operación, no según la especificación genérica de reemplazo del OEM; instalar un indicador de restricción (indicador de servicio) en el sistema de admisión, porque la confirmación visual de una derivación inminente es la medición de campo más fiable; cambiar el elemento según la señal del indicador de restricción, no según el calendario, porque las cargas de polvo varían por temporada y por sitio; inspeccionar el asiento del elemento y los sellos de la carcasa en cada cambio de elemento y reemplazarlos si hay cualquier deformación, deformación por compresión o vía de contaminación visible; incluir el análisis de aceite en el programa de servicio, porque un Si elevado en el aceite confirma que había ingestión al final de la vida útil antes de cambiar el elemento; un prelimpiador o separador ciclónico aguas arriba del elemento primario reduce la carga de polvo y alarga la vida útil en entornos extremos de minería y construcción; nunca limpie ni reutilice elementos de filtro de aire de celulosa, porque la limpieza redistribuye la contaminación y daña las fibras del medio, lo que reduce la eficiencia por debajo de los valores originales."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Velocidad frontal objetivo de diseño",
+      "value": "0.05–0.12 m/s"
+    },
+    {
+      "label": "Límite de servicio del motor NA",
+      "value": "25 mbar / 2,500 Pa"
+    },
+    {
+      "label": "Límite de servicio del motor turbo",
+      "value": "37.5–62.5 mbar"
+    },
+    {
+      "label": "Prolongación de vida por el prelimpiador",
+      "value": "3–10× la vida del elemento primario"
+    }
+  ],
+  "relatedStandards": [
+    "ISO 5011",
+    "ISO 29463",
+    "SAE J1539"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™",
+    "INTEKCORE™"
+  ],
+  "relatedSystems": [
+    "Air Intake Protection"
+  ],
+  "keywords": [
+    "sistema de admisión de aire",
+    "prelimpiador",
+    "elemento primario",
+    "elemento de seguridad",
+    "indicador de servicio",
+    "ISO 5011",
+    "dimensionamiento del caudal de aire",
+    "filtración en dos etapas",
+    "ingestión de polvo",
+    "desgaste abrasivo"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Humo negro en el escape a plena carga: combustión rica en combustible por menor caudal másico de aire debido a un elemento demasiado restringido",
+      "Silicio (Si) detectado en el análisis ICP del aceite del motor: partículas de sílice que superan la admisión de aire y entran en el circuito de lubricación a través de la combustión",
+      "Desgaste anormal de camisas y anillos en un análisis de aceite temprano: partículas de desgaste abrasivo presentes antes del intervalo de servicio normal",
+      "Indicador de restricción activado antes de lo previsto: la capacidad de retención de polvo del elemento se consume más rápido de lo esperado para el entorno",
+      "Pérdida de presión de sobrealimentación del turbocompresor: el compresor opera en un punto incorrecto del mapa por la restricción elevada"
+    ],
+    "probableCauses": [
+      "Falla de la junta de la carcasa de admisión de aire o elemento primario mal asentado: crea una vía de derivación para el aire sin filtrar",
+      "Elemento primario con servicio tardío (reemplazado demasiado tarde): la restricción del elemento supera el límite de diseño del motor",
+      "Elemento incorrecto instalado: dimensiones equivocadas que dejan holgura en el asiento de la carcasa",
+      "Elemento de seguridad retirado y no reinstalado tras el servicio del elemento primario",
+      "Prelimpiador obstruido o ausente: toda la carga de polvo ambiental llega al elemento primario a 3–10× la tasa normal"
+    ],
+    "inspectionMethods": [
+      "Revisar el indicador de restricción: activado = elemento en el límite de servicio; verificar que el punto de ajuste del indicador coincida con la especificación de restricción del OEM",
+      "Retirar el elemento primario e inspeccionar la cara aguas arriba: carga de polvo marrón uniforme (normal) frente a patrones de carga localizados (derivación) o perforaciones del medio (daño)",
+      "Con el elemento primario retirado, inspeccionar el asiento de la carcasa en busca de deformación, corrosión o residuos que impidan la compresión completa de la junta",
+      "Análisis de aceite: un contenido de silicio ≥20 ppm (ICP) en el aceite lubricante del motor indica una brecha en la admisión de aire; distinguir entre el sistema de filtro de aire y el desgaste de las camisas de cilindro (distintos compuestos de Si)",
+      "Inspección visual del prelimpiador: un tubo de expulsión obstruido o una taza desbordada indican que se superó el intervalo de servicio; la eficiencia del ciclón cae bruscamente cuando la taza está llena"
+    ],
+    "correctiveActions": [
+      "Si se confirma una derivación en la admisión de aire: reemplazar el elemento primario, limpiar el asiento de la carcasa, verificar que el elemento nuevo gire 0° (sin movimiento = sello completo) y volver a revisar el nivel de Si en el siguiente análisis de aceite",
+      "Si la restricción se activó antes de tiempo: determinar la concentración de polvo en el punto de instalación y recalcular el intervalo con la fórmula de la DHC; instalar un prelimpiador si no lo hay o pasar a un elemento de mayor DHC",
+      "Si falta el elemento de seguridad: instalar de inmediato un elemento de seguridad con la especificación correcta; el elemento primario solo no da protección durante el hueco de instalación ni respaldo si se perfora",
+      "Después de cualquier brecha en la admisión de aire (Si en aceite > 20 ppm): aumentar la frecuencia de análisis de aceite a cada 100 horas hasta que el Si vuelva a la línea base; evaluar el desgaste de las camisas con medición por calibre de diámetro"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Contaminación por silicio en el aceite del motor (ingestión de sílice)",
+      "standard": "ISO 5011 (element efficiency), ASTM D5185 (oil Si measurement)",
+      "protectionSystem": "Protección de la admisión de aire",
+      "technology": "Inspección completa de la carcasa + elemento primario con la especificación correcta y sello de junta verificado + elemento de seguridad colocado",
+      "relatedArticles": [
+        "iso-5011",
+        "oil-analysis-methods",
+        "contamination-control"
+      ]
+    },
+    {
+      "problem": "Restricción rápida del elemento primario en entorno con mucho polvo",
+      "standard": "ISO 5011 (DHC testing)",
+      "protectionSystem": "Protección de la admisión de aire",
+      "technology": "Añadir un prelimpiador (centrífugo, ≥80% de eficiencia a ≥10 µm) + elemento primario sintético de alta DHC",
+      "relatedArticles": [
+        "dust-holding-capacity",
+        "iso-5011",
+        "service-intervals"
+      ]
+    },
+    {
+      "problem": "Pérdida de eficiencia del compresor del turbocompresor por restricción elevada",
+      "standard": "ISO 5011 (initial restriction), engine OEM specification",
+      "protectionSystem": "Protección de la admisión de aire",
+      "technology": "Carcasa del depurador de aire bien dimensionada (velocidad frontal 0.05–0.12 m/s) con elemento primario de baja restricción e indicador de restricción calibrado",
+      "relatedArticles": [
+        "airflow-engineering",
+        "air-restriction",
+        "iso-5011"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-04",
+    "nextScheduledReview": "2027-01-04",
+    "responsibleRegistry": "EDL-STANDARDS (STD-ISO-5011)",
+    "evidenceStatus": "ISO 5011:2014 verified; ISO 29463-1:2011 verified; engine OEM restriction limits from published service data"
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "slug": "varnish-formation-lube-systems",
+  "faqs": [
+    {
+      "question": "¿Qué es el barniz en los sistemas de lubricación y cómo se forma químicamente?",
+      "answer": "El barniz en los sistemas de lubricación es un depósito delgado, duro y parecido a una laca, formado por productos de oxidación del aceite que precipitan de la solución y se adhieren a las superficies metálicas. Químicamente, el barniz está formado por compuestos polares polimerizados: moléculas de aceite oxidado entrecruzadas mediante grupos peróxido y carbonilo. La secuencia de formación: la oxidación del aceite produce radicales peroxi → formación de peróxidos → formación de compuestos carbonílicos (aldehídos, cetonas, ácidos carboxílicos) → más polimerización → oligómeros polares insolubles (precursores del barniz en suspensión coloidal) → precipitación sobre las superficies metálicas cuando el fluido está sobresaturado de productos de oxidación. Los precursores del barniz suelen medir 0.01–0.5 µm de diámetro, por debajo del límite de detección de los contadores de partículas APC estándar, lo que significa que los códigos de limpieza ISO 4406 no indican el riesgo de barniz. La colorimetría de parche de membrana (MPC, ASTM D7843) es el principal método de diagnóstico para monitorear los precursores del barniz."
+    },
+    {
+      "question": "¿Cómo mide el ensayo MPC (colorimetría de parche de membrana) el potencial de barniz?",
+      "answer": "El ensayo MPC (ASTM D7843) filtra al vacío una muestra de aceite de 50 mL a través de un parche de membrana de 0.45 µm. Los precursores del barniz (compuestos polares insolubles de 0.01–0.45 µm) se acumulan en el parche como un depósito amarillo pardo. El parche se fotografía y se analiza por colorimetría para determinar el ΔE (delta E): la diferencia de color entre el parche manchado y un parche blanco de referencia limpio, en el espacio de color CIE Lab*. Los valores de ΔE indican el riesgo de barniz: ΔE <15 = riesgo bajo (no requiere acción); ΔE 15–30 = precaución (aumentar la frecuencia de monitoreo, investigar las fuentes de oxidación); ΔE 30–40 = riesgo alto (programar la eliminación del barniz en menos de 500 horas); ΔE >40 = crítico (acción inmediata, posible atascamiento inminente de servoválvulas). Las tendencias del ΔE de MPC se correlacionan mejor con los depósitos inminentes en servoválvulas que el TAN solo, porque el ΔE mide específicamente los compuestos polares que pueden depositarse."
+    },
+    {
+      "question": "¿Qué impacto tienen los depósitos de barniz en el desempeño de la corredera de las servoválvulas?",
+      "answer": "Las correderas de servoválvulas, con holguras de 2–5 µm, son los componentes más sensibles al barniz de los sistemas hidráulicos. Los depósitos de barniz en la holgura corredera-camisa se acumulan a medida que los compuestos polares submicrónicos se adsorben en las superficies metálicas y polimerizan bajo la combinación de temperatura y presión. A medida que crecen los depósitos, la holgura efectiva se reduce: una capa de barniz de 1 µm en una holgura de 3 µm la reduce un 33%, lo que aumenta la resistencia hidrodinámica y la fricción dinámica. La histéresis de la válvula (la fuerza necesaria para vencer el atascamiento) aumenta del 0.5–1% normal de la fuerza nominal al 5–20% en condiciones de mucho barniz. La respuesta en frecuencia de la válvula se degrada: el tiempo de respuesta con una señal de mando del 3% puede pasar de 10 ms (limpia) a 50–100 ms (cargada de barniz). En los casos graves, las correderas se atascan a mitad de carrera y provocan el descontrol del sistema o la pérdida del control de posición, un evento de seguridad en las aplicaciones de control de movimiento."
+    },
+    {
+      "question": "¿Qué condiciones de operación aceleran la formación de barniz en los sistemas de lubricación por circulación?",
+      "answer": "La velocidad de formación del barniz se acelera con: (1) Temperatura del cárter de aceite por encima de 90°C: la velocidad de oxidación del aceite sigue la ecuación de Arrhenius y se duplica aproximadamente por cada 10°C de aumento; a 120°C, la formación de precursores del barniz es 8× más rápida que a 90°C; (2) Catálisis de las superficies metálicas: los iones de cobre, hierro y plomo disueltos de las superficies de los cojinetes en concentraciones de ppm actúan como catalizadores de la oxidación; los sistemas con bujes de cobre o camisas de bronce tienen tasas de formación de barniz 3–5× mayores que los sistemas totalmente de acero con un aceite equivalente; (3) Arrastre de aire: el aire arrastrado en el aceite acelera la degradación oxidativa en la interfaz aceite-aire; un diseño del depósito que minimice la turbulencia de la línea de retorno y reduzca la superficie del aceite reduce el arrastre de aire; (4) Alta carga de contaminación: las partículas de sílice y de metal catalizan reacciones de oxidación en su superficie; los sistemas con códigos ISO por encima de 18/16/13 forman barniz 2–3× más rápido que los mantenidos con limpieza 16/14/11."
+    },
+    {
+      "question": "¿Cómo se elimina el barniz de un sistema hidráulico o de lubricación por circulación contaminado?",
+      "answer": "La eliminación del barniz tiene tres etapas: (1) Solubilización química: se hacen circular aditivos solventes de barniz (aditivos de lavado con solventes polares o aceite base de alta solvencia) a temperatura elevada (60–70°C) para disolver los depósitos de barniz acumulados en las superficies metálicas; los aditivos comerciales de lavado de barniz al 10–20% en el aceite del sistema reducen el ΔE en 15–25 unidades en 200–500 horas. (2) Eliminación por filtración: las unidades de limpieza electrostática del aceite (ESP) o la filtración kidney-loop con medios adsorbentes (tierra de diatomeas, alúmina activada) retiran del fluido los precursores del barniz solubilizados; la ESP logra reducir el ΔE de MPC en 20–35 unidades en 200–400 horas en sistemas con mucho barniz. (3) Cambio a aceite nuevo: tras la disolución química y la filtración, se reemplaza el aceite para eliminar los productos de oxidación residuales que la filtración no puede retirar. Un cambio parcial de aceite (50% del volumen) después del tratamiento químico suele reducir el ΔE de MPC de >40 a <20."
+    },
+    {
+      "question": "¿Qué métodos analíticos detectan el riesgo de barniz antes de que falle una servoválvula?",
+      "answer": "Métodos de detección del riesgo de barniz, ordenados por anticipación antes de la falla: (1) RULER (Remaining Useful Life Evaluation Routine, ASTM D6971): mide la reserva de antioxidantes; los antioxidantes agotados (por debajo del 25% del nivel del aceite nuevo) indican una acumulación inminente de productos de oxidación; anticipación de 500–2,000 horas antes de los depósitos de barniz. (2) MPC (colorimetría de parche de membrana, ASTM D7843): detecta precursores del barniz ya formados pero aún no depositados; anticipación de 100–500 horas antes del impacto en las servoválvulas. (3) TAN (número de acidez total, ASTM D664): mide los subproductos ácidos de la oxidación; anticipación de 50–200 horas antes de los depósitos visibles. (4) Monitoreo del tiempo de respuesta de la servoválvula: una degradación de la respuesta de 10 ms a 25 ms indica acumulación activa de depósitos; anticipación de 0–50 horas antes de un desempeño inaceptable. Los programas proactivos monitorean RULER y MPC trimestralmente, y el TAN en cada intervalo de muestreo de aceite de 250 horas."
+    },
+    {
+      "question": "¿Cuál es el mecanismo de formación del barniz en el aceite de turbinas frente al aceite hidráulico, y es distinto?",
+      "answer": "El barniz del aceite lubricante de turbinas (turbinas de gas, turbinas de vapor) y el del aceite hidráulico comparten la misma química de oxidación básica, pero difieren en la severidad de operación y en la ubicación de los depósitos. El aceite lubricante de las turbinas de gas opera de forma continua a 90–120°C, con temperaturas en las cajas de cojinetes de hasta 150°C y alta exposición al aire por los depósitos de cárter abierto, lo que da una tasa de formación de barniz mayor que la de los sistemas hidráulicos típicos a 50–70°C. El barniz de las turbinas se deposita preferentemente en las servoválvulas de las cajas de cojinetes, en los orificios de alimentación de aceite de los cojinetes de deslizamiento (diámetro de orificio de 0.5–2 mm) y en las superficies de los muñones, donde el depósito reduce directamente la holgura. El barniz del aceite hidráulico se deposita preferentemente en las holguras de las correderas de las válvulas servo/proporcionales y en los orificios pequeños de los compensadores de presión y los divisores de caudal. La composición química del barniz de turbinas y del hidráulico es similar (compuestos polares oxidados), pero la morfología del depósito difiere: el barniz de turbinas suele ser más blando (consistencia de laca), mientras que el del aceite hidráulico puede ser más duro (parecido a una resina) por la distinta composición del aceite base."
+    },
+    {
+      "question": "¿Cómo afecta el tipo de aditivo antioxidante a la velocidad de formación del barniz en los aceites base de los grupos II y III?",
+      "answer": "Los aceites base de los grupos II y III contienen concentraciones de antioxidantes naturales (compuestos aromáticos y compuestos con azufre que se eliminan en el hidroprocesamiento) bastante más bajas que los aceites del grupo I, lo que los hace más dependientes de los paquetes de aditivos antioxidantes sintéticos para resistir la oxidación. Los antioxidantes primarios (fenoles impedidos, ASTM D7843 medidos por RULER) reaccionan de forma sacrificial con los radicales peroxi para interrumpir la cadena de oxidación; los antioxidantes secundarios (ditiofosfato de dialquilo de zinc, ZDDP; tipos amínicos) descomponen los peróxidos antes de que polimericen en precursores del barniz. Cuando los antioxidantes primarios se agotan (RULER muestra <25% restante), la velocidad de formación del barniz aumenta 5–10× aunque el aceite parezca normal por viscosidad o TAN. Las formulaciones con aceite base del grupo III y sistemas antioxidantes de alto desempeño (combinación fenólica/amínica) pueden lograr una resistencia a la oxidación igual o mejor que el grupo I, pero la reserva de antioxidantes se consume por completo en lugar de degradarse lentamente el aceite base, por lo que el monitoreo de antioxidantes es esencial en los programas de intervalos de drenaje extendidos con aceites del grupo III."
+    },
+    {
+      "question": "¿Cuál es la correlación entre el código de limpieza ISO 4406 y el valor ΔE de MPC del barniz?",
+      "answer": "No hay una correlación matemática directa entre el código de conteo de partículas ISO 4406 y el potencial de barniz por MPC (ΔE) porque: (1) Los precursores del barniz miden 0.01–0.45 µm, por debajo del umbral de medición ISO 4406 de ≥4 µm; no aparecen en los conteos de partículas APC hasta que se aglomeran a >4 µm; (2) Un código ISO alto por ingreso externo de sílice (común en la minería) no tiene relación directa con la concentración de precursores del barniz, que depende de la velocidad de oxidación y del estado de los antioxidantes; (3) Un sistema puede mostrar un código ISO 4406 de 16/14/11 (limpio desde el punto de vista del conteo de partículas) y a la vez un ΔE de MPC >40 (riesgo de barniz crítico) por una oxidación severa del aceite sin aglomeración de partículas. Sin embargo, el efecto catalítico de las altas concentraciones de partículas metálicas sobre la oxidación del aceite crea una relación secundaria: los sistemas con códigos ISO 2+ unidades por encima del objetivo tienden a acumular barniz más rápido por la catálisis de la oxidación que producen las partículas metálicas."
+    },
+    {
+      "question": "¿Qué intervalo de muestreo de aceite se recomienda en sistemas con alto riesgo de barniz identificado?",
+      "answer": "Los sistemas con alto riesgo de barniz identificado (ΔE de MPC 30–40 o antioxidante RULER <50% del aceite nuevo) requieren: (1) Muestreo trimestral de aceite para ΔE de MPC, RULER y TAN hasta que el riesgo de barniz vuelva a un ΔE de MPC <20 tras la eliminación; (2) Conteo mensual de partículas APC para monitorear la eficacia del sistema de filtración durante la eliminación (la disolución del barniz libera partículas que suben el código ISO de forma transitoria); (3) Ensayo del tiempo de respuesta de la servoválvula en cada intervalo de muestreo de aceite: verificar el tiempo de respuesta al escalón, el error de posición en régimen estacionario y la histéresis frente a los registros de referencia; (4) Inspección del depósito en busca de depósitos de barniz visibles en cada mantenimiento planificado: una laca blanda pardo anaranjada en las paredes del depósito indica deposición activa; (5) Monitoreo de la eficiencia del intercambiador de calor: el barniz en las superficies de los tubos reduce la transferencia de calor un 10–30% por cada 0.1 mm de depósito, lo que sube la temperatura del aceite y acelera aún más la formación de barniz en un lazo de retroalimentación positiva."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D7843-19, Standard Test Method for Measurement of Lubricant Generated Insoluble Color Bodies in In-Service Turbine Oils Using Membrane Patch Colorimetry",
+      "relevance": "Método de ensayo principal para medir los precursores del barniz mediante colorimetría de parche de membrana (MPC), expresado en unidades de color ΔE."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6971-09, Standard Test Method for Measurement of Hindered Phenolic and Aromatic Amine Antioxidant Content in Non-Zinc Turbine Oils by Linear Sweep Voltammetry (RULER)",
+      "relevance": "Método de medición de la reserva de antioxidantes usado para predecir la vida útil restante del aceite antes de que empiece la formación de barniz."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D664-11a, Standard Test Method for Acid Number of Petroleum Products by Potentiometric Titration (TAN)",
+      "relevance": "Medición del número de acidez total usada como indicador secundario del riesgo de barniz, que mide la acumulación de subproductos ácidos de la oxidación del aceite."
+    },
+    {
+      "category": "research",
+      "citation": "Livingstone, G., Varnish and What It Means for Your Lube Oil System, Machinery Lubrication Conference & Exhibition Proceedings, Noria Corporation, 2015",
+      "relevance": "Referencia de la industria que cubre los mecanismos de formación del barniz, la interpretación del MPC y casos de eliminación en aplicaciones de turbinas de gas y sistemas hidráulicos."
+    }
+  ],
+  "title": "Formación de barniz en sistemas de lubricación: mecanismos de oxidación, deposición electrostática y eliminación",
+  "subtitle": "Química de la oxidación del aceite que conduce a los precursores del barniz, deposición por descarga electrostática en las superficies de servoválvulas y válvulas de control, cuantificación por colorimetría de parche (MPC), ventana de solubilidad del barniz y estrategias de limpieza.",
+  "metaDescription": "Referencia de ingeniería sobre la formación de barniz en sistemas de lubricación e hidráulicos: mecanismos de degradación oxidativa y térmica del aceite, deposición electrostática en las superficies de las válvulas, colorimetría de parche de membrana (ASTM D7843) para cuantificar el potencial de barniz, concepto de ventana de solubilidad y eliminación del barniz mediante lavado del fluido y filtración.",
+  "category": "ingeniería",
+  "readTime": "12 min",
+  "intro": "Los depósitos de barniz (subproductos de oxidación insolubles que se adhieren a las superficies metálicas) son una de las principales causas del atascamiento de servoválvulas y válvulas proporcionales, del agarrotamiento de bombas hidráulicas y de la inestabilidad de los sistemas de control en sistemas de aceite lubricante de turbinas e hidráulicos que operan a temperaturas elevadas. El barniz es distinto de la contaminación por partículas: los filtros de partículas convencionales no pueden capturarlo y es invisible para el conteo de partículas ISO 4406. Entender los mecanismos de formación del barniz y los métodos de cuantificación es requisito previo para elegir estrategias de prevención y eliminación adecuadas.",
+  "sections": [
+    {
+      "heading": "Química del barniz: oxidación y degradación térmica",
+      "body": "Los precursores del barniz se forman por dos vías químicas principales: (1) Oxidación del aceite: el oxígeno reacciona con el aceite base hidrocarburo a temperatura elevada en presencia de catalizadores metálicos (hierro, cobre). La reacción en cadena de oxidación produce peróxidos, aldehídos y ácidos carboxílicos (detectados como aumento del TAN según la ASTM D664); estos productos se condensan y polimerizan en resinas y asfaltenos de alto peso molecular. La velocidad de oxidación se duplica aproximadamente por cada 10°C de aumento por encima de 60°C (relación de Arrhenius). (2) Degradación térmica: la pirólisis directa de las moléculas del aceite base en puntos calientes (zonas de cavitación de las bombas, superficies de los vástagos de cilindros hidráulicos, zonas junto a las placas del intercambiador de calor) produce productos de degradación ricos en carbono sin necesidad de oxígeno. Ambas vías generan compuestos polares que al principio son solubles en el aceite pero que se vuelven insolubles a medida que aumenta su peso molecular o cambia la temperatura del aceite. El punto en que el aceite ya no puede disolver los productos de oxidación, el límite de solubilidad, determina cuándo el barniz precipita sobre las superficies metálicas.",
+      "callout": [
+        {
+          "label": "Regla de la velocidad de oxidación",
+          "value": "Se duplica por cada 10°C por encima de 60°C"
+        },
+        {
+          "label": "Aumento del TAN",
+          "value": "Indica acumulación de ácidos oxidativos (ASTM D664)"
+        },
+        {
+          "label": "Puntos críticos",
+          "value": "Puntos calientes: cavitación de bombas, zonas del intercambiador de calor"
+        }
+      ]
+    },
+    {
+      "heading": "Ventana de solubilidad y desencadenantes de la precipitación",
+      "body": "Los sistemas de aceite de turbinas y de aceite hidráulico de alto desempeño presentan un fenómeno característico de \"ventana de solubilidad\": los productos de oxidación permanecen disueltos en el aceite caliente durante la operación pero precipitan cuando el aceite se enfría durante la parada. La solubilidad de los productos de oxidación polares en el aceite base no polar disminuye al bajar la temperatura, lo que provoca deposición sobre las superficies metálicas frías durante la parada y sobre las superficies que operan a menor temperatura en operación normal (paredes del depósito, cuerpos de válvulas, placas tubulares de los enfriadores). Esto explica una observación característica: los depósitos de barniz aparecen preferentemente en las superficies internas estacionarias durante la parada y en las correderas de servoválvulas que operan a menor temperatura que el aceite en conjunto. A la inversa, a la temperatura de operación, parte del barniz puede volver a disolverse (\"removilización\"), lo que libera fragmentos de barniz depositados antes como contaminación por partículas y explica picos ocasionales de contaminación durante la operación en caliente del sistema."
+    },
+    {
+      "heading": "Mecanismo de deposición por descarga electrostática",
+      "body": "Un mecanismo secundario de formación de barniz, la deposición por descarga electrostática (ESD), actúa en circuitos de fluido de alta velocidad con independencia del nivel de oxidación. Cuando el aceite fluye a alta velocidad (normalmente >5 m/s) por filtros finos y orificios, se produce carga triboestática: las moléculas polares del aceite generan un desequilibrio de carga eléctrica entre el aceite y las superficies metálicas. El potencial electrostático resultante (medible como corriente de flujo) deposita moléculas polares cargadas, incluidos los productos de oxidación ya en solución, sobre las superficies metálicas. La deposición ESD es especialmente activa en sistemas con: aceite base muy limpio y de baja conductividad (mínima disipación iónica); filtros finos de alta eficiencia (que aumentan la velocidad del aceite por los poros finos); caudales altos; y tiempos largos de circulación del fluido entre el depósito y el equipo. La filtración electrostática (medio filtrante tipo electret con campo aplicado) puede acelerar la deposición ESD dentro del elemento filtrante y retirar los precursores del barniz antes de que lleguen a las superficies de las válvulas, pero debe diseñarse con cuidado para no eliminar los aditivos polares beneficiosos."
+    },
+    {
+      "heading": "Colorimetría de parche de membrana: ASTM D7843",
+      "body": "La colorimetría de parche de membrana (MPC) es el principal método cuantitativo para evaluar el potencial de barniz. Procedimiento ASTM D7843: una muestra de aceite de 100 mL pasa por un parche de membrana de 0.45 µm en condiciones controladas; el color del parche se mide por espectrofotometría y se expresa como el valor ΔE (diferencia de color). Un ΔE más alto indica una mayor concentración de depósitos de oxidación insolubles en aceite sobre el parche. Interpretación del ΔE de MPC: ΔE <15: potencial de barniz bajo; ΔE 15–30: potencial de barniz moderado; ΔE 30–45: potencial de barniz alto, vigilar de cerca; ΔE >45: crítico, deposición de barniz probable en el sistema. El MPC complementa el conteo de partículas ISO 4406 y no lo reemplaza: la ISO 4406 mide partículas >4 µm; el MPC capta productos de oxidación insolubles submicrónicos que los contadores de partículas no ven. Un sistema puede mostrar un código ISO 4406 dentro del objetivo mientras el ΔE de MPC está en el rango crítico, lo que indica un problema de barniz en desarrollo que aún no llega al umbral de tamaño de partícula.",
+      "callout": [
+        {
+          "label": "ΔE de MPC < 15",
+          "value": "Potencial de barniz bajo"
+        },
+        {
+          "label": "ΔE de MPC 30–45",
+          "value": "Potencial de barniz alto: vigilar de cerca"
+        },
+        {
+          "label": "ΔE de MPC > 45",
+          "value": "Crítico: deposición probablemente activa"
+        }
+      ]
+    },
+    {
+      "heading": "Atascamiento de servoválvulas e impacto en el sistema de control",
+      "body": "Los depósitos de barniz en las superficies de las correderas de las servoválvulas se acumulan en la holgura submicrónica entre la corredera y el alojamiento (normalmente 1–3 µm en las servoválvulas electrohidráulicas). Un espesor de depósito de apenas 1–2 µm basta para atascar la corredera: la fuerza necesaria para mover la corredera contra la adherencia del barniz supera la fuerza disponible del motor de torque. El resultado: la válvula no responde a las señales de control de baja magnitud (inestabilidad en las correcciones de posición pequeñas); la válvula se \"pega\" en una posición y provoca deriva; al final la válvula requiere desmontaje mecánico y limpieza. Los ciclos térmicos de los arranques y paradas del sistema empeoran este mecanismo: los depósitos formados durante el enfriamiento no se vuelven a disolver durante el calentamiento si la ventana de solubilidad se ha desplazado con la degradación del aceite. Los sistemas de aceite lubricante de turbinas de gas y de vapor, y los sistemas de ensayo servohidráulicos de alto desempeño, son los más susceptibles por su operación continua y prolongada a alta temperatura."
+    },
+    {
+      "heading": "Estrategias de prevención del barniz",
+      "body": "Prevenir es mucho más fácil que eliminar: (1) Selección del aceite: los aceites base éster y PAO tienen una estabilidad a la oxidación intrínsecamente mayor que los aceites minerales del grupo I; las especificaciones de aceite de turbinas (serie ISO 8068) exigen un TOST ASTM D943 (ensayo de estabilidad del aceite de turbinas) de mínimo 1,000 horas hasta la formación de lodos; algunos aceites de turbinas premium superan las 10,000 horas de TOST. (2) Control de temperatura: mantener la temperatura del aceite en conjunto por debajo de 60°C cuando sea posible; controlar los puntos calientes desde el diseño (capacidad adecuada del intercambiador de calor, prevención de la cavitación de las bombas); los sistemas de aceite de turbinas apuntan a <65°C de temperatura en conjunto. (3) Mantenimiento de antioxidantes: monitorear el TAN según la ASTM D664 y el agotamiento de los antioxidantes fenólicos; en sistemas de gran volumen, donde un cambio total de aceite es caro, se puede reponer antioxidante o mezclar aceite. (4) Control de la deposición electrostática: diseñar el sistema para mantener la velocidad del aceite por debajo de 5 m/s en las líneas críticas; evaluar el riesgo electrostático con aceite muy limpio y de baja conductividad en circuitos de alta velocidad. (5) Monitoreo MPC: ensayo MPC trimestral para detectar el aumento del potencial de barniz antes de que empiece la deposición."
+    },
+    {
+      "heading": "Procedimientos de eliminación del barniz",
+      "body": "Cuando el ΔE de MPC supera 45 o el atascamiento de válvulas confirma la deposición de barniz, las opciones de eliminación son: (1) Mejora de la solubilidad: añadir un aditivo solubilizante del barniz (normalmente de química amínica o de éster polar) a la carga de aceite existente; esto sube el límite de solubilidad y vuelve a disolver parte de los depósitos de barniz en el aceite, que luego captura la filtración de alta eficiencia aguas abajo; riesgo: las partículas liberadas de depósitos grandes pueden superar la capacidad del filtro y llegar a las válvulas. (2) Lavado con solvente: drenar el aceite existente; lavar el circuito con un fluido de lavado de baja viscosidad y alta solubilidad (hidrocarburo más ligero o fluido específico para eliminar barniz) a temperatura elevada; hacerlo circular por filtración fina; drenar y rellenar con aceite nuevo. (3) Filtración electrostática: instalar elementos filtrantes electrostáticos tipo electret o de campo aplicado para capturar los productos de oxidación insolubles submicrónicos que los medios convencionales no capturan; la eliminación continua de los precursores del barniz reduce la velocidad de deposición. (4) Reparación de componentes: desmontar, desarmar y limpiar por ultrasonido las servoválvulas y las válvulas proporcionales; reinstalarlas después del lavado del sistema y del llenado con aceite nuevo. Toda estrategia de eliminación debe seguirse de monitoreo MPC a intervalos de 250 horas para confirmar que el potencial de barniz disminuye."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Aceleración de la velocidad de oxidación",
+      "value": "2× por cada 10°C por encima de 60°C (Arrhenius)"
+    },
+    {
+      "label": "Umbral crítico de ΔE de MPC",
+      "value": ">45 (ASTM D7843)"
+    },
+    {
+      "label": "Holgura de atascamiento por barniz",
+      "value": "1–3 µm (alojamiento de la corredera de servoválvula)"
+    },
+    {
+      "label": "Velocidad de inicio de la deposición ESD",
+      "value": ">5 m/s (carga triboestática)"
+    },
+    {
+      "label": "Objetivo TOST del aceite de turbinas",
+      "value": "≥1,000 horas (serie ISO 8068)"
+    }
+  ],
+  "relatedStandards": [
+    "ASTM D7843",
+    "ASTM D664",
+    "ASTM D943",
+    "ISO 8068",
+    "ISO 4406"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "formación de barniz",
+    "colorimetría de parche de membrana MPC",
+    "ASTM D7843",
+    "oxidación del aceite",
+    "deposición electrostática",
+    "atascamiento de servoválvulas",
+    "barniz en aceite de turbinas",
+    "aumento del TAN",
+    "ventana de solubilidad",
+    "ASTM D664",
+    "eliminación del barniz",
+    "SYNTRAX",
+    "ISO 8068",
+    "prevención del barniz",
+    "barniz hidráulico"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Atascamiento de servoválvulas o válvulas proporcionales: respuesta errática o lenta a la señal de control",
+      "Más ruido y vibración en la bomba o el motor hidráulico sin cambio en las condiciones de operación",
+      "El aceite parece normal pero el ΔE de MPC es >30 en el análisis trimestral",
+      "Depósitos tipo barniz (ámbar a pardo oscuro, duros, adherentes) visibles en el interior del depósito o en el exterior del elemento filtrante",
+      "Conteo de partículas ISO 4406 dentro del objetivo pero el desempeño de la servoválvula sigue degradándose"
+    ],
+    "probableCauses": [
+      "Atascamiento de válvulas: deposición de barniz en la superficie de la corredera (confirmar con ΔE de MPC); también es posible contaminación por partículas (distinguir con ISO 4406); precipitación por ventana de solubilidad en ciclos de parada anteriores",
+      "Ruido de la bomba: cavitación (revisar la restricción de succión); barniz en las superficies internas de la bomba que reduce las holguras; viscosidad incorrecta para la temperatura de operación",
+      "MPC alto con aspecto normal: productos de oxidación insolubles submicrónicos, invisibles a simple vista y para el contador de partículas; alerta temprana antes de que empiece la macrodeposición",
+      "Depósitos visibles: oxidación avanzada; el sistema ha operado por encima de los límites de temperatura o con antioxidantes agotados durante un período prolongado",
+      "ISO 4406 normal y válvula degradándose: el barniz es submicrónico (por debajo del umbral de detección ISO 4406); se requiere cuantificación por MPC"
+    ],
+    "inspectionMethods": [
+      "Ensayo MPC ASTM D7843 en muestra de aceite: 100 mL a través de un parche de 0.45 µm; medir el ΔE con espectrofotómetro; comparar con los umbrales",
+      "TAN (número de acidez total) ASTM D664 en muestra de aceite: un TAN en aumento indica acumulación de ácidos oxidativos; un aumento del TAN >0.5 mg KOH/g sobre la línea base indica oxidación importante",
+      "TOST ASTM D943 en muestra de aceite nuevo: verifica la estabilidad a la oxidación restante si se lleva un programa preventivo de reposición de antioxidantes",
+      "Inspección de la servoválvula: retirar la válvula, sacar la corredera del alojamiento e inspeccionar si hay depósitos ámbar o pardos en el diámetro exterior de la corredera y el interior del alojamiento; documentar con fotografías",
+      "Espectroscopia elemental (ICP) de Fe y Cu en el aceite: metales elevados indican ataque corrosivo del barniz a las superficies metálicas o removilización de depósitos que libera partículas metálicas"
+    ],
+    "correctiveActions": [
+      "ΔE de MPC 30–45 (alto, aún no crítico): aumentar el monitoreo a mensual; añadir aditivo solubilizante del barniz en la dosis recomendada por el fabricante; instalar un elemento filtrante fino electrostático aguas abajo del filtro principal; evitar excursiones de temperatura",
+      "ΔE de MPC >45 o válvula atascada por barniz confirmada: retirar las válvulas atascadas; limpiarlas por ultrasonido; ejecutar un lavado con solvente del sistema (drenar el aceite, lavar con fluido de lavado de baja viscosidad a 60°C durante 8 horas, drenar el fluido de lavado, rellenar con aceite nuevo); instalar filtración electrostática para la prevención continua",
+      "Degradación térmica confirmada (puntos calientes): inspeccionar el intercambiador de calor en busca de ensuciamiento; verificar que la presión de apertura de la válvula de derivación no permita que el aceite caliente se derive; revisar los indicadores de cavitación de la bomba",
+      "Patrón de deposición ESD confirmado (aceite ultralimpio en circuito de alta velocidad): reducir la velocidad del aceite donde sea posible; instalar un elemento filtrante electrostático para capturar el material depositado por ESD antes de que llegue a las válvulas; considerar un aceite con aditivo de mayor conductividad",
+      "Después de la eliminación: ASTM D7843 a intervalos de 250 horas hasta ΔE <15; ISO 4406 a intervalos de 100 horas tras el lavado para verificar que las partículas liberadas no superen el código objetivo"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Sistema de aceite lubricante de turbina con ΔE de MPC de 38 tras 12,000 horas de servicio: las válvulas empiezan a mostrar respuesta lenta",
+      "standard": "ASTM D7843 (MPC varnish potential), ASTM D664 (TAN), ISO 8068 (turbine oil specification)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Un MPC de 38 es alto: hay que intervenir antes del umbral crítico. Opción 1 (preferida si la química del aceite lo permite): añadir solubilizante de barniz en dosis del 2–5%; aumentar el monitoreo MPC a mensual; instalar un elemento filtrante electrostático; objetivo MPC <20 en 3,000 horas. Opción 2 (si el TAN es >2.0 mg KOH/g, degradación severa del aceite): drenaje y lavado programados; limpieza por ultrasonido de todas las válvulas durante el drenaje; rellenar con aceite de turbinas nuevo que cumpla ISO 8068 con TOST ≥1,000 horas",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "lubrication-system-filtration",
+        "hydraulic-contamination-sensitivity"
+      ]
+    },
+    {
+      "problem": "Sistema de ensayo servohidráulico con fluido éster sintético ultralimpio que muestra deriva del punto nulo de la servoválvula después de 6 meses",
+      "standard": "ASTM D7843 (MPC varnish), ISO 4406 (particles), ASTM D664 (TAN)",
+      "protectionSystem": "Protección hidráulica",
+      "technology": "El fluido éster en un circuito servo de alta velocidad es susceptible a la deposición ESD; medir el ΔE de MPC y la corriente de flujo si se dispone del equipo; si el MPC está elevado con un conteo de partículas ISO bajo, la deposición ESD queda confirmada; reducir la velocidad del aceite en las líneas de suministro principales si el circuito permite rediseño; instalar un elemento filtrante electrostático; verificar que los aditivos del fluido incluyan un modificador de conductividad para reducir el potencial de ESD",
+      "relatedArticles": [
+        "nfpa-t2-14-hydraulic-cleanliness",
+        "hydraulic-contamination-sensitivity",
+        "filter-media-engineering"
+      ]
+    },
+    {
+      "problem": "Cárter de motor con aumento del TAN a 2.0 mg KOH/g a las 300 horas en un programa de drenaje extendido de 500 horas",
+      "standard": "ASTM D664 (TAN), SAE J300 (viscosity grade), API CK-4 (oil specification)",
+      "protectionSystem": "Protección de la lubricación",
+      "technology": "Un TAN de 2.0 mg KOH/g a 300/500 horas indica oxidación acelerada, probablemente por temperatura de operación elevada o agotamiento de antioxidantes; conteo de partículas ISO 4406 y viscosidad para completar el cuadro; no extender a 500 horas con un TAN de 2.0; revisar si el motor funciona por encima de la temperatura normal del refrigerante; considerar el cambio a un aceite base sintético del grupo III o IV con mejor desempeño TOST para este motor y ciclo de trabajo",
+      "relatedArticles": [
+        "sae-j300-viscosity-classification",
+        "oil-analysis-methods",
+        "service-intervals"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "ASTM D7843:2021 MPC method verified; ASTM D664 TAN method verified; ASTM D943 TOST verified; oxidation rate doubling per 10°C from Arrhenius kinetics (published tribology literature); MPC ΔE threshold values from published field correlation studies; servo valve clearance range from electrohydraulic servo valve engineering references; ESD deposition mechanism from published LUBE magazine and STLE research"
+  }
+}

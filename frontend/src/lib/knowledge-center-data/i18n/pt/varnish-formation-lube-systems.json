@@ -1,0 +1,256 @@
+{
+  "slug": "varnish-formation-lube-systems",
+  "faqs": [
+    {
+      "question": "O que é verniz em sistemas de lubrificação e como ele se forma quimicamente?",
+      "answer": "O verniz em sistemas de lubrificação é um depósito fino, duro e semelhante a laca, formado por produtos de oxidação do óleo que precipitam da solução e aderem às superfícies metálicas. Quimicamente, o verniz é composto por compostos polares polimerizados: moléculas de óleo oxidado reticuladas por grupos peróxido e carbonila. A sequência de formação: a oxidação do óleo produz radicais peroxila → formação de peróxidos → formação de compostos carbonílicos (aldeídos, cetonas, ácidos carboxílicos) → mais polimerização → oligômeros polares insolúveis (precursores do verniz em suspensão coloidal) → precipitação nas superfícies metálicas quando o fluido está supersaturado de produtos de oxidação. Os precursores do verniz normalmente medem 0.01–0.5 µm de diâmetro, abaixo do limite de detecção dos contadores de partículas APC padrão, o que significa que os códigos de limpeza ISO 4406 não indicam o risco de verniz. A colorimetria de patch de membrana (MPC, ASTM D7843) é o principal método de diagnóstico para monitorar os precursores do verniz."
+    },
+    {
+      "question": "Como o ensaio MPC (colorimetria de patch de membrana) mede o potencial de verniz?",
+      "answer": "O ensaio MPC (ASTM D7843) filtra a vácuo uma amostra de óleo de 50 mL através de um patch de membrana de 0.45 µm. Os precursores do verniz (compostos polares insolúveis de 0.01–0.45 µm) se acumulam no patch como um depósito amarelo-acastanhado. O patch é fotografado e analisado por colorimetria para determinar o ΔE (delta E): a diferença de cor entre o patch manchado e um patch branco de referência limpo, no espaço de cor CIE Lab*. Os valores de ΔE indicam o risco de verniz: ΔE <15 = risco baixo (nenhuma ação necessária); ΔE 15–30 = atenção (aumentar a frequência de monitoramento, investigar as fontes de oxidação); ΔE 30–40 = risco alto (programar a remoção do verniz em até 500 horas); ΔE >40 = crítico (ação imediata, possível travamento iminente de servoválvulas). As tendências do ΔE de MPC se correlacionam melhor com depósitos iminentes em servoválvulas que o TAN sozinho, porque o ΔE mede especificamente os compostos polares que podem se depositar."
+    },
+    {
+      "question": "Qual é o impacto dos depósitos de verniz no desempenho do carretel das servoválvulas?",
+      "answer": "Os carretéis de servoválvulas, com folgas de 2–5 µm, são os componentes mais sensíveis ao verniz em sistemas hidráulicos. Os depósitos de verniz na folga carretel-camisa se acumulam à medida que compostos polares submicrométricos se adsorvem nas superfícies metálicas e polimerizam sob a combinação de temperatura e pressão. Conforme os depósitos crescem, a folga efetiva diminui: uma camada de verniz de 1 µm em uma folga de 3 µm a reduz em 33%, aumentando a resistência hidrodinâmica e o atrito dinâmico. A histerese da válvula (a força necessária para vencer o travamento) aumenta de 0.5–1% normal da força nominal para 5–20% em condições de muito verniz. A resposta em frequência da válvula se degrada: o tempo de resposta com sinal de comando de 3% pode passar de 10 ms (limpa) para 50–100 ms (carregada de verniz). Em casos graves, os carretéis travam no meio do curso, causando descontrole do sistema ou perda do controle de posição, um evento de segurança em aplicações de controle de movimento."
+    },
+    {
+      "question": "Quais condições de operação aceleram a formação de verniz em sistemas de lubrificação por circulação?",
+      "answer": "A taxa de formação do verniz acelera com: (1) Temperatura do cárter de óleo acima de 90°C: a taxa de oxidação do óleo segue a equação de Arrhenius e aproximadamente dobra a cada 10°C de aumento; a 120°C, a formação de precursores do verniz é 8× mais rápida que a 90°C; (2) Catálise pelas superfícies metálicas: íons de cobre, ferro e chumbo dissolvidos das superfícies dos mancais em concentrações de ppm atuam como catalisadores da oxidação; sistemas com buchas de cobre ou camisas de bronze têm taxas de formação de verniz 3–5× maiores que sistemas totalmente de aço com óleo equivalente; (3) Arraste de ar: o ar arrastado no óleo acelera a degradação oxidativa na interface óleo-ar; um projeto de reservatório que minimize a turbulência da linha de retorno e reduza a área de superfície do óleo reduz o arraste de ar; (4) Alta carga de contaminação: partículas de sílica e de metal catalisam reações de oxidação em sua superfície; sistemas com códigos ISO acima de 18/16/13 formam verniz 2–3× mais rápido que sistemas mantidos com limpeza 16/14/11."
+    },
+    {
+      "question": "Como o verniz é removido de um sistema hidráulico ou de lubrificação por circulação contaminado?",
+      "answer": "A remoção do verniz envolve três etapas: (1) Solubilização química: aditivos solventes de verniz (aditivos de flushing com solventes polares ou óleo base de alta solvência) são circulados em temperatura elevada (60–70°C) para dissolver os depósitos de verniz acumulados nas superfícies metálicas; aditivos comerciais de flushing de verniz a 10–20% no óleo do sistema reduzem o ΔE em 15–25 unidades em 200–500 horas. (2) Remoção por filtração: unidades de limpeza eletrostática do óleo (ESP) ou filtração kidney loop com mídias adsorventes (terra diatomácea, alumina ativada) removem do fluido os precursores do verniz solubilizados; a ESP reduz o ΔE de MPC em 20–35 unidades em 200–400 horas em sistemas com muito verniz. (3) Troca por óleo novo: após a dissolução química e a filtração, troca-se o óleo para remover os produtos de oxidação residuais que a filtração não consegue remover. Uma troca parcial de óleo (50% do volume) após o tratamento químico normalmente reduz o ΔE de MPC de >40 para <20."
+    },
+    {
+      "question": "Quais métodos analíticos detectam o risco de verniz antes da falha de uma servoválvula?",
+      "answer": "Métodos de detecção do risco de verniz, em ordem de antecedência antes da falha: (1) RULER (Remaining Useful Life Evaluation Routine, ASTM D6971): mede a reserva de antioxidantes; antioxidantes esgotados (abaixo de 25% do nível do óleo novo) indicam acúmulo iminente de produtos de oxidação; antecedência de 500–2,000 horas antes dos depósitos de verniz. (2) MPC (colorimetria de patch de membrana, ASTM D7843): detecta precursores do verniz já formados, mas ainda não depositados; antecedência de 100–500 horas antes do impacto nas servoválvulas. (3) TAN (número de acidez total, ASTM D664): mede os subprodutos ácidos da oxidação; antecedência de 50–200 horas antes de depósitos visíveis. (4) Monitoramento do tempo de resposta da servoválvula: uma degradação da resposta de 10 ms para 25 ms indica acúmulo ativo de depósitos; antecedência de 0–50 horas antes de desempenho inaceitável. Programas proativos monitoram RULER e MPC trimestralmente, e o TAN a cada intervalo de amostragem de óleo de 250 horas."
+    },
+    {
+      "question": "Qual é o mecanismo de formação do verniz no óleo de turbinas em comparação ao óleo hidráulico, e ele é diferente?",
+      "answer": "O verniz do óleo lubrificante de turbinas (turbinas a gás, turbinas a vapor) e o do óleo hidráulico compartilham a mesma química básica de oxidação, mas diferem na severidade de operação e no local dos depósitos. O óleo lubrificante de turbinas a gás opera continuamente a 90–120°C, com temperaturas nas caixas de mancais de até 150°C e alta exposição ao ar pelos reservatórios de cárter aberto, resultando em taxa de formação de verniz maior que a dos sistemas hidráulicos típicos a 50–70°C. O verniz das turbinas se deposita preferencialmente nas servoválvulas das caixas de mancais, nos furos de alimentação de óleo dos mancais de deslizamento (diâmetro de orifício de 0.5–2 mm) e nas superfícies dos munhões, onde o depósito reduz diretamente a folga. O verniz do óleo hidráulico se deposita preferencialmente nas folgas dos carretéis das válvulas servo/proporcionais e nos pequenos orifícios de compensadores de pressão e divisores de vazão. A composição química do verniz de turbinas e do hidráulico é semelhante (compostos polares oxidados), mas a morfologia do depósito difere: o verniz de turbinas costuma ser mais mole (consistência de laca), enquanto o do óleo hidráulico pode ser mais duro (semelhante a resina) pela composição diferente do óleo base."
+    },
+    {
+      "question": "Como o tipo de aditivo antioxidante afeta a taxa de formação de verniz nos óleos base dos grupos II e III?",
+      "answer": "Os óleos base dos grupos II e III contêm concentrações de antioxidantes naturais (compostos aromáticos e compostos com enxofre removidos no hidroprocessamento) bem menores que os óleos do grupo I, o que os torna mais dependentes de pacotes de aditivos antioxidantes sintéticos para resistir à oxidação. Os antioxidantes primários (fenóis impedidos, ASTM D7843 medidos por RULER) reagem de forma sacrificial com os radicais peroxila para interromper a cadeia de oxidação; os antioxidantes secundários (ditiofosfato de dialquila de zinco, ZDDP; tipos amínicos) decompõem os peróxidos antes que polimerizem em precursores do verniz. Quando os antioxidantes primários se esgotam (RULER mostra <25% restante), a taxa de formação do verniz aumenta 5–10× mesmo que o óleo pareça normal pela viscosidade ou pelo TAN. Formulações com óleo base do grupo III e sistemas antioxidantes de alto desempenho (combinação fenólica/amínica) podem alcançar resistência à oxidação igual ou melhor que o grupo I, mas a reserva de antioxidantes é totalmente consumida em vez de o óleo base se degradar lentamente, o que torna o monitoramento de antioxidantes essencial em programas de intervalos de troca estendidos com óleos do grupo III."
+    },
+    {
+      "question": "Qual é a correlação entre o código de limpeza ISO 4406 e o valor ΔE de MPC do verniz?",
+      "answer": "Não há correlação matemática direta entre o código de contagem de partículas ISO 4406 e o potencial de verniz por MPC (ΔE) porque: (1) Os precursores do verniz medem 0.01–0.45 µm, abaixo do limiar de medição ISO 4406 de ≥4 µm; eles não aparecem nas contagens de partículas APC até se aglomerarem a >4 µm; (2) Um código ISO alto por ingresso externo de sílica (comum na mineração) não tem relação direta com a concentração de precursores do verniz, que depende da taxa de oxidação e do estado dos antioxidantes; (3) Um sistema pode mostrar código ISO 4406 16/14/11 (limpo do ponto de vista da contagem de partículas) e ao mesmo tempo ΔE de MPC >40 (risco de verniz crítico) por oxidação severa do óleo sem aglomeração de partículas. No entanto, o efeito catalítico de altas concentrações de partículas metálicas sobre a oxidação do óleo cria uma relação secundária: sistemas com códigos ISO 2+ unidades acima da meta tendem a acumular verniz mais rápido pela catálise da oxidação causada pelas partículas metálicas."
+    },
+    {
+      "question": "Qual intervalo de amostragem de óleo é recomendado em sistemas com alto risco de verniz identificado?",
+      "answer": "Sistemas com alto risco de verniz identificado (ΔE de MPC 30–40 ou antioxidante RULER <50% do óleo novo) exigem: (1) Amostragem trimestral de óleo para ΔE de MPC, RULER e TAN até o risco de verniz voltar a ΔE de MPC <20 após a remoção; (2) Contagem mensal de partículas APC para monitorar a eficácia do sistema de filtração durante a remoção (a dissolução do verniz libera partículas que elevam o código ISO transitoriamente); (3) Ensaio do tempo de resposta da servoválvula a cada intervalo de amostragem de óleo: verificar o tempo de resposta ao degrau, o erro de posição em regime permanente e a histerese em relação aos registros de referência; (4) Inspeção do reservatório em busca de depósitos de verniz visíveis a cada manutenção planejada: laca mole marrom-alaranjada nas paredes do reservatório indica deposição ativa; (5) Monitoramento da eficiência do trocador de calor: o verniz nas superfícies dos tubos reduz a troca de calor em 10–30% a cada 0.1 mm de depósito, elevando a temperatura do óleo e acelerando ainda mais a formação de verniz em um ciclo de realimentação positiva."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ASTM D7843-19, Standard Test Method for Measurement of Lubricant Generated Insoluble Color Bodies in In-Service Turbine Oils Using Membrane Patch Colorimetry",
+      "relevance": "Método de ensaio principal para medir os precursores do verniz por colorimetria de patch de membrana (MPC), expresso em unidades de cor ΔE."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6971-09, Standard Test Method for Measurement of Hindered Phenolic and Aromatic Amine Antioxidant Content in Non-Zinc Turbine Oils by Linear Sweep Voltammetry (RULER)",
+      "relevance": "Método de medição da reserva de antioxidantes usado para prever a vida útil restante do óleo antes do início da formação de verniz."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D664-11a, Standard Test Method for Acid Number of Petroleum Products by Potentiometric Titration (TAN)",
+      "relevance": "Medição do número de acidez total usada como indicador secundário do risco de verniz, que mede o acúmulo de subprodutos ácidos da oxidação do óleo."
+    },
+    {
+      "category": "research",
+      "citation": "Livingstone, G., Varnish and What It Means for Your Lube Oil System, Machinery Lubrication Conference & Exhibition Proceedings, Noria Corporation, 2015",
+      "relevance": "Referência do setor que abrange os mecanismos de formação do verniz, a interpretação do MPC e estudos de caso de remoção em aplicações de turbinas a gás e sistemas hidráulicos."
+    }
+  ],
+  "title": "Formação de verniz em sistemas de lubrificação: mecanismos de oxidação, deposição eletrostática e remoção",
+  "subtitle": "Química da oxidação do óleo que leva aos precursores do verniz, deposição por descarga eletrostática nas superfícies de servoválvulas e válvulas de controle, quantificação por colorimetria de patch (MPC), janela de solubilidade do verniz e estratégias de limpeza.",
+  "metaDescription": "Referência de engenharia sobre a formação de verniz em sistemas de lubrificação e hidráulicos: mecanismos de degradação oxidativa e térmica do óleo, deposição eletrostática nas superfícies das válvulas, colorimetria de patch de membrana (ASTM D7843) para quantificar o potencial de verniz, conceito de janela de solubilidade e remoção do verniz por flushing do fluido e filtração.",
+  "category": "engenharia",
+  "readTime": "12 min",
+  "intro": "Os depósitos de verniz (subprodutos de oxidação insolúveis que aderem às superfícies metálicas) são uma das principais causas de travamento de servoválvulas e válvulas proporcionais, de engripamento de bombas hidráulicas e de instabilidade de sistemas de controle em sistemas de óleo lubrificante de turbinas e hidráulicos que operam em temperaturas elevadas. O verniz é diferente da contaminação por partículas: os filtros de partículas convencionais não conseguem capturá-lo e ele é invisível para a contagem de partículas ISO 4406. Entender os mecanismos de formação do verniz e os métodos de quantificação é pré-requisito para escolher estratégias adequadas de prevenção e remoção.",
+  "sections": [
+    {
+      "heading": "Química do verniz: oxidação e degradação térmica",
+      "body": "Os precursores do verniz se formam por duas vias químicas principais: (1) Oxidação do óleo: o oxigênio reage com o óleo base hidrocarboneto em temperatura elevada na presença de catalisadores metálicos (ferro, cobre). A reação em cadeia de oxidação produz peróxidos, aldeídos e ácidos carboxílicos (detectados como aumento do TAN segundo a ASTM D664); esses produtos se condensam e polimerizam em resinas e asfaltenos de alto peso molecular. A taxa de oxidação aproximadamente dobra a cada 10°C de aumento acima de 60°C (relação de Arrhenius). (2) Degradação térmica: a pirólise direta das moléculas do óleo base em pontos quentes (zonas de cavitação das bombas, superfícies das hastes de cilindros hidráulicos, áreas junto às placas do trocador de calor) produz produtos de degradação ricos em carbono sem necessidade de oxigênio. As duas vias geram compostos polares que no início são solúveis no óleo, mas se tornam insolúveis à medida que seu peso molecular aumenta ou que a temperatura do óleo muda. O ponto em que o óleo não consegue mais dissolver os produtos de oxidação, o limite de solubilidade, determina quando o verniz precipita nas superfícies metálicas.",
+      "callout": [
+        {
+          "label": "Regra da taxa de oxidação",
+          "value": "Dobra a cada 10°C acima de 60°C"
+        },
+        {
+          "label": "Aumento do TAN",
+          "value": "Indica acúmulo de ácidos oxidativos (ASTM D664)"
+        },
+        {
+          "label": "Pontos críticos",
+          "value": "Pontos quentes: cavitação de bombas, zonas do trocador de calor"
+        }
+      ]
+    },
+    {
+      "heading": "Janela de solubilidade e gatilhos de precipitação",
+      "body": "Sistemas de óleo de turbinas e de óleo hidráulico de alto desempenho apresentam um fenômeno característico de \"janela de solubilidade\": os produtos de oxidação permanecem dissolvidos no óleo quente durante a operação, mas precipitam quando o óleo esfria na parada. A solubilidade dos produtos de oxidação polares no óleo base apolar diminui com a queda da temperatura, levando à deposição nas superfícies metálicas frias durante a parada e nas superfícies que operam em temperatura menor durante a operação normal (paredes do reservatório, corpos de válvulas, espelhos dos resfriadores). Isso explica uma observação característica: os depósitos de verniz aparecem preferencialmente nas superfícies internas estacionárias durante a parada e nos carretéis de servoválvulas que operam em temperatura menor que o óleo como um todo. Por outro lado, na temperatura de operação, parte do verniz pode voltar a se dissolver (\"remobilização\"), liberando fragmentos de verniz depositados anteriormente como contaminação por partículas e explicando picos ocasionais de contaminação durante a operação a quente do sistema."
+    },
+    {
+      "heading": "Mecanismo de deposição por descarga eletrostática",
+      "body": "Um mecanismo secundário de formação de verniz, a deposição por descarga eletrostática (ESD), atua em circuitos de fluido de alta velocidade independentemente do nível de oxidação. Quando o óleo escoa em alta velocidade (normalmente >5 m/s) por filtros finos e orifícios, ocorre carregamento triboestático: as moléculas polares do óleo geram um desequilíbrio de carga elétrica entre o óleo e as superfícies metálicas. O potencial eletrostático resultante (mensurável como corrente de escoamento) deposita moléculas polares carregadas, inclusive produtos de oxidação já em solução, nas superfícies metálicas. A deposição ESD é especialmente ativa em sistemas com: óleo base muito limpo e de baixa condutividade (dissipação iônica mínima); filtros finos de alta eficiência (que aumentam a velocidade do óleo pelos poros finos); vazões altas; e longos tempos de circulação do fluido entre o reservatório e o equipamento. A filtração eletrostática (mídia filtrante tipo eletreto com campo aplicado) pode acelerar a deposição ESD dentro do elemento filtrante, removendo os precursores do verniz antes que cheguem às superfícies das válvulas, mas deve ser projetada com cuidado para não remover os aditivos polares benéficos."
+    },
+    {
+      "heading": "Colorimetria de patch de membrana: ASTM D7843",
+      "body": "A colorimetria de patch de membrana (MPC) é o principal método quantitativo para avaliar o potencial de verniz. Procedimento ASTM D7843: uma amostra de óleo de 100 mL passa por um patch de membrana de 0.45 µm em condições controladas; a cor do patch é medida por espectrofotometria e expressa como o valor ΔE (diferença de cor). Um ΔE maior indica maior concentração de depósitos de oxidação insolúveis em óleo no patch. Interpretação do ΔE de MPC: ΔE <15: potencial de verniz baixo; ΔE 15–30: potencial de verniz moderado; ΔE 30–45: potencial de verniz alto, monitorar de perto; ΔE >45: crítico, deposição de verniz provável no sistema. O MPC complementa a contagem de partículas ISO 4406, não a substitui: a ISO 4406 mede partículas >4 µm; o MPC capta produtos de oxidação insolúveis submicrométricos que os contadores de partículas não veem. Um sistema pode mostrar código ISO 4406 dentro da meta enquanto o ΔE de MPC está na faixa crítica, indicando um problema de verniz em desenvolvimento que ainda não chegou ao limiar de tamanho de partícula.",
+      "callout": [
+        {
+          "label": "ΔE de MPC < 15",
+          "value": "Potencial de verniz baixo"
+        },
+        {
+          "label": "ΔE de MPC 30–45",
+          "value": "Potencial de verniz alto: monitorar de perto"
+        },
+        {
+          "label": "ΔE de MPC > 45",
+          "value": "Crítico: deposição provavelmente ativa"
+        }
+      ]
+    },
+    {
+      "heading": "Travamento de servoválvulas e impacto no sistema de controle",
+      "body": "Os depósitos de verniz nas superfícies dos carretéis das servoválvulas se acumulam na folga submicrométrica entre o carretel e o furo (normalmente 1–3 µm em servoválvulas eletro-hidráulicas). Uma espessura de depósito de apenas 1–2 µm basta para travar o carretel: a força necessária para mover o carretel contra a aderência do verniz excede a força disponível do motor de torque. O resultado: a válvula não responde a sinais de controle de baixa magnitude (instabilidade em pequenas correções de posição); a válvula \"gruda\" em uma posição e causa deriva; por fim a válvula exige remoção mecânica e limpeza. Os ciclos térmicos das partidas e paradas do sistema agravam esse mecanismo: os depósitos formados no resfriamento não voltam a se dissolver no aquecimento se a janela de solubilidade tiver se deslocado com a degradação do óleo. Os sistemas de óleo lubrificante de turbinas a gás e a vapor, e os sistemas de ensaio servo-hidráulicos de alto desempenho, são os mais suscetíveis pela operação contínua e prolongada em alta temperatura."
+    },
+    {
+      "heading": "Estratégias de prevenção do verniz",
+      "body": "Prevenir é muito mais fácil que remover: (1) Seleção do óleo: óleos base éster e PAO têm estabilidade à oxidação intrinsecamente maior que os óleos minerais do grupo I; as especificações de óleo de turbinas (série ISO 8068) exigem TOST ASTM D943 (ensaio de estabilidade do óleo de turbinas) de no mínimo 1,000 horas até a formação de borra; alguns óleos de turbinas premium passam de 10,000 horas de TOST. (2) Controle de temperatura: manter a temperatura do óleo como um todo abaixo de 60°C quando possível; controlar os pontos quentes no projeto (capacidade adequada do trocador de calor, prevenção de cavitação das bombas); sistemas de óleo de turbinas visam <65°C de temperatura do óleo como um todo. (3) Manutenção dos antioxidantes: monitorar o TAN segundo a ASTM D664 e o esgotamento dos antioxidantes fenólicos; em sistemas de grande volume, onde a troca total do óleo é cara, é possível repor antioxidante ou misturar óleo. (4) Controle da deposição eletrostática: projetar o sistema para manter a velocidade do óleo abaixo de 5 m/s nas linhas críticas; avaliar o risco eletrostático com óleo muito limpo e de baixa condutividade em circuitos de alta velocidade. (5) Monitoramento MPC: ensaio MPC trimestral para detectar o aumento do potencial de verniz antes do início da deposição."
+    },
+    {
+      "heading": "Procedimentos de remoção do verniz",
+      "body": "Quando o ΔE de MPC passa de 45 ou o travamento de válvulas confirma a deposição de verniz, as opções de remoção são: (1) Aumento da solubilidade: adicionar um aditivo solubilizante de verniz (normalmente de química amínica ou de éster polar) à carga de óleo existente; isso eleva o limite de solubilidade e volta a dissolver parte dos depósitos de verniz no óleo, que depois são capturados pela filtração de alta eficiência a jusante; risco: partículas liberadas de depósitos grandes podem exceder a capacidade do filtro e chegar às válvulas. (2) Flushing com solvente: drenar o óleo existente; fazer o flushing do circuito com um fluido de flushing de baixa viscosidade e alta solubilidade (hidrocarboneto mais leve ou fluido específico para remoção de verniz) em temperatura elevada; circular por filtração fina; drenar e reabastecer com óleo novo. (3) Filtração eletrostática: instalar elementos filtrantes eletrostáticos tipo eletreto ou de campo aplicado para capturar os produtos de oxidação insolúveis submicrométricos que as mídias convencionais não capturam; a remoção contínua dos precursores do verniz reduz a taxa de deposição. (4) Revisão de componentes: remover, desmontar e limpar por ultrassom as servoválvulas e válvulas proporcionais; reinstalá-las após o flushing do sistema e o abastecimento com óleo novo. Toda estratégia de remoção deve ser seguida de monitoramento MPC em intervalos de 250 horas para confirmar que o potencial de verniz está diminuindo."
+    }
+  ],
+  "keyMetrics": [
+    {
+      "label": "Aceleração da taxa de oxidação",
+      "value": "2× a cada 10°C acima de 60°C (Arrhenius)"
+    },
+    {
+      "label": "Limiar crítico de ΔE de MPC",
+      "value": ">45 (ASTM D7843)"
+    },
+    {
+      "label": "Folga de travamento por verniz",
+      "value": "1–3 µm (furo do carretel de servoválvula)"
+    },
+    {
+      "label": "Velocidade de início da deposição ESD",
+      "value": ">5 m/s (carregamento triboestático)"
+    },
+    {
+      "label": "Meta de TOST do óleo de turbinas",
+      "value": "≥1,000 horas (série ISO 8068)"
+    }
+  ],
+  "relatedStandards": [
+    "ASTM D7843",
+    "ASTM D664",
+    "ASTM D943",
+    "ISO 8068",
+    "ISO 4406"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™"
+  ],
+  "relatedSystems": [
+    "Lubrication Protection",
+    "Hydraulic Protection"
+  ],
+  "keywords": [
+    "formação de verniz",
+    "colorimetria de patch de membrana MPC",
+    "ASTM D7843",
+    "oxidação do óleo",
+    "deposição eletrostática",
+    "travamento de servoválvulas",
+    "verniz em óleo de turbinas",
+    "aumento do TAN",
+    "janela de solubilidade",
+    "ASTM D664",
+    "remoção do verniz",
+    "SYNTRAX",
+    "ISO 8068",
+    "prevenção do verniz",
+    "verniz hidráulico"
+  ],
+  "fieldDiagnostics": {
+    "symptoms": [
+      "Travamento de servoválvulas ou válvulas proporcionais: resposta errática ou lenta ao sinal de controle",
+      "Mais ruído e vibração na bomba ou no motor hidráulico sem mudança nas condições de operação",
+      "O óleo parece normal, mas o ΔE de MPC é >30 na análise trimestral",
+      "Depósitos tipo verniz (âmbar a marrom-escuro, duros, aderentes) visíveis no interior do reservatório ou no exterior do elemento filtrante",
+      "Contagem de partículas ISO 4406 dentro da meta, mas o desempenho da servoválvula continua se degradando"
+    ],
+    "probableCauses": [
+      "Travamento de válvulas: deposição de verniz na superfície do carretel (confirmar com ΔE de MPC); contaminação por partículas também é possível (distinguir com ISO 4406); precipitação por janela de solubilidade em ciclos de parada anteriores",
+      "Ruído da bomba: cavitação (verificar a restrição de sucção); verniz nas superfícies internas da bomba reduzindo as folgas; viscosidade incorreta para a temperatura de operação",
+      "MPC alto com aparência normal: produtos de oxidação insolúveis submicrométricos, invisíveis a olho nu e ao contador de partículas; alerta precoce antes do início da macrodeposição",
+      "Depósitos visíveis: oxidação avançada; o sistema operou acima dos limites de temperatura ou com antioxidantes esgotados por um período prolongado",
+      "ISO 4406 normal e válvula se degradando: o verniz é submicrométrico (abaixo do limiar de detecção ISO 4406); é necessária a quantificação por MPC"
+    ],
+    "inspectionMethods": [
+      "Ensaio MPC ASTM D7843 em amostra de óleo: 100 mL através de patch de 0.45 µm; medir o ΔE com espectrofotômetro; comparar com os limiares",
+      "TAN (número de acidez total) ASTM D664 em amostra de óleo: TAN em alta indica acúmulo de ácidos oxidativos; aumento do TAN >0.5 mg KOH/g em relação à linha de base indica oxidação significativa",
+      "TOST ASTM D943 em amostra de óleo novo: verifica a estabilidade à oxidação restante em um programa preventivo de reposição de antioxidantes",
+      "Inspeção da servoválvula: remover a válvula, retirar o carretel do furo e inspecionar se há depósitos âmbar ou marrons no diâmetro externo do carretel e no interior do furo; documentar com fotografias",
+      "Espectroscopia elementar (ICP) de Fe e Cu no óleo: metais elevados indicam ataque corrosivo do verniz às superfícies metálicas ou remobilização de depósitos liberando partículas metálicas"
+    ],
+    "correctiveActions": [
+      "ΔE de MPC 30–45 (alto, ainda não crítico): aumentar o monitoramento para mensal; adicionar aditivo solubilizante de verniz na dose recomendada pelo fabricante; instalar elemento filtrante fino eletrostático a jusante do filtro principal; evitar excursões de temperatura",
+      "ΔE de MPC >45 ou válvula travada por verniz confirmada: remover as válvulas travadas; limpá-las por ultrassom; executar o flushing com solvente do sistema (drenar o óleo, fazer flushing com fluido de baixa viscosidade a 60°C por 8 horas, drenar o fluido de flushing, reabastecer com óleo novo); instalar filtração eletrostática para prevenção contínua",
+      "Degradação térmica confirmada (pontos quentes): inspecionar o trocador de calor em busca de incrustação; verificar se a pressão de abertura da válvula de bypass não está permitindo o bypass de óleo quente; revisar os indicadores de cavitação da bomba",
+      "Padrão de deposição ESD confirmado (óleo ultralimpo em circuito de alta velocidade): reduzir a velocidade do óleo onde possível; instalar elemento filtrante eletrostático para capturar o material depositado por ESD antes que chegue às válvulas; considerar óleo com aditivo de maior condutividade",
+      "Após a remoção: ASTM D7843 em intervalos de 250 horas até ΔE <15; ISO 4406 em intervalos de 100 horas após o flushing para verificar que as partículas liberadas não excedam o código alvo"
+    ]
+  },
+  "decisionMatrix": [
+    {
+      "problem": "Sistema de óleo lubrificante de turbina com ΔE de MPC de 38 após 12,000 horas de serviço: as válvulas começam a mostrar resposta lenta",
+      "standard": "ASTM D7843 (MPC varnish potential), ASTM D664 (TAN), ISO 8068 (turbine oil specification)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "MPC de 38 é alto: é preciso intervir antes do limiar crítico. Opção 1 (preferida se a química do óleo permitir): adicionar solubilizante de verniz na dose de 2–5%; aumentar o monitoramento MPC para mensal; instalar elemento filtrante eletrostático; meta de MPC <20 em 3,000 horas. Opção 2 (se o TAN for >2.0 mg KOH/g, degradação severa do óleo): drenagem e flushing programados; limpeza por ultrassom de todas as válvulas durante a drenagem; reabastecer com óleo de turbinas novo conforme a ISO 8068 com TOST ≥1,000 horas",
+      "relatedArticles": [
+        "oil-analysis-methods",
+        "lubrication-system-filtration",
+        "hydraulic-contamination-sensitivity"
+      ]
+    },
+    {
+      "problem": "Sistema de ensaio servo-hidráulico com fluido éster sintético ultralimpo mostrando deriva do ponto nulo da servoválvula após 6 meses",
+      "standard": "ASTM D7843 (MPC varnish), ISO 4406 (particles), ASTM D664 (TAN)",
+      "protectionSystem": "Proteção hidráulica",
+      "technology": "O fluido éster em circuito servo de alta velocidade é suscetível à deposição ESD; medir o ΔE de MPC e a corrente de escoamento se houver equipamento disponível; se o MPC estiver elevado com contagem de partículas ISO baixa, a deposição ESD está confirmada; reduzir a velocidade do óleo nas linhas de alimentação principais se o circuito permitir reprojeto; instalar elemento filtrante eletrostático; verificar se os aditivos do fluido incluem um modificador de condutividade para reduzir o potencial de ESD",
+      "relatedArticles": [
+        "nfpa-t2-14-hydraulic-cleanliness",
+        "hydraulic-contamination-sensitivity",
+        "filter-media-engineering"
+      ]
+    },
+    {
+      "problem": "Cárter de motor com aumento do TAN para 2.0 mg KOH/g às 300 horas em um programa de troca estendida de 500 horas",
+      "standard": "ASTM D664 (TAN), SAE J300 (viscosity grade), API CK-4 (oil specification)",
+      "protectionSystem": "Proteção da lubrificação",
+      "technology": "TAN de 2.0 mg KOH/g a 300/500 horas indica oxidação acelerada, provavelmente por temperatura de operação elevada ou esgotamento de antioxidantes; contagem de partículas ISO 4406 e viscosidade para completar o quadro; não estender para 500 horas com TAN de 2.0; verificar se o motor está operando acima da temperatura normal do líquido de arrefecimento; considerar a troca para óleo base sintético do grupo III ou IV com melhor desempenho TOST para este motor e ciclo de trabalho",
+      "relatedArticles": [
+        "sae-j300-viscosity-classification",
+        "oil-analysis-methods",
+        "service-intervals"
+      ]
+    }
+  ],
+  "revisionHistory": {
+    "version": "1.0",
+    "lastEngineeringReview": "2026-07-05",
+    "nextScheduledReview": "2027-01-05",
+    "responsibleRegistry": "EDL-SYSTEMS (SYS-LUBRICATION)",
+    "evidenceStatus": "ASTM D7843:2021 MPC method verified; ASTM D664 TAN method verified; ASTM D943 TOST verified; oxidation rate doubling per 10°C from Arrhenius kinetics (published tribology literature); MPC ΔE threshold values from published field correlation studies; servo valve clearance range from electrohydraulic servo valve engineering references; ESD deposition mechanism from published LUBE magazine and STLE research"
+  }
+}
