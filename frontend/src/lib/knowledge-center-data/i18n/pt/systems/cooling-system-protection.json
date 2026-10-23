@@ -1,0 +1,49 @@
+{
+  "system": {
+    "slug": "cooling-system-protection",
+    "title": "Proteção do sistema de arrefecimento",
+    "description": "Controle da erosão por cavitação, da corrosão e da formação de incrustações nos sistemas de arrefecimento de motores diesel por meio de filtração com aditivo suplementar de líquido de arrefecimento (SCA) e condicionamento do líquido de arrefecimento.",
+    "icon": "🌡️",
+    "technologies": [
+      "THERMACORE™"
+    ],
+    "kits": [],
+    "standards": [],
+    "challenges": [
+      "Proteção contra cavitação",
+      "Esgotamento do inibidor de corrosão",
+      "Controle do pH do líquido de arrefecimento",
+      "Prevenção de incrustações"
+    ]
+  },
+  "detail": {
+    "slug": "cooling-system-protection",
+    "failureMechanism": "Esgotamento do inibidor SCA → erosão por cavitação da parede da camisa → contaminação do líquido de arrefecimento com partículas de ferro fundido → corrosão da camisa d'água → falha da junta do cabeçote. Formação de incrustações → menor coeficiente de transferência de calor → temperatura do líquido de arrefecimento elevada → eventos de superaquecimento.",
+    "contaminationTarget": "Concentração de SCA mantida na faixa de 0.5–1.0 unidade/L; incrustações, produtos de corrosão e gel de silicato abaixo do limiar de 20 µm.",
+    "targetCleanliness": "Concentração de SCA de 0.5–1.0 unidade por litro; pH 8.5–10.5; intervalo de troca do líquido de arrefecimento segundo a ASTM D6210.",
+    "keyMetrics": [
+      {
+        "label": "Concentração alvo de SCA",
+        "value": "0.5–1.0 unidade/L"
+      },
+      {
+        "label": "Captura de partículas THERMACORE™",
+        "value": "Conforme a aplicação aprovada"
+      },
+      {
+        "label": "Mecanismo de erosão da camisa",
+        "value": "Cavitação por colapso de bolhas de vapor"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Mecanismo de erosão por cavitação",
+        "body": "As camisas de cilindro úmidas dos motores diesel vibram com os pulsos de pressão da combustão. Essa vibração cria zonas de baixa pressão no lado do líquido de arrefecimento da camisa: quando a pressão cai abaixo da pressão de vapor do líquido de arrefecimento, formam-se bolhas de vapor. Quando essas bolhas colapsam, microjatos de líquido atingem a superfície da camisa em velocidades que erodem o ferro fundido a uma taxa capaz de perfurar a parede de uma camisa em 2,000–5,000 horas sem proteção SCA adequada. Os aditivos suplementares de líquido de arrefecimento (SCA) formam uma película protetora na superfície da camisa que absorve a energia de impacto do colapso das bolhas."
+      },
+      {
+        "heading": "Gestão do SCA",
+        "body": "A concentração de SCA deve permanecer dentro da faixa especificada para a química do líquido de arrefecimento e a aplicação aprovada. Abaixo do mínimo, a proteção contra a erosão por cavitação é insuficiente; acima do máximo, a precipitação do SCA pode formar gel e entupimentos. THERMACORE™ é projetado para liberar SCA a uma taxa controlada ao longo do intervalo de serviço, ajudando a manter a concentração dentro da faixa especificada. A concentração de SCA é verificada com tiras de teste ou refratômetro a cada intervalo de serviço do líquido de arrefecimento."
+      }
+    ]
+  }
+}

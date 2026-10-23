@@ -1,12 +1,20 @@
 'use client';
 
-import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_SYSTEMS, KC_SYSTEM_DETAILS, KC_TECHNOLOGIES, KCSystemDetail } from '@/lib/knowledge-center-data';
 import { getSystemSidebarData } from '@/lib/knowledge-center/navigation-index';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { articleTitle, systemTitle } from '@/lib/knowledge-center-data/i18n/titles';
 
 type KCSystem = typeof KC_SYSTEMS[number];
+
+const COPY = {
+  en: { kc: 'Knowledge Center', systems: 'Systems', failure: 'FAILURE MECHANISM', target: 'Contamination Target', cleanliness: 'TARGET CLEANLINESS', pendingTitle: 'PENDING ENGINEERING DOCUMENTATION', pendingBody: 'Detailed system documentation is being developed. Contact ELIMFILTERS for engineering consultation.', techs: 'ELIMFILTERS TECHNOLOGIES FOR THIS SYSTEM', standards: 'RELEVANT STANDARDS', technologies: 'TECHNOLOGIES', kits: 'COMMERCIAL KITS', other: 'OTHER SYSTEMS', articles: 'ENGINEERING ARTICLES' },
+  es: { kc: 'Centro de Conocimiento', systems: 'Sistemas', failure: 'MECANISMO DE FALLA', target: 'Objetivo de contaminación', cleanliness: 'LIMPIEZA OBJETIVO', pendingTitle: 'DOCUMENTACIÓN DE INGENIERÍA PENDIENTE', pendingBody: 'La documentación detallada del sistema está en desarrollo. Contacte a ELIMFILTERS para una consulta de ingeniería.', techs: 'TECNOLOGÍAS ELIMFILTERS PARA ESTE SISTEMA', standards: 'NORMAS RELEVANTES', technologies: 'TECNOLOGÍAS', kits: 'KITS COMERCIALES', other: 'OTROS SISTEMAS', articles: 'ARTÍCULOS DE INGENIERÍA' },
+  pt: { kc: 'Centro de Conhecimento', systems: 'Sistemas', failure: 'MECANISMO DE FALHA', target: 'Meta de contaminação', cleanliness: 'LIMPEZA ALVO', pendingTitle: 'DOCUMENTAÇÃO DE ENGENHARIA PENDENTE', pendingBody: 'A documentação detalhada do sistema está em desenvolvimento. Entre em contato com a ELIMFILTERS para uma consulta de engenharia.', techs: 'TECNOLOGIAS ELIMFILTERS PARA ESTE SISTEMA', standards: 'NORMAS RELEVANTES', technologies: 'TECNOLOGIAS', kits: 'KITS COMERCIAIS', other: 'OUTROS SISTEMAS', articles: 'ARTIGOS DE ENGENHARIA' },
+} as const;
 
 const STD_SLUG_MAP: Record<string, string> = {
   'ISO 16889': 'iso-16889',
@@ -35,6 +43,9 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
 
   const otherSystems = KC_SYSTEMS.filter((s) => s.slug !== system.slug);
   const { referencingArticles } = getSystemSidebarData(system.slug);
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
+  const c = COPY[lang === 'es' || lang === 'pt' ? lang : 'en'];
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
@@ -45,9 +56,9 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Knowledge Center</Link>
+          <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.kc}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
-          <Link href="/knowledge-center/systems" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Systems</Link>
+          <Link href="/knowledge-center/systems" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.systems}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)' }}>{system.title}</span>
         </div>
@@ -117,7 +128,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               }}
             >
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.5)', marginBottom: '0.5rem' }}>
-                FAILURE MECHANISM
+                {c.failure}
               </p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>
                 {detail.failureMechanism}
@@ -187,14 +198,14 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                     01 /
                   </p>
                   <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '0.75rem' }}>
-                    Contamination Target
+                    {c.target}
                   </h2>
                   <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
                     {detail.contaminationTarget}
                   </p>
                   {detail.targetCleanliness && (
                     <div style={{ marginTop: '1rem', padding: '0.875rem 1.25rem', background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.12)' }}>
-                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.35rem' }}>TARGET CLEANLINESS</p>
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.35rem' }}>{c.cleanliness}</p>
                       <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)' }}>{detail.targetCleanliness}</p>
                     </div>
                   )}
@@ -251,10 +262,10 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               textAlign: 'center',
             }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>
-                PENDING ENGINEERING DOCUMENTATION
+                {c.pendingTitle}
               </p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.5rem' }}>
-                Detailed system documentation is being developed. Contact ELIMFILTERS for engineering consultation.
+                {c.pendingBody}
               </p>
             </div>
           )}
@@ -269,7 +280,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                 color: 'rgba(255,255,255,0.3)',
                 marginBottom: '1.25rem',
               }}>
-                ELIMFILTERS TECHNOLOGIES FOR THIS SYSTEM
+                {c.techs}
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
                 {relatedTechs.map((t) => (
@@ -293,7 +304,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
           {system.standards.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                RELEVANT STANDARDS
+                {c.standards}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {system.standards.map((std) => {
@@ -319,7 +330,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
 
           {system.technologies.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}><PublicUiText textKey="publicUi.text1">{"TECHNOLOGIES"}</PublicUiText></p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>{c.technologies}</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {system.technologies.map((tech) => (
                   <div key={tech} style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '0.6rem 0.875rem', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', fontWeight: 600, color: 'rgba(255,255,255,0.65)' }}>
@@ -333,7 +344,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
           {system.kits.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                COMMERCIAL KITS
+                {c.kits}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {system.kits.map((kit) => (
@@ -352,7 +363,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
 
           <div style={{ marginBottom: referencingArticles.length > 0 ? '1.5rem' : 0 }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-              OTHER SYSTEMS
+              {c.other}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
               {otherSystems.map((s) => (
@@ -362,7 +373,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                     style={{ padding: '0.5rem 0.75rem', fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', transition: 'all 0.15s', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
                   >
                     <span style={{ fontSize: '0.9rem' }}>{s.icon}</span>
-                    {s.title}
+                    {systemTitle(s.slug, lang, s.title)}
                   </motion.div>
                 </Link>
               ))}
@@ -372,7 +383,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
           {referencingArticles.length > 0 && (
             <div>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                ENGINEERING ARTICLES
+                {c.articles}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                 {referencingArticles.slice(0, 6).map((a) => (
@@ -389,7 +400,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                         transition: 'all 0.15s',
                       }}
                     >
-                      {a.title}
+                      {articleTitle(a.slug, lang, a.title)}
                     </motion.div>
                   </Link>
                 ))}

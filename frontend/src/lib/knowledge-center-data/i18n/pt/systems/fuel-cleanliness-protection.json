@@ -1,0 +1,69 @@
+{
+  "system": {
+    "slug": "fuel-cleanliness-protection",
+    "title": "Proteção da limpeza do combustível",
+    "description": "Proteção coordenada do combustível diesel por meio de filtração de partículas, separação de combustível/água padrão não turbina aprovada e separação tipo turbina FH/FG aprovada.",
+    "icon": "⛽",
+    "technologies": [
+      "SYNTAPORE™",
+      "HYDROCORE™",
+      "TURBOCORE™"
+    ],
+    "kits": [
+      "DURATECH™",
+      "MARINECLEAN™"
+    ],
+    "standards": [
+      "ISO 12937",
+      "ASTM D6304"
+    ],
+    "challenges": [
+      "Contaminação por água",
+      "Proteção de injetores HPCR",
+      "Crescimento microbiano",
+      "Polimento do combustível"
+    ]
+  },
+  "detail": {
+    "slug": "fuel-cleanliness-protection",
+    "failureMechanism": "Partículas e água que entram nos componentes de precisão do combustível diesel podem contribuir para desgaste abrasivo, corrosão, travamento e perda de controle do sistema de injeção. Por isso, a estratégia de proteção deve tratar da filtração de partículas e da gestão da água sem misturar as arquiteturas de separador padrão e tipo turbina.",
+    "contaminationTarget": "Contaminação por partículas e por água do combustível diesel a montante das bombas de precisão, dos injetores e dos componentes relacionados do sistema de combustível.",
+    "targetCleanliness": "Específico da aplicação. A limpeza de partículas, os limites de água, o desempenho de filtração e os intervalos de serviço devem ser vinculados ao sistema de combustível protegido, à configuração do produto e à evidência validada aplicável, em vez de atribuídos como uma única meta universal de limpeza do combustível.",
+    "keyMetrics": [
+      {
+        "label": "Arquitetura de partículas",
+        "value": "SYNTAPORE™"
+      },
+      {
+        "label": "Separação padrão não turbina",
+        "value": "HYDROCORE™"
+      },
+      {
+        "label": "Separação tipo turbina FH/FG",
+        "value": "TURBOCORE™"
+      },
+      {
+        "label": "Seleção final",
+        "value": "Validação específica da aplicação"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Arquitetura de limpeza do combustível com três tecnologias",
+        "body": "A proteção da limpeza do combustível usa três tecnologias distintas. SYNTAPORE™ controla a contaminação por partículas nas posições aprovadas de filtração primária, secundária e de cartucho. HYDROCORE™ rege as aplicações aprovadas de separadores de combustível/água padrão não turbina spin-on e de cartucho. TURBOCORE™ rege as carcaças de separação de combustível/água tipo turbina FH/FG aplicáveis e suas configurações de reposição dedicadas."
+      },
+      {
+        "heading": "Controle de partículas: SYNTAPORE™",
+        "body": "A filtração de partículas é escalonada conforme a arquitetura aprovada do sistema de combustível, o requisito de vazão, a exposição à contaminação e a sensibilidade dos componentes a jusante. A eficiência, a capacidade de contaminantes e a queda de pressão em nível de produto continuam vinculadas a cada filtro e aplicação validados."
+      },
+      {
+        "heading": "Separação padrão de combustível/água: HYDROCORE™",
+        "body": "HYDROCORE™ é restrito aos separadores de combustível/água padrão não turbina aprovados, incluindo as configurações spin-on, de cartucho, com dreno e com copo transparente aplicáveis. Não deve ser usado como identidade tecnológica dos sistemas tipo turbina FH ou FG."
+      },
+      {
+        "heading": "Separação tipo turbina: TURBOCORE™",
+        "body": "TURBOCORE™ é reservado aos sistemas de separação de combustível/água tipo turbina FH/FG aplicáveis e à sua arquitetura de reposição dedicada, incluindo as configurações aprovadas das séries 2010, 2020 e 2040. A carcaça, o elemento, as vedações, o caminho do fluxo e as condições de serviço devem ser tratados como um único sistema aprovado específico de turbina."
+      }
+    ]
+  }
+}

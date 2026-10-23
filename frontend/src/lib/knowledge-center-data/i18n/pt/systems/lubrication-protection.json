@@ -1,0 +1,64 @@
+{
+  "system": {
+    "slug": "lubrication-protection",
+    "title": "Proteção da lubrificação",
+    "description": "Manter os códigos de limpeza ISO 4406 nos circuitos de lubrificação do motor e da transmissão. A contaminação por partículas no óleo lubrificante é a principal causa de desgaste de mancais e pistões.",
+    "icon": "🔧",
+    "technologies": [
+      "SYNTRAX™"
+    ],
+    "kits": [
+      "DURATECH™",
+      "MARINECLEAN™"
+    ],
+    "standards": [
+      "ISO 16889",
+      "ISO 4406",
+      "SAE J1858"
+    ],
+    "challenges": [
+      "Projeto da válvula de bypass",
+      "Proteção na partida a frio",
+      "Intervalos de troca estendidos",
+      "Análise de óleo"
+    ]
+  },
+  "detail": {
+    "slug": "lubrication-protection",
+    "failureMechanism": "Contaminação por partículas no óleo lubrificante → desgaste abrasivo dos munhões dos mancais e dos anéis do pistão → a folga do mancal aumenta → ruptura do filme de óleo com a folga alterada → engripamento do mancal. Abertura da válvula de bypass na partida a frio → óleo não filtrado nos mancais durante os primeiros 30–60 segundos.",
+    "contaminationTarget": "Partículas sólidas (meta ISO 4406 16/14/11 com abordagem de sistema), água (por vazamento de líquido de arrefecimento ou condensação), diluição por combustível e fuligem de oxidação.",
+    "targetCleanliness": "Código ISO 4406 16/14/11 para proteção com abordagem de sistema; especificação do OEM para conformidade mínima.",
+    "keyMetrics": [
+      {
+        "label": "Vida do mancal com 16/14/11",
+        "value": "3–5× vs 19/17/14"
+      },
+      {
+        "label": "β₁₀(c) típico de filtro de lubrificante",
+        "value": "SYNTRAX™: ≥200"
+      },
+      {
+        "label": "ΔP de abertura da válvula de bypass",
+        "value": "0.8–1.0 bar"
+      },
+      {
+        "label": "Especificação ADB na partida a frio",
+        "value": "<1 mL/min de retorno"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Folga dos mancais e contaminação",
+        "body": "Os munhões dos mancais do motor operam com folgas de 5–25 µm conforme o tamanho e o projeto do mancal. Partículas nessa faixa de tamanho, as mais frequentes no óleo de motor usado, causam desgaste abrasivo de dois e três corpos que aumenta progressivamente a folga. Uma folga maior reduz a pressão do filme de óleo, o que por sua vez eleva a temperatura de operação do mancal. O código de limpeza ISO 4406 16/14/11, atingível com SYNTRAX™, estende a vida dos mancais em 3–5× em relação à abordagem genérica com 19/17/14."
+      },
+      {
+        "heading": "Projeto da válvula de bypass",
+        "body": "As válvulas de bypass dos filtros de lubrificante abrem a 0.8–1.0 bar de pressão diferencial para proteger o motor da falta de óleo se o filtro ficar muito restrito. Durante o bypass, o óleo não filtrado desvia da mídia filtrante e entra no circuito de lubrificação. Isso é aceitável em partidas a frio breves, mas é um modo de falha se for prolongado. A constante da mola da válvula de bypass deve ser calibrada para mantê-la fechada em toda a faixa de temperatura de operação: o relaxamento da mola em temperatura elevada pode causar bypass parcial abaixo do limiar nominal."
+      },
+      {
+        "heading": "Intervalos de troca estendidos",
+        "body": "Programas de intervalo de troca estendido exigem análise de óleo para monitorar a condição e o nível de contaminação do óleo ao longo de todo o intervalo. Os elementos SYNTRAX™ têm maior capacidade de retenção de sujeira que a celulose, permitindo intervalos mais longos em termos de restrição do filtro. No entanto, o intervalo de troca do óleo lubrificante é regido pela oxidação do óleo, pelo esgotamento dos aditivos e pelo TAN (número de acidez total), não apenas pela restrição do filtro. Programas de troca estendida sem análise de óleo correm o risco de desgaste acumulado dos mancais por óleo contaminado."
+      }
+    ]
+  }
+}

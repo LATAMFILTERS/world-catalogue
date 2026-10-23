@@ -1,0 +1,72 @@
+{
+  "system": {
+    "slug": "air-intake-protection",
+    "title": "Proteção da admissão e do fluxo de ar",
+    "description": "Proteção coordenada da admissão de ar do motor, das carcaças dos filtros de ar, da filtração do ar da cabine e da secagem de ar comprimido quando aplicável. São funções de fluxo de ar distintas dentro de um mesmo sistema de proteção.",
+    "icon": "💨",
+    "technologies": [
+      "MACROCORE™",
+      "INTEKCORE™",
+      "MICROKAPPA™",
+      "DRYCORE™"
+    ],
+    "kits": [
+      "DURATECH™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 11155-1",
+      "DIN 71460",
+      "ISO 8573-1"
+    ],
+    "challenges": [
+      "Ingestão de sílica",
+      "Restrição de ar",
+      "Integridade da carcaça e das vedações",
+      "Qualidade do ar da cabine",
+      "Controle de umidade do ar comprimido"
+    ]
+  },
+  "detail": {
+    "slug": "air-intake-protection",
+    "failureMechanism": "A perda do limite de fluxo de ar protegido pode ocorrer por sobrecarga da mídia, carcaças ou vedações danificadas, assentamento incorreto do elemento, carga da cabine/HVAC ou controle de umidade do ar comprimido insuficiente. O risco resultante depende do caminho de ar afetado: contaminação do motor, menor desempenho do HVAC, exposição do operador ou falhas do sistema pneumático relacionadas à umidade.",
+    "contaminationTarget": "Partículas em suspensão nos limites do motor e da cabine, passagem de ar não filtrado por bypass nas interfaces da carcaça e de vedação, e umidade nas funções de secagem de ar comprimido aplicáveis.",
+    "targetCleanliness": "Específico da aplicação. O desempenho da admissão do motor é validado em nível de produto e de carcaça pelos métodos de ensaio de filtros de ar aplicáveis; as funções de cabine e de ar comprimido usam seus próprios requisitos aplicáveis e não devem herdar uma única meta universal do sistema.",
+    "keyMetrics": [
+      {
+        "label": "Validação do ar do motor",
+        "value": "Conforme o produto/a carcaça"
+      },
+      {
+        "label": "Validação do ar da cabine",
+        "value": "Conforme a aplicação e a mídia"
+      },
+      {
+        "label": "Integridade da carcaça",
+        "value": "Limite contínuo de ar protegido"
+      },
+      {
+        "label": "Secagem de ar comprimido",
+        "value": "Conforme a aplicação e o secador"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Um sistema de proteção do fluxo de ar, várias funções",
+        "body": "A proteção da admissão e do fluxo de ar coordena a filtração da admissão do motor, as carcaças e a vedação dos filtros de ar, a filtração do ar da cabine e a secagem de ar comprimido aplicável como funções distintas dentro de um mesmo sistema de proteção. MACROCORE™ rege a filtração da admissão de ar do motor, INTEKCORE™ rege a arquitetura de carcaças e vedação, MICROKAPPA™ rege a filtração do ar da cabine e DRYCORE™ rege as aplicações aprovadas de secadores de ar."
+      },
+      {
+        "heading": "Limite da admissão do motor",
+        "body": "A proteção do motor depende de todo o caminho do ar sujo ao ar limpo, não apenas do elemento. A seleção da mídia, a capacidade de poeira, a restrição, a retenção do elemento, o estado da carcaça, os dutos, as abraçadeiras e as interfaces de vedação devem permanecer compatíveis com o requisito de fluxo de ar do motor e com o ambiente de operação. As afirmações quantitativas de eficiência, capacidade e restrição pertencem ao produto validado e à configuração instalada."
+      },
+      {
+        "heading": "O ar da cabine é uma função, não um sistema de proteção separado",
+        "body": "A filtração da cabine trata da exposição do operador e dos passageiros pelo caminho de ar do HVAC. A configuração da mídia MICROKAPPA™ é escolhida conforme os contaminantes, a demanda de fluxo de ar, os limites de queda de pressão, o encaixe da carcaça e o ambiente de cabine previsto. O desempenho do ar da cabine deve ser validado independentemente do desempenho do ar do motor, mesmo que ambos pertençam à proteção da admissão e do fluxo de ar."
+      },
+      {
+        "heading": "Função de secagem de ar comprimido",
+        "body": "DRYCORE™ apoia o controle de umidade em aplicações pneumáticas e de secadores de ar aprovadas. O estado do secador, o regime do compressor, o comportamento da purga, a evidência de umidade a jusante e os requisitos de serviço devem ser avaliados em conjunto. A secagem de ar comprimido continua sendo uma função de proteção do fluxo de ar e não cria um sexto sistema de proteção ELIMFILTERS."
+      }
+    ]
+  }
+}
