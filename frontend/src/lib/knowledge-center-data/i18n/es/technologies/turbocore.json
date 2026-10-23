@@ -1,0 +1,321 @@
+{
+  "slug": "turbocore",
+  "name": "TURBOCORE™",
+  "domain": "Protección de la limpieza del combustible",
+  "tagline": "Arquitectura de separación de combustible/agua tipo turbina reservada a los sistemas de las series FH y FG aprobados.",
+  "engineeringPrinciple": "TURBOCORE™ es la arquitectura ELIMFILTERS de separación de combustible/agua tipo turbina reservada exclusivamente a los sistemas de las series FH y FG aprobados. Atiende la limpieza del combustible y la gestión del agua dentro de la configuración de separador de turbina aprobada y se mantiene distinta de HYDROCORE™, que rige los separadores estándar no turbina. La eficiencia, el desempeño de separación de agua, la capacidad y los intervalos de servicio a nivel de producto requieren evidencia validada específica de cada aplicación.",
+  "selectionGuidance": "La separación tipo turbina debe elegirse como un sistema FH o FG aprobado completo, incluidos el tamaño de la carcasa, la serie de elementos dedicada, la disposición del vaso y del drenaje, el requisito de caudal de combustible y el espacio de servicio disponible. Revise la fuente de contaminación y la práctica de gestión del agua además del propio separador; la acumulación repetida de agua puede indicar problemas de almacenamiento, transferencia o tanque que requieren corrección aguas arriba. Durante el servicio, los sellos internos correctos, la orientación del elemento y el estado del drenaje son esenciales para preservar el recorrido de flujo previsto. La lógica de los separadores estándar spin-on o de cartucho no debe sustituirse solo porque las dimensiones externas parezcan compatibles.",
+  "evidenceBoundary": "TURBOCORE™ se limita a los sistemas tipo turbina FH y FG aprobados y a su arquitectura de reemplazo dedicada. No da una eficiencia de separación de agua, clasificación de partículas, capacidad ni intervalo de servicio universales. Toda afirmación de desempeño debe respaldarse con la configuración validada de carcasa y elemento y con la evidencia de ensayo aplicable. Los separadores estándar no turbina siguen dentro del alcance de HYDROCORE™.",
+  "contamination": [
+    "Contaminación por partículas en el combustible",
+    "Contaminación por agua en los sistemas de separador tipo turbina FH y FG aprobados"
+  ],
+  "performanceSpecs": [],
+  "standards": [],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedIndustries": [],
+  "worksWith": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "figures": [
+    {
+      "href": "/knowledge-center/figures/turbocore.html",
+      "preview": "/knowledge-center/figures/turbocore.webp",
+      "title": "Carcasa tipo turbina con deflector fijo",
+      "caption": "Un deflector de turbina fijo hace girar el combustible; el agua y los sólidos más grandes son lanzados contra la pared y se depositan en el vaso, de donde los libera el drenaje. El elemento reemplazable sale por la tapa.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/turbocore-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/turbocore-pt.html"
+        }
+      ]
+    }
+  ],
+  "howItWorks": {
+    "en": {
+      "overview": [
+        "TURBOCORE™ is the ELIMFILTERS architecture for turbine-style FH and FG fuel/water separation systems. Like a standard separator it removes water and solids from diesel before they reach the injection system, but it does so in stages, and the first stage needs no media at all: it uses the fuel's own flow.",
+        "In the first stage, the fuel enters the housing and is directed onto a fixed turbine deflector. Its helical vanes turn the incoming flow into a swirl; nothing rotates. The swirl centrifuges the fuel, so water and the larger solid particles, which are denser than diesel, are thrown out to the wall, slide down and settle at the bottom of the bowl. A large share of the contaminant load is removed here, before the fuel ever reaches the element.",
+        "The following stages take place in the replaceable element, which receives fuel already relieved of the free water and the heavier solids and holds what remains. Because the bowl stores the separated water, draining it is part of how the system works: the water has to be released before it reaches the mark, as with any separator.",
+        "A turbine-style separator is selected and serviced as a complete approved system: housing size, dedicated element series, bowl and drain arrangement, matched to the fuel flow it has to handle. Standard spin-on or cartridge separators work on a different principle and belong to HYDROCORE™; their logic and parts are not substituted here, even when dimensions look similar."
+      ],
+      "figures": {
+        "turbocore": {
+          "title": "Turbine-style housing with fixed deflector",
+          "caption": "A fixed turbine deflector swirls the fuel; water and larger solids are thrown to the wall and settle in the bowl, where the drain releases them. The replaceable element comes out through the lid.",
+          "steps": [
+            {
+              "part": "Inlet and outlet",
+              "text": "The fuel enters and leaves through the fittings on the side of the cast housing, which is clamped to a wall bracket. Moving the cursor sideways changes the fuel flow through the housing."
+            },
+            {
+              "part": "Fixed turbine deflector",
+              "text": "Seen through the transparent bowl, the helical vanes of the deflector turn the flow into a swirl. The dashed rings show the fuel turning below it; nothing in the housing rotates."
+            },
+            {
+              "part": "Centrifugal separation",
+              "text": "The blue drops are water and the dark dots solid residues: being denser than diesel, they are thrown to the wall of the bowl and settle at the bottom."
+            },
+            {
+              "part": "Drain",
+              "text": "When the water reaches the mark the readout says so. Clicking the figure, or pressing the space bar, opens the drain and releases the water into the cup."
+            },
+            {
+              "part": "Lid and element",
+              "text": "Moving the cursor to the top, or pressing E, lifts the lid with its T-handle and draws the replaceable element out of the housing: this is the service position. Housing, bowl and deflector stay in place."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Fixed turbine deflector",
+          "role": "The first separation stage. Its helical vanes turn the incoming fuel into a swirl that throws water and heavier solids to the wall of the bowl. It has no moving parts and is not a service part."
+        },
+        {
+          "name": "Transparent bowl",
+          "role": "Collects the separated water and residues and lets the operator see the level against the mark."
+        },
+        {
+          "name": "Drain",
+          "role": "The valve at the bottom of the bowl. Opening it releases the collected water; it has to be closed again and checked for leaks."
+        },
+        {
+          "name": "Replaceable element",
+          "role": "The following separation stages. It belongs to the dedicated series for the housing and comes out through the lid at service."
+        },
+        {
+          "name": "Lid with T-handle",
+          "role": "Closes the top of the housing with its bolt circle and seal. Lifting it gives access to the element without disturbing the lines or the bowl."
+        },
+        {
+          "name": "Finned cast housing, clamp and bracket",
+          "role": "The permanent body of the system, held to the bracket by a clamp band. It carries the inlet and outlet and is not replaced at service."
+        }
+      ],
+      "service": [
+        "With the engine off, open the drain and release the collected water into a container. Dispose of it as fuel-contaminated waste.",
+        "Confirm that the replacement element belongs to the dedicated series for that FH or FG housing; a standard element is not a substitute.",
+        "Remove the lid and withdraw the used element. Inspect the lid seal and the element seals, and replace them with the ones supplied.",
+        "Fit the new element in the correct orientation, so the intended flow path through the stages is preserved.",
+        "Refit the lid, tighten it as the equipment maker specifies, and refill and prime the system following its service procedure.",
+        "Start the engine and check the lid, the drain and every fitting for leaks. Confirm the drain is closed."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "The water reaches the mark again soon after every drain",
+          "check": "The separator is doing its job and reporting what the fuel carries. Look upstream: tank condensation, water in deliveries, storage and transfer practices."
+        },
+        {
+          "symptom": "Water found downstream of the housing",
+          "check": "Check whether the drain was overdue, whether the element is the correct dedicated series and fitted in the right orientation, and whether the internal seals are intact."
+        },
+        {
+          "symptom": "Restriction rises with little water in the bowl",
+          "check": "The element is loading with what the first stage did not remove. Consider fuel quality and low-temperature waxing before changing the maintenance interval."
+        },
+        {
+          "symptom": "Air in the system or a fuel leak after service",
+          "check": "Check the lid seal and its tightening, the element seals and the drain. On the suction side a poor seal draws in air rather than leaking fuel."
+        },
+        {
+          "symptom": "Dark sludge at the water–fuel boundary in the bowl",
+          "check": "A sign of microbial growth. It has to be treated in the tank and fuel system; the separator only shows it."
+        }
+      ]
+    },
+    "es": {
+      "overview": [
+        "TURBOCORE™ es la arquitectura ELIMFILTERS para los sistemas de separación de combustible/agua tipo turbina FH y FG. Como un separador estándar, retira el agua y los sólidos del diésel antes de que lleguen al sistema de inyección, pero lo hace por etapas, y la primera etapa no necesita ningún medio filtrante: usa el propio flujo del combustible.",
+        "En la primera etapa, el combustible entra en la carcasa y se dirige hacia un deflector de turbina fijo. Sus álabes helicoidales convierten el flujo de entrada en un giro; nada rota. El giro centrifuga el combustible, de modo que el agua y las partículas sólidas más grandes, más densas que el diésel, son lanzadas hacia la pared, bajan por ella y se depositan en el fondo del vaso. Una gran parte de la carga de contaminantes se retira aquí, antes de que el combustible llegue siquiera al elemento.",
+        "Las etapas siguientes ocurren en el elemento reemplazable, que recibe combustible ya sin el agua libre ni los sólidos más pesados y retiene lo que queda. Como el vaso almacena el agua separada, purgarla es parte del funcionamiento del sistema: el agua debe descargarse antes de que llegue a la marca, como en cualquier separador.",
+        "Un separador tipo turbina se selecciona y se mantiene como un sistema completo aprobado: tamaño de la carcasa, serie de elementos dedicada, disposición del vaso y del purgador, ajustados al caudal de combustible que debe manejar. Los separadores estándar spin-on o de cartucho funcionan con otro principio y corresponden a HYDROCORE™; su lógica y sus piezas no se sustituyen aquí, aunque las dimensiones parezcan similares."
+      ],
+      "figures": {
+        "turbocore": {
+          "title": "Carcasa tipo turbina con deflector fijo",
+          "caption": "Un deflector de turbina fijo hace girar el combustible; el agua y los sólidos más grandes son lanzados a la pared y se depositan en el vaso, donde el purgador los descarga. El elemento reemplazable sale por la tapa.",
+          "steps": [
+            {
+              "part": "Entrada y salida",
+              "text": "El combustible entra y sale por las conexiones del costado de la carcasa fundida, sujeta con abrazadera a un soporte de pared. Al mover el cursor de lado a lado cambia el caudal de combustible que pasa por la carcasa."
+            },
+            {
+              "part": "Deflector de turbina fijo",
+              "text": "A través del vaso transparente se ven los álabes helicoidales del deflector, que convierten el flujo en un giro. Los anillos punteados muestran el combustible girando debajo; nada dentro de la carcasa rota."
+            },
+            {
+              "part": "Separación centrífuga",
+              "text": "Las gotas azules son agua y los puntos oscuros residuos sólidos: al ser más densos que el diésel, son lanzados a la pared del vaso y se depositan en el fondo."
+            },
+            {
+              "part": "Purgador",
+              "text": "Cuando el agua llega a la marca, el indicador lo avisa. Al hacer clic en la figura, o pulsar la barra espaciadora, se abre el purgador y el agua cae a la taza."
+            },
+            {
+              "part": "Tapa y elemento",
+              "text": "Al llevar el cursor arriba, o pulsar E, la tapa sube con su manija en T y saca el elemento reemplazable de la carcasa: es la posición de servicio. La carcasa, el vaso y el deflector permanecen en su lugar."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Deflector de turbina fijo",
+          "role": "La primera etapa de separación. Sus álabes helicoidales convierten el combustible que entra en un giro que lanza el agua y los sólidos pesados a la pared del vaso. No tiene piezas móviles y no es una pieza de servicio."
+        },
+        {
+          "name": "Vaso transparente",
+          "role": "Recoge el agua separada y los residuos y deja ver el nivel respecto a la marca."
+        },
+        {
+          "name": "Purgador",
+          "role": "La válvula del fondo del vaso. Al abrirla sale el agua acumulada; hay que volver a cerrarla y comprobar que no gotee."
+        },
+        {
+          "name": "Elemento reemplazable",
+          "role": "Las etapas siguientes de separación. Pertenece a la serie dedicada de la carcasa y sale por la tapa en el servicio."
+        },
+        {
+          "name": "Tapa con manija en T",
+          "role": "Cierra la parte superior de la carcasa con su círculo de tornillos y su sello. Al levantarla se accede al elemento sin tocar las líneas ni el vaso."
+        },
+        {
+          "name": "Carcasa fundida con aletas, abrazadera y soporte",
+          "role": "El cuerpo permanente del sistema, sujeto al soporte con una abrazadera. Lleva la entrada y la salida y no se reemplaza en el servicio."
+        }
+      ],
+      "service": [
+        "Con el motor apagado, abrir el purgador y sacar el agua acumulada a un recipiente. Desecharla como residuo contaminado con combustible.",
+        "Confirmar que el elemento de repuesto pertenece a la serie dedicada de esa carcasa FH o FG; un elemento estándar no es un sustituto.",
+        "Retirar la tapa y sacar el elemento usado. Revisar el sello de la tapa y los sellos del elemento, y reemplazarlos por los que vienen con el repuesto.",
+        "Colocar el elemento nuevo en la orientación correcta, para conservar el recorrido de flujo previsto a través de las etapas.",
+        "Volver a montar la tapa, apretarla como indica el fabricante del equipo, y rellenar y cebar el sistema según su procedimiento de servicio.",
+        "Arrancar el motor y revisar fugas en la tapa, el purgador y cada conexión. Confirmar que el purgador quedó cerrado."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "El agua vuelve a llegar a la marca poco después de cada purga",
+          "check": "El separador está haciendo su trabajo y refleja lo que trae el combustible. Revisar aguas arriba: condensación en el tanque, agua en las entregas, prácticas de almacenamiento y trasvase."
+        },
+        {
+          "symptom": "Aparece agua después de la carcasa",
+          "check": "Verificar si la purga se atrasó, si el elemento es de la serie dedicada correcta y está colocado en la orientación correcta, y si los sellos internos están intactos."
+        },
+        {
+          "symptom": "La restricción sube con poca agua en el vaso",
+          "check": "El elemento se está cargando con lo que la primera etapa no retiró. Considerar la calidad del combustible y la formación de parafina por frío antes de cambiar el intervalo de mantenimiento."
+        },
+        {
+          "symptom": "Aire en el sistema o fuga de combustible después del servicio",
+          "check": "Revisar el sello de la tapa y su apriete, los sellos del elemento y el purgador. En el lado de succión, un sello defectuoso aspira aire en lugar de gotear combustible."
+        },
+        {
+          "symptom": "Lodo oscuro en el límite entre agua y combustible del vaso",
+          "check": "Es señal de crecimiento microbiano. Debe tratarse en el tanque y el sistema de combustible; el separador solo lo pone a la vista."
+        }
+      ]
+    },
+    "pt": {
+      "overview": [
+        "TURBOCORE™ é a arquitetura ELIMFILTERS para os sistemas de separação de combustível/água tipo turbina FH e FG. Como um separador padrão, retira a água e os sólidos do diesel antes que cheguem ao sistema de injeção, mas faz isso em etapas, e a primeira etapa não precisa de nenhum meio filtrante: usa o próprio fluxo do combustível.",
+        "Na primeira etapa, o combustível entra na carcaça e é dirigido para um defletor de turbina fixo. Suas pás helicoidais transformam o fluxo de entrada em um giro; nada gira mecanicamente. O giro centrifuga o combustível, de modo que a água e as partículas sólidas maiores, mais densas que o diesel, são lançadas para a parede, descem por ela e se depositam no fundo do copo. Uma grande parte da carga de contaminantes é retirada aqui, antes mesmo de o combustível chegar ao elemento.",
+        "As etapas seguintes acontecem no elemento substituível, que recebe combustível já sem a água livre nem os sólidos mais pesados e retém o que resta. Como o copo armazena a água separada, drená-la faz parte do funcionamento do sistema: a água precisa ser descarregada antes de chegar à marca, como em qualquer separador.",
+        "Um separador tipo turbina é selecionado e mantido como um sistema completo aprovado: tamanho da carcaça, série de elementos dedicada, disposição do copo e do dreno, ajustados à vazão de combustível que deve atender. Os separadores padrão spin-on ou de cartucho funcionam com outro princípio e pertencem ao HYDROCORE™; sua lógica e suas peças não são substituídas aqui, mesmo que as dimensões pareçam semelhantes."
+      ],
+      "figures": {
+        "turbocore": {
+          "title": "Carcaça tipo turbina com defletor fixo",
+          "caption": "Um defletor de turbina fixo faz o combustível girar; a água e os sólidos maiores são lançados para a parede e se depositam no copo, onde o dreno os descarrega. O elemento substituível sai pela tampa.",
+          "steps": [
+            {
+              "part": "Entrada e saída",
+              "text": "O combustível entra e sai pelas conexões na lateral da carcaça fundida, fixada com abraçadeira a um suporte de parede. Mover o cursor para os lados muda a vazão de combustível que passa pela carcaça."
+            },
+            {
+              "part": "Defletor de turbina fixo",
+              "text": "Através do copo transparente veem-se as pás helicoidais do defletor, que transformam o fluxo em um giro. Os anéis tracejados mostram o combustível girando abaixo dele; nada dentro da carcaça gira mecanicamente."
+            },
+            {
+              "part": "Separação centrífuga",
+              "text": "As gotas azuis são água e os pontos escuros resíduos sólidos: por serem mais densos que o diesel, são lançados para a parede do copo e se depositam no fundo."
+            },
+            {
+              "part": "Dreno",
+              "text": "Quando a água chega à marca, o indicador avisa. Clicar na figura, ou pressionar a barra de espaço, abre o dreno e a água cai no copo coletor."
+            },
+            {
+              "part": "Tampa e elemento",
+              "text": "Levar o cursor ao topo, ou pressionar E, levanta a tampa com sua manopla em T e retira o elemento substituível da carcaça: é a posição de manutenção. A carcaça, o copo e o defletor permanecem no lugar."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Defletor de turbina fixo",
+          "role": "A primeira etapa de separação. Suas pás helicoidais transformam o combustível que entra em um giro que lança a água e os sólidos pesados contra a parede do copo. Não tem partes móveis e não é uma peça de manutenção."
+        },
+        {
+          "name": "Copo transparente",
+          "role": "Recolhe a água separada e os resíduos e deixa ver o nível em relação à marca."
+        },
+        {
+          "name": "Dreno",
+          "role": "A válvula no fundo do copo. Ao abri-la sai a água acumulada; é preciso fechá-la de novo e verificar que não pinga."
+        },
+        {
+          "name": "Elemento substituível",
+          "role": "As etapas seguintes de separação. Pertence à série dedicada da carcaça e sai pela tampa na manutenção."
+        },
+        {
+          "name": "Tampa com manopla em T",
+          "role": "Fecha a parte superior da carcaça com seu círculo de parafusos e sua vedação. Ao levantá-la acessa-se o elemento sem mexer nas linhas nem no copo."
+        },
+        {
+          "name": "Carcaça fundida aletada, abraçadeira e suporte",
+          "role": "O corpo permanente do sistema, preso ao suporte por uma abraçadeira. Tem a entrada e a saída e não é substituído na manutenção."
+        }
+      ],
+      "service": [
+        "Com o motor desligado, abrir o dreno e retirar a água acumulada para um recipiente. Descartá-la como resíduo contaminado com combustível.",
+        "Confirmar que o elemento de reposição pertence à série dedicada dessa carcaça FH ou FG; um elemento padrão não é um substituto.",
+        "Retirar a tampa e o elemento usado. Inspecionar a vedação da tampa e as vedações do elemento, e substituí-las pelas que acompanham a reposição.",
+        "Instalar o elemento novo na orientação correta, para preservar o percurso de fluxo previsto através das etapas.",
+        "Montar a tampa de volta, apertá-la conforme indica o fabricante do equipamento, e reabastecer e escorvar o sistema segundo seu procedimento de manutenção.",
+        "Ligar o motor e verificar vazamentos na tampa, no dreno e em cada conexão. Confirmar que o dreno ficou fechado."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "A água volta a chegar à marca logo depois de cada drenagem",
+          "check": "O separador está fazendo seu trabalho e reflete o que o combustível traz. Verificar a montante: condensação no tanque, água nas entregas, práticas de armazenamento e transferência."
+        },
+        {
+          "symptom": "Aparece água depois da carcaça",
+          "check": "Verificar se a drenagem atrasou, se o elemento é da série dedicada correta e está instalado na orientação certa, e se as vedações internas estão intactas."
+        },
+        {
+          "symptom": "A restrição sobe com pouca água no copo",
+          "check": "O elemento está se carregando com o que a primeira etapa não retirou. Considerar a qualidade do combustível e a formação de parafina no frio antes de mudar o intervalo de manutenção."
+        },
+        {
+          "symptom": "Ar no sistema ou vazamento de combustível depois da manutenção",
+          "check": "Verificar a vedação da tampa e seu aperto, as vedações do elemento e o dreno. No lado de sucção, uma vedação defeituosa aspira ar em vez de vazar combustível."
+        },
+        {
+          "symptom": "Borra escura no limite entre água e combustível no copo",
+          "check": "É sinal de crescimento microbiano. Deve ser tratado no tanque e no sistema de combustível; o separador apenas o torna visível."
+        }
+      ]
+    }
+  }
+}

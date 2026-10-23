@@ -1,0 +1,495 @@
+{
+  "slug": "nanoforce",
+  "name": "NANOFORCE™",
+  "domain": "Proteção hidráulica",
+  "tagline": "Arquitetura de filtração hidráulica para a limpeza do fluido conforme as tolerâncias de bombas, válvulas e atuadores.",
+  "engineeringPrinciple": "NANOFORCE™ é a arquitetura ELIMFILTERS de filtração hidráulica desenvolvida para manter a limpeza do fluido conforme os requisitos de tolerância de bombas, válvulas, atuadores e componentes hidráulicos de precisão. A mídia e a construção do elemento são escolhidas conforme a meta de limpeza exigida, o tamanho de partícula crítico, a vazão do sistema, a pressão, a viscosidade do fluido e o regime de operação. Essa flexibilidade de engenharia permite configurar a filtração para aplicações de pressão, de retorno e off-line aprovadas. A eficiência, o desempenho Beta, a capacidade de contaminantes e as pressões nominais em nível de produto devem ser respaldados por dados validados segundo as normas de ensaio aplicáveis.",
+  "selectionGuidance": "A filtração hidráulica deve ser posicionada e dimensionada em função do componente mais sensível à contaminação, do código de limpeza alvo, da vazão do circuito, da pressão de operação, da viscosidade do fluido e da taxa de ingresso esperada. As posições de pressão, de retorno e off-line impõem exigências estruturais e de pressão diferencial diferentes, então os elementos não devem ser intercambiados apenas pelas dimensões. A revisão deve incluir os respiros do reservatório, as práticas de abastecimento, a exposição dos cilindros e a limpeza na manutenção, porque os filtros não conseguem compensar indefinidamente um ingresso descontrolado. Acompanhar a tendência das contagens de partículas e da pressão diferencial é mais informativo que trocar elementos pela aparência ou por um intervalo genérico de horas.",
+  "evidenceBoundary": "NANOFORCE™ não atribui uma única razão Beta, classificação em mícrons, resistência ao colapso, limite de pressão ou vida útil a todos os elementos hidráulicos. A ISO 16889 e a ISO 4406 fornecem estruturas de desempenho e de limpeza, mas as afirmações devem permanecer vinculadas aos dados de produto validados e ao circuito real. A seleção final exige a carcaça aprovada, o sentido do fluxo, o arranjo do bypass, a compatibilidade com o fluido e a meta de limpeza do equipamento.",
+  "contamination": [
+    "Contaminação por partículas no fluido hidráulico"
+  ],
+  "performanceSpecs": [],
+  "standards": [
+    "ISO 16889",
+    "ISO 4406"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedIndustries": [],
+  "worksWith": [],
+  "image": "/images/technologies/nanoforce-media.png",
+  "figures": [
+    {
+      "href": "/knowledge-center/figures/nanoforce.html",
+      "preview": "/knowledge-center/figures/nanoforce.webp",
+      "title": "Filtro spin-on de pressão no circuito hidráulico",
+      "caption": "A bomba envia o fluido através do filtro antes das válvulas de controle, de modo que as partículas ficam retidas na mídia plissada antes de chegar aos componentes de tolerância estreita. No serviço, o spin-on é substituído.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/nanoforce-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/nanoforce-pt.html"
+        }
+      ]
+    },
+    {
+      "href": "/knowledge-center/figures/compare-nanoforce.html",
+      "preview": "/knowledge-center/figures/compare-nanoforce.webp",
+      "title": "Formatos spin-on e cartucho",
+      "caption": "Um spin-on é substituído inteiro, com a carcaça incluída. Em um cartucho, a carcaça permanece no circuito hidráulico: o copo é retirado e só o elemento é trocado.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/compare-nanoforce-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/compare-nanoforce-pt.html"
+        }
+      ]
+    }
+  ],
+  "howItWorks": {
+    "en": {
+      "overview": [
+        "Hydraulic pumps, valves and actuators work with very close internal clearances, and the fluid that moves them also lubricates them. Hard particles in the fluid wear those surfaces, and fine particles can pack into the clearances of a valve spool until it responds slowly or sticks. NANOFORCE™ is the ELIMFILTERS hydraulic-filtration architecture that keeps the fluid clean enough for the components it serves.",
+        "Hydraulic filtration starts from a cleanliness target, not from a filter. ISO 4406 provides the cleanliness-code framework for expressing how clean the fluid has to be, and the target is set by the most contamination-sensitive component in the circuit. The filter is then sized and positioned to hold that target against the contaminants that keep entering: through reservoir breathers, during filling, past cylinder rods and during maintenance, plus the particles the system generates itself.",
+        "Where the filter sits changes what it has to withstand. A pressure-line filter, the one in the figure, sits right after the pump and protects the valves downstream; it carries full system pressure and pressure peaks, so its housing and element must be built for that duty. A return-line filter sits where the fluid comes back to the reservoir at low pressure, capturing what the circuit picked up before it mixes with the stored fluid. An offline filter has its own pump and cleans the reservoir continuously, independent of the machine's duty cycle. Because the duties differ, elements are never interchanged by dimensions alone.",
+        "Element performance under the ISO 16889 multi-pass framework, collapse strength, bypass arrangement and pressure ratings belong to each validated product and its circuit, never to the technology as a single value. In service, trending particle counts and the pressure difference across the element says more about the system than replacing elements by appearance or a generic hour interval."
+      ],
+      "figures": {
+        "nanoforce": {
+          "title": "Pressure-line spin-on in the hydraulic circuit",
+          "caption": "The pump sends the fluid through the filter before the control valves, so particles are held on the pleated media before they reach close-tolerance components. At service the spin-on is replaced.",
+          "steps": [
+            {
+              "part": "Reservoir",
+              "text": "The fluid rests in the reservoir on the bench, with the suction and the return on top. Moving the cursor sideways changes how much contamination the fluid carries."
+            },
+            {
+              "part": "Pump",
+              "text": "The pump draws the fluid through the suction line and sends it under pressure toward the filter head."
+            },
+            {
+              "part": "NANOFORCE™ pressure-line spin-on",
+              "text": "All the pump flow crosses the pleated NANOFORCE™ element, drawn in section, where the particles are held. The readout shows the filter's load."
+            },
+            {
+              "part": "Control-valve block",
+              "text": "Downstream of the filter, the valve block with its spool caps along the top receives fluid that has just been cleaned: these close-tolerance spools are the components this position protects."
+            },
+            {
+              "part": "Return",
+              "text": "From the valves, the fluid goes back to the reservoir through the return line. In a real machine, a return-line filter would sit on this line."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the spin-on is replaced and the new one goes on clean. Head, pump and valves stay in place."
+            }
+          ]
+        },
+        "compare-nanoforce": {
+          "title": "Spin-on and cartridge formats",
+          "caption": "A spin-on is replaced whole, can included. In a cartridge the housing stays on the equipment: the bowl comes off and only the element is changed.",
+          "steps": [
+            {
+              "part": "Heads on the bracket",
+              "text": "Both filters hang from a fixed head with an inlet and an outlet port. The head belongs to the equipment and is never replaced at service."
+            },
+            {
+              "part": "Left: spin-on",
+              "text": "The pleated NANOFORCE™ element is sealed inside its own can, which screws onto the head."
+            },
+            {
+              "part": "Right: cartridge",
+              "text": "A permanent bowl closes against the head and holds a pleated NANOFORCE™ element that is replaced on its own."
+            },
+            {
+              "part": "Flow",
+              "text": "In both formats the fluid enters through the head, crosses the pleated media, where the particles are held, and leaves through the head toward the circuit. The filtration principle is the same."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the spin-on comes off whole, can included; on the cartridge the bowl drops, the element is changed and the same bowl goes back."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Pleated NANOFORCE™ element",
+          "role": "The filtration media, folded into pleats so a large media area fits in a compact element. Its construction is matched to the cleanliness target, flow, viscosity and the pressure duty of its position."
+        },
+        {
+          "name": "Filter head",
+          "role": "The fixed mount with the inlet, the outlet and the sealing face. In a pressure-line position it is part of the pressure-rated assembly and has a defined flow direction."
+        },
+        {
+          "name": "Spin-on can",
+          "role": "A sealed metal can that contains the element and screws onto the head. Element, can and gasket are replaced together."
+        },
+        {
+          "name": "Cartridge bowl",
+          "role": "In the cartridge format, the reusable housing around the element. It comes off at service and is refitted with the new element and its new seals."
+        },
+        {
+          "name": "Pump",
+          "role": "Draws fluid from the reservoir and delivers the flow and pressure the circuit works with."
+        },
+        {
+          "name": "Control-valve block",
+          "role": "Directs the fluid to the actuators. Its spools work with close clearances, which makes it one of the most contamination-sensitive components in the circuit."
+        },
+        {
+          "name": "Reservoir, suction and return",
+          "role": "The reservoir stores the fluid and lets it settle; its breather and filling point are common entry paths for contamination."
+        },
+        {
+          "name": "Bypass valve and differential-pressure indicator (where fitted, not drawn)",
+          "role": "The indicator shows how much the element restricts the flow; a bypass, where the design includes one, protects the circuit when that restriction becomes too high. Both belong to the approved housing."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "The element is built into its own sealed can. Service is quick and closed, which also helps keep dirt out of the circuit during the change; the complete can is discarded."
+        },
+        {
+          "name": "Cartridge",
+          "text": "The housing is a permanent, often pressure-rated part of the equipment and only the element is replaced. It asks more of the technician: the housing has to be clean, the seals supplied with the element fitted, and the element seated correctly so no fluid bypasses the media."
+        },
+        {
+          "name": "Which one applies",
+          "text": "The format is set by the approved housing and its position in the circuit. The replacement is chosen for that position, pressure duty, flow direction and bypass arrangement, never by external dimensions alone."
+        }
+      ],
+      "service": [
+        "Stop the machine and relieve the pressure in the circuit, following the equipment maker's procedure, before opening any filter.",
+        "Confirm that the replacement is the NANOFORCE™ element approved for that position and housing, including its pressure duty, flow direction and fluid compatibility.",
+        "Work clean: wipe the head and the surrounding area, keep the new element in its packaging until fitting it, and cap any open port.",
+        "Spin-on: remove the filter, check that the old gasket came off with it, clean the sealing face, lubricate the new gasket with clean system fluid and tighten as specified. Cartridge: remove the bowl and element, clean the housing, fit the new element with its new seals and refit the bowl.",
+        "Top up only with filtered fluid, bleed the air as the equipment procedure specifies, then run the system and check for leaks.",
+        "Record the differential-pressure reading or the particle count after service, so later readings can be compared as a trend."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "Elements load much faster than before",
+          "check": "Look for new ingression: reservoir breather, filling practice, cylinder rod seals and wipers, maintenance cleanliness, or a component that has started to wear."
+        },
+        {
+          "symptom": "The indicator shows high restriction at cold start and clears when warm",
+          "check": "Thick cold fluid raises the pressure difference without the element being loaded. Read the indicator at operating temperature before deciding on a change."
+        },
+        {
+          "symptom": "Particle counts stay above target although the filter is changed on time",
+          "check": "Review whether the position and rating suit the most sensitive component, whether a bypass is leaking, and whether ingression exceeds what the filter can hold; an offline filter may be part of the answer."
+        },
+        {
+          "symptom": "Valves respond slowly or stick",
+          "check": "Fine particles may be packing into the spool clearances. Check the cleanliness trend at the valves, not only the condition of the filter."
+        },
+        {
+          "symptom": "A deformed or collapsed element is found at service",
+          "check": "The pressure difference exceeded what that element was built for: check that it is the correct element for the position, the bypass function and the change interval."
+        }
+      ]
+    },
+    "es": {
+      "overview": [
+        "Las bombas, válvulas y actuadores hidráulicos trabajan con holguras internas muy estrechas, y el mismo fluido que los mueve también los lubrica. Las partículas duras en el fluido desgastan esas superficies, y las partículas finas pueden acumularse en las holguras del carrete de una válvula hasta que responde lento o se traba. NANOFORCE™ es la arquitectura ELIMFILTERS de filtración hidráulica que mantiene el fluido tan limpio como lo requieren los componentes que alimenta.",
+        "La filtración hidráulica parte de un objetivo de limpieza, no de un filtro. ISO 4406 da el marco del código de limpieza para expresar qué tan limpio debe estar el fluido, y el objetivo lo fija el componente más sensible a la contaminación del circuito. Luego el filtro se dimensiona y se ubica para sostener ese objetivo frente a los contaminantes que siguen entrando: por los respiraderos del tanque, durante el llenado, por los vástagos de los cilindros y durante el mantenimiento, además de las partículas que genera el propio sistema.",
+        "El lugar donde va el filtro cambia lo que debe soportar. Un filtro de línea de presión, el de la figura, va justo después de la bomba y protege las válvulas que están aguas abajo; soporta toda la presión del sistema y sus picos, por lo que su carcasa y su elemento deben estar construidos para ese servicio. Un filtro de línea de retorno va donde el fluido vuelve al tanque a baja presión y captura lo que el circuito recogió antes de que se mezcle con el fluido almacenado. Un filtro fuera de línea tiene su propia bomba y limpia el tanque de forma continua, sin depender del ciclo de trabajo de la máquina. Como los servicios son distintos, los elementos nunca se intercambian solo por sus dimensiones.",
+        "El desempeño del elemento bajo el marco de ensayo multipaso ISO 16889, la resistencia al colapso, la disposición del bypass y las presiones nominales pertenecen a cada producto validado y a su circuito, nunca a la tecnología como un valor único. En servicio, seguir la tendencia del conteo de partículas y de la diferencia de presión en el elemento dice más del sistema que cambiar elementos por su aspecto o por un intervalo genérico de horas."
+      ],
+      "figures": {
+        "nanoforce": {
+          "title": "Spin-on de línea de presión en el circuito hidráulico",
+          "caption": "La bomba envía el fluido a través del filtro antes de las válvulas de control, de modo que las partículas quedan en el medio plisado antes de llegar a los componentes de holgura estrecha. En el servicio se reemplaza el spin-on.",
+          "steps": [
+            {
+              "part": "Tanque",
+              "text": "El fluido reposa en el tanque, sobre el banco, con la succión y el retorno en la parte superior. Al mover el cursor de lado a lado cambia cuánta contaminación trae el fluido."
+            },
+            {
+              "part": "Bomba",
+              "text": "La bomba aspira el fluido por la línea de succión y lo envía a presión hacia el cabezal del filtro."
+            },
+            {
+              "part": "Spin-on NANOFORCE™ de línea de presión",
+              "text": "Todo el caudal de la bomba atraviesa el elemento plisado NANOFORCE™, que se ve en corte, donde quedan las partículas. El indicador muestra la carga del filtro."
+            },
+            {
+              "part": "Bloque de válvulas de control",
+              "text": "Aguas abajo del filtro, el bloque de válvulas, con las tapas de sus carretes en la parte superior, recibe fluido recién limpiado: esos carretes de holgura estrecha son los componentes que protege esta posición."
+            },
+            {
+              "part": "Retorno",
+              "text": "Desde las válvulas, el fluido vuelve al tanque por la línea de retorno. En una máquina real, en esta línea iría un filtro de retorno."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: se reemplaza el spin-on y el nuevo entra limpio. El cabezal, la bomba y las válvulas permanecen en su lugar."
+            }
+          ]
+        },
+        "compare-nanoforce": {
+          "title": "Formatos spin-on y cartucho",
+          "caption": "El spin-on se reemplaza completo, carcasa incluida. En el cartucho la carcasa queda en el equipo: se retira el vaso y solo se cambia el elemento.",
+          "steps": [
+            {
+              "part": "Cabezales en el soporte",
+              "text": "Ambos filtros cuelgan de un cabezal fijo con un puerto de entrada y uno de salida. El cabezal es parte del equipo y nunca se reemplaza en el servicio."
+            },
+            {
+              "part": "Izquierda: spin-on",
+              "text": "El elemento plisado NANOFORCE™ va sellado dentro de su propia carcasa, que se enrosca en el cabezal."
+            },
+            {
+              "part": "Derecha: cartucho",
+              "text": "Un vaso permanente cierra contra el cabezal y aloja un elemento plisado NANOFORCE™ que se reemplaza solo."
+            },
+            {
+              "part": "Flujo",
+              "text": "En ambos formatos el fluido entra por el cabezal, atraviesa el medio plisado, donde quedan las partículas, y sale por el cabezal hacia el circuito. El principio de filtración es el mismo."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: el spin-on sale completo, carcasa incluida; en el cartucho baja el vaso, se cambia el elemento y se vuelve a montar el mismo vaso."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plisado NANOFORCE™",
+          "role": "El medio filtrante, plegado en pliegues para que una gran superficie de filtración quepa en un elemento compacto. Su construcción se ajusta al objetivo de limpieza, al caudal, a la viscosidad y a la exigencia de presión de su posición."
+        },
+        {
+          "name": "Cabezal del filtro",
+          "role": "El soporte fijo con la entrada, la salida y la cara de sellado. En una posición de línea de presión forma parte del conjunto diseñado para esa presión y tiene un sentido de flujo definido."
+        },
+        {
+          "name": "Carcasa del spin-on",
+          "role": "Un envase metálico sellado que contiene el elemento y se enrosca en el cabezal. Elemento, carcasa y empaque se reemplazan juntos."
+        },
+        {
+          "name": "Vaso del cartucho",
+          "role": "En el formato cartucho, la carcasa reutilizable que rodea al elemento. Se retira en el servicio y se vuelve a montar con el elemento nuevo y sus sellos nuevos."
+        },
+        {
+          "name": "Bomba",
+          "role": "Aspira el fluido del tanque y entrega el caudal y la presión con que trabaja el circuito."
+        },
+        {
+          "name": "Bloque de válvulas de control",
+          "role": "Dirige el fluido a los actuadores. Sus carretes trabajan con holguras estrechas, lo que lo convierte en uno de los componentes más sensibles a la contaminación del circuito."
+        },
+        {
+          "name": "Tanque, succión y retorno",
+          "role": "El tanque guarda el fluido y lo deja asentar; su respiradero y su punto de llenado son vías comunes de entrada de contaminación."
+        },
+        {
+          "name": "Válvula de bypass e indicador de presión diferencial (cuando existen, no dibujados)",
+          "role": "El indicador muestra cuánto restringe el elemento el flujo; un bypass, cuando el diseño lo incluye, protege el circuito cuando esa restricción es demasiado alta. Ambos pertenecen a la carcasa aprobada."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "El elemento viene integrado en su propia carcasa sellada. El servicio es rápido y cerrado, lo que además ayuda a que no entre suciedad al circuito durante el cambio; se desecha la carcasa completa."
+        },
+        {
+          "name": "Cartucho",
+          "text": "La carcasa es una parte permanente del equipo, a menudo diseñada para presión, y solo se reemplaza el elemento. Exige más al técnico: la carcasa debe estar limpia, deben colocarse los sellos que vienen con el elemento, y el elemento debe quedar bien asentado para que el fluido no pase sin atravesar el medio."
+        },
+        {
+          "name": "Cuál corresponde",
+          "text": "El formato lo define la carcasa aprobada y su posición en el circuito. El repuesto se elige para esa posición, exigencia de presión, sentido de flujo y disposición del bypass, nunca solo por sus dimensiones externas."
+        }
+      ],
+      "service": [
+        "Detener la máquina y liberar la presión del circuito, siguiendo el procedimiento del fabricante del equipo, antes de abrir cualquier filtro.",
+        "Confirmar que el repuesto es el elemento NANOFORCE™ aprobado para esa posición y esa carcasa, incluida su exigencia de presión, su sentido de flujo y su compatibilidad con el fluido.",
+        "Trabajar limpio: limpiar el cabezal y la zona alrededor, mantener el elemento nuevo en su empaque hasta colocarlo y tapar cualquier puerto abierto.",
+        "Spin-on: retirar el filtro, verificar que el empaque viejo salió con él, limpiar la cara de sellado, lubricar el empaque nuevo con fluido limpio del sistema y apretar como se especifica. Cartucho: retirar el vaso y el elemento, limpiar la carcasa, colocar el elemento nuevo con sus sellos nuevos y volver a montar el vaso.",
+        "Rellenar solo con fluido filtrado, purgar el aire según el procedimiento del equipo, luego poner en marcha el sistema y revisar fugas.",
+        "Registrar la lectura de presión diferencial o el conteo de partículas después del servicio, para comparar las lecturas siguientes como tendencia."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "Los elementos se cargan mucho más rápido que antes",
+          "check": "Buscar una nueva vía de entrada: respiradero del tanque, práctica de llenado, sellos y limpiadores de los vástagos de cilindros, limpieza durante el mantenimiento, o un componente que empezó a desgastarse."
+        },
+        {
+          "symptom": "El indicador marca alta restricción en arranque en frío y se normaliza en caliente",
+          "check": "El fluido frío y espeso eleva la diferencia de presión sin que el elemento esté cargado. Leer el indicador a temperatura de operación antes de decidir un cambio."
+        },
+        {
+          "symptom": "El conteo de partículas sigue por encima del objetivo aunque el filtro se cambia a tiempo",
+          "check": "Revisar si la posición y la clasificación son adecuadas para el componente más sensible, si un bypass tiene fugas y si la entrada de contaminación supera lo que el filtro puede retener; un filtro fuera de línea puede ser parte de la solución."
+        },
+        {
+          "symptom": "Las válvulas responden lento o se traban",
+          "check": "Las partículas finas pueden estar acumulándose en las holguras de los carretes. Revisar la tendencia de limpieza en las válvulas, no solo el estado del filtro."
+        },
+        {
+          "symptom": "En el servicio aparece un elemento deformado o colapsado",
+          "check": "La diferencia de presión superó aquello para lo que ese elemento fue construido: verificar que sea el elemento correcto para la posición, la función del bypass y el intervalo de cambio."
+        }
+      ]
+    },
+    "pt": {
+      "overview": [
+        "Bombas, válvulas e atuadores hidráulicos trabalham com folgas internas muito estreitas, e o mesmo fluido que os movimenta também os lubrifica. Partículas duras no fluido desgastam essas superfícies, e partículas finas podem se acumular nas folgas do carretel de uma válvula até que ela responda devagar ou trave. NANOFORCE™ é a arquitetura ELIMFILTERS de filtração hidráulica que mantém o fluido tão limpo quanto exigem os componentes que ele alimenta.",
+        "A filtração hidráulica parte de uma meta de limpeza, não de um filtro. A ISO 4406 fornece a estrutura do código de limpeza para expressar quão limpo o fluido deve estar, e a meta é definida pelo componente mais sensível à contaminação do circuito. Depois o filtro é dimensionado e posicionado para manter essa meta contra os contaminantes que continuam entrando: pelos respiros do reservatório, durante o abastecimento, pelas hastes dos cilindros e durante a manutenção, além das partículas geradas pelo próprio sistema.",
+        "O lugar onde o filtro fica muda o que ele precisa suportar. Um filtro de linha de pressão, o da figura, fica logo depois da bomba e protege as válvulas a jusante; suporta toda a pressão do sistema e seus picos, por isso sua carcaça e seu elemento precisam ser construídos para esse serviço. Um filtro de linha de retorno fica onde o fluido volta ao reservatório em baixa pressão e captura o que o circuito recolheu antes que se misture ao fluido armazenado. Um filtro fora de linha tem sua própria bomba e limpa o reservatório continuamente, sem depender do ciclo de trabalho da máquina. Como os serviços são diferentes, os elementos nunca são trocados entre si apenas pelas dimensões.",
+        "O desempenho do elemento na estrutura de ensaio multipass da ISO 16889, a resistência ao colapso, a disposição do bypass e as pressões nominais pertencem a cada produto validado e ao seu circuito, nunca à tecnologia como um valor único. Em serviço, acompanhar a tendência da contagem de partículas e da diferença de pressão no elemento diz mais sobre o sistema do que trocar elementos pela aparência ou por um intervalo genérico de horas."
+      ],
+      "figures": {
+        "nanoforce": {
+          "title": "Spin-on de linha de pressão no circuito hidráulico",
+          "caption": "A bomba envia o fluido através do filtro antes das válvulas de controle, de modo que as partículas ficam no meio plissado antes de chegar aos componentes de folga estreita. Na manutenção o spin-on é substituído.",
+          "steps": [
+            {
+              "part": "Reservatório",
+              "text": "O fluido fica no reservatório, sobre a bancada, com a sucção e o retorno na parte de cima. Mover o cursor para os lados muda quanta contaminação o fluido carrega."
+            },
+            {
+              "part": "Bomba",
+              "text": "A bomba aspira o fluido pela linha de sucção e o envia sob pressão para o cabeçote do filtro."
+            },
+            {
+              "part": "Spin-on NANOFORCE™ de linha de pressão",
+              "text": "Toda a vazão da bomba atravessa o elemento plissado NANOFORCE™, visto em corte, onde as partículas ficam retidas. O indicador mostra a carga do filtro."
+            },
+            {
+              "part": "Bloco de válvulas de controle",
+              "text": "A jusante do filtro, o bloco de válvulas, com as tampas dos carretéis na parte de cima, recebe fluido recém-limpo: esses carretéis de folga estreita são os componentes que esta posição protege."
+            },
+            {
+              "part": "Retorno",
+              "text": "Das válvulas, o fluido volta ao reservatório pela linha de retorno. Em uma máquina real, um filtro de retorno ficaria nesta linha."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o spin-on é substituído e o novo entra limpo. O cabeçote, a bomba e as válvulas permanecem no lugar."
+            }
+          ]
+        },
+        "compare-nanoforce": {
+          "title": "Formatos spin-on e cartucho",
+          "caption": "O spin-on é substituído inteiro, carcaça incluída. No cartucho a carcaça fica no equipamento: retira-se o copo e troca-se apenas o elemento.",
+          "steps": [
+            {
+              "part": "Cabeçotes no suporte",
+              "text": "Os dois filtros ficam presos a um cabeçote fixo com uma porta de entrada e uma de saída. O cabeçote faz parte do equipamento e nunca é substituído na manutenção."
+            },
+            {
+              "part": "Esquerda: spin-on",
+              "text": "O elemento plissado NANOFORCE™ vem selado dentro da sua própria carcaça, que é rosqueada no cabeçote."
+            },
+            {
+              "part": "Direita: cartucho",
+              "text": "Um copo permanente fecha contra o cabeçote e aloja um elemento plissado NANOFORCE™ que é substituído sozinho."
+            },
+            {
+              "part": "Fluxo",
+              "text": "Nos dois formatos o fluido entra pelo cabeçote, atravessa o meio plissado, onde as partículas ficam retidas, e sai pelo cabeçote em direção ao circuito. O princípio de filtração é o mesmo."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o spin-on sai inteiro, carcaça incluída; no cartucho o copo desce, troca-se o elemento e o mesmo copo volta ao lugar."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plissado NANOFORCE™",
+          "role": "O meio filtrante, dobrado em pregas para que uma grande área de filtração caiba em um elemento compacto. Sua construção é ajustada à meta de limpeza, à vazão, à viscosidade e à exigência de pressão da sua posição."
+        },
+        {
+          "name": "Cabeçote do filtro",
+          "role": "O suporte fixo com a entrada, a saída e a face de vedação. Em uma posição de linha de pressão faz parte do conjunto projetado para essa pressão e tem um sentido de fluxo definido."
+        },
+        {
+          "name": "Carcaça do spin-on",
+          "role": "Um invólucro metálico selado que contém o elemento e é rosqueado no cabeçote. Elemento, carcaça e junta são substituídos juntos."
+        },
+        {
+          "name": "Copo do cartucho",
+          "role": "No formato cartucho, a carcaça reutilizável que envolve o elemento. É retirado na manutenção e montado de volta com o elemento novo e suas vedações novas."
+        },
+        {
+          "name": "Bomba",
+          "role": "Aspira o fluido do reservatório e entrega a vazão e a pressão com que o circuito trabalha."
+        },
+        {
+          "name": "Bloco de válvulas de controle",
+          "role": "Direciona o fluido para os atuadores. Seus carretéis trabalham com folgas estreitas, o que o torna um dos componentes mais sensíveis à contaminação do circuito."
+        },
+        {
+          "name": "Reservatório, sucção e retorno",
+          "role": "O reservatório armazena o fluido e o deixa decantar; seu respiro e seu ponto de abastecimento são caminhos comuns de entrada de contaminação."
+        },
+        {
+          "name": "Válvula de bypass e indicador de pressão diferencial (quando existem, não desenhados)",
+          "role": "O indicador mostra quanto o elemento restringe o fluxo; um bypass, quando o projeto o inclui, protege o circuito quando essa restrição fica alta demais. Ambos pertencem à carcaça aprovada."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "O elemento vem integrado à sua própria carcaça selada. A manutenção é rápida e fechada, o que também ajuda a não deixar sujeira entrar no circuito durante a troca; a carcaça inteira é descartada."
+        },
+        {
+          "name": "Cartucho",
+          "text": "A carcaça é uma parte permanente do equipamento, muitas vezes projetada para pressão, e só o elemento é substituído. Exige mais do técnico: a carcaça precisa estar limpa, as vedações que acompanham o elemento devem ser instaladas e o elemento deve ficar bem assentado para que o fluido não passe sem atravessar o meio."
+        },
+        {
+          "name": "Qual se aplica",
+          "text": "O formato é definido pela carcaça aprovada e pela sua posição no circuito. A reposição é escolhida para essa posição, exigência de pressão, sentido de fluxo e disposição do bypass, nunca apenas pelas dimensões externas."
+        }
+      ],
+      "service": [
+        "Parar a máquina e aliviar a pressão do circuito, seguindo o procedimento do fabricante do equipamento, antes de abrir qualquer filtro.",
+        "Confirmar que a reposição é o elemento NANOFORCE™ aprovado para essa posição e essa carcaça, incluindo sua exigência de pressão, seu sentido de fluxo e sua compatibilidade com o fluido.",
+        "Trabalhar limpo: limpar o cabeçote e a área ao redor, manter o elemento novo na embalagem até instalá-lo e tampar qualquer porta aberta.",
+        "Spin-on: retirar o filtro, verificar se a junta velha saiu com ele, limpar a face de vedação, lubrificar a junta nova com fluido limpo do sistema e apertar conforme especificado. Cartucho: retirar o copo e o elemento, limpar a carcaça, instalar o elemento novo com suas vedações novas e montar o copo de volta.",
+        "Completar apenas com fluido filtrado, sangrar o ar conforme o procedimento do equipamento, depois colocar o sistema em funcionamento e verificar vazamentos.",
+        "Registrar a leitura de pressão diferencial ou a contagem de partículas depois da manutenção, para comparar as leituras seguintes como tendência."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "Os elementos se carregam muito mais rápido do que antes",
+          "check": "Procurar uma nova via de entrada: respiro do reservatório, prática de abastecimento, vedações e raspadores das hastes dos cilindros, limpeza durante a manutenção, ou um componente que começou a se desgastar."
+        },
+        {
+          "symptom": "O indicador mostra alta restrição na partida a frio e normaliza a quente",
+          "check": "O fluido frio e espesso eleva a diferença de pressão sem que o elemento esteja carregado. Ler o indicador na temperatura de operação antes de decidir uma troca."
+        },
+        {
+          "symptom": "A contagem de partículas continua acima da meta mesmo com o filtro trocado em dia",
+          "check": "Verificar se a posição e a classificação são adequadas ao componente mais sensível, se um bypass está vazando e se a entrada de contaminação supera o que o filtro consegue reter; um filtro fora de linha pode fazer parte da solução."
+        },
+        {
+          "symptom": "As válvulas respondem devagar ou travam",
+          "check": "Partículas finas podem estar se acumulando nas folgas dos carretéis. Verificar a tendência de limpeza nas válvulas, não só o estado do filtro."
+        },
+        {
+          "symptom": "Na manutenção aparece um elemento deformado ou colapsado",
+          "check": "A diferença de pressão superou aquilo para que esse elemento foi construído: verificar se é o elemento correto para a posição, a função do bypass e o intervalo de troca."
+        }
+      ]
+    }
+  }
+}

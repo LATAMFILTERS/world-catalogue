@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { KC_TECHNOLOGIES } from '@/lib/knowledge-center-data';
 import { notFound } from 'next/navigation';
 import TechContent from './TechContent';
+import { languageAlternates } from '@/lib/localized-routes';
+import { TRANSLATED_TECHNOLOGY_SLUGS } from '@/lib/knowledge-center-data/i18n/titles';
 
 const BASE_URL = 'https://elimfilters.com';
 
@@ -26,7 +28,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${tech.name} Filtration Technology`,
     description: tech.tagline,
-    alternates: { canonical: url },
+    alternates: (TRANSLATED_TECHNOLOGY_SLUGS as readonly string[]).includes(slug)
+      ? { canonical: url, languages: languageAlternates(`/knowledge-center/technologies/${slug}`) }
+      : { canonical: url },
     openGraph: {
       title: `${tech.name} Filtration Technology | ELIMFILTERS`,
       description: tech.tagline,

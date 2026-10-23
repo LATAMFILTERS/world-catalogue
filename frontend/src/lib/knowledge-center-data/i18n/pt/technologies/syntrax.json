@@ -1,0 +1,501 @@
+{
+  "slug": "syntrax",
+  "name": "SYNTRAX™",
+  "domain": "Proteção da lubrificação",
+  "tagline": "Arquitetura de filtração de lubrificação para controlar partículas de desgaste, aglomerados de fuligem e contaminantes do óleo.",
+  "engineeringPrinciple": "SYNTRAX™ é a arquitetura ELIMFILTERS de filtração de lubrificação projetada para controlar as partículas de desgaste, os aglomerados de fuligem e outros contaminantes que circulam no óleo do motor. Sua abordagem de engenharia equilibra o desempenho de filtração, a capacidade de contaminantes, a vazão de óleo, a queda de pressão e a integridade das válvulas em temperaturas e condições de operação variáveis. Isso permite escolher a configuração do filtro conforme o regime do motor, o estado do lubrificante e o programa de manutenção estabelecido. O desempenho e a capacidade de serviço são determinados para cada produto e aplicação, em vez de atribuídos como valores universais a toda a tecnologia.",
+  "selectionGuidance": "A seleção da filtração de lubrificação deve considerar a viscosidade do óleo da partida até a temperatura de operação, a demanda de vazão do motor, o comportamento da válvula de bypass, a geração de contaminantes e a estratégia de troca de óleo estabelecida. O elemento deve controlar as partículas de desgaste e os aglomerados de fuligem sem deixar os componentes lubrificados sem óleo nas partidas a frio ou na operação de alta vazão. Intervalos curtos recorrentes devem disparar uma revisão do estado da combustão, da diluição por líquido de arrefecimento ou combustível, da vedação da admissão de ar e do histórico de amostragem, em vez de uma mudança automática para outra classificação nominal. O encaixe, a compressão da junta, a função antidreno e o estado da carcaça continuam fazendo parte do circuito de lubrificação protegido.",
+  "evidenceBoundary": "SYNTRAX™ define uma arquitetura de filtração de lubrificação, não uma classificação em mícrons, capacidade, ajuste de bypass ou intervalo de troca de óleo para todos os motores. O desempenho do produto pertence a cada filtro e aplicação aprovada. A análise de óleo pode apoiar a avaliação de condição, mas a interpretação deve usar amostragem consistente e limites específicos do motor; ela não substitui o encaixe verificado, os requisitos de pressão-vazão nem as orientações de serviço do fabricante.",
+  "contamination": [
+    "Contaminação por partículas no lubrificante"
+  ],
+  "performanceSpecs": [],
+  "standards": [],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedIndustries": [],
+  "worksWith": [],
+  "image": "/images/technologies/syntrax-media.png",
+  "figures": [
+    {
+      "href": "/knowledge-center/figures/syntrax.html",
+      "preview": "/knowledge-center/figures/syntrax.webp",
+      "title": "Spin-on de fluxo total no circuito de lubrificação",
+      "caption": "A bomba de óleo envia todo o óleo através do filtro antes da galeria principal que alimenta os mancais; as partículas de desgaste e a fuligem ficam retidas na mídia plissada. No serviço, o spin-on é substituído.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/syntrax-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/syntrax-pt.html"
+        }
+      ]
+    },
+    {
+      "href": "/knowledge-center/figures/compare-syntrax.html",
+      "preview": "/knowledge-center/figures/compare-syntrax.webp",
+      "title": "Formatos spin-on e cartucho",
+      "caption": "Um spin-on é substituído inteiro, com a carcaça incluída. Em um cartucho, a carcaça permanece no motor: o copo é retirado e só o elemento é trocado.",
+      "translations": [
+        {
+          "lang": "es",
+          "label": "Español",
+          "href": "/knowledge-center/figures/compare-syntrax-es.html"
+        },
+        {
+          "lang": "pt",
+          "label": "Português",
+          "href": "/knowledge-center/figures/compare-syntrax-pt.html"
+        }
+      ]
+    }
+  ],
+  "howItWorks": {
+    "en": {
+      "overview": [
+        "Engine oil lubricates, cools and also carries away what the engine generates: wear particles from bearings, rings and the valve train, soot from combustion that reaches the crankcase, and dust that got past the air intake. The lubricated surfaces are separated by a very thin oil film, so particles of a similar size act as an abrasive every time they pass through. SYNTRAX™ is the ELIMFILTERS lubrication-filtration architecture that controls this wear debris and the soot agglomerates circulating in the oil.",
+        "In a full-flow circuit the oil pump draws oil from the pan and sends all of it through the filter before it reaches the main gallery that feeds the bearings. Every bearing therefore receives oil that has just been filtered. The oil then drains back to the pan and the cycle repeats continuously while the engine runs.",
+        "Because all the oil passes through it, the filter has to balance two duties: holding contaminants and letting enough oil through. Oil is far thicker at a cold start than at operating temperature, and the engine must never be starved. That is why lube filters work with a bypass valve, which opens when the pressure difference across the element becomes too high (cold oil or a heavily loaded element) and lets oil reach the bearings, and often with an anti-drainback valve that keeps the filter full when the engine stops, so pressure builds quickly at the next start.",
+        "Selection therefore depends on oil viscosity across start-up and operating temperature, engine flow demand, bypass behaviour, how much contamination the engine generates and the oil-drain strategy. Performance and service capacity belong to each product and application, never to the technology as a single universal value."
+      ],
+      "figures": {
+        "syntrax": {
+          "title": "Full-flow spin-on in the lube circuit",
+          "caption": "The oil pump sends all the oil through the filter before the main gallery that feeds the bearings; wear particles and soot are held on the pleated media. At service the spin-on is replaced.",
+          "steps": [
+            {
+              "part": "Oil pan and pickup",
+              "text": "The oil rests in the pan on the bench. The pickup line draws it from the pan to the pump."
+            },
+            {
+              "part": "Oil pump",
+              "text": "Driven by the engine, the pump sends the oil under pressure to the filter head."
+            },
+            {
+              "part": "SYNTRAX™ full-flow spin-on",
+              "text": "All the oil crosses the pleated SYNTRAX™ element, drawn in section. The larger dots are wear particles and the finer ones soot; moving the cursor sideways changes how much the oil carries, and the readout shows the filter's load."
+            },
+            {
+              "part": "Main gallery and bearing feeds",
+              "text": "From the filter the oil reaches the main gallery, which distributes it to the bearings through the feeds."
+            },
+            {
+              "part": "Return",
+              "text": "After lubricating, the oil drains back to the pan through the return line and the circuit starts again."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the spin-on is replaced and the new one goes on clean. Head, pump and gallery stay on the engine."
+            }
+          ]
+        },
+        "compare-syntrax": {
+          "title": "Spin-on and cartridge formats",
+          "caption": "A spin-on is replaced whole, can included. In a cartridge the housing stays on the engine: the bowl comes off and only the element is changed.",
+          "steps": [
+            {
+              "part": "Heads on the bracket",
+              "text": "Both filters hang from a fixed head with an inlet and an outlet port. The head belongs to the engine and is never replaced at service."
+            },
+            {
+              "part": "Left: spin-on",
+              "text": "The pleated SYNTRAX™ element is sealed inside its own can, which screws onto the head."
+            },
+            {
+              "part": "Right: cartridge",
+              "text": "A permanent bowl closes against the head and holds a pleated SYNTRAX™ element that is replaced on its own."
+            },
+            {
+              "part": "Flow",
+              "text": "In both formats the oil enters through the head, crosses the pleated media, where wear particles and soot are held, and leaves through the head toward the gallery. The filtration principle is the same."
+            },
+            {
+              "part": "Service",
+              "text": "Moving the cursor to the top, or pressing E, runs the service: the spin-on comes off whole, can included; on the cartridge the bowl drops, the element is changed and the same bowl goes back."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Pleated SYNTRAX™ element",
+          "role": "The filtration media, folded into pleats so a large media area fits in a compact element. It holds wear particles and soot agglomerates while letting the full oil flow through."
+        },
+        {
+          "name": "Filter head",
+          "role": "The fixed mount on the engine block with the inlet from the pump and the outlet to the gallery, and the sealing face the filter seals against. It is not replaced at service."
+        },
+        {
+          "name": "Spin-on can",
+          "role": "A sealed metal can that contains the element and screws onto the head. Element, can and gasket are replaced together."
+        },
+        {
+          "name": "Cartridge bowl",
+          "role": "In the cartridge format, the reusable housing around the element. It comes off at service and is refitted with the new element and its new seals."
+        },
+        {
+          "name": "Oil pump",
+          "role": "Draws oil from the pan through the pickup and delivers it under pressure through the filter to the gallery."
+        },
+        {
+          "name": "Main gallery and bearing feeds",
+          "role": "Distribute the filtered oil to the bearings. They are the components the filter exists to protect."
+        },
+        {
+          "name": "Oil pan, pickup and return",
+          "role": "The pan holds the oil; the pickup takes it to the pump and the return brings it back after lubricating."
+        },
+        {
+          "name": "Bypass valve (inside the filter or head, not drawn)",
+          "role": "Opens when the pressure difference across the element is too high, as with cold oil or a heavily loaded element, so the bearings are never left without oil. Its setting belongs to the approved filter and engine."
+        },
+        {
+          "name": "Anti-drainback valve (inside the filter, where fitted, not drawn)",
+          "role": "Keeps the oil in the filter when the engine stops, so oil pressure builds quickly at the next start."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "The element is built into its own sealed can. Service is quick and closed: the whole unit is unscrewed and a new one is screwed on, so the head's sealing face and the new gasket are the only interfaces to check. The complete can is discarded."
+        },
+        {
+          "name": "Cartridge",
+          "text": "The housing is a permanent part of the engine and only the element is replaced, which reduces the material discarded at each service. It also puts more responsibility on the technician: the housing must be clean and undamaged, and the seals supplied with the element must be fitted, because a poorly seated element lets oil bypass the media."
+        },
+        {
+          "name": "Which one applies",
+          "text": "The format is set by the engine design; the filtration principle is the same in both. The replacement is chosen as the element approved for that engine and housing, including its bypass and anti-drainback behaviour, never by external dimensions alone."
+        }
+      ],
+      "service": [
+        "Confirm that the replacement is the SYNTRAX™ element approved for that engine and format; fit, gasket compression and valve functions are part of the protected circuit.",
+        "Change the filter together with the oil, following the engine's maintenance program and the oil-drain procedure.",
+        "Spin-on: unscrew the filter, check that the old gasket came off with it, clean the head's sealing face, lubricate the new gasket with clean engine oil and tighten as the engine maker specifies.",
+        "Cartridge: remove the bowl and the used element, clean the housing, fit the new element with the new seals supplied with it and refit the bowl as specified.",
+        "Refill with the specified oil, start the engine and confirm that oil pressure comes up promptly. Check the filter for leaks, then stop the engine and recheck the oil level."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "The filter loads much sooner than expected",
+          "check": "Review combustion condition (soot), coolant or fuel dilution, air-intake sealing and the oil-sampling history before moving to a different element. The filter reports what the engine generates."
+        },
+        {
+          "symptom": "Slow oil-pressure build-up or noise at cold start",
+          "check": "Check that the correct element is fitted, with its anti-drainback function, and that the oil viscosity suits the start-up temperature."
+        },
+        {
+          "symptom": "Low oil pressure with a filter that looks fine",
+          "check": "Check for an incorrect element or a bypass that is not behaving as designed, then the pump and pickup side of the circuit."
+        },
+        {
+          "symptom": "Oil leak at the filter after service",
+          "check": "Look for a double gasket (the old one left on the head), a damaged gasket or incorrect tightening."
+        },
+        {
+          "symptom": "Oil analysis shows rising dust or wear indicators",
+          "check": "Check the air-intake sealing and the wear sources, and make sure samples are taken consistently and compared with engine-specific limits."
+        }
+      ]
+    },
+    "es": {
+      "overview": [
+        "El aceite del motor lubrica, enfría y además arrastra lo que el motor genera: partículas de desgaste de cojinetes, anillos y tren de válvulas, hollín de la combustión que llega al cárter y polvo que pasó la admisión de aire. Las superficies lubricadas están separadas por una película de aceite muy delgada, así que las partículas de tamaño similar actúan como abrasivo cada vez que pasan. SYNTRAX™ es la arquitectura ELIMFILTERS de filtración de lubricación que controla esas partículas de desgaste y los aglomerados de hollín que circulan en el aceite.",
+        "En un circuito de flujo total, la bomba de aceite aspira el aceite del cárter y lo envía completo a través del filtro antes de que llegue a la galería principal que alimenta los cojinetes. Así, cada cojinete recibe aceite recién filtrado. Luego el aceite regresa al cárter y el ciclo se repite continuamente mientras el motor funciona.",
+        "Como todo el aceite pasa por él, el filtro debe equilibrar dos funciones: retener contaminantes y dejar pasar suficiente aceite. El aceite es mucho más espeso en un arranque en frío que a temperatura de operación, y el motor nunca debe quedarse sin aceite. Por eso los filtros de lubricación trabajan con una válvula de alivio (bypass), que se abre cuando la diferencia de presión en el elemento es demasiado alta (aceite frío o elemento muy cargado) y deja llegar aceite a los cojinetes, y a menudo con una válvula antidrenaje que mantiene el filtro lleno cuando el motor se detiene, para que la presión suba rápido en el siguiente arranque.",
+        "Por eso la selección depende de la viscosidad del aceite entre el arranque y la temperatura de operación, la demanda de caudal del motor, el comportamiento de la válvula de alivio, cuánta contaminación genera el motor y la estrategia de cambio de aceite. El desempeño y la capacidad de servicio pertenecen a cada producto y aplicación, nunca a la tecnología como un valor universal."
+      ],
+      "figures": {
+        "syntrax": {
+          "title": "Spin-on de flujo total en el circuito de lubricación",
+          "caption": "La bomba de aceite envía todo el aceite a través del filtro antes de la galería principal que alimenta los cojinetes; las partículas de desgaste y el hollín quedan en el medio plisado. En el servicio se reemplaza el spin-on.",
+          "steps": [
+            {
+              "part": "Cárter y succión",
+              "text": "El aceite reposa en el cárter, sobre el banco. La línea de succión lo lleva del cárter a la bomba."
+            },
+            {
+              "part": "Bomba de aceite",
+              "text": "Accionada por el motor, la bomba envía el aceite a presión hacia el cabezal del filtro."
+            },
+            {
+              "part": "Spin-on SYNTRAX™ de flujo total",
+              "text": "Todo el aceite atraviesa el elemento plisado SYNTRAX™, que se ve en corte. Los puntos más grandes son partículas de desgaste y los más finos hollín; al mover el cursor de lado a lado cambia cuánto trae el aceite, y el indicador muestra la carga del filtro."
+            },
+            {
+              "part": "Galería principal y alimentación a cojinetes",
+              "text": "Del filtro, el aceite llega a la galería principal, que lo reparte a los cojinetes por las líneas de alimentación."
+            },
+            {
+              "part": "Retorno",
+              "text": "Después de lubricar, el aceite vuelve al cárter por la línea de retorno y el circuito comienza de nuevo."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: se reemplaza el spin-on y el nuevo entra limpio. El cabezal, la bomba y la galería permanecen en el motor."
+            }
+          ]
+        },
+        "compare-syntrax": {
+          "title": "Formatos spin-on y cartucho",
+          "caption": "El spin-on se reemplaza completo, carcasa incluida. En el cartucho la carcasa queda en el motor: se retira el vaso y solo se cambia el elemento.",
+          "steps": [
+            {
+              "part": "Cabezales en el soporte",
+              "text": "Ambos filtros cuelgan de un cabezal fijo con un puerto de entrada y uno de salida. El cabezal es parte del motor y nunca se reemplaza en el servicio."
+            },
+            {
+              "part": "Izquierda: spin-on",
+              "text": "El elemento plisado SYNTRAX™ va sellado dentro de su propia carcasa, que se enrosca en el cabezal."
+            },
+            {
+              "part": "Derecha: cartucho",
+              "text": "Un vaso permanente cierra contra el cabezal y aloja un elemento plisado SYNTRAX™ que se reemplaza solo."
+            },
+            {
+              "part": "Flujo",
+              "text": "En ambos formatos el aceite entra por el cabezal, atraviesa el medio plisado, donde quedan las partículas de desgaste y el hollín, y sale por el cabezal hacia la galería. El principio de filtración es el mismo."
+            },
+            {
+              "part": "Servicio",
+              "text": "Al llevar el cursor arriba, o pulsar E, se ejecuta el servicio: el spin-on sale completo, carcasa incluida; en el cartucho baja el vaso, se cambia el elemento y se vuelve a montar el mismo vaso."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plisado SYNTRAX™",
+          "role": "El medio filtrante, plegado en pliegues para que una gran superficie de filtración quepa en un elemento compacto. Retiene las partículas de desgaste y los aglomerados de hollín y deja pasar todo el caudal de aceite."
+        },
+        {
+          "name": "Cabezal del filtro",
+          "role": "El soporte fijo en el bloque del motor, con la entrada desde la bomba, la salida hacia la galería y la cara de sellado contra la que asienta el filtro. No se reemplaza en el servicio."
+        },
+        {
+          "name": "Carcasa del spin-on",
+          "role": "Un envase metálico sellado que contiene el elemento y se enrosca en el cabezal. Elemento, carcasa y empaque se reemplazan juntos."
+        },
+        {
+          "name": "Vaso del cartucho",
+          "role": "En el formato cartucho, la carcasa reutilizable que rodea al elemento. Se retira en el servicio y se vuelve a montar con el elemento nuevo y sus sellos nuevos."
+        },
+        {
+          "name": "Bomba de aceite",
+          "role": "Aspira el aceite del cárter por la succión y lo entrega a presión, a través del filtro, a la galería."
+        },
+        {
+          "name": "Galería principal y alimentación a cojinetes",
+          "role": "Reparten el aceite filtrado a los cojinetes. Son los componentes que el filtro existe para proteger."
+        },
+        {
+          "name": "Cárter, succión y retorno",
+          "role": "El cárter guarda el aceite; la succión lo lleva a la bomba y el retorno lo devuelve después de lubricar."
+        },
+        {
+          "name": "Válvula de alivio o bypass (en el filtro o en el cabezal, no dibujada)",
+          "role": "Se abre cuando la diferencia de presión en el elemento es demasiado alta, como con aceite frío o un elemento muy cargado, para que los cojinetes nunca queden sin aceite. Su ajuste pertenece al filtro y al motor aprobados."
+        },
+        {
+          "name": "Válvula antidrenaje (dentro del filtro, cuando la tiene, no dibujada)",
+          "role": "Mantiene el aceite dentro del filtro cuando el motor se detiene, para que la presión de aceite suba rápido en el siguiente arranque."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "El elemento viene integrado en su propia carcasa sellada. El servicio es rápido y cerrado: se desenrosca la unidad completa y se enrosca una nueva, de modo que la cara de sellado del cabezal y el empaque nuevo son las únicas interfaces que hay que revisar. Se desecha la carcasa completa."
+        },
+        {
+          "name": "Cartucho",
+          "text": "La carcasa es parte permanente del motor y solo se reemplaza el elemento, lo que reduce el material desechado en cada servicio. También exige más al técnico: la carcasa debe estar limpia y sin daños, y deben colocarse los sellos que vienen con el elemento, porque un elemento mal asentado deja que el aceite pase sin atravesar el medio."
+        },
+        {
+          "name": "Cuál corresponde",
+          "text": "El formato lo define el diseño del motor; el principio de filtración es el mismo en ambos. El repuesto se elige como el elemento aprobado para ese motor y esa carcasa, incluido su comportamiento de alivio y antidrenaje, nunca solo por sus dimensiones externas."
+        }
+      ],
+      "service": [
+        "Confirmar que el repuesto es el elemento SYNTRAX™ aprobado para ese motor y ese formato; el ajuste, la compresión del empaque y las funciones de las válvulas forman parte del circuito protegido.",
+        "Cambiar el filtro junto con el aceite, siguiendo el programa de mantenimiento del motor y el procedimiento de drenaje del aceite.",
+        "Spin-on: desenroscar el filtro, verificar que el empaque viejo salió con él, limpiar la cara de sellado del cabezal, lubricar el empaque nuevo con aceite de motor limpio y apretar como indica el fabricante del motor.",
+        "Cartucho: retirar el vaso y el elemento usado, limpiar la carcasa, colocar el elemento nuevo con los sellos nuevos que trae y volver a montar el vaso como se especifica.",
+        "Rellenar con el aceite especificado, arrancar el motor y confirmar que la presión de aceite sube enseguida. Revisar fugas en el filtro, luego apagar el motor y volver a verificar el nivel de aceite."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "El filtro se carga mucho antes de lo esperado",
+          "check": "Revisar el estado de la combustión (hollín), la dilución por refrigerante o combustible, el sellado de la admisión de aire y el historial de análisis de aceite antes de pasar a otro elemento. El filtro refleja lo que genera el motor."
+        },
+        {
+          "symptom": "La presión de aceite tarda en subir o hay ruido en el arranque en frío",
+          "check": "Verificar que esté instalado el elemento correcto, con su función antidrenaje, y que la viscosidad del aceite sea adecuada para la temperatura de arranque."
+        },
+        {
+          "symptom": "Presión de aceite baja con un filtro que parece estar bien",
+          "check": "Revisar si hay un elemento incorrecto o una válvula de alivio que no se comporta como fue diseñada, y luego la bomba y el lado de succión del circuito."
+        },
+        {
+          "symptom": "Fuga de aceite en el filtro después del servicio",
+          "check": "Buscar un empaque doble (el viejo quedó en el cabezal), un empaque dañado o un apriete incorrecto."
+        },
+        {
+          "symptom": "El análisis de aceite muestra aumento de polvo o de indicadores de desgaste",
+          "check": "Revisar el sellado de la admisión de aire y las fuentes de desgaste, y asegurar que las muestras se tomen siempre igual y se comparen con los límites propios del motor."
+        }
+      ]
+    },
+    "pt": {
+      "overview": [
+        "O óleo do motor lubrifica, resfria e também carrega o que o motor gera: partículas de desgaste de mancais, anéis e trem de válvulas, fuligem da combustão que chega ao cárter e poeira que passou pela admissão de ar. As superfícies lubrificadas são separadas por uma película de óleo muito fina, então partículas de tamanho semelhante agem como abrasivo cada vez que passam. SYNTRAX™ é a arquitetura ELIMFILTERS de filtração de lubrificação que controla essas partículas de desgaste e os aglomerados de fuligem que circulam no óleo.",
+        "Em um circuito de fluxo total, a bomba de óleo aspira o óleo do cárter e o envia inteiro através do filtro antes que ele chegue à galeria principal que alimenta os mancais. Assim, cada mancal recebe óleo recém-filtrado. Depois o óleo volta ao cárter e o ciclo se repete continuamente enquanto o motor funciona.",
+        "Como todo o óleo passa por ele, o filtro precisa equilibrar duas funções: reter contaminantes e deixar passar óleo suficiente. O óleo é muito mais espesso numa partida a frio do que na temperatura de operação, e o motor nunca pode ficar sem óleo. Por isso os filtros de lubrificação trabalham com uma válvula de alívio (bypass), que abre quando a diferença de pressão no elemento fica alta demais (óleo frio ou elemento muito carregado) e deixa o óleo chegar aos mancais, e muitas vezes com uma válvula antidrenagem que mantém o filtro cheio quando o motor para, para que a pressão suba rápido na próxima partida.",
+        "Por isso a seleção depende da viscosidade do óleo entre a partida e a temperatura de operação, da demanda de vazão do motor, do comportamento da válvula de alívio, de quanta contaminação o motor gera e da estratégia de troca de óleo. O desempenho e a capacidade de serviço pertencem a cada produto e aplicação, nunca à tecnologia como um valor universal."
+      ],
+      "figures": {
+        "syntrax": {
+          "title": "Spin-on de fluxo total no circuito de lubrificação",
+          "caption": "A bomba de óleo envia todo o óleo através do filtro antes da galeria principal que alimenta os mancais; as partículas de desgaste e a fuligem ficam no meio plissado. Na manutenção o spin-on é substituído.",
+          "steps": [
+            {
+              "part": "Cárter e sucção",
+              "text": "O óleo fica no cárter, sobre a bancada. A linha de sucção o leva do cárter até a bomba."
+            },
+            {
+              "part": "Bomba de óleo",
+              "text": "Acionada pelo motor, a bomba envia o óleo sob pressão para o cabeçote do filtro."
+            },
+            {
+              "part": "Spin-on SYNTRAX™ de fluxo total",
+              "text": "Todo o óleo atravessa o elemento plissado SYNTRAX™, visto em corte. Os pontos maiores são partículas de desgaste e os mais finos fuligem; mover o cursor para os lados muda quanto o óleo carrega, e o indicador mostra a carga do filtro."
+            },
+            {
+              "part": "Galeria principal e alimentação dos mancais",
+              "text": "Do filtro, o óleo chega à galeria principal, que o distribui aos mancais pelas linhas de alimentação."
+            },
+            {
+              "part": "Retorno",
+              "text": "Depois de lubrificar, o óleo volta ao cárter pela linha de retorno e o circuito recomeça."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o spin-on é substituído e o novo entra limpo. O cabeçote, a bomba e a galeria permanecem no motor."
+            }
+          ]
+        },
+        "compare-syntrax": {
+          "title": "Formatos spin-on e cartucho",
+          "caption": "O spin-on é substituído inteiro, carcaça incluída. No cartucho a carcaça fica no motor: retira-se o copo e troca-se apenas o elemento.",
+          "steps": [
+            {
+              "part": "Cabeçotes no suporte",
+              "text": "Os dois filtros ficam presos a um cabeçote fixo com uma porta de entrada e uma de saída. O cabeçote faz parte do motor e nunca é substituído na manutenção."
+            },
+            {
+              "part": "Esquerda: spin-on",
+              "text": "O elemento plissado SYNTRAX™ vem selado dentro da sua própria carcaça, que é rosqueada no cabeçote."
+            },
+            {
+              "part": "Direita: cartucho",
+              "text": "Um copo permanente fecha contra o cabeçote e aloja um elemento plissado SYNTRAX™ que é substituído sozinho."
+            },
+            {
+              "part": "Fluxo",
+              "text": "Nos dois formatos o óleo entra pelo cabeçote, atravessa o meio plissado, onde ficam as partículas de desgaste e a fuligem, e sai pelo cabeçote em direção à galeria. O princípio de filtração é o mesmo."
+            },
+            {
+              "part": "Manutenção",
+              "text": "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o spin-on sai inteiro, carcaça incluída; no cartucho o copo desce, troca-se o elemento e o mesmo copo volta ao lugar."
+            }
+          ]
+        }
+      },
+      "components": [
+        {
+          "name": "Elemento plissado SYNTRAX™",
+          "role": "O meio filtrante, dobrado em pregas para que uma grande área de filtração caiba em um elemento compacto. Retém as partículas de desgaste e os aglomerados de fuligem e deixa passar toda a vazão de óleo."
+        },
+        {
+          "name": "Cabeçote do filtro",
+          "role": "O suporte fixo no bloco do motor, com a entrada vinda da bomba, a saída para a galeria e a face de vedação onde o filtro assenta. Não é substituído na manutenção."
+        },
+        {
+          "name": "Carcaça do spin-on",
+          "role": "Um invólucro metálico selado que contém o elemento e é rosqueado no cabeçote. Elemento, carcaça e junta são substituídos juntos."
+        },
+        {
+          "name": "Copo do cartucho",
+          "role": "No formato cartucho, a carcaça reutilizável que envolve o elemento. É retirado na manutenção e montado de volta com o elemento novo e suas vedações novas."
+        },
+        {
+          "name": "Bomba de óleo",
+          "role": "Aspira o óleo do cárter pela sucção e o entrega sob pressão, através do filtro, à galeria."
+        },
+        {
+          "name": "Galeria principal e alimentação dos mancais",
+          "role": "Distribuem o óleo filtrado aos mancais. São os componentes que o filtro existe para proteger."
+        },
+        {
+          "name": "Cárter, sucção e retorno",
+          "role": "O cárter guarda o óleo; a sucção o leva à bomba e o retorno o devolve depois de lubrificar."
+        },
+        {
+          "name": "Válvula de alívio ou bypass (no filtro ou no cabeçote, não desenhada)",
+          "role": "Abre quando a diferença de pressão no elemento fica alta demais, como com óleo frio ou um elemento muito carregado, para que os mancais nunca fiquem sem óleo. Sua regulagem pertence ao filtro e ao motor aprovados."
+        },
+        {
+          "name": "Válvula antidrenagem (dentro do filtro, quando existe, não desenhada)",
+          "role": "Mantém o óleo dentro do filtro quando o motor para, para que a pressão de óleo suba rápido na próxima partida."
+        }
+      ],
+      "formats": [
+        {
+          "name": "Spin-on",
+          "text": "O elemento vem integrado à sua própria carcaça selada. A manutenção é rápida e fechada: a unidade inteira é desrosqueada e uma nova é rosqueada, de modo que a face de vedação do cabeçote e a junta nova são as únicas interfaces a verificar. A carcaça inteira é descartada."
+        },
+        {
+          "name": "Cartucho",
+          "text": "A carcaça é parte permanente do motor e só o elemento é substituído, o que reduz o material descartado em cada manutenção. Também exige mais do técnico: a carcaça deve estar limpa e sem danos, e as vedações que acompanham o elemento devem ser instaladas, porque um elemento mal assentado deixa o óleo passar sem atravessar o meio."
+        },
+        {
+          "name": "Qual se aplica",
+          "text": "O formato é definido pelo projeto do motor; o princípio de filtração é o mesmo nos dois. A reposição é escolhida como o elemento aprovado para esse motor e essa carcaça, incluindo seu comportamento de alívio e antidrenagem, nunca apenas pelas dimensões externas."
+        }
+      ],
+      "service": [
+        "Confirmar que a reposição é o elemento SYNTRAX™ aprovado para esse motor e esse formato; o encaixe, a compressão da junta e as funções das válvulas fazem parte do circuito protegido.",
+        "Trocar o filtro junto com o óleo, seguindo o programa de manutenção do motor e o procedimento de drenagem do óleo.",
+        "Spin-on: desrosquear o filtro, verificar se a junta velha saiu com ele, limpar a face de vedação do cabeçote, lubrificar a junta nova com óleo de motor limpo e apertar conforme indica o fabricante do motor.",
+        "Cartucho: retirar o copo e o elemento usado, limpar a carcaça, instalar o elemento novo com as vedações novas que o acompanham e montar o copo de volta como especificado.",
+        "Completar com o óleo especificado, ligar o motor e confirmar que a pressão de óleo sobe logo. Verificar vazamentos no filtro, depois desligar o motor e conferir de novo o nível de óleo."
+      ],
+      "diagnostics": [
+        {
+          "symptom": "O filtro se carrega muito antes do esperado",
+          "check": "Verificar a condição da combustão (fuligem), a diluição por líquido de arrefecimento ou combustível, a vedação da admissão de ar e o histórico de análise de óleo antes de passar para outro elemento. O filtro reflete o que o motor gera."
+        },
+        {
+          "symptom": "A pressão de óleo demora a subir ou há ruído na partida a frio",
+          "check": "Verificar se está instalado o elemento correto, com sua função antidrenagem, e se a viscosidade do óleo é adequada à temperatura de partida."
+        },
+        {
+          "symptom": "Pressão de óleo baixa com um filtro que parece estar bem",
+          "check": "Verificar se há um elemento incorreto ou uma válvula de alívio que não se comporta como projetada, e depois a bomba e o lado de sucção do circuito."
+        },
+        {
+          "symptom": "Vazamento de óleo no filtro depois da manutenção",
+          "check": "Procurar uma junta dupla (a velha ficou no cabeçote), uma junta danificada ou um aperto incorreto."
+        },
+        {
+          "symptom": "A análise de óleo mostra aumento de poeira ou de indicadores de desgaste",
+          "check": "Verificar a vedação da admissão de ar e as fontes de desgaste, e garantir que as amostras sejam coletadas sempre do mesmo modo e comparadas com os limites próprios do motor."
+        }
+      ]
+    }
+  }
+}
