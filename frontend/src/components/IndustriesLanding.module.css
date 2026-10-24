@@ -21,6 +21,8 @@
   font-family: var(--font-display) !important;
 }
 .heroContainer { width: 100%; }
+/* Sitewide hero guards otherwise clamp this headline at 980px on large monitors. */
+main.page > section.heroSection:first-of-type h1:first-child { max-width: min(100%, 1200px) !important; }
 .heroLower {
   display: grid;
   grid-template-columns: minmax(0, 1.28fr) minmax(230px, .72fr);
