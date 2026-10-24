@@ -146,7 +146,7 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
   text-wrap: pretty;
   text-shadow: 0 2px 12px rgba(0,0,0,.95);
 }
-.sectionShell { max-width: 1320px; margin-inline: auto; }
+.sectionShell { max-width: 1560px; margin-inline: auto; width: 100%; }
 .caseGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
@@ -184,12 +184,42 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
 }
 .pathGrid > * { min-width: 0; }
 
+
+/* The closing action shares the same wide grid and gutters as the rest of Industries. */
+.ctaGrid {
+  max-width: 1560px;
+  width: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: start;
+}
+.ctaGrid > * { min-width: 0; }
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1.4rem, 2.5vw, 2rem);
+}
+.ctaContent > p { max-width: 68ch; }
+.ctaActions {
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ctaActions > a { text-align: center; line-height: 1.3; }
+
 @media (max-width: 1150px) {
   .heroLower { grid-template-columns: minmax(0,1.2fr) minmax(220px,.8fr); }
   .marketGrid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .pathGrid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .pathGrid { grid-template-columns: repeat(6, minmax(0,1fr)); }
+  .pathGrid > :nth-child(-n+3) { grid-column: span 2; }
+  .pathGrid > :nth-child(n+4) { grid-column: span 3; }
 }
 @media (max-width: 900px) {
+  .ctaGrid { grid-template-columns: 1fr; }
   .page > .heroSection {
     min-height: auto !important;
     padding-top: clamp(6.7rem, 11vw, 8rem) !important;
@@ -212,6 +242,8 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
   .marketGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .caseGrid { grid-template-columns: 1fr; }
   .pathGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .pathGrid > :nth-child(n) { grid-column: span 1; }
+  .pathGrid > :last-child { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) {
   .page { --industries-gutter: clamp(1rem, 5vw, 1.35rem); }
@@ -223,6 +255,10 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
   .marketGrid { grid-template-columns: 1fr; }
   .marketCard { aspect-ratio: 1.22; min-height: 280px; }
   .pathGrid { grid-template-columns: 1fr; }
+  .pathGrid > :last-child { grid-column: auto; }
+  .ctaContent { gap: 1.15rem; }
+  .ctaActions { width: 100%; flex-direction: column; align-items: stretch; }
+  .ctaActions > a { width: 100%; }
   .caseFacts > div { grid-template-columns: 1fr; gap: .3rem; }
 }
 @media (prefers-reduced-motion: reduce) {
