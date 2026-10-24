@@ -157,22 +157,26 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className={styles.page} style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <PageHeader currentPage="Industries" />
 
-      <section style={hero}>
+      <section style={hero} className={styles.heroSection}>
         <video autoPlay muted loop playsInline preload="metadata" style={{ ...heroImage, objectFit: 'cover', objectPosition: 'center' }}>
           <source src="/images/Engineer_walking_home_industrias.mp4" type="video/mp4" />
         </video>
         <div style={heroOverlay} />
-        <div style={heroInner}>
+        <div style={heroInner} className={styles.heroContainer}>
           <h1 style={heroTitle}>{industryText(lang, "Industrial Filtration")}<br /><span style={{ color: '#FFF12D' }}>{industryText(lang, "By Industry")}</span></h1>
-          <p style={heroPromise}>{industryText(lang, "Selection starts with the machine and its operating conditions.")}</p>
-          <p style={heroLead}>{industryText(lang, "Dust, water, heat and service conditions create different failure risks. Explore the industry, identify the exposed systems and verify the OEM requirements before selecting a filter.")}</p>
-          <div style={heroActions}>
-            <Link href="/contact/" style={yellowButton}>{industryText(lang, "PROTECT MY EQUIPMENT")}</Link>
-            <a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "FIND MY FILTER")}</a>
+          <div className={styles.heroLower}>
+            <div className={styles.heroCopy}>
+              <p style={heroPromise} className={styles.heroKicker}>{industryText(lang, "Selection starts with the machine and its operating conditions.")}</p>
+              <p style={heroLead}>{industryText(lang, "Dust, water, heat and service conditions create different failure risks. Explore the industry, identify the exposed systems and verify the OEM requirements before selecting a filter.")}</p>
+            </div>
+            <div style={heroActions} className={styles.heroActions}>
+              <Link href="/contact/" style={yellowButton}>{industryText(lang, "PROTECT MY EQUIPMENT")}</Link>
+              <a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "FIND MY FILTER")}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -196,7 +200,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={marketSection} aria-labelledby="markets-title">
         <div style={wrapWide}>
-          <div style={{ maxWidth: '1320px', margin: '0 auto 2.4rem' }}><p style={eyebrow}>{industryText(lang, "12 OPERATING MARKETS")}</p><h2 id="markets-title" style={sectionTitle}>{industryText(lang, "Select the industry. Understand the risk. Protect the asset.")}</h2></div>
+          <div style={{ maxWidth: '1560px', margin: '0 auto 2.4rem' }}><p style={eyebrow}>{industryText(lang, "12 OPERATING MARKETS")}</p><h2 id="markets-title" style={sectionTitle}>{industryText(lang, "Select the industry. Understand the risk. Protect the asset.")}</h2></div>
           <div className={styles.marketGrid}>
             {INDUSTRIES.map((industry) => (
               <Link key={industry.slug} href={lang === 'en' ? `/industries/${industry.slug}/` : `/${lang}/industries/${industry.slug}/`} style={marketCard} className={styles.marketCard} aria-label={lang === 'es' ? `Explorar filtración y protección de activos: ${industryText(lang, industry.label)}` : lang === 'pt' ? `Explorar filtração e proteção de ativos: ${industryText(lang, industry.label)}` : `Explore ${industry.label} filtration and asset protection`}>
@@ -233,7 +237,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={standardsSection}>
-        <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1560px', margin: '0 auto' }}>
           <p style={eyebrow}>{industryText(lang, "ENGINEERING DECISION FACTORS")}</p>
           <h2 style={{ ...sectionTitle, marginBottom: '1.5rem', maxWidth: '980px' }}>{industryText(lang, "What actually changes the filtration decision?")}</h2>
           <p style={{ ...bodyText, maxWidth: '860px', marginBottom: '2rem' }}>{industryText(lang, "A cross-reference alone does not validate flow, restriction, sealing, bypass settings or service life. Use the following checks to define the requirement before approving a replacement.")}</p>
@@ -279,7 +283,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={pathSection}>
-        <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1560px', margin: '0 auto' }}>
           <p style={eyebrow}>{industryText(lang, "FROM OPERATING ENVIRONMENT TO PRODUCT")}</p>
           <h2 style={{ ...sectionTitle, maxWidth: '900px' }}>{industryText(lang, "Translate industry risk into the correct protection architecture.")}</h2>
           <div style={pathGrid} className={styles.pathGrid}>
@@ -297,7 +301,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={conversionSection} aria-labelledby="conversion-title">
-        <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1560px', margin: '0 auto' }}>
           <p style={eyebrow}>{industryText(lang, "CHOOSE YOUR NEXT STEP")}</p>
           <h2 id="conversion-title" style={{ ...sectionTitle, marginBottom: '2.25rem' }}>{industryText(lang, "What do you need to do?")}</h2>
           <div style={conversionGrid}>
@@ -309,18 +313,24 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
-        <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1560px', margin: '0 auto' }}>
           <p style={eyebrow}>{industryText(lang, "INDUSTRY FILTRATION QUESTIONS")}</p>
           <h2 id="faq-title" style={{ ...sectionTitle, marginBottom: '2rem' }}>{industryText(lang, "Common questions about filtration by industry")}</h2>
-          <div style={{ display: 'grid', gap: '1rem' }}>{FAQS.map((item) => <article key={item.q} style={faqCard}><h3 style={faqQuestion}>{industryText(lang, item.q)}</h3><p style={faqAnswer}>{industryText(lang, item.a)}</p></article>)}</div>
+          <div className={styles.faqGrid}>{FAQS.map((item) => <article key={item.q} style={faqCard}><h3 style={faqQuestion}>{industryText(lang, item.q)}</h3><p style={faqAnswer}>{industryText(lang, item.a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={cta}>
-        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>{industryText(lang, "From operating conditions to a verified application.")}</h2>
-          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>{industryText(lang, "Have an OEM reference? Use Part Search. Need technical review? Share the equipment, duty cycle, contamination symptoms and maintenance history.")}</p>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}><Link href="/systems/" style={yellowButton}>{industryText(lang, "PROTECTION SYSTEMS")}</Link><Link href="/technologies/" style={darkButton}>{industryText(lang, "TECHNOLOGIES")}</Link><a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "PART SEARCH")}</a></div>
+        <div className={styles.ctaGrid}>
+          <h2 style={sectionTitle}>{industryText(lang, "From operating conditions to a verified application.")}</h2>
+          <div className={styles.ctaContent}>
+            <p style={bodyText}>{industryText(lang, "Have an OEM reference? Use Part Search. Need technical review? Share the equipment, duty cycle, contamination symptoms and maintenance history.")}</p>
+            <div className={styles.ctaActions}>
+              <Link href="/systems/" style={yellowButton}>{industryText(lang, "PROTECTION SYSTEMS")}</Link>
+              <Link href="/technologies/" style={darkButton}>{industryText(lang, "TECHNOLOGIES")}</Link>
+              <a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "PART SEARCH")}</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -330,31 +340,31 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
-const hero: CSSProperties = { minHeight: '88vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
+const hero: CSSProperties = { minHeight: '82vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 9vw, 8.5rem) clamp(1rem, 3.5vw, 4.5rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: VIDEO_HERO_TREATMENT.opacity };
 const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: VIDEO_HERO_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { maxWidth: '1320px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
-const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em', lineHeight: 0.9, fontSize: 'clamp(3.1rem, 7.2vw, 6.8rem)', maxWidth: '1050px', margin: 0, textTransform: 'uppercase' };
+const heroInner: CSSProperties = { maxWidth: '1560px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em', lineHeight: 0.9, fontSize: 'clamp(3.1rem, 7.2vw, 6.8rem)', maxWidth: '1200px', margin: 0, textTransform: 'uppercase' };
 const heroPromise: CSSProperties = { margin: '1.45rem 0 0', maxWidth: '760px', color: '#fff', fontFamily: displayFont, fontSize: 'clamp(1.05rem, 1.8vw, 1.35rem)', lineHeight: 1.35, fontWeight: 700, letterSpacing: '-0.01em' };
 const heroLead: CSSProperties = { marginTop: '0.9rem', maxWidth: '820px', color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(1rem, 1.7vw, 1.18rem)', lineHeight: 1.68, fontWeight: 500 };
-const heroActions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.85rem', marginTop: '2rem' };
+const heroActions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.85rem', marginTop: '0' };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.72rem', lineHeight: 1, letterSpacing: '0.12em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
-const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
+const section: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1rem, 3.5vw, 4.5rem)' };
 const answerSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.015)' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 1.05, letterSpacing: '-0.035em', margin: 0, textTransform: 'none', fontWeight: 700, textWrap: 'balance' };
-const leadText: CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: '0 0 1.5rem' };
-const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.62)', fontSize: '1rem', lineHeight: 1.78, margin: 0 };
-const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
-const marketSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)', borderTop: '1px solid rgba(255,255,255,0.06)' };
+const leadText: CSSProperties = { color: 'rgba(255,255,255,0.95)', fontSize: 'clamp(1.06rem, 1.4vw, 1.27rem)', lineHeight: 1.65, fontWeight: 500, margin: '0 0 1.5rem' };
+const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.81)', fontSize: 'clamp(1rem, 1.08vw, 1.125rem)', lineHeight: 1.7, margin: 0 };
+const wrapWide: CSSProperties = { maxWidth: '1560px', margin: '0 auto' };
+const marketSection: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1rem, 3.5vw, 4.5rem)', borderTop: '1px solid rgba(255,255,255,0.06)' };
 const marketCard: CSSProperties = { position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
 const marketImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.94, filter: 'brightness(0.96) contrast(1.03)' };
 const marketOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.08) 48%, rgba(0,0,0,0.72) 100%)' };
 const marketContent: CSSProperties = { position: 'absolute', inset: 0, padding: '1.45rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' };
 const marketTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.45rem, 2vw, 1.95rem)', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase', fontWeight: 700, textShadow: '0 2px 18px rgba(0,0,0,0.8)' };
 const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.11em', fontSize: '0.68rem', marginTop: '0.8rem' };
-const riskCasesSection: CSSProperties = { padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 4vw, 4rem)', borderTop: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.015)' };
-const standardsSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.025)', borderTop: '1px solid rgba(255,241,45,0.1)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
-const standardGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' };
+const riskCasesSection: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1rem, 3.5vw, 4.5rem)', borderTop: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.015)' };
+const standardsSection: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1rem, 3.5vw, 4.5rem)', background: 'rgba(255,241,45,0.025)', borderTop: '1px solid rgba(255,241,45,0.1)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
+const standardGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 255px), 1fr))', gap: 'clamp(0.9rem, 1.5vw, 1.35rem)' };
 const standardCard: CSSProperties = { background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.09)', padding: '1.7rem', minHeight: '250px' };
 const factorNumber: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em' };
 const standardTitle: CSSProperties = { fontFamily: displayFont, color: '#fff', fontSize: '1.08rem', textTransform: 'uppercase', letterSpacing: '0.03em', margin: '1rem 0 0.75rem' };
@@ -362,7 +372,7 @@ const standardText: CSSProperties = { ...bodyText, fontSize: '0.94rem' };
 const engineeringPrinciple: CSSProperties = { marginTop: '1.5rem', padding: '2rem 2.2rem', borderLeft: '4px solid #FFF12D', background: 'linear-gradient(90deg, rgba(255,241,45,0.08) 0%, rgba(255,241,45,0.03) 28%, rgba(255,255,255,0.02) 100%)', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' };
 const engineeringPrincipleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.78rem', lineHeight: 1, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0 };
 const engineeringPrincipleText: CSSProperties = { fontFamily: bodyFont, color: 'rgba(255,255,255,0.9)', fontSize: 'clamp(1.18rem, 1.9vw, 1.55rem)', lineHeight: 1.65, letterSpacing: '-0.01em', textAlign: 'left', margin: 0, maxWidth: '100%' };
-const impactSection: CSSProperties = { padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(255,241,45,0.08), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0) 100%)' };
+const impactSection: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1rem, 3.5vw, 4.5rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(255,241,45,0.08), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0) 100%)' };
 const impactOutcomeLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em' };
 const impactOutcomeText: CSSProperties = { ...bodyText, color: 'rgba(255,255,255,0.78)', fontSize: '0.94rem' };
 const pathSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.06)' };
@@ -372,7 +382,7 @@ const pathNumber: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', f
 const pathTitle: CSSProperties = { fontFamily: displayFont, textTransform: 'uppercase', fontSize: '1.05rem', margin: '1.2rem 0 0.65rem' };
 const pathText: CSSProperties = { ...bodyText, fontSize: '0.9rem' };
 const conversionSection: CSSProperties = { ...section, background: 'rgba(255,255,255,0.018)' };
-const conversionGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' };
+const conversionGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1rem' };
 const conversionCard: CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', padding: '2rem', background: '#050505', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' };
 const conversionTitle: CSSProperties = { fontFamily: displayFont, textTransform: 'uppercase', fontSize: '1.35rem', margin: 0 };
 const conversionText: CSSProperties = { ...bodyText, margin: '1rem 0 1.5rem', flex: 1 };
@@ -380,6 +390,6 @@ const faqSection: CSSProperties = { ...section, borderTop: '1px solid rgba(255,2
 const faqCard: CSSProperties = { border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.02)', padding: '1.5rem' };
 const faqQuestion: CSSProperties = { fontFamily: displayFont, fontSize: '1.05rem', lineHeight: 1.3, margin: '0 0 0.65rem', color: '#fff' };
 const faqAnswer: CSSProperties = { ...bodyText, fontSize: '0.96rem' };
-const cta: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,241,45,0.2)', background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.18), transparent 36%)' };
+const cta: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1rem, 3.5vw, 4.5rem)', borderTop: '1px solid rgba(255,241,45,0.2)', background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.18), transparent 36%)' };
 const yellowButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.78rem', padding: '1rem 1.25rem', textTransform: 'uppercase' };
 const darkButton: CSSProperties = { display: 'inline-block', background: 'rgba(0,0,0,0.55)', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.78rem', padding: '1rem 1.25rem', border: '1px solid rgba(255,241,45,0.4)', textTransform: 'uppercase' };

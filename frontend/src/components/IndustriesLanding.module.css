@@ -1,8 +1,61 @@
+/* Industries editorial prototype: retain photography, motion and Chakra Petch headings.
+   IBM Plex Sans is scoped to this page's body copy, not applied site-wide. */
+.page {
+  --font-body: 'IBM Plex Sans', 'Barlow', Arial, sans-serif;
+  --industries-gutter: clamp(1rem, 3.5vw, 4.5rem);
+}
+.page > section {
+  padding-left: var(--industries-gutter) !important;
+  padding-right: var(--industries-gutter) !important;
+}
+.page p,
+.page dd {
+  font-family: var(--font-body);
+  text-align: left;
+  text-wrap: pretty;
+}
+.page > section:first-of-type .heroCopy p:not(.heroKicker) {
+  font-family: var(--font-body) !important;
+}
+.page > section:first-of-type .heroKicker {
+  font-family: var(--font-display) !important;
+}
+.heroContainer { width: 100%; }
+/* Sitewide hero guards otherwise clamp this headline at 980px on large monitors. */
+main.page > section.heroSection:first-of-type h1:first-child { max-width: min(100%, 1200px) !important; }
+.heroLower {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(230px, .72fr);
+  align-items: end;
+  gap: clamp(1.5rem, 5vw, 5.5rem);
+  margin-top: clamp(1.6rem, 3.5vw, 2.9rem);
+}
+.heroCopy { min-width: 0; }
+.heroCopy > p:first-child { margin-top: 0 !important; }
+.heroActions {
+  align-self: end;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  min-width: 0;
+}
+.heroActions > a {
+  width: min(100%, 315px);
+  text-align: center;
+  line-height: 1.35;
+}
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(.85rem, 1.5vw, 1.25rem);
+}
+.faqGrid > * { min-width: 0; }
+
 /* Industries landing: layout only. All original photographs and hero media remain unchanged. */
 /* Editorial sections use the entire shell before splitting body copy into balanced columns. */
 .introEditorial, .impactEditorial {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1560px;
   margin-inline: auto;
 }
 .editorialHeading {
@@ -132,10 +185,27 @@
 .pathGrid > * { min-width: 0; }
 
 @media (max-width: 1150px) {
+  .heroLower { grid-template-columns: minmax(0,1.2fr) minmax(220px,.8fr); }
   .marketGrid { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .pathGrid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
+@media (max-width: 900px) {
+  .page > .heroSection {
+    min-height: auto !important;
+    padding-top: clamp(6.7rem, 11vw, 8rem) !important;
+    padding-bottom: clamp(3.5rem, 7vw, 5rem) !important;
+  }
+  .page > .heroSection > .heroContainer {
+    max-width: 1560px !important;
+    width: 100% !important;
+    padding-inline: 0 !important;
+  }
+  .heroLower { grid-template-columns: 1fr; align-items: start; gap: 1.8rem; }
+  .heroActions { align-items: flex-start; justify-content: flex-start; flex-direction: row; }
+  .heroActions > a { width: auto; flex: 1 1 210px; }
+}
 @media (max-width: 820px) {
+  .faqGrid { grid-template-columns: 1fr; }
   .introTextGrid, .impactTextGrid { grid-template-columns: 1fr; } 
   .impactOutcomesGrid { grid-template-columns: 1fr; }
   .impactFooter { align-items: flex-start; }
@@ -144,6 +214,11 @@
   .pathGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 560px) {
+  .page { --industries-gutter: clamp(1rem, 5vw, 1.35rem); }
+  .page > section:not(:first-of-type) { padding-top: clamp(2.7rem, 9vw, 4rem) !important; padding-bottom: clamp(2.7rem, 9vw, 4rem) !important; }
+  .heroActions { flex-direction: column; align-items: stretch; width: 100%; }
+  .heroActions > a { flex: 0 0 auto; width: 100%; }
+  .heroCopy > p { max-width: 100%; }
   .impactFooter > a { width: 100%; }
   .marketGrid { grid-template-columns: 1fr; }
   .marketCard { aspect-ratio: 1.22; min-height: 280px; }
