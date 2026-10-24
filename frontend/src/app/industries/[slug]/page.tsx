@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           : item.name === 'Marine'
             ? 'Marine Filtration for Owners & Engineers | ELIMFILTERS'
             : item.name === 'Power Generation'
-              ? 'Power Generation Filtration Systems | Generator Sets | ELIMFILTERS'
+              ? 'Power Generation Filtration for Generator Maintenance | ELIMFILTERS'
               : item.name === 'Trucks Fleets'
                 ? 'Truck Fleet Filtration Systems | Heavy-Duty Fleets | ELIMFILTERS'
                 : item.name === 'Manufacturing'
