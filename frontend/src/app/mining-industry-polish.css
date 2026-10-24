@@ -107,55 +107,21 @@ main.mining-industry-page .filter-carousel-slide p {
   color: rgba(255,255,255,.87) !important;
 }
 
-/* Mining hero must never depend on successful video autoplay or decoding.
-   The approved photograph stays visible underneath the existing MP4. */
-main.mining-industry-page > section:first-of-type .miningHeroPoster {
+/* Mining hero: the requested MP4 is the sole artwork, no poster or play button. */
+main.mining-industry-page > section:first-of-type > video.miningHeroVideo {
   position: absolute !important;
   inset: 0 !important;
-  z-index: 0;
   display: block !important;
+  z-index: 1;
   width: 100% !important;
   height: 100% !important;
+  max-width: none !important;
   object-fit: cover !important;
-  object-position: center center;
+  object-position: center;
+  opacity: 1 !important;
   pointer-events: none;
 }
-main.mining-industry-page > section:first-of-type .miningHeroVideo {
-  z-index: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-  main.mining-industry-page > section:first-of-type .miningHeroVideo:not(.miningHeroManualPlay) {
-    opacity: 0 !important;
-  }
-  main.mining-industry-page > section:first-of-type .miningHeroVideo {
-    transition: none !important;
-  }
-}
 
-/* Video is the primary artwork; when autoplay is denied, offer an explicit
-   interaction without covering hero copy or conversion actions. */
-main.mining-industry-page > section:first-of-type .miningHeroPlayButton {
-  position: absolute;
-  right: var(--mining-gutter, clamp(1rem, 3.5vw, 4.5rem));
-  top: clamp(5rem, 9vw, 7rem);
-  z-index: 5;
-  display: inline-flex;
-  align-items: center;
-  gap: .65rem;
-  background: rgba(0,0,0,.78);
-  color: #FFF12D;
-  border: 1px solid rgba(255,241,45,.72);
-  padding: .8rem 1rem;
-  font-family: var(--font-display);
-  font-size: .76rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  cursor: pointer;
-}
-main.mining-industry-page > section:first-of-type .miningHeroPlayButton:focus-visible {
-  outline: 2px solid #FFF12D;
-  outline-offset: 3px;
-}
 /* The complete TCO explanation shares the heading's 1560px alignment. */
 main.mining-industry-page section[aria-labelledby="mining-tco-title"] .miningTcoLead {
   margin-top: clamp(1.35rem, 2.3vw, 2rem) !important;
@@ -163,15 +129,8 @@ main.mining-industry-page section[aria-labelledby="mining-tco-title"] .miningTco
   max-width: 980px;
   text-align: left !important;
 }
-@media (max-width: 720px) {
-  main.mining-industry-page > section:first-of-type .miningHeroPlayButton {
-    right: 1rem;
-    top: 1rem;
-    font-size: .7rem;
-  }
-}
 
-/* Protect reading contrast over both sunlit open-pit footage and fallback. */
+/* Preserve legible hero text over the requested mining footage. */
 main.mining-industry-page > section:first-of-type .miningHeroShade {
   background:
     linear-gradient(90deg, rgba(0,0,0,.67) 0%, rgba(0,0,0,.46) 43%, rgba(0,0,0,.12) 83%),
