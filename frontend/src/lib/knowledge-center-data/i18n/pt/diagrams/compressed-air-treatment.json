@@ -1,0 +1,42 @@
+{
+  "slug": "compressed-air-treatment",
+  "entityId": "DIAG-CA-TREATMENT",
+  "title": "Trem de tratamento de ar comprimido: classes de pureza ISO 8573-1",
+  "metaDescription": "Linha ilustrativa de tratamento de ar comprimido que abrange os estágios de controle de umidade, partículas e óleo dentro da estrutura de classes de pureza ISO 8573. A classe de pureza e o ponto de orvalho exigidos são específicos da aplicação.",
+  "engineeringPurpose": "Ilustra uma sequência representativa de tratamento de ar comprimido e o controle diferenciado de partículas, água e óleo. A ISO 8573 fornece a estrutura de classificação e ensaio, mas a classe de pureza exigida, o desempenho do secador e os estágios de tratamento devem ser definidos pela aplicação pneumática protegida. O DRYCORE™ continua sendo uma função de Proteção da Admissão de Ar e do Fluxo de Ar, e não um sexto sistema de proteção independente.",
+  "diagramType": "process",
+  "governingStandards": [
+    "STD-ISO-8573-1",
+    "STD-ISO-8573-2"
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedTechnologies": [
+    "DRYCORE™"
+  ],
+  "relatedArticles": [
+    "compressed-air-purity",
+    "compressed-air-quality-verification",
+    "compressed-air-dryer-selection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-DEW-POINT",
+    "TERM-COALESCING",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-RESTRICTION"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama da linha de tratamento de ar comprimido",
+    "desc": "Linha representativa de tratamento de ar comprimido que mostra a saída do compressor, a separação de umidade ou a secagem e os estágios de filtração a jusante. A classe de pureza ISO 8573, o ponto de orvalho e a sequência de tratamento exigidos dependem da aplicação protegida e não são fixos de forma universal.",
+    "ariaLabel": "Diagrama da linha de tratamento de ar comprimido que mostra os estágios sequenciais do compressor até ar limpo Classe 1.1.1"
+  },
+  "svgComponentId": "CompressedAirTreatment"
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "iso-4406-cleanliness-scale",
+  "entityId": "DIAG-ISO4406-CLEANLINESS",
+  "title": "Escala de códigos de limpieza de fluidos ISO 4406",
+  "metaDescription": "Gráfico de los números de código de limpieza ISO 4406 del 6 al 24 frente al conteo de partículas por mililitro para tres canales de tamaño de partícula (≥4µm, ≥6µm, ≥14µm según ISO 11171), con los requisitos de limpieza objetivo para servoválvulas, válvulas proporcionales y bombas de engranajes.",
+  "engineeringPurpose": "Ofrece una referencia visual para interpretar los códigos de limpieza ISO 4406. El código de tres números (por ejemplo, 17/15/12) representa los rangos de conteo de partículas en los canales ≥4µm, ≥6µm y ≥14µm, respectivamente. Cada incremento del código representa una duplicación del conteo de partículas. Se superponen los niveles de limpieza objetivo de los componentes hidráulicos comunes para mostrar dónde queda un código ISO dado respecto de la sensibilidad de cada componente.",
+  "diagramType": "chart",
+  "governingStandards": [
+    "STD-ISO-4406",
+    "STD-ISO-11171"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "iso-4406",
+    "fluid-cleanliness",
+    "hydraulic-contamination-sensitivity",
+    "contamination-control"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-BETA-RATIO",
+    "TERM-SERVO-VALVE"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Gráfico de la escala de códigos de limpieza de fluidos ISO 4406",
+    "desc": "Gráfico con el número de código ISO 4406 en el eje X (6 a 24) y el conteo de partículas por mL en el eje Y (logarítmico, de 0.32 a 20,000). Tres líneas representan los canales de tamaño de partícula ≥4µm(c), ≥6µm(c) y ≥14µm(c) según ISO 11171. Las franjas horizontales muestran la limpieza objetivo para servoválvulas (≤14/12/10), válvulas proporcionales (≤17/15/12) y bombas de engranajes (≤19/17/14).",
+    "ariaLabel": "Gráfico de la escala de códigos de limpieza de fluidos ISO 4406 que muestra los rangos de conteo de partículas para los códigos del 6 al 24"
+  },
+  "svgComponentId": "Iso4406CleanlinessScale"
+}

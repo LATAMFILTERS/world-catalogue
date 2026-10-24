@@ -1,0 +1,47 @@
+{
+  "slug": "lube-oil-circuit",
+  "entityId": "DIAG-LUBE-OIL-CIRCUIT",
+  "title": "Circuito de filtração do óleo lubrificante do motor: fluxo total com válvula de bypass",
+  "metaDescription": "Diagrama do circuito de óleo lubrificante do motor que mostra o cárter, a tela de sucção, a bomba de engrenagens, a válvula de alívio de pressão, o filtro de fluxo total com válvula de bypass integrada, a galeria principal de óleo, a distribuição para os mancais principais e do eixo de comando, e os retornos de dreno de óleo. A ISO 16889 rege o desempenho do filtro.",
+  "engineeringPurpose": "Documenta um circuito de lubrificação de motor de fluxo total representativo, com bomba, filtro, proteção por bypass e distribuição do óleo aos componentes lubrificados. Os ajustes do bypass, o comportamento da vazão e os limites de serviço dependem do motor e do filtro, e devem ser obtidos da aplicação aprovada, não deduzidos do diagrama.",
+  "diagramType": "schematic",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-4406"
+  ],
+  "applicableSystems": [
+    "lubrication-protection"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "lubrication-system-filtration",
+    "oil-condition-monitoring",
+    "service-intervals",
+    "total-cost-of-ownership",
+    "failure-analysis"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-BYPASS-FILTRATION",
+    "TERM-BEARING-CLEARANCE",
+    "TERM-VISCOSITY",
+    "TERM-OIL-DRAIN-INTERVAL",
+    "TERM-ABRASIVE-WEAR"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama do circuito de filtração do óleo lubrificante do motor",
+    "desc": "Circuito representativo de óleo lubrificante que mostra o cárter, a bomba, o filtro de fluxo total, o caminho de bypass, a galeria principal de óleo e a distribuição para os mancais. A pressão de abertura do bypass e outros ajustes numéricos não são universalizados intencionalmente porque dependem da configuração aprovada do motor e do filtro.",
+    "ariaLabel": "Diagrama do circuito de filtração do óleo lubrificante do motor que mostra o filtro de fluxo total com válvula de bypass e a distribuição para os mancais"
+  },
+  "svgComponentId": "LubeOilCircuit"
+}

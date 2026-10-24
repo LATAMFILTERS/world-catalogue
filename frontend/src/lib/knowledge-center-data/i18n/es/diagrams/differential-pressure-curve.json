@@ -1,0 +1,48 @@
+{
+  "slug": "differential-pressure-curve",
+  "entityId": "DIAG-DP-CURVE",
+  "title": "Curva de presión diferencial del filtro frente a vida útil",
+  "metaDescription": "Gráfico que muestra cómo la presión diferencial (ΔP) a través de un elemento filtrante aumenta a medida que crece la carga de contaminación a lo largo de su vida útil. Se muestran tres líneas de umbral: alerta del indicador de servicio, presión de apertura de la válvula de derivación y umbral de colapso del elemento. Basado en ISO 16889 e ISO 3968.",
+  "engineeringPurpose": "Documenta la relación entre ΔP y vida útil que rige los intervalos de reemplazo de filtros. La curva empieza baja (resistencia inicial del elemento limpio), sube con la acumulación de suciedad y se acelera a medida que el elemento se acerca a su capacidad nominal. Tres umbrales críticos definen los modos de falla: el umbral del indicador de servicio (aviso visual o electrónico de reemplazo), la presión de apertura de la válvula de derivación (protección del elemento a costa de flujo sin filtrar) y la presión de colapso del elemento (falla estructural por presión diferencial).",
+  "diagramType": "chart",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-3968"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection",
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "dust-holding-capacity",
+    "filter-element-integrity",
+    "air-restriction",
+    "service-intervals"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-COLLAPSE-PRESSURE",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-RESTRICTION-INDICATOR"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Gráfico de la curva de presión diferencial del filtro frente a su vida útil",
+    "desc": "Gráfico de líneas con la carga de contaminación en el eje X (de NUEVO a FIN DE VIDA) y la presión diferencial en el eje Y (de baja a alta). Una curva suave en forma de S sube desde la esquina inferior izquierda. Tres líneas horizontales discontinuas de umbral: amarilla a media altura, identificada como INDICADOR DE SERVICIO; naranja por encima, identificada como ABRE LA DERIVACIÓN; y roja cerca de la parte superior, identificada como RIESGO DE COLAPSO. Tres zonas sombreadas de fondo: verde tenue por debajo del indicador de servicio (rango normal de operación), amarillo tenue entre el indicador de servicio y la derivación (intervalo de servicio excedido) y rojo tenue por encima de la derivación (derivación activa, flujo sin filtrar). Un marcador circular en la intersección de la curva con el umbral del indicador de servicio.",
+    "ariaLabel": "Gráfico que muestra el aumento de la presión diferencial a través del elemento filtrante a lo largo de su vida útil con tres líneas de umbral"
+  },
+  "svgComponentId": "DifferentialPressureCurve"
+}

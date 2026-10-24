@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function Iso4406CleanlinessScale({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,12 +17,8 @@ export default function Iso4406CleanlinessScale({ className, style }: SvgDiagram
       className={className}
       style={style}
     >
-      <title id="i4c-title">ISO 4406 Fluid Cleanliness Code Scale</title>
-      <desc id="i4c-desc">
-        Chart showing the ISO 4406 cleanliness code scale: particle count ranges per millilitre
-        for each code number (6 to 24), with three particle size channels (≥4µm, ≥6µm, ≥14µm)
-        and target cleanliness requirements for servo valves, proportional valves, and gear pumps.
-      </desc>
+      <title id="i4c-title">{tr("ISO 4406 Fluid Cleanliness Code Scale")}</title>
+      <desc id="i4c-desc">{tr("Chart showing the ISO 4406 cleanliness code scale: particle count ranges per millilitre for each code number (6 to 24), with three particle size channels (≥4µm, ≥6µm, ≥14µm) and target cleanliness requirements for servo valves, proportional valves, and gear pumps.")}</desc>
 
       {/* ── Chart axes ─────────────────────────────────────────────────── */}
       {/* Y-axis */}
@@ -59,15 +57,11 @@ export default function Iso4406CleanlinessScale({ className, style }: SvgDiagram
       {/* X-axis label */}
       <text x="405" y="435" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="9.5"
-        fill="rgba(255,255,255,0.45)" letterSpacing="0.06em">
-        ISO 4406 CLEANLINESS CODE NUMBER
-      </text>
+        fill="rgba(255,255,255,0.45)" letterSpacing="0.06em">{tr("ISO 4406 CLEANLINESS CODE NUMBER")}</text>
 
       {/* Y-axis label */}
       <text x="25" y="220" fontFamily="'JetBrains Mono', monospace" fontSize="9"
-        fill="rgba(255,255,255,0.45)" transform="rotate(-90, 25, 220)" textAnchor="middle" letterSpacing="0.06em">
-        PARTICLE COUNT PER mL
-      </text>
+        fill="rgba(255,255,255,0.45)" transform="rotate(-90, 25, 220)" textAnchor="middle" letterSpacing="0.06em">{tr("PARTICLE COUNT PER mL")}</text>
 
       {/* Y-axis tick labels (particle counts) */}
       {[
@@ -135,19 +129,13 @@ export default function Iso4406CleanlinessScale({ className, style }: SvgDiagram
         fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" rx="3" />
       <line x1="130" y1="64" x2="165" y2="64" stroke="#FFF12D" strokeWidth="2" />
       <text x="172" y="68" fontFamily="'JetBrains Mono', monospace" fontSize="10"
-        fill="rgba(255,255,255,0.75)">
-        Channel ≥4µm(c) [ISO 11171]
-      </text>
+        fill="rgba(255,255,255,0.75)">{tr("Channel ≥4µm(c) [ISO 11171]")}</text>
       <line x1="130" y1="82" x2="165" y2="82" stroke="rgba(100,200,255,0.8)" strokeWidth="2" />
       <text x="172" y="86" fontFamily="'JetBrains Mono', monospace" fontSize="10"
-        fill="rgba(255,255,255,0.75)">
-        Channel ≥6µm(c) [ISO 11171]
-      </text>
+        fill="rgba(255,255,255,0.75)">{tr("Channel ≥6µm(c) [ISO 11171]")}</text>
       <line x1="130" y1="100" x2="165" y2="100" stroke="rgba(255,160,80,0.8)" strokeWidth="2" />
       <text x="172" y="104" fontFamily="'JetBrains Mono', monospace" fontSize="10"
-        fill="rgba(255,255,255,0.75)">
-        Channel ≥14µm(c) [ISO 11171]
-      </text>
+        fill="rgba(255,255,255,0.75)">{tr("Channel ≥14µm(c) [ISO 11171]")}</text>
 
       {/* ── Target cleanliness bands ────────────────────────────────────── */}
       {/* Servo valves: ISO 16/14/11 → x≈585(16), x≈516(14), x≈385(11)?
@@ -157,31 +145,23 @@ export default function Iso4406CleanlinessScale({ className, style }: SvgDiagram
       <rect x="110" y="270" width="262" height="3"
         fill="rgba(100,220,100,0.6)" />
       <text x="112" y="265" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(100,220,100,0.7)">
-        ← Servo valves ≤14/12/10
-      </text>
+        fill="rgba(100,220,100,0.7)">{tr("← Servo valves ≤14/12/10")}</text>
 
       {/* Proportional valve target: 17/15/12 — x range ~372-503 */}
       <rect x="110" y="195" width="393" height="3"
         fill="rgba(255,241,45,0.5)" />
       <text x="112" y="190" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(255,241,45,0.7)">
-        ← Proportional valves ≤17/15/12
-      </text>
+        fill="rgba(255,241,45,0.7)">{tr("← Proportional valves ≤17/15/12")}</text>
 
       {/* Gear pumps target: 19/17/14 — x range ~437-634 */}
       <rect x="110" y="150" width="458" height="3"
         fill="rgba(255,160,80,0.5)" />
       <text x="112" y="145" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(255,160,80,0.7)">
-        ← Gear pumps / cylinders ≤19/17/14
-      </text>
+        fill="rgba(255,160,80,0.7)">{tr("← Gear pumps / cylinders ≤19/17/14")}</text>
 
       {/* ── Standard label ─────────────────────────────────────────────── */}
       <text x="696" y="480" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 4406 · ISO 11171
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 4406 · ISO 11171")}</text>
     </svg>
   );
 }

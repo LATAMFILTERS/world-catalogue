@@ -1,0 +1,40 @@
+{
+  "slug": "cabin-air-system",
+  "entityId": "DIAG-CABIN-AIR-SYSTEM",
+  "title": "Sistema de filtración de aire de cabina: ISO 11155",
+  "metaDescription": "Diagrama de sistema de un tren de filtración de aire de cabina de vehículo ISO 11155 que muestra la toma de aire fresco, el prefiltro de partículas gruesas, la etapa de carbón activado para fase gaseosa, la etapa HEPA de partículas finas, la compuerta de modo recirculación y la entrega a la cabina.",
+  "engineeringPurpose": "Documenta las etapas de filtración de un sistema de aire de cabina conforme a ISO 11155. Los operadores en entornos de construcción, agricultura y minería pueden estar expuestos a concentraciones de PM10 y PM2.5 que superan los límites de exposición ocupacional si no hay un sistema eficaz de filtración de cabina. Cada etapa ataca una clase de contaminante distinta: partículas gruesas, contaminantes en fase gaseosa y partículas finas respirables.",
+  "diagramType": "system",
+  "governingStandards": [
+    "STD-ISO-11155-1",
+    "STD-ISO-29463"
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedArticles": [
+    "cabin-air-filtration",
+    "filter-element-integrity",
+    "seal-integrity"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-PRE-CLEANER",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-SAFETY-ELEMENT"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama del sistema de filtración de aire de cabina ISO 11155",
+    "desc": "Flujo del sistema de izquierda a derecha. Toma de aire exterior a la izquierda. Primera etapa: prefiltro de partículas gruesas identificado como etapa PM10 según ISO 11155, con símbolos de partículas grandes bloqueadas. Segunda etapa: adsorbedor de carbón activado para contaminantes en fase gaseosa y olores, representado como un bloque punteado. Tercera etapa: filtro de partículas finas identificado como PM2.5/HEPA con eficiencia superior al 95% a 0.3 µm según ISO 29463, con un rayado denso y partículas muy pequeñas bloqueadas. La flecha continúa hasta la zona HVAC de la cabina a la derecha. Una derivación de recirculación, representada con una flecha discontinua debajo del flujo principal, devuelve el aire de la cabina a las etapas de carbón y de filtro fino, controlada por una compuerta. Las etiquetas indican el modo aire fresco en la vía principal y el modo recirculación en la derivación.",
+    "ariaLabel": "Diagrama de sistema de un sistema de filtración de aire de cabina de vehículo que muestra la toma de aire fresco, el prefiltro de partículas, la etapa de carbón activado, la etapa final HEPA, el circuito de recirculación y la entrega a la cabina"
+  },
+  "svgComponentId": "CabinAirSystem"
+}

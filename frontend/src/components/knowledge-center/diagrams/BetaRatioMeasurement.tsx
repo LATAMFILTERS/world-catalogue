@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function BetaRatioMeasurement({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,12 +17,8 @@ export default function BetaRatioMeasurement({ className, style }: SvgDiagramPro
       className={className}
       style={style}
     >
-      <title id="brm-title">Beta Ratio Measurement — ISO 16889</title>
-      <desc id="brm-desc">
-        Schematic showing upstream particle count (Nᵤ) before the filter element and downstream
-        particle count (Nd) after, with the beta ratio formula β = Nᵤ/Nd and efficiency
-        equation E(%) = (1 − 1/β) × 100.
-      </desc>
+      <title id="brm-title">{tr("Beta Ratio Measurement — ISO 16889")}</title>
+      <desc id="brm-desc">{tr("Schematic showing upstream particle count (Nᵤ) before the filter element and downstream particle count (Nd) after, with the beta ratio formula β = Nᵤ/Nd and efficiency equation E(%) = (1 − 1/β) × 100.")}</desc>
 
       <defs>
         <marker id="brm-ay" viewBox="0 0 8 6" refX="7" refY="3"
@@ -36,9 +34,7 @@ export default function BetaRatioMeasurement({ className, style }: SvgDiagramPro
       <rect x="30" y="80" width="190" height="220"
         fill="rgba(255,128,64,0.05)" stroke="rgba(255,128,64,0.4)" strokeWidth="1.5" />
       <text x="125" y="68" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(255,128,64,0.8)" letterSpacing="0.08em">
-        UPSTREAM
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(255,128,64,0.8)" letterSpacing="0.08em">{tr("UPSTREAM")}</text>
 
       {/* Upstream particles — various sizes */}
       {/* Large particles */}
@@ -71,17 +67,11 @@ export default function BetaRatioMeasurement({ className, style }: SvgDiagramPro
 
       {/* Nᵤ label */}
       <text x="125" y="330" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="rgba(255,255,255,0.9)">
-        N
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="rgba(255,255,255,0.9)">{tr("N")}</text>
       <text x="134" y="333" textAnchor="start"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.9)">
-        u
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.9)">{tr("u")}</text>
       <text x="125" y="348" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.45)">
-        upstream count
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.45)">{tr("upstream count")}</text>
 
       {/* ── Flow arrows ────────────────────────────────────────────────── */}
       <line x1="220" y1="190" x2="290" y2="190"
@@ -97,13 +87,9 @@ export default function BetaRatioMeasurement({ className, style }: SvgDiagramPro
       <line x1="375" y1="80" x2="375" y2="300" stroke="rgba(255,241,45,0.25)" strokeWidth="1" />
       <line x1="395" y1="80" x2="395" y2="300" stroke="rgba(255,241,45,0.25)" strokeWidth="1" />
       <text x="350" y="340" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.7)" letterSpacing="0.06em">
-        FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.7)" letterSpacing="0.06em">{tr("FILTER")}</text>
       <text x="350" y="352" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.7)" letterSpacing="0.06em">
-        ELEMENT
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.7)" letterSpacing="0.06em">{tr("ELEMENT")}</text>
 
       <line x1="405" y1="190" x2="475" y2="190"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#brm-ay)" />
@@ -112,9 +98,7 @@ export default function BetaRatioMeasurement({ className, style }: SvgDiagramPro
       <rect x="480" y="80" width="190" height="220"
         fill="rgba(100,200,100,0.04)" stroke="rgba(100,200,100,0.35)" strokeWidth="1.5" />
       <text x="575" y="68" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(100,200,100,0.8)" letterSpacing="0.08em">
-        DOWNSTREAM
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(100,200,100,0.8)" letterSpacing="0.08em">{tr("DOWNSTREAM")}</text>
 
       {/* Downstream particles — only small ones (mostly captured) */}
       <circle cx="520" cy="130" r="2.5" fill="rgba(255,200,140,0.8)" />
@@ -127,35 +111,23 @@ export default function BetaRatioMeasurement({ className, style }: SvgDiagramPro
 
       {/* Nd label */}
       <text x="575" y="330" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="rgba(255,255,255,0.9)">
-        N
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="rgba(255,255,255,0.9)">{tr("N")}</text>
       <text x="584" y="333" textAnchor="start"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.9)">
-        d
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.9)">{tr("d")}</text>
       <text x="575" y="348" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.45)">
-        downstream count
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.45)">{tr("downstream count")}</text>
 
       {/* ── Formula box ────────────────────────────────────────────────── */}
       <rect x="220" y="370" width="340" height="42"
         fill="rgba(255,241,45,0.06)" stroke="rgba(255,241,45,0.25)" strokeWidth="1" rx="3" />
       <text x="390" y="388" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="#FFF12D">
-        β = Nᵤ / Nd
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="#FFF12D">{tr("β = Nᵤ / Nd")}</text>
       <text x="390" y="404" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(255,255,255,0.5)">
-        E(%) = (1 − 1/β) × 100
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(255,255,255,0.5)">{tr("E(%) = (1 − 1/β) × 100")}</text>
 
       {/* ── Standard label ─────────────────────────────────────────────── */}
       <text x="700" y="400" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 16889
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 16889")}</text>
     </svg>
   );
 }

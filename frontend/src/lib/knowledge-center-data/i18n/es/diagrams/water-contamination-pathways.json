@@ -1,0 +1,49 @@
+{
+  "slug": "water-contamination-pathways",
+  "entityId": "DIAG-WATER-CONT-PATHS",
+  "title": "Vías de ingreso de agua en sistemas de combustible diésel",
+  "metaDescription": "Diagrama de ingeniería de cinco vías de ingreso de agua en sistemas de combustible diésel e hidráulicos — condensación, tapa de llenado, respiradero, sellos gastados y contaminación cruzada — y de las consecuencias de daño en los equipos aguas abajo.",
+  "engineeringPurpose": "Identifica y relaciona los cinco principales mecanismos de ingreso de agua en el combustible diésel y en los depósitos hidráulicos, para diseñar una prevención dirigida. La contaminación por agua es la principal causa de falla en los sistemas de inyección HPCR y la principal causa del crecimiento microbiano en los tanques de diésel. Cada vía de ingreso requiere una medida de prevención específica.",
+  "diagramType": "flow",
+  "governingStandards": [
+    "STD-ASTM-D6304",
+    "STD-ISO-12937",
+    "STD-ISO-16332"
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection",
+    "hydraulic-protection"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "diesel-fuel-filtration",
+    "hpcr-fuel-system-cleanliness",
+    "contamination-control"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-WATER-INGRESS",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-MICROBIAL-CONTAMINATION",
+    "TERM-COALESCING",
+    "TERM-HPCR",
+    "TERM-INJECTOR-STICTION",
+    "TERM-WATER-SEPARATION-EFFICIENCY"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama de las vías de ingreso de contaminación por agua",
+    "desc": "Elemento central: un tanque de combustible o depósito hidráulico. Cinco vías de ingreso representadas como flechas que apuntan al tanque. Arriba a la izquierda: condensación por ciclos de temperatura con símbolos de gotas de agua. Arriba a la derecha: salpicaduras por la tapa de llenado o ingreso de lluvia. Izquierda: respiradero que admite aire húmedo, representado con una flecha discontinua. Abajo a la izquierda: sellos de eje gastados que permiten el ingreso de agua externa. Abajo a la derecha: contaminación cruzada por fluido contaminado durante los trasvases. Lado derecho del diagrama: cadena de consecuencias — una flecha sale del tanque con la etiqueta agua libre presente y luego cuatro recuadros apilados de consecuencias: crecimiento microbiano por bacterias sulfatorreductoras, taponamiento del filtro en la interfaz hidrocarburo-agua, corrosión de inyectores y daño de la bomba HPCR. Recuadro de detección debajo: titulación Karl Fischer según ASTM D6304 e ISO 12937, objetivo inferior a 200 ppm en peso.",
+    "ariaLabel": "Diagrama de cinco vías de ingreso de contaminación por agua en sistemas de combustible diésel y de las consecuencias de daño en los equipos aguas abajo"
+  },
+  "svgComponentId": "WaterContaminationPathways"
+}

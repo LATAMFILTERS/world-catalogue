@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function FilterMediaCrossSection({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,14 +17,8 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
       className={className}
       style={style}
     >
-      <title id="fmcs-title">Filter Element Media Cross-Section</title>
-      <desc id="fmcs-desc">
-        Cross-sectional view through a cylindrical filter element from outside to center.
-        Outer wrap (protective), pre-filter coarse layer, main synthetic/glass-fiber media
-        depth zone (progressive-density gradient), anti-collapse scrim, and perforated steel
-        center tube. Particle capture is progressive: large particles at outer layer,
-        medium at mid-depth, fine at inner zones. Beta ratio formula shown.
-      </desc>
+      <title id="fmcs-title">{tr("Filter Element Media Cross-Section")}</title>
+      <desc id="fmcs-desc">{tr("Cross-sectional view through a cylindrical filter element from outside to center. Outer wrap (protective), pre-filter coarse layer, main synthetic/glass-fiber media depth zone (progressive-density gradient), anti-collapse scrim, and perforated steel center tube. Particle capture is progressive: large particles at outer layer, medium at mid-depth, fine at inner zones. Beta ratio formula shown.")}</desc>
 
       <defs>
         <pattern id="fmcs-coarse-hatch" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -64,9 +60,7 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
         fill="rgba(255,255,255,0.04)"
         stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" strokeDasharray="6,3" />
       <text x="80" y="60" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.5)" letterSpacing="0.05em">
-        OUTER WRAP
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.5)" letterSpacing="0.05em">{tr("OUTER WRAP")}</text>
       <line x1="80" y1="65" x2="80" y2="98" stroke="rgba(255,255,255,0.2)" strokeWidth="0.8" strokeDasharray="3,2" />
 
       {/* ── PRE-FILTER (COARSE) LAYER ───────────────────────────────────── */}
@@ -76,13 +70,9 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
       <rect x="100" y="100" width="85" height="280"
         fill="rgba(255,200,80,0.05)" />
       <text x="142" y="60" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,200,80,0.7)" letterSpacing="0.04em">
-        PRE-FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,200,80,0.7)" letterSpacing="0.04em">{tr("PRE-FILTER")}</text>
       <text x="142" y="72" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,200,80,0.5)">
-        (COARSE)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,200,80,0.5)">{tr("(COARSE)")}</text>
       <line x1="142" y1="76" x2="142" y2="98" stroke="rgba(255,200,80,0.2)" strokeWidth="0.8" strokeDasharray="3,2" />
 
       {/* Large particles trapped in pre-filter */}
@@ -102,13 +92,9 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
 
       {/* Depth zone label */}
       <text x="422" y="60" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.7)" letterSpacing="0.06em">
-        FILTRATION MEDIA (DEPTH ZONE)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.7)" letterSpacing="0.06em">{tr("FILTRATION MEDIA (DEPTH ZONE)")}</text>
       <text x="422" y="73" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.45)">
-        progressive-density gradient · ISO 16889
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.45)">{tr("progressive-density gradient · ISO 16889")}</text>
       <line x1="422" y1="77" x2="422" y2="98" stroke="rgba(255,241,45,0.2)" strokeWidth="0.8" strokeDasharray="3,2" />
 
       {/* Media vertical density lines (denser toward center) */}
@@ -146,9 +132,7 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
         stroke="rgba(255,255,255,0.35)" strokeWidth="1" />
       <text x="670" y="455" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(255,255,255,0.35)"
-        transform="rotate(-90, 670, 455)">
-        ANTI-COLLAPSE SCRIM
-      </text>
+        transform="rotate(-90, 670, 455)">{tr("ANTI-COLLAPSE SCRIM")}</text>
 
       {/* ── CENTER TUBE ─────────────────────────────────────────────────── */}
       <rect x="680" y="100" width="100" height="280"
@@ -157,13 +141,9 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
       <rect x="680" y="100" width="100" height="280"
         fill="rgba(100,200,255,0.04)" />
       <text x="730" y="60" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,200,255,0.65)" letterSpacing="0.05em">
-        CENTER TUBE
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,200,255,0.65)" letterSpacing="0.05em">{tr("CENTER TUBE")}</text>
       <text x="730" y="72" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.4)">
-        (perforated)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.4)">{tr("(perforated)")}</text>
       <line x1="730" y1="76" x2="730" y2="98" stroke="rgba(100,200,255,0.2)" strokeWidth="0.8" strokeDasharray="3,2" />
 
       {/* Clean fluid in center tube — almost no particles */}
@@ -179,13 +159,9 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
       <line x1="15" y1="285" x2="57" y2="285"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#fmcs-ay)" />
       <text x="30" y="185" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.55)" letterSpacing="0.04em">
-        CONTAMINATED
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.55)" letterSpacing="0.04em">{tr("CONTAMINATED")}</text>
       <text x="30" y="195" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.55)">
-        FLOW
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.55)">{tr("FLOW")}</text>
 
       {/* Clean flow exiting right through center tube */}
       <line x1="782" y1="220" x2="838" y2="220"
@@ -193,48 +169,34 @@ export default function FilterMediaCrossSection({ className, style }: SvgDiagram
       <line x1="782" y1="260" x2="838" y2="260"
         stroke="rgba(100,200,255,0.7)" strokeWidth="2" markerEnd="url(#fmcs-ab)" />
       <text x="818" y="245" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.55)" letterSpacing="0.04em">
-        CLEAN
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.55)" letterSpacing="0.04em">{tr("CLEAN")}</text>
       <text x="818" y="256" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.55)">
-        FLOW
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.55)">{tr("FLOW")}</text>
 
       {/* ── BETA RATIO FORMULA ───────────────────────────────────────────── */}
       <rect x="185" y="405" width="240" height="58"
         fill="rgba(255,241,45,0.06)" stroke="rgba(255,241,45,0.25)" strokeWidth="1" rx="3" />
       <text x="305" y="425" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="#FFF12D" fontWeight="700">
-        β_x(c) = N_up / N_down
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="12" fill="#FFF12D" fontWeight="700">{tr("β_x(c) = N_up / N_down")}</text>
       <text x="305" y="442" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        efficiency E = (1 − 1/β) × 100 %
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("efficiency E = (1 − 1/β) × 100 %")}</text>
       <text x="305" y="455" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.3)">
-        ISO 16889:2022 §3.1.2
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.3)">{tr("ISO 16889:2022 §3.1.2")}</text>
 
       {/* Particle size legend */}
       <rect x="460" y="405" width="230" height="58"
         fill="rgba(255,120,40,0.05)" stroke="rgba(255,120,40,0.2)" strokeWidth="1" rx="3" />
-      <text x="470" y="422" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.4)">
-        CAPTURE DEPTH BY PARTICLE SIZE:
-      </text>
+      <text x="470" y="422" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.4)">{tr("CAPTURE DEPTH BY PARTICLE SIZE:")}</text>
       <circle cx="478" cy="436" r="6" fill="rgba(255,120,40,0.5)" />
-      <text x="490" y="440" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.5)">Large (&gt;10 µm) → pre-filter</text>
+      <text x="490" y="440" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.5)">{tr("Large (>10 µm) → pre-filter")}</text>
       <circle cx="478" cy="453" r="3" fill="rgba(255,120,40,0.45)" />
-      <text x="490" y="456" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.5)">Med (2–10 µm) → mid-media</text>
+      <text x="490" y="456" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.5)">{tr("Med (2–10 µm) → mid-media")}</text>
       <circle cx="670" cy="436" r="1.5" fill="rgba(255,120,40,0.35)" />
-      <text x="678" y="440" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.5)">Fine (&lt;2 µm) → inner zone</text>
+      <text x="678" y="440" fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.5)">{tr("Fine (<2 µm) → inner zone")}</text>
 
       {/* Standard label */}
       <text x="850" y="475" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 16889 · ISO 11171
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 16889 · ISO 11171")}</text>
     </svg>
   );
 }

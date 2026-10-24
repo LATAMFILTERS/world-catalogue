@@ -1,0 +1,42 @@
+{
+  "slug": "iso-8573-purity-classes",
+  "entityId": "DIAG-ISO8573-PURITY",
+  "title": "Clases de pureza del aire comprimido ISO 8573-1",
+  "metaDescription": "Gráfico de referencia de las clasificaciones de pureza del aire comprimido ISO 8573-1:2010 que abarca el conteo de partículas sólidas, el punto de rocío a presión y el contenido total de aceite en las Clases 0 a 9.",
+  "engineeringPurpose": "Ofrece una referencia visual para seleccionar la clase de pureza ISO 8573-1 en el diseño de sistemas de aire comprimido. Los ingenieros eligen la clase adecuada para cada aplicación según su sensibilidad a partículas sólidas, humedad y aceite, y luego especifican los componentes del tren de tratamiento necesarios para lograr esa clase en el punto de uso.",
+  "diagramType": "chart",
+  "governingStandards": [
+    "STD-ISO-8573-1",
+    "STD-ISO-8573-2"
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedTechnologies": [
+    "DRYCORE™"
+  ],
+  "relatedArticles": [
+    "compressed-air-purity",
+    "compressed-air-quality-verification",
+    "compressed-air-dryer-selection",
+    "testing-and-validation"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-DEW-POINT",
+    "TERM-PARTICLE-COUNT",
+    "TERM-PARTICLE-SIZE-DISTRIBUTION"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Gráfico de las clases de pureza del aire comprimido ISO 8573-1",
+    "desc": "Gráfico de referencia de tres paneles para ISO 8573-1:2010. Panel superior — partículas sólidas: tabla con las Clases 0–5 y el conteo máximo de partículas por metro cúbico en los rangos de tamaño ≥0.1 µm, ≥0.5 µm, ≥1 µm y ≥5 µm; la Clase 0 requiere especificación del usuario y la Clase 1 es la más estricta. Panel central — contenido de agua: barras horizontales con el punto de rocío a presión máximo desde la Clase 1 (−70°C, la más seca) hasta la Clase 6 (+10°C, la menos seca). Panel inferior — contenido de aceite: gráfico de barras con el contenido total máximo de aceite de las Clases 1–4, de 0.01 mg/m³ a 5 mg/m³.",
+    "ariaLabel": "Gráfico de las clases de pureza del aire comprimido ISO 8573-1:2010 de 0 a 9 para partículas sólidas, contenido de agua y contenido total de aceite"
+  },
+  "svgComponentId": "Iso8573PurityClasses"
+}

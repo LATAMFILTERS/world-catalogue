@@ -5,6 +5,10 @@ import { motion } from 'motion/react';
 import type { KCDiagram } from '@/lib/knowledge-center-data';
 import { ArticleSchema } from '@/components/knowledge-center';
 import DiagramBlock from '@/components/knowledge-center/DiagramBlock';
+import { useReviewed } from '@/components/ReviewedText';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { articleTitle, systemTitle } from '@/lib/knowledge-center-data/i18n/titles';
 
 const TYPE_LABELS: Record<string, string> = {
   flow:            'FLOW DIAGRAM',
@@ -22,6 +26,9 @@ const STATUS_COLOR: Record<string, string> = {
 };
 
 export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
+  const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
@@ -32,8 +39,8 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
       }}>
         <nav style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
           {[
-            { label: 'Knowledge Center', href: '/knowledge-center' },
-            { label: 'Diagrams', href: '/knowledge-center/diagrams' },
+            { label: tr('Knowledge Center'), href: '/knowledge-center' },
+            { label: tr('Diagrams'), href: '/knowledge-center/diagrams' },
             { label: diagram.title },
           ].map((crumb, i) => (
             <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -83,7 +90,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
               padding: '0.2rem 0.6rem',
               border: '1px solid rgba(255,241,45,0.25)',
             }}>
-              {TYPE_LABELS[diagram.diagramType] ?? diagram.diagramType.toUpperCase()}
+              {tr(TYPE_LABELS[diagram.diagramType] ?? diagram.diagramType.toUpperCase())}
             </span>
             <span style={{
               fontFamily: 'JetBrains Mono, monospace',
@@ -93,7 +100,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
               padding: '0.2rem 0.6rem',
               border: `1px solid ${STATUS_COLOR[diagram.revisionMetadata.status] ?? 'rgba(255,255,255,0.1)'}30`,
             }}>
-              {diagram.revisionMetadata.status.toUpperCase()} · v{diagram.revisionMetadata.version}
+              {tr(diagram.revisionMetadata.status.toUpperCase())} · v{diagram.revisionMetadata.version}
             </span>
             <span style={{
               fontFamily: 'JetBrains Mono, monospace',
@@ -173,7 +180,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '0.75rem',
             }}>
-              GOVERNING STANDARDS
+              {tr('GOVERNING STANDARDS')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               {diagram.governingStandards.map((stdId) => (
@@ -206,7 +213,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '0.75rem',
             }}>
-              ELIMFILTERS TECHNOLOGIES
+              {tr('ELIMFILTERS TECHNOLOGIES')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               {diagram.relatedTechnologies.map((tech) => (
@@ -238,7 +245,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '0.75rem',
             }}>
-              APPLICABLE SYSTEMS
+              {tr('APPLICABLE SYSTEMS')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               {diagram.applicableSystems.map((sys) => (
@@ -253,7 +260,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
                       border: '1px solid rgba(255,255,255,0.07)',
                     }}
                   >
-                    {sys.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
+                    {systemTitle(sys, lang, sys.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()))}
                   </motion.div>
                 </Link>
               ))}
@@ -274,14 +281,14 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            REVISION METADATA
+            {tr('REVISION METADATA')}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
             {[
-              ['Version', `v${diagram.revisionMetadata.version}`],
-              ['Status', diagram.revisionMetadata.status],
-              ['Last Reviewed', diagram.revisionMetadata.lastReviewed],
-              ['Next Review', diagram.revisionMetadata.nextReview],
+              [tr('Version'), `v${diagram.revisionMetadata.version}`],
+              [tr('Status'), tr(diagram.revisionMetadata.status)],
+              [tr('Last Reviewed'), diagram.revisionMetadata.lastReviewed],
+              [tr('Next Review'), diagram.revisionMetadata.nextReview],
             ].map(([label, value]) => (
               <div key={label} style={{
                 display: 'flex',
@@ -323,7 +330,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '1rem',
           }}>
-            RELATED ENGINEERING ARTICLES
+            {tr('RELATED ENGINEERING ARTICLES')}
           </p>
           <div style={{
             display: 'grid',
@@ -360,7 +367,7 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
                     color: 'rgba(255,255,255,0.55)',
                     lineHeight: 1.4,
                   }}>
-                    {slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
+                    {articleTitle(slug, lang, slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()))}
                   </span>
                 </motion.div>
               </Link>

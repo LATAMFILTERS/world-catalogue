@@ -1,0 +1,49 @@
+{
+  "slug": "water-contamination-pathways",
+  "entityId": "DIAG-WATER-CONT-PATHS",
+  "title": "Caminhos de entrada de água em sistemas de combustível diesel",
+  "metaDescription": "Diagrama de engenharia de cinco caminhos de ingresso de água em sistemas de combustível diesel e hidráulicos — condensação, tampa de abastecimento, respiro, vedações gastas e contaminação cruzada — e das consequências de dano aos equipamentos a jusante.",
+  "engineeringPurpose": "Identifica e relaciona os cinco principais mecanismos de entrada de água no combustível diesel e nos reservatórios hidráulicos, para projetar uma prevenção direcionada. A contaminação por água é a principal causa de falha nos sistemas de injeção HPCR e a principal causa do crescimento microbiano nos tanques de diesel. Cada caminho de entrada exige uma medida de prevenção específica.",
+  "diagramType": "flow",
+  "governingStandards": [
+    "STD-ASTM-D6304",
+    "STD-ISO-12937",
+    "STD-ISO-16332"
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection",
+    "hydraulic-protection"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "diesel-fuel-filtration",
+    "hpcr-fuel-system-cleanliness",
+    "contamination-control"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-WATER-INGRESS",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-MICROBIAL-CONTAMINATION",
+    "TERM-COALESCING",
+    "TERM-HPCR",
+    "TERM-INJECTOR-STICTION",
+    "TERM-WATER-SEPARATION-EFFICIENCY"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama dos caminhos de ingresso de contaminação por água",
+    "desc": "Elemento central: um tanque de combustível ou reservatório hidráulico. Cinco caminhos de ingresso representados como setas apontando para o tanque. Acima à esquerda: condensação por ciclos de temperatura com símbolos de gotas de água. Acima à direita: respingos pela tampa de abastecimento ou ingresso de chuva. Esquerda: respiro que admite ar úmido, representado por uma seta tracejada. Abaixo à esquerda: vedações de eixo gastas que permitem o ingresso de água externa. Abaixo à direita: contaminação cruzada por fluido contaminado durante as transferências. Lado direito do diagrama: cadeia de consequências — uma seta sai do tanque com a etiqueta água livre presente e depois quatro quadros empilhados de consequências: crescimento microbiano por bactérias redutoras de sulfato, entupimento do filtro na interface hidrocarboneto-água, corrosão dos injetores e dano à bomba HPCR. Quadro de detecção abaixo: titulação Karl Fischer conforme a ASTM D6304 e a ISO 12937, meta abaixo de 200 ppm em peso.",
+    "ariaLabel": "Diagrama de cinco caminhos de ingresso de contaminação por água em sistemas de combustível diesel e das consequências de dano aos equipamentos a jusante"
+  },
+  "svgComponentId": "WaterContaminationPathways"
+}

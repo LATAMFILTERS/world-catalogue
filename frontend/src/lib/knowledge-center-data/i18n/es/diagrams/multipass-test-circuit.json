@@ -1,0 +1,46 @@
+{
+  "slug": "multipass-test-circuit",
+  "entityId": "DIAG-MULTIPASS-TEST",
+  "title": "Circuito de ensayo de filtros multipaso ISO 16889",
+  "metaDescription": "Esquema de ingeniería del circuito de ensayo multipaso ISO 16889 usado para medir la eficiencia por relación Beta (β) del filtro: depósito, bomba, contador de partículas aguas arriba (PC₁), filtro de ensayo, contador de partículas aguas abajo (PC₂) y flujo de retorno.",
+  "engineeringPurpose": "Documenta el circuito de ensayo estandarizado para determinar la eficiencia del filtro (relación Beta) y la capacidad de retención de suciedad según ISO 16889. El método multipaso recircula el fluido de ensayo con polvo de ensayo ISO medium inyectado para lograr una concentración estable de partículas aguas arriba, lo que permite medir la eficiencia de forma reproducible en distintos rangos de tamaño de partícula.",
+  "diagramType": "schematic",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-11171"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "iso-16889-multipass-test",
+    "beta-ratio",
+    "testing-and-validation",
+    "fluid-cleanliness"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-MULTI-PASS-TEST",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-TEST-DUST",
+    "TERM-ABSOLUTE-EFFICIENCY"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Circuito de ensayo de filtros multipaso ISO 16889",
+    "desc": "Esquema del circuito de ensayo multipaso: depósito, bomba, contador de partículas aguas arriba PC₁, carcasa del filtro de ensayo con sensor de ΔP, contador de partículas aguas abajo PC₂ y línea de retorno. Punto de inyección de contaminación aguas arriba de PC₁. Relación Beta β = PC₁ ÷ PC₂.",
+    "ariaLabel": "Esquema de ingeniería del circuito de ensayo de filtros multipaso ISO 16889"
+  },
+  "svgComponentId": "MultipassTestCircuit"
+}

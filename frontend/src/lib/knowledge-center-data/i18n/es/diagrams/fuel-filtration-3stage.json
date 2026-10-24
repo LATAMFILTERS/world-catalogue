@@ -1,0 +1,49 @@
+{
+  "slug": "fuel-filtration-3stage",
+  "entityId": "DIAG-FUEL-3STAGE",
+  "title": "Sistema de filtración de combustible diésel de 3 etapas para motores HPCR",
+  "metaDescription": "Arquitectura ilustrativa de filtración de combustible diésel por etapas que muestra la protección gruesa, la gestión combustible/agua, la filtración final de partículas y la entrega a un sistema de inyección de alta presión. Las clasificaciones de las etapas y las presiones son específicas de la aplicación.",
+  "engineeringPurpose": "Ilustra cómo puede organizarse por etapas la protección del combustible diésel antes de los componentes de inyección de precisión. El número exacto de etapas, las clasificaciones de partículas, la arquitectura de separación de agua y las condiciones de caudal y presión dependen del sistema de combustible aprobado. SYNTAPORE™ rige la filtración de partículas, HYDROCORE™ rige los separadores de agua y combustible estándar aprobados sin turbina, y los sistemas tipo turbina FH/FG que correspondan se rigen por separado con TURBOCORE™.",
+  "diagramType": "flow",
+  "governingStandards": [
+    "STD-ISO-16332",
+    "STD-ASTM-D6304",
+    "STD-ISO-12937"
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "diesel-fuel-filtration",
+    "hpcr-fuel-system-cleanliness",
+    "water-contamination-fuel",
+    "marine-diesel-filtration"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-HPCR",
+    "TERM-COALESCING",
+    "TERM-WATER-INGRESS",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-WATER-SEPARATION-EFFICIENCY",
+    "TERM-INJECTOR-STICTION",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama del sistema de filtración de combustible diésel de 3 etapas",
+    "desc": "Recorrido ilustrativo del combustible diésel por etapas desde el tanque, pasando por la protección gruesa, la gestión combustible/agua y la filtración final de partículas, hasta el sistema de inyección. Las clasificaciones exactas en micras, la cantidad de etapas, la presión y la arquitectura del separador son específicas de la aplicación y este diagrama no las universaliza.",
+    "ariaLabel": "Diagrama del sistema de filtración de combustible diésel de 3 etapas desde el tanque, a través de tres etapas de filtro, hasta los inyectores HPCR"
+  },
+  "svgComponentId": "FuelFiltration3Stage"
+}

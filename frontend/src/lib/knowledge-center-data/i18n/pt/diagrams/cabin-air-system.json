@@ -1,0 +1,40 @@
+{
+  "slug": "cabin-air-system",
+  "entityId": "DIAG-CABIN-AIR-SYSTEM",
+  "title": "Sistema de filtração de ar de cabine: ISO 11155",
+  "metaDescription": "Diagrama de sistema de uma linha de filtração de ar da cabine de veículo ISO 11155 que mostra a tomada de ar fresco, o pré-filtro de partículas grossas, o estágio de carvão ativado para fase gasosa, o estágio HEPA de partículas finas, a comporta de modo recirculação e a entrega à cabine.",
+  "engineeringPurpose": "Documenta os estágios de filtração de um sistema de ar de cabine conforme a ISO 11155. Operadores em ambientes de construção, agricultura e mineração podem ficar expostos a concentrações de PM10 e PM2.5 acima dos limites de exposição ocupacional sem um sistema eficaz de filtração da cabine. Cada estágio trata uma classe de contaminante distinta: partículas grossas, contaminantes em fase gasosa e partículas finas respiráveis.",
+  "diagramType": "system",
+  "governingStandards": [
+    "STD-ISO-11155-1",
+    "STD-ISO-29463"
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedArticles": [
+    "cabin-air-filtration",
+    "filter-element-integrity",
+    "seal-integrity"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-PRE-CLEANER",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-SAFETY-ELEMENT"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama do sistema de filtração de ar da cabine ISO 11155",
+    "desc": "Fluxo do sistema da esquerda para a direita. Tomada de ar externo à esquerda. Primeiro estágio: pré-filtro de partículas grossas identificado como estágio PM10 conforme a ISO 11155, com símbolos de partículas grandes bloqueadas. Segundo estágio: adsorvedor de carvão ativado para contaminantes em fase gasosa e odores, representado como um bloco pontilhado. Terceiro estágio: filtro de partículas finas identificado como PM2.5/HEPA com eficiência superior a 95% a 0.3 µm conforme a ISO 29463, com hachura densa e partículas muito pequenas bloqueadas. A seta continua até a zona HVAC da cabine à direita. Um ramal de recirculação, representado por uma seta tracejada abaixo do fluxo principal, devolve o ar da cabine aos estágios de carvão e de filtro fino, controlado por uma comporta. As etiquetas indicam o modo ar fresco no caminho principal e o modo recirculação no ramal.",
+    "ariaLabel": "Diagrama de sistema de um sistema de filtração de ar da cabine de veículo que mostra a tomada de ar fresco, o pré-filtro de partículas, o estágio de carvão ativado, o estágio final HEPA, o circuito de recirculação e a entrega à cabine"
+  },
+  "svgComponentId": "CabinAirSystem"
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "service-interval-flow",
+  "entityId": "DIAG-SERVICE-INTERVAL-FLOW",
+  "title": "Flujo de decisión para planificar intervalos de servicio",
+  "metaDescription": "Diagrama de decisión de ingeniería para calcular los intervalos de servicio del filtro a partir de la capacidad de retención de suciedad (DHC), la tasa de ingestión de contaminación, el caudal del sistema y el factor de seguridad según ISO 3724:2007 y SAE J1299:2008.",
+  "engineeringPurpose": "Documenta el método de cálculo de intervalos de servicio ISO 3724/SAE J1299 como un flujo de decisión, para que los ingenieros obtengan de forma sistemática los intervalos de reemplazo a partir de la DHC medida o estimada, las tasas de ingestión propias del entorno y los factores de seguridad de la aplicación. El intervalo resultante es un objetivo de planificación que requiere validación en campo.",
+  "diagramType": "flow",
+  "governingStandards": [
+    "STD-ISO-16889"
+  ],
+  "applicableSystems": [
+    "air-intake-protection",
+    "hydraulic-protection",
+    "lubrication-protection",
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™",
+    "SYNTRAX™",
+    "NANOFORCE™"
+  ],
+  "relatedArticles": [
+    "service-intervals",
+    "dust-holding-capacity",
+    "contamination-ingression-modelling",
+    "total-cost-of-ownership"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-DIFFERENTIAL-PRESSURE"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Flujo de decisión para planificar intervalos de servicio",
+    "desc": "Diagrama de flujo para planificar el intervalo de servicio del filtro según ISO 3724 y SAE J1299. Óvalo de inicio: planificación del intervalo de servicio del filtro. Paso 1: medir la DHC con el ensayo multipaso ISO 16889 o estimarla como área del medio × factor de capacidad, resultado en gramos. Paso 2: clasificar el entorno de operación — construcción 2.0 mg/L de ingestión típica, agricultura 0.8 mg/L, industrial 0.15 mg/L según la Tabla 2 de SAE J1299. Paso 3: aplicar el factor de seguridad — construcción 0.65, agricultura 0.75, industrial 0.85 según el Anexo D de SAE J1299. Paso 4: calcular el intervalo de servicio I_s = DHC × S_f dividido entre C_in × Q × 60, resultado en horas. Óvalo final: intervalo de servicio I_s en horas. Nota lateral: verificar con datos de campo y ajustar el factor de seguridad si es necesario.",
+    "ariaLabel": "Diagrama de flujo que muestra el proceso de ingeniería para calcular los intervalos de servicio del filtro a partir de la capacidad de retención de suciedad, la tasa de ingestión de contaminación y el factor de seguridad"
+  },
+  "svgComponentId": "ServiceIntervalFlow"
+}

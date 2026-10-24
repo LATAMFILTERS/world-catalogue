@@ -1,0 +1,47 @@
+{
+  "slug": "lube-oil-circuit",
+  "entityId": "DIAG-LUBE-OIL-CIRCUIT",
+  "title": "Circuito de filtración del aceite lubricante del motor: flujo total con válvula de derivación",
+  "metaDescription": "Diagrama del circuito de aceite lubricante del motor que muestra el cárter, el colador de succión, la bomba de engranajes, la válvula de alivio de presión, el filtro de flujo total con válvula de derivación integrada, la galería principal de aceite, la distribución a los cojinetes de bancada y del árbol de levas, y los retornos de drenaje de aceite. La ISO 16889 rige el desempeño del filtro.",
+  "engineeringPurpose": "Documenta un circuito de lubricación de motor de flujo total representativo, con bomba, filtro, protección por derivación y distribución del aceite a los componentes lubricados. Los ajustes de la derivación, el comportamiento del caudal y los límites de servicio dependen del motor y del filtro, y deben tomarse de la aplicación aprobada y no deducirse del diagrama.",
+  "diagramType": "schematic",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-4406"
+  ],
+  "applicableSystems": [
+    "lubrication-protection"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "lubrication-system-filtration",
+    "oil-condition-monitoring",
+    "service-intervals",
+    "total-cost-of-ownership",
+    "failure-analysis"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-BYPASS-FILTRATION",
+    "TERM-BEARING-CLEARANCE",
+    "TERM-VISCOSITY",
+    "TERM-OIL-DRAIN-INTERVAL",
+    "TERM-ABRASIVE-WEAR"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama del circuito de filtración del aceite lubricante del motor",
+    "desc": "Circuito representativo de aceite lubricante que muestra el cárter, la bomba, el filtro de flujo total, la vía de derivación, la galería principal de aceite y la distribución a los cojinetes. La presión de apertura de la derivación y otros ajustes numéricos no se universalizan intencionalmente porque dependen de la configuración aprobada del motor y del filtro.",
+    "ariaLabel": "Diagrama del circuito de filtración del aceite lubricante del motor que muestra el filtro de flujo total con válvula de derivación y la distribución a los cojinetes"
+  },
+  "svgComponentId": "LubeOilCircuit"
+}

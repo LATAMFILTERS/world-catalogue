@@ -1,0 +1,47 @@
+{
+  "slug": "beta-ratio-measurement",
+  "entityId": "DIAG-BETA-RATIO",
+  "title": "Medición de la relación Beta: conteo de partículas aguas arriba y aguas abajo",
+  "metaDescription": "Esquema del principio de medición de la relación Beta: conteo de partículas aguas arriba (Nᵤ) antes del elemento filtrante frente al conteo aguas abajo (Nd) después. Fórmula β = Nᵤ/Nd. Eficiencia de filtración E(%) = (1 − 1/β) × 100.",
+  "engineeringPurpose": "Ilustra el principio fundamental de la relación Beta (relación de filtración) definida en ISO 16889. Las partículas de todos los tamaños entran aguas arriba al elemento filtrante; solo las que están por debajo del corte de eficiencia nominal pasan al lado de salida. La relación entre los conteos de partículas aguas arriba y aguas abajo en un tamaño dado define la relación Beta, que cuantifica directamente la eficiencia de filtración.",
+  "diagramType": "schematic",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-11171"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection",
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "beta-ratio",
+    "iso-16889",
+    "filter-media-science",
+    "fluid-cleanliness",
+    "filter-media-engineering"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-ABSOLUTE-EFFICIENCY",
+    "TERM-NOMINAL-EFFICIENCY",
+    "TERM-MULTI-PASS-TEST",
+    "TERM-PARTICLE-COUNT"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Esquema de medición de la relación Beta",
+    "desc": "La zona izquierda muestra el fluido contaminado aguas arriba con muchas partículas de distintos tamaños (círculos naranjas grandes, partículas medianas y finas). La zona central es el elemento filtrante, representado como un rectángulo rayado. La zona derecha muestra el fluido limpio aguas abajo con solo unas pocas partículas finas que lo atravesaron. En la parte inferior se muestran la fórmula β = Nᵤ/Nd y la eficiencia E(%) = (1 − 1/β) × 100.",
+    "ariaLabel": "Esquema de medición de la relación Beta que muestra los conteos de partículas aguas arriba y aguas abajo de un elemento filtrante"
+  },
+  "svgComponentId": "BetaRatioMeasurement"
+}

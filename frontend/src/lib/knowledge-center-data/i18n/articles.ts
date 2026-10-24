@@ -1,7 +1,7 @@
 // Server-only: reviewed /es/ and /pt/ engineering article bodies, read at build time (never shipped in the client bundle).
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { KCArticle, KCComparison, KCIndustryDetail, KCStandard, KCSystemDetail, KCTechnology } from '../types';
+import type { KCArticle, KCComparison, KCDiagram, KCIndustryDetail, KCStandard, KCSystemDetail, KCTechnology } from '../types';
 import type { KC_INDUSTRIES } from '../canonical-industries-registry';
 import type { KC_SYSTEMS } from '../canonical-systems-registry';
 import type { ProblemStub, TerminologyEntry } from '@/lib/knowledge-center';
@@ -51,4 +51,8 @@ export function translatedComparison(slug: string, lang: 'es' | 'pt'): KCCompari
 
 export function translatedIndustry(slug: string, lang: 'es' | 'pt'): { industry: (typeof KC_INDUSTRIES)[number]; detail: KCIndustryDetail | null } {
   return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'industries', `${slug}.json`), 'utf8'));
+}
+
+export function translatedDiagram(slug: string, lang: 'es' | 'pt'): KCDiagram {
+  return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'diagrams', `${slug}.json`), 'utf8'));
 }

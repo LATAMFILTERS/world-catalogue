@@ -1,0 +1,49 @@
+{
+  "slug": "hydraulic-contamination-paths",
+  "entityId": "DIAG-HYD-CONTAMINATION",
+  "title": "Vías de ingreso de contaminación en sistemas hidráulicos",
+  "metaDescription": "Diagrama de sistema de las tres vías de ingreso de contaminación en sistemas hidráulicos: incorporada (residuos de fabricación), ingresada (sellos, respiraderos, rellenos) y generada (desgaste de componentes). Los filtros de retorno y de presión eliminan las partículas del circuito.",
+  "engineeringPurpose": "Muestra las tres fuentes fundamentales de contaminación que determinan la limpieza del fluido hidráulico. La contaminación de origen entra en el ensamblaje y no puede eliminarse sin un lavado previo a la puesta en marcha. La contaminación por ingreso entra de forma continua durante la operación por los sellos dinámicos y los respiraderos del depósito. La contaminación generada la produce el desgaste de los componentes, a su vez acelerado por la contaminación por partículas, lo que crea un ciclo de retroalimentación positiva que la filtración del sistema debe romper.",
+  "diagramType": "system",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-NFPA-T2-14",
+    "STD-ISO-4406"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "relatedArticles": [
+    "contamination-control",
+    "hydraulic-power-unit-design",
+    "hydraulic-system-flushing",
+    "hydraulic-reservoir-design",
+    "particle-ingress-prevention"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-SERVO-VALVE",
+    "TERM-PROPORTIONAL-VALVE",
+    "TERM-BYPASS-FILTRATION",
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-KIDNEY-LOOP",
+    "TERM-SYSTEM-FLUSHING"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama de las vías de ingreso de contaminación en sistemas hidráulicos",
+    "desc": "Depósito hidráulico central con tres fuentes de contaminación representadas como recuadros con flechas que apuntan al depósito. Arriba a la izquierda: contaminación incorporada (residuos de fabricación, contaminación de ensamblaje, arena de fundición, fibras de mangueras). Arriba a la derecha: contaminación ingresada (respiradero, sellos de vástagos de cilindros, relleno sin filtrar, tapas de acceso, ingreso de agua). Abajo a la izquierda: contaminación generada (partículas de desgaste de bombas, erosión de correderas de válvulas, degradación de sellos, erosión de mangueras). El filtro de retorno y el filtro de presión se muestran eliminando partículas del circuito. Abajo a la derecha se muestra la tabla de limpieza objetivo para servoválvulas, válvulas proporcionales y bombas de engranajes.",
+    "ariaLabel": "Diagrama de las vías de ingreso de contaminación en sistemas hidráulicos que muestra tres fuentes de contaminación que convergen en el depósito"
+  },
+  "svgComponentId": "HydraulicContaminationPaths"
+}
