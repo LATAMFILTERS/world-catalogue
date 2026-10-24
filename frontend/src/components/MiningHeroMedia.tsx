@@ -6,29 +6,44 @@ import type { CSSProperties } from 'react';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
 /**
- * Keep the original mining video as the hero's primary medium, but show an
- * existing mining photograph until actual playback is confirmed.
- * Browsers that cannot autoplay, decode or fetch the MP4 never see a black hero.
+ * The mining film is the primary hero medium. Keep it paintable from the
+ * initial render: opacity:0 until onPlaying creates an autoplay visibility
+ * deadlock on some browsers. The image below is only a loading/error fallback.
  */
 export function MiningHeroMedia() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [requiresPlay, setRequiresPlay] = useState(false);
+  const [manualPlay, setManualPlay] = useState(false);
+
+  const tryPlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    setManualPlay(true);
+    const attempt = video.play();
+    if (attempt) {
+      void attempt.then(() => setRequiresPlay(false)).catch(() => setRequiresPlay(true));
+    }
+  };
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
+    // Respect user motion preferences; explicit playback remains available.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       video.pause();
+      // Report the need for user interaction after the effect, not synchronously
+      // during React's effect synchronization phase.
+      void Promise.resolve().then(() => setRequiresPlay(true));
       return;
     }
 
-    if (!video.paused && video.readyState >= 2) setPlaying(true);
-
-    // Muted/inline playback normally works without interaction. When browser
-    // policy or decoding prevents it, leave the still photograph visible.
-    const request = video.play();
-    if (request) void request.catch(() => setPlaying(false));
+    video.muted = true;
+    const attempt = video.play();
+    if (attempt) {
+      void attempt.catch(() => setRequiresPlay(true));
+    }
   }, []);
 
   const videoStyle: CSSProperties = {
@@ -39,8 +54,7 @@ export function MiningHeroMedia() {
     objectFit: 'cover',
     objectPosition: 'center',
     zIndex: 1,
-    opacity: playing ? VIDEO_HERO_TREATMENT.opacity : 0,
-    transition: 'opacity 350ms ease',
+    opacity: VIDEO_HERO_TREATMENT.opacity,
     pointerEvents: 'none',
   };
 
@@ -58,7 +72,7 @@ export function MiningHeroMedia() {
       />
       <video
         ref={videoRef}
-        className="miningHeroVideo"
+        className={manualPlay ? "miningHeroVideo miningHeroManualPlay" : "miningHeroVideo"}
         autoPlay
         muted
         loop
@@ -67,14 +81,21 @@ export function MiningHeroMedia() {
         poster="/images/mineria-1.avif"
         style={videoStyle}
         aria-hidden="true"
-        onPlaying={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        onWaiting={() => setPlaying(false)}
-        onStalled={() => setPlaying(false)}
-        onError={() => setPlaying(false)}
+        onPlaying={() => setRequiresPlay(false)}
+        onError={() => setRequiresPlay(true)}
       >
         <source src="/images/Mineria-Video1.mp4" type="video/mp4" />
       </video>
+      {requiresPlay && (
+        <button
+          type="button"
+          className="miningHeroPlayButton"
+          aria-label="Play mining hero video"
+          onClick={tryPlay}
+        >
+          <span aria-hidden="true">▶</span> REPRODUCIR VIDEO
+        </button>
+      )}
     </>
   );
 }
