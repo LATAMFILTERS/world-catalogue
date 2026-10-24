@@ -214,11 +214,11 @@ const report = {
   current_payload_hash_normalized: applicationPayloadHash(current),
   current_vehicle_db_hash: row.vehicle_db_hash,
   existing_evidence: evidence,
-  only_in_mann_sample: onlyMann.slice(0, 20),
-  only_in_current_sample: onlyCurrent.slice(0, 20),
+  only_in_mann_all: onlyMann,
+  only_in_current_all: onlyCurrent,
 };
 fs.writeFileSync(path.join(outDir, 'comparison.json'), JSON.stringify(report, null, 2));
-console.log(JSON.stringify({ ...report, only_in_mann_sample: undefined, only_in_current_sample: undefined, current_sample: undefined }, null, 2));
+console.log(JSON.stringify({ ...report, only_in_mann_all: undefined, only_in_current_all: undefined, current_sample: undefined }, null, 2));
 console.log(`\nFiles: ${outDir}`);
 if (!mann.length) {
   console.error('WARNING: 0 MANN rows parsed. Inspect mann-page.html; applications may load dynamically or the table markup differs.');
