@@ -87,6 +87,13 @@ for (let m; (m = tokenRe.exec(body));) {
   }
 }
 
+// "528i (4 L 2.0L FI Turbo 01/12-) for aluminium oil filter module" ->
+// model / engine / fitment qualifier. The qualifier is a fitment condition and must be kept.
+const splitModel = (text) => {
+  const t = String(text || '').trim();
+  const m = /^(.*?)\s*\(([^)]*)\)\s*(.*)$/.exec(t);
+  return m ? { model: m[1].trim(), engine: m[2].trim(), qualifier: m[3].trim() } : { model: t, engine: '', qualifier: '' };
+};
 const isYear = (t) => /^(19|20)\d{2}$/.test(t);
 const num = (t) => { const m = /\d+(?:[.,]\d+)?/.exec(String(t || '')); return m ? Number(m[0].replace(',', '.')) : null; };
 const anomalies = [];
@@ -102,9 +109,9 @@ for (const ev of events) {
   if (c.length < 6) continue;                                   // key/value duplicate blocks have 2 cells
   if (!/filtr|filter/i.test(c[1]?.text || '')) continue;          // header rows and unrelated tables
   if (/^(tipo de (modelo|filtro)|model type|filter type)$/i.test(c[0].text) || /^tipo de filtro$|^filter type$/i.test(c[1].text)) continue; // header row
-  const modelCell = c[0].text;
-  const model = c[0].link || modelCell.replace(/\(.*\)\s*$/, '').trim();
-  const engineDescription = (modelCell.match(/\(([^)]*)\)\s*$/) || [])[1] || '';
+  const split = splitModel(c[0].text);
+  const model = c[0].link || split.model;
+  const engineDescription = split.engine;
   let kw = num(c[4]?.text);
   let hp = num(c[5]?.text);
   if (kw != null && kw > 1000) { anomalies.push({ year, model, field: 'kW', value: kw }); kw = null; }
@@ -112,6 +119,7 @@ for (const ev of events) {
   parsed.push({
     make, year, model,
     engine: engineDescription,
+    equipment_options: split.qualifier || null,
     engine_code: c[2]?.text && c[2].text !== '-' ? c[2].text : null,
     displacement_ccm: num(c[3]?.text),
     kw, hp,
@@ -151,24 +159,25 @@ fs.writeFileSync(path.join(outDir, 'current-vehicle-applications.json'), JSON.st
 // Legacy rows pack "YEAR MODEL (ENGINE)" into `model` with no year field
 // (e.g. "2018 640i Gran Coupe (6 cyl. 3.0L FI Turbo 24V)"). Unpack before comparing.
 const norm = (s) => normalizePart(s);
-const formats = { year_in_model: 0, year_field: 0, year_range: 0, no_year: 0 };
+const formats = { year_in_model: 0, year_in_model_family: 0, year_field: 0, year_range: 0, no_year: 0 };
 const currentParts = (e) => {
   const n = normalizedApplication(e) || {};
-  let model = n.model || String(e.model_type || '').trim();
+  let text = n.model || String(e.model_type || '').trim();
   let year = n.year;
+  const fam = String(e.model_family || '').trim();
   if (year) formats.year_field++;
+  else if (/^(?:19|20)\d{2}$/.test(fam)) { year = fam; formats.year_in_model_family++; }
   else {
-    const m = /^((?:19|20)\d{2})\s+(.+)$/.exec(model);
-    if (m) { year = m[1]; model = m[2]; formats.year_in_model++; }
+    const m = /^((?:19|20)\d{2})\s+(.+)$/.exec(text);
+    if (m) { year = m[1]; text = m[2]; formats.year_in_model++; }
     else if (String(e.year_range || '').trim()) { year = `RANGE:${String(e.year_range).trim()}`; formats.year_range++; }
     else formats.no_year++;
   }
-  const engine = (model.match(/\(([^)]*)\)\s*$/) || [])[1] || '';
-  model = model.replace(/\s*\([^)]*\)\s*$/, '').trim();
-  return { make: n.make, year, model, engine, engine_code: String(e.engine_code || '').trim() };
+  const sp = splitModel(text);
+  return { make: n.make, year, model: sp.model, engine: sp.engine, qualifier: sp.qualifier, engine_code: String(e.engine_code || '').trim() };
 };
-const keyCur = (p) => [norm(p.make), norm(p.model), p.year].join('|');
-const keyMann = (r) => [norm(r.make), norm(r.model), r.year].join('|');
+const keyCur = (p) => [norm(p.make), norm(p.model), p.year, norm(p.qualifier)].join('|');
+const keyMann = (r) => [norm(r.make), norm(r.model), r.year, norm(r.equipment_options)].join('|');
 const curParsed = current.map(currentParts);
 const curKeys = new Map();
 for (const p of curParsed) { const k = keyCur(p); if (!curKeys.has(k)) curKeys.set(k, p); }
