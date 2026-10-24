@@ -75,16 +75,34 @@ if (!dbUrl) throw new Error('CATALOG_DATABASE_URL is required');
 const db = new pg.Client({ connectionString: dbUrl });
 await db.connect();
 await db.query('BEGIN READ ONLY');
+// Base code = the MANN part number the applications were actually imported from.
+// 1) ld_canonical_product_identity (MANN-FILTER, ACTIVE), else
+// 2) ld_vehicle_applications.source_sku when the SKU has exactly ONE distinct
+//    source code (origin master/external_recovered). SKUs with 2+ source codes
+//    are mixed imports (e.g. EL30816 = HU816X + HU816ZKIT) and go to review.
 const { rows: targets } = await db.query(`
-  SELECT c.sku, c.canonical_source_code AS mann_code
+  WITH rel AS (
+    SELECT v.elimfilters_sku AS sku, min(btrim(v.source_sku)) AS code,
+           count(DISTINCT ld_catalog.norm_part(v.source_sku)) AS k
+    FROM ld_catalog.ld_vehicle_applications v
+    WHERE v.source_origin IN ('master','external_recovered') AND nullif(btrim(v.source_sku),'') IS NOT NULL
+    GROUP BY 1)
+  SELECT c.sku,
+         coalesce(i.canonical_part_number, CASE WHEN rel.k = 1 THEN rel.code END) AS mann_code,
+         CASE WHEN i.canonical_part_number IS NOT NULL THEN 'CANONICAL_IDENTITY'
+              WHEN rel.k = 1 THEN 'RELATIONAL_SOURCE_SKU'
+              WHEN rel.k > 1 THEN 'MIXED_SOURCE_SKU' ELSE 'NO_BASE_CODE' END AS code_source,
+         rel.k AS source_codes
   FROM public.elimfilters_catalog c
+  LEFT JOIN ld_catalog.ld_canonical_product_identity i
+         ON i.elimfilters_sku = c.sku AND i.canonical_brand = 'MANN-FILTER' AND i.status = 'ACTIVE'
+  LEFT JOIN rel ON rel.sku = c.sku
   WHERE c.duty = 'LIGHT_DUTY'
-    AND c.canonical_source_brand = 'MANN-FILTER'
-    AND nullif(btrim(c.canonical_source_code), '') IS NOT NULL
     AND jsonb_array_length(coalesce(c.vehicle_applications, '[]'::jsonb)) > 0
     AND NOT EXISTS (SELECT 1 FROM public.catalog_application_evidence e
                     WHERE e.sku = c.sku AND e.application_kind = 'VEHICLE' AND e.verified = true
                       AND e.payload_hash = md5(c.vehicle_applications::text))
+    AND (i.canonical_part_number IS NOT NULL OR rel.k IS NOT NULL)
   ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit]);
 await db.query('ROLLBACK');
 await db.end();
@@ -95,6 +113,17 @@ fs.mkdirSync(runDir, { recursive: true });
 const rows = [];
 for (const [i, t] of targets.entries()) {
   const dir = path.join(runDir, t.sku);
+  const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
+  if (!t.mann_code) {
+    rows.push({ sku: t.sku, mann_code: null, code_source: t.code_source, source_codes: t.source_codes, eligible: false, reason: t.code_source });
+    console.log(`[${i + 1}/${targets.length}] ${t.sku} -\tHOLD\t${t.code_source} (${t.source_codes} codigos)`);
+    continue;
+  }
+  if (last4(t.mann_code) !== last4(t.sku)) {
+    rows.push({ sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, eligible: false, reason: 'BASE_CODE_SKU_DIGITS_MISMATCH' });
+    console.log(`[${i + 1}/${targets.length}] ${t.sku} ${t.mann_code}\tHOLD\tBASE_CODE_SKU_DIGITS_MISMATCH`);
+    continue;
+  }
   // us-en first (US vehicle listings); fall back to the global en page when the
   // product is missing there or lists no vehicles.
   let pilot; let locale;
@@ -106,7 +135,7 @@ for (const [i, t] of targets.entries()) {
     await sleep(delayMs);
   }
   const c = pilot.json?.counts;
-  const row = { sku: t.sku, mann_code: t.mann_code, locale, dir, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
+  const row = { sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, locale, dir, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
     current_distinct: c?.current_distinct_keys ?? null, matched: c?.matched_make_model_year ?? null,
     only_in_current: c?.only_in_current ?? null, engine_mismatch: c?.matched_engine_code_mismatch ?? null,
     match_ratio: null, guard_after: null, eligible: false, reason: null };
@@ -126,6 +155,7 @@ for (const [i, t] of targets.entries()) {
   fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, min_match: minMatch, rows }, null, 2));
   if (i < targets.length - 1) await sleep(delayMs);
 }
+fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, min_match: minMatch, rows }, null, 2));
 const eligible = rows.filter((r) => r.eligible).length;
 console.log(JSON.stringify({ run_dir: runDir, processed: rows.length, eligible, hold: rows.length - eligible,
   hold_reasons: rows.filter((r) => !r.eligible).reduce((m, r) => { const k = String(r.reason).split(':')[0].replace(/_0\.\d+$/, ''); m[k] = (m[k] || 0) + 1; return m; }, {}),
