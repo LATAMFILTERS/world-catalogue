@@ -30,7 +30,7 @@ const serviceChecks: Record<string, string> = {
   'AIR INTAKE': 'Inspect restriction indication, intake duct integrity and seals according to the machine manual.',
   'HYDRAULIC': 'Check fluid cleanliness requirements, hose couplings and clean handling during attachment changes.',
   'HYDROCORE™': 'Inspect storage and mobile refueling practices; check water drainage, sealing and the specified separator application.',
-  'SYNTAPORE™': 'Review particulate contamination during storage and refueling, fuel-filter restriction and the specified fuel-filter application.'
+  'SYNTAPORE™': 'Review particulate contamination during storage and refueling, fuel-filter restriction and the specified fuel-filter application.',
   'LUBRICATION': 'Review oil condition, operating hours and the machine-specific filter and service requirements.',
   'CABIN AIR': 'Inspect cabin seals and the specified cabin filter; particulate filtration does not establish respiratory protection against hazardous dust.'
 };
