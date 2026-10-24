@@ -147,15 +147,38 @@ if (!row) throw new Error(`SKU not found: ${sku}`);
 const current = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
 fs.writeFileSync(path.join(outDir, 'current-vehicle-applications.json'), JSON.stringify(current, null, 2));
 
-// ---------- 4. Compare on make + model + year ----------
+// ---------- 4. Compare on make + model + year (+ engine code) ----------
+// Legacy rows pack "YEAR MODEL (ENGINE)" into `model` with no year field
+// (e.g. "2018 640i Gran Coupe (6 cyl. 3.0L FI Turbo 24V)"). Unpack before comparing.
 const norm = (s) => normalizePart(s);
-const keyOf = (e) => { const n = normalizedApplication(e) || {}; return [norm(n.make), norm(n.model), n.year || `${n.year_from}-${n.year_to}`].join('|'); };
+const formats = { year_in_model: 0, year_field: 0, year_range: 0, no_year: 0 };
+const currentParts = (e) => {
+  const n = normalizedApplication(e) || {};
+  let model = n.model || String(e.model_type || '').trim();
+  let year = n.year;
+  if (year) formats.year_field++;
+  else {
+    const m = /^((?:19|20)\d{2})\s+(.+)$/.exec(model);
+    if (m) { year = m[1]; model = m[2]; formats.year_in_model++; }
+    else if (String(e.year_range || '').trim()) { year = `RANGE:${String(e.year_range).trim()}`; formats.year_range++; }
+    else formats.no_year++;
+  }
+  const engine = (model.match(/\(([^)]*)\)\s*$/) || [])[1] || '';
+  model = model.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  return { make: n.make, year, model, engine, engine_code: String(e.engine_code || '').trim() };
+};
+const keyCur = (p) => [norm(p.make), norm(p.model), p.year].join('|');
 const keyMann = (r) => [norm(r.make), norm(r.model), r.year].join('|');
-const curKeys = new Map(current.map((e) => [keyOf(e), e]));
+const curParsed = current.map(currentParts);
+const curKeys = new Map();
+for (const p of curParsed) { const k = keyCur(p); if (!curKeys.has(k)) curKeys.set(k, p); }
 const mannKeys = new Map(mann.map((r) => [keyMann(r), r]));
 const matched = [...mannKeys.keys()].filter((k) => curKeys.has(k));
 const onlyMann = [...mannKeys.keys()].filter((k) => !curKeys.has(k));
 const onlyCurrent = [...curKeys.keys()].filter((k) => !mannKeys.has(k));
+const engineCodeMismatch = matched.filter((k) => norm(mannKeys.get(k).engine_code) !== norm(curKeys.get(k).engine_code))
+  .map((k) => ({ key: k, mann: mannKeys.get(k).engine_code, current: curKeys.get(k).engine_code }));
+const currentDuplicateRows = current.length - curKeys.size;
 
 const report = {
   generated_at: new Date().toISOString(),
@@ -169,7 +192,12 @@ const report = {
     matched_make_model_year: matched.length,
     only_in_mann: onlyMann.length,
     only_in_current: onlyCurrent.length,
+    current_distinct_keys: curKeys.size,
+    current_duplicate_rows: currentDuplicateRows,
+    matched_engine_code_mismatch: engineCodeMismatch.length,
   },
+  current_year_formats: formats,
+  engine_code_mismatch_sample: engineCodeMismatch.slice(0, 20),
   mann_makes: [...new Set(mann.map((r) => r.make))],
   mann_years: [...new Set(mann.map((r) => r.year))].sort(),
   kw_hp_anomalies_set_to_null: anomalies,
