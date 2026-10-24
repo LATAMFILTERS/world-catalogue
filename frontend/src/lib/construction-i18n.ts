@@ -1,6 +1,9 @@
 import type { PageLang } from '@/lib/localized-routes';
 const translations: Record<'es' | 'pt', Record<string,string>> = {
   "es": {
+    "Construction filtration systems and contamination-control architecture for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive jobsite conditions.": "Sistemas de filtración y control de contaminación para excavadoras, cargadoras, topadoras, motoniveladoras, compactadoras y camiones articulados expuestos a condiciones abrasivas de obra.",
+    "Construction equipment applications": "Aplicaciones de maquinaria de construcción",
+    "Construction equipment operating in severe jobsite conditions": "Maquinaria de construcción operando en condiciones severas de obra",
     "Inspect storage and mobile refueling practices; check water drainage, sealing and the specified separator application.": "Revise las prácticas de almacenamiento y abastecimiento móvil; compruebe drenaje de agua, sellado y la aplicación especificada del separador.",
     "Review particulate contamination during storage and refueling, fuel-filter restriction and the specified fuel-filter application.": "Revise la contaminación por partículas durante el almacenamiento y el abastecimiento, la restricción del filtro y la aplicación especificada.",
     "Duty": "Ciclo de trabajo",
@@ -145,6 +148,9 @@ const translations: Record<'es' | 'pt', Record<string,string>> = {
     "Yes. If the OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the machine, engine, protected system and jobsite conditions.": "Sí. Con una referencia OEM o número de filtro, Part Search facilita consultar equivalencias y aplicaciones. Para evaluación de ingeniería, incluya máquina, motor, sistema protegido y condiciones de obra."
   },
   "pt": {
+    "Construction filtration systems and contamination-control architecture for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive jobsite conditions.": "Sistemas de filtragem e controle de contaminação para escavadeiras, carregadeiras, tratores de esteira, motoniveladoras, compactadores e caminhões articulados em canteiros abrasivos.",
+    "Construction equipment applications": "Aplicações de máquinas de construção",
+    "Construction equipment operating in severe jobsite conditions": "Máquinas de construção operando em condições severas de canteiro",
     "Inspect storage and mobile refueling practices; check water drainage, sealing and the specified separator application.": "Revise as práticas de armazenamento e abastecimento móvel; verifique a drenagem de água, as vedações e a aplicação especificada do separador.",
     "Review particulate contamination during storage and refueling, fuel-filter restriction and the specified fuel-filter application.": "Revise a contaminação por partículas no armazenamento e abastecimento, a restrição do filtro e a aplicação especificada.",
     "Duty": "Ciclo de operação",
