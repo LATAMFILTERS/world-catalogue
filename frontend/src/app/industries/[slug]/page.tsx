@@ -42,7 +42,7 @@ const industryMetaDescription: Record<string, string> = {
   'Bus Coach': 'Bus and coach filtration systems for transit buses, intercity coaches, school buses and shuttle fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
   Construction: 'Construction filtration systems for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, hydraulic load, vibration and severe off-road duty.',
   Manufacturing: 'Manufacturing filtration systems for hydraulic power units, compressors, pumps, machine tools and production equipment requiring contamination control across continuous plant duty and planned maintenance windows.',
-  Marine: 'Marine filtration systems for commercial vessels, workboats, marine engines, deck machinery and onboard hydraulic equipment operating under salt air, humidity, fuel-water exposure and extended duty.',
+  Marine: 'Marine filtration for vessel owners, maintenance engineers and technicians protecting propulsion engines, diesel fuel systems, deck hydraulics and auxiliary equipment through validated application selection.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
   'Oil Gas': 'Filtration engineering for oil and gas maintenance teams protecting diesel engines, hydraulic circuits and lubricated field equipment under demanding duty and limited shutdown windows.',
   'Power Generation': 'Power generation filtration systems for standby generators, prime-power systems and industrial diesel generator sets requiring fuel, air, lubrication and cooling-system protection.',
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : item.name === 'Oil Gas'
           ? 'Oil & Gas Filtration for Maintenance Engineers | ELIMFILTERS'
           : item.name === 'Marine'
-            ? 'Marine Filtration Systems | Vessels & Marine Engines | ELIMFILTERS'
+            ? 'Marine Filtration for Owners & Engineers | ELIMFILTERS'
             : item.name === 'Power Generation'
               ? 'Power Generation Filtration Systems | Generator Sets | ELIMFILTERS'
               : item.name === 'Trucks Fleets'
