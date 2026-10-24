@@ -73,17 +73,30 @@
   gap: 1px;
 }
 .pathGrid > * { min-width: 0; }
+
+.impactGrid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+}
+.impactGrid > * { min-width: 0; }
+.impactOutcome {
+  display: grid;
+  grid-template-columns: minmax(0, .42fr) minmax(0, 1fr);
+}
+.impactOutcome > * { min-width: 0; }
 @media (max-width: 1150px) {
   .marketGrid { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .pathGrid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
 @media (max-width: 820px) {
+  .impactGrid { grid-template-columns: 1fr; }
   .introGrid { grid-template-columns: 1fr; }
   .marketGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .caseGrid { grid-template-columns: 1fr; }
   .pathGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 560px) {
+  .impactOutcome { grid-template-columns: 1fr; }
   .marketGrid { grid-template-columns: 1fr; }
   .marketCard { aspect-ratio: 1.22; min-height: 280px; }
   .pathGrid { grid-template-columns: 1fr; }
