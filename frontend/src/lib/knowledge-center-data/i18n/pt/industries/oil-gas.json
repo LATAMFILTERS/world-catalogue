@@ -1,0 +1,67 @@
+{
+  "industry": {
+    "slug": "oil-gas",
+    "title": "Petróleo e gás",
+    "icon": "IND-O&G",
+    "dust": "High",
+    "description": "Areia, H₂S e contaminação por lama de perfuração em ativos de petróleo e gás de upstream e midstream."
+  },
+  "detail": {
+    "slug": "oil-gas",
+    "contaminationEnvironment": "Operações de petróleo e gás com poeira de perfuração, areia, fluidos produzidos, exposição a serviço ácido, requisitos de compressores e de controle pneumático, e risco de contaminação em ativos de upstream, midstream e processamento.",
+    "primaryRisks": [
+      "Contaminação dos sistemas de admissão de ar por fluido de perfuração (lama)",
+      "Gás ácido com H₂S que exige vedações de elastômero FKM",
+      "Qualidade do ar comprimido para ar de instrumentos e sistemas de controle",
+      "Água produzida e areia nos sistemas de manuseio de fluidos"
+    ],
+    "serviceIntervalNote": "Os intervalos de filtração e os requisitos de materiais em petróleo e gás devem ser validados em relação ao processo real, à química do gás e do fluido, à pressão, à temperatura, à fonte de contaminação, à especificação do equipamento e aos requisitos de segurança.",
+    "keyMetrics": [
+      {
+        "label": "Compatibilidade de materiais",
+        "value": "Específica do processo e da química"
+      },
+      {
+        "label": "Qualidade do ar comprimido",
+        "value": "Classe ISO 8573 específica da aplicação quando exigida"
+      },
+      {
+        "label": "Carga da admissão de ar",
+        "value": "Depende do local e da atividade de perfuração"
+      },
+      {
+        "label": "Base de validação",
+        "value": "Equipamento + processo + requisitos de segurança"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "SYNTRAX™",
+      "NANOFORCE™",
+      "SYNTAPORE™",
+      "HYDROCORE™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 8573-1",
+      "ISO 16889",
+      "ISO 4406"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection",
+      "Hydraulic Protection",
+      "Fuel Cleanliness Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Contaminação de processo e ambiental",
+        "body": "Os equipamentos de petróleo e gás podem encontrar sólidos de perfuração, poeira em suspensão, fluidos produzidos e serviço corrosivo ou quimicamente agressivo. Os meios filtrantes, as vedações e as carcaças devem ser selecionados a partir da química real do processo e da especificação do equipamento; nenhum elastômero ou classe de limpeza deve ser tratado como requisito universal para toda a indústria."
+      },
+      {
+        "heading": "Ar de instrumentos e ar comprimido",
+        "body": "Os requisitos de qualidade do ar de instrumentos dependem do equipamento pneumático e do processo. A ISO 8573-1 oferece uma estrutura de classificação, mas a classe exigida deve vir da aplicação e do requisito do equipamento específicos, e não de um valor padrão único para toda a indústria."
+      }
+    ]
+  }
+}

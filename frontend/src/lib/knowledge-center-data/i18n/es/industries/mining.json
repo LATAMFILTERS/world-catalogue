@@ -1,0 +1,70 @@
+{
+  "industry": {
+    "slug": "mining",
+    "title": "Minería",
+    "icon": "IND-MIN",
+    "dust": "Extreme",
+    "description": "Polvo de sílice, finos de roca, gases explosivos y contaminación por agua en entornos extremos."
+  },
+  "detail": {
+    "slug": "mining",
+    "contaminationEnvironment": "Servicio minero de trabajo severo con polvo con sílice, finos de roca, eventos de polvo repetidos, ingreso de contaminación hidráulica, almacenamiento remoto de combustible y exposición de la cabina del operador en operaciones a cielo abierto y subterráneas.",
+    "primaryRisks": [
+      "Ingestión de sílice por la admisión de aire → desgaste abrasivo del motor",
+      "Riesgo de silicosis del operador (fracción respirable)",
+      "Agarrotamiento de válvulas hidráulicas por partículas finas de sílice",
+      "Desgaste de rodamientos por contaminación del aceite lubricante",
+      "Contaminación del combustible con agua en almacenamientos remotos"
+    ],
+    "serviceIntervalNote": "Los intervalos de servicio en minería deben definirse a partir de la restricción medida, la carga de contaminación, la condición del fluido, el régimen del equipo y la evidencia aprobada de producto/aplicación. La cercanía a voladuras, el ciclo de acarreo, la integridad de los cerramientos y las prácticas de mantenimiento pueden cambiar la carga de forma sustancial.",
+    "keyMetrics": [
+      {
+        "label": "Severidad del polvo",
+        "value": "Depende del sitio y del ciclo de trabajo"
+      },
+      {
+        "label": "Control del aire del motor",
+        "value": "Restricción + sellado + capacidad"
+      },
+      {
+        "label": "Control hidráulico",
+        "value": "Objetivo de limpieza específico del componente"
+      },
+      {
+        "label": "Protección de cabina",
+        "value": "Control de HVAC y de exposición específico de la aplicación"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "INTEKCORE™",
+      "MICROKAPPA™",
+      "SYNTRAX™",
+      "NANOFORCE™",
+      "SYNTAPORE™",
+      "HYDROCORE™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 4406",
+      "ISO 16889",
+      "ISO 11155-1"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Hydraulic Protection",
+      "Lubrication Protection",
+      "Fuel Cleanliness Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Perfil de contaminación",
+        "body": "La minería expone a la contaminación, al mismo tiempo, las fronteras del aire del motor, hidráulica, lubricación, combustible y aire del operador. La estrategia de protección debe construirse en torno a la máquina real, el proceso minero, el estado de los cerramientos, el acceso de servicio y la fuente de contaminación, y no en torno a una concentración de polvo o un intervalo de reemplazo universales."
+      },
+      {
+        "heading": "Prioridad del aire de cabina",
+        "body": "La filtración de cabina forma parte de la Protección de admisión y flujo de aire y debe seleccionarse según el entorno real del operador, el flujo del HVAC, la integridad de los sellos y los requisitos ocupacionales aplicables. MICROKAPPA™ no constituye una declaración universal de control de exposición; el desempeño del producto y en el lugar de trabajo requiere validación específica de la aplicación."
+      }
+    ]
+  }
+}

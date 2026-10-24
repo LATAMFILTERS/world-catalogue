@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { KC_INDUSTRIES, KC_INDUSTRY_DETAILS } from '@/lib/knowledge-center-data';
 import { notFound } from 'next/navigation';
 import IndustryContent from './IndustryContent';
+import { languageAlternates } from '@/lib/localized-routes';
+import { TRANSLATED_INDUSTRY_SLUGS } from '@/lib/knowledge-center-data/i18n/titles';
 
 export function generateStaticParams() {
   return KC_INDUSTRIES.map((ind) => ({ slug: ind.slug }));
@@ -16,7 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${industry.title} Filtration Engineering`,
     description: industry.description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      ...((TRANSLATED_INDUSTRY_SLUGS as readonly string[]).includes(slug) ? { languages: languageAlternates(`/knowledge-center/industries/${slug}`) } : {}),
+    },
     openGraph: {
       title: `${industry.title} Filtration Engineering | ELIMFILTERS`,
       description: industry.description,

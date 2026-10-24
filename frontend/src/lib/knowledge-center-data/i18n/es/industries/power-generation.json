@@ -1,0 +1,68 @@
+{
+  "industry": {
+    "slug": "power-generation",
+    "title": "Generación de energía",
+    "icon": "IND-PWR",
+    "dust": "Moderate",
+    "description": "Filtración de la admisión de aire de turbinas, sistemas de lubricación de generadores y requisitos de operación continua."
+  },
+  "detail": {
+    "slug": "power-generation",
+    "contaminationEnvironment": "Servicio de generación de energía que abarca diésel de respaldo, grupos electrógenos continuos y entornos de admisión de turbinas aplicables, con riesgos de aire, combustible, lubricación y refrigeración determinados por la ubicación, el régimen de disponibilidad y el perfil operativo.",
+    "primaryRisks": [
+      "Ensuciamiento de la entrada de la turbina por aerosol salino (costa)",
+      "Pulido del combustible de respaldo para grupos electrógenos diésel de emergencia",
+      "Contaminación del aceite lubricante en grupos electrógenos de operación continua",
+      "Confiabilidad de la admisión de aire para el desempeño de turbinas de gas"
+    ],
+    "serviceIntervalNote": "El mantenimiento en generación de energía debe seguir el requisito del motor o de la turbina, el régimen de disponibilidad, la condición del combustible almacenado, la evidencia de restricción o de condición del fluido y los datos de aplicación aprobados. Los activos de respaldo y de servicio continuo requieren estrategias distintas.",
+    "keyMetrics": [
+      {
+        "label": "Modo de operación",
+        "value": "Respaldo o servicio continuo"
+      },
+      {
+        "label": "Carga de la admisión de aire",
+        "value": "Depende del sitio y del sistema de entrada"
+      },
+      {
+        "label": "Control del combustible almacenado",
+        "value": "Depende de la condición y de la gestión del agua"
+      },
+      {
+        "label": "Validación de disponibilidad",
+        "value": "Específica del activo y del programa de mantenimiento"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "SYNTRAX™",
+      "SYNTAPORE™",
+      "HYDROCORE™",
+      "THERMACORE™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 16889",
+      "SAE J1858",
+      "ISO 12937",
+      "ASTM D6304"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection",
+      "Fuel Cleanliness Protection",
+      "Cooling System Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Admisión de aire y operación continua",
+        "body": "La protección de la admisión de aire en generación de energía debe equilibrar el control de la contaminación con los límites de flujo de aire y de restricción del equipo instalado. Los sitios costeros, industriales y polvorientos pueden crear mecanismos de carga distintos, por lo que la selección del filtro y la estrategia de limpieza deben validarse frente al sistema de entrada real."
+      },
+      {
+        "heading": "Disponibilidad del diésel de respaldo",
+        "body": "El diésel almacenado puede acumular agua y contaminación durante largos periodos de inactividad. El acondicionamiento, la filtración y la gestión del agua del combustible deben seleccionarse según la condición del tanque, el análisis del combustible, los requisitos del motor y la práctica de mantenimiento; el alcance de HYDROCORE™ o TURBOCORE™ depende de la arquitectura de separador aprobada y no debe generalizarse como un requisito universal de pulido."
+      }
+    ]
+  }
+}

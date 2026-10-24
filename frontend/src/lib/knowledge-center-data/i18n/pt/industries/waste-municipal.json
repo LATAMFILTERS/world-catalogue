@@ -1,0 +1,64 @@
+{
+  "industry": {
+    "slug": "waste-municipal",
+    "title": "Frotas de resíduos e municipais",
+    "icon": "IND-MUN",
+    "dust": "High",
+    "description": "Filtração para frotas de coleta de resíduos e serviços municipais com ciclos repetidos de para-e-anda, compactação hidráulica, exposição a partículas da via e orgânicas, marcha lenta e disponibilidade programada do serviço público."
+  },
+  "detail": {
+    "slug": "waste-municipal",
+    "contaminationEnvironment": "Serviço de frotas de resíduos e municipais com operação repetida de para-e-anda, marcha lenta, uso de tomada de força (PTO), compactação hidráulica, exposição a partículas viárias e orgânicas, umidade e requisitos de disponibilidade do serviço público.",
+    "primaryRisks": [
+      "Contaminação do circuito hidráulico de compactação por ciclos de trabalho extremos",
+      "Exposição da admissão de ar a poeira orgânica e bioaerossóis",
+      "Contaminação do óleo do motor por operação de trajetos curtos e muita marcha lenta",
+      "Saúde do operador — exposição a bioaerossóis e poeira orgânica"
+    ],
+    "serviceIntervalNote": "Os intervalos em frotas de resíduos e municipais devem refletir o regime da rota, o histórico de marcha lenta e de PTO, a condição hidráulica, a carga da admissão, a condição do lubrificante e a evidência aprovada da aplicação. O serviço repetido de para-e-anda deve ser tratado como uma variável de regime, não como um intervalo fixo universal.",
+    "keyMetrics": [
+      {
+        "label": "Perfil de trabalho",
+        "value": "Depende de para-e-anda + marcha lenta + PTO"
+      },
+      {
+        "label": "Carga hidráulica",
+        "value": "Depende do sistema de compactação"
+      },
+      {
+        "label": "Ambiente da cabine",
+        "value": "Depende das partículas e do HVAC"
+      },
+      {
+        "label": "Planejamento do serviço",
+        "value": "Baseado na rota e na condição do ativo"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "NANOFORCE™",
+      "SYNTRAX™",
+      "MICROKAPPA™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 4406",
+      "ISO 16889"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Hydraulic Protection",
+      "Lubrication Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Ciclo de trabalho da coleta de resíduos",
+        "body": "A coleta de resíduos combina acelerações repetidas, marcha lenta e trabalho hidráulico acionado pela PTO. O planejamento da manutenção deve usar o histórico real da rota, a condição do motor, a condição hidráulica e a exposição à contaminação, em vez de supor que uma mesma pressão, quantidade de paradas ou intervalo de serviço se aplica a todos os veículos."
+      },
+      {
+        "heading": "Bioaerossóis e poeira orgânica",
+        "body": "Os resíduos orgânicos podem aumentar a carga de partículas e biológica em torno do ambiente do operador. O MICROKAPPA™ apoia a filtração do ar da cabine quando aprovado, mas o controle da exposição ocupacional exige o enclausuramento completo do HVAC, as práticas de trabalho e os requisitos aplicáveis do local de trabalho; o filtro, por si só, não deve ser apresentado como uma solução universal de controle da saúde."
+      }
+    ]
+  }
+}

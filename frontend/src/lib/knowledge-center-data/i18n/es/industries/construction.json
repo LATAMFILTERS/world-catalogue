@@ -1,0 +1,64 @@
+{
+  "industry": {
+    "slug": "construction",
+    "title": "Construcción",
+    "icon": "IND-CON",
+    "dust": "High",
+    "description": "Polvo de concreto, tierra y contaminación de los circuitos hidráulicos en equipos móviles de movimiento de tierras."
+  },
+  "detail": {
+    "slug": "construction",
+    "contaminationEnvironment": "Servicio de construcción y demolición con polvo de concreto y de suelo, cambio de implementos, exposición de las conexiones hidráulicas, clima variable y reubicación frecuente de la máquina entre zonas de trabajo.",
+    "primaryRisks": [
+      "Polvo de concreto y sílice en la admisión de aire: desgaste abrasivo",
+      "Contaminación hidráulica durante los cambios de implementos con acople rápido",
+      "Contaminación del aceite lubricante en excavadoras de ciclo intenso",
+      "Contaminación con agua del combustible almacenado en obra"
+    ],
+    "serviceIntervalNote": "Los intervalos de mantenimiento en construcción deben seguir la carga medida, la condición hidráulica, el régimen de la máquina, las prácticas de cambio de implementos y la evidencia aprobada de la aplicación. La demolición, el movimiento de tierras y la obra vial pueden imponer exigencias de servicio muy distintas.",
+    "keyMetrics": [
+      {
+        "label": "Fuente principal de contaminación",
+        "value": "Depende de la zona de trabajo y de la tarea"
+      },
+      {
+        "label": "Ingreso hidráulico",
+        "value": "Depende de los implementos y de las prácticas de servicio"
+      },
+      {
+        "label": "Servicio de la admisión de aire",
+        "value": "Basado en la restricción cuando aplica"
+      },
+      {
+        "label": "Validación de la aplicación",
+        "value": "Máquina + sistema + ciclo de trabajo"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "NANOFORCE™",
+      "SYNTRAX™",
+      "MICROKAPPA™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 4406",
+      "ISO 16889"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Hydraulic Protection",
+      "Lubrication Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Perfil de contaminación",
+        "body": "La contaminación en construcción cambia con la tarea. La demolición, la nivelación, la excavación y el manejo de materiales exponen de forma distinta los sistemas de admisión e hidráulico. Por eso, la selección debe resolver la máquina, el patrón de implementos, la fuente de polvo, el requisito de flujo de aire o de fluido y la práctica de servicio antes de asignar un filtro o un intervalo."
+      },
+      {
+        "heading": "Disciplina de implementos e hidráulica",
+        "body": "Los acoples rápidos hidráulicos y los puntos de servicio en campo pueden convertirse en vías de ingreso de contaminación cuando las conexiones quedan expuestas o se limpian mal. La protección hidráulica debe combinar una filtración adecuada con prácticas de conexión limpias, control del depósito y verificación del componente más sensible a la contaminación."
+      }
+    ]
+  }
+}

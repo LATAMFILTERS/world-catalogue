@@ -1,0 +1,64 @@
+{
+  "industry": {
+    "slug": "trucks-fleets",
+    "title": "Flotas de camiones comerciales",
+    "icon": "IND-FLT",
+    "dust": "Moderate",
+    "description": "Filtración para flotas de camiones comerciales en larga distancia, transporte regional, servicio vocacional y reparto urbano, con protección coordinada de aire del motor, combustible, lubricación, enfriamiento, cabina y, cuando corresponde, sistemas neumáticos."
+  },
+  "detail": {
+    "slug": "trucks-fleets",
+    "contaminationEnvironment": "Operación de camiones comerciales en servicio de larga distancia, regional, vocacional y urbano con polvo de carretera, arranques repetidos, ralentí, calidad de combustible variable, exposición de la cabina y efectos operativos relacionados con el postratamiento.",
+    "primaryRisks": [
+      "Contaminación del aceite del motor por hollín del EGR y dilución con combustible por la postinyección del DPF",
+      "Calidad del aire de la cabina (escape diésel urbano)",
+      "Cumplimiento de intervalos de cambio extendidos",
+      "Restricción de aire por polvo de carretera acumulado"
+    ],
+    "serviceIntervalNote": "Los intervalos de flota deben establecerse a partir de la aplicación validada del motor y del vehículo, los datos medidos de restricción o condición, el análisis del lubricante cuando se use, el régimen de la ruta y el historial de mantenimiento. Por defecto, las flotas de carretera y urbanas no deben compartir un mismo intervalo genérico.",
+    "keyMetrics": [
+      {
+        "label": "Régimen de la flota",
+        "value": "Larga distancia, regional, vocacional o urbano"
+      },
+      {
+        "label": "Servicio de la admisión de aire",
+        "value": "Depende de la aplicación y de la restricción"
+      },
+      {
+        "label": "Estrategia de lubricación",
+        "value": "Régimen del motor + condición del lubricante"
+      },
+      {
+        "label": "Estandarización de la flota",
+        "value": "Compatibilidad de aplicación verificada"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "SYNTRAX™",
+      "MICROKAPPA™",
+      "SYNTAPORE™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 16889",
+      "SAE J1858"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection",
+      "Fuel Cleanliness Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Condiciones de operación del diésel moderno",
+        "body": "Las flotas diésel comerciales combinan requisitos de aire del motor, combustible, lubricación, refrigeración y cabina con distintos patrones de ruta y ralentí. Las estrategias de postratamiento y recirculación pueden influir en las condiciones del lubricante y de la admisión, pero la decisión de mantenimiento resultante debe seguir vinculada al motor, la especificación del aceite, el historial de operación y los datos de aplicación aprobados."
+      },
+      {
+        "heading": "Mantenimiento de flota basado en la condición",
+        "body": "Las estrategias de servicio extendido deben respaldarse con evidencia de condición adecuada, como el historial de restricción, el análisis de aceite, las observaciones de calidad del combustible y los registros de mantenimiento. La capacidad del filtro por sí sola no establece un intervalo de cambio de aceite ni de servicio de componentes."
+      }
+    ]
+  }
+}

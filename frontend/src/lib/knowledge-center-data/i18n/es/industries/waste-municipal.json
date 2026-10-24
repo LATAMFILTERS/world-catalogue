@@ -1,0 +1,64 @@
+{
+  "industry": {
+    "slug": "waste-municipal",
+    "title": "Flotas de residuos y municipales",
+    "icon": "IND-MUN",
+    "dust": "High",
+    "description": "Filtración para flotas de recolección de residuos y servicios municipales con ciclos repetidos de arranque y parada, compactación hidráulica, exposición a partículas de la vía y orgánicas, ralentí y disponibilidad programada del servicio público."
+  },
+  "detail": {
+    "slug": "waste-municipal",
+    "contaminationEnvironment": "Servicio de flotas de residuos y municipales con operación repetida de parada y arranque, ralentí, uso de toma de fuerza (PTO), compactación hidráulica, exposición a partículas viales y orgánicas, humedad y requisitos de disponibilidad del servicio público.",
+    "primaryRisks": [
+      "Contaminación del circuito hidráulico de compactación por ciclos de trabajo extremos",
+      "Exposición de la admisión de aire a polvo orgánico y bioaerosoles",
+      "Contaminación del aceite del motor por operación de trayectos cortos y mucho ralentí",
+      "Salud del operador: exposición a bioaerosoles y polvo orgánico"
+    ],
+    "serviceIntervalNote": "Los intervalos en flotas de residuos y municipales deben reflejar el régimen de la ruta, el historial de ralentí y de PTO, la condición hidráulica, la carga de la admisión, la condición del lubricante y la evidencia aprobada de la aplicación. El servicio repetido de parada y arranque debe tratarse como una variable de régimen, no como un intervalo fijo universal.",
+    "keyMetrics": [
+      {
+        "label": "Perfil de trabajo",
+        "value": "Depende de parada y arranque + ralentí + PTO"
+      },
+      {
+        "label": "Carga hidráulica",
+        "value": "Depende del sistema de compactación"
+      },
+      {
+        "label": "Entorno de la cabina",
+        "value": "Depende de las partículas y del HVAC"
+      },
+      {
+        "label": "Planificación del servicio",
+        "value": "Basada en la ruta y en la condición del activo"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "NANOFORCE™",
+      "SYNTRAX™",
+      "MICROKAPPA™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 4406",
+      "ISO 16889"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Hydraulic Protection",
+      "Lubrication Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Ciclo de trabajo de la recolección de residuos",
+        "body": "La recolección de residuos combina aceleraciones repetidas, ralentí y trabajo hidráulico accionado por la PTO. La planificación del mantenimiento debe usar el historial real de la ruta, la condición del motor, la condición hidráulica y la exposición a la contaminación, en lugar de suponer que una misma presión, cantidad de paradas o intervalo de servicio se aplica a todos los vehículos."
+      },
+      {
+        "heading": "Bioaerosoles y polvo orgánico",
+        "body": "Los residuos orgánicos pueden aumentar la carga de partículas y biológica alrededor del entorno del operador. MICROKAPPA™ respalda la filtración del aire de cabina cuando está aprobado, pero el control de la exposición ocupacional requiere el cerramiento completo del HVAC, las prácticas de trabajo y los requisitos aplicables del lugar de trabajo; el filtro por sí solo no debe presentarse como una solución universal de control de la salud."
+      }
+    ]
+  }
+}

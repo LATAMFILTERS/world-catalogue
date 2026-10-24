@@ -2,6 +2,7 @@
 
 import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
+import { useReviewed } from '@/components/ReviewedText';
 import { KC_INDUSTRIES, KC_INDUSTRY_DETAILS, KC_TECHNOLOGIES, KCIndustryDetail } from '@/lib/knowledge-center-data';
 
 type KCIndustry = typeof KC_INDUSTRIES[number];
@@ -59,6 +60,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
   const otherIndustries = KC_INDUSTRIES.filter((ind) => ind.slug !== industry.slug);
   const dustColor = DUST_COLORS[industry.dust] || '#FFF12D';
   const commercialSlug = COMMERCIAL_INDUSTRY_SLUG[industry.slug] ?? industry.slug;
+  const tr = useReviewed();
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
@@ -69,9 +71,9 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Knowledge Center</Link>
+          <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{tr('Knowledge Center')}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
-          <Link href="/knowledge-center/industries" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Industries</Link>
+          <Link href="/knowledge-center/industries" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{tr('Industries')}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)' }}>{industry.title}</span>
         </div>
@@ -101,7 +103,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               padding: '0.25rem 0.6rem',
               letterSpacing: '0.08em',
             }}>
-              {industry.dust.toUpperCase()} CONTAMINATION EXPOSURE
+              {tr(`${industry.dust.toUpperCase()} CONTAMINATION EXPOSURE`)}
             </span>
           </motion.div>
 
@@ -158,7 +160,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                 padding: '0.55rem 0.9rem',
               }}
             >
-              See the full {industry.title} Filtration Systems guide →
+              {tr('See the full {industry} Filtration Systems guide →').replace('{industry}', industry.title)}
             </Link>
           </motion.div>
 
@@ -175,7 +177,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               }}
             >
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.5)', marginBottom: '0.5rem' }}>
-                CONTAMINATION ENVIRONMENT
+                {tr('CONTAMINATION ENVIRONMENT')}
               </p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>
                 {detail.contaminationEnvironment}
@@ -243,7 +245,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                 01 /
               </p>
               <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>
-                Primary Contamination Risks
+                {tr('Primary Contamination Risks')}
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 {detail.primaryRisks.map((risk, i) => (
@@ -274,7 +276,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                 02 /
               </p>
               <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '0.75rem' }}>
-                Service Interval Guidance
+                {tr('Service Interval Guidance')}
               </h2>
               <div style={{ padding: '1rem 1.25rem', background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.1)' }}>
                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
@@ -312,10 +314,10 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               textAlign: 'center',
             }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>
-                PENDING ENGINEERING DOCUMENTATION
+                {tr('PENDING ENGINEERING DOCUMENTATION')}
               </p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.5rem' }}>
-                Detailed industry documentation is being developed. Contact ELIMFILTERS for application-specific engineering consultation.
+                {tr('Detailed industry documentation is being developed. Contact ELIMFILTERS for application-specific engineering consultation.')}
               </p>
             </div>
           )}
@@ -326,7 +328,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
           {detail && detail.technologies.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                ELIMFILTERS TECHNOLOGIES
+                {tr('ELIMFILTERS TECHNOLOGIES')}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {detail.technologies.map((tech) => {
@@ -353,7 +355,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
           {detail && detail.standards.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                RELEVANT STANDARDS
+                {tr('RELEVANT STANDARDS')}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {detail.standards.map((std) => {
@@ -380,12 +382,12 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
           {detail && detail.systems.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                PROTECTION SYSTEMS
+                {tr('PROTECTION SYSTEMS')}
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                 {detail.systems.map((sys) => (
                   <div key={sys} style={{ border: '1px solid rgba(255,255,255,0.06)', padding: '0.5rem 0.75rem', fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>
-                    {sys}
+                    {tr(sys)}
                   </div>
                 ))}
               </div>
@@ -394,7 +396,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
 
           <div>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-              OTHER INDUSTRIES
+              {tr('OTHER INDUSTRIES')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
               {otherIndustries.map((ind) => (
@@ -404,7 +406,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                     style={{ padding: '0.5rem 0.75rem', fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', transition: 'all 0.15s', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
                   >
                     <span style={{ fontSize: '0.9rem' }}>{ind.icon}</span>
-                    {ind.title}
+                    {tr(ind.title)}
                   </motion.div>
                 </Link>
               ))}

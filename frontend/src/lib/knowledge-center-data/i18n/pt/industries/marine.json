@@ -1,0 +1,66 @@
+{
+  "industry": {
+    "slug": "marine",
+    "title": "Marítimo",
+    "icon": "IND-MAR",
+    "dust": "Moderate",
+    "description": "Filtração marítima para sistemas de propulsão, auxiliares, hidráulicos e de manuseio de combustível que operam com exposição ao sal, risco de contaminação por água e requisitos específicos de cada embarcação."
+  },
+  "detail": {
+    "slug": "marine",
+    "contaminationEnvironment": "Serviço marítimo de propulsão, auxiliares e hidráulica com exposição ao sal, risco de contaminação do combustível por água, condensação em tanques, contaminação na transferência, longos períodos de inatividade e requisitos operacionais específicos de cada embarcação.",
+    "primaryRisks": [
+      "Contaminação do combustível por água — crescimento microbiano, corrosão, dano aos injetores",
+      "Intrusão de água salgada nos sistemas do motor e hidráulicos",
+      "Os requisitos regulatórios e operacionais marítimos exigem verificação específica da aplicação",
+      "Corrosão dos componentes metálicos do filtro pela atmosfera salina"
+    ],
+    "serviceIntervalNote": "Os intervalos de serviço marítimos devem seguir o motor, a embarcação, o sistema de manuseio de combustível, a condição de contaminação e a evidência de produto aprovados. O acúmulo de água, a restrição e a condição do fluido devem ser monitorados em vez de reduzidos a um intervalo universal.",
+    "keyMetrics": [
+      {
+        "label": "Exposição combustível-água",
+        "value": "Depende do tanque, da transferência e da condensação"
+      },
+      {
+        "label": "Ambiente salino",
+        "value": "Exige compatibilidade de materiais e vedação"
+      },
+      {
+        "label": "Requisitos operacionais marítimos",
+        "value": "Verificação específica da aplicação"
+      },
+      {
+        "label": "MARINECLEAN™",
+        "value": "Solução marítima especializada"
+      }
+    ],
+    "technologies": [
+      "SYNTAPORE™",
+      "HYDROCORE™",
+      "SYNTRAX™",
+      "NANOFORCE™",
+      "MICROKAPPA™"
+    ],
+    "standards": [
+      "ISO 12937",
+      "ASTM D6304",
+      "ISO 16889",
+      "ISO 4406"
+    ],
+    "systems": [
+      "Fuel Cleanliness Protection",
+      "Lubrication Protection",
+      "Hydraulic Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Gestão do combustível e da água em aplicações marítimas",
+        "body": "Os sistemas de combustível marítimos podem acumular água por condensação, práticas de transferência e condições de armazenamento. A estratégia de filtração deve separar o controle de partículas dos requisitos de gestão da água e permanecer compatível com a arquitetura aprovada do motor, da carcaça e do manuseio de combustível."
+      },
+      {
+        "heading": "Contexto operacional marítimo e MARINECLEAN™",
+        "body": "A seleção da filtração marítima deve considerar a embarcação, o motor, o ambiente hidráulico e de manuseio de combustível, o perfil operacional e os requisitos regulatórios aplicáveis à jurisdição e ao serviço específicos. O MARINECLEAN™ é uma solução comercial especializada da ELIMFILTERS para ambientes operacionais marítimos. Qualquer alegação de certificação ou conformidade exige evidência verificada específica do produto e da aplicação antes do uso público."
+      }
+    ]
+  }
+}

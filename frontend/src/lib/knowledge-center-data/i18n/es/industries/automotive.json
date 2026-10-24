@@ -1,0 +1,64 @@
+{
+  "industry": {
+    "slug": "automotive",
+    "title": "Automotriz y línea liviana",
+    "icon": "IND-LD",
+    "dust": "Moderate",
+    "description": "Filtración para vehículos de pasajeros y de línea liviana en uso urbano, en carretera y en flotas, que requiere identificar con precisión el vehículo, el motor, el año del modelo y el sistema protegido."
+  },
+  "detail": {
+    "slug": "automotive",
+    "contaminationEnvironment": "Servicio liviano variable: operación urbana de parada y arranque, régimen de carretera, polvo y polen estacionales, residuos viales, arranques repetidos, ralentí, demanda de HVAC según el clima y uso mixto de flota.",
+    "primaryRisks": [
+      "Identificación incorrecta de año, marca, modelo o motor que causa un error de aplicación",
+      "Contaminación del aire del motor por polvo vial y carga de la admisión",
+      "Contaminación de la lubricación por partículas de desgaste, subproductos de la combustión e ingreso durante el servicio",
+      "Contaminación del sistema de combustible que requiere filtración específica de la aplicación",
+      "Carga de partículas y polen en la cabina a través del sistema HVAC"
+    ],
+    "serviceIntervalNote": "Los intervalos de servicio deben seguir la aplicación validada del vehículo y el régimen de operación real. El servicio urbano de parada y arranque, los caminos polvorientos, el polen estacional y el uso de la flota pueden cambiar el historial de carga y no deben reducirse a un intervalo genérico.",
+    "keyMetrics": [
+      {
+        "label": "Identificación principal",
+        "value": "Año + marca + modelo + motor"
+      },
+      {
+        "label": "Control de la aplicación",
+        "value": "Año modelo y configuración del sistema"
+      },
+      {
+        "label": "Perfiles de trabajo",
+        "value": "Urbano, carretera, estacional y flota"
+      },
+      {
+        "label": "Evidencia de validación",
+        "value": "Referencia OEM + dimensiones + datos de aplicación"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "SYNTRAX™",
+      "MICROKAPPA™"
+    ],
+    "standards": [],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Fuel Cleanliness Protection",
+      "Lubrication Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Identificación de la aplicación del vehículo",
+        "body": "La filtración automotriz empieza por la aplicación real del vehículo. El año, la marca y el modelo establecen la familia del vehículo, pero el motor, el tipo de combustible, la configuración del HVAC, el sistema protegido y los cambios de año modelo determinan si un filtro es realmente correcto. Una coincidencia visual o una sola referencia cruzada no es evidencia suficiente por sí misma."
+      },
+      {
+        "heading": "Régimen de operación y contaminación",
+        "body": "Un vehículo de uso diario, una furgoneta de reparto, una camioneta pickup y una flota liviana mixta pueden compartir plataformas y acumular contaminación de forma distinta. El régimen urbano de parada y arranque aumenta los arranques repetidos y el ralentí; la operación en carretera produce historiales de carga sostenida más largos; el polvo, el polen y los residuos viales estacionales alteran la demanda de filtración de la admisión y de la cabina."
+      },
+      {
+        "heading": "Disciplina de servicio y de referencias cruzadas",
+        "body": "Las referencias OEM y de filtros actuales conocidas son puntos de partida útiles para identificar el producto, pero la aceptación final debe conciliar el vehículo, el motor, el año modelo, el sistema protegido, las dimensiones y la evidencia documentada de la aplicación. La estandarización de la flota debe seguir la compatibilidad verificada, no la apariencia ni una especificación compartida."
+      }
+    ]
+  }
+}

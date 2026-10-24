@@ -1,0 +1,67 @@
+{
+  "industry": {
+    "slug": "agriculture",
+    "title": "Agricultura",
+    "icon": "IND-AGR",
+    "dust": "High",
+    "description": "Tierra, polvo de granos y materia orgánica que desgastan la admisión de aire y los sistemas hidráulicos."
+  },
+  "detail": {
+    "slug": "agriculture",
+    "contaminationEnvironment": "Servicio agrícola estacional con residuos de cultivo, polvo de grano, paja, polvo de suelo, humedad cambiante y trabajo de cosecha con plazos críticos que puede acelerar la carga de la admisión y de la cabina.",
+    "primaryRisks": [
+      "Saturación de la admisión de aire durante la cosecha: requiere servicio diario o más frecuente",
+      "Salud del operador en cabina: exposición a polvo de grano y agroquímicos",
+      "Contaminación del sistema hidráulico por operaciones de ciclo intenso",
+      "Contaminación con agua del combustible en almacenamiento estacional"
+    ],
+    "serviceIntervalNote": "El servicio agrícola debe basarse en la restricción real, el cultivo, la temporada, la carga de polvo, el estado del prefiltro, el régimen de la máquina y la evidencia aprobada del producto. Las condiciones de cosecha pueden cambiar rápidamente y no deben reducirse a un intervalo fijo universal.",
+    "keyMetrics": [
+      {
+        "label": "Carga estacional",
+        "value": "Depende del cultivo y de las condiciones de cosecha"
+      },
+      {
+        "label": "Beneficio del prefiltro",
+        "value": "Depende de la configuración y de las condiciones del campo"
+      },
+      {
+        "label": "Demanda de la cabina",
+        "value": "Depende del polvo, el polen y el HVAC"
+      },
+      {
+        "label": "Disparador de servicio",
+        "value": "Específico de la condición y de la aplicación"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "INTEKCORE™",
+      "SYNTRAX™",
+      "MICROKAPPA™",
+      "NANOFORCE™",
+      "HYDROCORE™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 4406",
+      "ISO 16889"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection",
+      "Hydraulic Protection",
+      "Fuel Cleanliness Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Contaminación en temporada de cosecha",
+        "body": "La cosecha combina polvo de cultivo, paja y suelo removido alrededor de maquinaria de alto flujo de aire. La protección de la admisión debe evaluarse como un sistema que incluya la prelimpieza cuando aplique, la filtración primaria, el sellado, el monitoreo de restricción y el acceso de servicio, en lugar de suponer un único intervalo o un multiplicador de extensión de vida."
+      },
+      {
+        "heading": "Estrategia para equipos estacionales",
+        "body": "Cosechadoras, tractores, pulverizadoras y equipos de apoyo enfrentan fuentes de contaminación y ciclos de trabajo distintos. La selección de filtros y la planificación del mantenimiento deben ajustarse a la máquina, el motor, la configuración hidráulica, el entorno de la cabina y el perfil de uso estacional reales."
+      }
+    ]
+  }
+}

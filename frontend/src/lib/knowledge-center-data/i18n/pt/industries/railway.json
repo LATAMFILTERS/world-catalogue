@@ -1,0 +1,61 @@
+{
+  "industry": {
+    "slug": "railway",
+    "title": "Ferroviário",
+    "icon": "IND-RAL",
+    "dust": "Moderate",
+    "description": "Fuligem diesel, poeira de freios e requisitos de intervalos de serviço estendidos em locomotivas e frotas ferroviárias."
+  },
+  "detail": {
+    "slug": "railway",
+    "contaminationEnvironment": "Serviço ferroviário com fuligem diesel, partículas de freios, exposição em túneis, janelas de manutenção limitadas e frotas heterogêneas de locomotivas ou veículos ferroviários.",
+    "primaryRisks": [
+      "Contaminação do óleo lubrificante por acúmulo de fuligem diesel",
+      "Intervalos de serviço estendidos — as janelas de manutenção são limitadas pelos horários de operação",
+      "Filtração do ar de arrefecimento dos motores de tração (fuligem de túnel)",
+      "Padronização da frota entre classes heterogêneas de locomotivas"
+    ],
+    "serviceIntervalNote": "Os intervalos de serviço ferroviário devem seguir o ambiente da rota, a configuração do motor e da admissão, a condição do lubrificante, as horas de operação e a evidência de manutenção da frota, em vez de uma única faixa de horas para túnel ou superfície.",
+    "keyMetrics": [
+      {
+        "label": "Ambiente da rota",
+        "value": "A exposição em túnel e em superfície é diferente"
+      },
+      {
+        "label": "Condição da lubrificação",
+        "value": "Depende do motor e da análise de óleo"
+      },
+      {
+        "label": "Padronização da frota",
+        "value": "Somente com compatibilidade verificada"
+      },
+      {
+        "label": "Planejamento da manutenção",
+        "value": "Depende da rota e da disponibilidade"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "SYNTRAX™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 16889",
+      "SAE J1858"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Perfil de contaminação ferroviário",
+        "body": "O equipamento ferroviário pode encontrar fuligem do motor, partículas de freios e contaminantes concentrados em túneis enquanto opera com janelas de manutenção limitadas. A estratégia de admissão e de lubrificação deve corresponder à locomotiva ou ao veículo ferroviário real, ao perfil da rota e à condição medida."
+      },
+      {
+        "heading": "Padronização da frota",
+        "body": "A padronização só reduz a complexidade de peças quando as aplicações de base são realmente compatíveis. A consolidação da frota deve conciliar o motor, a carcaça, as dimensões, a função do sistema e a evidência validada de referências cruzadas antes de atribuir um mesmo filtro a várias classes."
+      }
+    ]
+  }
+}
