@@ -45,7 +45,9 @@ const runNode = (script, scriptArgs) => {
       try { json = JSON.parse(out.slice(start, end + 1)); } catch { /* keep shrinking */ }
     }
   }
-  const err = (p.stderr || '').split('\n').find((l) => /STOP_REVIEW|Error|error:/.test(l)) || (p.stderr || '').trim().split('\n')[0] || null;
+  // Real message lines only ("Error: ...", "STOP_REVIEW: ...", "WARNING: ..."), never echoed source lines.
+  const lines = (p.stderr || '').split('\n').map((l) => l.trim());
+  const err = lines.find((l) => /^(\w*Error: |STOP_REVIEW: |WARNING: |error: )/.test(l)) || lines.find(Boolean) || null;
   return { status: p.status, json, error: p.status === 0 ? null : err };
 };
 
@@ -93,10 +95,18 @@ fs.mkdirSync(runDir, { recursive: true });
 const rows = [];
 for (const [i, t] of targets.entries()) {
   const dir = path.join(runDir, t.sku);
-  const url = `https://www.mann-filter.com/us-en/catalog/search-results/product.html/${slug(t.mann_code)}_mann-filter.html`;
-  const pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', t.sku, '--mann', t.mann_code, '--url', url, '--out', dir]);
+  // us-en first (US vehicle listings); fall back to the global en page when the
+  // product is missing there or lists no vehicles.
+  let pilot; let locale;
+  for (locale of ['us-en', 'en']) {
+    const url = `https://www.mann-filter.com/${locale}/catalog/search-results/product.html/${slug(t.mann_code)}_mann-filter.html`;
+    pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', t.sku, '--mann', t.mann_code, '--url', url, '--out', dir]);
+    if (pilot.status === 0 && pilot.json?.counts) break;
+    if (!/MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) break;
+    await sleep(delayMs);
+  }
   const c = pilot.json?.counts;
-  const row = { sku: t.sku, mann_code: t.mann_code, dir, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
+  const row = { sku: t.sku, mann_code: t.mann_code, locale, dir, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
     current_distinct: c?.current_distinct_keys ?? null, matched: c?.matched_make_model_year ?? null,
     only_in_current: c?.only_in_current ?? null, engine_mismatch: c?.matched_engine_code_mismatch ?? null,
     match_ratio: null, guard_after: null, eligible: false, reason: null };
