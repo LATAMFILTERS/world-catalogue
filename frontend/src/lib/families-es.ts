@@ -263,7 +263,7 @@ export const INDUSTRY_ES: Record<string, string> = {
   marine: 'Sector marino',
   'oil-gas': 'Petróleo y gas',
   railway: 'Ferroviaria',
-  'bus-coach': 'Buses y autocares',
+  'bus-coach': 'Autobuses',
   manufacturing: 'Manufactura',
   'waste-municipal': 'Residuos y servicios municipales',
   automotive: 'Automotriz',

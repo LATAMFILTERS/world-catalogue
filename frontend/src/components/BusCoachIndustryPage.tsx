@@ -63,7 +63,7 @@ export function BusCoachIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         '@type': 'WebPage',
         '@id': `${pageUrl}#page`,
         url: pageUrl,
-        name: lang === 'es' ? 'Filtración para autobuses y autocares' : lang === 'pt' ? 'Filtração para ônibus e transporte rodoviário' : 'Bus & Coach Filtration Systems',
+        name: lang === 'es' ? 'Filtración para autobuses' : lang === 'pt' ? 'Filtração para ônibus' : 'Bus & Coach Filtration Systems',
         inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Bus and coach filtration systems for transit buses, intercity coaches, school buses, shuttle fleets and passenger vehicles requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
