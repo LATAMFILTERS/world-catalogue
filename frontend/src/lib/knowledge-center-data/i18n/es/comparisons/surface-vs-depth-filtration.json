@@ -1,0 +1,187 @@
+{
+  "id": "COMP-SURFACE-VS-DEPTH",
+  "slug": "surface-vs-depth-filtration",
+  "title": "Filtración superficial frente a filtración en profundidad",
+  "subtitle": "Dos mecanismos fundamentales de captura de partículas: dónde y cómo se retienen las partículas en el medio filtrante",
+  "category": "technology",
+  "engineeringObjective": "Entender el mecanismo físico con el que cada tipo de filtración captura partículas y seleccionar el mecanismo adecuado para una aplicación según el tamaño de partícula, el flujo del fluido, el comportamiento de la caída de presión y los requisitos de contralavado.",
+  "comparisonScope": "Cubre la filtración superficial (captura de partículas en la superficie del medio) y la filtración en profundidad (captura de partículas dentro del volumen del medio). No cubre la precipitación electrostática, la separación centrífuga ni la coalescencia.",
+  "governingStandards": [
+    "ISO 16889:2022",
+    "ISO 11171:2010",
+    "ISO 11125:2018"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Filtración superficial",
+    "description": "Las partículas se capturan en la cara aguas arriba del medio filtrante o sobre ella, principalmente por un mecanismo de tamizado en el que las partículas mayores que el tamaño de poro del medio no pueden pasar. Las implementaciones comunes incluyen malla de alambre tejida, metal sinterizado, membranas cerámicas y membranas de PTFE plisadas. La torta de filtración que se forma en la superficie con el tiempo aumenta progresivamente la eficiencia, pero también la presión diferencial. Los elementos de filtración superficial suelen ser limpiables o lavables a contracorriente porque la carga de partículas se concentra en la superficie accesible.",
+    "advantages": [
+      "Clasificación de filtración absoluta: las partículas por encima del tamaño de poro nominal se capturan con una certeza cercana al 100%, algo especialmente valioso en malla de alambre o metal sinterizado",
+      "Limpiable/lavable a contracorriente: la torta superficial puede eliminarse con contralavado, pulsos o limpieza mecánica, lo que permite reutilizarlo",
+      "Comportamiento predecible de la caída de presión: la ΔP aumenta de forma monótona a medida que se forma la torta; condición terminal bien definida",
+      "Eficaz con cargas altas de partículas cuando la formación de torta es manejable y los ciclos de limpieza son viables",
+      "Bajo volumen de medio: es posible un diseño compacto del elemento cuando la superficie es la variable principal"
+    ],
+    "limitations": [
+      "Tamizado de una sola capa: las partículas iguales o menores que el tamaño de poro pasan sin obstáculo; no hay protección en profundidad para las partículas menores que el poro",
+      "Capacidad de retención de suciedad limitada para partículas muy finas: la torta se ciega rápidamente con contaminantes submicrónicos",
+      "Riesgo de rearrastre de la torta en los picos de flujo: las partículas capturadas pueden liberarse y migrar aguas abajo ante un cambio repentino de ΔP",
+      "La especificación del tamaño de poro del medio exige una tolerancia de fabricación estrecha: un solo defecto o poro crea una vía de derivación en ese punto",
+      "No es adecuada para contaminación compresible (lodo, gel) que puede extruirse a través de la superficie bajo presión"
+    ],
+    "typicalApplications": [
+      "Coladores de sistemas hidráulicos (protección gruesa, malla de alambre limpiable, 100–500 µm)",
+      "Filtros de línea de retorno de alto caudal con capacidad de contralavado en sistemas hidráulicos industriales",
+      "Precoladores de combustible aguas arriba de los elementos de filtración primaria",
+      "Filtración de procesos donde los ciclos de limpieza del filtro son económicamente viables",
+      "Aplicaciones que requieren exclusión absoluta de partículas por encima de un umbral de tamaño definido"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Filtración en profundidad",
+    "description": "Las partículas se capturan dentro del volumen tridimensional del medio filtrante mediante una combinación de mecanismos: impacto inercial, intercepción directa, difusión (movimiento browniano en partículas submicrónicas) y atracción electrostática. Los medios fibrosos y granulares (celulosa, fibra sintética, fibra de vidrio, carbón activado) operan por filtración en profundidad. Un gradiente de densidad progresivo —fibras de menor densidad en la cara aguas arriba y más finas aguas abajo— distribuye la carga de partículas en la profundidad del medio y maximiza la capacidad de retención de suciedad por unidad de volumen.",
+    "advantages": [
+      "Alta capacidad de retención de suciedad: la carga de partículas se distribuye en la profundidad del medio en lugar de concentrarse en la superficie",
+      "El gradiente de densidad progresivo captura partículas de distintos tamaños en distintas zonas del medio: más partículas capturadas por unidad de volumen",
+      "Eficaz para partículas submicrónicas mediante mecanismos de difusión y electrostáticos: la filtración superficial no puede capturarlas",
+      "La eficiencia por relación Beta (ISO 16889) es la métrica característica: permite especificar y comparar con precisión",
+      "Menor caída de presión inicial que una filtración superficial equivalente con el mismo caudal y eficiencia",
+      "Más tolerante a distribuciones variables del tamaño de las partículas contaminantes: captura con eficacia partículas grandes y pequeñas"
+    ],
+    "limitations": [
+      "No es limpiable: una vez cargado el medio en profundidad, las partículas capturadas están distribuidas en el medio y no pueden eliminarse por contralavado",
+      "La eficiencia puede variar con el caudal: a velocidades muy altas mejora la captura inercial, pero la captura submicrónica dominada por la difusión puede disminuir",
+      "Riesgo de migración del medio con alta presión diferencial: las fibras o las partículas capturadas pueden desprenderse de la cara aguas abajo si se compromete la integridad del medio",
+      "El comportamiento de la caída de presión no es lineal: la ΔP terminal puede subir bruscamente una vez agotada la capacidad principal",
+      "De un solo uso: el elemento debe reemplazarse al final de su vida útil"
+    ],
+    "typicalApplications": [
+      "Elementos de filtro hidráulico primarios (clasificados según la ISO 16889, β₁₀(c) ≥ 200)",
+      "Elementos de filtro de aceite lubricante en circuitos de motor",
+      "Elementos de filtración de combustible para sistemas diésel HPCR",
+      "Elementos de filtro de admisión de aire (ISO 5011)",
+      "Filtración de aire de cabina (ISO 29463, grados HEPA)",
+      "Todas las aplicaciones que requieren especificar la eficiencia por relación Beta"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Mecanismo de captura",
+      "optionA": "Tamizado en la superficie del medio (exclusión por poro)",
+      "optionB": "Impacto, intercepción y difusión dentro del volumen del medio"
+    },
+    {
+      "dimension": "Ubicación de la retención de partículas",
+      "optionA": "Cara aguas arriba (superficie accesible)",
+      "optionB": "En toda la profundidad del medio (inaccesible tras la captura)"
+    },
+    {
+      "dimension": "Capacidad submicrónica",
+      "optionA": "Limitada: depende solo del tamaño de poro",
+      "optionB": "Sí: la difusión captura partículas submicrónicas por movimiento browniano"
+    },
+    {
+      "dimension": "Capacidad de retención de suciedad",
+      "optionA": "Limitada a la torta superficial antes del cegado",
+      "optionB": "Alta: distribuida en el volumen del medio"
+    },
+    {
+      "dimension": "Limpiabilidad",
+      "optionA": "Limpiable / lavable a contracorriente",
+      "optionB": "De un solo uso: no limpiable"
+    },
+    {
+      "dimension": "Método de clasificación de la eficiencia",
+      "optionA": "Tamaño de poro absoluto (µm); sin clasificación Beta ISO 16889",
+      "optionB": "Relación Beta ISO 16889 β_x(c): método de clasificación estándar"
+    },
+    {
+      "dimension": "Comportamiento de la ΔP",
+      "optionA": "Aumenta de forma monótona con la formación de torta",
+      "optionB": "Aumento gradual; subida brusca con la carga terminal"
+    },
+    {
+      "dimension": "Riesgo de rearrastre",
+      "optionA": "Mayor: la torta superficial puede liberarse ante un pico",
+      "optionB": "Menor: partículas capturadas dentro de la matriz del medio"
+    }
+  ],
+  "engineeringImplications": [
+    "La filtración en profundidad es el mecanismo de todos los elementos filtrantes clasificados según la ISO 16889: los coladores de filtración superficial son dispositivos de prefiltración y protección, no elementos principales de control de contaminación.",
+    "La filtración superficial ofrece exclusión absoluta de partículas por encima del tamaño de poro, pero no puede contribuir a mejorar el código de limpieza ISO 4406 por debajo de la abertura de la malla: debe seguirle una filtración en profundidad.",
+    "En entornos de alta contaminación, un colador superficial aguas arriba de un elemento en profundidad prolonga la vida útil de este último al eliminar la carga gruesa a granel antes de que intervenga el medio en profundidad.",
+    "Nunca especifique una malla de alambre limpiable como única etapa de filtración en un sistema que requiere códigos de limpieza ISO: las partículas menores que el poro pasarán sin obstáculo."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Prefiltración gruesa aguas arriba de los elementos primarios en profundidad, para protegerlos de cargas de partículas catastróficas",
+        "Aplicaciones que requieren elementos limpiables por ubicación remota o difícil acceso al elemento",
+        "Aplicaciones de colado de alto caudal en las que solo se necesita excluir partículas gruesas (>100 µm)",
+        "Sistemas con capacidad de contralavado en filtración industrial donde se requiere operación continua con limpieza"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Toda filtración primaria hidráulica, de aceite lubricante, de combustible y de admisión de aire que requiera códigos de limpieza ISO o especificar la eficiencia por relación Beta",
+        "Cualquier aplicación que requiera capturar partículas submicrónicas",
+        "Aplicaciones con alta DHC que requieren intervalos de servicio extendidos",
+        "Todas las aplicaciones en las que se exigen ensayos de desempeño ISO 16889, ISO 5011 o normas equivalentes"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Como única etapa de filtración cuando deben cumplirse códigos de limpieza ISO 4406",
+        "Aplicaciones que requieren capturar partículas submicrónicas",
+        "Donde el riesgo de rearrastre por picos de flujo es inaceptable (circuitos con servoválvulas)"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Aplicaciones que requieren reutilizar el elemento mediante limpieza o contralavado",
+        "Precolado grueso, donde una malla superficial es más adecuada y rentable"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16889",
+    "iso-11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE",
+    "SYNTRAX",
+    "MACROCORE",
+    "SYNTAPORE"
+  ],
+  "relatedSystems": [
+    "hydraulic",
+    "lube-oil",
+    "fuel",
+    "air-intake"
+  ],
+  "relatedTerms": [
+    "depth-filtration",
+    "surface-filtration",
+    "beta-ratio",
+    "dirt-holding-capacity",
+    "differential-pressure"
+  ],
+  "relatedArticles": [
+    "filter-media-engineering",
+    "fluid-cleanliness"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    }
+  ]
+}

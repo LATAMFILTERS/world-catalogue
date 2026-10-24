@@ -1,0 +1,172 @@
+{
+  "id": "COMP-BYPASS-VS-FULL",
+  "slug": "bypass-vs-full-flow-filtration",
+  "title": "Filtração de bypass versus fluxo total (primária)",
+  "subtitle": "Duas configurações de circuito de filtração de óleo: controle primário da contaminação versus polimento e filtração fina",
+  "category": "system",
+  "engineeringObjective": "Entender quando a filtração em bypass (de vazão parcial) complementa a filtração primária de fluxo total e projetar a combinação correta de topologias de circuito para a meta de contaminação de um dado sistema de óleo lubrificante ou hidráulico.",
+  "comparisonScope": "Cobre as configurações de circuito de filtração de fluxo total (primária, em linha) e em bypass (de vazão parcial) em sistemas de óleo lubrificante e hidráulicos. Não cobre a filtração hidráulica off-line kidney-loop (tratada em outra comparação).",
+  "governingStandards": [
+    "ISO 16889:2022",
+    "ISO 4406:2021",
+    "SAE J1811"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Filtração de fluxo total",
+    "description": "Toda a vazão da bomba passa pelo elemento filtrante antes de chegar aos componentes críticos do sistema. O elemento filtrante deve deixar passar a vazão total do sistema com pressão diferencial aceitável. Por isso, os elementos de fluxo total precisam equilibrar a eficiência com capacidade de vazão suficiente — elementos de eficiência muito alta (muito finos) podem criar ΔP inaceitavelmente alta com a vazão total. Uma válvula de bypass é incorporada para abrir quando a ΔP atinge o ajuste de bypass (tipicamente 3–6 bar), protegendo o sistema contra a falta de óleo se o elemento bloquear. Essa abertura de bypass deixa passar fluido não filtrado para os componentes.",
+    "advantages": [
+      "Todo o fluido é filtrado a cada passagem pelo circuito — proteção máxima para os componentes do sistema",
+      "Garante que os contaminantes gerados na partida do motor ou em eventos transitórios sejam capturados antes de chegar aos mancais ou às válvulas",
+      "Configuração padrão em todos os circuitos de óleo lubrificante de motores automotivos e comerciais — procedimentos de manutenção bem conhecidos",
+      "Substituição de um único elemento em intervalo de serviço definido — protocolo de manutenção simples"
+    ],
+    "limitations": [
+      "O requisito de fluxo total obriga a ceder em eficiência — elementos mais grossos (β₁₀(c) ≥ 75 em vez de ≥ 200) são frequentemente usados para manter restrição aceitável na vazão nominal",
+      "A abertura da válvula de bypass (com ΔP alta ou bloqueio) deixa o fluido não filtrado chegar aos componentes — o controle de contaminação fica comprometido justamente quando a proteção é mais necessária",
+      "Após longa vida do cárter/reservatório, acumula-se uma grande carga de sujeira de partículas finas abaixo da faixa de captura efetiva do elemento de fluxo total",
+      "O intervalo de serviço do elemento é determinado pela restrição (ΔP) — um sistema pouco carregado pode trocar elementos antes de esgotar a DHC; um sistema muito carregado pode exceder a capacidade"
+    ],
+    "typicalApplications": [
+      "Todos os circuitos de óleo lubrificante do cárter de motores automotivos e comerciais",
+      "Filtração primária na linha de retorno ou na linha de pressão do circuito hidráulico",
+      "Circuitos de fluido de transmissão",
+      "Qualquer circuito em que todo o fluido deva ser condicionado antes de chegar aos componentes críticos"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Filtração de bypass (fluxo parcial)",
+    "description": "Uma fração da vazão do sistema (tipicamente 5–15%) é desviada por um elemento de filtração fino de alta eficiência, em paralelo com o circuito principal de fluxo total. O elemento em bypass recebe apenas uma fração da vazão do sistema, podendo operar com eficiência muito alta (meio muito fino, β₂(c) ≥ 200 ou mais) sem criar restrição excessiva ao fluxo principal de óleo. Com o tempo, o elemento em bypass remove progressivamente partículas submicrônicas, água e produtos de oxidação que o elemento de fluxo total não consegue capturar. A filtração em bypass se soma à de fluxo total — ela não a substitui.",
+    "advantages": [
+      "É possível uma eficiência de filtração muito alta (β₂(c), β₅(c)) porque a baixa vazão permite meio fino sem restrição inaceitável",
+      "Captura partículas submicrônicas, água, fuligem e produtos de diluição por combustível abaixo do tamanho de captura do elemento de fluxo total",
+      "Prolonga a vida do fluido ao remover continuamente os subprodutos de degradação — programas de análise de óleo frequentemente mostram intervalos de troca mais longos com filtração em bypass",
+      "Não afeta o fluxo do sistema principal — opera em paralelo sem risco de falta de fluxo",
+      "A capacidade de retenção de sujeira não é o fator limitante — o elemento fino é trocado com base no tempo/na análise de óleo, e não na restrição"
+    ],
+    "limitations": [
+      "Processa apenas 5–15% da vazão total a cada passagem pelo circuito — oferece polimento progressivo, e não proteção imediata de todo o circuito",
+      "Não elimina a filtração primária de fluxo total — o bypass é complementar, não um substituto",
+      "Custo adicional de elemento, montagem e tubulação além da filtração primária",
+      "O elemento de meio fino tem DHC menor que o elemento primário — pode exigir substituições mais frequentes se a vazão em bypass for alta",
+      "Não é eficaz para capturar partículas grandes de eventos de contaminação catastróficos — o elemento de fluxo total é a barreira principal"
+    ],
+    "typicalApplications": [
+      "Programas de intervalo estendido de troca de óleo (motores de caminhões pesados e fora de estrada)",
+      "Operações de frotas com programas de análise de óleo voltados à redução do consumo de fluido",
+      "Sistemas hidráulicos industriais que exigem códigos de limpeza ISO 16/14/11 ou mais rigorosos junto com a filtração primária",
+      "Equipamentos de alto valor (mineração, geração de energia) em que prolongar a vida do fluido justifica o custo de filtração adicional",
+      "Motores operando em ambientes com muita fuligem, onde o elemento de fluxo total satura rapidamente"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Fração de vazão processada",
+      "optionA": "100% da vazão do sistema",
+      "optionB": "5–15% da vazão do sistema (desvio parcial)"
+    },
+    {
+      "dimension": "Eficiência Beta típica",
+      "optionA": "β₁₀(c) = 75–200 (restrição pela vazão)",
+      "optionB": "β₂(c)–β₅(c) ≥ 200 (a baixa vazão permite meio fino)"
+    },
+    {
+      "dimension": "Função no circuito",
+      "optionA": "Primária — deve proteger a cada passagem pelo circuito",
+      "optionB": "Polimento complementar — não substitui a primária"
+    },
+    {
+      "dimension": "Captura submicrônica",
+      "optionA": "Limitada pela eficiência sacrificada no fluxo total",
+      "optionB": "Sim — o meio fino em baixa vazão captura partículas submicrônicas"
+    },
+    {
+      "dimension": "Válvula de bypass",
+      "optionA": "Presente — abre no limite de ΔP (3–6 bar)",
+      "optionB": "Não necessária — a baixa vazão gera ΔP desprezível"
+    },
+    {
+      "dimension": "Prolongamento da vida do óleo",
+      "optionA": "Intervalos de troca padrão",
+      "optionB": "Intervalos de troca 25–100% mais longos documentados em estudos de campo"
+    },
+    {
+      "dimension": "Complexidade da manutenção",
+      "optionA": "Troca de um único elemento por ΔP ou por intervalo",
+      "optionB": "Elemento adicional em paralelo — dois elementos para gerenciar"
+    }
+  ],
+  "engineeringImplications": [
+    "A filtração em bypass não substitui a de fluxo total — um sistema apenas com bypass deixaria toda a contaminação gerada nos transientes de partida chegar sem filtragem aos componentes.",
+    "A combinação de fluxo total (β₁₀(c) ≥ 200) mais bypass (β₂(c) ≥ 200) obtém o melhor controle de contaminação possível dentro de restrições práticas de perda de carga.",
+    "Os dados de análise de óleo de frotas com filtração em bypass mostram consistentemente concentrações menores de metais de desgaste Fe, Cu e Al em comparação com apenas fluxo total — indicando que a etapa de polimento fino reduz o desgaste abrasivo.",
+    "Em sistemas com uma válvula de bypass que abre com frequência, a própria válvula é um indicador de problema de serviço — o elemento deve ser trocado, e não deixado em bypass na operação normal."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Todos os sistemas de óleo lubrificante e hidráulicos, como circuito de filtração primária obrigatório",
+        "Aplicações em que todo o fluido deve ser condicionado antes de chegar aos componentes críticos a cada passagem",
+        "Programas de manutenção com intervalos padrão"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Frotas pesadas que buscam intervalos de troca de óleo estendidos com validação por análise de óleo",
+        "Equipamentos de alto valor em que o retorno de prolongar a vida do fluido justifica o custo do elemento adicional",
+        "Sistemas em que o filtro primário de fluxo total sozinho não consegue atingir os códigos de limpeza ISO alvo pela restrição de eficiência",
+        "Aplicações diesel com muita fuligem (motores com EGR), onde a carga de fuligem satura rapidamente os elementos de fluxo total"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Nunca omitir — a filtração de fluxo total é obrigatória em todos os circuitos de óleo lubrificante e hidráulicos"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Como substituta da filtração primária de fluxo total",
+        "Equipamentos de vida curta ou descartáveis em que o custo do elemento adicional supera o benefício operacional",
+        "Sistemas com ambientes de operação muito limpos que já atingem os códigos de limpeza alvo apenas com a filtração primária"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16889",
+    "iso-4406"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX",
+    "NANOFORCE"
+  ],
+  "relatedSystems": [
+    "lube-oil",
+    "hydraulic"
+  ],
+  "relatedTerms": [
+    "bypass-valve",
+    "filtration-efficiency",
+    "dirt-holding-capacity",
+    "differential-pressure"
+  ],
+  "relatedArticles": [
+    "service-intervals",
+    "total-cost-of-ownership",
+    "fluid-cleanliness",
+    "contamination-control"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    }
+  ]
+}

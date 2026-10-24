@@ -1,0 +1,175 @@
+{
+  "id": "COMP-MULTI-VS-SINGLE-TEST",
+  "slug": "multipass-vs-single-pass-testing",
+  "title": "Ensayo de filtros multipaso ISO 16889 frente a ensayo de una pasada",
+  "subtitle": "Dos protocolos para medir el desempeño de elementos filtrantes: cómo el método de ensayo afecta los valores de eficiencia informados",
+  "category": "test-method",
+  "engineeringObjective": "Entender qué mide cada método de ensayo y por qué los datos multipaso ISO 16889 no pueden compararse directamente con los datos históricos de una pasada, para interpretar correctamente las especificaciones de desempeño de los elementos filtrantes.",
+  "comparisonScope": "Cubre la ISO 16889:2022 (multipaso) y los métodos de ensayo de una pasada (ISO 4572, retirada en 2000). No cubre los ensayos de filtros de aire (ISO 5011/SAE J726) ni los de filtros de cabina (ISO 29463).",
+  "governingStandards": [
+    "ISO 16889:2022",
+    "ISO 11171:2010",
+    "ISO 4406:2021"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Ensayo multipaso ISO 16889",
+    "description": "El método de ensayo internacional vigente para el desempeño de elementos de filtro de fluido hidráulico. El fluido circula de forma continua por el circuito de ensayo, con conteos de partículas aguas arriba medidos antes del filtro y conteos aguas abajo medidos después. La contaminación se inyecta de forma continua aguas arriba. La relación Beta se calcula a partir de los conteos acumulados de partículas aguas arriba frente a aguas abajo medidos con un contador óptico de partículas calibrado según la ISO 11171. El ensayo continúa hasta que el filtro alcanza la presión diferencial terminal. Se obtienen tanto la eficiencia de filtración como la capacidad de retención de suciedad. El sufijo (c) de los valores Beta (β_x(c)) indica datos de un contador de partículas calibrado según la ISO 11171.",
+    "advantages": [
+      "Simulación realista: el fluido contaminado que circula de forma continua refleja las condiciones reales de operación mejor que el ensayo de una pasada",
+      "Mide en un solo ensayo la eficiencia Y la capacidad de retención de suciedad: caracterización completa del desempeño",
+      "La calibración del contador de partículas (ISO 11171:2010) asegura la reproducibilidad entre laboratorios: distintos laboratorios producen resultados comparables",
+      "Norma vigente obligatoria para toda afirmación de cumplimiento ISO 16889: exigida en las compras internacionales",
+      "Los datos de ΔP terminal permiten los cálculos de ingeniería del intervalo de servicio y del ajuste de la válvula de derivación",
+      "Produce valores β_x(c) que se aplican directamente a los cálculos de diseño de sistemas con código de limpieza ISO 4406"
+    ],
+    "limitations": [
+      "Banco de ensayo más complejo (inyección de partículas, circulación continua, APC ISO 11171) que requiere una mayor inversión de capital que el ensayo de una pasada",
+      "El ensayo dura más que el de una pasada: el elemento debe cargarse hasta la ΔP terminal",
+      "Los valores Beta de los métodos multipaso y de una pasada son numéricamente distintos para el mismo elemento: la comparación con datos heredados es imposible sin saber qué método se usó"
+    ],
+    "typicalApplications": [
+      "Todos los ensayos vigentes de desempeño de elementos de filtro hidráulico y de aceite lubricante",
+      "Especificaciones de compra OEM para equipos nuevos",
+      "Investigación y desarrollo de nuevas formulaciones de medios filtrantes",
+      "Validación de cumplimiento ISO 16889 para afirmaciones de certificación",
+      "Verificación forense del desempeño de elementos provenientes de fallas en campo"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Método de ensayo de una pasada (ISO 4572, retirada)",
+    "description": "El fluido de ensayo contaminado pasa una sola vez por el elemento filtrante; se miden los conteos de partículas aguas arriba y aguas abajo. La eficiencia se calcula con esta relación de conteos de una pasada. La ISO 4572 usaba ACFTD (Air Cleaner Fine Test Dust) y contadores ópticos de partículas de primera generación sin la calibración ISO 11171. La ISO 4572 fue retirada en 2000 y reemplazada por la ISO 16889. Los valores de eficiencia de una pasada informados antes de 2000 son numéricamente distintos de los valores multipaso ISO 16889 para el mismo medio filtrante: la comparación directa no es válida. Nota: existen algunos métodos de una pasada ajenos a la filtración para aplicaciones específicas (p. ej., ensayos de membranas), pero la ISO 16889 no los cita.",
+    "advantages": [
+      "Banco de ensayo más simple: una sola pasada no requiere inyección continua de contaminación ni un circuito de circulación completo",
+      "Ejecución más rápida: no hace falta cargar el elemento hasta la ΔP terminal",
+      "Útil para un cribado rápido en desarrollo cuando el objetivo es la eficiencia relativa (no absoluta)",
+      "Existe un gran conjunto de datos históricos de productos anteriores a 2000: útil como referencia para el mantenimiento de sistemas heredados"
+    ],
+    "limitations": [
+      "Norma ISO retirada: no es válida para especificaciones de compra vigentes ni para afirmaciones de cumplimiento",
+      "El polvo de ensayo ACFTD está descontinuado: la ISO 12103-1 A4 (sucesora del ACFTD) produce conteos de partículas distintos al mismo tamaño nominal",
+      "Sin requisito de calibración ISO 11171: la variabilidad entre laboratorios era alta y los resultados de distintos laboratorios para el mismo elemento podían variar de forma significativa",
+      "Una sola pasada no capta cómo cambia la eficiencia a medida que el elemento se carga: el ensayo multipaso muestra la variación de la eficiencia con el estado de carga",
+      "Los valores Beta de una pasada ISO 4572 NO son intercambiables con los β_x(c) del ensayo multipaso ISO 16889",
+      "La capacidad de retención de suciedad no es un resultado principal del ensayo de una pasada"
+    ],
+    "typicalApplications": [
+      "Referencia histórica para fichas técnicas de productos heredados (anteriores a 2000)",
+      "Cribado interno en desarrollo, donde la comparación de eficiencia relativa importa más que los valores calibrados absolutos",
+      "Interpretar especificaciones OEM heredadas de elementos filtrantes anteriores a la adopción de la ISO 16889"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Circulación del fluido",
+      "optionA": "Continua: el fluido recircula durante todo el ensayo",
+      "optionB": "Una sola vez: el fluido pasa por el filtro una única vez"
+    },
+    {
+      "dimension": "Inyección de contaminación",
+      "optionA": "Inyección continua aguas arriba durante todo el ensayo",
+      "optionB": "Premezclada o agregada una vez aguas arriba"
+    },
+    {
+      "dimension": "Polvo de ensayo",
+      "optionA": "ISO 12103-1 A3 Medium (o A2/A4)",
+      "optionB": "ACFTD (descontinuado, ya no disponible)"
+    },
+    {
+      "dimension": "Contador de partículas",
+      "optionA": "APC calibrado según la ISO 11171:2010: obligatorio",
+      "optionB": "APC sin calibrar: época anterior a la ISO 11171"
+    },
+    {
+      "dimension": "Estado normativo actual",
+      "optionA": "Vigente: ISO 16889:2022",
+      "optionB": "Retirada: ISO 4572 (2000)"
+    },
+    {
+      "dimension": "Resultados",
+      "optionA": "Relación Beta β_x(c) + DHC [g] + ΔP terminal",
+      "optionB": "Eficiencia de una pasada en % (sin DHC)"
+    },
+    {
+      "dimension": "Reproducibilidad",
+      "optionA": "Alta: la calibración ISO 11171 asegura la concordancia entre laboratorios",
+      "optionB": "Baja: contador de partículas sin calibrar; gran variación entre laboratorios"
+    },
+    {
+      "dimension": "Comparabilidad de los datos",
+      "optionA": "Comparables a nivel global (misma base de calibración)",
+      "optionB": "No comparables con datos ISO 16889; solo de uso interno"
+    }
+  ],
+  "engineeringImplications": [
+    "Un filtro clasificado como \"99% eficiente a 10 µm\" en una ficha técnica de 1995 con la ISO 4572 NO equivale a β₁₀(c) ≥ 200 en un ensayo ISO 16889 vigente: nunca compare estos valores directamente.",
+    "Toda especificación de compra redactada hoy debe citar la ISO 16889 y exigir valores β_x(c) con el sufijo (c) de calibración: las especificaciones que citan la \"eficiencia de una pasada\" están técnicamente incompletas.",
+    "Los datos multipaso ISO 16889 le dicen al ingeniero cómo se comporta el elemento a lo largo de su vida útil (la eficiencia cambia a medida que aumenta la carga); los datos de una pasada reflejan solo el desempeño inicial del elemento limpio.",
+    "Al evaluar sustituciones de elementos filtrantes para equipos heredados, asegúrese de que el elemento de reemplazo tenga datos multipaso ISO 16889 y luego establezca qué métrica de desempeño (clasificación β, DHC) corresponde a la intención del diseño original."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Todas las especificaciones de desempeño y compras vigentes de elementos filtrantes",
+        "Cualquier aplicación que requiera cálculos de diseño con código de limpieza ISO 4406",
+        "Desarrollo de productos nuevos, certificación y validación de cumplimiento",
+        "Análisis forense de elementos filtrantes en investigaciones de desempeño en campo"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Interpretar datos históricos de productos (anteriores a 2000) para decisiones de mantenimiento de equipos heredados",
+        "Cribado interno rápido en desarrollo, donde bastan las comparaciones relativas (no valores certificados)"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "No hay razones válidas para evitar la ISO 16889 en la caracterización del desempeño de elementos de filtro de fluidos"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Cualquier especificación de compra vigente: la ISO 4572 está retirada",
+        "Cualquier afirmación de certificación o cumplimiento: los valores ISO 4572 no tienen reconocimiento internacional",
+        "Comparación cruzada con datos ISO 16889 modernos"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16889",
+    "iso-11171",
+    "iso-4406"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE",
+    "SYNTRAX"
+  ],
+  "relatedSystems": [
+    "hydraulic",
+    "lube-oil"
+  ],
+  "relatedTerms": [
+    "multipass-test",
+    "beta-ratio",
+    "filtration-efficiency",
+    "particle-counting"
+  ],
+  "relatedArticles": [
+    "testing-and-validation",
+    "fluid-cleanliness"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    }
+  ]
+}

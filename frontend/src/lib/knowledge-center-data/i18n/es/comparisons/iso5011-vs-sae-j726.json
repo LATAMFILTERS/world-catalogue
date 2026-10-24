@@ -1,0 +1,141 @@
+{
+  "id": "COMP-ISO5011-VS-SAE",
+  "slug": "iso5011-vs-sae-j726",
+  "title": "ISO 5011 frente a la antigua referencia de ensayo de filtros de aire SAE J726",
+  "subtitle": "El ensayo actual de desempeño de filtros de aire ISO comparado con una referencia antigua de SAE ya retirada",
+  "category": "standards",
+  "engineeringObjective": "Interpretar los datos de desempeño ISO 5011 vigentes y la documentación heredada SAE J726 sin tratar el documento SAE retirado como una norma equivalente vigente.",
+  "comparisonScope": "Cubre la ISO 5011 como la referencia vigente de ensayo de desempeño de depuradores de aire de admisión de motores y la SAE J726 solo como contexto histórico para datos heredados. La SAE J726_200206 fue cancelada el 27 de junio de 2002. Los resultados de distintos métodos de ensayo o de conjuntos de datos históricos no deben tratarse como directamente intercambiables sin evidencia de correlación validada.",
+  "governingStandards": [
+    "ISO 5011:2020",
+    "ISO 5125:2020"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "ISO 5011:2020",
+    "description": "La ISO 5011 define los ensayos de desempeño en laboratorio de los equipos de limpieza del aire de entrada usados con motores de combustión interna y compresores. Las decisiones de aplicación deben usar los datos de ensayo ISO aplicables junto con los requisitos del equipo y condiciones de operación validadas.",
+    "advantages": [
+      "Referencia vigente y gobernada para el ensayo de desempeño de depuradores de aire de admisión de motores en el Knowledge Center de ELIMFILTERS",
+      "Permite comparar de forma controlada la restricción, la eficiencia y la capacidad de polvo con su método definido",
+      "Ofrece una norma vigente de referencia para el contenido técnico nuevo y la interpretación en compras"
+    ],
+    "limitations": [
+      "Los resultados de laboratorio siguen siendo propios del método y de las condiciones, y por sí solos no determinan los intervalos de servicio en campo",
+      "No puede suponerse que los datos de desempeño generados con otro método de ensayo sean equivalentes sin evidencia de correlación"
+    ],
+    "typicalApplications": [
+      "Especificaciones vigentes de desempeño de depuradores de aire de admisión de motores que citan la ISO 5011",
+      "Comparación de ingeniería de la restricción, la eficiencia y la capacidad de los filtros con un método común",
+      "Revisión técnica de elementos de reemplazo cuando existe evidencia ISO 5011 comparable"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "SAE J726: referencia antigua retirada",
+    "description": "La SAE J726 se conserva aquí solo para interpretar documentación histórica de depuradores de aire. La revisión final J726_200206 fue cancelada el 27 de junio de 2002; no debe presentarse como un equivalente norteamericano vigente de la ISO 5011 ni como evidencia válida para nuevas afirmaciones de ELIMFILTERS.",
+    "advantages": [
+      "Útil para identificar la base de ensayo indicada en documentación histórica de equipos o filtros",
+      "Ayuda a evitar que los resultados heredados se comparen con datos ISO 5011 vigentes sin reconocer la diferencia de método"
+    ],
+    "limitations": [
+      "Documento cancelado; no es una norma vigente de referencia para ELIMFILTERS",
+      "Los datos históricos deben conservar su contexto de ensayo original y no pueden convertirse en desempeño ISO 5011 por suposición",
+      "Los requisitos OEM o de la aplicación deben verificarse en la documentación vigente del equipo y no deducirse de la referencia heredada"
+    ],
+    "typicalApplications": [
+      "Interpretación de informes de ensayo archivados o documentación de mantenimiento heredada que cita explícitamente la SAE J726",
+      "Revisión de líneas base históricas en las que debe conservarse el método de ensayo original por trazabilidad"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Estado de gobernanza",
+      "optionA": "Referencia ISO vigente y gobernada",
+      "optionB": "Referencia heredada retirada/cancelada"
+    },
+    {
+      "dimension": "Uso en nuevas afirmaciones de ELIMFILTERS",
+      "optionA": "Permitido cuando lo respalda evidencia de ensayo aplicable",
+      "optionB": "No: solo interpretación histórica"
+    },
+    {
+      "dimension": "Equivalencia entre métodos",
+      "optionA": "Usar los resultados ISO 5011 como resultados ISO 5011",
+      "optionB": "No deducir equivalencia ISO 5011 a partir de datos heredados SAE J726"
+    },
+    {
+      "dimension": "Significado para el intervalo de servicio",
+      "optionA": "Los datos de ensayo pueden orientar la ingeniería de aplicación; el intervalo en campo sigue siendo propio de cada aplicación",
+      "optionB": "Los resultados heredados no definen un intervalo de servicio vigente"
+    }
+  ],
+  "engineeringImplications": [
+    "Identifique siempre el método de ensayo antes de comparar valores de restricción, eficiencia o capacidad.",
+    "No presente la SAE J726 como un equivalente vigente ni como una norma alternativa de referencia a la ISO 5011.",
+    "No use la ISO 3724 como autoridad para intervalos de servicio de filtros de aire; corresponde a ensayos de fatiga de elementos de filtro hidráulico, no a la vida útil del aire del motor.",
+    "Las decisiones de servicio en campo requieren los requisitos del equipo, las condiciones de operación y evidencia validada de restricción/condición, además de los datos de ensayo de laboratorio."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Especificaciones de ingeniería y comparaciones técnicas vigentes que citan la ISO 5011",
+        "Nuevo contenido técnico de ELIMFILTERS que requiere un método de ensayo de depuradores de aire de referencia"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Interpretar documentación histórica que cita explícitamente la SAE J726",
+        "Rastrear el origen de datos heredados de desempeño de depuradores de aire sin convertirlos en una afirmación ISO vigente"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Cuando el resultado disponible se generó con un método distinto y no existe una correlación validada con la ISO 5011"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Calificación de productos nuevos o afirmaciones sobre normas vigentes",
+        "Cualquier afirmación que describa la SAE J726 como activa, vigente o equivalente a la ISO 5011"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-5011",
+    "sae-j726",
+    "iso-3724"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE"
+  ],
+  "relatedSystems": [
+    "air-intake"
+  ],
+  "relatedTerms": [
+    "dust-holding-capacity",
+    "filtration-efficiency",
+    "differential-pressure"
+  ],
+  "relatedArticles": [
+    "dust-holding-capacity",
+    "testing-and-validation"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    },
+    {
+      "version": "1.1",
+      "date": "2026-09-04",
+      "changes": "Reframed SAE J726 as withdrawn legacy context and removed false current-equivalence/service-interval authority."
+    }
+  ]
+}

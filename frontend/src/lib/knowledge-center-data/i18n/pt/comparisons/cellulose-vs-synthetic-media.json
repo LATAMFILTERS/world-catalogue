@@ -1,0 +1,195 @@
+{
+  "id": "COMP-CELLULOSE-VS-SYN",
+  "slug": "cellulose-vs-synthetic-media",
+  "title": "Meio filtrante de celulose versus sintético",
+  "subtitle": "Seleção do substrato do meio filtrante primário: compromissos de desempenho, capacidade e intervalo de serviço",
+  "category": "technology",
+  "engineeringObjective": "Selecionar o substrato de meio filtrante correto para uma aplicação com base na eficiência de filtração exigida, nas metas de intervalo de serviço, na compatibilidade com o fluido de operação e no custo total de propriedade.",
+  "comparisonScope": "Cobre os substratos de meio filtrante de celulose (fibra de polpa de madeira) e sintéticos (poliéster, polipropileno ou mistura com fibra de vidro). Não cobre meios de membrana ou de filtração superficial nem misturas compostas de celulose/sintético.",
+  "governingStandards": [
+    "ISO 16889:2022",
+    "ISO 11171:2010",
+    "ISO 5011:2020"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Meio de celulose",
+    "description": "Meio filtrante produzido com fibras de polpa de madeira em arranjo aleatório que cria um caminho tortuoso de filtração em profundidade. As fibras de celulose são hidrofílicas e incham quando expostas a fluidos contaminados com água. A construção típica de densidade graduada usa camadas externas mais grossas e camadas internas progressivamente mais finas. A capacidade de retenção de sujeira (DHC) normalmente é de 50–150 g/m², conforme a gramatura e o tratamento. A eficiência Beta a 10 µm(c) vai de β₁₀(c) = 75 a β₁₀(c) = 200 nos graus padrão.",
+    "advantages": [
+      "Menor custo unitário — o meio de celulose custa 30–60% menos por metro quadrado que os equivalentes sintéticos",
+      "Base de fabricação consolidada — qualidade uniforme de vários fornecedores globais",
+      "Desempenho adequado em aplicações com entrada moderada de contaminação e intervalos de serviço padrão",
+      "O substrato biodegradável reduz o impacto do descarte em jurisdições com regras de resíduos específicas para meios filtrantes",
+      "Há tratamentos com resinas de alta resistência a úmido para aplicações com exposição moderada à água"
+    ],
+    "limitations": [
+      "As fibras hidrofílicas absorvem água, incham e reduzem a seção de passagem — a eficiência e a capacidade se degradam em sistemas contaminados com água",
+      "DHC menor que os graus sintéticos (50–150 g/m² contra 100–300 g/m²) — intervalos de serviço mais curtos para a mesma área de meio",
+      "Teto de eficiência Beta: a celulose padrão raramente atinge β₁₀(c) > 200 sem impregnação química",
+      "Maior risco de desprendimento de fibras que os meios de fibra de vidro ou sintéticos no fim da vida útil",
+      "Limite de temperatura de aproximadamente 100–120°C contínuos — inadequado para circuitos de óleo lubrificante de alta temperatura sem tratamento termoestabilizado",
+      "Risco de colapso do meio sob pressão diferencial alta sustentada — resistência ao estouro menor que as alternativas sintéticas"
+    ],
+    "typicalApplications": [
+      "Filtros de óleo lubrificante e de combustível com intervalos padrão em aplicações leves e médias",
+      "Pré-filtros de admissão de ar em que a contaminação principal é de partículas grossas",
+      "Filtração na linha de retorno hidráulica de baixa criticidade",
+      "Aplicações sensíveis a custo com meta de limpeza do fluido ISO 18/16/13 ou mais grossa",
+      "Aplicações de frotas em que o intervalo de troca do filtro corresponde à capacidade DHC da celulose"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Meio sintético",
+    "description": "Meio filtrante produzido com fibras poliméricas projetadas (poliéster, polipropileno ou fibra de vidro) ou misturas, com diâmetro de fibra, tratamento superficial e camadas controlados para atingir eficiência, capacidade e resistência química definidas. As fibras dos meios sintéticos são hidrofóbicas, dimensionalmente estáveis em contato com água e podem ser produzidas com geometria de poro muito uniforme. A DHC normalmente é de 100–300 g/m² (poliéster/polipropileno) ou 150–400 g/m² (fibra de vidro). A eficiência Beta vai de β₁₀(c) = 200 a β₁₀(c) > 1000, conforme o grau.",
+    "advantages": [
+      "Maior DHC por unidade de área (1.5–3× a celulose), permitindo intervalos de serviço mais longos ou um filtro menor para capacidade equivalente",
+      "O tratamento superficial hidrofóbico repele a água — a eficiência e a capacidade são estáveis em ambientes de operação contaminados com água",
+      "A geometria uniforme das fibras permite eficiência Beta alta e reprodutível — β₁₀(c) ≥ 200 é atingível como padrão; β₂(c) ≥ 200 é atingível com graus de fibra de vidro",
+      "Desempenho superior em alta temperatura — o sintético de fibra de vidro é estável até 150°C+",
+      "Maior resistência ao estouro e ao colapso — a integridade do meio se mantém até uma ΔP terminal mais alta",
+      "Menor desprendimento de fibras — lado do fluido mais limpo no fim da vida útil",
+      "Permite intervalos de serviço estendidos (1.5–2.5× a celulose para a mesma DHC) — reduz diretamente o TCO quando o custo de mão de obra da troca de filtro é significativo"
+    ],
+    "limitations": [
+      "O maior custo do meio (40–100% a mais que a celulose) aumenta o custo de fabricação do elemento",
+      "O meio de fibra de vidro exige descarte cuidadoso — classificado como resíduo de fibra mineral artificial em algumas jurisdições",
+      "Alguns graus de meio sintético exigem aglutinantes de resina que podem não ser compatíveis com todos os fluidos hidráulicos ou tipos de combustível — é necessário verificar a compatibilidade",
+      "O maior custo de capital por elemento pode não ser compensado pelo intervalo estendido em contextos de mão de obra barata e veículos de ciclo de vida curto"
+    ],
+    "typicalApplications": [
+      "Filtração de óleo lubrificante com intervalo estendido em motores com programas de análise de óleo",
+      "Sistemas hidráulicos que exigem códigos de limpeza ISO 17/15/12 ou mais rigorosos",
+      "Filtração de sistemas de combustível common rail de alta pressão (HPCR) em que a contaminação por água é um risco",
+      "Filtração de ar de cabine (graus HEPA)",
+      "Aplicações com altas taxas de entrada de contaminação em que a DHC é uma restrição do sistema",
+      "Sistemas em que o tamanho do filtro é limitado e é necessária a máxima DHC por volume"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Tipo de fibra",
+      "optionA": "Polpa de madeira (celulose) — natural",
+      "optionB": "Poliéster / polipropileno / fibra de vidro — projetadas"
+    },
+    {
+      "dimension": "Capacidade de retenção de sujeira",
+      "optionA": "50–150 g/m²",
+      "optionB": "100–400 g/m² (conforme o grau)"
+    },
+    {
+      "dimension": "Beta típico a 10 µm(c)",
+      "optionA": "β₁₀(c) = 75–200",
+      "optionB": "β₁₀(c) = 200–1000+"
+    },
+    {
+      "dimension": "Resistência à água",
+      "optionA": "Baixa — as fibras incham e a eficiência cai",
+      "optionB": "Boa — hidrofóbico, dimensionalmente estável"
+    },
+    {
+      "dimension": "Limite de temperatura",
+      "optionA": "~100–120°C contínuos",
+      "optionB": "130–200°C+ (graus de fibra de vidro)"
+    },
+    {
+      "dimension": "Intervalo de serviço",
+      "optionA": "Padrão — referência de base",
+      "optionB": "1.5–2.5× a celulose para DHC equivalente"
+    },
+    {
+      "dimension": "Custo do meio por m²",
+      "optionA": "Menor (referência)",
+      "optionB": "40–100% a mais que a celulose"
+    },
+    {
+      "dimension": "Resistência ao estouro/colapso",
+      "optionA": "Moderada — limite de pressão menor",
+      "optionB": "Maior — mais integridade estrutural"
+    },
+    {
+      "dimension": "Classificação para descarte",
+      "optionA": "Substrato biodegradável",
+      "optionB": "Fibra de vidro: classificada como resíduo MMMF em algumas jurisdições"
+    }
+  ],
+  "engineeringImplications": [
+    "Em ambientes de operação contaminados com água (agricultura, marítimo, construção com entrada de chuva), o meio sintético mantém o desempenho onde a celulose se degrada — o custo adicional do meio é justificado pela proteção constante.",
+    "Em sistemas de combustível HPCR com tolerâncias de folga dos injetores <1 µm, apenas meios sintéticos ou de fibra de vidro com classificações certificadas β₄(c) ou mais finas conseguem proteger de forma confiável o equipamento de injeção.",
+    "A análise de TCO deve incluir a mão de obra da troca de filtro e o custo de parada — em frotas com mão de obra cara, os intervalos estendidos do meio sintético reduzem o custo total mesmo com preço maior por elemento.",
+    "Misturar elementos de celulose e sintéticos no mesmo circuito de filtração arrisca criar restrição diferencial e desequilíbrio de pressão — especifique de forma consistente dentro de um sistema."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Aplicações sensíveis a custo com meta de limpeza do fluido ISO 18/16/13 ou mais grossa e baixo risco de contaminação por água",
+        "Programas de troca de filtro de intervalo curto e alta frequência, em que a DHC não é a restrição de serviço",
+        "Aplicações em que as regras de descarte de elementos favorecem meios biodegradáveis",
+        "Filtração de óleo de motores leves que cumpre os intervalos de serviço do fabricante sem troca estendida"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Sistemas hidráulicos que exigem ISO 17/15/12 ou mais rigoroso — a eficiência Beta da celulose é insuficiente",
+        "Sistemas de combustível HPCR — a rejeição da água e a eficiência fina são essenciais",
+        "Intervalos de serviço estendidos guiados por análise de óleo ou operação remota (mineração, florestal)",
+        "Circuitos de óleo lubrificante de alta temperatura (>110°C)",
+        "Qualquer aplicação em que a entrada de água seja um risco documentado ou provável"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Sistemas hidráulicos com válvulas proporcionais ou servoválvulas — a meta ISO 17/15/12 exige eficiência Beta fora do alcance da celulose",
+        "Sistemas de injeção de combustível HPCR — o risco de contaminação por água é inaceitável com uma celulose higroscópica",
+        "Ambientes de alta contaminação com intervalos de troca estendidos — a DHC se esgotará cedo"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Programas de substituição guiados pelo orçamento em que o sobrepreço não pode ser justificado pelo contexto de operação",
+        "Aplicações com intervalos de serviço muito curtos (≤250 horas) em que a DHC da celulose não é o fator limitante"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16889",
+    "iso-5011",
+    "iso-3724"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX",
+    "NANOFORCE",
+    "SYNTAPORE",
+    "MACROCORE"
+  ],
+  "relatedSystems": [
+    "hydraulic",
+    "lube-oil",
+    "fuel",
+    "air-intake"
+  ],
+  "relatedTerms": [
+    "dust-holding-capacity",
+    "filtration-efficiency",
+    "beta-ratio",
+    "depth-filtration"
+  ],
+  "relatedArticles": [
+    "filter-media-engineering",
+    "service-intervals",
+    "total-cost-of-ownership"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    }
+  ]
+}

@@ -6,6 +6,10 @@ import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { KCComparison, KCComparisonCategory } from '@/lib/knowledge-center-data';
 import RecommendationBlock from '@/components/knowledge-center/RecommendationBlock';
+import { useReviewed } from '@/components/ReviewedText';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { articleTitle } from '@/lib/knowledge-center-data/i18n/titles';
 
 const CATEGORY_LABELS: Record<KCComparisonCategory, string> = {
   'standards':   'STANDARDS',
@@ -27,6 +31,9 @@ export default function ComparisonContent({
   comparison: KCComparison;
 }) {
   const color = CATEGORY_COLORS[c.category];
+  const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   const colorMid = color.replace('0.8', '0.4');
   const colorDim = color.replace('0.8', '0.12');
 
@@ -44,7 +51,7 @@ export default function ComparisonContent({
           display: 'block',
           marginBottom: '2.5rem',
         }}>
-          ← COMPARISONS
+          ← {tr('COMPARISONS')}
         </Link>
 
         {/* Header */}
@@ -64,7 +71,7 @@ export default function ComparisonContent({
             display: 'inline-block',
             marginBottom: '0.75rem',
           }}>
-            {CATEGORY_LABELS[c.category]}
+            {tr(CATEGORY_LABELS[c.category])}
           </span>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
@@ -142,7 +149,7 @@ export default function ComparisonContent({
             color: 'rgba(255,255,255,0.3)',
             letterSpacing: '0.08em',
             marginBottom: '0.6rem',
-          }}>GOVERNING STANDARDS</p>
+          }}>{tr('GOVERNING STANDARDS')}</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {c.governingStandards.map(std => (
               <span key={std} style={{
@@ -167,7 +174,7 @@ export default function ComparisonContent({
             color: 'rgba(255,255,255,0.3)',
             letterSpacing: '0.08em',
             marginBottom: '1rem',
-          }}>OPTION DEFINITIONS</p>
+          }}>{tr('OPTION DEFINITIONS')}</p>
 
           <div style={{
             display: 'grid',
@@ -225,7 +232,7 @@ export default function ComparisonContent({
                     color: 'rgba(100,220,120,0.6)',
                     letterSpacing: '0.08em',
                     marginBottom: '0.4rem',
-                  }}>ADVANTAGES</p>
+                  }}>{tr('ADVANTAGES')}</p>
                   {opt.advantages.map((adv, i) => (
                     <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.3rem' }}>
                       <span style={{ color: 'rgba(100,220,120,0.5)', flexShrink: 0, marginTop: '0.1rem' }}>+</span>
@@ -248,7 +255,7 @@ export default function ComparisonContent({
                     color: 'rgba(255,80,80,0.6)',
                     letterSpacing: '0.08em',
                     marginBottom: '0.4rem',
-                  }}>LIMITATIONS</p>
+                  }}>{tr('LIMITATIONS')}</p>
                   {opt.limitations.map((lim, i) => (
                     <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.3rem' }}>
                       <span style={{ color: 'rgba(255,80,80,0.5)', flexShrink: 0, marginTop: '0.1rem' }}>−</span>
@@ -271,7 +278,7 @@ export default function ComparisonContent({
                     color: 'rgba(255,255,255,0.25)',
                     letterSpacing: '0.08em',
                     marginBottom: '0.4rem',
-                  }}>TYPICAL APPLICATIONS</p>
+                  }}>{tr('TYPICAL APPLICATIONS')}</p>
                   {opt.typicalApplications.map((app, i) => (
                     <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.25rem' }}>
                       <span style={{ color: 'rgba(255,255,255,0.2)', flexShrink: 0 }}>·</span>
@@ -299,7 +306,7 @@ export default function ComparisonContent({
             color: 'rgba(255,255,255,0.3)',
             letterSpacing: '0.08em',
             marginBottom: '1rem',
-          }}>ENGINEERING COMPARISON MATRIX</p>
+          }}>{tr('ENGINEERING COMPARISON MATRIX')}</p>
 
           <div style={{ overflowX: 'auto' }}>
             <table style={{
@@ -321,7 +328,7 @@ export default function ComparisonContent({
                     width: '28%',
                     background: 'rgba(255,255,255,0.02)',
                   }}>
-                    DIMENSION
+                    {tr('DIMENSION')}
                   </th>
                   <th style={{
                     padding: '0.6rem 0.75rem',
@@ -408,7 +415,7 @@ export default function ComparisonContent({
         }}>
           {/* When to use A */}
           <WhenBlock
-            title="WHEN TO USE A"
+            title={tr('WHEN TO USE A')}
             optionLabel={c.optionA.label}
             clauses={c.whenToUse.filter(w => w.option === 'A')}
             notClauses={c.whenNotToUse.filter(w => w.option === 'A')}
@@ -416,7 +423,7 @@ export default function ComparisonContent({
           />
           {/* When to use B */}
           <WhenBlock
-            title="WHEN TO USE B"
+            title={tr('WHEN TO USE B')}
             optionLabel={c.optionB.label}
             clauses={c.whenToUse.filter(w => w.option === 'B')}
             notClauses={c.whenNotToUse.filter(w => w.option === 'B')}
@@ -432,7 +439,7 @@ export default function ComparisonContent({
             color: 'rgba(255,255,255,0.3)',
             letterSpacing: '0.08em',
             marginBottom: '0.75rem',
-          }}>ENGINEERING IMPLICATIONS</p>
+          }}>{tr('ENGINEERING IMPLICATIONS')}</p>
           <div style={{
             border: '1px solid rgba(255,241,45,0.15)',
             background: 'rgba(255,241,45,0.03)',
@@ -470,7 +477,7 @@ export default function ComparisonContent({
             color: 'rgba(255,255,255,0.3)',
             letterSpacing: '0.08em',
             marginBottom: '0.75rem',
-          }}>RELATED KNOWLEDGE</p>
+          }}>{tr('RELATED KNOWLEDGE')}</p>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -478,7 +485,7 @@ export default function ComparisonContent({
           }}>
             {c.relatedStandards.length > 0 && (
               <RelatedGroup
-                label="STANDARDS"
+                label={tr('STANDARDS')}
                 items={c.relatedStandards.map(s => ({
                   label: s.replace(/-/g, ' ').toUpperCase(),
                   href: `/knowledge-center/standards/${s}`,
@@ -488,7 +495,7 @@ export default function ComparisonContent({
             )}
             {c.relatedTechnologies.length > 0 && (
               <RelatedGroup
-                label="TECHNOLOGIES"
+                label={tr('TECHNOLOGIES')}
                 items={c.relatedTechnologies.map(t => ({
                   label: t,
                   href: `/knowledge-center/technologies/${t.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
@@ -498,9 +505,9 @@ export default function ComparisonContent({
             )}
             {c.relatedArticles.length > 0 && (
               <RelatedGroup
-                label="ARTICLES"
+                label={tr('ARTICLES')}
                 items={c.relatedArticles.map(a => ({
-                  label: a.replace(/-/g, ' '),
+                  label: articleTitle(a, lang, a.replace(/-/g, ' ')),
                   href: `/knowledge-center/articles/${a}`,
                 }))}
                 color="rgba(100,220,120,0.6)"
@@ -515,7 +522,6 @@ export default function ComparisonContent({
           sourceSlug={c.slug}
           maxResults={12}
           excludeTypes={['comparison']}
-          title="Related Engineering Content"
         />
 
         {/* Revision */}
@@ -541,7 +547,7 @@ export default function ComparisonContent({
             textDecoration: 'none',
             letterSpacing: '0.06em',
           }}>
-            ← ALL COMPARISONS
+            ← {tr('ALL COMPARISONS')}
           </Link>
         </div>
       </div>
@@ -562,6 +568,7 @@ function WhenBlock({
   notClauses: { conditions: string[] }[];
   accentColor: string;
 }) {
+  const tr = useReviewed();
   return (
     <div style={{
       background: '#000',
@@ -610,7 +617,7 @@ function WhenBlock({
             letterSpacing: '0.08em',
             margin: '0.75rem 0 0.35rem 0',
           }}>
-            WHEN NOT TO USE
+            {tr('WHEN NOT TO USE')}
           </p>
           {notClauses.flatMap(cl => cl.conditions).map((cond, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.3rem' }}>

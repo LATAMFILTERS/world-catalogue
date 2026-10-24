@@ -1,0 +1,159 @@
+{
+  "id": "COMP-SINGLE-VS-MULTI-FUEL",
+  "slug": "single-stage-vs-multi-stage-fuel",
+  "title": "Filtração de combustível diesel de um estágio versus vários estágios",
+  "subtitle": "Arquitetura de limpeza do combustível e gestão da água em sistemas diesel, conforme a aplicação",
+  "category": "system",
+  "engineeringObjective": "Comparar as arquiteturas de filtração de óleo diesel de um estágio e de vários estágios com base no equipamento real, na exposição à contaminação, no requisito de gestão da água, nos limites de vazão/restrição e no desempenho validado do elemento.",
+  "comparisonScope": "Cobre a arquitetura de filtração de óleo diesel. Não estabelece um número universal de estágios, um limite de pressão do trilho, uma classificação em mícrons, um intervalo de serviço, um resultado de custos nem uma exigência OEM. A seleção deve seguir os requisitos específicos do motor/sistema de combustível e evidência de aplicação validada.",
+  "governingStandards": [
+    "ISO 16332:2018",
+    "ASTM D6304",
+    "ISO 12937"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Filtração de combustível de um estágio",
+    "description": "Uma arquitetura de um estágio usa um único local de filtração com serviço para as funções exigidas pela aplicação aprovada. Sua adequação depende do projeto do equipamento, do controle de partículas exigido, da capacidade de gestão da água, do envelope de vazão/restrição e do desempenho validado do elemento.",
+    "advantages": [
+      "Menos carcaças e pontos de serviço quando a arquitetura do equipamento é projetada para um arranjo de um estágio",
+      "Montagem compacta quando o espaço de instalação e a complexidade da tubulação são limitados",
+      "Pode ser adequada quando a aplicação aprovada e o desempenho validado do elemento atendem às funções de controle de contaminação exigidas"
+    ],
+    "limitations": [
+      "A carga de partículas e a gestão da água compartilham um único local de serviço, o que pode concentrar a carga de contaminação",
+      "A adequação não pode ser deduzida apenas pelo tipo de motor ou pela pressão do trilho",
+      "Não se deve supor que um arranjo de um estágio é suficiente quando a especificação do equipamento exige funções separadas ou estágios adicionais"
+    ],
+    "typicalApplications": [
+      "Equipamentos projetados e validados explicitamente para um arranjo de filtração de combustível com um único estágio de serviço",
+      "Aplicações em que o conjunto de filtro aprovado atende aos requisitos especificados de partículas e gestão da água"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Filtração de combustível de vários estágios (2–3 estágios)",
+    "description": "Uma arquitetura de vários estágios separa duas ou mais funções de controle de contaminação ou locais de serviço. Os estágios podem dividir a remoção de partículas em massa, a separação de água e uma proteção mais fina a jusante, mas a sequência exata e as classificações dos elementos são específicas de cada aplicação.",
+    "advantages": [
+      "Permite distribuir as funções de controle de contaminação entre estágios dedicados quando a arquitetura do equipamento exige",
+      "Pode isolar a carga de água/contaminantes em massa de um estágio de proteção fina a jusante",
+      "Permite inspeção ou serviço por estágio quando o sistema é projetado com indicadores, drenos ou elementos independentes"
+    ],
+    "limitations": [
+      "Acrescenta carcaças, conexões e pontos de serviço que devem se encaixar nos requisitos aprovados de vazão, restrição e vedação",
+      "Mais componentes não significam automaticamente melhor proteção; cada estágio deve ter uma função definida e adequação à aplicação validada",
+      "O número de estágios por si só não estabelece a eficiência de filtração, o desempenho de separação de água nem a vida útil"
+    ],
+    "typicalApplications": [
+      "Sistemas diesel cuja especificação do equipamento separa as funções de filtração de partículas e de gestão da água",
+      "Aplicações com exposição documentada à contaminação que exigem vários estágios de proteção validados",
+      "Sistemas de combustível projetados pelo fabricante do equipamento com locais de filtração separados a montante e a jusante"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Arquitetura",
+      "optionA": "Um local com um único estágio de serviço",
+      "optionB": "Dois ou mais estágios definidos de serviço/proteção"
+    },
+    {
+      "dimension": "Base da seleção",
+      "optionA": "Aplicação aprovada + capacidade validada do elemento",
+      "optionB": "Aplicação aprovada + finalidade definida para cada estágio"
+    },
+    {
+      "dimension": "Gestão da água",
+      "optionA": "Deve ser verificada no conjunto selecionado, se exigida",
+      "optionB": "Pode ser atribuída a um estágio dedicado quando o projeto prevê"
+    },
+    {
+      "dimension": "Controle de partículas",
+      "optionA": "Definido pelo desempenho validado do elemento, não pelo número de estágios",
+      "optionB": "Definido pelo desempenho validado de cada estágio aplicável"
+    },
+    {
+      "dimension": "Classificação em mícrons",
+      "optionA": "Específica de cada aplicação",
+      "optionB": "Específica de cada aplicação, por estágio"
+    },
+    {
+      "dimension": "Intervalo de serviço",
+      "optionA": "Específico das condições/do equipamento/da aplicação",
+      "optionB": "Específico das condições/do equipamento/da aplicação em cada estágio"
+    }
+  ],
+  "engineeringImplications": [
+    "Não escolha o número de estágios com base em um limite universal de pressão do trilho ou em um rótulo HPCR genérico.",
+    "Não descreva a ISO 16332 como se exigisse uma arquitetura de três estágios; ela é um método comparativo de laboratório para o desempenho de separadores de combustível/água.",
+    "Não deduza a classificação em mícrons a partir do número do estágio nem dos identificadores de família de elementos TURBOCORE 2010/2020/2040.",
+    "Use os requisitos do equipamento, os limites de vazão/restrição, a exposição à contaminação e o desempenho validado de partículas/água para determinar a arquitetura.",
+    "Os resultados de custos e de vida útil exigem evidência específica da aplicação e não devem ser apresentados como vantagens universais."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "A especificação do equipamento prevê um único local de serviço de filtração e o conjunto selecionado está validado para as funções exigidas",
+        "A evidência da aplicação mostra que um estágio atende ao desempenho exigido de partículas e gestão da água"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "A arquitetura do equipamento especifica vários locais de filtração ou funções de proteção separadas",
+        "Os requisitos documentados de contaminação/gestão da água justificam vários estágios validados"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "O equipamento exige estágios separados ou o conjunto selecionado não consegue demonstrar as funções exigidas"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Estão sendo acrescentados estágios sem uma função de engenharia definida ou sem verificar a restrição total, a vazão e os requisitos de serviço"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16332",
+    "iso-12937",
+    "astm-d6304"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE",
+    "HYDROCORE",
+    "TURBOCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness"
+  ],
+  "relatedTerms": [
+    "water-contamination",
+    "filtration-efficiency",
+    "differential-pressure",
+    "beta-ratio"
+  ],
+  "relatedArticles": [
+    "diesel-fuel-filtration",
+    "hpcr-fuel-system-cleanliness",
+    "water-contamination-fuel",
+    "service-intervals"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    },
+    {
+      "version": "1.1",
+      "date": "2026-09-04",
+      "changes": "Removed universal HPCR/OEM/stage-count claims and aligned architecture guidance with application-specific evidence."
+    }
+  ]
+}

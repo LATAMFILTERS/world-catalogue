@@ -1,0 +1,172 @@
+{
+  "id": "COMP-BETA-VS-EFF",
+  "slug": "beta-ratio-vs-filtration-efficiency",
+  "title": "Relação Beta versus eficiência de filtração por passagem",
+  "subtitle": "Duas expressões da mesma medição de captura de partículas, no contexto do ensaio multipass ISO 16889",
+  "category": "standards",
+  "engineeringObjective": "Determinar qual expressão usar ao especificar, relatar ou comparar o desempenho de captura de partículas de um elemento filtrante em condições ISO 16889.",
+  "comparisonScope": "Cobre a relação Beta (β_x(c)) e a eficiência de passagem única (E%) derivadas do ensaio multipass ISO 16889. Não cobre a eficiência gravimétrica, a retenção (arrestance) de filtros de ar nem os métodos de ensaio de membrana de passagem única.",
+  "governingStandards": [
+    "ISO 16889:2022",
+    "ISO 11171:2010",
+    "ISO 4406:2021"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Relação Beta β_x(c)",
+    "description": "A razão entre a contagem de partículas a montante e a contagem a jusante em um tamanho de partícula x declarado, nas condições de ensaio c. É definida na ISO 16889:2022 §3.1.2 como β_x(c) = N_up / N_down, em que N é a contagem acumulada de partículas ≥x µm(c) por unidade de volume de fluido. Um valor Beta mais alto indica que passam menos partículas; β₁₀(c) = 200 significa 200 partículas a montante para cada 1 a jusante a ≥10 µm(c).",
+    "advantages": [
+      "Diretamente proporcional à razão real de partículas a montante/a jusante — precisão de engenharia",
+      "A escala não tem limite (de β = 2 a β = ∞), o que revela diferenças entre meios de alta eficiência que as porcentagens comprimem acima de 99%",
+      "Exigida pela ISO 16889 e citada na maioria das especificações de compra de elementos de filtro hidráulico e de óleo lubrificante",
+      "Aplica-se diretamente aos cálculos de código de limpeza ISO 4406 usados no projeto de sistemas",
+      "Reversibilidade: E = (1 − 1/β) × 100% converte sem ambiguidade"
+    ],
+    "limitations": [
+      "Escala pouco intuitiva — um não especialista pode não entender que β = 200 significa 99.5% de eficiência",
+      "Dois filtros de alta eficiência (β = 200 versus β = 1000) parecem muito distantes numericamente, mas diferem em menos de 0.4 ponto percentual",
+      "Exige calibração do contador de partículas conforme a ISO 11171:2010 para gerar dados válidos; contagens sem calibração não são comparáveis em β",
+      "O sufixo (c) de condição é frequentemente omitido em especificações antigas, criando problemas de comparabilidade entre dados de ensaio anteriores e posteriores a 2000"
+    ],
+    "typicalApplications": [
+      "Especificações de elementos filtrantes ISO e documentos de compra",
+      "Projeto do nível de limpeza de sistemas hidráulicos (cálculos de meta ISO 17/15/12)",
+      "Fichas de classificação de elementos de filtro de óleo lubrificante (p. ex., β₁₀(c) ≥ 200)",
+      "Relatórios de validação de engenharia conforme o protocolo de ensaio ISO 16889"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Eficiência de filtração por passagem E%",
+    "description": "A porcentagem de partículas de um dado tamanho retidas em uma única passagem por um elemento filtrante, calculada como E = (1 − 1/β) × 100%. Por exemplo, β₁₀(c) = 200 corresponde a E = 99.5% a ≥10 µm(c). Às vezes a eficiência é medida por métodos de ensaio de passagem única (ensaio de adição conforme a ISO 4572, hoje retirada), mas, quando derivada de dados multipass ISO 16889, é matematicamente idêntica à relação Beta — só muda a apresentação.",
+    "advantages": [
+      "Escala percentual intuitiva, compreendida imediatamente por partes interessadas sem formação em engenharia",
+      "Comunica com clareza os filtros de alto desempenho ao pessoal de compras ou de manutenção",
+      "Útil para documentação resumida, especificações de garantia e material de treinamento de operadores",
+      "Diretamente comparável às expressões de eficiência de filtros de ar (retenção / eficiência ISO 5011)"
+    ],
+    "limitations": [
+      "Comprime a faixa de alta eficiência: a diferença entre β = 200 (99.5%) e β = 1000 (99.9%) parece insignificante, mas representa uma diferença de desempenho de 5× na passagem de partículas a jusante",
+      "Requisito de precisão: um \"99%\" deve indicar o limite de tamanho de partícula e as condições de ensaio — sem isso, o valor não é comparável entre filtros",
+      "Os dados históricos de ensaio de passagem única (ISO 4572, retirada em 2000) não são diretamente comparáveis aos valores de eficiência multipass ISO 16889, apesar do mesmo formato percentual",
+      "Não pode ser usada para calcular a degradação do código de limpeza ISO 4406 sem antes ser convertida de volta para relação Beta"
+    ],
+    "typicalApplications": [
+      "Fichas técnicas comerciais voltadas a públicos sem formação em engenharia",
+      "Treinamento de operadores e documentação de manutenção",
+      "Documentação de conformidade regulatória que exige formato percentual",
+      "Comunicação rápida da capacidade do filtro sem o contexto completo dos dados ISO 16889"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Base da definição",
+      "optionA": "Razão N_up / N_down conforme a ISO 16889",
+      "optionB": "Porcentagem (1 − 1/β) × 100%",
+      "engineeringNote": "Matematicamente idênticas quando ambas derivam de dados multipass ISO 16889"
+    },
+    {
+      "dimension": "Faixa da escala",
+      "optionA": "1 (sem filtração) → ∞ (absoluta)",
+      "optionB": "0% → 100%"
+    },
+    {
+      "dimension": "Discriminação em alta eficiência",
+      "optionA": "β = 200 versus β = 1000, claramente distintas",
+      "optionB": "99.5% versus 99.9% — apenas 0.4 pp de diferença na escala"
+    },
+    {
+      "dimension": "Requisito da ISO 16889",
+      "optionA": "Expressão exigida nos relatórios de ensaio",
+      "optionB": "Métrica derivada; não é o resultado principal da ISO 16889"
+    },
+    {
+      "dimension": "Compatibilidade com a ISO 4406",
+      "optionA": "Entrada direta para os cálculos de limpeza",
+      "optionB": "Deve ser convertida primeiro para β no projeto do sistema"
+    },
+    {
+      "dimension": "Clareza para as partes interessadas",
+      "optionA": "Precisão de engenharia; exige explicação",
+      "optionB": "Intuitiva para não engenheiros; perde nuances em alta eficiência"
+    },
+    {
+      "dimension": "Especificidade do tamanho de partícula",
+      "optionA": "Deve indicar β_x(c) com o subscrito de tamanho",
+      "optionB": "Deve indicar E_x(c)% com o tamanho; na prática, frequentemente omitido"
+    }
+  ],
+  "engineeringImplications": [
+    "Especificar \"99% de eficiência\" sem indicar o tamanho de partícula e o método de ensaio não serve para compras — exija sempre o valor β_x(c) completo dos dados ISO 16889.",
+    "Os dados antigos de passagem única (anteriores a 2000) expressos em % de eficiência não podem ser comparados diretamente com os dados modernos de relação Beta ISO 16889 — os métodos de ensaio diferem fundamentalmente.",
+    "Para definir metas de limpeza do sistema (seleção do código ISO 4406), deve-se usar a relação Beta — a porcentagem de eficiência não leva diretamente aos cálculos de código de limpeza sem conversão.",
+    "Ao comparar dois elementos de alta eficiência (ambos classificados >99%), a relação Beta revela qual oferece controle de contaminação realmente melhor; a porcentagem esconde isso."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Redigir especificações de compra de elementos de filtro hidráulico ou de óleo lubrificante",
+        "Fazer cálculos de limpeza do sistema ISO 4406 ou selecionar classificações de filtro para códigos alvo",
+        "Comparar o desempenho de elementos filtrantes em relatórios de validação de engenharia",
+        "Qualquer contexto que exija documentação de conformidade ISO 16889"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Comunicar a capacidade do filtro ao pessoal de manutenção ou a responsáveis por compras sem formação em engenharia",
+        "Produzir fichas técnicas comerciais que resumam o desempenho",
+        "Submissões regulatórias que exigem formato percentual",
+        "Contexto de desempenho de filtros de ar, em que a retenção/eficiência em % é a convenção estabelecida (ISO 5011)"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Materiais de marketing para o usuário, em que a escala de razão causa confusão",
+        "Comparações entre meios com filtros de ar, em que a eficiência em % é a métrica estabelecida"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Especificações de engenharia — \"99% eficiente\" sem tamanho de partícula e método de ensaio não é uma especificação",
+        "Comparar dois elementos de alta eficiência em que a pequena diferença percentual esconde uma grande diferença de desempenho",
+        "Cálculos de projeto do nível de limpeza do sistema ISO 4406"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16889",
+    "iso-11171",
+    "iso-4406"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE",
+    "SYNTRAX"
+  ],
+  "relatedSystems": [
+    "hydraulic",
+    "lube-oil"
+  ],
+  "relatedTerms": [
+    "beta-ratio",
+    "filtration-efficiency",
+    "multipass-test",
+    "particle-counting"
+  ],
+  "relatedArticles": [
+    "testing-and-validation",
+    "fluid-cleanliness"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    }
+  ]
+}
