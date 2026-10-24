@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { MiningHeroMedia } from './MiningHeroMedia';
 import { miningText } from '@/lib/mining-i18n';
 import type { PageLang } from '@/lib/localized-routes';
 
@@ -121,9 +122,7 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
       <PageHeader currentPage="Mining" />
 
       <section style={hero}>
-        <video autoPlay muted loop playsInline preload="auto" style={heroVideo}>
-          <source src="/images/Mina-Video-1.mp4" type="video/mp4" />
-        </video>
+        <MiningHeroMedia />
         <div style={heroShade} />
         <div style={heroInner} className="miningHeroContainer">
           <p style={eyebrow}>{miningText(lang, "MINING / SEVERE-DUTY FILTRATION")}</p>
@@ -224,9 +223,8 @@ const bodyFont = 'var(--font-body)';
 const yellowText: CSSProperties = { color: '#FFF12D' };
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
 const hero: CSSProperties = { minHeight: '82vh', background: '#000', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,0.08)' };
-const heroVideo: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: VIDEO_HERO_TREATMENT.opacity };
-const heroShade: CSSProperties = { position: 'absolute', inset: 0, background: VIDEO_HERO_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { width: '100%', maxWidth: '1560px', margin: '0 auto', padding: 'clamp(6.75rem,10vw,9rem) clamp(1rem,3.5vw,4.5rem) clamp(3.5rem,5.5vw,5rem)', position: 'relative', zIndex: 2 };
+const heroShade: CSSProperties = { position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: VIDEO_HERO_TREATMENT.overlayBackground };
+const heroInner: CSSProperties = { width: '100%', maxWidth: '1560px', margin: '0 auto', padding: 'clamp(6.75rem,10vw,9rem) clamp(1rem,3.5vw,4.5rem) clamp(3.5rem,5.5vw,5rem)', position: 'relative', zIndex: 3 };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.72rem', letterSpacing: '.18em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .86, fontSize: 'clamp(3.4rem,8vw,7.6rem)', textTransform: 'uppercase', margin: 0, maxWidth: '900px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.1rem,2vw,1.55rem)', lineHeight: 1.3, fontWeight: 700, maxWidth: '760px', margin: '1.6rem 0 0' };
