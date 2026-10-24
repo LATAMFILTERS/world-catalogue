@@ -1,0 +1,35 @@
+{
+  "id": "TERM-GLYCOL-CONTAMINATION",
+  "term": "Contaminação por glicol",
+  "category": "contamination",
+  "definition": "A presença de etilenoglicol (líquido de arrefecimento do motor) no óleo do motor ou no fluido da caixa de engrenagens, resultante de falha do resfriador de óleo do motor, cabeçote trincado, junta do cabeçote danificada ou bloco do motor trincado. O glicol se combina com o óleo do motor e forma uma borra gelatinosa espessa que aumenta drasticamente a viscosidade, cria depósitos abrasivos nas superfícies dos mancais e degrada a resistência do filme de óleo. Apenas 0.1–0.5% de glicol em volume no óleo do motor causa danos aos mancais; concentrações acima de 1% podem levar à falha total dos mancais e ao engripamento do motor se não forem detectadas e corrigidas imediatamente. A presença de glicol é detectada por espectroscopia FTIR ou pelo teste de potássio (K elevado indica a entrada do pacote inibidor do glicol).",
+  "engineeringContext": "A contaminação por glicol é um evento que pode condenar o motor se não for detectada cedo. A análise periódica de óleo detecta a intrusão de glicol 50–200 horas de operação antes que apareçam sintomas visíveis — fumaça branca no escapamento, óleo leitoso sob a tampa de abastecimento, perda de nível do líquido de arrefecimento ou superaquecimento. Diante de uma contaminação por glicol confirmada, o óleo e o filtro devem ser trocados imediatamente, a via de contaminação deve ser identificada e reparada e o sistema de lubrificação deve passar por flushing com óleo limpo antes de voltar ao serviço. Operar o equipamento com óleo contaminado por glicol, mesmo que brevemente, multiplica os danos em comparação com uma parada oportuna.",
+  "aliases": [
+    "contaminação por líquido de arrefecimento",
+    "contaminação por anticongelante",
+    "intrusão de glicol",
+    "entrada de líquido de arrefecimento",
+    "líquido de arrefecimento no óleo"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-SLUDGE",
+    "TERM-WATER-INGRESS"
+  ],
+  "relatedTechnologies": [
+    "duratech"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "oil-analysis-methods",
+    "failure-analysis"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

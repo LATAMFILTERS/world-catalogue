@@ -1,0 +1,42 @@
+{
+  "id": "TERM-CELLULOSE-MEDIA",
+  "term": "Meio de celulose",
+  "category": "filter-media",
+  "definition": "Meio filtrante fabricado com fibras de celulose (polpa de madeira), processado em uma manta não tecida por via úmida com tecnologia de fabricação de papel. O meio de celulose é usado em filtros de admissão de ar e de óleo lubrificante desde a década de 1950. As fibras naturais de celulose têm diâmetros de 5–30 µm — maiores e menos uniformes que as fibras sintéticas de vidro ou polipropileno —, resultando em distribuição de tamanho de poro mais ampla, menor eficiência absoluta em tamanhos de partícula finos (β₁₀(c) = 5–20 contra 75–200 do meio sintético) e menor resistência ao estouro em úmido sob ciclos de pressão. O meio de celulose absorve água e perde integridade estrutural em temperaturas elevadas quando molhado, o que o torna inadequado para aplicações em que possa haver água livre.",
+  "engineeringContext": "O meio de celulose continua de uso comum em aplicações de admissão de ar de eficiência moderada — admissões de cabine de caminhões, pré-filtros de HVAC — e em filtros de óleo de motor econômicos em que não se exige especificação de relação Beta ISO 16889. Para filtros de pressão hidráulicos, filtros de pressão de óleo lubrificante ou qualquer aplicação que exija β₁₀(c) ≥ 75, o meio de celulose é inadequado e deve ser substituído por meio sintético ou composto. O meio misto celulose/sintético — fibras de celulose combinadas com 5–20% de fibras de vidro ou polipropileno — atinge desempenho intermediário a custo moderado e é usado em muitos filtros de óleo de veículos comerciais de linha intermediária.",
+  "aliases": [
+    "meio de papel",
+    "meio de polpa de madeira",
+    "papel filtrante de celulose",
+    "meio filtrante de papel",
+    "meio de fibra natural"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-SYNTHETIC-MEDIA",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-NOMINAL-EFFICIENCY",
+    "TERM-MELT-BLOWN-MEDIA"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "materials-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

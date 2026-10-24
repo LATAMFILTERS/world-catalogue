@@ -1,0 +1,41 @@
+{
+  "id": "TERM-FERROUS-WEAR-DEBRIS",
+  "term": "Resíduos de desgaste ferroso",
+  "category": "contamination",
+  "definition": "Partículas metálicas à base de ferro geradas pelo desgaste abrasivo ou adesivo de componentes ferrosos — camisas de cilindro, comandos de válvulas, virabrequins, dentes de engrenagens e internos de bombas — suspensas no óleo do motor, óleo de engrenagens ou fluido hidráulico. Os resíduos ferrosos são detectados e quantificados por três métodos: análise espectrométrica de óleo (ASTM D5185/ICP-OES, eficaz para partículas <10 µm), ferrografia analítica e microscopia de patch (partículas >10 µm, revela morfologia e composição) e o índice do Particle Quantifier (PQ) — uma medição por indução magnética proporcional à concentração mássica ferrosa total, independentemente do tamanho de partícula, incluindo partículas grandes não detectáveis por espectrometria que indicam desgaste severo.",
+  "engineeringContext": "A tendência dos resíduos de desgaste ferroso ao longo do tempo é o principal indicador de condição da saúde do motor e do trem de força pesado. Uma tendência de aumento gradual do índice PQ indica amaciamento normal; um pico repentino indica um evento de desgaste agudo que exige inspeção imediata do componente. Picos de silício na mesma amostra de óleo indicam bypass do filtro de ar como fonte do desgaste — a sílica do ar que entra no motor se torna o abrasivo responsável pela geração de ferro. Interpretar dados de resíduos ferrosos sem dados simultâneos de silício é insuficiente para o diagnóstico de causa raiz.",
+  "aliases": [
+    "resíduos de desgaste de ferro",
+    "ferro de desgaste",
+    "partículas ferrosas",
+    "índice PQ",
+    "depósitos no bujão magnético",
+    "resíduos de ferro"
+  ],
+  "abbreviations": [
+    "PQ"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-ABRASIVE-WEAR",
+    "TERM-ADHESIVE-WEAR",
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-PARTICLE-COUNT",
+    "TERM-SILICA"
+  ],
+  "relatedTechnologies": [
+    "duratech",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "oil-analysis-methods",
+    "oil-condition-monitoring",
+    "fleet-oil-sampling-protocol"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

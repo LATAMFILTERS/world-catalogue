@@ -1,0 +1,42 @@
+{
+  "id": "TERM-HPCR",
+  "term": "Common rail de alta pressão",
+  "category": "water-fuel",
+  "definition": "Um sistema de injeção de óleo diesel no qual o combustível é pressurizado a 1,400–2,500 bar em um trilho acumulador comum e distribuído a injetores individuais acionados por solenoide ou piezoelétricos que injetam várias vezes por ciclo de combustão. Os injetores HPCR têm folgas pistão-cilindro de 1–3 µm e diâmetros de orifício de injeção de 80–200 µm, o que os torna os componentes mais sensíveis à contaminação dos motores diesel modernos. É exigida classe de limpeza ISO 12 ou melhor (tipicamente código de limpeza ISO para combustível: <18/16/13). Mesmo contaminantes moles, como crescimento biológico, parafina e arraste de óleo, podem causar travamento dos injetores e formação de depósitos.",
+  "engineeringContext": "Os sistemas HPCR exigem os padrões de limpeza de combustível mais rigorosos já especificados para motores de produção. Uma única partícula de sílica acima de 5 µm pode riscar permanentemente o pistão de um injetor, causando vazamento de combustível pelo pistão e perda de pressão de injeção. A filtração compatível com HPCR deve atingir classificações absolutas a 2–6 µm para proteger os componentes de injeção frente às quantidades de partículas presentes no diesel a granel típico.",
+  "aliases": [
+    "common rail",
+    "CRD",
+    "injeção direta",
+    "injeção CR"
+  ],
+  "abbreviations": [
+    "HPCR",
+    "CRD",
+    "CR"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16332",
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-INJECTOR-STICTION",
+    "TERM-WATER-INGRESS",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE",
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "hpcr-fuel-system-cleanliness",
+    "diesel-fuel-filtration",
+    "water-contamination-fuel"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

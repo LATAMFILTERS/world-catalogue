@@ -1,0 +1,37 @@
+{
+  "id": "TERM-CYCLONIC-SEPARATION",
+  "term": "Preseparación ciclónica",
+  "category": "air-intake",
+  "definition": "Una etapa de prelimpieza centrífuga integrada aguas arriba del elemento filtrante primario, en la que el aire entrante recibe un movimiento rotacional mediante álabes o tubos fijos, lo que crea una fuerza centrífuga que lanza las partículas grandes (típicamente >100 µm) hacia la pared exterior del cuerpo del separador. Las partículas separadas se descargan por una válvula de evacuación de polvo o a un vaso colector, sin pasar por el elemento filtrante. La preseparación reduce la carga de polvo sobre el elemento primario en un 70–95%, lo que prolonga considerablemente la vida útil del elemento filtrante en entornos con mucho polvo.",
+  "engineeringContext": "La preseparación ciclónica es práctica estándar en equipos móviles que operan en minería, agricultura y construcción, donde las concentraciones de polvo en el aire son altas. El preseparador debe ajustarse al caudal de aire del motor y al diseño de la carcasa del filtro primario. Los preseparadores subdimensionados generan restricción sin lograr una separación eficaz; las unidades sobredimensionadas suman peso y costo sin un beneficio proporcional.",
+  "aliases": [
+    "prefiltro",
+    "preseparador centrífugo",
+    "separador ciclónico",
+    "separador inercial",
+    "turboseparador"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-INGRESS-PROTECTION"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "air-intake-system-design",
+    "particle-ingress-prevention",
+    "airflow-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

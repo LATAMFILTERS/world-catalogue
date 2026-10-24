@@ -1,0 +1,34 @@
+{
+  "id": "TERM-SURFACE-FILTRATION",
+  "term": "Filtração superficial",
+  "category": "filter-media",
+  "definition": "Um mecanismo de filtração no qual partículas maiores que as aberturas dos poros superficiais do meio filtrante são capturadas exclusivamente na superfície a montante, formando uma camada de torta de partículas que se torna ela mesma uma superfície de filtração cada vez mais eficiente à medida que engrossa. A filtração superficial oferece alta eficiência inicial com um tamanho de poro absoluto definido e é característica de filtros de membrana, telas metálicas tecidas e alguns meios de grau HEPA. No entanto, a filtração superficial resulta em aumento rápido da pressão diferencial à medida que a torta superficial se forma e normalmente tem capacidade de retenção de pó muito menor que elementos de filtração em profundidade da mesma espessura.",
+  "engineeringContext": "A filtração superficial é adequada para aplicações que exigem filtração absoluta — reter todas as partículas acima de um tamanho definido —, mas não para filtração de ar ou fluidos de alta capacidade em que são exigidos intervalos de serviço estendidos. A tecnologia NANOFORCE usa camadas superficiais de nanofibras sobre um substrato de filtração em profundidade para oferecer filtração superficial de alta eficiência na faixa de partículas finas sem sacrificar a capacidade de retenção total.",
+  "aliases": [
+    "filtração por torta",
+    "filtração por tela",
+    "filtração de barreira superficial",
+    "filtração por peneiramento"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-DEPTH-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-SYNTHETIC-MEDIA"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

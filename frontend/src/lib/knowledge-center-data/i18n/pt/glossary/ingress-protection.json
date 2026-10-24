@@ -1,0 +1,41 @@
+{
+  "id": "TERM-INGRESS-PROTECTION",
+  "term": "Proteção contra entrada",
+  "category": "air-intake",
+  "definition": "O grau em que uma carcaça de filtro, uma vedação ou um componente do sistema impede a entrada de partículas sólidas e líquidos do ambiente, classificado por códigos IP (IEC 60529) ou por especificações de engenharia de vedação. Nos sistemas de admissão de ar, a proteção contra entrada se refere especificamente à integridade da vedação entre o elemento filtrante e a carcaça, impedindo que o ar não filtrado contorne o meio filtrante. Os modos de falha comuns incluem juntas do elemento danificadas, superfícies de vedação da carcaça deformadas, instalação incorreta do elemento e danos à carcaça. O bypass de partículas por vedação inadequada pode reduzir a eficiência de filtração efetiva de >99.9% para <80%, mesmo com um elemento filtrante novo e sem danos.",
+  "engineeringContext": "A inspeção da integridade da vedação é o aspecto mais negligenciado da manutenção da filtração de ar. Estudos mostram que a entrada de pó por bypass nas vedações contribui para o desgaste do motor em uma proporção significativa das falhas de campo atribuídas a \"bypass do filtro\". Em respiros e reservatórios hidráulicos, respiros de suspiro com classificação IP impedem que a poeira ambiente entre pelo reservatório durante as variações de nível do óleo.",
+  "aliases": [
+    "integridade da vedação",
+    "prevenção de bypass",
+    "classificação IP",
+    "vedação contra pó"
+  ],
+  "abbreviations": [
+    "IP"
+  ],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-SILICA"
+  ],
+  "relatedTechnologies": [
+    "macrocore",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "seal-integrity",
+    "particle-ingress-prevention",
+    "air-intake-system-design",
+    "filter-housing-system-integration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

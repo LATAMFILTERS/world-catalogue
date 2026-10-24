@@ -1,0 +1,37 @@
+{
+  "id": "TERM-LACQUER",
+  "term": "Laca",
+  "category": "chemical-degradation",
+  "definition": "Depósitos duros, insolubles y horneados que se forman en las superficies de componentes de motores e hidráulicos cuando los precursores de barniz se polimerizan en condiciones de alta temperatura, típicamente por encima de 200°C. La laca es la etapa final de la degradación oxidativa del aceite: los productos de oxidación (aldehídos, cetonas, hidroperóxidos) se polimerizan progresivamente y forman barniz blando, que luego se hornea hasta convertirse en laca dura bajo ciclos térmicos sostenidos. La laca en las ranuras de los anillos de pistón causa el pegado de los anillos y aumenta el blowby y el consumo de aceite. La laca en las superficies de los cojinetes de la carcasa central del turbocompresor causa rayado de cojinetes y falla del eje. En los sistemas hidráulicos, el barniz y la laca en los carretes de las válvulas proporcionales causan una respuesta de control errática y, finalmente, el agarrotamiento de la válvula.",
+  "engineeringContext": "Las tasas de formación de laca y barniz aumentan exponencialmente con la temperatura del aceite y con la extensión del intervalo de cambio. Una extensión del 30% más allá del intervalo de cambio recomendado con alta temperatura de operación puede duplicar la concentración de precursores de barniz. Usar aceite totalmente sintético con alta estabilidad a la oxidación reduce considerablemente el riesgo de formación de laca, pero no elimina la necesidad de cambios de aceite oportunos al operar con temperaturas extremas, alta carga de hollín o combustible contaminado. La eliminación de los depósitos de laca suele requerir limpieza mecánica o tratamiento químico, no filtración.",
+  "aliases": [
+    "barniz duro",
+    "depósitos horneados",
+    "depósitos de laca",
+    "depósitos en pistones",
+    "laca carbonosa"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VARNISH",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-THERMAL-DEGRADATION",
+    "TERM-SLUDGE"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "failure-analysis",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

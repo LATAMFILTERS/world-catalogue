@@ -1,0 +1,38 @@
+{
+  "id": "TERM-ABSOLUTE-EFFICIENCY",
+  "term": "Eficiência absoluta",
+  "category": "filtration-performance",
+  "definition": "Eficiência do filtro expressa como a porcentagem de partículas de um tamanho especificado retidas em uma única passagem pelo elemento filtrante, derivada da relação Beta: eficiência absoluta = (1 − 1/β_x(c)) × 100%. Um β₁₀(c) de 200 corresponde a eficiência absoluta de 99.5% a 10 µm. As classificações de eficiência absoluta são medidas em condições padronizadas de ensaio multipass conforme a ISO 16889.",
+  "engineeringContext": "A eficiência absoluta é a métrica correta ao especificar filtros para sistemas críticos, incluindo servoválvulas, válvulas proporcionais e atuadores hidráulicos de precisão. Ao contrário da eficiência nominal, os valores de eficiência absoluta são reprodutíveis entre laboratórios de ensaio porque derivam de um protocolo de ensaio multipass definido.",
+  "aliases": [
+    "eficiência de passagem única",
+    "eficiência de filtração absoluta"
+  ],
+  "abbreviations": [
+    "AE"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-NOMINAL-EFFICIENCY",
+    "TERM-MULTI-PASS-TEST"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "beta-ratio",
+    "filter-media-engineering",
+    "iso-16889"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

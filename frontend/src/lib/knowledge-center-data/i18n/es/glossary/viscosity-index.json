@@ -1,0 +1,31 @@
+{
+  "id": "TERM-VISCOSITY-INDEX",
+  "term": "Índice de viscosidad",
+  "category": "lubrication",
+  "definition": "Un número adimensional que expresa la tasa de cambio de la viscosidad del aceite con la temperatura. Un índice de viscosidad (VI) más alto significa que el aceite mantiene una viscosidad más uniforme en un rango de temperatura más amplio. Los aceites minerales suelen tener un VI de 90–110; los fluidos hidráulicos convencionales, 95–105; los aceites de motor con mejorador de VI, 140–175; los fluidos sintéticos, 150–200+. Los aceites de bajo índice de viscosidad se vuelven muy fluidos a altas temperaturas (con riesgo de un espesor de película insuficiente) y muy espesos a bajas temperaturas (con riesgo de cavitación de la bomba en el arranque en frío y restricción excesiva).",
+  "engineeringContext": "El índice de viscosidad es crítico para equipos móviles que operan en amplios rangos de temperatura ambiente. Una excavadora hidráulica que opera desde −20°C en invierno hasta +40°C de ambiente en verano requiere un fluido hidráulico con VI ≥ 160 para mantener una viscosidad aceptable en la entrada de la bomba en el arranque en frío y evitar un adelgazamiento excesivo a la temperatura máxima de operación. Los aceites base sintéticos ofrecen de forma intrínseca un VI más alto que los aceites minerales.",
+  "aliases": [
+    "VI",
+    "comportamiento viscosidad-temperatura"
+  ],
+  "abbreviations": [
+    "VI"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VISCOSITY",
+    "TERM-THERMAL-DEGRADATION"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "sae-j300-viscosity-classification",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

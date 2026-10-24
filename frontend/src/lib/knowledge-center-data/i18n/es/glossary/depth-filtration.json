@@ -1,0 +1,40 @@
+{
+  "id": "TERM-DEPTH-FILTRATION",
+  "term": "Filtración en profundidad",
+  "category": "filter-media",
+  "definition": "Un mecanismo de filtración en el que las partículas se capturan en todo el volumen tridimensional del medio filtrante —dentro de los poros e intersticios de la estructura fibrosa— y no en una sola capa superficial. La filtración en profundidad captura partículas por adsorción, impacto inercial, atracción electrostática e intercepción directa a medida que recorren los caminos tortuosos de los poros del medio. La filtración en profundidad ofrece una alta capacidad de retención de polvo porque todo el volumen del medio participa en la retención de partículas, a diferencia de la filtración superficial, que se satura rápidamente en la cara aguas arriba.",
+  "engineeringContext": "La filtración en profundidad es el mecanismo dominante en los elementos de filtro de admisión de aire, aceite lubricante e hidráulicos fabricados con medios multicapa de celulosa, fibra de vidrio y sintéticos. Las características de eficiencia y capacidad de la filtración en profundidad dependen del diámetro de las fibras, la densidad de empaque, el espesor del medio y la distribución de tamaño de poro, todos ellos definidos durante la fabricación del medio.",
+  "aliases": [
+    "filtro de profundidad",
+    "filtración volumétrica",
+    "filtración en masa"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-SURFACE-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-BETA-RATIO"
+  ],
+  "relatedTechnologies": [
+    "macrocore",
+    "syntrax",
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "air-intake-protection",
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "airflow-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

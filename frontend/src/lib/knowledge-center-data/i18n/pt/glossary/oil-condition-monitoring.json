@@ -1,0 +1,45 @@
+{
+  "id": "TERM-OIL-CONDITION-MONITORING",
+  "term": "Monitoramento da condição do óleo",
+  "category": "fluid-cleanliness",
+  "definition": "A medição sistemática das propriedades do óleo lubrificante ou hidráulico para avaliar tanto a condição do próprio óleo quanto a condição mecânica dos componentes lubrificados. Os parâmetros de monitoramento incluem: contagem de partículas e código de limpeza ISO (nível de contaminação), viscosidade, número de acidez/TAN (estado de oxidação), número de basicidade/TBN (esgotamento de aditivos), concentrações de metais de desgaste por análise espectrométrica de óleo (ferro, cobre, chumbo, cromo, alumínio), teor de água por titulação Karl Fischer e silício (indicador de bypass do filtro de ar ou falha de vedação). Os resultados orientam as decisões de manutenção preditiva sobre intervalos de troca de óleo e inspeção de componentes.",
+  "engineeringContext": "O monitoramento da condição do óleo transforma o serviço do filtro de substituição programada em substituição baseada na condição, estendendo os intervalos de troca de óleo em 30–100% em muitas aplicações e reduzindo falhas inesperadas. A análise de óleo em laboratório realizada a cada 250–500 horas de operação fornece o quadro mais completo; sensores em linha de contagem de partículas e teor de água permitem monitoramento em tempo real sem amostragem.",
+  "aliases": [
+    "análise de óleo",
+    "monitoramento da condição do lubrificante",
+    "análise de fluidos",
+    "manutenção preditiva do óleo"
+  ],
+  "abbreviations": [
+    "OCM",
+    "OA"
+  ],
+  "applicableStandards": [
+    "STD-ISO-4406",
+    "STD-ISO-11171"
+  ],
+  "relatedTerms": [
+    "TERM-PARTICLE-COUNT",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-KARL-FISCHER-TITRATION"
+  ],
+  "relatedTechnologies": [
+    "duratech"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "oil-analysis-methods",
+    "fleet-oil-sampling-protocol",
+    "extended-drain-interval-engineering",
+    "service-intervals"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

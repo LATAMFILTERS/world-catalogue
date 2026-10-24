@@ -1,0 +1,41 @@
+{
+  "id": "TERM-COLLAPSE-PRESSURE",
+  "term": "Presión de colapso",
+  "category": "filtration-performance",
+  "definition": "La presión diferencial mínima a la que un elemento filtrante sufre una falla estructural irreversible bajo carga de estallido o implosión, determinada mediante el ensayo de colapso/estallido. La presión de colapso se mide aplicando una presión diferencial estática a través del elemento hasta que ocurre la falla estructural. Representa el límite superior de seguridad estructural: la ΔP máxima por debajo de la cual se garantiza la integridad del elemento. Los elementos hidráulicos y de lubricación ELIMFILTERS se diseñan con presiones de colapso de 21–35 bar, lo que da márgenes de seguridad de 3.5–7× sobre los ajustes máximos de la válvula de derivación (3–6 bar). En elementos de filtro de aire, la presión de colapso se ensaya según la ISO 3723.",
+  "engineeringContext": "La presión de colapso es un límite de seguridad estructural, no un parámetro de operación. Los elementos filtrantes nunca deberían acercarse a la presión de colapso en servicio. Su propósito es definir el margen de seguridad entre la presión de apertura de la válvula de derivación y la falla catastrófica. Los elementos con presión de colapso insuficiente son vulnerables a la falla estructural en los arranques en frío (la alta viscosidad del aceite genera una ΔP elevada) o ante una falla de la válvula de derivación. Un colapso libera todo el contaminante acumulado directamente en el circuito aguas abajo y obliga a lavar por completo el sistema.",
+  "aliases": [
+    "presión de estallido",
+    "límite de integridad estructural",
+    "clasificación de estallido del elemento",
+    "clasificación de colapso"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-FILTER-BYPASS-VALVE"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "nanoforce",
+    "macrocore",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-element-integrity",
+    "materials-engineering",
+    "failure-analysis"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

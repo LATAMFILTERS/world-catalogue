@@ -1,0 +1,42 @@
+{
+  "id": "TERM-CELLULOSE-MEDIA",
+  "term": "Medio de celulosa",
+  "category": "filter-media",
+  "definition": "Medio filtrante fabricado con fibras de celulosa (pulpa de madera), procesado en una lámina no tejida por vía húmeda con tecnología papelera. El medio de celulosa se usa en filtros de admisión de aire y de aceite lubricante desde la década de 1950. Las fibras naturales de celulosa tienen diámetros de 5–30 µm —más grandes y menos uniformes que las fibras sintéticas de vidrio o polipropileno—, lo que da una distribución de tamaño de poro más amplia, menor eficiencia absoluta en tamaños de partícula finos (β₁₀(c) = 5–20 frente a 75–200 del medio sintético) y menor resistencia al estallido en húmedo bajo ciclos de presión. El medio de celulosa absorbe agua y pierde integridad estructural a temperaturas elevadas cuando está mojado, por lo que no es adecuado para aplicaciones donde pueda haber agua libre.",
+  "engineeringContext": "El medio de celulosa sigue siendo de uso común en aplicaciones de admisión de aire de eficiencia moderada —admisiones de cabina de camiones, prefiltros de HVAC— y en filtros de aceite de motor económicos donde no se exige una especificación de relación Beta ISO 16889. Para filtros de presión hidráulicos, filtros de presión de aceite lubricante o cualquier aplicación que requiera β₁₀(c) ≥ 75, el medio de celulosa es insuficiente y debe reemplazarse por medio sintético o compuesto. El medio mixto celulosa/sintético —fibras de celulosa combinadas con 5–20% de fibras de vidrio o polipropileno— logra un desempeño intermedio a costo moderado y se usa en muchos filtros de aceite de vehículos comerciales de gama media.",
+  "aliases": [
+    "medio de papel",
+    "medio de pulpa de madera",
+    "papel filtrante de celulosa",
+    "medio filtrante de papel",
+    "medio de fibra natural"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-SYNTHETIC-MEDIA",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-NOMINAL-EFFICIENCY",
+    "TERM-MELT-BLOWN-MEDIA"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "materials-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

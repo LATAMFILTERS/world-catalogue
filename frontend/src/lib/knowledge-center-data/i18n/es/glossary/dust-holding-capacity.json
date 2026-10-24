@@ -1,0 +1,42 @@
+{
+  "id": "TERM-DUST-HOLDING-CAPACITY",
+  "term": "Capacidad de retención de polvo",
+  "category": "air-intake",
+  "definition": "La masa total de polvo de ensayo estandarizado (ISO 12103-1 A2 Fine) que retiene un elemento filtrante antes de alcanzar su límite de restricción terminal definido, medida en gramos (g) según el protocolo de ensayo ISO 5011. Una mayor capacidad de retención de polvo con restricción equivalente prolonga los intervalos de servicio en campo. La capacidad de retención de polvo y la restricción inicial determinan juntas si un elemento filtrante es adecuado para entornos polvorientos de alta carga o para aplicaciones livianas de aire limpio.",
+  "engineeringContext": "La capacidad de retención de polvo es el diferenciador clave entre los elementos de filtro de aire de alto desempeño y los genéricos. Un elemento con el doble de capacidad de retención de polvo con la misma restricción inicial duplica el intervalo de servicio en un entorno de polvo de campo dado, lo que reduce directamente los costos de mantenimiento y el tiempo de parada. La construcción con gradiente de densidad progresivo es el principal método de ingeniería para maximizar la capacidad de retención de polvo.",
+  "aliases": [
+    "DHC",
+    "capacidad de retención de suciedad",
+    "capacidad de polvo",
+    "capacidad del filtro"
+  ],
+  "abbreviations": [
+    "DHC"
+  ],
+  "applicableStandards": [
+    "STD-ISO-5011",
+    "STD-SAE-J726"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-TEST-DUST",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "dust-holding-capacity",
+    "airflow-engineering",
+    "service-intervals",
+    "iso-5011",
+    "sae-j726-iso-5011-air-cleaner-test"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

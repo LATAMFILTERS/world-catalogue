@@ -1,0 +1,35 @@
+{
+  "id": "TERM-FILTER-BYPASS-VALVE",
+  "term": "Válvula de derivación del filtro",
+  "category": "filtration-performance",
+  "definition": "Una válvula de alivio de presión con resorte integrada en un elemento filtrante o en la carcasa del filtro, que se abre automáticamente cuando la presión diferencial a través del elemento supera un umbral preajustado, lo que permite que el fluido sin filtrar rodee el elemento y mantenga el flujo del circuito. Las válvulas de derivación protegen a los componentes aguas abajo de la falta de aceite en los arranques en frío (cuando la alta viscosidad del aceite genera una ΔP elevada) y cuando los elementos filtrantes están sobrecargados de contaminante. La presión de apertura de la válvula de derivación suele ser de 1.5–4 bar en filtros de aceite lubricante y de 3–6 bar en elementos hidráulicos.",
+  "engineeringContext": "Una válvula de derivación es un dispositivo de protección de último recurso, no un indicador de servicio. Los eventos de derivación introducen en el circuito fluido sin filtrar y cargado de partículas, lo que causa un desgaste rápido de los componentes. Los sistemas de filtración deben seleccionarse y mantenerse de modo que la activación de la válvula de derivación sea poco frecuente. Los indicadores de derivación (visuales o electrónicos) permiten detectar los eventos de derivación en servicio.",
+  "aliases": [
+    "válvula de alivio de derivación",
+    "válvula de alivio de presión",
+    "válvula antirretorno"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-FULL-FLOW-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "filter-element-integrity",
+    "filter-housing-design",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

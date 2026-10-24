@@ -1,0 +1,34 @@
+{
+  "id": "TERM-PARTICLE-SIZE-DISTRIBUTION",
+  "term": "Distribución de tamaño de partícula",
+  "category": "contamination",
+  "definition": "La descripción estadística del rango de tamaños de partícula presentes en una muestra de contaminante de fluido o del aire, expresada típicamente como conteo acumulado o porcentaje en masa en umbrales de tamaño especificados. La distribución de tamaño de partícula se mide por conteo de partículas láser (ISO 11171) para la contaminación de fluidos y por difracción láser o análisis por tamizado para caracterizar el polvo del aire. La distribución determina qué tamaños de partícula dominan los mecanismos de desgaste y qué clasificación de filtro se requiere para controlar la fracción más dañina.",
+  "engineeringContext": "En los sistemas hidráulicos, las partículas del rango de 2–15 µm causan el máximo daño abrasivo porque coinciden con las holguras típicas de cojinetes y válvulas (1–25 µm). Las partículas menores de 1 µm contribuyen poco al desgaste abrasivo y no las capturan los contadores de partículas láser estándar. Las partículas mayores de 50 µm se eliminan rápidamente por sedimentación y las atrapa con facilidad la filtración gruesa. La especificación del filtro debe apuntar al rango crítico de 2–15 µm.",
+  "aliases": [
+    "PSD",
+    "distribución de partículas",
+    "espectro de tamaño de partícula"
+  ],
+  "abbreviations": [
+    "PSD"
+  ],
+  "applicableStandards": [
+    "STD-ISO-11171",
+    "STD-ISO-4406"
+  ],
+  "relatedTerms": [
+    "TERM-PARTICLE-COUNT",
+    "TERM-ABRASIVE-WEAR",
+    "TERM-ISO-CLEANLINESS-CODE"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "iso-11171-particle-counting",
+    "contamination-control",
+    "filter-media-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

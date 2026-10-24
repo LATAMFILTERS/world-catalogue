@@ -1,0 +1,34 @@
+{
+  "id": "TERM-CAVITATION",
+  "term": "Cavitación",
+  "category": "hydraulic-systems",
+  "definition": "La formación y el colapso violento de cavidades llenas de vapor (burbujas) en un fluido hidráulico cuando la presión local cae por debajo de la presión de vapor del fluido. La cavitación ocurre principalmente en la entrada de las bombas hidráulicas (cavitación de succión), donde una restricción excesiva —causada por una válvula de entrada parcialmente cerrada, una línea de entrada subdimensionada, un colador de succión obstruido o aceite demasiado frío y viscoso— reduce la presión de entrada por debajo del umbral de presión de vapor. El colapso de las burbujas genera picos de presión locales intensos (de hasta varios miles de bar) que erosionan las superficies de los componentes de bombas y válvulas, producen ruido de alta frecuencia y generan partículas metálicas de desgaste que contaminan el fluido.",
+  "engineeringContext": "La cavitación es un fenómeno destructivo para la bomba que avanza rápido una vez que empieza. Los indicadores incluyen un zumbido o traqueteo de alta frecuencia en la bomba, componentes de la bomba decolorados y conteos de partículas metálicas en rápido aumento en las muestras de aceite. La prevención se centra en asegurar un dimensionamiento adecuado de la línea de entrada, mantener el nivel de aceite, usar el grado de viscosidad correcto para la temperatura ambiente y mantener limpios los coladores de succión. Los coladores de succión no deben superar una malla de 120 µm para proteger las bombas sin restringir el flujo.",
+  "aliases": [
+    "cavitación de succión",
+    "cavitación por vapor",
+    "cavitación de bomba"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-AERATION",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-VISCOSITY"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "hydraulic-reservoir-design",
+    "failure-analysis",
+    "hydraulic-contamination-sensitivity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

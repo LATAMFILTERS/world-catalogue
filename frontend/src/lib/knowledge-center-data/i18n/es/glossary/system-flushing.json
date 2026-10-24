@@ -1,0 +1,40 @@
+{
+  "id": "TERM-SYSTEM-FLUSHING",
+  "term": "Lavado del sistema",
+  "category": "hydraulic-systems",
+  "definition": "Un procedimiento en el que el fluido hidráulico circula por un sistema nuevo o reparado a velocidad elevada —número de Reynolds >4,000 para flujo turbulento— para desprender y eliminar los contaminantes de montaje, como virutas metálicas, costras de tubería, salpicaduras de soldadura, compuestos de juntas y partículas residuales de fabricación, antes de que el sistema entre en servicio. El lavado usa una bomba de lavado dedicada y conjuntos de filtro temporales con elementos finos (β₆(c) ≥ 200), haciendo pasar el flujo por todos los tramos del sistema y derivando los componentes de precisión como servoválvulas y válvulas proporcionales. Criterio de aceptación: el código de limpieza ISO en la línea de retorno cumple el objetivo del sistema en tres muestras consecutivas tomadas a intervalos de tiempo definidos.",
+  "engineeringContext": "La contaminación de montaje es la mayor fuente individual de contaminación en los sistemas hidráulicos nuevos. Las prácticas de fabricación y montaje introducen conteos de partículas 5–10 niveles de código ISO por encima del objetivo de operación. Sin lavado, la operación inicial del sistema distribuye esta contaminación por todos los circuitos, lo que causa un desgaste rápido de servoválvulas, válvulas proporcionales y bombas en las primeras 200–500 horas de operación. La documentación del protocolo de lavado —diagramas de circuito, registro de filtros, resultados de ensayos de limpieza— debe conservarse como parte del registro de mantenimiento permanente de la máquina y es necesaria para cumplir la garantía de los equipos hidráulicos de precisión.",
+  "aliases": [
+    "lavado de puesta en servicio",
+    "lavado hidráulico",
+    "lavado previo a la puesta en servicio",
+    "purga del sistema",
+    "lavado por circuito"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-KIDNEY-LOOP",
+    "TERM-PARTICLE-COUNT",
+    "TERM-SERVO-VALVE",
+    "TERM-PROPORTIONAL-VALVE"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "contamination-control",
+    "fluid-cleanliness"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

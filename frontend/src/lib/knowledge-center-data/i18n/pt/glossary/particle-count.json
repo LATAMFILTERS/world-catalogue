@@ -1,0 +1,39 @@
+{
+  "id": "TERM-PARTICLE-COUNT",
+  "term": "Contagem de partículas",
+  "category": "fluid-cleanliness",
+  "definition": "O número de partículas de uma faixa de tamanho especificada presentes em uma unidade de volume de fluido, expresso tipicamente em partículas por mililitro (p/mL) ou partículas por 100 mL. As contagens de partículas são medidas por contadores automáticos de partículas por obscurecimento ou espalhamento de luz laser, calibrados conforme a ISO 11171 com padrões de calibração rastreáveis ao NIST. Os resultados são relatados como contagens acumuladas nos tamanhos limite ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c) para determinar o código de limpeza ISO 4406.",
+  "engineeringContext": "A contagem de partículas é a medição fundamental na qual se baseiam todas as normas de limpeza de fluidos. A contagem de partículas em campo usa contadores a laser portáteis conectados a pontos de amostragem em máquinas em operação. A contagem de partículas em laboratório usa instrumentos ópticos de bancada dedicados. O manuseio das amostras — evitando a contaminação por frascos, tubos e ambiente — é crítico para resultados exatos.",
+  "aliases": [
+    "concentração de partículas",
+    "nível de contaminação por partículas",
+    "densidade de partículas"
+  ],
+  "abbreviations": [
+    "p/mL",
+    "p/100mL"
+  ],
+  "applicableStandards": [
+    "STD-ISO-11171",
+    "STD-ISO-4406"
+  ],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-NAS-CLEANLINESS-CODE",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "iso-11171-particle-counting",
+    "oil-analysis-methods",
+    "fluid-cleanliness",
+    "fleet-oil-sampling-protocol"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

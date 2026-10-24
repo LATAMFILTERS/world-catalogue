@@ -1,0 +1,40 @@
+{
+  "id": "TERM-WATER-INGRESS",
+  "term": "Ingreso de agua",
+  "category": "water-fuel",
+  "definition": "La entrada de agua libre o agua emulsionada a un sistema de combustible, hidráulico o de lubricación. El ingreso de agua ocurre por condensación en depósitos ventilados, contaminación por los respiraderos, degradación de sellos, falla de intercambiadores de calor y procedimientos de mantenimiento inadecuados. Las concentraciones de agua superiores a 200 ppm en el fluido hidráulico causan cavitación, aceleran la corrosión de los cojinetes, reducen la resistencia de la película y permiten el crecimiento microbiano. En el diésel, el agua por encima de 200 ppm causa agarrotamiento de los inyectores, corrosión y contaminación microbiana. Se mide por titulación Karl Fischer según la ASTM D6304 o la ISO 12937.",
+  "engineeringContext": "El agua es el contaminante no particulado más dañino en los sistemas hidráulicos y de combustible. Apenas un 0.1% de agua libre reduce la vida a la fatiga de los rodamientos en un 90% por la fragilización por hidrógeno del acero del rodamiento en los contactos entre asperezas. Los respiraderos de depósito con barreras desecantes o de membrana evitan el ingreso de agua por condensación en sistemas estacionarios. Los filtros separadores de agua por coalescencia son el principal método activo de eliminación.",
+  "aliases": [
+    "contaminación por agua",
+    "agua libre",
+    "agua disuelta",
+    "agua emulsionada",
+    "ingreso de humedad"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ASTM-D6304",
+    "STD-ISO-12937"
+  ],
+  "relatedTerms": [
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-COALESCING",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection",
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "diesel-fuel-filtration",
+    "marine-diesel-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

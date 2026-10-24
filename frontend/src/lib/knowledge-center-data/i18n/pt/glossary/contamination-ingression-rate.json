@@ -1,0 +1,38 @@
+{
+  "id": "TERM-CONTAMINATION-INGRESSION-RATE",
+  "term": "Taxa de entrada de contaminação",
+  "category": "fluid-cleanliness",
+  "definition": "A taxa na qual partículas do ar, contaminantes de processo ou resíduos de desgaste entram em um sistema de fluido durante a operação normal, expressa tipicamente em miligramas por hora (mg/h) ou partículas por hora em uma faixa de tamanho definida. A taxa de entrada determina o nível de contaminação em regime permanente que um sistema de filtração consegue atingir: um sistema de filtração entra em equilíbrio quando sua taxa de remoção iguala a taxa de entrada. Ambientes com alta taxa de entrada (obras empoeiradas, mineração, agricultura) exigem maior capacidade de filtração ou intervalos de serviço mais frequentes do que ambientes com baixa entrada.",
+  "engineeringContext": "A modelagem da entrada de contaminação é usada para selecionar sistemas de filtração capazes de manter os códigos de limpeza alvo nas condições reais de operação. As principais vias de entrada incluem: vedações de haste de cilindros e respiros (principais na hidráulica móvel), respiros de suspiro de reservatórios (principais em sistemas estacionários) e contaminação durante a manutenção (limpeza de ferramentas, transferência inadequada de óleo). A integridade das vedações e a seleção da filtração dos respiros controlam diretamente a taxa de entrada.",
+  "aliases": [
+    "taxa de entrada",
+    "taxa de geração de contaminação",
+    "taxa de ingestão de partículas"
+  ],
+  "abbreviations": [
+    "IR"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-INGRESS-PROTECTION",
+    "TERM-BYPASS-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "contamination-ingression-modelling",
+    "particle-ingress-prevention",
+    "seal-integrity",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

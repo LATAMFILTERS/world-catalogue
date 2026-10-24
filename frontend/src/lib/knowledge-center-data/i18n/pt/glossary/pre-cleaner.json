@@ -1,0 +1,38 @@
+{
+  "id": "TERM-PRE-CLEANER",
+  "term": "Pré-filtro",
+  "category": "air-intake",
+  "definition": "Um dispositivo instalado a montante do elemento de filtro de ar primário que usa separação centrífuga, ciclônica ou inercial para remover partículas grandes — tipicamente >100 µm — antes que cheguem ao elemento primário. Os pré-filtros reduzem a carga de pó sobre o elemento filtrante primário, prolongando sua vida útil em 2–5× em ambientes com muito pó. Os tipos incluem pré-filtros de aletas, copos pré-separadores centrífugos, baterias de ciclones de tubos e pré-filtros em banho de óleo. Os pré-filtros são padrão nos sistemas de filtro de ar de equipamentos de mineração, pedreiras e terraplenagem que operam em ambientes com concentrações de pó ambiente acima de 5 mg/m³.",
+  "engineeringContext": "Em ambientes de pó extremo, os pré-filtros são essenciais para atingir intervalos de serviço práticos. Sem pré-filtro, a restrição do elemento primário atinge os limites de serviço em poucas horas em operações com sílica ou areia. A eficiência de separação do pré-filtro não é classificada pela ISO 5011 porque ele remove apenas partículas grandes — a eficiência global do sistema é determinada pelo elemento primário atuando sobre o ar pré-limpo. O desempenho do pré-filtro se degrada se a porta de expulsão de pó estiver bloqueada ou se o copo centrífugo não for esvaziado durante o serviço.",
+  "aliases": [
+    "pré-separador",
+    "pré-separador de admissão",
+    "pré-filtro de ar",
+    "pré-filtro ciclônico",
+    "pré-separador inercial"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-CYCLONIC-SEPARATION",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "air-intake-system-design",
+    "airflow-engineering",
+    "iso-5011"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

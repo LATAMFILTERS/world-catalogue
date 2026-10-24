@@ -4,6 +4,10 @@ import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { TERMINOLOGY_REGISTRY, termIdToSlug, getGlossarySidebarData, TERM_CATEGORY_LABELS } from '@/lib/knowledge-center';
 import type { TerminologyEntry } from '@/lib/knowledge-center';
+import { useReviewed } from '@/components/ReviewedText';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { articleTitle, systemTitle, termTitle } from '@/lib/knowledge-center-data/i18n/titles';
 import {
   ArticleBreadcrumb,
   ArticleHero,
@@ -19,6 +23,9 @@ export default function GlossaryTermContent({
   slug: string;
 }) {
   const sidebar = getGlossarySidebarData(slug);
+  const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   const relatedEntries = entry.relatedTerms
     .map((id) => TERMINOLOGY_REGISTRY[id])
     .filter(Boolean) as TerminologyEntry[];
@@ -27,8 +34,8 @@ export default function GlossaryTermContent({
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
       <ArticleBreadcrumb items={[
-        { label: 'Knowledge Center', href: '/knowledge-center' },
-        { label: 'Glossary', href: '/knowledge-center/glossary' },
+        { label: tr('Knowledge Center'), href: '/knowledge-center' },
+        { label: tr('Glossary'), href: '/knowledge-center/glossary' },
         { label: entry.term },
       ]} />
 
@@ -51,7 +58,7 @@ export default function GlossaryTermContent({
             marginBottom: '0.5rem',
           }}
         >
-          {TERM_CATEGORY_LABELS[entry.category]}
+          {tr(TERM_CATEGORY_LABELS[entry.category])}
         </motion.p>
 
         {entry.aliases.length > 0 && (
@@ -66,7 +73,7 @@ export default function GlossaryTermContent({
               letterSpacing: '0.04em',
             }}
           >
-            Also: {entry.aliases.join(' · ')}
+            {tr('Also:')} {entry.aliases.join(' · ')}
           </motion.p>
         )}
 
@@ -82,7 +89,7 @@ export default function GlossaryTermContent({
               letterSpacing: '0.04em',
             }}
           >
-            Abbrev: {entry.abbreviations.join(' · ')}
+            {tr('Abbrev:')} {entry.abbreviations.join(' · ')}
           </motion.p>
         )}
       </ArticleHero>
@@ -108,7 +115,7 @@ export default function GlossaryTermContent({
             textTransform: 'uppercase',
             marginBottom: '1.25rem',
           }}>
-            Canonical Definition
+            {tr('Canonical Definition')}
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -141,7 +148,7 @@ export default function GlossaryTermContent({
             textTransform: 'uppercase',
             marginBottom: '1rem',
           }}>
-            Engineering Context
+            {tr('Engineering Context')}
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -169,7 +176,7 @@ export default function GlossaryTermContent({
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
-              Applicable Standards
+              {tr('Applicable Standards')}
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {sidebar.relatedStandards.map((std) => (
@@ -229,7 +236,7 @@ export default function GlossaryTermContent({
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
-              Related Technologies
+              {tr('Related Technologies')}
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {sidebar.relatedTechnologies.map((tech) => (
@@ -275,7 +282,7 @@ export default function GlossaryTermContent({
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
-              Protection Systems
+              {tr('Protection Systems')}
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {sidebar.relatedSystems.map((sys) => (
@@ -297,7 +304,7 @@ export default function GlossaryTermContent({
                       transition: 'background 0.2s',
                     }}
                   >
-                    {sys.title}
+                    {systemTitle(sys.slug, lang, sys.title)}
                   </motion.span>
                 </Link>
               ))}
@@ -321,7 +328,7 @@ export default function GlossaryTermContent({
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
-              Knowledge Center Articles
+              {tr('Knowledge Center Articles')}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '0.5rem' }}>
               {sidebar.relatedArticles.map((article) => (
@@ -352,7 +359,7 @@ export default function GlossaryTermContent({
                       color: 'rgba(255,255,255,0.7)',
                       lineHeight: 1.4,
                     }}>
-                      {article.title}
+                      {articleTitle(article.slug, lang, article.title)}
                     </p>
                   </motion.div>
                 </Link>
@@ -369,13 +376,13 @@ export default function GlossaryTermContent({
           style={{ marginBottom: '3rem' }}
         >
           <SpecificationTable
-            title="KC-00 Governance Metadata"
+            title={tr('KC-00 Governance Metadata')}
             rows={[
-              { label: 'Permanent ID', value: entry.id },
-              { label: 'Category', value: TERM_CATEGORY_LABELS[entry.category] },
-              { label: 'Status', value: entry.status.charAt(0).toUpperCase() + entry.status.slice(1) },
-              { label: 'Version', value: entry.version },
-              { label: 'Last Reviewed', value: entry.lastReviewed },
+              { label: tr('Permanent ID'), value: entry.id },
+              { label: tr('Category'), value: tr(TERM_CATEGORY_LABELS[entry.category]) },
+              { label: tr('Status'), value: tr(entry.status.charAt(0).toUpperCase() + entry.status.slice(1)) },
+              { label: tr('Version'), value: entry.version },
+              { label: tr('Last Reviewed'), value: entry.lastReviewed },
             ]}
           />
         </motion.div>
@@ -395,7 +402,7 @@ export default function GlossaryTermContent({
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
-              Related Terms
+              {tr('Related Terms')}
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {relatedEntries.map((t) => (
@@ -412,7 +419,7 @@ export default function GlossaryTermContent({
                     padding: '4px 12px',
                   }}
                 >
-                  {t.term}
+                  {termTitle(termIdToSlug(t.id), lang, t.term)}
                 </Link>
               ))}
             </div>

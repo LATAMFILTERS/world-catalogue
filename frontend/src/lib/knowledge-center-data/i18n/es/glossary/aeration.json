@@ -1,0 +1,32 @@
+{
+  "id": "TERM-AERATION",
+  "term": "Aireación",
+  "category": "contamination",
+  "definition": "El arrastre de aire libre o gases no condensables en el fluido hidráulico o de lubricación, que produce una mezcla de fluido compresible y espumosa. La aireación ocurre cuando el fluido se expone a aire por encima de su punto de saturación, típicamente por flujo turbulento, formación de vórtices en las entradas de succión, bajo nivel de fluido en el depósito o fugas en las conexiones de la línea de succión. El fluido aireado se comprime bajo presión, lo que causa una respuesta esponjosa de los actuadores, más ruido (similar a la cavitación), temperaturas elevadas del fluido por la compresión adiabática de las burbujas de aire y oxidación acelerada del aceite. La aireación es distinta del aire disuelto: el aire disuelto permanece en solución y no se comprime a las presiones de operación.",
+  "engineeringContext": "La aireación se controla con el diseño del depósito hidráulico: volumen de fluido adecuado (mínimo 3–5× el caudal de la bomba por minuto), línea de retorno sumergida bajo la superficie del fluido, tiempo de reposo suficiente y deflectores para que el aire arrastrado escape antes de que el fluido vuelva a pasar por la bomba. Los aditivos antiespumantes del aceite reducen la tensión superficial, pero no atacan la causa raíz del arrastre de aire.",
+  "aliases": [
+    "arrastre de aire",
+    "formación de espuma",
+    "aceite aireado",
+    "aire arrastrado"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-CAVITATION",
+    "TERM-VARNISH"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-reservoir-design",
+    "failure-analysis",
+    "hydraulic-power-unit-design"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

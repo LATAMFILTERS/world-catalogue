@@ -1,0 +1,41 @@
+{
+  "id": "TERM-EMULSIFIED-WATER",
+  "term": "Agua emulsionada",
+  "category": "water-fuel",
+  "definition": "Agua dispersa en el combustible o el aceite en forma de gotas microscópicas —típicamente de 1–100 µm de diámetro— estabilizadas por aditivos del combustible de tipo tensoactivo o por productos de degradación, que forman una emulsión estable de aspecto turbio o lechoso. A diferencia del agua libre, el agua emulsionada no decanta por gravedad y no puede eliminarse solo con válvulas de drenaje: se requiere filtración coalescente para forzar la unión de las gotas en gotas más grandes que decanten o drenen. El contenido de agua emulsionada en el diésel se mide por titulación Karl Fischer (ASTM D6304/ISO 12937); concentraciones superiores a 100–200 ppm en masa aceleran la obstrucción del filtro y la corrosión de los inyectores HPCR.",
+  "engineeringContext": "El diésel moderno de ultra bajo azufre (ULSD) tolera menos la contaminación por agua que el diésel tradicional de alto azufre, porque el ULSD contiene menos tensoactivos naturales. El agua que entra al ULSD por condensación en los tanques de almacenamiento o por contaminación cruzada forma rápidamente emulsiones finas y estables que atraviesan los medios filtrantes convencionales sin separarse. La tecnología de filtración coalescente —HYDROCORE— está diseñada específicamente para romper y eliminar las emulsiones del ULSD antes de que el combustible llegue a los componentes de inyección HPCR con holguras internas de precisión.",
+  "aliases": [
+    "agua dispersa",
+    "emulsión de agua en combustible",
+    "agua arrastrada",
+    "combustible turbio",
+    "agua en suspensión (turbidez)"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ASTM-D6304",
+    "STD-ISO-12937"
+  ],
+  "relatedTerms": [
+    "TERM-FREE-WATER",
+    "TERM-COALESCING",
+    "TERM-HPCR",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-MICROBIAL-CONTAMINATION",
+    "TERM-WATER-SEPARATION-EFFICIENCY"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "hpcr-fuel-system-protection",
+    "filter-media-science"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

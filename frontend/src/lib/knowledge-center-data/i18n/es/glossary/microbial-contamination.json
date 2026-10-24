@@ -1,0 +1,38 @@
+{
+  "id": "TERM-MICROBIAL-CONTAMINATION",
+  "term": "Contaminación microbiana",
+  "category": "water-fuel",
+  "definition": "La colonización del combustible diésel, las mezclas de biodiésel y los componentes del sistema de combustible por bacterias, hongos y levaduras en la interfaz agua-combustible. Los microorganismos metabolizan los hidrocarburos como fuente de carbono y usan el agua libre como medio de crecimiento. Generan desechos metabólicos ácidos (pH 3–5 en las colonias) que corroen tanques y componentes metálicos, producen biomasa y biopelículas que obstruyen los filtros de combustible y generan sulfuro de hidrógeno que corroe los materiales del sistema de combustible. Los combustibles ULSD (diésel de ultra bajo azufre) son más susceptibles que los de alto azufre porque los compuestos de azufre actuaban antes como biocidas naturales.",
+  "engineeringContext": "La contaminación microbiana es un problema principal del sistema de combustible en aplicaciones marinas, de generadores y de almacenamiento a granel, donde el combustible permanece largos períodos con agua libre presente. El agua libre debe reducirse por debajo de 200 ppm para inhibir el crecimiento. El tratamiento con biocidas (BIOGUARD, Grotamar 82, etc.) trata la contaminación existente, pero no reemplaza la eliminación del agua. Los sistemas de combustible contaminados requieren drenaje completo del sistema, limpieza del tanque y reemplazo de filtros.",
+  "aliases": [
+    "contaminación biológica",
+    "bichos en el combustible",
+    "crecimiento microbiológico",
+    "contaminación bacteriana",
+    "contaminación por hongos"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-WATER-INGRESS",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-HPCR"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE",
+    "marineclean"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "marine-diesel-filtration",
+    "diesel-fuel-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

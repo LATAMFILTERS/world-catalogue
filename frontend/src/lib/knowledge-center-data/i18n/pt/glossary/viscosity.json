@@ -1,0 +1,37 @@
+{
+  "id": "TERM-VISCOSITY",
+  "term": "Viscosidade do óleo",
+  "category": "lubrication",
+  "definition": "Uma medida da resistência de um fluido ao escoamento, expressa como viscosidade cinemática em centistokes (cSt) a uma temperatura definida ou como viscosidade dinâmica (absoluta) em centipoise (cP). Os óleos de motor e hidráulicos são classificados por graus de viscosidade SAE J300 (motor) ou ISO VG (hidráulicos). A viscosidade é a propriedade física mais crítica de um lubrificante: baixa demais, o filme de óleo não suporta a carga do mancal (levando a contato metálico e desgaste); alta demais, o óleo gera perdas excessivas por agitação, geração de calor e cavitação da bomba na partida a frio. A viscosidade diminui com a temperatura e aumenta com a pressão.",
+  "engineeringContext": "A viscosidade do óleo deve permanecer dentro da especificação durante todo o intervalo de serviço. A diluição excessiva por combustível, a degradação térmica, a contaminação com óleo de outro grau de viscosidade e a perda por cisalhamento sob alta tensão mecânica reduzem a viscosidade em serviço. A oxidação e a carga de fuligem aumentam a viscosidade. A medição de viscosidade na análise de óleo (a 40°C e 100°C) detecta os dois modos e é um gatilho principal do monitoramento de condição para decidir a troca de óleo.",
+  "aliases": [
+    "viscosidade cinemática",
+    "grau do óleo",
+    "grau SAE",
+    "ISO VG"
+  ],
+  "abbreviations": [
+    "cSt",
+    "cP"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VISCOSITY-INDEX",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "sae-j300-viscosity-classification",
+    "lubrication-system-filtration",
+    "oil-condition-monitoring"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

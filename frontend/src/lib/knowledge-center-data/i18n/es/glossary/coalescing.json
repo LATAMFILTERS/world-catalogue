@@ -1,0 +1,36 @@
+{
+  "id": "TERM-COALESCING",
+  "term": "Coalescencia",
+  "category": "water-fuel",
+  "definition": "Un mecanismo de separación de agua en el que las finas gotas de agua emulsionada en el combustible o el fluido hidráulico entran en contacto con las fibras hidrófilas del medio filtrante y se fusionan (coalescen) en gotas cada vez más grandes. Las gotas más grandes, ya lo bastante pesadas para vencer el arrastre del fluido y las fuerzas de tensión superficial que las mantenían emulsionadas, migran a la superficie exterior del elemento coalescente y drenan por gravedad a un colector para su eliminación. La coalescencia es distinta de la absorción (retener el agua dentro del medio): elimina el agua libre y emulsionada mientras deja pasar el fluido. La eficiencia de coalescencia disminuye con una alta concentración de tensoactivos en el combustible, que estabilizan las emulsiones.",
+  "engineeringContext": "Los filtros separadores de agua por coalescencia son la principal tecnología activa de eliminación de agua en sistemas de combustible. Los elementos coalescentes HYDROCORE están clasificados según el desempeño de separación de agua requerido para la aplicación aprobada. El agua decantada debe drenarse del vaso del filtro con regularidad —típicamente cada 100–250 horas o cuando se activa el indicador de drenaje de agua— para evitar que el agua vuelva a arrastrarse en condiciones de alto caudal.",
+  "aliases": [
+    "coalescencia de agua",
+    "separación por coalescencia",
+    "coalescedor",
+    "separación de agua"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16332",
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-WATER-INGRESS",
+    "TERM-KARL-FISCHER-TITRATION"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "diesel-fuel-filtration",
+    "marine-diesel-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

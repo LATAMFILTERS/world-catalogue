@@ -1,0 +1,37 @@
+{
+  "id": "TERM-VISCOSITY",
+  "term": "Viscosidad del aceite",
+  "category": "lubrication",
+  "definition": "Una medida de la resistencia de un fluido a fluir, expresada como viscosidad cinemática en centistokes (cSt) a una temperatura definida, o como viscosidad dinámica (absoluta) en centipoise (cP). Los aceites de motor e hidráulicos se clasifican por grados de viscosidad SAE J300 (motor) o ISO VG (hidráulicos). La viscosidad es la propiedad física más crítica de un lubricante: si es demasiado baja, la película de aceite no puede soportar la carga del cojinete (lo que lleva al contacto metálico y al desgaste); si es demasiado alta, el aceite genera pérdidas excesivas por batido, generación de calor y cavitación de la bomba en el arranque en frío. La viscosidad disminuye con la temperatura y aumenta con la presión.",
+  "engineeringContext": "La viscosidad del aceite debe mantenerse dentro de la especificación durante todo el intervalo de servicio. La dilución excesiva con combustible, la degradación térmica, la contaminación con aceite de otro grado de viscosidad y la pérdida por cizallamiento bajo alta tensión mecánica reducen la viscosidad en servicio. La oxidación y la carga de hollín aumentan la viscosidad. La medición de viscosidad en el análisis de aceite (a 40°C y 100°C) detecta ambos modos y es un activador principal del monitoreo de condición para decidir el cambio de aceite.",
+  "aliases": [
+    "viscosidad cinemática",
+    "grado del aceite",
+    "grado SAE",
+    "ISO VG"
+  ],
+  "abbreviations": [
+    "cSt",
+    "cP"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VISCOSITY-INDEX",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "sae-j300-viscosity-classification",
+    "lubrication-system-filtration",
+    "oil-condition-monitoring"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

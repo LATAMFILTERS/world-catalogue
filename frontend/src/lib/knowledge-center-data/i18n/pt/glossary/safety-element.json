@@ -1,0 +1,37 @@
+{
+  "id": "TERM-SAFETY-ELEMENT",
+  "term": "Elemento de segurança",
+  "category": "air-intake",
+  "definition": "Um elemento filtrante secundário montado dentro da carcaça do filtro de ar primário, posicionado a jusante do elemento primário, que oferece uma barreira final contra a entrada de pó se o elemento primário falhar, for instalado incorretamente ou for danificado durante a manutenção. O elemento de segurança não é removido nem limpo durante o serviço normal — ele é substituído somente no intervalo especificado pelo fabricante do equipamento, tipicamente a cada 3–6 trocas do elemento primário. Elementos de segurança estão presentes na maioria dos sistemas de filtro de ar pesados para mineração, construção e agricultura que operam em ambientes com muito pó.",
+  "engineeringContext": "A função do elemento de segurança é proteger o motor durante o período de máxima exposição ao pó — a remoção e a reinstalação do elemento primário. Mesmo uma fresta momentânea entre o elemento primário e a superfície de vedação da carcaça pode introduzir em segundos meses de pó de campo. Os elementos de segurança nunca devem ser limpos com ar comprimido; a limpeza danifica o meio e pode não restabelecer a integridade de vedação exigida. A inspeção visual deve confirmar o estado da vedação do elemento de segurança a cada serviço do primário.",
+  "aliases": [
+    "filtro de segurança interno",
+    "elemento filtrante secundário",
+    "elemento de reserva",
+    "filtro de segurança",
+    "elemento secundário"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "air-intake-system-design",
+    "airflow-engineering",
+    "service-intervals"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

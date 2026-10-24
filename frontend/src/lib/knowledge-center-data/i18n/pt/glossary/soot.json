@@ -1,0 +1,34 @@
+{
+  "id": "TERM-SOOT",
+  "term": "Fuligem",
+  "category": "chemical-degradation",
+  "definition": "Partículas carbonáceas subproduto da combustão (tipicamente de 10–100 nm de diâmetro primário, aglomerando-se até 0.1–10 µm) que entram no óleo lubrificante do motor com os gases de blowby que passam pelo conjunto de anéis do pistão. As concentrações de fuligem no óleo usado de motores diesel normalmente variam de 0.5–5% em peso. Alta carga de fuligem aumenta a viscosidade do óleo (em concentrações acima de ~3%), favorece reações oxidativas e pode saturar o pacote de aditivos dispersantes, causando aglomeração da fuligem e formação de depósitos abrasivos nas superfícies do motor. A fuligem é detectada na análise de óleo pela medição de carbono elementar ou pelo monitoramento da tendência da viscosidade.",
+  "engineeringContext": "Os motores diesel modernos Euro 5/6 e Tier 4 Final geram muito menos blowby e fuligem que os projetos antigos, graças a tolerâncias mais estreitas dos anéis de pistão e maior eficiência de combustão. No entanto, os sistemas EGR (recirculação dos gases de escape) introduzem gases de escape carregados de fuligem na admissão, aumentando a carga de fuligem no cárter em algumas configurações de motor. Ambientes com muita fuligem exigem pacotes dispersantes reforçados no óleo do motor.",
+  "aliases": [
+    "fuligem carbonosa",
+    "fuligem de combustão",
+    "fuligem de blowby",
+    "fuligem diesel"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "crankcase-ventilation-filtration",
+    "lubrication-system-filtration",
+    "oil-condition-monitoring"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

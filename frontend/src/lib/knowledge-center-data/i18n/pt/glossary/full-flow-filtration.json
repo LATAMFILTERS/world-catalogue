@@ -1,0 +1,39 @@
+{
+  "id": "TERM-FULL-FLOW-FILTRATION",
+  "term": "Filtração de fluxo total",
+  "category": "hydraulic-systems",
+  "definition": "Um arranjo de filtração no qual toda a saída da bomba passa pelo elemento filtrante antes de chegar aos componentes a jusante, garantindo que todo o fluido seja filtrado a cada passagem. Os filtros de fluxo total são posicionados nas linhas de pressão, de retorno ou de dreno da carcaça, conforme o projeto do sistema. Os filtros de fluxo total na linha de pressão devem suportar a pressão total do sistema e cargas de choque; os filtros de linha de retorno operam em pressão próxima à do reservatório, mas lidam com a vazão total, incluindo os fluxos de regeneração dos cilindros. A filtração de fluxo total é a principal barreira contra a contaminação para proteger todos os componentes a jusante.",
+  "engineeringContext": "A classificação da filtração de fluxo total deve equilibrar a eficiência de captura de partículas com a capacidade de vazão e o impacto na pressão diferencial. Um elemento fino demais para a vazão total atingirá rapidamente sua pressão diferencial de serviço, causando aberturas frequentes da válvula de bypass e filtração degradada. A filtração de fluxo total e a filtração em bypass são complementares: o fluxo total lida com a maior parte da contaminação com eficiência moderada; o polimento em bypass atinge o código de limpeza alvo.",
+  "aliases": [
+    "filtro de linha de pressão",
+    "filtro de linha de retorno",
+    "filtro de linha principal",
+    "filtro em linha"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-BYPASS-FILTRATION",
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-DIFFERENTIAL-PRESSURE"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "syntrax",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "filter-housing-design",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

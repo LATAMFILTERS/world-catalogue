@@ -1,0 +1,43 @@
+{
+  "id": "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+  "term": "Gradiente de densidade progressivo",
+  "category": "air-intake",
+  "definition": "Uma construção de meio filtrante na qual a densidade de empacotamento das fibras aumenta progressivamente da face a montante (suja) para a face a jusante (limpa) do elemento filtrante. As zonas externas de menor densidade capturam partículas grandes e atuam como pré-filtros; as zonas internas de maior densidade capturam partículas finas com alta eficiência. Esse gradiente maximiza a capacidade de retenção de pó mantendo baixa restrição inicial e alta eficiência de filtração global — o oposto da filtração superficial, que se carrega rapidamente em um único plano de captura.",
+  "engineeringContext": "A construção com gradiente de densidade progressivo é usada nos elementos de filtro de ar primários MACROCORE e em elementos hidráulicos de alto desempenho. Ao distribuir a captura de partículas por toda a profundidade do meio, em vez de concentrá-la na superfície, a capacidade de retenção de pó aumenta 40–120% em comparação com um meio de densidade única de espessura equivalente, com a mesma classificação de eficiência.",
+  "aliases": [
+    "densidade graduada",
+    "meio com gradiente de densidade",
+    "construção com gradiente em profundidade",
+    "estrutura de poros cônica"
+  ],
+  "abbreviations": [
+    "PDG"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-RESTRICTION",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-SURFACE-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "macrocore",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "air-intake-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "dust-holding-capacity",
+    "airflow-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

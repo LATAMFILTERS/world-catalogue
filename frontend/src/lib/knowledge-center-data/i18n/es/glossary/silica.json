@@ -1,0 +1,37 @@
+{
+  "id": "TERM-SILICA",
+  "term": "Sílice",
+  "category": "contamination",
+  "definition": "Dióxido de silicio (SiO₂), el principal componente mineral del suelo, la arena y el polvo del aire, con una dureza Mohs de 7, mayor que la de la mayoría de los materiales de cojinetes y componentes de motor, incluido el acero (5–6.5). La sílice es el contaminante más dañino en los sistemas de admisión de aire, lubricación e hidráulicos porque su dureza le permite cortar y desgastar superficies metálicas incluso en bajas concentraciones. Un solo miligramo de polvo de sílice que entra a un motor representa millones de partículas abrasivas individuales capaces de causar un desgaste medible de los cojinetes.",
+  "engineeringContext": "El ingreso de sílice por el sistema de admisión de aire es la principal causa de desgaste acelerado de motores en equipos móviles que operan en entornos polvorientos. El contenido de silicio en el aceite lubricante, medido por espectrometría ICP, es un marcador clave del análisis de aceite: un silicio elevado indica derivación del filtro de aire o falla de sellos. En entornos de construcción y minería, las concentraciones de sílice en el aire pueden alcanzar 100–1,000 mg/m³, lo que exige una preseparación y una filtración primaria de alta eficiencia.",
+  "aliases": [
+    "dióxido de silicio",
+    "SiO₂",
+    "polvo de cuarzo",
+    "silicio en el aire"
+  ],
+  "abbreviations": [
+    "SiO₂"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-ABRASIVE-WEAR",
+    "TERM-INGRESS-PROTECTION",
+    "TERM-RESTRICTION"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "particle-ingress-prevention",
+    "airflow-engineering",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

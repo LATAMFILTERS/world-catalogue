@@ -1,0 +1,34 @@
+{
+  "id": "TERM-VARNISH",
+  "term": "Verniz",
+  "category": "chemical-degradation",
+  "definition": "Um depósito insolúvel, de mole a duro, que se forma nas superfícies de sistemas hidráulicos e de lubrificação quando os produtos de degradação do óleo — subprodutos de oxidação, produtos de decomposição térmica e metais dissolvidos — precipitam da solução. Os depósitos de verniz aparecem como filmes finos semelhantes à laca (0.1–5 µm de espessura) em carretéis de válvulas, componentes de bombas e superfícies de trocadores de calor. A formação de verniz é acelerada por altas temperaturas (>80°C), aeração e intervalos de serviço do óleo estendidos. Ela aumenta o travamento das válvulas, reduz a eficiência de troca térmica e é uma das principais causas de falha de válvulas proporcionais.",
+  "engineeringContext": "Os depósitos de verniz não são removidos por trocas de óleo porque aderem às superfícies metálicas e são insolúveis no óleo novo. A filtração por precipitação eletrostática e os tratamentos químicos de flushing do óleo podem remover o verniz depositado nas superfícies do sistema. A prevenção pelo controle da temperatura do óleo (abaixo de 80°C), pela análise regular de óleo e por trocas de óleo oportunas antes de uma oxidação avançada é mais econômica do que a remediação.",
+  "aliases": [
+    "depósitos de laca",
+    "verniz do óleo",
+    "precursores de borra",
+    "contaminantes moles"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-SERVO-VALVE",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-THERMAL-DEGRADATION",
+    "TERM-AERATION"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "varnish-formation-lube-systems",
+    "failure-analysis",
+    "hydraulic-contamination-sensitivity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

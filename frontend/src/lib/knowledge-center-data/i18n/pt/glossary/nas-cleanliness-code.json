@@ -1,0 +1,37 @@
+{
+  "id": "TERM-NAS-CLEANLINESS-CODE",
+  "term": "Classificação de limpeza NAS 1638",
+  "category": "fluid-cleanliness",
+  "definition": "Um sistema de classificação da limpeza de fluidos desenvolvido originalmente pelo National Aerospace Standard (NAS 1638), que define 14 classes (0–12) com base em contagens de partículas por 100 mL em cinco faixas de tamanho (5–15 µm, 15–25 µm, 25–50 µm, 50–100 µm, >100 µm). Números de classe NAS maiores indicam maior contaminação. A classe NAS 6 é comumente especificada para sistemas hidráulicos industriais; as classes 4–5, para sistemas com servoválvulas e válvulas proporcionais. A NAS 1638 foi amplamente substituída pela ISO 4406 nas especificações de sistemas novos, mas continua comum na documentação legada de equipamentos aeroespaciais e militares.",
+  "engineeringContext": "A NAS 1638 e a ISO 4406 não são diretamente intercambiáveis — usam faixas de tamanho e métodos de contagem diferentes. Correspondência aproximada: NAS 5 ≈ ISO 15/13/10; NAS 7 ≈ ISO 17/15/12; NAS 9 ≈ ISO 19/17/14. Ao converter entre os sistemas, use o método de contagem ISO 11171 (identificado como \"c\") em vez dos métodos antigos de microscopia óptica para manter a exatidão.",
+  "aliases": [
+    "código NAS",
+    "classe NAS",
+    "classe de contaminação NAS"
+  ],
+  "abbreviations": [
+    "NAS"
+  ],
+  "applicableStandards": [
+    "STD-NAS-1638",
+    "STD-ISO-4406"
+  ],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-PARTICLE-COUNT"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "fluid-cleanliness",
+    "hydraulic-contamination-sensitivity",
+    "nfpa-t2-14-hydraulic-cleanliness"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

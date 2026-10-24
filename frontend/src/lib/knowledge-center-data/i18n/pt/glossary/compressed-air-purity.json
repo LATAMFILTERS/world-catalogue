@@ -1,0 +1,32 @@
+{
+  "id": "TERM-COMPRESSED-AIR-PURITY",
+  "term": "Classe de pureza do ar comprimido",
+  "category": "fluid-cleanliness",
+  "definition": "Uma especificação de qualidade de três números definida pela ISO 8573-1 no formato [S:W:O], onde S é a classe de partículas sólidas (1–9), W é a classe de água/umidade (1–9) e O é a classe de aerossol e vapor de óleo (1–4). Números de classe menores indicam maior pureza. Exemplo: a classe 1:2:1 ISO 8573-1 especifica: S1 (≤20,000 partículas ≥0.1 µm por m³; nenhuma partícula >0.5 µm), W2 (PDP ≤ −40°C ou água líquida: 0 g/m³), O1 (≤0.01 mg/m³ de óleo total). Cada classe é especificada independentemente, permitindo requisitos de pureza diferentes para cada tipo de contaminante.",
+  "engineeringContext": "As classes de pureza ISO 8573-1 orientam a seleção dos componentes do trem de tratamento de ar comprimido. Pneumática industrial geral (atuadores, cilindros): classe 5:4:3. Ar de instrumentos (medidores de vazão, válvulas de controle, analisadores): classe 2:4:2. Contato com alimentos e farmacêutico: classe 1:2:1. Filtros de ponto de uso, pré-filtros coalescentes, secadores dessecantes e leitos de carvão ativado são selecionados e sequenciados para atingir a classe especificada na pressão da aplicação e na vazão nominal. A classe de pureza deve ser verificada no ponto de uso, não na saída do compressor.",
+  "aliases": [
+    "classe ISO 8573",
+    "classe de ar comprimido",
+    "classe de pureza do ar",
+    "classe de qualidade do ar"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-8573-1"
+  ],
+  "relatedTerms": [
+    "TERM-DEW-POINT",
+    "TERM-PARTICLE-COUNT"
+  ],
+  "relatedTechnologies": [
+    "drycore"
+  ],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "compressed-air-systems",
+    "iso-8573-compressed-air-purity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "TERM-OIL-DRAIN-INTERVAL",
+  "term": "Intervalo de cambio de aceite",
+  "category": "lubrication",
+  "definition": "El tiempo de operación o la distancia programados entre cambios de aceite del motor o la transmisión, expresados típicamente en horas de operación para equipos fuera de carretera o en kilómetros para vehículos de carretera. Los intervalos de cambio estándar de los motores diésel de servicio pesado van de 250–500 horas en minería y construcción de servicio severo, a 750–1,000 horas en transporte agrícola y por carretera, hasta 1,000–2,000 horas en motores industriales estacionarios con formulaciones sintéticas de larga duración. Los intervalos de cambio de aceite se determinan por la tasa de degradación del aceite —oxidación, agotamiento del TBN, cambio de viscosidad, acumulación de hollín— y la acumulación de contaminación, que dependen ambas de las condiciones de operación, el contenido de azufre del combustible, la tasa de blowby, la especificación del aceite y el desempeño del sistema de filtración.",
+  "engineeringContext": "Los intervalos de cambio de aceite solo se extienden de forma segura cuando los respaldan datos periódicos de monitoreo de condición del aceite que confirman que tanto el aceite como el sistema están dentro de límites aceptables en el punto final extendido propuesto. Extender los intervalos solo sobre la base de afirmaciones comerciales del aceite, sin datos de monitoreo, no es una práctica de ingeniería aceptable y puede anular las garantías del equipo. La filtración de alto desempeño elimina partículas abrasivas que de otro modo acelerarían la degradación del aceite, por lo que una mejor filtración es un factor para extender los intervalos de cambio seguros, pero el monitoreo sigue siendo el control principal.",
+  "aliases": [
+    "intervalo de cambio",
+    "intervalo de drenaje",
+    "período de servicio del aceite",
+    "intervalo del aceite de motor",
+    "intervalo de cambio de lubricante"
+  ],
+  "abbreviations": [
+    "ODI"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-SOOT",
+    "TERM-VISCOSITY"
+  ],
+  "relatedTechnologies": [
+    "duratech",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "extended-drain-interval-engineering",
+    "oil-condition-monitoring",
+    "service-intervals",
+    "oil-analysis-methods"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "TERM-WATER-INGRESS",
+  "term": "Entrada de água",
+  "category": "water-fuel",
+  "definition": "A entrada de água livre ou água emulsionada em um sistema de combustível, hidráulico ou de lubrificação. A entrada de água ocorre por condensação em reservatórios ventilados, contaminação pelos respiros, degradação de vedações, falha de trocadores de calor e procedimentos de manutenção inadequados. Concentrações de água acima de 200 ppm no fluido hidráulico causam cavitação, aceleram a corrosão dos mancais, reduzem a resistência do filme e permitem o crescimento microbiano. No diesel, água acima de 200 ppm causa travamento dos injetores, corrosão e contaminação microbiana. É medida por titulação Karl Fischer conforme a ASTM D6304 ou a ISO 12937.",
+  "engineeringContext": "A água é o contaminante não particulado mais danoso em sistemas hidráulicos e de combustível. Apenas 0.1% de água livre reduz a vida à fadiga dos rolamentos em 90% pela fragilização por hidrogênio do aço do rolamento nos contatos entre asperezas. Respiros de reservatório com barreiras dessecantes ou de membrana evitam a entrada de água por condensação em sistemas estacionários. Os filtros separadores de água por coalescência são o principal método ativo de remoção.",
+  "aliases": [
+    "contaminação por água",
+    "água livre",
+    "água dissolvida",
+    "água emulsionada",
+    "entrada de umidade"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ASTM-D6304",
+    "STD-ISO-12937"
+  ],
+  "relatedTerms": [
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-COALESCING",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection",
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "diesel-fuel-filtration",
+    "marine-diesel-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

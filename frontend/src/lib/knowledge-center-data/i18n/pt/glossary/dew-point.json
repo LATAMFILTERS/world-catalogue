@@ -1,0 +1,36 @@
+{
+  "id": "TERM-DEW-POINT",
+  "term": "Ponto de orvalho",
+  "category": "fluid-cleanliness",
+  "definition": "A temperatura na qual o vapor de água do ar comprimido atinge a saturação e começa a condensar em água líquida, expressa na pressão de operação do sistema (ponto de orvalho sob pressão, PDP) ou na pressão atmosférica (ponto de orvalho atmosférico, ADP). A ISO 8573-1 define as classes de qualidade de água pelo ponto de orvalho sob pressão: a classe 1 exige PDP ≤ −70°C; a classe 2, ≤ −40°C; a classe 3, ≤ −20°C; a classe 4, ≤ +3°C; a classe 6 (industrial geral), ≤ +10°C. O ponto de orvalho é medido por higrômetros de espelho resfriado ou sensores capacitivos calibrados conforme padrões NIST.",
+  "engineeringContext": "Os sistemas de distribuição de ar comprimido devem manter o ponto de orvalho abaixo da temperatura ambiente mínima para evitar condensação em tubulações, atuadores, instrumentos pneumáticos e equipamentos de processo. A água condensada causa corrosão de tubulações, crescimento microbiano, congelamento de válvulas pneumáticas em ambientes abaixo de zero e contaminação de fluxos de processo sensíveis. Secadores por refrigeração atingem PDP de +2°C a +10°C para ar industrial geral; secadores dessecantes atingem PDP de −40°C a −70°C para ar de instrumentos e de processo. A filtração de secadores de ar DRYCORE™ atende ao controle de umidade nos circuitos de ar comprimido de sistemas de freio pneumático de equipamentos de transporte comercial pesado.",
+  "aliases": [
+    "ponto de orvalho sob pressão",
+    "ponto de orvalho atmosférico",
+    "ponto de orvalho de umidade",
+    "PDP"
+  ],
+  "abbreviations": [
+    "PDP",
+    "ADP"
+  ],
+  "applicableStandards": [
+    "STD-ISO-8573-1"
+  ],
+  "relatedTerms": [
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-WATER-INGRESS",
+    "TERM-COALESCING"
+  ],
+  "relatedTechnologies": [
+    "drycore"
+  ],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "compressed-air-systems",
+    "iso-8573-compressed-air-purity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

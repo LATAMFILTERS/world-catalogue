@@ -1,0 +1,40 @@
+{
+  "id": "TERM-KIDNEY-LOOP",
+  "term": "Kidney-loop",
+  "category": "hydraulic-systems",
+  "definition": "Um circuito de filtração off-line que faz circular continuamente o fluido hidráulico através de um elemento filtrante de alta eficiência, independente do caminho de fluxo do circuito hidráulico principal. A bomba do kidney-loop retira fluido do reservatório, passa-o por um elemento filtrante fino — tipicamente β₆(c) ≥ 200 ou β₃(c) ≥ 200 — e o devolve ao reservatório sem passar por atuadores, válvulas de controle ou outros componentes do circuito. Os kidney-loops atingem metas de limpeza ISO 2–3 níveis de código mais finas do que a filtração de fluxo total sozinha, podem operar com o sistema principal parado e permitem filtração fina sem impor perda de carga adicional ao circuito principal.",
+  "engineeringContext": "Os kidney-loops são padrão em sistemas hidráulicos de alta criticidade, incluindo máquinas-ferramenta servocontroladas, injetoras, bancadas de teste e sistemas de controle de pitch de turbinas eólicas. Podem ser instalados em sistemas existentes sem grandes modificações do circuito. Combinado com contagem de partículas on-line e controle automático de vazão, um kidney-loop forma a base de um sistema de gestão de contaminação em malha fechada. A vazão do kidney-loop deve ser dimensionada para renovar todo o volume do reservatório pelo menos uma vez por hora de operação, mantendo a limpeza em regime permanente no código alvo.",
+  "aliases": [
+    "filtração off-line",
+    "malha de filtração off-line",
+    "circuito kidney-loop",
+    "filtração de retorno ao tanque",
+    "circuito de filtro off-line"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-BYPASS-FILTRATION",
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-SERVO-VALVE",
+    "TERM-SYSTEM-FLUSHING"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "fluid-cleanliness",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

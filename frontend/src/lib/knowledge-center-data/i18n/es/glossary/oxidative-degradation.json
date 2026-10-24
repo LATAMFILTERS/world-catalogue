@@ -1,0 +1,36 @@
+{
+  "id": "TERM-OXIDATIVE-DEGRADATION",
+  "term": "Degradación oxidativa",
+  "category": "chemical-degradation",
+  "definition": "La descomposición química del aceite lubricante o hidráulico por reacción con el oxígeno disuelto, que genera subproductos de oxidación como ácidos orgánicos, aldehídos, cetonas y polímeros de alto peso molecular (precursores de lodos). La tasa de oxidación se duplica aproximadamente por cada 10°C de aumento de la temperatura del aceite por encima de 60°C (la regla de Arrhenius para la oxidación de lubricantes). Los productos de oxidación aumentan la viscosidad y el TAN del aceite, disminuyen el TBN, reducen el contenido de aditivos antioxidantes y generan depósitos de barniz insolubles. La contaminación por agua y por catalizadores metálicos (cobre, hierro) acelera considerablemente la oxidación.",
+  "engineeringContext": "La degradación oxidativa fija el límite fundamental de la vida útil del lubricante. Todos los parámetros de monitoreo de condición del aceite —aumento de viscosidad, aumento del TAN, agotamiento del TBN, agotamiento de antioxidantes y potencial de barniz— son indicadores directos del avance de la oxidación. Controlar la temperatura del aceite por debajo de 80°C es el medio más eficaz para prolongar la vida útil del aceite.",
+  "aliases": [
+    "oxidación del aceite",
+    "degradación del lubricante",
+    "envejecimiento del aceite",
+    "oxidación térmica"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VARNISH",
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-THERMAL-DEGRADATION"
+  ],
+  "relatedTechnologies": [
+    "duratech"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "varnish-formation-lube-systems",
+    "oil-condition-monitoring",
+    "extended-drain-interval-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

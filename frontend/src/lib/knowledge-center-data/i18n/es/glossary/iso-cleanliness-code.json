@@ -1,0 +1,43 @@
+{
+  "id": "TERM-ISO-CLEANLINESS-CODE",
+  "term": "Código de limpieza ISO",
+  "category": "fluid-cleanliness",
+  "definition": "Un código de tres números definido por la ISO 4406 que cuantifica el nivel de contaminación por partículas de una muestra de fluido. Cada número representa la cantidad de partículas por mililitro en un rango de tamaño específico: el primero cubre partículas ≥4 µm(c), el segundo ≥6 µm(c) y el tercero ≥14 µm(c). Cada número de código representa un rango de conteo de partículas en potencias de dos: código 16 = 320–640 partículas/mL, código 14 = 80–160 partículas/mL. Un código de limpieza de 16/14/11 significa: 320–640 partículas ≥4 µm, 80–160 partículas ≥6 µm y 10–20 partículas ≥14 µm por mililitro. Los códigos más estrictos (números más bajos) indican un fluido más limpio y reducen el riesgo de desgaste abrasivo, agarrotamiento de válvulas y falla de cojinetes.",
+  "engineeringContext": "Los códigos de limpieza ISO son el estándar global para especificar y verificar la limpieza del fluido en sistemas hidráulicos y de lubricación. Los códigos objetivo varían según la sensibilidad del componente: las servoválvulas requieren 15/13/10 o más estricto; los sistemas hidráulicos generales suelen apuntar a 17/15/12; los sistemas de lubricación de motor apuntan a 16/14/11. Los códigos de limpieza se miden por conteo de partículas láser según la ISO 11171.",
+  "aliases": [
+    "código ISO 4406",
+    "objetivo de limpieza del fluido",
+    "clase de limpieza",
+    "código ISO"
+  ],
+  "abbreviations": [
+    "ICC"
+  ],
+  "applicableStandards": [
+    "STD-ISO-4406",
+    "STD-ISO-11171"
+  ],
+  "relatedTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-SERVO-VALVE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-NAS-CLEANLINESS-CODE"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "iso-4406",
+    "fluid-cleanliness",
+    "hydraulic-contamination-sensitivity",
+    "contamination-sensitivity-components"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

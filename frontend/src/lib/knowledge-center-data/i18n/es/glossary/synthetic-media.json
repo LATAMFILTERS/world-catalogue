@@ -1,0 +1,42 @@
+{
+  "id": "TERM-SYNTHETIC-MEDIA",
+  "term": "Medio filtrante sintético",
+  "category": "filter-media",
+  "definition": "Medio filtrante fabricado con fibras de polímeros artificiales —incluidos poliéster, polipropileno, poliacrilonitrilo y fibra de vidrio—, a diferencia del medio de celulosa natural (a base de pulpa de madera). Las fibras sintéticas ofrecen un diámetro de fibra controlado, una distribución uniforme del tamaño de poro, alta resistencia al estallido en húmedo, resistencia química y resistencia a la degradación biológica. El medio sintético logra relaciones Beta más altas en tamaños de partícula más pequeños, mayor vida útil bajo ciclos de presión y mejor estabilidad dimensional a temperaturas elevadas que un medio de celulosa equivalente.",
+  "engineeringContext": "El medio sintético es estándar en los filtros de aceite hidráulico y de lubricación donde debe garantizarse el desempeño de relación Beta ISO 16889. El medio de celulosa todavía se usa en muchos filtros de aire por su ventaja de costo y su desempeño adecuado en aplicaciones de admisión de aire de eficiencia moderada. Las tecnologías ELIMFILTERS SYNTRAX y NANOFORCE usan compuestos de medio sintético diseñados para objetivos de desempeño específicos en los distintos ámbitos de filtración de aceite.",
+  "aliases": [
+    "medio de fibra de vidrio",
+    "medio de poliéster",
+    "medio de polipropileno",
+    "medio artificial",
+    "material filtrante sintético"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-DEPTH-FILTRATION",
+    "TERM-SURFACE-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-CELLULOSE-MEDIA"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "nanoforce",
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "materials-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

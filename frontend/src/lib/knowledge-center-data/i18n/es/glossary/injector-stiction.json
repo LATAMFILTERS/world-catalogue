@@ -1,0 +1,36 @@
+{
+  "id": "TERM-INJECTOR-STICTION",
+  "term": "Agarrotamiento de inyectores",
+  "category": "water-fuel",
+  "definition": "Atascamiento o movimiento lento de la aguja o el émbolo de un inyector debido a depósitos, formación de laca, contaminación por agua, crecimiento biológico o abrasión por partículas dentro de las holguras de precisión de un inyector de combustible. En los inyectores HPCR, el agarrotamiento causa fallas de encendido, entrega desigual de combustible entre cilindros, humo excesivo, desgaste de la bomba de alta presión y pérdida de potencia del motor. El agarrotamiento puede ser temporal (se puede eliminar por lavado) o permanente (rayado mecánico de las superficies del émbolo y el cilindro). El agua por encima de 200 ppm en el diésel es un desencadenante principal de la laca y el agarrotamiento de los inyectores.",
+  "engineeringContext": "El diagnóstico del agarrotamiento de inyectores usa los datos de factor de corrección de inyección de la ECU del motor: una corrección positiva alta en un cilindro indica baja entrega del inyector (agarrotamiento) y una corrección negativa indica entrega excesiva (fuga por un émbolo rayado). Los procedimientos de limpieza del sistema de combustible con aditivos limpiadores de inyectores de alta concentración pueden resolver depósitos en etapa temprana, pero el rayado mecánico por contaminación de partículas requiere reemplazar el inyector.",
+  "aliases": [
+    "ensuciamiento de inyectores",
+    "depósitos en inyectores",
+    "IDID",
+    "lacado de inyectores"
+  ],
+  "abbreviations": [
+    "IDID"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-HPCR",
+    "TERM-WATER-INGRESS",
+    "TERM-VARNISH"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "hpcr-fuel-system-cleanliness",
+    "diesel-fuel-filtration",
+    "water-contamination-fuel"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

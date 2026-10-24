@@ -1,0 +1,37 @@
+{
+  "id": "TERM-CYCLONIC-SEPARATION",
+  "term": "Pré-separação ciclônica",
+  "category": "air-intake",
+  "definition": "Um estágio de pré-limpeza centrífuga integrado a montante do elemento filtrante primário, no qual o ar que entra recebe movimento rotacional por aletas ou tubos fixos, criando uma força centrífuga que lança as partículas grandes (tipicamente >100 µm) contra a parede externa do corpo do separador. As partículas separadas são descarregadas por uma válvula de descarga de pó ou em um copo coletor, sem passar pelo elemento filtrante. A pré-separação reduz a carga de pó sobre o elemento primário em 70–95%, prolongando significativamente a vida útil do elemento filtrante em ambientes com muito pó.",
+  "engineeringContext": "A pré-separação ciclônica é prática padrão em equipamentos móveis que operam em mineração, agricultura e construção, onde as concentrações de pó no ar são altas. O pré-separador deve ser compatível com a vazão de ar do motor e com o projeto da carcaça do filtro primário. Pré-separadores subdimensionados geram restrição sem atingir separação eficaz; unidades superdimensionadas acrescentam peso e custo sem benefício proporcional.",
+  "aliases": [
+    "pré-filtro",
+    "pré-separador centrífugo",
+    "separador ciclônico",
+    "separador inercial",
+    "turbosseparador"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-INGRESS-PROTECTION"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "air-intake-system-design",
+    "particle-ingress-prevention",
+    "airflow-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

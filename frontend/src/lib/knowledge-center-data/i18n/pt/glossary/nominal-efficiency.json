@@ -1,0 +1,29 @@
+{
+  "id": "TERM-NOMINAL-EFFICIENCY",
+  "term": "Eficiência nominal",
+  "category": "filtration-performance",
+  "definition": "Uma classificação de eficiência não padronizada que indica que um filtro retém uma porcentagem declarada de partículas de um tamanho declarado em condições de passagem única, sem definir o método de ensaio específico usado. Ao contrário da eficiência absoluta (multipass ISO 16889), as classificações de eficiência nominal não são comparáveis entre fabricantes porque as condições de ensaio variam. Classificações nominais não são usadas na documentação de engenharia da ELIMFILTERS; todas as declarações de eficiência referenciam a relação Beta ISO 16889.",
+  "engineeringContext": "A eficiência nominal aparece com frequência em fichas técnicas de filtros genéricos como \"90% a 10 mícrons\" ou declarações semelhantes. Como o método de ensaio não é especificado, dois filtros classificados como \"90% nominal a 10 µm\" podem ter eficiências reais entre 50% e 95% em condições reais idênticas. Use a relação Beta (ISO 16889) para comparações de desempenho exatas.",
+  "aliases": [
+    "classificação de filtração nominal",
+    "classificação nominal em mícrons"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-ABSOLUTE-EFFICIENCY"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "beta-ratio",
+    "filter-media-science",
+    "oem-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

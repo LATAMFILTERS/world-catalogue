@@ -1,0 +1,36 @@
+{
+  "id": "TERM-COALESCING",
+  "term": "Coalescência",
+  "category": "water-fuel",
+  "definition": "Um mecanismo de separação de água em que as finas gotículas de água emulsionada no combustível ou no fluido hidráulico entram em contato com as fibras hidrofílicas do meio filtrante e se fundem (coalescem) em gotículas progressivamente maiores. As gotículas maiores, já pesadas o bastante para vencer o arrasto do fluido e as forças de tensão superficial que as mantinham emulsionadas, migram para a superfície externa do elemento coalescente e drenam por gravidade para um coletor para remoção. A coalescência é diferente da absorção (reter a água dentro do meio) — ela remove a água livre e emulsionada e deixa o fluido passar. A eficiência de coalescência diminui com alta concentração de tensoativos no combustível, que estabilizam as emulsões.",
+  "engineeringContext": "Os filtros separadores de água por coalescência são a principal tecnologia ativa de remoção de água em sistemas de combustível. Os elementos coalescentes HYDROCORE são classificados conforme o desempenho de separação de água exigido para a aplicação aprovada. A água decantada deve ser drenada do copo do filtro regularmente — tipicamente a cada 100–250 horas ou quando o indicador de drenagem de água é acionado — para evitar que a água seja rearrastada em condições de alta vazão.",
+  "aliases": [
+    "coalescência de água",
+    "separação por coalescência",
+    "coalescedor",
+    "separação de água"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16332",
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-WATER-INGRESS",
+    "TERM-KARL-FISCHER-TITRATION"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "diesel-fuel-filtration",
+    "marine-diesel-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

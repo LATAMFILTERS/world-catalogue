@@ -1,0 +1,36 @@
+{
+  "id": "TERM-ELEMENT-COLLAPSE",
+  "term": "Colapso del elemento",
+  "category": "filtration-performance",
+  "definition": "La falla estructural de un elemento filtrante bajo una presión diferencial excesiva, en la que el medio filtrante o la estructura de soporte colapsan hacia adentro (en flujo de afuera hacia adentro) o hacia afuera (en flujo de adentro hacia afuera), lo que destruye de forma irreversible la integridad de filtración del elemento. El colapso libera el contaminante acumulado directamente en el circuito aguas abajo. La presión de colapso es la presión diferencial mínima a la que un elemento filtrante falla estructuralmente, medida según la ISO 3723 (ensayo de colapso/estallido). Los elementos ELIMFILTERS se diseñan con presiones de colapso superiores a 21 bar para dar un margen sobre los ajustes máximos de la válvula de derivación.",
+  "engineeringContext": "El colapso del elemento es un modo de falla catastrófico que suele deberse a no reemplazar un elemento filtrante sobrecargado, a una válvula de derivación trabada o ausente, o a una viscosidad muy alta en el arranque en frío combinada con una aceleración rápida. Los eventos de contaminación tras un colapso requieren lavar por completo el sistema e inspeccionar los componentes aguas abajo.",
+  "aliases": [
+    "colapso del filtro",
+    "colapso del medio",
+    "falla estructural del filtro"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-FILTER-BYPASS-VALVE"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "macrocore",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-element-integrity",
+    "failure-analysis",
+    "materials-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

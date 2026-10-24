@@ -1,0 +1,39 @@
+{
+  "id": "TERM-FULL-FLOW-FILTRATION",
+  "term": "Filtración de flujo total",
+  "category": "hydraulic-systems",
+  "definition": "Una disposición de filtración en la que toda la salida de la bomba pasa por el elemento filtrante antes de llegar a los componentes aguas abajo, lo que asegura que todo el fluido se filtre en cada paso. Los filtros de flujo total se ubican en las líneas de presión, de retorno o de drenaje de carcasa según el diseño del sistema. Los filtros de flujo total en línea de presión deben soportar la presión total del sistema y las cargas de choque; los filtros de línea de retorno operan a una presión cercana a la del depósito, pero manejan el caudal total, incluidos los flujos de regeneración de los cilindros. La filtración de flujo total es la barrera principal contra la contaminación para proteger todos los componentes aguas abajo.",
+  "engineeringContext": "La clasificación de la filtración de flujo total debe equilibrar la eficiencia de captura de partículas con la capacidad de flujo y el impacto en la presión diferencial. Un elemento demasiado fino para el caudal total alcanzará rápido su presión diferencial de servicio, lo que provocará aperturas frecuentes de la válvula de derivación y una filtración deficiente. La filtración de flujo total y la filtración en derivación son complementarias: el flujo total maneja la mayor parte de la contaminación con eficiencia moderada; el pulido en derivación logra el código de limpieza objetivo.",
+  "aliases": [
+    "filtro de línea de presión",
+    "filtro de línea de retorno",
+    "filtro de línea principal",
+    "filtro en línea"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-BYPASS-FILTRATION",
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-DIFFERENTIAL-PRESSURE"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "syntrax",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "filter-housing-design",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "TERM-DIFFERENTIAL-PRESSURE",
+  "term": "Pressão diferencial",
+  "category": "filtration-performance",
+  "definition": "A diferença de pressão (ΔP) medida através de um elemento filtrante entre o lado a montante (sujo) e o lado a jusante (limpo), expressa tipicamente em bar, milibar (mbar) ou libras por polegada quadrada (psi). Um elemento filtrante limpo tem pressão diferencial baixa na vazão nominal. À medida que o elemento se carrega de contaminante, a pressão diferencial aumenta progressivamente até atingir o limite de serviço do elemento, indicando a substituição. Nos sistemas de admissão de ar, a pressão diferencial é chamada de restrição.",
+  "engineeringContext": "O monitoramento da pressão diferencial é o principal método para determinar a vida útil do filtro em sistemas hidráulicos e de lubrificação. As válvulas de bypass são ajustadas para abrir em uma pressão diferencial máxima (tipicamente 3–6 bar em elementos hidráulicos e 1.5–4 bar em filtros de lubrificação) para proteger o circuito a jusante contra a falta de fluxo quando o elemento está totalmente carregado. Sensores contínuos de ΔP permitem a substituição baseada na condição em sistemas de alta criticidade.",
+  "aliases": [
+    "perda de carga",
+    "diferencial de pressão",
+    "ΔP"
+  ],
+  "abbreviations": [
+    "ΔP",
+    "dP"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-RESTRICTION",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "filter-element-integrity",
+    "service-intervals",
+    "hydraulic-power-unit-design",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

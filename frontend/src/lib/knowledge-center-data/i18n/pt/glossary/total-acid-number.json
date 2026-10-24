@@ -1,0 +1,36 @@
+{
+  "id": "TERM-TOTAL-ACID-NUMBER",
+  "term": "Número de acidez total",
+  "category": "chemical-degradation",
+  "definition": "Uma medida da acidez total de um óleo lubrificante ou hidráulico, expressa em miligramas de hidróxido de potássio necessários para neutralizar todos os componentes ácidos de um grama de óleo (mg KOH/g). O TAN inclui tanto ácidos inorgânicos fortes (produtos da combustão do enxofre) quanto ácidos orgânicos fracos (subprodutos da oxidação). O aumento do TAN durante o serviço indica oxidação do óleo e esgotamento de aditivos. Em fluidos hidráulicos, um aumento do TAN de mais de 0.5–1.0 mg KOH/g acima da linha de base do óleo novo indica degradação significativa e normalmente motiva a substituição do óleo.",
+  "engineeringContext": "O TAN é usado principalmente para avaliar a condição do óleo hidráulico e monitorar fluidos resistentes ao fogo. Em óleos de motor, o TBN é o indicador principal porque predominam os ácidos derivados da combustão. Valores altos de TAN indicam risco de ataque corrosivo às camadas superficiais de zinco, cobre e chumbo dos mancais. O TAN é medido por titulação potenciométrica ASTM D664.",
+  "aliases": [
+    "TAN",
+    "número de acidez",
+    "AN",
+    "acidez"
+  ],
+  "abbreviations": [
+    "TAN",
+    "AN"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "oil-analysis-methods",
+    "oil-condition-monitoring",
+    "extended-drain-interval-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

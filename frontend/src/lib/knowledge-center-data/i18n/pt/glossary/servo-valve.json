@@ -1,0 +1,41 @@
+{
+  "id": "TERM-SERVO-VALVE",
+  "term": "Servoválvula",
+  "category": "hydraulic-systems",
+  "definition": "Uma válvula de controle hidráulico de alta precisão que modula a vazão hidráulica proporcionalmente a um sinal elétrico de entrada. As servoválvulas operam com folgas internas de 1–5 µm entre o carretel e o furo. A contaminação por partículas acima de 3–5 µm no fluido hidráulico causa travamento, riscamento das superfícies do carretel e degradação do controle de vazão. Códigos de limpeza ISO 16/14/11 ou mais rigorosos são necessários para proteger o desempenho e a vida útil da servoválvula. As servoválvulas são usadas em aplicações de controle de movimento de precisão, incluindo hidráulica de aeronaves, máquinas-ferramenta CNC e sistemas industriais de alto desempenho.",
+  "engineeringContext": "As servoválvulas são os componentes mais sensíveis à contaminação de qualquer circuito hidráulico. Uma única partícula maior que a folga carretel-furo pode causar emperramento. Sistemas hidráulicos com servoválvulas exigem filtração kidney-loop off-line para manter os códigos de limpeza continuamente, não apenas durante a operação, mas também nos períodos de parada, quando a convecção térmica pode redistribuir as partículas decantadas.",
+  "aliases": [
+    "servoválvula eletro-hidráulica",
+    "EHSV",
+    "válvula proporcional"
+  ],
+  "abbreviations": [
+    "EHSV",
+    "SV"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-4406",
+    "STD-NFPA-T2-14"
+  ],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-PROPORTIONAL-VALVE",
+    "TERM-BYPASS-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-contamination-sensitivity",
+    "contamination-sensitivity-components",
+    "hydraulic-power-unit-design",
+    "nfpa-t2-14-hydraulic-cleanliness"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "TERM-EMULSIFIED-WATER",
+  "term": "Água emulsionada",
+  "category": "water-fuel",
+  "definition": "Água dispersa no combustível ou no óleo como gotículas microscópicas — tipicamente de 1–100 µm de diâmetro — estabilizadas por aditivos do combustível do tipo tensoativo ou por produtos de degradação, formando uma emulsão estável de aspecto turvo ou leitoso. Ao contrário da água livre, a água emulsionada não decanta por gravidade e não pode ser removida apenas por válvulas de drenagem — é necessária filtração coalescente para forçar a união das gotículas em gotas maiores que decantem ou drenem. O teor de água emulsionada no diesel é medido por titulação Karl Fischer (ASTM D6304/ISO 12937); concentrações acima de 100–200 ppm em massa aceleram a obstrução do filtro e a corrosão dos injetores HPCR.",
+  "engineeringContext": "O diesel moderno de ultrabaixo teor de enxofre (ULSD) tolera menos a contaminação por água do que o diesel tradicional de alto teor de enxofre, porque o ULSD contém menos tensoativos naturais. A água que entra no ULSD por condensação nos tanques de armazenamento ou por contaminação cruzada forma rapidamente emulsões finas e estáveis que atravessam os meios filtrantes convencionais sem se separar. A tecnologia de filtração coalescente — HYDROCORE — é projetada especificamente para romper e remover as emulsões do ULSD antes que o combustível chegue aos componentes de injeção HPCR com folgas internas de precisão.",
+  "aliases": [
+    "água dispersa",
+    "emulsão de água no combustível",
+    "água arrastada",
+    "combustível turvo",
+    "água em suspensão (turbidez)"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ASTM-D6304",
+    "STD-ISO-12937"
+  ],
+  "relatedTerms": [
+    "TERM-FREE-WATER",
+    "TERM-COALESCING",
+    "TERM-HPCR",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-MICROBIAL-CONTAMINATION",
+    "TERM-WATER-SEPARATION-EFFICIENCY"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "hpcr-fuel-system-protection",
+    "filter-media-science"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}
