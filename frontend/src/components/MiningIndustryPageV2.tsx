@@ -123,7 +123,7 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={hero}>
         <MiningHeroMedia />
-        <div style={heroShade} />
+        <div style={heroShade} className="miningHeroShade" />
         <div style={heroInner} className="miningHeroContainer">
           <p style={eyebrow}>{miningText(lang, "OPEN-PIT & UNDERGROUND MINING")}</p>
           <h1 style={heroTitle} className="miningHeroHeading">{miningText(lang, "FILTRATION FOR")}<br /><span style={yellowText}>{miningText(lang, "MINING EQUIPMENT")}</span></h1>
