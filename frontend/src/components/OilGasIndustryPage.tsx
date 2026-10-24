@@ -129,8 +129,8 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
       <PageHeader currentPage="Oil Gas" />
 
       <section style={hero}>
-        <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="metadata" poster="/images/ingpetrolero.avif" style={heroVideo}>
-          <source src="/images/Petro%26Gas-1.mp4" type="video/mp4" />
+        <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="auto" style={heroVideo}>
+          <source src="/images/Petro%26Gas-1.mp4?v=oilgas-video-direct-20261024" type="video/mp4" />
         </video>
         <div className="miningHeroShade" style={heroShade} />
         <div className="miningHeroContainer" style={heroInner}>
@@ -257,7 +257,7 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const yellow: CSSProperties = { color: '#FFF12D' };
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: '82vh', background: '#000 url("/images/ingpetrolero.avif") center center / cover no-repeat', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
+const hero: CSSProperties = { minHeight: '82vh', background: '#000', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
 const heroVideo: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: VIDEO_HERO_TREATMENT.opacity };
 const heroShade: CSSProperties = { position: 'absolute', inset: 0, zIndex: 2, background: VIDEO_HERO_TREATMENT.overlayBackground };
 const heroInner: CSSProperties = { width: '100%', maxWidth: '1560px', margin: '0 auto', padding: 'clamp(6.75rem,10vw,9rem) clamp(1rem,3.5vw,4.5rem) clamp(3.5rem,5.5vw,5rem)', position: 'relative', zIndex: 3 };
