@@ -1,0 +1,141 @@
+{
+  "slug": "astm-d5185",
+  "code": "ASTM D5185",
+  "entityId": "STD-ASTM-D5185",
+  "title": "Determination of Additive Elements, Wear Metals, and Contaminants in Used Lubricating Oils by ICP-OES",
+  "issuingOrganization": "ASTM International",
+  "year": "2019",
+  "revisionStatus": "active",
+  "metaDescription": "A ASTM D5185 especifica a espectrometria de emissão óptica com plasma indutivamente acoplado (ICP-OES) para medir a composição elementar de óleos lubrificantes e hidráulicos usados em programas de monitoramento de condição.",
+  "scope": "Óleos lubrificantes usados, fluidos hidráulicos e produtos de petróleo relacionados em programas de análise de óleo para manutenção preditiva que exigem a quantificação de metais de desgaste, elementos de aditivos e contaminantes.",
+  "engineeringPurpose": "Fornece o principal método analítico para a análise espectrométrica de óleo usado — quantificando 20+ elementos (metais de desgaste, elementos de aditivos, contaminantes) que indicam taxas de desgaste de componentes, taxas de degradação do óleo e eventos de contaminação — permitindo decisões de manutenção baseada na condição sobre intervalos de troca de óleo e programação de inspeções de componentes.",
+  "sections": [
+    {
+      "heading": "Metodologia de análise ICP-OES",
+      "body": "A ASTM D5185 usa espectrometria de emissão óptica com plasma indutivamente acoplado (ICP-OES) para quantificar simultaneamente vários elementos em amostras de óleo usado diluídas em solvente. A fonte de plasma atomiza e excita as espécies metálicas dissolvidas no óleo; cada elemento emite comprimentos de onda característicos detectados pelo espectrômetro. Os elementos medidos incluem metais de desgaste (ferro, cobre, chumbo, estanho, alumínio, cromo, níquel), elementos de aditivos (cálcio, magnésio, zinco, fósforo, boro, molibdênio) e contaminantes (silício, sódio, potássio, elementos marcadores de glicol). Os resultados são expressos em mg/kg (ppm)."
+    },
+    {
+      "heading": "Interpretação de metais de desgaste",
+      "body": "A concentração de ferro indica o desgaste geral de componentes ferrosos em todo o circuito de lubrificação. O cobre indica desgaste das bronzinas. O chumbo indica falha da camada superficial do mancal. O alumínio indica desgaste do pistão ou da liga do mancal. Silício acima de 20 ppm indica ingestão de terra (bypass do filtro de ar ou contaminação por poeira da estrada), que simultaneamente eleva o ferro ao agir como abrasivo nos cilindros e nas superfícies dos mancais. Acompanhar a tendência de vários elementos de desgaste ao mesmo tempo revela o mecanismo de desgaste específico e o componente afetado — uma análise ICP sem dados de silício é incompleta para o diagnóstico de causa raiz de ferro elevado."
+    },
+    {
+      "heading": "Integração com o monitoramento da condição do óleo",
+      "body": "A ASTM D5185 é o método analítico central em programas de monitoramento da condição do óleo, combinado com: viscosidade a 100°C (ASTM D445), número de acidez/TAN (ASTM D664), número de basicidade/TBN (ASTM D2896 ou D4739), teor de água (ASTM D6304/ISO 12937) e contagem de partículas (ISO 4406/ISO 11171). Cada método analítico cobre um modo de falha diferente — a ASTM D5185 trata do desgaste de componentes e da contaminação; a viscosidade e o TBN/TAN tratam da degradação do óleo. Os dados combinados permitem decidir os intervalos de troca de óleo com base na condição."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Método",
+      "value": "ICP-OES (plasma indutivamente acoplado)"
+    },
+    {
+      "label": "Faixa de sensibilidade",
+      "value": "0.1–10,000 ppm por elemento"
+    },
+    {
+      "label": "Elementos medidos",
+      "value": "20+ (metais de desgaste, aditivos, contaminantes)"
+    },
+    {
+      "label": "Limite de silício (ingestão de ar)",
+      "value": ">20 ppm = suspeita de bypass do filtro"
+    }
+  ],
+  "applicableSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-FERROUS-WEAR-DEBRIS",
+    "TERM-ABRASIVE-WEAR",
+    "TERM-GLYCOL-CONTAMINATION",
+    "TERM-SILICA",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-TOTAL-ACID-NUMBER"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "DURATECH™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "oil-analysis-methods",
+    "oil-condition-monitoring",
+    "fleet-oil-sampling-protocol",
+    "extended-drain-interval-engineering"
+  ],
+  "commonMistakes": [
+    "Tratar a concentração de metais de desgaste de uma única amostra como indicador definitivo de desgaste, sem dados de tendência de amostras sequenciais com intervalos de troca conhecidos. Um valor alto de ferro isolado pode refletir o amaciamento do componente — a taxa de tendência importa mais do que qualquer leitura individual.",
+    "Não normalizar as concentrações de metais de desgaste pelo intervalo de troca da amostra. Comparar uma amostra de óleo de 250 horas com uma de 500 horas sem normalização dá uma impressão enganosa da taxa de desgaste — mg por hora de operação é a métrica de comparação correta.",
+    "Usar a espectroscopia ICP-OES (ASTM D5185) como único método de detecção de resíduos de desgaste. A ICP-OES detecta com confiabilidade partículas abaixo de 5–8 µm; partículas de desgaste maiores, características de danos acelerados aos componentes, ficam sub-representadas. A ferrografia ou a análise de resíduos no filtro devem complementar a ICP em equipamentos críticos."
+  ],
+  "faqs": [
+    {
+      "question": "Quais elementos a ASTM D5185 mede e o que eles indicam sobre a condição do motor?",
+      "answer": "A ASTM D5185 mede simultaneamente 20+ elementos por espectroscopia ICP-OES em uma única amostra de óleo. Metais de desgaste: ferro (Fe) — desgaste ferroso geral de anéis, camisas, virabrequim, comando de válvulas; cobre (Cu) — bronzinas, buchas do pino do pistão, resfriador de óleo; chumbo (Pb) — falha da liga superficial do mancal; estanho (Sn) — metal antifricção (babbitt) do mancal; alumínio (Al) — pistão, liga do mancal; cromo (Cr) — cromagem dos anéis, anticongelante do líquido de arrefecimento. Elementos de aditivos: zinco (Zn) + fósforo (P) — esgotamento do aditivo antidesgaste ZDDP; cálcio (Ca) + magnésio (Mg) — aditivos detergentes/dispersantes; boro (B) — inibidor de corrosão do líquido de arrefecimento (elevado = entrada de líquido de arrefecimento). Contaminantes: silício (Si) — ingestão de terra por bypass do filtro de ar; sódio (Na) + potássio (K) — marcadores de contaminação por líquido de arrefecimento. Acompanhar a tendência de cada elemento em amostras sequenciais revela a progressão do desgaste dos componentes antes de uma falha catastrófica."
+    },
+    {
+      "question": "Qual limitação de tamanho de partícula a ICP-OES da ASTM D5185 tem e como ela afeta o diagnóstico de desgaste?",
+      "answer": "A análise ICP-OES ASTM D5185 detecta com confiabilidade espécies metálicas dissolvidas e particuladas finas abaixo de aproximadamente 5–8 µm de diâmetro. Partículas de desgaste maiores — os resíduos grossos característicos de desgaste avançado de componentes (lascamento, fadiga do babbitt, riscamento) — ficam sub-representadas ou ausentes no resultado ICP-OES, porque partículas grandes não são totalmente digeridas na preparação da amostra e podem decantar na amostra diluída antes da análise. Essa limitação de tamanho significa que a ICP-OES pode mostrar concentrações normais de elementos enquanto há partículas de desgaste grandes (25–500 µm) no óleo — um falso negativo para danos avançados. Métodos analíticos complementares (ferrografia para partículas magnéticas, análise de resíduos no filtro conforme a MIL-STD-1796, esgotamento de antioxidantes RULER) são necessários em equipamentos críticos onde a geração de resíduos grandes precede a falha catastrófica."
+    },
+    {
+      "question": "Qual é a importância da concentração de silício na análise de óleo ASTM D5185?",
+      "answer": "Silício (Si) acima de 20 ppm na análise de óleo do motor é o principal indicador de falha do sistema de filtração de ar — ingestão de poeira de terra através de um filtro de admissão de ar danificado ou em bypass. A terra ambiente contém 20–60% de dióxido de silício (quartzo/sílica) em massa. O silício ingerido pela admissão de ar não vem dos aditivos do óleo (que raramente contêm silício) nem das ligas do motor — ele só pode se originar de terra externa ou poeira em suspensão. Cada ppm de Si no óleo do motor, com taxas típicas de consumo de óleo, representa a ingestão de aproximadamente 50–100 mg de sílica no circuito de lubrificação. A dureza da sílica (7 Mohs) supera a do aço (5–6 Mohs) e a dos materiais de mancal de liga de aço (4–5 Mohs), tornando-a uma contaminação altamente abrasiva — Si elevado nos resultados ASTM D5185 deve acionar imediatamente a inspeção e o serviço do sistema de filtração de ar."
+    },
+    {
+      "question": "Como as concentrações de metais de desgaste ASTM D5185 devem ser normalizadas para uma tendência válida?",
+      "answer": "As concentrações brutas de metais de desgaste (mg/kg) da ASTM D5185 não são diretamente comparáveis entre amostras de óleo coletadas em intervalos de troca diferentes, porque intervalos mais longos permitem maior acúmulo de resíduos de desgaste. A métrica de comparação correta é a taxa de desgaste: mg de elemento por hora de operação = (concentração em mg/kg × volume de óleo em litros × densidade do óleo em kg/L) / intervalo de troca em horas. Para um cárter de 15 L com concentração de ferro de 40 µg/g (ppm) em um intervalo de troca de 500 horas: taxa de desgaste de ferro = (40 × 15 × 0.88) / 500 = 1.06 mg/hora. Acompanhar essa taxa em trocas sequenciais revela se o desgaste está aumentando, estável ou diminuindo. A maioria dos serviços comerciais de análise de óleo relata tanto a concentração em ppm quanto a taxa de desgaste normalizada quando o intervalo de troca é informado."
+    },
+    {
+      "question": "O que níveis elevados de cálcio e magnésio na análise ASTM D5185 indicam?",
+      "answer": "O cálcio (Ca) e o magnésio (Mg) do óleo do motor vêm de pacotes de aditivos detergentes/dispersantes de sulfonato de cálcio e sulfonato de magnésio — os principais componentes de reserva alcalina que mantêm o TBN (número de basicidade total) do óleo. O óleo de motor novo normalmente contém 2,000–4,000 ppm de Ca e 50–300 ppm de Mg, conforme a formulação. Concentrações decrescentes de Ca e Mg em amostras sequenciais indicam esgotamento de aditivos — a reserva de TBN restante do óleo está caindo. Se o TBN cair abaixo de 1 (ASTM D2896) com o óleo ainda em serviço, a capacidade de neutralização de ácidos se esgota e a corrosão das superfícies dos mancais induzida pelo óleo se acelera. A tendência de Ca e Mg ASTM D5185 fornece os dados de esgotamento de aditivos necessários para otimizar o intervalo de troca de óleo em programas de troca estendida."
+    },
+    {
+      "question": "Como a ASTM D5185 detecta contaminação por líquido de arrefecimento no óleo lubrificante do motor?",
+      "answer": "A detecção de contaminação por líquido de arrefecimento no óleo do motor pela ASTM D5185 se baseia em três elementos marcadores. Boro (B): os inibidores de corrosão do anticongelante de etilenoglicol (bórax, toliltriazol-borato) contêm boro em 200–500 ppm no líquido de arrefecimento — contaminação do óleo acima de 25 ppm de B (descontando o boro que possa vir dos aditivos do óleo) indica entrada de líquido de arrefecimento. Sódio (Na) + potássio (K): os inibidores de corrosão do líquido de arrefecimento (silicatos, tecnologia de ácidos orgânicos/OAT) contêm Na e K — Na+K elevado acima da linha de base junto com boro confirma a presença de líquido de arrefecimento. O glicol em si é detectado pela ASTM D2982 (ensaio específico de glicol). A detecção precoce pela ASTM D5185 da elevação de boro, sódio e potássio permite investigar e reparar o vazamento de líquido de arrefecimento antes de uma falha catastrófica dos mancais por diluição da viscosidade do óleo e reação dos aditivos com o glicol."
+    },
+    {
+      "question": "Qual é a relação entre os níveis de silício ASTM D5185 e os códigos de limpeza de partículas ISO 4406?",
+      "answer": "A medição de silício ASTM D5185 (Si dissolvido + partículas finas abaixo de 8 µm) e a contagem de partículas ISO 4406 (todas as partículas, independentemente da composição) fornecem informações de contaminação complementares, porém diferentes. Si ASTM D5185 alto (>20 ppm) confirma a ingestão de terra — o silício vem especificamente da poeira de sílica, o principal abrasivo do motor. No entanto, uma contagem de partículas ISO 4406 de ISO 16/14/11 (limpeza normal do óleo do motor) com Si elevado (50 ppm) indica contaminação abrasiva significativa — enquanto ISO 4406 de ISO 19/17/14 com Si normal (<15 ppm) indica acúmulo geral de partículas por desgaste normal. Usando as duas medições simultaneamente: a ASTM D5185 identifica a fonte de contaminação (ingestão de terra vs. desgaste geral); a ISO 4406 quantifica o nível total de contaminação."
+    },
+    {
+      "question": "Qual protocolo de amostragem é necessário para que a análise ASTM D5185 produza dados de tendência válidos?",
+      "answer": "A tendência ASTM D5185 exige um protocolo de amostragem consistente para produzir dados de comparação válidos. (1) Momento e ponto de amostragem: coletar sempre no mesmo ponto do circuito de lubrificação (válvula de amostragem pressurizada na galeria principal de óleo, NÃO no bujão de drenagem do cárter, que acumula resíduos decantados não representativos do óleo em circulação). (2) Volume da amostra: 50–100 mL de um ponto de amostragem purgado (purgar 100–300 mL antes de coletar a amostra de análise para remover o óleo estagnado). (3) Registro do intervalo de troca: cada amostra deve vir acompanhada das horas exatas de operação no momento da coleta. (4) Recipientes de amostra: a ASTM D5185 exige recipientes de polietileno limpos e isentos de metais — evite vidro (a dissolução do vidro pode contaminar com Si e afetar os resultados de Si em amostras com pouco silício). (5) Envio: as amostras devem chegar ao laboratório em até 30 dias, a temperaturas abaixo de 40°C, para evitar crescimento microbiano ou separação de fases glicol-água que afetem os resultados."
+    },
+    {
+      "question": "Como a ASTM D5185 apoia programas de intervalo estendido de troca de óleo em frotas de equipamentos pesados?",
+      "answer": "Os programas de intervalo estendido de troca de óleo (EODI) usam a ASTM D5185 junto com a viscosidade (ASTM D445), o TAN (ASTM D664), o TBN (ASTM D2896) e o teor de água (ASTM D6304) para determinar quando a condição do óleo justifica a troca, em vez de usar um intervalo fixo por horas. Os metais de desgaste ASTM D5185 indicam o estado de saúde dos componentes (não é necessária troca prematura se as taxas de desgaste forem normais e todos os outros parâmetros estiverem dentro dos limites); o silício indica o estado de contaminação (troca antecipada se o Si indicar falha do filtro de ar); os elementos de aditivos (Zn, P, Ca, Mg) indicam o estado da reserva de aditivos (troca acionada quando o esgotamento de aditivos atinge o limite de fim de vida). Os programas de manutenção de frotas DURATECH™ usam esse painel analítico completo para a gestão do óleo baseada na condição, normalmente estendendo os intervalos de troca em 20–40% além dos cronogramas por horas fixas, mantendo ou melhorando a proteção do motor."
+    },
+    {
+      "question": "O que o esgotamento de zinco e fósforo na análise ASTM D5185 indica?",
+      "answer": "O zinco (Zn) e o fósforo (P) do óleo do motor vêm principalmente do ditiofosfato de dialquilzinco (ZDDP) — o principal aditivo antidesgaste, antioxidante e inibidor de corrosão dos lubrificantes de motor. O óleo SAE 15W-40 novo normalmente contém 800–1,200 ppm de Zn e 750–1,100 ppm de P. Em serviço, o ZDDP se decompõe progressivamente por seus mecanismos de reação antidesgaste e antioxidante. Concentrações de Zn e P ASTM D5185 decrescentes em amostras sequenciais indicam esgotamento do ZDDP. Quando o Zn ou o P caem abaixo de aproximadamente 30–40% da concentração do óleo novo, a margem de proteção antidesgaste é substancialmente reduzida. O esgotamento combinado de Zn/P ASTM D5185 com TBN ASTM D2896 abaixo de 1 mg KOH/g indica óleo no fim da vida funcional — a troca imediata é justificada independentemente das horas decorridas."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "test-method",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry (ICP-AES), ASTM International",
+      "relevance": "Principal método analítico ICP-OES para a determinação multielementar simultânea em óleo usado; quantifica metais de desgaste, elementos de aditivos e contaminantes, permitindo avaliar a condição dos componentes e identificar a fonte de contaminação."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D2896-22, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration, ASTM International",
+      "relevance": "Método de medição do TBN usado junto com a ASTM D5185 no monitoramento da condição do óleo; indica o estado da reserva alcalina do óleo, complementando os dados de esgotamento de elementos de aditivos (Zn, Ca, Mg) da D5185."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products by Coulometric Karl Fischer Titration, ASTM International",
+      "relevance": "Medição do teor de água usada em conjunto com a ASTM D5185 para o diagnóstico de contaminação por líquido de arrefecimento; a D5185 detecta os elementos marcadores do líquido de arrefecimento (B, Na, K), enquanto a D6304 quantifica a água total da entrada de líquido de arrefecimento."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles, ISO Geneva",
+      "relevance": "Norma de código de limpeza de partículas usada junto com a ASTM D5185 no monitoramento abrangente da condição do óleo; a D5185 identifica a fonte de contaminação (silício = ingestão de terra), enquanto a ISO 4406 quantifica o nível total de contaminação por partículas."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "slug": "iso-8573-2",
+  "code": "ISO 8573-2",
+  "entityId": "STD-ISO-8573-2",
+  "title": "Compressed Air — Test Methods for Aerosol Oil Content",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2018 (3.ª edição)",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 8573-2 especifica métodos de ensaio para medir o teor de aerossol e vapor de óleo no ar comprimido, fornecendo os procedimentos de medição para a classe de contaminação por óleo definida na ISO 8573-1.",
+  "scope": "Medição da contaminação por aerossol e vapor de óleo no ar comprimido no ponto de uso, para a qualificação de sistemas de tratamento de ar comprimido e a verificação da classe de pureza segundo a ISO 8573-1.",
+  "engineeringPurpose": "Fornece a metodologia de medição do componente de teor de óleo do sistema de classes de pureza ISO 8573-1, permitindo verificar se filtros coalescentes, leitos de carvão ativado e sistemas de tratamento de ar comprimido atingem a classe de aerossol e vapor de óleo especificada em aplicações de contato com alimentos, farmacêuticas e de processos sensíveis.",
+  "sections": [
+    {
+      "heading": "Escopo da medição do teor de óleo",
+      "body": "A ISO 8573-2 especifica dois métodos de ensaio complementares para medir o teor total de óleo no ar comprimido: o método de aerossol (coleta em filtro de membrana e medição gravimétrica da névoa de óleo líquido) e o método de vapor (coleta em tubo sorvente de carvão ativado e extração com solvente do vapor de óleo). Teor total de óleo = óleo em aerossol + óleo em vapor, relatado em mg/m³ nas condições de referência (20°C, 1 bar). As classes de óleo ISO 8573-1 são verificadas com a medição do teor total de óleo da ISO 8573-2."
+    },
+    {
+      "heading": "Verificação do tratamento de ar comprimido",
+      "body": "A medição ISO 8573-2 é realizada a jusante de cada estágio de tratamento para verificar se o equipamento instalado atinge a classe de óleo especificada. Um pré-filtro coalescente reduz o aerossol de óleo arrastado do lubrificante do compressor (tipicamente 5–40 mg/m³ na saída do compressor) para <1 mg/m³ (óleo classe ISO 3). Um estágio coalescente de alta eficiência reduz ainda mais, para <0.1 mg/m³ (classe ISO 2). Um adsorvedor de carvão ativado remove o vapor de óleo até <0.01 mg/m³ (classe ISO 1). A medição no ponto de uso confirma que cada estágio funciona corretamente nas condições reais de pressão e vazão de operação."
+    },
+    {
+      "heading": "Relação com a ISO 8573-1",
+      "body": "A ISO 8573-2 é a norma de método de ensaio referenciada pela ISO 8573-1 para o parâmetro de classe de contaminação por óleo. A ISO 8573-1 especifica qual classe de pureza é exigida; a ISO 8573-2 especifica como medir se essa classe é atingida. Outras partes da ISO 8573 cobrem outros contaminantes: Parte 3 (medição de água e umidade), Parte 4 (partículas sólidas por massa), Parte 6 (contaminantes gasosos) e Parte 9 (medição de água líquida). Juntas, essas partes formam a estrutura completa de medição do sistema de classes de pureza ISO 8573-1."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Medição",
+      "value": "Aerossol + vapor de óleo (mg/m³)"
+    },
+    {
+      "label": "Limite de óleo classe ISO 3",
+      "value": "<1 mg/m³"
+    },
+    {
+      "label": "Limite de óleo classe ISO 1",
+      "value": "<0.01 mg/m³"
+    },
+    {
+      "label": "Métodos",
+      "value": "Filtro de membrana (aerossol) + tubo sorvente (vapor)"
+    }
+  ],
+  "applicableSystems": [],
+  "relatedGlossaryTerms": [
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-DEW-POINT",
+    "TERM-COALESCING"
+  ],
+  "relatedTopics": [
+    "testing-and-validation",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [],
+  "relatedArticles": [
+    "compressed-air-systems",
+    "iso-8573-compressed-air-purity"
+  ],
+  "parentStandard": "STD-ISO-8573-1",
+  "commonMistakes": [
+    "Usar a medição de aerossol de óleo ISO 8573-2 como indicador do teor total de hidrocarbonetos. A ISO 8573-2 mede aerossol de óleo e óleo líquido — não detecta vapor de óleo, que exige tratamento com carvão ativado e medição separada.",
+    "Não reconhecer que o teor de aerossol de óleo no ar comprimido aumenta com o envelhecimento do elemento filtrante a jusante, mesmo dentro da vida útil nominal. As medições de verificação devem ser feitas em condições de fim de vida, não apenas com elementos novos."
+  ],
+  "faqs": [
+    {
+      "question": "Quais dois métodos de medição a ISO 8573-2 especifica para o teor de óleo do ar comprimido?",
+      "answer": "A ISO 8573-2 especifica dois métodos complementares para medir o teor total de óleo no ar comprimido. Método 1 (óleo em aerossol): o ar comprimido é aspirado através de um filtro de membrana a uma vazão controlada; as gotículas de aerossol de óleo se acumulam na membrana; a pesagem gravimétrica antes e depois da coleta fornece a massa de aerossol de óleo em mg/m³ nas condições de referência (20°C, 1 bar abs). Método 2 (vapor de óleo): o ar comprimido passa por um tubo sorvente de carvão ativado; os vapores de hidrocarbonetos adsorvidos são extraídos com solvente e medidos por GC-FID (cromatografia gasosa com detector de ionização de chama) ou gravimetria, fornecendo o vapor de óleo em mg/m³. Teor total de óleo relatado conforme a ISO 8573-1 = aerossol de óleo + vapor de óleo."
+    },
+    {
+      "question": "Quais concentrações de aerossol de óleo a ISO 8573-2 normalmente mede a montante e a jusante de filtros de ar comprimido?",
+      "answer": "A montante do primeiro estágio de filtro coalescente (na saída do compressor), as concentrações de aerossol de óleo de compressores de parafuso rotativo lubrificados normalmente são de 5–30 mg/m³ em condições normais de operação — principalmente óleo arrastado do lubrificante do compressor através do estágio separador. Um pré-filtro coalescente de alta eficiência (40–70% de eficiência) reduz isso para 2–10 mg/m³ (óleo classe ISO 4–3). Um filtro coalescente de alta eficiência de segundo estágio (ensaiado conforme a ISO 12500-1) reduz para <0.1 mg/m³ (óleo classe ISO 2). A adsorção com carvão ativado remove o vapor de óleo até <0.003 mg/m³ (óleo classe ISO 1). As medições ISO 8573-2 em cada estágio confirmam que cada elemento de tratamento funciona dentro de sua eficiência nominal."
+    },
+    {
+      "question": "Por que as medições ISO 8573-2 devem ser feitas no ponto de uso e não na saída do secador ou do filtro?",
+      "answer": "A recontaminação do ar comprimido pela tubulação de distribuição é uma fonte significativa e frequentemente subestimada de contaminação por óleo no ponto de uso. Crostas de ferrugem e depósitos em tubulações de aço carbono contêm óleos de compressor absorvidos ao longo de anos de serviço — esses óleos são dessorvidos como aerossóis e vapores quando o ar comprimido morno e seco passa por eles. Biofilmes podem produzir vapores de hidrocarbonetos. Mangueiras flexíveis e conexões podem liberar plastificantes no fluxo de ar. As medições ISO 8573-2 na saída do filtro podem mostrar óleo classe 1 enquanto as medições no ponto de uso da aplicação mostram classe 3–4 devido à recontaminação do sistema de distribuição — especialmente em instalações antigas com tubulação legada de aço carbono. A conformidade com a especificação deve ser verificada no ponto de uso real."
+    },
+    {
+      "question": "Como o envelhecimento do elemento filtrante afeta as medições de aerossol de óleo ISO 8573-2?",
+      "answer": "O desempenho do elemento filtrante coalescente se degrada progressivamente com a vida útil por dois mecanismos. (1) Saturação do meio: à medida que o meio coalescente de fibra de vidro se enche de óleo coalescido e partículas sólidas, a velocidade do fluxo através do meio carregado aumenta — reduzindo o tempo de residência das gotículas de óleo no meio e diminuindo a eficiência de coalescência. (2) Arraste de líquido: no fim da vida útil, o óleo líquido acumulado no coletor de um elemento coalescente carregado pode ser rearrastado para o fluxo de ar de saída se a drenagem do coletor for inadequada ou se a velocidade do fluxo exceder a velocidade de rearraste do elemento. As medições ISO 8573-2 em elementos envelhecidos mostram consistentemente maior saída de aerossol de óleo do que em elementos novos — os intervalos de serviço devem se basear no desempenho de fim de vida, e não na eficiência inicial, para garantir a conformidade contínua com a classe de óleo ISO 8573-1 especificada."
+    },
+    {
+      "question": "Qual é a condição de referência das medições de teor de óleo ISO 8573-2?",
+      "answer": "A ISO 8573-2 expressa o teor de óleo em mg/m³ nas condições de referência padrão: 20°C e 1 bar absoluto (pressão atmosférica). Essa normalização é essencial porque o ar comprimido na pressão do sistema (tipicamente 7 bar manométricos = 8 bar absolutos) contém a mesma massa total de óleo em um volume muito menor do que na pressão atmosférica. Uma concentração de aerossol de óleo de 0.01 mg/m³ medida a 8 bar absolutos corresponde a 0.08 mg/m³ nas condições de referência de 1 bar — uma diferença de 8×. As medições ISO 8573-2 feitas na pressão do sistema devem ser convertidas para as condições de referência antes da comparação com os limites de classe ISO 8573-1, que são especificados a 20°C e 1 bar absoluto."
+    },
+    {
+      "question": "Como a ISO 8573-2 se relaciona com a ISO 12500-1 no desempenho de filtros coalescentes de ar comprimido?",
+      "answer": "A ISO 8573-2 é a norma de medição em campo — especifica como medir aerossol e vapor de óleo no fluxo de ar comprimido no ponto de uso ou na saída dos estágios de tratamento. A ISO 12500-1 (Filters for Compressed Air — Test Methods — Part 1: Oil Aerosol) é a norma de ensaio de desempenho de filtros em laboratório — especifica como medir a eficiência de remoção de aerossol de óleo de elementos filtrantes coalescentes em condições de ensaio controladas em uma bancada. A ISO 12500-1 gera os dados de eficiência do filtro publicados pelo fabricante (concentração de óleo na entrada → concentração de óleo na saída); a ISO 8573-2 verifica se o filtro instalado atinge o desempenho esperado nas condições reais de serviço (vazão, temperatura, pressão, concentração de óleo na entrada), que podem diferir das condições de ensaio da ISO 12500-1."
+    },
+    {
+      "question": "Qual é a duração mínima de medição ISO 8573-2 para resultados confiáveis de teor de óleo?",
+      "answer": "A ISO 8573-2 especifica tempos mínimos de coleta para o método de filtro de membrana de aerossol, a fim de garantir resultados gravimétricos estatisticamente confiáveis. Em baixas concentrações de óleo (classe 1: <0.01 mg/m³), a coleta deve continuar até que uma massa mínima detectável se acumule no filtro de membrana — tipicamente 0.1–0.5 mg para exatidão gravimétrica confiável. A 0.01 mg/m³ e vazão de amostra de 10 L/min, isso exige 10–50 minutos de coleta. Em concentrações mais altas (classe 3–4: 1–5 mg/m³), tempos de coleta de 5–15 minutos a 10 L/min são suficientes. Um tempo de coleta inadequado produz alta incerteza relativa de medição (>±50%), tornando sem sentido a determinação de conformidade — a sensibilidade da balança analítica do laboratório e a massa mínima detectável determinam o volume mínimo válido de coleta para cada nível de classe."
+    },
+    {
+      "question": "A ISO 8573-2 trata do teor total de hidrocarbonetos ou apenas do óleo proveniente do compressor?",
+      "answer": "Os métodos de medição de óleo ISO 8573-2 capturam todos os aerossóis e vapores de hidrocarbonetos carbonáceos — não apenas o óleo lubrificante proveniente do compressor. A contaminação do ar atmosférico de admissão (gases de escapamento de veículos, vapores de solventes perto de operações de pintura ou limpeza, emissões de processos industriais) aspirada pela admissão do compressor e arrastada pelo sistema de tratamento contribui para o teor total de óleo no ar comprimido. Em instalações próximas a armazenamento de petróleo, oficinas automotivas ou cabines industriais de pintura, as concentrações de hidrocarbonetos atmosféricos podem ser de 0.1–1.0 mg/m³ — significativas em relação aos limites da classe 1 (0.01 mg/m³) e da classe 2 (0.1 mg/m³). Por isso, uma especificação de ar comprimido de alta qualidade para aplicações sensíveis também deve controlar a qualidade do ar de admissão do compressor, e não apenas a eficiência do tratamento."
+    },
+    {
+      "question": "Quais são as consequências de exceder os limites de classe de óleo ISO 8573-1 em aplicações específicas?",
+      "answer": "As consequências da contaminação por óleo acima da classe ISO 8573-1 especificada dependem da aplicação. (1) Instrumentação pneumática (classe 1:4:1): óleo acima de 0.01 mg/m³ reveste com depósitos pegajosos os diafragmas dos posicionadores e os orifícios dos transmissores de 4–20 mA, causando deriva e histerese nas malhas de controle — distúrbios na planta e degradação do SIS. (2) Embalagem em contato com alimentos (classe 1:2:1): óleo acima de 0.01 mg/m³ contamina as superfícies de embalagem — possível violação das normas de segurança de alimentos e recall do produto. (3) Envase farmacêutico parenteral (classe 0): qualquer óleo detectável constitui um incidente de contaminação que exige investigação segundo o EU GMP Annex 1. (4) Pintura por pulverização (classe 3:4:3): óleo acima de 1 mg/m³ causa defeitos de olho de peixe na pintura e falha de aderência — rejeição de qualidade do produto. A verificação periódica ISO 8573-2 evita esses eventos de contaminação de alto impacto."
+    },
+    {
+      "question": "Como a medição de óleo ISO 8573-2 difere da medição de COV (compostos orgânicos voláteis) na qualidade do ar comprimido?",
+      "answer": "A medição de óleo ISO 8573-2 visa especificamente os aerossóis e vapores de hidrocarbonetos do lubrificante do compressor — hidrocarbonetos C15–C40 derivados do petróleo com pressões de vapor iguais ou inferiores às condições atmosféricas. A medição de COV (ISO 8573-8) cobre compostos orgânicos voláteis com pressão de vapor significativa em condições ambientes — hidrocarbonetos aromáticos C4–C12, cetonas, ésteres e álcoois provenientes da poluição atmosférica, do arraste de solventes ou do crescimento biológico. A contaminação por COV está fora do escopo da ISO 8573-2, mas é igualmente importante para aplicações alimentícias, farmacêuticas e de laboratório. Uma especificação de qualidade do ar comprimido que trate da contaminação por óleo e por COV deve referenciar de forma independente os métodos de medição ISO 8573-2 (óleo) e ISO 8573-8 (COV)."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content, ISO Geneva",
+      "relevance": "Norma de método de medição do teor de aerossol e vapor de óleo no ar comprimido; especifica os métodos de filtro de membrana (aerossol) e tubo sorvente (vapor) para a verificação da classe de óleo ISO 8573-1."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes, ISO Geneva",
+      "relevance": "Norma de classificação principal que define as classes de teor de óleo verificadas pela medição ISO 8573-2."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12500-1:2007, Filters for Compressed Air — Test Methods — Part 1: Oil Aerosol, ISO Geneva",
+      "relevance": "Norma de ensaio de desempenho de filtros em laboratório para a eficiência de filtros coalescentes; fornece dados de eficiência de remoção de aerossol de óleo certificados pelo fabricante, validados frente às condições de medição em campo ISO 8573-2."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-4:2019, Compressed Air — Part 4: Test Methods for Solid Particle Content, ISO Geneva",
+      "relevance": "Norma de método de ensaio complementar para medição de partículas sólidas no ar comprimido; usada junto com a medição de óleo ISO 8573-2 para a verificação abrangente da classe de pureza ISO 8573-1 no ponto de uso."
+    }
+  ]
+}

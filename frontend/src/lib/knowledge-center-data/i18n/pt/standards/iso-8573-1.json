@@ -1,0 +1,129 @@
+{
+  "slug": "iso-8573-1",
+  "code": "ISO 8573-1",
+  "entityId": "STD-ISO-8573-1",
+  "title": "Compressed Air — Contaminant Classes and Purity Requirements",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2010",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 8573-1 define classes de pureza para o ar comprimido, especificando as concentrações máximas de partículas sólidas, água e óleo para aplicações de ar industrial, alimentício, farmacêutico e de instrumentos.",
+  "scope": "Classificação da pureza do ar comprimido por classe de contaminação para partículas sólidas, água (líquida e vapor) e óleo total (líquido, aerossol e vapor).",
+  "engineeringPurpose": "Estabelece o sistema de classificação de pureza do ar comprimido (classes Partículas:Água:Óleo), permitindo especificar os requisitos de qualidade do ar no ponto de uso para equipamentos pneumáticos, instrumentação e aplicações de processo. A parte desta estrutura referente à classe de água (ponto de orvalho sob pressão) é relevante para a seleção de secadores de ar DRYCORE™ de sistemas de freio pneumático.",
+  "sections": [
+    {
+      "heading": "Estrutura das classes de pureza",
+      "body": "A ISO 8573-1 especifica a pureza do ar comprimido com três números de classe independentes no formato X:Y:Z — onde X é a classe de partículas (1–9 ou 0), Y é a classe de água (1–9 ou 0) e Z é a classe de óleo (1–4 ou 0). Números menores representam maior pureza. A classe 1:4:1 representa concentração de partículas <20,000 por m³ a ≥0.1 µm, ponto de orvalho sob pressão ≤+3°C e óleo total <0.01 mg/m³. A classe 0 (maior pureza) é específica de cada aplicação e definida pelo fornecedor do equipamento e pelo usuário final."
+    },
+    {
+      "heading": "Requisitos por aplicação",
+      "body": "Requisitos típicos por aplicação: serviço pneumático geral classe 5:4:3; ar de instrumentos classe 2:4:1; contato com alimentos classe 1:2:1; envase farmacêutico classe 1:2:1. A ISO 8573-1 é usada em conjunto com a ISO 8573-2 (medição de partículas), a ISO 8573-3 (medição de umidade e água) e a ISO 12500 (ensaio de filtros coalescentes). Os secadores de ar DRYCORE™ de sistemas de freio pneumático são selecionados conforme a meta de classe de água (ponto de orvalho sob pressão) especificada para a aplicação veicular aprovada."
+    },
+    {
+      "heading": "Requisitos dos estágios de tratamento",
+      "body": "Atingir a classe 1:4:1 exige um trem de tratamento de ar comprimido de vários estágios: pré-filtro (líquido em massa e partículas >3 µm), secador por refrigeração (ponto de orvalho sob pressão de 2–5°C), filtro coalescente (aerossol de óleo até 0.01 mg/m³), carvão ativado (vapor de óleo até 0.005 mg/m³) e pós-filtro (remoção de finos de carvão). Cada estágio é ensaiado e classificado individualmente segundo a parte aplicável da ISO 8573."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Formato",
+      "value": "Números de classe Partículas:Água:Óleo"
+    },
+    {
+      "label": "Mínimo para ar de instrumentos",
+      "value": "Classe 2:4:1"
+    },
+    {
+      "label": "Partículas classe 1",
+      "value": "<20,000/m³ a ≥0.1 µm"
+    }
+  ],
+  "applicableSystems": [],
+  "relatedGlossaryTerms": [
+    "TERM-DEW-POINT",
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-COALESCING"
+  ],
+  "relatedTopics": [
+    "testing-and-validation",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "DRYCORE™"
+  ],
+  "relatedArticles": [
+    "compressed-air-systems",
+    "iso-8573-compressed-air-purity"
+  ],
+  "childStandards": [
+    "STD-ISO-8573-2"
+  ],
+  "commonMistakes": [
+    "Especificar a classe 0 ISO 8573-1 (isento de óleo) para aplicações que exigem apenas a classe 1 (≤0.01 mg/m³ de aerossol de óleo). A classe 0 exige um compressor isento de óleo; a classe 1 é atingível com filtração coalescente a jusante em um compressor lubrificado — uma diferença de custo significativa.",
+    "Não distinguir entre o teor de aerossol de óleo ISO 8573-1 (medido pela 8573-2) e o teor total de hidrocarbonetos (aerossol + vapor). Um sistema que atende à classe 1 de aerossol de óleo ainda pode conter vapor de óleo que exige tratamento com carvão ativado.",
+    "Aplicar as especificações de classe de pureza ISO 8573-1 em um único ponto do sistema sem considerar a recontaminação pela tubulação de distribuição. A qualidade do ar no ponto de uso deve ser medida na aplicação, não na saída do secador."
+  ],
+  "faqs": [
+    {
+      "question": "Como funciona o formato de classe de pureza de três números da ISO 8573-1?",
+      "answer": "A ISO 8573-1 expressa a pureza do ar comprimido como três números de classe separados por dois-pontos no formato Classe de partículas : Classe de água : Classe de óleo. Cada número é independente e se refere a uma categoria de contaminação distinta. A classe 1:4:2 significa: partículas classe 1 (≤20,000 partículas/m³ ≥0.1 µm), água classe 4 (ponto de orvalho sob pressão ≤+3°C) e óleo classe 2 (≤0.1 mg/m³ de óleo total). Números de classe menores representam ar mais limpo. A classe 0 (maior pureza) não é definida pela norma — é específica de cada aplicação e definida por acordo entre o usuário e o fornecedor do ar comprimido. A classe 0 exige tecnologia de compressor isento de óleo mais tratamento a jusante; as classes 1–4 são atingíveis com equipamentos de filtração e secagem a jusante bem selecionados."
+    },
+    {
+      "question": "Quais são as classes de partículas ISO 8573-1 e quais concentrações elas representam?",
+      "answer": "A ISO 8573-1 define as classes de partículas com base na concentração de partículas por metro cúbico em faixas de tamanho especificadas. Classe 1: ≤20,000 partículas/m³ a ≥0.1 µm (a classe definida mais limpa). Classe 2: ≤400,000 partículas/m³ a ≥0.1 µm e ≤6,000/m³ a ≥0.5 µm. Classe 3: ≤90,000 partículas/m³ a ≥0.5 µm e ≤1,000/m³ a ≥1.0 µm. Classe 4: ≤10,000 partículas/m³ a ≥1.0 µm. Classe 5: ≤100,000 partículas/m³ a ≥1.0 µm. As classes superiores (6–9) cobrem aplicações menos limpas. O ar de instrumentos normalmente exige a classe 2 ou melhor; atuadores pneumáticos de controle de processo exigem as classes 3–4; o ar de sopro pode aceitar as classes 5–6."
+    },
+    {
+      "question": "O que as classes de água ISO 8573-1 representam em termos de ponto de orvalho sob pressão?",
+      "answer": "As classes de água ISO 8573-1 são definidas pelo ponto de orvalho sob pressão (PDP) — a temperatura em que o vapor de água do ar comprimido na pressão do sistema começaria a condensar. Classe 1: PDP ≤−70°C (ultrasseco, exige secador criogênico). Classe 2: PDP ≤−40°C (secador por membrana ou por adsorção com oscilação de pressão). Classe 3: PDP ≤−20°C (secador por adsorção regenerativo). Classe 4: PDP ≤+3°C (secador por refrigeração). Classe 5: PDP ≤+7°C (secador por refrigeração com ponto de orvalho mais alto). Classe 6: teor de água líquida ≤5 g/m³ (parcialmente seco ou parcialmente tratado). Para ar de instrumentos e controles pneumáticos em ambientes onde a temperatura ambiente excede +3°C, a classe 4 (PDP ≤+3°C) evita a condensação na tubulação de distribuição. Os secadores de ar DRYCORE™ de sistemas de freio pneumático são dimensionados conforme a meta de classe de água especificada para a aplicação veicular aprovada."
+    },
+    {
+      "question": "Quais são as classes de óleo ISO 8573-1 e quais fontes de contaminação por óleo elas abordam?",
+      "answer": "As classes de óleo ISO 8573-1 especificam o teor total de óleo (óleo líquido + aerossol de óleo + vapor de óleo) em mg/m³ na pressão e temperatura de linha. Classe 1: ≤0.01 mg/m³ (ultralimpo, exige adsorvedor de carvão ativado). Classe 2: ≤0.1 mg/m³ (filtro coalescente de alta eficiência mais carvão ativado). Classe 3: ≤1 mg/m³ (um filtro coalescente sozinho atinge isso na maioria dos compressores lubrificados). Classe 4: ≤5 mg/m³ (aplicações industriais gerais sem requisitos rigorosos de óleo). As fontes de contaminação por óleo incluem: lubrificante do compressor arrastado como gotículas de aerossol (tratado por filtros coalescentes), vapor de óleo evaporado do lubrificante no estágio de compressão (tratado por adsorvedores de carvão ativado) e vapor de hidrocarbonetos atmosféricos aspirado pela admissão do compressor. Para aplicações de contato com alimentos e farmacêuticas, a especificação de óleo classe 1 ISO 8573-1 (≤0.01 mg/m³) é obrigatória."
+    },
+    {
+      "question": "Qual trem de tratamento de ar comprimido é necessário para atingir a classe 1:4:1 ISO 8573-1?",
+      "answer": "Atingir a classe 1:4:1 ISO 8573-1 exige um trem de tratamento de quatro a cinco estágios a jusante do compressor de ar. Estágio 1: separador em massa (remove água líquida e aerossol de óleo >10 µm). Estágio 2: pré-filtro com elemento coalescente (remove aerossol de óleo até ≤1 mg/m³ e partículas >1 µm). Estágio 3: secador por refrigeração (atinge PDP ≤+3°C, atendendo à classe 4 de água). Estágio 4: filtro coalescente de alta eficiência (remove aerossol de óleo até ≤0.01 mg/m³, atendendo à classe 1 de óleo). Estágio 5: adsorvedor de carvão ativado (remove vapor de óleo até ≤0.003 mg/m³). Um filtro opcional de pó/finos de carvão após o adsorvedor remove o particulado de carvão ativado para atender à classe 1 de partículas."
+    },
+    {
+      "question": "Como a ISO 8573-2 complementa a ISO 8573-1 na medição de partículas?",
+      "answer": "A ISO 8573-1 define as classes de pureza — os níveis máximos aceitáveis de contaminação. A ISO 8573-2 (Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content) define os métodos de medição para determinar se o ar atende a essas classes. A ISO 8573-2 especifica o uso de contadores ópticos de partículas (OPC), contadores de partículas a laser e métodos gravimétricos para medir o teor de partículas sólidas nas faixas de tamanho relevantes para as classes de partículas ISO 8573-1. Sem medição conforme a ISO 8573-2, não há meio tecnicamente válido de verificar se o sistema de ar comprimido atende à classe de partículas ISO 8573-1 especificada — a especificação sozinha, sem verificação por medição, não garante a qualidade real do ar."
+    },
+    {
+      "question": "Qual classe ISO 8573-1 é exigida para aplicações de embalagem de alimentos e bebidas?",
+      "answer": "Aplicações de embalagem de alimentos e bebidas exigem no mínimo a classe 1:2:1 ISO 8573-1 para o ar em contato direto com o produto. Partículas classe 1 (≤20,000/m³ a ≥0.1 µm) evitam a contaminação por partículas das superfícies de embalagem. Água classe 2 (PDP ≤−40°C) evita a condensação dentro de linhas de embalagem que operam em temperatura variável. Óleo classe 1 (≤0.01 mg/m³) evita a contaminação por óleo de superfícies em contato com alimentos, o que violaria as normas de segurança de alimentos. Requisitos adicionais além da ISO 8573-1 podem se aplicar sob regulamentações nacionais específicas de segurança de alimentos (FDA 21 CFR nos EUA; EC 1935/2004 na Europa) para lubrificantes do compressor e materiais de construção do sistema de tratamento de ar em contato com o fluxo de produto."
+    },
+    {
+      "question": "Qual é a consequência de subespecificar a classe de pureza ISO 8573-1 para o ar de instrumentos pneumáticos?",
+      "answer": "O ar de instrumentos pneumáticos aciona válvulas de controle, posicionadores e transmissores pneumáticos em plantas de processo. Subespecificar a classe de pureza causa modos de falha previsíveis. Excesso de partículas (classe 4 especificada onde a 2 era necessária): obstrução de orifícios de válvula e portas de purga de 100–500 µm nos posicionadores, causando posição de válvula errática. Excesso de água (classe 6 ou 5 onde a 4 era necessária): acúmulo de condensado na tubulação de instrumentos, causando bloqueio por congelamento com ambiente abaixo de 0°C e crescimento de bactérias/algas em climas quentes. Excesso de óleo (classe 3 onde a 1 era necessária): depósitos pegajosos no interior dos posicionadores que causam histerese da válvula e erros permanentes de desvio. Esses modos de falha causam distúrbios no processo e degradação do sistema instrumentado de segurança (SIS) — o custo de uma especificação ISO 8573-1 correta normalmente é inferior a 5% de uma única parada de processo não planejada."
+    },
+    {
+      "question": "A ISO 8573-1 trata da contaminação microbiológica do ar comprimido?",
+      "answer": "A ISO 8573-1:2010 não inclui uma classe de contaminação microbiológica — ela trata apenas de partículas sólidas, água e óleo. A qualidade microbiológica do ar comprimido para a fabricação farmacêutica e de dispositivos médicos é tratada pela ISO 8573-7 (Part 7: Test method for viable microbiological contaminant content) e pelos requisitos do sistema de qualidade GAMP-5. Para aplicações farmacêuticas de ar comprimido (salas limpas EU GMP Annex 1), os limites de contaminação microbiológica viável são especificados na autorização de fabricação do produto farmacêutico, e não diretamente na ISO 8573-1. É necessária amostragem microbiológica validada segundo a ISO 8573-7 com amostradores por impacto no ponto de uso para demonstrar conformidade com os requisitos das autoridades de fabricação farmacêutica (EMA, FDA)."
+    },
+    {
+      "question": "Como a altitude afeta a classificação de pureza do ar comprimido ISO 8573-1?",
+      "answer": "As classes de pureza ISO 8573-1 são definidas nas condições de pressão do sistema de ar comprimido (tipicamente 7 bar manométricos em sistemas industriais). A classe de água (ponto de orvalho sob pressão) é especificada na pressão do sistema — quando o ar se expande para a pressão atmosférica no ponto de uso, o ponto de orvalho se desloca em relação ao ponto de orvalho do sistema comprimido conforme a razão de pressões. Um sistema que atinge PDP de −40°C a 7 bar manométricos teria um ponto de orvalho equivalente atmosférico de aproximadamente −12°C. Em instalações de grande altitude (acima de 2,000 m), a pressão atmosférica é menor, o que reduz a razão de pressões em relação aos cálculos ao nível do mar e desloca o ponto de orvalho equivalente atmosférico. Em aplicações de ar comprimido em altitude, os cálculos de ponto de orvalho devem considerar a pressão barométrica local para verificar se o PDP especificado evita a condensação nas condições atmosféricas reais."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes, ISO Geneva",
+      "relevance": "Principal norma de classificação de pureza do ar comprimido, que define classes de teor de partículas, água (ponto de orvalho sob pressão) e óleo; a parte desta estrutura referente à classe de água é relevante para especificar os requisitos dos secadores de ar DRYCORE™ de sistemas de freio pneumático."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content, ISO Geneva",
+      "relevance": "Norma de método de medição que complementa a ISO 8573-1; especifica métodos com contador óptico de partículas e gravimétricos para verificar se o ar comprimido atende às classes de pureza especificadas de partículas e aerossol de óleo."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-4:2019, Compressed Air — Part 4: Test Methods for Solid Particle Content, ISO Geneva",
+      "relevance": "Métodos de ensaio gravimétricos e ópticos para medir o teor de partículas sólidas no ar comprimido nos níveis de concentração relevantes para as especificações de partículas das classes 1–4 ISO 8573-1."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12500-1:2007, Filters for Compressed Air — Test Methods — Part 1: Oil Aerosol, ISO Geneva",
+      "relevance": "Norma de ensaio para medir a eficiência de remoção de aerossol de óleo de filtros coalescentes de ar comprimido; necessária para confirmar que os elementos filtrantes coalescentes instalados atendem aos requisitos de classe de óleo ISO 8573-1 no ponto de uso."
+    }
+  ]
+}

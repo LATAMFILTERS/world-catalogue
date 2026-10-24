@@ -1,0 +1,127 @@
+{
+  "slug": "iso-29463",
+  "code": "ISO 29463",
+  "entityId": "STD-ISO-29463",
+  "title": "High-Efficiency Filters and Filter Media — Classification, Performance Testing, and Marking",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2011 (Partes 1–5)",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 29463 define métodos de ensayo y la clasificación de filtros de aire de alta eficiencia (clases HEPA/ULPA ePM1, ePM2.5, ePM10) para aplicaciones de admisión de motor, aire comprimido y aire de cabina.",
+  "scope": "Filtros de aire y de aire de cabina de alta eficiencia para la clasificación de desempeño HEPA/ULPA.",
+  "engineeringPurpose": "Proporciona el sistema internacional de clasificación y la metodología de ensayo de desempeño para filtros de aire de grado HEPA y ULPA, lo que permite verificar el cumplimiento de salud ocupacional en sistemas de aire de cabina de equipos pesados que operan en minería, canteras y construcción.",
+  "sections": [
+    {
+      "heading": "Sistema de clasificación",
+      "body": "La ISO 29463 reemplaza a la EN 1822 para la clasificación HEPA/ULPA en aplicaciones industriales. Las clases de filtro se definen por la eficiencia mínima al tamaño de partícula más penetrante (MPPS): E10 = 85%, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%. Los filtros de aire de cabina ELIMFILTERS MICROKAPPA™ se clasifican según la clase de eficiencia ISO 29463 especificada para la aplicación aprobada en protección de la salud ocupacional."
+    },
+    {
+      "heading": "Ensayo MPPS",
+      "body": "El tamaño de partícula más penetrante (MPPS) en medios fibrosos suele ser de 0.1–0.3 µm, el tamaño en el que los mecanismos de difusión e intercepción tienen ambos su eficiencia mínima. Ensayar al MPPS da la medición de eficiencia del peor caso. En filtros de aire de cabina, los métodos de escaneo miden la penetración local en toda la cara del filtro para identificar puntos críticos de penetración que expondrían a los ocupantes a concentraciones localizadas altas de partículas."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Eficiencia mínima H13",
+      "value": "99.95% al MPPS"
+    },
+    {
+      "label": "Rango MPPS",
+      "value": "0.1–0.3 µm"
+    },
+    {
+      "label": "Ámbito de aplicación",
+      "value": "Aire de cabina HEPA/ULPA y filtración industrial"
+    }
+  ],
+  "applicableSystems": [
+    "cabin-air-protection",
+    "air-intake-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-MELT-BLOWN-MEDIA",
+    "TERM-SURFACE-FILTRATION"
+  ],
+  "relatedTopics": [
+    "filter-media-science",
+    "airflow-engineering",
+    "cabin-air-filtration"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedArticles": [
+    "cabin-air-filtration",
+    "filter-media-science",
+    "filter-media-engineering"
+  ],
+  "commonMistakes": [
+    "Usar la penetración DOP/DEHS al caudal nominal como único criterio de desempeño. La ISO 29463 también exige integridad mecánica bajo ciclos de presión pulsante; un medio de alta eficiencia que falla con cargas cíclicas no ofrece protección.",
+    "Considerar equivalentes la eficiencia HEPA H13 (99.95% al MPPS) y la H14 (99.995%) para aplicaciones de salud del operador. La diferencia de penetración de 10× es significativa con concentraciones de polvo industrial superiores a 1 mg/m³.",
+    "Aplicar especificaciones HEPA de cabina de HVAC de laboratorio a cabinas de equipos pesados sin considerar las mayores velocidades frontales y concentraciones de contaminación de los entornos de minería y construcción."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué clases de filtro define la ISO 29463 y qué significa cada objetivo de eficiencia?",
+      "answer": "La ISO 29463 define siete clases de filtro al tamaño de partícula más penetrante (MPPS): E10 = 85% de eficiencia mínima, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%, U16 = 99.99995%. El prefijo \"E\" (clase de eficiencia) indica filtros de 85–99.5% de eficiencia, adecuados para aplicaciones HEPA gruesas. El prefijo \"H\" (HEPA) cubre el rango principal de salud ocupacional. El prefijo \"U\" (ULPA) atiende las aplicaciones farmacéuticas y de semiconductores más exigentes. Para la protección de operadores de equipos pesados en entornos mineros, la H13 es la clase mínima que ofrece una protección significativa contra la sílice respirable (PM2.5) a concentraciones ambientales industriales."
+    },
+    {
+      "question": "¿Qué es el tamaño de partícula más penetrante (MPPS) y por qué se usa en los ensayos ISO 29463?",
+      "answer": "El tamaño de partícula más penetrante (MPPS) en medios filtrantes fibrosos suele ser de 0.1–0.3 µm: el tamaño de partícula en el que los mecanismos de filtración mecánica (impacto inercial, intercepción) y la difusión operan con eficiencia mínima, lo que produce la mayor penetración de partículas de cualquier tamaño. Ensayar al MPPS da el dato de eficiencia del peor caso: si un filtro cumple su eficiencia nominal al MPPS, la superará en todos los tamaños de partícula mayores y menores. La ISO 29463 exige ensayar al MPPS en lugar de a un tamaño de partícula fijo para asegurar que la eficiencia mínima del filtro ocurra dentro del rango de tamaño de partícula ensayado."
+    },
+    {
+      "question": "¿En qué se diferencia la ISO 29463 de la EN 1822, a la que reemplazó?",
+      "answer": "La ISO 29463 y la EN 1822 usan el mismo principio de ensayo fundamental (eficiencia al MPPS medida mediante escaneo con aerosol), el mismo sistema de clasificación de filtros (E10–U16) y el mismo requisito de ensayo por escaneo en toda la cara del filtro para detectar puntos críticos de penetración local. La ISO 29463 es la norma internacional que sustituyó a la EN 1822 en las especificaciones globales de filtración HEPA industrial. La EN 1822 sigue citándose en algunos documentos regulatorios europeos y en especificaciones heredadas de OEM. Para diseños de equipos nuevos, la ISO 29463 es la norma aplicable vigente; los datos EN 1822 de calificaciones heredadas de elementos aún se aceptan en contextos de cumplimiento regulatorio europeo donde la especificación citada no se ha actualizado."
+    },
+    {
+      "question": "¿Qué aerosol de desafío usa la ISO 29463 para los ensayos de eficiencia HEPA/ULPA?",
+      "answer": "La ISO 29463 especifica DEHS (sebacato de di-2-etilhexilo) o un aerosol líquido equivalente como material de desafío para los ensayos de eficiencia HEPA/ULPA. El DEHS se genera como aerosol polidisperso con una concentración y distribución de tamaño de partícula que cubren el rango MPPS (0.1–0.3 µm). El método fotométrico o de contador de partículas aguas abajo del filtro mide la penetración al MPPS. Se usa DEHS en lugar de polvos de ensayo sólidos porque produce gotas esféricas uniformes con propiedades ópticas bien controladas, lo que permite mediciones de penetración reproducibles en tamaños submicrónicos donde los métodos de conteo de partículas sólidas son menos confiables."
+    },
+    {
+      "question": "¿Por qué la ISO 29463 exige escanear toda la cara del filtro en lugar de tomar muestras aguas abajo?",
+      "answer": "La ISO 29463 exige el escaneo (medición de eficiencia local en toda la cara del filtro) además de la medición de eficiencia integral (global) para detectar puntos críticos de penetración: zonas locales de penetración elevada de partículas causadas por defectos del medio, fallas de sellos o fallas de unión entre marco y medio. Un filtro puede aprobar el ensayo de eficiencia integral (la penetración promedio global está bajo el límite de la clase) y aun así tener un defecto localizado que permite una penetración local de 10–100×. El escaneo detecta estos puntos críticos: si cualquier punto escaneado supera el límite máximo de penetración local definido en la ISO 29463, el elemento falla, sin importar su eficiencia integral. Esto es especialmente crítico en elementos HEPA H13 y H14 usados para la protección de la salud ocupacional."
+    },
+    {
+      "question": "¿Qué protección contra PM2.5 ofrece un filtro de aire de cabina ISO 29463 H13?",
+      "answer": "Un filtro de aire de cabina clasificado ISO 29463 H13 ofrece una eficiencia ≥99.95% al MPPS (0.1–0.3 µm). Como PM2.5 abarca partículas ≤2.5 µm, más grandes que el MPPS, un filtro H13 logra una eficiencia incluso mayor que 99.95% para partículas PM2.5. En una cabina minera con una concentración externa de PM2.5 de 500 µg/m³ (una condición de exposición severa durante voladuras y perforación), un filtro H13 reduce el PM2.5 interior de la cabina a aproximadamente 0.25 µg/m³, por debajo de la guía de 24 horas de la OMS de 15 µg/m³ y muy por debajo de la mayoría de los límites nacionales de exposición ocupacional al polvo de sílice respirable."
+    },
+    {
+      "question": "¿Qué requisitos de integridad mecánica especifica la ISO 29463 para elementos HEPA?",
+      "answer": "La ISO 29463 especifica ensayos de integridad mecánica mediante ciclos de presión pulsante: el elemento filtrante debe resistir pulsos repetidos de presión diferencial al diferencial de operación nominal sin desarrollar una penetración que supere el límite de la clase. Este ensayo simula los ciclos de presión por arranque y parada del ventilador HVAC, la operación con variador de velocidad y el ciclado de la compuerta de derivación termostática que experimentan los elementos HEPA en sistemas de climatización de cabina. Los elementos que aprueban el ensayo de eficiencia inicial pero fallan los ciclos de presión pulsante pueden deslaminar las uniones adhesivas entre los pliegues del medio y los marcos, creando vías de derivación que permiten una penetración muy superior al límite de la clase tras unas pocas semanas de servicio en campo."
+    },
+    {
+      "question": "¿Cómo clasifica la ISO 29463 los elementos para aplicaciones de aire de cabina en equipos pesados?",
+      "answer": "La ISO 29463 clasifica los elementos según la eficiencia medida al MPPS respecto de los límites de cada clase. Para la protección del aire de cabina en equipos pesados que operan en minería y construcción —donde hay a la vez sílice respirable, aerosoles de metales pesados, partículas diésel y humos de asfalto— la clase mínima adecuada es H13 (≥99.95% al MPPS). En cabinas cerradas con presión positiva mantenida por el sistema HVAC (típicamente +50 a +150 Pa sobre el ambiente), la filtración H13 combinada con la presurización positiva permite cumplir eficazmente los límites de exposición ocupacional para operadores que trabajan turnos de 8–12 horas en entornos con alta carga de PM2.5."
+    },
+    {
+      "question": "¿Se pueden limpiar y reutilizar los elementos HEPA ISO 29463?",
+      "answer": "Los elementos HEPA y ULPA ISO 29463 no se pueden limpiar ni reutilizar. Los métodos de limpieza (aire comprimido, lavado, aspiración) dañan invariablemente la estructura fibrosa fina del medio a escala de poro submicrónico: alteran la alineación de las fibras y crean defectos en el medio que aumentan la penetración al MPPS. Un elemento HEPA limpiado puede conservar sus características de restricción inicial, pero fallará al volver a ensayar su eficiencia ISO 29463. En aplicaciones de aire de cabina de equipos pesados, los protocolos de mantenimiento de filtros deben especificar procedimientos de solo reemplazo. Intentar limpiar y reinstalar elementos HEPA de aire de cabina expone a los operadores a una penetración de partículas no medida e inverificable que puede superar los límites de exposición ocupacional."
+    },
+    {
+      "question": "¿Cuál es la vida útil típica de un elemento de aire de cabina ISO 29463 H13 en equipos pesados?",
+      "answer": "La vida útil de los elementos de aire de cabina ISO 29463 H13 en equipos pesados depende de la concentración de polvo ambiental, el caudal de aire del HVAC y el nivel de presurización positiva de la cabina. En condiciones típicas de obra (TSP ambiental de 50–200 µg/m³), los elementos H13 de un sistema HVAC de cabina con 500 m³/h de caudal de aire se cargan con 0.5–2.0 g/día de partículas; son típicos intervalos de servicio de 500–2,000 horas. En entornos mineros con mucho polvo (TSP de 500–5,000 µg/m³ durante voladuras o perforación activas), los elementos pueden requerir reemplazo cada 100–500 horas. Monitorear el caudal del sistema HVAC (con sensores de calidad del aire en cabina o monitoreo de la corriente del soplador HVAC) da una indicación en tiempo real de la carga del elemento sin tener que retirarlo para inspeccionarlo."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 29463-1:2011, High-Efficiency Filters and Filter Media for Removing Particles in Air — Part 1: Classification, Performance Testing and Marking, ISO Geneva",
+      "relevance": "Norma principal de clasificación de filtros HEPA/ULPA que define las clases de eficiencia E10–U16; especifica la metodología de ensayo MPPS y los requisitos de ensayo por escaneo para aplicaciones industriales de filtración de aire de cabina y aire de proceso."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 1822-1:2009, High Efficiency Air Filters (EPA, HEPA and ULPA) — Part 1: Classification, Performance Testing, Marking, CEN Brussels",
+      "relevance": "Norma europea predecesora de la ISO 29463; aún citada en documentos regulatorios europeos heredados y en especificaciones de OEM; metodología de ensayo y clasificación de filtros equivalentes a la ISO 29463."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11155-1:2001, Road Vehicles — Air Filters for Passenger Compartments — Part 1: Test for Particulate Filtration, ISO Geneva",
+      "relevance": "Norma complementaria de desempeño de aire de cabina para vehículos de carretera y equipos pesados; define la medición de eficiencia PM10 y PM2.5 aplicable a sistemas de aire de cabina que requieren cumplimiento de salud ocupacional."
+    },
+    {
+      "category": "regulation",
+      "citation": "IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Volume 100C (2012): Silica Dust, Crystalline, in the Form of Quartz or Cristobalite, IARC/WHO",
+      "relevance": "Aporta la base de salud ocupacional para las especificaciones de filtración HEPA de aire de cabina; la sílice cristalina está clasificada como carcinógeno del Grupo 1, lo que establece el marco de límites de exposición que impulsa las especificaciones mínimas H13 en cabinas de equipos de minería y construcción."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "slug": "iso-8573-1",
+  "code": "ISO 8573-1",
+  "entityId": "STD-ISO-8573-1",
+  "title": "Compressed Air — Contaminant Classes and Purity Requirements",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2010",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 8573-1 define clases de pureza para el aire comprimido y especifica las concentraciones máximas de partículas sólidas, agua y aceite para aplicaciones de aire industrial, alimentario, farmacéutico y de instrumentos.",
+  "scope": "Clasificación de la pureza del aire comprimido por clase de contaminación para partículas sólidas, agua (líquida y vapor) y aceite total (líquido, aerosol y vapor).",
+  "engineeringPurpose": "Establece el sistema de clasificación de pureza del aire comprimido (clases Partículas:Agua:Aceite), que permite especificar los requisitos de calidad del aire en el punto de uso para equipos neumáticos, instrumentación y aplicaciones de proceso. La parte de este marco correspondiente a la clase de agua (punto de rocío a presión) es relevante para seleccionar secadores de aire DRYCORE™ de sistemas de freno neumático.",
+  "sections": [
+    {
+      "heading": "Estructura de las clases de pureza",
+      "body": "La ISO 8573-1 especifica la pureza del aire comprimido con tres números de clase independientes en el formato X:Y:Z, donde X es la clase de partículas (1–9 o 0), Y es la clase de agua (1–9 o 0) y Z es la clase de aceite (1–4 o 0). Los números más bajos representan mayor pureza. La clase 1:4:1 representa una concentración de partículas <20,000 por m³ a ≥0.1 µm, un punto de rocío a presión ≤+3°C y aceite total <0.01 mg/m³. La clase 0 (máxima pureza) es específica de cada aplicación y la definen el proveedor del equipo y el usuario final."
+    },
+    {
+      "heading": "Requisitos por aplicación",
+      "body": "Requisitos típicos por aplicación: servicio neumático general clase 5:4:3; aire de instrumentos clase 2:4:1; contacto con alimentos clase 1:2:1; llenado farmacéutico clase 1:2:1. La ISO 8573-1 se usa junto con la ISO 8573-2 (medición de partículas), la ISO 8573-3 (medición de humedad y agua) y la ISO 12500 (ensayo de filtros coalescentes). Los secadores de aire DRYCORE™ de sistemas de freno neumático se seleccionan según el objetivo de clase de agua (punto de rocío a presión) especificado para la aplicación vehicular aprobada."
+    },
+    {
+      "heading": "Requisitos de las etapas de tratamiento",
+      "body": "Lograr la clase 1:4:1 requiere un tren de tratamiento de aire comprimido de varias etapas: prefiltro (líquido a granel y partículas >3 µm), secador frigorífico (punto de rocío a presión de 2–5°C), filtro coalescente (aerosol de aceite hasta 0.01 mg/m³), carbón activado (vapor de aceite hasta 0.005 mg/m³) y posfiltro (remoción de finos de carbón). Cada etapa se ensaya y clasifica por separado según la parte aplicable de la ISO 8573."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Formato",
+      "value": "Números de clase Partículas:Agua:Aceite"
+    },
+    {
+      "label": "Mínimo para aire de instrumentos",
+      "value": "Clase 2:4:1"
+    },
+    {
+      "label": "Partículas clase 1",
+      "value": "<20,000/m³ a ≥0.1 µm"
+    }
+  ],
+  "applicableSystems": [],
+  "relatedGlossaryTerms": [
+    "TERM-DEW-POINT",
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-COALESCING"
+  ],
+  "relatedTopics": [
+    "testing-and-validation",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "DRYCORE™"
+  ],
+  "relatedArticles": [
+    "compressed-air-systems",
+    "iso-8573-compressed-air-purity"
+  ],
+  "childStandards": [
+    "STD-ISO-8573-2"
+  ],
+  "commonMistakes": [
+    "Especificar la clase 0 ISO 8573-1 (libre de aceite) para aplicaciones que solo requieren la clase 1 (≤0.01 mg/m³ de aerosol de aceite). La clase 0 requiere un compresor libre de aceite; la clase 1 se logra con filtración coalescente aguas abajo en un compresor lubricado, una diferencia de costo significativa.",
+    "No distinguir entre el contenido de aerosol de aceite ISO 8573-1 (medido según la 8573-2) y el contenido total de hidrocarburos (aerosol + vapor). Un sistema que cumple la clase 1 de aerosol de aceite puede contener vapor de aceite que requiera tratamiento con carbón activado.",
+    "Aplicar las especificaciones de clase de pureza ISO 8573-1 en un solo punto del sistema sin considerar la recontaminación desde la tubería de distribución. La calidad del aire en el punto de uso debe medirse en la aplicación, no en la salida del secador."
+  ],
+  "faqs": [
+    {
+      "question": "¿Cómo funciona el formato de clase de pureza de tres números de la ISO 8573-1?",
+      "answer": "La ISO 8573-1 expresa la pureza del aire comprimido como tres números de clase separados por dos puntos en el formato Clase de partículas : Clase de agua : Clase de aceite. Cada número es independiente y se refiere a una categoría de contaminación distinta. La clase 1:4:2 significa: partículas clase 1 (≤20,000 partículas/m³ ≥0.1 µm), agua clase 4 (punto de rocío a presión ≤+3°C) y aceite clase 2 (≤0.1 mg/m³ de aceite total). Los números de clase más bajos representan aire más limpio. La clase 0 (máxima pureza) no la define la norma: es específica de cada aplicación y la acuerdan el usuario y el proveedor del aire comprimido. La clase 0 requiere tecnología de compresor libre de aceite más tratamiento aguas abajo; las clases 1–4 se logran con equipos de filtración y secado aguas abajo bien seleccionados."
+    },
+    {
+      "question": "¿Cuáles son las clases de partículas ISO 8573-1 y qué concentraciones representan?",
+      "answer": "La ISO 8573-1 define las clases de partículas según la concentración de partículas por metro cúbico en rangos de tamaño especificados. Clase 1: ≤20,000 partículas/m³ a ≥0.1 µm (la clase definida más limpia). Clase 2: ≤400,000 partículas/m³ a ≥0.1 µm y ≤6,000/m³ a ≥0.5 µm. Clase 3: ≤90,000 partículas/m³ a ≥0.5 µm y ≤1,000/m³ a ≥1.0 µm. Clase 4: ≤10,000 partículas/m³ a ≥1.0 µm. Clase 5: ≤100,000 partículas/m³ a ≥1.0 µm. Las clases superiores (6–9) cubren aplicaciones menos limpias. El aire de instrumentos suele requerir la clase 2 o mejor; los actuadores neumáticos de control de procesos requieren las clases 3–4; el aire de soplado puede aceptar las clases 5–6."
+    },
+    {
+      "question": "¿Qué representan las clases de agua ISO 8573-1 en términos de punto de rocío a presión?",
+      "answer": "Las clases de agua ISO 8573-1 se definen por el punto de rocío a presión (PDP): la temperatura a la que el vapor de agua del aire comprimido a la presión del sistema empezaría a condensarse. Clase 1: PDP ≤−70°C (ultraseco, requiere secador criogénico). Clase 2: PDP ≤−40°C (secador de membrana o de adsorción por oscilación de presión). Clase 3: PDP ≤−20°C (secador de adsorción regenerativo). Clase 4: PDP ≤+3°C (secador frigorífico). Clase 5: PDP ≤+7°C (secador frigorífico con punto de rocío más alto). Clase 6: contenido de agua líquida ≤5 g/m³ (secado o tratado parcialmente). Para aire de instrumentos y controles neumáticos en entornos donde la temperatura ambiente supera +3°C, la clase 4 (PDP ≤+3°C) evita la condensación en la tubería de distribución. Los secadores de aire DRYCORE™ de sistemas de freno neumático se dimensionan según el objetivo de clase de agua especificado para la aplicación vehicular aprobada."
+    },
+    {
+      "question": "¿Cuáles son las clases de aceite ISO 8573-1 y qué fuentes de contaminación por aceite abordan?",
+      "answer": "Las clases de aceite ISO 8573-1 especifican el contenido total de aceite (aceite líquido + aerosol de aceite + vapor de aceite) en mg/m³ a la presión y temperatura de línea. Clase 1: ≤0.01 mg/m³ (ultralimpio, requiere adsorbedor de carbón activado). Clase 2: ≤0.1 mg/m³ (filtro coalescente de alta eficiencia más carbón activado). Clase 3: ≤1 mg/m³ (un filtro coalescente por sí solo lo logra en la mayoría de los compresores lubricados). Clase 4: ≤5 mg/m³ (aplicaciones industriales generales sin requisitos estrictos de aceite). Las fuentes de contaminación por aceite incluyen: lubricante del compresor arrastrado como gotas de aerosol (abordado con filtros coalescentes), vapor de aceite evaporado del lubricante en la etapa de compresión (abordado con adsorbedores de carbón activado) y vapor de hidrocarburos atmosféricos aspirado por la admisión del compresor. Para aplicaciones de contacto con alimentos y farmacéuticas, la especificación de aceite clase 1 ISO 8573-1 (≤0.01 mg/m³) es obligatoria."
+    },
+    {
+      "question": "¿Qué tren de tratamiento de aire comprimido se requiere para lograr la clase 1:4:1 ISO 8573-1?",
+      "answer": "Lograr la clase 1:4:1 ISO 8573-1 requiere un tren de tratamiento de cuatro a cinco etapas aguas abajo del compresor de aire. Etapa 1: separador a granel (elimina agua líquida y aerosol de aceite >10 µm). Etapa 2: prefiltro con elemento coalescente (elimina aerosol de aceite hasta ≤1 mg/m³ y partículas >1 µm). Etapa 3: secador frigorífico (logra PDP ≤+3°C y cumple la clase 4 de agua). Etapa 4: filtro coalescente de alta eficiencia (elimina aerosol de aceite hasta ≤0.01 mg/m³ y cumple la clase 1 de aceite). Etapa 5: adsorbedor de carbón activado (elimina vapor de aceite hasta ≤0.003 mg/m³). Un filtro opcional de polvo/finos de carbón después del adsorbedor elimina el particulado de carbón activado para cumplir la clase 1 de partículas."
+    },
+    {
+      "question": "¿Cómo complementa la ISO 8573-2 a la ISO 8573-1 en la medición de partículas?",
+      "answer": "La ISO 8573-1 define las clases de pureza: los niveles máximos aceptables de contaminación. La ISO 8573-2 (Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content) define los métodos de medición para determinar si el aire cumple esas clases. La ISO 8573-2 especifica el uso de contadores ópticos de partículas (OPC), contadores de partículas láser y métodos gravimétricos para medir el contenido de partículas sólidas en los rangos de tamaño relevantes para las clases de partículas ISO 8573-1. Sin una medición conforme a la ISO 8573-2, no existe un medio técnicamente válido para verificar que el sistema de aire comprimido cumple su clase de partículas ISO 8573-1 especificada; la especificación sola, sin verificación por medición, no garantiza la calidad real del aire."
+    },
+    {
+      "question": "¿Qué clase ISO 8573-1 se requiere para aplicaciones de envasado de alimentos y bebidas?",
+      "answer": "Las aplicaciones de envasado de alimentos y bebidas requieren como mínimo la clase 1:2:1 ISO 8573-1 para el aire en contacto directo con el producto. Las partículas clase 1 (≤20,000/m³ a ≥0.1 µm) evitan la contaminación por partículas de las superficies de envase. El agua clase 2 (PDP ≤−40°C) evita la condensación dentro de líneas de envasado que operan a temperatura variable. El aceite clase 1 (≤0.01 mg/m³) evita la contaminación por aceite de superficies en contacto con alimentos, que infringiría las normas de inocuidad alimentaria. Pueden aplicarse requisitos adicionales más allá de la ISO 8573-1 según normativas nacionales específicas de inocuidad alimentaria (FDA 21 CFR en EE. UU.; EC 1935/2004 en Europa) para los lubricantes del compresor y los materiales de construcción del sistema de tratamiento de aire en contacto con el flujo de producto."
+    },
+    {
+      "question": "¿Qué consecuencia tiene subespecificar la clase de pureza ISO 8573-1 para el aire de instrumentos neumáticos?",
+      "answer": "El aire de instrumentos neumáticos acciona válvulas de control, posicionadores y transmisores neumáticos en plantas de proceso. Subespecificar la clase de pureza provoca modos de falla predecibles. Exceso de partículas (clase 4 especificada donde se necesitaba la 2): obstrucción de orificios de válvula y puertos de purga de 100–500 µm en los posicionadores, lo que causa una posición de válvula errática. Exceso de agua (clase 6 o 5 donde se necesitaba la 4): acumulación de condensado en la tubería de instrumentos, con bloqueos por congelamiento con ambientes bajo 0°C y crecimiento de bacterias/algas en climas cálidos. Exceso de aceite (clase 3 donde se necesitaba la 1): depósitos pegajosos en el interior de los posicionadores que causan histéresis de la válvula y errores permanentes de desviación. Estos modos de falla causan alteraciones del proceso y degradación del sistema instrumentado de seguridad (SIS); el costo de una especificación ISO 8573-1 correcta suele ser inferior al 5% de una sola parada de proceso no planificada."
+    },
+    {
+      "question": "¿La ISO 8573-1 aborda la contaminación microbiológica del aire comprimido?",
+      "answer": "La ISO 8573-1:2010 no incluye una clase de contaminación microbiológica: aborda solo partículas sólidas, agua y aceite. La calidad microbiológica del aire comprimido para la fabricación farmacéutica y de dispositivos médicos se aborda en la ISO 8573-7 (Part 7: Test method for viable microbiological contaminant content) y en los requisitos del sistema de calidad GAMP-5. Para aplicaciones farmacéuticas de aire comprimido (salas limpias EU GMP Annex 1), los límites de contaminación microbiológica viable se especifican en la autorización de fabricación del producto farmacéutico y no directamente en la ISO 8573-1. Se requiere un muestreo microbiológico validado según la ISO 8573-7 con muestreadores por impacto en el punto de uso para demostrar el cumplimiento de los requisitos de las autoridades de fabricación farmacéutica (EMA, FDA)."
+    },
+    {
+      "question": "¿Cómo afecta la altitud a la clasificación de pureza del aire comprimido ISO 8573-1?",
+      "answer": "Las clases de pureza ISO 8573-1 se definen en las condiciones de presión del sistema de aire comprimido (típicamente 7 bar manométricos en sistemas industriales). La clase de agua (punto de rocío a presión) se especifica a la presión del sistema; cuando el aire se expande a presión atmosférica en el punto de uso, el punto de rocío se desplaza respecto del punto de rocío del sistema comprimido según la relación de presiones. Un sistema que logra un PDP de −40°C a 7 bar manométricos tendría un punto de rocío equivalente atmosférico de aproximadamente −12°C. En instalaciones de gran altitud (sobre 2,000 m), la presión atmosférica es menor, lo que reduce la relación de presiones respecto de los cálculos a nivel del mar y desplaza el punto de rocío equivalente atmosférico. En aplicaciones de aire comprimido en altura, los cálculos de punto de rocío deben considerar la presión barométrica local para verificar que el PDP especificado evite la condensación en las condiciones atmosféricas reales."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes, ISO Geneva",
+      "relevance": "Norma principal de clasificación de la pureza del aire comprimido que define clases de contenido de partículas, agua (punto de rocío a presión) y aceite; la parte de este marco correspondiente a la clase de agua es relevante para especificar los requisitos de los secadores de aire DRYCORE™ de sistemas de freno neumático."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content, ISO Geneva",
+      "relevance": "Norma de método de medición que complementa la ISO 8573-1; especifica métodos con contador óptico de partículas y gravimétricos para verificar que el aire comprimido cumple las clases de pureza especificadas de partículas y aerosol de aceite."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 8573-4:2019, Compressed Air — Part 4: Test Methods for Solid Particle Content, ISO Geneva",
+      "relevance": "Métodos de ensayo gravimétricos y ópticos para medir el contenido de partículas sólidas en el aire comprimido en los niveles de concentración relevantes para las especificaciones de partículas de las clases 1–4 ISO 8573-1."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12500-1:2007, Filters for Compressed Air — Test Methods — Part 1: Oil Aerosol, ISO Geneva",
+      "relevance": "Norma de ensayo para medir la eficiencia de remoción de aerosol de aceite de los filtros coalescentes de aire comprimido; necesaria para confirmar que los elementos filtrantes coalescentes instalados cumplen los requisitos de clase de aceite ISO 8573-1 en el punto de uso."
+    }
+  ]
+}

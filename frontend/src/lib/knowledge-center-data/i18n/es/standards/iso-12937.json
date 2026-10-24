@@ -1,0 +1,129 @@
+{
+  "slug": "iso-12937",
+  "code": "ISO 12937",
+  "entityId": "STD-ISO-12937",
+  "title": "Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2000",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 12937 define el método de titulación coulométrica Karl Fischer para determinar el contenido de agua en productos de petróleo; es el equivalente europeo e internacional de la ASTM D6304.",
+  "scope": "Determinación del contenido de agua en productos de petróleo con un contenido de agua de entre 5 mg/kg y 2,000 mg/kg mediante titulación coulométrica Karl Fischer.",
+  "engineeringPurpose": "Especifica el método de titulación coulométrica Karl Fischer para cuantificar la contaminación por agua en el combustible diésel y los aceites lubricantes: la principal medición analítica usada para verificar que el contenido de agua del combustible cumpla los umbrales de protección de los sistemas de inyección HPCR y para detectar el ingreso de refrigerante en el monitoreo de condición del aceite de motor.",
+  "sections": [
+    {
+      "heading": "Principio de la titulación Karl Fischer",
+      "body": "La ISO 12937 usa la titulación coulométrica Karl Fischer para determinar cuantitativamente el contenido de agua en productos de petróleo. El yodo se genera electroquímicamente en un ánodo y reacciona estequiométricamente con el agua en la reacción de Karl Fischer; la carga necesaria para generar yodo suficiente para consumir toda el agua de la muestra es proporcional al contenido de agua. Los resultados se expresan en mg/kg (ppm en masa). La ISO 12937 y la ASTM D6304 usan el mismo principio electroquímico y producen resultados equivalentes: la ISO 12937 es la referencia de los mercados europeo e internacional; la ASTM D6304 es el equivalente norteamericano."
+    },
+    {
+      "heading": "Objetivo de calidad del combustible para HPCR",
+      "body": "La ISO 12937 es el método de medición citado en la EN 590 (especificación europea de combustible diésel) con un límite de 200 mg/kg de agua. Los inyectores common rail de alta presión requieren un contenido de agua en el combustible inferior a este umbral para evitar la corrosión del asiento del inyector, el micropicado y el agarrotamiento. El agua por encima de 500 mg/kg provoca fases visibles de agua libre. El análisis ISO 12937 se realiza en la recepción del combustible en depósito, durante el monitoreo del almacenamiento y como verificación del lavado de puesta en servicio en buques según la ISO 8217."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Rango de medición",
+      "value": "5–2,000 mg/kg (ppm)"
+    },
+    {
+      "label": "Límite de agua EN 590",
+      "value": "200 mg/kg"
+    },
+    {
+      "label": "Norma equivalente",
+      "value": "ASTM D6304 (norteamericana)"
+    }
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection",
+    "lubrication-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-WATER-INGRESS",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-HPCR",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "oil-analysis-methods",
+    "hpcr-fuel-system-protection"
+  ],
+  "commonMistakes": [
+    "Confundir agua libre y agua disuelta en los resultados Karl Fischer. La KF coulométrica ISO 12937 mide el agua total (disuelta + libre + emulsionada); un resultado de 80 ppm en diésel no significa que no haya agua libre si se ha producido separación de fases.",
+    "Aceptar un contenido de agua en el diésel superior a 200 ppm sin considerar el riesgo de agarrotamiento de los inyectores HPCR. Los sistemas HPCR modernos con holguras de carrete ≤1 µm muestran un inicio acelerado del desgaste por encima de 200 ppm de agua total.",
+    "No considerar la absorción de agua durante la manipulación de la muestra en el ensayo Karl Fischer. Las muestras con poca agua (<50 ppm) absorben humedad ambiental con rapidez; los protocolos de manipulación de muestras ISO 12937 son obligatorios para obtener resultados confiables."
+  ],
+  "faqs": [
+    {
+      "question": "¿Cuál es el principio de la titulación coulométrica Karl Fischer que usa la ISO 12937?",
+      "answer": "La ISO 12937 usa la titulación coulométrica Karl Fischer basada en la reacción estequiométrica del yodo con el agua: I₂ + SO₂ + 2H₂O → 2HI + H₂SO₄. En modo coulométrico, el yodo no se agrega como solución reactiva: se genera electroquímicamente en el ánodo (2I⁻ → I₂ + 2e⁻) en una celda de titulación cerrada. La carga (en coulombs) necesaria para generar yodo suficiente para consumir toda el agua de la muestra es exactamente proporcional al contenido de agua: 10.71 coulombs = 1 mg de agua. El resultado se expresa en mg/kg (ppm en masa). Esta generación electroquímica elimina la incertidumbre de estandarización del titulante KF volumétrico."
+    },
+    {
+      "question": "¿Qué límite de contenido de agua especifica la EN 590 para el combustible diésel europeo y por qué importa para los HPCR?",
+      "answer": "La EN 590 (especificación europea de combustible diésel automotriz) especifica un contenido máximo de agua de 200 mg/kg (200 ppm en masa) determinado según la ISO 12937. Este límite se fija para proteger los sistemas de inyección common rail de alta presión (HPCR) con presiones de inyección de 1,800–2,500 bar y holguras de carrete del inyector ≤1 µm. El agua por encima de 200 ppm en el diésel en condiciones de operación HPCR provoca corrosión del asiento del inyector en las superficies de sello metal-metal, micropicado de las superficies de la válvula de aguja y agarrotamiento, en el que las agujas del inyector se adhieren parcialmente a los asientos tras cada inyección, lo que causa un patrón de pulverización irregular, una combustión poco eficiente y, finalmente, la falla del inyector. Los elementos separadores coalescentes HYDROCORE™ se especifican según el objetivo de agua de salida requerido para la aplicación aprobada, con margen por debajo del límite EN 590."
+    },
+    {
+      "question": "¿Cuál es el rango de medición de la ISO 12937 y cuándo no es adecuada?",
+      "answer": "La titulación coulométrica Karl Fischer ISO 12937 se especifica para contenidos de agua de 5–2,000 mg/kg (5–2,000 ppm). Por debajo de 5 ppm, la humedad de fondo en la celda de titulación y el reactivo limitan la precisión de la medición. Por encima de 2,000 ppm (0.2% de agua en masa), la KF coulométrica puede requerir tiempos de titulación prolongados y regeneración del reactivo. Para productos de petróleo con alto contenido de agua (>1,000 ppm o fase visible de agua libre), es más adecuada la titulación Karl Fischer volumétrica (ISO 8534 o ASTM D1744), que usa un titulante de concentración conocida en lugar de yodo generado electroquímicamente y permite determinar mayores volúmenes de agua. Las muestras de combustible con separación de fases visible (acumulación de agua libre) deben ensayarse con KF volumétrica o con el método de destilación Dean-Stark (ISO 3733)."
+    },
+    {
+      "question": "¿Cómo detecta la ISO 12937 la contaminación por refrigerante en el aceite lubricante del motor?",
+      "answer": "La ISO 12937 mide el contenido total de agua en muestras de aceite lubricante. El agua en el aceite de motor por encima de 0.1% (1,000 ppm) indica ingreso de refrigerante por empaquetaduras de culata dañadas, camisas fisuradas o culatas de fundición porosas. El agua por encima de 0.5% inicia una oxidación acelerada del aceite (el agua cataliza la degradación oxidativa), favorece el crecimiento microbiano en lubricantes biodegradables y reduce el espesor de la película de aceite en las superficies de los cojinetes por debajo de la película hidrodinámica mínima requerida. La ISO 12937 en programas de monitoreo de condición del aceite permite detectar a tiempo fugas de refrigerante antes de un daño catastrófico del motor: una fuga de refrigerante detectable a 500 ppm de agua con un intervalo de cambio de aceite de 500 horas habría causado 250+ horas de desgaste acelerado de cojinetes sin una detección temprana. El contenido de glicol (confirmación adicional de refrigerante) se mide por separado según la ASTM D2982."
+    },
+    {
+      "question": "¿Por qué deben seguirse estrictamente los protocolos de manipulación de muestras ISO 12937 en muestras de diésel con poca agua?",
+      "answer": "El combustible diésel en saturación contiene aproximadamente 50–150 mg/kg de agua disuelta a 20°C, según su contenido aromático. Una muestra con 80 mg/kg de agua total —cercana al límite de saturación— absorberá humedad atmosférica en minutos si el envase no está bien cerrado y la muestra no se mantiene a una temperatura inferior al punto de rocío ambiente. La ISO 12937 especifica: envases herméticos de vidrio ámbar, espacio libre mínimo para reducir la superficie de equilibrio de humedad, análisis inmediato tras la apertura y manto de nitrógeno para muestras con poca agua. No seguir los protocolos de manipulación puede causar una absorción de agua de 20–50 ppm durante la manipulación, lo que convierte una muestra conforme de 180 ppm en un resultado aparentemente no conforme de 220+ ppm. La acreditación de laboratorio (ISO 17025) exige una cadena de custodia documentada de la manipulación de muestras."
+    },
+    {
+      "question": "¿Cuál es la relación entre la ISO 12937 y la ISO 16332 en el diseño de sistemas de filtración de combustible diésel?",
+      "answer": "La ISO 12937 y la ISO 16332 cumplen funciones distintas pero complementarias en la gestión del agua en el diésel. La ISO 12937 es el método de medición analítica: cuantifica el contenido de agua en muestras de combustible en puntos específicos del sistema de combustible (tanque, entrada del filtro, salida del filtro). La ISO 16332 es la norma de ensayo de desempeño del filtro: mide qué porcentaje del agua elimina del combustible un elemento filtrante coalescente en condiciones especificadas de caudal y temperatura. En la práctica, el ensayo ISO 12937 en la entrada y la salida del filtro verifica si la instalación del filtro logra la eficiencia de separación clasificada según la ISO 16332 en las condiciones reales del sistema de combustible. Juntas conforman el marco de medición: la ISO 16332 predice el desempeño; la ISO 12937 lo confirma en la verificación en campo."
+    },
+    {
+      "question": "¿Cómo afecta la temperatura al contenido de agua del diésel medido según la ISO 12937?",
+      "answer": "La solubilidad del agua en el diésel depende de la temperatura y suele aumentar 10–20 mg/kg por cada 10°C de aumento de temperatura en el rango de servicio de 0–60°C. Una muestra de diésel en el límite de saturación (150 mg/kg a 20°C) puede contener agua libre si se enfría a 5°C (límite de saturación más bajo): el exceso de agua precipita como gotas submicrónicas (agua emulsionada inicial) y con el tiempo coalesce en agua libre. La ISO 12937 mide el agua total (disuelta + emulsionada + libre) de la muestra tal como se presenta. Al comparar mediciones de contenido de agua tomadas a distintas temperaturas del combustible —tanque frío por la mañana frente a retorno de combustible caliente por la tarde— debe documentarse la diferencia de temperatura. Seguir la tendencia de los resultados de agua ISO 12937 requiere condiciones de muestreo coherentes."
+    },
+    {
+      "question": "¿Qué riesgo de crecimiento microbiano se asocia a la contaminación por agua detectada según la ISO 12937?",
+      "answer": "Un contenido de agua superior a 200 ppm en el diésel crea condiciones para la contaminación microbiana en la interfaz combustible-agua de las acumulaciones del fondo del tanque. Las bacterias sulfatorreductoras (Pseudomonas aeruginosa, Desulfovibrio spp.) y los hongos (Hormoconis resinae, conocido como \"hongo del queroseno\") colonizan la interfaz agua-combustible y producen metabolitos ácidos (sulfuros, ácidos orgánicos) que corroen las paredes del tanque y forman masas de biomasa que obstruyen los filtros de combustible. El ensayo de contenido de agua ISO 12937 da una alerta temprana de condiciones favorables al crecimiento microbiano, pero detectar una contaminación microbiológica ya establecida requiere ensayos adicionales: bioluminiscencia ATP, ASTM D6974 (recuento de microorganismos en combustible) o métodos de recuento de colonias por cultivo. La separación de agua HYDROCORE™ reduce la acumulación de agua libre en el fondo de los tanques y limita los sitios de colonización microbiana."
+    },
+    {
+      "question": "¿Se puede usar la ISO 12937 para medir el contenido de agua de combustibles marinos (HFO/LSFO)?",
+      "answer": "La titulación coulométrica Karl Fischer ISO 12937 está calibrada para productos de petróleo en el rango de agua de 5–2,000 mg/kg y se aplica principalmente a combustibles destilados (diésel, queroseno, combustible de aviación) y aceites lubricantes. El fueloil pesado (HFO) y el fueloil de bajo azufre (LSFO) tienen alta viscosidad y alto contenido aromático, que pueden interferir con la química del reactivo Karl Fischer o requerir dilución antes del análisis. La ISO 3733 (Petroleum Products — Determination of Water — Distillation Method) es el método preferido para fueloils pesados con alto contenido de agua. Para verificar el contenido de agua del diésel marino (MGO/MDO) según la ISO 8217, la ISO 12937 es aplicable y es el método de ensayo citado en los certificados de calidad de combustibles marinos."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre agua disuelta, emulsionada y libre en el diésel, y la ISO 12937 las distingue?",
+      "answer": "La ISO 12937 mide el contenido total de agua: la suma de las fases disuelta, emulsionada y libre. No distingue entre fases. El agua disuelta es totalmente soluble en el combustible a la temperatura de la muestra: invisible y no removible por decantación. El agua emulsionada consiste en gotas de agua de tamaño submicrónico a 10 µm estabilizadas por contaminantes tensoactivos o productos de oxidación del combustible: no es visible a simple vista y solo se elimina mediante filtración coalescente. El agua libre es una fase acuosa visible y diferenciada (gotas >50 µm): se elimina por decantación y separación a granel. La distinción importa para la filtración: el agua disuelta no puede eliminarse con filtros coalescentes estándar y debe controlarse en el origen; el agua emulsionada se elimina con el medio coalescente HYDROCORE™; el agua libre se elimina con cualquier separador bien diseñado."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 12937:2000, Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration, ISO Geneva",
+      "relevance": "Norma europea e internacional principal para medir el contenido de agua en productos de petróleo; citada en la especificación de combustible diésel EN 590 (límite de 200 mg/kg) y en las normas de combustibles marinos ISO 8217."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods, CEN Brussels",
+      "relevance": "Especificación europea de calidad del combustible diésel que cita la ISO 12937 como método de ensayo del contenido de agua; especifica el límite máximo de agua de 200 mg/kg que define los requisitos de protección de inyectores HPCR en los mercados europeos."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva",
+      "relevance": "Norma de ensayo de desempeño de filtros que complementa la medición de agua ISO 12937; usa la medición del contenido de agua ISO 12937 en la entrada y la salida del filtro para calcular la eficiencia de separación de agua de los elementos filtrantes coalescentes."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6304, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration, ASTM International",
+      "relevance": "Equivalente norteamericano de la ISO 12937; método KF coulométrico técnicamente equivalente usado en especificaciones de OEM norteamericanos, en normas de calidad de combustible que citan la ASTM y en especificaciones de combustible militar de EE. UU."
+    }
+  ]
+}

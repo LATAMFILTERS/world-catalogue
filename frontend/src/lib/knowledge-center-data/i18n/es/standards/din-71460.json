@@ -1,0 +1,122 @@
+{
+  "slug": "din-71460",
+  "code": "DIN 71460",
+  "entityId": "STD-DIN-71460",
+  "title": "Road Vehicles — Cabin Air Filters — Requirements and Testing",
+  "issuingOrganization": "DIN (Deutsches Institut für Normung)",
+  "year": "Vigente (previa a la armonización)",
+  "revisionStatus": "active",
+  "metaDescription": "La DIN 71460 es la norma alemana de desempeño de filtros de aire de cabina para vehículos de carretera; especifica la eficiencia de filtración de partículas, la remoción de olores y el desempeño del carbón activado. Es predecesora de la ISO 11155 y aún se cita en especificaciones de OEM europeos.",
+  "scope": "Filtros de aire de cabina para vehículos de carretera (automóviles, vehículos comerciales livianos, buses, camiones) en contextos de calificación de OEM europeos, en especial en las cadenas de suministro automotrices alemanas.",
+  "engineeringPurpose": "Norma alemana predecesora para la calificación de filtros de aire de cabina, aún exigida junto con la ISO 11155 en cadenas de suministro de OEM europeos donde las especificaciones heredadas obligan a cumplir ambas normas en los mercados alemanes automotriz y de vehículos comerciales.",
+  "sections": [
+    {
+      "heading": "Alcance y antecedentes",
+      "body": "La DIN 71460 especifica la eficiencia de filtración de partículas (>80%), el desempeño de remoción de olores y los ensayos de la capa de carbón activado para filtros de aire de cabina de vehículos de carretera. Publicada por DIN (Deutsches Institut für Normung), precedió a la ISO 11155 y sigue citándose en documentos de calificación de proveedores de OEM europeos —en especial en las cadenas de suministro alemanas de automóviles, buses y camiones— donde las especificaciones heredadas no se han actualizado a equivalentes ISO 11155. La norma cubre el mismo alcance de vehículos que la ISO 11155: automóviles, vehículos comerciales livianos, buses y camiones."
+    },
+    {
+      "heading": "Relación con la ISO 11155",
+      "body": "La metodología de eficiencia de partículas y resistencia al flujo de la ISO 11155-1 se basa directamente en el marco de la DIN 71460, con condiciones de ensayo estandarizadas a nivel internacional. En la práctica, un filtro de cabina que aprueba la ISO 11155-1 en general cumplirá los requisitos de eficiencia de partículas de la DIN 71460. Sin embargo, puede requerirse un ensayo formal DIN 71460 por separado para la calificación OEM cuando las especificaciones de OEM alemanes siguen citando la DIN 71460 junto con la ISO 11155 o en su lugar. Los productos de filtro de cabina para el mercado europeo dirigidos a cadenas de suministro de OEM alemanes deben cumplir ambas normas."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Umbral de eficiencia de partículas",
+      "value": ">80% en condiciones de ensayo nominales"
+    },
+    {
+      "label": "Organismo emisor",
+      "value": "DIN (Deutsches Institut für Normung)"
+    },
+    {
+      "label": "Alcance",
+      "value": "Vehículos de carretera: automóviles, LCV, buses, camiones"
+    },
+    {
+      "label": "Relación",
+      "value": "Predecesora alemana de la ISO 11155; algunas cadenas de suministro de OEM de la UE exigen doble calificación"
+    }
+  ],
+  "applicableSystems": [
+    "cabin-air-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-MELT-BLOWN-MEDIA",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT"
+  ],
+  "relatedTopics": [
+    "cabin-air-filtration",
+    "operator-health"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedArticles": [
+    "cabin-air-filtration",
+    "filter-media-science"
+  ],
+  "commonMistakes": [
+    "Tratar la DIN 71460 y la ISO 11155 como especificaciones totalmente intercambiables. Las concentraciones de polvo de ensayo y las condiciones de medición de eficiencia difieren entre ambas normas; un filtro que califica según una puede no cumplir la otra.",
+    "Aplicar los intervalos de cambio de filtro de cabina de automóviles de pasajeros (típicamente 15,000–25,000 km) a equipos de construcción o agrícolas, donde las concentraciones de polvo ambiental son 10–100× mayores que en vehículos de carretera."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué es la DIN 71460 y cómo se relaciona con la ISO 11155?",
+      "answer": "La DIN 71460 (Road Vehicles — Cabin Air Filters — Requirements and Testing) es la norma nacional alemana de desempeño de filtros de aire de cabina, emitida por DIN (Deutsches Institut für Normung) antes de que existiera la norma internacional ISO 11155. La DIN 71460 especifica la eficiencia de filtración de partículas y, en su formulación completa, el desempeño del carbón activado para la filtración de olores y gases. La ISO 11155 se desarrolló como norma internacional que armoniza la metodología de la DIN 71460 y de otras normas nacionales de filtros de cabina. Algunas cadenas de suministro de OEM europeos, en especial fabricantes alemanes de automóviles y vehículos comerciales, siguen exigiendo la calificación DIN 71460 junto con la ISO 11155 para elementos de filtro de aire de cabina."
+    },
+    {
+      "question": "¿Qué eficiencia de filtración especifica la DIN 71460 para filtros de partículas de aire de cabina?",
+      "answer": "La DIN 71460 especifica umbrales de desempeño de eficiencia de filtración de partículas ensayados con polvo estandarizado en condiciones definidas de caudal de aire HVAC. La norma exige una eficiencia mínima de filtración de partículas; los valores exactos para las distintas fracciones de tamaño de partícula se indican en el protocolo de ensayo. Para la protección contra partículas PM10, la DIN 71460 especifica una eficiencia de filtración ≥80%, similar a los umbrales mínimos de la ISO 11155-1. Los elementos de aire de cabina MICROKAPPA™ se seleccionan para superar los umbrales mínimos DIN 71460 de eficiencia PM10 y PM2.5, clasificados según el objetivo de eficiencia PM2.5 especificado para la aplicación aprobada en las condiciones de ensayo de la DIN 71460 y la ISO 11155-1."
+    },
+    {
+      "question": "¿La DIN 71460 cubre las capas de carbón activado para la remoción de contaminantes gaseosos?",
+      "answer": "La DIN 71460, en su alcance completo, incluye requisitos y métodos de ensayo para el desempeño de la capa de carbón activado en filtros de aire de cabina, que cubren la capacidad de adsorción de compuestos odoríferos, hidrocarburos aromáticos (benceno, tolueno) y gases inorgánicos (NOx, SO₂). Este alcance de doble función es análogo al marco combinado ISO 11155-1 (partículas) e ISO 11155-2 (gases). Las especificaciones de OEM que exigen cumplir la DIN 71460 para filtros de aire de cabina con carbón activado deben verificar tanto el componente de eficiencia de partículas como el de adsorción en fase gaseosa; un elemento filtrante combinado debe cumplir ambas partes de la especificación."
+    },
+    {
+      "question": "¿En qué se diferencian las condiciones de ensayo de la DIN 71460 de las de la ISO 11155-1?",
+      "answer": "La DIN 71460 y la ISO 11155-1 usan condiciones de ensayo comparables pero no idénticas para medir la eficiencia de partículas. Las diferencias incluyen el tipo y la concentración específicos del polvo de ensayo, el caudal de aire aplicado durante el ensayo respecto del área frontal del elemento filtrante y la metodología de cálculo de la eficiencia. Estas diferencias de procedimiento implican que un elemento filtrante que alcanza justo el umbral mínimo según una norma puede no alcanzarlo según la otra. Para cumplir ambas normas, los elementos deben ensayarse de forma independiente con el protocolo exacto de cada norma, sin suponer el cumplimiento cruzado a partir de un solo resultado de ensayo."
+    },
+    {
+      "question": "¿Cuál es el intervalo de servicio adecuado del filtro de aire de cabina para equipos de construcción según la DIN 71460?",
+      "answer": "La DIN 71460 especifica requisitos de desempeño de filtros de aire de cabina para vehículos de carretera (automóviles, LCV, buses, camiones) en condiciones de operación de carretera, con concentraciones de polvo ambiental de 5–50 µg/m³ de TSP, típicas de entornos viales urbanos y suburbanos. Los equipos de construcción y minería operan en entornos de 50–5,000 µg/m³ de TSP, una carga de polvo 10–100× mayor. La DIN 71460 no especifica intervalos de servicio, que son responsabilidad del OEM del equipo. Los OEM de equipos de construcción deberían aplicar factores de reducción del intervalo de mantenimiento de 5–20× respecto de las especificaciones de filtros de cabina de vehículos de carretera, con inspecciones cada 50–200 horas en operaciones activas de minería y construcción."
+    },
+    {
+      "question": "¿La DIN 71460 aborda los requisitos de presurización de cabina para cabinas de operador de equipos pesados?",
+      "answer": "La DIN 71460 se desarrolló para habitáculos de vehículos de carretera y no aborda directamente las especificaciones de presurización de cabinas de operador de equipos pesados. La presurización positiva de la cabina (mantener 50–150 Pa sobre la presión ambiente mediante el sistema soplador-filtro del HVAC) la especifican los OEM de equipos pesados en sus requisitos de diseño de cabina, no las normas de filtros de aire de cabina como la DIN 71460 o la ISO 11155. Sin embargo, las características de resistencia al flujo del elemento filtrante conforme a la DIN 71460 afectan directamente la capacidad del sistema de presurización para mantener la presión positiva, por lo que la selección del elemento filtrante forma parte del diseño integrado de presurización del HVAC de la cabina."
+    },
+    {
+      "question": "¿Puede usarse un elemento calificado DIN 71460 como sustituto directo de un elemento calificado ISO 11155-1?",
+      "answer": "No sin verificación. Las especificaciones DIN 71460 e ISO 11155-1 están estrechamente relacionadas pero no son idénticas. Un elemento filtrante calificado de forma independiente según ambas normas da confianza de cumplimiento. Usar un elemento calificado solo según la DIN 71460 en una aplicación especificada con la ISO 11155-1 requiere demostrar (con datos de ensayo o una justificación de equivalencia técnica) que el elemento cumple los umbrales de eficiencia PM10 y PM2.5 de la ISO 11155-1 en las condiciones de ensayo ISO 11155-1. En las cadenas de suministro de OEM europeos donde la especificación del equipo cita la ISO 11155-1, presentar solo datos DIN 71460 no basta para la aprobación formal de la calificación sin la aceptación explícita del OEM."
+    },
+    {
+      "question": "¿Qué eficiencia PM2.5 típica se puede lograr con un filtro de aire de cabina conforme a la DIN 71460 para equipos de minería?",
+      "answer": "Los filtros de aire de cabina estándar conformes a la DIN 71460 para vehículos de carretera suelen lograr eficiencias PM2.5 de 60–85%, por encima del umbral mínimo de la norma pero fuera del rango de desempeño HEPA. Para proteger a los operadores de equipos de minería y construcción frente a la sílice cristalina respirable (que tiene un umbral cancerígeno definido por la OMS inferior a 25 µg/m³ de polvo respirable específico de sílice), se requiere una eficiencia PM2.5 ≥95% para reducir la concentración de sílice dentro de la cabina por debajo de los límites de exposición ocupacional con concentraciones ambientales mineras de 200–1,000 µg/m³. Los elementos MICROKAPPA™ se seleccionan según el objetivo de eficiencia PM2.5 especificado para la aplicación aprobada en las condiciones de la DIN 71460 y la ISO 11155-1, atendiendo el requisito de salud ocupacional más allá de los umbrales mínimos estándar de la DIN 71460."
+    },
+    {
+      "question": "¿Qué capacidad de adsorción de carbón activado exige la DIN 71460 para filtros de aire de cabina combinados de partículas/gases?",
+      "answer": "La DIN 71460 especifica un desempeño mínimo de adsorción del carbón activado para filtros de aire de cabina combinados de partículas y fase gaseosa, ensayados frente a concentraciones de desafío definidas de tolueno, butano y SO₂ como contaminantes gaseosos representativos. La norma especifica el tiempo de ruptura (tiempo hasta una concentración especificada aguas abajo) con una velocidad frontal y una concentración inicial de contaminante definidas. La capacidad del carbón activado se relaciona directamente con el peso del lecho de carbón por unidad de área de filtro y con su superficie específica (típicamente 1,000–1,500 m²/g para el carbón activado usado en aplicaciones de aire de cabina). La DIN 71460 exige que la capa de carbón demuestre tiempos de ruptura que cumplan el mínimo especificado al caudal HVAC nominal a través del elemento filtrante."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "DIN 71460, Kraftfahrzeuge — Innenraumluftfilter — Anforderungen und Prüfung (Road Vehicles — Cabin Air Filters — Requirements and Testing), Deutsches Institut für Normung",
+      "relevance": "Norma alemana principal de desempeño de filtros de aire de cabina; predecesora de la ISO 11155; aún exigida para la calificación en cadenas de suministro de OEM automotrices europeos en la fabricación de vehículos alemana y afiliada a Alemania."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11155-1:2001, Road Vehicles — Air Filters for Passenger Compartments — Part 1: Test for Particulate Filtration, ISO Geneva",
+      "relevance": "Sucesora internacional de la DIN 71460 en desempeño de filtración de partículas; define la metodología de medición de eficiencia PM10 y PM2.5 aplicable junto con la DIN 71460 para la calificación OEM con doble norma."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11155-2:2009, Road Vehicles — Air Filters for Passenger Compartments — Part 2: Test for Gaseous Filtration, ISO Geneva",
+      "relevance": "Norma complementaria de la ISO 11155-1 para la remoción de contaminantes gaseosos; equivalente al componente de fase gaseosa de la DIN 71460 para la calificación de filtros de aire de cabina con carbón activado."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 29463-1:2011, High-Efficiency Filters and Filter Media — Classification, Performance Testing and Marking, ISO Geneva",
+      "relevance": "Norma de clasificación HEPA de mayor desempeño que se aplica cuando los umbrales mínimos DIN 71460 no bastan para proteger la salud ocupacional en entornos de minería y construcción que requieren una eficiencia PM ≥99.95%."
+    }
+  ]
+}

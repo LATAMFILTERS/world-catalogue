@@ -1,0 +1,134 @@
+{
+  "slug": "din-51524",
+  "code": "DIN 51524",
+  "entityId": "STD-DIN-51524",
+  "title": "Hydraulic Fluids — Minimum Requirements (HL, HLP, HVLP Classifications)",
+  "issuingOrganization": "DIN (Deutsches Institut für Normung)",
+  "year": "Vigente (várias partes)",
+  "revisionStatus": "active",
+  "metaDescription": "A DIN 51524 especifica requisitos mínimos de desempenho para óleos hidráulicos e lubrificantes das classificações HL, HLP e HVLP — a norma alemã de compatibilidade de lubrificantes com meios filtrantes e componentes de sistemas hidráulicos.",
+  "scope": "Classificação de desempenho de óleos hidráulicos e lubrificantes para equipamentos industriais e móveis — circuitos de lubrificação de motor, circuitos de potência hidráulica e lubrificação de engrenagens industriais.",
+  "engineeringPurpose": "Define a composição e a classificação de desempenho (HL/HLP/HVLP) de óleos hidráulicos e lubrificantes, garantindo que a compatibilidade química do meio filtrante e a proteção antidesgaste dos aditivos sejam mantidas durante todo o intervalo de serviço em plataformas de equipamentos europeias e globais.",
+  "sections": [
+    {
+      "heading": "Sistema de classificação (HL / HLP / HVLP)",
+      "body": "A DIN 51524 define três classificações de desempenho de óleos hidráulicos. Parte 1 (HL): inibido contra ferrugem e oxidação — proteção básica para aplicações de baixa exigência. Parte 2 (HLP): adiciona aditivos antidesgaste para proteção de bombas e válvulas proporcionais — a especificação mais comum na hidráulica de equipamentos móveis. Parte 3 (HVLP): óleo hidráulico de alto índice de viscosidade com viscosidade estável em amplas faixas de temperatura, especificado para equipamentos que operam de condições árticas a tropicais, onde a estabilidade da viscosidade na partida a frio e em operação a quente é crítica."
+    },
+    {
+      "heading": "Relevância para a compatibilidade dos meios filtrantes",
+      "body": "Os meios filtrantes devem ser quimicamente compatíveis com os fluidos DIN 51524 — em especial com os pacotes de aditivos dos óleos das classes HLP e HVLP. Um meio incompatível pode causar remoção de aditivos (esgotando a proteção antidesgaste) ou degradação do meio (reduzindo a eficiência de filtração ao longo do intervalo de serviço). Os elementos de filtro hidráulico NANOFORCE™ são qualificados para compatibilidade com fluidos DIN 51524 das classes HLP e HVLP, garantindo ausência de degradação do meio ou interação com os aditivos em condições normais de operação. A verificação de compatibilidade é necessária ao trocar a marca ou a formulação do lubrificante dentro do sistema de classificação DIN 51524."
+    },
+    {
+      "heading": "Relação com as normas de limpeza ISO",
+      "body": "A DIN 51524 define a qualidade de composição do fluido; a ISO 4406 define os códigos de limpeza por contaminação de partículas. Ambas se aplicam simultaneamente em sistemas de óleo lubrificante e hidráulicos — o fluido deve atender aos requisitos de composição DIN 51524 e o nível de contaminação por partículas deve atender às metas de limpeza ISO 4406 (16/14/11 para lubrificação de motor com abordagem de sistema; 17/15/12 para circuitos hidráulicos). Um fluido DIN 51524 corretamente especificado com filtração inadequada ainda não atingirá as metas de contaminação; um fluido corretamente filtrado com lubrificante não conforme comprometerá a proteção antidesgaste dos componentes."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Classe HL",
+      "value": "Inibido contra ferrugem e oxidação — proteção básica"
+    },
+    {
+      "label": "Classe HLP",
+      "value": "Aditivos antidesgaste — especificação mais comum em equipamentos móveis"
+    },
+    {
+      "label": "Classe HVLP",
+      "value": "Alto índice de viscosidade — aplicações em ampla faixa de temperatura"
+    },
+    {
+      "label": "Verificação de compatibilidade",
+      "value": "Necessária ao trocar a marca ou a formulação do lubrificante"
+    }
+  ],
+  "applicableSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-VISCOSITY",
+    "TERM-VISCOSITY-INDEX",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-ISO-CLEANLINESS-CODE"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "relatedArticles": [
+    "lubrication-system-filtration",
+    "contamination-control",
+    "fluid-cleanliness"
+  ],
+  "commonMistakes": [
+    "Escolher óleo mineral grau HLP para sistemas hidráulicos que exigem especificação HM. Os fluidos HM adicionam aditivos antidesgaste para proteção de bombas de alta pressão — substituir por HLP em sistemas especificados como HM aumenta o desgaste da bomba.",
+    "Escolher o grau de viscosidade do fluido hidráulico apenas pela temperatura ambiente, sem considerar a pressão de operação e o tipo de bomba. Bombas de pistões axiais de alta pressão exigem viscosidade maior do que bombas de engrenagens na mesma temperatura.",
+    "Misturar classificações de fluido DIN 51524 (HL, HLP, HVLP) no mesmo sistema. A incompatibilidade dos pacotes de aditivos pode causar espuma, emulsificação e degradação de vedações."
+  ],
+  "faqs": [
+    {
+      "question": "Quais são as três classificações de desempenho definidas pela DIN 51524 e quando cada uma se aplica?",
+      "answer": "A DIN 51524 define três classificações de desempenho de óleos hidráulicos. Parte 1 (HL): inibido contra ferrugem e oxidação — desempenho antidesgaste mínimo para sistemas hidráulicos de baixa pressão (≤150 bar) com bombas de engrenagens. Parte 2 (HLP): adiciona pacotes de aditivos antidesgaste — a especificação padrão para a hidráulica de equipamentos móveis (escavadeiras, pás carregadeiras, máquinas agrícolas) com pressão de sistema de 200–350 bar. Parte 3 (HVLP): fluido de alto índice de viscosidade (VI ≥150) que mantém a estabilidade da viscosidade de −30°C a +90°C — especificado para equipamentos que operam em faixas extremas de temperatura ambiente, como mineração ártica e máquinas de construção no deserto."
+    },
+    {
+      "question": "Quais graus de viscosidade existem na classificação DIN 51524 HLP?",
+      "answer": "A DIN 51524 Parte 2 (HLP) especifica requisitos de desempenho para os graus de viscosidade VG 15, 22, 32, 46, 68 e 100 conforme a ISO 3448. O ISO VG 46 (viscosidade cinemática de 41.4–50.6 cSt a 40°C) é o grau mais comum na hidráulica de equipamentos móveis em climas temperados (ambiente de −10°C a +40°C). O VG 32 é escolhido para equipamentos de clima frio, onde a bombeabilidade na partida a frio deve ser mantida a −25°C. O VG 68 é especificado para hidráulica industrial de alta pressão e alta temperatura. Todos os graus de viscosidade de uma classificação DIN 51524 devem atender aos mesmos requisitos de desempenho dos aditivos."
+    },
+    {
+      "question": "Como o DIN 51524 HLP difere do grau HM especificado por alguns OEMs?",
+      "answer": "HLP (DIN 51524 Parte 2) e HM (ISO 6743-4) são especificações paralelas para óleos hidráulicos antidesgaste. HM é a designação ISO 6743-4 para o mesmo nível de desempenho do HLP — óleo hidráulico mineral com desempenho contra ferrugem, oxidação e desgaste. Um óleo que atende à DIN 51524 HLP também atende à ISO 6743-4 HM no mesmo grau de viscosidade. As especificações de OEMs que citam HM (comuns em equipamentos japoneses e norte-americanos) e as que citam HLP (comuns em equipamentos europeus) especificam o mesmo nível de desempenho. Usar óleo HLP em um sistema especificado como HM geralmente é aceitável, sujeito à aprovação do OEM."
+    },
+    {
+      "question": "Quais requisitos de compatibilidade a DIN 51524 impõe aos meios filtrantes?",
+      "answer": "Os óleos DIN 51524 Parte 2 (HLP) e Parte 3 (HVLP) contêm pacotes de aditivos antidesgaste — tipicamente ditiofosfato de dialquilzinco (ZDDP) ou química AW de éster fosfato sem cinzas. Os meios filtrantes em contato com esses fluidos devem ser quimicamente inertes ao pacote de aditivos para evitar a remoção de aditivos (esgotamento da proteção AW na passagem pelo filtro) ou a degradação do meio (perda de integridade estrutural e de eficiência de filtração). O meio de microfibra de vidro sintética usado nos elementos hidráulicos NANOFORCE™ é qualificado para compatibilidade com DIN 51524 HLP e HVLP. Meios de celulose podem apresentar adsorção de aditivos em temperatura elevada (>80°C) com certas químicas de aditivos AW — um fator de risco para operadores que usam intervalos de troca estendidos."
+    },
+    {
+      "question": "Por que o HVLP (DIN 51524 Parte 3) é importante para equipamentos móveis que operam em climas extremos?",
+      "answer": "O índice de viscosidade (VI) mede a taxa de variação da viscosidade com a temperatura — VI mais alto significa menor variação de viscosidade por grau. O óleo mineral HLP padrão tem VI de aproximadamente 95–105. O HVLP Parte 3 exige VI ≥150, obtido pela mistura de bases multigrau ou pela adição de polímeros melhoradores de VI. Para equipamentos que operam a −25°C, um óleo HLP 46 padrão atinge 800–1,200 cSt na partida a frio — gerando cavitação severa da bomba e pressão diferencial extrema no filtro. Um fluido HVLP 46 na mesma temperatura atinge 200–350 cSt — dentro da faixa bombeável, sem abertura da válvula de bypass. A melhora do VI reduz a pressão diferencial do filtro na partida a frio em 3–5×, afetando diretamente os requisitos estruturais NFPA T2.14 de resistência ao colapso do elemento."
+    },
+    {
+      "question": "Como a classificação DIN 51524 se relaciona com as listas de aprovação de fluidos hidráulicos dos OEMs?",
+      "answer": "Os principais OEMs de equipamentos móveis mantêm listas de aprovação de fluidos hidráulicos que exigem uma classificação DIN 51524 mínima mais requisitos de ensaio proprietários adicionais. A especificação HYDO Advanced da Caterpillar, a especificação de fluido VCE 1 da Volvo CE e a especificação HY-GARD da John Deere exigem conformidade com DIN 51524 HLP ou HVLP como base e depois acrescentam ensaios adicionais (corrosão ao cobre, compatibilidade com filtros, liberação de ar, estabilidade de espuma) específicos do projeto do sistema hidráulico de cada OEM. Usar um óleo DIN 51524 HLP não aprovado especificamente pelo OEM do equipamento pode anular a garantia do sistema hidráulico mesmo que a classificação básica de desempenho seja atendida."
+    },
+    {
+      "question": "Qual é a importância da estabilidade à oxidação dos óleos DIN 51524 HLP no projeto do sistema de filtração?",
+      "answer": "A DIN 51524 Parte 2 especifica a estabilidade à oxidação por um ensaio de horas mínimas até um aumento especificado do número de acidez total (ensaio de oxidação IP 280 ou DIN 51554). A estabilidade à oxidação afeta diretamente o intervalo de serviço do filtro: à medida que o óleo oxida, formam-se precursores insolúveis de verniz — aldeídos, peróxidos e hidrocarbonetos polimerizados — que geram depósitos que obstruem progressivamente os poros do meio filtrante. O aumento da pressão diferencial acelerado pela oxidação pode elevar a frequência de troca do filtro em 30–50% em sistemas hidráulicos de alta temperatura operando além da estabilidade à oxidação mínima DIN 51524. Sistemas que operam com temperatura do fluido acima de 80°C exigem óleos que atendam a requisitos de estabilidade à oxidação mais rigorosos do que o mínimo DIN 51524."
+    },
+    {
+      "question": "Fluidos DIN 51524 HLP e HVLP podem ser misturados se ambos forem do mesmo grau de viscosidade?",
+      "answer": "A DIN 51524 não permite a mistura intencional de formulações de aditivos diferentes, mesmo dentro da mesma classe de desempenho e grau de viscosidade. Os óleos HLP ou HVLP de fabricantes diferentes usam químicas de aditivos proprietárias que podem ser incompatíveis — produzindo precipitados, obstrução do meio filtrante ou esgotamento sinérgico do desempenho AW. A única prática segura ao trocar a marca ou a formulação do fluido dentro da conformidade DIN 51524 é fazer o flushing completo do sistema hidráulico: drenar, reabastecer com fluido novo, circular pelo filtro por no mínimo dois volumes de filtro, drenar e reabastecer. Recomenda-se o monitoramento conjunto de TAN e viscosidade nas primeiras 250 horas após a troca de fluido."
+    },
+    {
+      "question": "Qual é o papel da contaminação por água na degradação dos fluidos DIN 51524 HLP e nos requisitos de filtração?",
+      "answer": "Os fluidos DIN 51524 HLP são de base mineral e repelem a água naturalmente — mas a água emulsionada acelera a degradação hidrolítica dos aditivos e a oxidação. A água nos fluidos HLP hidrolisa os aditivos antidesgaste ZDDP, convertendo-os em depósitos insolúveis de fosfato de zinco. Esses produtos de degradação precipitam como partículas submicrônicas que desafiam a filtração — partículas abaixo de 1 µm não são capturadas por elementos de filtro hidráulico padrão com classificação β₆(c)≥200. A contaminação por água também reduz a rigidez dielétrica, acelerando o carregamento eletrostático no meio filtrante. Recomenda-se o ensaio de titulação Karl Fischer ASTM D6304 em sistemas HLP anualmente ou sempre que houver suspeita de contaminação por água por falha de vedação ou condensação."
+    },
+    {
+      "question": "Como a escolha do grau de viscosidade do fluido DIN 51524 afeta a pressão diferencial do elemento filtrante e os requisitos de razão Beta?",
+      "answer": "A pressão diferencial do elemento filtrante em uma dada vazão é proporcional à viscosidade do fluido. Um filtro classificado para 3.5 bar de diferencial com HLP 46 a 46 cSt produzirá aproximadamente 2.4 bar com HLP 32 a 32 cSt e aproximadamente 5.2 bar com HLP 68 a 68 cSt — conforme a proporcionalidade da lei de Darcy. Isso afeta tanto o comportamento de abertura da válvula de bypass quanto a margem de pressão de colapso NFPA T2.14. Trocar HLP 46 por HLP 68 em um sistema existente sem verificar se a pressão de colapso do elemento filtrante continua >10× o novo diferencial de fim de vida com viscosidade VG 68 pode reduzir a margem de segurança estrutural abaixo do requisito NFPA T2.14."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "DIN 51524-2:2017, Lubricants — Hydraulic Oils — Minimum Requirements for HLP Hydraulic Oils, Deutsches Institut für Normung",
+      "relevance": "Norma principal para a classificação de desempenho de óleos hidráulicos antidesgaste; define a composição química e os mínimos de desempenho HL, HLP e HVLP para aplicações em equipamentos industriais e móveis."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 6743-4:2015, Lubricants, Industrial Oils and Related Products (Class L) — Classification — Part 4: Family H (Hydraulic Systems), ISO Geneva",
+      "relevance": "Sistema internacional paralelo de classificação de fluidos hidráulicos; HM corresponde a DIN 51524 HLP — permite a correspondência entre especificações de fluidos hidráulicos DIN europeias e ISO internacionais."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles, ISO Geneva",
+      "relevance": "Norma de código de limpeza aplicada simultaneamente à classificação de fluidos DIN 51524; ambas se aplicam em sistemas hidráulicos — o fluido deve atender aos requisitos de composição DIN 51524 e a contaminação por partículas deve atender às metas de limpeza ISO 4406."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D943, Standard Test Method for Oxidation Characteristics of Inhibited Mineral Oils, ASTM International",
+      "relevance": "Método de ensaio de estabilidade à oxidação usado na qualificação DIN 51524; fluidos HLP e HVLP de intervalo de troca estendido devem demonstrar horas mínimas até o aumento do TAN segundo o protocolo ASTM D943 ou IP 280."
+    }
+  ]
+}

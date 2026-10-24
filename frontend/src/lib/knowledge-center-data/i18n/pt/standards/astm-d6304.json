@@ -1,0 +1,132 @@
+{
+  "slug": "astm-d6304",
+  "code": "ASTM D6304",
+  "entityId": "STD-ASTM-D6304",
+  "title": "Standard Test Method for Determination of Water in Petroleum Products by Coulometric Karl Fischer Titration",
+  "issuingOrganization": "ASTM International",
+  "year": "2007",
+  "revisionStatus": "active",
+  "metaDescription": "A ASTM D6304 é o método norte-americano de titulação coulométrica Karl Fischer para o teor de água em produtos de petróleo e óleos lubrificantes, equivalente à ISO 12937.",
+  "scope": "Determinação do teor de água em produtos de petróleo, óleos lubrificantes e aditivos com teor de água de 10 ppm a 25,000 ppm por titulação coulométrica Karl Fischer.",
+  "engineeringPurpose": "Fornece o método analítico padrão norte-americano para medição do teor de água em produtos de petróleo e óleos lubrificantes — usado na verificação da qualidade do combustível HPCR, nos ensaios de desempenho de filtros de combustível/separadores de água e no monitoramento da condição do óleo do motor quando é necessário detectar a entrada de líquido de arrefecimento.",
+  "sections": [
+    {
+      "heading": "Método coulométrico Karl Fischer",
+      "body": "A ASTM D6304 mede o teor total de água em produtos de petróleo por titulação coulométrica Karl Fischer — o iodo gerado eletroquimicamente reage estequiometricamente com a água da amostra, e a carga aplicada é proporcional à concentração de água. A faixa de sensibilidade cobre 10–25,000 mg/kg, tornando-a adequada para a gestão da qualidade do combustível e o monitoramento da condição do óleo lubrificante. A ASTM D6304 e a ISO 12937 são tecnicamente equivalentes e produzem os mesmos resultados com o mesmo material de amostra; a ASTM D6304 é referenciada em especificações regulatórias e de OEMs norte-americanos, enquanto a ISO 12937 é citada em estruturas europeias e internacionais."
+    },
+    {
+      "heading": "Aplicações em combustível e óleo lubrificante",
+      "body": "Em aplicações de combustível, a ASTM D6304 verifica se o teor de água do diesel está abaixo do limite de 200 mg/kg, crítico para a proteção dos injetores HPCR. Em aplicações de óleo lubrificante, água acima de 0.1% indica vazamento de líquido de arrefecimento (falha da junta do cabeçote ou da camisa); acima de 0.5%, a água acelera a oxidação do óleo, favorece o crescimento bacteriano em óleos biodegradáveis e reduz a resistência do filme de óleo nas superfícies dos mancais. O desempenho HYDROCORE™ é validado comparando as concentrações de água ASTM D6304 de entrada e saída com a meta de saída da aplicação aprovada específica."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Faixa de medição",
+      "value": "10–25,000 ppm"
+    },
+    {
+      "label": "Equivalente a",
+      "value": "ISO 12937"
+    },
+    {
+      "label": "Limite de proteção HPCR",
+      "value": "<200 ppm"
+    },
+    {
+      "label": "Indicador de vazamento de arrefecimento no óleo",
+      "value": ">0.1% de água"
+    }
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection",
+    "lubrication-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-WATER-SEPARATION-EFFICIENCY",
+    "TERM-COALESCING",
+    "TERM-HPCR"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "oil-analysis-methods",
+    "hpcr-fuel-system-protection"
+  ],
+  "commonMistakes": [
+    "Escolher Karl Fischer coulométrica (ASTM D6304) para amostras com alto teor de água (>1000 ppm). A KF coulométrica é projetada para baixos teores de água — a KF volumétrica (ASTM D1744) é mais adequada para produtos de petróleo com muita água.",
+    "Comparar resultados de teor de água KF entre amostras coletadas em temperaturas diferentes do combustível. A solubilidade da água no diesel muda com a temperatura — amostras de tanque quente coletadas após a operação do motor mostrarão menos água dissolvida do que amostras frias da manhã."
+  ],
+  "faqs": [
+    {
+      "question": "Qual é a diferença entre a ASTM D6304 e a ISO 12937?",
+      "answer": "A ASTM D6304 e a ISO 12937 são métodos de titulação coulométrica Karl Fischer tecnicamente equivalentes para medir o teor de água em produtos de petróleo. Ambas usam iodo gerado eletroquimicamente para quantificar estequiometricamente a água com base em 10.71 coulombs por miligrama de água. As normas são mantidas por órgãos diferentes — ASTM International (América do Norte) e ISO (internacional) — e referenciadas em estruturas regulatórias e de OEMs diferentes. A ASTM D6304 é referenciada em especificações de combustível norte-americanas (diesel ASTM D975), na MIL-DTL-5624 militar dos EUA e em documentação de OEMs baseada em SAE. A ISO 12937 é referenciada na EN 590 (diesel europeu), na ISO 8217 (combustível marítimo) e em especificações de OEMs europeus. Laboratórios acreditados nas duas normas relatam os resultados em unidades idênticas (mg/kg ou ppm em massa)."
+    },
+    {
+      "question": "Qual é a faixa de medição da ASTM D6304 e quando a Karl Fischer volumétrica deve ser usada em seu lugar?",
+      "answer": "A ASTM D6304 cobre teores de água de 10 a 25,000 mg/kg (de 10 ppm a 2.5% de água em massa) no modo coulométrico. Abaixo de 10 ppm, a umidade de fundo e a variabilidade do reagente limitam a precisão. Acima de aproximadamente 1,000 ppm, os tempos de titulação prolongados e o possível esgotamento do reagente tornam a KF volumétrica (ASTM D1744, que usa solução de reagente de iodo padronizada em vez de iodo gerado eletroquimicamente) mais prática e exata. Para óleo diesel abaixo do limite de água EN 590/ASTM D975 de 200 mg/kg, o modo coulométrico ASTM D6304 é a técnica adequada, com precisão de ±5–10 mg/kg nas concentrações de água típicas do diesel de 50–150 mg/kg."
+    },
+    {
+      "question": "Como a ASTM D6304 é usada para verificar o desempenho do separador de água HYDROCORE™?",
+      "answer": "O desempenho do separador de água HYDROCORE™ é verificado comparando medições de teor de água ASTM D6304 de amostras de combustível coletadas simultaneamente na entrada e na saída do separador em condições de vazão de operação. Eficiência de separação de água = (água na entrada – água na saída) / água na entrada × 100%. A verificação em campo com ASTM D6304 em pontos de amostragem instalados a montante e a jusante do separador valida que o sistema instalado atinge o desempenho nominal do elemento aprovado específico nas condições reais de temperatura do combustível, vazão e composição do combustível. Resultados abaixo da classificação aprovada podem indicar degradação do elemento, vazamento de bypass ou operação acima da vazão nominal."
+    },
+    {
+      "question": "O que a ASTM D6304 mede em aplicações de monitoramento da condição do óleo lubrificante?",
+      "answer": "No monitoramento da condição do óleo lubrificante do motor, a ASTM D6304 quantifica a contaminação por água de três fontes possíveis: (1) Entrada de líquido de arrefecimento por falha da junta do cabeçote ou da camisa — detectada acima de 0.1% de água (1,000 mg/kg), muitas vezes com elevação simultânea de glicol (ASTM D2982) e silício (ASTM D5185 ICP). (2) Condensação por operação do motor frio em trajetos curtos — água elevada em <0.1% sem elevação de glicol ou silício; normalmente se dissipa com temperatura do óleo acima de 70°C. (3) Contaminação por fluido hidráulico por falha de vedações — água elevada acompanhada de contaminação por fósforo (dos aditivos do fluido hidráulico). A ASTM D6304 sozinha não distingue essas fontes — o diagnóstico exige o painel completo de análise de óleo, incluindo viscosidade, TAN, TBN, metais de desgaste e elementos contaminantes."
+    },
+    {
+      "question": "Qual preparação de amostra é necessária para uma análise ASTM D6304 exata de óleo de motor pesado?",
+      "answer": "Óleos de motor pesados (SAE 15W-40, 10W-40) são viscosos à temperatura ambiente e podem não fluir facilmente para os recipientes de titulação Karl Fischer sem preparação da amostra. A ASTM D6304 permite diluição com metanol anidro seco (sem água) ou clorofórmio para reduzir a viscosidade e melhorar a precisão da injeção da amostra — o fator de diluição é considerado no cálculo final. O recipiente da amostra deve ser vedado imediatamente após a coleta para evitar absorção de umidade atmosférica. Para óleo de motor com suspeita de alto teor de água (>500 ppm), um pré-tratamento de \"destilação a vapor\" à base de água pode extrair a água para uma fração aquosa medida por KF volumétrica. O modo coulométrico ASTM D6304 padrão sem destilação é adequado para monitorar o teor de água do óleo diesel e do óleo de motor novo."
+    },
+    {
+      "question": "Com que frequência o ensaio de teor de água ASTM D6304 deve ser realizado na gestão de frotas HPCR?",
+      "answer": "A frequência de monitoramento do teor de água do combustível HPCR depende do risco da cadeia de suprimento de combustível. Em operações que usam combustível de grandes fornecedores estabelecidos com fornecimento certificado EN 590/ASTM D975, o ensaio no recebimento em depósito (cada entrega de caminhão-tanque) garante a cadeia de suprimento. Em operações em locais remotos com qualidade de combustível desconhecida ou variável — incluindo operações agrícolas que recebem combustível de distribuidores locais, minas em mercados em desenvolvimento ou embarcações que abastecem em portos não certificados — é adequado um ensaio ASTM D6304 semanal ou por entrega de amostras do tanque. Ensaios adicionais são indicados após chuvas (que podem introduzir água por tampas de tanque ventiladas), após longos períodos de armazenamento (acúmulo de condensação) e após qualquer transferência de combustível de novas fontes."
+    },
+    {
+      "question": "Qual é a especificação de teor de água do diesel ASTM D975 citada junto com a ASTM D6304?",
+      "answer": "A ASTM D975 (Standard Specification for Diesel Fuel Oils) é a especificação norte-americana para óleo diesel automotivo e comercial, que define requisitos de desempenho para os graus No. 1-D, 1-D S15, 2-D, 2-D S15 e 4-D. A ASTM D975 referencia a ASTM D6304 como método de ensaio do teor de água e especifica no máximo 0.05% em volume de água livre e sedimentos (não de água dissolvida total) na entrega do combustível. Essa especificação de 0.05% em volume trata da água livre em massa — é mais tolerante que o limite de água dissolvida relevante para a proteção HPCR. O limite de água dissolvida de 200 mg/kg (ppm) relevante para a proteção de injetores HPCR é uma especificação de engenharia separada, não um limite de grau de combustível ASTM D975, embora esteja alinhado à prática europeia EN 590."
+    },
+    {
+      "question": "A ASTM D6304 consegue detectar a entrada de água por um cabeçote trincado na primeira amostragem de óleo após a falha?",
+      "answer": "A ASTM D6304 consegue detectar água de arrefecimento em concentrações de apenas 10–50 mg/kg no óleo do motor. Uma taxa típica de vazamento de líquido de arrefecimento pelo cabeçote de 50–500 mL/dia entrando em um cárter de 18 L operando a 90°C gera acúmulo de água de 3,000–28,000 mg/dia (inicialmente) antes que a evaporação como vapor reduza o nível de água dissolvida em regime permanente. Com um volume de amostra de óleo de 20–40 mL coletado dentro de 24 horas do início do vazamento, concentrações de água no óleo de 500–5,000 mg/kg normalmente são detectáveis, dependendo da taxa de vazamento e das condições térmicas de operação. A detecção precoce com 100–500 mg/kg de água no óleo (bem acima do limite inferior de 10 ppm da ASTM D6304) permite ação corretiva antes que a diluição pelo líquido de arrefecimento reduza a viscosidade do óleo abaixo do limite mínimo do grau SAE e cause falha dos mancais."
+    },
+    {
+      "question": "A ASTM D6304 é aprovada para uso nos ensaios de desempenho de separadores de água ISO 16332?",
+      "answer": "A ISO 16332 (Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency) especifica a medição do teor de água pela ISO 12937 ou pela ASTM D6304 como método analítico para determinar as concentrações de água de entrada e saída durante os ensaios de desempenho de separadores. A ASTM D6304 é explicitamente aceita como método de medição equivalente dentro da ISO 16332. Para laboratórios norte-americanos que realizam ensaios de desempenho ISO 16332 de elementos HYDROCORE™, a ASTM D6304 é o método KF coulométrico padrão disponível em laboratórios acreditados de ensaio de combustíveis — permitindo ensaios ISO 16332 conformes sem exigir qualificação de instrumentos específica para a ISO 12937."
+    },
+    {
+      "question": "Qual exatidão e precisão a ASTM D6304 oferece na medição do teor de água do óleo diesel?",
+      "answer": "A repetibilidade da ASTM D6304 (mesmo operador, mesmo instrumento, mesma amostra, mesmo dia) é de aproximadamente ±5% relativo do valor medido em concentrações de água na faixa de 50–500 mg/kg, relevante para o monitoramento do diesel. A reprodutibilidade (operadores diferentes, laboratórios diferentes) é de aproximadamente ±15% relativo. Com 200 mg/kg de água no combustível (o limite EN 590), isso representa ±10 mg/kg de repetibilidade e ±30 mg/kg de reprodutibilidade. Esses valores de precisão significam que uma amostra de combustível que relata exatamente 200 mg/kg de água em um único resultado ASTM D6304 tem um intervalo de confiança de 95% de aproximadamente 170–230 mg/kg — abrangendo os dois lados do limite da especificação. Decisões de conformidade para amostras limítrofes devem se basear em ensaios repetidos de amostras coletadas separadamente em um laboratório acreditado ISO 17025."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "test-method",
+      "citation": "ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration, ASTM International",
+      "relevance": "Norma norte-americana de teor de água por KF coulométrica; tecnicamente equivalente à ISO 12937; referenciada na especificação de diesel ASTM D975, em documentação de OEMs SAE e em especificações de combustível militar norte-americanas."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D975-22, Standard Specification for Diesel Fuel Oils, ASTM International",
+      "relevance": "Especificação norte-americana de qualidade do óleo diesel que referencia a ASTM D6304 para o ensaio de água e sedimentos; define requisitos de desempenho para os graus de óleo diesel aplicáveis à proteção de motores diesel HPCR."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12937:2000, Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration, ISO Geneva",
+      "relevance": "Equivalente europeia e internacional da ASTM D6304; método tecnicamente equivalente aceito como alternativa nos protocolos de ensaio de desempenho de separadores de água ISO 16332."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva",
+      "relevance": "Norma de ensaio de desempenho de filtros que usa a ASTM D6304 ou a ISO 12937 para medir o teor de água na entrada e na saída do filtro; base de qualificação de desempenho dos elementos separadores de água coalescentes para óleo diesel."
+    }
+  ]
+}

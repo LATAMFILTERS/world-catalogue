@@ -1,0 +1,141 @@
+{
+  "slug": "astm-d5185",
+  "code": "ASTM D5185",
+  "entityId": "STD-ASTM-D5185",
+  "title": "Determination of Additive Elements, Wear Metals, and Contaminants in Used Lubricating Oils by ICP-OES",
+  "issuingOrganization": "ASTM International",
+  "year": "2019",
+  "revisionStatus": "active",
+  "metaDescription": "La ASTM D5185 especifica la espectrometría de emisión óptica con plasma acoplado inductivamente (ICP-OES) para medir la composición elemental de aceites lubricantes e hidráulicos usados en programas de monitoreo de condición.",
+  "scope": "Aceites lubricantes usados, fluidos hidráulicos y productos de petróleo afines en programas de análisis de aceite para mantenimiento predictivo que requieren cuantificar metales de desgaste, elementos de aditivos y contaminantes.",
+  "engineeringPurpose": "Proporciona el método analítico principal para el análisis espectrométrico de aceite usado: cuantifica 20+ elementos (metales de desgaste, elementos de aditivos, contaminantes) que indican tasas de desgaste de componentes, tasas de degradación del aceite y eventos de contaminación, lo que permite decisiones de mantenimiento basado en la condición sobre los intervalos de cambio de aceite y la programación de inspecciones de componentes.",
+  "sections": [
+    {
+      "heading": "Metodología de análisis ICP-OES",
+      "body": "La ASTM D5185 usa espectrometría de emisión óptica con plasma acoplado inductivamente (ICP-OES) para cuantificar simultáneamente varios elementos en muestras de aceite usado diluidas en un solvente. La fuente de plasma atomiza y excita las especies metálicas disueltas en el aceite; cada elemento emite longitudes de onda características que detecta el espectrómetro. Los elementos medidos incluyen metales de desgaste (hierro, cobre, plomo, estaño, aluminio, cromo, níquel), elementos de aditivos (calcio, magnesio, zinc, fósforo, boro, molibdeno) y contaminantes (silicio, sodio, potasio, elementos marcadores de glicol). Los resultados se expresan en mg/kg (ppm)."
+    },
+    {
+      "heading": "Interpretación de metales de desgaste",
+      "body": "La concentración de hierro indica el desgaste general de componentes ferrosos en todo el circuito de lubricación. El cobre indica desgaste de los casquetes de cojinete. El plomo indica falla de la capa superficial del cojinete. El aluminio indica desgaste del pistón o de la aleación del cojinete. El silicio por encima de 20 ppm indica ingreso de tierra (derivación del filtro de aire o contaminación por polvo del camino), que a la vez eleva el hierro al actuar como abrasivo sobre los cilindros y las superficies de los cojinetes. Seguir la tendencia de varios elementos de desgaste a la vez revela el mecanismo de desgaste específico y el componente afectado; un análisis ICP sin datos de silicio queda incompleto para el diagnóstico de causa raíz de un hierro elevado."
+    },
+    {
+      "heading": "Integración con el monitoreo de condición del aceite",
+      "body": "La ASTM D5185 es el método analítico central en los programas de monitoreo de condición del aceite, combinado con: viscosidad a 100°C (ASTM D445), número ácido/TAN (ASTM D664), número básico/TBN (ASTM D2896 o D4739), contenido de agua (ASTM D6304/ISO 12937) y conteo de partículas (ISO 4406/ISO 11171). Cada método analítico cubre un modo de falla distinto: la ASTM D5185 aborda el desgaste de componentes y la contaminación; la viscosidad y el TBN/TAN abordan la degradación del aceite. Los datos combinados permiten decidir los intervalos de cambio de aceite según la condición."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Método",
+      "value": "ICP-OES (plasma acoplado inductivamente)"
+    },
+    {
+      "label": "Rango de sensibilidad",
+      "value": "0.1–10,000 ppm por elemento"
+    },
+    {
+      "label": "Elementos medidos",
+      "value": "20+ (metales de desgaste, aditivos, contaminantes)"
+    },
+    {
+      "label": "Umbral de silicio (ingreso de aire)",
+      "value": ">20 ppm = sospecha de derivación del filtro"
+    }
+  ],
+  "applicableSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-FERROUS-WEAR-DEBRIS",
+    "TERM-ABRASIVE-WEAR",
+    "TERM-GLYCOL-CONTAMINATION",
+    "TERM-SILICA",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-TOTAL-ACID-NUMBER"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "DURATECH™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "oil-analysis-methods",
+    "oil-condition-monitoring",
+    "fleet-oil-sampling-protocol",
+    "extended-drain-interval-engineering"
+  ],
+  "commonMistakes": [
+    "Tomar la concentración de metales de desgaste de una sola muestra como indicador definitivo de desgaste, sin datos de tendencia de muestras secuenciales con intervalos de cambio conocidos. Un valor alto de hierro aislado puede reflejar el asentamiento del componente; la tasa de tendencia importa más que cualquier lectura individual.",
+    "No normalizar las concentraciones de metales de desgaste según el intervalo de cambio de la muestra. Comparar una muestra de aceite de 250 horas con una de 500 horas sin normalizar da una impresión engañosa de la tasa de desgaste; los mg por hora de operación son la métrica de comparación correcta.",
+    "Usar la espectroscopía ICP-OES (ASTM D5185) como único método de detección de residuos de desgaste. La ICP-OES detecta de forma confiable partículas menores de 5–8 µm; las partículas de desgaste más grandes, características del daño acelerado de componentes, quedan subrepresentadas. La ferrografía o el análisis de residuos en el filtro deben complementar el ICP en equipos críticos."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué elementos mide la ASTM D5185 y qué indican sobre la condición del motor?",
+      "answer": "La ASTM D5185 mide simultáneamente 20+ elementos por espectroscopía ICP-OES en una sola muestra de aceite. Metales de desgaste: hierro (Fe), desgaste ferroso general de anillos, camisas, cigüeñal y árbol de levas; cobre (Cu), casquetes de cojinete de bronce, bujes del pasador de pistón, enfriador de aceite; plomo (Pb), falla de la aleación superficial del cojinete; estaño (Sn), metal antifricción (babbitt) del cojinete; aluminio (Al), pistón y aleación del cojinete; cromo (Cr), cromado de anillos, anticongelante del refrigerante. Elementos de aditivos: zinc (Zn) + fósforo (P), agotamiento del aditivo antidesgaste ZDDP; calcio (Ca) + magnesio (Mg), aditivos detergentes/dispersantes; boro (B), inhibidor de corrosión del refrigerante (elevado = ingreso de refrigerante). Contaminantes: silicio (Si), ingreso de tierra por derivación del filtro de aire; sodio (Na) + potasio (K), marcadores de contaminación por refrigerante. Seguir la tendencia de cada elemento en muestras secuenciales revela la progresión del desgaste de los componentes antes de una falla catastrófica."
+    },
+    {
+      "question": "¿Qué limitación de tamaño de partícula tiene la ICP-OES de la ASTM D5185 y cómo afecta el diagnóstico de desgaste?",
+      "answer": "El análisis ICP-OES ASTM D5185 detecta de forma confiable especies metálicas disueltas y particuladas finas menores de aproximadamente 5–8 µm de diámetro. Las partículas de desgaste más grandes —los residuos gruesos característicos del desgaste avanzado de componentes (descascarado, fatiga del babbitt, rayado)— quedan subrepresentadas o ausentes en el resultado ICP-OES, porque las partículas grandes no se digieren por completo en la preparación de la muestra y pueden decantar en la muestra diluida antes del análisis. Esta limitación de tamaño implica que la ICP-OES puede mostrar concentraciones normales de elementos mientras hay partículas de desgaste grandes (25–500 µm) en el aceite: un falso negativo de daño avanzado. Se requieren métodos analíticos complementarios (ferrografía para partículas magnéticas, análisis de residuos en el filtro según la MIL-STD-1796, agotamiento de antioxidantes RULER) en equipos críticos donde la generación de residuos grandes precede a la falla catastrófica."
+    },
+    {
+      "question": "¿Qué importancia tiene la concentración de silicio en el análisis de aceite ASTM D5185?",
+      "answer": "El silicio (Si) por encima de 20 ppm en el análisis de aceite de motor es el indicador principal de falla del sistema de filtración de aire: ingreso de polvo de tierra a través de un filtro de admisión de aire dañado o en derivación. La tierra ambiental contiene 20–60% de dióxido de silicio (cuarzo/sílice) en masa. El silicio que ingresa por la admisión de aire no proviene de los aditivos del aceite (que rara vez contienen silicio) ni de las aleaciones del motor: solo puede originarse en tierra externa o polvo en suspensión. Cada ppm de Si en el aceite de motor, con tasas típicas de consumo de aceite, representa el ingreso de aproximadamente 50–100 mg de sílice al circuito de lubricación. La dureza de la sílice (7 Mohs) supera la del acero (5–6 Mohs) y la de los materiales de cojinete de aleación de acero (4–5 Mohs), lo que la convierte en una contaminación muy abrasiva; un Si elevado en los resultados ASTM D5185 debe activar de inmediato la inspección y el servicio del sistema de filtración de aire."
+    },
+    {
+      "question": "¿Cómo deben normalizarse las concentraciones de metales de desgaste ASTM D5185 para una tendencia válida?",
+      "answer": "Las concentraciones brutas de metales de desgaste (mg/kg) de la ASTM D5185 no son directamente comparables entre muestras de aceite tomadas con distintos intervalos de cambio, porque los intervalos más largos permiten acumular más residuos de desgaste. La métrica de comparación correcta es la tasa de desgaste: mg de elemento por hora de operación = (concentración en mg/kg × volumen de aceite en litros × densidad del aceite en kg/L) / intervalo de cambio en horas. Para un cárter de 15 L con una concentración de hierro de 40 µg/g (ppm) en un intervalo de cambio de 500 horas: tasa de desgaste de hierro = (40 × 15 × 0.88) / 500 = 1.06 mg/hora. Seguir la tendencia de esta tasa en cambios secuenciales revela si el desgaste aumenta, se mantiene o disminuye. La mayoría de los servicios comerciales de análisis de aceite informan tanto la concentración en ppm como la tasa de desgaste normalizada cuando se indica el intervalo de cambio."
+    },
+    {
+      "question": "¿Qué indican los niveles elevados de calcio y magnesio en el análisis ASTM D5185?",
+      "answer": "El calcio (Ca) y el magnesio (Mg) del aceite de motor provienen de paquetes de aditivos detergentes/dispersantes de sulfonato de calcio y sulfonato de magnesio, los principales componentes de reserva alcalina que mantienen el TBN (número básico total) del aceite. El aceite de motor nuevo suele contener 2,000–4,000 ppm de Ca y 50–300 ppm de Mg, según la formulación. Concentraciones decrecientes de Ca y Mg en muestras de cambio secuenciales indican agotamiento de aditivos: la reserva de TBN restante del aceite está bajando. Si el TBN cae por debajo de 1 (ASTM D2896) con el aceite todavía en servicio, la capacidad de neutralización de ácidos se agota y se acelera la corrosión de las superficies de los cojinetes inducida por el aceite. La tendencia de Ca y Mg ASTM D5185 aporta los datos de agotamiento de aditivos necesarios para optimizar el intervalo de cambio de aceite en programas de drenaje extendido."
+    },
+    {
+      "question": "¿Cómo detecta la ASTM D5185 la contaminación por refrigerante en el aceite lubricante del motor?",
+      "answer": "La detección de contaminación por refrigerante en el aceite de motor mediante la ASTM D5185 se basa en tres elementos marcadores. Boro (B): los inhibidores de corrosión del anticongelante de etilenglicol (bórax, toliltriazol-borato) contienen boro en 200–500 ppm en el refrigerante; una contaminación del aceite por encima de 25 ppm de B (descontando el boro que pueda venir de los aditivos del aceite) indica ingreso de refrigerante. Sodio (Na) + potasio (K): los inhibidores de corrosión del refrigerante (silicatos, tecnología de ácidos orgánicos/OAT) contienen Na y K; un Na+K elevado sobre la línea base junto con boro confirma la presencia de refrigerante. El glicol en sí se detecta con la ASTM D2982 (ensayo específico de glicol). La detección temprana con ASTM D5185 del aumento de boro, sodio y potasio permite investigar y reparar la fuga de refrigerante antes de una falla catastrófica de cojinetes por dilución de la viscosidad del aceite y reacción de los aditivos con el glicol."
+    },
+    {
+      "question": "¿Cuál es la relación entre los niveles de silicio ASTM D5185 y los códigos de limpieza de partículas ISO 4406?",
+      "answer": "La medición de silicio ASTM D5185 (Si disuelto + partículas finas menores de 8 µm) y el conteo de partículas ISO 4406 (todas las partículas sin importar su composición) aportan información de contaminación complementaria pero distinta. Un Si ASTM D5185 alto (>20 ppm) confirma el ingreso de tierra: el silicio proviene específicamente del polvo de sílice, el principal abrasivo del motor. Sin embargo, un conteo de partículas ISO 4406 de ISO 16/14/11 (limpieza normal del aceite de motor) con Si elevado (50 ppm) indica una contaminación abrasiva significativa, mientras que un ISO 4406 de ISO 19/17/14 con Si normal (<15 ppm) indica acumulación general de partículas por desgaste normal. Usando ambas mediciones a la vez: la ASTM D5185 identifica la fuente de contaminación (ingreso de tierra frente a desgaste general); la ISO 4406 cuantifica el nivel total de contaminación."
+    },
+    {
+      "question": "¿Qué protocolo de muestreo se requiere para que el análisis ASTM D5185 produzca datos de tendencia válidos?",
+      "answer": "La tendencia ASTM D5185 requiere un protocolo de muestreo coherente para producir datos comparables válidos. (1) Momento y punto de muestreo: tomar siempre la muestra en el mismo punto del circuito de lubricación (válvula de muestreo presurizada en la galería principal de aceite, NO en el tapón de drenaje del cárter, que acumula residuos decantados no representativos del aceite en circulación). (2) Volumen de muestra: 50–100 mL de un puerto de muestreo purgado (purgar 100–300 mL antes de tomar la muestra de análisis para eliminar el aceite estancado). (3) Registro del intervalo de cambio: cada muestra debe ir acompañada de las horas exactas de operación al momento del muestreo. (4) Envases de muestra: la ASTM D5185 exige envases de polietileno limpios y libres de metales; evite el vidrio (la disolución del vidrio puede contaminar con Si y afectar los resultados de Si en muestras con poco silicio). (5) Envío: las muestras deben llegar al laboratorio dentro de 30 días a temperaturas inferiores a 40°C para evitar crecimiento microbiano o separación de fases glicol-agua que afecten los resultados."
+    },
+    {
+      "question": "¿Cómo apoya la ASTM D5185 los programas de intervalo extendido de cambio de aceite en flotas de equipos pesados?",
+      "answer": "Los programas de intervalo extendido de cambio de aceite (EODI) usan la ASTM D5185 junto con la viscosidad (ASTM D445), el TAN (ASTM D664), el TBN (ASTM D2896) y el contenido de agua (ASTM D6304) para determinar cuándo la condición del aceite justifica el cambio, en lugar de usar un intervalo fijo por horas. Los metales de desgaste ASTM D5185 dan el estado de salud de los componentes (no se requiere un cambio prematuro si las tasas de desgaste son normales y todos los demás parámetros están dentro de los límites); el silicio da el estado de contaminación (se adelanta el cambio si el Si indica una falla del filtro de aire); los elementos de aditivos (Zn, P, Ca, Mg) dan el estado de la reserva de aditivos (el cambio se activa cuando el agotamiento de aditivos alcanza el umbral de fin de vida). Los programas de mantenimiento de flotas DURATECH™ usan este panel analítico completo para la gestión del aceite basada en la condición, y suelen extender los intervalos de cambio un 20–40% más allá de los calendarios por horas fijas manteniendo o mejorando la protección del motor."
+    },
+    {
+      "question": "¿Qué indica el agotamiento de zinc y fósforo en el análisis ASTM D5185?",
+      "answer": "El zinc (Zn) y el fósforo (P) del aceite de motor provienen principalmente del ditiofosfato de dialquilzinc (ZDDP), el principal aditivo antidesgaste, antioxidante e inhibidor de corrosión de los lubricantes de motor. El aceite SAE 15W-40 nuevo suele contener 800–1,200 ppm de Zn y 750–1,100 ppm de P. En servicio, el ZDDP se descompone progresivamente a través de sus mecanismos de reacción antidesgaste y antioxidante. Concentraciones de Zn y P ASTM D5185 decrecientes en muestras secuenciales indican agotamiento del ZDDP. Cuando el Zn o el P caen por debajo de aproximadamente el 30–40% de la concentración del aceite nuevo, el margen de protección antidesgaste se reduce considerablemente. El agotamiento combinado de Zn/P ASTM D5185 con un TBN ASTM D2896 inferior a 1 mg KOH/g indica que el aceite llegó al fin de su vida funcional: corresponde un cambio inmediato sin importar las horas transcurridas."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "test-method",
+      "citation": "ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry (ICP-AES), ASTM International",
+      "relevance": "Método analítico ICP-OES principal para la determinación multielemental simultánea en aceite usado; cuantifica metales de desgaste, elementos de aditivos y contaminantes, lo que permite evaluar la condición de los componentes e identificar la fuente de contaminación."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D2896-22, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration, ASTM International",
+      "relevance": "Método de medición del TBN usado junto con la ASTM D5185 en el monitoreo de condición del aceite; da el estado de la reserva alcalina del aceite y complementa los datos de agotamiento de elementos de aditivos (Zn, Ca, Mg) de la D5185."
+    },
+    {
+      "category": "test-method",
+      "citation": "ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products by Coulometric Karl Fischer Titration, ASTM International",
+      "relevance": "Medición del contenido de agua usada junto con la ASTM D5185 para diagnosticar la contaminación por refrigerante; la D5185 detecta los elementos marcadores del refrigerante (B, Na, K) mientras que la D6304 cuantifica el agua total del ingreso de refrigerante."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles, ISO Geneva",
+      "relevance": "Norma de código de limpieza de partículas usada junto con la ASTM D5185 en el monitoreo integral de condición del aceite; la D5185 identifica la fuente de contaminación (silicio = ingreso de tierra) mientras que la ISO 4406 cuantifica el nivel total de contaminación por partículas."
+    }
+  ]
+}
