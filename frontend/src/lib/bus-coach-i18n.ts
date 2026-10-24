@@ -2,7 +2,7 @@ import type { PageLang } from '@/lib/localized-routes';
 const translations: Record<'es'|'pt',Record<string,string>> = {
   "es": {
     "BUS & COACH / PASSENGER FLEET PROTECTION": "AUTOBUSES / PROTECCIÓN DE FLOTAS DE PASAJEROS",
-    "Bus & Coach": "Autobuses y autocares",
+    "Bus & Coach": "Autobuses",
     "Filtration Systems": "Sistemas de filtración",
     "Protect route availability, engine systems, compressed air and the passenger environment with application-specific filtration.": "Proteja rutas, motores, aire comprimido y ambiente de pasajeros con filtración adaptada a cada aplicación.",
     "Filtration architecture for transit buses, intercity coaches, school buses, shuttle fleets and other passenger vehicles operating through stop-and-go duty, urban particulate, long daily service and scheduled depot maintenance.": "Filtración para autobuses urbanos, interurbanos, escolares, lanzaderas y otros vehículos de pasajeros expuestos a arranques frecuentes, polvo urbano, jornadas largas y mantenimiento de depósito.",
@@ -45,10 +45,10 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
     "Evaluate distributor fit.": "Evalúe su perfil de distribuidor.",
     "BECOME A DISTRIBUTOR": "SER DISTRIBUIDOR",
     "Urban Transit Buses": "Autobuses urbanos",
-    "Intercity Coaches": "Autocares interurbanos",
+    "Intercity Coaches": "Autobuses interurbanos",
     "School Buses": "Autobuses escolares",
     "Shuttle Fleets": "Flotas de lanzaderas",
-    "Touring Coaches": "Autocares turísticos",
+    "Touring Coaches": "Autobuses turísticos",
     "Airport & Institutional Buses": "Autobuses de aeropuertos e instituciones",
     "Stop-and-Go Duty": "Operación de arranque y parada",
     "Frequent acceleration, braking, idling and low-speed operation change engine loading, thermal conditions and service demand throughout the route.": "Aceleraciones, frenadas, ralentí y baja velocidad modifican la carga del motor, el calor y el mantenimiento de cada ruta.",
@@ -121,7 +121,7 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
   },
   "pt": {
     "BUS & COACH / PASSENGER FLEET PROTECTION": "ÔNIBUS / PROTEÇÃO DE FROTAS DE PASSAGEIROS",
-    "Bus & Coach": "Ônibus e transporte rodoviário",
+    "Bus & Coach": "Ônibus",
     "Filtration Systems": "Sistemas de filtração",
     "Protect route availability, engine systems, compressed air and the passenger environment with application-specific filtration.": "Proteja rotas, motores, ar comprimido e ambiente dos passageiros com filtração adequada a cada aplicação.",
     "Filtration architecture for transit buses, intercity coaches, school buses, shuttle fleets and other passenger vehicles operating through stop-and-go duty, urban particulate, long daily service and scheduled depot maintenance.": "Filtração para ônibus urbanos, rodoviários, escolares, traslados e outros veículos de passageiros expostos a partidas frequentes, poeira urbana, longas jornadas e manutenção na garagem.",
