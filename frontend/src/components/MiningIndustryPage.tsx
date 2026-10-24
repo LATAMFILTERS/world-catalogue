@@ -122,7 +122,7 @@ export function MiningIndustryPage() {
 
       <section style={hero}>
         <video autoPlay muted loop playsInline preload="metadata" poster="/images/mineria.avif" style={heroVideo}>
-          <source src="/images/Mineria-Video1.mp4" type="video/mp4" />
+          <source src="/images/Minning4.mp4" type="video/mp4" />
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
