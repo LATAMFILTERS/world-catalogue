@@ -1,0 +1,134 @@
+{
+  "slug": "iso-19438",
+  "code": "ISO 19438",
+  "entityId": "STD-ISO-19438",
+  "title": "Diesel Fuel and Petrol — Filtration and Filtration Performance Evaluation",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2003",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 19438 define métodos de conteo de partículas y de evaluación del desempeño de filtración para elementos de filtro de combustible diésel y gasolina, y extiende la metodología ISO 16889 a aplicaciones de sistemas de combustible para la protección de la inyección HPCR.",
+  "scope": "Elementos de filtro de combustible en sistemas de combustible diésel y gasolina, en especial sistemas de inyección common rail de alta presión que requieren calificación de filtración de partículas en tamaños ≤6 µm.",
+  "engineeringPurpose": "Proporciona una medición estandarizada de conteo de partículas y de eficiencia de filtración para elementos de filtro de combustible diésel y gasolina, lo que permite calificar cuantitativamente el desempeño por relación Beta para la protección de sistemas de inyección HPCR, donde las partículas mayores de 4–6 µm causan fallas de los componentes de precisión del inyector y la bomba dentro de las holguras del sistema de inyección.",
+  "sections": [
+    {
+      "heading": "Alcance y contexto HPCR",
+      "body": "La ISO 19438 adapta la metodología de ensayo de filtración multipaso de la ISO 16889 a las aplicaciones de filtros de combustible y aborda las condiciones específicas de los sistemas de combustible diésel y gasolina. La norma define la selección del fluido de ensayo (diésel o fluido de ensayo ISO VG 15), el tipo de polvo de ensayo, las condiciones de caudal y la metodología de conteo de partículas para elementos de filtro de combustible. La aplicación principal es calificar filtros de combustible para sistemas de inyección diésel common rail de alta presión (HPCR), donde holguras de componentes de 1–3 µm exigen una limpieza del combustible ISO 12/10/8 o más fina."
+    },
+    {
+      "heading": "Metodología de conteo de partículas",
+      "body": "La ISO 19438 usa contadores automáticos de partículas calibrados según la ISO 11171 para umbrales de tamaño de partícula que incluyen ≥4 µm(c), ≥6 µm(c) y ≥14 µm(c). El ensayo multipaso recircula una suspensión de combustible y polvo para obtener conteos estadísticamente confiables en cada rango de tamaño. Los resultados de relación Beta de la ISO 19438 se expresan en el mismo formato β_x(c) que la ISO 16889, lo que permite comparar directamente la eficiencia de filtros de combustible con datos de eficiencia de filtros hidráulicos, algo importante en sistemas que combinan filtración de combustible e hidráulica en el diseño del tren motriz del equipo."
+    },
+    {
+      "heading": "Especificación de protección HPCR",
+      "body": "En sistemas de inyección HPCR que operan con presiones de inyección de 1,600–2,500 bar, orificios de punta de tobera de 100–150 µm de diámetro y holguras de émbolo de bomba de 1–2 µm, la contaminación por partículas mayores de 6 µm en la entrada del inyector causa desgaste abrasivo de las superficies de precisión. La calificación por relación Beta ISO 19438 con β₆(c) ≥ 200 es el desempeño mínimo de filtración requerido para proteger los inyectores HPCR."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Tamaño de partícula clave",
+      "value": "≥4 µm(c), ≥6 µm(c)"
+    },
+    {
+      "label": "Relación Beta mínima HPCR",
+      "value": "β₆(c) ≥ 200"
+    },
+    {
+      "label": "Calibración del contador de partículas",
+      "value": "ISO 11171"
+    },
+    {
+      "label": "Metodología equivalente",
+      "value": "ISO 16889 (hidráulica) adaptada a combustible"
+    }
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-HPCR",
+    "TERM-INJECTOR-STICTION",
+    "TERM-PARTICLE-COUNT",
+    "TERM-ABSOLUTE-EFFICIENCY",
+    "TERM-MULTI-PASS-TEST"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation",
+    "filter-media-science"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "hpcr-fuel-system-protection",
+    "fuel-water-contamination",
+    "beta-ratio",
+    "filter-media-engineering"
+  ],
+  "commonMistakes": [
+    "Especificar el desempeño de filtros de combustible con la ISO 4548 (método para filtros de aceite lubricante) cuando la norma aplicable a combustible es la ISO 19438. Los distintos fluidos de ensayo, viscosidades y especificaciones de contaminante hacen que los ensayos no sean comparables.",
+    "No considerar los efectos del tratamiento con biocidas sobre el medio filtrante sintético en aplicaciones de biodiésel (B20+). Algunos biocidas a base de aminas causan hinchamiento y degradación del medio filtrante de poliéster que aprueba el ensayo ISO 19438 con diésel mineral.",
+    "Usar la eficiencia de partículas a 10 µm como criterio principal de selección de filtros de combustible HPCR. Las holguras de los inyectores HPCR de 1–3 µm exigen calificar el filtro de combustible en tamaños de partícula de 4–6 µm; los datos de eficiencia a 10 µm subestiman el riesgo de contaminación."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué es la ISO 19438 y por qué exige ensayos de relación Beta a ≥4 µm y ≥6 µm en lugar de ≥10 µm?",
+      "answer": "La ISO 19438 (Diesel Fuel and Petrol Filters — Filtration Efficiency Using Particle Counting and Contaminant Retention Capacity) adapta la metodología de ensayo de filtración multipaso de la ISO 16889 a las aplicaciones de filtros de combustible. Las holguras de los sistemas de inyección HPCR de 1–3 µm (carrete del inyector, asiento de la aguja, émbolo de la bomba) son críticamente sensibles a las partículas del rango de 4–6 µm: las partículas apenas mayores que la holgura son las más dañinas porque puentean parcialmente la holgura, lo que maximiza la presión de contacto y la tasa de desgaste abrasivo. Ensayar a ≥10 µm omite por completo la fracción de tamaño que causa el daño principal; por eso la ISO 19438 exige informar la relación Beta a ≥4 µm(c) y ≥6 µm(c) para la calificación HPCR."
+    },
+    {
+      "question": "¿Qué clase de limpieza del combustible persigue la ISO 19438 para proteger los sistemas de inyección HPCR?",
+      "answer": "Los sistemas de inyección HPCR que operan con presiones de inyección de 1,600–2,500 bar requieren una limpieza del combustible con código ISO 4406 12/10/8 en la entrada del inyector, es decir, menos de 1,300 partículas/mL ≥4 µm(c), menos de 320 partículas/mL ≥6 µm(c) y menos de 20 partículas/mL ≥14 µm(c). Lograr ISO 12/10/8 a partir de una calidad típica de almacenamiento de diésel ISO 18/16/13 (una de las condiciones de suministro de combustible más sucias en la práctica) requiere una filtración con relación Beta β₄(c) ≥ 4,000 en el canal de 4 µm."
+    },
+    {
+      "question": "¿En qué se diferencia el fluido de ensayo de la ISO 19438 del de la ISO 16889 y por qué importa?",
+      "answer": "La ISO 16889 usa aceite hidráulico ISO VG 15 como fluido de ensayo; la ISO 19438 usa combustible diésel o aceite mineral ISO VG 15 según la versión del protocolo de ensayo. La diferencia de viscosidad es significativa: el diésel a 20°C tiene una viscosidad cinemática de aproximadamente 2–4 cSt frente a 15 cSt del ISO VG 15. Con menor viscosidad, el transporte de partículas a través del medio filtrante es más rápido (menores fuerzas de arrastre sobre las partículas), lo que en general reduce la eficiencia de captura con la misma construcción del medio. Los resultados de relación Beta de la ISO 19438 (condiciones de combustible) y de la ISO 16889 (condiciones de aceite hidráulico) para medios filtrantes nominalmente idénticos no son numéricamente equivalentes: las relaciones Beta de filtros de combustible suelen ser un 20–40% menores que las de medios de filtro hidráulico equivalentes ensayados en condiciones ISO 16889."
+    },
+    {
+      "question": "¿Cómo aborda la ISO 19438 la compatibilidad del combustible con el medio filtrante sintético?",
+      "answer": "La ISO 19438 especifica ensayos con combustible representativo —diésel comercial o fluido de ensayo ISO VG 15— y exige que el medio filtrante mantenga su integridad y eficiencia durante todo el ensayo, sin degradación por interacción química con el combustible. Para mezclas de biodiésel (contenido de FAME B5–B20 según la EN 14214), el ensayo ISO 19438 debe realizarse con mezclas de combustible representativas de la aplicación prevista, porque el FAME afecta el hinchamiento del medio en fibras de poliéster y polipropileno y cambia la geometría de poros y la eficiencia. Algunas formulaciones de medio sintético pueden mostrar una reducción de eficiencia del 10–15% tras 500 horas de exposición a combustible B20. Por eso se recomienda verificar la compatibilidad combustible-medio según la ISO 19438 en elementos de filtro de combustible usados en aplicaciones de biodiésel B20+."
+    },
+    {
+      "question": "¿Qué capacidad de retención de contaminante especifica la ISO 19438 para filtros de combustible diésel?",
+      "answer": "La ISO 19438 incluye la medición de la capacidad de retención de contaminante (CRC) junto con el ensayo de eficiencia por relación Beta. La CRC mide los gramos totales de polvo de ensayo ISO 12103-1 A2 Fine que retiene el filtro de combustible antes de que la presión diferencial suba hasta un valor terminal especificado, en analogía directa con la capacidad de retención de polvo (DHC) de los ensayos de filtros hidráulicos ISO 16889. La CRC es la base para estimar el intervalo de servicio del filtro de combustible: dividir la CRC por la tasa de ingreso de contaminación del combustible en campo (gramos por litro × litros por hora de consumo de combustible) da el intervalo de servicio previsto en horas de operación. Para un motor diésel de 12 L que consume 30 L/h a potencia nominal con combustible con 1 mg/L de contaminación por partículas: tasa de ingreso de partículas = 0.03 g/h; un elemento de filtro de combustible con una CRC ISO 19438 de 15 g alcanzaría la restricción terminal en 500 horas de operación."
+    },
+    {
+      "question": "¿Cómo se relaciona el conteo de partículas de la ISO 19438 con la calibración de APC según la ISO 11171?",
+      "answer": "La ISO 19438 especifica que los contadores automáticos de partículas usados en el ensayo multipaso deben calibrarse según la ISO 11171 con partículas de referencia PSL trazables a NIST. Este requisito replica el requisito de calibración de APC de la ISO 16889 y asegura que los valores de relación Beta de los ensayos de filtros de combustible ISO 19438 lleven el sufijo \"(c)\" que confirma la calibración ISO 11171. Un elemento de filtro de combustible certificado con \"β₆(c) ≥ 200 según la ISO 19438\" ofrece la misma trazabilidad de medición que un filtro hidráulico certificado con \"β₆(c) ≥ 200 según la ISO 16889\": ambos usan APC calibrados según la ISO 11171 en el umbral de 6 µm(c)."
+    },
+    {
+      "question": "¿Por qué importa el ensayo ISO 19438 al seleccionar filtros de combustible de reposición?",
+      "answer": "Seleccionar filtros de combustible diésel de reposición solo por ajuste dimensional (tamaño de rosca, geometría del vaso, dimensiones de los puertos) no garantiza que el elemento de reemplazo ofrezca una protección equivalente del sistema de inyección HPCR. Un elemento de reposición con dimensiones idénticas pero sin ensayo de relación Beta ISO 19438 puede lograr una eficiencia de captura de partículas muy inferior a la de un elemento OEM debidamente calificado. Con el mismo nivel de contaminación del combustible, el elemento de reposición de menor eficiencia deja pasar 10–50× más partículas al sistema de inyección por unidad de volumen, lo que causa un aumento medible del desgaste de los inyectores HPCR, detectable en 250–500 horas de operación por el aumento de hierro y cromo en el combustible provenientes de residuos de desgaste."
+    },
+    {
+      "question": "¿Cuál es la relación entre la ISO 19438 y la ISO 16332 en un sistema completo de protección del combustible diésel?",
+      "answer": "La ISO 19438 y la ISO 16332 abordan funciones de protección complementarias pero distintas en el sistema de combustible diésel. La ISO 19438 califica la eficiencia de filtración de partículas en el rango de 4–6 µm, crítico para los HPCR, y protege los componentes de precisión del sistema de inyección del desgaste abrasivo por partículas sólidas. La ISO 16332 califica la eficiencia de separación de agua y protege las superficies metálicas del sistema de inyección de la corrosión, el micropicado y el agarrotamiento causados por agua superior a 200 ppm. Ambas normas se aplican simultáneamente en un sistema de protección del combustible HPCR bien diseñado: la filtración de partículas (ISO 19438) y la separación de agua (ISO 16332, HYDROCORE™) atienden cada una una dimensión del doble desafío de contaminación de los sistemas de inyección HPCR."
+    },
+    {
+      "question": "¿Cómo trata la ISO 19438 la selección del polvo de ensayo para la calificación de filtros de combustible?",
+      "answer": "La ISO 19438 especifica el polvo de ensayo ISO 12103-1 A2 Fine (antes polvo de ensayo SAE Fine) como contaminante de desafío tanto para el ensayo de eficiencia por relación Beta como para la medición de la CRC. El ISO A2 Fine tiene una distribución de tamaño de partícula controlada con partículas de 1–80 µm y un diámetro mediano de aproximadamente 5.5 µm, lo que aporta una concentración de desafío significativa en el rango de 4–10 µm, crítico para la protección HPCR. El polvo de ensayo se inyecta a una tasa controlada en el circuito de ensayo de combustible recirculante para generar la condición de contaminación multipaso. La ISO 19438 mantiene el mismo polvo de ensayo que la ISO 16889, lo que permite comparar el desempeño de filtración entre aplicaciones hidráulicas y de combustible cuando se considera la viscosidad del fluido de ensayo en el análisis."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 19438:2003, Diesel Fuel and Petrol Filters for Internal Combustion Engines — Filtration Efficiency Using Particle Counting and Contaminant Retention Capacity, ISO Geneva",
+      "relevance": "Norma principal de ensayo de eficiencia de filtración para elementos de filtro de combustible diésel y gasolina; define la metodología de relación Beta multipaso a ≥4 µm(c) y ≥6 µm(c) para la calificación de protección de sistemas de inyección HPCR."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element, ISO Geneva",
+      "relevance": "Norma de metodología de origen de la ISO 19438; mismo principio multipaso adaptado de aplicaciones hidráulicas a combustible; los resultados de relación Beta de la ISO 16889 y la ISO 19438 no son numéricamente intercambiables debido a las distintas viscosidades del fluido de ensayo."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids, ISO Geneva",
+      "relevance": "Norma obligatoria de calibración de APC para el conteo de partículas en los ensayos ISO 19438; asegura que los valores β₆(c) sean trazables a NIST y reproducibles entre laboratorios en los datos de ensayo de los fabricantes de filtros de combustible."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva",
+      "relevance": "Norma complementaria de ensayo de separación de agua; la ISO 19438 (filtración de partículas) y la ISO 16332 (separación de agua, HYDROCORE™) proporcionan juntas la calificación completa de protección del combustible HPCR."
+    }
+  ]
+}

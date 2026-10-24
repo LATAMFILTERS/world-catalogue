@@ -1,0 +1,129 @@
+{
+  "slug": "iso-12937",
+  "code": "ISO 12937",
+  "entityId": "STD-ISO-12937",
+  "title": "Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2000",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 12937 define o método de titulação coulométrica Karl Fischer para determinar o teor de água em produtos de petróleo — o equivalente europeu e internacional da ASTM D6304.",
+  "scope": "Determinação do teor de água em produtos de petróleo com teor de água entre 5 mg/kg e 2,000 mg/kg por titulação coulométrica Karl Fischer.",
+  "engineeringPurpose": "Especifica o método de titulação coulométrica Karl Fischer para quantificar a contaminação por água no óleo diesel e em óleos lubrificantes — a principal medição analítica usada para verificar se o teor de água do combustível atende aos limites de proteção dos sistemas de injeção HPCR e para detectar a entrada de líquido de arrefecimento no monitoramento da condição do óleo do motor.",
+  "sections": [
+    {
+      "heading": "Princípio da titulação Karl Fischer",
+      "body": "A ISO 12937 usa a titulação coulométrica Karl Fischer para determinar quantitativamente o teor de água em produtos de petróleo. O iodo é gerado eletroquimicamente em um ânodo e reage estequiometricamente com a água na reação de Karl Fischer; a carga necessária para gerar iodo suficiente para consumir toda a água da amostra é proporcional ao teor de água. Os resultados são expressos em mg/kg (ppm em massa). A ISO 12937 e a ASTM D6304 usam o mesmo princípio eletroquímico e produzem resultados equivalentes — a ISO 12937 é a referência dos mercados europeu e internacional; a ASTM D6304 é a equivalente norte-americana."
+    },
+    {
+      "heading": "Meta de qualidade do combustível para HPCR",
+      "body": "A ISO 12937 é o método de medição citado na EN 590 (especificação europeia de óleo diesel) com limite de 200 mg/kg de água. Os injetores common rail de alta pressão exigem teor de água no combustível abaixo desse limite para evitar corrosão da sede do injetor, micropitting e travamento (stiction). Água acima de 500 mg/kg causa fases visíveis de água livre. A análise ISO 12937 é realizada no recebimento do combustível em depósito, durante o monitoramento do armazenamento e como verificação do flushing de comissionamento em embarcações segundo a ISO 8217."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Faixa de medição",
+      "value": "5–2,000 mg/kg (ppm)"
+    },
+    {
+      "label": "Limite de água EN 590",
+      "value": "200 mg/kg"
+    },
+    {
+      "label": "Norma equivalente",
+      "value": "ASTM D6304 (norte-americana)"
+    }
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection",
+    "lubrication-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-WATER-INGRESS",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-HPCR",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "oil-analysis-methods",
+    "hpcr-fuel-system-protection"
+  ],
+  "commonMistakes": [
+    "Confundir água livre e água dissolvida nos resultados Karl Fischer. A KF coulométrica ISO 12937 mede a água total (dissolvida + livre + emulsionada) — um resultado de 80 ppm no diesel não significa ausência de água livre se tiver ocorrido separação de fases.",
+    "Aceitar teor de água no diesel acima de 200 ppm sem considerar o risco de travamento dos injetores HPCR. Sistemas HPCR modernos com folgas de carretel ≤1 µm mostram início acelerado de desgaste acima de 200 ppm de água total.",
+    "Não considerar a absorção de água durante o manuseio da amostra no ensaio Karl Fischer. Amostras com pouca água (<50 ppm) absorvem umidade ambiente rapidamente — os protocolos de manuseio de amostras ISO 12937 são obrigatórios para resultados confiáveis."
+  ],
+  "faqs": [
+    {
+      "question": "Qual é o princípio da titulação coulométrica Karl Fischer usada na ISO 12937?",
+      "answer": "A ISO 12937 usa a titulação coulométrica Karl Fischer baseada na reação estequiométrica do iodo com a água: I₂ + SO₂ + 2H₂O → 2HI + H₂SO₄. No modo coulométrico, o iodo não é adicionado como solução reagente — ele é gerado eletroquimicamente no ânodo (2I⁻ → I₂ + 2e⁻) em uma célula de titulação fechada. A carga (em coulombs) necessária para gerar iodo suficiente para consumir toda a água da amostra é exatamente proporcional ao teor de água: 10.71 coulombs = 1 mg de água. O resultado é expresso em mg/kg (ppm em massa). Essa geração eletroquímica elimina a incerteza de padronização do titulante KF volumétrico."
+    },
+    {
+      "question": "Qual limite de teor de água a EN 590 especifica para o óleo diesel europeu e por que isso importa para os HPCR?",
+      "answer": "A EN 590 (especificação europeia de óleo diesel automotivo) especifica teor máximo de água de 200 mg/kg (200 ppm em massa), determinado pela ISO 12937. Esse limite é definido para proteger sistemas de injeção common rail de alta pressão (HPCR) com pressões de injeção de 1,800–2,500 bar e folgas de carretel do injetor ≤1 µm. Água acima de 200 ppm no diesel em condições de operação HPCR causa corrosão da sede do injetor nas superfícies de vedação metal-metal, micropitting das superfícies da válvula de agulha e travamento — quando as agulhas do injetor aderem parcialmente às sedes após os eventos de injeção, causando padrão de pulverização irregular, baixa eficiência de combustão e, por fim, falha do injetor. Os elementos separadores coalescentes HYDROCORE™ são especificados conforme a meta de água na saída exigida para a aplicação aprovada, com margem abaixo do limite EN 590."
+    },
+    {
+      "question": "Qual é a faixa de medição da ISO 12937 e quando ela não é adequada?",
+      "answer": "A titulação coulométrica Karl Fischer ISO 12937 é especificada para teores de água na faixa de 5–2,000 mg/kg (5–2,000 ppm). Abaixo de 5 ppm, a umidade de fundo na célula de titulação e no reagente limita a precisão da medição. Acima de 2,000 ppm (0.2% de água em massa), a KF coulométrica pode exigir tempos de titulação prolongados e regeneração do reagente. Para produtos de petróleo com alto teor de água (>1,000 ppm ou fase visível de água livre), a titulação Karl Fischer volumétrica (ISO 8534 ou ASTM D1744) é mais adequada — ela usa titulante de concentração conhecida em vez de iodo gerado eletroquimicamente, permitindo determinar volumes maiores de água. Amostras de combustível com separação de fases visível (acúmulo de água livre) devem ser ensaiadas por KF volumétrica ou pelo método de destilação Dean-Stark (ISO 3733)."
+    },
+    {
+      "question": "Como a ISO 12937 detecta contaminação por líquido de arrefecimento no óleo lubrificante do motor?",
+      "answer": "A ISO 12937 mede o teor total de água em amostras de óleo lubrificante. Água no óleo do motor acima de 0.1% (1,000 ppm) indica entrada de líquido de arrefecimento por juntas de cabeçote danificadas, camisas trincadas ou cabeçotes fundidos porosos. Água acima de 0.5% inicia oxidação acelerada do óleo (a água catalisa a degradação oxidativa), favorece o crescimento microbiano em lubrificantes biodegradáveis e reduz a espessura do filme de óleo nas superfícies dos mancais abaixo do filme hidrodinâmico mínimo exigido. A ISO 12937 em programas de monitoramento da condição do óleo permite detectar vazamentos de líquido de arrefecimento antes de danos catastróficos ao motor — um vazamento detectável a 500 ppm de água em um intervalo de troca de óleo de 500 horas teria causado 250+ horas de desgaste acelerado dos mancais sem detecção precoce. O teor de glicol (confirmação adicional de líquido de arrefecimento) é medido separadamente pela ASTM D2982."
+    },
+    {
+      "question": "Por que os protocolos de manuseio de amostras ISO 12937 devem ser seguidos rigorosamente em amostras de diesel com pouca água?",
+      "answer": "O óleo diesel em saturação contém aproximadamente 50–150 mg/kg de água dissolvida a 20°C, dependendo do teor de aromáticos. Uma amostra com 80 mg/kg de água total — próxima do limite de saturação — absorverá umidade atmosférica em minutos se o recipiente não estiver bem vedado e a amostra não for mantida abaixo do ponto de orvalho ambiente. A ISO 12937 especifica: recipientes herméticos de vidro âmbar, espaço livre mínimo para reduzir a superfície de equilíbrio de umidade, análise imediata após a abertura e manta de nitrogênio para amostras com pouca água. Não seguir os protocolos de manuseio pode causar absorção de 20–50 ppm de água durante o manuseio — transformando uma amostra conforme de 180 ppm em um resultado aparentemente não conforme de 220+ ppm. A acreditação de laboratório (ISO 17025) exige cadeia de custódia documentada do manuseio de amostras."
+    },
+    {
+      "question": "Qual é a relação entre a ISO 12937 e a ISO 16332 no projeto de sistemas de filtração de óleo diesel?",
+      "answer": "A ISO 12937 e a ISO 16332 têm funções diferentes, porém complementares, na gestão da água no diesel. A ISO 12937 é o método de medição analítica — quantifica o teor de água em amostras de combustível em pontos específicos do sistema de combustível (tanque, entrada do filtro, saída do filtro). A ISO 16332 é a norma de ensaio de desempenho do filtro — mede qual porcentagem da água um elemento filtrante coalescente remove do combustível em condições especificadas de vazão e temperatura. Na prática, o ensaio ISO 12937 na entrada e na saída do filtro verifica se a instalação do filtro atinge a eficiência de separação classificada pela ISO 16332 nas condições reais do sistema de combustível. Juntas, elas formam a estrutura de medição: a ISO 16332 prevê o desempenho; a ISO 12937 o confirma na verificação em campo."
+    },
+    {
+      "question": "Como a temperatura afeta o teor de água do diesel medido pela ISO 12937?",
+      "answer": "A solubilidade da água no diesel depende da temperatura, aumentando tipicamente 10–20 mg/kg a cada 10°C de aumento de temperatura na faixa de serviço de 0–60°C. Uma amostra de diesel no limite de saturação (150 mg/kg a 20°C) pode conter água livre se resfriada a 5°C (limite de saturação mais baixo) — o excesso de água precipita como gotículas submicrônicas (água emulsionada inicial) e acaba coalescendo em água livre. A ISO 12937 mede a água total (dissolvida + emulsionada + livre) da amostra como apresentada. Ao comparar medições de teor de água feitas em temperaturas diferentes do combustível — tanque frio de manhã versus retorno de combustível quente à tarde — a diferença de temperatura deve ser documentada. Acompanhar a tendência dos resultados de água ISO 12937 exige condições de amostragem consistentes."
+    },
+    {
+      "question": "Qual risco de crescimento microbiano está associado à contaminação por água detectada pela ISO 12937?",
+      "answer": "Teor de água acima de 200 ppm no diesel cria condições para contaminação microbiana na interface combustível-água dos acúmulos no fundo do tanque. Bactérias redutoras de sulfato (Pseudomonas aeruginosa, Desulfovibrio spp.) e fungos (Hormoconis resinae, conhecido como \"fungo do querosene\") colonizam a interface água-combustível, produzindo metabólitos ácidos (sulfetos, ácidos orgânicos) que corroem as paredes do tanque e formam mantas de biomassa que obstruem os filtros de combustível. O ensaio de teor de água ISO 12937 fornece alerta precoce de condições favoráveis ao crescimento microbiano, mas detectar uma contaminação microbiológica já estabelecida exige ensaios adicionais: bioluminescência ATP, ASTM D6974 (contagem de microrganismos em combustível) ou métodos de contagem de colônias por cultura. A separação de água HYDROCORE™ reduz o acúmulo de água livre no fundo dos tanques, limitando os locais de colonização microbiana."
+    },
+    {
+      "question": "A ISO 12937 pode ser usada para medir o teor de água de combustíveis marítimos (HFO/LSFO)?",
+      "answer": "A titulação coulométrica Karl Fischer ISO 12937 é calibrada para produtos de petróleo na faixa de água de 5–2,000 mg/kg e é aplicada principalmente a combustíveis destilados (diesel, querosene, combustível de aviação) e óleos lubrificantes. O óleo combustível pesado (HFO) e o óleo combustível de baixo enxofre (LSFO) têm alta viscosidade e alto teor de aromáticos, que podem interferir na química do reagente Karl Fischer ou exigir diluição antes da análise. A ISO 3733 (Petroleum Products — Determination of Water — Distillation Method) é o método preferido para óleos combustíveis pesados com alto teor de água. Para a verificação do teor de água do diesel marítimo (MGO/MDO) conforme a ISO 8217, a ISO 12937 é aplicável e é o método de ensaio citado nos certificados de qualidade de combustíveis marítimos."
+    },
+    {
+      "question": "Qual é a diferença entre água dissolvida, emulsionada e livre no diesel, e a ISO 12937 as distingue?",
+      "answer": "A ISO 12937 mede o teor total de água — a soma das fases dissolvida, emulsionada e livre. Ela não distingue entre as fases. A água dissolvida é totalmente solúvel no combustível na temperatura da amostra — invisível e não removível por decantação. A água emulsionada consiste em gotículas de água de tamanho submicrônico a 10 µm estabilizadas por contaminantes tensoativos ou produtos de oxidação do combustível — não é visível a olho nu e só é removível por filtração coalescente. A água livre é uma fase aquosa visível e distinta (gotículas >50 µm) — removível por decantação e separação em massa. A distinção importa para a filtração: a água dissolvida não pode ser removida por filtros coalescentes padrão e deve ser controlada na origem; a água emulsionada é removível pelo meio coalescente HYDROCORE™; a água livre é removível por qualquer separador bem projetado."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 12937:2000, Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration, ISO Geneva",
+      "relevance": "Principal norma europeia e internacional para medição do teor de água em produtos de petróleo; citada na especificação de óleo diesel EN 590 (limite de 200 mg/kg) e nas normas de combustíveis marítimos ISO 8217."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods, CEN Brussels",
+      "relevance": "Especificação europeia de qualidade do óleo diesel que cita a ISO 12937 como método de ensaio do teor de água; especifica o limite máximo de água de 200 mg/kg que define os requisitos de proteção de injetores HPCR nos mercados europeus."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva",
+      "relevance": "Norma de ensaio de desempenho de filtros que complementa a medição de água ISO 12937; usa a medição do teor de água ISO 12937 na entrada e na saída do filtro para calcular a eficiência de separação de água de elementos filtrantes coalescentes."
+    },
+    {
+      "category": "standard",
+      "citation": "ASTM D6304, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration, ASTM International",
+      "relevance": "Equivalente norte-americana da ISO 12937; método KF coulométrico tecnicamente equivalente usado em especificações de OEMs norte-americanos, em normas de qualidade de combustível que referenciam a ASTM e em especificações de combustível militar dos EUA."
+    }
+  ]
+}

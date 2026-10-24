@@ -240,4 +240,4 @@ export function technologyText(slug: string, field: 'tagline' | 'domain', lang: 
 }
 
 // Standards detail pages with reviewed /es/ and /pt/ versions (official standard titles stay in English).
-export const TRANSLATED_STANDARD_SLUGS = ['iso-4406', 'iso-16889', 'iso-11171', 'nas-1638', 'sae-j726', 'iso-16332', 'iso-3723', 'iso-2941'] as const;
+export const TRANSLATED_STANDARD_SLUGS = ['iso-4406', 'iso-16889', 'iso-11171', 'nas-1638', 'sae-j726', 'iso-16332', 'iso-3723', 'iso-2941', 'din-51524', 'iso-5011', 'sae-j1539', 'iso-29463', 'iso-11155-1', 'din-71460', 'iso-12937', 'astm-d6304', 'iso-8573-1', 'sae-j1858', 'iso-19438', 'astm-d5185', 'iso-8573-2', 'iso-3968'] as const;

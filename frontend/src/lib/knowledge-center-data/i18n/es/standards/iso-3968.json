@@ -1,0 +1,139 @@
+{
+  "slug": "iso-3968",
+  "code": "ISO 3968",
+  "entityId": "STD-ISO-3968",
+  "title": "Hydraulic Fluid Power — Filters — Evaluation of Differential Pressure versus Flow Characteristics",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2001",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 3968 define el método de ensayo para medir las características de presión diferencial frente a caudal de los elementos de filtro hidráulico, y proporciona los datos de curva presión-caudal usados en la integración del sistema y la selección de la carcasa.",
+  "scope": "Elementos de filtro hidráulico y conjuntos de filtro que requieren datos de característica presión-caudal para su integración en el diseño del circuito hidráulico.",
+  "engineeringPurpose": "Proporciona una medición estandarizada de las características presión-caudal (ΔP-Q) del elemento filtrante, lo que permite modelar con exactitud la caída de presión del circuito hidráulico y seleccionar la carcasa del filtro en todo el rango de caudal de operación, desde las condiciones de viscosidad de arranque en frío hasta el caudal continuo nominal.",
+  "sections": [
+    {
+      "heading": "Método de ensayo presión-caudal",
+      "body": "La ISO 3968 mide la presión diferencial a través de un elemento filtrante a una serie de caudales con fluido de ensayo limpio (aceite mineral ISO VG 15) a temperatura controlada (23 ± 1°C). El ensayo genera una curva ΔP-Q: con caudal cero, la ΔP es cero; al aumentar el caudal, la ΔP aumenta aproximadamente con el cuadrado del caudal en condiciones turbulentas o de forma lineal en condiciones laminares. Varios puntos de medición generan la curva, que se ajusta a una función polinómica o potencial para el modelado del circuito hidráulico. Se aplican factores de corrección de arranque en frío con el multiplicador de viscosidad a la temperatura de arranque en frío."
+    },
+    {
+      "heading": "Aplicación en la integración del sistema",
+      "body": "Los datos presión-caudal de la ISO 3968 son el insumo principal para el presupuesto de caída de presión del sistema hidráulico. En un sistema hidráulico móvil típico, la caída de presión del elemento filtrante no debe superar el 15–20% de la presión de entrega de la bomba al caudal nominal y la temperatura de operación para mantener una eficiencia aceptable del sistema. Los datos ISO 3968 permiten a los ingenieros seleccionar elementos filtrantes y carcasas que mantengan una ΔP aceptable en todo el rango de operación: arranque en frío (alta viscosidad, bajo caudal), temperatura de operación (viscosidad nominal, caudal nominal) y fin de vida (elemento limpio, caudal nominal: el peor caso para el diseño inicial del sistema)."
+    },
+    {
+      "heading": "Relación con la ISO 16889",
+      "body": "La ISO 3968 caracteriza el comportamiento presión-caudal del elemento filtrante limpio; la ISO 16889 caracteriza el desempeño del elemento sucio (relación Beta, DHC y aumento de ΔP durante la carga). Juntas, la ISO 3968 (ΔP inicial) y la ISO 16889 (ΔP al fin de vida) definen el rango completo de presión diferencial que el sistema de filtración presentará al circuito hidráulico, desde la primera instalación hasta el reemplazo. Ambos conjuntos de datos son necesarios para la integración completa del sistema de filtración en el diseño de circuitos hidráulicos de alta presión."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Fluido de ensayo",
+      "value": "Aceite mineral ISO VG 15"
+    },
+    {
+      "label": "Temperatura de ensayo",
+      "value": "23 ± 1°C (elemento limpio)"
+    },
+    {
+      "label": "Resultado",
+      "value": "Curva ΔP-Q (presión diferencial frente a caudal)"
+    },
+    {
+      "label": "Aplicación",
+      "value": "Presupuesto de caída de presión del circuito y selección de carcasa"
+    }
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-VISCOSITY",
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-KIDNEY-LOOP"
+  ],
+  "relatedTopics": [
+    "contamination-control",
+    "testing-and-validation",
+    "filter-media-science"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™",
+    "INTEKCORE™"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "filter-element-integrity",
+    "testing-and-validation"
+  ],
+  "commonMistakes": [
+    "Seleccionar filtros solo según la ΔP en limpio de la ISO 3968 sin considerar la ΔP contaminada en servicio. Un elemento filtrante totalmente cargado puede tener 5–10× la presión diferencial en limpio; los diseños de sistema que usan solo datos de ΔP en limpio subestiman las pérdidas de presión del circuito.",
+    "Comparar curvas ΔP-Q ISO 3968 de distintos fabricantes sin confirmar una viscosidad de fluido de ensayo idéntica (ISO VG 15 a 23°C). Las diferencias de viscosidad de ±20% producen diferencias proporcionales de ΔP; los datos de condiciones de ensayo distintas no son directamente comparables.",
+    "No aplicar la corrección de viscosidad de arranque en frío a los datos ISO 3968 al especificar los ajustes de alivio de la válvula de derivación. El aceite mineral a 0°C tiene una viscosidad 10–15× mayor que a la temperatura de operación; la ΔP de arranque en frío puede superar la presión de apertura de la válvula de derivación incluso con un elemento limpio."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué mide la ISO 3968 y cuál es su aplicación principal en el diseño de sistemas hidráulicos?",
+      "answer": "La ISO 3968 (Hydraulic Fluid Power — Filters — Evaluation of Differential Pressure versus Flow Characteristics) mide la caída de presión a través de un elemento de filtro hidráulico limpio en función del caudal, con aceite de ensayo ISO VG 15 a 23°C. El resultado es una curva ΔP-Q (presión diferencial frente a caudal) que caracteriza la resistencia al flujo del elemento. Esta curva es el insumo principal para el presupuesto de caída de presión del circuito hidráulico: los ingenieros usan los datos ISO 3968 para predecir cuánta de la presión disponible de la bomba consumirá el filtro al caudal nominal, en arranque en frío (alta viscosidad) y al fin de vida (elemento totalmente cargado). Elegir un filtro con una ΔP en limpio excesiva consume el margen de presión necesario para la operación de los actuadores."
+    },
+    {
+      "question": "¿Por qué la ISO 3968 usa aceite de ensayo ISO VG 15 en lugar del fluido hidráulico real?",
+      "answer": "El aceite mineral ISO VG 15 (viscosidad cinemática de 15 cSt a 40°C) se usa como fluido de ensayo estándar porque es estable, reproducible y fácil de conseguir con propiedades uniformes en laboratorios de todo el mundo. Usar el fluido hidráulico real (HLP 46, HVLP 32, etc.) haría que los datos ΔP-Q de distintos fabricantes no fueran comparables por la variación de viscosidad entre lotes y las diferencias de paquetes de aditivos. Los datos ISO 3968 con ISO VG 15 / 23°C dan una ΔP de referencia que puede escalarse a cualquier viscosidad real del fluido con la ley de proporcionalidad: ΔP a viscosidad μ₂ = ΔP a μ₁ × (μ₂/μ₁) en condiciones de flujo laminar, o con un modelo combinado laminar/turbulento para operación con números de Reynolds más altos."
+    },
+    {
+      "question": "¿Cómo afecta la viscosidad de arranque en frío a la ΔP prevista a partir de los datos ISO 3968?",
+      "answer": "Los datos ISO 3968 a 23°C con ISO VG 15 (15 cSt) deben corregirse para las condiciones de arranque en frío, en las que la viscosidad del aceite hidráulico es muchísimo mayor. El HLP 46 a −20°C tiene una viscosidad de aproximadamente 800–1,500 cSt, 50–100× la viscosidad de ensayo ISO VG 15. En flujo laminar (que predomina con los bajos caudales del arranque en frío), la ΔP del filtro escala en proporción a la viscosidad: ΔP_frío = ΔP_ISO3968 × (800/15) = 53× la ΔP de ensayo nominal. Un elemento filtrante con una ΔP en limpio ISO 3968 de 0.05 bar al caudal nominal produciría 2.6 bar en arranque en frío, lo que en algunos casos supera un ajuste estándar de válvula de derivación de 3 bar. Por eso la activación de la válvula de derivación en el arranque en frío es normal y no una falla, y por eso los fluidos HVLP (DIN 51524 Parte 3) con mayor VI reducen la ΔP de arranque en frío en 3–5× frente al aceite HLP estándar."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre la ΔP inicial (en limpio) de la ISO 3968 y la ΔP de fin de vida de la ISO 16889?",
+      "answer": "La ISO 3968 mide la caída de presión del elemento limpio: la ΔP mínima al inicio de la vida útil, cuando aún no se ha cargado contaminación en el medio. El ensayo multipaso ISO 16889 mide el aumento de la ΔP durante la carga de polvo: la presión diferencial del elemento aumenta a medida que se acumula contaminación en el medio hasta alcanzar la restricción terminal (presión de apertura de la válvula de derivación). La ΔP de fin de vida de la ISO 16889 (en la apertura de la válvula de derivación) suele ser 5–15× la ΔP inicial en limpio de la ISO 3968. Un modelado completo de la caída de presión del sistema hidráulico requiere ambas: la ISO 3968 para la ΔP inicial mínima y para establecer el modelo base de resistencia al flujo; la ISO 16889 para predecir la ΔP máxima en servicio en los límites del intervalo de servicio. La presión de alivio de la válvula de derivación debe ajustarse por encima de la ΔP de fin de vida máxima creíble, incluidos los efectos de viscosidad del arranque en frío."
+    },
+    {
+      "question": "¿Cómo afecta la cantidad de pliegues a la forma de la curva ΔP-Q ISO 3968?",
+      "answer": "La cantidad de pliegues determina directamente el área de medio del elemento filtrante: más pliegues = más área = menor velocidad frontal al caudal nominal = menor ΔP. Duplicar la cantidad de pliegues con el mismo volumen de elemento reduce aproximadamente a la mitad la ΔP inicial en limpio al caudal nominal. Sin embargo, la cantidad de pliegues está limitada por restricciones geométricas: demasiados pliegues provocan el puenteo de pliegues (pliegues adyacentes que se tocan), lo que reduce el área efectiva del medio por debajo del máximo teórico. La cantidad óptima de pliegues de los elementos hidráulicos NANOFORCE™ equilibra la máxima área de medio con el mínimo puenteo, usando una construcción con malla de soporte para mantener la separación de los pliegues bajo presión. Las curvas ΔP-Q ISO 3968 de elementos con distinta cantidad de pliegues (pero con medio y dimensiones idénticos) revelan el factor de eficiencia de los pliegues: la relación entre el área efectiva lograda y la teórica."
+    },
+    {
+      "question": "¿Cómo se usan los datos ISO 3968 para seleccionar la presión de apertura de la válvula de derivación?",
+      "answer": "La presión de apertura de la válvula de derivación debe ajustarse por encima de la ΔP máxima en servicio que experimentará el elemento filtrante en operación normal, para evitar activaciones de derivación innecesarias, pero por debajo de la presión de colapso del elemento, para evitar una falla estructural catastrófica. Jerarquía de decisión: (1) Determinar la ΔP al caudal nominal según la ISO 3968 con la viscosidad de la temperatura de operación. (2) Aplicar el multiplicador de viscosidad de arranque en frío para obtener la ΔP de arranque en frío a la temperatura mínima de operación. (3) Obtener la ΔP terminal del ensayo ISO 16889 al final del intervalo de servicio. (4) Ajustar la presión de apertura de la válvula de derivación por encima del mayor valor entre la ΔP en limpio de arranque en frío y la ΔP terminal con carga, con un margen de 15–25%. (5) Verificar que la presión de apertura de la válvula de derivación sea <10% de la presión de colapso del elemento según los ensayos ISO 3723/NFPA T2.14."
+    },
+    {
+      "question": "¿Qué régimen de flujo suponen los datos ISO 3968 y cuándo el flujo turbulento invalida el escalado proporcional?",
+      "answer": "Los datos ΔP-Q ISO 3968 cubren los regímenes de flujo laminar y turbulento, según el caudal y la geometría del elemento. Con caudales bajos (número de Reynolds bajo, Re <2,300 en el medio), la relación ΔP-Q es lineal (flujo de Darcy): ΔP = K₁ × μ × Q. Con caudales más altos (turbulento, Re >4,000), la relación pasa a ser cuadrática: ΔP = K₂ × ρ × Q². La curva ISO 3968 abarca ambos regímenes, y los datos de ensayo se ajustan a un modelo combinado de Forchheimer: ΔP = K₁ × μ × Q + K₂ × ρ × Q². En los cálculos de escalado por viscosidad (p. ej., de ISO VG 15 a HLP 46), solo el término laminar escala en proporción a la viscosidad; el término turbulento escala con la densidad, no con la viscosidad. Con caudales altos (predominio del régimen turbulento), el escalado proporcional por viscosidad sobrestima considerablemente el efecto de la viscosidad sobre la ΔP."
+    },
+    {
+      "question": "¿Cómo se integran los datos presión-caudal ISO 3968 en el presupuesto de caída de presión del sistema hidráulico?",
+      "answer": "Un presupuesto de caída de presión del sistema hidráulico reparte la presión disponible de la bomba entre todos los elementos de resistencia del circuito: líneas, válvulas, actuadores, accesorios y filtros. Para un sistema hidráulico móvil con una bomba de 250 bar a un caudal nominal de 200 L/min: el presupuesto de presión total es de 250 bar. Reparto típico: presión de operación del cilindro/motor 200 bar (80%); ΔP de la válvula de control direccional 5 bar (2%); pérdidas en mangueras y accesorios 5 bar (2%); ΔP del filtro 3–5 bar (1.5–2%). Los datos ISO 3968 a 200 L/min con HLP 46 a una temperatura de operación de 50°C deben mostrar una ΔP ≤ 2–3 bar para que el elemento limpio se mantenga dentro del presupuesto. La ΔP de fin de vida de la ISO 16889 (típicamente 3–4× la ΔP en limpio) no debe superar la presión de apertura de la válvula de derivación (típicamente 3–4 bar) para mantener el presupuesto de presión durante todo el intervalo de servicio."
+    },
+    {
+      "question": "¿Se pueden comparar los datos ΔP-Q ISO 3968 de un fabricante con los de otro para seleccionar elementos?",
+      "answer": "Los datos ISO 3968 son directamente comparables entre fabricantes solo si ambos informes de ensayo especifican condiciones idénticas: aceite de ensayo ISO VG 15, temperatura de ensayo de 23°C y el mismo diámetro y largo de elemento. La norma especifica estas condiciones con precisión para permitir la comparación entre fabricantes, que es el propósito principal de la normalización. Sin embargo, los caudales informados y las curvas ΔP deben compararse al caudal real del sistema, no a un \"caudal nominal\" elegido por el fabricante, que puede diferir entre proveedores. Además, compare la ΔP en limpio ISO 3968 en el contexto de la ΔP terminal y la capacidad de retención de suciedad (DHC) ISO 16889: un elemento con menor ΔP en limpio ISO 3968 pero menor DHC ISO 16889 puede ofrecer un desempeño total del sistema peor que un elemento con una ΔP inicial algo mayor y un intervalo de servicio considerablemente más largo."
+    },
+    {
+      "question": "¿Cuál es la tolerancia de temperatura de ensayo de la ISO 3968 y cómo afecta la reproducibilidad entre laboratorios?",
+      "answer": "La ISO 3968 especifica una temperatura de ensayo de 23 ± 1°C para el aceite de ensayo ISO VG 15, una tolerancia de ±1°C que corresponde a una variación de viscosidad de aproximadamente ±5% en aceite mineral (la viscosidad del aceite mineral cambia aproximadamente un 3–5% por °C cerca de 23°C). En el límite de la tolerancia (22°C frente a 24°C), la variación de ΔP solo por temperatura llega a ±5% en el régimen de flujo laminar. La repetibilidad de los informes de ensayo ISO 3968 para el mismo elemento en varias corridas en el mismo laboratorio suele ser de ±2–3%; la reproducibilidad entre distintos laboratorios que siguen la norma suele ser de ±5–8%. En decisiones críticas de selección de filtros donde los elementos de la competencia muestran una diferencia de ΔP <10%, un ensayo simultáneo lado a lado en el mismo laboratorio con el mismo banco de pruebas elimina la variabilidad entre laboratorios y entrega datos de comparación definitivos."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 3968:2001, Hydraulic Fluid Power — Filters — Evaluation of Differential Pressure versus Flow Characteristics, ISO Geneva",
+      "relevance": "Norma principal de caracterización presión-caudal de elementos de filtro hidráulico; proporciona datos de curva ΔP-Q usados en el presupuesto de caída de presión del circuito hidráulico, la especificación de la válvula de derivación y la selección de la carcasa."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element, ISO Geneva",
+      "relevance": "Norma de desempeño complementaria que proporciona datos de ΔP de fin de vida (restricción terminal) y de capacidad de retención de suciedad; se usa junto con la ΔP en limpio de la ISO 3968 para un modelado completo de la caída de presión durante el intervalo de servicio."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 3723:2015, Hydraulic Fluid Power Filter Elements — Method for End Load Test, ISO Geneva",
+      "relevance": "Norma de integridad estructural que proporciona datos de carga de colapso; los ajustes de la válvula de derivación derivados de los datos ISO 3968 deben verificarse frente a las clasificaciones de colapso ISO 3723 para asegurar un margen de seguridad estructural adecuado."
+    },
+    {
+      "category": "standard",
+      "citation": "DIN 51524-2:2017, Lubricants — Hydraulic Oils — Minimum Requirements for HLP Hydraulic Oils, Deutsches Institut für Normung",
+      "relevance": "Norma de clasificación de fluidos hidráulicos; la elección del grado de viscosidad del fluido según la DIN 51524 determina directamente los multiplicadores de ΔP de arranque en frío y de temperatura de operación aplicados a los datos de ensayo ISO 3968 en el diseño del sistema."
+    }
+  ]
+}

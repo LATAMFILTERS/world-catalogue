@@ -1,0 +1,133 @@
+{
+  "slug": "iso-11155-1",
+  "code": "ISO 11155-1",
+  "entityId": "STD-ISO-11155-1",
+  "title": "Road Vehicles — Air Filters for Passenger Compartments — Particle Filtration Performance",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2001",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 11155-1 define métodos de ensaio de eficiência de filtração de partículas e de resistência ao fluxo de ar para filtros de ar de cabine em veículos rodoviários e cabines de operador de equipamentos pesados.",
+  "scope": "Ensaio de desempenho de elementos de filtro de ar de cabine quanto à eficiência de filtração de partículas (PM10, PM2.5) e à resistência ao fluxo de ar em habitáculos de veículos rodoviários e cabines de operador de equipamentos pesados.",
+  "engineeringPurpose": "Define a metodologia de ensaio de eficiência de filtração de partículas para sistemas de ar de cabine em veículos rodoviários e cabines de operador de equipamentos pesados, fornecendo a estrutura de desempenho para proteger a saúde do operador contra a exposição a PM2.5 e PM10 em ambientes industriais.",
+  "sections": [
+    {
+      "heading": "Ensaio de eficiência de partículas",
+      "body": "A ISO 11155-1 mede a eficiência de captura de partículas nas frações PM10 e PM2.5 — as faixas de tamanho correspondentes às frações de saúde inalável e respirável segundo as diretrizes de qualidade do ar da OMS. O ensaio usa vazões de ar padronizadas com desafio de pó sintético. As metas mínimas de desempenho para a proteção da saúde do operador são eficiência >80% para PM10 e >60% para PM2.5. Os elementos MICROKAPPA™ são classificados conforme a meta de eficiência PM2.5 especificada para a aplicação aprovada, selecionada para superar o limite mínimo ISO 11155-1 e atender aos limites de exposição ocupacional em ambientes industriais com muito pó."
+    },
+    {
+      "heading": "Complemento ISO 11155-2",
+      "body": "A ISO 11155-1 trata da filtração de partículas; a ISO 11155-2 trata da eficiência de remoção de contaminantes gasosos das camadas de carvão ativado contra compostos odoríferos, hidrocarbonetos aromáticos e espécies NOx. Juntas, as Partes 1 e 2 formam a estrutura completa de desempenho da filtração de ar de cabine. A DIN 71460 é a norma alemã predecessora, harmonizada com a metodologia ISO 11155, e ainda é referenciada em documentos de qualificação de filtros de cabine de OEMs europeus."
+    },
+    {
+      "heading": "Aplicação em equipamentos pesados",
+      "body": "A ISO 11155 foi desenvolvida para habitáculos de veículos rodoviários, mas sua metodologia de ensaio se aplica a cabines de operador de equipamentos pesados, onde os ambientes de contaminação são muito mais agressivos. Em operações de mineração e construção, as concentrações ambientes de PM2.5 podem chegar a 150–500 µg/m³ durante a operação ativa — 10–30× a diretriz de 24 horas da OMS de 15 µg/m³. Uma filtração de cabine que atende às metas de eficiência PM2.5 da ISO 11155-1 reduz as concentrações dentro da cabine para abaixo dos limites de exposição ocupacional."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Eficiência mínima PM10",
+      "value": ">80%"
+    },
+    {
+      "label": "Eficiência mínima PM2.5",
+      "value": ">60%"
+    },
+    {
+      "label": "MICROKAPPA™ PM2.5",
+      "value": "Conforme a aplicação aprovada"
+    },
+    {
+      "label": "Partes",
+      "value": "Parte 1: partículas; Parte 2: fase gasosa"
+    }
+  ],
+  "applicableSystems": [
+    "cabin-air-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-MELT-BLOWN-MEDIA",
+    "TERM-DEPTH-FILTRATION"
+  ],
+  "relatedTopics": [
+    "filter-media-science",
+    "testing-and-validation",
+    "cabin-air-filtration"
+  ],
+  "relatedTechnologies": [
+    "MICROKAPPA™"
+  ],
+  "relatedArticles": [
+    "cabin-air-filtration",
+    "filter-media-science"
+  ],
+  "commonMistakes": [
+    "Especificar filtros de cabine apenas pela eficiência de partículas, sem considerar a proteção contra contaminantes gasosos. A ISO 11155-1 cobre apenas particulado — a proteção química e contra odores exige ensaios de filtro combinado ISO 11155-2.",
+    "Não considerar a saturação do meio filtrante em ambientes com muito pó. A eficiência de partículas se aproxima de 100% em um filtro saturado, mas a restrição ao fluxo pode exceder a capacidade do sistema HVAC antes do fim do intervalo de serviço nominal.",
+    "Aplicar especificações de filtros de cabine de veículos rodoviários (condições de habitáculo) diretamente a cabines de equipamentos de construção ou mineração sem ajustá-las às maiores concentrações de pó ambiente desses ambientes."
+  ],
+  "faqs": [
+    {
+      "question": "Quais frações de tamanho de partícula a ISO 11155-1 ensaia e por que PM10 e PM2.5 são o foco específico?",
+      "answer": "A ISO 11155-1 mede a eficiência de partículas de filtros de ar de cabine nas frações de tamanho PM10 (partículas ≤10 µm de diâmetro aerodinâmico) e PM2.5 (partículas ≤2.5 µm de diâmetro aerodinâmico). Essas frações correspondem às definições da OMS e da regulamentação de saúde ocupacional para as frações de partículas inalável e respirável. As partículas PM10 se depositam no trato respiratório superior (fossas nasais e brônquios superiores); as partículas PM2.5 penetram até a região alveolar de troca gasosa do pulmão, onde podem causar danos de longo prazo. O material particulado diesel, a poeira de sílica cristalina e os aerossóis de metais pesados de operações industriais estão predominantemente na fração PM2.5 — o principal risco à saúde respiratória dos operadores de equipamentos."
+    },
+    {
+      "question": "Quais são os limites mínimos de eficiência de filtração de partículas especificados na ISO 11155-1?",
+      "answer": "A ISO 11155-1 especifica limites mínimos de eficiência de filtração de partículas para filtros de ar de cabine: eficiência ≥80% para partículas PM10 e ≥60% para partículas PM2.5, medidas em condições de vazão de ar padronizadas com pó de ensaio sintético. São limites mínimos de base — os elementos MICROKAPPA™ são selecionados conforme a meta de eficiência PM2.5 e PM10 especificada para a aplicação aprovada, superando o mínimo ISO 11155-1 quando a aplicação exige, o que é relevante em ambientes com muito pó, onde uma passagem significativa de PM2.5 em concentrações ambientes elevadas produz exposição inaceitável dentro da cabine."
+    },
+    {
+      "question": "Como a ISO 11155-2 complementa a ISO 11155-1 para a proteção completa do ar de cabine?",
+      "answer": "A ISO 11155-1 cobre a eficiência de filtração de particulado; a ISO 11155-2 cobre a eficiência de remoção de contaminantes gasosos das camadas de carvão ativado de filtros de ar de cabine. As camadas de carvão ativado em filtros combinados de partículas + gases adsorvem hidrocarbonetos aromáticos (benzeno, tolueno), óxidos de nitrogênio (NO, NO₂), compostos de enxofre, ozônio e compostos odoríferos produzidos pelo tráfego de veículos e por operações industriais. A ISO 11155-2 especifica a metodologia de ensaio de saturação (breakthrough) para cada classe de gás. Operadores de equipamentos pesados em obras urbanas ou próximos a estações de geradores diesel estão expostos a contaminantes particulados e gasosos — filtros que atendem simultaneamente à ISO 11155-1 e à 11155-2 oferecem proteção simultânea contra as duas vias de exposição."
+    },
+    {
+      "question": "Qual é a diferença entre as medições de eficiência PM da ISO 11155-1 e a eficiência HEPA da ISO 29463?",
+      "answer": "A ISO 11155-1 mede a eficiência de filtração de partículas nas frações PM10 e PM2.5 por método gravimétrico ou de contagem óptica, com pó mineral de ensaio padronizado e condições de vazão representativas de HVAC — uma medição prática orientada à conformidade com a saúde ocupacional. A ISO 29463 mede a eficiência no tamanho de partícula mais penetrante (MPPS, 0.1–0.3 µm) com aerossol líquido DEHS em condições controladas de laboratório — uma medição fundamental de desempenho no ponto de eficiência de pior caso. Um filtro de ar de cabine que atende à ISO 11155-1 com ≥95% em PM2.5 não atende necessariamente à ISO 29463 H13 (≥99.95% no MPPS), porque as partículas da faixa MPPS de 0.1–0.3 µm podem penetrar com mais facilidade que as de 2.5 µm."
+    },
+    {
+      "question": "Como a pressurização positiva da cabine interage com o desempenho do filtro ISO 11155-1 na proteção do operador?",
+      "answer": "A ISO 11155-1 ensaia os elementos filtrantes isoladamente — mede a eficiência de captura de partículas do filtro na vazão nominal. Na prática, a pressurização positiva da cabine (manter a pressão do ar da cabine 50–150 Pa acima do ambiente) impede que o ar não filtrado se infiltre pelas vedações das portas, passagens no piso e aberturas de conduítes elétricos. O sistema de proteção combinado — filtro conforme a ISO 11155-1 mais pressurização da cabine — oferece proteção multiplicativa: um filtro com 95% de eficiência em PM2.5 mais pressurização eficaz (que pode cobrir 50–80% das vias de infiltração) pode reduzir o PM2.5 dentro da cabine a 5–10% dos níveis ambientes. A perda de pressurização por degradação das vedações ou falha do HVAC pode anular a contribuição do filtro e deve ser monitorada separadamente."
+    },
+    {
+      "question": "Quais concentrações ambientes de PM2.5 são encontradas em operações com equipamentos pesados?",
+      "answer": "As concentrações ambientes de PM2.5 variam conforme o tipo de operação. Operações agrícolas em campo: 20–100 µg/m³ durante o cultivo e a colheita. Obras de construção urbanas: 50–300 µg/m³ perto de escavações ativas. Mineração a céu aberto (fases de desmonte e perfuração): 200–2,000 µg/m³ nas frentes ativas. Bocas de minas subterrâneas: 100–500 µg/m³ durante a movimentação de veículos diesel. A diretriz de 24 horas da OMS para PM2.5 é de 15 µg/m³; a maioria dos limites nacionais de exposição ocupacional para poeira mista é de 3–10 mg/m³ (3,000–10,000 µg/m³) — mas os limites específicos para sílica cristalina são de 0.025–0.1 mg/m³ (25–100 µg/m³) para poeira contendo sílica, devido às suas propriedades carcinogênicas. Operadores em mineração a céu aberto ativa exigem filtração ISO 11155-1 bem acima dos limites mínimos para permanecer abaixo dos limites de exposição específicos de sílica durante turnos completos."
+    },
+    {
+      "question": "Como o ensaio ISO 11155-1 considera o efeito do carregamento do filtro sobre a eficiência de partículas?",
+      "answer": "Os ensaios ISO 11155-1 normalmente são realizados com elementos filtrantes novos e limpos para caracterizar o desempenho inicial. A eficiência de filtração de partículas em geral aumenta à medida que o particulado se acumula no meio filtrante — a filtração por torta superficial melhora a captura. No entanto, em aplicações de ar de cabine com operação cíclica do HVAC (partidas e paradas do ventilador), a torta de partículas pode se desprender da superfície do meio durante transientes de fluxo de alta velocidade na partida, liberando temporariamente partículas capturadas no ar da cabine a jusante. Os dados de eficiência inicial ISO 11155-1 representam o desempenho limpo de pior caso; monitorar o desempenho com carga de pó exige ensaios periódicos de verificação de substituição ou monitoramento de condição."
+    },
+    {
+      "question": "Qual intervalo de manutenção é adequado para elementos de filtro de ar de cabine conformes à ISO 11155-1?",
+      "answer": "A ISO 11155-1 não especifica intervalos de manutenção — eles são definidos pelo OEM do equipamento com base no ciclo de trabalho esperado e no ambiente. As recomendações típicas dos OEMs variam de 500 a 2,000 horas de operação ou substituição anual para veículos rodoviários padrão. Para equipamentos pesados em ambientes com muito pó (mineração, construção), os intervalos de manutenção do filtro de ar de cabine podem ser de 100–500 horas — 4–10× mais frequentes que as especificações de veículos rodoviários. Monitorar a vazão de ar do HVAC (por sensores de corrente do soprador ou pressão diferencial através do filtro) fornece indicação de substituição baseada na condição, sem depender de cronogramas de horas fixas que podem ser inadequados em ambientes de pó variável."
+    },
+    {
+      "question": "A conformidade com a ISO 11155-1 garante a proteção da saúde do operador contra a exposição a particulado diesel?",
+      "answer": "A conformidade com a ISO 11155-1 no limite de eficiência PM2.5 especificado é condição necessária, mas não suficiente, para proteger o operador do material particulado diesel (DPM). O DPM inclui partículas carbonáceas sólidas na faixa PM2.5 (tipicamente 0.1–2.5 µm) e compostos orgânicos semivoláteis que podem ser adsorvidos e dessorvidos da superfície das partículas. O ensaio de eficiência PM2.5 ISO 11155-1 cobre a proteção da fração particulada; é necessária uma camada complementar de carvão ativado (ensaiada segundo a ISO 11155-2) para proteger contra os componentes semivoláteis e gasosos do DPM. Além disso, a integridade da pressurização da cabine deve ser mantida e o modo de recirculação do HVAC deve estar disponível em ambientes de alta exposição a DPM — o filtro é um componente de um sistema de proteção em várias camadas."
+    },
+    {
+      "question": "Qual pó de ensaio é usado nas medições de eficiência de partículas ISO 11155-1?",
+      "answer": "A ISO 11155-1 usa pó mineral sintético de ensaio padronizado com distribuição de tamanho de partícula representativa do aerossol ambiente encontrado em veículos rodoviários. O pó de ensaio específico é indicado no protocolo de ensaio da norma — tipicamente um pó mineral fino com distribuição de tamanho ponderada para as frações PM10 e PM2.5. A contagem de partículas a montante e a jusante do elemento filtrante na vazão HVAC nominal fornece dados de eficiência nas frações PM10 e PM2.5. Na prática de qualificação de OEMs europeus, alguns fabricantes também usam pó de ensaio SAE fine (ISO 12103-1 A2 Fine) por compatibilidade com o ecossistema mais amplo de ensaios de filtração, embora a especificação de pó própria da ISO 11155-1 prevaleça para a conformidade com a norma."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 11155-1:2001, Road Vehicles — Air Filters for Passenger Compartments — Part 1: Test for Particulate Filtration, ISO Geneva",
+      "relevance": "Principal norma de ensaio de eficiência de partículas para filtros de ar de cabine; define a metodologia de medição da eficiência de filtração PM10 e PM2.5 para habitáculos de veículos rodoviários e cabines de operador de equipamentos pesados."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11155-2:2009, Road Vehicles — Air Filters for Passenger Compartments — Part 2: Test for Gaseous Filtration, ISO Geneva",
+      "relevance": "Norma complementar que cobre o desempenho da camada de carvão ativado na remoção de contaminantes gasosos; exigida junto com a ISO 11155-1 para a proteção completa do ar de cabine, incluindo as vias de exposição a particulado diesel, NOx e COV."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 29463-1:2011, High-Efficiency Filters and Filter Media — Classification, Performance Testing and Marking, ISO Geneva",
+      "relevance": "Norma complementar de classificação HEPA aplicável a elementos de ar de cabine de alta eficiência em equipamentos de mineração e construção, onde o desempenho H13 (≥99.95% no MPPS) é exigido para atender aos limites de exposição ocupacional à sílica."
+    },
+    {
+      "category": "regulation",
+      "citation": "EU Directive 2004/37/EC on the Protection of Workers from Risks Related to Exposure to Carcinogens and Mutagens at Work, European Parliament",
+      "relevance": "Estabelece limites de exposição ocupacional à sílica cristalina (risco de silicose) que impulsionam as especificações de filtração de ar de cabine para equipamentos de mineração e construção nos mercados europeus; a conformidade exige filtração ISO 11155-1 acima dos limites mínimos."
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "slug": "iso-5011",
+  "code": "ISO 5011",
+  "entityId": "STD-ISO-5011",
+  "title": "Inlet Air Cleaning Equipment — Performance Testing of Air Filters for Internal Combustion Engines and Compressors",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2014",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 5011 define métodos de ensaio de desempenho para filtros de ar usados em motores de combustão interna e compressores, abrangendo eficiência, restrição e capacidade de retenção de pó.",
+  "scope": "Filtros de ar para motores de combustão interna, turbinas a gás e compressores.",
+  "engineeringPurpose": "Fornece metodologia de ensaio padronizada para a eficiência gravimétrica e a capacidade de retenção de pó de filtros de admissão de ar, permitindo comparar o desempenho entre fabricantes de filtros de ar na proteção da admissão do motor em aplicações rodoviárias, fora de estrada, agrícolas e industriais.",
+  "sections": [
+    {
+      "heading": "O que a ISO 5011 ensaia",
+      "body": "A ISO 5011 define os métodos de ensaio para medir o desempenho de elementos filtrantes de admissão de ar usados em motores de combustão interna e compressores. A norma especifica três procedimentos de ensaio principais: (1) Ensaio de eficiência inicial — mede a eficiência de captura de partículas do filtro no início da vida útil, usando pó de ensaio AC Fine (ACFTD) com distribuição de tamanho de partícula definida. (2) Ensaio de capacidade de pó — mede a massa total de pó que o elemento consegue reter antes de atingir a pressão diferencial máxima admissível especificada, definindo o intervalo de serviço. (3) Ensaio de colapso/integridade — verifica a integridade estrutural do elemento sob pressão diferencial severa: o elemento deve resistir sem vazar nem colapsar a três a cinco vezes a pressão diferencial de operação nominal. Esses ensaios são realizados em condições de vazão de ar padronizadas e documentam o desempenho do filtro com metodologia consistente e reprodutível, que permite a comparação direta entre elementos concorrentes."
+    },
+    {
+      "heading": "Medição de eficiência",
+      "body": "A contagem de partículas a montante e a jusante em 0.5, 1, 2, 3, 5, 7, 10, 20, 40 e 80 µm fornece dados de eficiência fracionária. A eficiência global é medida gravimetricamente — massa de pó retida pelo elemento dividida pela massa injetada. O pó de ensaio ISO A2 fino (ISO 12103-1, antes pó de ensaio SAE Fine) é injetado a uma taxa constante durante o ensaio. Um filtro secundário a jusante captura todas as partículas que atravessam o elemento ensaiado."
+    },
+    {
+      "heading": "Ensaio de restrição e capacidade",
+      "body": "A restrição (perda de carga em mbar ou Pa) é medida na vazão de ar nominal com transdutores de pressão diferencial calibrados. O ensaio é realizado em vazão constante até atingir a restrição terminal (conforme especificado pelo fabricante ou pelo cliente do ensaio). A capacidade de retenção de pó é o total de gramas de pó de ensaio retidos pelo elemento na restrição terminal, e serve de base para a previsão do intervalo de serviço."
+    },
+    {
+      "heading": "Por que importa para a proteção do motor",
+      "body": "A filtração da admissão de ar é a primeira e mais crítica defesa para a confiabilidade de um motor de combustão. Motores diesel aspiram 10,000–30,000 litros de ar por litro de combustível queimado; toda a contaminação desse ar — pó de sílica, partículas de carbono, pólen, particulado industrial — entra na câmara de combustão, a menos que o filtro de ar a intercepte. Uma única partícula de pó de sílica (dureza 7 Mohs) maior que a espessura do filme de óleo em um anel de pistão (tipicamente 3–10 µm) pode iniciar um desgaste abrasivo que se propaga por todo o intervalo de serviço. A ISO 5011 fornece a estrutura de medição que garante que um elemento de filtro de ar capturará partículas acima de seu limite de eficiência nominal em condições de operação definidas. Um elemento aprovado no ensaio de integridade ISO 5011 a 3× a pressão diferencial nominal não desenvolverá vazamentos de bypass em serviço normal. Sem certificação ISO 5011, não há base de engenharia para supor que um filtro de ar terá o desempenho declarado durante toda a sua vida útil."
+    },
+    {
+      "heading": "Aplicação em especificações de motores",
+      "body": "Os fabricantes OEM de motores especificam os elementos de filtro de ar por parâmetros de desempenho ISO 5011: eficiência inicial mínima (tipicamente 99.5%–99.9% no tamanho de partícula de ensaio), capacidade mínima de pó (em gramas de ACFTD por unidade de vazão de ar) e pressão mínima de colapso. Quando um OEM de tratores agrícolas especifica um elemento de filtro de ar para um motor diesel de 150 kW, o elemento deve atender aos parâmetros de desempenho ISO 5011 validados para a vazão de ar desse motor (tipicamente 600–900 m³/h) e seu ambiente de operação (a alta concentração de pó ambiente em aplicações agrícolas exige maior capacidade de pó do que equipamentos de construção urbana). Elementos de reposição devem demonstrar desempenho ISO 5011 equivalente — não apenas compatibilidade dimensional — para oferecer proteção equivalente ao motor. Um elemento que encaixa fisicamente, mas retém 30% menos pó, exigirá intervalos de troca 30% mais frequentes para evitar perda de desempenho por restrição ou falha por colapso."
+    },
+    {
+      "heading": "Qual é a diferença entre o ensaio de colapso e o ensaio de integridade na ISO 5011?",
+      "body": "O ensaio de integridade (ponto de bolha) aplica ar a baixa pressão ao elemento filtrante limpo enquanto o lado de saída está submerso em líquido; bolhas indicam vazamentos no meio filtrante ou nas vedações da junta. Ele detecta defeitos de fabricação e pequenas perfurações que permitiriam o bypass de partículas em serviço. O ensaio de colapso aplica pressão diferencial crescente (com líquido) até que o elemento apresente vazamento contínuo ou se deforme estruturalmente. O ensaio de colapso verifica se o elemento suporta picos de pressão de partida a frio, operação com filtro obstruído e intervalos de serviço excedidos sem bypass catastrófico. A ISO 5011 exige que os elementos resistam a pelo menos 3× sua pressão diferencial de operação nominal sem colapsar."
+    },
+    {
+      "heading": "Qual pressão diferencial nominal um elemento de filtro de ar pesado deve ter?",
+      "body": "Elementos de filtro de ar pesados para motores diesel normalmente têm pressões diferenciais de serviço nominais de 3–7 kPa (30–70 mbar) na vazão de ar máxima nominal. Indicadores de restrição de serviço (visuais ou eletrônicos) normalmente são acionados a 6–10 kPa. O ensaio de colapso ISO 5011 exige que o elemento resista a 20–35 kPa sem falha — oferecendo uma margem de segurança de 3–5× acima do ponto de acionamento do indicador de restrição. Equipamentos de mineração e construção que operam em ambientes extremamente empoeirados podem usar acionamentos de restrição mais baixos (4–5 kPa) para evitar a ingestão de pó através de um elemento obstruído em bypass. Compressores industriais de alto desempenho podem especificar pressões de colapso de até 100 kPa para prevenir falhas catastróficas em aplicações críticas de processo."
+    },
+    {
+      "heading": "Como a ISO 5011 se relaciona com a SAE J726 e a SAE J1539?",
+      "body": "A SAE J726 (código de ensaio de filtros de ar) e a ISO 5011 são normas tecnicamente equivalentes, harmonizadas pelo processo de normalização internacional. A SAE J726 é a versão norte-americana; a ISO 5011 é a versão internacional. Elas especificam os mesmos procedimentos de ensaio e os mesmos pós de ensaio e produzem resultados comparáveis. Equipamentos vendidos globalmente podem referenciar qualquer uma das duas. A SAE J1539 (código de ensaio de elementos de filtro de ar para respiros do cárter) cobre uma aplicação relacionada, porém distinta: elementos filtrantes de ventilação do cárter que impedem que a névoa de óleo do motor e os gases de blowby entrem na admissão de ar. Os elementos ELIMFILTERS MACROCORE™ são ensaiados e certificados segundo a ISO 5011 e a SAE J726 para aplicações de admissão de ar primária."
+    },
+    {
+      "heading": "A certificação ISO 5011 garante a compatibilidade com o meu motor?",
+      "body": "A certificação ISO 5011 garante que o elemento atende aos valores especificados de eficiência, capacidade de pó e integridade estrutural nas condições de ensaio da norma — ela não garante o encaixe dimensional nem a compatibilidade com o sistema de ar de um motor específico. O elemento também deve corresponder às dimensões de entrada/saída da carcaça do motor, à geometria de vedação (vedação radial, vedação axial ou painel plano) e às características de resistência ao fluxo de ar conforme a especificação do OEM. Ao adquirir elementos de reposição, verifique tanto os dados de desempenho ISO 5011 (eficiência ≥ especificação OEM, capacidade de pó ≥ especificação OEM, pressão de colapso ≥ especificação OEM) quanto a especificação dimensional frente ao código do elemento original."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Pó de ensaio",
+      "value": "ISO A2 fino (ISO 12103-1)"
+    },
+    {
+      "label": "Unidade de restrição",
+      "value": "mbar ou Pa"
+    },
+    {
+      "label": "Unidade de eficiência",
+      "value": "% gravimétrica ou fracionária"
+    },
+    {
+      "label": "Unidade de DHC",
+      "value": "gramas"
+    }
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-GRAVIMETRIC-EFFICIENCY",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-RESTRICTION",
+    "TERM-TEST-DUST",
+    "TERM-SAFETY-ELEMENT",
+    "TERM-PRE-CLEANER",
+    "TERM-CYCLONIC-SEPARATION"
+  ],
+  "relatedTopics": [
+    "airflow-engineering",
+    "air-restriction",
+    "dust-holding-capacity"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedArticles": [
+    "iso-5011",
+    "sae-j726-iso-5011-air-cleaner-test",
+    "airflow-engineering",
+    "air-intake-system-design"
+  ],
+  "commonMistakes": [
+    "Confundir a capacidade de pó de ensaio gravimétrica ISO 5011 com a vida útil real. O pó de laboratório (ISO Fine ou ISO Coarse) difere em distribuição de tamanho e composição do pó ambiente nas condições de cada obra.",
+    "Tratar os valores de restrição inicial como representativos da restrição em serviço. A restrição de um filtro aumenta significativamente à medida que o contaminante se acumula no meio — a restrição na vazão nominal com 0 g de carga de pó não é a condição de operação.",
+    "Escolher filtros de ar pela classificação nominal em mícrons em vez da eficiência gravimétrica ISO 5011 com tipo e concentração de pó especificados. As classificações nominais não são definidas pela ISO 5011 e não têm validade de engenharia."
+  ],
+  "faqs": [
+    {
+      "question": "Quais são os três procedimentos de ensaio principais especificados pela ISO 5011?",
+      "answer": "A ISO 5011 especifica três procedimentos de ensaio. (1) Ensaio de eficiência inicial: mede a eficiência de captura de partículas do filtro no início da vida útil com pó de ensaio ISO A2 fino (ISO 12103-1), expressa como eficiência gravimétrica (%) e eficiência fracionária em 10 canais de tamanho de partícula de 0.5 a 80 µm. (2) Ensaio de capacidade de pó: mede a massa total de pó de ensaio que o elemento consegue reter antes de atingir a restrição terminal máxima especificada — a principal base para a previsão do intervalo de serviço. (3) Ensaio de colapso/integridade: verifica a integridade estrutural sob pressão diferencial de 3–5× o diferencial de operação nominal, confirmando que o elemento não entrará em bypass na partida a frio ou com filtro obstruído."
+    },
+    {
+      "question": "Como a ISO 5011 mede a eficiência de filtração — gravimetricamente ou por contagem de partículas?",
+      "answer": "A ISO 5011 usa a eficiência gravimétrica como métrica principal: massa total de pó de ensaio retida pelo elemento dividida pela massa total injetada, expressa em porcentagem. A eficiência gravimétrica é complementada por dados de eficiência fracionária obtidos por contagem de partículas a montante e a jusante em 10 canais de tamanho (0.5, 1, 2, 3, 5, 7, 10, 20, 40 e 80 µm). O método gravimétrico capta o desempenho global de interceptação de massa; o método fracionário revela a eficiência de captura por classe de tamanho, crítica para prever a proteção do motor em tamanhos de partícula próximos da faixa de espessura do filme de óleo (3–10 µm)."
+    },
+    {
+      "question": "O que é o pó de ensaio ISO 12103-1 e por que ele é usado nos ensaios ISO 5011?",
+      "answer": "A ISO 12103-1 define pós de ensaio padronizados com distribuições de tamanho de partícula controladas para ensaios de desempenho de filtros. O ISO A2 Fine (antes pó de ensaio SAE Fine) é o material de desafio padrão nos ensaios ISO 5011 de filtros de ar primários, com diâmetro mediano de partícula de aproximadamente 5.5 µm e partículas de 0.97 a 180 µm. A composição padronizada — predominantemente sílica (quartzo), um abrasivo primário do motor — garante que os resultados de eficiência ISO 5011 de diferentes laboratórios e países sejam diretamente comparáveis. O A2 Fine se aproxima da distribuição de tamanho de partícula encontrada em ambientes de pó agrícolas e de construção."
+    },
+    {
+      "question": "Qual valor de restrição terminal a ISO 5011 usa para definir a capacidade de retenção de pó?",
+      "answer": "A capacidade de retenção de pó (DHC) ISO 5011 é medida até uma restrição terminal especificada pelo fabricante do filtro ou pelo cliente do ensaio — tipicamente o limite máximo de restrição de operação para a aplicação do motor. Filtros de ar de motores diesel pesados costumam especificar restrições terminais de 6.25 kPa (25 in. H₂O) para aplicações padrão e de 3.75 kPa (15 in. H₂O) para motores turboalimentados sensíveis. A DHC é expressa em gramas de pó de ensaio ISO A2 Fine nessa restrição terminal; DHC maior na mesma restrição terminal indica intervalos de serviço em campo mais longos antes do acionamento do indicador de restrição."
+    },
+    {
+      "question": "Como o ensaio de colapso ISO 5011 difere do ensaio de integridade (ponto de bolha)?",
+      "answer": "O ensaio de integridade aplica ar a baixa pressão ao elemento filtrante limpo enquanto a saída está submersa em líquido — bolhas indicam vazamentos no meio ou nas vedações da junta causados por defeitos de fabricação. O ensaio de colapso aplica pressão diferencial hidráulica crescente até que o elemento apresente vazamento contínuo ou se deforme estruturalmente, verificando a resistência estrutural em condições extremas de restrição (partida a frio, operação obstruída). A ISO 5011 exige que os elementos resistam a no mínimo 3× a restrição terminal de operação nominal sem colapsar. Os dois ensaios tratam de modos de falha diferentes: defeitos de fabricação (integridade) versus margem de projeto estrutural (colapso)."
+    },
+    {
+      "question": "Qual valor de restrição inicial é típico para elementos de filtro de ar diesel pesados segundo a ISO 5011?",
+      "answer": "Elementos de filtro de ar diesel pesados novos e limpos (elemento primário para motores de 10–15 L de cilindrada com vazão de ar nominal de 600–1,000 m³/h) têm restrição inicial tipicamente na faixa de 0.5–2.5 kPa (5–25 mbar ou 2–10 in. H₂O) nas condições de ensaio ISO 5011 na vazão nominal. A restrição inicial aumenta progressivamente à medida que o pó se acumula na superfície do meio. Os indicadores de troca de serviço normalmente são acionados a 6.25–7.5 kPa (25–30 in. H₂O) — a restrição terminal em que a eficiência de filtração começa a se estabilizar, mas a restrição ao fluxo pode prejudicar o desempenho do motor."
+    },
+    {
+      "question": "Como os dados ISO 5011 se traduzem em intervalos de serviço em campo para equipamentos de mineração e agrícolas?",
+      "answer": "A capacidade de retenção de pó (DHC) ISO 5011 fornece o dado de laboratório; o intervalo de serviço em campo exige uma etapa adicional: estimar a taxa de ingestão de pó do local. Se o motor de um trator agrícola aspira 800 m³/h de ar em uma concentração de pó ambiente de 10 mg/m³, a taxa de ingestão de pó = 800 × 10 = 8,000 mg/h (8 g/h). Um elemento MACROCORE™ com DHC ISO 5011 de 2,500 g atingiria a restrição terminal em aproximadamente 2,500/8 = 312 horas de operação nessas condições. Na prática, a variabilidade do ciclo de trabalho, a posição do acelerador e as flutuações do pó ambiente exigem que esse cálculo seja verificado pelo monitoramento em campo do estado do indicador de restrição."
+    },
+    {
+      "question": "Qual é a diferença entre as metodologias de ensaio ISO 5011 e ISO 29463?",
+      "answer": "A ISO 5011 se aplica a filtros de admissão de ar primários de motores de combustão interna e compressores — ensaiados com pó mineral padronizado ISO 12103-1 em vazões de ar representativas do motor, medindo eficiência gravimétrica e capacidade de retenção de pó. A ISO 29463 se aplica a filtros de alta eficiência de grau HEPA e ULPA — ensaiados com partículas monodispersas ou aerossol DEHS no tamanho de partícula mais penetrante (MPPS, 0.1–0.3 µm), medindo a eficiência de penetração em um único tamanho de partícula de pior caso. A ISO 5011 é adequada para a proteção do motor; a ISO 29463 é adequada para a proteção respiratória do operador em sistemas de ar de cabine, onde as frações de saúde submicrônicas PM2.5 e PM1 devem ser quantificadas."
+    },
+    {
+      "question": "A ISO 5011 trata de elementos filtrantes secundários (de segurança)?",
+      "answer": "A metodologia de ensaio ISO 5011 se aplica tanto a elementos de filtro de ar primários (externos) quanto secundários (de segurança/internos). Os elementos secundários são ensaiados separadamente nas mesmas condições. Eles são projetados para proteger o motor durante a substituição do elemento primário ou em caso de falha deste — não se destinam à filtração normal. A eficiência ISO 5011 dos elementos secundários normalmente é especificada entre ≥99.9% e ≥99.99% para o tamanho de partícula especificado pelo OEM, e a resistência ao colapso é especificada em um múltiplo maior da pressão diferencial de operação do que a dos elementos primários, pois eles podem ficar expostos a todo o diferencial de pressão se o elemento primário falhar."
+    },
+    {
+      "question": "Por que classificações nominais em mícrons não são aceitas como dados de desempenho ISO 5011?",
+      "answer": "Classificações nominais em mícrons (p. ex., \"filtro de 20 mícrons\") não são definidas pela ISO 5011 e não têm significado padronizado. Cada fabricante define classificações nominais com metodologias de ensaio diferentes — alguns usam a eficiência inicial a 50% de captura de partículas (o tamanho de partícula em que 50% das partículas passam), outros usam um tamanho de partícula arbitrário com eficiência não declarada. Sem especificar o pó de ensaio, a vazão de ar, a porcentagem de eficiência e o método de ensaio, uma classificação nominal em mícrons não pode ser comparada entre fabricantes. Os dados de eficiência gravimétrica e fracionária ISO 5011 são a única base tecnicamente válida para comparar o desempenho de filtros de ar em aplicações de proteção do motor."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment — Performance Testing of Air Filters for Internal Combustion Engines and Compressors, ISO Geneva",
+      "relevance": "Norma principal de ensaio de desempenho para filtros de admissão de ar de motores; define os métodos de ensaio de eficiência gravimétrica, capacidade de retenção de pó, restrição e colapso/integridade usados na qualificação global de filtros pelos OEMs."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust, ISO Geneva",
+      "relevance": "Especifica os graus de pó de ensaio padronizados (A1 Ultrafine, A2 Fine, A3 Medium, A4 Coarse) usados nos ensaios ISO 5011 de filtros de ar; o A2 Fine é o principal material de desafio para a qualificação de filtros de ar de motores pesados."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Test Code, SAE International",
+      "relevance": "Equivalente norte-americana da ISO 5011; metodologia de ensaio harmonizada para avaliação de desempenho de filtros de ar, frequentemente referenciada junto com a ISO 5011 na documentação da cadeia de suprimento de OEMs norte-americanos."
+    },
+    {
+      "category": "handbook",
+      "citation": "Donaldson Engineering Data Manual, Filtration Principles for Air Intake Systems, Donaldson Company Inc.",
+      "relevance": "Documento de referência do setor que explica o cálculo da capacidade de retenção de pó, a previsão do intervalo de serviço em campo a partir de dados ISO 5011 e a metodologia de especificação de indicadores de restrição para aplicações diesel pesadas."
+    }
+  ]
+}
