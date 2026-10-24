@@ -19,9 +19,9 @@ const equipment = [
 
 const readinessFactors = [
   ['Stored Fuel', 'Standby assets may sit for long periods while fuel is exposed to storage time, tank breathing, condensation and transfer contamination.'],
-  ['Start Readiness', 'A generator can spend most of its life waiting, then be required to accept load immediately when utility power is unavailable.'],
+  ['Start and Transfer Readiness', 'A standby generator may have to start and accept facility load after long idle periods. Battery, controls and automatic transfer switch condition must be checked separately from engine filtration.'],
   ['Thermal Control', 'Cooling-system condition becomes critical once the engine moves from standby to sustained load and heat rejection increases rapidly.'],
-  ['Duty Transition', 'Prime-power and emergency sets can move between low utilization, testing and extended operation, changing filtration demand across the same asset.'],
+  ['Load Testing and Low-Load Duty', 'Standby sets exercised with little or no load may develop wet stacking in some diesel engines. Use the manufacturer-approved testing and loading procedure; filtration does not correct low-load operating conditions.'],
 ] as const;
 
 const protection = [
@@ -44,7 +44,7 @@ const ownerReadiness = [
   ['Generator owner', 'Define the cost of lost power, critical loads and spare-part coverage. Confirm who can authorize maintenance and what emergency service is available.'],
   ['Facility maintenance manager', 'Plan calendar-based inspections, fuel storage and water checks, safe service access, documented test schedules and corrective work before the next power event.'],
   ['Reliability engineer', 'Review stored-fuel condition, engine alerts, measured restriction where instrumented, load-test results and OEM application evidence; separate engine filtration from controls and electrical faults.'],
-  ['Service technician', 'Apply lockout and manufacturer isolation procedures, verify the filter and seal, prevent contamination during replacement and document leak checks and return-to-ready testing.'
+  ['Service technician', 'Disable unintended automatic starting and follow the OEM isolation procedure before servicing. Verify filter and seal, prevent contamination and document leak checks, safe recommissioning and restoration of the specified standby mode.'
   ]
 ] as const;
 
@@ -52,19 +52,20 @@ const consequences = [
   ['Starting Reliability', 'Fuel, air and lubrication condition influence whether the engine can transition from standby to stable operation when demanded.'],
   ['Load Acceptance', 'A generator must move from start-up into electrical load without contamination-related restrictions compromising protected engine systems.'],
   ['Fuel-System Integrity', 'Stored-fuel contamination can reach pumps and injectors before an emergency event exposes the weakness.'],
-  ['Thermal Stability', 'Cooling-system cleanliness supports controlled heat rejection during sustained generator load.'],
+  ['Thermal Stability', 'Cooling-fluid condition and unobstructed heat rejection matter under load. A coolant filter is appropriate only where specified by the generator-engine OEM.'],
   ['Maintenance Readiness', 'Inspection and service decisions should be completed before an outage turns maintenance access into an operating constraint.'],
-  ['Power Availability', 'The filtration strategy supports the larger requirement: keeping the generating asset ready to deliver power when the facility depends on it.'],
+  ['Power Availability', 'Filtration manages defined engine contamination risks. Electrical availability also depends on batteries, controls, alternator, protection, switching and verified testing.'],
 ] as const;
 
 const questions = [
-  ['What filtration systems are most important on generator sets?', 'Fuel and water separation, air intake, lubrication and cooling-system protection are common priorities on diesel generator sets. The correct priority depends on whether the unit is standby or prime power, fuel-storage conditions, environment, engine configuration, duty profile and maintenance access.'],
+  ['What filtration systems are most important on generator sets?', 'Diesel-fuel particulate control, approved fuel/water separation, engine air intake and lubrication are frequent filtration priorities. Cooling-system filtration applies only where an OEM-approved filter circuit exists. Selection depends on the engine, duty, stored-fuel conditions and verified application.'],
   ['Why is standby generator filtration different from continuously operated equipment?', 'A standby generator can remain idle for long periods while fuel, fluids, seals and environmental exposure continue to change. When called, the asset may have to start and accept load immediately. Filtration and maintenance planning should therefore account for stored-fluid condition and readiness, not only running hours.'],
   ['How can stored generator fuel become contaminated?', 'Fuel can acquire particulate or water through bulk storage, tank breathing, condensation, transfer equipment, maintenance activity and extended storage. The protection strategy should consider the complete fuel path before fuel reaches sensitive pumps and injectors.'],
-  ['Why does cooling-system protection matter in power generation?', 'Generator engines can move rapidly from standby to sustained thermal load. Cooling-system contamination, scale, corrosion debris or degraded fluid condition can interfere with heat transfer and system stability, so coolant protection should be treated as part of asset readiness.'],
+  ['Why does cooling-system protection matter in power generation?', 'Generator engines can transition quickly to substantial thermal load. Coolant quality, radiator airflow, heat exchanger condition and OEM maintenance requirements matter. A coolant filter must not be assumed compatible unless a specified circuit and application exist.'],
   ['Should generator filters be selected only by operating hours?', 'No. Running hours do not capture stored-fuel condition, calendar aging, environmental dust, fluid degradation, standby duration, testing frequency or the consequences of an emergency start. Selection and service planning should reflect the actual duty profile.'],
   ['What information is needed to identify the correct generator filter?', 'Use the generator-set or engine model, protected system, standby or prime-power duty, fuel-storage conditions, environment, OEM or existing part reference, dimensions when available and validated application evidence.'],
-  ['Can ELIMFILTERS identify a generator filter from an OEM or part number?', 'Yes. If an OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the generator set, engine, protected system and operating duty.'],
+  ['Can ELIMFILTERS identify a generator filter from an OEM or part number?', 'A known OEM or filter reference is a starting point for searching candidate cross-references in Part Search. Final compatibility must be verified against generator or engine identity, dimensions, protected system and documented application evidence; an unverified cross-reference is not an approved fitment.'],
+  ['Does replacing the filter prove that a standby generator will start and transfer the load?', 'No. Filtration controls specific contamination risks in engine systems. Emergency readiness also requires OEM-directed starting-system, battery, charging, controls, ATS, protection and appropriate load-testing checks performed by qualified personnel.']
 ] as const;
 
 export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
@@ -160,7 +161,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           </div>
           <div>
             <p style={directText}>{powerGenerationText(lang, "Power-generation filtration starts with the generator set and its readiness requirement, then resolves stored-fuel condition, protected system, standby or prime-power duty, environmental exposure, maintenance access and validated application evidence. A filter should not be selected from running hours or generator category alone.")}</p>
-            <p style={directText} className="powerScopeText">{powerGenerationText(lang, "Scope: filtration does not replace battery, starting system, switchgear, automatic transfer switch or electrical load-testing inspections. Cooling-system filters must be specified for the engine and coolant chemistry.")}</p>
+            <p style={directText} className="powerScopeText">{powerGenerationText(lang, "Scope: filtration reduces specified contamination risks but cannot verify generator start, load acceptance or automatic transfer. Battery, controls, ATS, alternator, electrical protection and OEM-approved load tests require separate checks. Coolant filters require a specified compatible circuit and coolant chemistry.")}</p>
           </div>
         </div>
       </section>
