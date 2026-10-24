@@ -72,7 +72,7 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         url: pageUrl,
         name: lang === 'es' ? 'Sistemas de filtración para construcción' : lang === 'pt' ? 'Sistemas de filtração para construção' : 'Construction Filtration Systems',
         inLanguage: lang === 'pt' ? 'pt-BR' : lang,
-        description: 'Construction filtration systems and contamination-control architecture for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive jobsite conditions.',
+        description: constructionText(lang, 'Construction filtration systems and contamination-control architecture for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive jobsite conditions.'),
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
         about: [
@@ -167,9 +167,9 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <div style={equipmentCopy}>
             <h2 id="equipment-title" style={sectionTitle}>{constructionText(lang, "Different machines. Different jobsite exposure.")}</h2>
             <p style={wideText}>{constructionText(lang, "An excavator, loader and grader can operate yards apart and still require different filtration priorities because their airflow, hydraulic load, duty cycle and service access are not the same.")}</p>
-            <div role="list" aria-label="Construction equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{constructionText(lang, asset)}</span></div>)}</div>
+            <div role="list" aria-label={constructionText(lang, "Construction equipment applications")} style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{constructionText(lang, asset)}</span></div>)}</div>
           </div>
-          <div style={equipmentMedia}><img src="/images/construccion.avif" alt="Construction equipment operating in severe jobsite conditions" style={equipmentImage} /></div>
+          <div style={equipmentMedia}><img src="/images/construccion.avif" alt={constructionText(lang, "Construction equipment operating in severe jobsite conditions")} style={equipmentImage} /></div>
         </div>
       </section>
 
