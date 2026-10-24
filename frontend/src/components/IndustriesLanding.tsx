@@ -1,4 +1,5 @@
 import { PageHeader } from '@/components/PageHeader';
+import styles from './IndustriesLanding.module.css';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
@@ -20,6 +21,49 @@ const INDUSTRIES = [
   { slug: 'waste-municipal', label: 'Waste & Municipal Fleets', image: '/images/wasted-municipal.avif', summary: 'Municipal fleet filtration for stop-start operation, dust ingestion, hydraulic load, and public-service uptime.' },
   { slug: 'bus-coach', label: 'Bus & Coach', image: '/images/bus-hero.avif', summary: 'Bus and coach filtration for passenger uptime, cabin-air quality, engine protection, and predictable route service.' },
   { slug: 'automotive', label: 'Automotive & Light Duty', image: '/images/Automotive-1.avif', summary: 'Light-duty filtration for service reliability, contamination control, and high-volume application coverage.' },
+] as const;
+
+
+const INDUSTRY_RISKS: Record<(typeof INDUSTRIES)[number]['slug'], string> = {
+  mining: 'Abrasive dust · hydraulic cleanliness',
+  agriculture: 'Harvest dust · seasonal duty',
+  construction: 'Dust loading · hydraulic demand',
+  'oil-gas': 'Bulk-fuel quality · remote service',
+  marine: 'Fuel water · humid environments',
+  'power-generation': 'Stored fuel · standby readiness',
+  'trucks-fleets': 'Diesel cleanliness · route availability',
+  manufacturing: 'Fluid cleanliness · plant continuity',
+  railway: 'Vibration · extended service cycles',
+  'waste-municipal': 'Stop-start duty · hydraulic load',
+  'bus-coach': 'Cabin air · scheduled operations',
+  automotive: 'OEM fit · service reliability',
+};
+
+const FIELD_CASES = [
+  {
+    slug: 'mining', label: 'Mining',
+    exposure: 'Abrasive dust and suspended hydraulic particles',
+    check: 'Air-intake restriction and fluid cleanliness against the equipment target',
+    consequence: 'Premature wear of intake and hydraulic components',
+  },
+  {
+    slug: 'trucks-fleets', label: 'Commercial Truck Fleets',
+    exposure: 'Water and particulate contamination in diesel fuel',
+    check: 'Fuel-system stages, separator drainage history and restriction symptoms',
+    consequence: 'Fuel-system faults and unplanned vehicle downtime',
+  },
+  {
+    slug: 'power-generation', label: 'Power Generation',
+    exposure: 'Contamination during fuel storage and intermittent operation',
+    check: 'Tank condition, fuel sampling records and readiness for starting',
+    consequence: 'Failure to start or loss of availability when needed',
+  },
+  {
+    slug: 'manufacturing', label: 'Manufacturing',
+    exposure: 'Hydraulic particles and moisture in compressed-air systems',
+    check: 'Fluid cleanliness per component requirements and air-treatment condition',
+    consequence: 'Control faults, component wear and process interruption',
+  },
 ] as const;
 
 const FAQS = [
@@ -124,8 +168,8 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
         <div style={heroOverlay} />
         <div style={heroInner}>
           <h1 style={heroTitle}>{industryText(lang, "Industrial Filtration")}<br /><span style={{ color: '#FFF12D' }}>{industryText(lang, "By Industry")}</span></h1>
-          <p style={heroPromise}>{industryText(lang, "Built for severe-duty operating environments.")}</p>
-          <p style={heroLead}>{industryText(lang, "Different industries expose equipment to different contamination risks. ELIMFILTERS matches filtration and contamination-control architectures to the machine, environment, duty cycle, and operational consequences of failure.")}</p>
+          <p style={heroPromise}>{industryText(lang, "Selection starts with the machine and its operating conditions.")}</p>
+          <p style={heroLead}>{industryText(lang, "Dust, water, heat and service conditions create different failure risks. Explore the industry, identify the exposed systems and verify the OEM requirements before selecting a filter.")}</p>
           <div style={heroActions}>
             <Link href="/contact/" style={yellowButton}>{industryText(lang, "PROTECT MY EQUIPMENT")}</Link>
             <a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "FIND MY FILTER")}</a>
@@ -133,46 +177,62 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
         </div>
       </section>
 
-      <section style={answerSection} aria-labelledby="industries-answer-title">
-        <div style={answerGrid}>
-          <div style={stickyHeading}><p style={eyebrow}>{industryText(lang, "DIRECT ANSWER")}</p><h2 id="industries-answer-title" style={sectionTitle}>{industryText(lang, "What industries does ELIMFILTERS support?")}</h2></div>
+      <section style={answerSection} aria-labelledby="industry-context-title">
+        <div className={styles.introGrid}>
           <div>
-            <p style={leadText}>{industryText(lang, "ELIMFILTERS provides industrial filtration and contamination-control architectures for 12 markets: mining, agriculture, construction, oil & gas, marine, power generation, commercial truck fleets, manufacturing, railway, waste and municipal fleets, bus and coach operations, and automotive and light-duty applications.")}</p>
-            <p style={bodyText}>{industryText(lang, "Filtration requirements change with dust concentration, water exposure, fuel quality, temperature, load cycle, system sensitivity, idle time, and service interval. Industry is therefore the first context layer—not the final product selection.")}</p>
+            <p style={eyebrow}>{industryText(lang, "OPERATING CONTEXT")}</p>
+            <h2 id="industry-context-title" style={sectionTitle}>{industryText(lang, "Different duty cycles. Different failure exposure.")}</h2>
           </div>
-        </div>
-      </section>
-
-      <section style={section}>
-        <div style={twoCol}>
-          <div style={stickyHeading}><p style={eyebrow}>{industryText(lang, "WHY INDUSTRY MATTERS")}</p><h2 style={industryRiskTitle}>{industryText(lang, "The same filter does not face the same failure risk.")}</h2></div>
           <div>
             <p style={leadText}>{industryText(lang, "A mining loader, a marine engine, a standby generator, and a city waste truck may share filter categories, but they do not share the same operating reality.")}</p>
-            <p style={bodyText}>{industryText(lang, "The correct protection strategy connects the contamination mechanism to the system being protected, the equipment duty cycle, the maintenance environment, and the consequence of failure.")}</p>
+            <p style={bodyText}>{industryText(lang, "Before comparing elements, document the equipment and engine, service interval, contaminant source, current filter reference and consequence of a shutdown. Industry is the starting context, not proof of fit.")}</p>
           </div>
         </div>
       </section>
 
       <section style={marketSection} aria-labelledby="markets-title">
         <div style={wrapWide}>
-          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}><p style={eyebrow}>{industryText(lang, "12 OPERATING MARKETS")}</p><h2 id="markets-title" style={sectionTitle}>{industryText(lang, "Select the industry. Understand the risk. Protect the asset.")}</h2></div>
-          <div style={marketGrid}>
+          <div style={{ maxWidth: '1320px', margin: '0 auto 2.4rem' }}><p style={eyebrow}>{industryText(lang, "12 OPERATING MARKETS")}</p><h2 id="markets-title" style={sectionTitle}>{industryText(lang, "Select the industry. Understand the risk. Protect the asset.")}</h2></div>
+          <div className={styles.marketGrid}>
             {INDUSTRIES.map((industry) => (
-              <Link key={industry.slug} href={lang === 'en' ? `/industries/${industry.slug}/` : `/${lang}/industries/${industry.slug}/`} style={marketCard} aria-label={lang === 'es' ? `Explorar filtración y protección de activos: ${industryText(lang, industry.label)}` : lang === 'pt' ? `Explorar filtração e proteção de ativos: ${industryText(lang, industry.label)}` : `Explore ${industry.label} filtration and asset protection`}>
+              <Link key={industry.slug} href={lang === 'en' ? `/industries/${industry.slug}/` : `/${lang}/industries/${industry.slug}/`} style={marketCard} className={styles.marketCard} aria-label={lang === 'es' ? `Explorar filtración y protección de activos: ${industryText(lang, industry.label)}` : lang === 'pt' ? `Explorar filtração e proteção de ativos: ${industryText(lang, industry.label)}` : `Explore ${industry.label} filtration and asset protection`}>
                 <img src={industry.image} alt={`${industryText(lang, industry.label)} ${lang === 'es' ? 'equipo industrial' : lang === 'pt' ? 'equipamento industrial' : 'industrial equipment'}`} style={marketImage} loading="lazy" />
                 <div style={marketOverlay} />
-                <div style={marketContent}><h3 style={marketTitle}>{industryText(lang, industry.label)}</h3><span style={explore}>{industryText(lang, "EXPLORE INDUSTRY →")}</span></div>
+                <div style={marketContent}><h3 style={marketTitle}>{industryText(lang, industry.label)}</h3><p className={styles.marketRisk}>{industryText(lang, INDUSTRY_RISKS[industry.slug])}</p><span style={explore}>{industryText(lang, "EXPLORE INDUSTRY →")}</span></div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      <section style={riskCasesSection} aria-labelledby="field-cases-title">
+        <div className={styles.sectionShell}>
+          <p style={eyebrow}>{industryText(lang, "FIELD DECISION EXAMPLES")}</p>
+          <h2 id="field-cases-title" style={{ ...sectionTitle, maxWidth: '950px' }}>{industryText(lang, "What should maintenance and risk teams verify?")}</h2>
+          <p style={{ ...bodyText, maxWidth: '900px', marginTop: '1.25rem' }}>{industryText(lang, "Illustrative checkpoints, not universal specifications. Confirm targets and service limits with the equipment manufacturer and application data.")}</p>
+          <div className={styles.caseGrid}>
+            {FIELD_CASES.map((item) => (
+              <article key={item.slug} className={styles.caseCard}>
+                <div className={styles.caseTop}>
+                  <h3 className={styles.caseTitle}>{industryText(lang, item.label)}</h3>
+                  <Link className={styles.caseLink} href={lang === 'en' ? `/industries/${item.slug}/` : `/${lang}/industries/${item.slug}/`}>{industryText(lang, "EXPLORE INDUSTRY →")}</Link>
+                </div>
+                <dl className={styles.caseFacts}>
+                  <div><dt>{industryText(lang, "Exposure")}</dt><dd>{industryText(lang, item.exposure)}</dd></div>
+                  <div><dt>{industryText(lang, "Field check")}</dt><dd>{industryText(lang, item.check)}</dd></div>
+                  <div><dt>{industryText(lang, "Operational consequence")}</dt><dd>{industryText(lang, item.consequence)}</dd></div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={standardsSection}>
-        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
           <p style={eyebrow}>{industryText(lang, "ENGINEERING DECISION FACTORS")}</p>
           <h2 style={{ ...sectionTitle, marginBottom: '1.5rem', maxWidth: '980px' }}>{industryText(lang, "What actually changes the filtration decision?")}</h2>
-          <p style={{ ...bodyText, maxWidth: '860px', marginBottom: '2rem' }}>{industryText(lang, "Industry tells us where the equipment works. It does not, by itself, determine the filter. The engineering decision becomes useful only when operating conditions are translated into measurable contamination load, system sensitivity, service reality, and failure consequence.")}</p>
+          <p style={{ ...bodyText, maxWidth: '860px', marginBottom: '2rem' }}>{industryText(lang, "A cross-reference alone does not validate flow, restriction, sealing, bypass settings or service life. Use the following checks to define the requirement before approving a replacement.")}</p>
           <div style={standardGrid}>
             <div style={standardCard}><span style={factorNumber}>01</span><h3 style={standardTitle}>{industryText(lang, "Contamination Load")}</h3><p style={standardText}>{industryText(lang, "Particle size, concentration, water content, debris source, and ingestion rate determine what the filtration system must remove and how quickly its capacity can be consumed.")}</p></div>
             <div style={standardCard}><span style={factorNumber}>02</span><h3 style={standardTitle}>{industryText(lang, "Duty Cycle & Environment")}</h3><p style={standardText}>{industryText(lang, "Load, idle time, temperature, vibration, humidity, dust exposure, and operating hours change restriction growth, fluid condition, and the rate at which contamination reaches critical components.")}</p></div>
@@ -185,29 +245,27 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={impactGrid}>
-          <div style={impactHeading}>
-            <p style={eyebrow}>{industryText(lang, "ENGINEERING IMPACT")}</p>
-            <h2 id="impact-title" style={impactTitle}>{industryText(lang, "Protection that reduces waste at the source.")}</h2>
+          <div>
+            <p style={eyebrow}>{industryText(lang, "MAINTENANCE AND RISK CONTROL")}</p>
+            <h2 id="impact-title" style={impactTitle}>{industryText(lang, "Track the condition. Document the decision.")}</h2>
           </div>
           <div>
-            <p style={impactLead}>{industryText(lang, "Contamination does more than damage components. It can shorten fluid life, increase maintenance frequency, accelerate replacement demand, and create avoidable material and energy waste across the equipment lifecycle.")}</p>
-            <p style={bodyText}>{industryText(lang, "ELIMFILTERS technologies are engineered to help control that burden by keeping critical systems cleaner for longer. The objective is not simply to capture particles, but to protect the useful life of components, fluids, and equipment while reducing unnecessary service intervention and premature replacement.")}</p>
-            <p style={bodyText}>{industryText(lang, 'For engineering-level detail on dust exposure, contamination mechanisms, and system-level technical guidance by industry, see the ')}<Link href="/knowledge-center/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>{industryText(lang, "Knowledge Center Industries reference")}</Link>.</p>
+            <p style={impactLead}>{industryText(lang, "Filter selection is only one control. Maintenance teams also need operating evidence to distinguish contamination from installation, component or service problems.")}</p>
             <div style={impactOutcomes}>
-              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "LONGER USEFUL LIFE")}</span><p style={impactOutcomeText}>{industryText(lang, "Protect components and fluids from contamination-driven degradation.")}</p></div>
-              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "LESS SERVICE WASTE")}</span><p style={impactOutcomeText}>{industryText(lang, "Reduce avoidable replacement and maintenance activity caused by premature contamination-related wear.")}</p></div>
-              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "LOWER OPERATING BURDEN")}</span><p style={impactOutcomeText}>{industryText(lang, "Support more stable service intervals and fewer disruption-driven interventions.")}</p></div>
+              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Intake and fluid condition")}</span><p style={impactOutcomeText}>{industryText(lang, "Monitor air-filter restriction and, where required, fluid cleanliness against an application-specific target.")}</p></div>
+              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Fuel and recurring symptoms")}</span><p style={impactOutcomeText}>{industryText(lang, "Record water in separators, abnormal restriction and recurring contamination after service.")}</p></div>
+              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Asset availability")}</span><p style={impactOutcomeText}>{industryText(lang, "Connect inspections and interventions to operating hours, failure modes and the cost of an unexpected stop.")}</p></div>
             </div>
-            <Link href="/technologies/" style={{ ...yellowButton, marginTop: '1.75rem' }}>{industryText(lang, "EXPLORE ELIMFILTERS TECHNOLOGIES")}</Link>
+            <p style={{ ...bodyText, marginTop: '1.5rem' }}>{industryText(lang, 'For engineering-level detail on dust exposure, contamination mechanisms, and system-level technical guidance by industry, see the ')}<Link href="/knowledge-center/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>{industryText(lang, "Knowledge Center Industries reference")}</Link>.</p>
           </div>
         </div>
       </section>
 
       <section style={pathSection}>
-        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
           <p style={eyebrow}>{industryText(lang, "FROM OPERATING ENVIRONMENT TO PRODUCT")}</p>
           <h2 style={{ ...sectionTitle, maxWidth: '900px' }}>{industryText(lang, "Translate industry risk into the correct protection architecture.")}</h2>
-          <div style={pathGrid}>
+          <div style={pathGrid} className={styles.pathGrid}>
             {[
               ['01', 'Industry', 'Establish the operating environment, equipment type, and duty cycle.'],
               ['02', 'Contamination Risk', 'Identify particles, water, thermal stress, bypass risk, or other failure mechanisms.'],
@@ -222,7 +280,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={conversionSection} aria-labelledby="conversion-title">
-        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
           <p style={eyebrow}>{industryText(lang, "CHOOSE YOUR NEXT STEP")}</p>
           <h2 id="conversion-title" style={{ ...sectionTitle, marginBottom: '2.25rem' }}>{industryText(lang, "What do you need to do?")}</h2>
           <div style={conversionGrid}>
@@ -243,8 +301,8 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>{industryText(lang, "Start with the operating reality. End with the right protection.")}</h2>
-          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>{industryText(lang, "Move from industry context to protection system, technology, and product identification without treating every duty cycle as the same application.")}</p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>{industryText(lang, "From operating conditions to a verified application.")}</h2>
+          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>{industryText(lang, "Have an OEM reference? Use Part Search. Need technical review? Share the equipment, duty cycle, contamination symptoms and maintenance history.")}</p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}><Link href="/systems/" style={yellowButton}>{industryText(lang, "PROTECTION SYSTEMS")}</Link><Link href="/technologies/" style={darkButton}>{industryText(lang, "TECHNOLOGIES")}</Link><a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "PART SEARCH")}</a></div>
         </div>
       </section>
@@ -258,29 +316,26 @@ const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100
 const hero: CSSProperties = { minHeight: '88vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: VIDEO_HERO_TREATMENT.opacity };
 const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: VIDEO_HERO_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const heroInner: CSSProperties = { maxWidth: '1320px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em', lineHeight: 0.9, fontSize: 'clamp(3.1rem, 7.2vw, 6.8rem)', maxWidth: '1050px', margin: 0, textTransform: 'uppercase' };
 const heroPromise: CSSProperties = { margin: '1.45rem 0 0', maxWidth: '760px', color: '#fff', fontFamily: displayFont, fontSize: 'clamp(1.05rem, 1.8vw, 1.35rem)', lineHeight: 1.35, fontWeight: 700, letterSpacing: '-0.01em' };
 const heroLead: CSSProperties = { marginTop: '0.9rem', maxWidth: '820px', color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(1rem, 1.7vw, 1.18rem)', lineHeight: 1.68, fontWeight: 500 };
 const heroActions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.85rem', marginTop: '2rem' };
-const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.72rem', lineHeight: 1, letterSpacing: '0.2em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
+const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.72rem', lineHeight: 1, letterSpacing: '0.12em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
 const answerSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.015)' };
-const answerGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(2rem, 6vw, 5rem)' };
-const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(2rem, 6vw, 5rem)' };
-const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.98, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
-const industryRiskTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.3rem, 4.6vw, 4.14rem)' };
+const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 1.05, letterSpacing: '-0.035em', margin: 0, textTransform: 'none', fontWeight: 700, textWrap: 'balance' };
 const leadText: CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: '0 0 1.5rem' };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.62)', fontSize: '1rem', lineHeight: 1.78, margin: 0 };
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 const marketSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)', borderTop: '1px solid rgba(255,255,255,0.06)' };
-const marketGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '1rem' };
-const marketCard: CSSProperties = { minHeight: '390px', position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
+const marketCard: CSSProperties = { position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
 const marketImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.94, filter: 'brightness(0.96) contrast(1.03)' };
 const marketOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.08) 48%, rgba(0,0,0,0.72) 100%)' };
 const marketContent: CSSProperties = { position: 'absolute', inset: 0, padding: '1.45rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' };
 const marketTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.45rem, 2vw, 1.95rem)', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase', fontWeight: 700, textShadow: '0 2px 18px rgba(0,0,0,0.8)' };
 const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.11em', fontSize: '0.68rem', marginTop: '0.8rem' };
+const riskCasesSection: CSSProperties = { padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 4vw, 4rem)', borderTop: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.015)' };
 const standardsSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.025)', borderTop: '1px solid rgba(255,241,45,0.1)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
 const standardGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' };
 const standardCard: CSSProperties = { background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.09)', padding: '1.7rem', minHeight: '250px' };
@@ -291,18 +346,16 @@ const engineeringPrinciple: CSSProperties = { marginTop: '1.5rem', padding: '2re
 const engineeringPrincipleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.78rem', lineHeight: 1, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0 };
 const engineeringPrincipleText: CSSProperties = { fontFamily: bodyFont, color: 'rgba(255,255,255,0.9)', fontSize: 'clamp(1.18rem, 1.9vw, 1.55rem)', lineHeight: 1.65, letterSpacing: '-0.01em', textAlign: 'left', margin: 0, maxWidth: '100%' };
 const impactSection: CSSProperties = { padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(255,241,45,0.08), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0) 100%)' };
-const impactGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2.5rem, 7vw, 6rem)', alignItems: 'start' };
-const impactHeading: CSSProperties = { position: 'sticky', top: '7rem' };
-const stickyHeading: CSSProperties = { position: 'sticky', top: '7rem' };
-const impactTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.5rem, 5vw, 4.8rem)', maxWidth: '700px' };
+const impactGrid: CSSProperties = { maxWidth: '1320px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2.5rem, 5vw, 5rem)', alignItems: 'start' };
+const impactTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.1rem, 4vw, 3.8rem)', maxWidth: '700px' };
 const impactLead: CSSProperties = { ...leadText, fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)' };
 const impactOutcomes: CSSProperties = { display: 'grid', gap: '0', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.12)' };
-const impactOutcome: CSSProperties = { padding: '1.2rem 0', borderBottom: '1px solid rgba(255,255,255,0.12)', display: 'grid', gridTemplateColumns: 'minmax(150px, 0.42fr) minmax(0, 1fr)', gap: '1rem' };
+const impactOutcome: CSSProperties = { padding: '1.2rem 0', borderBottom: '1px solid rgba(255,255,255,0.12)', display: 'grid', gridTemplateColumns: 'minmax(0, 0.42fr) minmax(0, 1fr)', gap: '1rem' };
 const impactOutcomeLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em' };
 const impactOutcomeText: CSSProperties = { ...bodyText, color: 'rgba(255,255,255,0.78)', fontSize: '0.94rem' };
 const pathSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.06)' };
-const pathGrid: CSSProperties = { display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,0.08)', marginTop: '2.5rem', border: '1px solid rgba(255,255,255,0.08)' };
-const pathCard: CSSProperties = { background: '#050505', padding: '1.5rem', minHeight: '210px', flex: '1 1 190px', maxWidth: '300px', minWidth: 0 };
+const pathGrid: CSSProperties = { background: 'rgba(255,255,255,0.08)', marginTop: '2.5rem', border: '1px solid rgba(255,255,255,0.08)' };
+const pathCard: CSSProperties = { background: '#050505', padding: '1.5rem', minHeight: '210px', minWidth: 0 };
 const pathNumber: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em' };
 const pathTitle: CSSProperties = { fontFamily: displayFont, textTransform: 'uppercase', fontSize: '1.05rem', margin: '1.2rem 0 0.65rem' };
 const pathText: CSSProperties = { ...bodyText, fontSize: '0.9rem' };
