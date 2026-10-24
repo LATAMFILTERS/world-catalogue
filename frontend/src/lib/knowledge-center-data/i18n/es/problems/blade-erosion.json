@@ -1,0 +1,84 @@
+{
+  "id": "PROB-BLADE-EROSION",
+  "slug": "blade-erosion",
+  "name": "Erosión de álabes",
+  "category": "mechanical-wear",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "metaDescription": "Erosión de álabes de compresores/turbinas: impacto de partículas abrasivas, pérdida de recubrimiento, degradación de la eficiencia aerodinámica. Estrategia de protección para las series FH/FG.",
+  "definition": "La erosión de álabes es la pérdida progresiva de material de las superficies de los álabes de compresores y turbinas causada por el impacto a alta velocidad de partículas abrasivas (sílice, arena, óxidos metálicos) presentes en el aire de entrada o en el gas de proceso. Las partículas que golpean los bordes de ataque de los álabes a 5,000-15,000 RPM crean daños por microimpacto y eliminan progresivamente material del álabe, recubrimientos superficiales y el acabado aerodinámico. La erosión de álabes reduce la eficiencia del compresor (el caudal volumétrico cae un 5-15%), aumenta el consumo de energía un 10-25%, eleva la temperatura de salida 20-40°C y termina causando la falla del álabe (fractura del álabe por concentración de tensiones en el punto de erosión). El daño por erosión es acumulativo e irreversible; una vez iniciada, la tasa de erosión se acelera exponencialmente a medida que aumentan la rugosidad superficial y la turbulencia y se profundiza la concentración de tensiones.",
+  "relatedStandards": [
+    "ISO 5011",
+    "SAE J1539",
+    "ISO 12103"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Diseño de los álabes del compresor y vulnerabilidad a la erosión",
+      "body": "Los álabes de los compresores centrífugos (series FH/FG) son perfiles aerodinámicos optimizados para la eficiencia de flujo y el aumento de presión. Parámetros de diseño del álabe: (1) Radio del borde de ataque de 0.3-1.0 mm (afilado para minimizar la separación del flujo); (2) Acabado superficial de 0.4-1.6 µm Ra (acabado aerodinámico pulido que minimiza la turbulencia de la capa límite); (3) Material del álabe: aleación de aluminio (serie 7xxx, límite elástico típico de 450-500 MPa) o aleación de titanio (etapas de alta velocidad >10,000 RPM); (4) Holgura entre el álabe y la carcasa de 0.2-0.5 mm (tolerancia estrecha que evita las fugas por recirculación). Vulnerabilidad a la erosión: el borde de ataque afilado (radio de 0.3-1 mm) y la superficie pulida (acabado de 0.4 µm) están optimizados para el desempeño aerodinámico, NO para la resistencia a la erosión. Cuando partículas abrasivas de 10-50 µm a 100+ m/s golpean el borde de ataque, la fuerza del impacto crea una deformación plástica instantánea y remoción de material. La energía cinética de la partícula (0.5 × m × v²) concentrada en un área de impacto de escala mm² crea una tensión local de 5-20× el límite elástico y supera el límite elástico del material. Un borde de ataque de 0.3 mm de radio golpeado por una partícula de 20 µm a 150 m/s genera una tensión de contacto >3000 MPa (el material cede y se forma un microcráter). Los impactos repetidos (el álabe gira 5,000-15,000 veces/min, expuesto de forma continua al flujo de partículas) acumulan microcráteres en un patrón de erosión visible en 100-500 horas de operación en entornos arenosos. Ejemplo real: compresor serie FG en una faena minera, con aire de entrada del rajo abierto (entorno de mucho polvo); la erosión de álabes redujo la eficiencia un 20% en 200 horas y obligó a reconstruir el compresor; costo de €18,000-25,000 en piezas + €8,000 de mano de obra + €12,000 de producción perdida por la parada."
+    },
+    {
+      "heading": "Avance del daño por erosión y pérdida de eficiencia",
+      "body": "La erosión de álabes avanza en tres etapas: (1) Erosión inicial (0-100 h): se forman cráteres de microimpacto en el borde de ataque, la rugosidad superficial aumenta de 0.4 µm a 2-5 µm, el espesor de la capa límite aumenta un 10-20%, la eficiencia del compresor cae un 2-5% (el caudal volumétrico cae 100-200 m³/h por etapa) y la temperatura de salida sube 5-10°C; (2) Erosión progresiva (100-500 h): el redondeo del borde de ataque pasa de un radio afilado de 0.3 mm a 2-3 mm, el acabado superficial se degrada a 10-20 µm, el perfil aerodinámico del álabe se distorsiona, cambia la formación de la onda de choque en la entrada del álabe (el choque se desplaza aguas abajo y se reduce la recuperación de presión), la eficiencia del compresor cae en total un 10-15%, el consumo de energía aumenta un 20-30% y la temperatura de salida sube 20-30°C sobre la línea base; (3) Erosión crítica (>500 h): retroceso del borde de ataque de 5-10 mm de profundidad, perfil del álabe seriamente comprometido, se elimina el margen de bombeo del compresor (el compresor se vuelve inestable y el punto de operación se acerca a la línea de bombeo), la tensión vibratoria del álabe aumenta un 50-100% por la carga asimétrica y se inician microfisuras en los puntos de concentración de tensiones por erosión. Consecuencias aerodinámicas: el borde de ataque está diseñado como un difusor subsónico de bajas pérdidas (choque normal con 5-10% de pérdida de energía); cuando el borde de ataque se erosiona y se redondea, el difusor subsónico pasa a supersónico, aumenta la intensidad del choque normal (pérdida por choque del 15-25%), la posición del choque se desplaza aguas arriba dentro del pasaje del álabe y el riesgo de separación del flujo aumenta exponencialmente. Con erosión crítica, el compresor ya no puede mantener la presión nominal: la presión del sistema cae un 10-20% y obliga a reducir el caudal másico de entrada para evitar el bombeo. Impacto económico: compresor serie FG con capacidad nominal de 500 m³/h a 20 bar; con un 15% de pérdida de eficiencia, el caudal real es de 425 m³/h; un sistema diseñado para una carga de 500 m³/h no puede operar y la producción se reduce un 15% (€50,000-100,000 de ingresos perdidos por mes en un proceso industrial). Reconstrucción: el borde de ataque del álabe no puede repararse de forma económica (soldadura + rectificado de €5,000-8,000 por álabe, que solo extiende la vida 100-200 h); se requiere reemplazar el álabe/rotor completo (€15,000-30,000 por etapa)."
+    },
+    {
+      "heading": "Efecto del tamaño de partícula en la tasa de erosión",
+      "body": "La tasa de erosión aumenta exponencialmente con el tamaño y la velocidad de las partículas: volumen de erosión (V) ∝ (d^n) × (v^m), donde d = diámetro de partícula, v = velocidad, n = 2.5-3.5 (exponente de tamaño), m = 2.5-3.0 (exponente de velocidad). Ejemplo práctico: partículas de 4 µm a 100 m/s, tasa de erosión base = 1× de referencia. Con partículas de 8 µm (2× de tamaño), la tasa de erosión aumenta 4-6× (exponente ~2.5). Con partículas de 16 µm (4× de tamaño), la tasa es de 15-50× la referencia. Con partículas de 50 µm (12.5× de tamaño), la tasa es >1000× la base. Efecto de la velocidad: duplicar la velocidad de 100 m/s a 200 m/s aumenta la tasa de erosión 5-7× (exponente ~2.5). Entornos reales: (1) Entrada de aire limpio (ISO 5011 grado 1, predominan las partículas <1 µm): erosión despreciable; la superficie del álabe incluso se pule y mejora con el tiempo (las partículas pequeñas suavizan la microrrugosidad); (2) Entorno polvoriento (ISO 5011 grado 5, partículas de 10-50 µm significativas): tasa de erosión de 50-200× la base, vida del álabe de 50-200 horas; (3) Entorno arenoso/minero (ISO 5011 grado 7, partículas de 50-100+ µm): erosión catastrófica, vida del álabe <50 horas. Minería en el desierto: las partículas de entrada son principalmente sílice (cuarzo, SiO₂, dureza 7 Mohs) y óxido de hierro (Fe₂O₃, dureza 9 Mohs); composición típica del polvo: 60% sílice, 20% óxido de hierro y 20% otros (carbonato de calcio, arcillas). Una partícula de sílice de 50 µm a 150 m/s que golpea un álabe de aluminio (dureza 3 Mohs) crea un cráter de erosión >1 mm de profundidad por impacto. Un compresor serie FG a 12,000 RPM sufre 200 impactos en los álabes por segundo; con partículas de sílice de 50 µm al 0.1% de concentración (en masa) = 100,000+ impactos/hora, con una erosión acumulada de 50-100 mm de profundidad en 200 horas (borde de ataque del álabe totalmente erosionado)."
+    },
+    {
+      "heading": "Estrategia de filtración del aire y protección de los álabes",
+      "body": "Prevenir la erosión requiere eliminar del aire de entrada las partículas >5-10 µm antes de que lleguen al compresor: (1) Etapa 1 — Separador inercial (preseparador grueso): separador ciclónico o de vórtice que elimina las partículas >50 µm, con una eficiencia del 50-80% en >50 µm; costo de €2,000-5,000; elimina el 80% de la masa (partículas grandes), pero deja pasar la mayoría del número de partículas (partículas pequeñas); (2) Etapa 2 — Filtro de aire principal (tecnología MACROCORE): ISO 5011 grado 1-2 (99%+ de eficiencia en >4 µm), captura el 95-99% de las partículas con riesgo de erosión; costo del elemento filtrante de €300-500, intervalo de cambio de 1000-2000 horas (según el entorno); (3) Etapa 3 — Limpieza de aire fuera de línea kidney-loop (circulación 24/7 durante la inactividad): un filtro secundario de 3-5 µm elimina el particulado acumulado y mantiene la limpieza del aire de entrada de forma continua; costo de €10,000-15,000 del sistema + €200/mes de operación. Economía de la protección: compresor serie FG de €80,000-120,000 de inversión; daño por erosión de álabes de €18,000-25,000 por falla; sistema de filtración en varias etapas de €15,000-25,000; recuperación de la inversión en <2 años por las fallas por erosión evitadas. Implementación real: operación minera con 8 compresores serie FG, €180,000 de inversión en filtración (varias etapas + kidney-loop en todas las unidades), redujo las fallas por erosión de 5-8/año a 0-1/año (90% de reducción), con un ahorro acumulado en 5 años de €80,000-150,000 (reconstrucciones de compresores evitadas + producción perdida por paradas)."
+    },
+    {
+      "heading": "Escenario ilustrativo: erosión de álabes de compresores serie FG en minería a rajo abierto",
+      "body": "⚠️ Escenario ilustrativo, no un caso documentado. Considere compresores centrífugos serie FG que toman el aire de entrada directamente de un rajo abierto con mucho polvo, sin prefiltración. Con exposición sostenida a polvo de sílice grueso, la eficiencia del compresor puede degradarse de forma significativa en unos pocos cientos de horas de operación, y la erosión del borde de ataque de los álabes obliga a paradas frecuentes para inspección y reconstrucción. Una mejora de la filtración por etapas —agregar un preseparador ciclónico para eliminar el polvo grueso (>50 µm), acortar el intervalo de cambio del filtro principal y luego pasar a un filtro principal ISO 5011 grado 1 (MACROCORE) con circulación de aire fuera de línea kidney-loop continua y un secador desecante del aire de entrada— es el camino estándar para controlar este modo de falla. En un escenario como este, la erosión de los álabes debería caer de forma marcada y los intervalos de reconstrucción extenderse considerablemente a medida que mejora la limpieza del aire de entrada en cada etapa; la reducción exacta, la extensión del intervalo y el ahorro dependen del sitio, la carga de polvo y el ciclo de trabajo del compresor, por lo que cualquier cifra aquí debe tomarse como orientativa, no como un resultado documentado. El principio de fondo se cumple sin importar la escala: la filtración de entrada es mucho más barata que reemplazar álabes, y la filtración en varias etapas con circulación fuera de línea logra un nivel de protección que la filtración genérica de una sola etapa no puede igualar."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Por qué los álabes de los compresores se erosionan tan rápido en entornos arenosos y a qué velocidad ocurre realmente la erosión?",
+      "answer": "La tasa de erosión de los álabes depende exponencialmente del tamaño y la velocidad de las partículas. En entornos desérticos/mineros con partículas de sílice de 50-100 µm a 150 m/s de velocidad de entrada, la tasa de erosión llega a 50-100 mm de profundidad cada 1000 horas, lo que significa que el borde de ataque del álabe (radio afilado nominal de 0.3 mm) se erosiona por completo en 5-10 horas de operación continua. En cambio, el aire de entrada limpio (ISO 5011 grado 1, partículas <1 µm) produce una erosión despreciable durante toda la vida del equipo. La diferencia es exponencial: las partículas de 50 µm causan una tasa de erosión 1000× mayor que las de 5 µm a la misma velocidad."
+    },
+    {
+      "question": "¿Cómo reduce la erosión de álabes la eficiencia del compresor y cuánta penalización de potencia produce?",
+      "answer": "La erosión de álabes degrada el perfil aerodinámico: el borde de ataque afilado (radio de 0.3 mm optimizado para la difusión subsónica) se redondea a un radio de 2-3 mm y la superficie pulida se vuelve rugosa (10-20 µm). Esto fuerza el flujo a un régimen supersónico con un choque normal fuerte; la pérdida por choque aumenta del 5% al 20-25%, y la eficiencia del compresor cae un 2-5% al principio y un 15-20% con erosión crítica. Penalización de potencia: caudal volumétrico reducido un 15-20% y consumo de energía aumentado un 25-35%; en una aplicación industrial esto se traduce en €50,000-100,000/mes de ingresos de producción perdidos."
+    },
+    {
+      "question": "¿Se pueden reparar los bordes de ataque erosionados de los álabes y cuánto prolonga la reparación la vida del álabe?",
+      "answer": "La erosión del borde de ataque puede repararse con soldadura (soldadura de aporte) + mecanizado para restaurar el perfil aerodinámico. Costo por álabe: €5,000-8,000. Sin embargo, la zona reparada con soldadura introduce un cambio metalúrgico (estructura de grano alterada, tensiones residuales) que crea concentración de tensiones y limita la eficacia de la reparación a 100-200 horas adicionales de operación antes de que la erosión vuelva a iniciarse en el borde de la soldadura. Comparación económica: reparar cuesta €5,000 y extiende la vida 100-200 h; un álabe de reemplazo cuesta €8,000 y extiende la vida 1000+ h; reemplazar es más económico. Prevenir (filtración) siempre es más barato que reparar."
+    },
+    {
+      "question": "¿Qué grado de filtro de aire y qué nivel de eficiencia se requieren para proteger los álabes de los compresores FH/FG?",
+      "answer": "Una protección eficaz de los álabes requiere filtración ISO 5011 grado 1-2 (99%+ de eficiencia ≥4 µm), que elimine las partículas >5-10 µm antes de la entrada. El filtro de aire OEM estándar (típicamente ISO 5011 grado 4-5, 85-90% de eficiencia) es insuficiente para proteger contra la erosión en entornos polvorientos. El filtro premium MACROCORE (ISO 5011 grado 1, 99.9% de eficiencia ≥4 µm, 300+ gramos de capacidad de suciedad) ofrece una protección robusta. En entornos mineros/desérticos se recomienda una filtración en varias etapas (preseparador grueso de 50 µm + filtro principal de 4 µm + kidney-loop de 3 µm) para extender la vida de los álabes más allá de 2000 horas."
+    },
+    {
+      "question": "¿Por qué la filtración de aire fuera de línea kidney-loop es valiosa para proteger los álabes del compresor?",
+      "answer": "El kidney-loop fuera de línea (filtro de 3-5 µm funcionando 24/7 durante las noches/fines de semana inactivos) elimina de forma continua la acumulación de partículas y la humedad del sistema de aire de entrada. En entornos mineros, la entrada de aire aspira polvo 16+ horas/día durante la operación; sin kidney-loop, el polvo se deposita en las tuberías de entrada, el tanque y el enfriador, y vuelve a arrastrarse en el siguiente arranque. El kidney-loop evita esta acumulación y mantiene el aire de entrada en ISO 5011 grado 1 de forma continua. Resultado: la tasa de erosión de los álabes se reduce un 60-80% y la vida del compresor se extiende 2-3×. Costo: €10,000-15,000 del sistema + €200/mes; recuperación de la inversión en 1-2 años por las fallas por erosión evitadas."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Radio del borde de ataque del álabe",
+      "value": "0.3–1.0 mm (afilado)"
+    },
+    {
+      "label": "Tasa de erosión con partículas de 50 µm",
+      "value": "50–100× la base"
+    },
+    {
+      "label": "Profundidad crítica de erosión",
+      "value": "5–10 mm de retroceso del borde de ataque"
+    },
+    {
+      "label": "Pérdida de eficiencia con erosión crítica",
+      "value": "15–20% (volumétrica)"
+    }
+  ]
+}

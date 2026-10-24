@@ -1,0 +1,84 @@
+{
+  "id": "PROB-BLADE-EROSION",
+  "slug": "blade-erosion",
+  "name": "Erosão de palhetas",
+  "category": "mechanical-wear",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "metaDescription": "Erosão de palhetas de compressores/turbinas: impacto de partículas abrasivas, perda de revestimento, degradação da eficiência aerodinâmica. Estratégia de proteção para as séries FH/FG.",
+  "definition": "A erosão de palhetas é a perda progressiva de material das superfícies das palhetas de compressores e turbinas causada pelo impacto em alta velocidade de partículas abrasivas (sílica, areia, óxidos metálicos) presentes no ar de entrada ou no gás de processo. As partículas que atingem os bordos de ataque das palhetas a 5,000-15,000 RPM criam danos por microimpacto, removendo progressivamente material da palheta, revestimentos superficiais e o acabamento aerodinâmico. A erosão de palhetas reduz a eficiência do compressor (a vazão volumétrica cai 5-15%), aumenta o consumo de energia em 10-25%, eleva a temperatura de saída em 20-40°C e acaba causando a falha da palheta (fratura da palheta por concentração de tensões no ponto de erosão). O dano por erosão é cumulativo e irreversível; depois de iniciada, a taxa de erosão se acelera exponencialmente à medida que a rugosidade superficial e a turbulência aumentam e a concentração de tensões se aprofunda.",
+  "relatedStandards": [
+    "ISO 5011",
+    "SAE J1539",
+    "ISO 12103"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Projeto das palhetas do compressor e vulnerabilidade à erosão",
+      "body": "As palhetas dos compressores centrífugos (séries FH/FG) são perfis aerodinâmicos otimizados para a eficiência de escoamento e o aumento de pressão. Parâmetros de projeto da palheta: (1) Raio do bordo de ataque de 0.3-1.0 mm (afiado para minimizar a separação do escoamento); (2) Acabamento superficial de 0.4-1.6 µm Ra (acabamento aerodinâmico polido que minimiza a turbulência da camada-limite); (3) Material da palheta: liga de alumínio (série 7xxx, limite de escoamento típico de 450-500 MPa) ou liga de titânio (estágios de alta rotação >10,000 RPM); (4) Folga entre a palheta e a carcaça de 0.2-0.5 mm (tolerância estreita que evita vazamentos por recirculação). Vulnerabilidade à erosão: o bordo de ataque afiado (raio de 0.3-1 mm) e a superfície polida (acabamento de 0.4 µm) são otimizados para o desempenho aerodinâmico, NÃO para a resistência à erosão. Quando partículas abrasivas de 10-50 µm a 100+ m/s atingem o bordo de ataque, a força do impacto cria deformação plástica instantânea e remoção de material. A energia cinética da partícula (0.5 × m × v²) concentrada em uma área de impacto na escala de mm² cria tensão local de 5-20× o limite de escoamento, excedendo o limite elástico do material. Um bordo de ataque de 0.3 mm de raio atingido por uma partícula de 20 µm a 150 m/s gera tensão de contato >3000 MPa (o material escoa e forma-se uma microcratera). Os impactos repetidos (a palheta gira 5,000-15,000 vezes/min, exposta continuamente ao fluxo de partículas) acumulam microcrateras em um padrão de erosão visível em 100-500 horas de operação em ambientes arenosos. Exemplo real: compressor série FG em uma mina, com ar de entrada vindo da cava a céu aberto (ambiente de muito pó); a erosão de palhetas reduziu a eficiência em 20% em 200 horas, exigindo a reconstrução do compressor; custo de €18,000-25,000 em peças + €8,000 de mão de obra + €12,000 de produção perdida pela parada."
+    },
+    {
+      "heading": "Progressão do dano por erosão e perda de eficiência",
+      "body": "A erosão de palhetas avança em três estágios: (1) Erosão inicial (0-100 h) — formam-se crateras de microimpacto no bordo de ataque, a rugosidade superficial aumenta de 0.4 µm para 2-5 µm, a espessura da camada-limite aumenta 10-20%, a eficiência do compressor cai 2-5% (a vazão volumétrica cai 100-200 m³/h por estágio) e a temperatura de saída sobe 5-10°C; (2) Erosão progressiva (100-500 h) — o arredondamento do bordo de ataque passa de um raio afiado de 0.3 mm para 2-3 mm, o acabamento superficial se degrada para 10-20 µm, o perfil aerodinâmico da palheta se distorce, muda a formação da onda de choque na entrada da palheta (o choque se desloca a jusante e a recuperação de pressão diminui), a eficiência do compressor cai no total 10-15%, o consumo de energia aumenta 20-30% e a temperatura de saída sobe 20-30°C acima da linha de base; (3) Erosão crítica (>500 h) — recuo do bordo de ataque de 5-10 mm de profundidade, perfil da palheta seriamente comprometido, a margem de surge do compressor é eliminada (o compressor fica instável e o ponto de operação se aproxima da linha de surge), a tensão vibratória da palheta aumenta 50-100% pela carga assimétrica e iniciam-se microtrincas nos pontos de concentração de tensões por erosão. Consequências aerodinâmicas: o bordo de ataque é projetado como um difusor subsônico de baixas perdas (choque normal com 5-10% de perda de energia); quando o bordo de ataque erode e se arredonda, o difusor subsônico passa a supersônico, a intensidade do choque normal aumenta (perda por choque de 15-25%), a posição do choque se desloca a montante para dentro da passagem da palheta e o risco de separação do escoamento aumenta exponencialmente. Com erosão crítica, o compressor não consegue mais manter a pressão nominal — a pressão do sistema cai 10-20%, obrigando a reduzir a vazão mássica de entrada para evitar o surge. Impacto econômico: compressor série FG com capacidade nominal de 500 m³/h a 20 bar; com 15% de perda de eficiência, a vazão real é de 425 m³/h; um sistema projetado para carga de 500 m³/h não consegue operar e a produção é reduzida em 15% (€50,000-100,000 de receita perdida por mês em um processo industrial). Reconstrução: o bordo de ataque da palheta não pode ser reparado de forma econômica (solda + retrabalho de €5,000-8,000 por palheta, que só estende a vida em 100-200 h); é necessária a substituição completa da palheta/rotor (€15,000-30,000 por estágio)."
+    },
+    {
+      "heading": "Efeito do tamanho de partícula na taxa de erosão",
+      "body": "A taxa de erosão aumenta exponencialmente com o tamanho e a velocidade das partículas: volume de erosão (V) ∝ (d^n) × (v^m), em que d = diâmetro da partícula, v = velocidade, n = 2.5-3.5 (expoente de tamanho), m = 2.5-3.0 (expoente de velocidade). Exemplo prático: partículas de 4 µm a 100 m/s, taxa de erosão de base = 1× de referência. Com partículas de 8 µm (2× de tamanho), a taxa de erosão aumenta 4-6× (expoente ~2.5). Com partículas de 16 µm (4× de tamanho), a taxa é de 15-50× a referência. Com partículas de 50 µm (12.5× de tamanho), a taxa é >1000× a base. Efeito da velocidade: dobrar a velocidade de 100 m/s para 200 m/s aumenta a taxa de erosão em 5-7× (expoente ~2.5). Ambientes reais: (1) Entrada de ar limpo (ISO 5011 grau 1, predominam partículas <1 µm): erosão desprezível; a superfície da palheta até se pule e melhora com o tempo (as partículas pequenas suavizam a microrrugosidade); (2) Ambiente empoeirado (ISO 5011 grau 5, partículas de 10-50 µm significativas): taxa de erosão de 50-200× a base, vida da palheta de 50-200 horas; (3) Ambiente arenoso/de mineração (ISO 5011 grau 7, partículas de 50-100+ µm): erosão catastrófica, vida da palheta <50 horas. Mineração no deserto: as partículas de entrada são predominantemente sílica (quartzo, SiO₂, dureza 7 Mohs) e óxido de ferro (Fe₂O₃, dureza 9 Mohs); composição típica do pó: 60% sílica, 20% óxido de ferro e 20% outros (carbonato de cálcio, argilas). Uma partícula de sílica de 50 µm a 150 m/s atingindo uma palheta de alumínio (dureza 3 Mohs) cria uma cratera de erosão >1 mm de profundidade por impacto. Um compressor série FG a 12,000 RPM sofre 200 impactos nas palhetas por segundo; com partículas de sílica de 50 µm a 0.1% de concentração (em massa) = 100,000+ impactos/hora, com erosão acumulada de 50-100 mm de profundidade em 200 horas (bordo de ataque da palheta totalmente erodido)."
+    },
+    {
+      "heading": "Estratégia de filtração do ar e proteção das palhetas",
+      "body": "Prevenir a erosão exige eliminar do ar de entrada as partículas >5-10 µm antes que cheguem ao compressor: (1) Estágio 1 — Separador inercial (pré-separador grosso): separador ciclônico ou de vórtice que remove partículas >50 µm, com eficiência de 50-80% em >50 µm; custo de €2,000-5,000; remove 80% da massa (partículas grandes), mas deixa passar a maior parte do número de partículas (partículas pequenas); (2) Estágio 2 — Filtro de ar principal (tecnologia MACROCORE): ISO 5011 grau 1-2 (99%+ de eficiência em >4 µm), captura 95-99% das partículas com risco de erosão; custo do elemento filtrante de €300-500, intervalo de troca de 1000-2000 horas (conforme o ambiente); (3) Estágio 3 — Limpeza de ar off-line kidney-loop (circulação 24/7 durante o tempo ocioso): um filtro secundário de 3-5 µm remove o particulado acumulado e mantém a limpeza do ar de entrada continuamente; custo de €10,000-15,000 do sistema + €200/mês de operação. Economia da proteção: compressor série FG de €80,000-120,000 de investimento; dano por erosão de palhetas de €18,000-25,000 por falha; sistema de filtração em vários estágios de €15,000-25,000; retorno do investimento em <2 anos pelas falhas por erosão evitadas. Implementação real: operação de mineração com 8 compressores série FG, €180,000 de investimento em filtração (vários estágios + kidney-loop em todas as unidades), reduziu as falhas por erosão de 5-8/ano para 0-1/ano (90% de redução), com economia acumulada em 5 anos de €80,000-150,000 (reconstruções de compressores evitadas + produção perdida por paradas)."
+    },
+    {
+      "heading": "Cenário ilustrativo: erosão de palhetas de compressores série FG em mineração a céu aberto",
+      "body": "⚠️ Cenário ilustrativo, não um caso documentado. Considere compressores centrífugos série FG que aspiram o ar de entrada diretamente de uma cava a céu aberto com muito pó, sem pré-filtração. Sob exposição contínua a pó de sílica grosso, a eficiência do compressor pode se degradar significativamente em algumas centenas de horas de operação, e a erosão do bordo de ataque das palhetas obriga a paradas frequentes para inspeção e reconstrução. Uma melhoria da filtração em estágios — acrescentar um pré-separador ciclônico para remover o pó grosso (>50 µm), encurtar o intervalo de troca do filtro principal e depois passar para um filtro principal ISO 5011 grau 1 (MACROCORE) com circulação de ar off-line kidney-loop contínua e um secador dessecante do ar de entrada — é o caminho padrão para controlar esse modo de falha. Em um cenário como este, a erosão das palhetas deve cair acentuadamente e os intervalos de reconstrução devem se estender substancialmente à medida que a limpeza do ar de entrada melhora em cada estágio — a redução exata, a extensão do intervalo e a economia dependem do local, da carga de pó e do ciclo de trabalho do compressor, portanto trate qualquer número aqui como indicativo, não como resultado documentado. O princípio de fundo vale independentemente da escala: a filtração de entrada é muito mais barata que a substituição de palhetas, e a filtração em vários estágios com circulação off-line atinge um nível de proteção que a filtração genérica de estágio único não consegue igualar."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Por que as palhetas dos compressores erodem tão rápido em ambientes arenosos e com que velocidade a erosão realmente ocorre?",
+      "answer": "A taxa de erosão das palhetas depende exponencialmente do tamanho e da velocidade das partículas. Em ambientes desérticos/de mineração com partículas de sílica de 50-100 µm a 150 m/s de velocidade de entrada, a taxa de erosão chega a 50-100 mm de profundidade a cada 1000 horas — o que significa que o bordo de ataque da palheta (raio afiado nominal de 0.3 mm) erode completamente em 5-10 horas de operação contínua. Por outro lado, o ar de entrada limpo (ISO 5011 grau 1, partículas <1 µm) produz erosão desprezível ao longo de toda a vida do equipamento. A diferença é exponencial: partículas de 50 µm causam taxa de erosão 1000× maior que partículas de 5 µm na mesma velocidade."
+    },
+    {
+      "question": "Como a erosão de palhetas reduz a eficiência do compressor e quanta penalidade de potência ela causa?",
+      "answer": "A erosão de palhetas degrada o perfil aerodinâmico: o bordo de ataque afiado (raio de 0.3 mm otimizado para a difusão subsônica) se arredonda para um raio de 2-3 mm e a superfície polida fica áspera (10-20 µm). Isso força o escoamento para o regime supersônico com choque normal forte; a perda por choque aumenta de 5% para 20-25%, e a eficiência do compressor cai 2-5% inicialmente e 15-20% com erosão crítica. Penalidade de potência: vazão volumétrica reduzida em 15-20% e consumo de energia aumentado em 25-35%; em uma aplicação industrial, isso se traduz em €50,000-100,000/mês de receita de produção perdida."
+    },
+    {
+      "question": "Os bordos de ataque erodidos das palhetas podem ser reparados e quanto o reparo prolonga a vida da palheta?",
+      "answer": "A erosão do bordo de ataque pode ser reparada por soldagem (solda de enchimento) + usinagem para restaurar o perfil aerodinâmico. Custo por palheta: €5,000-8,000. No entanto, a região reparada com solda introduz uma mudança metalúrgica (estrutura de grão alterada, tensões residuais) que cria concentração de tensões, limitando a eficácia do reparo a 100-200 horas adicionais de operação antes que a erosão volte a se iniciar na borda da solda. Comparação econômica: o reparo custa €5,000 e estende a vida em 100-200 h; uma palheta de reposição custa €8,000 e estende a vida em 1000+ h; a substituição é mais econômica. A prevenção (filtração) é sempre mais barata que o reparo."
+    },
+    {
+      "question": "Qual grau de filtro de ar e qual nível de eficiência são necessários para proteger as palhetas dos compressores FH/FG?",
+      "answer": "Uma proteção eficaz das palhetas exige filtração ISO 5011 grau 1-2 (99%+ de eficiência ≥4 µm), removendo as partículas >5-10 µm antes da entrada. O filtro de ar OEM padrão (tipicamente ISO 5011 grau 4-5, 85-90% de eficiência) é inadequado para proteger contra a erosão em ambientes empoeirados. O filtro premium MACROCORE (ISO 5011 grau 1, 99.9% de eficiência ≥4 µm, 300+ gramas de capacidade de sujeira) oferece proteção robusta. Em ambientes de mineração/desérticos, recomenda-se filtração em vários estágios (pré-separador grosso de 50 µm + filtro principal de 4 µm + kidney-loop de 3 µm) para estender a vida das palhetas além de 2000 horas."
+    },
+    {
+      "question": "Por que a filtração de ar off-line kidney-loop é valiosa para proteger as palhetas do compressor?",
+      "answer": "O kidney-loop off-line (filtro de 3-5 µm funcionando 24/7 nas noites/fins de semana ociosos) remove continuamente o acúmulo de partículas e a umidade do sistema de ar de entrada. Em ambientes de mineração, a entrada de ar aspira pó 16+ horas/dia durante a operação; sem kidney-loop, o pó se deposita na tubulação de entrada, no tanque e no resfriador e é rearrastado na próxima partida. O kidney-loop evita esse acúmulo, mantendo o ar de entrada em ISO 5011 grau 1 continuamente. Resultado: a taxa de erosão das palhetas é reduzida em 60-80% e a vida do compressor se estende em 2-3×. Custo: €10,000-15,000 do sistema + €200/mês; retorno do investimento em 1-2 anos pelas falhas por erosão evitadas."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Raio do bordo de ataque da palheta",
+      "value": "0.3–1.0 mm (afiado)"
+    },
+    {
+      "label": "Taxa de erosão com partículas de 50 µm",
+      "value": "50–100× a base"
+    },
+    {
+      "label": "Profundidade crítica de erosão",
+      "value": "5–10 mm de recuo do bordo de ataque"
+    },
+    {
+      "label": "Perda de eficiência com erosão crítica",
+      "value": "15–20% (volumétrica)"
+    }
+  ]
+}

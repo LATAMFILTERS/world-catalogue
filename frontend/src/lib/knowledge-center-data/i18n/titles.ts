@@ -394,4 +394,4 @@ export function termTitle(slug: string, lang: SiteLang, fallback: string): strin
 }
 
 // Problem Graph detail pages with reviewed /es/ and /pt/ versions (problem names come from reviewed copy).
-export const TRANSLATED_PROBLEM_SLUGS = ['abrasive-wear', 'adhesive-wear', 'bearing-wear', 'injector-wear', 'water-ingress', 'fuel-contamination', 'air-restriction', 'cavitation'] as const;
+export const TRANSLATED_PROBLEM_SLUGS = ['abrasive-wear', 'adhesive-wear', 'bearing-wear', 'injector-wear', 'water-ingress', 'fuel-contamination', 'air-restriction', 'cavitation', 'pump-failure', 'filter-collapse', 'varnish-formation', 'oxidation', 'blade-erosion', 'bearing-wash-out', 'seal-leakage', 'compressor-surge'] as const;
