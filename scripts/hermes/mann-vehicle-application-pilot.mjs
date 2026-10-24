@@ -82,6 +82,14 @@ for (let m; (m = tokenRe.exec(body));) {
     const cells = [...m[2].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((c) => ({
       text: decode(c[1]),
       link: decode((c[1].match(/<a[^>]*>([\s\S]*?)<\/a>/i) || [])[1] || ''),
+      // Global (/en/) pages carry the structured vehicle record in the link's
+      // data-g-binding-params (vehicleMake, vehicleModel, vehicleName, engineCode,
+      // ccm, kw, bhp, vehicleManufacturedFrom/To).
+      params: (() => {
+        const raw = (c[1].match(/data-g-binding-params="([^"]*)"/i) || [])[1];
+        if (!raw) return null;
+        try { return Object.fromEntries(new URLSearchParams(decodeURIComponent(raw.replace(/&amp;/g, '&')).replace(/^\?/, ''))); } catch { return null; }
+      })(),
     }));
     events.push({ kind: 'row', cells });
   }
@@ -102,7 +110,8 @@ let make = null;
 let year = null;
 for (const ev of events) {
   if (ev.kind === 'heading') {
-    if (isYear(ev.text)) year = ev.text; else if (ev.text) make = ev.text;
+    // US pages: MAKE heading -> YEAR headings. Global pages: MAKE -> MODEL headings.
+    if (isYear(ev.text)) year = ev.text; else if (ev.text) { make = ev.text; year = null; }
     continue;
   }
   const c = ev.cells;
@@ -110,6 +119,28 @@ for (const ev of events) {
   if (!/filtr|filter/i.test(c[1]?.text || '')) continue;          // header rows and unrelated tables
   if (/^(tipo de (modelo|filtro)|model type|filter type)$/i.test(c[0].text) || /^tipo de filtro$|^filter type$/i.test(c[1].text)) continue; // header row
   const split = splitModel(c[0].text);
+  const pr = c[0].params;
+  if (!year && pr && pr.vehicleMake) {
+    // Global page row: take identity from the structured record, never from headings.
+    const yf = /^(\d{4})-/.exec(pr.vehicleManufacturedFrom || '');
+    const yt = /^(\d{4})-/.exec(pr.vehicleManufacturedTo || '');
+    parsed.push({
+      make: pr.vehicleMake,
+      year: null,
+      year_from: yf ? yf[1] : null,
+      year_to: yt ? yt[1] : null,
+      model: [pr.vehicleModel || pr.modelSeriesName, pr.vehicleName].filter(Boolean).join(' ').trim(),
+      engine: split.engine,
+      equipment_options: split.qualifier || null,
+      engine_code: pr.engineCode || (c[2]?.text !== '-' ? c[2]?.text : null) || null,
+      displacement_ccm: num(pr.ccm) ?? num(c[3]?.text),
+      kw: (() => { const v = num(pr.kw); return v != null && v > 1000 ? null : v; })(),
+      hp: (() => { const v = num(pr.bhp); return v != null && v > 1500 ? null : v; })(),
+      filter_type: c[1].text,
+      production_text: c[6]?.text || null,
+    });
+    continue;
+  }
   const model = c[0].link || split.model;
   const engineDescription = split.engine;
   let kw = num(c[4]?.text);
@@ -176,8 +207,10 @@ const currentParts = (e) => {
   const sp = splitModel(text);
   return { make: n.make, year, model: sp.model, engine: sp.engine, qualifier: sp.qualifier, engine_code: String(e.engine_code || '').trim() };
 };
-const keyCur = (p) => [norm(p.make), norm(p.model), p.year, norm(p.qualifier)].join('|');
-const keyMann = (r) => [norm(r.make), norm(r.model), r.year, norm(r.equipment_options)].join('|');
+// Global pages publish production periods, not model years: compare without year there.
+const yearAgnostic = mann.length > 0 && mann.every((r) => !r.year);
+const keyCur = (p) => [norm(p.make), norm(p.model), yearAgnostic ? '' : p.year, norm(p.qualifier)].join('|');
+const keyMann = (r) => [norm(r.make), norm(r.model), yearAgnostic ? '' : r.year, norm(r.equipment_options)].join('|');
 const curParsed = current.map(currentParts);
 const curKeys = new Map();
 for (const p of curParsed) { const k = keyCur(p); if (!curKeys.has(k)) curKeys.set(k, p); }
@@ -206,6 +239,7 @@ const report = {
     matched_engine_code_mismatch: engineCodeMismatch.length,
   },
   current_year_formats: formats,
+  comparison_mode: yearAgnostic ? 'MAKE_MODEL_ONLY_PRODUCTION_PERIODS' : 'MAKE_MODEL_YEAR',
   engine_code_mismatch_sample: engineCodeMismatch.slice(0, 20),
   mann_makes: [...new Set(mann.map((r) => r.make))],
   mann_years: [...new Set(mann.map((r) => r.year))].sort(),

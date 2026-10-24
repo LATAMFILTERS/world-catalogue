@@ -56,6 +56,9 @@ const payload = mannRows
     make: r.make,
     model: r.model,
     year: r.year,
+    year_from: r.year_from,
+    year_to: r.year_to,
+    production_period: r.year ? null : r.production_text,
     engine: r.engine,
     engine_code: r.engine_code,
     displacement_ccm: r.displacement_ccm,
@@ -63,7 +66,7 @@ const payload = mannRows
     hp: r.hp,
     equipment_options: r.equipment_options,
   }))
-  .sort((a, b) => (b.year || '').localeCompare(a.year || '') || a.model.localeCompare(b.model) || String(a.equipment_options || '').localeCompare(String(b.equipment_options || '')));
+  .sort((a, b) => (b.year || '').localeCompare(a.year || '') || String(a.make).localeCompare(String(b.make)) || a.model.localeCompare(b.model) || String(a.equipment_options || '').localeCompare(String(b.equipment_options || '')));
 
 // Rows the official page does not support are not migrated; kept for review.
 const reviewKeys = new Set(comparison.only_in_current_all || []);
