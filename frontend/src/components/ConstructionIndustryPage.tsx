@@ -29,7 +29,8 @@ const protection = [
 const serviceChecks: Record<string, string> = {
   'AIR INTAKE': 'Inspect restriction indication, intake duct integrity and seals according to the machine manual.',
   'HYDRAULIC': 'Check fluid cleanliness requirements, hose couplings and clean handling during attachment changes.',
-  'FUEL': 'Review storage cleanliness, mobile refueling, water drainage and the specified fuel-filter application.',
+  'HYDROCORE™': 'Inspect storage and mobile refueling practices; check water drainage, sealing and the specified separator application.',
+  'SYNTAPORE™': 'Review particulate contamination during storage and refueling, fuel-filter restriction and the specified fuel-filter application.'
   'LUBRICATION': 'Review oil condition, operating hours and the machine-specific filter and service requirements.',
   'CABIN AIR': 'Inspect cabin seals and the specified cabin filter; particulate filtration does not establish respiratory protection against hazardous dust.'
 };
@@ -177,7 +178,7 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{constructionText(lang, "CONTAMINATION PATHWAYS")}</p>
           <h2 id="protection-title" style={sectionTitle}>{constructionText(lang, "Connect the jobsite threat to the system that must stay protected.")}</h2>
           <p style={wideText}>{constructionText(lang, "Construction filtration should begin with the contamination source and protected interface, then resolve the appropriate system, technology and final part.")}</p>
-          <div className="miningPathwayFlow" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{constructionText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{constructionText(lang, source)}</strong><p style={smallText}>{constructionText(lang, detail)}</p></div><div><span style={smallLabel}>{constructionText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{constructionText(lang, system)}</strong></div><div><span style={smallLabel}>{constructionText(lang, "SERVICE CHECK")}</span><p style={smallText}>{constructionText(lang, serviceChecks[system])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{constructionText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{constructionText(lang, "EXPLORE →")}</span></Link></article>)}</div>
+          <div className="miningPathwayFlow" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{constructionText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{constructionText(lang, source)}</strong><p style={smallText}>{constructionText(lang, detail)}</p></div><div><span style={smallLabel}>{constructionText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{constructionText(lang, system)}</strong></div><div><span style={smallLabel}>{constructionText(lang, "SERVICE CHECK")}</span><p style={smallText}>{constructionText(lang, serviceChecks[technology] ?? serviceChecks[system])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{constructionText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{constructionText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
