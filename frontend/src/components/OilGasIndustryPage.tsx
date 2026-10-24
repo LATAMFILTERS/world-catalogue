@@ -126,6 +126,7 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
   return (
     <main id="main-content" className="mining-industry-page oil-gas-industry-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <style>{oilGasLayoutCss}</style>
       <PageHeader currentPage="Oil Gas" />
 
       <section style={hero}>
@@ -150,19 +151,29 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={directSection} aria-labelledby="direct-title">
-        <div style={contentWidth}>
-          <p style={eyebrow}>{oilGasText(lang, "DIRECT ANSWER")}</p>
-          <h2 id="direct-title" style={directTitle}>{oilGasText(lang, "What defines the correct oil & gas filtration strategy?")}</h2>
-          <p style={directText}>{oilGasText(lang, "The correct filtration strategy starts with the asset and contamination source, then resolves the protected system, component sensitivity, duty cycle, maintenance access and validated application evidence. Oil and gas equipment should not be selected by industry label or service interval alone.")}</p>
-          <p style={wideText}>{oilGasText(lang, "Product scope: these ELIMFILTERS technologies protect equipment air intake, hydraulic circuits, diesel fuel and lubrication; they are not specifications for process-gas filtration or treatment.")}</p>
+        <div style={contentWidth} className="oilGasSplitHeader oilGasDirectGrid">
+          <div className="oilGasSplitTitle">
+            <p style={eyebrow}>{oilGasText(lang, "DIRECT ANSWER")}</p>
+            <h2 id="direct-title" style={directTitle}>{oilGasText(lang, "What defines the correct oil & gas filtration strategy?")}</h2>
+          </div>
+          <div className="oilGasSplitCopy oilGasDirectContent">
+            <p style={directText}>{oilGasText(lang, "The correct filtration strategy starts with the asset and contamination source, then resolves the protected system, component sensitivity, duty cycle, maintenance access and validated application evidence. Oil and gas equipment should not be selected by industry label or service interval alone.")}</p>
+            <p style={wideText}>{oilGasText(lang, "Product scope: these ELIMFILTERS technologies protect equipment air intake, hydraulic circuits, diesel fuel and lubrication; they are not specifications for process-gas filtration or treatment.")}</p>
+          </div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="reality-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>{oilGasText(lang, "FIELD OPERATING REALITY")}</p>
-          <h2 id="reality-title" style={sectionTitle}>{oilGasText(lang, "Contamination risk changes across the operating chain.")}</h2>
-          <p style={wideText}>{oilGasText(lang, "Drilling, pumping, compression, hydraulic control and field power place different demands on filtration even when equipment operates at the same site.")}</p>
+          <div className="oilGasSplitHeader">
+            <div className="oilGasSplitTitle">
+              <p style={eyebrow}>{oilGasText(lang, "FIELD OPERATING REALITY")}</p>
+              <h2 id="reality-title" style={sectionTitle}>{oilGasText(lang, "Contamination risk changes across the operating chain.")}</h2>
+            </div>
+            <div className="oilGasSplitCopy">
+              <p style={wideText}>{oilGasText(lang, "Drilling, pumping, compression, hydraulic control and field power place different demands on filtration even when equipment operates at the same site.")}</p>
+            </div>
+          </div>
           <div style={pressureGrid} className="miningRiskGrid">{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard} className="miningRiskCard"><h3 style={cardTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
         </div>
       </section>
@@ -180,33 +191,51 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>{oilGasText(lang, "CONTAMINATION PATHWAYS")}</p>
-          <h2 id="path-title" style={sectionTitle}>{oilGasText(lang, "Connect the field threat to the system that must remain protected.")}</h2>
-          <p style={wideText}>{oilGasText(lang, "Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
+          <div className="oilGasSplitHeader">
+            <div className="oilGasSplitTitle">
+              <p style={eyebrow}>{oilGasText(lang, "CONTAMINATION PATHWAYS")}</p>
+              <h2 id="path-title" style={sectionTitle}>{oilGasText(lang, "Connect the field threat to the system that must remain protected.")}</h2>
+            </div>
+            <div className="oilGasSplitCopy">
+              <p style={wideText}>{oilGasText(lang, "Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
+            </div>
+          </div>
           <div className="miningPathwayFlow" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{oilGasText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{oilGasText(lang, source)}</strong><p style={smallText}>{oilGasText(lang, detail)}</p></div><div><span style={smallLabel}>{oilGasText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{oilGasText(lang, system)}</strong></div><div><span style={smallLabel}>{oilGasText(lang, "MAINTENANCE CHECK")}</span><p style={smallText}>{oilGasText(lang, serviceChecks[technology])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{oilGasText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{oilGasText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>{oilGasText(lang, "OIL & GAS ENGINEERING PRINCIPLE")}</span><p style={principleText}>{oilGasText(lang, "The filtration decision must resolve the equipment, contamination pathway, protected interface, operating duty and application evidence before a product number is accepted.")}</p></div>
+        <div style={principle} className="oilGasPrinciple"><span style={principleLabel}>{oilGasText(lang, "OIL & GAS ENGINEERING PRINCIPLE")}</span><p style={principleText}>{oilGasText(lang, "The filtration decision must resolve the equipment, contamination pathway, protected interface, operating duty and application evidence before a product number is accepted.")}</p></div>
       </section>
 
       <IndustryFilterCarousel dutyClass="HD" industryName="Oil Gas" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>{oilGasText(lang, "OPERATING CONTINUITY")}</p>
-          <h2 id="impact-title" style={sectionTitle}>{oilGasText(lang, "Protect the process before contamination becomes an interruption.")}</h2>
-          <p style={wideText}>{oilGasText(lang, "Filtration supports more than the component itself. It protects the operating sequence around engines, pumps, compressors and hydraulic functions that other field activities may depend on.")}</p>
+          <div className="oilGasSplitHeader">
+            <div className="oilGasSplitTitle">
+              <p style={eyebrow}>{oilGasText(lang, "OPERATING CONTINUITY")}</p>
+              <h2 id="impact-title" style={sectionTitle}>{oilGasText(lang, "Protect the process before contamination becomes an interruption.")}</h2>
+            </div>
+            <div className="oilGasSplitCopy">
+              <p style={wideText}>{oilGasText(lang, "Filtration supports more than the component itself. It protects the operating sequence around engines, pumps, compressors and hydraulic functions that other field activities may depend on.")}</p>
+            </div>
+          </div>
           <div style={impactGrid} className="miningStakesGrid">{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="maintenance-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>{oilGasText(lang, "MAINTENANCE ENGINEERING")}</p>
-          <h2 id="maintenance-title" style={sectionTitle}>{oilGasText(lang, "From contamination diagnosis to verified return to service.")}</h2>
-          <p style={wideText}>{oilGasText(lang, "For maintenance engineers, the decision extends beyond the replacement filter: identify operating evidence, confirm physical compatibility and document the intervention before restoring equipment to duty.")}</p>
+          <div className="oilGasSplitHeader">
+            <div className="oilGasSplitTitle">
+              <p style={eyebrow}>{oilGasText(lang, "MAINTENANCE ENGINEERING")}</p>
+              <h2 id="maintenance-title" style={sectionTitle}>{oilGasText(lang, "From contamination diagnosis to verified return to service.")}</h2>
+            </div>
+            <div className="oilGasSplitCopy">
+              <p style={wideText}>{oilGasText(lang, "For maintenance engineers, the decision extends beyond the replacement filter: identify operating evidence, confirm physical compatibility and document the intervention before restoring equipment to duty.")}</p>
+            </div>
+          </div>
           <div className="miningValueGrid" style={{ marginTop: "2rem" }}>
             {maintenanceWorkflow.map(([title, description]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, description)}</p></article>)}
           </div>
@@ -229,9 +258,15 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>{oilGasText(lang, "APPLICATION EVIDENCE")}</p>
-          <h2 id="evidence-title" style={sectionTitle}>{oilGasText(lang, "A plausible cross-reference is not enough.")}</h2>
-          <p style={wideText}>{oilGasText(lang, "Final identification should reconcile the known reference, equipment or engine context, dimensions, protected system and operating conditions. Where evidence is incomplete, the application should remain under review rather than be treated as confirmed.")}</p>
+          <div className="oilGasSplitHeader">
+            <div className="oilGasSplitTitle">
+              <p style={eyebrow}>{oilGasText(lang, "APPLICATION EVIDENCE")}</p>
+              <h2 id="evidence-title" style={sectionTitle}>{oilGasText(lang, "A plausible cross-reference is not enough.")}</h2>
+            </div>
+            <div className="oilGasSplitCopy">
+              <p style={wideText}>{oilGasText(lang, "Final identification should reconcile the known reference, equipment or engine context, dimensions, protected system and operating conditions. Where evidence is incomplete, the application should remain under review rather than be treated as confirmed.")}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -253,6 +288,72 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
   );
 }
 
+
+const oilGasLayoutCss = `
+  /* Oil & Gas only: all editorial introductions fill the existing 1560px container. */
+  main.oil-gas-industry-page .oilGasSplitHeader {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    align-items: start;
+    column-gap: clamp(1.5rem, 5vw, 5rem);
+  }
+  main.oil-gas-industry-page .oilGasSplitTitle,
+  main.oil-gas-industry-page .oilGasSplitCopy { min-width: 0; }
+  main.oil-gas-industry-page .oilGasSplitTitle h2 { max-width: 100% !important; }
+  main.oil-gas-industry-page .oilGasSplitCopy > p {
+    width: 100%;
+    max-width: none !important;
+    margin-top: 0 !important;
+  }
+  main.oil-gas-industry-page .oilGasDirectContent > p:first-child {
+    font-size: clamp(1.125rem, 1.42vw, 1.28rem);
+    color: rgba(255,255,255,.9);
+  }
+  main.oil-gas-industry-page .oilGasDirectContent > p + p {
+    margin-top: clamp(1.25rem,2vw,1.8rem) !important;
+    padding: .25rem 0 .25rem clamp(1rem,1.6vw,1.5rem);
+    border-left: 3px solid #FFF12D;
+  }
+  main.oil-gas-industry-page .oilGasSplitHeader + .miningRiskGrid,
+  main.oil-gas-industry-page .oilGasSplitHeader + .miningPathwayFlow,
+  main.oil-gas-industry-page .oilGasSplitHeader + .miningStakesGrid,
+  main.oil-gas-industry-page .oilGasSplitHeader + .miningValueGrid {
+    margin-top: clamp(1.5rem,3vw,2.5rem) !important;
+  }
+  main.oil-gas-industry-page .oilGasPrinciple {
+    display: grid;
+    grid-template-columns: minmax(0, .52fr) minmax(0, 1.48fr);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 4.5rem);
+  }
+  main.oil-gas-industry-page .oilGasPrinciple > p {
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  main.oil-gas-industry-page > section:has(.filter-carousel-slide) > div:first-child {
+    display: grid;
+    grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr);
+    gap: clamp(1.5rem,5vw,5rem);
+    align-items: start;
+  }
+  main.oil-gas-industry-page > section:has(.filter-carousel-slide) > div:first-child > p {
+    max-width: none !important;
+    min-width: 0;
+    margin: 0 !important;
+  }
+  @media (max-width: 950px) {
+    main.oil-gas-industry-page .oilGasSplitHeader,
+    main.oil-gas-industry-page .oilGasPrinciple,
+    main.oil-gas-industry-page > section:has(.filter-carousel-slide) > div:first-child {
+      grid-template-columns: minmax(0,1fr);
+      gap: clamp(1rem,3vw,1.5rem);
+    }
+    main.oil-gas-industry-page .oilGasSplitCopy > p { margin-top: 0 !important; }
+  }
+`;
+
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const yellow: CSSProperties = { color: '#FFF12D' };
@@ -270,12 +371,12 @@ const primaryButton: CSSProperties = { display: 'inline-block', background: '#FF
 const secondaryButton: CSSProperties = { display: 'inline-block', background: 'transparent', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase', border: '1px solid rgba(255,241,45,.42)' };
 const section: CSSProperties = { padding: 'clamp(4.5rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderBottom: '1px solid rgba(255,255,255,.06)' };
 const contentWidth: CSSProperties = { maxWidth: '1560px', margin: '0 auto' };
-const directSection: CSSProperties = { ...section, background: '#050505' };
+const directSection: CSSProperties = { ...section, background: '#050505', paddingTop: 'clamp(3.25rem,5vw,5rem)', paddingBottom: 'clamp(3.25rem,5vw,5rem)' };
 const directTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.8rem,3.4vw,3.1rem)', lineHeight: 1, textTransform: 'uppercase', maxWidth: '860px', margin: 0 };
-const directText: CSSProperties = { fontSize: 'clamp(1.05rem,1.7vw,1.28rem)', lineHeight: 1.65, color: 'rgba(255,255,255,.82)', maxWidth: '980px', margin: '1.3rem 0 0' };
+const directText: CSSProperties = { fontSize: 'clamp(1.05rem,1.7vw,1.28rem)', lineHeight: 1.65, color: 'rgba(255,255,255,.82)', margin: 0 };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2.2rem,4.7vw,4.2rem)', lineHeight: .96, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0, maxWidth: '950px' };
 const bodyText: CSSProperties = { fontSize: 'clamp(1.125rem,1.24vw,1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,.82)', margin: 0 };
-const wideText: CSSProperties = { ...bodyText, maxWidth: '880px', marginTop: '1.3rem' };
+const wideText: CSSProperties = { ...bodyText, marginTop: '1.3rem' };
 const pressureGrid: CSSProperties = { width: '100%', marginTop: '2rem' };
 const pressureCard: CSSProperties = { background: '#050505', padding: '1.55rem', minHeight: '190px', minWidth: 0 };
 const cardTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.05rem,1.8vw,1.35rem)', lineHeight: 1.05, textTransform: 'uppercase', color: '#fff', margin: '0 0 .8rem' };
@@ -300,7 +401,7 @@ const technologyCta: CSSProperties = { fontFamily: displayFont, fontSize: '.58re
 const principleSection: CSSProperties = { padding: '0 clamp(1.25rem,6vw,6rem) clamp(4.5rem,8vw,7rem)' };
 const principle: CSSProperties = { ...contentWidth, borderLeft: '4px solid #FFF12D', background: 'linear-gradient(90deg,rgba(255,241,45,.08),rgba(255,255,255,.018))', padding: 'clamp(2rem,4vw,3rem)' };
 const principleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.74rem', letterSpacing: '.16em', fontWeight: 700 };
-const principleText: CSSProperties = { fontSize: 'clamp(1.2rem,2vw,1.55rem)', lineHeight: 1.55, color: 'rgba(255,255,255,.9)', margin: '1rem 0 0', maxWidth: '1040px' };
+const principleText: CSSProperties = { fontSize: 'clamp(1.2rem,2vw,1.55rem)', lineHeight: 1.55, color: 'rgba(255,255,255,.9)', margin: 0 };
 const impactSection: CSSProperties = { ...section, background: '#050505' };
 const impactGrid: CSSProperties = { width: '100%', marginTop: '2.5rem' };
 const impactCard: CSSProperties = { borderTop: '1px solid rgba(255,255,255,.15)', padding: '1.25rem 0', minHeight: '150px' };
