@@ -1,0 +1,85 @@
+{
+  "id": "PROB-ADHESIVE-WEAR",
+  "slug": "adhesive-wear",
+  "name": "Desgaste adhesivo",
+  "category": "mechanical-wear",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "metaDescription": "Desgaste adhesivo causado por contacto metal-metal y rotura de la película de aceite. Efectos de la temperatura, la presión y la filtración.",
+  "definition": "El desgaste adhesivo ocurre cuando la película de aceite lubricante entre superficies en movimiento se rompe y provoca contacto directo metal-metal. Cuando las superficies se deslizan bajo carga sin lubricación adecuada, los picos localizados de presión y temperatura (>150°C) causan la soldadura microscópica y el cizallamiento de las asperezas superficiales. El material se transfiere de una superficie a la otra y crea puntos ásperos que aceleran exponencialmente el desgaste.",
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4406",
+    "ASTM D4378"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Mecanismo de contacto metal-metal",
+      "body": "El desgaste adhesivo comienza cuando el espesor de la película de aceite cae por debajo de 0.1 µm (el espesor de película depende de la viscosidad, la carga y la velocidad según la curva de Stribeck). Una vez rota la película: (1) Las asperezas superficiales (micropicos de 0.1–1 µm de altura) se tocan directamente bajo carga; (2) La presión de contacto localizada supera 2–5 GPa (con un área de contacto de 1 cm² y una carga de 10 kN); (3) La temperatura en el contacto entre asperezas sube a 150–300°C por fricción; (4) El material superficial se ablanda, las asperezas se sueldan entre sí y se cizallan al continuar el movimiento relativo; (5) El material transferido se acumula en una superficie y luego se desprende como partícula (10–100 µm), dejando un cráter. La tasa de desgaste adhesivo se acelera exponencialmente una vez iniciado: el desgaste inicial crea puntos ásperos que aumentan aún más la presión de contacto."
+    },
+    {
+      "heading": "Desencadenantes de la rotura de la película de aceite",
+      "body": "Cinco condiciones provocan la rotura de la película: (1) Partículas contaminantes >3 µm que rompen la película al actuar como \"microengranajes\" que fuerzan el contacto entre superficies; (2) Viscosidad de aceite insuficiente: un aceite de baja viscosidad no puede mantener el espesor de película bajo carga; una caída de viscosidad de 46 cSt (nominal) a 30 cSt reduce el espesor de película en un 30–40%; (3) Presión/temperatura extremas: las cargas de choque que superan la envolvente de diseño colapsan la película temporalmente; las altas temperaturas (>80°C) reducen la viscosidad del aceite un 5–10% por cada 10°C; (4) Oxidación del aceite y agotamiento de aditivos: el aceite envejecido pierde los aditivos antidesgaste (zinc, molibdeno) que normalmente crean películas protectoras de lubricación límite; (5) Humedad y ácidos corrosivos: el agua y los ácidos de oxidación reducen la resistencia de la película de aceite y favorecen las picaduras por microcorrosión, lo que reduce la lisura superficial y la capacidad de carga de la película."
+    },
+    {
+      "heading": "Vulnerabilidad de los sistemas hidráulicos al desgaste adhesivo",
+      "body": "Los sistemas hidráulicos son especialmente susceptibles al desgaste adhesivo en válvulas proporcionales, conjuntos carrete-alojamiento y placas de puertos de bombas, donde las holguras son estrechas (1–5 µm) y las presiones extremas (200–350 bar). El carrete de una válvula proporcional mantiene el control hidráulico mediante una separación precisa de 2–4 µm entre el carrete y el alojamiento. Cualquier partícula >3 µm aumenta la presión de contacto del carrete; combinado con picos de presión (300 bar × 10 cm² de carrete = 30,000 N de fuerza) y los aumentos de temperatura por la acción de estrangulamiento de la válvula proporcional, el desgaste adhesivo comienza rápidamente. El desgaste del carrete aumenta la holgura de 3 µm a 5–10 µm en 500–1000 horas, lo que destruye el control de precisión y provoca la pérdida de respuesta proporcional (la presión piloto ya no controla de forma confiable la posición del carrete principal)."
+    },
+    {
+      "heading": "Sinergia entre contaminación y temperatura",
+      "body": "El desgaste adhesivo es un efecto sinérgico de la contaminación Y la temperatura: las partículas contaminantes reducen la película de aceite efectiva (al quedar atrapadas en los espacios de la película) Y la temperatura elevada reduce la viscosidad y la resistencia de la película. En operaciones de alta temperatura (minería en el desierto, climas tropicales), la temperatura base del aceite sube a 60–70°C; esto por sí solo reduce la viscosidad un 30–40% y adelgaza la película. Sumar contaminación por partículas (ISO 19/17/14 frente a un objetivo de 16/14/11) reduce el espesor de película otro 20–30%, con una reducción acumulada de película del 50–70%. El efecto combinado acelera el desgaste adhesivo 10–20×. La prevención requiere AMBOS: control de temperatura (enfriamiento adecuado) Y control de contaminación (filtración en varias etapas)."
+    },
+    {
+      "heading": "Prevención: aditivos antidesgaste + filtración",
+      "body": "Prevención del desgaste adhesivo en dos partes: (1) Aditivos antidesgaste (AW) del aceite: el ditiofosfato de dialquilzinc (ZDDP) y el molibdeno forman películas protectoras de lubricación límite bajo presión extrema, lo que permite que la película se recupere tras los picos de presión; los aceites sintéticos premium (SYNTRAX) contienen paquetes AW reforzados; (2) Control de contaminación: la eliminación de partículas evita la rotura mecánica de la película; un aceite limpio ISO 16/14/11 mantiene un espesor de película de 0.5–1 µm incluso con 200 bar de presión y 70°C de temperatura. Los márgenes de operación mejoran notablemente: la película de aceite se vuelve resiliente, puede recuperarse tras picos de presión transitorios y acomoda las microasperezas sin soldarse. Resultado: la tasa de desgaste adhesivo cae 10–50× frente al enfoque de aceite genérico + filtración deficiente."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Cuál es la diferencia entre el desgaste adhesivo y el abrasivo?",
+      "answer": "Desgaste abrasivo: partículas duras (sílice, óxidos) actúan como herramientas de esmerilado que cortan las superficies; el desgaste es proporcional al tamaño y la cantidad de partículas; se previene eliminando partículas mediante filtración. Desgaste adhesivo: las superficies metálicas se tocan directamente bajo carga; el material se transfiere entre superficies y se desprende; la tasa de desgaste aumenta exponencialmente una vez iniciado. La prevención requiere tanto un espesor de película adecuado (viscosidad, limpieza, enfriamiento) como aditivos antidesgaste. El desgaste abrasivo es un \"esmerilado lento\"; el desgaste adhesivo es una \"soldadura y pérdida de material rápidas\"."
+    },
+    {
+      "question": "¿Por qué las partículas contaminantes desencadenan desgaste adhesivo si son más pequeñas que la carga?",
+      "answer": "Las partículas no necesitan \"romper\" la película por la fuerza; actúan como \"separadores\" en el espacio de aceite. Una partícula de 3 µm en un espacio de película de 4 µm se ve forzada contra los picos de las asperezas y actúa como un microengranaje que aumenta la presión de contacto local 10–50×. Este pico de presión localizado causa microsoldadura en la interfaz partícula-superficie. Además, la presencia de la partícula altera la formación de la película hidrodinámica: la partícula crea remolinos y turbulencia que impiden un flujo de aceite uniforme y adelgazan la película alrededor de su ubicación."
+    },
+    {
+      "question": "¿Se puede revertir el desgaste adhesivo una vez iniciado?",
+      "answer": "No del todo. Una vez iniciado el desgaste adhesivo, la rugosidad superficial aumenta (de Ra 0.1 µm a Ra 0.5–1.5 µm) y las superficies rugosas quedan trabadas mecánicamente (los ángulos de fricción altos impiden un deslizamiento suave). Aunque se elimine la contaminación y se reemplace el aceite, las superficies rugosas siguen generando desgaste adhesivo a una tasa acelerada por el aumento de las presiones de contacto. Prevenir es muy superior a curar: mantener aceite limpio (ISO 16/14/11), viscosidad adecuada (46 cSt nominal) y aditivos antidesgaste desde el inicio. La detección temprana (aumento de partículas de desgaste ferroso en el análisis de aceite) permite reemplazar el componente antes de un daño superficial permanente."
+    },
+    {
+      "question": "¿Cómo aumenta la temperatura el riesgo de desgaste adhesivo?",
+      "answer": "La temperatura afecta la viscosidad (espesor de película) y la estabilidad de los aditivos antidesgaste. Con un aumento de +10°C: la viscosidad cae un 10–15% (reduciendo proporcionalmente el espesor de película), la eficacia de los aditivos antidesgaste baja un 5–10% (menos protección en los picos de presión) y la tasa de oxidación se duplica (el aceite envejecido pierde aditivos más rápido). En un clima cálido (40°C de ambiente) con enfriamiento inadecuado (aceite a 85°C frente a 65°C nominal), la pérdida de viscosidad combinada es del 30–40%, el espesor de película cae un 30–40% y la protección de los aditivos es un 20–30% menor. Esto crea la \"tormenta perfecta\" para el desgaste adhesivo: película delgada + protección química débil + altas presiones de contacto. Solución: enfriamiento activo del aceite (controlado por termostato) + aceite premium de alto índice de viscosidad (SYNTRAX) + filtración en varias etapas."
+    },
+    {
+      "question": "¿Por qué el desgaste adhesivo es común en válvulas proporcionales pero raro en cilindros?",
+      "answer": "Los carretes de las válvulas proporcionales operan con: (1) holguras estrechas (separación carrete-alojamiento de 2–4 µm), donde incluso partículas de 1 µm fuerzan el contacto metálico; (2) altas presiones diferenciales (200–300 bar a través del carrete), que generan fuerzas de 20,000–30,000 N sobre una pequeña área del carrete; (3) alta velocidad del fluido (5–10 m/s), que genera una alta tensión de cizallamiento. Los cilindros, en cambio, operan con: (1) holguras amplias (separaciones del sello del vástago de 20–50 µm); (2) menor presión (100–150 bar); (3) menor velocidad del fluido. El mismo nivel de limpieza del aceite (ISO 19/17/14) es catastrófico para las válvulas proporcionales, pero tolerable para los cilindros. Por eso los objetivos de limpieza del sistema deben fijarse según el componente MÁS SENSIBLE (válvula proporcional, 16/14/11), no según el promedio."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Espesor crítico de la película",
+      "value": "0.1–1 µm"
+    },
+    {
+      "label": "Temperatura en el contacto entre asperezas",
+      "value": "150–300°C"
+    },
+    {
+      "label": "Holgura del carrete de la válvula proporcional",
+      "value": "2–4 µm"
+    },
+    {
+      "label": "Aumento de la tasa de desgaste (por cada +10°C)",
+      "value": "+50–100%"
+    }
+  ]
+}

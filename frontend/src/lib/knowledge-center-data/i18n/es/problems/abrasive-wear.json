@@ -1,0 +1,90 @@
+{
+  "id": "PROB-ABRASIVE-WEAR",
+  "slug": "abrasive-wear",
+  "name": "Desgaste abrasivo",
+  "category": "mechanical-wear",
+  "severity": "critical",
+  "status": "published",
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "metaDescription": "Desgaste abrasivo por contaminación con partículas duras. Jerarquía de sensibilidad de componentes, umbrales de daño por tamaño de partícula y especificaciones de filtración ISO 16889.",
+  "definition": "El desgaste abrasivo es la remoción de material superficial causada por partículas contaminantes duras (sílice, óxido de hierro, residuos cerámicos) atrapadas entre superficies en movimiento bajo carga. Las partículas de >4 µm de diámetro que se incrustan en las superficies con tensiones de contacto >1 GPa crean surcos de microcorte, generan partículas de desgaste y aceleran la degradación superficial. La tasa de desgaste aumenta exponencialmente con el tamaño de partícula y la carga.",
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4406",
+    "ISO 5011",
+    "SAE J1539",
+    "ISO 19438"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™",
+    "SYNTRAX™",
+    "NANOFORCE™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Umbrales de daño por tamaño de partícula según el componente",
+      "body": "Cada componente del equipo tiene umbrales específicos de daño por tamaño de partícula: por debajo de ellos las partículas pasan sin daño y por encima el desgaste se acelera: (1) Válvulas de control proporcionales y servoválvulas (holguras de carrete de 1–4 µm): las partículas >3–5 µm causan agarrotamiento y pérdida de precisión de control en 500–1000 horas; (2) Motores y bombas hidráulicas (holguras de puertos de 10–15 µm): las partículas >10–15 µm erosionan las placas de puertos y reducen la eficiencia volumétrica, con una vida útil reducida en 50–70%; (3) Cilindros (holguras del sello del vástago de 20–50 µm): las partículas >20–50 µm erosionan la superficie del vástago y desgastan los sellos, aunque los cilindros son el componente más tolerante; (4) Rodamientos (holguras de los elementos rodantes de 5–10 µm): las partículas >4–6 µm entran directamente en la película del rodamiento, causan descascarado y reducen la vida en 70–90%; (5) Anillos de pistón (holguras de abertura de 0.05–0.15 mm): las partículas >10 µm causan blowby y pérdida de compresión. Las especificaciones de filtro ISO 16889 deben apuntar al componente más sensible del sistema."
+    },
+    {
+      "heading": "Mecanismos de desgaste abrasivo bajo carga",
+      "body": "Tres mecanismos principales de desgaste abrasivo causan daño superficial: (1) Abrasión de dos cuerpos: una partícula dura presionada entre una superficie en movimiento y una superficie fija corta ambas; tasa de desgaste ∝ carga normal × tamaño de partícula × distancia recorrida; (2) Abrasión de tres cuerpos: partículas duras que ruedan/se deslizan libremente entre las superficies y las lijan como papel de lija; es menos agresiva que la de dos cuerpos, pero el volumen de desgaste es mayor por la cantidad de partículas que intervienen a la vez; (3) Desgaste erosivo: un flujo de partículas a alta velocidad que impacta las superficies en ángulos oblicuos y remueve material por deformación plástica y fatiga; común en válvulas sometidas a transitorios de presión. La tasa de generación de partículas ferrosas aumenta exponencialmente una vez que empieza el desgaste: el desgaste inicial produce partículas de Fe que luego causan desgaste secundario, creando un ciclo destructivo de retroalimentación positiva."
+    },
+    {
+      "heading": "Jerarquía de sensibilidad de los componentes",
+      "body": "Los sistemas industriales contienen componentes con sensibilidades a la contaminación muy distintas: sensibilidad CRÍTICA (deben mantener 16/14/11 o más estricto): válvulas proporcionales, servoválvulas, bombas de desplazamiento variable, unidades compensadas por presión; sensibilidad ALTA (18/16/13 aceptable): válvulas de control direccional estándar, motores hidráulicos, bombas de engranajes, válvulas de alivio de presión; sensibilidad MODERADA (20/18/15 aceptable): cilindros, acumuladores, válvulas de control de caudal; sensibilidad BAJA (21/19/16+ aceptable): coladores de succión, respiraderos de depósito, filtros de línea de retorno. El objetivo de limpieza del sistema lo fija el componente MÁS SENSIBLE de ese sistema. Agregar una válvula proporcional a un sistema de cilindros por lo demás simple obliga a todo el sistema a mantener la limpieza de una válvula proporcional (16/14/11). La selección del filtro debe basarse en el componente más exigente del sistema, no en el promedio."
+    },
+    {
+      "heading": "Estrategia de filtración: remoción de partículas etapa por etapa",
+      "body": "Prevenir el desgaste abrasivo en todo el sistema requiere una filtración en varias etapas que elimine partículas cada vez más pequeñas: (1) Filtración de admisión de aire: filtro SAE J1539 o ISO 5011 que captura el 99.5% de las partículas >25 µm antes de que entren a la admisión de aire del motor; (2) Filtración de combustible: separador de agua absoluto de 10 µm (Beta 1000) que elimina partículas y agua antes de la inyección de combustible; (3) Filtración de la línea de retorno del motor: retorno al cárter a través de un filtro absoluto de 10 µm (equivalente a ISO 16/14/11), que limpia todos los residuos de desgaste generados durante la operación; (4) Circulación fuera de línea kidney-loop: una bomba independiente de bajo caudal que hace circular el aceite lubricante de forma continua por un filtro absoluto de 3 µm y mantiene la limpieza indefinidamente sin importar la carga del motor; (5) Filtración de suministro del sistema hidráulico: filtro de alto caudal absoluto de 10 µm (Beta 1000) en la entrada de la bomba, que protege todas las válvulas y motores. Efecto compuesto: cada etapa elimina el 99.5% de las partículas del tamaño filtrado, lo que da una remoción acumulada de contaminación de 99.5%^n (con 5 etapas, 99.97% de exclusión total de partículas >3 µm)."
+    },
+    {
+      "heading": "Escenario ilustrativo: prevención del desgaste abrasivo en equipos móviles",
+      "body": "⚠️ Escenario ilustrativo, no un caso documentado. Considere un equipo móvil que opera en un entorno polvoriento solo con filtración OEM genérica (filtro de aire estándar + filtro de aceite de motor). Con exposición sostenida al polvo, el desarme del motor puede mostrar un desgaste de los anillos de pistón de 300–400 µm frente a una línea base normal de aproximadamente 50 µm, junto con rayado de pistones y erosión de las superficies de los cojinetes, lo que es coherente con una limpieza del aceite de alrededor de ISO 22/20/17 frente a un objetivo de ISO 18/16/13 para equipos móviles. Pasar a un filtro de aire absoluto ISO 5011 (99.5% de eficiencia a 5 µm frente a una especificación OEM típica de 25 µm), agregar filtración de línea de retorno con circulación fuera de línea kidney-loop (combinación MACROCORE + SYNTRAX) y aumentar la frecuencia de muestreo de aceite en los períodos de mucho polvo son las intervenciones estándar para devolver la limpieza al objetivo. En un escenario como este, restablecer la limpieza ISO 18/16/13 debería restablecer las tasas normales de desgaste de los anillos y prolongar los intervalos de reparación del motor; la magnitud real depende del equipo, el ciclo de trabajo y el nivel de contaminación inicial, por lo que cualquier cifra aquí debe tomarse como orientativa, no como un resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Por qué el desgaste abrasivo se acelera exponencialmente con el tamaño de partícula?",
+      "answer": "El volumen de desgaste removido es proporcional al diámetro de la partícula elevado a 2–3 (W ∝ d^2.2, según el modelo de desgaste de Archard). Una partícula de 10 µm causa ~100× más desgaste que una de 1 µm. Además, las partículas grandes (>10 µm) penetran más fácilmente las películas de lubricación y aumentan la tensión de contacto directo entre superficies. Esta relación cúbica explica por qué reducir el tamaño máximo de partícula de 25 µm (filtro OEM) a 5 µm (filtro ISO 5011) reduce el desgaste 125×."
+    },
+    {
+      "question": "¿Cómo deben determinarse los objetivos de limpieza del sistema?",
+      "answer": "El objetivo de limpieza debe fijarlo el componente MÁS SENSIBLE del sistema. Si un sistema hidráulico contiene una válvula de control proporcional (requiere 16/14/11), todos los demás componentes de ese sistema deben diseñarse/filtrarse para mantener 16/14/11, aunque los cilindros podrían tolerar 21/19/16. Especificar la limpieza según la sensibilidad promedio de los componentes garantiza la falla prematura del componente más sensible. La ISO 19438 da requisitos de limpieza específicos por componente."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre el desgaste abrasivo de dos cuerpos y el de tres cuerpos?",
+      "answer": "Abrasión de dos cuerpos: una partícula dura fija contra una superficie (p. ej., atrapada en la ranura de la pista de un rodamiento) corta la superficie opuesta; causa surcos profundos y desgaste localizado severo. Abrasión de tres cuerpos: partículas duras que ruedan libremente entre dos superficies y las lijan como papel de lija; causa un desgaste más superficial en áreas más grandes. El desgaste de tres cuerpos es menos localizado, pero a menudo más dañino en conjunto por el volumen de partículas involucradas. La mayor parte del desgaste industrial combina ambos mecanismos a la vez."
+    },
+    {
+      "question": "¿Por qué la circulación fuera de línea kidney-loop es más eficaz que depender solo de la filtración de la línea de retorno?",
+      "answer": "Los filtros de línea de retorno limpian el aceite solo DESPUÉS de que circula por el motor/sistema (con la contaminación ya presente). El kidney-loop hace circular continuamente una parte del fluido del sistema (5–10% del volumen total por hora) por un filtro independiente de alta eficiencia y elimina la contaminación sin importar la demanda del sistema. Así mantiene la limpieza objetivo indefinidamente, incluso con ingreso continuo de polvo. La filtración de la línea de retorno solo impide que la limpieza se degrade AÚN MÁS; el kidney-loop mejora la limpieza de forma progresiva."
+    },
+    {
+      "question": "¿Cómo cambian las distribuciones de tamaño de partícula durante la operación?",
+      "answer": "Al principio, la contaminación es mayormente de partículas grandes (>10 µm) por el ingreso de polvo y los residuos de montaje. A medida que avanza la operación y el desgaste abrasivo de dos y tres cuerpos genera partículas metálicas, la distribución se desplaza hacia partículas finas (1–10 µm), que son MÁS dañinas para los componentes de precisión. Por eso el análisis de aceite debe seguir los códigos ISO 4406 en varios canales de tamaño (>4 µm, >6 µm, >14 µm): un desplazamiento hacia números más altos en los umbrales de tamaño más pequeños indica un desgaste abrasivo activo que genera residuos finos."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Tamaño de partícula crítico (rodamientos)",
+      "value": ">4 µm"
+    },
+    {
+      "label": "Tamaño de partícula crítico (válvulas proporcionales)",
+      "value": ">3–5 µm"
+    },
+    {
+      "label": "Limpieza óptima del sistema",
+      "value": "ISO 18/16/13 mínimo"
+    },
+    {
+      "label": "Reducción del desgaste (filtro 25µm→5µm)",
+      "value": "125× de mejora"
+    }
+  ]
+}

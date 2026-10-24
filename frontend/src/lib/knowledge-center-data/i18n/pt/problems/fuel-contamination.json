@@ -1,0 +1,90 @@
+{
+  "id": "PROB-FUEL-CONTAMINATION",
+  "slug": "fuel-contamination",
+  "name": "Contaminação do combustível",
+  "category": "contamination",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "metaDescription": "Contaminação do combustível: danos a injetores HPCR, entrada de partículas e água, compatibilidade com biodiesel. Ensaio de água ASTM D6304.",
+  "definition": "A contaminação do combustível se refere a partículas sólidas (>4 µm), água (livre ou emulsionada) e microrganismos suspensos no diesel ou no biodiesel. Os injetores common rail de alta pressão (HPCR) modernos, com orifícios de bico de 0.1–0.15 mm e sedes de válvula de 0.5–1 µm, são extremamente sensíveis à contaminação por partículas e água, falhando de forma catastrófica em 500–1000 horas de exposição a combustível contaminado.",
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937",
+    "ASTM D4378",
+    "ISO 16332"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™",
+    "SYNTAPORE™",
+    "DRYCORE™"
+  ],
+  "sections": [
+    {
+      "heading": "Projeto dos injetores HPCR e sensibilidade à contaminação",
+      "body": "Os injetores common rail de alta pressão (HPCR) operam a 1600–2000 bar (contra 200–400 bar nos sistemas tradicionais). Essa pressão extrema exige dimensões de orifício microscópicas: orifícios da ponta do bico de 0.1–0.15 mm de diâmetro, folgas do carretel da válvula piloto de 0.5–1 µm e sedes da válvula de agulha com tolerância de forma de ±0.05 mm. Essas tolerâncias são 10–100× mais estreitas que as de outros componentes do sistema de combustível. Uma única partícula dura >4 µm que entra em um orifício de 0.1 mm se torna uma \"pedra na represa\" — bloqueando o fluxo de combustível e causando falhas de ignição ou desligamento total do injetor. Gotículas de água que se unem em fluxo em golfadas podem emperrar as válvulas de agulha em milissegundos."
+    },
+    {
+      "heading": "Modos de dano por partículas nos injetores HPCR",
+      "body": "A contaminação por partículas provoca três modos de falha: (1) Obstrução de orifícios — partículas >4 µm alojadas nos orifícios do bico de 0.1–0.15 mm, restringindo o padrão de pulverização e causando distribuição desigual do combustível, marcha lenta irregular e fumaça branca visível (combustível não queimado); (2) Travamento (stick-slip) — partículas que se incrustam nas superfícies da sede da válvula de agulha, criando picos de microatrito que travam a válvula de forma intermitente; o travamento atrasa a entrega de combustível (deriva do sincronismo da injeção), prolonga os tempos de partida e dificulta a partida; (3) Erosão/pitting — partículas que atingem as superfícies da válvula de agulha durante seu movimento de alta velocidade (abertura/fechamento a 25,000 ciclos/segundo), microcortando a superfície da sede e destruindo a geometria de vedação. Uma profundidade de pitting >10 µm em uma sede de 0.5 µm significa a destruição total da válvula. Os três modos obrigam à substituição do injetor ($800–1200 por injetor × 6–8 injetores por motor = $4800–9600 por evento de falha). As garantias OEM modernas excluem falhas por combustível contaminado."
+    },
+    {
+      "heading": "Contaminação por água nos sistemas HPCR",
+      "body": "A água no combustível HPCR causa quatro mecanismos de falha: (1) Corrosão dos componentes do injetor — a água livre reage com compostos ácidos do diesel (ácido sulfúrico da oxidação do combustível), causando pitting no furo do injetor e nas superfícies da válvula de agulha em 100–200 horas de operação; (2) Crescimento de microrganismos — as interfaces água-diesel abrigam bactérias Bacillus e Clostridium, que produzem ácidos orgânicos corrosivos (acetato, butirato) que aceleram a corrosão em 3–5×; (3) Formação de emulsões — a água suspensa no diesel como gotículas minúsculas obstrui as passagens capilares de combustível (linhas de dreno do combustível piloto de 0.5–1 mm de diâmetro), causando falta de pressão e mau funcionamento do injetor; (4) Cavitação no trilho de combustível de alta pressão — bolhas de vapor de água se formam durante a expansão do combustível através dos orifícios do injetor, colapsando violentamente e danificando as paredes dos orifícios. Limite crítico: >100 ppm de água desencadeia corrosão mensurável; >200 ppm inicia o crescimento de microrganismos; >300 ppm causa degradação visível do desempenho (marcha lenta irregular, fumaça branca, batida dos injetores); >500 ppm, falha do sistema em 1–2 semanas."
+    },
+    {
+      "heading": "Sensibilidade à contaminação própria do biodiesel",
+      "body": "As misturas de biodiesel (B5–B100) aumentam em 2–3× a sensibilidade à contaminação do combustível: (1) Higroscopicidade — o biodiesel absorve a umidade atmosférica 2–3× mais rápido que o diesel convencional; tanques que armazenam B20+ devem usar respiros dessecantes e tampas de acesso vedadas; (2) Preferência dos microrganismos — Bacillus e Aspergillus proliferam mais rápido no biodiesel do que no diesel convencional, com taxas de crescimento 3–5× maiores com níveis de água equivalentes; (3) Corrosão dos injetores — os elastômeros compatíveis com biodiesel (nitrila, EPDM) dos injetores HPCR incham levemente no biodiesel, reduzindo as folgas da válvula de agulha e aumentando o risco de travamento por partículas >2 µm (contra >4 µm em injetores de diesel convencional); (4) Instabilidade oxidativa — o biodiesel oxida mais rápido que o diesel convencional, produzindo compostos de oxidação polares que favorecem a absorção de água e o crescimento de microrganismos. O ensaio de água ASTM D6304 é OBRIGATÓRIO para combustível misturado com biodiesel a cada 100 horas de operação (contra trimestral para o diesel convencional)."
+    },
+    {
+      "heading": "Estratégia de filtração e proteção do combustível",
+      "body": "A proteção do combustível HPCR exige vários estágios de filtração: (1) Filtração do armazenamento de combustível a granel — filtro de partículas + filtro separador de água na entrada do tanque, evitando nova contaminação durante a transferência para os tanques dos veículos; (2) Filtro de combustível primário (filtro principal) — remoção de partículas (SYNTAPORE) antes da bomba de combustível, junto com um separador de água dedicado (HYDROCORE) para remover a água livre; (3) Filtro de combustível secundário (filtro fino) — remoção de partículas mais finas (SYNTAPORE), protegendo o trilho de combustível HPCR e os injetores; (4) Filtração do dreno do combustível piloto — filtração no circuito de retorno do combustível piloto do injetor, evitando que partículas de desgaste da degradação do carretel piloto recirculem para o trilho de combustível principal. A combinação moderna ELIMFILTERS SYNTAPORE (partículas) + HYDROCORE (separação de água) oferece remoção de partículas e separação de água em estágios em todo o circuito de combustível, atendendo aos requisitos de proteção HPCR. Na transição para misturas de biodiesel, é necessário o polimento do combustível dos tanques existentes (carrinho portátil com filtro de partículas + separador de água)."
+    },
+    {
+      "heading": "Cenário ilustrativo: prevenção da contaminação do combustível em uma frota diesel pesada",
+      "body": "⚠️ Cenário ilustrativo, não um caso documentado. Considere uma frota de distribuição que abastece a partir de um tanque a granel próprio exposto ao suspiro e à entrada de chuva, sem respiro dessecante. A amostragem de combustível nesse tipo de situação pode mostrar 300–500 ppm de água — bem acima do limite de aproximadamente 100 ppm a partir do qual começa a corrosão mensurável dos injetores HPCR — junto com limpeza de partículas ISO elevada (em torno de 22/20/16), causando falhas frequentes de injetores a $800–1,200 por unidade. Acrescentar um respiro dessecante no tanque a granel, um pré-filtro na linha de enchimento da bomba de transferência, filtração de duplo estágio no veículo (primário de partículas SYNTAPORE + secundário separador de água HYDROCORE) e ensaios rotineiros de água Karl Fischer são as intervenções padrão para trazer o teor de água de volta abaixo do limite de crescimento microbiano (aproximadamente 50 ppm). Em um cenário como este, as taxas de falha de injetores devem cair acentuadamente depois que a água e a limpeza de partículas do combustível atingirem a meta — a economia exata e o prazo de retorno do investimento dependem do tamanho da frota, do ciclo de trabalho e da taxa de falhas inicial, portanto trate qualquer número aqui como indicativo, não como resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Por que os injetores HPCR são tão sensíveis à contaminação do combustível em comparação com os sistemas de combustível antigos?",
+      "answer": "Os injetores HPCR operam a 1600–2000 bar (contra 200–400 bar nos sistemas tradicionais) e têm folgas microscópicas: orifícios de bico de 0.1–0.15 mm e sedes de válvula de agulha de 0.5–1 µm. Essas tolerâncias são 10–100× mais estreitas que as dos sistemas antigos. Uma partícula de 4 µm bloqueando um orifício de 0.1 mm é, proporcionalmente, maior que uma rocha em um túnel, enquanto os sistemas antigos, com passagens de injetor de 0.3–0.5 mm, são mais tolerantes."
+    },
+    {
+      "question": "O que é o travamento de injetores e como a contaminação o causa?",
+      "answer": "O travamento (stick-slip) ocorre quando partículas se incrustam nas superfícies da sede da válvula de agulha, criando atrito intermitente que trava momentaneamente as válvulas de agulha na abertura/fechamento. Isso atrasa o sincronismo da injeção de combustível em 1–5 milissegundos, causando marcha lenta irregular, fumaça branca (combustível não queimado) e partidas difíceis. O travamento piora até que as partículas desgastem sulcos nas sedes de válvula, causando dano permanente à vedação e a substituição do injetor."
+    },
+    {
+      "question": "Por que as misturas de biodiesel exigem ensaios de combustível mais frequentes que o diesel convencional?",
+      "answer": "O biodiesel é higroscópico (absorve umidade 2–3× mais rápido que o diesel convencional) e favorece um crescimento mais rápido de microrganismos (taxa 3–5× maior). Além disso, os elastômeros compatíveis com biodiesel dos injetores HPCR incham levemente, reduzindo as folgas da válvula de agulha de 1–2 µm para 0.5–1 µm e aumentando a sensibilidade a partículas >2 µm. Recomenda-se o ensaio ASTM D6304 a cada 100 horas para o biodiesel, contra a cada 500 horas para o diesel convencional."
+    },
+    {
+      "question": "Como os separadores de água evitam danos por água nos injetores?",
+      "answer": "Os filtros separadores de água por coalescência (tecnologia HYDROCORE) usam um meio oleofóbico (que atrai a água) que deixa o diesel passar enquanto captura as gotículas de água. As gotículas capturadas se unem em gotas maiores que afundam e drenam por gravidade no fundo do copo do filtro, removendo a água livre antes que o combustível chegue ao trilho HPCR conforme o desempenho nominal do elemento aprovado. A água emulsionada (gotículas minúsculas dispersas em todo o combustível) exige polimento adicional do combustível com sistemas portáteis de tratamento de tanques."
+    },
+    {
+      "question": "Qual é o nível crítico de água que causa corrosão nos injetores HPCR?",
+      "answer": "Água livre >100 ppm inicia corrosão mensurável dos componentes dos injetores HPCR em 100–200 horas de operação. O crescimento de microrganismos (que acelera a corrosão pela produção de ácidos orgânicos) começa com 50–100 ppm e se torna agressivo com >200 ppm. Nível de ação: >100 ppm exige investigação; >200 ppm aciona tratamento imediato do sistema de combustível (separação de água + polimento do tanque); com >500 ppm o sistema não deve ser operado até que o combustível seja limpo."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Tamanho do orifício do injetor HPCR",
+      "value": "0.1–0.15 mm"
+    },
+    {
+      "label": "Folga da sede da válvula de agulha",
+      "value": "0.5–1 µm"
+    },
+    {
+      "label": "Limite crítico de água",
+      "value": "100 ppm"
+    },
+    {
+      "label": "Meta de proteção HPCR",
+      "value": "partículas <4 µm"
+    }
+  ]
+}

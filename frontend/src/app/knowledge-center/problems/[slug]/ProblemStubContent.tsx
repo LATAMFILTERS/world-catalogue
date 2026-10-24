@@ -11,6 +11,7 @@ import {
 } from '@/lib/knowledge-center';
 import type { ProblemStub } from '@/lib/knowledge-center';
 import type { ProblemFaqItem } from '@/lib/knowledge-center/article-registry';
+import { useReviewed } from '@/components/ReviewedText';
 import {
   ArticleBreadcrumb,
   WarningBox,
@@ -63,6 +64,7 @@ void CATEGORY_ORDER_INDEX;
 
 export default function ProblemStubContent({ problem }: { problem: ProblemStub }) {
   const severityColor = PROBLEM_SEVERITY_COLORS[problem.severity];
+  const tr = useReviewed();
 
   const relatedProblems = PROBLEM_STUBS.filter(
     (p) => p.slug !== problem.slug && p.category === problem.category
@@ -72,8 +74,8 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
       <ArticleBreadcrumb items={[
-        { label: 'Knowledge Center', href: '/knowledge-center' },
-        { label: 'Problem Graph', href: '/knowledge-center/problems' },
+        { label: tr('Knowledge Center'), href: '/knowledge-center' },
+        { label: tr('Problem Graph'), href: '/knowledge-center/problems' },
         { label: problem.name },
       ]} />
 
@@ -96,7 +98,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
                 color: '#FFF12D',
                 textTransform: 'uppercase',
               }}>
-                {PROBLEM_CATEGORY_LABELS[problem.category]}
+                {tr(PROBLEM_CATEGORY_LABELS[problem.category])}
               </span>
               <span style={{
                 fontFamily: 'JetBrains Mono, monospace',
@@ -130,7 +132,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
               borderRadius: '4px',
               padding: '3px 10px',
             }}>
-              {problem.severity} severity
+              {tr(`${problem.severity} severity`)}
             </span>
           </motion.div>
         </div>
@@ -157,7 +159,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
               color: 'rgba(255,241,45,0.5)',
               marginBottom: '0.75rem',
             }}>
-              DEFINITION
+              {tr('DEFINITION')}
             </p>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -185,7 +187,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '1rem',
             }}>
-              KEY PARAMETERS
+              {tr('KEY PARAMETERS')}
             </p>
             <div style={{
               display: 'grid',
@@ -282,7 +284,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}>
-              Related Problems — {PROBLEM_CATEGORY_LABELS[problem.category]}
+              {tr('Related Problems')} — {tr(PROBLEM_CATEGORY_LABELS[problem.category])}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {relatedProblems.map((p) => (
@@ -299,7 +301,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
                     padding: '4px 10px',
                   }}
                 >
-                  {p.name}
+                  {tr(p.name)}
                 </Link>
               ))}
             </div>

@@ -1,0 +1,91 @@
+{
+  "id": "PROB-WATER-INGRESS",
+  "slug": "water-ingress",
+  "name": "Entrada de água",
+  "category": "contamination",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "fuel-cleanliness-protection",
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "metaDescription": "Contaminação por água em sistemas de combustível e óleo. Crescimento microbiano, corrosão e ensaio Karl Fischer (ASTM D6304).",
+  "definition": "A entrada de água é a entrada e o acúmulo de água (livre, emulsionada ou dissolvida) em sistemas de combustível, óleo lubrificante ou fluido hidráulico. A água favorece o crescimento microbiano nas interfaces fluido-água, acelera a oxidação e a formação de ácidos, corrói injetores de combustível e componentes de válvulas e reduz a viscosidade. Limite crítico: >200 ppm de água livre desencadeia crescimento microbiano exponencial e danos aos componentes.",
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937",
+    "ASTM D4378",
+    "ISO 3448"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™",
+    "DRYCORE™"
+  ],
+  "sections": [
+    {
+      "heading": "Vias de entrada da água",
+      "body": "A água entra nos sistemas de fluido por várias vias: (1) Respiração do tanque durante ciclos de temperatura e variações de pressão — o ar carregado de umidade entra nos tanques durante o resfriamento; (2) Precipitação — a água da chuva infiltra pelas tampas dos respiros, pelos bocais de abastecimento ou pelas costuras corroídas do tanque; (3) Degradação de vedações — retentores de eixo e o-rings desgastados deixam a água condensada entrar na carcaça da bomba hidráulica; (4) Umidade no óleo novo — tambores embalados em ambientes úmidos absorvem umidade pelo papelão ou pelos furos de ventilação; (5) Lavagem — o jato de água em alta pressão sobre o equipamento penetra vedações mecânicas e sistemas de respiro. Ambientes tropicais e costeiros têm taxas de entrada de água 10–20× maiores por causa da umidade e da névoa salina."
+    },
+    {
+      "heading": "Crescimento microbiano na interface água-diesel",
+      "body": "As misturas de água e diesel criam interfaces onde os microrganismos prosperam. Três famílias patogênicas predominam nos tanques de combustível: (1) Bacillus — bactérias aeróbias que formam biofilmes na interface ar-água, produzindo ácidos graxos corrosivos e sulfeto de hidrogênio; (2) Clostridium — bactérias anaeróbias ativas nos fundos estagnados dos tanques, que consomem diesel e produzem ácidos e metano; (3) Aspergillus — fungos que formam um lodo visível preto/marrom, secretando micotoxinas que degradam elastômeros e corroem o aço. Cronologia microbiana: 100 ppm de água → crescimento microbiano detectável em 3–7 dias; 200 ppm → crescimento exponencial e incrustação biológica visível em 2 semanas; 500+ ppm → depósitos espessos de biofilme, entupimento de filtros e contaminação do sistema em 3–5 dias."
+    },
+    {
+      "heading": "Cascata de falhas: danos a injetores e componentes",
+      "body": "A contaminação por água avança por uma cascata de falhas previsível de 600 horas: (1) 100–200 ppm de água: inicia-se o crescimento microbiano, começa a incrustação biológica nas superfícies do tanque e o cheiro do combustível muda (leve odor de enxofre); (2) 200–300 ppm de água: aumenta a produção microbiana de ácidos, o pH do combustível cai para 4.5–5.0 (pH normal do diesel: 6.5–7.5) e começa o pitting por corrosão no aço do sistema de combustível; (3) 300–500 ppm de água: forma-se uma emulsão (água suspensa no combustível), aumenta a pressão de bypass do filtro, surgem os primeiros depósitos nos injetores e começa a degradação do desempenho (1–3% de perda de potência); (4) 500–1000 ppm de água: emulsão completa, travamento de injetores frequente, começa a coqueificação da válvula de controle de pressão de combustível e o consumo de combustível aumenta 5–15%; (5) >1000 ppm de água: falha catastrófica do sistema em 2–5 dias — engripamento da agulha do injetor, colapso da pressão do trilho de combustível e perda total de potência do motor. A biomassa microbiana obstrui visivelmente os filtros de combustível e os elementos de tela."
+    },
+    {
+      "heading": "Ensaio Karl Fischer (ASTM D6304)",
+      "body": "A titulação coulométrica Karl Fischer é o padrão ISO/ASTM para quantificar a água no diesel. A reação: água (H₂O) + SO₂ + I₂ → H₂SO₄ + 2HI consome iodo em quantidade equivalente ao teor de água, medida por um detector coulométrico. Parâmetros críticos: (1) Método — coulométrico (ASTM D6304-A para exatidão <10 ppm) versus titulação volumétrica (menos exata, ±5 ppm); (2) Manuseio da amostra — as amostras de combustível devem ser vedadas imediatamente após a coleta (a exposição ao ar aumenta a água medida em 50–100 ppm); (3) Calibração — o instrumento deve ser calibrado diariamente com padrões de água conhecidos (10 ppm, 50 ppm, 200 ppm); (4) Frequência de análise — base trimestral, mensal na estação chuvosa e imediatamente após um evento suspeito de entrada de água. Limite de detecção: limite de 50–100 ppm acima do qual a atividade microbiana se torna mensurável. Nível de ação: >200 ppm aciona inspeção imediata do sistema de combustível e tratamento microbiano."
+    },
+    {
+      "heading": "Prevenção: controle de água em várias camadas",
+      "body": "Prevenir a entrada de água exige bloquear as vias de entrada e remover a água que já entrou: (1) Respiros dessecantes (tipo sílica-gel) substituem os respiros de ar padrão, absorvendo a umidade atmosférica antes que o ar úmido entre no tanque — reduzem a entrada em 50–70%; (2) Filtros separadores de água (tecnologia HYDROCORE com meio coalescente) capturam a água livre no estágio de filtro de combustível, drenando por gravidade a água separada antes que chegue aos injetores; (3) Unidades de polimento de combustível (portáteis ou sobre skid) com filtro de partículas de 3 mícrons + separador de água para tratamento proativo do tanque; (4) Tampas de combustível e tampas de inspeção vedadas para minimizar a abertura do tanque e a entrada de umidade; (5) Limpeza periódica do tanque a cada 2–3 anos em climas úmidos, removendo a microbiota e os sedimentos acumulados. Abordagem combinada: respiro dessecante + filtro separador de água + ensaio Karl Fischer trimestral reduz as falhas relacionadas à água praticamente a zero."
+    },
+    {
+      "heading": "Cenário ilustrativo: operação de uma frota em clima tropical",
+      "body": "⚠️ Cenário ilustrativo, não um caso documentado. Considere uma frota operando em clima tropical com respiros de tanque padrão (sem dessecante) e sem monitoramento rotineiro da água. Em condições úmidas da estação chuvosa, os tanques de combustível nesse tipo de situação podem acumular 300–800 ppm de água, causando falta de combustível recorrente e travamento de injetores que obrigam a paradas não planejadas para o serviço dos injetores. Acrescentar respiros dessecantes, filtração de duplo estágio com separador de água HYDROCORE, ensaios Karl Fischer mensais e polimento periódico do combustível são as intervenções padrão para baixar a água do tanque para a faixa de poucas dezenas de ppm e eliminar em grande parte as paradas causadas pela água. Em um cenário como este, as paradas não planejadas relacionadas ao combustível devem cair acentuadamente depois que o teor de água for controlado — o prazo exato de retorno do investimento e a economia dependem do tamanho da frota, do ciclo de trabalho e da taxa de falhas inicial, portanto trate qualquer número aqui como indicativo, não como resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Qual nível de teor de água desencadeia o crescimento microbiano no diesel?",
+      "answer": "O crescimento microbiano começa com 50–100 ppm de água livre e se torna exponencial acima de 200 ppm. Com 200 ppm, a incrustação biológica visível (biofilme, depósitos de lodo) aparece em 2 semanas. Com 500+ ppm, mantas microbianas espessas obstruem completamente os filtros de combustível e causam a falha do sistema em dias. O ensaio Karl Fischer deve acionar uma investigação com >100 ppm e uma intervenção imediata (tratamento do tanque, polimento do combustível) com >200 ppm."
+    },
+    {
+      "question": "O que é a cascata de falhas por contaminação de água de 600 horas?",
+      "answer": "A entrada de água avança assim: 100 ppm (início do crescimento microbiano) → 200 ppm (forma-se emulsão, o pH cai) → 300 ppm (depósitos nos injetores, perda de desempenho) → 500 ppm (coqueificação da válvula de controle de combustível, consumo +15%) → 1000 ppm (falha do sistema em 2–5 dias). A cronologia da cascata depende da taxa de entrada de água e do volume do tanque, mas o dano ao sistema normalmente passa despercebido até 300–500 ppm, quando o travamento dos injetores se torna evidente."
+    },
+    {
+      "question": "Como o ensaio Karl Fischer detecta a água no diesel?",
+      "answer": "A titulação coulométrica Karl Fischer (ASTM D6304) mede a água fazendo-a reagir com uma solução de iodo — o consumo de iodo é proporcional ao teor de água. A detecção coulométrica oferece exatidão de ±0.5 ppm. As amostras devem ser vedadas imediatamente após a coleta e analisadas em até 24 horas (o combustível absorve umidade atmosférica, gerando leituras falsamente altas). É necessária calibração diária com padrões conhecidos."
+    },
+    {
+      "question": "Os separadores de água conseguem remover toda a água de um combustível contaminado?",
+      "answer": "Os filtros separadores de água (de meio coalescente, como HYDROCORE) capturam a água livre e emulsionada conforme o desempenho nominal do elemento aprovado. A água dissolvida (água molecular em solução no combustível, <50 ppm) passa. Para combustível muito contaminado (>500 ppm de água), uma abordagem em dois estágios funciona melhor: (1) um separador de água primário remove a água livre em massa; (2) uma unidade de polimento de combustível (filtração portátil + separação de água) remove a emulsão restante e a água dissolvida ao longo de vários ciclos de circulação."
+    },
+    {
+      "question": "Por que as regiões tropicais sofrem mais falhas por entrada de água?",
+      "answer": "Os climas tropicais (alta umidade, 70–95% de umidade relativa) causam: (1) ciclos rápidos de respiração do tanque impulsionados pela temperatura, que puxam ar carregado de umidade para dentro dos tanques; (2) condensação nas paredes do tanque durante os ciclos noturnos mais frios; (3) precipitação penetrando sistemas de respiro envelhecidos; (4) taxa de crescimento de microrganismos 3–5× mais rápida pelo calor e pela umidade. Os respiros dessecantes são 3–4× mais críticos em regiões tropicais do que em climas temperados."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Limite crítico de água",
+      "value": "200 ppm"
+    },
+    {
+      "label": "Início do crescimento microbiano",
+      "value": "50–100 ppm"
+    },
+    {
+      "label": "Prazo até a falha do sistema",
+      "value": "500–1000 ppm → 2–5 dias"
+    },
+    {
+      "label": "Norma de ensaio",
+      "value": "ASTM D6304 (Karl Fischer)"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "PROB-INJECTOR-WEAR",
+  "slug": "injector-wear",
+  "name": "Desgaste de inyectores",
+  "category": "mechanical-wear",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "metaDescription": "Desgaste de inyectores HPCR por contaminación con partículas y corrosión por agua. Obstrucción de orificios, agarrotamiento de la aguja y mecanismos de erosión.",
+  "definition": "El desgaste de inyectores es la degradación de las válvulas de aguja y los orificios de tobera de los inyectores common rail de alta presión (HPCR) causada por la contaminación con partículas y la corrosión por agua. Las tolerancias microscópicas (orificios de tobera de 0.1 mm, asiento de aguja de 0.5–1 µm) no toleran contaminación >2 µm. El desgaste se manifiesta como erosión, agarrotamiento (stick-slip) y obstrucción de orificios, lo que causa errores de sincronización de la inyección, distribución desigual del combustible y la falla total del inyector.",
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "sections": [
+    {
+      "heading": "Diseño de los inyectores HPCR y sensibilidad a fallas",
+      "body": "Los inyectores HPCR operan a 1600–2000 bar (160–200 MPa) de presión, 10× más que los sistemas de combustible tradicionales. Los orificios de la punta de la tobera miden 0.1–0.15 mm de diámetro (100–150 µm); las holguras del carrete de la válvula piloto son de 0.5–1 µm (escala micrométrica). Estas tolerancias crean un modo de falla de \"piedra en la represa\": una sola partícula dura >4 µm que entra en un orificio de 0.1 mm bloquea el flujo de combustible. Los múltiples ciclos de la válvula de aguja (25,000 ciclos/segundo a 1500 RPM) generan tensiones de alta frecuencia que se propagan en microfisuras en los asientos de válvula y las paredes de los orificios. Los sistemas de combustible OEM modernos no toleran la contaminación; incluso un diésel genérico \"limpio\" con partículas de 4 µm es destructivo para los sistemas HPCR."
+    },
+    {
+      "heading": "Tres mecanismos de falla de los inyectores",
+      "body": "Modo 1 — Obstrucción del orificio: una partícula >3 µm se aloja en el orificio de la tobera, restringe el patrón de pulverización y causa una distribución desigual del combustible; el resultado es ralentí irregular, humo blanco (combustible no quemado) y fallas de encendido. Modo 2 — Agarrotamiento de la aguja (stick-slip): las partículas se incrustan en la superficie del asiento de válvula (0.5 µm de ancho de asiento) y crean picos de microfricción que traban la válvula de aguja de forma intermitente; el agarrotamiento causa sincronización errática de la inyección, entrega de combustible retrasada (variación de sincronización de 100–500 microsegundos) y arranques prolongados. Modo 3 — Erosión/picado: las partículas que golpean la válvula de aguja durante su movimiento de 25,000 ciclos/s microcortan el asiento de válvula y destruyen la geometría de sellado; una profundidad de picado >10 µm en un asiento de 0.5 µm destruye por completo el sello. Los tres modos requieren reemplazar el inyector completo ($800–1200 por inyector × 6–8 inyectores por motor = $4800–9600 por evento de falla)."
+    },
+    {
+      "heading": "Contaminación por agua y corrosión en HPCR",
+      "body": "El agua en el diésel causa cuatro mecanismos de falla específicos de los HPCR: (1) Corrosión del alojamiento del inyector y de las superficies de la válvula de aguja: el agua libre reacciona con compuestos ácidos del diésel (ácido sulfúrico por oxidación del combustible, ácidos orgánicos por crecimiento microbiano) y pica los componentes del inyector en 100–200 horas de operación; una profundidad de corrosión >50 µm en zonas críticas destruye la geometría de sellado; (2) Corrosión acelerada por microorganismos: las interfaces agua-diésel albergan bacterias Bacillus y Clostridium, que producen ácidos orgánicos (acetato, butirato) que aceleran la corrosión 3–5×; los depósitos de biopelícula obstruyen los pasajes de combustible; (3) Formación de emulsiones: el agua suspendida en el diésel como gotas diminutas crea un flujo en tapones que atasca las válvulas de aguja y obstruye las líneas de drenaje del combustible piloto (0.5–1 mm de diámetro); (4) Cavitación en el riel de combustible de alta presión: se forman burbujas de vapor de agua durante la expansión del combustible a través de los orificios del inyector, que colapsan violentamente y dañan las paredes de los orificios (pulsos de presión >2000 bar durante 1–10 microsegundos). Umbrales críticos de agua: >100 ppm desencadena picado por corrosión; >200 ppm inicia crecimiento microbiano; >300 ppm causa una degradación visible del desempeño; >500 ppm, falla del sistema en 1–2 semanas."
+    },
+    {
+      "heading": "Estrategia de detección y prevención",
+      "body": "Detección del desgaste de inyectores: (1) Análisis de combustible ISO 4406 para conteo de partículas (objetivo: partículas <4 µm en HPCR); (2) Ensayo Karl Fischer del contenido de agua (umbral crítico >200 ppm); (3) Ensayo de desempeño de inyectores: los sistemas OBD-II modernos detectan variaciones de sincronización de la inyección (>50 microsegundos); el ralentí irregular y el humo blanco indican agarrotamiento/obstrucción. La prevención requiere una protección del combustible por etapas: (1) Filtración de partículas de combustible SYNTAPORE que captura las partículas antes del riel de combustible; (2) Separador de agua HYDROCORE que previene la corrosión; (3) Pulido periódico del combustible para un tratamiento proactivo del tanque. El ensayo Karl Fischer periódico (mensual en temporada de lluvias, trimestral el resto del año) permite detectar a tiempo el ingreso de agua antes de que el combustible corrosivo llegue a los inyectores."
+    },
+    {
+      "heading": "Escenario ilustrativo: protección del sistema de combustible de una flota comercial",
+      "body": "⚠️ Escenario ilustrativo, no un caso documentado. Considere una flota de servicio pesado que opera en un clima tropical húmedo solo con filtros de combustible genéricos y respiraderos de tanque estándar (sin desecante). En condiciones de monzón durante la temporada de lluvias, las muestras de combustible en este tipo de situación pueden mostrar una limpieza de partículas ISO muy por encima del objetivo HPCR prácticamente limpio y un contenido de agua en el rango de 400–800 ppm, lo que provoca fallas repetidas de inyectores con ralentí irregular y humo blanco. Agregar respiraderos desecantes en los tanques de combustible, filtración de doble etapa con separador de agua HYDROCORE y ensayos mensuales de agua Karl Fischer son las intervenciones estándar para volver a controlar el agua del tanque; los respiraderos desecantes por sí solos pueden reducir el ingreso de agua del rango de 100–500 ppm a menos de 20 ppm en las temporadas de alta humedad. En un escenario como este, las tasas de falla de inyectores deberían caer de forma marcada una vez que el contenido de agua y la limpieza de partículas vuelvan al objetivo; el período exacto de recuperación de la inversión y el ahorro dependen del tamaño de la flota, el clima y la tasa de fallas inicial, por lo que cualquier cifra aquí debe tomarse como orientativa, no como un resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Por qué los filtros de diésel genéricos no pueden proteger los inyectores HPCR?",
+      "answer": "Los filtros de diésel genéricos están clasificados a 20–25 µm absolutos (Beta 200 @ 20 µm) y dejan pasar el 50% de las partículas >20 µm. Los inyectores HPCR fallan con partículas >4 µm. Un filtro genérico que deje pasar aunque sea el 1% de las partículas de 5 µm es catastrófico: 100 µm³ de combustible que pasan por orificios de tobera de 0.1 mm a 1000 litros/hora = millones de partículas de 5 µm por minuto que llegan a los inyectores. El medio de partículas SYNTAPORE está diseñado para el rango de tamaño de partícula más fino relevante para la protección de los orificios HPCR, ajustado a la etapa de filtración de combustible aprobada y no a una clasificación universal. El umbral de tamaño de partícula es la diferencia crítica."
+    },
+    {
+      "question": "¿Cómo se detecta el agua en el diésel antes de que dañe los inyectores?",
+      "answer": "La titulación coulométrica Karl Fischer (ASTM D6304) es el método estándar. Procedimiento: (1) La muestra de combustible se recoge en un envase sellado inmediatamente después del muestreo del tanque (evita la exposición al aire, que aumenta artificialmente el agua medida); (2) Se inyectan 100–500 mL de muestra en la celda de titulación Karl Fischer; (3) El agua reacciona con el reactivo y produce una señal eléctrica medible proporcional al contenido de agua; (4) Resultado: ppm de agua (rango de 50–2000 ppm). Umbrales críticos: <50 ppm (seguro); 50–100 ppm (vigilar de cerca); 100–200 ppm (activar el separador de agua de inmediato); >200 ppm (crecimiento microbiano probable, acción de emergencia). Frecuencia: base mensual, semanal en temporada de lluvias e inmediatamente después de un evento sospechoso de ingreso de agua."
+    },
+    {
+      "question": "¿Se pueden reparar los inyectores corroídos o deben reemplazarse?",
+      "answer": "Los inyectores HPCR corroídos no se pueden reparar. El picado por corrosión en zonas críticas (asiento de la válvula de aguja, pared del orificio) destruye la geometría de precisión. Incluso después de eliminar los depósitos de corrosión y pulir las superficies, el picado permanece y se producen fugas. Recomendación OEM: reemplazar de inmediato al detectar corrosión (verificada por humo blanco, ralentí irregular, variación de la presión de combustible o inspección tras el retiro del inyector). Algunos talleres intentan una \"limpieza\" con solventes ultrasónicos, pero esto solo elimina los depósitos sueltos, no el picado incrustado. Se requiere el reemplazo completo ($800–1200 por inyector); la separación de agua preventiva evita este costo."
+    },
+    {
+      "question": "¿Cómo evitan los respiraderos desecantes el ingreso de agua en los tanques de combustible?",
+      "answer": "La respiración del tanque ocurre durante los ciclos de temperatura: de noche se enfría (el tanque se contrae y aspira aire por el respiradero); de día se calienta (el tanque se expande y expulsa aire). Los respiraderos estándar dejan entrar aire ambiente; con una humedad relativa del 80%+ (climas tropicales), el aire ambiente a 25°C y 80% de HR contiene ~13 gramos de agua por metro cúbico. En 6 meses (temporada de lluvias), 1000 m³ de aire húmedo que entra al tanque = ~13 kg de agua acumulada. Los respiraderos desecantes usan gel de sílice o tamiz molecular que absorbe la humedad del aire entrante y reduce la humedad del 80% al 5–10%. Los cartuchos de los respiraderos son regenerables (el gel de sílice vuelve al color azul cuando está cargado); el intervalo típico de regeneración es de 6–12 meses según el clima. Efecto neto: el ingreso de agua al tanque cae de 100–500 ppm a <20 ppm en las temporadas de alta humedad."
+    },
+    {
+      "question": "¿Por qué el crecimiento microbiano acelera la corrosión del sistema de combustible?",
+      "answer": "Las bacterias de la interfaz combustible-agua (Bacillus, Clostridium) consumen los hidrocarburos del diésel y el agua, y producen ácidos orgánicos (acetato, butirato, ácido propiónico). Estos ácidos bajan el pH del combustible de neutro (6.5–7.5) a ácido (4.0–5.0). El combustible ácido corroe agresivamente el acero del alojamiento del inyector, la superficie de la válvula de aguja y los componentes del riel de combustible. Además, los depósitos de biopelícula bacteriana (lodo oscuro visible en el fondo del tanque y en los filtros de combustible) contienen sales disueltas y ácidos orgánicos muy corrosivos. Un mes de crecimiento microbiano intenso (>1 millón de UFC/mL) puede generar una profundidad de corrosión de 50–100 µm y destruir superficies de sellado críticas. Prevención: (1) mantener el agua <100 ppm para evitar colonias bacterianas; (2) tratamiento con biocida si se detecta contaminación microbiana (recuento bacteriano >10,000 UFC/mL); (3) el pulido periódico del combustible elimina la biopelícula acumulada."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Presión de operación HPCR",
+      "value": "1600–2000 bar"
+    },
+    {
+      "label": "Diámetro del orificio de la tobera",
+      "value": "0.1–0.15 mm"
+    },
+    {
+      "label": "Holgura del carrete de la válvula de aguja",
+      "value": "0.5–1 µm"
+    },
+    {
+      "label": "Umbral crítico de agua",
+      "value": ">200 ppm (crecimiento microbiano)"
+    }
+  ]
+}

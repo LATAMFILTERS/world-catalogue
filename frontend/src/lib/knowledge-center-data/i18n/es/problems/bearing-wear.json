@@ -1,0 +1,86 @@
+{
+  "id": "PROB-BEARING-WEAR",
+  "slug": "bearing-wear",
+  "name": "Desgaste de cojinetes",
+  "category": "mechanical-wear",
+  "severity": "critical",
+  "status": "published",
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "metaDescription": "Desgaste de cojinetes causado por desgaste abrasivo acelerado por la contaminación. Correlación con la limpieza ISO 4406 y predicción de la vida útil.",
+  "definition": "El desgaste de cojinetes es la reducción acelerada de la holgura del cojinete por la contaminación con partículas abrasivas en el aceite lubricante. Las partículas duras (sílice, óxidos, residuos de desgaste) atrapadas entre las superficies del cojinete generan una acción de microcorte que aumenta la rugosidad superficial, produce cambios dimensionales y termina en el agarrotamiento.",
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4406",
+    "ISO 19438"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "MACROCORE™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Mecanismo de contaminación y desgaste",
+      "body": "El desgaste de cojinetes se acelera en proporción directa a los niveles de contaminación. Las partículas duras (>4 µm) entran en la película del cojinete y crean surcos de microcorte en las superficies de la pista y de los elementos rodantes. Esto aumenta la rugosidad superficial de Ra 0.1 µm (cojinete nuevo) a 0.4–0.6 µm con contaminación severa. El desgaste acumulado reduce la holgura radial interna del cojinete (típicamente 10–20 µm nominal) hasta que las tensiones de contacto superan el límite elástico del material, lo que causa descascarado y agarrotamiento. La tasa de desgaste se duplica por cada paso de degradación del código de limpieza ISO 4406 (p. ej., 16/14/11 → 17/15/12 duplica la tasa de desgaste)."
+    },
+    {
+      "heading": "Correlación con la limpieza ISO 4406",
+      "body": "La vida útil de los cojinetes depende de forma crítica de la limpieza del aceite medida con los códigos ISO 4406. Los datos empíricos del sector muestran: ISO 16/14/11 (óptimo para cojinetes) → 15,000–25,000 horas de operación; ISO 19/17/14 (aceptable) → 8,000–10,000 horas; ISO 22/20/17 (deficiente) → 2,000–3,000 horas. Cada paso más estricto en el código de limpieza prolonga la vida del cojinete 2–3 veces. El aceite nuevo de tambor suele medir ISO 21/19/16; si el objetivo del motor es 16/14/11, el aceite nuevo debe filtrarse antes de usarlo. La correlación es: vida del cojinete = vida base × (factor de limpieza) × (factor de carga) × (factor de velocidad), donde el factor de limpieza va de 0.1 (contaminado) a 3.5 (óptimo)."
+    },
+    {
+      "heading": "Enfoque genérico frente a enfoque de sistema",
+      "body": "Enfoque genérico: el OEM especifica el grado del filtro, el operador instala un reemplazo genérico y solo controla el intervalo de cambio de aceite. Resultado típico: aceite en condición ISO 22/20/17 después de 500 horas, vida de los cojinetes reducida a la mitad (8,000 horas), reparaciones no planificadas cada 3–4 años. Enfoque de sistema: especificar la limpieza objetivo (16/14/11), instalar filtración en varias etapas (aire + combustible + retorno + kidney-loop fuera de línea), realizar análisis ISO 4406 trimestrales y cambiar los filtros de forma preventiva cuando el código llega al objetivo + 1 nivel. Resultado típico: 16/14/11 sostenido, vida de los cojinetes extendida a 20,000+ horas, reparaciones planificadas cada 8–10 años y un costo total 60% menor durante la vida del equipo."
+    },
+    {
+      "heading": "Prevención: filtración en varias etapas",
+      "body": "Prevenir el desgaste de cojinetes requiere controlar el ingreso de contaminación en TODOS los puntos: (1) La filtración de admisión de aire (ISO 5011) elimina el 99.9% del polvo antes de que entre al cárter; (2) La filtración de combustible (ASTM D6304 con separador de agua) evita que el agua y las partículas del combustible lleguen a los inyectores y al aceite lubricante; (3) Filtración de la línea de retorno antes del depósito (Beta 1000 @ 10 µm, equivalente a una limpieza ISO 16/14/11); (4) La circulación fuera de línea kidney-loop a través de un filtro de alta eficiencia (Beta 1000 @ 3 µm) mantiene la limpieza objetivo indefinidamente, incluso con ingreso continuo de contaminación. Cada etapa elimina contaminación progresivamente más pequeña y logra un efecto compuesto: 99.9% × 99.5% × 99.5% × 99.9% = 99.97% de exclusión total de la contaminación."
+    },
+    {
+      "heading": "Escenario ilustrativo: prevención de fallas de cojinetes en una flota",
+      "body": "⚠️ Escenario ilustrativo, no un caso documentado. Considere una flota de camiones mineros de acarreo que usa solo filtración genérica y sufre fallas de cojinetes no planificadas y recurrentes entre los ciclos de reparación programados. Pasar a una filtración en varias etapas (combinación SYNTRAX + MACROCORE + DURATECH) con muestreo ISO 4406 trimestral y un circuito de circulación fuera de línea kidney-loop es el camino estándar para llevar la limpieza del aceite por debajo de la especificación OEM (al rango de 15/13/10) y controlar los mecanismos de desgaste abrasivo/adhesivo que provocan fallas prematuras de los cojinetes. En un escenario como este, las fallas no planificadas de cojinetes deberían caer de forma marcada y los intervalos de reparación programada podrían extenderse de forma significativa una vez que la limpieza se mantenga en el objetivo; la extensión exacta del intervalo, la reducción del tiempo de parada y el ahorro en dinero dependen de la flota, el ciclo de trabajo y la tasa de fallas inicial, por lo que cualquier cifra aquí debe tomarse como orientativa, no como un resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Cuál es la relación entre la limpieza del aceite (código ISO 4406) y la vida útil de los cojinetes?",
+      "answer": "La vida de los cojinetes depende exponencialmente de la limpieza del aceite. Los modelos empíricos de desgaste de cojinetes (SKF, FAG, Timken) muestran que cada paso más estricto en el código ISO 4406 prolonga la vida del cojinete 2–3×. Ejemplo: un aceite ISO 16/14/11 da 20,000 h de vida del cojinete; ISO 19/17/14 da 8,000 h; ISO 22/20/17 da 2,000–3,000 h. La diferencia entre óptimo (16/14/11) y deficiente (22/20/17) es una reducción de la vida del cojinete de 7–10×. Esta relación se cuantifica en la metodología de cálculo de vida de cojinetes de la ISO 19438."
+    },
+    {
+      "question": "¿Cómo causan las partículas duras el desgaste de los cojinetes?",
+      "answer": "Las partículas contaminantes duras (sílice, óxido de hierro, residuos de desgaste >4 µm) viajan en la película lubricante del cojinete y quedan atrapadas entre las superficies de la pista y de los elementos rodantes durante la rotación. Bajo carga (la fuerza radial del cojinete suele ser de 5–20 kN), la partícula se incrusta en ambas superficies y crea surcos de microcorte. Tras millones de ciclos, los surcos acumulados aumentan la rugosidad superficial (Ra 0.1 µm → 0.4–0.6 µm), lo que aumenta exponencialmente la fricción y la tasa de desgaste. Finalmente se consume la holgura del cojinete (10–20 µm nominal), lo que lleva al contacto metal-metal, el descascarado y el agarrotamiento."
+    },
+    {
+      "question": "¿Por qué el aceite nuevo debe filtrarse antes de agregarlo a un motor?",
+      "answer": "El aceite hidráulico nuevo de tambor suele medir ISO 21/19/16 o peor, porque se contamina durante la fabricación, el transporte y la manipulación de los tambores. Si un motor apunta a ISO 16/14/11 para proteger los cojinetes, agregar aceite nuevo sin filtrar contamina directamente el sistema y anula semanas de esfuerzos de filtración. Un cambio de aceite de 40 litros a ISO 21/19/16 puede empeorar la limpieza promedio del sistema en 2–3 niveles de código. Buena práctica: filtrar el aceite nuevo con una unidad portátil de trasvase (filtro absoluto de 10 µm, equivalente a un objetivo ISO 16) antes de introducirlo en el motor."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre la vida de los cojinetes en ensayos de laboratorio y en la operación real?",
+      "answer": "La vida de los cojinetes en laboratorio (según el cálculo de la capacidad de carga dinámica básica ISO 281) supone una película de lubricación constante, carga estable y contaminación despreciable. La vida real de los cojinetes (horas reales hasta la falla) es un 30–70% más corta por las partículas contaminantes que alteran la película, los transitorios de carga (aceleración, frenado) que disparan las tensiones de contacto y el agua/ácidos corrosivos en el aceite. El \"factor de contaminación\" del modelo de vida de cojinetes de la ISO 19438 (0.1–3.5) explica esta brecha. Una limpieza óptima del aceite acerca la vida real del cojinete a las predicciones de laboratorio; una limpieza deficiente la reduce al 10–20% de la vida de laboratorio."
+    },
+    {
+      "question": "¿Se puede detectar el desgaste de cojinetes antes de una falla catastrófica?",
+      "answer": "Sí. Tres métodos: (1) Análisis de aceite: los metales de desgaste ferrosos (Fe, Fe₂O₃) medidos por ICP-OES aumentan 5–10× antes del agarrotamiento del cojinete, subiendo de una línea base de 10–20 ppm a 100–500 ppm en semanas; (2) Monitoreo ultrasónico: el descascarado temprano produce ondas de tensión de alta frecuencia (>10 kHz) detectables con un medidor ultrasónico antes de que aparezcan partículas metálicas en el aceite; (3) Análisis de vibraciones: la frecuencia de descascarado del cojinete aumenta de una línea base <2 mm/s a >7–10 mm/s en el espectro de velocidad ISO 20816. Los programas de mantenimiento basado en la condición monitorean los tres y activan el reemplazo del cojinete cuando las tendencias se aceleran."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Limpieza óptima",
+      "value": "ISO 16/14/11"
+    },
+    {
+      "label": "Vida del cojinete (óptima)",
+      "value": "15,000–25,000 h"
+    },
+    {
+      "label": "Vida del cojinete (deficiente)",
+      "value": "2,000–3,000 h"
+    },
+    {
+      "label": "Tamaño de partícula crítico",
+      "value": ">4 µm"
+    }
+  ]
+}

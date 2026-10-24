@@ -1,0 +1,83 @@
+{
+  "id": "PROB-CAVITATION",
+  "slug": "cavitation",
+  "name": "Cavitación",
+  "category": "structural-failure",
+  "severity": "critical",
+  "status": "published",
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "metaDescription": "Cavitación en sistemas hidráulicos: formación de burbujas de vapor, erosión por colapso de cavidades, daño a bombas y prevención mediante el control de presión.",
+  "definition": "La cavitación es la formación y el colapso rápidos de burbujas de vapor (cavidades) en un líquido en movimiento, que ocurre cuando la presión local cae por debajo de la presión de vapor del líquido. En los sistemas hidráulicos, la cavitación se produce en las líneas de entrada de las bombas, los carretes de las válvulas proporcionales y las restricciones de orificios. El colapso de las cavidades crea ondas de presión violentas (>2000 bar durante microsegundos) que dañan las superficies de los componentes por erosión, picado y pérdida de material.",
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4413",
+    "NFPA T2.14"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "sections": [
+    {
+      "heading": "Física de la cavitación en sistemas hidráulicos",
+      "body": "La cavitación comienza cuando la presión local en un punto del fluido en movimiento cae por debajo de la presión de vapor (0.5–1 bar absoluto para aceite hidráulico a 60°C). Tres condiciones la desencadenan: (1) Caída rápida de presión: los carretes de las válvulas proporcionales crean una presión diferencial de 200 bar a través de un orificio de 1 mm, la velocidad local alcanza 15–25 m/s y la presión cae a <0.5 bar (ecuación de Bernoulli); (2) Caída de presión de succión: una restricción en la línea de entrada de la bomba (filtro obstruido, línea doblada) crea una succión por debajo de 0.3 bar absoluto y desencadena la cavitación; (3) Descompresión rápida: el escape de la línea piloto crea caídas de presión repentinas en la cavidad piloto de la válvula proporcional. Cuando la presión cae por debajo de la presión de vapor, el aire disuelto sale de la solución Y el líquido se vaporiza, formando burbujas de vapor de 0.1–10 mm de diámetro. Al continuar el flujo aguas abajo y recuperarse la presión (>1 bar), las burbujas colapsan violentamente en ~1 microsegundo y crean ondas de choque de presión de 2000–4000 bar."
+    },
+    {
+      "heading": "Daño por erosión del colapso de cavidades",
+      "body": "El colapso de cavidades genera tres mecanismos de daño: (1) Onda de presión: una onda de choque de 3000 bar que dura 1–10 microsegundos crea una tensión localizada que supera el límite elástico del material; el material superficial (acero, aluminio) se deforma plásticamente y crea cráteres de 10–100 µm de profundidad; el colapso repetido crea cráteres superpuestos con bordes irregulares; (2) Formación de microchorros: el colapso asimétrico de las burbujas crea chorros de líquido focalizados a 100+ m/s que impactan la superficie y perforan orificios microscópicos; (3) Radicales libres y subproductos de la erosión por cavitación: los radicales de oxígeno y las especies reactivas de la vaporización/condensación del líquido atacan químicamente las superficies, además del daño mecánico. La tasa de erosión acumulada en sistemas hidráulicos con cavitación es de 0.1–0.5 mm de profundidad cada 1000 horas de operación. Las placas de puertos de salida de las bombas (3–5 mm de espesor normal) pueden perforarse en 2000–3000 horas de cavitación continua."
+    },
+    {
+      "heading": "Señales de cavitación a nivel del sistema y su detección",
+      "body": "Tres indicadores de cavitación activa: (1) Ruido audible: la cavitación produce un sonido de molienda/crepitación de alta frecuencia (20–50 kHz ultrasónico, con un componente audible de 500–5000 Hz); el múltiple suena como \"canicas en un molino\"; (2) Pulsación de presión: la cavitación crea picos de presión (100–200 bar de amplitud, 1–10 kHz de frecuencia) visibles en los transductores de presión; las curvas de presión suaves se vuelven oscilantes con ruido de alta frecuencia; (3) Condición del fluido hidráulico: la cavitación genera calor y oxida el aceite, aumentando el número ácido (TAN) en 0.5–1.0 ppm/hora en un sistema con cavitación frente a 0.01 ppm/hora en un sistema normal; además, el fluido forma espuma, pierde un 10–20% de viscosidad y se decolora a marrón oscuro/negro. Un análisis de aceite que detecta un TAN elevado + un pico en el conteo de partículas indica daño activo por cavitación."
+    },
+    {
+      "heading": "Prevención: presión de entrada, limpieza del aceite y liberación de aire",
+      "body": "Prevención de la cavitación en tres partes: (1) Mantener la presión de entrada: la succión de la bomba debe estar 0.2–0.5 bar sobre la atmosférica (carga positiva); evitar restricciones en la línea de succión (usar una línea de gran diámetro y un filtro de entrada de baja resistencia, solo Beta 100 @ 100 µm); el filtro de succión debe tener una válvula de derivación ajustada a <0.3 bar de diferencial para evitar la falta de fluido; (2) Control de la liberación de aire: los filtros ISO 16889 eliminan el aire atrapado en el aceite; el aceite saturado de aire tiene menor presión de vapor y cavita con más facilidad; el aceite limpio (ISO 16/14/11) libera el aire más rápido que el aceite contaminado; la filtración fuera de línea kidney-loop con NANOFORCE (filtro de 3 µm) elimina las burbujas de aire microscópicas; (3) Diseño de la caída de presión de las válvulas proporcionales: los ingenieros de múltiples deben minimizar la presión diferencial a través de los carretes de las válvulas proporcionales (<50 bar en la etapa piloto, <100 bar en la etapa principal); un estrangulamiento excesivo aumenta la velocidad local y el riesgo de cavitación. Enfoque combinado: presión de succión positiva + aceite limpio + diseño correcto de válvulas elimina la cavitación."
+    },
+    {
+      "heading": "Escenario ilustrativo: daño por cavitación en un cargador de ruedas minero",
+      "body": "⚠️ Escenario ilustrativo, no un caso documentado. Considere una flota de equipos móviles que muestra un ruido hidráulico progresivo, un control proporcional brusco y un movimiento errático del cucharón después de varios miles de horas de servicio. En una situación así, el diagnóstico suele apuntar a una línea de succión parcialmente restringida (que baja la presión de entrada por debajo del umbral de cavitación) combinada con una filtración solo del lubricante (Beta 1000 a 10 µm) que deja partículas de 15–20 µm en el fluido hidráulico y degrada la limpieza de las válvulas proporcionales por debajo del objetivo de aproximadamente 17/15/12. Corregir la restricción de succión, agregar un kidney-loop fuera de línea NANOFORCE (filtración de 3 µm) en operación de campo, un prefiltro de entrada de alta eficiencia y un filtro de retorno DURATECH son las intervenciones estándar para detener el ruido de cavitación, normalizar el TAN del aceite y restablecer el control de las válvulas proporcionales. En un escenario como este, la degradación de la bomba debería detenerse una vez corregidas la presión de succión y la limpieza del fluido; el costo evitado exacto depende del equipo y de la etapa de la falla, por lo que cualquier cifra aquí debe tomarse como orientativa, no como un resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Se puede reparar el daño por cavitación o hay que reemplazar los componentes?",
+      "answer": "La erosión por cavitación es permanente. Las superficies picadas no pueden repararse a su precisión original. Las placas de puertos y las caras de salida de las bombas erosionadas por cavitación deben reemplazarse. Los carretes de válvulas proporcionales con picado por cavitación desarrollan vías de fuga y pierden capacidad de control: se requiere reemplazarlos. La única \"reparación\" es la prevención: eliminar la fuente de cavitación y reemplazar los componentes dañados. Intentar remecanizar placas de puertos picadas suele fracasar porque el picado es demasiado profundo y el patrón de daño irregular; el producto final sigue teniendo fugas. Reemplazar y prevenir es mucho más rentable que intentar reparar."
+    },
+    {
+      "question": "¿Por qué la cavitación es peor en equipos móviles (cargadores, excavadoras) que en sistemas hidráulicos estacionarios?",
+      "answer": "Los equipos móviles sufren picos de presión transitorios (aceleración, desaceleración, cargas de choque) que bajan momentáneamente la presión de succión o disparan las presiones diferenciales a través de las válvulas proporcionales. Además, las mangueras en campo están expuestas a dobleces, aplastamientos y obstrucciones parciales inducidas por vibración: el riesgo de restricción en la línea de succión es 10× mayor que en sistemas estacionarios con tuberías rígidas. Las válvulas proporcionales de los equipos móviles también operan con caudales más altos (50–100 gal/min) y carretes más ajustados (holgura de 1–2 µm), lo que genera mayor velocidad local y susceptibilidad a la cavitación. Los sistemas estacionarios tienen presión de entrada estable, líneas de succión rígidas y caudales más bajos: el riesgo de cavitación es intrínsecamente menor."
+    },
+    {
+      "question": "¿El aditivo de liberación de aire del aceite hidráulico previene la cavitación?",
+      "answer": "Los aditivos de liberación de aire (a base de silicona) reducen la ESPUMA (burbujas de aire que flotan en la superficie del aceite), pero no previenen la cavitación (aire disuelto que sale de la solución ante una caída de presión). La espuma es indeseable (reduce la transferencia de calor), pero la cavitación es destructiva (erosiona los componentes). Son fenómenos distintos. Los aceites hidráulicos sintéticos de alta calidad (formulaciones compatibles con NANOFORCE) incluyen aditivos de liberación de aire, pero prevenir la cavitación requiere cambios en el diseño del sistema (presión de succión positiva, limpieza, estrangulamiento de válvulas), no aditivos del fluido."
+    },
+    {
+      "question": "¿Cómo sé si mi sistema está cavitando o si solo hace ruido por otras causas?",
+      "answer": "Procedimiento de diagnóstico: (1) Escuchar: la cavitación real produce un ruido de molienda de alta frecuencia característico, como \"canicas en un molino\", no solo el zumbido de la bomba o el ruido del motor; (2) Medir la presión de succión: si es <0.1 bar absoluto, probablemente hay cavitación; los sistemas normales mantienen 0.2–0.5 bar; (3) Análisis de aceite: revisar el TAN (número ácido); el aceite dañado por cavitación tiene un TAN >2.0 ppm (normal <0.8); (4) Medición de transitorios de presión: instalar transductores de presión en la salida de la bomba; los sistemas con cavitación muestran oscilaciones de 100–200 bar a 1–10 kHz de frecuencia; (5) Inspección visual: retirar la bomba e inspeccionar la cara de salida en busca de erosión por picado (cavitación) frente a desgaste liso (desgaste normal). Si los cinco indicadores apuntan a cavitación, la cavitación del sistema queda confirmada."
+    },
+    {
+      "question": "¿Por qué la cavitación es especialmente dañina para las válvulas proporcionales?",
+      "answer": "Los carretes de las válvulas proporcionales operan con holguras microscópicas (1–3 µm) y estrangulan un caudal considerable (50–100 gal/min) a través de orificios pequeños. Esto genera una velocidad local extrema (15–25 m/s) y una caída de presión (100–200 bar) que fácilmente baja la presión por debajo de la presión de vapor en el orificio. Las burbujas de cavitación se forman en los resaltes del carrete y en las cavidades piloto, y colapsan creando ondas de choque que impactan las delicadas superficies del carrete. La erosión superficial del carrete (picado de 100–200 µm) es catastrófica porque degrada la geometría de sellado y aumenta la fuga interna al 5–10% (sin control). La válvula proporcional es el componente más sensible a la cavitación del sistema por sus holguras estrechas + alto estrangulamiento. Las válvulas simples de orificio fijo tienen holguras mayores y menor sensibilidad."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Presión de vapor (aceite hidráulico @ 60°C)",
+      "value": "0.5–1 bar absoluto"
+    },
+    {
+      "label": "Duración del colapso de la cavidad",
+      "value": "1 µs"
+    },
+    {
+      "label": "Presión de la onda de choque en el colapso",
+      "value": "2000–4000 bar"
+    },
+    {
+      "label": "Tasa de erosión (sistema con cavitación)",
+      "value": "0.1–0.5 mm/1000 h"
+    }
+  ]
+}

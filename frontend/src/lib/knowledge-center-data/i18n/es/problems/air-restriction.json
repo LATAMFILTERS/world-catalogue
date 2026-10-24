@@ -1,0 +1,90 @@
+{
+  "id": "PROB-AIR-RESTRICTION",
+  "slug": "air-restriction",
+  "name": "Restricción de aire",
+  "category": "contamination",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "metaDescription": "Restricción del filtro de admisión de aire: activación de la válvula de derivación, pérdida de eficiencia volumétrica, ensayo ISO 5011. Prolongación de la vida útil con filtros de aire premium.",
+  "definition": "La restricción de aire ocurre cuando los filtros de admisión de aire se saturan de polvo y la presión diferencial a través del filtro supera el punto de ajuste de la válvula de derivación (típicamente 60–80 mbar). Cuando se activa la derivación, el aire sin filtrar rodea el elemento filtrante y entra al motor, reintroduciendo contaminación directamente en el múltiple de admisión y en los cilindros.",
+  "relatedStandards": [
+    "ISO 5011",
+    "SAE J1539",
+    "SAE J726",
+    "ISO 5636"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™",
+    "DRYCORE™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Mecanismo de derivación del filtro de admisión de aire",
+      "body": "Los filtros de admisión de aire cuentan con válvulas de derivación de alivio de presión que se abren cuando la restricción del filtro supera 60–80 mbar (punto de ajuste típico). La derivación es una función de seguridad que evita que el motor se quede sin aire si el filtro se bloquea por completo. Sin embargo, su activación significa que el aire sin filtrar, con el 100% de la contaminación de polvo ambiental, entra directamente al motor. Los motores modernos con sensores de flujo másico de aire (MAF) y de temperatura del aire de admisión detectan la activación de la derivación como una caída repentina de la densidad del aire de entrada y ajustan la inyección de combustible, pero no pueden evitar el daño físico de las partículas abrasivas. La activación de la derivación es un indicador de FALLA, no una operación normal. La mayoría de las garantías OEM NO cubren el daño por activación de la derivación: se considera negligencia del operador (no cambiar el filtro a tiempo)."
+    },
+    {
+      "heading": "Pérdida de eficiencia volumétrica por restricción",
+      "body": "La potencia del motor y el consumo de combustible dependen directamente de la restricción de admisión de aire: (1) Filtro limpio (0–20 mbar): 100% de eficiencia volumétrica, potencia nominal y consumo de combustible base; (2) Restricción moderada (20–40 mbar): la eficiencia volumétrica cae a 95–98%, la potencia se reduce un 2–5% y el consumo de combustible aumenta un 1–3% (el motor trabaja más para aspirar aire a través de la restricción); (3) Restricción alta (40–60 mbar): eficiencia volumétrica de 85–92%, potencia reducida un 8–15%, consumo de combustible aumentado un 5–12% y pérdida de torque visible al acelerar; (4) Restricción crítica (>60–80 mbar, derivación inminente): eficiencia volumétrica <80%, potencia reducida >15%, consumo de combustible aumentado >15%, y la válvula de derivación puede activarse de forma intermitente creando una sensación de tirones. Operar mucho tiempo con restricción alta (40–60 mbar) aumenta el costo de combustible en el equivalente a $2–3 por galón: con 200,000 millas anuales a 6 MPG, $2000–3000 extra por año en combustible. La prolongación de la vida útil de un filtro de aire premium (intervalos de 150%+) se paga sola solo con el ahorro de combustible."
+    },
+    {
+      "heading": "Daño por ingestión de polvo sin filtrar (en derivación)",
+      "body": "Cuando la válvula de derivación se activa por saturación del filtro, el polvo sin filtrar entra directamente a los cilindros. Distribución de tamaño de partícula del polvo en el aire exterior: 60–70% entre 2–10 µm (tamaño de partícula respirable), 20–30% entre 10–50 µm y el resto >50 µm. La fracción de 2–10 µm es la más dañina: partículas lo bastante pequeñas para penetrar la película de aceite y depositarse en la cabeza del pistón y las paredes del cilindro. Mecanismos de daño: (1) Erosión de la cabeza del pistón: las partículas de polvo a temperaturas de la cámara de combustión (2000+ K) se oxidan y crean microindentaciones en la superficie de la cabeza del pistón, lo que aumenta la rugosidad superficial y la transferencia de calor a la película de aceite; (2) Agarrotamiento de los anillos de pistón: la acumulación de polvo en las ranuras de los anillos aumenta la fricción y reduce la presión de sellado de los anillos; (3) Pérdida del acabado de las paredes del cilindro: las partículas abrasivas desgastan el fino rayado cruzado necesario para la adherencia de la película de aceite, lo que degrada el sellado de los anillos y aumenta el blowby; (4) Desgaste de los asientos de válvula: las partículas de polvo que entran al flujo de escape golpean los asientos y vástagos de las válvulas, causando erosión y agarrotamiento. Efecto acumulado de apenas 100 horas de operación en derivación (ingestión de polvo): la tasa de desgaste de los anillos de pistón aumenta 5–10×, la limpieza del aceite del motor se degrada a ISO 22/20/17 y la vida de los cojinetes se reduce un 50%. Un solo evento de derivación por un filtro obstruido puede acortar la vida restante del motor en un 20–30%."
+    },
+    {
+      "heading": "Ensayo y clasificación de filtros de aire ISO 5011",
+      "body": "La ISO 5011 es la norma internacional para ensayar filtros de admisión de aire. Procedimiento de ensayo: (1) Desafío con polvo: se inyecta polvo de ensayo Arizona estandarizado (A2 medium, ISO 12103-1) en el flujo de aire que pasa por el elemento filtrante; (2) Medición de eficiencia: la concentración de polvo aguas arriba y aguas abajo se mide en el rango de tamaño ≥4 µm con contadores automáticos de partículas (calibrados según la ISO 11171); (3) Capacidad de retención de suciedad: el ensayo continúa hasta alcanzar la presión diferencial terminal (3 kPa, equivalente a ~30 mbar), midiendo la masa total de polvo capturada; (4) Informe: la relación Beta se informa a 4 µm (eficiencia), 14 µm (eficiencia en partículas grandes) y 21 µm (eficiencia gruesa); la capacidad de retención de suciedad, en gramos. Ejemplo: el filtro de aire MACROCORE logra β4 = 1000 (99.9% @ 4 µm) y retiene 300 gramos de polvo antes de llegar a 30 mbar, frente a un filtro OEM estándar con β4 = 75 (98.7%) que retiene 100 gramos. Resultado: MACROCORE ofrece 2× de eficiencia en el tamaño de partícula más pequeño y 3× de capacidad de suciedad, lo que permite extender el intervalo un 150–200% (cambio cada 15,000 millas en lugar de 10,000)."
+    },
+    {
+      "heading": "Extensión del intervalo del filtro de aire y análisis de costos",
+      "body": "Los filtros de aire premium con mayor capacidad de suciedad (tecnología MACROCORE) permiten intervalos de cambio extendidos: filtro OEM estándar (capacidad de 100 gramos): cambio cada 10,000 millas, costo de $35 por filtro × 20 cambios cada 200,000 millas = $700. Filtro premium MACROCORE (capacidad de 300 gramos, 99.9% de eficiencia @ 4 µm): cambio cada 15,000 millas, costo de $65 por filtro × 13 cambios cada 200,000 millas = $845. Costo adicional: $145 en 200,000 millas. Ganancia de eficiencia de combustible: el filtro premium mantiene una restricción <20 mbar (frente al OEM, que llega a 50+ mbar al final del intervalo) → el consumo de combustible se mantiene dentro del 1% del filtro limpio frente a una penalización del 10% con el filtro OEM → costo adicional de combustible del OEM = 200,000 millas ÷ 6 MPG × $2 de pérdida extra de eficiencia de combustible ÷ 4 = $16,700 de costo adicional de combustible. Beneficio neto del filtro premium: $16,700 de ahorro de combustible - $145 de costo adicional de filtros = $16,555 de ahorro en 200,000 millas ($0.083 por milla)."
+    },
+    {
+      "heading": "Escenario ilustrativo: filtración de aire en entornos desérticos y polvorientos",
+      "body": "⚠️ Escenario ilustrativo, no un caso documentado. Considere una flota de camiones mineros de acarreo en un entorno de rajo abierto extremadamente polvoriento que usa solo filtros de aire OEM estándar con un intervalo de cambio acortado. La ingestión intensa de polvo en este tipo de entorno puede provocar activaciones frecuentes de la derivación, recircular polvo sin filtrar y llevar los residuos de desgaste del aceite lubricante hacia ISO 23/21/18, lo que a su vez acorta los intervalos de reparación del motor muy por debajo del objetivo de diseño. Pasar a un filtro de aire de mayor capacidad de suciedad (tecnología MACROCORE, aproximadamente 3× de capacidad, 99.9% de eficiencia a 4 µm) junto con filtración del lubricante fuera de línea kidney-loop (SYNTRAX + DURATECH) es la combinación estándar para eliminar los eventos de derivación y devolver la limpieza del aceite hacia el objetivo ISO 18/16/13. En un escenario como este, los intervalos de reparación del motor deberían volver a acercarse a su duración de diseño una vez eliminados los eventos de derivación y restablecida la limpieza del aceite; la extensión exacta del intervalo y el ahorro dependen de la flota, la exposición al polvo y el ciclo de trabajo, por lo que cualquier cifra aquí debe tomarse como orientativa, no como un resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Cuándo se activa la válvula de derivación del filtro de admisión de aire y qué ocurre entonces?",
+      "answer": "La válvula de derivación se activa cuando la presión diferencial del filtro supera 60–80 mbar (punto de ajuste típico). Esto ocurre cuando el polvo acumulado satura el medio filtrante y crea una resistencia excesiva al flujo de aire. Una vez activada la derivación, el aire ambiente sin filtrar (100% de la contaminación de polvo) rodea el elemento y entra directamente al motor. La activación de la derivación indica que el filtro debió reemplazarse antes: seguir operando con la derivación activa causa un aumento rápido de las partículas de desgaste del motor y de la contaminación del aceite lubricante."
+    },
+    {
+      "question": "¿Cómo aumenta la restricción del filtro de aire el consumo de combustible?",
+      "answer": "La restricción del filtro de aire reduce la eficiencia volumétrica: el motor debe esforzarse más para aspirar aire a través del filtro obstruido. Esto reduce el oxígeno disponible para la combustión, por lo que el motor compensa inyectando más combustible para mantener la potencia. Con 40–60 mbar de restricción, el consumo de combustible aumenta un 5–12%. Un motor que consume 100 galones cada 10,000 millas con un filtro limpio puede consumir 105–112 galones con un filtro obstruido, lo que cuesta $10–24 extra cada 10,000 millas. Durante la vida del vehículo (200,000 millas), la penalización acumulada de costo de combustible por operar con filtros de aire restringidos es de $200–480."
+    },
+    {
+      "question": "¿Qué daño ocurre cuando el polvo sin filtrar entra a los cilindros?",
+      "answer": "El polvo sin filtrar (partículas de 2–50 µm) que entra a los cilindros causa: (1) erosión de la cabeza del pistón: el polvo a temperaturas de combustión se oxida y microcorta la superficie del pistón; (2) desgaste de las paredes del cilindro: las partículas abrasivas desgastan el acabado de bruñido de rayado cruzado, lo que degrada la retención de la película de aceite y el sellado de los anillos; (3) agarrotamiento de los anillos de pistón: la acumulación de polvo en las ranuras de los anillos aumenta la fricción; (4) erosión de los asientos de válvula: las partículas de polvo del flujo de escape golpean los asientos y vástagos de las válvulas. Un solo período de 100 horas de operación en derivación (ingestión de polvo) puede reducir la vida restante del motor en un 20–30%."
+    },
+    {
+      "question": "¿Por qué los filtros de aire premium con mayor capacidad de suciedad reducen el riesgo de derivación?",
+      "answer": "Los filtros premium (tecnología MACROCORE) retienen 2–3× más masa de polvo antes de llegar a la presión de derivación (p. ej., 300 gramos frente a 100 gramos). Una mayor capacidad de suciedad significa que el filtro no se satura ni activa la derivación tan rápido. Además, los filtros premium tienen un medio más eficiente (99.9% @ 4 µm frente a 98–99%) que captura partículas más finas que de otro modo provocarían un aumento más rápido de la restricción. Los intervalos extendidos (150%+ más largos) reflejan la combinación de mayor capacidad + eficiencia."
+    },
+    {
+      "question": "¿Cómo se mide la eficiencia de un filtro de aire según la ISO 5011?",
+      "answer": "El ensayo ISO 5011 inyecta polvo de ensayo Arizona estandarizado en el flujo de aire que pasa por el filtro. Los contadores automáticos de partículas miden la concentración de polvo aguas arriba y aguas abajo y calculan la relación Beta en varios tamaños de partícula (4 µm, 14 µm, 21 µm). El ensayo continúa hasta alcanzar la presión diferencial terminal (30 mbar, ~3 kPa), midiendo tanto la eficiencia como la capacidad de retención de suciedad. Un filtro clasificado β4(c) = 1000 captura 999 de cada 1000 partículas >4 µm (99.9% de eficiencia)."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Punto de ajuste de la válvula de derivación",
+      "value": "60–80 mbar"
+    },
+    {
+      "label": "Punto crítico de restricción",
+      "value": "40–60 mbar"
+    },
+    {
+      "label": "Penalización en consumo de combustible (restricción alta)",
+      "value": "+5–12%"
+    },
+    {
+      "label": "Eficiencia objetivo ISO 5011",
+      "value": "β4 ≥ 200 (99.5%)"
+    }
+  ]
+}
