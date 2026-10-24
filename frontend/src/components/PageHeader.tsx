@@ -49,7 +49,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
   es: {
     Agriculture: 'Sistemas de filtración agrícola',
     Automotive: 'Sistemas de filtración automotriz',
-    'Bus Coach': 'Filtración para autobuses y autocares',
+    'Bus Coach': 'Filtración para autobuses',
     Construction: 'Sistemas de filtración para construcción',
     Manufacturing: 'Sistemas de filtración industrial',
     Marine: 'Sistemas de filtración marina',
@@ -63,7 +63,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
   pt: {
     Agriculture: 'Sistemas de filtração agrícola',
     Automotive: 'Sistemas de filtração automotiva',
-    'Bus Coach': 'Filtração para ônibus e transporte rodoviário',
+    'Bus Coach': 'Filtração para ônibus',
     Construction: 'Sistemas de filtração para construção',
     Manufacturing: 'Sistemas de filtração industrial',
     Marine: 'Sistemas de filtração marítima',
