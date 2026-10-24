@@ -123,15 +123,15 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={hero}>
         <MiningHeroMedia />
-        <div style={heroShade} />
+        <div style={heroShade} className="miningHeroShade" />
         <div style={heroInner} className="miningHeroContainer">
-          <p style={eyebrow}>{miningText(lang, "MINING / SEVERE-DUTY FILTRATION")}</p>
-          <h1 style={heroTitle}>{miningText(lang, "Mining Filtration")}<br /><span style={yellowText}>{miningText(lang, "Systems")}</span></h1>
+          <p style={eyebrow}>{miningText(lang, "OPEN-PIT & UNDERGROUND MINING")}</p>
+          <h1 style={heroTitle} className="miningHeroHeading">{miningText(lang, "FILTRATION FOR")}<br /><span style={yellowText}>{miningText(lang, "MINING EQUIPMENT")}</span></h1>
           <div className="miningHeroLower">
             <div className="miningHeroCopy">
-              <p style={heroPromise} className="miningHeroPromise">{miningText(lang, "Asset protection for equipment that cannot stop when contamination gets aggressive.")}</p>
-              <p style={heroLead}>{miningText(lang, "Air intake, fuel, lubrication and hydraulic contamination control for haul trucks, excavators, loaders, drills and support equipment operating in open-pit and underground mining environments.")}</p>
-              <p style={heroContext}>{miningText(lang, "Operating reality: abrasive dust, heavy load, extended duty cycles and constrained service windows.")}</p>
+              <p style={heroPromise} className="miningHeroPromise">{miningText(lang, "Protection of engines and critical systems in haulage, excavation, loading and drilling operations.")}</p>
+              <p style={heroLead}>{miningText(lang, "Abrasive mineral dust, fuel contamination and wear debris threaten high-value components. Filter selection must reflect each machine's air-intake, hydraulic and lubrication demands.")}</p>
+              <p style={heroContext}>{miningText(lang, "Operating priorities: fleet availability, component integrity and maintenance under severe duty cycles.")}</p>
             </div>
             <div style={actions} className="miningHeroActions">
               <Link href="/contact/" style={primaryButton} data-conversion-action="application-support">{miningText(lang, "PROTECT MINING EQUIPMENT")}</Link>
@@ -230,7 +230,7 @@ const hero: CSSProperties = { minHeight: '82vh', background: '#000', position: '
 const heroShade: CSSProperties = { position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: VIDEO_HERO_TREATMENT.overlayBackground };
 const heroInner: CSSProperties = { width: '100%', maxWidth: '1560px', margin: '0 auto', padding: 'clamp(6.75rem,10vw,9rem) clamp(1rem,3.5vw,4.5rem) clamp(3.5rem,5.5vw,5rem)', position: 'relative', zIndex: 3 };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.72rem', letterSpacing: '.18em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
-const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .86, fontSize: 'clamp(3.4rem,8vw,7.6rem)', textTransform: 'uppercase', margin: 0, maxWidth: '900px' };
+const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .94, fontSize: 'clamp(2.8rem,5.6vw,6.1rem)', textTransform: 'uppercase', margin: 0, maxWidth: 'min(100%, 1450px)' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.1rem,2vw,1.55rem)', lineHeight: 1.3, fontWeight: 700, maxWidth: '760px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1.125rem,1.35vw,1.35rem)', lineHeight: 1.64, color: 'rgba(255,255,255,.92)', maxWidth: '820px', margin: '1rem 0 0' };
 const heroContext: CSSProperties = { color: 'rgba(255,255,255,.84)', fontSize: 'clamp(1.08rem,1.15vw,1.18rem)', lineHeight: 1.6, margin: '.85rem 0 0', maxWidth: '760px' };
