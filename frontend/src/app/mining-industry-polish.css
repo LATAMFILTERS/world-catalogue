@@ -171,6 +171,14 @@ main.mining-industry-page section[aria-labelledby="mining-tco-title"] .miningTco
   }
 }
 
+/* Protect reading contrast over both sunlit open-pit footage and fallback. */
+main.mining-industry-page > section:first-of-type .miningHeroShade {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.67) 0%, rgba(0,0,0,.46) 43%, rgba(0,0,0,.12) 83%),
+    linear-gradient(0deg, rgba(0,0,0,.23), rgba(0,0,0,0) 65%) !important;
+  pointer-events: none;
+}
+
 /* Mine operations H1: true two-line heading, not the old 13ch global hero clamp. */
 main.mining-industry-page > section:first-of-type h1.miningHeroHeading {
   width: 100%;
