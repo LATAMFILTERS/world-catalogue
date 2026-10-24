@@ -1,6 +1,8 @@
 import type { PageLang } from '@/lib/localized-routes';
 const translations: Record<'es' | 'pt', Record<string,string>> = {
   "es": {
+    "Duty": "Ciclo de trabajo",
+    "CABIN AIR": "AIRE DE CABINA",
     "FILTRATION FOR": "FILTRACIÓN PARA",
     "CONSTRUCTION EQUIPMENT": "MAQUINARIA DE CONSTRUCCIÓN",
     "Technical protection for construction equipment owners, fleet managers and maintenance contractors.": "Protección técnica para propietarios de maquinaria, responsables de flotas y empresas de mantenimiento de construcción.",
@@ -141,6 +143,8 @@ const translations: Record<'es' | 'pt', Record<string,string>> = {
     "Yes. If the OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the machine, engine, protected system and jobsite conditions.": "Sí. Con una referencia OEM o número de filtro, Part Search facilita consultar equivalencias y aplicaciones. Para evaluación de ingeniería, incluya máquina, motor, sistema protegido y condiciones de obra."
   },
   "pt": {
+    "Duty": "Ciclo de operação",
+    "CABIN AIR": "AR DA CABINE",
     "FILTRATION FOR": "FILTRAÇÃO PARA",
     "CONSTRUCTION EQUIPMENT": "MÁQUINAS DE CONSTRUÇÃO",
     "Technical protection for construction equipment owners, fleet managers and maintenance contractors.": "Proteção técnica para proprietários de máquinas, gestores de frotas e empresas de manutenção da construção.",
