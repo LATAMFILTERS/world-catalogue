@@ -85,7 +85,8 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
   border-left: 3px solid #FFF12D;
   background: rgba(255,241,45,.045);
   color: rgba(255,255,255,.86);
-  line-height: 1.55;
+  line-height: 1.65;
+  font-size: clamp(1.08rem, 1.16vw, 1.175rem);
 }
 .assetPrinciple strong { color: #FFF12D; font-size: .78rem; letter-spacing: .12em; }
 .assetPrinciple span { flex: 1 1 280px; min-width: 0; }
@@ -137,12 +138,12 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
 }
 .marketCard:focus-visible { outline: 2px solid #FFF12D; outline-offset: 3px; }
 .marketRisk {
-  max-width: 29ch;
+  max-width: 32ch;
   margin: .6rem 0 0;
   color: rgba(255,255,255,.91);
-  font-size: .85rem;
+  font-size: clamp(1.025rem, 1.08vw, 1.11rem);
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.48;
   text-wrap: pretty;
   text-shadow: 0 2px 12px rgba(0,0,0,.95);
 }
@@ -176,7 +177,7 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
 .caseFacts { margin: 0; display: grid; gap: .85rem; }
 .caseFacts > div { display: grid; grid-template-columns: minmax(108px,.32fr) minmax(0,1fr); gap: 1rem; }
 .caseFacts dt { color:#FFF12D; font-weight:700; font-size:.74rem; letter-spacing:.06em; text-transform: uppercase; }
-.caseFacts dd { color:rgba(255,255,255,.8); margin:0; font-size:.94rem; line-height:1.5; }
+.caseFacts dd { color:rgba(255,255,255,.88); margin:0; font-size:clamp(1.06rem, 1.12vw, 1.145rem); line-height:1.6; }
 .pathGrid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0,1fr));
@@ -244,6 +245,14 @@ main.page > section.heroSection:first-of-type h1:first-child { max-width: min(10
   .pathGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .pathGrid > :nth-child(n) { grid-column: span 1; }
   .pathGrid > :last-child { grid-column: 1 / -1; }
+}
+/* Mobile global hero rules cap paragraph copy at 1rem; override only the
+   Industries descriptive paragraph, never the Chakra Petch kicker. */
+@media (max-width: 640px) {
+  .page > .heroSection .heroCopy p:not(.heroKicker) {
+    font-size: 1.125rem !important;
+    line-height: 1.66 !important;
+  }
 }
 @media (max-width: 560px) {
   .page { --industries-gutter: clamp(1rem, 5vw, 1.35rem); }
