@@ -130,7 +130,7 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={hero}>
         <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="auto" style={heroVideo}>
-          <source src="/images/Petro%26Gas-1.mp4?v=oilgas-video-direct-20261024" type="video/mp4" />
+          <source src="/images/petro-gas-hero-h264.mp4" type="video/mp4" />
         </video>
         <div className="miningHeroShade" style={heroShade} />
         <div className="miningHeroContainer" style={heroInner}>

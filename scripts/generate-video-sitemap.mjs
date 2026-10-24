@@ -17,7 +17,7 @@ const VIDEOS = [
   { id:'marine', title:'Marine Vessel Filtration', description:'Advanced filtration for maritime and ocean-going vessels', page:'/industries/marine/', content:'/images/Marino-1.mp4' },
   { id:'manufacturing', title:'Industrial Manufacturing Systems', description:'Filtration for precision manufacturing and production equipment', page:'/industries/manufacturing/', content:'/images/Manufacture-1.mp4' },
   { id:'power-generation', title:'Power Generation Protection', description:'Filtration systems for power plants and electrical generation', page:'/industries/power-generation/', content:'/images/powergenerator-Video-1.mp4' },
-  { id:'oil-gas', title:'Oil & Gas Operations', description:'Specialized filtration for upstream and downstream operations', page:'/industries/oil-gas/', content:'/images/Petro&Gas-1.mp4' },
+  { id:'oil-gas', title:'Oil & Gas Operations', description:'Specialized filtration for upstream and downstream operations', page:'/industries/oil-gas/', content:'/images/petro-gas-hero-h264.mp4' },
   { id:'bus-coach', title:'Transit & Coach Systems', description:'Reliable filtration for public transportation and coach services', page:'/industries/bus-coach/', content:'/images/buses-2.mp4' },
 
   { id:'industrial-process', title:'Industrial & Process Filtration', description:'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.', page:'/industrial-process/', content:'/images/INDUSTRIAL%20PROCESS.mp4', thumbnail:'/images/planta_converted.avif' },
