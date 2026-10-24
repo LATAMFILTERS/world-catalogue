@@ -1,0 +1,44 @@
+{
+  "id": "TERM-BETA-RATIO",
+  "term": "Relación Beta",
+  "category": "filtration-performance",
+  "definition": "La relación entre el número de partículas de un tamaño dado (x µm) aguas arriba de un filtro y el número de partículas del mismo tamaño aguas abajo, medida con el ensayo multipaso según la ISO 16889. Se expresa como β_x(c), donde x es el tamaño de partícula en micrómetros y c indica el método de conteo. Una relación Beta de 200 a 10 µm (β₁₀(c) = 200) significa 200 partículas aguas arriba por cada 1 partícula aguas abajo, lo que corresponde a una eficiencia de un solo paso de 99.5%.",
+  "engineeringContext": "La relación Beta es la principal métrica estandarizada de eficiencia para filtros hidráulicos y de lubricación. Permite comparar directamente el desempeño entre fabricantes porque todas las mediciones siguen las mismas condiciones de ensayo multipaso definidas en la ISO 16889. Especificar β₁₀(c) ≥ 200 es un requisito mínimo para proteger válvulas proporcionales en hidráulica móvil.",
+  "aliases": [
+    "relación ß",
+    "relación de filtración",
+    "Beta-x",
+    "beta_x(c)"
+  ],
+  "abbreviations": [
+    "β_x(c)",
+    "β₁₀(c)"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-ABSOLUTE-EFFICIENCY",
+    "TERM-NOMINAL-EFFICIENCY",
+    "TERM-MULTI-PASS-TEST"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "nanoforce",
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "beta-ratio",
+    "iso-16889",
+    "iso-16889-multipass-test",
+    "filter-media-engineering",
+    "testing-and-validation"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "TERM-SYSTEM-FLUSHING",
+  "term": "Flushing do sistema",
+  "category": "hydraulic-systems",
+  "definition": "Um procedimento no qual o fluido hidráulico circula por um sistema novo ou reparado em velocidade elevada — número de Reynolds >4,000 para fluxo turbulento — para soltar e remover os contaminantes de montagem, como cavacos metálicos, carepa de tubulação, respingos de solda, compostos de vedação de juntas e partículas residuais de fabricação, antes que o sistema entre em serviço. O flushing usa uma bomba de flushing dedicada e conjuntos de filtro temporários com elementos finos (β₆(c) ≥ 200), direcionando o fluxo por todos os trechos do sistema e contornando componentes de precisão, como servoválvulas e válvulas proporcionais. Critério de aceitação: o código de limpeza ISO na linha de retorno atende à meta do sistema em três amostras consecutivas coletadas em intervalos de tempo definidos.",
+  "engineeringContext": "A contaminação de montagem é a maior fonte individual de contaminação em sistemas hidráulicos novos. As práticas de fabricação e montagem introduzem contagens de partículas 5–10 níveis de código ISO acima da meta de operação. Sem flushing, a operação inicial do sistema distribui essa contaminação por todos os circuitos, causando desgaste rápido de servoválvulas, válvulas proporcionais e bombas nas primeiras 200–500 horas de operação. A documentação do protocolo de flushing — diagramas de circuito, registro de filtros, resultados de ensaios de limpeza — deve ser mantida como parte do registro permanente de manutenção da máquina e é exigida para o cumprimento da garantia de equipamentos hidráulicos de precisão.",
+  "aliases": [
+    "flushing de comissionamento",
+    "flushing hidráulico",
+    "flushing pré-comissionamento",
+    "purga do sistema",
+    "flushing por circuito"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-KIDNEY-LOOP",
+    "TERM-PARTICLE-COUNT",
+    "TERM-SERVO-VALVE",
+    "TERM-PROPORTIONAL-VALVE"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "contamination-control",
+    "fluid-cleanliness"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TERM-RESTRICTION-INDICATOR",
+  "term": "Indicador de restricción",
+  "category": "air-intake",
+  "definition": "Un dispositivo que monitorea la restricción del aire de admisión y alerta al operador cuando el elemento de filtro de aire primario se acerca a su límite de servicio o lo alcanza. Los indicadores vacuostáticos (mecánicos) usan un pistón con resorte que se traba en una posición roja visible cuando la restricción supera el umbral de servicio, típicamente 25 mbar en motores de aspiración natural y 37.5–62.5 mbar en motores turboalimentados. Los sensores electrónicos de restricción entregan una señal analógica (0–10 V o 4–20 mA) o una señal digital por bus CAN al sistema de gestión del equipo. Los indicadores de restricción permiten reemplazar el filtro según su condición en lugar de por intervalos programados, lo que evita tanto los cambios prematuros como la operación con elementos sobrecargados.",
+  "engineeringContext": "Los indicadores de restricción se calibran según la restricción de admisión máxima admisible del fabricante del motor. Superar este límite reduce la eficiencia volumétrica del motor, aumenta el consumo de combustible y puede generar humo negro visible en el escape antes de causar daños visibles en el hardware. Los operadores que dan servicio a los filtros según las señales del indicador de restricción en lugar de intervalos de calendario suelen prolongar la vida del elemento en un 30–80% en entornos de polvo variable, con una protección del motor equivalente. Después del servicio, los indicadores mecánicos deben reiniciarse manualmente.",
+  "aliases": [
+    "manómetro de restricción",
+    "indicador de servicio",
+    "indicador vacuostático",
+    "medidor de restricción de aire",
+    "indicador de alerta de servicio",
+    "vacuómetro"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-SAE-J1539"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-DUST-HOLDING-CAPACITY"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "airflow-engineering",
+    "air-restriction",
+    "service-intervals"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

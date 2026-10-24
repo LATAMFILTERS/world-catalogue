@@ -1,0 +1,38 @@
+{
+  "id": "TERM-TOTAL-BASE-NUMBER",
+  "term": "Número de basicidade total",
+  "category": "lubrication",
+  "definition": "Uma medida da alcalinidade de reserva de um óleo — sua capacidade de neutralizar os ácidos formados pelos gases de blowby da combustão e pelos produtos de oxidação do óleo. É expresso em miligramas de hidróxido de potássio por grama de óleo (mg KOH/g). O óleo de motor novo normalmente tem TBN de 8–14 mg KOH/g. Os produtos ácidos (ácido sulfúrico da combustão de combustíveis com enxofre, ácidos carboxílicos da oxidação do óleo) são neutralizados por aditivos alcalinos (detergentes de cálcio e magnésio). A troca de óleo é indicada quando o TBN cai para aproximadamente 2 mg KOH/g, abaixo do qual a corrosão das superfícies dos mancais pelos produtos ácidos não neutralizados se acelera.",
+  "engineeringContext": "O monitoramento do TBN pela análise de óleo é o método definitivo para determinar os intervalos de troca do óleo lubrificante do motor com base na condição. Um óleo que mantém TBN alto não está esgotado, independentemente do tempo de calendário; um óleo com TBN baixo está esgotado, independentemente das horas. O teor de enxofre do combustível determina fortemente a taxa de esgotamento do TBN — combustíveis com alto teor de enxofre exigem mais reserva alcalina ou intervalos de troca mais curtos.",
+  "aliases": [
+    "TBN",
+    "número de basicidade",
+    "reserva de alcalinidade",
+    "alcalinidade de reserva"
+  ],
+  "abbreviations": [
+    "TBN",
+    "BN"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-OXIDATIVE-DEGRADATION"
+  ],
+  "relatedTechnologies": [
+    "duratech"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "oil-analysis-methods",
+    "extended-drain-interval-engineering",
+    "fleet-oil-sampling-protocol"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

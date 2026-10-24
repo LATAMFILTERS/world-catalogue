@@ -1,0 +1,40 @@
+{
+  "id": "TERM-WATER-SEPARATION-EFFICIENCY",
+  "term": "Eficiência de separação de água",
+  "category": "water-fuel",
+  "definition": "A porcentagem de água emulsionada que um elemento de filtro de combustível/separador de água remove do diesel em uma única passagem em condições de ensaio padronizadas, medida conforme a ISO 16332. As condições de ensaio especificam pó de ensaio A2 Fine em uma concentração definida, água injetada como dispersão fina a 0.5% em volume e a vazão nominal. O desempenho de grau A ISO 16332 exige separação de água ≥95%; o grau B exige ≥90%. A eficiência de separação de água é medida independentemente da eficiência de filtração de partículas — um elemento filtrante com alta relação Beta de partículas pode ter baixa eficiência de separação de água se não tiver um estágio de meio coalescente dedicado.",
+  "engineeringContext": "A eficiência de separação de água determina a concentração residual de água que pode ser atingida no combustível a jusante do conjunto de filtro nas condições de operação nominais. Em sistemas de injeção HPCR que exigem baixo teor de água na entrada do injetor em ambientes de alta umidade ou com combustível contaminado, o elemento coalescente deve ser classificado para o grau exigido. O condicionamento e a separação de combustível em estágios HYDROCORE são projetados em torno de mecanismos sequenciais — coalescência de gotículas, decantação por gravidade e repulsão hidrofóbica das gotículas finas residuais — compatíveis com a aplicação aprovada.",
+  "aliases": [
+    "taxa de separação de água",
+    "eficiência do coalescedor",
+    "WSE",
+    "eficiência de remoção de água"
+  ],
+  "abbreviations": [
+    "WSE"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16332",
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-COALESCING",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-HPCR"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "hpcr-fuel-system-protection",
+    "iso-16332"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

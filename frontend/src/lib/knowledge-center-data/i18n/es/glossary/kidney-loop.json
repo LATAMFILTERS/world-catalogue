@@ -1,0 +1,40 @@
+{
+  "id": "TERM-KIDNEY-LOOP",
+  "term": "Kidney-loop",
+  "category": "hydraulic-systems",
+  "definition": "Un circuito de filtración fuera de línea que hace circular continuamente el fluido hidráulico a través de un elemento filtrante de alta eficiencia, independiente de la ruta de flujo del circuito hidráulico principal. La bomba del kidney-loop toma fluido del depósito, lo pasa por un elemento filtrante fino —típicamente β₆(c) ≥ 200 o β₃(c) ≥ 200— y lo devuelve al depósito sin pasar por actuadores, válvulas de control ni otros componentes del circuito. Los kidney-loops logran objetivos de limpieza ISO 2–3 niveles de código más finos que la filtración de flujo total sola, pueden operar con el sistema principal detenido y permiten una filtración fina sin imponer caída de presión adicional al circuito principal.",
+  "engineeringContext": "Los kidney-loops son estándar en sistemas hidráulicos de alta criticidad, incluidas máquinas herramienta servocontroladas, máquinas de moldeo por inyección, bancos de prueba y sistemas de control de pitch de aerogeneradores. Pueden incorporarse a sistemas existentes sin modificaciones importantes del circuito. Combinado con conteo de partículas en línea y control automático de caudal, un kidney-loop forma la base de un sistema de gestión de contaminación de lazo cerrado. El caudal del kidney-loop debe dimensionarse para renovar todo el volumen del depósito al menos una vez por hora de operación y mantener la limpieza en régimen estable en el código objetivo.",
+  "aliases": [
+    "filtración fuera de línea",
+    "lazo de filtración fuera de línea",
+    "circuito kidney-loop",
+    "filtración de retorno al tanque",
+    "circuito de filtro fuera de línea"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-BYPASS-FILTRATION",
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-SERVO-VALVE",
+    "TERM-SYSTEM-FLUSHING"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "fluid-cleanliness",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

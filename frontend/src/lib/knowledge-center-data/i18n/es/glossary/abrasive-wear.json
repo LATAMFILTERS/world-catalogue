@@ -1,0 +1,44 @@
+{
+  "id": "TERM-ABRASIVE-WEAR",
+  "term": "Desgaste abrasivo",
+  "category": "contamination",
+  "definition": "La remoción de material de una superficie por la acción de corte o rayado de partículas duras que se mueven respecto de esa superficie. En sistemas de lubricación e hidráulicos, el desgaste abrasivo ocurre cuando partículas duras (sílice, óxidos de hierro, metales de desgaste) presentes en el fluido quedan atrapadas entre superficies en movimiento —muñones y alojamientos de cojinetes, anillos de pistón y paredes de cilindro, flancos de dientes de engranajes— y causan microcorte y fatiga superficial. La tasa de desgaste abrasivo depende fuertemente de la dureza de la partícula (respecto del sustrato), la concentración, el tamaño de partícula y la tensión de contacto. Las partículas del rango de 2–15 µm causan el máximo desgaste abrasivo porque pueden entrar en las holguras de los cojinetes y en las asperezas que soportan carga.",
+  "engineeringContext": "El desgaste abrasivo es el modo de falla dominante en sistemas hidráulicos y de lubricación contaminados. Un aumento de 10× en la concentración de partículas acelera el desgaste de cojinetes aproximadamente 4–7×. Mantener ISO 16/14/11 o una limpieza más estricta en sistemas de lubricación prolonga la vida de los cojinetes desde las típicas 3,000–5,000 horas limitadas por contaminación hasta 15,000–25,000 horas en condiciones controladas.",
+  "aliases": [
+    "desgaste erosivo",
+    "abrasión de tres cuerpos",
+    "abrasión de dos cuerpos",
+    "erosión por partículas"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-4406",
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-BEARING-CLEARANCE",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-SILICA",
+    "TERM-ADHESIVE-WEAR"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "nanoforce",
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "contamination-control",
+    "failure-analysis",
+    "contamination-sensitivity-components",
+    "lubrication-system-filtration",
+    "hydraulic-contamination-sensitivity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "TERM-DUST-HOLDING-CAPACITY",
+  "term": "Capacidade de retenção de pó",
+  "category": "air-intake",
+  "definition": "A massa total de pó de ensaio padronizado (ISO 12103-1 A2 Fine) que um elemento filtrante retém antes de atingir seu limite de restrição terminal definido, medida em gramas (g) conforme o protocolo de ensaio ISO 5011. Maior capacidade de retenção de pó com restrição equivalente prolonga os intervalos de serviço em campo. A capacidade de retenção de pó e a restrição inicial determinam juntas se um elemento filtrante é adequado para ambientes empoeirados de alta carga ou para aplicações leves de ar limpo.",
+  "engineeringContext": "A capacidade de retenção de pó é o principal diferencial entre elementos de filtro de ar de alto desempenho e genéricos. Um elemento com o dobro de capacidade de retenção de pó com a mesma restrição inicial dobra o intervalo de serviço em um dado ambiente de pó de campo, reduzindo diretamente os custos de manutenção e o tempo de parada. A construção com gradiente de densidade progressivo é o principal método de engenharia para maximizar a capacidade de retenção de pó.",
+  "aliases": [
+    "DHC",
+    "capacidade de retenção de sujeira",
+    "capacidade de pó",
+    "capacidade do filtro"
+  ],
+  "abbreviations": [
+    "DHC"
+  ],
+  "applicableStandards": [
+    "STD-ISO-5011",
+    "STD-SAE-J726"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-TEST-DUST",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "dust-holding-capacity",
+    "airflow-engineering",
+    "service-intervals",
+    "iso-5011",
+    "sae-j726-iso-5011-air-cleaner-test"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

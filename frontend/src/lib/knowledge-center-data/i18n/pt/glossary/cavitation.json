@@ -1,0 +1,34 @@
+{
+  "id": "TERM-CAVITATION",
+  "term": "Cavitação",
+  "category": "hydraulic-systems",
+  "definition": "A formação e o colapso violento de cavidades cheias de vapor (bolhas) em um fluido hidráulico quando a pressão local cai abaixo da pressão de vapor do fluido. A cavitação ocorre principalmente na entrada das bombas hidráulicas (cavitação de sucção), onde uma restrição excessiva — causada por uma válvula de entrada parcialmente fechada, uma linha de entrada subdimensionada, um filtro de sucção obstruído ou óleo excessivamente frio e viscoso — reduz a pressão de entrada abaixo do limite de pressão de vapor. O colapso das bolhas gera picos de pressão locais intensos (de até vários milhares de bar) que erodem as superfícies dos componentes de bombas e válvulas, produzem ruído de alta frequência e geram partículas metálicas de desgaste que contaminam o fluido.",
+  "engineeringContext": "A cavitação é um fenômeno destrutivo para a bomba que se desenvolve rapidamente depois de iniciada. Os indicadores incluem zumbido ou chocalhar de alta frequência na bomba, componentes da bomba descoloridos e contagens de partículas metálicas em rápido aumento nas amostras de óleo. A prevenção se concentra em garantir o dimensionamento adequado da linha de entrada, manter o nível de óleo, usar o grau de viscosidade correto para a temperatura ambiente e manter limpos os filtros de sucção. Os filtros de sucção não devem exceder malha de 120 µm para proteger as bombas sem restringir o fluxo.",
+  "aliases": [
+    "cavitação de sucção",
+    "cavitação por vapor",
+    "cavitação da bomba"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-AERATION",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-VISCOSITY"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-power-unit-design",
+    "hydraulic-reservoir-design",
+    "failure-analysis",
+    "hydraulic-contamination-sensitivity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

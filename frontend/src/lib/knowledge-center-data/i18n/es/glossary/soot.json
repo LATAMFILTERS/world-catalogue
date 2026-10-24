@@ -1,0 +1,34 @@
+{
+  "id": "TERM-SOOT",
+  "term": "Hollín",
+  "category": "chemical-degradation",
+  "definition": "Partículas carbonosas subproducto de la combustión (típicamente de 10–100 nm de diámetro primario, que se aglomeran hasta 0.1–10 µm) que entran al aceite lubricante del motor con los gases de blowby que pasan por el conjunto de anillos del pistón. Las concentraciones de hollín en el aceite usado de motores diésel suelen ir de 0.5–5% en peso. Una alta carga de hollín aumenta la viscosidad del aceite (en concentraciones superiores a ~3%), favorece las reacciones oxidativas y puede saturar el paquete de aditivos dispersantes, lo que provoca la aglomeración del hollín y la formación de depósitos abrasivos en las superficies del motor. El hollín se detecta en el análisis de aceite midiendo el carbono elemental o monitoreando la tendencia de la viscosidad.",
+  "engineeringContext": "Los motores diésel modernos Euro 5/6 y Tier 4 Final generan mucho menos blowby y hollín que los diseños antiguos gracias a tolerancias más estrechas de los anillos de pistón y a una mayor eficiencia de combustión. Sin embargo, los sistemas EGR (recirculación de gases de escape) introducen gases de escape cargados de hollín en la admisión, lo que aumenta la carga de hollín en el cárter en algunas configuraciones de motor. Los entornos con mucho hollín requieren paquetes dispersantes reforzados en el aceite de motor.",
+  "aliases": [
+    "hollín carbonoso",
+    "hollín de combustión",
+    "hollín de blowby",
+    "hollín diésel"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "crankcase-ventilation-filtration",
+    "lubrication-system-filtration",
+    "oil-condition-monitoring"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

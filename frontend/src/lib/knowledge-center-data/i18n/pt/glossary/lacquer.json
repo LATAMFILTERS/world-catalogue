@@ -1,0 +1,37 @@
+{
+  "id": "TERM-LACQUER",
+  "term": "Laca",
+  "category": "chemical-degradation",
+  "definition": "Depósitos duros, insolúveis e cozidos que se formam nas superfícies de componentes de motores e hidráulicos quando os precursores de verniz se polimerizam em condições de alta temperatura, tipicamente acima de 200°C. A laca é o estágio final da degradação oxidativa do óleo: os produtos de oxidação (aldeídos, cetonas, hidroperóxidos) se polimerizam progressivamente formando verniz mole, que depois é cozido até virar laca dura sob ciclos térmicos sustentados. A laca nas canaletas dos anéis de pistão causa o colamento dos anéis, aumentando o blowby e o consumo de óleo. A laca nas superfícies dos mancais da carcaça central do turbocompressor causa riscamento dos mancais e falha do eixo. Em sistemas hidráulicos, o verniz e a laca nos carretéis das válvulas proporcionais causam resposta de controle errática e, por fim, o travamento da válvula.",
+  "engineeringContext": "As taxas de formação de laca e verniz aumentam exponencialmente com a temperatura do óleo e com a extensão do intervalo de troca. Uma extensão de 30% além do intervalo de troca recomendado com alta temperatura de operação pode dobrar a concentração de precursores de verniz. Usar óleo totalmente sintético com alta estabilidade à oxidação reduz significativamente o risco de formação de laca, mas não elimina a necessidade de trocas de óleo oportunas ao operar com temperaturas extremas, alta carga de fuligem ou combustível contaminado. A remoção dos depósitos de laca normalmente exige limpeza mecânica ou tratamento químico, não filtração.",
+  "aliases": [
+    "verniz duro",
+    "depósitos cozidos",
+    "depósitos de laca",
+    "depósitos nos pistões",
+    "laca carbonosa"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VARNISH",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-THERMAL-DEGRADATION",
+    "TERM-SLUDGE"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "failure-analysis",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

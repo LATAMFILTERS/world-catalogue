@@ -1,0 +1,40 @@
+{
+  "id": "TERM-FREE-WATER",
+  "term": "Água livre",
+  "category": "water-fuel",
+  "definition": "Gotículas de água líquida distintas que se separaram da emulsão de combustível ou óleo e formam uma fase aquosa própria — visível como turbidez, névoa ou uma camada de água separada no fundo de um tanque de armazenamento, do copo da carcaça de um filtro ou de um frasco de amostra de combustível. A água livre no diesel favorece o crescimento microbiano (colônias de fungos e bactérias na interface combustível-água), causa corrosão da ponta dos injetores e acelera a obstrução do filtro em clima frio pela formação de cristais de gelo. No óleo do motor, a água livre favorece a corrosão dos mancais, a emulsificação do óleo, o esgotamento de aditivos e a formação de borra. A água livre é removida por decantação por gravidade, separadores de água do tipo coalescedor e válvulas de drenagem manuais nos coletores dos filtros.",
+  "engineeringContext": "A detecção de água livre no diesel pode ser feita por inspeção visual de turbidez, pasta detectora de água em uma vareta de medição ou sensores eletrônicos de água no combustível no coletor da carcaça do filtro. Muitos conjuntos de filtro de óleo diesel pesados incluem uma válvula de drenagem manual e uma luz de alerta de água no combustível para avisar os operadores sobre a água livre acumulada antes que ela passe a jusante para o sistema de injeção. A água livre que contorna o filtro e chega aos sistemas de injeção HPCR causa erosão imediata do injetor e desgaste da sede da válvula — muitas vezes irreversíveis já no primeiro evento de contaminação.",
+  "aliases": [
+    "água separada",
+    "água decantada",
+    "água com separação de fases",
+    "água em massa",
+    "água em fase livre"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-12937",
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-EMULSIFIED-WATER",
+    "TERM-WATER-INGRESS",
+    "TERM-COALESCING",
+    "TERM-MICROBIAL-CONTAMINATION",
+    "TERM-KARL-FISCHER-TITRATION"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "hpcr-fuel-system-protection",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

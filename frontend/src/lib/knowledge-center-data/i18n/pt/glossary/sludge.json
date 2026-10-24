@@ -1,0 +1,38 @@
+{
+  "id": "TERM-SLUDGE",
+  "term": "Borra",
+  "category": "chemical-degradation",
+  "definition": "Depósitos insolúveis moles e gelatinosos que se formam no óleo do motor quando componentes oxidados do óleo, água, gases de blowby da combustão, fuligem e partículas metálicas se combinam e precipitam. A borra se acumula preferencialmente em zonas de baixo fluxo — galerias de óleo, tampas de balancins, cárteres e tampas da corrente de distribuição. Ao contrário do verniz (que forma depósitos duros e cozidos), a borra permanece semifluida e pode voltar ao fluxo de óleo durante variações de temperatura, obstruindo telas, peneiras e passagens de alívio de pressão do óleo. A formação de borra normalmente se torna visível após intervalos de troca estendidos ou operação frequente em trajetos curtos, em que o líquido de arrefecimento não atinge a temperatura de operação completa.",
+  "engineeringContext": "A formação de borra é acelerada por ciclos curtos de aquecimento do motor (condensação de água e combustível no óleo do cárter), intervalos de troca de óleo estendidos, altas taxas de blowby por anéis de pistão desgastados e filtração de óleo inadequada. A baixa temperatura de operação — trânsito urbano com paradas e partidas, marcha lenta com temperatura ambiente baixa — favorece o acúmulo de água no cárter, que catalisa a formação de borra. Cumprir periodicamente o intervalo de troca e manter o líquido de arrefecimento acima de 90°C são as principais medidas preventivas. Depois que os depósitos de borra se formam, é necessário um flushing químico do motor ou um procedimento de flushing estendido antes de reabastecer.",
+  "aliases": [
+    "borra do motor",
+    "borra do óleo",
+    "borra do cárter",
+    "depósitos por gelificação do óleo"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VARNISH",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-SOOT",
+    "TERM-GLYCOL-CONTAMINATION",
+    "TERM-LACQUER"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "duratech"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "extended-drain-interval-engineering",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

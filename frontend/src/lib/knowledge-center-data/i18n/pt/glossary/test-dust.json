@@ -1,0 +1,38 @@
+{
+  "id": "TERM-TEST-DUST",
+  "term": "Pó de ensaio ISO 12103-1",
+  "category": "fluid-cleanliness",
+  "definition": "Contaminantes de ensaio artificiais padronizados definidos pela ISO 12103-1 para uso em ensaios de desempenho de filtros. Quatro graus são especificados: A1 Ultrafine (0–80 µm), A2 Fine (0–150 µm, mediana ~18 µm), A3 Medium (0–280 µm) e A4 Coarse (0–600 µm). O grau A2 Fine é o principal pó usado nos ensaios multipass ISO 16889 de filtros hidráulicos e nos ensaios ISO 5011 de filtros de ar. Todos os graus são à base de sílica com distribuições de tamanho de partícula definidas, garantindo a reprodutibilidade entre laboratórios de ensaio do mundo todo.",
+  "engineeringContext": "A distribuição controlada do tamanho de partícula do pó de ensaio ISO 12103-1 permite ensaios de desempenho de filtros reprodutíveis entre diferentes laboratórios e fabricantes. O pó de campo não é usado em ensaios padronizados porque sua composição, forma e distribuição de tamanho variam conforme a geografia, a estação e o ambiente industrial. Os resultados com pó de ensaio fornecem uma base consistente para comparar o desempenho, e não uma previsão da vida útil absoluta em campo.",
+  "aliases": [
+    "pó de ensaio ISO",
+    "ACFTD",
+    "contaminante de ensaio padronizado",
+    "pó SAE J726"
+  ],
+  "abbreviations": [
+    "A2 Fine",
+    "ACFTD"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011",
+    "STD-SAE-J726"
+  ],
+  "relatedTerms": [
+    "TERM-MULTI-PASS-TEST",
+    "TERM-GRAVIMETRIC-EFFICIENCY",
+    "TERM-DUST-HOLDING-CAPACITY"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "iso-16889-multipass-test",
+    "iso-5011",
+    "sae-j726-iso-5011-air-cleaner-test",
+    "testing-and-validation"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

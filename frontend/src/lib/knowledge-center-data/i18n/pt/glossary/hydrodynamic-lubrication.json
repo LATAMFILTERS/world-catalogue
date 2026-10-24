@@ -1,0 +1,38 @@
+{
+  "id": "TERM-HYDRODYNAMIC-LUBRICATION",
+  "term": "Lubrificação hidrodinâmica",
+  "category": "lubrication",
+  "definition": "O regime de lubrificação no qual duas superfícies em movimento relativo ficam completamente separadas por um filme de óleo pressurizado gerado pela geometria do mancal e pelo movimento relativo das superfícies, sem contato direto metal-metal. A carga é suportada inteiramente pela pressão hidrodinâmica do filme de óleo. Esse regime exige viscosidade, rotação do eixo e carga suficientes para manter a separação de filme completo. A espessura do filme de óleo nos mancais de munhão do virabrequim do motor normalmente é de 5–50 µm, conforme a rotação e a carga. A lubrificação hidrodinâmica produz o menor atrito e, quando mantida, resulta em desgaste abrasivo desprezível das superfícies dos mancais.",
+  "engineeringContext": "A limpeza do óleo deve ser mantida de modo que o tamanho das partículas em suspensão não exceda a espessura mínima do filme de óleo. Em um mancal de virabrequim com filme mínimo de 20 µm, partículas >20 µm penetram diretamente a superfície e causam riscamento abrasivo. É por isso que as metas de limpeza ISO para sistemas de lubrificação de motor (16/14/11) limitam as partículas >14 µm a 10–20 por mL — partículas maiores rompem o filme hidrodinâmico e iniciam sequências de dano abrasivo. A perda de viscosidade por intervalos de troca de óleo longos demais reduz a espessura do filme, aumentando o risco de condições de lubrificação mista ou limite, em que as taxas de desgaste aumentam 100–1,000×.",
+  "aliases": [
+    "lubrificação de filme completo",
+    "filme hidrodinâmico",
+    "lubrificação de filme espesso",
+    "lubrificação por filme fluido"
+  ],
+  "abbreviations": [
+    "HL"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VISCOSITY",
+    "TERM-BEARING-CLEARANCE",
+    "TERM-ABRASIVE-WEAR",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-OIL-DRAIN-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "lubrication-system-filtration",
+    "filter-media-engineering",
+    "oil-condition-monitoring"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

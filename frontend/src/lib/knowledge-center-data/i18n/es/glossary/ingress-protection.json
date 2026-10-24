@@ -1,0 +1,41 @@
+{
+  "id": "TERM-INGRESS-PROTECTION",
+  "term": "Protección contra el ingreso",
+  "category": "air-intake",
+  "definition": "El grado en que una carcasa de filtro, un sello o un componente del sistema impide la entrada de partículas sólidas y líquidos del entorno, clasificado por códigos IP (IEC 60529) o por especificaciones de ingeniería de sellos. En los sistemas de admisión de aire, la protección contra el ingreso se refiere específicamente a la integridad del sello entre el elemento filtrante y la carcasa, que impide que el aire sin filtrar rodee el medio filtrante. Los modos de falla comunes incluyen empaquetaduras del elemento dañadas, superficies de sello de la carcasa deformadas, instalación incorrecta del elemento y daños en la carcasa. La derivación de partículas por un sellado inadecuado puede reducir la eficiencia de filtración efectiva de >99.9% a <80%, incluso con un elemento filtrante nuevo y sin daños.",
+  "engineeringContext": "La inspección de la integridad del sello es el aspecto más descuidado del mantenimiento de la filtración de aire. Los estudios muestran que el ingreso de polvo por derivación en los sellos contribuye al desgaste del motor en una proporción significativa de las fallas de campo atribuidas a una \"derivación del filtro\". En respiraderos y depósitos hidráulicos, los respiraderos de venteo con clasificación IP impiden que el polvo ambiental entre por el depósito durante los cambios de nivel de aceite.",
+  "aliases": [
+    "integridad del sello",
+    "prevención de derivación",
+    "clasificación IP",
+    "sello antipolvo"
+  ],
+  "abbreviations": [
+    "IP"
+  ],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-SILICA"
+  ],
+  "relatedTechnologies": [
+    "macrocore",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "seal-integrity",
+    "particle-ingress-prevention",
+    "air-intake-system-design",
+    "filter-housing-system-integration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

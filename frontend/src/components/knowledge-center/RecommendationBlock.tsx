@@ -21,7 +21,7 @@ import type { KCNodeType, KCReasonType, KCRecommendation } from '@/lib/knowledge
 import { useReviewed } from '@/components/ReviewedText';
 import { useTranslation } from 'react-i18next';
 import { siteLangFromTag, type SiteLang } from '@/lib/language-preference';
-import { articleTitle, systemTitle } from '@/lib/knowledge-center-data/i18n/titles';
+import { articleTitle, systemTitle, termTitle } from '@/lib/knowledge-center-data/i18n/titles';
 
 // ── Colour palette for node types ─────────────────────────────────────────────
 
@@ -77,6 +77,7 @@ function reasonLabel(r: KCRecommendation, tr: (text: string) => string): string 
 function localLabel(rec: KCRecommendation, lang: SiteLang): string {
   if (rec.type === 'article') return articleTitle(rec.slug, lang, rec.label);
   if (rec.type === 'system') return systemTitle(rec.slug, lang, rec.label);
+  if (rec.type === 'term') return termTitle(rec.slug, lang, rec.label);
   return rec.label;
 }
 

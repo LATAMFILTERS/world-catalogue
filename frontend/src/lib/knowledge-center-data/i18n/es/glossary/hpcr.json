@@ -1,0 +1,42 @@
+{
+  "id": "TERM-HPCR",
+  "term": "Common rail de alta presión",
+  "category": "water-fuel",
+  "definition": "Un sistema de inyección de combustible diésel en el que el combustible se presuriza a 1,400–2,500 bar en un riel acumulador común y se distribuye a inyectores individuales accionados por solenoide o piezoeléctricos que inyectan varias veces por ciclo de combustión. Los inyectores HPCR tienen holguras émbolo-cilindro de 1–3 µm y diámetros de orificio de inyección de 80–200 µm, lo que los convierte en los componentes más sensibles a la contaminación de los motores diésel modernos. Se requiere una clase de limpieza ISO 12 o mejor (típicamente un código de limpieza ISO para combustible: <18/16/13). Incluso contaminantes blandos como el crecimiento biológico, la parafina y el arrastre de aceite pueden causar agarrotamiento de los inyectores y formación de depósitos.",
+  "engineeringContext": "Los sistemas HPCR requieren los estándares de limpieza de combustible más exigentes jamás especificados para motores de producción. Una sola partícula de sílice mayor de 5 µm puede rayar de forma permanente el émbolo de un inyector, lo que causa fugas de combustible por el émbolo y pérdida de presión de inyección. La filtración compatible con HPCR debe lograr clasificaciones absolutas a 2–6 µm para proteger los componentes de inyección frente a las cantidades de partículas presentes en el diésel a granel típico.",
+  "aliases": [
+    "common rail",
+    "CRD",
+    "inyección directa",
+    "inyección CR"
+  ],
+  "abbreviations": [
+    "HPCR",
+    "CRD",
+    "CR"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16332",
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-INJECTOR-STICTION",
+    "TERM-WATER-INGRESS",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE",
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "hpcr-fuel-system-cleanliness",
+    "diesel-fuel-filtration",
+    "water-contamination-fuel"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

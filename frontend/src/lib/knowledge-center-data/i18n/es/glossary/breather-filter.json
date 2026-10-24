@@ -1,0 +1,37 @@
+{
+  "id": "TERM-BREATHER-FILTER",
+  "term": "Filtro respiradero",
+  "category": "air-intake",
+  "definition": "Un pequeño elemento filtrante instalado en los venteos de depósitos, respiraderos de cajas de engranajes y carcasas de diferenciales para impedir que entren partículas del aire a los depósitos cerrados de fluido cuando el nivel cambia durante la operación. Los venteos de los depósitos hidráulicos son una vía principal de ingreso de contaminación en equipos móviles: cada ciclo de extensión de un cilindro desplaza volumen de fluido y aspira un volumen equivalente de aire ambiente por el venteo. Los respiraderos de depósitos hidráulicos suelen filtrar a 3–10 µm con eficiencia ≥98%; los de cajas de engranajes, a 3–5 µm. Los filtros respiraderos requieren reemplazo periódico según el entorno de operación y suelen ser el punto de mantenimiento de filtración más descuidado en los equipos móviles.",
+  "engineeringContext": "Un solo filtro respiradero sin mantenimiento puede introducir en un sistema hidráulico, en una semana de operación, más contaminación que todas las demás fuentes juntas. Los respiraderos deben especificarse para lograr una limpieza de partículas al menos una clase de código ISO más fina que el objetivo del sistema, considerando la alta concentración de polvo ambiental que entra en cada ciclo de respiración. En entornos polvorientos de minería o construcción, los filtros respiraderos pueden requerir reemplazo con el mismo intervalo que los elementos filtrantes hidráulicos principales, o uno más corto.",
+  "aliases": [
+    "respiradero de depósito",
+    "respiradero hidráulico",
+    "respiradero de tanque",
+    "filtro de venteo",
+    "filtro respiradero de caja de engranajes"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-INGRESS-PROTECTION",
+    "TERM-ISO-CLEANLINESS-CODE"
+  ],
+  "relatedTechnologies": [
+    "intekcore",
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "contamination-ingression-modelling",
+    "particle-ingress-prevention",
+    "hydraulic-power-unit-design"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

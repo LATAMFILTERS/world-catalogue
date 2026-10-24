@@ -1,0 +1,37 @@
+{
+  "id": "TERM-SAFETY-ELEMENT",
+  "term": "Elemento de seguridad",
+  "category": "air-intake",
+  "definition": "Un elemento filtrante secundario montado dentro de la carcasa del filtro de aire primario, ubicado aguas abajo del elemento primario, que ofrece una barrera final contra el ingreso de polvo si el elemento primario falla, se instala mal o se daña durante el mantenimiento. El elemento de seguridad no se retira ni se limpia durante el servicio normal: se reemplaza solo en el intervalo especificado por el fabricante del equipo, típicamente cada 3–6 cambios del elemento primario. Los elementos de seguridad están presentes en la mayoría de los sistemas de filtro de aire de servicio pesado para minería, construcción y agricultura que operan en entornos con mucho polvo.",
+  "engineeringContext": "La función del elemento de seguridad es proteger el motor durante el período de máxima exposición al polvo: el retiro y la reinstalación del elemento primario. Incluso una separación momentánea entre el elemento primario y la superficie de sello de la carcasa puede introducir en segundos meses de polvo de campo. Los elementos de seguridad nunca deben limpiarse con aire comprimido; la limpieza daña el medio y puede no restablecer la integridad de sellado requerida. En cada servicio del primario debe confirmarse visualmente el estado del sello del elemento de seguridad.",
+  "aliases": [
+    "filtro de seguridad interior",
+    "elemento filtrante secundario",
+    "elemento de respaldo",
+    "filtro de seguridad",
+    "elemento secundario"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "air-intake-system-design",
+    "airflow-engineering",
+    "service-intervals"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

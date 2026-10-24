@@ -1,0 +1,39 @@
+{
+  "id": "TERM-RESTRICTION-INDICATOR",
+  "term": "Indicador de restrição",
+  "category": "air-intake",
+  "definition": "Um dispositivo que monitora a restrição do ar de admissão e alerta o operador quando o elemento de filtro de ar primário se aproxima ou atinge seu limite de serviço. Os indicadores vacuostáticos (mecânicos) usam um pistão com mola que trava em uma posição vermelha visível quando a restrição excede o limite de serviço — tipicamente 25 mbar em motores de aspiração natural e 37.5–62.5 mbar em motores turboalimentados. Os sensores eletrônicos de restrição fornecem um sinal analógico (0–10 V ou 4–20 mA) ou um sinal digital via barramento CAN ao sistema de gestão do equipamento. Os indicadores de restrição permitem a substituição do filtro baseada na condição em vez de por intervalos programados, evitando tanto trocas prematuras quanto a operação com elementos sobrecarregados.",
+  "engineeringContext": "Os indicadores de restrição são calibrados conforme a restrição de admissão máxima admissível do fabricante do motor. Exceder esse limite reduz a eficiência volumétrica do motor, aumenta o consumo de combustível e pode gerar fumaça preta visível no escapamento antes de causar danos visíveis ao hardware. Operadores que fazem o serviço dos filtros com base nos sinais do indicador de restrição em vez de intervalos de calendário normalmente prolongam a vida do elemento em 30–80% em ambientes de pó variável, com proteção equivalente do motor. Após o serviço, os indicadores mecânicos devem ser rearmados manualmente.",
+  "aliases": [
+    "manômetro de restrição",
+    "indicador de serviço",
+    "indicador vacuostático",
+    "medidor de restrição de ar",
+    "indicador de alerta de serviço",
+    "vacuômetro"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-SAE-J1539"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-DUST-HOLDING-CAPACITY"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "airflow-engineering",
+    "air-restriction",
+    "service-intervals"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

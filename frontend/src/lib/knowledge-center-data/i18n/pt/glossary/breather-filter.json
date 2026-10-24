@@ -1,0 +1,37 @@
+{
+  "id": "TERM-BREATHER-FILTER",
+  "term": "Filtro de respiro",
+  "category": "air-intake",
+  "definition": "Um pequeno elemento filtrante instalado nos suspiros de reservatórios, respiros de caixas de engrenagens e carcaças de diferenciais para impedir que partículas do ar entrem nos reservatórios fechados de fluido quando o nível muda durante a operação. Os suspiros dos reservatórios hidráulicos são uma via principal de entrada de contaminação em equipamentos móveis: cada ciclo de extensão de um cilindro desloca volume de fluido e aspira um volume equivalente de ar ambiente pelo suspiro. Os respiros de reservatórios hidráulicos normalmente filtram a 3–10 µm com eficiência ≥98%; os de caixas de engrenagens, a 3–5 µm. Os filtros de respiro exigem substituição periódica conforme o ambiente de operação e costumam ser o ponto de manutenção de filtração mais negligenciado em equipamentos móveis.",
+  "engineeringContext": "Um único filtro de respiro sem manutenção pode introduzir em um sistema hidráulico, em uma semana de operação, mais contaminação do que todas as outras fontes juntas. Os respiros devem ser especificados para atingir uma limpeza de partículas pelo menos uma classe de código ISO mais fina que a meta do sistema, considerando a alta concentração de poeira ambiente que entra a cada ciclo de respiração. Em ambientes empoeirados de mineração ou construção, os filtros de respiro podem exigir substituição no mesmo intervalo dos elementos filtrantes hidráulicos principais ou em intervalo mais curto.",
+  "aliases": [
+    "respiro do reservatório",
+    "respiro hidráulico",
+    "respiro do tanque",
+    "filtro de suspiro",
+    "filtro de respiro da caixa de engrenagens"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-INGRESS-PROTECTION",
+    "TERM-ISO-CLEANLINESS-CODE"
+  ],
+  "relatedTechnologies": [
+    "intekcore",
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "contamination-ingression-modelling",
+    "particle-ingress-prevention",
+    "hydraulic-power-unit-design"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

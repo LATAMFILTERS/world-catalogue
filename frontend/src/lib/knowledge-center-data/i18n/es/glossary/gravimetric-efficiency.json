@@ -1,0 +1,39 @@
+{
+  "id": "TERM-GRAVIMETRIC-EFFICIENCY",
+  "term": "Eficiencia gravimétrica",
+  "category": "filtration-performance",
+  "definition": "Eficiencia del filtro de aire medida como el porcentaje de reducción de la masa de polvo de ensayo estandarizado (ISO 12103-1) que pasa por el elemento filtrante, según se define en la ISO 5011 y la SAE J726. La eficiencia gravimétrica es la métrica de eficiencia principal de los filtros de admisión de aire y refleja la capacidad del filtro para capturar la masa total de contaminantes del aire antes de que entren al motor. Una eficiencia gravimétrica de 99.9% significa que, por cada 1,000 g de polvo de ensayo introducidos aguas arriba, el elemento filtrante retiene 999 g.",
+  "engineeringContext": "Los filtros de admisión de aire se evalúan por eficiencia gravimétrica y no por relación Beta porque el polvo del aire existe en una distribución de tamaño de partícula amplia y continua. La eficiencia gravimétrica mide la captura acumulada de masa en todos los tamaños de partícula presentes en el polvo de ensayo, lo que se correlaciona directamente con la masa de polvo de campo que se impide que entre a los cilindros del motor y cause desgaste abrasivo.",
+  "aliases": [
+    "eficiencia global",
+    "eficiencia másica",
+    "eficiencia del filtro de aire"
+  ],
+  "abbreviations": [
+    "GE"
+  ],
+  "applicableStandards": [
+    "STD-ISO-5011",
+    "STD-SAE-J726"
+  ],
+  "relatedTerms": [
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-RESTRICTION",
+    "TERM-TEST-DUST"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "iso-5011",
+    "sae-j726-iso-5011-air-cleaner-test",
+    "airflow-engineering",
+    "air-intake-system-design"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

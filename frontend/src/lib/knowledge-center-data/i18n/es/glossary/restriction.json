@@ -1,0 +1,43 @@
+{
+  "id": "TERM-RESTRICTION",
+  "term": "Restricción",
+  "category": "air-intake",
+  "definition": "La caída de presión (ΔP) a través de un elemento de filtro de aire a un caudal de aire dado, medida en milibar (mbar) o pulgadas de columna de agua (inH₂O). La restricción aumenta a medida que el elemento filtrante se carga de contaminante. Los límites de servicio se alcanzan cuando la restricción supera el umbral del fabricante del motor, típicamente 25 mbar en motores de aspiración natural y 37.5–62.5 mbar en motores turboalimentados. Se mide según la ISO 5011 y la SAE J1539.",
+  "engineeringContext": "La restricción reduce directamente la eficiencia volumétrica y la potencia del motor. Un aumento de 1 mbar en la restricción de admisión reduce la potencia de un motor de aspiración natural en aproximadamente 0.3–0.5%. En los motores turboalimentados, la restricción antes de la entrada del compresor reduce la eficiencia del compresor y aumenta la contrapresión de escape, lo que agrava la pérdida de potencia. Los indicadores de restricción (alertas vacuostáticas) señalan cuándo se acercan los límites de servicio.",
+  "aliases": [
+    "caída de presión",
+    "ΔP",
+    "restricción de admisión",
+    "restricción de aire"
+  ],
+  "abbreviations": [
+    "ΔP",
+    "inH₂O",
+    "mbar"
+  ],
+  "applicableStandards": [
+    "STD-ISO-5011",
+    "STD-SAE-J1539"
+  ],
+  "relatedTerms": [
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "airflow-engineering",
+    "air-restriction",
+    "air-intake-system-design",
+    "service-intervals",
+    "iso-5011"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

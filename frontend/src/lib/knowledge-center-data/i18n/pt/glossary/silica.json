@@ -1,0 +1,37 @@
+{
+  "id": "TERM-SILICA",
+  "term": "Sílica",
+  "category": "contamination",
+  "definition": "Dióxido de silício (SiO₂), o principal componente mineral do solo, da areia e da poeira do ar, com dureza Mohs de 7 — maior que a da maioria dos materiais de mancais e componentes de motor, incluindo o aço (5–6.5). A sílica é o contaminante mais danoso em sistemas de admissão de ar, lubrificação e hidráulicos porque sua dureza permite cortar e desgastar superfícies metálicas mesmo em baixas concentrações. Um único miligrama de pó de sílica que entra em um motor representa milhões de partículas abrasivas individuais capazes de causar desgaste mensurável dos mancais.",
+  "engineeringContext": "A ingestão de sílica pelo sistema de admissão de ar é a principal causa de desgaste acelerado de motores em equipamentos móveis que operam em ambientes empoeirados. O teor de silício no óleo lubrificante, medido por espectrometria ICP, é um marcador-chave da análise de óleo — silício elevado indica bypass do filtro de ar ou falha de vedação. Em ambientes de construção e mineração, as concentrações de sílica no ar podem chegar a 100–1,000 mg/m³, exigindo pré-separação e filtração primária de alta eficiência.",
+  "aliases": [
+    "dióxido de silício",
+    "SiO₂",
+    "pó de quartzo",
+    "silício no ar"
+  ],
+  "abbreviations": [
+    "SiO₂"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-ABRASIVE-WEAR",
+    "TERM-INGRESS-PROTECTION",
+    "TERM-RESTRICTION"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "particle-ingress-prevention",
+    "airflow-engineering",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

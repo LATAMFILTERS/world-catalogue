@@ -1,0 +1,36 @@
+{
+  "id": "TERM-INJECTOR-STICTION",
+  "term": "Travamento de injetores",
+  "category": "water-fuel",
+  "definition": "Travamento ou movimento lento da agulha ou do pistão de um injetor devido a depósitos, formação de laca, contaminação por água, crescimento biológico ou abrasão por partículas dentro das folgas de precisão de um injetor de combustível. Nos injetores HPCR, o travamento causa falhas de ignição, entrega desigual de combustível entre cilindros, fumaça excessiva, desgaste da bomba de alta pressão e perda de potência do motor. O travamento pode ser temporário (removível por lavagem) ou permanente (riscamento mecânico das superfícies do pistão e do cilindro). Água acima de 200 ppm no diesel é um dos principais gatilhos de laca e travamento dos injetores.",
+  "engineeringContext": "O diagnóstico do travamento de injetores usa os dados de fator de correção de injeção da ECU do motor — uma correção positiva alta em um cilindro indica baixa entrega do injetor (travamento) e uma correção negativa indica entrega excessiva (vazamento por um pistão riscado). Procedimentos de limpeza do sistema de combustível com aditivos limpadores de injetores de alta concentração podem resolver depósitos em estágio inicial, mas o riscamento mecânico por contaminação de partículas exige a substituição do injetor.",
+  "aliases": [
+    "incrustação de injetores",
+    "depósitos nos injetores",
+    "IDID",
+    "envernizamento de injetores"
+  ],
+  "abbreviations": [
+    "IDID"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-HPCR",
+    "TERM-WATER-INGRESS",
+    "TERM-VARNISH"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "hpcr-fuel-system-cleanliness",
+    "diesel-fuel-filtration",
+    "water-contamination-fuel"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

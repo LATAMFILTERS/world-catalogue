@@ -1,0 +1,34 @@
+{
+  "id": "TERM-SURFACE-FILTRATION",
+  "term": "Filtración superficial",
+  "category": "filter-media",
+  "definition": "Un mecanismo de filtración en el que las partículas mayores que las aberturas de los poros superficiales del medio filtrante se capturan exclusivamente en la superficie aguas arriba, formando una capa de torta de partículas que se convierte a su vez en una superficie de filtración cada vez más eficiente a medida que se engrosa. La filtración superficial ofrece una alta eficiencia inicial con un tamaño de poro absoluto definido y es característica de los filtros de membrana, las mallas metálicas tejidas y algunos medios de grado HEPA. Sin embargo, la filtración superficial produce un aumento rápido de la presión diferencial a medida que se forma la torta superficial, y suele tener una capacidad de retención de polvo mucho menor que los elementos de filtración en profundidad del mismo espesor.",
+  "engineeringContext": "La filtración superficial es adecuada para aplicaciones que requieren filtración absoluta —retener todas las partículas por encima de un tamaño definido—, pero no para la filtración de aire o fluidos de alta capacidad donde se requieren intervalos de servicio extendidos. La tecnología NANOFORCE usa capas superficiales de nanofibras sobre un sustrato de filtración en profundidad para lograr filtración superficial de alta eficiencia en el extremo de las partículas finas sin sacrificar la capacidad de retención total.",
+  "aliases": [
+    "filtración por torta",
+    "filtración por malla",
+    "filtración de barrera superficial",
+    "filtración por tamizado"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-DEPTH-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-SYNTHETIC-MEDIA"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

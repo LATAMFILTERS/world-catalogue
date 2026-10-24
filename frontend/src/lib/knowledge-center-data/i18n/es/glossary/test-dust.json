@@ -1,0 +1,38 @@
+{
+  "id": "TERM-TEST-DUST",
+  "term": "Polvo de ensayo ISO 12103-1",
+  "category": "fluid-cleanliness",
+  "definition": "Contaminantes de ensayo artificiales estandarizados definidos por la ISO 12103-1 para su uso en ensayos de desempeño de filtros. Se especifican cuatro grados: A1 Ultrafine (0–80 µm), A2 Fine (0–150 µm, mediana ~18 µm), A3 Medium (0–280 µm) y A4 Coarse (0–600 µm). El grado A2 Fine es el polvo principal usado en los ensayos multipaso ISO 16889 de filtros hidráulicos y en los ensayos ISO 5011 de filtros de aire. Todos los grados son a base de sílice con distribuciones de tamaño de partícula definidas, lo que asegura la reproducibilidad entre laboratorios de ensayo de todo el mundo.",
+  "engineeringContext": "La distribución controlada del tamaño de partícula del polvo de ensayo ISO 12103-1 permite ensayos de desempeño de filtros reproducibles entre distintos laboratorios y fabricantes. El polvo de campo no se usa en los ensayos estandarizados porque su composición, forma y distribución de tamaño varían según la geografía, la estación y el entorno industrial. Los resultados con polvo de ensayo dan una base coherente para comparar el desempeño, no una predicción de la vida útil absoluta en campo.",
+  "aliases": [
+    "polvo de ensayo ISO",
+    "ACFTD",
+    "contaminante de ensayo estandarizado",
+    "polvo SAE J726"
+  ],
+  "abbreviations": [
+    "A2 Fine",
+    "ACFTD"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011",
+    "STD-SAE-J726"
+  ],
+  "relatedTerms": [
+    "TERM-MULTI-PASS-TEST",
+    "TERM-GRAVIMETRIC-EFFICIENCY",
+    "TERM-DUST-HOLDING-CAPACITY"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "iso-16889-multipass-test",
+    "iso-5011",
+    "sae-j726-iso-5011-air-cleaner-test",
+    "testing-and-validation"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

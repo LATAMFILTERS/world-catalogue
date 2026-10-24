@@ -1,0 +1,38 @@
+{
+  "id": "TERM-MICROBIAL-CONTAMINATION",
+  "term": "Contaminação microbiana",
+  "category": "water-fuel",
+  "definition": "A colonização do óleo diesel, das misturas de biodiesel e dos componentes do sistema de combustível por bactérias, fungos e leveduras na interface água-combustível. Os microrganismos metabolizam os hidrocarbonetos como fonte de carbono e usam a água livre como meio de crescimento. Eles geram resíduos metabólicos ácidos (pH 3–5 nas colônias) que corroem tanques e componentes metálicos, produzem biomassa e biofilmes que obstruem os filtros de combustível e geram sulfeto de hidrogênio que corrói os materiais do sistema de combustível. Os combustíveis ULSD (diesel de ultrabaixo teor de enxofre) são mais suscetíveis que os de alto teor de enxofre porque os compostos de enxofre atuavam antes como biocidas naturais.",
+  "engineeringContext": "A contaminação microbiana é um problema principal do sistema de combustível em aplicações marítimas, de geradores e de armazenamento a granel, em que o combustível fica parado por longos períodos com água livre presente. A água livre deve ser reduzida abaixo de 200 ppm para inibir o crescimento. O tratamento com biocidas (BIOGUARD, Grotamar 82 etc.) trata a contaminação existente, mas não substitui a remoção da água. Sistemas de combustível contaminados exigem drenagem completa do sistema, limpeza do tanque e substituição dos filtros.",
+  "aliases": [
+    "contaminação biológica",
+    "\"bichos\" no combustível",
+    "crescimento microbiológico",
+    "contaminação bacteriana",
+    "contaminação por fungos"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-WATER-INGRESS",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-HPCR"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE",
+    "marineclean"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "marine-diesel-filtration",
+    "diesel-fuel-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

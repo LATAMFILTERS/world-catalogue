@@ -1,0 +1,38 @@
+{
+  "id": "TERM-PRE-CLEANER",
+  "term": "Prefiltro",
+  "category": "air-intake",
+  "definition": "Un dispositivo instalado aguas arriba del elemento de filtro de aire primario que usa separación centrífuga, ciclónica o inercial para eliminar partículas grandes —típicamente >100 µm— antes de que lleguen al elemento primario. Los prefiltros reducen la carga de polvo sobre el elemento filtrante primario y prolongan su vida útil 2–5× en entornos con mucho polvo. Los tipos incluyen prefiltros de álabes, vasos preseparadores centrífugos, baterías de ciclones de tubos y prefiltros en baño de aceite. Los prefiltros son estándar en los sistemas de filtro de aire de equipos de minería, canteras y movimiento de tierra que operan en entornos con concentraciones de polvo ambiental superiores a 5 mg/m³.",
+  "engineeringContext": "En entornos de polvo extremo, los prefiltros son esenciales para lograr intervalos de servicio prácticos. Sin prefiltro, la restricción del elemento primario alcanza los límites de servicio en cuestión de horas en operaciones con sílice o arena. La eficiencia de separación del prefiltro no se clasifica según la ISO 5011 porque solo elimina partículas grandes; la eficiencia total del sistema la determina el elemento primario actuando sobre el aire prelimpiado. El desempeño del prefiltro se degrada si el puerto de expulsión de polvo está bloqueado o si el vaso centrífugo no se vacía durante el servicio.",
+  "aliases": [
+    "preseparador",
+    "preseparador de admisión",
+    "prefiltro de aire",
+    "prefiltro ciclónico",
+    "preseparador inercial"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-RESTRICTION",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-CYCLONIC-SEPARATION",
+    "TERM-SERVICE-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "air-intake-system-design",
+    "airflow-engineering",
+    "iso-5011"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

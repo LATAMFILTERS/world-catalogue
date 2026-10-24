@@ -1,0 +1,40 @@
+{
+  "id": "TERM-FREE-WATER",
+  "term": "Agua libre",
+  "category": "water-fuel",
+  "definition": "Gotas de agua líquida diferenciadas que se han separado de la emulsión de combustible o aceite y forman una fase acuosa propia, visible como turbidez, neblina o una capa de agua separada en el fondo de un tanque de almacenamiento, del vaso de la carcasa de un filtro o de una botella de muestra de combustible. El agua libre en el diésel favorece el crecimiento microbiano (colonias de hongos y bacterias en la interfaz combustible-agua), causa corrosión de la punta de los inyectores y acelera la obstrucción del filtro en clima frío por formación de cristales de hielo. En el aceite de motor, el agua libre favorece la corrosión de cojinetes, la emulsificación del aceite, el agotamiento de aditivos y la formación de lodos. El agua libre se elimina por decantación por gravedad, separadores de agua de tipo coalescedor y válvulas de drenaje manuales en los colectores de los filtros.",
+  "engineeringContext": "La detección de agua libre en el diésel puede hacerse por inspección visual de turbidez, pasta detectora de agua en una varilla de medición o sensores electrónicos de agua en combustible en el colector de la carcasa del filtro. Muchos conjuntos de filtro de combustible diésel de servicio pesado incluyen una válvula de drenaje manual y una luz de advertencia de agua en el combustible para alertar a los operadores sobre el agua libre acumulada antes de que pase aguas abajo al sistema de inyección. El agua libre que evade el filtro y llega a los sistemas de inyección HPCR causa erosión inmediata del inyector y desgaste del asiento de la válvula, a menudo irreversibles desde el primer evento de contaminación.",
+  "aliases": [
+    "agua separada",
+    "agua decantada",
+    "agua con separación de fases",
+    "agua a granel",
+    "agua en fase libre"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-12937",
+    "STD-ASTM-D6304"
+  ],
+  "relatedTerms": [
+    "TERM-EMULSIFIED-WATER",
+    "TERM-WATER-INGRESS",
+    "TERM-COALESCING",
+    "TERM-MICROBIAL-CONTAMINATION",
+    "TERM-KARL-FISCHER-TITRATION"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "hpcr-fuel-system-protection",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TERM-TOTAL-BASE-NUMBER",
+  "term": "Número básico total",
+  "category": "lubrication",
+  "definition": "Una medida de la alcalinidad de reserva de un aceite: su capacidad para neutralizar los ácidos formados por los gases de blowby de la combustión y los productos de oxidación del aceite. Se expresa en miligramos de hidróxido de potasio por gramo de aceite (mg KOH/g). El aceite de motor nuevo suele tener un TBN de 8–14 mg KOH/g. Los productos ácidos (ácido sulfúrico de la combustión de combustibles con azufre, ácidos carboxílicos de la oxidación del aceite) se neutralizan con aditivos alcalinos (detergentes de calcio y magnesio). El cambio de aceite está indicado cuando el TBN cae a aproximadamente 2 mg KOH/g, por debajo del cual se acelera la corrosión de las superficies de los cojinetes por los productos ácidos no neutralizados.",
+  "engineeringContext": "El monitoreo del TBN mediante análisis de aceite es el método definitivo para determinar los intervalos de cambio del aceite lubricante del motor según la condición. Un aceite que mantiene un TBN alto no está agotado sin importar el tiempo calendario; un aceite con TBN bajo está agotado sin importar las horas. El contenido de azufre del combustible determina en gran medida la tasa de agotamiento del TBN: los combustibles de alto azufre requieren más reserva alcalina o intervalos de cambio más cortos.",
+  "aliases": [
+    "TBN",
+    "número básico",
+    "reserva de alcalinidad",
+    "alcalinidad de reserva"
+  ],
+  "abbreviations": [
+    "TBN",
+    "BN"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-OXIDATIVE-DEGRADATION"
+  ],
+  "relatedTechnologies": [
+    "duratech"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "oil-analysis-methods",
+    "extended-drain-interval-engineering",
+    "fleet-oil-sampling-protocol"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

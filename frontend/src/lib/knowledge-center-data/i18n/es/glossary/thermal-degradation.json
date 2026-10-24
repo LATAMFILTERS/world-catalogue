@@ -1,0 +1,30 @@
+{
+  "id": "TERM-THERMAL-DEGRADATION",
+  "term": "Degradación térmica",
+  "category": "chemical-degradation",
+  "definition": "La descomposición de las moléculas del lubricante o del fluido hidráulico a temperaturas elevadas por craqueo, polimerización y volatilización, independientemente de la disponibilidad de oxígeno. La degradación térmica produce compuestos volátiles de bajo peso molecular (reducción del punto de inflamación), depósitos carbonosos insolubles (negro de humo y coque) y polímeros de muy alto peso molecular (laca y barniz). Ocurre en puntos calientes localizados, como las zonas de descarga de las bombas, los sellos de vástago de los actuadores hidráulicos y las carcasas de cojinetes de los turbocompresores, donde las temperaturas pueden superar momentáneamente los 200–300°C.",
+  "engineeringContext": "La degradación térmica es distinta de la degradación oxidativa porque puede avanzar sin oxígeno: ocurre en sistemas hidráulicos totalmente sellados con altas temperaturas locales aun cuando la temperatura del aceite a granel está dentro de la especificación. Los aceites base sintéticos (PAO, éster) soportan temperaturas más altas antes del craqueo térmico que los aceites minerales, por lo que son superiores para el servicio a alta temperatura, como los circuitos de suministro de aceite del turbocompresor.",
+  "aliases": [
+    "craqueo térmico",
+    "degradación pirolítica",
+    "descomposición térmica"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-VARNISH",
+    "TERM-VISCOSITY"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "varnish-formation-lube-systems",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

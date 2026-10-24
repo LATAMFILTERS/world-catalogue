@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { TERMINOLOGY_REGISTRY, getPublishedTerms, termIdToSlug, slugToTermId } from '@/lib/knowledge-center';
 import GlossaryTermContent from './GlossaryTermContent';
+import { languageAlternates } from '@/lib/localized-routes';
+import { TRANSLATED_GLOSSARY_SLUGS } from '@/lib/knowledge-center-data/i18n/titles';
 
 const CTR_1_METADATA: Record<string, { title: string; description: string }> = {
   'restriction-indicator': {
@@ -65,6 +67,7 @@ export async function generateMetadata({
     description: override?.description || entry.definition.slice(0, 160),
     alternates: {
       canonical: `https://elimfilters.com/knowledge-center/glossary/${term}/`,
+      ...((TRANSLATED_GLOSSARY_SLUGS as readonly string[]).includes(term) ? { languages: languageAlternates(`/knowledge-center/glossary/${term}`) } : {}),
     },
     robots: {
       index: isPublished,

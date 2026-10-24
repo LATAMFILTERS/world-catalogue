@@ -1,0 +1,32 @@
+{
+  "id": "TERM-AERATION",
+  "term": "Aeração",
+  "category": "contamination",
+  "definition": "O arraste de ar livre ou gases não condensáveis para o fluido hidráulico ou de lubrificação, resultando em uma mistura de fluido compressível e espumosa. A aeração ocorre quando o fluido é exposto a ar acima de seu ponto de saturação — tipicamente por fluxo turbulento, formação de vórtices nas entradas de sucção, baixo nível de fluido no reservatório ou vazamentos nas conexões da linha de sucção. O fluido aerado se comprime sob pressão, causando resposta esponjosa dos atuadores, mais ruído (semelhante à cavitação), temperaturas elevadas do fluido pela compressão adiabática das bolhas de ar e oxidação acelerada do óleo. A aeração é diferente do ar dissolvido — o ar dissolvido permanece em solução e não se comprime nas pressões de operação.",
+  "engineeringContext": "A aeração é controlada pelo projeto do reservatório hidráulico: volume de fluido adequado (mínimo de 3–5× a vazão da bomba por minuto), linha de retorno submersa abaixo da superfície do fluido, tempo de repouso adequado e defletores para que o ar arrastado escape antes que o fluido recircule pela bomba. Aditivos antiespumantes do óleo reduzem a tensão superficial, mas não tratam a causa raiz do arraste de ar.",
+  "aliases": [
+    "arraste de ar",
+    "formação de espuma",
+    "óleo aerado",
+    "ar arrastado"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-CAVITATION",
+    "TERM-VARNISH"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-reservoir-design",
+    "failure-analysis",
+    "hydraulic-power-unit-design"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

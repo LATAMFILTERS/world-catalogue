@@ -1,0 +1,39 @@
+{
+  "id": "TERM-SERVICE-INTERVAL",
+  "term": "Intervalo de serviço",
+  "category": "air-intake",
+  "definition": "O período (medido em horas de operação, quilômetros ou tempo de calendário) entre substituições ou ações de serviço do elemento filtrante. Os intervalos de serviço são definidos por cronogramas baseados em tempo (intervalos de horas fixos) ou por gatilhos baseados na condição (acionamento do indicador de restrição em filtros de ar; limite de pressão diferencial em filtros de fluido; resultados de análise de óleo em sistemas de lubrificação). Os intervalos baseados na condição são mais econômicos e confiáveis porque respondem ao acúmulo real de contaminação, e não a suposições sobre condições médias de operação.",
+  "engineeringContext": "Estender demais os intervalos de serviço é a principal causa de falhas de equipamentos relacionadas a filtros. O excesso de serviço aumenta os custos de operação e gera resíduos desnecessários. O monitoramento baseado na condição permite estender os intervalos de serviço em 30–200% em relação a cronogramas fixos em ambientes limpos, garantindo ao mesmo tempo o serviço antecipado em condições de alta contaminação.",
+  "aliases": [
+    "intervalo de manutenção",
+    "intervalo de troca do filtro",
+    "intervalo de troca de óleo",
+    "intervalo de substituição"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-RESTRICTION",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [
+    "macrocore",
+    "duratech"
+  ],
+  "relatedSystems": [
+    "air-intake-protection",
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "service-intervals",
+    "extended-drain-interval-engineering",
+    "total-cost-of-ownership",
+    "oil-condition-monitoring"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

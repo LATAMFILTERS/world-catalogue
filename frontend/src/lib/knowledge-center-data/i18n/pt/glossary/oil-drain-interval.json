@@ -1,0 +1,42 @@
+{
+  "id": "TERM-OIL-DRAIN-INTERVAL",
+  "term": "Intervalo de troca de óleo",
+  "category": "lubrication",
+  "definition": "O tempo de operação ou a distância programados entre trocas de óleo do motor ou da transmissão, expressos tipicamente em horas de operação para equipamentos fora de estrada ou em quilômetros para veículos rodoviários. Os intervalos de troca padrão de motores diesel pesados vão de 250–500 horas em mineração e construção de serviço severo, a 750–1,000 horas em transporte agrícola e rodoviário, até 1,000–2,000 horas em motores industriais estacionários com formulações sintéticas de longa duração. Os intervalos de troca de óleo são determinados pela taxa de degradação do óleo — oxidação, esgotamento do TBN, variação de viscosidade, acúmulo de fuligem — e pelo acúmulo de contaminação, ambos dependentes das condições de operação, do teor de enxofre do combustível, da taxa de blowby, da especificação do óleo e do desempenho do sistema de filtração.",
+  "engineeringContext": "Os intervalos de troca de óleo só são estendidos com segurança quando apoiados por dados regulares de monitoramento da condição do óleo que confirmem que tanto o óleo quanto o sistema estão dentro de limites aceitáveis no ponto final estendido proposto. Estender os intervalos apenas com base em alegações de marketing do óleo, sem dados de monitoramento, não é prática de engenharia aceitável e pode anular as garantias do equipamento. A filtração de alto desempenho remove partículas abrasivas que de outra forma acelerariam a degradação do óleo, tornando a melhor filtração um fator para estender os intervalos de troca seguros — mas o monitoramento continua sendo o controle principal.",
+  "aliases": [
+    "intervalo de troca",
+    "intervalo de drenagem",
+    "período de serviço do óleo",
+    "intervalo do óleo do motor",
+    "intervalo de troca do lubrificante"
+  ],
+  "abbreviations": [
+    "ODI"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-TOTAL-BASE-NUMBER",
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-OIL-CONDITION-MONITORING",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-SOOT",
+    "TERM-VISCOSITY"
+  ],
+  "relatedTechnologies": [
+    "duratech",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "extended-drain-interval-engineering",
+    "oil-condition-monitoring",
+    "service-intervals",
+    "oil-analysis-methods"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

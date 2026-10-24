@@ -1,0 +1,40 @@
+{
+  "id": "TERM-BYPASS-FILTRATION",
+  "term": "Filtração em bypass",
+  "category": "hydraulic-systems",
+  "definition": "Um circuito de filtração complementar no qual uma parte da vazão total do sistema (tipicamente 5–20%) é desviada do circuito principal através de um filtro fino de alta eficiência e retorna ao reservatório, operando em paralelo com o sistema de filtração de fluxo total. Também chamada de filtração kidney-loop ou off-line. Os filtros em bypass operam com baixa vazão e baixa pressão diferencial, permitindo filtração muito fina (β₃(c) ≥ 1,000 ou mais fina) sem as restrições ao fluxo que prejudicariam a operação normal do circuito. Com o tempo, a filtração em bypass purifica progressivamente todo o volume de fluido até o código de limpeza alvo, removendo inclusive partículas menores que a classificação do filtro de fluxo total.",
+  "engineeringContext": "A filtração em bypass kidney-loop é o principal meio de atingir e manter códigos de limpeza ISO 15/13/10 ou mais rigorosos em sistemas com servoválvulas e válvulas proporcionais. Uma unidade de filtração em bypass dedicada com filtro absoluto de 3 µm pode levar um sistema contaminado a ISO 16/14/11 em 2–4 horas de operação contínua. Os filtros em bypass devem funcionar continuamente — não apenas quando os alarmes de contaminação são acionados.",
+  "aliases": [
+    "filtração kidney-loop",
+    "filtração off-line",
+    "filtração complementar",
+    "filtro de polimento"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-NFPA-T2-14"
+  ],
+  "relatedTerms": [
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-SERVO-VALVE",
+    "TERM-BETA-RATIO"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-system-flushing",
+    "hydraulic-power-unit-design",
+    "nfpa-t2-14-hydraulic-cleanliness",
+    "fluid-cleanliness"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

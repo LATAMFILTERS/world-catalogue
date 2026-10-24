@@ -1,0 +1,42 @@
+{
+  "id": "TERM-SYNTHETIC-MEDIA",
+  "term": "Meio filtrante sintético",
+  "category": "filter-media",
+  "definition": "Meio filtrante fabricado com fibras de polímeros artificiais — incluindo poliéster, polipropileno, poliacrilonitrila e fibra de vidro —, ao contrário do meio de celulose natural (à base de polpa de madeira). As fibras sintéticas oferecem diâmetro de fibra controlado, distribuição uniforme do tamanho de poro, alta resistência ao estouro em úmido, resistência química e resistência à degradação biológica. O meio sintético atinge relações Beta mais altas em tamanhos de partícula menores, maior vida útil sob ciclos de pressão e melhor estabilidade dimensional em temperaturas elevadas do que um meio de celulose equivalente.",
+  "engineeringContext": "O meio sintético é padrão em filtros de óleo hidráulico e de lubrificação em que o desempenho de relação Beta ISO 16889 deve ser garantido. O meio de celulose ainda é usado em muitos filtros de ar por sua vantagem de custo e desempenho adequado em aplicações de admissão de ar de eficiência moderada. As tecnologias ELIMFILTERS SYNTRAX e NANOFORCE usam compostos de meio sintético projetados para metas de desempenho específicas nos diferentes domínios de filtração de óleo.",
+  "aliases": [
+    "meio de fibra de vidro",
+    "meio de poliéster",
+    "meio de polipropileno",
+    "meio artificial",
+    "material filtrante sintético"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889"
+  ],
+  "relatedTerms": [
+    "TERM-DEPTH-FILTRATION",
+    "TERM-SURFACE-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-CELLULOSE-MEDIA"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "nanoforce",
+    "macrocore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection",
+    "air-intake-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "materials-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

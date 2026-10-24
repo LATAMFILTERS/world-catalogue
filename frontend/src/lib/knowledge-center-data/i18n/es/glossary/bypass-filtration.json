@@ -1,0 +1,40 @@
+{
+  "id": "TERM-BYPASS-FILTRATION",
+  "term": "Filtración en derivación",
+  "category": "hydraulic-systems",
+  "definition": "Un circuito de filtración complementario en el que una parte del caudal total del sistema (típicamente 5–20%) se desvía del circuito principal a través de un filtro fino de alta eficiencia y vuelve al depósito, operando en paralelo con el sistema de filtración de flujo total. También se llama filtración kidney-loop o fuera de línea. Los filtros en derivación operan con bajo caudal y baja presión diferencial, lo que permite una filtración muy fina (β₃(c) ≥ 1,000 o más fina) sin las restricciones al flujo que afectarían la operación normal del circuito. Con el tiempo, la filtración en derivación pule progresivamente todo el volumen de fluido hasta el código de limpieza objetivo, e incluso elimina partículas menores que la clasificación del filtro de flujo total.",
+  "engineeringContext": "La filtración en derivación kidney-loop es el medio principal para lograr y mantener códigos de limpieza ISO 15/13/10 o más estrictos en sistemas con servoválvulas y válvulas proporcionales. Una unidad de filtración en derivación dedicada con un filtro absoluto de 3 µm puede llevar un sistema contaminado a ISO 16/14/11 en 2–4 horas de operación continua. Los filtros en derivación deben funcionar de forma continua, no solo cuando se activan las alarmas de contaminación.",
+  "aliases": [
+    "filtración kidney-loop",
+    "filtración fuera de línea",
+    "filtración complementaria",
+    "filtro pulidor"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-NFPA-T2-14"
+  ],
+  "relatedTerms": [
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-SERVO-VALVE",
+    "TERM-BETA-RATIO"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-system-flushing",
+    "hydraulic-power-unit-design",
+    "nfpa-t2-14-hydraulic-cleanliness",
+    "fluid-cleanliness"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

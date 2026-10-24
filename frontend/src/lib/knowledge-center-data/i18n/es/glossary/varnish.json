@@ -1,0 +1,34 @@
+{
+  "id": "TERM-VARNISH",
+  "term": "Barniz",
+  "category": "chemical-degradation",
+  "definition": "Un depósito insoluble, de blando a duro, que se forma en las superficies de los sistemas hidráulicos y de lubricación cuando los productos de degradación del aceite —subproductos de oxidación, productos de descomposición térmica y metales disueltos— precipitan de la solución. Los depósitos de barniz aparecen como películas finas similares a la laca (0.1–5 µm de espesor) en carretes de válvulas, componentes de bombas y superficies de intercambiadores de calor. La formación de barniz se acelera con altas temperaturas (>80°C), la aireación y los intervalos de servicio del aceite extendidos. Aumenta el agarrotamiento de las válvulas, reduce la eficiencia de transferencia de calor y es una causa principal de falla de las válvulas proporcionales.",
+  "engineeringContext": "Los depósitos de barniz no se eliminan con cambios de aceite porque se adhieren a las superficies metálicas y son insolubles en el aceite nuevo. La filtración por precipitación electrostática y los tratamientos químicos de lavado del aceite pueden eliminar el barniz depositado en las superficies del sistema. La prevención mediante el control de la temperatura del aceite (por debajo de 80°C), el análisis periódico de aceite y cambios de aceite oportunos antes de una oxidación avanzada es más económica que la remediación.",
+  "aliases": [
+    "depósitos de laca",
+    "barniz del aceite",
+    "precursores de lodo",
+    "contaminantes blandos"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-SERVO-VALVE",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-THERMAL-DEGRADATION",
+    "TERM-AERATION"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "varnish-formation-lube-systems",
+    "failure-analysis",
+    "hydraulic-contamination-sensitivity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

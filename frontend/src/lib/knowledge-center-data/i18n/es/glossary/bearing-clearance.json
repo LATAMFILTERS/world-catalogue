@@ -1,0 +1,36 @@
+{
+  "id": "TERM-BEARING-CLEARANCE",
+  "term": "Holgura de cojinete",
+  "category": "lubrication",
+  "definition": "La separación radial de diseño entre un muñón giratorio y la superficie de su cojinete, típicamente de 1–100 µm según el diámetro del eje y el tipo de cojinete. La holgura determina el espesor mínimo de la película hidrodinámica de aceite necesario para evitar el contacto metal-metal a la velocidad y carga de operación. Las partículas mayores que aproximadamente la mitad de la holgura del cojinete pueden tocar ambas superficies del cojinete a la vez (abrasión de tres cuerpos), lo que causa desgaste acelerado y pérdida de holgura. Las holguras desgastadas aumentan el consumo de aceite lubricante, reducen la presión de aceite y aceleran el desgaste.",
+  "engineeringContext": "Las holguras de los cojinetes de motores de alta velocidad (cojinetes de bancada del cigüeñal, cojinetes de biela) suelen ir de 25–75 µm. Por eso los tamaños de partícula del rango de 12–37 µm son los más dañinos para estos componentes, en correlación con la especificación de clasificación β₁₄(c) ISO 16889 para filtros de lubricación. Los códigos de limpieza ISO se calibran según las holguras más críticas de cada tipo de sistema.",
+  "aliases": [
+    "holgura de muñón",
+    "holgura de funcionamiento",
+    "holgura de película de aceite"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-4406"
+  ],
+  "relatedTerms": [
+    "TERM-ABRASIVE-WEAR",
+    "TERM-VISCOSITY",
+    "TERM-ISO-CLEANLINESS-CODE"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "lubrication-system-filtration",
+    "contamination-sensitivity-components",
+    "failure-analysis",
+    "iso-4406"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

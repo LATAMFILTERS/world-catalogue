@@ -7,9 +7,14 @@ import { motion } from 'motion/react';
 import { getPublishedTerms, termIdToSlug, TERM_CATEGORY_LABELS } from '@/lib/knowledge-center';
 import type { TermCategory } from '@/lib/knowledge-center';
 import { heroBackgroundImage } from '@/lib/hero-media';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { termTitle } from '@/lib/knowledge-center-data/i18n/titles';
 
 export default function GlossaryPage() {
   const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   const allTerms = getPublishedTerms(); // already sorted alphabetically
 
   // Group terms by category
@@ -202,7 +207,7 @@ export default function GlossaryPage() {
                         color: '#fff',
                         marginBottom: '0.4rem',
                       }}>
-                        {tr(term.term)}
+                        {termTitle(slug, lang, term.term)}
                       </p>
 
                       <p style={{

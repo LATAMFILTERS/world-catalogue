@@ -1,0 +1,34 @@
+{
+  "id": "TERM-ADHESIVE-WEAR",
+  "term": "Desgaste adesivo",
+  "category": "contamination",
+  "definition": "Desgaste causado pela transferência de material de uma superfície para outra quando duas superfícies em contato se movem entre si. Com alta tensão de contato e espessura insuficiente do filme de lubrificante, ocorre contato metal-metal entre asperezas. As asperezas superficiais se soldam momentaneamente e se cisalham, transferindo fragmentos de metal de uma superfície para a outra. Esses fragmentos transferidos se tornam partículas abrasivas no lubrificante, criando um modo secundário de desgaste abrasivo. O desgaste adesivo é acelerado por óleo contaminado, viscosidade de óleo incorreta, alta temperatura e componentes sobrecarregados.",
+  "engineeringContext": "O desgaste adesivo é característico da falta de lubrificação e ocorre quando a espessura do filme de lubrificante cai abaixo da rugosidade combinada das superfícies opostas. Os produtos do desgaste adesivo (ferro e outras partículas metálicas) normalmente medem 1–10 µm e contribuem para um aumento rápido da contaminação do óleo, o que por sua vez acelera o desgaste abrasivo — um ciclo de degradação que se autoalimenta e pode levar ao engripamento rápido dos mancais.",
+  "aliases": [
+    "escoriação (scuffing)",
+    "engripamento",
+    "riscamento",
+    "espalhamento (smearing)"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-ABRASIVE-WEAR",
+    "TERM-BEARING-CLEARANCE",
+    "TERM-VISCOSITY"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "failure-analysis",
+    "lubrication-system-filtration",
+    "contamination-sensitivity-components"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

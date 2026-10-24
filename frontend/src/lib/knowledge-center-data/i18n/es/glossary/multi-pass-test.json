@@ -1,0 +1,36 @@
+{
+  "id": "TERM-MULTI-PASS-TEST",
+  "term": "Ensayo multipaso",
+  "category": "filtration-performance",
+  "definition": "Un método de ensayo de laboratorio estandarizado definido en la ISO 16889 para medir el desempeño de filtros hidráulicos. El fluido de ensayo circula por el elemento filtrante en múltiples pasadas mientras se inyecta polvo de ensayo ISO 12103-1 A2 Fine a una tasa controlada aguas arriba. Se toman conteos de partículas aguas arriba y aguas abajo con contadores automáticos de partículas según la ISO 11171 a intervalos definidos. El ensayo continúa hasta alcanzar una presión diferencial terminal. Los resultados dan la relación Beta en cada tamaño de partícula y la capacidad de retención de polvo.",
+  "engineeringContext": "El ensayo multipaso es el estándar global para calificar filtros hidráulicos y de lubricación. Su diseño de recirculación multipaso permite contar partículas finas con exactitud estadística a lo largo de varios ciclos de filtración, a diferencia de los ensayos de un solo paso, que no pueden controlar con precisión la concentración de partículas en la entrada del filtro.",
+  "aliases": [
+    "ensayo ISO 16889",
+    "ensayo de filtración multipaso",
+    "ensayo de eficiencia del filtro"
+  ],
+  "abbreviations": [
+    "MPT"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-11171"
+  ],
+  "relatedTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-ABSOLUTE-EFFICIENCY",
+    "TERM-TEST-DUST",
+    "TERM-DIFFERENTIAL-PRESSURE"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "iso-16889",
+    "iso-16889-multipass-test",
+    "testing-and-validation",
+    "beta-ratio"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

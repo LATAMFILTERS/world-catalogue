@@ -1,0 +1,36 @@
+{
+  "id": "TERM-BEARING-CLEARANCE",
+  "term": "Folga do mancal",
+  "category": "lubrication",
+  "definition": "A folga radial de projeto entre um munhão rotativo e a superfície de seu mancal, tipicamente de 1–100 µm conforme o diâmetro do eixo e o tipo de mancal. A folga determina a espessura mínima do filme hidrodinâmico de óleo necessária para evitar o contato metal-metal na velocidade e carga de operação. Partículas maiores que aproximadamente metade da folga do mancal podem tocar as duas superfícies do mancal ao mesmo tempo (abrasão de três corpos), causando desgaste acelerado e perda de folga. Folgas desgastadas aumentam o consumo de óleo lubrificante, reduzem a pressão de óleo e aceleram o desgaste.",
+  "engineeringContext": "As folgas dos mancais de motores de alta rotação (mancais principais do virabrequim, mancais de biela) normalmente variam de 25–75 µm. Por isso, tamanhos de partícula na faixa de 12–37 µm são os mais danosos para esses componentes, em correlação com a especificação de classificação β₁₄(c) ISO 16889 para filtros de lubrificação. Os códigos de limpeza ISO são calibrados de acordo com as folgas mais críticas de cada tipo de sistema.",
+  "aliases": [
+    "folga do munhão",
+    "folga de funcionamento",
+    "folga do filme de óleo"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [
+    "STD-ISO-4406"
+  ],
+  "relatedTerms": [
+    "TERM-ABRASIVE-WEAR",
+    "TERM-VISCOSITY",
+    "TERM-ISO-CLEANLINESS-CODE"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "lubrication-system-filtration",
+    "contamination-sensitivity-components",
+    "failure-analysis",
+    "iso-4406"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

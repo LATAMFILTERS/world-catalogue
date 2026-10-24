@@ -1,0 +1,40 @@
+{
+  "id": "TERM-PROPORTIONAL-VALVE",
+  "term": "Válvula proporcional",
+  "category": "hydraulic-systems",
+  "definition": "Uma válvula hidráulica de controle direcional que modula a vazão e a pressão proporcionalmente a um sinal elétrico de entrada por meio de um carretel acionado por solenoide. As válvulas proporcionais operam com folgas internas carretel-furo de 5–25 µm — maiores que as das servoválvulas, mas ainda muito sensíveis à contaminação por partículas acima de 10–15 µm. Os códigos de limpeza alvo para circuitos com válvulas proporcionais normalmente vão de ISO 17/15/12 a 16/14/11. As válvulas proporcionais são amplamente usadas na hidráulica móvel para o controle de lança, braço e caçamba em escavadeiras e em prensas industriais para o controle de força e posição.",
+  "engineeringContext": "O travamento induzido por contaminação nas válvulas proporcionais causa instabilidade de controle, baixa precisão de posicionamento e desgaste prematuro do carretel e do furo. Ao contrário das servoválvulas, as válvulas proporcionais normalmente toleram pequenos eventos de contaminação não cortantes sem falha catastrófica, mas eventos repetidos degradam progressivamente o desempenho de dosagem. A especificação de limpeza do fabricante da válvula deve ser verificada frente à meta de limpeza que o sistema consegue atingir e manter.",
+  "aliases": [
+    "válvula proporcional de controle direcional",
+    "PDCV",
+    "válvula proporcional eletro-hidráulica"
+  ],
+  "abbreviations": [
+    "PDCV",
+    "PV"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-4406",
+    "STD-NFPA-T2-14"
+  ],
+  "relatedTerms": [
+    "TERM-SERVO-VALVE",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-BYPASS-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-contamination-sensitivity",
+    "nfpa-t2-14-hydraulic-cleanliness",
+    "contamination-sensitivity-components"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

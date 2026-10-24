@@ -1,0 +1,35 @@
+{
+  "id": "TERM-FILTER-BYPASS-VALVE",
+  "term": "Válvula de bypass do filtro",
+  "category": "filtration-performance",
+  "definition": "Uma válvula de alívio de pressão com mola integrada a um elemento filtrante ou à carcaça do filtro, que se abre automaticamente quando a pressão diferencial através do elemento excede um limite pré-ajustado, permitindo que o fluido não filtrado contorne o elemento e mantenha o fluxo do circuito. As válvulas de bypass protegem os componentes a jusante contra a falta de óleo nas partidas a frio (quando a alta viscosidade do óleo gera ΔP elevada) e quando os elementos filtrantes estão sobrecarregados de contaminante. A pressão de abertura da válvula de bypass normalmente é de 1.5–4 bar em filtros de óleo lubrificante e de 3–6 bar em elementos hidráulicos.",
+  "engineeringContext": "Uma válvula de bypass é um dispositivo de proteção de último recurso, não um indicador de serviço. Os eventos de bypass introduzem no circuito fluido não filtrado e carregado de partículas, causando desgaste rápido dos componentes. Os sistemas de filtração devem ser selecionados e mantidos de modo que a ativação da válvula de bypass seja pouco frequente. Indicadores de bypass (visuais ou eletrônicos) permitem detectar eventos de bypass em serviço.",
+  "aliases": [
+    "válvula de alívio de bypass",
+    "válvula de alívio de pressão",
+    "válvula antirretorno"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-FULL-FLOW-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "filter-element-integrity",
+    "filter-housing-design",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TERM-MELT-BLOWN-MEDIA",
+  "term": "Meio meltblown",
+  "category": "filter-media",
+  "definition": "Um meio filtrante não tecido produzido pela extrusão de polímero termoplástico fundido — tipicamente polipropileno — através de uma matriz com muitos bicos capilares finos para um fluxo de ar quente de alta velocidade que estira o polímero em microfibras de 0.5–10 µm de diâmetro. As fibras são coletadas em uma esteira em movimento e unidas termicamente. O meio meltblown atinge classificações de filtração de 0.1 a 40 µm, controladas pelo diâmetro das fibras, pela temperatura da matriz, pela velocidade do ar e pela espessura da camada. A matriz aleatória tridimensional de fibras oferece filtração em profundidade sem aglutinantes adesivos, tornando o meio meltblown quimicamente limpo e resistente à degradação por óleo em aplicações hidráulicas e de combustível.",
+  "engineeringContext": "O polipropileno meltblown é o meio padrão dos elementos coalescedores de combustível/água — sua superfície intrinsecamente hidrofóbica favorece a coalescência das gotículas de água nos separadores de combustível/água (HYDROCORE). O meio meltblown com carga eletreto — tratado eletrostaticamente de forma permanente para criar uma carga superficial — atinge eficiência equivalente a HEPA (>99.95% no tamanho de partícula mais penetrante) com menor perda de carga que o meio sem carga, sendo usado na filtração de ar de cabine (MICROKAPPA). A uniformidade do diâmetro das fibras é o principal parâmetro de controle de qualidade; uma distribuição de diâmetros ampla cria variação descontrolada do tamanho de poro, reduzindo a previsibilidade da relação Beta.",
+  "aliases": [
+    "meio filtrante meltblown",
+    "PP meltblown",
+    "meio meltblown de polipropileno",
+    "meio por eletrofiação"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-SYNTHETIC-MEDIA",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-COALESCING",
+    "TERM-CELLULOSE-MEDIA"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE",
+    "microkappa",
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness-protection",
+    "hydraulic-protection",
+    "cabin-air-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "materials-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

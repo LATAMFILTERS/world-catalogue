@@ -1,0 +1,41 @@
+{
+  "id": "TERM-SERVO-VALVE",
+  "term": "Servoválvula",
+  "category": "hydraulic-systems",
+  "definition": "Una válvula de control hidráulico de alta precisión que modula el caudal hidráulico en proporción a una señal eléctrica de entrada. Las servoválvulas operan con holguras internas de 1–5 µm entre el carrete y el alojamiento. La contaminación por partículas mayores de 3–5 µm en el fluido hidráulico causa agarrotamiento, rayado de las superficies del carrete y degradación del control de caudal. Se requieren códigos de limpieza ISO 16/14/11 o más estrictos para proteger el desempeño y la vida útil de la servoválvula. Las servoválvulas se usan en aplicaciones de control de movimiento de precisión, incluidas la hidráulica de aeronaves, las máquinas herramienta CNC y los sistemas industriales de alto desempeño.",
+  "engineeringContext": "Las servoválvulas son los componentes más sensibles a la contaminación de cualquier circuito hidráulico. Una sola partícula mayor que la holgura carrete-alojamiento puede causar un atascamiento. Los sistemas hidráulicos con servoválvulas requieren filtración kidney-loop fuera de línea para mantener los códigos de limpieza de forma continua, no solo durante la operación sino también en los períodos de detención, cuando la convección térmica puede redistribuir las partículas decantadas.",
+  "aliases": [
+    "servoválvula electrohidráulica",
+    "EHSV",
+    "válvula proporcional"
+  ],
+  "abbreviations": [
+    "EHSV",
+    "SV"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-4406",
+    "STD-NFPA-T2-14"
+  ],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-PROPORTIONAL-VALVE",
+    "TERM-BYPASS-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-contamination-sensitivity",
+    "contamination-sensitivity-components",
+    "hydraulic-power-unit-design",
+    "nfpa-t2-14-hydraulic-cleanliness"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

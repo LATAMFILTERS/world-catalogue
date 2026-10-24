@@ -1,0 +1,38 @@
+{
+  "id": "TERM-KARL-FISCHER-TITRATION",
+  "term": "Titulación Karl Fischer",
+  "category": "water-fuel",
+  "definition": "Una técnica de análisis electroquímico precisa para determinar el contenido de agua en aceites, combustibles y otros líquidos no acuosos, basada en la reacción selectiva del yodo con el agua en presencia de dióxido de azufre, un alcohol y una base. Los resultados se expresan en partes por millón (ppm) en peso (mg de agua/kg de aceite) o como porcentaje en peso. La titulación Karl Fischer cuantifica el agua total —disuelta, emulsionada y libre— en una sola medición. Es el método principal especificado en la ASTM D6304 para fluidos hidráulicos y en la ISO 12937 para productos de petróleo.",
+  "engineeringContext": "La titulación Karl Fischer es el método de laboratorio de referencia para determinar el contenido de agua, con una exactitud de ±5 ppm. En campo, los sensores portátiles de actividad de agua (que miden la actividad de agua aᵥ de 0–1.0) permiten un monitoreo en tiempo real sin preparación de muestras. Una actividad de agua superior a 0.6 en fluido hidráulico y superior a 0.7 en aceite lubricante indica riesgo de formación de agua libre y requiere acción inmediata.",
+  "aliases": [
+    "titulación KF",
+    "Karl Fischer",
+    "análisis de contenido de agua",
+    "titulación coulométrica"
+  ],
+  "abbreviations": [
+    "KF",
+    "KFT"
+  ],
+  "applicableStandards": [
+    "STD-ASTM-D6304",
+    "STD-ISO-12937"
+  ],
+  "relatedTerms": [
+    "TERM-WATER-INGRESS",
+    "TERM-OIL-CONDITION-MONITORING"
+  ],
+  "relatedTechnologies": [],
+  "relatedSystems": [
+    "fuel-cleanliness-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "water-contamination-fuel",
+    "oil-analysis-methods",
+    "fleet-oil-sampling-protocol"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

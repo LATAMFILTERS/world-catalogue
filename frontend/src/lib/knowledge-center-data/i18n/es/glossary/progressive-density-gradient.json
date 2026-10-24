@@ -1,0 +1,43 @@
+{
+  "id": "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+  "term": "Gradiente de densidad progresivo",
+  "category": "air-intake",
+  "definition": "Una construcción de medio filtrante en la que la densidad de empaque de las fibras aumenta progresivamente desde la cara aguas arriba (sucia) hasta la cara aguas abajo (limpia) del elemento filtrante. Las zonas exteriores de menor densidad capturan las partículas grandes y actúan como prefiltros; las zonas interiores de mayor densidad capturan las partículas finas con alta eficiencia. Este gradiente maximiza la capacidad de retención de polvo manteniendo una baja restricción inicial y una alta eficiencia de filtración global, lo opuesto a la filtración superficial, que se carga rápidamente en un único plano de captura.",
+  "engineeringContext": "La construcción con gradiente de densidad progresivo se usa en los elementos de filtro de aire primarios MACROCORE y en elementos hidráulicos de alto desempeño. Al distribuir la captura de partículas en toda la profundidad del medio en lugar de concentrarla en la superficie, la capacidad de retención de polvo aumenta un 40–120% frente a un medio de densidad única de espesor equivalente, con la misma clasificación de eficiencia.",
+  "aliases": [
+    "densidad graduada",
+    "medio con gradiente de densidad",
+    "construcción con gradiente en profundidad",
+    "estructura de poros cónica"
+  ],
+  "abbreviations": [
+    "PDG"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-5011"
+  ],
+  "relatedTerms": [
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-RESTRICTION",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-SURFACE-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "macrocore",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "air-intake-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "dust-holding-capacity",
+    "airflow-engineering"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

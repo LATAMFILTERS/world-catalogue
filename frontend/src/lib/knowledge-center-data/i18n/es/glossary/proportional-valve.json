@@ -1,0 +1,40 @@
+{
+  "id": "TERM-PROPORTIONAL-VALVE",
+  "term": "Válvula proporcional",
+  "category": "hydraulic-systems",
+  "definition": "Una válvula hidráulica de control direccional que modula el caudal y la presión en proporción a una señal eléctrica de entrada mediante un carrete accionado por solenoide. Las válvulas proporcionales operan con holguras internas carrete-alojamiento de 5–25 µm —mayores que las de las servoválvulas, pero aún muy sensibles a la contaminación por partículas mayores de 10–15 µm. Los códigos de limpieza objetivo para circuitos con válvulas proporcionales suelen ir de ISO 17/15/12 a 16/14/11. Las válvulas proporcionales se usan ampliamente en hidráulica móvil para el control de pluma, brazo y cucharón en excavadoras, y en prensas industriales para el control de fuerza y posición.",
+  "engineeringContext": "El agarrotamiento inducido por contaminación en las válvulas proporcionales causa inestabilidad de control, mala precisión de posicionamiento y desgaste prematuro del carrete y el alojamiento. A diferencia de las servoválvulas, las válvulas proporcionales suelen tolerar eventos de contaminación pequeños y no cortantes sin falla catastrófica, pero los eventos repetidos degradan progresivamente el desempeño de dosificación. La especificación de limpieza del fabricante de la válvula debe verificarse frente al objetivo de limpieza que el sistema puede lograr y mantener.",
+  "aliases": [
+    "válvula proporcional de control direccional",
+    "PDCV",
+    "válvula proporcional electrohidráulica"
+  ],
+  "abbreviations": [
+    "PDCV",
+    "PV"
+  ],
+  "applicableStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-4406",
+    "STD-NFPA-T2-14"
+  ],
+  "relatedTerms": [
+    "TERM-SERVO-VALVE",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-BYPASS-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "nanoforce"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "hydraulic-contamination-sensitivity",
+    "nfpa-t2-14-hydraulic-cleanliness",
+    "contamination-sensitivity-components"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

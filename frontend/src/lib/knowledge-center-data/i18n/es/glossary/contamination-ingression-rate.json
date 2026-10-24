@@ -1,0 +1,38 @@
+{
+  "id": "TERM-CONTAMINATION-INGRESSION-RATE",
+  "term": "Tasa de ingreso de contaminación",
+  "category": "fluid-cleanliness",
+  "definition": "La tasa a la que partículas del aire, contaminantes de proceso o residuos de desgaste ingresan a un sistema de fluido durante la operación normal, expresada típicamente en miligramos por hora (mg/h) o partículas por hora en un rango de tamaño definido. La tasa de ingreso determina el nivel de contaminación en régimen estable que puede lograr un sistema de filtración: un sistema de filtración alcanza el equilibrio cuando su tasa de remoción iguala la tasa de ingreso. Los entornos con alta tasa de ingreso (obras polvorientas, minería, agricultura) requieren mayor capacidad de filtración o intervalos de servicio más frecuentes que los entornos con bajo ingreso.",
+  "engineeringContext": "El modelado del ingreso de contaminación se usa para seleccionar sistemas de filtración capaces de mantener los códigos de limpieza objetivo en las condiciones reales de operación. Las principales vías de ingreso incluyen: sellos de vástago de cilindros y respiraderos (principales en hidráulica móvil), respiraderos de venteo de depósitos (principales en sistemas estacionarios) y contaminación durante el mantenimiento (limpieza de herramientas, trasvase inadecuado de aceite). La integridad de los sellos y la selección de la filtración de los respiraderos controlan directamente la tasa de ingreso.",
+  "aliases": [
+    "tasa de ingreso",
+    "tasa de generación de contaminación",
+    "tasa de ingestión de partículas"
+  ],
+  "abbreviations": [
+    "IR"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-INGRESS-PROTECTION",
+    "TERM-BYPASS-FILTRATION"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "intekcore"
+  ],
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "contamination-ingression-modelling",
+    "particle-ingress-prevention",
+    "seal-integrity",
+    "contamination-control"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

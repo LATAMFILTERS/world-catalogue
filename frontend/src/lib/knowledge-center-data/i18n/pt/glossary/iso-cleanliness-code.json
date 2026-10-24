@@ -1,0 +1,43 @@
+{
+  "id": "TERM-ISO-CLEANLINESS-CODE",
+  "term": "Código de limpeza ISO",
+  "category": "fluid-cleanliness",
+  "definition": "Um código de três números definido pela ISO 4406 que quantifica o nível de contaminação por partículas de uma amostra de fluido. Cada número representa a quantidade de partículas por mililitro em uma faixa de tamanho específica: o primeiro cobre partículas ≥4 µm(c), o segundo ≥6 µm(c) e o terceiro ≥14 µm(c). Cada número de código representa uma faixa de contagem de partículas em potências de dois — código 16 = 320–640 partículas/mL, código 14 = 80–160 partículas/mL. Um código de limpeza de 16/14/11 significa: 320–640 partículas ≥4 µm, 80–160 partículas ≥6 µm e 10–20 partículas ≥14 µm por mililitro. Códigos mais rigorosos (números menores) indicam fluido mais limpo e reduzem o risco de desgaste abrasivo, travamento de válvulas e falha de mancais.",
+  "engineeringContext": "Os códigos de limpeza ISO são o padrão global para especificar e verificar a limpeza do fluido em sistemas hidráulicos e de lubrificação. Os códigos alvo variam conforme a sensibilidade do componente: servoválvulas exigem 15/13/10 ou mais rigoroso; sistemas hidráulicos gerais normalmente visam 17/15/12; sistemas de lubrificação de motor visam 16/14/11. Os códigos de limpeza são medidos por contagem de partículas a laser conforme a ISO 11171.",
+  "aliases": [
+    "código ISO 4406",
+    "meta de limpeza do fluido",
+    "classe de limpeza",
+    "código ISO"
+  ],
+  "abbreviations": [
+    "ICC"
+  ],
+  "applicableStandards": [
+    "STD-ISO-4406",
+    "STD-ISO-11171"
+  ],
+  "relatedTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-SERVO-VALVE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-NAS-CLEANLINESS-CODE"
+  ],
+  "relatedTechnologies": [
+    "nanoforce",
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedArticles": [
+    "iso-4406",
+    "fluid-cleanliness",
+    "hydraulic-contamination-sensitivity",
+    "contamination-sensitivity-components"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

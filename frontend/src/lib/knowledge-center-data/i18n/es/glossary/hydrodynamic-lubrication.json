@@ -1,0 +1,38 @@
+{
+  "id": "TERM-HYDRODYNAMIC-LUBRICATION",
+  "term": "Lubricación hidrodinámica",
+  "category": "lubrication",
+  "definition": "El régimen de lubricación en el que dos superficies en movimiento relativo están completamente separadas por una película de aceite presurizada generada por la geometría del cojinete y el movimiento relativo de las superficies, sin contacto directo metal-metal. La carga se soporta por completo con la presión hidrodinámica de la película de aceite. Este régimen requiere viscosidad, velocidad del eje y carga suficientes para mantener la separación de película completa. El espesor de la película de aceite en los cojinetes de muñón del cigüeñal del motor suele ser de 5–50 µm según la velocidad y la carga. La lubricación hidrodinámica produce la menor fricción y, cuando se mantiene, genera un desgaste abrasivo insignificante de las superficies de los cojinetes.",
+  "engineeringContext": "La limpieza del aceite debe mantenerse de modo que el tamaño de las partículas en suspensión no supere el espesor mínimo de la película de aceite. En un cojinete de cigüeñal con una película mínima de 20 µm, las partículas >20 µm penetran directamente la superficie y causan rayado abrasivo. Por eso los objetivos de limpieza ISO para sistemas de lubricación de motor (16/14/11) limitan las partículas >14 µm a 10–20 por mL: las partículas más grandes rompen la película hidrodinámica e inician secuencias de daño abrasivo. La pérdida de viscosidad por intervalos de cambio de aceite demasiado largos reduce el espesor de la película y aumenta el riesgo de condiciones de lubricación mixta o límite, en las que las tasas de desgaste aumentan 100–1,000×.",
+  "aliases": [
+    "lubricación de película completa",
+    "película hidrodinámica",
+    "lubricación de película gruesa",
+    "lubricación por película fluida"
+  ],
+  "abbreviations": [
+    "HL"
+  ],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VISCOSITY",
+    "TERM-BEARING-CLEARANCE",
+    "TERM-ABRASIVE-WEAR",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-OIL-DRAIN-INTERVAL"
+  ],
+  "relatedTechnologies": [
+    "syntrax"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "lubrication-system-filtration",
+    "filter-media-engineering",
+    "oil-condition-monitoring"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

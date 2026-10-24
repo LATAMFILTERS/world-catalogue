@@ -1,0 +1,36 @@
+{
+  "id": "TERM-DEW-POINT",
+  "term": "Punto de rocío",
+  "category": "fluid-cleanliness",
+  "definition": "La temperatura a la que el vapor de agua del aire comprimido alcanza la saturación y empieza a condensarse en agua líquida, expresada a la presión de operación del sistema (punto de rocío a presión, PDP) o a presión atmosférica (punto de rocío atmosférico, ADP). La ISO 8573-1 define las clases de calidad de agua por punto de rocío a presión: la clase 1 exige PDP ≤ −70°C; la clase 2, ≤ −40°C; la clase 3, ≤ −20°C; la clase 4, ≤ +3°C; la clase 6 (industrial general), ≤ +10°C. El punto de rocío se mide con higrómetros de espejo enfriado o sensores capacitivos calibrados según patrones NIST.",
+  "engineeringContext": "Los sistemas de distribución de aire comprimido deben mantener el punto de rocío por debajo de la temperatura ambiente mínima para evitar condensación en tuberías, actuadores, instrumentos neumáticos y equipos de proceso. El agua condensada causa corrosión de tuberías, crecimiento microbiano, congelamiento de válvulas neumáticas en entornos bajo cero y contaminación de flujos de proceso sensibles. Los secadores frigoríficos logran un PDP de +2°C a +10°C para aire industrial general; los secadores desecantes logran un PDP de −40°C a −70°C para aire de instrumentos y de proceso. La filtración de secadores de aire DRYCORE™ atiende el control de humedad en los circuitos de aire comprimido de sistemas de freno neumático de equipos de transporte comercial de servicio pesado.",
+  "aliases": [
+    "punto de rocío a presión",
+    "punto de rocío atmosférico",
+    "punto de rocío de humedad",
+    "PDP"
+  ],
+  "abbreviations": [
+    "PDP",
+    "ADP"
+  ],
+  "applicableStandards": [
+    "STD-ISO-8573-1"
+  ],
+  "relatedTerms": [
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-WATER-INGRESS",
+    "TERM-COALESCING"
+  ],
+  "relatedTechnologies": [
+    "drycore"
+  ],
+  "relatedSystems": [],
+  "relatedArticles": [
+    "compressed-air-systems",
+    "iso-8573-compressed-air-purity"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}

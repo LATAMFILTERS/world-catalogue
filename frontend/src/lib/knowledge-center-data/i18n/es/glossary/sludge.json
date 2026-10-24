@@ -1,0 +1,38 @@
+{
+  "id": "TERM-SLUDGE",
+  "term": "Lodo",
+  "category": "chemical-degradation",
+  "definition": "Depósitos insolubles blandos y gelatinosos que se forman en el aceite de motor cuando componentes oxidados del aceite, agua, gases de blowby de la combustión, hollín y partículas metálicas se combinan y precipitan. El lodo se acumula preferentemente en zonas de bajo flujo: galerías de aceite, tapas de balancines, cárteres y tapas de la cadena de distribución. A diferencia del barniz (que forma depósitos duros y horneados), el lodo permanece semifluido y puede volver al flujo de aceite durante las variaciones de temperatura, obstruyendo mallas, coladores y pasajes de alivio de presión de aceite. La formación de lodo suele hacerse visible tras intervalos de cambio extendidos o una operación frecuente en trayectos cortos en la que el refrigerante no alcanza la temperatura de operación completa.",
+  "engineeringContext": "La formación de lodo se acelera con ciclos cortos de calentamiento del motor (condensación de agua y combustible en el aceite del cárter), intervalos de cambio de aceite extendidos, altas tasas de blowby por anillos de pistón desgastados y una filtración de aceite inadecuada. La baja temperatura de operación —conducción urbana con arranques y paradas, ralentí con temperaturas ambiente bajas— favorece la acumulación de agua en el cárter, que cataliza la formación de lodo. Cumplir periódicamente el intervalo de cambio y mantener una temperatura de refrigerante superior a 90°C son las principales medidas preventivas. Una vez formados los depósitos de lodo, se requiere un lavado químico del motor o un procedimiento de lavado extendido antes de rellenar.",
+  "aliases": [
+    "lodo del motor",
+    "lodo del aceite",
+    "lodo del cárter",
+    "depósitos por gelificación del aceite"
+  ],
+  "abbreviations": [],
+  "applicableStandards": [],
+  "relatedTerms": [
+    "TERM-VARNISH",
+    "TERM-OXIDATIVE-DEGRADATION",
+    "TERM-TOTAL-ACID-NUMBER",
+    "TERM-SOOT",
+    "TERM-GLYCOL-CONTAMINATION",
+    "TERM-LACQUER"
+  ],
+  "relatedTechnologies": [
+    "syntrax",
+    "duratech"
+  ],
+  "relatedSystems": [
+    "lubrication-protection"
+  ],
+  "relatedArticles": [
+    "oil-condition-monitoring",
+    "extended-drain-interval-engineering",
+    "lubrication-system-filtration"
+  ],
+  "version": "1.0",
+  "status": "published",
+  "lastReviewed": "2026-07-05"
+}
