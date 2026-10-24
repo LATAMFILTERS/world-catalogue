@@ -29,7 +29,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
   Manufacturing: { image: '/images/manufacture.avif', video: '/images/Manufacture-1.mp4' },
   Marine: { image: '/images/marine-2_converted.avif', video: '/images/Marino-1.mp4' },
   Mining: { image: '/images/mineria.avif', video: '/images/Mineria-Video1.mp4' },
-  'Oil Gas': { image: '/images/oil&gas.avif', video: '/images/Petro&Gas-1.mp4' },
+  'Oil Gas': { image: '/images/ingpetrolero.avif', video: '/images/Petro%26Gas-1.mp4' },
   'Power Generation': { image: '/images/power-generator.avif', video: '/images/powergenerator-Video-1.mp4' },
   Railway: { image: '/images/trenes.avif', video: '/images/Train.mp4' },
   'Trucks Fleets': { image: '/images/trucks-1.avif', video: '/images/Trucks&Feel-1.mp4' },
@@ -44,7 +44,7 @@ const industryMetaDescription: Record<string, string> = {
   Manufacturing: 'Manufacturing filtration systems for hydraulic power units, compressors, pumps, machine tools and production equipment requiring contamination control across continuous plant duty and planned maintenance windows.',
   Marine: 'Marine filtration systems for commercial vessels, workboats, marine engines, deck machinery and onboard hydraulic equipment operating under salt air, humidity, fuel-water exposure and extended duty.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
-  'Oil Gas': 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.',
+  'Oil Gas': 'Filtration engineering for oil and gas maintenance teams protecting diesel engines, hydraulic circuits and lubricated field equipment under demanding duty and limited shutdown windows.',
   'Power Generation': 'Power generation filtration systems for standby generators, prime-power systems and industrial diesel generator sets requiring fuel, air, lubrication and cooling-system protection.',
   Railway: 'Railway filtration systems for freight and passenger locomotives, diesel multiple units, auxiliary power units and rail maintenance equipment operating under vibration, route dust, fuel-handling exposure and extended duty.',
   'Trucks Fleets': 'Truck fleet filtration systems for long-haul, regional, vocational and mixed commercial fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : item.name === 'Construction'
         ? 'Construction Filtration Systems | Heavy Equipment | ELIMFILTERS'
         : item.name === 'Oil Gas'
-          ? 'Oil & Gas Filtration Systems | Field Equipment | ELIMFILTERS'
+          ? 'Oil & Gas Filtration for Maintenance Engineers | ELIMFILTERS'
           : item.name === 'Marine'
             ? 'Marine Filtration Systems | Vessels & Marine Engines | ELIMFILTERS'
             : item.name === 'Power Generation'
