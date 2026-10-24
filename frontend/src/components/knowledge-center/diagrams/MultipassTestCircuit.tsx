@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function MultipassTestCircuit({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,14 +17,8 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       className={className}
       style={style}
     >
-      <title id="mpt-title">ISO 16889 Multi-Pass Filter Test Circuit</title>
-      <desc id="mpt-desc">
-        The ISO 16889 multi-pass test circuit for measuring filter efficiency (Beta ratio).
-        Test fluid circulates from the reservoir through the pump to the upstream particle counter
-        (PC₁), through the test filter assembly, then through the downstream particle counter (PC₂)
-        before returning to the reservoir. ISO medium test dust is injected upstream to maintain
-        a target particle count at PC₁. Beta ratio β = PC₁ ÷ PC₂.
-      </desc>
+      <title id="mpt-title">{tr("ISO 16889 Multi-Pass Filter Test Circuit")}</title>
+      <desc id="mpt-desc">{tr("The ISO 16889 multi-pass test circuit for measuring filter efficiency (Beta ratio). Test fluid circulates from the reservoir through the pump to the upstream particle counter (PC₁), through the test filter assembly, then through the downstream particle counter (PC₂) before returning to the reservoir. ISO medium test dust is injected upstream to maintain a target particle count at PC₁. Beta ratio β = PC₁ ÷ PC₂.")}</desc>
 
       <defs>
         <marker id="mpt-ay" viewBox="0 0 8 6" refX="7" refY="3"
@@ -63,9 +59,7 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <circle cx="105" cy="408" r="3"   fill="rgba(255,120,40,0.5)" />
       <circle cx="50"  cy="418" r="2"   fill="rgba(255,120,40,0.4)" />
       <text x="80" y="450" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,200,40,0.65)">
-        RESERVOIR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,200,40,0.65)">{tr("RESERVOIR")}</text>
 
       {/* ── Pump ──────────────────────────────────────────────────────────── */}
       {/* Suction line: from reservoir top-right corner (130,360) → right to pump */}
@@ -83,9 +77,7 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <line x1="216" y1="280" x2="232" y2="268"
         stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" markerEnd="url(#mpt-ay)" />
       <text x="225" y="322" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">
-        PUMP
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">{tr("PUMP")}</text>
 
       {/* Pump outlet → main pipe */}
       <line x1="225" y1="250" x2="225" y2="160"
@@ -102,9 +94,7 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <rect x="300" y="20" width="80" height="22"
         fill="rgba(255,120,40,0.08)" stroke="rgba(255,120,40,0.45)" strokeWidth="1" rx="3" />
       <text x="340" y="34" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,120,40,0.8)">
-        ISO MTD INJECTION
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,120,40,0.8)">{tr("ISO MTD INJECTION")}</text>
       {/* Injection point on pipe */}
       <circle cx="340" cy="160" r="5" fill="rgba(255,120,40,0.7)" stroke="rgba(255,120,40,0.9)" strokeWidth="1" />
 
@@ -124,25 +114,17 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <circle cx="398" cy="147" r="2"   fill="rgba(255,120,40,0.6)" />
       <circle cx="385" cy="168" r="1.5" fill="rgba(255,120,40,0.5)" />
       <text x="395" y="156" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.9)">
-        PC
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.9)">{tr("PC")}</text>
       <text x="404" y="163" textAnchor="start"
         fontFamily="'JetBrains Mono', monospace" fontSize="6" fill="rgba(100,200,255,0.9)">
         1
       </text>
       <text x="395" y="215" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">
-        UPSTREAM
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">{tr("UPSTREAM")}</text>
       <text x="395" y="228" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">
-        COUNTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">{tr("COUNTER")}</text>
       <text x="395" y="241" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.45)">
-        counts Nᵤ
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.45)">{tr("counts Nᵤ")}</text>
 
       {/* Sample line for PC1 (branch from main pipe, shown as thin dashed) */}
       <line x1="395" y1="160" x2="425" y2="160"
@@ -169,9 +151,7 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <line x1="560" y1="130" x2="560" y2="190" stroke="rgba(255,241,45,0.2)" strokeWidth="1" />
 
       <text x="530" y="112" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,241,45,0.8)">
-        TEST FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,241,45,0.8)">{tr("TEST FILTER")}</text>
 
       {/* ΔP measurement taps on filter */}
       <line x1="530" y1="120" x2="530" y2="86"
@@ -179,9 +159,7 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <rect x="505" y="66" width="50" height="20"
         fill="rgba(255,241,45,0.08)" stroke="rgba(255,241,45,0.4)" strokeWidth="1" rx="2" />
       <text x="530" y="79" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.7)">
-        ΔP SENSOR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.7)">{tr("ΔP SENSOR")}</text>
 
       {/* Pipe through filter → PC2 */}
       <line x1="585" y1="160" x2="640" y2="160"
@@ -197,25 +175,17 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <circle cx="682" cy="165" r="1"   fill="rgba(255,120,40,0.5)" />
       <circle cx="667" cy="167" r="1.5" fill="rgba(255,120,40,0.5)" />
       <text x="675" y="156" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.9)">
-        PC
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.9)">{tr("PC")}</text>
       <text x="684" y="163" textAnchor="start"
         fontFamily="'JetBrains Mono', monospace" fontSize="6" fill="rgba(100,200,255,0.9)">
         2
       </text>
       <text x="675" y="215" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.6)">
-        DOWNSTREAM
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.6)">{tr("DOWNSTREAM")}</text>
       <text x="675" y="228" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.6)">
-        COUNTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.6)">{tr("COUNTER")}</text>
       <text x="675" y="241" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.4)">
-        counts Nd
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.4)">{tr("counts Nd")}</text>
 
       <line x1="705" y1="160" x2="780" y2="160"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#mpt-ay)" />
@@ -231,9 +201,7 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <line x1="820" y1="410" x2="130" y2="410"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#mpt-ay)" />
       <text x="490" y="435" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.35)">
-        ←── return to reservoir ───
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.35)">{tr("←── return to reservoir ───")}</text>
 
       {/* ── Flow control valve (back-pressure) ──────────────────────────── */}
       <rect x="750" y="272" width="22" height="180"
@@ -243,31 +211,21 @@ export default function MultipassTestCircuit({ className, style }: SvgDiagramPro
       <line x1="770" y1="340" x2="752" y2="360"
         stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
       <text x="786" y="355" fontFamily="'JetBrains Mono', monospace" fontSize="7.5"
-        fill="rgba(255,255,255,0.3)">
-        flow ctrl
-      </text>
+        fill="rgba(255,255,255,0.3)">{tr("flow ctrl")}</text>
 
       {/* ── Beta ratio formula ───────────────────────────────────────────── */}
       <rect x="40" y="260" width="160" height="55"
         fill="rgba(255,241,45,0.06)" stroke="rgba(255,241,45,0.25)" strokeWidth="1" rx="3" />
       <text x="120" y="282" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="#FFF12D">
-        β = Nᵤ / Nd
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="#FFF12D">{tr("β = Nᵤ / Nd")}</text>
       <text x="120" y="300" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        β₁₀(c) — ISO 16889 notation
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("β₁₀(c) — ISO 16889 notation")}</text>
       <text x="120" y="312" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.3)">
-        subscript = particle size (µm)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.3)">{tr("subscript = particle size (µm)")}</text>
 
       {/* Standard label */}
       <text x="820" y="475" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 16889 · ISO 11171
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 16889 · ISO 11171")}</text>
     </svg>
   );
 }

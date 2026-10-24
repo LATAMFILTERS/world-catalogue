@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function CabinAirSystem({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,15 +17,8 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
       className={className}
       style={style}
     >
-      <title id="cas-title">Cabin Air Filtration System — ISO 11155</title>
-      <desc id="cas-desc">
-        ISO 11155 cabin air filtration system flow diagram. Outside air enters fresh air inlet,
-        passes through coarse particulate pre-filter (PM10 stage), activated carbon adsorber
-        (gas-phase contaminants and odours), fine particulate filter (PM2.5/HEPA, greater than
-        95% efficiency at 0.3 µm per ISO 29463), then delivers to cabin HVAC zone.
-        A recirculation mode damper returns cabin air back through the carbon and fine filter
-        stages when external contamination levels are high.
-      </desc>
+      <title id="cas-title">{tr("Cabin Air Filtration System — ISO 11155")}</title>
+      <desc id="cas-desc">{tr("ISO 11155 cabin air filtration system flow diagram. Outside air enters fresh air inlet, passes through coarse particulate pre-filter (PM10 stage), activated carbon adsorber (gas-phase contaminants and odours), fine particulate filter (PM2.5/HEPA, greater than 95% efficiency at 0.3 µm per ISO 29463), then delivers to cabin HVAC zone. A recirculation mode damper returns cabin air back through the carbon and fine filter stages when external contamination levels are high.")}</desc>
 
       <defs>
         <pattern id="cas-carbon" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
@@ -53,32 +48,22 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
       {/* ── TITLE BAR ─────────────────────────────────────────────────────── */}
       <text x="430" y="20" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(255,255,255,0.55)"
-        letterSpacing="0.08em">
-        CABIN AIR FILTRATION SYSTEM — ISO 11155
-      </text>
+        letterSpacing="0.08em">{tr("CABIN AIR FILTRATION SYSTEM — ISO 11155")}</text>
 
       {/* ── FRESH AIR MODE label ───────────────────────────────────────────── */}
       <text x="430" y="48" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.35)"
-        letterSpacing="0.06em">
-        FRESH AIR MODE (primary) ──────────────────────────────────────────────────
-      </text>
+        letterSpacing="0.06em">{tr("FRESH AIR MODE (primary) ──────────────────────────────────────────────────")}</text>
 
       {/* ── OUTSIDE AIR INLET ─────────────────────────────────────────────── */}
       <rect x="20" y="130" width="80" height="140"
         fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" rx="3" />
       <text x="60" y="185" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.55)">
-        OUTSIDE
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.55)">{tr("OUTSIDE")}</text>
       <text x="60" y="197" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.55)">
-        AIR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.55)">{tr("AIR")}</text>
       <text x="60" y="209" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.55)">
-        INLET
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.55)">{tr("INLET")}</text>
       {/* Air flow lines into inlet */}
       {[148, 165, 182, 199, 216, 233].map((y, i) => (
         <line key={i} x1="8" y1={y} x2="18" y2={y}
@@ -97,17 +82,11 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
 
       <text x="195" y="95" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,200,80,0.75)"
-        letterSpacing="0.04em">
-        STAGE 1
-      </text>
+        letterSpacing="0.04em">{tr("STAGE 1")}</text>
       <text x="195" y="107" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,200,80,0.6)">
-        PRE-FILTER (PM10)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,200,80,0.6)">{tr("PRE-FILTER (PM10)")}</text>
       <text x="195" y="118" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(255,200,80,0.4)">
-        ISO 11155
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(255,200,80,0.4)">{tr("ISO 11155")}</text>
 
       {/* Large particles blocked at pre-filter — left face */}
       <circle cx="138" cy="155" r="6"   fill="rgba(255,120,40,0.6)" />
@@ -127,23 +106,17 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
 
       <text x="355" y="95" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.75)"
-        letterSpacing="0.04em">
-        STAGE 2
-      </text>
+        letterSpacing="0.04em">{tr("STAGE 2")}</text>
       <text x="355" y="107" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(180,140,255,0.6)">
-        ACTIVATED CARBON
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(180,140,255,0.6)">{tr("ACTIVATED CARBON")}</text>
       <text x="355" y="118" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(180,140,255,0.4)">
-        VOCs · odours
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(180,140,255,0.4)">{tr("VOCs · odours")}</text>
 
       {/* Gas molecule symbols */}
-      <text x="298" y="162" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.5)">NH₃</text>
-      <text x="298" y="195" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.45)">SO₂</text>
-      <text x="298" y="228" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.45)">VOC</text>
-      <text x="298" y="261" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.4)">H₂S</text>
+      <text x="298" y="162" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.5)">{tr("NH₃")}</text>
+      <text x="298" y="195" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.45)">{tr("SO₂")}</text>
+      <text x="298" y="228" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.45)">{tr("VOC")}</text>
+      <text x="298" y="261" fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(180,140,255,0.4)">{tr("H₂S")}</text>
 
       {/* Connector: carbon → fine filter */}
       <line x1="420" y1="200" x2="448" y2="200"
@@ -157,17 +130,11 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
 
       <text x="515" y="95" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,200,255,0.75)"
-        letterSpacing="0.04em">
-        STAGE 3
-      </text>
+        letterSpacing="0.04em">{tr("STAGE 3")}</text>
       <text x="515" y="107" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.6)">
-        FINE / HEPA FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.6)">{tr("FINE / HEPA FILTER")}</text>
       <text x="515" y="118" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.4)">
-        ISO 29463 · &gt;95% @ 0.3 µm
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.4)">{tr("ISO 29463 · >95% @ 0.3 µm")}</text>
 
       {/* Very fine particles blocked */}
       <circle cx="458" cy="150" r="3"   fill="rgba(255,120,40,0.45)" />
@@ -179,9 +146,7 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
 
       {/* PM2.5 label */}
       <text x="515" y="310" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.45)">
-        PM2.5 · 0.3 µm particles captured
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,200,255,0.45)">{tr("PM2.5 · 0.3 µm particles captured")}</text>
 
       {/* Connector: fine filter → cabin */}
       <line x1="580" y1="200" x2="608" y2="200"
@@ -192,17 +157,11 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
         fill="rgba(100,200,255,0.04)" stroke="rgba(100,200,255,0.35)" strokeWidth="1.5" rx="3"
         strokeDasharray="8,4" />
       <text x="675" y="185" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.55)">
-        CABIN
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.55)">{tr("CABIN")}</text>
       <text x="675" y="198" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.55)">
-        HVAC ZONE
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.55)">{tr("HVAC ZONE")}</text>
       <text x="675" y="215" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.35)">
-        operator breathing zone
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(100,200,255,0.35)">{tr("operator breathing zone")}</text>
 
       {/* Clean air indicators inside cabin */}
       <circle cx="650" cy="155" r="1.2" fill="rgba(100,200,255,0.3)" />
@@ -213,9 +172,7 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
       {/* ── RECIRCULATION MODE ─────────────────────────────────────────────── */}
       <text x="430" y="345" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.2)"
-        letterSpacing="0.06em">
-        ─────────────────── RECIRCULATION MODE (high external contamination) ───────────────────
-      </text>
+        letterSpacing="0.06em">{tr("─────────────────── RECIRCULATION MODE (high external contamination) ───────────────────")}</text>
 
       {/* Recirculation path: cabin → back to carbon + fine filter */}
       {/* Down from cabin */}
@@ -237,14 +194,10 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
       <rect x="655" y="290" width="40" height="30"
         fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1" rx="2" />
       <text x="730" y="308" fontFamily="'JetBrains Mono', monospace" fontSize="7"
-        fill="rgba(255,255,255,0.35)">
-        DAMPER
-      </text>
+        fill="rgba(255,255,255,0.35)">{tr("DAMPER")}</text>
 
       <text x="430" y="388" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.3)">
-        Cabin return air recirculates through carbon + fine filter stages when external PM or gas exceeds threshold
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.3)">{tr("Cabin return air recirculates through carbon + fine filter stages when external PM or gas exceeds threshold")}</text>
 
       {/* Efficiency stats */}
       <rect x="20" y="410" width="820" height="52"
@@ -258,11 +211,11 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
         <g key={col.x}>
           <text x={col.x} y="430" textAnchor="middle"
             fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.5)">
-            {col.label}
+            {tr(col.label)}
           </text>
           <text x={col.x} y="447" textAnchor="middle"
             fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.35)">
-            {col.spec}
+            {tr(col.spec)}
           </text>
         </g>
       ))}
@@ -270,9 +223,7 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
       {/* Standard label */}
       <text x="850" y="475" textAnchor="end"
         fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)"
-        letterSpacing="0.06em">
-        ISO 11155 · ISO 29463 · DIN 71460
-      </text>
+        letterSpacing="0.06em">{tr("ISO 11155 · ISO 29463 · DIN 71460")}</text>
     </svg>
   );
 }

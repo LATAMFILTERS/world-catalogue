@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ENGINEERING_DIAGRAMS, getDiagramBySlug } from '@/lib/knowledge-center-data';
 import DiagramContent from './DiagramContent';
+import { languageAlternates } from '@/lib/localized-routes';
+import { TRANSLATED_DIAGRAM_SLUGS } from '@/lib/knowledge-center-data/i18n/titles';
 
 interface Props {
   params: Promise<{ diagram: string }>;
@@ -24,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: diagram.metaDescription,
     alternates: {
       canonical: `https://elimfilters.com/knowledge-center/diagrams/${diagram.slug}/`,
+      ...((TRANSLATED_DIAGRAM_SLUGS as readonly string[]).includes(diagram.slug) ? { languages: languageAlternates(`/knowledge-center/diagrams/${diagram.slug}`) } : {}),
     },
   };
 }

@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function FuelFiltration3Stage({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,14 +17,8 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       className={className}
       style={style}
     >
-      <title id="ff3-title">3-Stage Diesel Fuel Filtration System</title>
-      <desc id="ff3-desc">
-        Sequential three-stage diesel fuel filtration: Stage 1 pre-filter removes coarse particles
-        (≥200µm), Stage 2 primary filter with water coalescing separator removes particles (≥10µm)
-        and free water, Stage 3 secondary fine filter (≥2µm) protects HPCR injection pump and
-        injectors. Return flow from injectors goes back to the fuel tank. Based on ISO 16332 and
-        ASTM D6304.
-      </desc>
+      <title id="ff3-title">{tr("3-Stage Diesel Fuel Filtration System")}</title>
+      <desc id="ff3-desc">{tr("Sequential three-stage diesel fuel filtration: Stage 1 pre-filter removes coarse particles (≥200µm), Stage 2 primary filter with water coalescing separator removes particles (≥10µm) and free water, Stage 3 secondary fine filter (≥2µm) protects HPCR injection pump and injectors. Return flow from injectors goes back to the fuel tank. Based on ISO 16332 and ASTM D6304.")}</desc>
 
       <defs>
         <marker id="ff3-ay" viewBox="0 0 8 6" refX="7" refY="3"
@@ -56,9 +52,7 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
         stroke="rgba(255,200,40,0.5)" strokeWidth="1" strokeDasharray="4,3" />
       {/* Tank label */}
       <text x="60" y="242" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,200,40,0.7)">
-        FUEL TANK
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,200,40,0.7)">{tr("FUEL TANK")}</text>
 
       {/* Feed line from tank to pre-filter */}
       <line x1="100" y1="160" x2="145" y2="160"
@@ -84,17 +78,11 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       <circle cx="208" cy="145" r="5" fill="rgba(180,140,80,0.55)" />
 
       <text x="187" y="265" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">
-        STAGE 1
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">{tr("STAGE 1")}</text>
       <text x="187" y="277" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">
-        PRE-FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">{tr("PRE-FILTER")}</text>
       <text x="187" y="290" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.6)">
-        ≥200µm
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.6)">{tr("≥200µm")}</text>
 
       <line x1="230" y1="160" x2="268" y2="160"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#ff3-ay)" />
@@ -124,22 +112,14 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       <line x1="328" y1="220" x2="328" y2="252"
         stroke="rgba(100,180,255,0.5)" strokeWidth="1.5" markerEnd="url(#ff3-ab)" />
       <text x="336" y="265" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(100,180,255,0.65)">
-        water drain
-      </text>
+        fill="rgba(100,180,255,0.65)">{tr("water drain")}</text>
 
       <text x="328" y="290" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">
-        STAGE 2
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">{tr("STAGE 2")}</text>
       <text x="328" y="302" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">
-        PRIMARY + WATER SEP.
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.55)">{tr("PRIMARY + WATER SEP.")}</text>
       <text x="328" y="315" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.6)">
-        ≥10µm · coalescing
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.6)">{tr("≥10µm · coalescing")}</text>
 
       <line x1="388" y1="160" x2="430" y2="160"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#ff3-ay)" />
@@ -151,9 +131,7 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       <line x1="442" y1="160" x2="456" y2="153"
         stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" markerEnd="url(#ff3-ay)" />
       <text x="450" y="192" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.35)">
-        lift pump
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.35)">{tr("lift pump")}</text>
 
       <line x1="468" y1="160" x2="510" y2="160"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#ff3-ay)" />
@@ -174,17 +152,11 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       <line x1="593" y1="117" x2="593" y2="203" stroke="rgba(100,220,100,0.15)" strokeWidth="1" />
 
       <text x="560" y="270" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)">
-        STAGE 3
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)">{tr("STAGE 3")}</text>
       <text x="560" y="282" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)">
-        SECONDARY FINE
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)">{tr("SECONDARY FINE")}</text>
       <text x="560" y="295" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,220,100,0.5)">
-        ≥2µm · HPCR grade
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,220,100,0.5)">{tr("≥2µm · HPCR grade")}</text>
 
       <line x1="610" y1="160" x2="648" y2="160"
         stroke="rgba(100,220,100,0.9)" strokeWidth="2" markerEnd="url(#ff3-ag)" />
@@ -196,13 +168,9 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       <rect x="648" y="130" width="60" height="60"
         fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" rx="3" />
       <text x="678" y="158" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.6)">
-        HPCR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.6)">{tr("HPCR")}</text>
       <text x="678" y="170" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.6)">
-        PUMP
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.6)">{tr("PUMP")}</text>
 
       {/* High-pressure line to injectors */}
       <line x1="708" y1="160" x2="750" y2="160"
@@ -216,9 +184,7 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       <polygon points="760,148 780,148 770,168" fill="rgba(255,255,255,0.2)" />
       <polygon points="760,186 780,186 770,206" fill="rgba(255,255,255,0.2)" />
       <text x="770" y="258" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        INJECTORS
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("INJECTORS")}</text>
 
       {/* Return fuel line back to tank */}
       <line x1="770" y1="230" x2="770" y2="315"
@@ -226,21 +192,15 @@ export default function FuelFiltration3Stage({ className, style }: SvgDiagramPro
       <line x1="770" y1="315" x2="60" y2="315"
         stroke="rgba(255,200,40,0.4)" strokeWidth="1.5" markerEnd="url(#ff3-ay)" />
       <text x="415" y="330" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,200,40,0.45)">
-        ── return flow (excess fuel) ──
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,200,40,0.45)">{tr("── return flow (excess fuel) ──")}</text>
 
       {/* Pressure label on HP line */}
       <text x="729" y="152" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.4)">
-        2000 bar
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.4)">{tr("2000 bar")}</text>
 
       {/* ── Standard label ─────────────────────────────────────────────── */}
       <text x="840" y="395" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 16332 · ASTM D6304
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 16332 · ASTM D6304")}</text>
     </svg>
   );
 }

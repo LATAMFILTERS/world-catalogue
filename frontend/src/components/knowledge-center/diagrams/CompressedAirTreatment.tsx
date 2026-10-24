@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function CompressedAirTreatment({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,13 +17,8 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
       className={className}
       style={style}
     >
-      <title id="cat-title">Compressed Air Treatment Train — ISO 8573-1</title>
-      <desc id="cat-desc">
-        Sequential compressed air treatment stages: compressor, aftercooler and moisture separator,
-        refrigerant or desiccant dryer, particulate filter (Class 1 dust), coalescing oil mist
-        filter (Class 1 oil), and activated carbon filter (Class 1 hydrocarbons). ISO 8573-1
-        purity class level achieved at each stage is shown.
-      </desc>
+      <title id="cat-title">{tr("Compressed Air Treatment Train — ISO 8573-1")}</title>
+      <desc id="cat-desc">{tr("Sequential compressed air treatment stages: compressor, aftercooler and moisture separator, refrigerant or desiccant dryer, particulate filter (Class 1 dust), coalescing oil mist filter (Class 1 oil), and activated carbon filter (Class 1 hydrocarbons). ISO 8573-1 purity class level achieved at each stage is shown.")}</desc>
 
       <defs>
         <marker id="cat-ay" viewBox="0 0 8 6" refX="7" refY="3"
@@ -46,9 +43,7 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       {/* Ambient air inlet */}
       <text x="18" y="155" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(255,120,40,0.6)">
-        AMBIENT
-      </text>
+        fill="rgba(255,120,40,0.6)">{tr("AMBIENT")}</text>
       <line x1="18" y1="165" x2="40" y2="165"
         stroke="rgba(255,120,40,0.6)" strokeWidth="1.5" markerEnd="url(#cat-ay)" />
 
@@ -59,9 +54,7 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
       <polygon points="55,175 90,145 90,205"
         fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
       <text x="75" y="228" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.55)">
-        COMPRESSOR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.55)">{tr("COMPRESSOR")}</text>
 
       {/* Connection pipe */}
       <line x1="110" y1="165" x2="140" y2="165"
@@ -82,17 +75,11 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
         stroke="rgba(100,180,255,0.5)" strokeWidth="1.5" markerEnd="url(#cat-aw)" />
       <circle cx="180" cy="255" r="4" fill="rgba(100,180,255,0.4)" />
       <text x="188" y="258" fontFamily="'JetBrains Mono', monospace" fontSize="7.5"
-        fill="rgba(100,180,255,0.6)">
-        condensate drain
-      </text>
+        fill="rgba(100,180,255,0.6)">{tr("condensate drain")}</text>
       <text x="180" y="285" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        AFTERCOOLER +
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("AFTERCOOLER +")}</text>
       <text x="180" y="296" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        SEPARATOR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("SEPARATOR")}</text>
 
       <line x1="220" y1="165" x2="260" y2="165"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#cat-ay)" />
@@ -114,19 +101,13 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
       <line x1="297" y1="215" x2="297" y2="245"
         stroke="rgba(100,180,255,0.4)" strokeWidth="1.5" markerEnd="url(#cat-aw)" />
       <text x="297" y="285" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        DESICCANT
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("DESICCANT")}</text>
       <text x="297" y="296" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        DRYER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("DRYER")}</text>
 
       {/* Dew point label */}
       <text x="297" y="310" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,180,255,0.5)">
-        DP ≤ −40°C
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,180,255,0.5)">{tr("DP ≤ −40°C")}</text>
 
       <line x1="335" y1="165" x2="375" y2="165"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#cat-ay)" />
@@ -150,17 +131,11 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
         stroke="rgba(255,120,40,0.4)" strokeWidth="1.5" markerEnd="url(#cat-ay)" />
 
       <text x="407" y="275" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        PARTICULATE
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("PARTICULATE")}</text>
       <text x="407" y="286" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("FILTER")}</text>
       <text x="407" y="300" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.5)">
-        ISO 8573-1 dust
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.5)">{tr("ISO 8573-1 dust")}</text>
 
       <line x1="447" y1="165" x2="490" y2="165"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#cat-ay)" />
@@ -182,17 +157,11 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
       <circle cx="527" cy="248" r="3" fill="rgba(200,160,40,0.4)" />
 
       <text x="527" y="275" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        OIL COALESCER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("OIL COALESCER")}</text>
       <text x="527" y="286" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        (coalescing)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("(coalescing)")}</text>
       <text x="527" y="300" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.5)">
-        ISO 8573-1 oil mist
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,241,45,0.5)">{tr("ISO 8573-1 oil mist")}</text>
 
       <line x1="567" y1="165" x2="612" y2="165"
         stroke="#FFF12D" strokeWidth="2" markerEnd="url(#cat-ay)" />
@@ -211,17 +180,11 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
         ))
       ))}
       <text x="647" y="275" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        ACTIVATED
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("ACTIVATED")}</text>
       <text x="647" y="286" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">
-        CARBON
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.45)">{tr("CARBON")}</text>
       <text x="647" y="300" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,220,100,0.5)">
-        hydrocarbons
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(100,220,100,0.5)">{tr("hydrocarbons")}</text>
 
       <line x1="687" y1="165" x2="730" y2="165"
         stroke="rgba(100,220,100,0.9)" strokeWidth="2" markerEnd="url(#cat-ag)" />
@@ -230,43 +193,27 @@ export default function CompressedAirTreatment({ className, style }: SvgDiagramP
       <rect x="730" y="130" width="80" height="70"
         fill="rgba(100,220,100,0.05)" stroke="rgba(100,220,100,0.4)" strokeWidth="1.5" rx="3" />
       <text x="770" y="162" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(100,220,100,0.7)">
-        CLEAN
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(100,220,100,0.7)">{tr("CLEAN")}</text>
       <text x="770" y="175" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(100,220,100,0.7)">
-        AIR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(100,220,100,0.7)">{tr("AIR")}</text>
       <text x="770" y="188" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,220,100,0.45)">
-        Class 1.1.1
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,220,100,0.45)">{tr("Class 1.1.1")}</text>
       <text x="770" y="228" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.4)">
-        END USE
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.4)">{tr("END USE")}</text>
 
       {/* ── ISO 8573-1 class reference ──────────────────────────────────── */}
       <rect x="20" y="325" width="860" height="60"
         fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" rx="3" />
       <text x="430" y="344" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.55)" letterSpacing="0.05em">
-        ISO 8573-1 PURITY CLASSES — three-number code: [particles] [water] [oil]
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.55)" letterSpacing="0.05em">{tr("ISO 8573-1 PURITY CLASSES — three-number code: [particles] [water] [oil]")}</text>
       <text x="430" y="360" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.35)">
-        Class 1.1.1: ≤0.1µm·mg/m³ · dew point ≤−70°C · ≤0.01mg/m³ oil · highest purity
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.35)">{tr("Class 1.1.1: ≤0.1µm·mg/m³ · dew point ≤−70°C · ≤0.01mg/m³ oil · highest purity")}</text>
       <text x="430" y="375" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.25)">
-        ISO 8573-2 specifies test methods for oil content measurement
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.25)">{tr("ISO 8573-2 specifies test methods for oil content measurement")}</text>
 
       {/* Standard label */}
       <text x="876" y="396" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 8573-1 · ISO 8573-2
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 8573-1 · ISO 8573-2")}</text>
     </svg>
   );
 }

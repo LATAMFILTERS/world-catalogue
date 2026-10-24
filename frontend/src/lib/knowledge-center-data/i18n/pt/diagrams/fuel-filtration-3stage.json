@@ -1,0 +1,49 @@
+{
+  "slug": "fuel-filtration-3stage",
+  "entityId": "DIAG-FUEL-3STAGE",
+  "title": "Sistema de filtração de combustível diesel de 3 estágios para motores HPCR",
+  "metaDescription": "Arquitetura ilustrativa de filtração de combustível diesel em estágios que mostra a proteção grossa, a gestão combustível/água, a filtração final de partículas e a entrega a um sistema de injeção de alta pressão. As classificações dos estágios e as pressões são específicas da aplicação.",
+  "engineeringPurpose": "Ilustra como a proteção do combustível diesel pode ser organizada em estágios antes dos componentes de injeção de precisão. O número exato de estágios, as classificações de partículas, a arquitetura de separação de água e as condições de vazão e pressão dependem do sistema de combustível aprovado. O SYNTAPORE™ rege a filtração de partículas, o HYDROCORE™ rege os separadores de água e combustível padrão aprovados sem turbina, e os sistemas tipo turbina FH/FG aplicáveis são regidos separadamente pelo TURBOCORE™.",
+  "diagramType": "flow",
+  "governingStandards": [
+    "STD-ISO-16332",
+    "STD-ASTM-D6304",
+    "STD-ISO-12937"
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "diesel-fuel-filtration",
+    "hpcr-fuel-system-cleanliness",
+    "water-contamination-fuel",
+    "marine-diesel-filtration"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-HPCR",
+    "TERM-COALESCING",
+    "TERM-WATER-INGRESS",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-WATER-SEPARATION-EFFICIENCY",
+    "TERM-INJECTOR-STICTION",
+    "TERM-KARL-FISCHER-TITRATION",
+    "TERM-MICROBIAL-CONTAMINATION"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama do sistema de filtração de combustível diesel de 3 estágios",
+    "desc": "Percurso ilustrativo do combustível diesel em estágios, do tanque pela proteção grossa, pela gestão combustível/água e pela filtração final de partículas até o sistema de injeção. As classificações exatas em mícrons, a quantidade de estágios, a pressão e a arquitetura do separador são específicas da aplicação e não são universalizadas por este diagrama.",
+    "ariaLabel": "Diagrama do sistema de filtração de combustível diesel de 3 estágios do tanque, por três estágios de filtro, até os injetores HPCR"
+  },
+  "svgComponentId": "FuelFiltration3Stage"
+}

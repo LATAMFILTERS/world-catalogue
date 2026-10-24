@@ -1,0 +1,46 @@
+{
+  "slug": "multipass-test-circuit",
+  "entityId": "DIAG-MULTIPASS-TEST",
+  "title": "Circuito de ensaio de filtros multipass ISO 16889",
+  "metaDescription": "Esquema de engenharia do circuito de ensaio multipass ISO 16889 usado para medir a eficiência por relação Beta (β) do filtro: reservatório, bomba, contador de partículas a montante (PC₁), filtro de ensaio, contador de partículas a jusante (PC₂) e fluxo de retorno.",
+  "engineeringPurpose": "Documenta o circuito de ensaio padronizado para determinar a eficiência do filtro (relação Beta) e a capacidade de retenção de sujeira conforme a ISO 16889. O método multipass recircula o fluido de ensaio com poeira de ensaio ISO medium injetada para obter uma concentração estável de partículas a montante, permitindo medir a eficiência de forma reprodutível em diferentes faixas de tamanho de partícula.",
+  "diagramType": "schematic",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-11171"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "iso-16889-multipass-test",
+    "beta-ratio",
+    "testing-and-validation",
+    "fluid-cleanliness"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-MULTI-PASS-TEST",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-TEST-DUST",
+    "TERM-ABSOLUTE-EFFICIENCY"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Circuito de ensaio de filtros multipass ISO 16889",
+    "desc": "Esquema do circuito de ensaio multipass: reservatório, bomba, contador de partículas a montante PC₁, carcaça do filtro de ensaio com sensor de ΔP, contador de partículas a jusante PC₂ e linha de retorno. Ponto de injeção de contaminação a montante de PC₁. Relação Beta β = PC₁ ÷ PC₂.",
+    "ariaLabel": "Esquema de engenharia do circuito de ensaio de filtros multipass ISO 16889"
+  },
+  "svgComponentId": "MultipassTestCircuit"
+}

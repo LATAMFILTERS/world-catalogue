@@ -1,0 +1,42 @@
+{
+  "slug": "compressed-air-treatment",
+  "entityId": "DIAG-CA-TREATMENT",
+  "title": "Tren de tratamiento de aire comprimido: clases de pureza ISO 8573-1",
+  "metaDescription": "Tren ilustrativo de tratamiento de aire comprimido que cubre las etapas de control de humedad, partículas y aceite dentro del marco de clases de pureza ISO 8573. La clase de pureza y el punto de rocío requeridos son específicos de la aplicación.",
+  "engineeringPurpose": "Ilustra una secuencia representativa de tratamiento de aire comprimido y el control diferenciado de partículas, agua y aceite. ISO 8573 aporta el marco de clasificación y ensayo, pero la clase de pureza requerida, el desempeño del secador y las etapas de tratamiento deben definirse según la aplicación neumática protegida. DRYCORE™ sigue siendo una función de Protección de la Admisión de Aire y del Flujo de Aire, y no un sexto sistema de protección independiente.",
+  "diagramType": "process",
+  "governingStandards": [
+    "STD-ISO-8573-1",
+    "STD-ISO-8573-2"
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedTechnologies": [
+    "DRYCORE™"
+  ],
+  "relatedArticles": [
+    "compressed-air-purity",
+    "compressed-air-quality-verification",
+    "compressed-air-dryer-selection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-DEW-POINT",
+    "TERM-COALESCING",
+    "TERM-DEPTH-FILTRATION",
+    "TERM-RESTRICTION"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama del tren de tratamiento de aire comprimido",
+    "desc": "Tren representativo de tratamiento de aire comprimido que muestra la salida del compresor, la separación de humedad o el secado y las etapas de filtración aguas abajo. La clase de pureza ISO 8573, el punto de rocío y la secuencia de tratamiento requeridos dependen de la aplicación protegida y no son fijos de forma universal.",
+    "ariaLabel": "Diagrama del tren de tratamiento de aire comprimido que muestra las etapas secuenciales desde el compresor hasta aire limpio Clase 1.1.1"
+  },
+  "svgComponentId": "CompressedAirTreatment"
+}

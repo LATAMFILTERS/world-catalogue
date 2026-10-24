@@ -1,0 +1,47 @@
+{
+  "slug": "particle-wear-mechanism",
+  "entityId": "DIAG-PARTICLE-WEAR",
+  "title": "Mecanismos de desgaste por partículas em sistemas lubrificados",
+  "metaDescription": "Diagrama em três painéis que mostra os mecanismos de desgaste em sistemas lubrificados: abrasão de dois corpos (partícula dura incrustada em uma superfície que corta a face oposta), abrasão de três corpos (partícula livre que rola entre superfícies) e desgaste adesivo (contato direto metal com metal por ruptura do filme de óleo). É mostrada a faixa crítica de tamanho de partícula em relação à folga do mancal.",
+  "engineeringPurpose": "Oferece uma visão mecânica do desgaste abrasivo, de três corpos e adesivo em interfaces lubrificadas e hidráulicas. O tamanho de partícula que se torna crítico depende da folga do componente, da dureza, da concentração, da carga e do regime de lubrificação; o diagrama por si só não permite deduzir um limite universal em mícrons nem uma eficiência de filtração.",
+  "diagramType": "schematic",
+  "governingStandards": [
+    "STD-ISO-4406",
+    "STD-ISO-16889"
+  ],
+  "applicableSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "NANOFORCE™",
+    "MACROCORE™"
+  ],
+  "relatedArticles": [
+    "contamination-control",
+    "failure-analysis",
+    "filter-media-science",
+    "fluid-cleanliness"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-ABRASIVE-WEAR",
+    "TERM-ADHESIVE-WEAR",
+    "TERM-PARTICLE-SIZE-DISTRIBUTION",
+    "TERM-BEARING-CLEARANCE",
+    "TERM-SILICA",
+    "TERM-FERROUS-WEAR-DEBRIS"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama dos mecanismos de desgaste por partículas",
+    "desc": "Ilustração em três painéis da abrasão de dois corpos, da abrasão de três corpos e do desgaste adesivo. As relações entre partícula e folga são mostradas de forma conceitual; os tamanhos críticos exatos e as metas de limpeza devem ser estabelecidos a partir do componente protegido e da aplicação.",
+    "ariaLabel": "Diagrama em três painéis dos mecanismos de desgaste por partículas: abrasão de dois corpos, abrasão de três corpos e desgaste adesivo"
+  },
+  "svgComponentId": "ParticleWearMechanism"
+}

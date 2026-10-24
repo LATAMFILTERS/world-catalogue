@@ -1,0 +1,42 @@
+{
+  "slug": "iso-8573-purity-classes",
+  "entityId": "DIAG-ISO8573-PURITY",
+  "title": "Classes de pureza do ar comprimido ISO 8573-1",
+  "metaDescription": "Gráfico de referência das classificações de pureza do ar comprimido ISO 8573-1:2010 que abrange a contagem de partículas sólidas, o ponto de orvalho sob pressão e o teor total de óleo nas Classes 0 a 9.",
+  "engineeringPurpose": "Oferece uma referência visual para selecionar a classe de pureza ISO 8573-1 no projeto de sistemas de ar comprimido. Os engenheiros escolhem a classe adequada para cada aplicação conforme a sensibilidade a partículas sólidas, umidade e óleo, e depois especificam os componentes do trem de tratamento necessários para atingir essa classe no ponto de uso.",
+  "diagramType": "chart",
+  "governingStandards": [
+    "STD-ISO-8573-1",
+    "STD-ISO-8573-2"
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedTechnologies": [
+    "DRYCORE™"
+  ],
+  "relatedArticles": [
+    "compressed-air-purity",
+    "compressed-air-quality-verification",
+    "compressed-air-dryer-selection",
+    "testing-and-validation"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-COMPRESSED-AIR-PURITY",
+    "TERM-DEW-POINT",
+    "TERM-PARTICLE-COUNT",
+    "TERM-PARTICLE-SIZE-DISTRIBUTION"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Gráfico das classes de pureza do ar comprimido ISO 8573-1",
+    "desc": "Gráfico de referência em três painéis para a ISO 8573-1:2010. Painel superior — partículas sólidas: tabela com as Classes 0–5 e a contagem máxima de partículas por metro cúbico nas faixas de tamanho ≥0.1 µm, ≥0.5 µm, ≥1 µm e ≥5 µm; a Classe 0 exige especificação do usuário e a Classe 1 é a mais rigorosa. Painel central — teor de água: barras horizontais com o ponto de orvalho sob pressão máximo da Classe 1 (−70°C, a mais seca) à Classe 6 (+10°C, a menos seca). Painel inferior — teor de óleo: gráfico de barras com o teor total máximo de óleo das Classes 1–4, de 0.01 mg/m³ a 5 mg/m³.",
+    "ariaLabel": "Gráfico das classes de pureza do ar comprimido ISO 8573-1:2010 de 0 a 9 para partículas sólidas, teor de água e teor total de óleo"
+  },
+  "svgComponentId": "Iso8573PurityClasses"
+}

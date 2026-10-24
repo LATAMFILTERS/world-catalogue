@@ -1,0 +1,49 @@
+{
+  "slug": "hydraulic-contamination-paths",
+  "entityId": "DIAG-HYD-CONTAMINATION",
+  "title": "Caminhos de entrada de contaminação em sistemas hidráulicos",
+  "metaDescription": "Diagrama de sistema dos três caminhos de ingresso de contaminação em sistemas hidráulicos: incorporada (resíduos de fabricação), ingressada (vedações, respiros, reposições) e gerada (desgaste de componentes). Os filtros de retorno e de pressão removem as partículas do circuito.",
+  "engineeringPurpose": "Mostra as três fontes fundamentais de contaminação que determinam a limpeza do fluido hidráulico. A contaminação de origem entra na montagem e não pode ser eliminada sem um flushing antes do comissionamento. A contaminação por entrada ocorre continuamente durante a operação pelas vedações dinâmicas e pelos respiros do reservatório. A contaminação gerada é produzida pelo desgaste dos componentes, por sua vez acelerado pela contaminação por partículas, criando um ciclo de realimentação positiva que a filtração do sistema precisa romper.",
+  "diagramType": "system",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-NFPA-T2-14",
+    "STD-ISO-4406"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "relatedArticles": [
+    "contamination-control",
+    "hydraulic-power-unit-design",
+    "hydraulic-system-flushing",
+    "hydraulic-reservoir-design",
+    "particle-ingress-prevention"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-CONTAMINATION-INGRESSION-RATE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-SERVO-VALVE",
+    "TERM-PROPORTIONAL-VALVE",
+    "TERM-BYPASS-FILTRATION",
+    "TERM-FULL-FLOW-FILTRATION",
+    "TERM-KIDNEY-LOOP",
+    "TERM-SYSTEM-FLUSHING"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama dos caminhos de ingresso de contaminação em sistemas hidráulicos",
+    "desc": "Reservatório hidráulico central com três fontes de contaminação representadas como quadros com setas apontando para o reservatório. Acima à esquerda: contaminação incorporada (resíduos de fabricação, contaminação de montagem, areia de fundição, fibras de mangueiras). Acima à direita: contaminação ingressada (respiro, vedações de hastes de cilindros, reposição não filtrada, tampas de acesso, ingresso de água). Abaixo à esquerda: contaminação gerada (partículas de desgaste de bombas, erosão de carretéis de válvulas, degradação de vedações, erosão de mangueiras). O filtro de retorno e o filtro de pressão são mostrados removendo partículas do circuito. Abaixo à direita é mostrada a tabela de limpeza alvo para servoválvulas, válvulas proporcionais e bombas de engrenagens.",
+    "ariaLabel": "Diagrama dos caminhos de ingresso de contaminação em sistemas hidráulicos que mostra três fontes de contaminação convergindo para o reservatório"
+  },
+  "svgComponentId": "HydraulicContaminationPaths"
+}

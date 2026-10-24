@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function Iso8573PurityClasses({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,27 +17,17 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
       className={className}
       style={style}
     >
-      <title id="iso8573-title">ISO 8573-1 Compressed Air Purity Classes</title>
-      <desc id="iso8573-desc">
-        Three-panel reference chart for ISO 8573-1:2010. Top panel shows solid particle purity
-        classes 0–5 by particle count per cubic metre at ≥0.1 µm, ≥0.5 µm, ≥1 µm, and ≥5 µm.
-        Middle panel shows water content as maximum pressure dew point from Class 1 (−70 °C)
-        to Class 6 (+10 °C). Bottom panel shows total oil content from Class 1 (0.01 mg/m³)
-        to Class 4 (5 mg/m³). Lower class number means tighter / cleaner air.
-      </desc>
+      <title id="iso8573-title">{tr("ISO 8573-1 Compressed Air Purity Classes")}</title>
+      <desc id="iso8573-desc">{tr("Three-panel reference chart for ISO 8573-1:2010. Top panel shows solid particle purity classes 0–5 by particle count per cubic metre at ≥0.1 µm, ≥0.5 µm, ≥1 µm, and ≥5 µm. Middle panel shows water content as maximum pressure dew point from Class 1 (−70 °C) to Class 6 (+10 °C). Bottom panel shows total oil content from Class 1 (0.01 mg/m³) to Class 4 (5 mg/m³). Lower class number means tighter / cleaner air.")}</desc>
 
       {/* ── Global labels ─────────────────────────────────────────────────── */}
       <text x="430" y="22" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="11" fontWeight="700"
-        fill="#FFF12D" letterSpacing="0.08em">
-        ISO 8573-1:2010 — COMPRESSED AIR PURITY CLASSES
-      </text>
+        fill="#FFF12D" letterSpacing="0.08em">{tr("ISO 8573-1:2010 — COMPRESSED AIR PURITY CLASSES")}</text>
 
       {/* "tighter →" direction indicator */}
       <text x="62" y="38" fontFamily="'JetBrains Mono', monospace" fontSize="7.5"
-        fill="rgba(255,255,255,0.3)">
-        ← TIGHTER (more stringent)
-      </text>
+        fill="rgba(255,255,255,0.3)">{tr("← TIGHTER (more stringent)")}</text>
       <line x1="60" y1="32" x2="230" y2="32"
         stroke="rgba(255,255,255,0.15)" strokeWidth="0.8" markerEnd="url(#iso8573-al)" />
 
@@ -61,9 +53,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
         fill="rgba(255,241,45,0.08)" />
       <text x="430" y="59" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,241,45,0.8)"
-        letterSpacing="0.06em">
-        SOLID PARTICLES — MAX COUNT PER m³ AT STATED SIZE RANGE
-      </text>
+        letterSpacing="0.06em">{tr("SOLID PARTICLES — MAX COUNT PER m³ AT STATED SIZE RANGE")}</text>
 
       {/* Column headers */}
       {[
@@ -77,7 +67,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
         <text key={col.x} x={col.x} y="82" textAnchor="middle"
           fontFamily="'JetBrains Mono', monospace" fontSize="7.5"
           fill="rgba(255,255,255,0.45)" letterSpacing="0.04em">
-          {col.label}
+          {tr(col.label)}
         </text>
       ))}
 
@@ -115,7 +105,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
                 fontFamily="'JetBrains Mono', monospace"
                 fontSize={cell.x === 730 ? 6.5 : 8}
                 fill={row.highlight ? 'rgba(255,241,45,0.7)' : cell.x === 90 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.45)'}>
-                {cell.v}
+                {tr(cell.v)}
               </text>
             ))}
           </g>
@@ -128,9 +118,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
         6–9…
       </text>
       <text x="350" y="197" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.2)">
-        (see ISO 8573-1:2010 Table 1 for complete values)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.2)">{tr("(see ISO 8573-1:2010 Table 1 for complete values)")}</text>
 
       {/* ══════════════════════════════════════════════════════════════════════
           PANEL 2: WATER CONTENT — Pressure Dew Point
@@ -142,9 +130,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
         fill="rgba(100,180,255,0.08)" />
       <text x="430" y="217" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,180,255,0.8)"
-        letterSpacing="0.06em">
-        WATER CONTENT — MAXIMUM PRESSURE DEW POINT [°C]
-      </text>
+        letterSpacing="0.06em">{tr("WATER CONTENT — MAXIMUM PRESSURE DEW POINT [°C]")}</text>
 
       {/* Dew point bars */}
       {[
@@ -176,9 +162,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
       })}
 
       <text x="100" y="318" fontFamily="'JetBrains Mono', monospace" fontSize="7"
-        fill="rgba(255,255,255,0.25)">
-        100  →  driest Class 1 (−70 °C) ·····················dryness →····················· wettest Class 6 (+10 °C)
-      </text>
+        fill="rgba(255,255,255,0.25)">{tr("100 → driest Class 1 (−70 °C) ·····················dryness →····················· wettest Class 6 (+10 °C)")}</text>
 
       {/* ══════════════════════════════════════════════════════════════════════
           PANEL 3: OIL CONTENT
@@ -190,9 +174,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
         fill="rgba(255,200,40,0.08)" />
       <text x="430" y="339" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,200,40,0.8)"
-        letterSpacing="0.06em">
-        TOTAL OIL CONTENT — MAXIMUM [mg/m³]
-      </text>
+        letterSpacing="0.06em">{tr("TOTAL OIL CONTENT — MAXIMUM [mg/m³]")}</text>
 
       {/* Oil bars */}
       {[
@@ -226,9 +208,7 @@ export default function Iso8573PurityClasses({ className, style }: SvgDiagramPro
       {/* Standard label */}
       <text x="850" y="475" textAnchor="end"
         fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)"
-        letterSpacing="0.06em">
-        ISO 8573-1:2010
-      </text>
+        letterSpacing="0.06em">{tr("ISO 8573-1:2010")}</text>
     </svg>
   );
 }

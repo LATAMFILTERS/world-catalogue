@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function HydraulicContaminationPaths({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,14 +17,8 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       className={className}
       style={style}
     >
-      <title id="hcp-title">Hydraulic System Contamination Ingression Paths</title>
-      <desc id="hcp-desc">
-        Three contamination ingression paths in a hydraulic system: built-in contamination from
-        manufacturing and assembly residues, ingressed contamination through seals, breathers, and
-        cylinder rods, and generated contamination from component wear (adhesive, abrasive, fatigue).
-        All converge on the hydraulic reservoir. Filtration removes particles from the circuit.
-        Based on ISO 16889 and NFPA T2.14.
-      </desc>
+      <title id="hcp-title">{tr("Hydraulic System Contamination Ingression Paths")}</title>
+      <desc id="hcp-desc">{tr("Three contamination ingression paths in a hydraulic system: built-in contamination from manufacturing and assembly residues, ingressed contamination through seals, breathers, and cylinder rods, and generated contamination from component wear (adhesive, abrasive, fatigue). All converge on the hydraulic reservoir. Filtration removes particles from the circuit. Based on ISO 16889 and NFPA T2.14.")}</desc>
 
       <defs>
         <marker id="hcp-ao" viewBox="0 0 8 6" refX="7" refY="3"
@@ -58,9 +54,7 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <circle cx="408" cy="352" r="3"   fill="rgba(255,120,40,0.45)" />
       <circle cx="478" cy="345" r="2.5" fill="rgba(255,120,40,0.4)" />
       <text x="400" y="390" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(255,200,40,0.7)">
-        HYDRAULIC RESERVOIR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="10" fill="rgba(255,200,40,0.7)">{tr("HYDRAULIC RESERVOIR")}</text>
 
       {/* Return filter (on return line to reservoir) */}
       <rect x="340" y="200" width="120" height="40"
@@ -71,9 +65,7 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <line x1="405" y1="200" x2="405" y2="240" stroke="rgba(100,220,100,0.25)" strokeWidth="1" />
       <line x1="425" y1="200" x2="425" y2="240" stroke="rgba(100,220,100,0.25)" strokeWidth="1" />
       <text x="400" y="226" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)">
-        RETURN FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)">{tr("RETURN FILTER")}</text>
       {/* Arrow into reservoir from filter */}
       <line x1="400" y1="240" x2="400" y2="255"
         stroke="rgba(100,220,100,0.7)" strokeWidth="1.5" markerEnd="url(#hcp-ag)" />
@@ -87,9 +79,7 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <line x1="560" y1="200" x2="560" y2="240" stroke="rgba(100,220,100,0.2)" strokeWidth="1" />
       <line x1="575" y1="200" x2="575" y2="240" stroke="rgba(100,220,100,0.2)" strokeWidth="1" />
       <text x="550" y="226" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.55)">
-        PRESSURE FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.55)">{tr("PRESSURE FILTER")}</text>
 
       {/* ── Circuit flow lines ────────────────────────────────────────────── */}
       {/* Pump suction from reservoir → pump */}
@@ -99,9 +89,7 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <circle cx="630" cy="310" r="22"
         fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
       <text x="630" y="314" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.6)">
-        P
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.6)">{tr("P")}</text>
       {/* Pressure line to pressure filter */}
       <line x1="630" y1="288" x2="630" y2="220"
         stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" markerEnd="url(#hcp-ay)" />
@@ -111,13 +99,9 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <line x1="490" y1="220" x2="460" y2="220"
         stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" markerEnd="url(#hcp-ay)" />
       <text x="340" y="188" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(100,220,100,0.5)">
-        return ←
-      </text>
+        fill="rgba(100,220,100,0.5)">{tr("return ←")}</text>
       <text x="492" y="188" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(100,220,100,0.5)">
-        → supply
-      </text>
+        fill="rgba(100,220,100,0.5)">{tr("→ supply")}</text>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           PATH 1: BUILT-IN CONTAMINATION (top left)
@@ -125,29 +109,17 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <rect x="20" y="20" width="200" height="110"
         fill="rgba(255,80,40,0.06)" stroke="rgba(255,80,40,0.4)" strokeWidth="1.5" rx="4" />
       <text x="120" y="40" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,80,40,0.9)" letterSpacing="0.06em">
-        BUILT-IN
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,80,40,0.9)" letterSpacing="0.06em">{tr("BUILT-IN")}</text>
       <text x="120" y="53" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,80,40,0.9)" letterSpacing="0.06em">
-        CONTAMINATION
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,80,40,0.9)" letterSpacing="0.06em">{tr("CONTAMINATION")}</text>
       <text x="120" y="72" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Manufacturing residues
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Manufacturing residues")}</text>
       <text x="120" y="84" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Assembly contamination
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Assembly contamination")}</text>
       <text x="120" y="96" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Casting sand / metal fines
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Casting sand / metal fines")}</text>
       <text x="120" y="108" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Residual hose fibres
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Residual hose fibres")}</text>
       {/* Arrow into reservoir */}
       <line x1="180" y1="130" x2="290" y2="260"
         stroke="#ff8040" strokeWidth="1.5" strokeDasharray="5,3" markerEnd="url(#hcp-ao)" />
@@ -158,33 +130,19 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <rect x="580" y="20" width="200" height="130"
         fill="rgba(255,160,40,0.06)" stroke="rgba(255,160,40,0.4)" strokeWidth="1.5" rx="4" />
       <text x="680" y="40" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,160,40,0.9)" letterSpacing="0.06em">
-        INGRESSED
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,160,40,0.9)" letterSpacing="0.06em">{tr("INGRESSED")}</text>
       <text x="680" y="53" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,160,40,0.9)" letterSpacing="0.06em">
-        CONTAMINATION
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,160,40,0.9)" letterSpacing="0.06em">{tr("CONTAMINATION")}</text>
       <text x="680" y="72" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Breather / vent contamination
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Breather / vent contamination")}</text>
       <text x="680" y="84" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Cylinder rod seals
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Cylinder rod seals")}</text>
       <text x="680" y="96" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Fluid top-up (unfiltered)
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Fluid top-up (unfiltered)")}</text>
       <text x="680" y="108" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Access covers / service
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Access covers / service")}</text>
       <text x="680" y="120" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Water / coolant ingress
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Water / coolant ingress")}</text>
       {/* Arrow into reservoir */}
       <line x1="620" y1="150" x2="510" y2="255"
         stroke="rgba(255,160,40,0.8)" strokeWidth="1.5" strokeDasharray="5,3" markerEnd="url(#hcp-ao)" />
@@ -195,33 +153,19 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <rect x="20" y="340" width="220" height="130"
         fill="rgba(255,60,60,0.06)" stroke="rgba(255,60,60,0.4)" strokeWidth="1.5" rx="4" />
       <text x="130" y="360" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,60,60,0.9)" letterSpacing="0.06em">
-        GENERATED
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,60,60,0.9)" letterSpacing="0.06em">{tr("GENERATED")}</text>
       <text x="130" y="373" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,60,60,0.9)" letterSpacing="0.06em">
-        CONTAMINATION
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9.5" fill="rgba(255,60,60,0.9)" letterSpacing="0.06em">{tr("CONTAMINATION")}</text>
       <text x="130" y="392" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Pump / motor wear debris
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Pump / motor wear debris")}</text>
       <text x="130" y="404" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Valve spool / bore erosion
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Valve spool / bore erosion")}</text>
       <text x="130" y="416" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Seal degradation particles
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Seal degradation particles")}</text>
       <text x="130" y="428" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Hose interior erosion
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Hose interior erosion")}</text>
       <text x="130" y="440" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
-        Oxidation / varnish particles
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.4)">{tr("Oxidation / varnish particles")}</text>
       {/* Arrow into reservoir */}
       <line x1="240" y1="380" x2="292" y2="340"
         stroke="rgba(255,60,60,0.8)" strokeWidth="1.5" strokeDasharray="5,3" markerEnd="url(#hcp-ao)" />
@@ -230,31 +174,19 @@ export default function HydraulicContaminationPaths({ className, style }: SvgDia
       <rect x="560" y="380" width="220" height="95"
         fill="rgba(100,220,100,0.05)" stroke="rgba(100,220,100,0.25)" strokeWidth="1" rx="3" />
       <text x="670" y="400" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)" letterSpacing="0.05em">
-        TARGET CLEANLINESS
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,220,100,0.7)" letterSpacing="0.05em">{tr("TARGET CLEANLINESS")}</text>
       <text x="670" y="416" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(100,220,100,0.9)">
-        Servo valves: ISO 14/12/10
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(100,220,100,0.9)">{tr("Servo valves: ISO 14/12/10")}</text>
       <text x="670" y="430" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.8)">
-        Prop. valves: ISO 17/15/12
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.8)">{tr("Prop. valves: ISO 17/15/12")}</text>
       <text x="670" y="444" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">
-        Gear pumps: ISO 19/17/14
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">{tr("Gear pumps: ISO 19/17/14")}</text>
       <text x="670" y="460" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.3)">
-        per ISO 4406 / NFPA T2.14
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="7.5" fill="rgba(255,255,255,0.3)">{tr("per ISO 4406 / NFPA T2.14")}</text>
 
       {/* Standard label */}
       <text x="780" y="490" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 16889 · NFPA T2.14 · ISO 4406
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 16889 · NFPA T2.14 · ISO 4406")}</text>
     </svg>
   );
 }

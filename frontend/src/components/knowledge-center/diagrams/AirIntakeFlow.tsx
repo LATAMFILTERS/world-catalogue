@@ -1,9 +1,11 @@
+import { useReviewed } from '@/components/ReviewedText';
 interface SvgDiagramProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
 export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}) {
+  const tr = useReviewed();
   return (
     <svg
       role="img"
@@ -15,13 +17,8 @@ export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}
       className={className}
       style={style}
     >
-      <title id="aif-title">Air Intake Filtration System Flow Diagram</title>
-      <desc id="aif-desc">
-        Sequential air intake filtration flow: ambient dusty air enters a pre-cleaner or cyclonic
-        separator, passes through the main filter element, through a safety element, and exits as
-        clean air to the engine intake. A restriction indicator monitors differential pressure
-        across the main element. Based on ISO 5011 and SAE J726.
-      </desc>
+      <title id="aif-title">{tr("Air Intake Filtration System Flow Diagram")}</title>
+      <desc id="aif-desc">{tr("Sequential air intake filtration flow: ambient dusty air enters a pre-cleaner or cyclonic separator, passes through the main filter element, through a safety element, and exits as clean air to the engine intake. A restriction indicator monitors differential pressure across the main element. Based on ISO 5011 and SAE J726.")}</desc>
 
       <defs>
         <marker id="aif-ay" viewBox="0 0 8 6" refX="7" refY="3"
@@ -42,9 +39,7 @@ export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}
 
       {/* ── Ambient air (left) ──────────────────────────────────────────── */}
       <text x="28" y="45" fontFamily="'JetBrains Mono', monospace" fontSize="9"
-        fill="rgba(255,255,255,0.4)" letterSpacing="0.06em">
-        AMBIENT AIR
-      </text>
+        fill="rgba(255,255,255,0.4)" letterSpacing="0.06em">{tr("AMBIENT AIR")}</text>
       {/* Dust particles in ambient air */}
       <circle cx="38" cy="110" r="4" fill="rgba(255,120,40,0.6)" />
       <circle cx="55" cy="90"  r="3" fill="rgba(255,120,40,0.55)" />
@@ -73,17 +68,11 @@ export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}
         stroke="rgba(255,120,40,0.5)" strokeWidth="1.5" markerEnd="url(#aif-ay)" />
       <circle cx="155" cy="262" r="4" fill="rgba(255,120,40,0.4)" />
       <text x="162" y="262" fontFamily="'JetBrains Mono', monospace" fontSize="8"
-        fill="rgba(255,120,40,0.6)">
-        dust ejected
-      </text>
+        fill="rgba(255,120,40,0.6)">{tr("dust ejected")}</text>
       <text x="155" y="295" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">
-        PRE-CLEANER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">{tr("PRE-CLEANER")}</text>
       <text x="155" y="307" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.3)">
-        cyclonic separator
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.3)">{tr("cyclonic separator")}</text>
 
       {/* ── Flow line → main filter ──────────────────────────────────────── */}
       <line x1="195" y1="160" x2="250" y2="160"
@@ -102,17 +91,11 @@ export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}
       <line x1="366" y1="80" x2="366" y2="240" stroke="rgba(255,241,45,0.25)" strokeWidth="1" />
 
       <text x="315" y="275" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.8)">
-        MAIN FILTER
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.8)">{tr("MAIN FILTER")}</text>
       <text x="315" y="287" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.8)">
-        ELEMENT
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,241,45,0.8)">{tr("ELEMENT")}</text>
       <text x="315" y="300" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.3)">
-        ISO 5011 / SAE J726
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.3)">{tr("ISO 5011 / SAE J726")}</text>
 
       {/* Restriction indicator connection */}
       <line x1="315" y1="80" x2="315" y2="52"
@@ -128,13 +111,9 @@ export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}
       <path d="M403,58 A18,18 0 0,1 437,58"
         fill="none" stroke="rgba(255,241,45,0.4)" strokeWidth="1" />
       <text x="420" y="82" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.7)">
-        RESTRICTION
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.7)">{tr("RESTRICTION")}</text>
       <text x="420" y="92" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.7)">
-        INDICATOR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,241,45,0.7)">{tr("INDICATOR")}</text>
 
       {/* ── Flow line → safety element ───────────────────────────────────── */}
       <line x1="380" y1="160" x2="440" y2="160"
@@ -150,17 +129,11 @@ export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}
       <line x1="498" y1="120" x2="498" y2="200" stroke="rgba(100,200,255,0.2)" strokeWidth="1" />
 
       <text x="475" y="225" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">
-        SAFETY
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">{tr("SAFETY")}</text>
       <text x="475" y="237" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">
-        ELEMENT
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(100,200,255,0.7)">{tr("ELEMENT")}</text>
       <text x="475" y="250" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.25)">
-        secondary protection
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(255,255,255,0.25)">{tr("secondary protection")}</text>
 
       {/* ── Flow line → engine ───────────────────────────────────────────── */}
       <line x1="510" y1="160" x2="590" y2="160"
@@ -183,33 +156,23 @@ export default function AirIntakeFlow({ className, style }: SvgDiagramProps = {}
       <rect x="666" y="120" width="20" height="60" rx="2"
         fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
       <text x="650" y="240" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">
-        ENGINE INTAKE
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.5)">{tr("ENGINE INTAKE")}</text>
 
       {/* CLEAN AIR label on output line */}
       <text x="550" y="148" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,220,100,0.7)">
-        CLEAN AIR
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8" fill="rgba(100,220,100,0.7)">{tr("CLEAN AIR")}</text>
 
       {/* ── Dust holding capacity note ──────────────────────────────────── */}
       <rect x="20" y="330" width="820" height="52"
         fill="rgba(255,241,45,0.04)" stroke="rgba(255,241,45,0.15)" strokeWidth="1" rx="3" />
       <text x="430" y="350" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,241,45,0.7)" letterSpacing="0.05em">
-        DUST HOLDING CAPACITY (DHC) — measured per ISO 5011: mass of ISO A2 fine test dust
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,241,45,0.7)" letterSpacing="0.05em">{tr("DUST HOLDING CAPACITY (DHC) — measured per ISO 5011: mass of ISO A2 fine test dust")}</text>
       <text x="430" y="368" textAnchor="middle"
-        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.35)">
-        retained by filter to terminal restriction ΔP · determines service interval
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="8.5" fill="rgba(255,255,255,0.35)">{tr("retained by filter to terminal restriction ΔP · determines service interval")}</text>
 
       {/* Standard label */}
       <text x="840" y="395" textAnchor="end"
-        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">
-        ISO 5011 · SAE J726
-      </text>
+        fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)" letterSpacing="0.06em">{tr("ISO 5011 · SAE J726")}</text>
     </svg>
   );
 }

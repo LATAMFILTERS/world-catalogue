@@ -1,0 +1,48 @@
+{
+  "slug": "differential-pressure-curve",
+  "entityId": "DIAG-DP-CURVE",
+  "title": "Curva de pressão diferencial do filtro versus vida útil",
+  "metaDescription": "Gráfico que mostra como a pressão diferencial (ΔP) no elemento filtrante aumenta conforme cresce a carga de contaminação ao longo da vida útil. São mostradas três linhas de limite: alerta do indicador de serviço, pressão de abertura da válvula de bypass e limite de colapso do elemento. Baseado na ISO 16889 e na ISO 3968.",
+  "engineeringPurpose": "Documenta a relação entre ΔP e vida útil que rege os intervalos de substituição de filtros. A curva começa baixa (resistência inicial do elemento limpo), sobe com o acúmulo de sujeira e acelera à medida que o elemento se aproxima de sua capacidade nominal. Três limites críticos definem os modos de falha: o limite do indicador de serviço (alerta visual ou eletrônico de substituição), a pressão de abertura da válvula de bypass (proteção do elemento à custa de fluxo sem filtragem) e a pressão de colapso do elemento (falha estrutural por pressão diferencial).",
+  "diagramType": "chart",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-3968"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection",
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "dust-holding-capacity",
+    "filter-element-integrity",
+    "air-restriction",
+    "service-intervals"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-FILTER-BYPASS-VALVE",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-COLLAPSE-PRESSURE",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-RESTRICTION-INDICATOR"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Gráfico da curva de pressão diferencial do filtro versus vida útil",
+    "desc": "Gráfico de linhas com a carga de contaminação no eixo X (de NOVO a FIM DE VIDA) e a pressão diferencial no eixo Y (de baixa a alta). Uma curva suave em forma de S sobe a partir do canto inferior esquerdo. Três linhas horizontais tracejadas de limite: amarela a meia altura, identificada como INDICADOR DE SERVIÇO; laranja acima dela, identificada como BYPASS ABRE; e vermelha perto do topo, identificada como RISCO DE COLAPSO. Três zonas sombreadas de fundo: verde suave abaixo do indicador de serviço (faixa normal de operação), amarelo suave entre o indicador de serviço e o bypass (intervalo de serviço excedido) e vermelho suave acima do bypass (bypass ativo, fluxo não filtrado). Um marcador circular na interseção da curva com o limite do indicador de serviço.",
+    "ariaLabel": "Gráfico que mostra o aumento da pressão diferencial no elemento filtrante ao longo da vida útil com três linhas de limite"
+  },
+  "svgComponentId": "DifferentialPressureCurve"
+}

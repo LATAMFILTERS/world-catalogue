@@ -1,0 +1,51 @@
+{
+  "slug": "filter-media-cross-section",
+  "entityId": "DIAG-MEDIA-CROSS-SECTION",
+  "title": "Sección transversal del medio del elemento filtrante",
+  "metaDescription": "Diagrama en corte de un elemento filtrante cilíndrico que muestra la envoltura exterior, la capa de prefiltro, la zona de profundidad del medio filtrante principal, la malla anticolapso y el tubo central perforado, con captura progresiva de partículas en cada capa.",
+  "engineeringPurpose": "Ilustra la construcción por capas de un elemento filtrante moderno multicapa y cómo la eficiencia de captura de partículas surge de la filtración en profundidad. El gradiente de densidad progresivo, de las capas exteriores gruesas a las capas interiores de medio fino, maximiza la capacidad de retención de suciedad y mantiene la eficiencia nominal de la relación Beta.",
+  "diagramType": "cross-section",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-11171"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection",
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™",
+    "SYNTAPORE™"
+  ],
+  "relatedArticles": [
+    "filter-media-science",
+    "filter-media-engineering",
+    "fluid-cleanliness",
+    "testing-and-validation",
+    "dust-holding-capacity"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-DEPTH-FILTRATION",
+    "TERM-SURFACE-FILTRATION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-SYNTHETIC-MEDIA",
+    "TERM-CELLULOSE-MEDIA",
+    "TERM-BETA-RATIO",
+    "TERM-COLLAPSE-PRESSURE",
+    "TERM-MELT-BLOWN-MEDIA"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Sección transversal del medio del elemento filtrante",
+    "desc": "Vista en corte de un elemento filtrante cilíndrico desde el exterior hacia el centro. Borde izquierdo: envoltura exterior protectora. Capa siguiente: zona de prefiltro grueso con símbolos de partículas grandes atrapadas cerca de la superficie. Zona principal (la más ancha): medio filtrante sintético o de fibra de vidrio con gradiente de densidad progresivo; partículas grandes capturadas cerca del borde exterior, medianas a media profundidad y finas cerca del centro. Malla interior anticolapso. Borde derecho: tubo central de acero perforado que aporta soporte estructural. Las flechas muestran el flujo contaminado que entra por la izquierda y el flujo limpio filtrado que sale por la derecha. Recuadro de fórmula: relación Beta β = N_aguas arriba ÷ N_aguas abajo según ISO 16889.",
+    "ariaLabel": "Diagrama en corte de un elemento filtrante cilíndrico que muestra la envoltura exterior, la capa de prefiltro, el medio filtrante principal y el tubo central perforado"
+  },
+  "svgComponentId": "FilterMediaCrossSection"
+}

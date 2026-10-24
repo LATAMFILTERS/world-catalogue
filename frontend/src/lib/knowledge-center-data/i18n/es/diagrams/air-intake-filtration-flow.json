@@ -1,0 +1,48 @@
+{
+  "slug": "air-intake-filtration-flow",
+  "entityId": "DIAG-AIR-INTAKE-FLOW",
+  "title": "Diagrama de flujo del sistema de filtración de admisión de aire",
+  "metaDescription": "Diagrama de flujo lineal de un sistema de filtración de la admisión de aire: aire ambiente con polvo → prefiltro (separador ciclónico) → elemento filtrante principal → elemento de seguridad → aire limpio hacia la admisión del motor. Un indicador de restricción monitorea la presión diferencial a través del elemento principal. Basado en ISO 5011 y SAE J726.",
+  "engineeringPurpose": "Ilustra la estrategia de protección por etapas que se usa en los sistemas de admisión de aire del motor que corresponden. La prelimpieza, la filtración primaria, la protección con elemento de seguridad, el sellado y el monitoreo de la restricción deben evaluarse como un único límite de flujo de aire instalado. Cualquier afirmación de eficiencia, capacidad de polvo, restricción o vida útil depende del producto y la configuración, según el método de validación aplicable.",
+  "diagramType": "flow",
+  "governingStandards": [
+    "STD-ISO-5011",
+    "STD-SAE-J726"
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedArticles": [
+    "air-restriction",
+    "air-intake-system-design",
+    "dust-holding-capacity",
+    "service-intervals",
+    "airflow-engineering"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-RESTRICTION",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT",
+    "TERM-CYCLONIC-SEPARATION",
+    "TERM-INGRESS-PROTECTION",
+    "TERM-SERVICE-INTERVAL",
+    "TERM-SAFETY-ELEMENT",
+    "TERM-PRE-CLEANER",
+    "TERM-RESTRICTION-INDICATOR"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Diagrama de flujo del sistema de filtración de admisión de aire",
+    "desc": "Flujo del aire del motor de izquierda a derecha que muestra la contaminación ambiental, una etapa de prelimpieza cuando aplica, el elemento filtrante primario, el elemento de seguridad, el monitoreo de restricción y la admisión protegida del motor. El diagrama es ilustrativo; los valores cuantitativos de eficiencia, capacidad y vida útil corresponden a la configuración validada del producto y de la carcasa.",
+    "ariaLabel": "Diagrama de flujo del sistema de filtración de la admisión de aire, desde el aire ambiente a través del prefiltro, el filtro principal y el elemento de seguridad hasta el motor"
+  },
+  "svgComponentId": "AirIntakeFlow"
+}

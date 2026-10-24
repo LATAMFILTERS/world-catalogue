@@ -1,0 +1,47 @@
+{
+  "slug": "beta-ratio-measurement",
+  "entityId": "DIAG-BETA-RATIO",
+  "title": "Medição da relação Beta: contagem de partículas a montante e a jusante",
+  "metaDescription": "Esquema do princípio de medição da relação Beta: contagem de partículas a montante (Nᵤ) antes do elemento filtrante versus a contagem a jusante (Nd) depois. Fórmula β = Nᵤ/Nd. Eficiência de filtração E(%) = (1 − 1/β) × 100.",
+  "engineeringPurpose": "Ilustra o princípio fundamental da relação Beta (relação de filtração) definida na ISO 16889. Partículas de todos os tamanhos entram a montante no elemento filtrante; apenas as que estão abaixo do corte de eficiência nominal passam para o lado de saída. A relação entre as contagens de partículas a montante e a jusante em um determinado tamanho define a relação Beta, que quantifica diretamente a eficiência de filtração.",
+  "diagramType": "schematic",
+  "governingStandards": [
+    "STD-ISO-16889",
+    "STD-ISO-11171"
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection",
+    "fuel-cleanliness-protection"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "beta-ratio",
+    "iso-16889",
+    "filter-media-science",
+    "fluid-cleanliness",
+    "filter-media-engineering"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-ABSOLUTE-EFFICIENCY",
+    "TERM-NOMINAL-EFFICIENCY",
+    "TERM-MULTI-PASS-TEST",
+    "TERM-PARTICLE-COUNT"
+  ],
+  "revisionMetadata": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-07-08",
+    "nextReview": "2027-07-08",
+    "status": "current"
+  },
+  "accessibility": {
+    "title": "Esquema de medição da relação Beta",
+    "desc": "A zona esquerda mostra o fluido contaminado a montante com muitas partículas de tamanhos variados (círculos laranja grandes, partículas médias e finas). A zona central é o elemento filtrante, representado como um retângulo hachurado. A zona direita mostra o fluido limpo a jusante com apenas algumas partículas finas que passaram. Na parte inferior são mostradas a fórmula β = Nᵤ/Nd e a eficiência E(%) = (1 − 1/β) × 100.",
+    "ariaLabel": "Esquema de medição da relação Beta que mostra as contagens de partículas a montante e a jusante de um elemento filtrante"
+  },
+  "svgComponentId": "BetaRatioMeasurement"
+}
