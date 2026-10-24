@@ -40,10 +40,7 @@ export default function PostHogAnalytics() {
     };
   }, [posthogKey, posthogHost]);
 
-  if (!posthogKey) {
-    console.warn('PostHog API key not configured. Set NEXT_PUBLIC_POSTHOG_KEY environment variable.');
-    return null;
-  }
-
+  // PostHog is optional. A missing key disables tracking without emitting
+  // a warning on every SSR prerender, which can occur for >1,000 routes.
   return null;
 }

@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Avoid OOM during static export: Render previously spawned 47 workers for 1,035 pages.
+  // Limit build worker concurrency while preserving every exported route.
+  experimental: { cpus: 2 },
   output: 'export',
   trailingSlash: true,
   images: {
