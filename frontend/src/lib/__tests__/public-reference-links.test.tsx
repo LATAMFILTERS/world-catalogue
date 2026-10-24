@@ -19,7 +19,8 @@ describe('References respect the published standards registry',()=>{
  for(const lang of ['en','es','pt'] as const)it(`${lang} preserves published routes, locale navigation, query and fragments`,()=>{
   const instance=lang==='en'?i18n:localeInstances[lang];
   const html=renderToStaticMarkup(<I18nextProvider i18n={instance}><PublicReferenceLink href="/knowledge-center/standards/iso-16889/?context=family#scope">ISO 16889</PublicReferenceLink><PublicReferenceLink href="/contact/?topic=standards#form">Contact</PublicReferenceLink></I18nextProvider>);
-  expect(html).toContain('href="/knowledge-center/standards/iso-16889/?context=family#scope"');
+  // ISO 16889 has published /es/ and /pt/ versions, so the link follows the visitor's language.
+  expect(html).toContain(`href="${lang==='en'?'':'/'+lang}/knowledge-center/standards/iso-16889/?context=family#scope"`);
   expect(html).toContain(`href="${lang==='en'?'':'/'+lang}/contact/?topic=standards#form"`);
  });
  it('preserves hidden coolant context without linking to an unpublished ASTM page',()=>{

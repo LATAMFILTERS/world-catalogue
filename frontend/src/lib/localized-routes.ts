@@ -1,5 +1,5 @@
 import { PRODUCT_FAMILY_LIST } from './product-families-data';
-import { TRANSLATED_ARTICLE_SLUGS, TRANSLATED_HUB_SLUGS, TRANSLATED_SYSTEM_SLUGS, TRANSLATED_TECHNOLOGY_SLUGS } from './knowledge-center-data/i18n/titles';
+import { TRANSLATED_ARTICLE_SLUGS, TRANSLATED_HUB_SLUGS, TRANSLATED_SYSTEM_SLUGS, TRANSLATED_TECHNOLOGY_SLUGS, TRANSLATED_STANDARD_SLUGS } from './knowledge-center-data/i18n/titles';
 
 const BASE_URL = 'https://elimfilters.com';
 
@@ -40,6 +40,10 @@ export const LOCALIZED_ROUTES: readonly string[] = [
 
 
   ...TRANSLATED_TECHNOLOGY_SLUGS.map((slug) => `/knowledge-center/technologies/${slug}`),
+
+
+
+  ...TRANSLATED_STANDARD_SLUGS.map((slug) => `/knowledge-center/standards/${slug}`),
 ];
 
 /** Path of an English route in the given language, always with a trailing slash. */

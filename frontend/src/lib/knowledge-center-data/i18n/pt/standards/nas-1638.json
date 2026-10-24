@@ -1,0 +1,129 @@
+{
+  "slug": "nas-1638",
+  "code": "NAS 1638",
+  "entityId": "STD-NAS-1638",
+  "title": "Cleanliness Requirements for Parts Used in Hydraulic Systems",
+  "issuingOrganization": "AIA (Aerospace Industries Association)",
+  "year": "1964 (com emendas posteriores)",
+  "revisionStatus": "active",
+  "metaDescription": "A NAS 1638 define classes de limpeza por contaminação de partículas para componentes e fluidos de sistemas hidráulicos, muito usadas em aplicações hidráulicas aeroespaciais, de defesa e industriais.",
+  "scope": "Componentes e fluidos de sistemas hidráulicos em aplicações aeroespaciais, de defesa e industriais.",
+  "engineeringPurpose": "Norma antecessora de classificação da limpeza hidráulica desenvolvida para os sistemas hidráulicos aeroespaciais dos EUA; fornece a estrutura antiga de classes de número único ainda exigida na documentação de equipamentos aeroespaciais, de defesa e industriais quando as especificações do OEM não migraram para a ISO 4406.",
+  "sections": [
+    {
+      "heading": "NAS vs ISO 4406",
+      "body": "A NAS 1638 foi a norma antecessora para especificar a limpeza hidráulica, desenvolvida pelo comitê National Aerospace Standards. Usa um sistema de classes de número único (da Classe 00 à Classe 12) baseado em contagens de partículas em cinco faixas de tamanho: 5–15, 15–25, 25–50, 50–100 e >100 µm. A Classe 6 da NAS 1638 equivale aproximadamente a ISO 4406 17/15/12. A ISO 4406 substituiu em grande parte a NAS 1638 nas aplicações industriais, mas a NAS 1638 continua sendo usada em especificações aeroespaciais e de defesa."
+    },
+    {
+      "heading": "Definição das classes",
+      "body": "As classes NAS 1638 definem a contagem máxima de partículas por 100 mL em cada faixa de tamanho. Classe 6: 5–15 µm = 32,000; 15–25 µm = 5,700; 25–50 µm = 1,012; 50–100 µm = 180; >100 µm = 32. Classe 4: 5–15 µm = 8,000; 15–25 µm = 1,425; 25–50 µm = 253; 50–100 µm = 45; >100 µm = 8. Números de classe menores indicam maior limpeza."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Faixa de classes",
+      "value": "Classe 00 a Classe 12"
+    },
+    {
+      "label": "Faixas de tamanho",
+      "value": "5–15, 15–25, 25–50, 50–100, >100 µm"
+    },
+    {
+      "label": "Unidade de contagem",
+      "value": "Partículas por 100 mL"
+    },
+    {
+      "label": "NAS 6 ≈ equivalente ISO",
+      "value": "ISO 17/15/12"
+    }
+  ],
+  "applicableSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-NAS-CLEANLINESS-CODE",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-PARTICLE-COUNT"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "relatedArticles": [
+    "fluid-cleanliness",
+    "hydraulic-contamination-sensitivity",
+    "nfpa-t2-14-hydraulic-cleanliness"
+  ],
+  "commonMistakes": [
+    "Tratar os números de classe NAS 1638 e os números de faixa ISO 4406 como diretamente intercambiáveis. As bases de medição e os canais de tamanho de partícula diferentes tornam a conversão aproximada, não equivalente.",
+    "Aplicar metas NAS 1638 a sistemas modernos de servoválvulas e válvulas proporcionais especificados pela ISO 4406 sem verificação formal da conversão. As diferenças de tolerância de folga tornam a substituição direta insegura.",
+    "Usar a NAS 1638 no monitoramento da manutenção de sistemas hidráulicos aeroespaciais quando a norma aplicável agora é a SAE AS4059 na maior parte da documentação dos OEMs."
+  ],
+  "faqs": [
+    {
+      "question": "Quais canais de tamanho de partícula a NAS 1638 usa e em que eles diferem da ISO 4406?",
+      "answer": "A NAS 1638 conta partículas em cinco faixas de tamanho: 5–15 µm, 15–25 µm, 25–50 µm, 50–100 µm e >100 µm, relatando contagens por 100 mL de fluido. A ISO 4406 usa três limiares de tamanho cumulativos (partículas ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c)) relatados como números de faixa por mL. Os canais de tamanho e a base volumétrica diferentes tornam a conversão numérica direta aproximada; não existe equivalência exata entre as classes NAS e os códigos ISO 4406."
+    },
+    {
+      "question": "Quantas classes de limpeza a NAS 1638 define e o que a Classe 6 representa?",
+      "answer": "A NAS 1638 define 14 classes de limpeza: Classe 00, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 e 12. A Classe 12 é a mais suja; a Classe 00, a mais limpa. A Classe 6 permite no máximo 32,000 partículas por 100 mL na faixa de 5–15 µm, 5,700 em 15–25 µm, 1,012 em 25–50 µm, 180 em 50–100 µm e 32 em >100 µm. A Classe 6 equivale aproximadamente ao código ISO 4406 17/15/12, adequado para circuitos hidráulicos de média pressão com bombas de engrenagens e válvulas de controle direcional."
+    },
+    {
+      "question": "Qual classe NAS 1638 é exigida para circuitos hidráulicos de servoválvulas?",
+      "answer": "Os circuitos hidráulicos de servoválvulas exigem a Classe NAS 5 ou mais limpa (equivalente a aproximadamente ISO 4406 16/14/11 ou mais rigoroso). Servoválvulas com folgas carretel-furo de 3–5 µm são sensíveis a partículas na faixa de 5–15 µm, o canal de tamanho predominante no limite da Classe NAS 5. A Classe 6 é aceitável para válvulas proporcionais com folgas maiores; a Classe 5 ou melhor é exigida para servoválvulas operando em altas frequências de ciclo, em que o desgaste por partículas acelera a abertura da folga."
+    },
+    {
+      "question": "Por que a SAE AS4059 substituiu a NAS 1638 nas aplicações aeroespaciais?",
+      "answer": "A SAE AS4059 (Aerospace Fluid Power — Cleanliness Classification for Hydraulic Fluids) foi publicada em 2005 e atualizada para AS4059F em 2013 para corrigir limitações da NAS 1638. A AS4059 alinha os canais de tamanho de partícula com a metodologia de APCs calibrados pela ISO 11171, permitindo medição rastreável. A NAS 1638 se baseava na contagem por microscopia óptica, um método manual com exatidão dependente do operador. A AS4059 também acrescenta canais de tamanho de 2 µm(c) e 5 µm(c), pertinentes às folgas dos servoatuadores aeroespaciais modernos, mais estreitas que as cobertas pelo limite inferior de 5–15 µm da NAS 1638."
+    },
+    {
+      "question": "Como as contagens de partículas NAS 1638 são relatadas: por 100 mL ou por mL?",
+      "answer": "A NAS 1638 classifica as partículas por 100 mL de amostra de fluido, ao contrário da ISO 4406, que usa partículas por mL. Ao converter contagens para comparação, a contagem NAS deve ser dividida por 100 para obter a base por mL usada na ISO 4406. Essa diferença de escala volumétrica é um dos motivos pelos quais as tabelas de conversão aproximada entre classes NAS e códigos ISO têm incerteza de ±1 número de faixa: a base volumétrica e os limites dos canais de tamanho não coincidem exatamente."
+    },
+    {
+      "question": "Os números de classe NAS 1638 podem ser convertidos diretamente em códigos ISO 4406?",
+      "answer": "Não existe equivalência matemática direta. As tabelas de conversão publicadas fornecem correlações aproximadas; por exemplo, Classe NAS 6 ≈ ISO 17/15/12, Classe NAS 8 ≈ ISO 19/17/14, Classe NAS 10 ≈ ISO 21/19/16. Essas conversões são apenas indicativas. No limite entre classes, a mesma amostra de fluido pode relatar níveis de limpeza diferentes em cada sistema por causa dos canais de tamanho e das bases de contagem diferentes. Uma determinação confiável exige medição simultânea pelas duas normas com equipamentos calibrados pela ISO 11171."
+    },
+    {
+      "question": "Qual é a importância prática da Classe 4 da NAS 1638 para sistemas hidráulicos industriais?",
+      "answer": "A Classe NAS 4 representa alta limpeza: no máximo 8,000 partículas por 100 mL em 5–15 µm, 1,425 em 15–25 µm, 253 em 25–50 µm, 45 em 50–100 µm e 8 em >100 µm. Atingir a Classe 4 exige filtração kidney loop off-line com elementos β₃(c)≥200 e reservatório vedado com respiro dessecante. A Classe 4 é exigida em sistemas com bombas de pistões axiais de alta pressão (>280 bar), servoválvulas de alta velocidade em controle de movimento de precisão e atuadores eletro-hidráulicos em equipamentos de apoio em solo aeroespaciais. Uma contagem bem acima do limite de >100 µm indica falha de vedação ou evento de bypass da mídia que exige investigação imediata."
+    },
+    {
+      "question": "Como a NAS 1638 trata contagens de partículas diferenciais e cumulativas?",
+      "answer": "A NAS 1638 usa contagens diferenciais (por faixa de tamanho): as partículas são contadas apenas dentro de cada intervalo de tamanho definido; uma contagem de 5–15 µm NÃO inclui partículas da faixa de 15–25 µm. A ISO 4406 usa contagens cumulativas: a contagem de ≥4 µm(c) inclui todas as partículas de 4 µm ou mais. Por isso, uma contagem NAS 1638 em 5–15 µm não é numericamente comparável a uma contagem ISO 4406 em ≥6 µm(c) sem aplicar a conversão de diferencial para cumulativo, que exige acesso a todos os dados de distribuição de tamanhos de partícula do APC."
+    },
+    {
+      "question": "Qual volume de amostra e quais condições de amostragem a NAS 1638 exige?",
+      "answer": "A NAS 1638 especifica volume mínimo de amostra de 100 mL coletado do sistema hidráulico em condições normais de operação, com pressão, temperatura e vazão do sistema dentro dos parâmetros de operação. Amostras coletadas de reservatórios estagnados ou de sistemas frios sub-representam as partículas de ingresso dinâmico das vedações de haste e da ciclagem dos atuadores. Aplicam-se os procedimentos de condicionamento de frascos de amostragem da ISO 3722: os frascos devem ser limpos a pelo menos duas classes de limpeza abaixo da limpeza alvo do sistema, para evitar que a contaminação vinda do frasco eleve falsamente o resultado da classe NAS."
+    },
+    {
+      "question": "A NAS 1638 especifica um pó de ensaio para as medições do nível de contaminação?",
+      "answer": "A NAS 1638 é uma norma de classificação que define limites aceitáveis de contagem de partículas, não uma norma de método de ensaio, e não especifica um pó de ensaio para calibração. A ISO 11171 (calibração de contadores automáticos de partículas com partículas PSL rastreáveis ao NIST) fornece a metodologia de calibração exigida para os instrumentos APC usados nos relatos NAS 1638. Medições NAS 1638 antigas feitas por microscopia óptica com pó de ensaio AC fine não são diretamente comparáveis aos resultados baseados em APC, pelas diferenças fundamentais entre a microscopia manual e a contagem eletrônica de partículas por extinção de luz."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "NAS 1638, Cleanliness Requirements for Parts Used in Hydraulic Systems, Aerospace Industries Association",
+      "relevance": "Norma principal de classificação da limpeza que define 14 classes (00–12) para a contaminação por partículas de fluidos hidráulicos com base em contagens de partículas diferenciais por 100 mL em cinco faixas de tamanho: 5–15, 15–25, 25–50, 50–100 e >100 µm."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE AS4059F, Aerospace Fluid Power — Cleanliness Classification for Hydraulic Fluids, SAE International, 2013",
+      "relevance": "Sucessora da NAS 1638 para aplicações aeroespaciais; alinha os canais de tamanho de partícula com a calibração de APC ISO 11171 e acrescenta canais de 2 µm(c) e 5 µm(c) para as especificações modernas de servoatuadores aeroespaciais."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles, ISO Geneva",
+      "relevance": "Sistema de classificação da limpeza paralelo que usa contagens de partículas cumulativas em ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c); comumente correlacionado com as classes NAS 1638 em aplicações hidráulicas industriais."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids, ISO Geneva",
+      "relevance": "Metodologia de calibração dos APCs usados nas medições NAS 1638; a calibração com partículas PSL rastreáveis ao NIST garante a reprodutibilidade entre laboratórios dos dados de contagem de partículas que sustentam os relatos de limpeza NAS e ISO."
+    }
+  ]
+}

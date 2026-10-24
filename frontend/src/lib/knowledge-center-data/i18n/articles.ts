@@ -1,7 +1,7 @@
 // Server-only: reviewed /es/ and /pt/ engineering article bodies, read at build time (never shipped in the client bundle).
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { KCArticle, KCSystemDetail, KCTechnology } from '../types';
+import type { KCArticle, KCStandard, KCSystemDetail, KCTechnology } from '../types';
 import type { KC_SYSTEMS } from '../canonical-systems-registry';
 
 export function translatedArticle(slug: string, lang: 'es' | 'pt'): KCArticle {
@@ -29,4 +29,8 @@ export function translatedSystem(slug: string, lang: 'es' | 'pt'): TranslatedSys
 
 export function translatedTechnology(slug: string, lang: 'es' | 'pt'): KCTechnology {
   return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'technologies', `${slug}.json`), 'utf8'));
+}
+
+export function translatedStandard(slug: string, lang: 'es' | 'pt'): KCStandard {
+  return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'standards', `${slug}.json`), 'utf8'));
 }

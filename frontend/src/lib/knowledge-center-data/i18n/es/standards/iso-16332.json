@@ -1,0 +1,108 @@
+{
+  "slug": "iso-16332",
+  "code": "ISO 16332",
+  "entityId": "STD-ISO-16332",
+  "title": "Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2018 (1.ª edición; confirmada en 2023)",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 16332:2018 especifica un método de comparación en laboratorio para evaluar la eficiencia de los separadores de combustible/agua diésel del lado de presión y del lado de succión en condiciones de ensayo definidas.",
+  "scope": "Evaluación comparativa en laboratorio de la eficiencia de los separadores de combustible/agua diésel en configuraciones del lado de presión y del lado de succión.",
+  "engineeringPurpose": "Ofrece un método de comparación controlado para evaluar el desempeño de los separadores de combustible/agua. No asigna las familias de elementos TURBOCORE 2010/2020/2040 a los grados de 2, 10 o 30 µm; la familia del elemento, el grado de filtración, la carcasa y la aplicación siguen siendo variables de selección separadas.",
+  "sections": [
+    {
+      "heading": "Qué define la ISO 16332",
+      "body": "La ISO 16332:2018 especifica un ensayo de comparación en laboratorio simplificado para la eficiencia de los separadores de combustible/agua diésel. El método cubre los separadores del lado de presión ensayados con gotas de agua finas y los del lado de succión ensayados con gotas gruesas, usando la misma disposición general del banco de ensayo."
+    },
+    {
+      "heading": "Rango de caudal y contexto del ensayo",
+      "body": "El método de la norma está pensado para caudales nominales de 50 L/h a 1,500 L/h. Con acuerdo entre el cliente y el fabricante del separador, pueden usarse procedimientos modificados fuera de ese rango. Los resultados del ensayo describen el desempeño con el método de laboratorio definido y no reemplazan la validación específica de la carcasa, el caudal o el servicio de la aplicación."
+    },
+    {
+      "heading": "Límite de selección de TURBOCORE",
+      "body": "La ISO 16332 es un método de ensayo de la eficiencia de separadores, no un código de número de elemento o de grado en micras de TURBOCORE. Dentro de TURBOCORE, 2010, 2020 y 2040 identifican familias de elementos asociadas a sus arquitecturas tipo turbina aprobadas, mientras que 2, 10 y 30 µm son opciones de grado de filtración separadas cuando estén aprobadas para la aplicación."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Método",
+      "value": "Ensayo de comparación en laboratorio de separadores de combustible/agua"
+    },
+    {
+      "label": "Lados del separador",
+      "value": "Lado de presión y lado de succión"
+    },
+    {
+      "label": "Rango de caudal nominal previsto",
+      "value": "50–1,500 L/h"
+    },
+    {
+      "label": "Regla de micras de TURBOCORE",
+      "value": "La familia del elemento y el grado de 2/10/30 µm son variables separadas"
+    }
+  ],
+  "applicableSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-COALESCING",
+    "TERM-WATER-SEPARATION-EFFICIENCY",
+    "TERM-FREE-WATER",
+    "TERM-EMULSIFIED-WATER",
+    "TERM-HPCR",
+    "TERM-INJECTOR-STICTION"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™"
+  ],
+  "relatedArticles": [
+    "fuel-water-contamination",
+    "hpcr-fuel-system-protection",
+    "iso-16332"
+  ],
+  "commonMistakes": [
+    "Tratar la ISO 16332 como una certificación que garantiza un desempeño en campo idéntico en todos los sistemas de combustible.",
+    "Usar la ISO 16332 para deducir un grado en micras universal para una familia de elementos TURBOCORE 2010, 2020 o 2040.",
+    "Ignorar si el separador opera en el lado de succión o de presión y si el rango de caudal ensayado representa la aplicación."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué ensaya la ISO 16332:2018?",
+      "answer": "Especifica un método de comparación en laboratorio para evaluar la eficiencia de los separadores de combustible/agua diésel en condiciones de ensayo definidas del lado de presión o del lado de succión."
+    },
+    {
+      "question": "¿Define la ISO 16332 si un elemento 2010, 2020 o 2040 es de 2, 10 o 30 µm?",
+      "answer": "No. La familia de elementos TURBOCORE y el grado de filtración son variables de selección separadas. La norma evalúa la eficiencia del separador; no codifica el grado en micras de TURBOCORE en el número de la familia del elemento."
+    },
+    {
+      "question": "¿Para qué rango de caudal nominal está pensado el método ISO 16332?",
+      "answer": "La norma indica un rango de caudal nominal previsto de 50 L/h a 1,500 L/h, con procedimientos modificados posibles fuera de ese rango por acuerdo entre el cliente y el fabricante del separador."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva",
+      "relevance": "Norma principal de ensayo de desempeño de los separadores de agua coalescentes para combustible diésel; define la metodología de ensayo para medir la eficiencia de separación de agua, pertinente para verificar el desempeño de HYDROCORE™ en campo."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12937:2000, Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration, ISO Geneva",
+      "relevance": "Método de medición del contenido de agua especificado en la ISO 16332 para cuantificar las concentraciones de agua en la entrada y la salida en el ensayo de eficiencia de separación de agua."
+    },
+    {
+      "category": "standard",
+      "citation": "EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods, CEN Brussels",
+      "relevance": "Especificación europea del combustible diésel que establece el contenido máximo de agua de 200 mg/kg que los separadores de agua HYDROCORE™ deben lograr como base de protección del combustible HPCR."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 19438:2003, Diesel Fuel and Petrol Filters for Internal Combustion Engines — Filtration Efficiency Using Particle Counting and Contaminant Retention Capacity, ISO Geneva",
+      "relevance": "Norma complementaria de ensayo de filtración de partículas del combustible para elementos filtrantes de combustible HPCR; funciona junto con el ensayo de separación de agua ISO 16332 para caracterizar el desempeño completo del sistema de protección del combustible HPCR."
+    }
+  ]
+}
