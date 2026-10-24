@@ -2,6 +2,12 @@ import type { PageLang } from '@/lib/localized-routes';
 /** Industry-specific editorial localization; product and OEM identifiers are never translated. */
 const strings: Record<'es' | 'pt', Record<string,string>> = {
   "es": {
+    "OPEN-PIT & UNDERGROUND MINING": "MINERÍA A CIELO ABIERTO Y SUBTERRÁNEA",
+    "FILTRATION FOR": "FILTRACIÓN PARA",
+    "MINING EQUIPMENT": "EQUIPOS MINEROS",
+    "Protection of engines and critical systems in haulage, excavation, loading and drilling operations.": "Protección de motores y sistemas críticos en operaciones de acarreo, excavación, carga y perforación.",
+    "Abrasive mineral dust, fuel contamination and wear debris threaten high-value components. Filter selection must reflect each machine's air-intake, hydraulic and lubrication demands.": "El polvo mineral abrasivo, la contaminación del combustible y los residuos de desgaste amenazan componentes de alto valor. La selección de filtros debe responder a las exigencias de admisión de aire, hidráulica y lubricación de cada máquina.",
+    "Operating priorities: fleet availability, component integrity and maintenance under severe duty cycles.": "Prioridades operativas: disponibilidad de la flota, integridad de componentes y mantenimiento durante ciclos de trabajo severos.",
     "MINING / SEVERE-DUTY FILTRATION": "MINERÍA / FILTRACIÓN DE SERVICIO SEVERO",
     "Mining Filtration": "Filtración minera",
     "Systems": "Sistemas",
@@ -133,6 +139,12 @@ const strings: Record<'es' | 'pt', Record<string,string>> = {
     "BECOME A DISTRIBUTOR": "SER DISTRIBUIDOR"
   },
   "pt": {
+    "OPEN-PIT & UNDERGROUND MINING": "MINERAÇÃO A CÉU ABERTO E SUBTERRÂNEA",
+    "FILTRATION FOR": "FILTRAÇÃO PARA",
+    "MINING EQUIPMENT": "EQUIPAMENTOS DE MINERAÇÃO",
+    "Protection of engines and critical systems in haulage, excavation, loading and drilling operations.": "Proteção de motores e sistemas críticos nas operações de transporte, escavação, carregamento e perfuração.",
+    "Abrasive mineral dust, fuel contamination and wear debris threaten high-value components. Filter selection must reflect each machine's air-intake, hydraulic and lubrication demands.": "A poeira mineral abrasiva, a contaminação do combustível e as partículas de desgaste ameaçam componentes de alto valor. A seleção dos filtros deve considerar as exigências de admissão de ar, dos sistemas hidráulicos e de lubrificação de cada máquina.",
+    "Operating priorities: fleet availability, component integrity and maintenance under severe duty cycles.": "Prioridades operacionais: disponibilidade da frota, integridade dos componentes e manutenção durante ciclos de trabalho severos.",
     "MINING / SEVERE-DUTY FILTRATION": "MINERAÇÃO / FILTRAÇÃO DE SERVIÇO SEVERO",
     "Mining Filtration": "Filtração para mineração",
     "Systems": "Sistemas",
