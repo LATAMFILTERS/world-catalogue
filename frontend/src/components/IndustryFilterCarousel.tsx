@@ -32,7 +32,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'primary-fuel': `${R2_BASE}/EF96745-SYNTAPORE-approved-opt.png`,
     'oil-filters': `${R2_BASE}/EL80422-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`,
+    'fuel-water-separators': '/images/es91430-agriculture.webp',
     'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
   },
   Construction: {
