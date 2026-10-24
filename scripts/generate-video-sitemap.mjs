@@ -10,7 +10,7 @@ const BASE_URL = 'https://elimfilters.com';
 const VIDEOS = [
   { id:'agriculture', title:'Filtration Solutions for Agriculture', description:'Heavy-duty filtration for agricultural equipment and harvesting operations', page:'/industries/agriculture/', content:'/images/Agriculture-2.mp4' },
   { id:'automotive', title:'Heavy-Duty Vehicle Filtration', description:'Comprehensive filtration systems for trucks and commercial vehicles', page:'/industries/automotive/', content:'/images/Autos-Vin4.mp4' },
-  { id:'mining', title:'Mining Equipment Protection', description:'Industrial filtration for extreme mining conditions', page:'/industries/mining/', content:'/images/Minning4.mp4' },
+  { id:'mining', title:'Mining Equipment Protection', description:'Industrial filtration for extreme mining conditions', page:'/industries/mining/', content:'/images/Mineria-Video1.mp4' },
   { id:'construction', title:'Construction Equipment Filtration', description:'Filtration systems for construction and heavy equipment', page:'/industries/construction/', content:'/images/construction-2.mp4' },
   { id:'trucks-fleets', title:'Fleet Maintenance Optimization', description:'Total cost of ownership optimization for commercial fleets', page:'/industries/trucks-fleets/', content:'/images/Trucks&Feel-1.mp4' },
   { id:'railway', title:'Railway Systems Protection', description:'Filtration solutions for rail transport and locomotive systems', page:'/industries/railway/', content:'/images/Train.mp4' },
