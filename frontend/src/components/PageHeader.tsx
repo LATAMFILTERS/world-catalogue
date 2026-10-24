@@ -53,7 +53,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
     Construction: 'Sistemas de filtración para construcción',
     Manufacturing: 'Sistemas de filtración industrial',
     Marine: 'Sistemas de filtración marina',
-    Mining: 'Sistemas de filtración minera',
+    Mining: 'Minería',
     'Oil Gas': 'Sistemas de filtración para petróleo y gas',
     'Power Generation': 'Filtración para generación eléctrica',
     Railway: 'Sistemas de filtración ferroviaria',
