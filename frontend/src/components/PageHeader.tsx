@@ -47,7 +47,7 @@ const INDUSTRY_BREADCRUMB_LABELS: Record<string, string> = {
 
 const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = {
   es: {
-    Agriculture: 'Sistemas de filtración agrícola',
+    Agriculture: 'Agricultura',
     Automotive: 'Sistemas de filtración automotriz',
     'Bus Coach': 'Filtración para autobuses',
     Construction: 'Sistemas de filtración para construcción',
