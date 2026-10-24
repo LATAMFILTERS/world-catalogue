@@ -109,23 +109,27 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className="mining-industry-page oil-gas-industry-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PageHeader currentPage="Oil Gas" />
 
       <section style={hero}>
-        <video autoPlay muted loop playsInline preload="auto" style={heroVideo}>
-          <source src="/images/Petro&Gas-1.mp4" type="video/mp4" />
+        <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="metadata" poster="/images/ingpetrolero.avif" style={heroVideo}>
+          <source src="/images/Petro%26Gas-1.mp4" type="video/mp4" />
         </video>
-        <div style={heroShade} />
-        <div style={heroInner}>
-          <p style={eyebrow}>{oilGasText(lang, "OIL & GAS / FIELD ASSET PROTECTION")}</p>
-          <h1 style={heroTitle}>{oilGasText(lang, "Oil & Gas Filtration")}<br /><span style={yellow}>{oilGasText(lang, "Systems")}</span></h1>
-          <p style={heroPromise}>{oilGasText(lang, "Protect the equipment that keeps energy operations moving.")}</p>
-          <p style={heroLead}>{oilGasText(lang, "Air intake, hydraulic, fuel and lubrication contamination control for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.")}</p>
-          <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{oilGasText(lang, "IDENTIFY MY PROTECTION PATH")}</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{oilGasText(lang, "FIND MY FILTER")}</a>
+        <div className="miningHeroShade" style={heroShade} />
+        <div className="miningHeroContainer" style={heroInner}>
+          <p style={eyebrow}>{oilGasText(lang, "OIL & GAS / MAINTENANCE ENGINEERING")}</p>
+          <h1 style={heroTitle} className="miningHeroHeading">{oilGasText(lang, "FILTRATION FOR")}<br /><span style={yellow}>{oilGasText(lang, "OIL & GAS ASSETS")}</span></h1>
+          <div className="miningHeroLower">
+            <div className="miningHeroCopy">
+              <p className="miningHeroPromise" style={heroPromise}>{oilGasText(lang, "Filtration engineering for maintenance teams responsible for asset reliability and controlled return to service.")}</p>
+              <p style={heroLead}>{oilGasText(lang, "Contamination control and filter selection for engine air intake, hydraulic systems, diesel fuel and lubrication on drilling, production, compression and field-power equipment—based on operating duty, OEM requirements and application evidence.")}</p>
+            </div>
+            <div className="miningHeroActions" style={actions}>
+              <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{oilGasText(lang, "REVIEW MAINTENANCE APPLICATION")}</Link>
+              <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{oilGasText(lang, "FIND MY FILTER")}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -226,19 +230,19 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const yellow: CSSProperties = { color: '#FFF12D' };
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: '92vh', background: '#000', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
+const hero: CSSProperties = { minHeight: '82vh', background: '#000 url("/images/ingpetrolero.avif") center center / cover no-repeat', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
 const heroVideo: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: VIDEO_HERO_TREATMENT.opacity };
-const heroShade: CSSProperties = { position: 'absolute', inset: 0, background: VIDEO_HERO_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { width: '100%', maxWidth: '1180px', margin: '0 auto', padding: 'clamp(7rem,12vw,10rem) clamp(1.25rem,5vw,4.5rem) clamp(4rem,7vw,6rem)', position: 'relative', zIndex: 2 };
+const heroShade: CSSProperties = { position: 'absolute', inset: 0, zIndex: 2, background: VIDEO_HERO_TREATMENT.overlayBackground };
+const heroInner: CSSProperties = { width: '100%', maxWidth: '1560px', margin: '0 auto', padding: 'clamp(6.75rem,10vw,9rem) clamp(1rem,3.5vw,4.5rem) clamp(3.5rem,5.5vw,5rem)', position: 'relative', zIndex: 3 };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.72rem', lineHeight: 1.2, letterSpacing: '.18em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
-const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .88, fontSize: 'clamp(3.3rem,7.4vw,7rem)', textTransform: 'uppercase', margin: 0, maxWidth: '980px' };
+const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .94, fontSize: 'clamp(2.7rem,5.1vw,5.7rem)', textTransform: 'uppercase', margin: 0, maxWidth: '980px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.1rem,2vw,1.55rem)', lineHeight: 1.3, fontWeight: 700, maxWidth: '780px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem,1.45vw,1.18rem)', lineHeight: 1.7, color: 'rgba(255,255,255,.78)', maxWidth: '880px', margin: '1rem 0 0' };
 const actions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2rem' };
 const primaryButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase' };
 const secondaryButton: CSSProperties = { display: 'inline-block', background: 'transparent', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase', border: '1px solid rgba(255,241,45,.42)' };
 const section: CSSProperties = { padding: 'clamp(4.5rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderBottom: '1px solid rgba(255,255,255,.06)' };
-const contentWidth: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const contentWidth: CSSProperties = { maxWidth: '1560px', margin: '0 auto' };
 const directSection: CSSProperties = { ...section, background: '#050505' };
 const directTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.8rem,3.4vw,3.1rem)', lineHeight: 1, textTransform: 'uppercase', maxWidth: '860px', margin: 0 };
 const directText: CSSProperties = { fontSize: 'clamp(1.05rem,1.7vw,1.28rem)', lineHeight: 1.65, color: 'rgba(255,255,255,.82)', maxWidth: '980px', margin: '1.3rem 0 0' };
