@@ -33,7 +33,9 @@ export function MiningHeroMedia() {
     // Respect user motion preferences; explicit playback remains available.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       video.pause();
-      setRequiresPlay(true);
+      // Report the need for user interaction after the effect, not synchronously
+      // during React's effect synchronization phase.
+      void Promise.resolve().then(() => setRequiresPlay(true));
       return;
     }
 
