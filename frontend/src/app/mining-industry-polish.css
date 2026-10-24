@@ -107,6 +107,31 @@ main.mining-industry-page .filter-carousel-slide p {
   color: rgba(255,255,255,.87) !important;
 }
 
+/* Mining hero must never depend on successful video autoplay or decoding.
+   The approved photograph stays visible underneath the existing MP4. */
+main.mining-industry-page > section:first-of-type .miningHeroPoster {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c2424;
+  background-image: url('/images/mineria-1.avif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+main.mining-industry-page > section:first-of-type .miningHeroVideo {
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  main.mining-industry-page > section:first-of-type .miningHeroVideo {
+    opacity: 0 !important;
+    transition: none !important;
+  }
+}
+
 /* MINING EDITORIAL · scoped to this page; preserve original media and headings. */
 main.mining-industry-page {
   --font-body: 'IBM Plex Sans', 'Barlow', Arial, sans-serif;
