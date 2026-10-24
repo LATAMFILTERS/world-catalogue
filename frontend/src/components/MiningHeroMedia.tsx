@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import type { CSSProperties } from 'react';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
@@ -45,7 +46,16 @@ export function MiningHeroMedia() {
 
   return (
     <>
-      <div className="miningHeroPoster" aria-hidden="true" />
+      <Image
+        className="miningHeroPoster"
+        src="/images/mineria-1.avif"
+        alt=""
+        aria-hidden="true"
+        fill
+        unoptimized
+        priority
+        sizes="100vw"
+      />
       <video
         ref={videoRef}
         className="miningHeroVideo"
