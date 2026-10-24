@@ -244,7 +244,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={impactSection} aria-labelledby="impact-title">
-        <div style={impactGrid}>
+        <div className={styles.impactGrid} style={impactGrid}>
           <div>
             <p style={eyebrow}>{industryText(lang, "MAINTENANCE AND RISK CONTROL")}</p>
             <h2 id="impact-title" style={impactTitle}>{industryText(lang, "Track the condition. Document the decision.")}</h2>
@@ -252,9 +252,9 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
           <div>
             <p style={impactLead}>{industryText(lang, "Filter selection is only one control. Maintenance teams also need operating evidence to distinguish contamination from installation, component or service problems.")}</p>
             <div style={impactOutcomes}>
-              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Intake and fluid condition")}</span><p style={impactOutcomeText}>{industryText(lang, "Monitor air-filter restriction and, where required, fluid cleanliness against an application-specific target.")}</p></div>
-              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Fuel and recurring symptoms")}</span><p style={impactOutcomeText}>{industryText(lang, "Record water in separators, abnormal restriction and recurring contamination after service.")}</p></div>
-              <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Asset availability")}</span><p style={impactOutcomeText}>{industryText(lang, "Connect inspections and interventions to operating hours, failure modes and the cost of an unexpected stop.")}</p></div>
+              <div className={styles.impactOutcome} style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Intake and fluid condition")}</span><p style={impactOutcomeText}>{industryText(lang, "Monitor air-filter restriction and, where required, fluid cleanliness against an application-specific target.")}</p></div>
+              <div className={styles.impactOutcome} style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Fuel and recurring symptoms")}</span><p style={impactOutcomeText}>{industryText(lang, "Record water in separators, abnormal restriction and recurring contamination after service.")}</p></div>
+              <div className={styles.impactOutcome} style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "Asset availability")}</span><p style={impactOutcomeText}>{industryText(lang, "Connect inspections and interventions to operating hours, failure modes and the cost of an unexpected stop.")}</p></div>
             </div>
             <p style={{ ...bodyText, marginTop: '1.5rem' }}>{industryText(lang, 'For engineering-level detail on dust exposure, contamination mechanisms, and system-level technical guidance by industry, see the ')}<Link href="/knowledge-center/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>{industryText(lang, "Knowledge Center Industries reference")}</Link>.</p>
           </div>
@@ -346,11 +346,11 @@ const engineeringPrinciple: CSSProperties = { marginTop: '1.5rem', padding: '2re
 const engineeringPrincipleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.78rem', lineHeight: 1, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0 };
 const engineeringPrincipleText: CSSProperties = { fontFamily: bodyFont, color: 'rgba(255,255,255,0.9)', fontSize: 'clamp(1.18rem, 1.9vw, 1.55rem)', lineHeight: 1.65, letterSpacing: '-0.01em', textAlign: 'left', margin: 0, maxWidth: '100%' };
 const impactSection: CSSProperties = { padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(255,241,45,0.08), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0) 100%)' };
-const impactGrid: CSSProperties = { maxWidth: '1320px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2.5rem, 5vw, 5rem)', alignItems: 'start' };
+const impactGrid: CSSProperties = { maxWidth: '1320px', margin: '0 auto', gap: 'clamp(2.5rem, 5vw, 5rem)', alignItems: 'start' };
 const impactTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.1rem, 4vw, 3.8rem)', maxWidth: '700px' };
 const impactLead: CSSProperties = { ...leadText, fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)' };
 const impactOutcomes: CSSProperties = { display: 'grid', gap: '0', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.12)' };
-const impactOutcome: CSSProperties = { padding: '1.2rem 0', borderBottom: '1px solid rgba(255,255,255,0.12)', display: 'grid', gridTemplateColumns: 'minmax(0, 0.42fr) minmax(0, 1fr)', gap: '1rem' };
+const impactOutcome: CSSProperties = { padding: '1.2rem 0', borderBottom: '1px solid rgba(255,255,255,0.12)', gap: '1rem' };
 const impactOutcomeLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em' };
 const impactOutcomeText: CSSProperties = { ...bodyText, color: 'rgba(255,255,255,0.78)', fontSize: '0.94rem' };
 const pathSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.06)' };
