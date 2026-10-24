@@ -189,7 +189,7 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
         <div style={wideHeader} className="miningWideHeader"><p style={eyebrow}>{miningText(lang, "AVAILABILITY & TOTAL COST OF OWNERSHIP")}</p><h2 id="mining-tco-title" style={sectionTitle}>{miningText(lang, "The filter is inexpensive. The component it protects is not.")}</h2><p style={bodyWide}>{miningText(lang, "Mining filtration should be judged against component sensitivity, maintenance consequence and equipment availability—not filter price alone.")}</p></div>
         <p style={tcoLead}>{miningText(lang, "A practical protection hierarchy separates long-life asset structures, high-value serviceable components and consumable protection elements. The categories show why a relatively low-cost filtration element can matter to much higher-value interfaces.")}</p>
         <div style={valueGrid} className="miningValueGrid">{valueHierarchy.map(([title, text]) => <article key={title} style={valueCard}><h3 style={valueTitle}>{miningText(lang, title)}</h3><p style={valueText}>{miningText(lang, text)}</p></article>)}</div>
-        <div style={lifecycleGrid} aria-label="Contamination to lifecycle cost pathway">{lifecycle.map((item) => <div key={item} style={lifecycleItem}>{miningText(lang, item)}</div>)}</div>
+        <div style={lifecycleGrid} className="miningLifecycleGrid" aria-label="Contamination to lifecycle cost pathway">{lifecycle.map((item) => <div key={item} style={lifecycleItem}>{miningText(lang, item)}</div>)}</div>
         <Link href="/knowledge-center/engineering/mining-contamination-tco/" style={textLink}>{miningText(lang, "READ THE ENGINEERING GUIDE →")}</Link>
       </section>
 
