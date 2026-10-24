@@ -60,4 +60,4 @@ jobs:
             exit 0
           fi
           git commit -m 'fix(media): publish verified H264 oil gas hero video [skip ci]'
-          git push origin HEAD:main
+          git push origin HEAD:refs/heads/fix/oilgas-h264-hero-20261024
