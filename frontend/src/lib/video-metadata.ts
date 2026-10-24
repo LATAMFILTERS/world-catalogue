@@ -52,7 +52,7 @@ export const VIDEOS: Record<string, VideoMetadata> = {
     uploadDate: '2024-02-01T00:00:00Z',
     duration: 'PT0H1M20S',
     url: 'https://elimfilters.com/industries/mining/',
-    contentUrl: 'https://elimfilters.com/images/Mina-Video-1.mp4',
+    contentUrl: 'https://elimfilters.com/images/Mineria-Video1.mp4',
     category: 'industry',
     keywords: ['mining', 'heavy equipment', 'dust control', 'hydraulic protection', 'asset protection'],
   },

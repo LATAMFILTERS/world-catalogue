@@ -73,7 +73,7 @@ export function MiningHeroMedia() {
         onStalled={() => setPlaying(false)}
         onError={() => setPlaying(false)}
       >
-        <source src="/images/Mina-Video-1.mp4" type="video/mp4" />
+        <source src="/images/Mineria-Video1.mp4" type="video/mp4" />
       </video>
     </>
   );
