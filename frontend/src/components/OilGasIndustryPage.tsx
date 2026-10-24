@@ -7,7 +7,6 @@ import { oilGasText } from '@/lib/oil-gas-i18n';
 import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
-const PAGE_URL = `${BASE_URL}/industries/oil-gas/`;
 
 const equipment = [
   'Drilling Rigs',
@@ -28,8 +27,23 @@ const operatingPressures = [
 const protection = [
   ['DUST + SAND', 'Airborne particulate around drilling and field operations', 'AIR INTAKE', 'MACROCORE™', '/technologies/macrocore/'],
   ['HYDRAULIC DEBRIS', 'Ingress + internal wear + service contamination', 'HYDRAULIC', 'NANOFORCE™', '/technologies/nanoforce/'],
-  ['FUEL + WATER', 'Storage + transfer + condensation + field refueling', 'FUEL', 'HYDROCORE™', '/technologies/hydrocore/'],
+  ['FUEL + WATER', 'Diesel storage, transfer, condensation and field refueling', 'FUEL', 'HYDROCORE™', '/technologies/hydrocore/'],
+  ['FUEL PARTICULATE', 'Particles entering diesel during storage, transfer and refueling', 'FUEL', 'SYNTAPORE™', '/technologies/syntapore/'],
   ['LUBE CONTAMINATION', 'Wear debris + soot + service ingress', 'LUBRICATION', 'SYNTRAX™', '/technologies/syntrax/'],
+] as const;
+
+const serviceChecks: Record<string, string> = {
+  'MACROCORE™': 'Check intake restriction trends, ducts and sealing integrity against the equipment service procedure.',
+  'NANOFORCE™': 'Review the specified hydraulic cleanliness target, sampling practice and differential pressure where measured.',
+  'HYDROCORE™': 'Review fuel storage, water drainage, separator integrity and the approved diesel application.',
+  'SYNTAPORE™': 'Review particulate ingress during transfer and refueling; monitor diesel-filter restriction when instrumentation exists.',
+  'SYNTRAX™': 'Review lubricant condition, operating hours, service history and the specified filter application.'
+};
+
+const maintenanceWorkflow = [
+  ['Condition monitoring', 'Use operating hours, fluid samples, restriction indication and differential-pressure trends where available to identify contamination or abnormal loading.'],
+  ['Planned intervention', 'Confirm the part, fluid, connection geometry, seals, safe isolation method and available service window before replacing an element.'],
+  ['Return to service', 'Use the equipment manufacturer commissioning procedure to verify sealing, leaks and system indications, then record the installed reference and findings.']
 ] as const;
 
 const consequences = [
@@ -62,7 +76,7 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         url: pageUrl,
         name: lang === 'es' ? 'Sistemas de filtración para petróleo y gas' : lang === 'pt' ? 'Sistemas de filtração para petróleo e gás' : 'Oil & Gas Filtration Systems',
         inLanguage: lang === 'pt' ? 'pt-BR' : lang,
-        description: 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, heat, vibration and extended duty.',
+        description: oilGasText(lang, 'Filtration engineering for maintenance teams protecting diesel, hydraulic and lubrication equipment in oil and gas operations.'),
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
         about: [
@@ -81,6 +95,7 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           { '@type': 'Thing', name: 'MACROCORE' },
           { '@type': 'Thing', name: 'NANOFORCE' },
           { '@type': 'Thing', name: 'HYDROCORE' },
+          { '@type': 'Thing', name: 'SYNTAPORE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
         ],
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
@@ -89,15 +104,15 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         '@type': 'BreadcrumbList',
         '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Oil & Gas Filtration Systems', item: pageUrl },
+          { '@type': 'ListItem', position: 1, name: lang === 'es' ? 'Inicio' : lang === 'pt' ? 'Início' : 'Home', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/` },
+          { '@type': 'ListItem', position: 2, name: lang === 'es' ? 'Industrias' : lang === 'pt' ? 'Indústrias' : 'Industries', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/` },
+          { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Petróleo y gas' : lang === 'pt' ? 'Petróleo e gás' : 'Oil & Gas', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
         '@id': `${pageUrl}#equipment`,
-        name: 'Oil and gas equipment applications',
+        name: oilGasText(lang, 'Oil and gas equipment applications'),
         itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: oilGasText(lang, name) })),
       },
       {
@@ -139,6 +154,7 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{oilGasText(lang, "DIRECT ANSWER")}</p>
           <h2 id="direct-title" style={directTitle}>{oilGasText(lang, "What defines the correct oil & gas filtration strategy?")}</h2>
           <p style={directText}>{oilGasText(lang, "The correct filtration strategy starts with the asset and contamination source, then resolves the protected system, component sensitivity, duty cycle, maintenance access and validated application evidence. Oil and gas equipment should not be selected by industry label or service interval alone.")}</p>
+          <p style={wideText}>{oilGasText(lang, "Product scope: these ELIMFILTERS technologies protect equipment air intake, hydraulic circuits, diesel fuel and lubrication; they are not specifications for process-gas filtration or treatment.")}</p>
         </div>
       </section>
 
@@ -147,18 +163,18 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{oilGasText(lang, "FIELD OPERATING REALITY")}</p>
           <h2 id="reality-title" style={sectionTitle}>{oilGasText(lang, "Contamination risk changes across the operating chain.")}</h2>
           <p style={wideText}>{oilGasText(lang, "Drilling, pumping, compression, hydraulic control and field power place different demands on filtration even when equipment operates at the same site.")}</p>
-          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
+          <div style={pressureGrid} className="miningRiskGrid">{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard} className="miningRiskCard"><h3 style={cardTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
-        <div style={equipmentGrid}>
+        <div style={equipmentGrid} className="miningEquipmentGrid">
           <div style={equipmentCopy}>
             <h2 id="equipment-title" style={sectionTitle}>{oilGasText(lang, "Different assets. Different protection priorities.")}</h2>
             <p style={wideText}>{oilGasText(lang, "A drilling rig, compressor and hydraulic power unit may share a site but not the same contamination mechanism, component sensitivity or service access.")}</p>
-            <div role="list" aria-label="Oil and gas equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{oilGasText(lang, asset)}</span></div>)}</div>
+            <div role="list" aria-label={oilGasText(lang, "Oil and gas equipment applications")} style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{oilGasText(lang, asset)}</span></div>)}</div>
           </div>
-          <div style={equipmentMedia}><img src="/images/oil&gas.avif" alt="Oil and gas field equipment operating in demanding conditions" style={equipmentImage} /></div>
+          <div style={equipmentMedia}><img src="/images/oil&gas.avif" alt={oilGasText(lang, "Oil and gas field equipment operating in demanding conditions")} style={equipmentImage} /></div>
         </div>
       </section>
 
@@ -167,7 +183,7 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{oilGasText(lang, "CONTAMINATION PATHWAYS")}</p>
           <h2 id="path-title" style={sectionTitle}>{oilGasText(lang, "Connect the field threat to the system that must remain protected.")}</h2>
           <p style={wideText}>{oilGasText(lang, "Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{oilGasText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{oilGasText(lang, source)}</strong><p style={smallText}>{oilGasText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{oilGasText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{oilGasText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{oilGasText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{oilGasText(lang, "EXPLORE →")}</span></Link></article>)}</div>
+          <div className="miningPathwayFlow" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{oilGasText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{oilGasText(lang, source)}</strong><p style={smallText}>{oilGasText(lang, detail)}</p></div><div><span style={smallLabel}>{oilGasText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{oilGasText(lang, system)}</strong></div><div><span style={smallLabel}>{oilGasText(lang, "MAINTENANCE CHECK")}</span><p style={smallText}>{oilGasText(lang, serviceChecks[technology])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{oilGasText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{oilGasText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
@@ -175,14 +191,25 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={principle}><span style={principleLabel}>{oilGasText(lang, "OIL & GAS ENGINEERING PRINCIPLE")}</span><p style={principleText}>{oilGasText(lang, "The filtration decision must resolve the equipment, contamination pathway, protected interface, operating duty and application evidence before a product number is accepted.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Oil & Gas" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Oil Gas" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
           <p style={eyebrow}>{oilGasText(lang, "OPERATING CONTINUITY")}</p>
           <h2 id="impact-title" style={sectionTitle}>{oilGasText(lang, "Protect the process before contamination becomes an interruption.")}</h2>
           <p style={wideText}>{oilGasText(lang, "Filtration supports more than the component itself. It protects the operating sequence around engines, pumps, compressors and hydraulic functions that other field activities may depend on.")}</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
+          <div style={impactGrid} className="miningStakesGrid">{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section style={section} aria-labelledby="maintenance-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>{oilGasText(lang, "MAINTENANCE ENGINEERING")}</p>
+          <h2 id="maintenance-title" style={sectionTitle}>{oilGasText(lang, "From contamination diagnosis to verified return to service.")}</h2>
+          <p style={wideText}>{oilGasText(lang, "For maintenance engineers, the decision extends beyond the replacement filter: identify operating evidence, confirm physical compatibility and document the intervention before restoring equipment to duty.")}</p>
+          <div className="miningValueGrid" style={{ marginTop: "2rem" }}>
+            {maintenanceWorkflow.map(([title, description]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, description)}</p></article>)}
+          </div>
         </div>
       </section>
 
@@ -190,7 +217,7 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{oilGasText(lang, "FROM FIELD CONDITION TO PART")}</p>
           <h2 id="decision-title" style={sectionTitle}>{oilGasText(lang, "Resolve the oil & gas application in five decisions.")}</h2>
-          <div style={decisionGrid}>{[
+          <div style={decisionGrid} className="miningDecisionGrid">{[
             ['Asset', 'Identify the drilling rig, pump, compressor, hydraulic power unit or engine-driven equipment.'],
             ['Exposure', 'Define dust, sand, moisture, fuel handling, heat, vibration and environmental contamination.'],
             ['Duty', 'Establish load, operating hours, pressure, service access and maintenance constraints.'],
@@ -211,14 +238,14 @@ export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
           <p style={eyebrow}>{oilGasText(lang, "OIL & GAS FILTRATION QUESTIONS")}</p>
-          <h2 id="faq-title" style={sectionTitle}>{oilGasText(lang, "What operators, fleet teams and maintenance teams need to know.")}</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{oilGasText(lang, q)}</h3><p style={faqAnswer}>{oilGasText(lang, a)}</p></article>)}</div>
+          <h2 id="faq-title" style={sectionTitle}>{oilGasText(lang, "What oil and gas maintenance engineers need to verify.")}</h2>
+          <div style={faqList} className="miningFaqGrid">{questions.map(([q, a]) => <article key={q} style={faqItem} className="miningFaqItem"><h3 style={faqQuestion}>{oilGasText(lang, q)}</h3><p style={faqAnswer}>{oilGasText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
-        <div style={conversionGrid}>
-          <div><p style={eyebrow}>{oilGasText(lang, "HAVE AN ASSET OR FIELD-CONTAMINATION PROBLEM?")}</p><h2 style={conversionTitle}>{oilGasText(lang, "Identify the protection path before selecting the part.")}</h2><p style={conversionText}>{oilGasText(lang, "Send the equipment, engine or power unit, protected system, operating conditions and any known OEM or filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{oilGasText(lang, "IDENTIFY MY PROTECTION PATH")}</Link></div>
+        <div style={conversionGrid} className="miningConversionGrid">
+          <div><p style={eyebrow}>{oilGasText(lang, "HAVE AN ASSET OR FIELD-CONTAMINATION PROBLEM?")}</p><h2 style={conversionTitle}>{oilGasText(lang, "Identify the protection path before selecting the part.")}</h2><p style={conversionText}>{oilGasText(lang, "Provide the equipment and engine or power unit model, operating hours, fluid and filter specifications, fault symptoms, restriction or pressure readings if available, OEM references and the planned shutdown or service window.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{oilGasText(lang, "IDENTIFY MY PROTECTION PATH")}</Link></div>
           <div style={conversionSecondary}><div><p style={eyebrow}>{oilGasText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{oilGasText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{oilGasText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{oilGasText(lang, "SERVE OIL & GAS OPERATIONS?")}</p><h3 style={conversionSubTitle}>{oilGasText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{oilGasText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
