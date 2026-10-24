@@ -1,0 +1,90 @@
+{
+  "id": "PROB-PUMP-FAILURE",
+  "slug": "pump-failure",
+  "name": "Falha de bomba",
+  "category": "structural-failure",
+  "severity": "critical",
+  "status": "published",
+  "relatedSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "metaDescription": "Falha de bombas hidráulicas: cavitação, desgaste abrasivo, perda de capacidade de carga. Metas de limpeza do fluido ISO 16889. Estratégias de monitoramento preditivo.",
+  "definition": "A falha de bomba é a perda catastrófica da capacidade de uma bomba hidráulica de gerar vazão e manter pressão, devido à erosão por cavitação, ao desgaste por partículas abrasivas que degrada as folgas internas ou ao engripamento de componentes internos. As bombas hidráulicas operam com folgas de 1–5 µm; um único evento de contaminação que introduz partículas de 10–50 µm causa desgaste que reduz a folga abaixo dos limites críticos, aumentando os vazamentos e reduzindo o deslocamento da bomba. A falha total da bomba exige sua substituição (€8,000–25,000 por bomba) e 3–7 dias de parada para o flushing do sistema e a troca do fluido.",
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4413",
+    "NFPA T2.14",
+    "ISO 6162"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Tipos de bombas hidráulicas e sensibilidade à contaminação",
+      "body": "Os sistemas hidráulicos industriais usam quatro projetos principais de bomba: (1) Bombas de engrenagens (dentes retos, helicoidais) — simples, de baixo custo, folgas internas de 2–3 µm e alta sensibilidade à contaminação; operam a 210–280 bar; exigem limpeza do fluido mínima ISO 18/16/13; (2) Bombas de palhetas (palhetas deslizantes) — complexidade moderada, folgas de 1–2 µm, extremamente sensíveis à contaminação; operam a 140–210 bar; exigem no mínimo ISO 17/15/12; usadas em circuitos de posicionamento e de válvulas proporcionais; (3) Bombas de pistões (axiais, de prato inclinado) — maior capacidade de pressão, 350–420 bar, as tolerâncias mais estreitas, 0.5–1 µm entre pistão e furo, e a maior sensibilidade à contaminação; exigem ISO 16/14/11 ou mais rigoroso; usadas em escavadeiras, equipamentos móveis e sistemas de injeção de plásticos; (4) Bombas centrífugas (sistemas de baixa pressão) — folgas de 3–5 µm, usadas para circulação e arrefecimento, operam a <50 bar, tolerância moderada à contaminação, ISO 19/17/14. As bombas de pistões respondem por 70% das falhas de sistemas hidráulicos pesados por causa das tolerâncias estreitas e das altas pressões de operação. Uma única partícula de sílica de 10 µm passando pela folga pistão-furo de uma bomba de pistões (0.5–1 µm) cria um microrrisco que aumenta a taxa de desgaste em 10–100×, acelerando exponencialmente a degradação interna."
+    },
+    {
+      "heading": "Erosão da bomba por cavitação",
+      "body": "A cavitação em bombas hidráulicas ocorre durante o curso de admissão, quando a pressão da linha de sucção cai abaixo da pressão de vapor do líquido (0.5–1 bar absoluto), formando bolhas de vapor. Quando a pressão de entrada se recupera durante o curso de descarga, as bolhas colapsam violentamente, liberando energia de onda de choque (2000–4000 bar localmente). O dano por erosão de cavitação se acumula nas portas de entrada da bomba e nas superfícies dos furos dos pistões, criando crateras de erosão que aumentam progressivamente as folgas. Padrão de dano: (1) Pitting inicial por cavitação — crateras de erosão microscópicas de 0.1–0.5 mm de profundidade após 100–200 horas de operação; (2) Formação progressiva de sulcos — o pitting se une em microssulcos, aumentando os vazamentos de vazão em 1–2% a cada 100 horas; (3) Degradação das vedações internas — a erosão das superfícies pistão-furo reduz a pressão de contato de vedação e os vazamentos aumentam exponencialmente (5–10%/h); (4) Falta de fluido na bomba — a vazão total cai abaixo da demanda do sistema, a pressão do sistema colapsa, a cavitação da bomba se autoalimenta e a falha total ocorre em 1–5 dias de cavitação severa. Causas raiz da cavitação da bomba: (1) restrição na linha de sucção (filtro de entrada entupido, linha de sucção dobrada) piorando a pressão de sucção em >0.5 bar; (2) viscosidade do fluido alta demais para a vazão de entrada (fluido frio a -10°C em aplicação de alta vazão); (3) entrada de ar por tampas de abastecimento soltas ou vedações danificadas, reduzindo a margem efetiva em relação à pressão de vapor."
+    },
+    {
+      "heading": "Degradação das folgas internas por desgaste abrasivo",
+      "body": "Partículas de 2–50 µm presas entre as peças móveis da bomba causam desgaste abrasivo de três corpos, aumentando progressivamente as folgas internas. A taxa de desgaste é exponencial com o tamanho de partícula: partículas de 4 µm causam o desgaste de base (referência 1×); as de 8 µm o aumentam em 3–4×; as de 16 µm, em 10–20×; as de 32 µm causam desgaste severo de 50–100×. Para uma bomba de pistões com folga nominal de 0.5 µm entre pistão e furo: (1) Fluido limpo (ISO 16/14/11): taxa de desgaste <0.001 µm/1000 h, a folga permanece <1 µm e a bomba opera com eficiência nominal por 10,000+ horas; (2) Contaminação moderada (ISO 19/17/15): partículas de 10–50 µm introduzidas, taxa de desgaste de 0.01–0.05 µm/1000 h, a folga aumenta para 2–3 µm em 2000 horas, os vazamentos sobem de 0.5% para 8–10% e a vazão da bomba cai 15–20%; (3) Contaminação severa (ISO 22/20/18 ou pior): partículas de 50–100 µm, taxa de desgaste de 0.1–0.5 µm/1000 h, a folga chega a 5–8 µm em 500 horas, vazamentos de 30–50%, cavitação e engripamento da bomba iminentes; (4) Contaminação catastrófica (partículas >100 µm, ingestão de objetos estranhos): taxa de desgaste >1 µm/h, engripamento total pistão-furo em 50–100 horas de operação. Exemplo real: um equipamento móvel com o filtro hidráulico primário com falha (bypass acionado, fluido não filtrado circulando) introduziu partículas de sílica de 100+ µm em uma bomba de pistões; a vazão da bomba caiu 50% em 8 horas e ela engripou completamente após 24 horas de operação (€22,000 de substituição da bomba, 5 dias de parada do sistema)."
+    },
+    {
+      "heading": "Perda de capacidade de carga e degradação do desempenho do sistema",
+      "body": "Os vazamentos internos da bomba (fluido pressurizado retornando ao tanque) aumentam à medida que as folgas internas crescem pelo desgaste induzido pela contaminação. Efeito no sistema: (1) Fase inicial (vazamentos de 0.5–2%): o operador percebe uma leve moleza na resposta das válvulas proporcionais, a manutenção de pressão sob carga se deteriora e o implemento deriva 2–5 mm por minuto (aceitável); (2) Fase progressiva (vazamentos de 5–15%): a válvula de alívio de pressão cicla com mais frequência para manter a pressão do sistema (a bomba não consegue gerar a pressão nominal com a folga reduzida), a geração de calor aumenta 15–25%, o tempo de ciclo aumenta 20–30% (o implemento fica \"lento\") e o tempo de resposta das válvulas proporcionais dobra; (3) Fase de falha (vazamentos >20%): a bomba não consegue manter a pressão nominal do sistema nem com deslocamento máximo, a capacidade de carga cai 50%+ (uma escavadeira de 5 toneladas só consegue levantar 2–3 toneladas), os implementos se movem aos trancos e sem controle e a válvula de alívio fica em bypass contínuo, elevando a temperatura do sistema acima de 70°C (acelerando a degradação do fluido). Risco de segurança: a deriva da carga e a perda de controle provocam erros do operador e acidentes. Os transientes de pressão pela resposta brusca das válvulas proporcionais causam danos secundários às vedações e aos acumuladores. É necessária a substituição da bomba; tentar operar com vazamentos >20% arrisca perda catastrófica de controle e danos ao equipamento ou lesões."
+    },
+    {
+      "heading": "Monitoramento preditivo e avaliação da saúde da bomba",
+      "body": "O desgaste da bomba pode ser detectado antes da falha por monitoramento de condição: (1) Emissão acústica (monitoramento de vibração de alta frequência) — a cavitação e os impactos de partículas de desgaste criam assinaturas ultrassônicas (10–100 kHz); uma assinatura anormal de cavitação aparece como crepitação rápida, diferente do ruído normal da bomba; a intensidade da cavitação se correlaciona com a taxa de erosão; (2) Análise da ondulação de pressão (medição da oscilação de pressão da bomba) — uma bomba desgastada produz maior ondulação de pressão (±5–20 bar contra ±1–2 bar de uma bomba saudável) por deslocamento desigual a cada rotação; a frequência e a amplitude da ondulação aumentam com o crescimento da folga; (3) Monitoramento da tendência de temperatura — os vazamentos aumentam a geração de calor; um aumento da temperatura da carcaça da bomba >5°C acima da linha de base e em tendência de alta indica desgaste progressivo; (4) Medição de vazão — os ensaios de deslocamento da bomba com rotação fixa do motor mostram vazão decrescente; redução de 10% em relação à nominal indica desgaste significativo e de 20%, falha iminente; (5) Análise de amostras de fluido — os resíduos de desgaste (partículas ferrosas do contato pistão-furo, bronze das buchas) aumentam de <50 ppm para 100–500 ppm durante a progressão do desgaste, detectáveis por espectroscopia ICP ou ferrografia; códigos de limpeza ISO em tendência de alta (ISO 17/15/12 → ISO 19/17/15 → ISO 21/19/16) indicam entrada de contaminação por vedações desgastadas. Limite de manutenção: quando dois indicadores quaisquer atingirem o nível de alerta (ondulação >10 bar + temperatura +5°C + resíduos ferrosos >150 ppm), programar a reconstrução/substituição da bomba em 2–4 semanas, antes de uma falha catastrófica."
+    },
+    {
+      "heading": "Cenário ilustrativo: controle de contaminação do sistema hidráulico em uma frota de escavadeiras de mineração",
+      "body": "⚠️ Cenário ilustrativo, não um caso documentado. Considere uma frota de escavadeiras grandes operando em uma mina a céu aberto muito empoeirada, com falhas recorrentes de bombas e muito tempo de parada. Em uma situação assim, a análise do fluido pode mostrar limpeza ISO muito acima da especificação de aproximadamente 16/14/11 para bombas de pistões, junto com resíduos de desgaste ferroso anormalmente altos — muitas vezes atribuídos a um filtro hidráulico principal com vida útil vencida, um filtro secundário do circuito piloto entupido causando bypass e uma linha de sucção restrita. Instalar um sistema de filtros hidráulicos em vários estágios de 10 µm + 3 µm com manômetros de pressão diferencial, acrescentar filtração off-line kidney-loop contínua (NANOFORCE, 3 µm absoluto), passar para amostragem trimestral do fluido com ferrografia e corrigir a restrição de sucção são as intervenções padrão para trazer a limpeza de volta à meta ISO 16/14/11. Em um cenário como este, as taxas de falha de bombas devem cair acentuadamente e os intervalos de troca do fluido podem se estender depois que a limpeza for mantida na meta — a redução exata, a extensão do intervalo e a economia dependem da frota, do ambiente e da taxa de falhas inicial, portanto trate qualquer número aqui como indicativo, não como resultado documentado. O princípio de fundo vale independentemente da escala: o controle da contaminação é o fator dominante na confiabilidade das bombas hidráulicas, e a ingestão de sujeira é em grande parte previsível e evitável com gestão adequada do fluido."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Por que as bombas hidráulicas são tão sensíveis à contaminação por partículas em comparação com outros componentes hidráulicos?",
+      "answer": "As bombas hidráulicas têm as tolerâncias mais estreitas do sistema: as bombas de pistões operam com folgas de 0.5–1 µm (pistão-furo), as de palhetas com folgas de 1–2 µm e as de engrenagens com 2–3 µm. Essas folgas são projetadas para filmes finíssimos de fluido hidráulico que fornecem a lubrificação. Uma única partícula de sílica de 10 µm é 10–20× maior que a folga de projeto — ela age como uma pedra de esmeril entre as superfícies em movimento. Por outro lado, as folgas dos carretéis das válvulas proporcionais são de 2–5 µm (mais tolerantes) e as das válvulas de retenção de carga, de 5–10 µm. O projeto da bomba prioriza a eficiência em vez da tolerância à contaminação, tornando-a o elo mais fraco do sistema diante da ingestão de sujeira."
+    },
+    {
+      "question": "Como a cavitação danifica uma bomba hidráulica e como pode ser evitada?",
+      "answer": "A cavitação ocorre quando a pressão de entrada da bomba cai abaixo da pressão de vapor do fluido (~0.5 bar absoluto), formando bolhas de vapor. Durante o curso de descarga, as bolhas colapsam a uma pressão >1 bar, liberando ondas de choque (2000–4000 bar localmente). As ondas de choque causam pitting e erosão nas portas de entrada e nas superfícies internas da bomba. Prevenção: (1) garantir que a linha de sucção seja de grande diâmetro e sem restrições (a pressão da linha de sucção deve ser >0.3 bar, idealmente 0.5 bar); (2) a pressão diferencial do filtro de entrada não deve exceder 0.3 bar (substituir o filtro antes de atingir 0.5 bar); (3) a viscosidade do fluido deve ser compatível com a vazão de entrada — com fluido frio na partida, é necessário um aquecimento de 2–3 minutos antes de exigir a vazão máxima; (4) manter o nível do tanque acima da marca mínima para evitar a formação de vórtices na entrada de sucção; (5) verificar a tampa de abastecimento e as vedações do tanque quanto à entrada de ar."
+    },
+    {
+      "question": "Que taxa de desgaste se pode esperar em uma bomba hidráulica contaminada e como ela se relaciona com o tamanho de partícula?",
+      "answer": "A taxa de desgaste é exponencial com o tamanho de partícula. Com um nível de contaminação de referência de 4 µm (limpeza ISO 19/17/15), as folgas de uma bomba de pistões crescem ~0.01 µm a cada 1000 horas de operação. Com contaminação de 8 µm, a taxa de desgaste aumenta 3–4×. Com 16 µm, 10–20×. Com 32+ µm, 50–100×. Exemplo: uma bomba de pistões com folga nominal de 0.5 µm operando com fluido contaminado ISO 22/20/18 (com partículas de 50–100 µm) sofre desgaste de 0.1–0.5 µm a cada 1000 horas. A folga atinge o valor crítico de 5 µm em 10,000 horas (3–4 anos de serviço contínuo), causando cavitação e engripamento da bomba. Por outro lado, a mesma bomba operando com fluido ISO 16/14/11 pode durar 20,000+ horas antes de atingir 5 µm de folga."
+    },
+    {
+      "question": "Como o desgaste da bomba é detectado antes de uma falha catastrófica e quais sintomas indicam falha iminente?",
+      "answer": "Indicadores precoces de desgaste da bomba: (1) aumento da ondulação de pressão — a ondulação medida sobe do normal de ±1–2 bar para ±5–10 bar; facilmente detectável com transdutores de pressão; (2) ruído de cavitação — se houver cavitação, ouve-se uma crepitação característica na região da bomba (assinatura acústica de 10–100 kHz); (3) aumento de temperatura — a temperatura da carcaça da bomba sobe 5–10°C acima da linha de base, em correlação com o aumento dos vazamentos internos que eleva o atrito; (4) queda de vazão — o deslocamento da bomba medido com rotação constante do motor mostra perda de 5–10% em relação ao nominal; (5) resíduos de desgaste ferroso no fluido — salto do normal de <50 ppm para 100–500 ppm, visível por ferrografia ou análise ICP. Alertas de falha em estágio avançado: a resposta das válvulas proporcionais fica brusca e sem controle, a deriva da carga se acelera (>1 cm/min), a pressão do sistema não atinge o nível nominal nem com o deslocamento máximo da bomba, a geração de calor fica excessiva (fluido >65°C) e a válvula de alívio fica em bypass contínuo (audível como um ronco do fluxo de retorno ao tanque). Se dois desses sintomas ocorrerem ao mesmo tempo, planeje a substituição da bomba em 2–4 semanas."
+    },
+    {
+      "question": "Por que a filtração off-line kidney-loop é valiosa para prolongar a vida da bomba e quanta melhoria se pode esperar?",
+      "answer": "A filtração off-line kidney-loop (filtro de 3–10 µm funcionando continuamente nas horas ociosas ou 24/7) remove as partículas de desgaste e a contaminação introduzidas durante a operação ou por eventos de entrada (ar dos respiros, vazamentos por vedações). Ao manter a limpeza do fluido em ISO 16/14/11 ou melhor entre os ciclos normais de operação, o kidney-loop elimina o acúmulo de partículas que causa o desgaste acelerado da bomba. Melhoria na prática: bombas de pistões operando com fluido ISO 18/16/13 (no limite do aceitável) normalmente duram 8000–12000 horas antes de se degradar. As mesmas bombas com kidney-loop off-line mantendo ISO 16/14/11 durante o tempo ocioso mostram prolongamento da vida de 50–80% (12000–20000 horas). Em ambientes de mineração/construção com alta exposição ao pó, o kidney-loop pode evitar 80–90% das falhas de bombas induzidas por contaminação. Custo: sistema kidney-loop de €15,000–25,000 por escavadeira; custo de substituição da bomba de €22,000–35,000 por bomba; a economia da prevenção dá retorno de 2–3:1."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Folga pistão-furo da bomba de pistões",
+      "value": "0.5–1 µm"
+    },
+    {
+      "label": "Folga de deslizamento da bomba de palhetas",
+      "value": "1–2 µm"
+    },
+    {
+      "label": "Folga de engrenamento da bomba de engrenagens",
+      "value": "2–3 µm"
+    },
+    {
+      "label": "Limite crítico de vazamento da bomba",
+      "value": "20% de perda de vazão"
+    }
+  ]
+}
