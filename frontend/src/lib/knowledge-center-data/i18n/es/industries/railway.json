@@ -1,0 +1,61 @@
+{
+  "industry": {
+    "slug": "railway",
+    "title": "Ferroviario",
+    "icon": "IND-RAL",
+    "dust": "Moderate",
+    "description": "Hollín diésel, polvo de frenos y requisitos de intervalos de servicio extendidos en locomotoras y flotas ferroviarias."
+  },
+  "detail": {
+    "slug": "railway",
+    "contaminationEnvironment": "Servicio ferroviario con hollín diésel, partículas de frenos, exposición en túneles, ventanas de mantenimiento limitadas y flotas heterogéneas de locomotoras o vehículos ferroviarios.",
+    "primaryRisks": [
+      "Contaminación del aceite lubricante por acumulación de hollín diésel",
+      "Intervalos de servicio extendidos: las ventanas de mantenimiento están limitadas por los horarios de operación",
+      "Filtración del aire de refrigeración de los motores de tracción (hollín de túnel)",
+      "Estandarización de flota entre clases heterogéneas de locomotoras"
+    ],
+    "serviceIntervalNote": "Los intervalos de servicio ferroviario deben seguir el entorno de la ruta, la configuración del motor y de la admisión, la condición del lubricante, las horas de operación y la evidencia de mantenimiento de la flota, en lugar de un único rango de horas para túnel o superficie.",
+    "keyMetrics": [
+      {
+        "label": "Entorno de la ruta",
+        "value": "La exposición en túnel y en superficie es distinta"
+      },
+      {
+        "label": "Condición de la lubricación",
+        "value": "Depende del motor y del análisis de aceite"
+      },
+      {
+        "label": "Estandarización de la flota",
+        "value": "Solo con compatibilidad verificada"
+      },
+      {
+        "label": "Planificación del mantenimiento",
+        "value": "Depende de la ruta y de la disponibilidad"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "SYNTRAX™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 16889",
+      "SAE J1858"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Perfil de contaminación ferroviario",
+        "body": "El equipo ferroviario puede encontrar hollín del motor, partículas de frenos y contaminantes concentrados en túneles mientras opera con ventanas de mantenimiento limitadas. La estrategia de admisión y de lubricación debe ajustarse a la locomotora o al vehículo ferroviario real, al perfil de la ruta y a la condición medida."
+      },
+      {
+        "heading": "Estandarización de la flota",
+        "body": "La estandarización solo puede reducir la complejidad de repuestos cuando las aplicaciones de base son realmente compatibles. La consolidación de la flota debe conciliar el motor, la carcasa, las dimensiones, la función del sistema y la evidencia validada de referencias cruzadas antes de asignar un mismo filtro a varias clases."
+      }
+    ]
+  }
+}

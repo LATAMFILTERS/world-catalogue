@@ -1,0 +1,69 @@
+{
+  "industry": {
+    "slug": "bus-coach",
+    "title": "Autobuses y autocares",
+    "icon": "IND-BUS",
+    "dust": "Moderate",
+    "description": "Filtración para flotas de pasajeros en transporte urbano, autocares interurbanos, autobuses escolares y servicios de traslado, con ciclos de arranque y parada, demanda continua de climatización y mantenimiento programado en taller."
+  },
+  "detail": {
+    "slug": "bus-coach",
+    "contaminationEnvironment": "Servicio de flotas de pasajeros: régimen urbano de parada y arranque, aceleraciones y frenadas repetidas, ralentí, uso continuo del HVAC, partículas viales, mantenimiento programado en depósito y requisitos de disponibilidad de las rutas.",
+    "primaryRisks": [
+      "Contaminación de la admisión de aire que afecta la protección del motor en largos ciclos de trabajo diarios",
+      "Contaminación del combustible y con agua que afecta la disponibilidad de los motores de la flota de pasajeros",
+      "Contaminación de la lubricación bajo ciclos de trabajo repetidos y ralentí",
+      "Humedad y contaminación en los sistemas de aire comprimido donde se especifican posiciones de secador de aire",
+      "Carga de partículas en la cabina y el HVAC de vehículos ocupados de forma continua",
+      "Contaminación del sistema de refrigeración bajo ciclos térmicos repetidos"
+    ],
+    "serviceIntervalNote": "La planificación del mantenimiento debe conciliar la plataforma del vehículo, el motor, el régimen de la ruta, el calendario del depósito, la demanda de HVAC, la configuración del sistema neumático y la evidencia validada de la aplicación antes de aceptar intervalos para toda la flota o la estandarización de repuestos.",
+    "keyMetrics": [
+      {
+        "label": "Régimen principal",
+        "value": "Parada y arranque + servicio de ruta programado"
+      },
+      {
+        "label": "Entorno de los pasajeros",
+        "value": "HVAC continuo y ciclos repetidos de puertas"
+      },
+      {
+        "label": "Sistemas neumáticos",
+        "value": "Protección del aire comprimido específica de la aplicación"
+      },
+      {
+        "label": "Validación de la flota",
+        "value": "Evidencia de motor + chasis + sistema + aplicación"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "HYDROCORE™",
+      "SYNTRAX™",
+      "DRYCORE™",
+      "MICROKAPPA™",
+      "THERMACORE™"
+    ],
+    "standards": [],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Fuel Cleanliness Protection",
+      "Lubrication Protection",
+      "Cooling System Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Perfil de trabajo de la flota de pasajeros",
+        "body": "Las aplicaciones de autobuses y autocares combinan requisitos de propulsión, HVAC, refrigeración y, en muchas plataformas, del sistema neumático. El transporte urbano, el transporte escolar, el servicio interurbano y las operaciones de lanzadera pueden compartir una arquitectura de vehículo similar y operar con longitudes de ruta, ciclos de pasajeros y ventanas de mantenimiento muy distintos."
+      },
+      {
+        "heading": "Disponibilidad de rutas y protección de sistemas",
+        "body": "Un autobús fuera de servicio afecta la asignación de rutas y la capacidad de pasajeros. La protección de admisión de aire, combustible, lubricación y refrigeración respalda la disponibilidad del motor; la filtración de cabina respalda el entorno ocupado; la protección del aire comprimido debe considerarse donde el vehículo especifica un secador de aire o una posición de filtración neumática relacionada."
+      },
+      {
+        "heading": "Estandarización en depósito y evidencia de aplicación",
+        "body": "Carrocerías similares no prueban posiciones de filtro idénticas. Antes de consolidar números de parte en una flota de pasajeros, los equipos de mantenimiento deben conciliar marca, modelo, año, chasis, motor, sistema protegido, referencia OEM, dimensiones y evidencia documentada de la aplicación."
+      }
+    ]
+  }
+}

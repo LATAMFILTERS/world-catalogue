@@ -1,0 +1,68 @@
+{
+  "industry": {
+    "slug": "power-generation",
+    "title": "Geração de energia",
+    "icon": "IND-PWR",
+    "dust": "Moderate",
+    "description": "Filtração da admissão de ar de turbinas, sistemas de lubrificação de geradores e requisitos de operação contínua."
+  },
+  "detail": {
+    "slug": "power-generation",
+    "contaminationEnvironment": "Serviço de geração de energia que abrange diesel de reserva, grupos geradores contínuos e ambientes de admissão de turbinas aplicáveis, com riscos de ar, combustível, lubrificação e arrefecimento determinados pela localização, pelo regime de prontidão e pelo perfil operacional.",
+    "primaryRisks": [
+      "Incrustação da entrada da turbina por aerossol salino (litoral)",
+      "Polimento do combustível de reserva para grupos geradores diesel de emergência",
+      "Contaminação do óleo lubrificante em grupos geradores de operação contínua",
+      "Confiabilidade da admissão de ar para o desempenho de turbinas a gás"
+    ],
+    "serviceIntervalNote": "A manutenção na geração de energia deve seguir o requisito do motor ou da turbina, o regime de prontidão, a condição do combustível armazenado, a evidência de restrição ou de condição do fluido e os dados de aplicação aprovados. Ativos de reserva e de serviço contínuo exigem estratégias diferentes.",
+    "keyMetrics": [
+      {
+        "label": "Modo de operação",
+        "value": "Reserva ou serviço contínuo"
+      },
+      {
+        "label": "Carga da admissão de ar",
+        "value": "Depende do local e do sistema de entrada"
+      },
+      {
+        "label": "Controle do combustível armazenado",
+        "value": "Depende da condição e da gestão da água"
+      },
+      {
+        "label": "Validação de prontidão",
+        "value": "Específica do ativo e do programa de manutenção"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "SYNTRAX™",
+      "SYNTAPORE™",
+      "HYDROCORE™",
+      "THERMACORE™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 16889",
+      "SAE J1858",
+      "ISO 12937",
+      "ASTM D6304"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection",
+      "Fuel Cleanliness Protection",
+      "Cooling System Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Admissão de ar e operação contínua",
+        "body": "A proteção da admissão de ar na geração de energia deve equilibrar o controle da contaminação com os limites de vazão de ar e de restrição do equipamento instalado. Locais litorâneos, industriais e empoeirados podem criar mecanismos de carga diferentes, por isso a seleção do filtro e a estratégia de limpeza devem ser validadas em relação ao sistema de entrada real."
+      },
+      {
+        "heading": "Prontidão do diesel de reserva",
+        "body": "O diesel armazenado pode acumular água e contaminação durante longos períodos de inatividade. O condicionamento, a filtração e a gestão da água do combustível devem ser selecionados a partir da condição do tanque, da análise do combustível, dos requisitos do motor e da prática de manutenção; o escopo do HYDROCORE™ ou do TURBOCORE™ depende da arquitetura de separador aprovada e não deve ser generalizado como um requisito universal de polimento."
+      }
+    ]
+  }
+}

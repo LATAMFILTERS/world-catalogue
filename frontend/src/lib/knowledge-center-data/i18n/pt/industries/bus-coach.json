@@ -1,0 +1,69 @@
+{
+  "industry": {
+    "slug": "bus-coach",
+    "title": "Ônibus e rodoviários",
+    "icon": "IND-BUS",
+    "dust": "Moderate",
+    "description": "Filtração para frotas de passageiros em transporte urbano, ônibus rodoviários, escolares e de fretamento, com ciclos de para-e-anda, demanda contínua de climatização e manutenção programada na garagem."
+  },
+  "detail": {
+    "slug": "bus-coach",
+    "contaminationEnvironment": "Serviço de frotas de passageiros — regime urbano de para-e-anda, acelerações e frenagens repetidas, marcha lenta, uso contínuo do HVAC, partículas viárias, manutenção programada na garagem e requisitos de disponibilidade das linhas.",
+    "primaryRisks": [
+      "Contaminação da admissão de ar que afeta a proteção do motor em longos ciclos de trabalho diários",
+      "Contaminação do combustível e por água que afeta a disponibilidade dos motores da frota de passageiros",
+      "Contaminação da lubrificação sob ciclos de trabalho repetidos e marcha lenta",
+      "Umidade e contaminação nos sistemas de ar comprimido onde são especificadas posições de secador de ar",
+      "Carga de partículas na cabine e no HVAC de veículos ocupados continuamente",
+      "Contaminação do sistema de arrefecimento sob ciclos térmicos repetidos"
+    ],
+    "serviceIntervalNote": "O planejamento da manutenção deve conciliar a plataforma do veículo, o motor, o regime da linha, o calendário da garagem, a demanda de HVAC, a configuração do sistema pneumático e a evidência validada da aplicação antes de aceitar intervalos para toda a frota ou a padronização de peças.",
+    "keyMetrics": [
+      {
+        "label": "Regime principal",
+        "value": "Para-e-anda + serviço de linha programado"
+      },
+      {
+        "label": "Ambiente dos passageiros",
+        "value": "HVAC contínuo e ciclos repetidos de portas"
+      },
+      {
+        "label": "Sistemas pneumáticos",
+        "value": "Proteção do ar comprimido específica da aplicação"
+      },
+      {
+        "label": "Validação da frota",
+        "value": "Evidência de motor + chassi + sistema + aplicação"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "HYDROCORE™",
+      "SYNTRAX™",
+      "DRYCORE™",
+      "MICROKAPPA™",
+      "THERMACORE™"
+    ],
+    "standards": [],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Fuel Cleanliness Protection",
+      "Lubrication Protection",
+      "Cooling System Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Perfil de trabalho da frota de passageiros",
+        "body": "As aplicações de ônibus urbanos e rodoviários combinam requisitos de propulsão, HVAC, arrefecimento e, em muitas plataformas, do sistema pneumático. O transporte urbano, o transporte escolar, o serviço intermunicipal e as operações de traslado podem compartilhar uma arquitetura de veículo semelhante e operar com extensões de linha, ciclos de passageiros e janelas de manutenção muito diferentes."
+      },
+      {
+        "heading": "Disponibilidade das linhas e proteção dos sistemas",
+        "body": "Um ônibus fora de serviço afeta a escala das linhas e a capacidade de passageiros. A proteção da admissão de ar, do combustível, da lubrificação e do arrefecimento apoia a disponibilidade do motor; a filtração da cabine apoia o ambiente ocupado; a proteção do ar comprimido deve ser considerada onde o veículo especifica um secador de ar ou uma posição de filtração pneumática relacionada."
+      },
+      {
+        "heading": "Padronização na garagem e evidência de aplicação",
+        "body": "Carrocerias semelhantes não comprovam posições de filtro idênticas. Antes de consolidar números de peça em uma frota de passageiros, as equipes de manutenção devem conciliar marca, modelo, ano, chassi, motor, sistema protegido, referência OEM, dimensões e evidência documentada da aplicação."
+      }
+    ]
+  }
+}

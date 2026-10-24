@@ -1,0 +1,67 @@
+{
+  "industry": {
+    "slug": "agriculture",
+    "title": "Agricultura",
+    "icon": "IND-AGR",
+    "dust": "High",
+    "description": "Terra, poeira de grãos e matéria orgânica que desgastam a admissão de ar e os sistemas hidráulicos."
+  },
+  "detail": {
+    "slug": "agriculture",
+    "contaminationEnvironment": "Serviço agrícola sazonal com resíduos de cultura, poeira de grãos, palha, poeira de solo, umidade variável e trabalho de colheita com prazos críticos que pode acelerar a carga da admissão e da cabine.",
+    "primaryRisks": [
+      "Saturação da admissão de ar durante a colheita — exige serviço diário ou mais frequente",
+      "Saúde do operador na cabine — exposição a poeira de grãos e agroquímicos",
+      "Contaminação do sistema hidráulico por operações de ciclo intenso",
+      "Contaminação por água do combustível em armazenamento sazonal"
+    ],
+    "serviceIntervalNote": "O serviço agrícola deve se basear na restrição real, na cultura, na safra, na carga de poeira, no estado do pré-filtro, no regime da máquina e na evidência aprovada do produto. As condições de colheita podem mudar rapidamente e não devem ser reduzidas a um intervalo fixo universal.",
+    "keyMetrics": [
+      {
+        "label": "Carga sazonal",
+        "value": "Depende da cultura e das condições de colheita"
+      },
+      {
+        "label": "Benefício do pré-filtro",
+        "value": "Depende da configuração e das condições do campo"
+      },
+      {
+        "label": "Demanda da cabine",
+        "value": "Depende da poeira, do pólen e do HVAC"
+      },
+      {
+        "label": "Gatilho de serviço",
+        "value": "Específico da condição e da aplicação"
+      }
+    ],
+    "technologies": [
+      "MACROCORE™",
+      "INTEKCORE™",
+      "SYNTRAX™",
+      "MICROKAPPA™",
+      "NANOFORCE™",
+      "HYDROCORE™"
+    ],
+    "standards": [
+      "ISO 5011",
+      "ISO 4406",
+      "ISO 16889"
+    ],
+    "systems": [
+      "Air Intake & Airflow Protection",
+      "Lubrication Protection",
+      "Hydraulic Protection",
+      "Fuel Cleanliness Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Contaminação na safra",
+        "body": "A colheita combina poeira da cultura, palha e solo revolvido em torno de máquinas de alta vazão de ar. A proteção da admissão deve ser avaliada como um sistema que inclua a pré-limpeza quando aplicável, a filtração primária, a vedação, o monitoramento da restrição e o acesso para serviço, em vez de supor um único intervalo ou um multiplicador de extensão de vida."
+      },
+      {
+        "heading": "Estratégia para equipamentos sazonais",
+        "body": "Colheitadeiras, tratores, pulverizadores e equipamentos de apoio enfrentam fontes de contaminação e ciclos de trabalho diferentes. A seleção de filtros e o planejamento da manutenção devem corresponder à máquina, ao motor, à configuração hidráulica, ao ambiente da cabine e ao perfil de uso sazonal reais."
+      }
+    ]
+  }
+}

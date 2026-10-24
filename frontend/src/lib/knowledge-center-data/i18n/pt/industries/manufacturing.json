@@ -1,0 +1,60 @@
+{
+  "industry": {
+    "slug": "manufacturing",
+    "title": "Manufatura",
+    "icon": "IND-MFG",
+    "dust": "Moderate",
+    "description": "Contaminação de fluidos de usinagem, filtração da admissão de compressores e proteção de prensas hidráulicas."
+  },
+  "detail": {
+    "slug": "manufacturing",
+    "contaminationEnvironment": "Serviço de manufatura com partículas de usinagem, névoa de fluidos de corte, contaminação hidráulica e de lubrificação, e requisitos de ar comprimido que variam substancialmente conforme o processo e o equipamento.",
+    "primaryRisks": [
+      "Contaminação do ar comprimido que afeta atuadores e instrumentos pneumáticos",
+      "Travamento de servoválvulas hidráulicas em equipamentos CNC",
+      "Névoa de fluidos de corte em ambientes de usinagem"
+    ],
+    "serviceIntervalNote": "Os intervalos de manutenção na manufatura devem seguir a condição da máquina, as metas de limpeza hidráulica, o desempenho do compressor e do secador, a criticidade do processo e a evidência aprovada do filtro, em vez de faixas fixas de horas.",
+    "keyMetrics": [
+      {
+        "label": "Limpeza hidráulica",
+        "value": "Depende do componente mais sensível"
+      },
+      {
+        "label": "Classe de ar comprimido",
+        "value": "Requisito ISO 8573 específico do processo"
+      },
+      {
+        "label": "Sensibilidade a partículas",
+        "value": "Depende do equipamento e das folgas"
+      },
+      {
+        "label": "Gatilho de manutenção",
+        "value": "Condição + criticidade do processo"
+      }
+    ],
+    "technologies": [
+      "NANOFORCE™",
+      "SYNTRAX™"
+    ],
+    "standards": [
+      "ISO 8573-1",
+      "ISO 16889",
+      "ISO 4406"
+    ],
+    "systems": [
+      "Hydraulic Protection",
+      "Lubrication Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Requisitos da manufatura de precisão",
+        "body": "Os sistemas hidráulicos e de lubrificação de precisão devem ser protegidos em função do componente mais sensível à contaminação, da pressão e da vazão reais do circuito, da viscosidade do fluido e do requisito de limpeza do fabricante. As alegações de desempenho do NANOFORCE™ são específicas do produto e não devem ser inferidas da página da indústria."
+      },
+      {
+        "heading": "Qualidade do ar comprimido",
+        "body": "Os processos de manufatura podem exigir classes de pureza do ar comprimido muito diferentes. A ISO 8573-1 fornece a estrutura de classificação; a classe aplicável de partículas, água e óleo deve ser selecionada a partir do processo e do requisito do equipamento reais."
+      }
+    ]
+  }
+}

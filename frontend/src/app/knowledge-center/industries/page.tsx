@@ -139,7 +139,7 @@ export default function IndustriesPage() {
                   padding: '0.2rem 0.5rem',
                   letterSpacing: '0.05em',
                 }}>
-                  {industry.dust.toUpperCase()}<PublicUiText textKey="publicUi.text38">{"EXPOSURE"}</PublicUiText></span>
+                  {tr(`${industry.dust.toUpperCase()} EXPOSURE`)}</span>
               </div>
 
               <h2 style={{

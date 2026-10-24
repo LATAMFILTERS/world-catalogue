@@ -1,0 +1,66 @@
+{
+  "industry": {
+    "slug": "marine",
+    "title": "Marino",
+    "icon": "IND-MAR",
+    "dust": "Moderate",
+    "description": "Filtración marina para sistemas de propulsión, auxiliares, hidráulicos y de manejo de combustible que operan con exposición a la sal, riesgo de contaminación por agua y requisitos específicos de cada embarcación."
+  },
+  "detail": {
+    "slug": "marine",
+    "contaminationEnvironment": "Servicio marino de propulsión, auxiliares e hidráulica con exposición a la sal, riesgo de contaminación del combustible con agua, condensación en tanques, contaminación durante el trasvase, largos periodos de inactividad y requisitos operativos específicos de cada embarcación.",
+    "primaryRisks": [
+      "Contaminación del combustible con agua: crecimiento microbiano, corrosión, daño de inyectores",
+      "Intrusión de agua salada en los sistemas del motor e hidráulicos",
+      "Los requisitos regulatorios y operativos marinos exigen verificación específica de la aplicación",
+      "Corrosión de los componentes metálicos del filtro por la atmósfera salina"
+    ],
+    "serviceIntervalNote": "Los intervalos de servicio marinos deben seguir el motor, la embarcación, el sistema de manejo de combustible, la condición de contaminación y la evidencia de producto aprobados. La acumulación de agua, la restricción y la condición del fluido deben monitorearse en lugar de reducirse a un intervalo universal.",
+    "keyMetrics": [
+      {
+        "label": "Exposición combustible-agua",
+        "value": "Depende del tanque, el trasvase y la condensación"
+      },
+      {
+        "label": "Entorno salino",
+        "value": "Requiere compatibilidad de materiales y sellado"
+      },
+      {
+        "label": "Requisitos operativos marinos",
+        "value": "Verificación específica de la aplicación"
+      },
+      {
+        "label": "MARINECLEAN™",
+        "value": "Solución marina especializada"
+      }
+    ],
+    "technologies": [
+      "SYNTAPORE™",
+      "HYDROCORE™",
+      "SYNTRAX™",
+      "NANOFORCE™",
+      "MICROKAPPA™"
+    ],
+    "standards": [
+      "ISO 12937",
+      "ASTM D6304",
+      "ISO 16889",
+      "ISO 4406"
+    ],
+    "systems": [
+      "Fuel Cleanliness Protection",
+      "Lubrication Protection",
+      "Hydraulic Protection"
+    ],
+    "sections": [
+      {
+        "heading": "Gestión del combustible y del agua en aplicaciones marinas",
+        "body": "Los sistemas de combustible marinos pueden acumular agua por condensación, prácticas de trasvase y condiciones de almacenamiento. La estrategia de filtración debe separar el control de partículas de los requisitos de gestión del agua y mantenerse acorde con la arquitectura aprobada del motor, la carcasa y el manejo de combustible."
+      },
+      {
+        "heading": "Contexto operativo marino y MARINECLEAN™",
+        "body": "La selección de filtración marina debe considerar la embarcación, el motor, el entorno hidráulico y de manejo de combustible, el perfil operativo y los requisitos regulatorios aplicables a la jurisdicción y al servicio específicos. MARINECLEAN™ es una solución comercial especializada de ELIMFILTERS para entornos operativos marinos. Cualquier declaración de certificación o cumplimiento requiere evidencia verificada específica del producto y de la aplicación antes de su uso público."
+      }
+    ]
+  }
+}
