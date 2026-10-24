@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { KCArticle, KCStandard, KCSystemDetail, KCTechnology } from '../types';
 import type { KC_SYSTEMS } from '../canonical-systems-registry';
-import type { TerminologyEntry } from '@/lib/knowledge-center';
+import type { ProblemStub, TerminologyEntry } from '@/lib/knowledge-center';
 
 export function translatedArticle(slug: string, lang: 'es' | 'pt'): KCArticle {
   return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, `${slug}.json`), 'utf8'));
@@ -38,4 +38,8 @@ export function translatedStandard(slug: string, lang: 'es' | 'pt'): KCStandard 
 
 export function translatedTerm(slug: string, lang: 'es' | 'pt'): TerminologyEntry {
   return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'glossary', `${slug}.json`), 'utf8'));
+}
+
+export function translatedProblem(slug: string, lang: 'es' | 'pt'): ProblemStub {
+  return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'problems', `${slug}.json`), 'utf8'));
 }

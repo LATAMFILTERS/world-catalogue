@@ -392,3 +392,6 @@ const TERM_TITLES: Record<'es' | 'pt', Record<string, string>> = {
 export function termTitle(slug: string, lang: SiteLang, fallback: string): string {
   return lang === 'es' || lang === 'pt' ? TERM_TITLES[lang][slug] ?? fallback : fallback;
 }
+
+// Problem Graph detail pages with reviewed /es/ and /pt/ versions (problem names come from reviewed copy).
+export const TRANSLATED_PROBLEM_SLUGS = ['abrasive-wear', 'adhesive-wear', 'bearing-wear', 'injector-wear', 'water-ingress', 'fuel-contamination', 'air-restriction', 'cavitation'] as const;

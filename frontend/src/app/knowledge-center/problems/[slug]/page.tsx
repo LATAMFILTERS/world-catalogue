@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ProblemStubContent from './ProblemStubContent';
 import { PROBLEM_STUBS, PROBLEM_STUBS_BY_SLUG } from '@/lib/knowledge-center';
+import { languageAlternates } from '@/lib/localized-routes';
+import { TRANSLATED_PROBLEM_SLUGS } from '@/lib/knowledge-center-data/i18n/titles';
 
 export function generateStaticParams() {
   return PROBLEM_STUBS.map((p) => ({ slug: p.slug }));
@@ -31,6 +33,7 @@ export async function generateMetadata({
       canonical: isDustIngestionAlias
         ? 'https://elimfilters.com/engineering/dust-ingestion/'
         : `https://elimfilters.com/knowledge-center/problems/${slug}/`,
+      ...((TRANSLATED_PROBLEM_SLUGS as readonly string[]).includes(slug) ? { languages: languageAlternates(`/knowledge-center/problems/${slug}`) } : {}),
     },
     robots: {
       index: shouldIndex,

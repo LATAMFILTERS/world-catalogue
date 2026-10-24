@@ -1,0 +1,85 @@
+{
+  "id": "PROB-ADHESIVE-WEAR",
+  "slug": "adhesive-wear",
+  "name": "Desgaste adesivo",
+  "category": "mechanical-wear",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "metaDescription": "Desgaste adesivo causado por contato metal-metal e rompimento do filme de óleo. Efeitos da temperatura, da pressão e da filtração.",
+  "definition": "O desgaste adesivo ocorre quando o filme de óleo lubrificante entre superfícies em movimento se rompe, causando contato direto metal-metal. Quando as superfícies deslizam sob carga sem lubrificação adequada, picos localizados de pressão e temperatura (>150°C) causam soldagem microscópica e cisalhamento das asperezas superficiais. O material é transferido de uma superfície para a outra, criando pontos ásperos que aceleram exponencialmente o desgaste.",
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4406",
+    "ASTM D4378"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Mecanismo de contato metal-metal",
+      "body": "O desgaste adesivo começa quando a espessura do filme de óleo cai abaixo de 0.1 µm (a espessura do filme depende da viscosidade, da carga e da velocidade conforme a curva de Stribeck). Depois que o filme se rompe: (1) As asperezas superficiais (micropicos de 0.1–1 µm de altura) se tocam diretamente sob carga; (2) A pressão de contato localizada excede 2–5 GPa (com área de contato de 1 cm² e carga de 10 kN); (3) A temperatura no contato entre asperezas sobe para 150–300°C pelo atrito; (4) O material superficial amolece, as asperezas se soldam entre si e se cisalham à medida que o movimento relativo continua; (5) O material transferido se acumula em uma superfície e depois se desprende como partícula (10–100 µm), deixando uma cratera. A taxa de desgaste adesivo se acelera exponencialmente depois de iniciada — o desgaste inicial cria pontos ásperos que aumentam ainda mais a pressão de contato."
+    },
+    {
+      "heading": "Gatilhos do rompimento do filme de óleo",
+      "body": "Cinco condições causam o rompimento do filme: (1) Partículas contaminantes >3 µm que rompem o filme ao agir como \"microengrenagens\" forçando o contato entre as superfícies; (2) Viscosidade insuficiente do óleo — um óleo de baixa viscosidade não consegue manter a espessura do filme sob carga; uma queda de viscosidade de 46 cSt (nominal) para 30 cSt reduz a espessura do filme em 30–40%; (3) Pressão/temperatura extremas — cargas de choque acima do envelope de projeto colapsam o filme temporariamente; altas temperaturas (>80°C) reduzem a viscosidade do óleo em 5–10% a cada 10°C; (4) Oxidação do óleo e esgotamento de aditivos — o óleo envelhecido perde os aditivos antidesgaste (zinco, molibdênio) que normalmente criam filmes protetores de lubrificação limite; (5) Umidade e ácidos corrosivos — a água e os ácidos de oxidação reduzem a resistência do filme de óleo e favorecem a corrosão por microcavidades, reduzindo a lisura superficial e a capacidade de carga do filme."
+    },
+    {
+      "heading": "Vulnerabilidade dos sistemas hidráulicos ao desgaste adesivo",
+      "body": "Os sistemas hidráulicos são particularmente suscetíveis ao desgaste adesivo em válvulas proporcionais, conjuntos carretel-furo e placas de portas de bombas, onde as folgas são estreitas (1–5 µm) e as pressões extremas (200–350 bar). O carretel de uma válvula proporcional mantém o controle hidráulico por uma folga precisa de 2–4 µm entre o carretel e o furo. Qualquer partícula >3 µm aumenta a pressão de contato do carretel; combinado com picos de pressão (300 bar × 10 cm² de carretel = 30,000 N de força) e aumentos de temperatura pela ação de estrangulamento da válvula proporcional, o desgaste adesivo começa rapidamente. O desgaste do carretel aumenta a folga de 3 µm para 5–10 µm em 500–1000 horas, destruindo o controle de precisão e causando perda da resposta proporcional (a pressão piloto deixa de controlar de forma confiável a posição do carretel principal)."
+    },
+    {
+      "heading": "Sinergia entre contaminação e temperatura",
+      "body": "O desgaste adesivo é um efeito sinérgico da contaminação E da temperatura: as partículas contaminantes reduzem o filme de óleo efetivo (ao ficarem presas nos espaços do filme) E a temperatura elevada reduz a viscosidade e a resistência do filme. Em operações de alta temperatura (mineração no deserto, climas tropicais), a temperatura base do óleo sobe para 60–70°C; isso por si só reduz a viscosidade em 30–40%, afinando o filme. Somar contaminação por partículas (ISO 19/17/14 contra uma meta de 16/14/11) reduz a espessura do filme em mais 20–30%, resultando em redução acumulada do filme de 50–70%. O efeito combinado acelera o desgaste adesivo em 10–20×. A prevenção exige AMBOS: controle de temperatura (arrefecimento adequado) E controle de contaminação (filtração em vários estágios)."
+    },
+    {
+      "heading": "Prevenção: aditivos antidesgaste + filtração",
+      "body": "Prevenção do desgaste adesivo em duas partes: (1) Aditivos antidesgaste (AW) do óleo — o ditiofosfato de dialquilzinco (ZDDP) e o molibdênio formam filmes protetores de lubrificação limite sob pressão extrema, permitindo que o filme se recupere após picos de pressão; os óleos sintéticos premium (SYNTRAX) contêm pacotes AW reforçados; (2) Controle de contaminação — a remoção de partículas evita o rompimento mecânico do filme; um óleo limpo ISO 16/14/11 mantém espessura de filme de 0.5–1 µm mesmo sob 200 bar de pressão e 70°C de temperatura. As margens de operação melhoram drasticamente: o filme de óleo se torna resiliente, consegue se recuperar após picos de pressão transitórios e acomoda as microasperezas sem soldagem. Resultado: a taxa de desgaste adesivo cai 10–50× em comparação com a abordagem de óleo genérico + filtração deficiente."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Qual é a diferença entre o desgaste adesivo e o abrasivo?",
+      "answer": "Desgaste abrasivo: partículas duras (sílica, óxidos) agem como ferramentas de esmerilhamento que cortam as superfícies; o desgaste é proporcional ao tamanho e à quantidade de partículas; a prevenção é a remoção de partículas por filtração. Desgaste adesivo: as superfícies metálicas se tocam diretamente sob carga; o material é transferido entre as superfícies e se desprende; a taxa de desgaste aumenta exponencialmente depois de iniciada. A prevenção exige tanto espessura de filme adequada (viscosidade, limpeza, arrefecimento) quanto aditivos antidesgaste. O desgaste abrasivo é um \"esmerilhamento lento\"; o desgaste adesivo é uma \"soldagem e perda de material rápidas\"."
+    },
+    {
+      "question": "Por que partículas contaminantes desencadeiam desgaste adesivo se são menores que a carga?",
+      "answer": "As partículas não precisam \"romper\" o filme à força; elas agem como \"espaçadores\" no espaço de óleo. Uma partícula de 3 µm em um espaço de filme de 4 µm é forçada contra os picos das asperezas, agindo como uma microengrenagem que aumenta a pressão de contato local em 10–50×. Esse pico de pressão localizado causa microssoldagem na interface partícula-superfície. Além disso, a presença da partícula perturba a formação do filme hidrodinâmico — a partícula cria redemoinhos e turbulência que impedem o fluxo uniforme do óleo, afinando o filme ao redor de sua localização."
+    },
+    {
+      "question": "O desgaste adesivo pode ser revertido depois de iniciado?",
+      "answer": "Não totalmente. Depois que o desgaste adesivo começa, a rugosidade superficial aumenta (de Ra 0.1 µm para Ra 0.5–1.5 µm) e as superfícies rugosas ficam travadas mecanicamente (ângulos de atrito altos impedem um deslizamento suave). Mesmo que a contaminação seja removida e o óleo substituído, as superfícies rugosas continuam gerando desgaste adesivo em taxa acelerada pelo aumento das pressões de contato. Prevenir é muito melhor do que remediar: manter óleo limpo (ISO 16/14/11), viscosidade adequada (46 cSt nominal) e aditivos antidesgaste desde o início. A detecção precoce (aumento de partículas de desgaste ferroso na análise de óleo) permite substituir o componente antes de um dano superficial permanente."
+    },
+    {
+      "question": "Como a temperatura aumenta o risco de desgaste adesivo?",
+      "answer": "A temperatura afeta a viscosidade (espessura do filme) e a estabilidade dos aditivos antidesgaste. Com um aumento de +10°C: a viscosidade cai 10–15% (reduzindo proporcionalmente a espessura do filme), a eficácia dos aditivos antidesgaste diminui 5–10% (menos proteção nos picos de pressão) e a taxa de oxidação dobra (o óleo envelhecido perde aditivos mais rápido). Em clima quente (40°C de ambiente) com arrefecimento inadequado (óleo a 85°C contra 65°C nominal), a perda de viscosidade combinada é de 30–40%, a espessura do filme cai 30–40% e a proteção dos aditivos é 20–30% menor. Isso cria a \"tempestade perfeita\" para o desgaste adesivo: filme fino + proteção química fraca + altas pressões de contato. Solução: arrefecimento ativo do óleo (controlado por termostato) + óleo premium de alto índice de viscosidade (SYNTRAX) + filtração em vários estágios."
+    },
+    {
+      "question": "Por que o desgaste adesivo é comum em válvulas proporcionais, mas raro em cilindros?",
+      "answer": "Os carretéis das válvulas proporcionais operam com: (1) folgas estreitas (folga carretel-furo de 2–4 µm), em que até partículas de 1 µm forçam o contato metálico; (2) altas pressões diferenciais (200–300 bar através do carretel), gerando forças de 20,000–30,000 N sobre uma pequena área do carretel; (3) alta velocidade do fluido (5–10 m/s), gerando alta tensão de cisalhamento. Os cilindros, por outro lado, operam com: (1) folgas amplas (folgas da vedação da haste de 20–50 µm); (2) pressão menor (100–150 bar); (3) velocidade do fluido menor. O mesmo nível de limpeza do óleo (ISO 19/17/14) é catastrófico para as válvulas proporcionais, mas tolerável para os cilindros. É por isso que as metas de limpeza do sistema devem ser definidas pelo componente MAIS SENSÍVEL (válvula proporcional, 16/14/11), e não pela média."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Espessura crítica do filme",
+      "value": "0.1–1 µm"
+    },
+    {
+      "label": "Temperatura no contato entre asperezas",
+      "value": "150–300°C"
+    },
+    {
+      "label": "Folga do carretel da válvula proporcional",
+      "value": "2–4 µm"
+    },
+    {
+      "label": "Aumento da taxa de desgaste (a cada +10°C)",
+      "value": "+50–100%"
+    }
+  ]
+}

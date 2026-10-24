@@ -1,0 +1,83 @@
+{
+  "id": "PROB-INJECTOR-WEAR",
+  "slug": "injector-wear",
+  "name": "Desgaste de injetores",
+  "category": "mechanical-wear",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "metaDescription": "Desgaste de injetores HPCR por contaminação com partículas e corrosão por água. Obstrução de orifícios, travamento da agulha e mecanismos de erosão.",
+  "definition": "O desgaste de injetores é a degradação das válvulas de agulha e dos orifícios do bico dos injetores common rail de alta pressão (HPCR) causada pela contaminação com partículas e pela corrosão por água. As tolerâncias microscópicas (orifícios do bico de 0.1 mm, sede da agulha de 0.5–1 µm) não toleram contaminação >2 µm. O desgaste se manifesta como erosão, travamento (stick-slip) e obstrução de orifícios, causando erros de sincronismo da injeção, distribuição desigual do combustível e falha total do injetor.",
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE™",
+    "HYDROCORE™"
+  ],
+  "sections": [
+    {
+      "heading": "Projeto dos injetores HPCR e sensibilidade a falhas",
+      "body": "Os injetores HPCR operam a 1600–2000 bar (160–200 MPa) de pressão, 10× mais do que os sistemas de combustível tradicionais. Os orifícios da ponta do bico medem 0.1–0.15 mm de diâmetro (100–150 µm); as folgas do carretel da válvula piloto são de 0.5–1 µm (escala micrométrica). Essas tolerâncias criam um modo de falha de \"pedra na represa\": uma única partícula dura >4 µm que entra em um orifício de 0.1 mm bloqueia o fluxo de combustível. Os múltiplos ciclos da válvula de agulha (25,000 ciclos/segundo a 1500 RPM) geram tensões de alta frequência que se propagam em microtrincas nas sedes de válvula e nas paredes dos orifícios. Os sistemas de combustível OEM modernos não toleram contaminação; até um diesel genérico \"limpo\" com partículas de 4 µm é destrutivo para os sistemas HPCR."
+    },
+    {
+      "heading": "Três mecanismos de falha dos injetores",
+      "body": "Modo 1 — Obstrução do orifício: uma partícula >3 µm se aloja no orifício do bico, restringindo o padrão de pulverização e causando distribuição desigual do combustível; o resultado é marcha lenta irregular, fumaça branca (combustível não queimado) e falhas de ignição. Modo 2 — Travamento da agulha (stick-slip): as partículas se incrustam na superfície da sede da válvula (0.5 µm de largura de sede), criando picos de microatrito que travam a válvula de agulha de forma intermitente; o travamento causa sincronismo errático da injeção, entrega de combustível atrasada (variação de sincronismo de 100–500 microssegundos) e partidas prolongadas. Modo 3 — Erosão/pitting: as partículas que atingem a válvula de agulha durante seu movimento de 25,000 ciclos/s microcortam a sede da válvula, destruindo a geometria de vedação; uma profundidade de pitting >10 µm em uma sede de 0.5 µm destrói completamente a vedação. Os três modos exigem a substituição completa do injetor ($800–1200 por injetor × 6–8 injetores por motor = $4800–9600 por evento de falha)."
+    },
+    {
+      "heading": "Contaminação por água e corrosão em HPCR",
+      "body": "A água no diesel causa quatro mecanismos de falha específicos dos HPCR: (1) Corrosão do furo do injetor e das superfícies da válvula de agulha — a água livre reage com compostos ácidos do diesel (ácido sulfúrico da oxidação do combustível, ácidos orgânicos do crescimento microbiano), causando pitting nos componentes do injetor em 100–200 horas de operação; profundidade de corrosão >50 µm em áreas críticas destrói a geometria de vedação; (2) Corrosão acelerada por microrganismos — as interfaces água-diesel abrigam bactérias Bacillus e Clostridium, que produzem ácidos orgânicos (acetato, butirato) que aceleram a corrosão em 3–5×; os depósitos de biofilme obstruem as passagens de combustível; (3) Formação de emulsões — a água suspensa no diesel como gotículas minúsculas cria fluxo em golfadas, emperrando as válvulas de agulha e obstruindo as linhas de dreno do combustível piloto (0.5–1 mm de diâmetro); (4) Cavitação no trilho de combustível de alta pressão — bolhas de vapor de água se formam durante a expansão do combustível através dos orifícios do injetor, colapsando violentamente e danificando as paredes dos orifícios (pulsos de pressão >2000 bar durante 1–10 microssegundos). Limites críticos de água: >100 ppm desencadeia pitting por corrosão; >200 ppm inicia crescimento microbiano; >300 ppm causa degradação visível do desempenho; >500 ppm, falha do sistema em 1–2 semanas."
+    },
+    {
+      "heading": "Estratégia de detecção e prevenção",
+      "body": "Detecção do desgaste de injetores: (1) Análise de combustível ISO 4406 para contagem de partículas (meta: partículas <4 µm em HPCR); (2) Ensaio Karl Fischer do teor de água (limite crítico >200 ppm); (3) Ensaio de desempenho dos injetores — os sistemas OBD-II modernos detectam variações de sincronismo da injeção (>50 microssegundos); marcha lenta irregular e fumaça branca indicam travamento/obstrução. A prevenção exige proteção do combustível em estágios: (1) Filtração de partículas de combustível SYNTAPORE que captura as partículas antes do trilho de combustível; (2) Separador de água HYDROCORE que previne a corrosão; (3) Polimento periódico do combustível para tratamento proativo do tanque. O ensaio Karl Fischer regular (mensal na estação chuvosa, trimestral no restante do ano) permite detectar precocemente a entrada de água antes que o combustível corrosivo chegue aos injetores."
+    },
+    {
+      "heading": "Cenário ilustrativo: proteção do sistema de combustível de uma frota comercial",
+      "body": "⚠️ Cenário ilustrativo, não um caso documentado. Considere uma frota pesada operando em clima tropical úmido apenas com filtros de combustível genéricos e respiros de tanque padrão (sem dessecante). Em condições de monção na estação chuvosa, as amostras de combustível nesse tipo de situação podem mostrar uma limpeza de partículas ISO muito acima da meta HPCR praticamente limpa e teor de água na faixa de 400–800 ppm, causando falhas repetidas de injetores com marcha lenta irregular e fumaça branca. Acrescentar respiros dessecantes nos tanques de combustível, filtração de duplo estágio com separador de água HYDROCORE e ensaios mensais de água Karl Fischer são as intervenções padrão para voltar a controlar a água do tanque — os respiros dessecantes sozinhos podem reduzir a entrada de água da faixa de 100–500 ppm para menos de 20 ppm nas estações de alta umidade. Em um cenário como este, as taxas de falha de injetores devem cair acentuadamente depois que o teor de água e a limpeza de partículas voltarem à meta — o prazo exato de retorno do investimento e a economia dependem do tamanho da frota, do clima e da taxa de falhas inicial, portanto trate qualquer número aqui como indicativo, não como resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Por que os filtros de diesel genéricos não conseguem proteger os injetores HPCR?",
+      "answer": "Os filtros de diesel genéricos são classificados a 20–25 µm absolutos (Beta 200 @ 20 µm), deixando passar 50% das partículas >20 µm. Os injetores HPCR falham com partículas >4 µm. Um filtro genérico que deixe passar mesmo 1% das partículas de 5 µm é catastrófico — 100 µm³ de combustível passando por orifícios de bico de 0.1 mm a 1000 litros/hora = milhões de partículas de 5 µm por minuto chegando aos injetores. O meio de partículas SYNTAPORE é projetado para a faixa de tamanho de partícula mais fina relevante para a proteção dos orifícios HPCR, compatível com o estágio de filtração de combustível aprovado, e não com uma classificação universal. O limite de tamanho de partícula é a diferença crítica."
+    },
+    {
+      "question": "Como a água no diesel é detectada antes que danifique os injetores?",
+      "answer": "A titulação coulométrica Karl Fischer (ASTM D6304) é o método padrão. Procedimento: (1) A amostra de combustível é coletada em recipiente vedado imediatamente após a amostragem do tanque (evita a exposição ao ar, que aumenta artificialmente a água medida); (2) 100–500 mL de amostra são injetados na célula de titulação Karl Fischer; (3) A água reage com o reagente, produzindo um sinal elétrico mensurável proporcional ao teor de água; (4) Resultado: ppm de água (faixa de 50–2000 ppm). Limites críticos: <50 ppm (seguro); 50–100 ppm (monitorar de perto); 100–200 ppm (ativar o separador de água imediatamente); >200 ppm (crescimento microbiano provável, ação de emergência). Frequência: base mensal, semanal na estação chuvosa e imediatamente após um evento suspeito de entrada de água."
+    },
+    {
+      "question": "Injetores corroídos podem ser reparados ou precisam ser substituídos?",
+      "answer": "Injetores HPCR corroídos não podem ser reparados. O pitting por corrosão em áreas críticas (sede da válvula de agulha, parede do orifício) destrói a geometria de precisão. Mesmo após remover os depósitos de corrosão e polir as superfícies, o pitting permanece e ocorrem vazamentos. Orientação OEM: substituir imediatamente ao detectar corrosão (verificada por fumaça branca, marcha lenta irregular, variação da pressão de combustível ou inspeção após a remoção do injetor). Algumas oficinas tentam uma \"limpeza\" com solventes ultrassônicos, mas isso remove apenas depósitos soltos, não o pitting incrustado. É necessária a substituição completa ($800–1200 por injetor); a separação de água preventiva evita esse custo."
+    },
+    {
+      "question": "Como os respiros dessecantes evitam a entrada de água nos tanques de combustível?",
+      "answer": "A respiração do tanque ocorre durante os ciclos de temperatura: à noite esfria (o tanque se contrai e aspira ar pelo respiro); de dia esquenta (o tanque se expande e expulsa ar). Os respiros padrão deixam o ar ambiente entrar; com umidade relativa de 80%+ (climas tropicais), o ar ambiente a 25°C e 80% de UR contém ~13 gramas de água por metro cúbico. Em 6 meses (estação chuvosa), 1000 m³ de ar úmido entrando no tanque = ~13 kg de água acumulada. Os respiros dessecantes usam sílica-gel ou peneira molecular que absorve a umidade do ar que entra, reduzindo a umidade de 80% para 5–10%. Os cartuchos dos respiros são regeneráveis (a sílica-gel volta à cor azul quando carregada); o intervalo típico de regeneração é de 6–12 meses, conforme o clima. Efeito líquido: a entrada de água no tanque cai de 100–500 ppm para <20 ppm nas estações de alta umidade."
+    },
+    {
+      "question": "Por que o crescimento microbiano acelera a corrosão do sistema de combustível?",
+      "answer": "As bactérias da interface combustível-água (Bacillus, Clostridium) consomem os hidrocarbonetos do diesel e a água, produzindo ácidos orgânicos (acetato, butirato, ácido propiônico). Esses ácidos baixam o pH do combustível de neutro (6.5–7.5) para ácido (4.0–5.0). O combustível ácido corrói agressivamente o aço do furo do injetor, a superfície da válvula de agulha e os componentes do trilho de combustível. Além disso, os depósitos de biofilme bacteriano (lodo escuro visível no fundo do tanque e nos filtros de combustível) contêm sais dissolvidos e ácidos orgânicos altamente corrosivos. Um mês de crescimento microbiano intenso (>1 milhão de UFC/mL) pode gerar profundidade de corrosão de 50–100 µm, destruindo superfícies de vedação críticas. Prevenção: (1) manter a água <100 ppm para evitar colônias bacterianas; (2) tratamento com biocida se for detectada contaminação microbiana (contagem bacteriana >10,000 UFC/mL); (3) o polimento periódico do combustível remove o biofilme acumulado."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Pressão de operação HPCR",
+      "value": "1600–2000 bar"
+    },
+    {
+      "label": "Diâmetro do orifício do bico",
+      "value": "0.1–0.15 mm"
+    },
+    {
+      "label": "Folga do carretel da válvula de agulha",
+      "value": "0.5–1 µm"
+    },
+    {
+      "label": "Limite crítico de água",
+      "value": ">200 ppm (crescimento microbiano)"
+    }
+  ]
+}

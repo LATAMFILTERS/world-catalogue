@@ -1,0 +1,90 @@
+{
+  "id": "PROB-FUEL-CONTAMINATION",
+  "slug": "fuel-contamination",
+  "name": "Contaminación del combustible",
+  "category": "contamination",
+  "severity": "high",
+  "status": "published",
+  "relatedSystems": [
+    "fuel-cleanliness-protection"
+  ],
+  "metaDescription": "Contaminación del combustible: daño a inyectores HPCR, ingreso de partículas y agua, compatibilidad con biodiésel. Ensayo de agua ASTM D6304.",
+  "definition": "La contaminación del combustible se refiere a partículas sólidas (>4 µm), agua (libre o emulsionada) y microorganismos suspendidos en el diésel o el biodiésel. Los inyectores common rail de alta presión (HPCR) modernos, con orificios de tobera de 0.1–0.15 mm y asientos de válvula de 0.5–1 µm, son extremadamente sensibles a la contaminación por partículas y agua, y fallan de forma catastrófica dentro de 500–1000 horas de exposición a combustible contaminado.",
+  "relatedStandards": [
+    "ASTM D6304",
+    "ISO 12937",
+    "ASTM D4378",
+    "ISO 16332"
+  ],
+  "relatedTechnologies": [
+    "HYDROCORE™",
+    "SYNTAPORE™",
+    "DRYCORE™"
+  ],
+  "sections": [
+    {
+      "heading": "Diseño de los inyectores HPCR y sensibilidad a la contaminación",
+      "body": "Los inyectores common rail de alta presión (HPCR) operan a 1600–2000 bar (frente a 200–400 bar en los sistemas tradicionales). Esta presión extrema exige dimensiones de orificio microscópicas: orificios de la punta de la tobera de 0.1–0.15 mm de diámetro, holguras del carrete de la válvula piloto de 0.5–1 µm y asientos de la válvula de aguja con una tolerancia de forma de ±0.05 mm. Estas tolerancias son 10–100× más estrechas que las de otros componentes del sistema de combustible. Una sola partícula dura >4 µm que entra en un orificio de 0.1 mm se convierte en una \"piedra en la represa\": bloquea el flujo de combustible y causa fallas de encendido o el apagado total del inyector. Las gotas de agua que se unen en un flujo en tapones pueden atascar las válvulas de aguja en milisegundos."
+    },
+    {
+      "heading": "Modos de daño por partículas en los inyectores HPCR",
+      "body": "La contaminación por partículas provoca tres modos de falla: (1) Obstrucción de orificios: partículas >4 µm que se alojan en los orificios de tobera de 0.1–0.15 mm, restringen el patrón de pulverización y causan una distribución desigual del combustible, ralentí irregular y humo blanco visible (combustible no quemado); (2) Agarrotamiento (stick-slip): partículas que se incrustan en las superficies del asiento de la válvula de aguja y crean picos de microfricción que traban la válvula de forma intermitente; el agarrotamiento retrasa la entrega de combustible (deriva de la sincronización de la inyección), prolonga los tiempos de arranque y dificulta el encendido; (3) Erosión/picado: partículas que golpean las superficies de la válvula de aguja durante su movimiento de alta velocidad (apertura/cierre a 25,000 ciclos/segundo), microcortan la superficie del asiento y destruyen la geometría de sellado. Una profundidad de picado >10 µm en un asiento de 0.5 µm significa la destrucción total de la válvula. Los tres modos obligan a reemplazar el inyector ($800–1200 por inyector × 6–8 inyectores por motor = $4800–9600 por evento de falla). Las garantías OEM modernas excluyen las fallas por combustible contaminado."
+    },
+    {
+      "heading": "Contaminación por agua en los sistemas HPCR",
+      "body": "El agua en el combustible HPCR causa cuatro mecanismos de falla: (1) Corrosión de los componentes del inyector: el agua libre reacciona con compuestos ácidos del diésel (ácido sulfúrico por oxidación del combustible) y pica el alojamiento del inyector y las superficies de la válvula de aguja en 100–200 horas de operación; (2) Crecimiento de microorganismos: las interfaces agua-diésel albergan bacterias Bacillus y Clostridium, que producen ácidos orgánicos corrosivos (acetato, butirato) que aceleran la corrosión 3–5×; (3) Formación de emulsiones: el agua suspendida en el diésel como gotas diminutas obstruye los pasajes capilares de combustible (líneas de drenaje del combustible piloto de 0.5–1 mm de diámetro) y provoca falta de presión y mal funcionamiento del inyector; (4) Cavitación en el riel de combustible de alta presión: se forman burbujas de vapor de agua durante la expansión del combustible a través de los orificios del inyector, que colapsan violentamente y dañan las paredes de los orificios. Umbral crítico: >100 ppm de agua desencadena corrosión medible; >200 ppm inicia el crecimiento de microorganismos; >300 ppm causa una degradación visible del desempeño (ralentí irregular, humo blanco, golpeteo de inyectores); >500 ppm, falla del sistema en 1–2 semanas."
+    },
+    {
+      "heading": "Sensibilidad a la contaminación propia del biodiésel",
+      "body": "Las mezclas de biodiésel (B5–B100) aumentan 2–3× la sensibilidad a la contaminación del combustible: (1) Higroscopicidad: el biodiésel absorbe la humedad atmosférica 2–3× más rápido que el diésel convencional; los tanques que almacenan B20+ deben usar respiraderos desecantes y tapas de acceso selladas; (2) Preferencia de los microorganismos: Bacillus y Aspergillus proliferan más rápido en el biodiésel que en el diésel convencional, con tasas de crecimiento 3–5× mayores con niveles de agua equivalentes; (3) Corrosión de inyectores: los elastómeros compatibles con biodiésel (nitrilo, EPDM) de los inyectores HPCR se hinchan levemente en el biodiésel, lo que reduce las holguras de la válvula de aguja y aumenta el riesgo de agarrotamiento por partículas >2 µm (frente a >4 µm en inyectores de diésel convencional); (4) Inestabilidad oxidativa: el biodiésel se oxida más rápido que el diésel convencional y produce compuestos de oxidación polares que favorecen la absorción de agua y el crecimiento de microorganismos. El ensayo de agua ASTM D6304 es OBLIGATORIO para combustible mezclado con biodiésel cada 100 horas de operación (frente a trimestral para diésel convencional)."
+    },
+    {
+      "heading": "Estrategia de filtración y protección del combustible",
+      "body": "La protección del combustible HPCR requiere varias etapas de filtración: (1) Filtración del almacenamiento de combustible a granel: filtro de partículas + filtro separador de agua en la entrada del tanque que evita nueva contaminación durante el trasvase a los tanques de los vehículos; (2) Filtro de combustible primario (filtro principal): eliminación de partículas (SYNTAPORE) antes de la bomba de combustible, junto con un separador de agua dedicado (HYDROCORE) para eliminar el agua libre; (3) Filtro de combustible secundario (filtro fino): eliminación de partículas más finas (SYNTAPORE) que protege el riel de combustible HPCR y los inyectores; (4) Filtración del drenaje del combustible piloto: filtración en el circuito de retorno del combustible piloto del inyector, que evita que las partículas de desgaste por degradación del carrete piloto vuelvan a circular hacia el riel de combustible principal. La combinación moderna ELIMFILTERS SYNTAPORE (partículas) + HYDROCORE (separación de agua) ofrece eliminación de partículas y separación de agua por etapas en todo el circuito de combustible y cumple los requisitos de protección HPCR. Al pasar a mezclas de biodiésel se requiere pulir el combustible de los tanques existentes (carro portátil con filtro de partículas + separador de agua)."
+    },
+    {
+      "heading": "Escenario ilustrativo: prevención de la contaminación del combustible en una flota diésel de servicio pesado",
+      "body": "⚠️ Escenario ilustrativo, no un caso documentado. Considere una flota de distribución que carga combustible desde un tanque a granel propio expuesto al venteo y al ingreso de lluvia, sin respiradero desecante. El muestreo de combustible en este tipo de situación puede mostrar 300–500 ppm de agua —muy por encima del umbral de aproximadamente 100 ppm a partir del cual comienza una corrosión medible de los inyectores HPCR— junto con una limpieza de partículas ISO elevada (alrededor de 22/20/16), lo que provoca fallas frecuentes de inyectores a $800–1,200 por unidad. Agregar un respiradero desecante en el tanque a granel, un prefiltro en la línea de llenado de la bomba de trasvase, filtración de doble etapa en el vehículo (primario de partículas SYNTAPORE + secundario separador de agua HYDROCORE) y ensayos rutinarios de agua Karl Fischer son las intervenciones estándar para devolver el contenido de agua por debajo del umbral de crecimiento microbiano (aproximadamente 50 ppm). En un escenario como este, las tasas de falla de inyectores deberían caer de forma marcada una vez que el agua y la limpieza de partículas del combustible lleguen al objetivo; el ahorro exacto y el período de recuperación de la inversión dependen del tamaño de la flota, el ciclo de trabajo y la tasa de fallas inicial, por lo que cualquier cifra aquí debe tomarse como orientativa, no como un resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Por qué los inyectores HPCR son tan sensibles a la contaminación del combustible en comparación con los sistemas de combustible antiguos?",
+      "answer": "Los inyectores HPCR operan a 1600–2000 bar (frente a 200–400 bar en los sistemas tradicionales) y tienen holguras microscópicas: orificios de tobera de 0.1–0.15 mm y asientos de válvula de aguja de 0.5–1 µm. Estas tolerancias son 10–100× más estrechas que las de los sistemas antiguos. Una partícula de 4 µm que bloquea un orificio de 0.1 mm es, en proporción, más grande que una roca en un túnel, mientras que los sistemas antiguos, con pasajes de inyector de 0.3–0.5 mm, son más tolerantes."
+    },
+    {
+      "question": "¿Qué es el agarrotamiento de inyectores y cómo lo causa la contaminación?",
+      "answer": "El agarrotamiento (stick-slip) ocurre cuando las partículas se incrustan en las superficies del asiento de la válvula de aguja y crean una fricción intermitente que traba momentáneamente las válvulas de aguja al abrir/cerrar. Esto retrasa la sincronización de la inyección de combustible en 1–5 milisegundos y causa ralentí irregular, humo blanco (combustible no quemado) y arranques difíciles. El agarrotamiento empeora hasta que las partículas desgastan surcos en los asientos de válvula, lo que causa un daño permanente del sello y obliga a reemplazar el inyector."
+    },
+    {
+      "question": "¿Por qué las mezclas de biodiésel requieren ensayos de combustible más frecuentes que el diésel convencional?",
+      "answer": "El biodiésel es higroscópico (absorbe humedad 2–3× más rápido que el diésel convencional) y favorece un crecimiento más rápido de microorganismos (tasa 3–5× mayor). Además, los elastómeros compatibles con biodiésel de los inyectores HPCR se hinchan levemente y reducen las holguras de la válvula de aguja de 1–2 µm a 0.5–1 µm, lo que aumenta la sensibilidad a las partículas >2 µm. Se recomienda el ensayo ASTM D6304 cada 100 horas para biodiésel frente a cada 500 horas para diésel convencional."
+    },
+    {
+      "question": "¿Cómo evitan los separadores de agua el daño por agua en los inyectores?",
+      "answer": "Los filtros separadores de agua por coalescencia (tecnología HYDROCORE) usan un medio oleofóbico (que atrae el agua) que deja pasar el diésel mientras captura las gotas de agua. Las gotas capturadas se unen en gotas más grandes que se hunden y drenan por gravedad en el fondo del vaso del filtro, eliminando el agua libre antes de que el combustible llegue al riel HPCR según el desempeño nominal del elemento aprobado. El agua emulsionada (gotas diminutas dispersas en todo el combustible) requiere un pulido adicional del combustible con sistemas portátiles de tratamiento de tanques."
+    },
+    {
+      "question": "¿Cuál es el nivel crítico de agua que causa corrosión en los inyectores HPCR?",
+      "answer": "El agua libre >100 ppm inicia una corrosión medible de los componentes de los inyectores HPCR en 100–200 horas de operación. El crecimiento de microorganismos (que acelera la corrosión por la producción de ácidos orgánicos) se inicia con 50–100 ppm y se vuelve agresivo con >200 ppm. Nivel de acción: >100 ppm requiere investigación; >200 ppm activa un tratamiento inmediato del sistema de combustible (separación de agua + pulido del tanque); con >500 ppm el sistema no debe operarse hasta limpiar el combustible."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Tamaño del orificio del inyector HPCR",
+      "value": "0.1–0.15 mm"
+    },
+    {
+      "label": "Holgura del asiento de la válvula de aguja",
+      "value": "0.5–1 µm"
+    },
+    {
+      "label": "Umbral crítico de agua",
+      "value": "100 ppm"
+    },
+    {
+      "label": "Objetivo de protección HPCR",
+      "value": "partículas <4 µm"
+    }
+  ]
+}

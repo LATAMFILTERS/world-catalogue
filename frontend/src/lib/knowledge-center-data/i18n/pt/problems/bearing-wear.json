@@ -1,0 +1,86 @@
+{
+  "id": "PROB-BEARING-WEAR",
+  "slug": "bearing-wear",
+  "name": "Desgaste de mancais",
+  "category": "mechanical-wear",
+  "severity": "critical",
+  "status": "published",
+  "relatedSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "metaDescription": "Desgaste de mancais causado por desgaste abrasivo acelerado pela contaminação. Correlação com a limpeza ISO 4406 e previsão da vida útil.",
+  "definition": "O desgaste de mancais é a redução acelerada da folga do mancal pela contaminação com partículas abrasivas no óleo lubrificante. Partículas duras (sílica, óxidos, resíduos de desgaste) presas entre as superfícies do mancal geram uma ação de microcorte que aumenta a rugosidade superficial, produz alterações dimensionais e termina no engripamento.",
+  "relatedStandards": [
+    "ISO 16889",
+    "ISO 4406",
+    "ISO 19438"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX™",
+    "MACROCORE™",
+    "DURATECH™"
+  ],
+  "sections": [
+    {
+      "heading": "Mecanismo de contaminação e desgaste",
+      "body": "O desgaste de mancais se acelera em proporção direta aos níveis de contaminação. Partículas duras (>4 µm) entram no filme do mancal e criam sulcos de microcorte nas superfícies da pista e dos elementos rolantes. Isso aumenta a rugosidade superficial de Ra 0.1 µm (mancal novo) para 0.4–0.6 µm sob contaminação severa. O desgaste acumulado reduz a folga radial interna do mancal (tipicamente 10–20 µm nominal) até que as tensões de contato excedam o limite de escoamento do material, causando lascamento e engripamento. A taxa de desgaste dobra a cada passo de degradação do código de limpeza ISO 4406 (p. ex., 16/14/11 → 17/15/12 dobra a taxa de desgaste)."
+    },
+    {
+      "heading": "Correlação com a limpeza ISO 4406",
+      "body": "A vida útil dos mancais depende criticamente da limpeza do óleo medida pelos códigos ISO 4406. Os dados empíricos do setor mostram: ISO 16/14/11 (ideal para mancais) → 15,000–25,000 horas de operação; ISO 19/17/14 (aceitável) → 8,000–10,000 horas; ISO 22/20/17 (ruim) → 2,000–3,000 horas. Cada passo mais rigoroso no código de limpeza prolonga a vida do mancal em 2–3 vezes. O óleo novo de tambor normalmente mede ISO 21/19/16; se a meta do motor é 16/14/11, o óleo novo deve ser filtrado antes do uso. A correlação é: vida do mancal = vida base × (fator de limpeza) × (fator de carga) × (fator de velocidade), em que o fator de limpeza vai de 0.1 (contaminado) a 3.5 (ideal)."
+    },
+    {
+      "heading": "Abordagem genérica versus abordagem de sistema",
+      "body": "Abordagem genérica: o OEM especifica o grau do filtro, o operador instala uma reposição genérica e controla apenas o intervalo de troca de óleo. Resultado típico: óleo em condição ISO 22/20/17 após 500 horas, vida dos mancais reduzida à metade (8,000 horas), retíficas não planejadas a cada 3–4 anos. Abordagem de sistema: especificar a limpeza alvo (16/14/11), instalar filtração em vários estágios (ar + combustível + retorno + kidney-loop off-line), fazer análises ISO 4406 trimestrais e trocar os filtros preventivamente quando o código atingir a meta + 1 nível. Resultado típico: 16/14/11 sustentado, vida dos mancais estendida para 20,000+ horas, retíficas planejadas a cada 8–10 anos e custo total 60% menor ao longo da vida do equipamento."
+    },
+    {
+      "heading": "Prevenção: filtração em vários estágios",
+      "body": "Prevenir o desgaste de mancais exige controlar a entrada de contaminação em TODOS os pontos: (1) A filtração da admissão de ar (ISO 5011) remove 99.9% do pó antes que entre no cárter; (2) A filtração de combustível (ASTM D6304 com separador de água) impede que a água e as partículas do combustível cheguem aos injetores e ao óleo lubrificante; (3) Filtração da linha de retorno antes do reservatório (Beta 1000 @ 10 µm, equivalente à limpeza ISO 16/14/11); (4) A circulação off-line kidney-loop através de um filtro de alta eficiência (Beta 1000 @ 3 µm) mantém a limpeza alvo indefinidamente, mesmo com entrada contínua de contaminação. Cada estágio remove contaminação progressivamente menor, obtendo um efeito composto: 99.9% × 99.5% × 99.5% × 99.9% = 99.97% de exclusão total da contaminação."
+    },
+    {
+      "heading": "Cenário ilustrativo: prevenção de falhas de mancais em uma frota",
+      "body": "⚠️ Cenário ilustrativo, não um caso documentado. Considere uma frota de caminhões fora de estrada de mineração que usa apenas filtração genérica e sofre falhas de mancais não planejadas e recorrentes entre os ciclos de retífica programados. Passar para uma filtração em vários estágios (combinação SYNTRAX + MACROCORE + DURATECH) com amostragem ISO 4406 trimestral e um circuito de circulação off-line kidney-loop é o caminho padrão para levar a limpeza do óleo abaixo da especificação OEM (para a faixa de 15/13/10) e controlar os mecanismos de desgaste abrasivo/adesivo que causam falhas prematuras de mancais. Em um cenário como este, as falhas não planejadas de mancais devem cair acentuadamente e os intervalos de retífica programada podem se estender de forma significativa depois que a limpeza for mantida na meta — a extensão exata do intervalo, a redução do tempo de parada e a economia financeira dependem da frota, do ciclo de trabalho e da taxa de falhas inicial, portanto trate qualquer número aqui como indicativo, não como resultado documentado."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Qual é a relação entre a limpeza do óleo (código ISO 4406) e a vida útil dos mancais?",
+      "answer": "A vida dos mancais depende exponencialmente da limpeza do óleo. Os modelos empíricos de desgaste de mancais (SKF, FAG, Timken) mostram que cada passo mais rigoroso no código ISO 4406 prolonga a vida do mancal em 2–3×. Exemplo: um óleo ISO 16/14/11 resulta em 20,000 h de vida do mancal; ISO 19/17/14, em 8,000 h; ISO 22/20/17, em 2,000–3,000 h. A diferença entre o ideal (16/14/11) e o ruim (22/20/17) é uma redução da vida do mancal de 7–10×. Essa relação é quantificada na metodologia de cálculo de vida de mancais da ISO 19438."
+    },
+    {
+      "question": "Como as partículas duras causam desgaste dos mancais?",
+      "answer": "Partículas contaminantes duras (sílica, óxido de ferro, resíduos de desgaste >4 µm) são levadas no filme lubrificante do mancal e ficam presas entre as superfícies da pista e dos elementos rolantes durante a rotação. Sob carga (a força radial do mancal normalmente é de 5–20 kN), a partícula se crava nas duas superfícies, criando sulcos de microcorte. Após milhões de ciclos, os sulcos acumulados aumentam a rugosidade superficial (Ra 0.1 µm → 0.4–0.6 µm), o que aumenta exponencialmente o atrito e a taxa de desgaste. Por fim, a folga do mancal (10–20 µm nominal) é consumida, levando a contato metal-metal, lascamento e engripamento."
+    },
+    {
+      "question": "Por que o óleo novo deve ser filtrado antes de ser adicionado a um motor?",
+      "answer": "O óleo hidráulico novo de tambor normalmente mede ISO 21/19/16 ou pior, contaminado durante a fabricação, o transporte e o manuseio dos tambores. Se um motor visa ISO 16/14/11 para proteger os mancais, adicionar óleo novo sem filtrar contamina diretamente o sistema e anula semanas de esforço de filtração. Uma troca de óleo de 40 litros a ISO 21/19/16 pode piorar a limpeza média do sistema em 2–3 níveis de código. Boa prática: filtrar o óleo novo com uma unidade portátil de transferência (filtro absoluto de 10 µm, equivalente a uma meta ISO 16) antes de introduzi-lo no motor."
+    },
+    {
+      "question": "Qual é a diferença entre a vida dos mancais em ensaios de laboratório e na operação real?",
+      "answer": "A vida dos mancais em laboratório (conforme o cálculo da capacidade de carga dinâmica básica ISO 281) pressupõe filme de lubrificação constante, carga estável e contaminação desprezível. A vida real dos mancais (horas reais até a falha) é 30–70% mais curta por causa das partículas contaminantes que perturbam o filme, dos transientes de carga (aceleração, frenagem) que elevam as tensões de contato e da água/ácidos corrosivos no óleo. O \"fator de contaminação\" do modelo de vida de mancais da ISO 19438 (0.1–3.5) explica essa diferença. Uma limpeza ideal do óleo aproxima a vida real do mancal das previsões de laboratório; uma limpeza ruim a reduz a 10–20% da vida de laboratório."
+    },
+    {
+      "question": "O desgaste de mancais pode ser detectado antes de uma falha catastrófica?",
+      "answer": "Sim. Três métodos: (1) Análise de óleo — os metais de desgaste ferrosos (Fe, Fe₂O₃) medidos por ICP-OES aumentam 5–10× antes do engripamento do mancal, subindo de uma linha de base de 10–20 ppm para 100–500 ppm em semanas; (2) Monitoramento ultrassônico — o lascamento inicial produz ondas de tensão de alta frequência (>10 kHz) detectáveis com um medidor ultrassônico antes que partículas metálicas apareçam no óleo; (3) Análise de vibração — a frequência de lascamento do mancal aumenta de uma linha de base <2 mm/s para >7–10 mm/s no espectro de velocidade ISO 20816. Os programas de manutenção baseada na condição monitoram os três e acionam a substituição do mancal quando as tendências se aceleram."
+    }
+  ],
+  "keyParameters": [
+    {
+      "label": "Limpeza ideal",
+      "value": "ISO 16/14/11"
+    },
+    {
+      "label": "Vida do mancal (ideal)",
+      "value": "15,000–25,000 h"
+    },
+    {
+      "label": "Vida do mancal (ruim)",
+      "value": "2,000–3,000 h"
+    },
+    {
+      "label": "Tamanho de partícula crítico",
+      "value": ">4 µm"
+    }
+  ]
+}
