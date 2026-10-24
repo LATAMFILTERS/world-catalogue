@@ -1,0 +1,42 @@
+name: Marine Page Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/marine-page-validation-20261024.yml
+
+permissions:
+  contents: read
+
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Check video codec and asset dimensions
+        run: |
+          set -euo pipefail
+          test -s frontend/public/images/Marino-1.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=index,codec_name,codec_type,pix_fmt,width,height -of json frontend/public/images/Marino-1.mp4
+          test -s frontend/public/images/marine-2_converted.avif
+  types:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Typecheck site components
+        working-directory: frontend
+        run: npm run type-check
