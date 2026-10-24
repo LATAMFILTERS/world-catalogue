@@ -321,10 +321,16 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
       </section>
 
       <section style={cta}>
-        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>{industryText(lang, "From operating conditions to a verified application.")}</h2>
-          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>{industryText(lang, "Have an OEM reference? Use Part Search. Need technical review? Share the equipment, duty cycle, contamination symptoms and maintenance history.")}</p>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}><Link href="/systems/" style={yellowButton}>{industryText(lang, "PROTECTION SYSTEMS")}</Link><Link href="/technologies/" style={darkButton}>{industryText(lang, "TECHNOLOGIES")}</Link><a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "PART SEARCH")}</a></div>
+        <div className={styles.ctaGrid}>
+          <h2 style={sectionTitle}>{industryText(lang, "From operating conditions to a verified application.")}</h2>
+          <div className={styles.ctaContent}>
+            <p style={bodyText}>{industryText(lang, "Have an OEM reference? Use Part Search. Need technical review? Share the equipment, duty cycle, contamination symptoms and maintenance history.")}</p>
+            <div className={styles.ctaActions}>
+              <Link href="/systems/" style={yellowButton}>{industryText(lang, "PROTECTION SYSTEMS")}</Link>
+              <Link href="/technologies/" style={darkButton}>{industryText(lang, "TECHNOLOGIES")}</Link>
+              <a href="https://part-search.elimfilters.com/" style={darkButton}>{industryText(lang, "PART SEARCH")}</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
