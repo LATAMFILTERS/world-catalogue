@@ -48,6 +48,17 @@ if (pageSha !== comparison.source.page_sha256) stop('mann-page.html does not mat
 if (!/^https:\/\/www\.mann-filter\.com\//.test(comparison.source.url)) stop('source URL is not mann-filter.com');
 if (comparison.counts.matched_engine_code_mismatch !== 0) stop('engine-code mismatches between MANN and current rows');
 if (!mannRows.length) stop('no MANN rows');
+// Exact identity: the page title must name this code as a whole token
+// ("C 37" must not be satisfied by "C 37 001").
+const normTitle = String(comparison.source.title || '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ');
+const codeTokens = String(comparison.mann_code || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+const titleCompact = normTitle.replace(/MANN FILTER/g, ' ').split(/\s+/).filter(Boolean);
+const exact = titleCompact.some((_, i) => {
+  let acc = '';
+  for (let j = i; j < titleCompact.length; j++) { acc += titleCompact[j]; if (acc === codeTokens) return !/^\d/.test(titleCompact[j + 1] || ''); if (acc.length >= codeTokens.length) return false; }
+  return false;
+});
+if (!exact) stop(`page title "${comparison.source.title}" is not an exact match for ${comparison.mann_code}`);
 
 // ---------- Target payload (MANN official rows, structured) ----------
 const clean = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== null && v !== undefined && v !== ''));
