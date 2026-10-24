@@ -7,7 +7,6 @@ import { constructionText } from '@/lib/construction-i18n';
 import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
-const PAGE_URL = `${BASE_URL}/industries/construction/`;
 
 const equipment = ['Excavators', 'Wheel Loaders', 'Bulldozers', 'Motor Graders', 'Compactors', 'Articulated Dump Trucks'] as const;
 
@@ -21,8 +20,24 @@ const jobsitePressures = [
 const protection = [
   ['SILICA + JOBSITE DUST', 'Airborne abrasive particulate', 'AIR INTAKE', 'MACROCORE™', '/technologies/macrocore/'],
   ['HYDRAULIC DEBRIS', 'Ingress + wear particles + service contamination', 'HYDRAULIC', 'NANOFORCE™', '/technologies/nanoforce/'],
-  ['FUEL CONTAMINATION', 'Storage + transfer + moisture exposure', 'FUEL', 'HYDROCORE™', '/technologies/hydrocore/'],
+  ['FUEL + MOISTURE', 'Bulk fuel storage, transfer and mobile refueling', 'FUEL', 'HYDROCORE™', '/technologies/hydrocore/'],
+  ['FUEL PARTICULATE', 'Particles entering during refueling and handling', 'FUEL', 'SYNTAPORE™', '/technologies/syntapore/'],
+  ['CABIN DUST', 'Airborne soil, demolition dust and site debris', 'CABIN AIR', 'MICROKAPPA™', '/technologies/microkappa/'],
   ['LUBE CONTAMINATION', 'Wear debris + soot + service ingress', 'LUBRICATION', 'SYNTRAX™', '/technologies/syntrax/'],
+] as const;
+
+const serviceChecks: Record<string, string> = {
+  'AIR INTAKE': 'Inspect restriction indication, intake duct integrity and seals according to the machine manual.',
+  'HYDRAULIC': 'Check fluid cleanliness requirements, hose couplings and clean handling during attachment changes.',
+  'FUEL': 'Review storage cleanliness, mobile refueling, water drainage and the specified fuel-filter application.',
+  'LUBRICATION': 'Review oil condition, operating hours and the machine-specific filter and service requirements.',
+  'CABIN AIR': 'Inspect cabin seals and the specified cabin filter; particulate filtration does not establish respiratory protection against hazardous dust.'
+};
+
+const ownership = [
+  ['Equipment owner', 'Prioritize critical excavators, loaders and supporting machines by project dependency, operating hours and available replacement capacity.'],
+  ['Maintenance contractor', 'Plan safe isolation, service access, correct parts, clean handling and documentation of installed references and completed work.'],
+  ['Return to service', "Verify sealing, leaks, instrument indications and hydraulic response using the equipment manufacturer's procedure before releasing the machine to the jobsite."]
 ] as const;
 
 const consequences = [
@@ -76,6 +91,8 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           { '@type': 'Thing', name: 'MACROCORE' },
           { '@type': 'Thing', name: 'NANOFORCE' },
           { '@type': 'Thing', name: 'HYDROCORE' },
+          { '@type': 'Thing', name: 'SYNTAPORE' },
+          { '@type': 'Thing', name: 'MICROKAPPA' },
           { '@type': 'Thing', name: 'SYNTRAX' },
         ],
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
@@ -84,9 +101,9 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         '@type': 'BreadcrumbList',
         '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Construction Filtration Systems', item: pageUrl },
+          { '@type': 'ListItem', position: 1, name: lang === 'es' ? 'Inicio' : lang === 'pt' ? 'Início' : 'Home', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/` },
+          { '@type': 'ListItem', position: 2, name: lang === 'es' ? 'Industrias' : lang === 'pt' ? 'Indústrias' : 'Industries', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/` },
+          { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Construcción' : lang === 'pt' ? 'Construção' : 'Construction', item: pageUrl },
         ],
       },
       {
@@ -104,23 +121,25 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className="mining-industry-page construction-industry-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PageHeader currentPage="Construction" />
 
       <section style={hero}>
-        <video autoPlay muted loop playsInline preload="auto" style={heroVideo}>
-          <source src="/images/construction-2.mp4" type="video/mp4" />
-        </video>
-        <div style={heroShade} />
-        <div style={heroInner}>
+        <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="auto" style={heroVideo}><source src="/images/construction-2.mp4" type="video/mp4" /></video>
+        <div className="miningHeroShade" style={heroShade} />
+        <div className="miningHeroContainer" style={heroInner}>
           <p style={eyebrow}>{constructionText(lang, "CONSTRUCTION / JOBSITE ASSET PROTECTION")}</p>
-          <h1 style={heroTitle}>{constructionText(lang, "Construction Filtration")}<br /><span style={yellow}>{constructionText(lang, "Systems")}</span></h1>
-          <p style={heroPromise}>{constructionText(lang, "Protect the machines that keep the project moving.")}</p>
-          <p style={heroLead}>{constructionText(lang, "Air intake, hydraulic, fuel and lubrication contamination control for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, vibration, heat and severe off-road duty.")}</p>
-          <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{constructionText(lang, "IDENTIFY MY PROTECTION PATH")}</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{constructionText(lang, "FIND MY FILTER")}</a>
+          <h1 style={heroTitle} className="miningHeroHeading">{constructionText(lang, "FILTRATION FOR")}<br /><span style={yellow}>{constructionText(lang, "CONSTRUCTION EQUIPMENT")}</span></h1>
+          <div className="miningHeroLower">
+            <div className="miningHeroCopy">
+              <p style={heroPromise} className="miningHeroPromise">{constructionText(lang, "Technical protection for construction equipment owners, fleet managers and maintenance contractors.")}</p>
+              <p style={heroLead}>{constructionText(lang, "Air intake, hydraulic, fuel and lubrication contamination control for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, vibration, heat and severe off-road duty.")}</p>
+            </div>
+            <div style={actions} className="miningHeroActions">
+              <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{constructionText(lang, "PLAN CONSTRUCTION MAINTENANCE")}</Link>
+              <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{constructionText(lang, "FIND MY FILTER")}</a>
+            </div>
           </div>
         </div>
       </section>
@@ -138,12 +157,12 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{constructionText(lang, "JOBSITE REALITY")}</p>
           <h2 id="jobsite-title" style={sectionTitle}>{constructionText(lang, "The contamination load changes with the work being done.")}</h2>
           <p style={wideText}>{constructionText(lang, "Construction equipment moves between excavation, loading, grading, demolition, compaction and haulage. The machine may stay on one project while the contamination mechanism and duty cycle change several times.")}</p>
-          <div style={pressureGrid}>{jobsitePressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, text)}</p></article>)}</div>
+          <div style={pressureGrid} className="miningRiskGrid">{jobsitePressures.map(([title, text]) => <article key={title} style={pressureCard} className="miningRiskCard"><h3 style={cardTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
-        <div style={equipmentGrid}>
+        <div style={equipmentGrid} className="miningEquipmentGrid">
           <div style={equipmentCopy}>
             <h2 id="equipment-title" style={sectionTitle}>{constructionText(lang, "Different machines. Different jobsite exposure.")}</h2>
             <p style={wideText}>{constructionText(lang, "An excavator, loader and grader can operate yards apart and still require different filtration priorities because their airflow, hydraulic load, duty cycle and service access are not the same.")}</p>
@@ -158,7 +177,7 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{constructionText(lang, "CONTAMINATION PATHWAYS")}</p>
           <h2 id="protection-title" style={sectionTitle}>{constructionText(lang, "Connect the jobsite threat to the system that must stay protected.")}</h2>
           <p style={wideText}>{constructionText(lang, "Construction filtration should begin with the contamination source and protected interface, then resolve the appropriate system, technology and final part.")}</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{constructionText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{constructionText(lang, source)}</strong><p style={smallText}>{constructionText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{constructionText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{constructionText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{constructionText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{constructionText(lang, "EXPLORE →")}</span></Link></article>)}</div>
+          <div className="miningPathwayFlow" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{constructionText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{constructionText(lang, source)}</strong><p style={smallText}>{constructionText(lang, detail)}</p></div><div><span style={smallLabel}>{constructionText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{constructionText(lang, system)}</strong></div><div><span style={smallLabel}>{constructionText(lang, "SERVICE CHECK")}</span><p style={smallText}>{constructionText(lang, serviceChecks[system])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{constructionText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{constructionText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
@@ -173,7 +192,18 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{constructionText(lang, "PROJECT CONTINUITY")}</p>
           <h2 id="impact-title" style={sectionTitle}>{constructionText(lang, "Protect the operating chain before contamination reaches the schedule.")}</h2>
           <p style={wideText}>{constructionText(lang, "A filtration problem on one machine can become a production problem for the crew, the next task and the project sequence. Contamination control therefore supports more than component protection.")}</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, text)}</p></article>)}</div>
+          <div style={impactGrid} className="miningStakesGrid">{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, text)}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section style={section} aria-labelledby="construction-tco-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>{constructionText(lang, "AVAILABILITY & OWNERSHIP COST")}</p>
+          <h2 id="construction-tco-title" style={sectionTitle}>{constructionText(lang, "Protect the machine. Control maintenance risk. Keep the project moving.")}</h2>
+          <p style={wideText}>{constructionText(lang, "The price of a filter is only part of a service decision. Downtime can affect paid crews, rented equipment, subcontractor sequencing, field travel and the date a machine returns to productive work.")}</p>
+          <div className="miningValueGrid" style={{ marginTop: '2rem' }}>
+            {ownership.map(([title, description]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, description)}</p></article>)}
+          </div>
         </div>
       </section>
 
@@ -181,7 +211,7 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{constructionText(lang, "FROM JOBSITE TO PART")}</p>
           <h2 id="decision-title" style={sectionTitle}>{constructionText(lang, "Resolve the construction application in five decisions.")}</h2>
-          <div style={decisionGrid}>{[
+          <div style={decisionGrid} className="miningDecisionGrid">{[
             ['Machine', 'Identify the excavator, loader, dozer, grader, compactor or haul unit.'],
             ['Jobsite', 'Define dust, demolition debris, moisture, fuel handling, heat and vibration exposure.'],
             ['Duty', 'Establish operating hours, hydraulic demand, start-stop pattern and service access.'],
@@ -196,7 +226,7 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{constructionText(lang, "APPLICATION EVIDENCE")}</p>
           <h2 id="evidence-title" style={sectionTitle}>{constructionText(lang, "Selection should end with evidence, not assumption.")}</h2>
           <p style={wideText}>{constructionText(lang, "A construction application becomes stronger when the equipment identity, protected system and operating reality are checked against available OEM references, current filter numbers, dimensions and documented application evidence before the final product is selected.")}</p>
-          <div style={evidenceGrid}>
+          <div style={evidenceGrid} className="miningValueGrid">
             <article style={evidenceCard}><h3 style={cardTitle}>{constructionText(lang, "Identify the asset")}</h3><p style={bodyText}>{constructionText(lang, "Machine, engine, model and protected system establish the technical context.")}</p></article>
             <article style={evidenceCard}><h3 style={cardTitle}>{constructionText(lang, "Define the exposure")}</h3><p style={bodyText}>{constructionText(lang, "Dust, moisture, fuel handling, hydraulic demand, vibration and service access define the operating reality.")}</p></article>
             <article style={evidenceCard}><h3 style={cardTitle}>{constructionText(lang, "Validate the part")}</h3><p style={bodyText}>{constructionText(lang, "OEM references, current filter numbers, dimensions and application evidence support final product identification.")}</p></article>
@@ -208,13 +238,13 @@ export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{constructionText(lang, "CONSTRUCTION FILTRATION QUESTIONS")}</p>
           <h2 id="faq-title" style={sectionTitle}>{constructionText(lang, "What fleet and maintenance teams need to know.")}</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{constructionText(lang, q)}</h3><p style={faqAnswer}>{constructionText(lang, a)}</p></article>)}</div>
+          <div style={faqList} className="miningFaqGrid">{questions.map(([q, a]) => <article key={q} style={faqItem} className="miningFaqItem"><h3 style={faqQuestion}>{constructionText(lang, q)}</h3><p style={faqAnswer}>{constructionText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
-        <div style={conversionGrid}>
-          <div><p style={eyebrow}>{constructionText(lang, "NEED TO RESOLVE A CONSTRUCTION APPLICATION?")}</p><h2 style={conversionTitle}>{constructionText(lang, "Identify the protection path before choosing the part.")}</h2><p style={conversionText}>{constructionText(lang, "Send the machine, engine, protected system, jobsite conditions and any known OEM or filter reference. ELIMFILTERS can use that information to structure the application path and move from operating condition to validated product identification.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{constructionText(lang, "IDENTIFY MY PROTECTION PATH")}</Link></div>
+        <div style={conversionGrid} className="miningConversionGrid">
+          <div><p style={eyebrow}>{constructionText(lang, "NEED TO RESOLVE A CONSTRUCTION APPLICATION?")}</p><h2 style={conversionTitle}>{constructionText(lang, "Identify the protection path before choosing the part.")}</h2><p style={conversionText}>{constructionText(lang, "Send machine model and serial number, engine, operating hours, protected system, site conditions, symptoms, service history and current filter references. Include the project's planned maintenance window.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{constructionText(lang, "IDENTIFY MY PROTECTION PATH")}</Link></div>
           <div style={conversionSecondary}><div><p style={eyebrow}>{constructionText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{constructionText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{constructionText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{constructionText(lang, "SERVE CONSTRUCTION CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{constructionText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{constructionText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
@@ -226,10 +256,10 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const yellow: CSSProperties = { color: '#FFF12D' };
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: '92vh', background: '#000', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
+const hero: CSSProperties = { minHeight: '82vh', background: '#000', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
 const heroVideo: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: VIDEO_HERO_TREATMENT.opacity };
-const heroShade: CSSProperties = { position: 'absolute', inset: 0, background: VIDEO_HERO_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { width: '100%', maxWidth: '1180px', margin: '0 auto', padding: 'clamp(7rem,12vw,10rem) clamp(1.25rem,5vw,4.5rem) clamp(4rem,7vw,6rem)', position: 'relative', zIndex: 2 };
+const heroShade: CSSProperties = { position: 'absolute', inset: 0, zIndex: 2, background: VIDEO_HERO_TREATMENT.overlayBackground };
+const heroInner: CSSProperties = { width: '100%', maxWidth: '1560px', margin: '0 auto', padding: 'clamp(7rem,12vw,10rem) clamp(1.25rem,5vw,4.5rem) clamp(4rem,7vw,6rem)', position: 'relative', zIndex: 2 };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.72rem', lineHeight: 1.2, letterSpacing: '.18em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .88, fontSize: 'clamp(3.3rem,7.6vw,7.2rem)', textTransform: 'uppercase', margin: 0, maxWidth: '920px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.1rem,2vw,1.55rem)', lineHeight: 1.3, fontWeight: 700, maxWidth: '760px', margin: '1.6rem 0 0' };
@@ -241,29 +271,28 @@ const directAnswerSection: CSSProperties = { padding: 'clamp(3rem,5vw,4.5rem) cl
 const directAnswerTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.8rem,3.4vw,3rem)', lineHeight: 1, letterSpacing: '-.03em', textTransform: 'uppercase', margin: 0, maxWidth: '900px' };
 const directAnswerText: CSSProperties = { fontSize: 'clamp(1.02rem,1.6vw,1.2rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.82)', maxWidth: '980px', margin: '1.25rem 0 0' };
 const section: CSSProperties = { padding: 'clamp(4.5rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderBottom: '1px solid rgba(255,255,255,.06)' };
-const contentWidth: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const contentWidth: CSSProperties = { maxWidth: '1560px', margin: '0 auto' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2.2rem,4.7vw,4.2rem)', lineHeight: .96, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0, maxWidth: '920px' };
-const bodyText: CSSProperties = { fontSize: '1rem', lineHeight: 1.72, color: 'rgba(255,255,255,.66)', margin: 0 };
+const bodyText: CSSProperties = { fontSize: 'clamp(1.125rem,1.24vw,1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,.82)', margin: 0 };
 const wideText: CSSProperties = { ...bodyText, maxWidth: '860px', marginTop: '1.3rem' };
-const pressureGrid: CSSProperties = { marginTop: '2.8rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.1)' };
-const pressureCard: CSSProperties = { background: '#050505', padding: '1.55rem', minHeight: '220px', flex: '1 1 240px', maxWidth: '380px', minWidth: 0 };
+const pressureGrid: CSSProperties = { width: '100%', marginTop: '2rem' };
+const pressureCard: CSSProperties = { background: '#050505', padding: '1.55rem', minHeight: '190px', minWidth: 0 };
 const cardTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.05rem,1.8vw,1.35rem)', lineHeight: 1.05, textTransform: 'uppercase', color: '#fff', margin: '0 0 .8rem' };
 const equipmentSection: CSSProperties = { ...section, background: '#050505' };
-const equipmentGrid: CSSProperties = { ...contentWidth, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 'clamp(2.5rem,6vw,5rem)', alignItems: 'center' };
+const equipmentGrid: CSSProperties = { width: '100%', margin: '2rem auto 0', alignItems: 'center' };
 const equipmentCopy: CSSProperties = { minWidth: 0 };
 const equipmentMedia: CSSProperties = { minWidth: 0 };
 const equipmentImage: CSSProperties = { width: '100%', height: 'auto', objectFit: 'contain', display: 'block', border: '1px solid rgba(255,255,255,.08)' };
 const equipmentList: CSSProperties = { marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,.14)' };
 const equipmentRow: CSSProperties = { padding: '.95rem 0', borderBottom: '1px solid rgba(255,255,255,.14)' };
 const equipmentName: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(.95rem,1.3vw,1.25rem)', lineHeight: 1.08, textTransform: 'uppercase', fontWeight: 700, color: '#fff', overflowWrap: 'break-word' };
-const pathwayGrid: CSSProperties = { marginTop: '2.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: '1rem' };
+const pathwayGrid: CSSProperties = { width: '100%', marginTop: '2rem', display: 'grid', gap: '1rem' };
 const pathwayCard: CSSProperties = { border: '1px solid rgba(255,255,255,.1)', background: '#050505', padding: '1.5rem', minHeight: '260px', display: 'grid', gap: '1rem' };
 const smallLabel: CSSProperties = { fontFamily: displayFont, fontSize: '.58rem', letterSpacing: '.13em', color: 'rgba(255,255,255,.4)', fontWeight: 700, display: 'block', marginBottom: '.7rem' };
 const smallLabelYellow: CSSProperties = { ...smallLabel, color: '#FFF12D' };
 const pathwaySource: CSSProperties = { fontFamily: displayFont, fontSize: '1.15rem', color: '#fff', textTransform: 'uppercase' };
 const pathwaySystem: CSSProperties = { fontFamily: displayFont, fontSize: '1.05rem', color: '#fff', textTransform: 'uppercase' };
 const smallText: CSSProperties = { ...bodyText, fontSize: '.86rem', lineHeight: 1.55, marginTop: '.6rem' };
-const pathwayDivider: CSSProperties = { height: '1px', background: 'rgba(255,255,255,.1)' };
 const technologyLink: CSSProperties = { textDecoration: 'none', borderTop: '1px solid rgba(255,241,45,.18)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' };
 const technologyName: CSSProperties = { fontFamily: displayFont, fontSize: '1.25rem', color: '#FFF12D' };
 const technologyCta: CSSProperties = { fontFamily: displayFont, fontSize: '.58rem', letterSpacing: '.1em', color: 'rgba(255,255,255,.6)', marginTop: '.65rem' };
@@ -272,13 +301,13 @@ const principle: CSSProperties = { ...contentWidth, borderLeft: '4px solid #FFF1
 const principleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.74rem', letterSpacing: '.16em', fontWeight: 700 };
 const principleText: CSSProperties = { fontSize: 'clamp(1.2rem,2vw,1.55rem)', lineHeight: 1.55, color: 'rgba(255,255,255,.9)', margin: '1rem 0 0', maxWidth: '1040px' };
 const impactSection: CSSProperties = { ...section, background: '#050505' };
-const impactGrid: CSSProperties = { marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: '1rem' };
+const impactGrid: CSSProperties = { width: '100%', marginTop: '2.5rem' };
 const impactCard: CSSProperties = { borderTop: '1px solid rgba(255,255,255,.15)', padding: '1.25rem 0', minHeight: '150px' };
 const impactTitle: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '1.05rem', textTransform: 'uppercase', margin: '0 0 .65rem' };
-const decisionGrid: CSSProperties = { marginTop: '2.6rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.1)' };
-const decisionCard: CSSProperties = { background: '#030303', minHeight: '200px', padding: '1.5rem', flex: '1 1 200px', maxWidth: '320px', minWidth: 0 };
+const decisionGrid: CSSProperties = { width: '100%', marginTop: '2.6rem' };
+const decisionCard: CSSProperties = { background: '#030303', minHeight: '200px', padding: '1.5rem', minWidth: 0 };
 const evidenceSection: CSSProperties = { ...section, background: '#020202' };
-const evidenceGrid: CSSProperties = { marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(250px,100%),1fr))', gap: '1rem' };
+const evidenceGrid: CSSProperties = { width: '100%', marginTop: '2.5rem' };
 const evidenceCard: CSSProperties = { borderTop: '2px solid rgba(255,241,45,.7)', background: '#060606', padding: '1.5rem', minHeight: '170px' };
 const faqSection: CSSProperties = { ...section, background: '#070707' };
 const faqList: CSSProperties = { marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,.12)' };
@@ -286,7 +315,7 @@ const faqItem: CSSProperties = { padding: '1.5rem 0', borderBottom: '1px solid r
 const faqQuestion: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.05rem,1.8vw,1.3rem)', lineHeight: 1.25, margin: '0 0 .65rem' };
 const faqAnswer: CSSProperties = { ...bodyText, maxWidth: '940px', fontSize: '.96rem' };
 const conversionSection: CSSProperties = { padding: 'clamp(4.5rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', background: '#020202', borderTop: '1px solid rgba(255,255,255,.08)' };
-const conversionGrid: CSSProperties = { ...contentWidth, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 'clamp(2.5rem,6vw,5rem)' };
+const conversionGrid: CSSProperties = { width: '100%', display: 'grid', gap: 'clamp(2.5rem,6vw,5rem)' };
 const conversionSecondary: CSSProperties = { display: 'grid', gap: '2.2rem' };
 const conversionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2.4rem,5vw,4.6rem)', lineHeight: .95, letterSpacing: '-.04em', textTransform: 'uppercase', maxWidth: '760px', margin: 0 };
 const conversionText: CSSProperties = { ...bodyText, fontSize: '1.05rem', maxWidth: '680px', margin: '1.5rem 0 2rem' };
