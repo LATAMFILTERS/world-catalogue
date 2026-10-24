@@ -1,0 +1,110 @@
+{
+  "slug": "sae-j726",
+  "code": "SAE J726",
+  "entityId": "STD-SAE-J726",
+  "title": "Air Cleaner Test Code",
+  "issuingOrganization": "SAE International",
+  "year": "2002 (cancelada)",
+  "revisionStatus": "withdrawn",
+  "metaDescription": "A SAE J726 é um código de ensaio histórico de filtros de ar já cancelado. A revisão final da SAE, J726_200206, foi cancelada em 27 de junho de 2002; use-a apenas como referência histórica quando a documentação antiga exigir.",
+  "scope": "Código de ensaio de laboratório histórico para determinar e relatar o desempenho de filtros de ar do tipo seco e em banho de óleo para motores de combustão interna.",
+  "engineeringPurpose": "Preserva a SAE J726 como referência técnica histórica para equipamentos e documentação antigos. Não deve ser apresentada como um equivalente norte-americano vigente da ISO 5011 nem como um requisito universal atual de qualificação dos OEMs.",
+  "sections": [
+    {
+      "heading": "Situação atual",
+      "body": "A SAE J726 foi cancelada em 2002. As revisões anteriores tratavam da determinação em laboratório e do relato de características de desempenho de filtros de ar, como restrição ou queda de pressão do fluxo de ar, eficiência de coleta de poeira, capacidade de poeira e integridade estrutural. Ela só continua útil quando uma especificação antiga ou um relatório de ensaio histórico cita expressamente a J726."
+    },
+    {
+      "heading": "Uso no trabalho de engenharia atual",
+      "body": "Não deduza conformidade atual, intervalos de serviço, valores de restrição terminal ou qualificação do produto apenas a partir de uma referência histórica à J726. A avaliação atual do produto deve seguir a norma vigente ou o requisito do OEM aplicável ao sistema de filtro de ar e ao mercado específicos."
+    },
+    {
+      "heading": "Relação com a ISO 5011",
+      "body": "A ISO 5011 é uma norma internacional separada para o ensaio de desempenho de equipamentos de limpeza do ar de admissão. Os dados históricos da SAE J726 e os dados da ISO 5011 não devem ser tratados como automaticamente intercambiáveis; compare apenas resultados gerados em condições de ensaio e com requisitos de relato explicitamente compatíveis."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Situação",
+      "value": "Cancelada pela SAE em 2002"
+    },
+    {
+      "label": "Uso",
+      "value": "Apenas como referência antiga / histórica"
+    },
+    {
+      "label": "Medições históricas",
+      "value": "Restrição, eficiência contra poeira, capacidade de poeira, integridade estrutural"
+    },
+    {
+      "label": "Regra de seleção atual",
+      "value": "Seguir o requisito vigente do OEM ou da norma aplicável à aplicação"
+    }
+  ],
+  "applicableSystems": [
+    "air-intake-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-GRAVIMETRIC-EFFICIENCY",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-RESTRICTION",
+    "TERM-TEST-DUST",
+    "TERM-PROGRESSIVE-DENSITY-GRADIENT"
+  ],
+  "relatedTopics": [
+    "airflow-engineering",
+    "dust-holding-capacity",
+    "testing-and-validation"
+  ],
+  "relatedTechnologies": [
+    "MACROCORE™"
+  ],
+  "relatedArticles": [
+    "sae-j726-iso-5011-air-cleaner-test",
+    "airflow-engineering",
+    "iso-5011",
+    "air-intake-system-design"
+  ],
+  "faqs": [
+    {
+      "question": "A SAE J726 ainda está vigente?",
+      "answer": "Não. A SAE registra a revisão final J726_200206 como cancelada em 27 de junho de 2002."
+    },
+    {
+      "question": "A SAE J726 deve ser usada como norma de qualificação atual?",
+      "answer": "Apenas quando uma especificação antiga a exigir expressamente. A qualificação atual deve seguir o requisito vigente do OEM ou da norma aplicável ao produto e ao mercado."
+    },
+    {
+      "question": "Os resultados da SAE J726 e da ISO 5011 são intercambiáveis?",
+      "answer": "Não automaticamente. Os resultados históricos da J726 e da ISO 5011 só devem ser comparados quando se demonstrar que as condições de ensaio, os contaminantes, o fluxo de ar e a base de relato são compatíveis."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "SAE J726, Air Cleaner Test Code, SAE International",
+      "relevance": "Código de ensaio norte-americano principal para avaliar o desempenho de filtros de ar; especifica a metodologia de medição da eficiência gravimétrica, da restrição e da capacidade de retenção de poeira para qualificar filtros de ar automotivos e de equipamentos pesados."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 5011:2014, Inlet Air Cleaning Equipment — Performance Testing of Air Filters for Internal Combustion Engines and Compressors, ISO Geneva",
+      "relevance": "Contraparte internacional da SAE J726; metodologia de ensaio harmonizada que permite comparar diretamente o desempenho e documentar a conformidade com as duas normas na cadeia de suprimentos global dos OEMs."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust, ISO Geneva",
+      "relevance": "Define os graus de pó de ensaio padronizados (A2 Fine = SAE Fine; A3 Medium = SAE Coarse) usados como material de desafio nos ensaios SAE J726 e ISO 5011, garantindo a comparabilidade internacional das medições de capacidade de retenção de poeira."
+    },
+    {
+      "category": "standard",
+      "citation": "SAE J1539, Air Cleaner Test Code — Heavy Duty Diesel Engines, SAE International",
+      "relevance": "Norma SAE complementar para avaliar o conjunto completo de filtro de ar de diesel de serviço pesado; complementa o ensaio de elementos da J726 com a determinação da restrição e do intervalo de serviço em nível de conjunto."
+    }
+  ],
+  "commonMistakes": [
+    "Apresentar a SAE J726 como norma vigente ou como o equivalente norte-americano atual da ISO 5011.",
+    "Usar resultados de ensaio históricos da J726 como prova de conformidade atual com a ISO 5011 sem evidência de ensaio compatível.",
+    "Transformar dados de capacidade de poeira em um intervalo de serviço de campo universal sem carga medida nem limites de restrição do OEM.",
+    "Publicar melhorias de eficiência genéricas, limiares de restrição ou multiplicadores de vida útil como se a SAE J726 os exigisse."
+  ]
+}

@@ -238,3 +238,6 @@ const TECH_TEXT: Record<'es' | 'pt', Record<string, { tagline: string; domain: s
 export function technologyText(slug: string, field: 'tagline' | 'domain', lang: SiteLang, fallback: string): string {
   return lang === 'es' || lang === 'pt' ? TECH_TEXT[lang][slug]?.[field] ?? fallback : fallback;
 }
+
+// Standards detail pages with reviewed /es/ and /pt/ versions (official standard titles stay in English).
+export const TRANSLATED_STANDARD_SLUGS = ['iso-4406', 'iso-16889', 'iso-11171', 'nas-1638', 'sae-j726', 'iso-16332', 'iso-3723', 'iso-2941'] as const;

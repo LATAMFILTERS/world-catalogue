@@ -1,0 +1,130 @@
+{
+  "slug": "iso-11171",
+  "code": "ISO 11171",
+  "entityId": "STD-ISO-11171",
+  "title": "Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2016",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 11171 define a metodologia de calibração dos contadores automáticos de partículas usados na análise de fluidos hidráulicos e de lubrificação, estabelecendo a base de medições de limpeza ISO 4406 rastreáveis.",
+  "scope": "Contadores automáticos de partículas (APC) usados para contagem de partículas em fluidos hidráulicos e de lubrificação.",
+  "engineeringPurpose": "Especifica o procedimento de calibração dos contadores automáticos de partículas com partículas de referência rastreáveis ao NIST, garantindo que as medições do código de limpeza ISO 4406 e os resultados de razão Beta ISO 16889 sejam reprodutíveis entre instrumentos, laboratórios e países: a base metrológica de todo o sistema de limpeza de fluidos.",
+  "sections": [
+    {
+      "heading": "Base da calibração",
+      "body": "A ISO 11171 usa partículas de referência de látex de poliestireno (PSL) rastreáveis ao NIST para calibrar os contadores automáticos de partículas para contagem de partículas em líquidos. A calibração estabelece os limiares de tamanho e a exatidão da contagem em toda a faixa de medição do instrumento. A calibração ISO 11171 é obrigatória para relatar conforme a ISO 4406(c): o sufixo \"(c)\" na notação da razão Beta (por exemplo, β₆(c)) confirma que as contagens de partículas foram obtidas com equipamentos calibrados pela ISO 11171."
+    },
+    {
+      "heading": "Contexto histórico",
+      "body": "Antes da ISO 11171, os contadores de partículas eram calibrados com pó de ensaio AC fine, um pó mineral natural com propriedades ópticas variáveis. Instrumentos diferentes calibrados com pó de ensaio AC fine davam resultados inconsistentes para o mesmo tamanho real de partícula. A calibração com PSL da ISO 11171 eliminou essa variabilidade e permitiu comparar de forma válida os dados de contagem de partículas entre instrumentos, laboratórios e fabricantes. A passagem da notação β para β(c) reflete essa mudança."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Material de referência",
+      "value": "Partículas PSL rastreáveis ao NIST"
+    },
+    {
+      "label": "Sufixo de notação",
+      "value": "(c) = calibrado pela ISO 11171"
+    },
+    {
+      "label": "Verificação da calibração",
+      "value": "Material de referência NIST SRM 1003c"
+    }
+  ],
+  "applicableSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-PARTICLE-COUNT",
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-MULTI-PASS-TEST",
+    "TERM-BETA-RATIO"
+  ],
+  "relatedTopics": [
+    "fluid-cleanliness",
+    "testing-and-validation",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "iso-11171-particle-counting",
+    "fluid-cleanliness",
+    "oil-analysis-methods",
+    "testing-and-validation"
+  ],
+  "commonMistakes": [
+    "Operar contadores automáticos de partículas sem verificar o estado de calibração ISO 11171. A deriva de calibração do APC causa erros sistemáticos que invalidam as comparações de códigos de limpeza entre intervalos de serviço.",
+    "Comparar resultados de contagem de partículas de APCs que usam fluidos de calibração ou padrões de referência PSL diferentes. A ISO 11171 exige o NIST SRM 1003c: instrumentos calibrados com outros padrões produzem resultados não comparáveis.",
+    "Usar APCs de obscurecimento de luz com fluidos cujos aditivos causam absorção óptica (por exemplo, óleos de engrenagens escuros). A ISO 11171 especifica os tipos de fluido aplicáveis: fluidos não conformes exigem métodos de contagem alternativos."
+  ],
+  "faqs": [
+    {
+      "question": "O que significa o sufixo \"(c)\" na notação da razão Beta (por exemplo, β₆(c)≥200)?",
+      "answer": "O sufixo \"(c)\" indica que a razão Beta foi medida com um contador automático de partículas calibrado pela ISO 11171. Antes da ISO 11171, os APCs eram calibrados com pó de ensaio AC fine, um pó mineral natural com índice de refração variável e geometria de partícula irregular. A ISO 11171 o substituiu por esferas de látex de poliestireno (PSL) de tamanho certificado rastreáveis ao NIST, permitindo reprodutibilidade entre laboratórios. As razões Beta medidas com instrumentos calibrados pela ISO 11171 diferem sistematicamente das medidas com calibração de pó AC fine; a notação \"(c)\" as distingue e evita comparações inválidas entre dados de ensaio de filtros anteriores a 2000 e posteriores a 2000."
+    },
+    {
+      "question": "Qual material de referência a ISO 11171 exige para calibrar os APCs?",
+      "answer": "A ISO 11171 exige o material de referência padrão (SRM) 1003c do NIST: uma suspensão de microesferas de látex de poliestireno (PSL) de tamanho estreitamente controlado com distribuição de tamanhos de partícula certificada. O NIST SRM 1003c fornece pontos de calibração rastreáveis na faixa de tamanhos pertinente para medir a limpeza de fluidos hidráulicos e de lubrificação (aproximadamente 2–200 µm). Calibrar com o SRM 1003c garante que um resultado β₆(c)≥200 obtido em um laboratório na Alemanha produza dados de contagem de partículas diretamente comparáveis à mesma medição nos EUA, no Japão ou no Brasil."
+    },
+    {
+      "question": "Com que frequência um APC conforme a ISO 11171 deve ser recalibrado?",
+      "answer": "A ISO 11171 não impõe um intervalo de recalibração específico, mas exige verificar o estado de calibração antes de cada sessão de ensaio com um fluido de referência rastreável ao NIST. Na prática, a calibração é verificada no início de cada dia de trabalho em laboratórios de alto volume e no mínimo a cada 30 dias quando os ensaios são menos frequentes. A recalibração completa com o NIST SRM 1003c é feita quando a verificação diária indica deriva do instrumento acima de ±10% da contagem de partículas PSL certificada em qualquer tamanho de calibração. Os fabricantes normalmente recomendam recalibração completa a cada 6–12 meses."
+    },
+    {
+      "question": "Por que a calibração PSL da ISO 11171 mudou os valores de razão Beta em relação aos dados de ensaio anteriores a 2000?",
+      "answer": "O pó de ensaio AC fine (ACFTD), usado antes da ISO 11171, é um mineral natural com propriedades ópticas variáveis entre lotes. Os APCs calibrados com ACFTD contavam as partículas com tamanhos aparentes sistematicamente diferentes dos obtidos ao contar esferas PSL do mesmo tamanho nominal, porque as esferas PSL são opticamente uniformes e as partículas de ACFTD não. Quando a calibração PSL da ISO 11171 foi adotada, as razões Beta dos filtros recalculadas no mesmo limiar de tamanho de partícula ficaram numericamente mais altas (melhor eficiência) que as medições baseadas em ACFTD. Um filtro antes classificado como β₁₀=75 com calibração ACFTD pode relatar corretamente β₁₀(c)=200 com calibração PSL: não porque o filtro mudou, mas porque a referência de medição mudou."
+    },
+    {
+      "question": "A quais tipos de instrumentos APC a ISO 11171 se aplica?",
+      "answer": "A ISO 11171 se aplica aos contadores automáticos de partículas por extinção de luz (obscurecimento de luz), o tipo de instrumento usado para determinar o código de limpeza ISO 4406 e para o ensaio de razão Beta ISO 16889. Os APCs por extinção de luz medem o tamanho da partícula pela redução da transmissão de luz quando cada partícula atravessa um feixe de luz focalizado. A ISO 11171 não abrange APCs por espalhamento de luz (usados para fluidos ultralimpos com partículas submicrométricas) nem instrumentos de difração a laser (usados para medir a distribuição de tamanhos de partícula a granel)."
+    },
+    {
+      "question": "Qual é a consequência prática de usar um APC sem calibração ISO 11171?",
+      "answer": "Sem calibração ISO 11171, os dados de contagem de partículas não são diretamente comparáveis entre instrumentos, laboratórios ou datas de ensaio. Podem ocorrer erros de calibração sistemáticos de até ±1–2 números de faixa ISO 4406, o que significa que um fluido realmente em ISO 18/16/13 pode ser relatado como 17/15/12 ou 19/17/14 conforme o estado de calibração do instrumento. Em aplicações de monitoramento de condição, instrumentos sem calibração tornam a análise de tendências não confiável: uma mudança do código de limpeza da faixa 17 para 18 não pode ser distinguida da deriva do instrumento sem conhecer o estado de calibração."
+    },
+    {
+      "question": "Como a ISO 11171 se relaciona com o ensaio de razão Beta ISO 16889?",
+      "answer": "A ISO 16889 especifica que a contagem de partículas no ensaio multipass deve ser feita com APCs calibrados pela ISO 11171. Esse vínculo significa que cada valor de razão Beta publicado no formato ISO 16889 reflete limiares de tamanho de partícula medidos com calibração PSL rastreável ao NIST. Portanto, a calibração ISO 11171 é a base metrológica das classificações de desempenho de filtros ISO 16889: um elemento filtrante não pode ser ensaiado corretamente pela ISO 16889 sem instrumentação conforme a ISO 11171. Comparar razões Beta ISO 16889 entre fabricantes exige que ambos os relatórios de ensaio especifiquem equipamentos calibrados pela ISO 11171."
+    },
+    {
+      "question": "Qual é a diferença entre os limiares de tamanho de calibração ISO 11171 e os tamanhos de partícula reais capturados por um filtro?",
+      "answer": "A ISO 11171 calibra os APCs para tamanhos de partícula medidos como diâmetro esférico equivalente: o diâmetro de uma esfera que produziria o mesmo sinal de extinção de luz que a partícula real de forma irregular. Poeira mineral, detritos de desgaste metálicos e partículas de borracha não são esferas; seu tamanho dimensional real difere do diâmetro equivalente medido pelo APC. Um filtro classificado β₁₀(c)≥200 vai capturar partículas de 10 µm de diâmetro esférico equivalente com eficiência ≥99.5%, mas as dimensões físicas reais das partículas podem variar de 8–14 µm conforme o fator de forma da partícula."
+    },
+    {
+      "question": "APCs calibrados pela ISO 11171 podem ser usados com óleos lubrificantes escuros, como óleos de engrenagens e óleo de motor usado?",
+      "answer": "A ISO 11171 especifica que o fluido de calibração e o fluido de ensaio devem ser opticamente transparentes o suficiente para permitir a transmissão de luz pela célula de amostra. Óleos minerais escuros de alta viscosidade, óleos de motor muito oxidados e fluidos com aditivos que absorvem luz podem atenuar o sinal óptico o bastante para causar subcontagem sistemática ou saturação do instrumento. Para fluidos opacos, usa-se a ISO 21018-3 (contagem portátil por patch com microscopia óptica) ou a análise gravimétrica off-line em vez da contagem APC por extinção de luz."
+    },
+    {
+      "question": "Como o estado de calibração ISO 11171 afeta os certificados de código de limpeza ISO 4406?",
+      "answer": "Os códigos de limpeza ISO 4406 relatados para amostras de fluidos hidráulicos e de lubrificação devem usar APCs calibrados pela ISO 11171 para serem plenamente válidos segundo a norma ISO 4406:2021. Os organismos de acreditação de laboratórios (laboratórios acreditados pela ISO 17025) verificam a calibração ISO 11171 como parte do escopo da acreditação. Um certificado de análise de fluidos que relata códigos ISO 4406, mas não cita a calibração ISO 11171, pode se basear em medição sem calibração: os códigos não são comparáveis internacionalmente. As especificações de garantia dos OEMs de equipamentos devem exigir medição calibrada pela ISO 11171 e análise em laboratórios acreditados pela ISO 17025."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids, ISO Geneva",
+      "relevance": "Norma principal que estabelece a metodologia de calibração com PSL dos APCs por extinção de luz usados na medição do código de limpeza ISO 4406 e no ensaio de razão Beta ISO 16889; a base metrológica da certificação de limpeza de fluidos hidráulicos."
+    },
+    {
+      "category": "specification",
+      "citation": "NIST SRM 1003c, Polystyrene Spheres (Nominal 10 µm), National Institute of Standards and Technology",
+      "relevance": "Material de referência para a calibração de APCs pela ISO 11171; distribuição de tamanhos de partícula certificada e rastreável aos padrões de comprimento do NIST, permitindo a reprodutibilidade entre laboratórios dos dados de contagem de partículas."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles, ISO Geneva",
+      "relevance": "Define o sistema de código de limpeza que depende da calibração ISO 11171 para comparar de forma válida as contagens de partículas entre laboratórios; contagens de partículas sem calibração ISO 11171 não estão conformes com a ISO 4406."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element, ISO Geneva",
+      "relevance": "Norma de ensaio multipass da razão Beta que exige a calibração ISO 11171 para toda a contagem de partículas; a base de toda a certificação de eficiência de elementos filtrantes com o sistema de notação β(c)."
+    }
+  ]
+}

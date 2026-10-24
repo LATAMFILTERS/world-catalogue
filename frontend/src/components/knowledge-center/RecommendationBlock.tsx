@@ -18,6 +18,10 @@ import Link from '@/components/LocalizedLink';
 import { getRecommendations } from '@/lib/knowledge-center/recommendation-engine';
 import { getKCRecommendationGraph, makeKey } from '@/lib/knowledge-center/recommendation-graph';
 import type { KCNodeType, KCReasonType, KCRecommendation } from '@/lib/knowledge-center/recommendation-types';
+import { useReviewed } from '@/components/ReviewedText';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag, type SiteLang } from '@/lib/language-preference';
+import { articleTitle, systemTitle } from '@/lib/knowledge-center-data/i18n/titles';
 
 // ── Colour palette for node types ─────────────────────────────────────────────
 
@@ -45,31 +49,42 @@ const TYPE_LABELS: Record<KCNodeType, string> = {
 
 // ── Reason descriptions ────────────────────────────────────────────────────────
 
-function reasonLabel(r: KCRecommendation): string {
+function reasonLabel(r: KCRecommendation, tr: (text: string) => string): string {
+  const via = (fallback: string) => `${tr('Via')} ${r.viaLabel ?? tr(fallback)}`;
   switch (r.reasonType) {
-    case 'related-standard':    return 'Shared standard reference';
-    case 'related-technology':  return 'Shared technology';
-    case 'related-system':      return 'Shared filtration system';
-    case 'related-term':        return 'Related engineering term';
-    case 'related-article':     return 'Related article';
-    case 'related-diagram':     return 'Related diagram';
-    case 'related-calculator':  return 'Related calculator';
-    case 'related-comparison':  return 'Related comparison';
-    case 'shared-standard':     return `Via ${r.viaLabel ?? 'shared standard'}`;
-    case 'shared-technology':   return `Via ${r.viaLabel ?? 'shared technology'}`;
-    case 'shared-system':       return `Via ${r.viaLabel ?? 'shared system'}`;
-    case 'shared-term':         return `Via ${r.viaLabel ?? 'shared term'}`;
-    case 'shared-article':      return `Via ${r.viaLabel ?? 'shared article'}`;
-    case 'shared-diagram':      return `Via ${r.viaLabel ?? 'shared diagram'}`;
-    case 'shared-calculator':   return `Via ${r.viaLabel ?? 'shared calculator'}`;
-    case 'shared-comparison':   return `Via ${r.viaLabel ?? 'shared comparison'}`;
+    case 'related-standard':    return tr('Shared standard reference');
+    case 'related-technology':  return tr('Shared technology');
+    case 'related-system':      return tr('Shared filtration system');
+    case 'related-term':        return tr('Related engineering term');
+    case 'related-article':     return tr('Related article');
+    case 'related-diagram':     return tr('Related diagram');
+    case 'related-calculator':  return tr('Related calculator');
+    case 'related-comparison':  return tr('Related comparison');
+    case 'shared-standard':     return via('shared standard');
+    case 'shared-technology':   return via('shared technology');
+    case 'shared-system':       return via('shared system');
+    case 'shared-term':         return via('shared term');
+    case 'shared-article':      return via('shared article');
+    case 'shared-diagram':      return via('shared diagram');
+    case 'shared-calculator':   return via('shared calculator');
+    case 'shared-comparison':   return via('shared comparison');
   }
 }
 
 // ── Card component ────────────────────────────────────────────────────────────
 
+/** Recommendation title in the visitor's language where a reviewed title exists. */
+function localLabel(rec: KCRecommendation, lang: SiteLang): string {
+  if (rec.type === 'article') return articleTitle(rec.slug, lang, rec.label);
+  if (rec.type === 'system') return systemTitle(rec.slug, lang, rec.label);
+  return rec.label;
+}
+
 function RecommendationCard({ rec }: { rec: KCRecommendation }) {
   const color = TYPE_COLORS[rec.type];
+  const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
 
   return (
     <Link
@@ -103,14 +118,14 @@ function RecommendationCard({ rec }: { rec: KCRecommendation }) {
             borderRadius: '2px',
             letterSpacing: '0.08em',
           }}>
-            {TYPE_LABELS[rec.type]}
+            {tr(TYPE_LABELS[rec.type])}
           </span>
           <span style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.55rem',
             color: rec.depth === 1 ? 'rgba(255,241,45,0.45)' : 'rgba(255,255,255,0.2)',
           }}>
-            {rec.depth === 1 ? 'DIRECT' : 'INDIRECT'}
+            {tr(rec.depth === 1 ? 'DIRECT' : 'INDIRECT')}
           </span>
         </div>
 
@@ -123,7 +138,7 @@ function RecommendationCard({ rec }: { rec: KCRecommendation }) {
           lineHeight: 1.3,
           marginBottom: '0.25rem',
         }}>
-          {rec.label}
+          {localLabel(rec, lang)}
         </div>
 
         {/* Reason */}
@@ -133,7 +148,7 @@ function RecommendationCard({ rec }: { rec: KCRecommendation }) {
           color: 'rgba(255,255,255,0.35)',
           lineHeight: 1.4,
         }}>
-          {reasonLabel(rec)}
+          {reasonLabel(rec, tr)}
         </div>
       </div>
     </Link>

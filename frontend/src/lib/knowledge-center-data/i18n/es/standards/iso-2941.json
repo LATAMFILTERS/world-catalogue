@@ -1,0 +1,94 @@
+{
+  "slug": "iso-2941",
+  "code": "ISO 2941",
+  "entityId": "STD-ISO-2941",
+  "title": "Hydraulic Fluid Power — Filter Elements — Verification of Collapse/Burst Pressure Rating",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2009 (2.ª edición; confirmada en 2025)",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 2941:2009 especifica el método para verificar la presión nominal de colapso/reventón de los elementos filtrantes hidráulicos de potencia fluida en condiciones de presión diferencial designadas.",
+  "scope": "Verificación de la capacidad del elemento filtrante hidráulico de soportar una presión diferencial designada en el sentido de flujo previsto.",
+  "engineeringPurpose": "Ofrece el ensayo canónico de presión estructural para elementos filtrantes hidráulicos. El método verifica si un elemento soporta la condición de presión diferencial designada hasta que se produce el colapso/reventón o se alcanza la presión diferencial máxima esperada sin falla.",
+  "sections": [
+    {
+      "heading": "Qué define la ISO 2941",
+      "body": "La ISO 2941:2009 especifica un método para verificar la presión nominal de colapso/reventón de un elemento filtrante hidráulico de potencia fluida. El ensayo somete el elemento a una presión diferencial creciente en el sentido de flujo previsto hasta que se produce el colapso/reventón o se alcanza la presión diferencial máxima esperada sin falla del elemento."
+    },
+    {
+      "heading": "Relación con la ISO 3723",
+      "body": "La ISO 2941 y la ISO 3723 tratan cargas estructurales distintas. La ISO 2941 cubre la resistencia al colapso/reventón por presión diferencial; la ISO 3723 cubre la carga axial y la carga axial designada. Aprobar un ensayo no reemplaza la calificación con el otro cuando ambos son aplicables."
+    },
+    {
+      "heading": "Límite de aplicación",
+      "body": "La norma verifica la resistencia estructural a la presión con su método de ensayo. No prescribe un factor de seguridad universal de presión de colapso, un objetivo de limpieza hidráulica, una relación Beta ni un intervalo de reemplazo específico de la aplicación. Esos requisitos deben venir del diseño del filtro, la especificación del equipo y las condiciones de operación validadas."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Método",
+      "value": "Verificación de la presión nominal de colapso/reventón"
+    },
+    {
+      "label": "Tipo de carga",
+      "value": "Presión diferencial en el sentido de flujo previsto"
+    },
+    {
+      "label": "Ensayo de carga axial aparte",
+      "value": "ISO 3723:2015"
+    },
+    {
+      "label": "Estado actual",
+      "value": "Publicada; confirmada en 2025"
+    }
+  ],
+  "applicableSystems": [
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-COLLAPSE-PRESSURE",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-DIFFERENTIAL-PRESSURE"
+  ],
+  "relatedTopics": [
+    "filter-element-integrity",
+    "testing-and-validation"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™"
+  ],
+  "relatedArticles": [
+    "filter-element-integrity",
+    "testing-and-validation"
+  ],
+  "commonMistakes": [
+    "Atribuir la verificación de carga axial a la ISO 2941. Esa función corresponde a la ISO 3723.",
+    "Tratar un margen de presión de colapso propio de un fabricante como un requisito universal de la ISO 2941.",
+    "Usar la ISO 2941 como sustituto del ensayo de desempeño de filtración ISO 16889 o de la codificación de limpieza del fluido ISO 4406."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué verifica la ISO 2941:2009?",
+      "answer": "Verifica la presión nominal de colapso/reventón de un elemento filtrante hidráulico sometiéndolo a presión diferencial en el sentido de flujo previsto."
+    },
+    {
+      "question": "¿Es la ISO 2941 lo mismo que la ISO 3723?",
+      "answer": "No. La ISO 2941 trata la resistencia a la presión de colapso/reventón; la ISO 3723 trata la resistencia a la carga axial."
+    },
+    {
+      "question": "¿Exige la ISO 2941 un margen universal de 10× sobre la presión de colapso?",
+      "answer": "No debe atribuirse ningún multiplicador universal a la ISO 2941 sin evidencia de la especificación o del requisito de producto aplicable. La norma verifica la presión nominal de colapso/reventón designada con su método de ensayo."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 2941:2009 — Hydraulic fluid power — Filter elements — Verification of collapse/burst pressure rating",
+      "relevance": "Método ISO vigente para verificar la presión nominal de colapso/reventón de los elementos filtrantes hidráulicos de potencia fluida; confirmado por la ISO en 2025."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 3723:2015 — Hydraulic fluid power — Filter elements — Method for end load test",
+      "relevance": "Ensayo estructural aparte para la resistencia a la carga axial; evita confundir la calificación axial con la de presión diferencial."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "slug": "iso-3723",
+  "code": "ISO 3723",
+  "entityId": "STD-ISO-3723",
+  "title": "Hydraulic Fluid Power Filter Elements — Method for End Load Test",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2015 (2ª edição; confirmada em 2026)",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 3723:2015 especifica o método para verificar a carga axial nominal de um elemento filtrante hidráulico de potência fluida e sua capacidade de suportar a carga axial designada imposta pela instalação e pelo uso.",
+  "scope": "Verificação da carga axial nominal do elemento filtrante hidráulico e de sua resistência à carga axial designada pela instalação e pelo uso.",
+  "engineeringPurpose": "Oferece um ensaio controlado de carga axial para elementos filtrantes hidráulicos. A ISO 3723 trata da carga axial; não define a pressão nominal de colapso/ruptura, as metas de limpeza do fluido, o desempenho da razão Beta nem fatores de segurança universais.",
+  "sections": [
+    {
+      "heading": "O que a ISO 3723 define",
+      "body": "A ISO 3723:2015 define um método para verificar a carga axial nominal de um elemento filtrante hidráulico de potência fluida e a capacidade do elemento de suportar a carga axial designada imposta pela instalação e pelo uso."
+    },
+    {
+      "heading": "O que a ISO 3723 não define",
+      "body": "A ISO 3723 não é o ensaio de pressão de colapso/ruptura dos elementos filtrantes hidráulicos. A pressão nominal de colapso/ruptura é coberta separadamente pela ISO 2941. A ISO 3723 também não estabelece metas de limpeza ISO 4406, eficiência de filtração nem um multiplicador universal entre a pressão diferencial de operação e a classificação estrutural."
+    },
+    {
+      "heading": "Limite de aplicação",
+      "body": "Use a ISO 3723 quando a carga axial e a integridade frente à carga axial forem pertinentes para a instalação, a retenção e o serviço do elemento. A qualificação do produto continua exigindo as demais normas aplicáveis ao desempenho de filtração, à integridade sob pressão, à compatibilidade de materiais e à aplicação hidráulica específica."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Finalidade do ensaio",
+      "value": "Verificação da carga axial"
+    },
+    {
+      "label": "Aplica-se a",
+      "value": "Elementos filtrantes hidráulicos de potência fluida"
+    },
+    {
+      "label": "Norma de colapso/ruptura",
+      "value": "ISO 2941:2009"
+    },
+    {
+      "label": "Limite de uso",
+      "value": "Não define metas de limpeza nem fatores de segurança universais"
+    }
+  ],
+  "applicableSystems": [
+    "hydraulic-protection",
+    "lubrication-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-COLLAPSE-PRESSURE",
+    "TERM-ELEMENT-COLLAPSE",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-FILTER-BYPASS-VALVE"
+  ],
+  "relatedTopics": [
+    "testing-and-validation",
+    "filter-media-science",
+    "contamination-control"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™",
+    "INTEKCORE™"
+  ],
+  "relatedArticles": [
+    "filter-element-integrity",
+    "materials-engineering",
+    "failure-analysis"
+  ],
+  "commonMistakes": [
+    "Tratar a ISO 3723 como um ensaio de pressão de colapso/ruptura. Essa função pertence à ISO 2941.",
+    "Publicar um multiplicador universal de pressão de colapso ou de bypass como se a ISO 3723 o exigisse.",
+    "Usar a ISO 3723 como evidência de eficiência de filtração ou de desempenho de limpeza do fluido."
+  ],
+  "faqs": [
+    {
+      "question": "O que a ISO 3723:2015 verifica?",
+      "answer": "Verifica a carga axial nominal de um elemento filtrante hidráulico e sua capacidade de suportar a carga axial designada imposta pela instalação e pelo uso."
+    },
+    {
+      "question": "A ISO 3723 define a pressão de colapso ou de ruptura?",
+      "answer": "Não. A ISO 2941:2009 é a norma separada para verificar a pressão nominal de colapso/ruptura de elementos filtrantes hidráulicos."
+    },
+    {
+      "question": "A ISO 3723 define uma meta de limpeza hidráulica?",
+      "answer": "Não. A integridade frente à carga axial e a limpeza do fluido são funções de engenharia distintas regidas por requisitos diferentes."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 3723:2015, Hydraulic Fluid Power Filter Elements — Method for End Load Test, ISO Geneva",
+      "relevance": "Ensaio principal de integridade estrutural de elementos filtrantes hidráulicos por carga axial de compressão; usado na inspeção de recebimento e na qualificação da resistência ao colapso de elementos em aplicações hidráulicas de alta pressão."
+    },
+    {
+      "category": "standard",
+      "citation": "NFPA T2.14.1-2005 (R2010), Fluid Power Systems — Hydraulic Filters — Method for Verifying Collapse/Burst Pressure Rating, NFPA",
+      "relevance": "Ensaio complementar de pressão de colapso/ruptura hidráulica com pressão diferencial hidráulica direta; fornece dados de pressão de colapso equivalentes ao serviço junto com os resultados de carga axial da ISO 3723."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 2941:2006, Hydraulic Fluid Power — Filter Elements — Verification of Collapse/Burst Pressure Rating, ISO Geneva",
+      "relevance": "Equivalente ISO da NFPA T2.14 para verificar a pressão de colapso e de ruptura; frequentemente citada junto com a ISO 3723 na qualificação de elementos filtrantes hidráulicos de OEMs europeus."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element, ISO Geneva",
+      "relevance": "Norma complementar de eficiência de filtração; o colapso da ISO 3723 e a eficiência da ISO 16889 juntos fornecem a qualificação estrutural e de desempenho completa dos elementos filtrantes hidráulicos."
+    }
+  ]
+}

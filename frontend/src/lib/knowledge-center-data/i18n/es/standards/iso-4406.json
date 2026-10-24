@@ -1,0 +1,120 @@
+{
+  "slug": "iso-4406",
+  "code": "ISO 4406",
+  "entityId": "STD-ISO-4406",
+  "title": "Hydraulic Fluid Power — Method for Coding the Level of Contamination by Solid Particles",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2021 (4.ª edición; confirmada en 2026)",
+  "revisionStatus": "active",
+  "metaDescription": "La ISO 4406:2021 especifica el código usado para expresar la cantidad de contaminación por partículas sólidas en el fluido hidráulico. Es un método de codificación, no una especificación universal de objetivo de limpieza.",
+  "scope": "Codificación del nivel de contaminación por partículas sólidas en el fluido usado en sistemas hidráulicos de potencia fluida.",
+  "engineeringPurpose": "Ofrece un lenguaje estandarizado de código de limpieza para informar la contaminación por partículas sólidas en el fluido hidráulico. La norma define cómo se codifica el nivel de contaminación; los fabricantes de equipos y los responsables de la aplicación determinan los límites u objetivos de limpieza adecuados para sus componentes y sistemas.",
+  "sections": [
+    {
+      "heading": "Qué define la ISO 4406",
+      "body": "La ISO 4406:2021 especifica el código usado para definir la cantidad de partículas sólidas en el fluido hidráulico. El código da un lenguaje común para informar el nivel de contaminación, de modo que las mediciones se comuniquen de forma coherente entre laboratorios, propietarios de equipos y programas de mantenimiento."
+    },
+    {
+      "heading": "Qué no define la ISO 4406",
+      "body": "La ISO 4406 no prescribe un objetivo de limpieza universal para servoválvulas, bombas, cilindros, equipos móviles ni sistemas industriales. El código aceptable para una aplicación debe venir del requisito del equipo o del componente, de una orientación de ingeniería validada o de un programa de control de la contaminación aprobado."
+    },
+    {
+      "heading": "Medición y tendencias",
+      "body": "Los datos de conteo de partículas se convierten en números de rango ISO 4406 para informar y seguir tendencias. La calidad del muestreo, el método de medición, la calibración y la contaminación introducida al manipular la muestra pueden afectar de forma importante el resultado informado, por lo que el procedimiento de medición debe estar controlado."
+    },
+    {
+      "heading": "Relación con el ensayo de filtros",
+      "body": "La ISO 4406 describe la limpieza del fluido. No evalúa la eficiencia del elemento filtrante. La ISO 16889 es el método multipaso aparte que se usa para evaluar el desempeño de filtración de los elementos filtrantes hidráulicos. Las dos normas son complementarias, pero no deben presentarse como intercambiables."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Propósito",
+      "value": "Codificar el nivel de contaminación por partículas sólidas en el fluido hidráulico"
+    },
+    {
+      "label": "Resultado",
+      "value": "Código de limpieza ISO / números de rango"
+    },
+    {
+      "label": "Responsable del objetivo",
+      "value": "Requisito del equipo, del componente o de la aplicación"
+    },
+    {
+      "label": "Ensayo de filtros aparte",
+      "value": "ISO 16889"
+    }
+  ],
+  "applicableSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-ISO-CLEANLINESS-CODE",
+    "TERM-PARTICLE-COUNT",
+    "TERM-NAS-CLEANLINESS-CODE",
+    "TERM-BETA-RATIO",
+    "TERM-SERVO-VALVE",
+    "TERM-PROPORTIONAL-VALVE"
+  ],
+  "relatedTopics": [
+    "contamination-control",
+    "fluid-cleanliness",
+    "filter-media-science"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "fluid-cleanliness",
+    "hydraulic-contamination-sensitivity",
+    "contamination-sensitivity-components"
+  ],
+  "commonMistakes": [
+    "Tratar un código de limpieza de ejemplo como un objetivo universal exigido por la ISO 4406.",
+    "Tratar la ISO 4406 como un ensayo de eficiencia de filtros o de desempeño multipaso. Esa función corresponde a la ISO 16889.",
+    "Convertir clasificaciones de limpieza históricas o alternativas a la ISO 4406 como si la conversión fuera exacta sin evidencia de la aplicación.",
+    "Usar un resultado de conteo de partículas sin controlar la calidad del muestreo, la manipulación y la medición."
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué define la ISO 4406:2021?",
+      "answer": "Define el método de codificación usado para expresar la cantidad de contaminación por partículas sólidas en el fluido hidráulico."
+    },
+    {
+      "question": "¿Prescribe la ISO 4406 la limpieza objetivo de una servoválvula o una bomba?",
+      "answer": "No. El límite u objetivo aplicable viene del requisito del componente, del equipo o de la aplicación aprobada. La ISO 4406 da el lenguaje usado para expresar ese nivel de limpieza."
+    },
+    {
+      "question": "¿Es la ISO 4406 lo mismo que la ISO 16889?",
+      "answer": "No. La ISO 4406 codifica el nivel de contaminación del fluido; la ISO 16889 evalúa el desempeño de filtración de los elementos filtrantes hidráulicos con un método de laboratorio multipaso."
+    },
+    {
+      "question": "¿Puede interpretarse un código ISO 4406 sin el contexto de la aplicación?",
+      "answer": "Puede describir el nivel de contaminación medido, pero saber si ese nivel es aceptable requiere el requisito aplicable del componente, del equipo y de la operación."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021 — Hydraulic fluid power — Fluids — Method for coding the level of contamination by solid particles (3rd edition)",
+      "relevance": "Norma principal que define el sistema de código de limpieza por números de rango, los canales de tamaño de partícula (≥4, ≥6, ≥14 µm), la unidad de conteo (partículas por mL) y los procedimientos de medición para clasificar la contaminación por partículas de fluidos hidráulicos y lubricantes."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022 — Hydraulic fluid power — Filters — Multi-pass method for evaluating filtration performance of a filter element (4th edition)",
+      "relevance": "Define la metodología del ensayo multipaso y los requisitos de contadores de partículas calibrados según la ISO 11171 que producen códigos de limpieza compatibles con la ISO 4406, con mejor reproducibilidad entre laboratorios que los métodos de conteo manual anteriores."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016 — Hydraulic fluid power — Calibration of automatic particle counters for liquids",
+      "relevance": "Protocolo de calibración obligatorio para los APC usados en la medición del código de limpieza ISO 4406; el sufijo \"(c)\" en los canales de tamaño de partícula confirma una calibración trazable al NIST conforme con la ISO 11171."
+    },
+    {
+      "category": "test-method",
+      "citation": "ISO 11500:2008 — Hydraulic fluid power — Determination of the particulate contamination level of a liquid sample by automatic particle counting using the light-extinction principle",
+      "relevance": "Especifica el método de conteo de partículas por extinción de luz aplicable a la medición ISO 4406 como alternativa para muestras de fluido no aptas para la medición APC estándar por obscuración de luz."
+    }
+  ]
+}

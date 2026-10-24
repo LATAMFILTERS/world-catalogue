@@ -1,0 +1,123 @@
+{
+  "slug": "iso-16889",
+  "code": "ISO 16889",
+  "entityId": "STD-ISO-16889",
+  "title": "Hydraulic Fluid Power — Multi-Pass Method for Evaluating Filter Element Performance",
+  "issuingOrganization": "ISO (International Organization for Standardization)",
+  "year": "2022 (3ª edição)",
+  "revisionStatus": "active",
+  "metaDescription": "A ISO 16889:2022 define um método de laboratório multipass para avaliar o desempenho de elementos filtrantes hidráulicos de potência fluida, incluindo capacidade de contaminantes, remoção de partículas e características de pressão diferencial.",
+  "scope": "Avaliação em laboratório de elementos filtrantes hidráulicos de potência fluida nas condições de ensaio e nos limites de aplicabilidade definidos pela ISO 16889:2022.",
+  "engineeringPurpose": "Oferece um procedimento de ensaio multipass reprodutível para avaliar o desempenho de filtração de elementos filtrantes hidráulicos. É uma norma de desempenho do elemento filtrante; não prescreve uma meta de limpeza ISO 4406 em serviço, um intervalo de manutenção universal nem um requisito universal de limpeza de componentes.",
+  "sections": [
+    {
+      "heading": "O que a ISO 16889 define",
+      "body": "A ISO 16889:2022 define um ensaio multipass com injeção contínua de contaminante para elementos filtrantes hidráulicos de potência fluida. O método avalia o desempenho de remoção de partículas, a capacidade de contaminantes e o comportamento da pressão diferencial em condições de laboratório controladas."
+    },
+    {
+      "heading": "Razão de filtração e capacidade",
+      "body": "O método multipass compara as populações de partículas a montante e a jusante para determinar a razão de filtração em tamanhos de partícula definidos enquanto o elemento se carrega de contaminante. O ensaio também caracteriza a capacidade de contaminantes e a evolução da pressão diferencial. Os resultados se aplicam ao elemento ensaiado e às condições de ensaio; não são um intervalo de serviço de campo universal."
+    },
+    {
+      "heading": "Relação com a ISO 4406",
+      "body": "A ISO 16889 avalia o desempenho do elemento filtrante. A ISO 4406 define separadamente o código usado para expressar o nível de contaminação por partículas sólidas em um fluido hidráulico. Uma meta de limpeza do sistema deve vir do requisito do equipamento, do componente ou da aplicação; ela não é prescrita pela própria ISO 16889."
+    },
+    {
+      "heading": "Limite de aplicação",
+      "body": "Use os dados da ISO 16889 para comparar ou qualificar o desempenho de elementos filtrantes apenas dentro do método de ensaio aplicável e do contexto de operação validado. Vazão, fluido, temperatura, carga de contaminante, construção do elemento e regime do sistema podem afetar o comportamento em campo, por isso a seleção do produto exige evidência específica da aplicação além da referência da norma."
+    }
+  ],
+  "keyParams": [
+    {
+      "label": "Método",
+      "value": "Ensaio multipass de elementos filtrantes com injeção contínua"
+    },
+    {
+      "label": "Resultados principais",
+      "value": "Razão de filtração, capacidade de contaminantes, características de pressão diferencial"
+    },
+    {
+      "label": "Contaminante de ensaio",
+      "value": "Pó de ensaio médio ISO conforme o método da norma"
+    },
+    {
+      "label": "Limite de uso",
+      "value": "Avaliação do desempenho do elemento em laboratório; a validação da aplicação ainda é necessária"
+    }
+  ],
+  "applicableSystems": [
+    "lubrication-protection",
+    "hydraulic-protection"
+  ],
+  "relatedGlossaryTerms": [
+    "TERM-BETA-RATIO",
+    "TERM-ABSOLUTE-EFFICIENCY",
+    "TERM-MULTI-PASS-TEST",
+    "TERM-DIFFERENTIAL-PRESSURE",
+    "TERM-TEST-DUST",
+    "TERM-DUST-HOLDING-CAPACITY",
+    "TERM-COLLAPSE-PRESSURE",
+    "TERM-NOMINAL-EFFICIENCY"
+  ],
+  "relatedTopics": [
+    "contamination-control",
+    "filter-media-science",
+    "fluid-cleanliness"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE™",
+    "SYNTRAX™"
+  ],
+  "relatedArticles": [
+    "iso-16889-multipass-test",
+    "beta-ratio",
+    "filter-media-engineering",
+    "testing-and-validation"
+  ],
+  "commonMistakes": [
+    "Tratar a ISO 16889 como uma norma de codificação da limpeza do fluido. A função de código de limpeza pertence à ISO 4406.",
+    "Publicar uma única meta de limpeza ISO 4406 como se a ISO 16889 a prescrevesse para todos os componentes ou sistemas hidráulicos.",
+    "Converter diretamente resultados de laboratório de capacidade de contaminantes ou de pressão diferencial em um intervalo de serviço de campo universal.",
+    "Usar apenas uma etiqueta em mícrons em vez da evidência de razão de filtração ensaiada e do contexto de operação exigidos para uma comparação de engenharia."
+  ],
+  "faqs": [
+    {
+      "question": "O que a ISO 16889:2022 avalia?",
+      "answer": "Define um método de laboratório multipass para avaliar o desempenho de remoção de partículas, a capacidade de contaminantes e as características de pressão diferencial de elementos filtrantes hidráulicos em condições de ensaio controladas."
+    },
+    {
+      "question": "A ISO 16889 define uma meta de limpeza ISO 4406?",
+      "answer": "Não. A ISO 4406 define o sistema de codificação da contaminação do fluido. As metas de limpeza vêm do requisito do equipamento, do componente ou da aplicação, não da própria ISO 16889."
+    },
+    {
+      "question": "Um resultado de ensaio ISO 16889 define um intervalo de serviço em campo?",
+      "answer": "Não. Os dados de laboratório de capacidade e de pressão diferencial são dados de entrada de engenharia. Os intervalos em campo continuam dependendo do ingresso de contaminação, da vazão, do fluido, da temperatura, do regime, do projeto do produto e da aplicação aprovada."
+    },
+    {
+      "question": "O que deve ser comparado entre elementos filtrantes de reposição?",
+      "answer": "Compare a evidência gerada pelo método ISO 16889 aplicável, incluindo o comportamento da razão de filtração, a capacidade de contaminantes e as características de pressão diferencial, junto com os requisitos de encaixe, vazão, pressão e aplicação."
+    }
+  ],
+  "engineeringReferences": [
+    {
+      "category": "standard",
+      "citation": "ISO 16889:2022 — Hydraulic fluid power — Filters — Multi-pass method for evaluating filtration performance of a filter element (4th edition)",
+      "relevance": "Norma principal que define a metodologia do ensaio multipass, o protocolo de medição da razão Beta, o procedimento de capacidade de retenção de sujeira e as condições de pressão diferencial terminal para avaliar o desempenho de elementos filtrantes hidráulicos e de lubrificação."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 11171:2016 — Hydraulic fluid power — Calibration of automatic particle counters for liquids",
+      "relevance": "Norma de calibração obrigatória para os APCs usados no ensaio multipass ISO 16889; o sufixo \"(c)\" na notação da razão Beta confirma calibração rastreável ao NIST conforme a ISO 11171."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 12103-1:2016 — Road vehicles — Test contaminants for filter evaluation — Part 1: Arizona test dust",
+      "relevance": "Especifica o pó de ensaio médio ISO A2 usado como contaminante padronizado no ensaio multipass ISO 16889, garantindo a reprodutibilidade entre laboratórios dos resultados de capacidade de retenção de sujeira e de razão Beta."
+    },
+    {
+      "category": "standard",
+      "citation": "ISO 4406:2021 — Hydraulic fluid power — Fluids — Method for coding the level of contamination by solid particles (3rd edition)",
+      "relevance": "Define o sistema de código de limpeza por números de faixa usado para relatar os níveis de contaminação por partículas gerados pelo ensaio de filtros ISO 16889 e pelos programas posteriores de análise de óleo em serviço."
+    }
+  ]
+}

@@ -17,6 +17,10 @@ import {
 } from '@/components/knowledge-center';
 import { getStandardSidebarData } from '@/lib/knowledge-center/navigation-index';
 import RecommendationBlock from '@/components/knowledge-center/RecommendationBlock';
+import { useReviewed } from '@/components/ReviewedText';
+import { useTranslation } from 'react-i18next';
+import { siteLangFromTag } from '@/lib/language-preference';
+import { articleTitle } from '@/lib/knowledge-center-data/i18n/titles';
 
 const REF_CATEGORY_LABEL: Record<string, string> = {
   standard: 'STANDARD',
@@ -71,6 +75,9 @@ const STATUS_COLORS: Record<string, string> = {
 export default function StandardContent({ std }: { std: KCStandard }) {
   const { referencingArticles, relatedStandards: indexRelatedStandards } = getStandardSidebarData(std.slug);
   const isDeprecated = std.revisionStatus === 'superseded' || std.revisionStatus === 'withdrawn';
+  const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
 
   const sidebar = (
     <>
@@ -88,7 +95,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
           color: 'rgba(255,255,255,0.3)',
           marginBottom: '0.5rem',
         }}>
-          LIFECYCLE STATUS
+          {tr('LIFECYCLE STATUS')}
         </p>
         <span style={{
           display: 'inline-block',
@@ -102,28 +109,28 @@ export default function StandardContent({ std }: { std: KCStandard }) {
           background: `${STATUS_COLORS[std.revisionStatus]}12`,
           marginBottom: std.supersedes || std.supersededBy || std.parentStandard ? '0.75rem' : 0,
         }}>
-          {std.revisionStatus.toUpperCase()}
+          {tr(std.revisionStatus.toUpperCase())}
         </span>
 
         {std.supersedes && (
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.5rem' }}>
-            Supersedes: <span style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'JetBrains Mono, monospace' }}>{std.supersedes}</span>
+            {tr('Supersedes:')} <span style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'JetBrains Mono, monospace' }}>{std.supersedes}</span>
           </p>
         )}
         {std.supersededBy && (
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.35rem' }}>
-            Replaced by: <span style={{ color: '#ff8c00', fontFamily: 'JetBrains Mono, monospace' }}>{std.supersededBy}</span>
+            {tr('Replaced by:')} <span style={{ color: '#ff8c00', fontFamily: 'JetBrains Mono, monospace' }}>{std.supersededBy}</span>
           </p>
         )}
         {std.parentStandard && (
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.35rem' }}>
-            Part of: <span style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace' }}>{std.parentStandard}</span>
+            {tr('Part of:')} <span style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace' }}>{std.parentStandard}</span>
           </p>
         )}
         {std.childStandards && std.childStandards.length > 0 && (
           <div style={{ marginTop: '0.5rem' }}>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', marginBottom: '0.25rem' }}>
-              Companion parts:
+              {tr('Companion parts:')}
             </p>
             {std.childStandards.map((child) => (
               <p key={child} style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: '#FFF12D', marginTop: '0.15rem' }}>
@@ -160,7 +167,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            RELATED TOPICS
+            {tr('RELATED TOPICS')}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {std.relatedTopics.map((topic) => (
@@ -176,7 +183,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
                     transition: 'background 0.2s',
                   }}
                 >
-                  {topic.replace(/-/g, ' ')} →
+                  {articleTitle(topic, lang, topic.replace(/-/g, ' '))} →
                 </motion.div>
               </Link>
             ))}
@@ -193,7 +200,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
             color: 'rgba(255,255,255,0.3)',
             marginBottom: '0.75rem',
           }}>
-            RELATED STANDARDS
+            {tr('RELATED STANDARDS')}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {indexRelatedStandards.map((s) => (
@@ -243,13 +250,13 @@ export default function StandardContent({ std }: { std: KCStandard }) {
           color: 'rgba(255,241,45,0.5)',
           marginBottom: '0.5rem',
         }}>
-          STANDARD REFERENCE
+          {tr('STANDARD REFERENCE')}
         </p>
         <p style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700, fontSize: '0.8rem', color: '#FFF12D' }}>
           {std.code}
         </p>
         <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.25rem' }}>
-          Published {std.year}
+          {tr('Published')} {std.year}
         </p>
       </div>
     </>
@@ -259,13 +266,13 @@ export default function StandardContent({ std }: { std: KCStandard }) {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
       <ArticleBreadcrumb items={[
-        { label: 'Knowledge Center', href: '/knowledge-center' },
-        { label: 'Standards', href: '/knowledge-center/standards' },
+        { label: tr('Knowledge Center'), href: '/knowledge-center' },
+        { label: tr('Standards'), href: '/knowledge-center/standards' },
         { label: std.code },
       ]} />
 
       <ArticleHero
-        overline={`INDUSTRIAL STANDARD · ${std.year}`}
+        overline={`${tr('INDUSTRIAL STANDARD')} · ${std.year}`}
         title={std.code}
         titleVariant="code"
         subtitle={std.title}
@@ -297,12 +304,14 @@ export default function StandardContent({ std }: { std: KCStandard }) {
               marginBottom: '0.4rem',
               fontWeight: 700,
             }}>
-              {std.revisionStatus === 'withdrawn' ? '⚠ WITHDRAWN' : '⚠ SUPERSEDED'}
+              {tr(std.revisionStatus === 'withdrawn' ? '⚠ WITHDRAWN' : '⚠ SUPERSEDED')}
             </p>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
               {std.revisionStatus === 'withdrawn'
-                ? `${std.code} has been withdrawn and is no longer in active use. Refer to current applicable standards for new designs.`
-                : `${std.code} has been superseded${std.supersededBy ? ` by ${std.supersededBy}` : ''}. Existing installations referencing this standard remain valid, but new designs should reference the current edition.`}
+                ? tr('{code} has been withdrawn and is no longer in active use. Refer to current applicable standards for new designs.').replace('{code}', std.code)
+                : std.supersededBy
+                  ? tr('{code} has been superseded by {by}. Existing installations referencing this standard remain valid, but new designs should reference the current edition.').replace('{code}', std.code).replace('{by}', std.supersededBy)
+                  : tr('{code} has been superseded. Existing installations referencing this standard remain valid, but new designs should reference the current edition.').replace('{code}', std.code)}
             </p>
           </motion.div>
         )}
@@ -321,7 +330,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '1rem',
             }}>
-              KEY PARAMETERS
+              {tr('KEY PARAMETERS')}
             </p>
             <div style={{
               display: 'grid',
@@ -403,7 +412,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '1rem',
             }}>
-              COMMON ENGINEERING MISTAKES
+              {tr('COMMON ENGINEERING MISTAKES')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {std.commonMistakes.map((mistake, i) => (
@@ -438,13 +447,13 @@ export default function StandardContent({ std }: { std: KCStandard }) {
             style={{ marginBottom: '3rem' }}
           >
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '1.25rem' }}>
-              ENGINEERING REFERENCES
+              {tr('ENGINEERING REFERENCES')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {std.engineeringReferences.map((ref, i) => (
                 <div key={i} style={{ padding: '0.875rem 1.125rem', border: '1px solid rgba(255,255,255,0.06)', display: 'flex', gap: '0.875rem', alignItems: 'flex-start' }}>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.5rem', letterSpacing: '0.08em', color: '#FFF12D', background: 'rgba(255,241,45,0.08)', border: '1px solid rgba(255,241,45,0.15)', padding: '0.2rem 0.45rem', flexShrink: 0, marginTop: '2px' }}>
-                    {REF_CATEGORY_LABEL[ref.category] ?? ref.category.toUpperCase()}
+                    {tr(REF_CATEGORY_LABEL[ref.category] ?? ref.category.toUpperCase())}
                   </span>
                   <div>
                     <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', color: 'rgba(255,255,255,0.75)', marginBottom: '0.25rem' }}>{ref.citation}</p>
@@ -466,18 +475,18 @@ export default function StandardContent({ std }: { std: KCStandard }) {
             style={{ marginBottom: '3rem' }}
           >
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '1.25rem' }}>
-              FREQUENTLY ASKED QUESTIONS — {std.code}
+              {tr('FREQUENTLY ASKED QUESTIONS')} — {std.code}
             </p>
             <FaqAccordion faqs={std.faqs} />
           </motion.div>
         )}
 
         <RelatedArticles
-          title={`ENGINEERING ARTICLES REFERENCING ${std.code}`}
+          title={`${tr('ENGINEERING ARTICLES REFERENCING')} ${std.code}`}
           items={referencingArticles.slice(0, 6).map((art) => ({
-            title: art.title,
+            title: articleTitle(art.slug, lang, art.title),
             href: `/knowledge-center/engineering/${art.slug}`,
-            meta: `${art.readTime} read`,
+            meta: `${art.readTime} ${tr('read')}`,
           }))}
         />
 
@@ -486,7 +495,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
           sourceSlug={std.slug}
           maxResults={10}
           excludeTypes={['standard']}
-          title="Related Engineering Content"
+          title={tr('Related Engineering Content')}
         />
 
         {/* Citation block */}
