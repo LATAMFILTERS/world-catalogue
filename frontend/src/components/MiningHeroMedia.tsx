@@ -26,7 +26,7 @@ export function MiningHeroMedia() {
         background: '#050505',
       }}
     >
-      <source src="/images/Mineria-Video1.mp4" type="video/mp4" />
+      <source src="/images/Mineria-Video1.mp4?v=809d8ab53d2d" type="video/mp4" />
     </video>
   );
 }
