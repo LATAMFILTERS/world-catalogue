@@ -13,11 +13,13 @@ import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 export function MiningHeroMedia() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [requiresPlay, setRequiresPlay] = useState(false);
+  const [manualPlay, setManualPlay] = useState(false);
 
   const tryPlay = () => {
     const video = videoRef.current;
     if (!video) return;
     video.muted = true;
+    setManualPlay(true);
     const attempt = video.play();
     if (attempt) {
       void attempt.then(() => setRequiresPlay(false)).catch(() => setRequiresPlay(true));
@@ -68,7 +70,7 @@ export function MiningHeroMedia() {
       />
       <video
         ref={videoRef}
-        className="miningHeroVideo"
+        className={manualPlay ? "miningHeroVideo miningHeroManualPlay" : "miningHeroVideo"}
         autoPlay
         muted
         loop
