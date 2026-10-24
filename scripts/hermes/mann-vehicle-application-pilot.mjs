@@ -127,8 +127,9 @@ for (const ev of events) {
     parsed.push({
       make: pr.vehicleMake,
       year: null,
-      year_from: yf ? yf[1] : null,
-      year_to: yt ? yt[1] : null,
+      // 1900-01-01 / 9999-12-31 are MANN placeholders for "no published period".
+      year_from: yf && yf[1] !== '1900' ? yf[1] : null,
+      year_to: yt && yt[1] !== '9999' ? yt[1] : null,
       model: [pr.vehicleModel || pr.modelSeriesName, pr.vehicleName].filter(Boolean).join(' ').trim(),
       engine: split.engine,
       equipment_options: split.qualifier || null,
@@ -205,12 +206,20 @@ const currentParts = (e) => {
     else formats.no_year++;
   }
   const sp = splitModel(text);
-  return { make: n.make, year, model: sp.model, engine: sp.engine, qualifier: sp.qualifier, engine_code: String(e.engine_code || '').trim() };
+  // Full vehicle text: legacy machinery rows split it as model_family ("2000-Serie")
+  // + model_type ("2000 (-> 12999)"); global MANN rows carry vehicleModel + vehicleName.
+  const full = [/^(?:19|20)\d{2}$/.test(fam) ? '' : fam, String(e.model_type || n.model || '').trim()].filter(Boolean).join(' ');
+  return { make: n.make, year, model: sp.model, engine: sp.engine, qualifier: sp.qualifier, full, engine_code: String(e.engine_code || '').trim() };
 };
 // Global pages publish production periods, not model years: compare without year there.
 const yearAgnostic = mann.length > 0 && mann.every((r) => !r.year);
-const keyCur = (p) => [norm(p.make), norm(p.model), yearAgnostic ? '' : p.year, norm(p.qualifier)].join('|');
-const keyMann = (r) => [norm(r.make), norm(r.model), yearAgnostic ? '' : r.year, norm(r.equipment_options)].join('|');
+const noParens = (t) => String(t || '').replace(/\([^)]*\)/g, ' ');
+const keyCur = (p) => yearAgnostic
+  ? [norm(p.make), norm(noParens(p.full))].join('|')
+  : [norm(p.make), norm(p.model), p.year, norm(p.qualifier)].join('|');
+const keyMann = (r) => yearAgnostic
+  ? [norm(r.make), norm(noParens([r.model, r.equipment_options].filter(Boolean).join(' ')))].join('|')
+  : [norm(r.make), norm(r.model), r.year, norm(r.equipment_options)].join('|');
 const curParsed = current.map(currentParts);
 const curKeys = new Map();
 for (const p of curParsed) { const k = keyCur(p); if (!curKeys.has(k)) curKeys.set(k, p); }

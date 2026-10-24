@@ -151,6 +151,17 @@ for (const [i, t] of targets.entries()) {
     row.reason = `PILOT_FAILED: ${pilot.error}`;
   } else {
     row.match_ratio = c.current_distinct_keys ? Number((c.matched_make_model_year / c.current_distinct_keys).toFixed(3)) : 0;
+    // LD family must match the official product type (EL3 oil, EA3 air, EC3 cabin, EF3 fuel).
+    const family = { EL3: /oil filter/i, EA3: /air filter/i, EC3: /cabin|interior/i, EF3: /fuel filter/i }[t.sku.slice(0, 3)];
+    row.mann_title = pilot.json?.source?.title || null;
+    if (family && !family.test(row.mann_title || '')) {
+      row.reason = `FAMILY_MISMATCH: ${row.mann_title}`;
+      rows.push(row);
+      console.log(`[${i + 1}/${targets.length}] ${t.sku} ${t.mann_code}\tHOLD\t${row.reason}`);
+      fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, prefix, rule, min_match: minMatch, rows }, null, 2));
+      await sleep(delayMs);
+      continue;
+    }
     const apply = runNode('mann-vehicle-application-apply.mjs', ['--sku', t.sku, '--in', dir]);
     row.guard_after = apply.json?.after?.guard?.state || null;
     if (apply.json?.result !== 'ROLLED_BACK_NO_CHANGES') row.reason = `DRY_RUN_FAILED: ${apply.json?.error || apply.error}`;
