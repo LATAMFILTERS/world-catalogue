@@ -171,6 +171,32 @@ main.mining-industry-page section[aria-labelledby="mining-tco-title"] .miningTco
   }
 }
 
+/* Mine operations H1: true two-line heading, not the old 13ch global hero clamp. */
+main.mining-industry-page > section:first-of-type h1.miningHeroHeading {
+  width: 100%;
+  max-width: min(100%, 1450px) !important;
+  text-wrap: balance;
+}
+main.mining-industry-page > section:first-of-type h1.miningHeroHeading > span {
+  display: inline-block;
+  max-width: 100%;
+}
+@media (max-width: 900px) {
+  main.mining-industry-page > section:first-of-type h1.miningHeroHeading {
+    font-size: clamp(2.65rem, 6.25vw, 5rem) !important;
+    line-height: .98 !important;
+    max-width: 100% !important;
+  }
+}
+@media (max-width: 640px) {
+  main.mining-industry-page > section:first-of-type h1.miningHeroHeading {
+    font-size: clamp(2.25rem, 9vw, 3.65rem) !important;
+    line-height: 1.02 !important;
+    text-wrap: pretty;
+    overflow-wrap: normal;
+  }
+}
+
 /* MINING EDITORIAL · scoped to this page; preserve original media and headings. */
 main.mining-industry-page {
   --font-body: 'IBM Plex Sans', 'Barlow', Arial, sans-serif;
