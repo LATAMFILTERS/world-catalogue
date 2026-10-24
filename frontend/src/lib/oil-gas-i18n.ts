@@ -1,6 +1,12 @@
 import type { PageLang } from '@/lib/localized-routes';
 const translations: Record<'es' | 'pt', Record<string,string>> = {
   "es": {
+    "OIL & GAS / MAINTENANCE ENGINEERING": "PETRÓLEO Y GAS / INGENIERÍA DE MANTENIMIENTO",
+    "FILTRATION FOR": "FILTRACIÓN PARA",
+    "OIL & GAS ASSETS": "ACTIVOS DE PETRÓLEO Y GAS",
+    "Filtration engineering for maintenance teams responsible for asset reliability and controlled return to service.": "Ingeniería de filtración para equipos de mantenimiento responsables de la confiabilidad de los activos y su retorno controlado al servicio.",
+    "Contamination control and filter selection for engine air intake, hydraulic systems, diesel fuel and lubrication on drilling, production, compression and field-power equipment—based on operating duty, OEM requirements and application evidence.": "Control de contaminación y selección de filtros para admisión de aire, sistemas hidráulicos, combustible diésel y lubricación en equipos de perforación, producción, compresión y generación auxiliar, según régimen operativo, requisitos OEM y evidencia de aplicación.",
+    "REVIEW MAINTENANCE APPLICATION": "EVALUAR APLICACIÓN DE MANTENIMIENTO",
     "OIL & GAS / FIELD ASSET PROTECTION": "PETRÓLEO Y GAS / PROTECCIÓN DE ACTIVOS EN CAMPO",
     "Oil & Gas Filtration": "Filtración para petróleo y gas",
     "Systems": "Sistemas",
@@ -107,6 +113,12 @@ const translations: Record<'es' | 'pt', Record<string,string>> = {
     "Yes. If an OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the equipment, protected system and site conditions.": "Sí. Con la referencia OEM o número de filtro, Part Search permite consultar equivalencias y aplicaciones. Para revisión de ingeniería, incluya equipo, sistema protegido y condiciones del sitio."
   },
   "pt": {
+    "OIL & GAS / MAINTENANCE ENGINEERING": "PETRÓLEO E GÁS / ENGENHARIA DE MANUTENÇÃO",
+    "FILTRATION FOR": "FILTRAÇÃO PARA",
+    "OIL & GAS ASSETS": "ATIVOS DE PETRÓLEO E GÁS",
+    "Filtration engineering for maintenance teams responsible for asset reliability and controlled return to service.": "Engenharia de filtração para equipes de manutenção responsáveis pela confiabilidade dos ativos e pelo retorno controlado à operação.",
+    "Contamination control and filter selection for engine air intake, hydraulic systems, diesel fuel and lubrication on drilling, production, compression and field-power equipment—based on operating duty, OEM requirements and application evidence.": "Controle de contaminação e seleção de filtros para admissão de ar, sistemas hidráulicos, diesel e lubrificação em equipamentos de perfuração, produção, compressão e geração auxiliar, conforme o regime operacional, os requisitos OEM e as evidências da aplicação.",
+    "REVIEW MAINTENANCE APPLICATION": "AVALIAR APLICAÇÃO DE MANUTENÇÃO",
     "OIL & GAS / FIELD ASSET PROTECTION": "PETRÓLEO E GÁS / PROTEÇÃO DE ATIVOS EM CAMPO",
     "Oil & Gas Filtration": "Filtração para petróleo e gás",
     "Systems": "Sistemas",
