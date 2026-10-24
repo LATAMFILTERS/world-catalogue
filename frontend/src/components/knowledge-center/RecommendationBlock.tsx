@@ -173,6 +173,7 @@ export default function RecommendationBlock({
   excludeTypes  = [],
   title         = 'Related Engineering Content',
 }: RecommendationBlockProps) {
+  const tr          = useReviewed();
   const graph       = getKCRecommendationGraph();
   const sourceKey   = makeKey(sourceType, sourceSlug);
   const recs        = getRecommendations(graph, sourceKey, { maxDepth: 2, maxResults, excludeTypes });
@@ -203,7 +204,7 @@ export default function RecommendationBlock({
           margin: 0,
           letterSpacing: '0.02em',
         }}>
-          {title}
+          {tr(title)}
         </h3>
         <div style={{
           fontFamily: 'JetBrains Mono, monospace',
@@ -211,10 +212,10 @@ export default function RecommendationBlock({
           color: 'rgba(255,255,255,0.2)',
           letterSpacing: '0.06em',
         }}>
-          {directCount > 0 && `${directCount} DIRECT`}
+          {directCount > 0 && `${directCount} ${tr('DIRECT')}`}
           {directCount > 0 && indirectCount > 0 && ' · '}
-          {indirectCount > 0 && `${indirectCount} INDIRECT`}
-          {' · BFS GRAPH TRAVERSAL · DEPTH 2'}
+          {indirectCount > 0 && `${indirectCount} ${tr('INDIRECT')}`}
+          {` · ${tr('BFS GRAPH TRAVERSAL · DEPTH 2')}`}
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 // Server-only: reviewed /es/ and /pt/ engineering article bodies, read at build time (never shipped in the client bundle).
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { KCArticle, KCStandard, KCSystemDetail, KCTechnology } from '../types';
+import type { KCArticle, KCComparison, KCStandard, KCSystemDetail, KCTechnology } from '../types';
 import type { KC_SYSTEMS } from '../canonical-systems-registry';
 import type { ProblemStub, TerminologyEntry } from '@/lib/knowledge-center';
 
@@ -42,4 +42,8 @@ export function translatedTerm(slug: string, lang: 'es' | 'pt'): TerminologyEntr
 
 export function translatedProblem(slug: string, lang: 'es' | 'pt'): ProblemStub {
   return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'problems', `${slug}.json`), 'utf8'));
+}
+
+export function translatedComparison(slug: string, lang: 'es' | 'pt'): KCComparison {
+  return JSON.parse(readFileSync(join(process.cwd(), 'src/lib/knowledge-center-data/i18n', lang, 'comparisons', `${slug}.json`), 'utf8'));
 }

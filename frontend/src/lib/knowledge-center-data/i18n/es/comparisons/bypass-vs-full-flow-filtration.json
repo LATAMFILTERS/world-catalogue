@@ -1,0 +1,172 @@
+{
+  "id": "COMP-BYPASS-VS-FULL",
+  "slug": "bypass-vs-full-flow-filtration",
+  "title": "Filtración de derivación frente a flujo total (primaria)",
+  "subtitle": "Dos configuraciones de circuito de filtración de aceite: control primario de la contaminación frente a pulido y filtración fina",
+  "category": "system",
+  "engineeringObjective": "Entender cuándo la filtración en derivación (de caudal parcial) complementa la filtración primaria de flujo total y diseñar la combinación correcta de topologías de circuito para el objetivo de contaminación de un sistema de aceite lubricante o hidráulico dado.",
+  "comparisonScope": "Cubre las configuraciones de circuito de filtración de flujo total (primaria, en línea) y en derivación (de caudal parcial) en sistemas de aceite lubricante e hidráulicos. No cubre la filtración hidráulica fuera de línea kidney-loop (tratada en otra comparación).",
+  "governingStandards": [
+    "ISO 16889:2022",
+    "ISO 4406:2021",
+    "SAE J1811"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Filtración de flujo total",
+    "description": "Todo el caudal de la bomba pasa por el elemento filtrante antes de llegar a los componentes críticos del sistema. El elemento filtrante debe dejar pasar el caudal total del sistema con una presión diferencial aceptable. Por eso los elementos de flujo total deben equilibrar la eficiencia con una capacidad de caudal suficiente: los elementos de eficiencia muy alta (muy finos) pueden crear una ΔP inaceptablemente alta con el caudal total. Se incorpora una válvula de derivación que se abre cuando la ΔP llega al ajuste de derivación (típicamente 3–6 bar) y protege al sistema de la falta de aceite si el elemento se bloquea. Esta apertura de derivación deja pasar fluido sin filtrar a los componentes.",
+    "advantages": [
+      "Todo el fluido se filtra en cada pasada por el circuito: máxima protección para los componentes del sistema",
+      "Asegura que los contaminantes generados durante el arranque del motor o en eventos transitorios se capturen antes de llegar a los cojinetes o a las válvulas",
+      "Configuración estándar en todos los circuitos de aceite lubricante de motores automotrices y comerciales: procedimientos de mantenimiento bien conocidos",
+      "Reemplazo de un solo elemento en un intervalo de servicio definido: protocolo de mantenimiento simple"
+    ],
+    "limitations": [
+      "El requisito de flujo total obliga a ceder en eficiencia: a menudo se usan elementos más gruesos (β₁₀(c) ≥ 75 en lugar de ≥ 200) para mantener una restricción aceptable al caudal nominal",
+      "La apertura de la válvula de derivación (con ΔP alta o bloqueo) deja que el fluido sin filtrar llegue a los componentes: el control de contaminación se ve comprometido justo cuando más se necesita la protección",
+      "Tras mucho tiempo de vida del cárter/depósito se acumula una gran carga de suciedad de partículas finas por debajo del rango de captura efectivo del elemento de flujo total",
+      "El intervalo de servicio del elemento lo determina la restricción (ΔP): un sistema con poca carga puede cambiar elementos antes de agotar la DHC; un sistema con mucha carga puede superar la capacidad"
+    ],
+    "typicalApplications": [
+      "Todos los circuitos de aceite lubricante del cárter de motores automotrices y comerciales",
+      "Filtración primaria en la línea de retorno o en la línea de presión del circuito hidráulico",
+      "Circuitos de fluido de transmisión",
+      "Cualquier circuito en el que todo el fluido deba acondicionarse antes de llegar a los componentes críticos"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Filtración de derivación (flujo parcial)",
+    "description": "Una fracción del caudal del sistema (típicamente 5–15%) se desvía por un elemento de filtración fino de alta eficiencia, en paralelo con el circuito principal de flujo total. El elemento en derivación recibe solo una fracción del caudal del sistema, por lo que puede operar con una eficiencia muy alta (medio muy fino, β₂(c) ≥ 200 o más) sin crear una restricción excesiva al flujo principal de aceite. Con el tiempo, el elemento en derivación elimina progresivamente partículas submicrónicas, agua y productos de oxidación que el elemento de flujo total no puede capturar. La filtración en derivación se suma a la de flujo total: no la reemplaza.",
+    "advantages": [
+      "Es posible una eficiencia de filtración muy alta (β₂(c), β₅(c)) porque el bajo caudal permite un medio fino sin una restricción inaceptable",
+      "Captura partículas submicrónicas, agua, hollín y productos de dilución por combustible que están por debajo del tamaño de captura del elemento de flujo total",
+      "Prolonga la vida del fluido al eliminar de forma continua los subproductos de degradación: los programas de análisis de aceite suelen mostrar intervalos de cambio más largos con filtración en derivación",
+      "No afecta el flujo del sistema principal: opera en paralelo sin riesgo de falta de flujo",
+      "La capacidad de retención de suciedad no es el factor limitante: el elemento fino se cambia según el tiempo/el análisis de aceite y no según la restricción"
+    ],
+    "limitations": [
+      "Procesa solo el 5–15% del caudal total en cada pasada por el circuito: da un pulido progresivo, no una protección inmediata de todo el circuito",
+      "No elimina la filtración primaria de flujo total: la derivación es complementaria, no un sustituto",
+      "Costo adicional de elemento, montaje y tuberías además de la filtración primaria",
+      "El elemento de medio fino tiene menos DHC que el elemento primario: puede requerir reemplazos más frecuentes si el caudal en derivación es alto",
+      "No es eficaz para capturar partículas grandes de eventos de contaminación catastróficos: el elemento de flujo total es la barrera principal"
+    ],
+    "typicalApplications": [
+      "Programas de intervalo extendido de cambio de aceite (motores de camiones de servicio pesado y fuera de carretera)",
+      "Operaciones de flotas con programas de análisis de aceite orientados a reducir el consumo de fluido",
+      "Sistemas hidráulicos industriales que requieren códigos de limpieza ISO 16/14/11 o más estrictos junto con la filtración primaria",
+      "Equipos de alto valor (minería, generación eléctrica) en los que prolongar la vida del fluido justifica el costo de filtración adicional",
+      "Motores que operan en entornos con mucho hollín, donde el elemento de flujo total se satura rápidamente"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Fracción de caudal procesada",
+      "optionA": "100% del caudal del sistema",
+      "optionB": "5–15% del caudal del sistema (desvío parcial)"
+    },
+    {
+      "dimension": "Eficiencia Beta típica",
+      "optionA": "β₁₀(c) = 75–200 (restricción por caudal)",
+      "optionB": "β₂(c)–β₅(c) ≥ 200 (el bajo caudal permite un medio fino)"
+    },
+    {
+      "dimension": "Función en el circuito",
+      "optionA": "Primaria: debe proteger en cada pasada por el circuito",
+      "optionB": "Pulido complementario: no sustituye a la primaria"
+    },
+    {
+      "dimension": "Captura submicrónica",
+      "optionA": "Limitada por la eficiencia que se sacrifica en el flujo total",
+      "optionB": "Sí: el medio fino a bajo caudal captura partículas submicrónicas"
+    },
+    {
+      "dimension": "Válvula de derivación",
+      "optionA": "Presente: se abre al umbral de ΔP (3–6 bar)",
+      "optionB": "No requerida: el bajo caudal genera una ΔP despreciable"
+    },
+    {
+      "dimension": "Prolongación de la vida del aceite",
+      "optionA": "Intervalos de cambio estándar",
+      "optionB": "Intervalos de cambio 25–100% más largos documentados en estudios de campo"
+    },
+    {
+      "dimension": "Complejidad del mantenimiento",
+      "optionA": "Cambio de un solo elemento por ΔP o por intervalo",
+      "optionB": "Elemento adicional en paralelo: dos elementos que gestionar"
+    }
+  ],
+  "engineeringImplications": [
+    "La filtración en derivación no reemplaza a la de flujo total: un sistema solo con derivación dejaría que toda la contaminación generada en los transitorios de arranque llegara sin filtrar a los componentes.",
+    "La combinación de flujo total (β₁₀(c) ≥ 200) más derivación (β₂(c) ≥ 200) logra el mejor control de contaminación posible dentro de restricciones prácticas de caída de presión.",
+    "Los datos de análisis de aceite de flotas con filtración en derivación muestran de forma constante concentraciones más bajas de metales de desgaste Fe, Cu y Al frente a solo flujo total, lo que indica que la etapa de pulido fino reduce el desgaste abrasivo.",
+    "En sistemas con una válvula de derivación que se abre con frecuencia, la propia válvula es un indicador de un problema de servicio: el elemento debe cambiarse, no dejarse en derivación durante la operación normal."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Todos los sistemas de aceite lubricante e hidráulicos, como circuito de filtración primaria obligatorio",
+        "Aplicaciones en las que todo el fluido debe acondicionarse antes de llegar a los componentes críticos en cada pasada",
+        "Programas de mantenimiento con intervalos estándar"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Flotas de servicio pesado que buscan intervalos de cambio de aceite extendidos con validación por análisis de aceite",
+        "Equipos de alto valor en los que el retorno de prolongar la vida del fluido justifica el costo del elemento adicional",
+        "Sistemas en los que el filtro primario de flujo total por sí solo no puede lograr los códigos de limpieza ISO objetivo por la restricción de eficiencia",
+        "Aplicaciones diésel con mucho hollín (motores con EGR), donde la carga de hollín satura rápidamente los elementos de flujo total"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Nunca omitirla: la filtración de flujo total es obligatoria en todos los circuitos de aceite lubricante e hidráulicos"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Como sustituto de la filtración primaria de flujo total",
+        "Equipos de vida corta o desechables en los que el costo del elemento adicional supera el beneficio operativo",
+        "Sistemas con entornos de operación muy limpios que ya logran los códigos de limpieza objetivo solo con la filtración primaria"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16889",
+    "iso-4406"
+  ],
+  "relatedTechnologies": [
+    "SYNTRAX",
+    "NANOFORCE"
+  ],
+  "relatedSystems": [
+    "lube-oil",
+    "hydraulic"
+  ],
+  "relatedTerms": [
+    "bypass-valve",
+    "filtration-efficiency",
+    "dirt-holding-capacity",
+    "differential-pressure"
+  ],
+  "relatedArticles": [
+    "service-intervals",
+    "total-cost-of-ownership",
+    "fluid-cleanliness",
+    "contamination-control"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    }
+  ]
+}

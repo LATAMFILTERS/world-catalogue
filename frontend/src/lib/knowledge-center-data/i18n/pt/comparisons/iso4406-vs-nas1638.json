@@ -1,0 +1,182 @@
+{
+  "id": "COMP-ISO4406-VS-NAS",
+  "slug": "iso4406-vs-nas1638",
+  "title": "Classificação de limpeza de fluidos ISO 4406 versus NAS 1638",
+  "subtitle": "Dois sistemas de codificação de limpeza para fluidos hidráulicos e óleos lubrificantes: o internacional versus o antigo aeroespacial dos EUA",
+  "category": "standards",
+  "engineeringObjective": "Selecionar o sistema de classificação de limpeza correto ao especificar, medir ou relatar a limpeza do fluido em sistemas hidráulicos e de óleo lubrificante, garantindo comunicação inequívoca entre as equipes de engenharia e os fornecedores.",
+  "comparisonScope": "Compara a codificação de limpeza de fluidos ISO 4406 com a abordagem de classificação legada NAS 1638. A comparação serve para interpretar e migrar documentação histórica; ela não atribui metas de limpeza aos componentes nem trata uma referência externa retirada como autoridade vigente.",
+  "governingStandards": [
+    "ISO 4406:2021",
+    "NAS 1638:2011",
+    "SAE AS4059F",
+    "ISO 11171:2010"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "ISO 4406:2021",
+    "description": "Um código de limpeza de três números (p. ex., 16/14/11) em que cada número representa o código de faixa ISO para as contagens acumuladas de partículas por mL a ≥4 µm(c), ≥6 µm(c) e ≥14 µm(c), respectivamente. Os códigos de faixa são logarítmicos: o código N significa que a contagem está entre 2^(N−1) e 2^N partículas/mL. Exige um contador automático de partículas (APC) calibrado conforme a ISO 11171:2010. Amplamente adotado no mundo desde 1999; a revisão vigente é a ISO 4406:2021.",
+    "advantages": [
+      "O sistema de três códigos cobre separadamente as populações de partículas pequenas, médias e grandes — mais informação de diagnóstico que uma única classe",
+      "A escala logarítmica de códigos resolve com eficiência faixas amplas de limpeza (código 16 = 320–640 partículas/mL)",
+      "O requisito de calibração ISO 11171:2010 garante a reprodutibilidade entre laboratórios",
+      "Norma internacional vigente — mantida ativamente, com a revisão de 2021 incorporando a calibração atualizada dos contadores de partículas",
+      "Diretamente compatível com os cálculos de relação Beta ISO 16889 para o projeto de sistemas"
+    ],
+    "limitations": [
+      "O formato de três códigos pode ser mal interpretado — a ordem dos códigos (4/6/14 µm) não deve ser invertida",
+      "Exige APC calibrado conforme a ISO 11171 — contadores antigos baseados em ACFTD produzem resultados não comparáveis",
+      "Não há relação numérica direta entre o código ISO e a classe NAS — a conversão é aproximada, não exata",
+      "O sufixo (c) (calibrado) costuma faltar em documentos antigos, tornando ambíguos os dados anteriores a 2000"
+    ],
+    "typicalApplications": [
+      "Especificações de sistemas hidráulicos móveis e industriais no mundo todo",
+      "Metas de limpeza de sistemas de óleo lubrificante em aplicações de motores e transmissões",
+      "Especificações de componentes hidráulicos OEM (Bosch Rexroth, Parker, Eaton)",
+      "Cálculos de projeto de sistemas ISO 16889"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "NAS 1638",
+    "description": "Uma especificação de contaminação por partículas de classe única (da Classe 00 à Classe 12) baseada nas contagens máximas admissíveis de partículas por 100 mL em cinco faixas de tamanho: 5–15 µm, 15–25 µm, 25–50 µm, 50–100 µm e >100 µm. A classe é determinada pela pior contagem (a mais alta) em qualquer faixa. Desenvolvida pelo comitê do National Aerospace Standard (NAS) e usada originalmente pelas indústrias aeroespacial e de defesa dos EUA. A NAS 1638 foi formalmente substituída pela SAE AS4059F para novos projetos aeroespaciais, mas continua em uso em sistemas legados.",
+    "advantages": [
+      "Um único número de classe é fácil de comunicar e de verificar frente a uma especificação",
+      "Longa história na indústria aeroespacial e de defesa dos EUA — os engenheiros conhecem as classes NAS 6, 8 etc.",
+      "Preservada em contratos legados e manuais OEM que não podem ser alterados sem requalificação do sistema",
+      "A Classe 6 e inferiores (equivalentes aproximadamente a ISO 16/14/11) ainda são muito citadas em contextos hidráulicos industriais da América do Norte"
+    ],
+    "limitations": [
+      "A regra da pior classe única pode ser dominada por uma única faixa de tamanho atípica — fornece menos informação de diagnóstico que os três códigos da ISO 4406",
+      "Baseada na distribuição de tamanho de partícula ACFTD (descontinuada) — contadores modernos calibrados pela ISO 11171 produzem números de classe NAS diferentes (normalmente mais limpos) para o mesmo fluido real",
+      "Formalmente substituída pela SAE AS4059F para novos projetos aeroespaciais; a NAS 1638 não deve ser usada em especificações novas",
+      "A norma original não tem requisito de calibração equivalente ao ISO — a reprodutibilidade entre laboratórios era pior que com a ISO 4406",
+      "Correspondência aproximada e não linear com os códigos ISO 4406 — as tabelas de conversão são apenas informativas, não exatas"
+    ],
+    "typicalApplications": [
+      "Sistemas hidráulicos legados das indústrias aeroespacial e de defesa dos EUA com manuais OEM baseados em NAS",
+      "Contratos existentes que citam níveis de classe NAS e não podem ser revisados",
+      "Mercados industriais da América do Norte em que a terminologia NAS continua incorporada à documentação dos equipamentos",
+      "Relatórios históricos de análise de fluidos que exigem comparação com dados NAS legados"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Estrutura do código",
+      "optionA": "Três códigos: ≥4, ≥6, ≥14 µm(c) por mL",
+      "optionB": "Classe única em 5 faixas de tamanho por 100 mL"
+    },
+    {
+      "dimension": "Tamanhos de partícula cobertos",
+      "optionA": "≥4 µm(c), ≥6 µm(c), ≥14 µm(c)",
+      "optionB": "5–15, 15–25, 25–50, 50–100, >100 µm"
+    },
+    {
+      "dimension": "Tipo de escala",
+      "optionA": "Códigos de faixa logarítmicos (0–24+)",
+      "optionB": "Números de classe lineares (00–12)"
+    },
+    {
+      "dimension": "Base de calibração",
+      "optionA": "ISO 11171:2010 (esferas PSL)",
+      "optionB": "ACFTD (descontinuado em 1999) — dados legados não comparáveis"
+    },
+    {
+      "dimension": "Situação atual",
+      "optionA": "Norma internacional vigente (ISO 4406:2021)",
+      "optionB": "Substituída pela SAE AS4059F para novos projetos"
+    },
+    {
+      "dimension": "Detalhe de diagnóstico",
+      "optionA": "Três populações de tamanho independentes — mais informação",
+      "optionB": "Pior classe única — menos diagnóstico"
+    },
+    {
+      "dimension": "Compatibilidade com a ISO 16889",
+      "optionA": "Compatibilidade direta de projeto",
+      "optionB": "Exige conversão (apenas aproximada)"
+    },
+    {
+      "dimension": "Exemplo típico",
+      "optionA": "16/14/11 (hidráulica móvel)",
+      "optionB": "Classe 6 (hidráulica aeroespacial, legada)"
+    }
+  ],
+  "engineeringImplications": [
+    "Toda especificação escrita para equipamentos ou sistemas novos deve usar a ISO 4406:2021 — a NAS 1638 não é mais adequada para projetos novos.",
+    "Os dados de um APC calibrado com ACFTD e os de um APC calibrado pela ISO 11171 não são numericamente comparáveis — um fluido que mede NAS Classe 6 em um contador antigo pode não atender à NAS Classe 6 em um contador moderno.",
+    "Ao converter uma classe NAS legada para ISO 4406 em sistemas com documentação mista, use as tabelas de conversão apenas como orientação; as duas escalas não podem ser correlacionadas com precisão porque cobrem faixas de tamanho de partícula diferentes.",
+    "Em compras internacionais, especifique sempre códigos ISO 4406 — a NAS 1638 não é reconhecida como vigente na maioria dos marcos nacionais de compras fora dos EUA."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Todas as novas especificações de limpeza de sistemas hidráulicos e de óleo lubrificante",
+        "Compras internacionais ou cadeias de suprimento que exigem conformidade ISO",
+        "Cálculos de projeto de sistemas com a estrutura de relação Beta ISO 16889"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Manutenção de sistemas aeroespaciais ou de defesa legados cujos manuais OEM especificam classes NAS e em que a requalificação não é viável",
+        "Interpretar registros históricos de análise de fluidos anteriores à adoção da ISO 4406",
+        "Contratos que não podem ser revisados para ISO 4406 sem autorização de mudança do programa"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Quando a documentação legada exige uma classe NAS e não há equivalência direta estabelecida",
+        "Comparar com dados anteriores a 1999 baseados em ACFTD — as bases de calibração são diferentes"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Qualquer especificação de sistema ou equipamento novo — a NAS 1638 está substituída",
+        "Quando forem usados dados de um APC moderno calibrado pela ISO 11171 — os resultados não são comparáveis com as classes NAS originais baseadas em ACFTD",
+        "Compras internacionais em que a conformidade ISO é exigida"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-4406",
+    "iso-16889",
+    "iso-11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE",
+    "SYNTRAX"
+  ],
+  "relatedSystems": [
+    "hydraulic",
+    "lube-oil"
+  ],
+  "relatedTerms": [
+    "cleanliness-code",
+    "particle-counting",
+    "iso-4406",
+    "beta-ratio"
+  ],
+  "relatedArticles": [
+    "fluid-cleanliness",
+    "testing-and-validation",
+    "contamination-control"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    },
+    {
+      "version": "1.1",
+      "date": "2026-09-04",
+      "changes": "Removed retired NFPA T2.14 authority references from the public comparison."
+    }
+  ]
+}

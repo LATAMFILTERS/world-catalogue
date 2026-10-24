@@ -1,0 +1,198 @@
+{
+  "id": "COMP-GRAV-VS-PARTICLE",
+  "slug": "gravimetric-vs-particle-counting",
+  "title": "Análise gravimétrica versus contagem de partículas",
+  "subtitle": "Dois métodos para medir os níveis de contaminação em fluidos hidráulicos e lubrificantes",
+  "category": "test-method",
+  "engineeringObjective": "Selecionar o método de medição de contaminação adequado com base no tipo de dado exigido (massa total, distribuição de tamanho ou contagem), na sensibilidade e em se o resultado exigido são códigos de limpeza ISO 4406 ou a massa de contaminação em massa.",
+  "comparisonScope": "Cobre a análise gravimétrica (ISO 4405) e a contagem automática de partículas (ISO 11171, ISO 4406) para medir a contaminação de fluidos hidráulicos e de óleo lubrificante. Não cobre a análise ferrográfica, a análise espectrométrica de óleo (SOAP) nem os ensaios de contaminação biológica.",
+  "governingStandards": [
+    "ISO 4405:1991",
+    "ISO 11171:2010",
+    "ISO 4406:2021",
+    "ISO 16889:2022"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Análise gravimétrica",
+    "description": "O fluido é filtrado através de um filtro de membrana de peso conhecido, seco e pesado novamente. A massa de contaminação por unidade de volume é calculada como (peso final − peso inicial) / volume de fluido e expressa em mg/L ou mg/100 mL. A ISO 4405 define o procedimento para fluidos hidráulicos. A análise gravimétrica captura a massa total de partículas acima do tamanho de poro da membrana (tipicamente 0.45–1.2 µm), mas não fornece informação sobre a distribuição de tamanho de partícula, a contagem de partículas nem o código de limpeza ISO 4406.",
+    "advantages": [
+      "Equipamento simples e de baixo custo — balança analítica calibrada e filtros de membrana; não exige contador de partículas",
+      "Mede a massa total de contaminação, incluindo tipos de partículas que espalham a luz de forma diferente e podem ser subcontados por APCs ópticos",
+      "Método padrão para medir a capacidade de retenção de sujeira do elemento filtrante (pesagem gravimétrica do elemento na ISO 16889)",
+      "Válido para fluidos com alta absorbância de luz ou fluorescência que interferem na contagem óptica de partículas",
+      "Método de medição histórico — grande banco de dados legado de valores em mg/L para comparação",
+      "Captura tanto partículas duras quanto contaminação mole (gel, borra, verniz) que o APC pode não contar com exatidão"
+    ],
+    "limitations": [
+      "Não produz dados de distribuição de tamanho de partícula — não permite calcular códigos de limpeza ISO 4406",
+      "Não distingue entre poucas partículas grandes e muitas partículas finas com a mesma massa total — perfis de contaminação fundamentalmente diferentes dão resultados gravimétricos idênticos",
+      "A massa mínima detectável depende da sensibilidade da balança — não é adequado para fluidos ultralimpos de ISO 14/12/9 ou mais limpos",
+      "Procedimento lento — a preparação da membrana, a filtração, a secagem e a pesagem levam horas, contra minutos com um APC",
+      "Consumíveis de filtros de membrana de uso único — o custo se acumula em programas de monitoramento de alta frequência",
+      "Não pode ser usado em linha nem continuamente — apenas análise off-line"
+    ],
+    "typicalApplications": [
+      "Medição da capacidade de retenção de sujeira do elemento filtrante conforme a ISO 16889 (pesagem do elemento antes e depois do ensaio)",
+      "Medição da contaminação em massa na análise de óleo quando a codificação ISO 4406 não é exigida",
+      "Fluidos com alta opacidade óptica (alguns fluidos de corte, óleos escuros) que inviabilizam os contadores ópticos de partículas",
+      "Auditoria de contaminação total em que a métrica exigida é a massa (não a contagem)",
+      "Sistemas legados em que os dados gravimétricos são a linha de base existente"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Contagem automática de partículas (APC)",
+    "description": "Um contador óptico de partículas por extinção de luz (APC) calibrado conforme a ISO 11171:2010 conta e mede partículas individuais em um volume conhecido de fluido. As contagens são relatadas por mL em limites de tamanho especificados (≥4 µm(c), ≥6 µm(c), ≥14 µm(c) conforme a ISO 4406:2021). As contagens dos três limites são convertidas em códigos de faixa ISO 4406. Os APCs podem medir continuamente em altas vazões, permitindo o monitoramento em linha. A calibração ISO 11171 com esferas PSL garante a comparabilidade entre laboratórios. Os dados de distribuição de tamanho de partícula permitem identificar as fontes de contaminação e os mecanismos de degradação.",
+    "advantages": [
+      "Produz diretamente códigos de limpeza ISO 4406 — exigidos nas especificações de proteção de componentes",
+      "Os dados de distribuição de tamanho de partícula revelam a fonte de contaminação (sílica abrasiva, desgaste metálico e partículas de degradação de vedações têm distribuições de tamanho diferentes)",
+      "Resultados rápidos — os APCs modernos fornecem resultados em minutos; os APCs em linha oferecem monitoramento contínuo",
+      "Detecta contaminação em concentrações abaixo dos limites de detecção gravimétricos — adequado para sistemas limpos de ISO 14/12/9 e mais limpos",
+      "Capacidade de monitoramento em linha — o APC pode ser instalado em linha para detectar eventos de contaminação em tempo real",
+      "A calibração ISO 11171 garante comparabilidade global entre laboratórios — o mesmo fluido medido em qualquer laboratório certificado dá códigos equivalentes",
+      "Exigido para os ensaios de desempenho de elementos filtrantes ISO 16889 (medição da relação Beta)"
+    ],
+    "limitations": [
+      "Exige instrumento calibrado pela ISO 11171 — custo de capital muito maior que o de uma balança gravimétrica",
+      "O método de extinção óptica é sensível à opacidade do fluido — fluidos escuros ou muito contaminados exigem diluição antes da medição, acrescentando etapas ao procedimento",
+      "Bolhas de ar e gotículas de água são contadas como partículas — o manuseio da amostra para eliminar a aeração é crítico",
+      "Conta partículas (contagens/mL), mas não sua massa — a massa total de contaminação não pode ser derivada apenas dos dados do APC",
+      "Partículas moles (gel, verniz, fragmentos de elastômero) podem ser contadas de forma inconsistente em relação a partículas duras do mesmo tamanho",
+      "A deriva de calibração sem recalibração periódica com PSL leva a códigos de limpeza errados"
+    ],
+    "typicalApplications": [
+      "Medição do código de limpeza ISO 4406 para o monitoramento da condição de sistemas hidráulicos",
+      "Ensaio de relação Beta de elementos filtrantes ISO 16889 (método APC obrigatório)",
+      "Monitoramento em linha da contaminação de sistemas hidráulicos com alarmes por contagem de partículas",
+      "Ensaios de aceitação de limpeza do fluido em sistemas novos e após o flushing",
+      "Monitoramento de condição em programas de manutenção preditiva",
+      "Verificação da proteção de componentes em sistemas com válvulas proporcionais e servoválvulas"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Tipo de dado de saída",
+      "optionA": "Massa total [mg/L ou mg/100 mL]",
+      "optionB": "Contagem de partículas por mL por limite de tamanho"
+    },
+    {
+      "dimension": "Saída de código ISO 4406",
+      "optionA": "Não é possível — não há dados de tamanho de partícula",
+      "optionB": "Saída direta — contagem a ≥4, ≥6, ≥14 µm(c)"
+    },
+    {
+      "dimension": "Dados de tamanho de partícula",
+      "optionA": "Nenhum — apenas massa",
+      "optionB": "Distribuição de tamanho completa (espectro de tamanho)"
+    },
+    {
+      "dimension": "Requisito de calibração",
+      "optionA": "Balança analítica calibrada conforme a ISO 4405",
+      "optionB": "Calibração PSL ISO 11171:2010 — obrigatória"
+    },
+    {
+      "dimension": "Detecção mínima",
+      "optionA": "Limitada pela sensibilidade da balança (~0.1 mg)",
+      "optionB": "Detecção de partículas individuais até 1 µm(c) e abaixo"
+    },
+    {
+      "dimension": "Velocidade",
+      "optionA": "Horas — preparação da membrana, secagem, pesagem",
+      "optionB": "Minutos; em linha = contínuo e em tempo real"
+    },
+    {
+      "dimension": "Sensibilidade à opacidade do fluido",
+      "optionA": "Não é afetado pelas propriedades ópticas",
+      "optionB": "Fluidos escuros/opacos exigem diluição ou um método de detecção alternativo"
+    },
+    {
+      "dimension": "Detecção de partículas moles",
+      "optionA": "Captura gel, verniz e borra por massa",
+      "optionB": "Partículas moles contadas de forma inconsistente pelo método óptico"
+    },
+    {
+      "dimension": "Requisito da ISO 16889",
+      "optionA": "Usado apenas para a pesagem da DHC do elemento",
+      "optionB": "Exigido para medir a relação Beta"
+    }
+  ],
+  "engineeringImplications": [
+    "Os códigos de limpeza ISO 4406 só podem ser atribuídos com um APC — a análise gravimétrica não produz códigos de limpeza; sistemas especificados com metas ISO 4406 devem usar um APC para a verificação.",
+    "Nos ensaios de desempenho de elementos filtrantes conforme a ISO 16889, o APC é obrigatório — a medição gravimétrica é usada apenas para determinar a capacidade de retenção de sujeira (peso do elemento), não a relação Beta.",
+    "Em fluidos escuros ou muito aerados, em que a exatidão do APC é duvidosa, a análise gravimétrica pode ser o indicador mais confiável da massa de contaminação, mas não pode substituir o APC em sistemas baseados em códigos de limpeza.",
+    "Ao investigar uma degradação rápida do código de limpeza, os dados de distribuição de tamanho de partícula do APC permitem identificar a fonte de contaminação, o que os dados gravimétricos em mg/L não conseguem — um pico de partículas de 14 µm+ indica uma fonte diferente de um pico de partículas de 4 µm."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Medição da capacidade de retenção de sujeira do elemento filtrante conforme o procedimento de ensaio ISO 16889",
+        "Auditoria de contaminação total em fluidos em que a contagem óptica de partículas não é prática (alta opacidade)",
+        "Comparação histórica com um banco de dados gravimétrico legado",
+        "Medição da massa de contaminação quando o resultado exigido não são códigos de limpeza ISO 4406"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Toda medição e verificação de códigos de limpeza ISO 4406",
+        "Ensaios de desempenho de relação Beta de elementos filtrantes ISO 16889",
+        "Programas de monitoramento da condição de sistemas hidráulicos e de óleo lubrificante",
+        "Verificação da proteção de componentes em sistemas com servoválvulas e válvulas proporcionais",
+        "Qualquer aplicação que exija dados de distribuição de tamanho de partícula para diagnosticar a fonte de contaminação"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "Quando o resultado exigido são códigos de limpeza ISO 4406 — o método gravimétrico não consegue produzir códigos de limpeza",
+        "Ensaios de relação Beta ISO 16889 — a norma exige o APC",
+        "Verificação de fluidos ultralimpos (ISO 14/12/9 ou mais limpos), em que as diferenças de massa estão abaixo do limite de detecção da balança"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Fluidos muito contaminados ou opacos sem possibilidade de diluição — a aeração e a opacidade causam erros de contagem",
+        "Quando a métrica exigida é a massa total de contaminação (não a contagem) para comparação com dados gravimétricos históricos",
+        "Ambientes em que a manutenção da calibração do APC não pode ser sustentada — dados de APC sem calibração não atendem à ISO 4406"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-4406",
+    "iso-11171",
+    "iso-16889",
+    "iso-4405"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE",
+    "SYNTRAX"
+  ],
+  "relatedSystems": [
+    "hydraulic",
+    "lube-oil"
+  ],
+  "relatedTerms": [
+    "particle-counting",
+    "cleanliness-code",
+    "gravimetric-analysis",
+    "beta-ratio",
+    "iso-4406"
+  ],
+  "relatedArticles": [
+    "testing-and-validation",
+    "fluid-cleanliness",
+    "contamination-control"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    }
+  ]
+}

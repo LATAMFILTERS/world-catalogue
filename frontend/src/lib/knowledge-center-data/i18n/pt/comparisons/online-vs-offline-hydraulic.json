@@ -1,0 +1,159 @@
+{
+  "id": "COMP-ONLINE-VS-OFFLINE",
+  "slug": "online-vs-offline-hydraulic",
+  "title": "Filtração hidráulica em linha versus off-line (kidney loop)",
+  "subtitle": "Topologias de controle da contaminação hidráulica conforme a aplicação: filtração no circuito e condicionamento independente do fluido",
+  "category": "system",
+  "engineeringObjective": "Comparar a filtração hidráulica no circuito e off-line com base na sensibilidade dos componentes, nas fontes de contaminação, no regime de operação, na condição do reservatório, nos requisitos de vazão/restrição e na disponibilidade de manutenção.",
+  "comparisonScope": "Cobre a filtração em linha localizada no circuito hidráulico de trabalho e a filtração off-line kidney-loop operando por um circuito de condicionamento independente. Nenhuma das duas topologias é universalmente obrigatória nem suficiente por si só; a arquitetura exigida depende do projeto do equipamento, dos requisitos de limpeza e das condições de operação validadas.",
+  "governingStandards": [
+    "ISO 16889:2022",
+    "ISO 4406:2021",
+    "ISO 11171:2010"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Filtração em linha (no circuito)",
+    "description": "A filtração em linha posiciona o filtro em um ponto do circuito de trabalho, como o fluxo de pressão ou de retorno. Sua finalidade e sua classificação dependem do projeto do circuito, da sensibilidade dos componentes, da perda de carga admissível e da carga de contaminação. Um filtro em linha não é automaticamente obrigatório em toda arquitetura hidráulica só porque o sistema é hidráulico.",
+    "advantages": [
+      "Captura a contaminação a cada passagem pelo circuito — a resposta mais rápida a eventos de contaminação repentinos (falha de vedação, desgaste de atuadores)",
+      "Protege todos os componentes a jusante em cada ciclo de operação",
+      "Prática padrão do setor — bem conhecida pelo pessoal de manutenção no mundo todo",
+      "A configuração na linha de retorno captura toda a contaminação gerada pelo sistema antes que o fluido volte ao reservatório",
+      "Integrada à operação do sistema — a filtração ocorre automaticamente durante a operação normal da máquina"
+    ],
+    "limitations": [
+      "Operar na vazão do sistema limita a eficiência máxima atingível — um meio fino de alta eficiência gera ΔP inaceitável com a vazão total do sistema",
+      "A válvula de bypass (filtro de linha de retorno) deve abrir para proteger o sistema contra a falta de óleo quando o elemento bloqueia — e então fluido não filtrado chega ao reservatório",
+      "É preciso parar o sistema para trocar o elemento — uma breve interrupção da operação",
+      "Não trata o acúmulo de partículas finas no reservatório — apenas as partículas que circulam no circuito de trabalho são capturadas a cada passagem"
+    ],
+    "typicalApplications": [
+      "Circuitos hidráulicos cujo projeto de equipamento inclui filtração na linha de pressão, na linha de retorno ou outra filtração no circuito",
+      "Aplicações que exigem proteção direta de componentes definidos a jusante dentro do caminho do fluxo de trabalho",
+      "Sistemas em que o local do filtro selecionado, a capacidade de vazão e o envelope de pressão diferencial estão validados para o ciclo de trabalho"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Filtração off-line (kidney loop)",
+    "description": "A filtração off-line ou kidney-loop usa um circuito independente de bomba e filtro para condicionar o fluido do reservatório separadamente do fluxo de trabalho principal. Ela pode apoiar a remoção de contaminação durante a operação ou em janelas de manutenção, mas não substitui automaticamente a filtração exigida pelo projeto do equipamento dentro do circuito de trabalho.",
+    "advantages": [
+      "Sem limitação de ΔP pela vazão do sistema principal — é possível usar meio fino com β₂(c) ≥ 200 ou mais fino",
+      "Opera continuamente, inclusive com o sistema parado — remove progressivamente do reservatório as partículas que se acumulam abaixo do limite do filtro do circuito principal",
+      "A troca do elemento pode ser feita sem parar a operação do sistema principal — o elemento é trocado apenas no circuito kidney-loop",
+      "Remove os sedimentos do reservatório e a população de partículas finas que a filtração do circuito principal não consegue atacar de forma econômica",
+      "Combinada com a filtração do circuito principal, pode atingir códigos de limpeza ISO 15/13/10 ou mais rigorosos, que não são atingíveis apenas com filtração em linha",
+      "Eficaz para o flushing de comissionamento — o kidney-loop funciona em alta velocidade antes da partida do sistema para remover a contaminação de montagem"
+    ],
+    "limitations": [
+      "Custo complementar — bomba, motor, carcaça, tubulação e elemento adicionais",
+      "Não captura a contaminação gerada durante um ciclo de trabalho antes que chegue aos componentes a jusante — a filtração do circuito principal continua necessária",
+      "A baixa vazão faz com que a melhoria da limpeza seja progressiva (de horas a dias para atingir um passo importante do código de limpeza) — não é uma medida de resposta de emergência",
+      "O motor elétrico/a bomba exigem alimentação elétrica — pouco prático em aplicações realmente móveis sem disponibilidade elétrica contínua",
+      "Manutenção adicional — a bomba e o elemento do kidney-loop são itens de serviço separados"
+    ],
+    "typicalApplications": [
+      "Condicionamento do reservatório onde um circuito de recirculação independente é prático",
+      "Sistemas que exigem limpeza do fluido sem fazer todo o fluxo de trabalho passar por um elemento de condicionamento fino",
+      "Programas de manutenção que usam o condicionamento off-line como complemento da arquitetura de filtração do equipamento"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Caminho do fluxo",
+      "optionA": "Dentro de um circuito hidráulico de trabalho",
+      "optionB": "Circuito de condicionamento independente"
+    },
+    {
+      "dimension": "Base principal de seleção",
+      "optionA": "Projeto do circuito, proteção dos componentes, requisitos de vazão e de perda de carga",
+      "optionB": "Objetivo de condicionamento do reservatório, velocidade de limpeza e vazão independente disponível"
+    },
+    {
+      "dimension": "Objetivo de limpeza",
+      "optionA": "Específico da aplicação/do componente",
+      "optionB": "Específico da aplicação/do componente"
+    },
+    {
+      "dimension": "Pode substituir a outra topologia?",
+      "optionA": "Não por suposição",
+      "optionB": "Não por suposição"
+    },
+    {
+      "dimension": "Estratégia de serviço",
+      "optionA": "Conforme os requisitos do equipamento e da condição do filtro",
+      "optionB": "Conforme o objetivo de condicionamento e a condição medida do fluido"
+    }
+  ],
+  "engineeringImplications": [
+    "Não afirme que todo sistema hidráulico deve usar filtração em linha; verifique a arquitetura do equipamento e os componentes protegidos.",
+    "Não afirme que um kidney-loop substitui automaticamente a filtração no circuito exigida pelo projeto do equipamento.",
+    "Os códigos de limpeza ISO 4406 descrevem níveis de contaminação do fluido; eles não prescrevem uma topologia de filtração universal.",
+    "Use os dados ISO 16889 quando aplicáveis ao desempenho do elemento, mas escolha a topologia com base no circuito real, na sensibilidade dos componentes e nas condições de operação."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "O projeto do equipamento ou do circuito exige filtração no caminho do fluxo de trabalho",
+        "Um componente ou circuito definido exige proteção direta em linha contra a contaminação e o filtro consegue atender aos requisitos de vazão/pressão"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "O condicionamento independente do reservatório é necessário ou vantajoso com base na contaminação medida e na estratégia de operação",
+        "Um circuito de limpeza separado pode ser instalado sem comprometer o circuito hidráulico de trabalho"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "A topologia está sendo especificada apenas com base em uma suposição genérica de código de limpeza, sem verificar o circuito real"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Está sendo usada como substituta da filtração do circuito de trabalho exigida pelo equipamento, sem validação de engenharia"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16889",
+    "iso-4406",
+    "iso-11171"
+  ],
+  "relatedTechnologies": [
+    "NANOFORCE"
+  ],
+  "relatedSystems": [
+    "hydraulic"
+  ],
+  "relatedTerms": [
+    "cleanliness-code",
+    "differential-pressure",
+    "bypass-valve",
+    "filtration-efficiency"
+  ],
+  "relatedArticles": [
+    "fluid-cleanliness",
+    "contamination-control",
+    "total-cost-of-ownership"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    },
+    {
+      "version": "1.1",
+      "date": "2026-09-04",
+      "changes": "Removed universal topology and cleanliness-target claims; made selection application- and evidence-dependent."
+    }
+  ]
+}

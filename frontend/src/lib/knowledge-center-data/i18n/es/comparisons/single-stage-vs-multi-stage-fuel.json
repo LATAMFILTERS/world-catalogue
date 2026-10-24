@@ -1,0 +1,159 @@
+{
+  "id": "COMP-SINGLE-VS-MULTI-FUEL",
+  "slug": "single-stage-vs-multi-stage-fuel",
+  "title": "Filtración de combustible diésel de una etapa frente a varias etapas",
+  "subtitle": "Arquitectura de limpieza del combustible y gestión del agua en sistemas diésel, según la aplicación",
+  "category": "system",
+  "engineeringObjective": "Comparar las arquitecturas de filtración de combustible diésel de una etapa y de varias etapas según el equipo real, la exposición a la contaminación, el requisito de gestión del agua, los límites de caudal/restricción y el desempeño validado del elemento.",
+  "comparisonScope": "Cubre la arquitectura de filtración de combustible diésel. No establece un número universal de etapas, un umbral de presión del riel, una clasificación en micras, un intervalo de servicio, un resultado de costos ni una exigencia OEM. La selección debe seguir los requisitos específicos del motor/sistema de combustible y evidencia de aplicación validada.",
+  "governingStandards": [
+    "ISO 16332:2018",
+    "ASTM D6304",
+    "ISO 12937"
+  ],
+  "optionA": {
+    "id": "A",
+    "label": "Filtración de combustible de una etapa",
+    "description": "Una arquitectura de una etapa usa una sola ubicación de filtración con servicio para las funciones que requiere la aplicación aprobada. Su idoneidad depende del diseño del equipo, el control de partículas requerido, la capacidad de gestión del agua, la envolvente de caudal/restricción y el desempeño validado del elemento.",
+    "advantages": [
+      "Menos carcasas y puntos de servicio cuando la arquitectura del equipo está diseñada para una disposición de una etapa",
+      "Montaje compacto cuando el espacio de instalación y la complejidad de las tuberías son limitados",
+      "Puede ser adecuada cuando la aplicación aprobada y el desempeño validado del elemento cumplen las funciones de control de contaminación requeridas"
+    ],
+    "limitations": [
+      "La carga de partículas y la gestión del agua comparten una sola ubicación de servicio, lo que puede concentrar la carga de contaminación",
+      "Su idoneidad no puede deducirse solo del tipo de motor o de la presión del riel",
+      "No debe suponerse que una disposición de una etapa es suficiente cuando la especificación del equipo exige funciones separadas o etapas adicionales"
+    ],
+    "typicalApplications": [
+      "Equipos diseñados y validados explícitamente para una disposición de filtración de combustible con una sola etapa de servicio",
+      "Aplicaciones en las que el conjunto de filtro aprobado cumple los requisitos especificados de partículas y gestión del agua"
+    ]
+  },
+  "optionB": {
+    "id": "B",
+    "label": "Filtración de combustible de varias etapas (2–3 etapas)",
+    "description": "Una arquitectura de varias etapas separa dos o más funciones de control de contaminación o ubicaciones de servicio. Las etapas pueden dividir la eliminación de partículas a granel, la separación de agua y una protección más fina aguas abajo, pero la secuencia exacta y las clasificaciones de los elementos son propias de cada aplicación.",
+    "advantages": [
+      "Permite distribuir las funciones de control de contaminación entre etapas dedicadas cuando la arquitectura del equipo lo requiere",
+      "Puede aislar la carga de agua/contaminantes a granel de una etapa de protección fina aguas abajo",
+      "Permite la inspección o el servicio por etapa cuando el sistema está diseñado con indicadores, drenajes o elementos independientes"
+    ],
+    "limitations": [
+      "Agrega carcasas, conexiones y puntos de servicio que deben ajustarse a los requisitos aprobados de caudal, restricción y sellado",
+      "Más componentes no significan automáticamente mejor protección; cada etapa debe tener una función definida y un ajuste de aplicación validado",
+      "El número de etapas por sí solo no establece la eficiencia de filtración, el desempeño de separación de agua ni la vida útil"
+    ],
+    "typicalApplications": [
+      "Sistemas diésel cuya especificación del equipo separa las funciones de filtración de partículas y de gestión del agua",
+      "Aplicaciones con exposición documentada a la contaminación que requieren varias etapas de protección validadas",
+      "Sistemas de combustible diseñados por el fabricante del equipo con ubicaciones de filtración separadas aguas arriba y aguas abajo"
+    ]
+  },
+  "matrix": [
+    {
+      "dimension": "Arquitectura",
+      "optionA": "Una ubicación con una sola etapa de servicio",
+      "optionB": "Dos o más etapas definidas de servicio/protección"
+    },
+    {
+      "dimension": "Base de la selección",
+      "optionA": "Aplicación aprobada + capacidad validada del elemento",
+      "optionB": "Aplicación aprobada + propósito definido para cada etapa"
+    },
+    {
+      "dimension": "Gestión del agua",
+      "optionA": "Debe verificarse en el conjunto seleccionado si se requiere",
+      "optionB": "Puede asignarse a una etapa dedicada cuando el diseño lo prevé"
+    },
+    {
+      "dimension": "Control de partículas",
+      "optionA": "Definido por el desempeño validado del elemento, no por el número de etapas",
+      "optionB": "Definido por el desempeño validado de cada etapa aplicable"
+    },
+    {
+      "dimension": "Clasificación en micras",
+      "optionA": "Propia de cada aplicación",
+      "optionB": "Propia de cada aplicación, por etapa"
+    },
+    {
+      "dimension": "Intervalo de servicio",
+      "optionA": "Propio de las condiciones/el equipo/la aplicación",
+      "optionB": "Propio de las condiciones/el equipo/la aplicación en cada etapa"
+    }
+  ],
+  "engineeringImplications": [
+    "No elija el número de etapas a partir de un umbral universal de presión del riel ni de una etiqueta HPCR genérica.",
+    "No describa la ISO 16332 como si exigiera una arquitectura de tres etapas; es un método comparativo de laboratorio para el desempeño de separadores de combustible/agua.",
+    "No deduzca la clasificación en micras a partir del número de etapa ni de los identificadores de familia de elementos TURBOCORE 2010/2020/2040.",
+    "Use los requisitos del equipo, los límites de caudal/restricción, la exposición a la contaminación y el desempeño validado de partículas/agua para determinar la arquitectura.",
+    "Los resultados de costos y de vida útil requieren evidencia propia de la aplicación y no deben presentarse como ventajas universales."
+  ],
+  "whenToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "La especificación del equipo prevé una sola ubicación de servicio de filtración y el conjunto seleccionado está validado para las funciones requeridas",
+        "La evidencia de la aplicación muestra que una etapa cumple el desempeño requerido de partículas y gestión del agua"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "La arquitectura del equipo especifica varias ubicaciones de filtración o funciones de protección separadas",
+        "Los requisitos documentados de contaminación/gestión del agua justifican varias etapas validadas"
+      ]
+    }
+  ],
+  "whenNotToUse": [
+    {
+      "option": "A",
+      "conditions": [
+        "El equipo requiere etapas separadas o el conjunto seleccionado no puede demostrar las funciones requeridas"
+      ]
+    },
+    {
+      "option": "B",
+      "conditions": [
+        "Se están agregando etapas sin una función de ingeniería definida o sin verificar la restricción total, el caudal y los requisitos de servicio"
+      ]
+    }
+  ],
+  "relatedStandards": [
+    "iso-16332",
+    "iso-12937",
+    "astm-d6304"
+  ],
+  "relatedTechnologies": [
+    "SYNTAPORE",
+    "HYDROCORE",
+    "TURBOCORE"
+  ],
+  "relatedSystems": [
+    "fuel-cleanliness"
+  ],
+  "relatedTerms": [
+    "water-contamination",
+    "filtration-efficiency",
+    "differential-pressure",
+    "beta-ratio"
+  ],
+  "relatedArticles": [
+    "diesel-fuel-filtration",
+    "hpcr-fuel-system-cleanliness",
+    "water-contamination-fuel",
+    "service-intervals"
+  ],
+  "revisionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-07-09",
+      "changes": "Initial entry — Phase 6C Engineering Comparison Engine"
+    },
+    {
+      "version": "1.1",
+      "date": "2026-09-04",
+      "changes": "Removed universal HPCR/OEM/stage-count claims and aligned architecture guidance with application-specific evidence."
+    }
+  ]
+}
