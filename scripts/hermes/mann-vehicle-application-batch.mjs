@@ -6,7 +6,7 @@
 //
 // DEFAULT: everything dry-run (ROLLBACK). A SKU is ELIGIBLE only if:
 //   pilot ok, apply dry-run guard -> EVIDENCE_VERIFIED, 0 engine-code mismatches,
-//   and matched / current_distinct_keys >= --min-match (default 0.70).
+//   and (rule=base-code, default) >=1 matching application; (rule=ratio) matched/current >= --min-match.
 // COMMIT: --commit-eligible --confirm-count <N>, where N must equal the number of
 // eligible SKUs reported by the dry-run summary you are approving.
 //
@@ -28,6 +28,13 @@ const args = Object.fromEntries(process.argv.slice(2).reduce((acc, cur, i, arr) 
 }, []));
 const limit = Number(args.limit || 20);
 const offset = Number(args.offset || 0);
+// rule=base-code (approved by Victor 2026-10-24): the base code (canonical identity or the
+// single relational source_sku, same last-4 digits as the SKU) plus a valid MANN page is the
+// authority. Require >=1 matching application and 0 engine-code mismatches; current rows not
+// on the official page are not migrated (review file). rule=ratio keeps the old >= min-match test.
+const rule = String(args.rule || 'base-code');
+if (!['base-code', 'ratio'].includes(rule)) throw new Error('--rule must be base-code or ratio');
+const prefix = args.prefix ? String(args.prefix).toUpperCase() : null;
 const minMatch = Number(args['min-match'] || 0.7);
 const delayMs = Number(args['delay-ms'] || 2000);
 const commitEligible = args['commit-eligible'] === 'true';
@@ -103,7 +110,8 @@ const { rows: targets } = await db.query(`
                     WHERE e.sku = c.sku AND e.application_kind = 'VEHICLE' AND e.verified = true
                       AND e.payload_hash = md5(c.vehicle_applications::text))
     AND (i.canonical_part_number IS NOT NULL OR rel.k IS NOT NULL)
-  ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit]);
+    AND ($3::text IS NULL OR c.sku LIKE $3::text || '%')
+  ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit, prefix]);
 await db.query('ROLLBACK');
 await db.end();
 
@@ -147,15 +155,16 @@ for (const [i, t] of targets.entries()) {
     row.guard_after = apply.json?.after?.guard?.state || null;
     if (apply.json?.result !== 'ROLLED_BACK_NO_CHANGES') row.reason = `DRY_RUN_FAILED: ${apply.json?.error || apply.error}`;
     else if (c.matched_engine_code_mismatch !== 0) row.reason = 'ENGINE_CODE_MISMATCH';
-    else if (row.match_ratio < minMatch) row.reason = `LOW_MATCH_${row.match_ratio}`;
+    else if (rule === 'base-code' && c.matched_make_model_year < 1) row.reason = 'NO_MATCHING_APPLICATION';
+    else if (rule === 'ratio' && row.match_ratio < minMatch) row.reason = `LOW_MATCH_${row.match_ratio}`;
     else { row.eligible = true; row.reason = 'OK'; }
   }
   rows.push(row);
   console.log(`[${i + 1}/${targets.length}] ${t.sku} ${t.mann_code}\t${row.eligible ? 'ELIGIBLE' : 'HOLD'}\t${row.reason}`);
-  fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, min_match: minMatch, rows }, null, 2));
+  fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, prefix, rule, min_match: minMatch, rows }, null, 2));
   if (i < targets.length - 1) await sleep(delayMs);
 }
-fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, min_match: minMatch, rows }, null, 2));
+fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, prefix, rule, min_match: minMatch, rows }, null, 2));
 const eligible = rows.filter((r) => r.eligible).length;
 console.log(JSON.stringify({ run_dir: runDir, processed: rows.length, eligible, hold: rows.length - eligible,
   hold_reasons: rows.filter((r) => !r.eligible).reduce((m, r) => { const k = String(r.reason).split(':')[0].replace(/_0\.\d+$/, ''); m[k] = (m[k] || 0) + 1; return m; }, {}),
