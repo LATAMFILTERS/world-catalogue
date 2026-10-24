@@ -7,7 +7,6 @@ import { powerGenerationText } from '@/lib/power-generation-i18n';
 import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
-const PAGE_URL = `${BASE_URL}/industries/power-generation/`;
 
 const equipment = [
   'Standby Generator Sets',
@@ -26,10 +25,27 @@ const readinessFactors = [
 ] as const;
 
 const protection = [
-  ['FUEL + WATER', 'Stored fuel + tank breathing + condensation + transfer', 'FUEL / WATER SEPARATION', 'HYDROCORE™', '/technologies/hydrocore/'],
+  ['FUEL + WATER', 'Tank breathing, condensation and water in stored diesel fuel', 'FUEL / WATER SEPARATION', 'HYDROCORE™', '/technologies/hydrocore/'],
+  ['FUEL PARTICULATE', 'Dirt introduced into diesel tanks, transfer hoses and filling points', 'DIESEL FUEL', 'SYNTAPORE™', '/technologies/syntapore/'],
   ['AIRBORNE PARTICULATE', 'Ambient dust + enclosure ingress + engine air demand', 'AIR INTAKE', 'MACROCORE™', '/technologies/macrocore/'],
   ['LUBE CONTAMINATION', 'Wear debris + soot + oxidation byproducts + service ingress', 'LUBRICATION', 'SYNTRAX™', '/technologies/syntrax/'],
-  ['COOLANT CONTAMINATION', 'Scale + corrosion debris + fluid degradation + service contamination', 'COOLING SYSTEM', 'THERMACORE™', '/technologies/thermacore/'],
+  ['COOLANT CONTAMINATION', 'Scale, corrosion debris and coolant condition where a filtration circuit is specified', 'COOLING SYSTEM', 'THERMACORE™', '/technologies/thermacore/'],
+] as const;
+
+const serviceChecks: Record<string, string> = {
+  'HYDROCORE™': 'Inspect water accumulation and drain points in stored-diesel systems; use the specified conventional fuel/water separator configuration, not a turbine substitute.',
+  'SYNTAPORE™': 'Review diesel particulate exposure during transfers and fueling; check engine-specific filtration and restriction requirements.',
+  'MACROCORE™': 'Check intake restriction, filter-housing sealing and air paths; follow the engine OEM service criteria.',
+  'SYNTRAX™': 'Review oil condition, service history and operating hours against the engine manufacturer requirements.',
+  'THERMACORE™': 'Only evaluate a coolant filter when the engine manufacturer specifies a compatible cooling-system filtration circuit; verify coolant chemistry and service requirements.'
+};
+
+const ownerReadiness = [
+  ['Generator owner', 'Define the cost of lost power, critical loads and spare-part coverage. Confirm who can authorize maintenance and what emergency service is available.'],
+  ['Facility maintenance manager', 'Plan calendar-based inspections, fuel storage and water checks, safe service access, documented test schedules and corrective work before the next power event.'],
+  ['Reliability engineer', 'Review stored-fuel condition, engine alerts, measured restriction where instrumented, load-test results and OEM application evidence; separate engine filtration from controls and electrical faults.'],
+  ['Service technician', 'Apply lockout and manufacturer isolation procedures, verify the filter and seal, prevent contamination during replacement and document leak checks and return-to-ready testing.'
+  ]
 ] as const;
 
 const consequences = [
@@ -62,7 +78,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
         url: pageUrl,
         name: lang === 'es' ? 'Filtración para generación eléctrica' : lang === 'pt' ? 'Filtração para geração de energia' : 'Power Generation Filtration Systems',
         inLanguage: lang === 'pt' ? 'pt-BR' : lang,
-        description: 'Power generation filtration systems for standby generators, prime-power systems and industrial diesel generator sets requiring fuel, air, lubrication and cooling-system protection.',
+        description: powerGenerationText(lang, 'Filtration for generator owners, facility maintenance teams, reliability engineers and technicians managing standby, emergency and prime-power diesel generator sets.'),
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
         about: [
@@ -79,6 +95,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           { '@type': 'Thing', name: 'Lubrication filtration' },
           { '@type': 'Thing', name: 'Coolant filtration' },
           { '@type': 'Thing', name: 'HYDROCORE' },
+          { '@type': 'Thing', name: 'SYNTAPORE' },
           { '@type': 'Thing', name: 'MACROCORE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
           { '@type': 'Thing', name: 'THERMACORE' },
@@ -89,15 +106,15 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
         '@type': 'BreadcrumbList',
         '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Power Generation Filtration Systems', item: pageUrl },
+          { '@type': 'ListItem', position: 1, name: lang === 'es' ? 'Inicio' : lang === 'pt' ? 'Início' : 'Home', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/` },
+          { '@type': 'ListItem', position: 2, name: lang === 'es' ? 'Industrias' : lang === 'pt' ? 'Indústrias' : 'Industries', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/` },
+          { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Generación eléctrica' : lang === 'pt' ? 'Geração de energia' : 'Power Generation', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
         '@id': `${pageUrl}#equipment`,
-        name: 'Power generation equipment applications',
+        name: powerGenerationText(lang, 'Power generation equipment applications'),
         itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: powerGenerationText(lang, name) })),
       },
       {
@@ -109,32 +126,42 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className="mining-industry-page power-generation-industry-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <style>{powerGenerationPageLayout}</style>
       <PageHeader currentPage="Power Generation" />
 
       <section style={hero}>
-        <video autoPlay muted loop playsInline preload="auto" style={heroVideo}>
+        <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="auto" style={heroVideo}>
           <source src="/images/powergenerator-Video-1.mp4" type="video/mp4" />
         </video>
-        <div style={heroShade} />
-        <div style={heroInner}>
-          <p style={eyebrow}>{powerGenerationText(lang, "POWER GENERATION / READINESS PROTECTION")}</p>
-          <h1 style={heroTitle}>{powerGenerationText(lang, "Power Generation Filtration")}<br /><span style={yellow}>{powerGenerationText(lang, "Systems")}</span></h1>
-          <p style={heroPromise}>{powerGenerationText(lang, "Protect the generator before the facility has to depend on it.")}</p>
-          <p style={heroLead}>{powerGenerationText(lang, "Fuel, air, lubrication and cooling-system contamination control for standby generators, prime-power systems and industrial engine-driven generation equipment operating across stored readiness, testing and sustained load.")}</p>
-          <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{powerGenerationText(lang, "IDENTIFY MY GENERATOR PROTECTION PATH")}</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{powerGenerationText(lang, "FIND MY FILTER")}</a>
+        <div className="miningHeroShade" style={heroShade} />
+        <div className="miningHeroContainer" style={heroInner}>
+          <p style={eyebrow}>{powerGenerationText(lang, "POWER GENERATION / ASSET READINESS")}</p>
+          <h1 style={heroTitle} className="miningHeroHeading">{powerGenerationText(lang, "FILTRATION FOR")}<br /><span style={yellow}>{powerGenerationText(lang, "POWER GENERATION EQUIPMENT")}</span></h1>
+          <div className="miningHeroLower">
+            <div className="miningHeroCopy">
+              <p className="miningHeroPromise" style={heroPromise}>{powerGenerationText(lang, "Engineering support for generator owners, facility maintenance managers, reliability engineers and service technicians.")}</p>
+              <p style={heroLead}>{powerGenerationText(lang, "Keep standby and prime-power diesel engines prepared for demand. Manage stored-fuel water and particles, air-intake restriction, lubricating-oil condition and OEM-specified coolant filtration before the next load event.")}</p>
+            </div>
+            <div className="miningHeroActions" style={actions}>
+              <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{powerGenerationText(lang, "PLAN GENERATOR MAINTENANCE")}</Link>
+              <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{powerGenerationText(lang, "FIND MY FILTER")}</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="power-direct-title">
-        <div style={contentWidth}>
-          <p style={eyebrow}>{powerGenerationText(lang, "DIRECT ANSWER")}</p>
-          <h2 id="power-direct-title" style={directTitle}>{powerGenerationText(lang, "What defines the correct power-generation filtration strategy?")}</h2>
-          <p style={directText}>{powerGenerationText(lang, "Power-generation filtration starts with the generator set and its readiness requirement, then resolves stored-fuel condition, protected system, standby or prime-power duty, environmental exposure, maintenance access and validated application evidence. A filter should not be selected from running hours or generator category alone.")}</p>
+        <div style={contentWidth} className="powerEditorialIntro">
+          <div>
+            <p style={eyebrow}>{powerGenerationText(lang, "DIRECT ANSWER")}</p>
+            <h2 id="power-direct-title" style={directTitle}>{powerGenerationText(lang, "What defines the correct power-generation filtration strategy?")}</h2>
+          </div>
+          <div>
+            <p style={directText}>{powerGenerationText(lang, "Power-generation filtration starts with the generator set and its readiness requirement, then resolves stored-fuel condition, protected system, standby or prime-power duty, environmental exposure, maintenance access and validated application evidence. A filter should not be selected from running hours or generator category alone.")}</p>
+            <p style={directText} className="powerScopeText">{powerGenerationText(lang, "Scope: filtration does not replace battery, starting system, switchgear, automatic transfer switch or electrical load-testing inspections. Cooling-system filters must be specified for the engine and coolant chemistry.")}</p>
+          </div>
         </div>
       </section>
 
@@ -143,18 +170,18 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           <p style={eyebrow}>{powerGenerationText(lang, "READINESS BEFORE RUNTIME")}</p>
           <h2 id="readiness-title" style={sectionTitle}>{powerGenerationText(lang, "A standby generator can develop risk while it is not running.")}</h2>
           <p style={wideText}>{powerGenerationText(lang, "Power-generation protection is unusual because the critical event may happen after long periods of low utilization. Stored fluids, environmental exposure and maintenance condition continue to matter while the hour meter barely moves.")}</p>
-          <div style={readinessGrid}>{readinessFactors.map(([title, text]) => <article key={title} style={readinessCard}><h3 style={cardTitle}>{powerGenerationText(lang, title)}</h3><p style={bodyText}>{powerGenerationText(lang, text)}</p></article>)}</div>
+          <div style={readinessGrid} className="miningRiskGrid">{readinessFactors.map(([title, text]) => <article key={title} style={readinessCard} className="miningRiskCard"><h3 style={cardTitle}>{powerGenerationText(lang, title)}</h3><p style={bodyText}>{powerGenerationText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
-        <div style={equipmentGrid}>
+        <div style={equipmentGrid} className="miningEquipmentGrid">
           <div style={equipmentCopy}>
             <h2 id="equipment-title" style={sectionTitle}>{powerGenerationText(lang, "Different power roles. Different readiness demands.")}</h2>
             <p style={wideText}>{powerGenerationText(lang, "A hospital standby set, a remote prime-power unit and an industrial emergency generator may share similar engines while operating under very different fuel-storage, testing, loading and maintenance conditions.")}</p>
-            <div role="list" aria-label="Power generation equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{powerGenerationText(lang, asset)}</span></div>)}</div>
+            <div role="list" aria-label={powerGenerationText(lang, "Power generation equipment applications")} style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{powerGenerationText(lang, asset)}</span></div>)}</div>
           </div>
-          <div style={equipmentMedia}><img src="/images/power-generator.avif" alt="Industrial generator set used for standby and prime power applications" style={equipmentImage} /></div>
+          <div style={equipmentMedia}><img src="/images/power-generator.avif" alt={powerGenerationText(lang, "Industrial generator set for standby and prime power applications")} style={equipmentImage} /></div>
         </div>
       </section>
 
@@ -163,7 +190,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           <p style={eyebrow}>{powerGenerationText(lang, "READINESS PATHWAYS")}</p>
           <h2 id="path-title" style={sectionTitle}>{powerGenerationText(lang, "Connect the failure source to the system that must respond on demand.")}</h2>
           <p style={wideText}>{powerGenerationText(lang, "Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{powerGenerationText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{powerGenerationText(lang, source)}</strong><p style={smallText}>{powerGenerationText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{powerGenerationText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{powerGenerationText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{powerGenerationText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{powerGenerationText(lang, "EXPLORE →")}</span></Link></article>)}</div>
+          <div className="miningPathwayFlow" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{powerGenerationText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{powerGenerationText(lang, source)}</strong><p style={smallText}>{powerGenerationText(lang, detail)}</p></div><div><span style={smallLabel}>{powerGenerationText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{powerGenerationText(lang, system)}</strong></div><div><span style={smallLabel}>{powerGenerationText(lang, "SERVICE CHECK")}</span><p style={smallText}>{powerGenerationText(lang, serviceChecks[technology])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{powerGenerationText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{powerGenerationText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
@@ -178,7 +205,18 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           <p style={eyebrow}>{powerGenerationText(lang, "POWER AVAILABILITY")}</p>
           <h2 id="impact-title" style={sectionTitle}>{powerGenerationText(lang, "The filtration consequence is measured when the generator is called.")}</h2>
           <p style={wideText}>{powerGenerationText(lang, "For standby and emergency systems, the relevant question is not only whether the engine can run. It is whether the complete generating asset is ready to start, stabilize and carry the required duty when the site loses normal power.")}</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{powerGenerationText(lang, title)}</h3><p style={bodyText}>{powerGenerationText(lang, text)}</p></article>)}</div>
+          <div style={impactGrid} className="miningStakesGrid">{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{powerGenerationText(lang, title)}</h3><p style={bodyText}>{powerGenerationText(lang, text)}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section style={section} aria-labelledby="power-roles-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>{powerGenerationText(lang, "GENERATOR MAINTENANCE RESPONSIBILITIES")}</p>
+          <h2 id="power-roles-title" style={sectionTitle}>{powerGenerationText(lang, "Four decisions that keep a generator ready for demand.")}</h2>
+          <p style={wideText}>{powerGenerationText(lang, "A ready generator requires coordinated maintenance, not just a replacement filter. Separate contamination and engine issues from starting, transfer-switch and electrical failures; use the equipment manufacturer's complete readiness procedure.")}</p>
+          <div style={readinessGrid} className="miningRiskGrid">
+            {ownerReadiness.map(([role, instruction]) => <article key={role} style={readinessCard} className="miningRiskCard"><h3 style={cardTitle}>{powerGenerationText(lang, role)}</h3><p style={bodyText}>{powerGenerationText(lang, instruction)}</p></article>)}
+          </div>
         </div>
       </section>
 
@@ -186,7 +224,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
         <div style={contentWidth}>
           <p style={eyebrow}>{powerGenerationText(lang, "FROM READINESS CONDITION TO PART")}</p>
           <h2 id="decision-title" style={sectionTitle}>{powerGenerationText(lang, "Resolve the generator application in five decisions.")}</h2>
-          <div style={decisionGrid}>{[
+          <div style={decisionGrid} className="miningDecisionGrid">{[
             ['Generator / Engine', 'Identify the generator set, engine family and protected subsystem.'],
             ['Readiness Duty', 'Define standby, emergency, prime-power or continuous operating responsibility.'],
             ['Stored Condition', 'Assess fuel storage, fluid age, environment, testing frequency and contamination exposure.'],
@@ -208,13 +246,13 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
         <div style={contentWidth}>
           <p style={eyebrow}>{powerGenerationText(lang, "POWER GENERATION FILTRATION QUESTIONS")}</p>
           <h2 id="faq-title" style={sectionTitle}>{powerGenerationText(lang, "What facility, reliability and maintenance teams need to know.")}</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{powerGenerationText(lang, q)}</h3><p style={faqAnswer}>{powerGenerationText(lang, a)}</p></article>)}</div>
+          <div style={faqList} className="miningFaqGrid">{questions.map(([q, a]) => <article key={q} style={faqItem} className="miningFaqItem"><h3 style={faqQuestion}>{powerGenerationText(lang, q)}</h3><p style={faqAnswer}>{powerGenerationText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
-        <div style={conversionGrid}>
-          <div><p style={eyebrow}>{powerGenerationText(lang, "HAVE A GENERATOR OR READINESS PROBLEM?")}</p><h2 style={conversionTitle}>{powerGenerationText(lang, "Identify the protection path before the next outage tests the asset.")}</h2><p style={conversionText}>{powerGenerationText(lang, "Send the generator set or engine, protected system, standby or prime-power duty, fuel-storage conditions and any known OEM or filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{powerGenerationText(lang, "IDENTIFY MY GENERATOR PROTECTION PATH")}</Link></div>
+        <div style={conversionGrid} className="miningConversionGrid">
+          <div><p style={eyebrow}>{powerGenerationText(lang, "HAVE A GENERATOR OR READINESS PROBLEM?")}</p><h2 style={conversionTitle}>{powerGenerationText(lang, "Identify the protection path before the next outage tests the asset.")}</h2><p style={conversionText}>{powerGenerationText(lang, "Send generator-set and engine model, standby or prime duty, operating and idle hours, fuel-storage history, current filter references, restriction or fluid observations, test results, maintenance log and next service window.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{powerGenerationText(lang, "IDENTIFY MY GENERATOR PROTECTION PATH")}</Link></div>
           <div style={conversionSecondary}><div><p style={eyebrow}>{powerGenerationText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{powerGenerationText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{powerGenerationText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{powerGenerationText(lang, "SERVE POWER-GENERATION CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{powerGenerationText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{powerGenerationText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
