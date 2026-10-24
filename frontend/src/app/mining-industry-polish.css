@@ -14,7 +14,7 @@
 }
 
 .mining-industry-page section[aria-labelledby="equipment-title"] p {
-  color: rgba(255, 255, 255, 0.64) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .mining-industry-page section[aria-labelledby="equipment-title"] > div > div:first-child > div:first-child > p:first-child {
@@ -62,7 +62,7 @@
 }
 
 .mining-industry-page section:not([aria-labelledby]) > div > div:first-child:has(> [data-conversion-action="application-support"]) > p:not(:first-child) {
-  color: rgba(255, 255, 255, 0.68) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .mining-industry-page section:not([aria-labelledby]) > div > div:first-child:has(> [data-conversion-action="application-support"]) > [data-conversion-action="application-support"] {
@@ -90,6 +90,22 @@
   word-break: normal !important;
 }
 
+
+/* Industry carousel is shared with other routes; its mining instance inherits
+   the larger editorial copy and aligned gutters without changing other pages. */
+main.mining-industry-page > section:has(.filter-carousel-slide) > div {
+  width: 100%;
+  max-width: 1560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 0 !important;
+}
+main.mining-industry-page > section:has(.filter-carousel-slide) > div:first-child > p,
+main.mining-industry-page .filter-carousel-slide p {
+  font-size: clamp(1.125rem, 1.24vw, 1.2rem) !important;
+  line-height: 1.7 !important;
+  color: rgba(255,255,255,.87) !important;
+}
 
 /* MINING EDITORIAL · scoped to this page; preserve original media and headings. */
 main.mining-industry-page {
