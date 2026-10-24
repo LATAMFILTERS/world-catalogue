@@ -183,7 +183,7 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
             margin: '0 0 0.9rem',
           }}
         >
-          {lang === 'es' ? 'Filtros diseñados para' : lang === 'pt' ? 'Filtros projetados para' : 'Filters Built For'} <span style={{ color: '#FFF12D' }}>{lang === 'es' && industryName === 'Mining' ? 'Minería' : lang === 'pt' && industryName === 'Mining' ? 'Mineração' : industryName}</span>
+          {lang === 'es' ? 'Filtros diseñados para' : lang === 'pt' ? 'Filtros projetados para' : 'Filters Built For'} <span style={{ color: '#FFF12D' }}>{lang === 'es' && industryName === 'Mining' ? 'Minería' : lang === 'pt' && industryName === 'Mining' ? 'Mineração' : lang === 'es' && industryName === 'Construction' ? 'Construcción' : lang === 'pt' && industryName === 'Construction' ? 'Construção' : industryName}</span>
         </h2>
         <p style={{ fontFamily: bodyFont, fontSize: '1rem', lineHeight: 1.78, color: 'rgba(255,255,255,0.58)', maxWidth: '780px', margin: 0 }}>
           {carouselText(lang, INDUSTRY_INTRO[industryName] ?? `We are proud to serve customers who build a better future and protect what matters. ELIMFILTERS® protection systems keep ${industryName.toLowerCase()} equipment running, because the industries we serve most depend on us being reliable.`)}
