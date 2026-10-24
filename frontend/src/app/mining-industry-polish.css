@@ -14,7 +14,7 @@
 }
 
 .mining-industry-page section[aria-labelledby="equipment-title"] p {
-  color: rgba(255, 255, 255, 0.64) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .mining-industry-page section[aria-labelledby="equipment-title"] > div > div:first-child > div:first-child > p:first-child {
@@ -41,94 +41,8 @@
 }
 
 /* Risk section: remove the dead split-column composition and use the full content width. */
-.mining-industry-page section:not([aria-labelledby]) > div[style*="max-width: 1180px"][style*="display: grid"] {
+.mining-industry-page section:not([aria-labelledby]) > div[style*="max-width: 1560px"][style*="display: grid"] {
   min-width: 0;
-}
-
-/* TCO section: intro first, then hierarchy and lifecycle path across the full width. */
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div {
-  display: block !important;
-  max-width: 1180px !important;
-  margin: 0 auto !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:first-child {
-  max-width: 900px !important;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem) !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:first-child h2 {
-  max-width: 820px !important;
-  font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:first-child p:last-child {
-  max-width: 760px !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) {
-  width: 100% !important;
-  max-width: none !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > p:first-child {
-  max-width: 940px !important;
-  margin-bottom: 2rem !important;
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem) !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 1px !important;
-  margin-top: 0 !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article {
-  display: block !important;
-  min-height: 210px !important;
-  padding: 1.5rem !important;
-  border: 0 !important;
-  background: #050505 !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article > span {
-  display: block !important;
-  margin-bottom: 1.4rem !important;
-  color: #FFF12D !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article h3 {
-  font-size: clamp(1rem, 1.6vw, 1.3rem) !important;
-  line-height: 1.08 !important;
-  margin-bottom: 0.75rem !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 0 !important;
-  margin-top: 2rem !important;
-  border-top: 1px solid rgba(255, 241, 45, 0.28) !important;
-  border-bottom: 1px solid rgba(255, 241, 45, 0.18) !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div {
-  min-height: 92px !important;
-  padding: 1rem 1.1rem !important;
-  border-bottom: 0 !important;
-  border-right: 1px solid rgba(255, 241, 45, 0.14) !important;
-  grid-template-columns: 34px minmax(0, 1fr) !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div:nth-child(3n) {
-  border-right: 0 !important;
-}
-
-.mining-industry-page section[aria-labelledby="mining-tco-title"] a[href*="mining-contamination-tco"] {
-  margin-top: 2rem !important;
 }
 
 /* Commercial close: never use a full yellow panel on Mining. */
@@ -148,7 +62,7 @@
 }
 
 .mining-industry-page section:not([aria-labelledby]) > div > div:first-child:has(> [data-conversion-action="application-support"]) > p:not(:first-child) {
-  color: rgba(255, 255, 255, 0.68) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .mining-industry-page section:not([aria-labelledby]) > div > div:first-child:has(> [data-conversion-action="application-support"]) > [data-conversion-action="application-support"] {
@@ -176,40 +90,220 @@
   word-break: normal !important;
 }
 
-@media (max-width: 900px) {
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type {
-    grid-template-columns: 1fr !important;
-  }
 
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article {
-    min-height: 0 !important;
-  }
-
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div,
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div:nth-child(3n) {
-    border-right: 1px solid rgba(255, 241, 45, 0.14) !important;
-    border-bottom: 1px solid rgba(255, 241, 45, 0.14) !important;
-  }
-
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div:nth-child(2n) {
-    border-right: 0 !important;
-  }
+/* Industry carousel is shared with other routes; its mining instance inherits
+   the larger editorial copy and aligned gutters without changing other pages. */
+main.mining-industry-page > section:has(.filter-carousel-slide) > div {
+  width: 100%;
+  max-width: 1560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 0 !important;
+}
+main.mining-industry-page > section:has(.filter-carousel-slide) > div:first-child > p,
+main.mining-industry-page .filter-carousel-slide p {
+  font-size: clamp(1.125rem, 1.24vw, 1.2rem) !important;
+  line-height: 1.7 !important;
+  color: rgba(255,255,255,.87) !important;
 }
 
+/* MINING EDITORIAL · scoped to this page; preserve original media and headings. */
+main.mining-industry-page {
+  --font-body: 'IBM Plex Sans', 'Barlow', Arial, sans-serif;
+  --mining-gutter: clamp(1rem, 3.5vw, 4.5rem);
+}
+main.mining-industry-page p {
+  font-family: var(--font-body);
+  text-align: left;
+  text-wrap: pretty;
+  hyphens: none;
+}
+main.mining-industry-page > section:not(:first-of-type) {
+  padding-inline: var(--mining-gutter) !important;
+}
+main.mining-industry-page .miningHeroContainer { width: 100%; max-width: 1560px; }
+main.mining-industry-page .miningHeroLower {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(245px, .7fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 4.75rem);
+  margin-top: clamp(1.5rem, 3.25vw, 2.75rem);
+}
+main.mining-industry-page .miningHeroCopy { min-width: 0; }
+main.mining-industry-page .miningHeroCopy > p:first-child { margin-top: 0 !important; }
+main.mining-industry-page > section:first-of-type .miningHeroPromise { font-family: var(--font-display) !important; }
+main.mining-industry-page > section:first-of-type .miningHeroCopy p:not(.miningHeroPromise) {
+  font-family: var(--font-body) !important;
+}
+main.mining-industry-page .miningHeroActions {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 0;
+}
+main.mining-industry-page .miningHeroActions > a {
+  width: min(100%, 320px);
+  text-align: center;
+  line-height: 1.35;
+}
+main.mining-industry-page .miningSplitHeader,
+main.mining-industry-page .miningWideHeader,
+main.mining-industry-page .miningEquipmentGrid,
+main.mining-industry-page .miningPathwayFlow,
+main.mining-industry-page .miningStakesGrid,
+main.mining-industry-page .miningValueGrid,
+main.mining-industry-page .miningDecisionGrid,
+main.mining-industry-page .miningFaqGrid,
+main.mining-industry-page .miningConversionGrid {
+  width: 100%;
+  max-width: 1560px;
+  margin-inline: auto;
+}
+main.mining-industry-page .miningWideHeader { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+main.mining-industry-page .miningWideHeader > p:last-child { max-width: 980px; }
+main.mining-industry-page .miningSplitHeader { display: block; }
+main.mining-industry-page .miningSplitHeader > div:first-child { width: 100%; }
+main.mining-industry-page .miningSplitHeader > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 4vw, 4rem);
+  align-items: start;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+main.mining-industry-page .miningSplitHeader > div:last-child > p { min-width: 0; margin: 0 !important; }
+main.mining-industry-page .miningRiskGrid {
+  display: grid;
+  max-width: 1560px;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(.9rem, 1.6vw, 1.3rem);
+  background: transparent;
+  border: 0;
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+}
+main.mining-industry-page .miningRiskCard {
+  max-width: none; width: 100%; min-height: 185px; min-width: 0;
+  flex: none; border: 1px solid rgba(255,255,255,.12);
+}
+main.mining-industry-page .miningEquipmentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+main.mining-industry-page .miningPathwayRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+}
+main.mining-industry-page .miningPathwayRow > * { min-width: 0; }
+main.mining-industry-page .miningPathwayRow .miningTechnologyCell {
+  background: linear-gradient(140deg,rgba(255,241,45,.09),rgba(255,241,45,.025));
+  color: #FFF12D;
+  border-left: 2px solid #FFF12D;
+}
+main.mining-industry-page .miningPathwayRow .miningTechnologyCell:focus-visible {
+  outline: 2px solid #FFF12D; outline-offset: -4px;
+}
+main.mining-industry-page .miningStakesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: clamp(.9rem, 1.6vw, 1.3rem);
+}
+main.mining-industry-page .miningStakesGrid > * { min-width: 0; }
+main.mining-industry-page .miningValueGrid {
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: clamp(.9rem, 1.6vw, 1.3rem);
+  border: 0; background: transparent;
+}
+main.mining-industry-page .miningValueGrid > * {
+  max-width: none; width: 100%; min-width: 0;
+  flex: none; border: 1px solid rgba(255,255,255,.12);
+}
+main.mining-industry-page .miningLifecycleGrid {
+  display: grid; max-width: 1560px; width: 100%;
+  margin: clamp(1.4rem, 2.5vw, 2rem) auto 0;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+}
+main.mining-industry-page .miningDecisionGrid {
+  display: grid; grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: clamp(.85rem, 1.5vw, 1.25rem);
+  border: 0; background: transparent;
+}
+main.mining-industry-page .miningDecisionGrid > * {
+  max-width: none; width: 100%; min-width: 0;
+  flex: none; border: 1px solid rgba(255,255,255,.12);
+}
+main.mining-industry-page .miningFaqGrid {
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(.85rem, 1.5vw, 1.25rem);
+  border: 0;
+}
+main.mining-industry-page .miningFaqItem {
+  min-width: 0;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.02);
+  padding: clamp(1.25rem, 2vw, 1.8rem);
+}
+main.mining-industry-page .miningFaqItem > p { max-width: 100%; }
+main.mining-industry-page .miningConversionGrid {
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+}
+@media (max-width: 1150px) {
+  main.mining-industry-page .miningHeroLower {
+    grid-template-columns: minmax(0,1.18fr) minmax(235px,.82fr);
+  }
+  main.mining-industry-page .miningPathwayRow,
+  main.mining-industry-page .miningStakesGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  main.mining-industry-page .miningDecisionGrid { grid-template-columns: repeat(6, minmax(0,1fr)); }
+  main.mining-industry-page .miningDecisionGrid > :nth-child(-n+3) { grid-column: span 2; }
+  main.mining-industry-page .miningDecisionGrid > :nth-child(n+4) { grid-column: span 3; }
+}
+@media (max-width: 900px) {
+  main.mining-industry-page > section:first-of-type {
+    min-height: auto !important;
+    align-items: center;
+    padding-top: clamp(6.25rem, 11vw, 8rem) !important;
+    padding-bottom: clamp(3.5rem, 7vw, 5rem) !important;
+  }
+  main.mining-industry-page > section:first-of-type .miningHeroContainer {
+    width: 100% !important; max-width: 1560px !important;
+    padding-top: 0 !important; padding-bottom: 0 !important;
+  }
+  main.mining-industry-page .miningHeroLower,
+  main.mining-industry-page .miningSplitHeader > div:last-child,
+  main.mining-industry-page .miningEquipmentGrid,
+  main.mining-industry-page .miningConversionGrid { grid-template-columns: 1fr; }
+  main.mining-industry-page .miningHeroActions {
+    flex-direction: row; justify-content: flex-start; align-items: stretch;
+  }
+  main.mining-industry-page .miningHeroActions > a { flex: 1 1 210px; width: auto; }
+  main.mining-industry-page .miningValueGrid { grid-template-columns: 1fr; }
+}
 @media (max-width: 720px) {
-  .mining-industry-page section[aria-labelledby="equipment-title"] {
-    background: #050505 !important;
+  main.mining-industry-page .miningRiskGrid,
+  main.mining-industry-page .miningStakesGrid,
+  main.mining-industry-page .miningFaqGrid,
+  main.mining-industry-page .miningPathwayRow,
+  main.mining-industry-page .miningLifecycleGrid,
+  main.mining-industry-page .miningDecisionGrid { grid-template-columns: 1fr; }
+  main.mining-industry-page .miningDecisionGrid > :nth-child(n) { grid-column: auto; }
+  main.mining-industry-page .miningRiskCard { min-height: 0; }
+  main.mining-industry-page .miningPathwayRow .miningTechnologyCell {
+    border-left: 0; border-top: 2px solid #FFF12D;
   }
-
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] {
-    grid-template-columns: 1fr !important;
+  main.mining-industry-page section[aria-labelledby="equipment-title"] { background: #050505 !important; }
+}
+@media (max-width: 640px) {
+  main.mining-industry-page { --mining-gutter: clamp(1rem,5vw,1.35rem); }
+  main.mining-industry-page > section:not(:first-of-type) {
+    padding-top: clamp(2.75rem,9vw,4rem) !important;
+    padding-bottom: clamp(2.75rem,9vw,4rem) !important;
   }
-
-  .mining-industry-page section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div {
-    border-right: 0 !important;
+  main.mining-industry-page > section:first-of-type .miningHeroCopy p:not(.miningHeroPromise) {
+    font-size: 1.125rem !important; line-height: 1.66 !important;
   }
+  main.mining-industry-page > section:first-of-type .miningHeroPromise {
+    font-size: 1.25rem !important; line-height: 1.3 !important;
+  }
+  main.mining-industry-page .miningHeroActions { flex-direction: column; width: 100%; }
+  main.mining-industry-page .miningHeroActions > a { width: 100%; flex: 0 0 auto; }
 }
