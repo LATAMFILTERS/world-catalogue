@@ -128,7 +128,7 @@ export function SystemsLanding({ lang = 'en' }: { lang?: PageLang }) {
               if (!detail) return null;
               return <article key={sys.slug} className={`${styles.systemCard} ${index === 0 ? styles.featured : ''}`}>
                 <div className={styles.systemMedia}>
-                  <img src={images[sys.slug]} alt={systemName(sys.slug, sys.name)} loading="lazy" />
+                  <img src={images[sys.slug]} alt={systemName(sys.slug, sys.name)} loading="lazy" className={sys.slug === 'cooling-system' ? styles.thermacoreProduct : undefined} />
                   <span className={styles.systemNumber}>0{index + 1} / 05</span>
                 </div>
                 <div className={styles.systemContent}>
