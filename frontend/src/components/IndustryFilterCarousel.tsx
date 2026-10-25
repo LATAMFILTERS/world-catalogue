@@ -14,6 +14,7 @@ const TRUCK_FLEET_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filte
 const MANUFACTURING_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'hydraulic-filters'];
 const RAILWAY_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'hydraulic-filters'];
 const MUNICIPAL_KEYS: FamilyKey[] = ['primary-air', 'air-dryer-filters', 'cabin-filters', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'coolant-filters'];
+const BUS_COACH_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'air-dryer-filters', 'cabin-filters', 'coolant-filters'];
 const FLEET_INDUSTRIES = ['Trucks Fleets', 'Waste Municipal', 'Bus Coach'];
 const NO_CABIN_INDUSTRIES = ['Manufacturing', 'Oil Gas', 'Power Generation'];
 const NO_HYDRAULIC_INDUSTRIES = ['Power Generation'];
@@ -109,7 +110,8 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
-    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
+    'air-dryer-filters': `${R2_BASE}/ED43571.png`,
+    'coolant-filters': `${R2_BASE}/EW74685.png`,
   },
 };
 
@@ -134,7 +136,7 @@ const INDUSTRY_INTRO: Record<string, string> = {
   Manufacturing: 'Plant maintenance teams must protect verified hydraulic circuits and engine-powered utilities without introducing contamination during service. Review fluid cleanliness, diesel-fuel water and particles, engine air-intake restriction, and lubrication condition. Confirm OEM compatibility and required spares before planned shutdown; filtration is not a substitute for process-air treatment or machine safety verification.',
   Railway: 'Rail operations and depot maintenance teams need verified filters before a locomotive enters its service slot. Evaluate engine-air restriction, diesel particulate exposure, approved fuel/water separation and oil condition; assess auxiliary hydraulics only when the installed system is specified. Validate each reference against the rail asset and engine, and record checks before the operator authorizes return to service.',
   'Waste Municipal': 'Municipal waste collection, street-cleaning, sewer maintenance and public-works routes depend on serviceable fleet equipment. Maintenance teams should inspect diesel fuel, engine air and lubrication, compactor or sweeper hydraulics and OEM-specified cabin, air-dryer and coolant filters where fitted. Match every part to the exact chassis, engine, body system and documented application before returning the unit to public service.',
-  'Bus Coach': 'Every bus taken out of rotation is a route that runs short. ELIMFILTERS® protection systems are engineered for the stop-and-go cycles, pneumatic brake systems, and cabin air quality that transit and coach operators depend on to keep passengers moving safely. Working with distributors that serve transit depots directly, we help operators protect both the vehicle and the passenger experience.',
+  'Bus Coach': 'Transit and coach maintenance teams need verified engine, diesel-fuel, lubrication, air-dryer, cabin HVAC and applicable coolant-filter components before a scheduled depot window. Record warnings, pneumatic moisture exposure, restriction, service hours and exact OEM configuration. Air-dryer and cabin elements support specified systems but do not certify braking, ventilation adequacy or passenger safety.',
   Automotive: 'Automotive and light-commercial fleets run on predictable maintenance, not surprises. ELIMFILTERS® systems protect engines, fuel systems, and cabin air quality across passenger vehicles, delivery fleets, and service vans through everyday urban and highway duty cycles. Because our distributor network reaches the service shops and parts counters drivers already use, the right filter is always within reach.',
 };
 
@@ -156,6 +158,8 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
         ? RAILWAY_KEYS
       : industryName === 'Waste Municipal'
         ? MUNICIPAL_KEYS
+      : industryName === 'Bus Coach'
+        ? BUS_COACH_KEYS
       : industryName === 'Power Generation'
         ? POWER_GENERATION_KEYS
         : FLEET_INDUSTRIES.includes(industryName)
@@ -174,7 +178,7 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
 
   const family = families[index];
   const image =
-    (industryName === 'Trucks Fleets' || industryName === 'Waste Municipal')
+    (['Trucks Fleets', 'Waste Municipal', 'Bus Coach'].includes(industryName))
       ? HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key]
       : family.key === 'air-dryer-filters'
         ? AIR_DRYER_IMAGE
@@ -199,7 +203,7 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
             margin: '0 0 0.9rem',
           }}
         >
-          {lang === 'es' ? 'Filtros diseñados para' : lang === 'pt' ? 'Filtros projetados para' : 'Filters Built For'} <span style={{ color: '#FFF12D' }}>{lang === 'es' && industryName === 'Mining' ? 'Minería' : lang === 'pt' && industryName === 'Mining' ? 'Mineração' : lang === 'es' && industryName === 'Construction' ? 'Construcción' : lang === 'pt' && industryName === 'Construction' ? 'Construção' : industryName === 'Oil Gas' ? (lang === 'es' ? 'Petróleo y gas' : lang === 'pt' ? 'Petróleo e gás' : 'Oil & Gas') : industryName === 'Marine' ? (lang === 'es' ? 'Marina' : lang === 'pt' ? 'Marítimo' : 'Marine') : industryName === 'Power Generation' ? (lang === 'es' ? 'Generación eléctrica' : lang === 'pt' ? 'Geração de energia' : 'Power Generation') : industryName === 'Trucks Fleets' ? (lang === 'es' ? 'Camiones y flotas' : lang === 'pt' ? 'Caminhões e frotas' : 'Trucks & Fleets') : industryName === 'Manufacturing' ? (lang === 'es' ? 'Manufactura' : lang === 'pt' ? 'Manufatura' : 'Manufacturing') : industryName === 'Railway' ? (lang === 'es' ? 'Ferrocarriles' : lang === 'pt' ? 'Ferrovias' : 'Railway') : industryName === 'Waste Municipal' ? (lang === 'es' ? 'Residuos y servicios municipales' : lang === 'pt' ? 'Resíduos e serviços municipais' : 'Waste & Municipal') : industryName}</span>
+          {lang === 'es' ? 'Filtros diseñados para' : lang === 'pt' ? 'Filtros projetados para' : 'Filters Built For'} <span style={{ color: '#FFF12D' }}>{lang === 'es' && industryName === 'Mining' ? 'Minería' : lang === 'pt' && industryName === 'Mining' ? 'Mineração' : lang === 'es' && industryName === 'Construction' ? 'Construcción' : lang === 'pt' && industryName === 'Construction' ? 'Construção' : industryName === 'Oil Gas' ? (lang === 'es' ? 'Petróleo y gas' : lang === 'pt' ? 'Petróleo e gás' : 'Oil & Gas') : industryName === 'Marine' ? (lang === 'es' ? 'Marina' : lang === 'pt' ? 'Marítimo' : 'Marine') : industryName === 'Power Generation' ? (lang === 'es' ? 'Generación eléctrica' : lang === 'pt' ? 'Geração de energia' : 'Power Generation') : industryName === 'Trucks Fleets' ? (lang === 'es' ? 'Camiones y flotas' : lang === 'pt' ? 'Caminhões e frotas' : 'Trucks & Fleets') : industryName === 'Manufacturing' ? (lang === 'es' ? 'Manufactura' : lang === 'pt' ? 'Manufatura' : 'Manufacturing') : industryName === 'Railway' ? (lang === 'es' ? 'Ferrocarriles' : lang === 'pt' ? 'Ferrovias' : 'Railway') : industryName === 'Waste Municipal' ? (lang === 'es' ? 'Residuos y servicios municipales' : lang === 'pt' ? 'Resíduos e serviços municipais' : 'Waste & Municipal') : industryName === 'Bus Coach' ? (lang === 'es' ? 'Autobuses y autocares' : lang === 'pt' ? 'Ônibus e rodoviários' : 'Bus & Coach') : industryName}</span>
         </h2>
         <p style={{ fontFamily: bodyFont, fontSize: '1rem', lineHeight: 1.78, color: 'rgba(255,255,255,0.58)', maxWidth: '780px', margin: 0 }}>
           {carouselText(lang, INDUSTRY_INTRO[industryName] ?? `We are proud to serve customers who build a better future and protect what matters. ELIMFILTERS® protection systems keep ${industryName.toLowerCase()} equipment running, because the industries we serve most depend on us being reliable.`)}
