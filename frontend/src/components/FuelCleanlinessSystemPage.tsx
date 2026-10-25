@@ -159,6 +159,11 @@ export function FuelCleanlinessSystemPage() {
           <div>
             <p style={lead}><ReviewedText text={"Fuel Cleanliness Protection organizes the filtration stages that control particulate contamination and water before diesel fuel reaches sensitive downstream components."} /></p>
             <p style={body}><ReviewedText text={"Primary filtration, secondary filtration, fuel/water separation and turbine-series separation may exist in different combinations. They should not be treated as interchangeable simply because every component is installed in the fuel path."} /></p>
+            <div className={airStyles.technicalRule}>
+              <strong><ReviewedText text={"ENGINEERING PRINCIPLE"} /></strong>
+              <p><ReviewedText text={"A filter that captures particulate is not automatically a fuel/water separator. Likewise, a separator architecture should not be assumed from external dimensions or cross-reference similarity alone."} /></p>
+              <p><ReviewedText text={"ELIMFILTERS keeps the hierarchy explicit: fuel contamination problem → protection function → technology → product family → validated part number."} /></p>
+            </div>
           </div>
         </div>
       </section>
@@ -198,19 +203,6 @@ export function FuelCleanlinessSystemPage() {
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={section}>
-        <div style={twoCol}>
-          <div>
-            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
-            <h2 style={h2}><ReviewedText text={"Particles and water create different risks and require different protection mechanisms."} /></h2>
-          </div>
-          <div>
-            <p style={lead}><ReviewedText text={"A filter that captures particulate is not automatically a fuel/water separator. Likewise, a separator architecture should not be assumed from external dimensions or cross-reference similarity alone."} /></p>
-            <p style={body}><ReviewedText text={"ELIMFILTERS keeps the hierarchy explicit: fuel contamination problem → protection function → technology → product family → validated part number."} /></p>
           </div>
         </div>
       </section>
