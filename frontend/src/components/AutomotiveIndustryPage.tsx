@@ -252,67 +252,91 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
   );
 }
 
+
+const automotivePageLayout = `
+  main.automotive-industry-page .automotiveEditorialIntro {
+    display:grid;width:100%;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+    gap:clamp(2rem,5vw,5rem);align-items:start;
+  }
+  main.automotive-industry-page .automotiveEditorialIntro > div { min-width:0; }
+  main.automotive-industry-page .automotiveScope {
+    margin-top:clamp(1.3rem,2vw,2rem) !important;
+    padding-left:clamp(1rem,2vw,1.5rem);border-left:3px solid #FFF12D;
+  }
+  main.automotive-industry-page .automotivePrinciple {
+    display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);
+    gap:clamp(1.5rem,4vw,4rem);align-items:center;
+  }
+  main.automotive-industry-page .automotivePrinciple > p { margin:0;max-width:none; }
+  main.automotive-industry-page .miningHeroHeading { max-width:min(100%,1500px) !important; }
+  @media(max-width:950px) {
+    main.automotive-industry-page .automotiveEditorialIntro,
+    main.automotive-industry-page .automotivePrinciple {
+      grid-template-columns:minmax(0,1fr);gap:1.5rem;
+    }
+  }
+`;
+
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const yellow: CSSProperties = { color: '#FFF12D' };
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
+const hero: CSSProperties = { minHeight: '82vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', borderBottom: '1px solid rgba(255,255,255,.08)' };
 const heroVideo: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: VIDEO_HERO_TREATMENT.opacity };
-const heroShade: CSSProperties = { position: 'absolute', inset: 0, background: VIDEO_HERO_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { width: '100%', maxWidth: '1180px', margin: '0 auto', padding: 'clamp(7rem,12vw,10rem) clamp(1.25rem,5vw,4.5rem) clamp(4rem,7vw,6rem)', position: 'relative', zIndex: 2 };
+const heroShade: CSSProperties = { position: 'absolute', inset: 0, zIndex: 2, background: VIDEO_HERO_TREATMENT.overlayBackground };
+const heroInner: CSSProperties = { width: '100%', maxWidth: '1560px', margin: '0 auto', padding: 'clamp(6.75rem,10vw,9rem) clamp(1rem,3.5vw,4.5rem) clamp(3.5rem,5.5vw,5rem)', position: 'relative', zIndex: 3 };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.72rem', letterSpacing: '.18em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
-const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .88, fontSize: 'clamp(3.3rem,7.6vw,7.2rem)', textTransform: 'uppercase', margin: 0, maxWidth: '950px' };
+const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .94, fontSize: 'clamp(2.7rem,5.15vw,5.85rem)', textTransform: 'uppercase', margin: 0 };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.1rem,2vw,1.55rem)', lineHeight: 1.3, fontWeight: 700, maxWidth: '850px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem,1.45vw,1.18rem)', lineHeight: 1.7, color: 'rgba(255,255,255,.78)', maxWidth: '900px', margin: '1rem 0 0' };
 const actions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2rem' };
 const primaryButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase' };
 const secondaryButton: CSSProperties = { display: 'inline-block', background: 'transparent', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase', border: '1px solid rgba(255,241,45,.42)' };
-const contentWidth: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const contentWidth: CSSProperties = { maxWidth: '1560px', margin: '0 auto' };
 const directSection: CSSProperties = { padding: 'clamp(3.5rem,6vw,5.5rem) clamp(1.25rem,6vw,6rem)', background: '#050505', borderBottom: '1px solid rgba(255,255,255,.08)' };
-const directTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem,4vw,3.4rem)', lineHeight: 1, textTransform: 'uppercase', letterSpacing: '-.035em', margin: 0, maxWidth: '900px' };
-const directText: CSSProperties = { fontSize: 'clamp(1.05rem,1.6vw,1.24rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.82)', maxWidth: '980px', margin: '1.3rem 0 0' };
+const directTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem,3.4vw,3.2rem)', lineHeight: 1, textTransform: 'uppercase', letterSpacing: '-.035em', margin: 0 };
+const directText: CSSProperties = { fontSize: 'clamp(1.05rem,1.5vw,1.22rem)', lineHeight: 1.7, color: 'rgba(255,255,255,.85)', margin: 0 };
 const section: CSSProperties = { padding: 'clamp(4.5rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderBottom: '1px solid rgba(255,255,255,.06)' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2.2rem,4.7vw,4.2rem)', lineHeight: .96, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0, maxWidth: '940px' };
-const bodyText: CSSProperties = { fontSize: '1rem', lineHeight: 1.72, color: 'rgba(255,255,255,.66)', margin: 0 };
-const wideText: CSSProperties = { ...bodyText, maxWidth: '880px', marginTop: '1.3rem' };
-const grid: CSSProperties = { marginTop: '2.8rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.1)' };
-const card: CSSProperties = { background: '#050505', padding: '1.55rem', minHeight: '210px', flex: '1 1 240px', maxWidth: '380px', minWidth: 0 };
+const bodyText: CSSProperties = { fontSize: 'clamp(1.08rem,1.18vw,1.2rem)', lineHeight: 1.68, color: 'rgba(255,255,255,.84)', margin: 0 };
+const wideText: CSSProperties = { ...bodyText, maxWidth: '100%', marginTop: '1.3rem' };
+const grid: CSSProperties = { width: '100%', marginTop: '2rem' };
+const card: CSSProperties = { background: '#050505', padding: '1.55rem', minHeight: '195px', minWidth: 0 };
 const cardTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.05rem,1.8vw,1.35rem)', lineHeight: 1.05, textTransform: 'uppercase', margin: '0 0 .8rem' };
 const applicationSection: CSSProperties = { ...section, background: '#050505' };
-const applicationGrid: CSSProperties = { ...contentWidth, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 'clamp(2.5rem,6vw,5rem)', alignItems: 'center' };
+const applicationGrid: CSSProperties = { width: '100%', margin: '2rem auto 0', alignItems: 'center' };
 const applicationImage: CSSProperties = { width: '100%', height: 'auto', objectFit: 'contain', display: 'block', border: '1px solid rgba(255,255,255,.08)' };
 const applicationList: CSSProperties = { marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,.14)' };
 const applicationRow: CSSProperties = { padding: '.95rem 0', borderBottom: '1px solid rgba(255,255,255,.14)' };
 const applicationName: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(.95rem,1.3vw,1.25rem)', textTransform: 'uppercase', fontWeight: 700 };
-const pathwayGrid: CSSProperties = { marginTop: '2.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))', gap: '1rem' };
+const pathwayGrid: CSSProperties = { width: '100%', marginTop: '2rem', display: 'grid', gap: '1rem' };
 const pathwayCard: CSSProperties = { border: '1px solid rgba(255,255,255,.1)', background: '#050505', padding: '1.5rem', minHeight: '265px', display: 'grid', gap: '1rem' };
-const smallLabel: CSSProperties = { fontFamily: displayFont, fontSize: '.58rem', letterSpacing: '.13em', color: 'rgba(255,255,255,.4)', fontWeight: 700, display: 'block', marginBottom: '.7rem' };
+const smallLabel: CSSProperties = { fontFamily: displayFont, fontSize: '.72rem', letterSpacing: '.13em', color: 'rgba(255,255,255,.72)', fontWeight: 700, display: 'block', marginBottom: '.7rem' };
 const smallLabelYellow: CSSProperties = { ...smallLabel, color: '#FFF12D' };
 const pathwaySource: CSSProperties = { fontFamily: displayFont, fontSize: '1.15rem', textTransform: 'uppercase' };
 const pathwaySystem: CSSProperties = { fontFamily: displayFont, fontSize: '1.05rem', textTransform: 'uppercase' };
-const smallText: CSSProperties = { ...bodyText, fontSize: '.86rem', lineHeight: 1.55, marginTop: '.6rem' };
-const dividerLine: CSSProperties = { height: '1px', background: 'rgba(255,255,255,.1)' };
+const smallText: CSSProperties = { ...bodyText, fontSize: '1.08rem', lineHeight: 1.55, marginTop: '.6rem' };
 const technologyLink: CSSProperties = { textDecoration: 'none', borderTop: '1px solid rgba(255,241,45,.18)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' };
 const technologyName: CSSProperties = { fontFamily: displayFont, fontSize: '1.16rem', color: '#FFF12D', textTransform: 'uppercase' };
-const technologyCta: CSSProperties = { fontFamily: displayFont, fontSize: '.58rem', letterSpacing: '.1em', color: 'rgba(255,255,255,.6)', marginTop: '.65rem' };
+const technologyCta: CSSProperties = { fontFamily: displayFont, fontSize: '.72rem', letterSpacing: '.1em', color: 'rgba(255,255,255,.6)', marginTop: '.65rem' };
 const principleSection: CSSProperties = { padding: '0 clamp(1.25rem,6vw,6rem) clamp(4.5rem,8vw,7rem)' };
 const principle: CSSProperties = { ...contentWidth, borderLeft: '4px solid #FFF12D', background: 'linear-gradient(90deg,rgba(255,241,45,.08),rgba(255,255,255,.018))', padding: 'clamp(2rem,4vw,3rem)' };
 const principleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.74rem', letterSpacing: '.16em', fontWeight: 700 };
 const principleText: CSSProperties = { fontSize: 'clamp(1.2rem,2vw,1.55rem)', lineHeight: 1.55, color: 'rgba(255,255,255,.9)', margin: '1rem 0 0', maxWidth: '1040px' };
 const impactSection: CSSProperties = { ...section, background: '#050505' };
-const impactGrid: CSSProperties = { marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: '1rem' };
+const impactGrid: CSSProperties = { width: '100%', marginTop: '2rem' };
 const impactCard: CSSProperties = { borderTop: '1px solid rgba(255,255,255,.15)', padding: '1.25rem 0', minHeight: '145px' };
 const impactTitle: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '1.05rem', textTransform: 'uppercase', margin: '0 0 .65rem' };
-const decisionGrid: CSSProperties = { marginTop: '2.6rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.1)' };
-const decisionCard: CSSProperties = { background: '#030303', minHeight: '200px', padding: '1.5rem', flex: '1 1 210px', maxWidth: '340px', minWidth: 0 };
+const decisionGrid: CSSProperties = { width: '100%', marginTop: '2rem' };
+const decisionCard: CSSProperties = { background: '#030303', minHeight: '205px', padding: '1.5rem', minWidth: 0 };
 const evidenceSection: CSSProperties = { ...section, background: 'linear-gradient(90deg,rgba(255,241,45,.045),#030303 38%)' };
 const faqSection: CSSProperties = { ...section, background: '#070707' };
-const faqList: CSSProperties = { marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,.12)' };
-const faqItem: CSSProperties = { padding: '1.5rem 0', borderBottom: '1px solid rgba(255,255,255,.12)' };
+const faqList: CSSProperties = { width: '100%', marginTop: '2rem' };
+const faqItem: CSSProperties = { minWidth: 0 };
 const faqQuestion: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.05rem,1.8vw,1.3rem)', lineHeight: 1.25, margin: '0 0 .65rem' };
-const faqAnswer: CSSProperties = { ...bodyText, maxWidth: '940px', fontSize: '.96rem' };
+const faqAnswer: CSSProperties = { ...bodyText, maxWidth: '100%', fontSize: 'clamp(1.04rem,1.15vw,1.18rem)' };
 const conversionSection: CSSProperties = { padding: 'clamp(4.5rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', background: '#020202', borderTop: '1px solid rgba(255,255,255,.08)' };
-const conversionGrid: CSSProperties = { ...contentWidth, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 'clamp(2.5rem,6vw,5rem)' };
+const conversionGrid: CSSProperties = { width: '100%', display: 'grid', margin: '2rem auto 0' };
 const conversionSecondary: CSSProperties = { display: 'grid', gap: '2.2rem' };
 const conversionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2.4rem,5vw,4.6rem)', lineHeight: .95, letterSpacing: '-.04em', textTransform: 'uppercase', maxWidth: '780px', margin: 0 };
 const conversionText: CSSProperties = { ...bodyText, fontSize: '1.05rem', maxWidth: '680px', margin: '1.5rem 0 2rem' };
