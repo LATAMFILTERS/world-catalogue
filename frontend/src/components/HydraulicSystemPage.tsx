@@ -5,6 +5,8 @@ import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
+import layout from './EngineeringSystemsLayout.module.css';
+import { EngineeringSystemControls } from './EngineeringSystemControls';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/systems/hydraulic/`;
@@ -100,17 +102,17 @@ export function HydraulicSystemPage() {
   ];
 
   return (
-    <main style={main}>
+    <main className={layout.page} style={main}>
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       ))}
 
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Hydraulic Protection" />
 
-      <section style={hero}>
-        <ReviewedImage src="/images/hidraulico-trabajador.jpg" alt="Hydraulic protection system" style={heroMedia} />
-        <div style={heroOverlay} />
-        <div style={heroInner}>
+      <section className={layout.hero} style={hero}>
+        <ReviewedImage src="/images/hidraulico-trabajador.jpg" alt="Hydraulic protection system" className={layout.heroImage} style={heroMedia} />
+        <div className={layout.heroScrim} />
+        <div className={layout.heroInner} style={heroInner}><div className={layout.heroCopy}>
           <p style={eyebrow}><ReviewedText text={"HYDRAULIC CONTAMINATION CONTROL"} /></p>
           <h1 style={heroTitle}><ReviewedText text={"Hydraulic"} context="HydraulicSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="HydraulicSystemPageTitle" /></span></h1>
           <p style={heroPromise}><ReviewedText text={"Control particle contamination around the hydraulic clearances that determine pressure, movement and machine response."} /></p>
@@ -119,7 +121,7 @@ export function HydraulicSystemPage() {
             <Link href="#protection-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE HYDRAULIC PATH"} /></Link>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
-        </div>
+        </div></div>
       </section>
 
       <section style={section}>
@@ -133,10 +135,12 @@ export function HydraulicSystemPage() {
         </div>
       </section>
 
+      <EngineeringSystemControls system="hydraulic" />
+
       <section id="protection-path" style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"CONTAMINATION PATHWAYS"} /></p>
         <h2 style={h2}><ReviewedText text={"Resolve where contamination enters, circulates and becomes critical."} /></h2>
-        <div style={grid3}>
+        <div className={layout.cardGrid3} style={grid3}>
           {pathways.map(([title, exposure, system, technology, href]) => (
             <article key={title} style={card}>
               <p style={cardLabel}><ReviewedText text={title} /></p>
@@ -149,23 +153,10 @@ export function HydraulicSystemPage() {
         </div>
       </section>
 
-      <section style={section}>
-        <div style={twoCol}>
-          <div>
-            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
-            <h2 style={h2}><ReviewedText text={"Hydraulic cleanliness has to be matched to component sensitivity and duty."} /></h2>
-          </div>
-          <div>
-            <p style={lead}><ReviewedText text={"The filtration target should reflect the hydraulic components being protected, the particle sizes that matter to those interfaces and the circuit conditions under which the filter must operate."} /></p>
-            <p style={body}><ReviewedText text={"ELIMFILTERS keeps the hierarchy explicit: hydraulic circuit → cleanliness requirement → filtration technology → product family → validated part number."} /></p>
-          </div>
-        </div>
-      </section>
-
       <section style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"WHAT THE SYSTEM PROTECTS"} /></p>
         <h2 style={h2}><ReviewedText text={"Protect the components that convert fluid power into controlled work."} /></h2>
-        <div style={grid2}>
+        <div className={layout.cardGrid2} style={grid2}>
           {assets.map(([title, text]) => (
             <article key={title} style={lineCard}>
               <h3 style={h3}><ReviewedText text={title} /></h3>
@@ -192,7 +183,7 @@ export function HydraulicSystemPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"VALIDATION CONTEXT"} /></p>
         <h2 style={h2}><ReviewedText text={"Use cleanliness and filter-performance standards in the correct context."} /></h2>
-        <div style={grid4}>
+        <div className={layout.cardGrid4} style={grid4}>
           {standards.map(([name, text]) => (
             <article key={name} style={card}>
               <p style={cardLabel}><ReviewedText text={name} /></p>
@@ -205,7 +196,7 @@ export function HydraulicSystemPage() {
       <section style={section}>
         <p style={eyebrow}><ReviewedText text={"FROM HYDRAULIC CONDITION TO PART"} /></p>
         <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
-        <div className="decision-flow" style={decisionFlow}>
+        <div className={`decision-flow ${layout.decisionGrid}`} style={decisionFlow}>
           {['1. EQUIPMENT', '2. HYDRAULIC CIRCUIT', '3. FLOW + PRESSURE CONTEXT', '4. CLEANLINESS / FILTRATION TARGET', '5. OEM + DIMENSIONAL EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
             <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>
           ))}
@@ -215,12 +206,12 @@ export function HydraulicSystemPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p>
         <h2 style={h2}><ReviewedText text={"Hydraulic Protection"} /></h2>
-        <div className="faq-grid" style={faqGrid}>
+        <div className={layout.faqGrid}>
           {faqs.map(([question, answer]) => (
-            <article key={question} style={faqCard}>
-              <h3 style={faqQuestion}><ReviewedText text={question} /></h3>
-              <p style={body}><ReviewedText text={answer} /></p>
-            </article>
+            <details key={question} className={layout.faq} style={faqCard}>
+              <summary className={layout.faqSummary}><ReviewedText text={question} /></summary>
+              <p className={layout.faqAnswer}><ReviewedText text={answer} /></p>
+            </details>
           ))}
         </div>
       </section>
@@ -243,26 +234,25 @@ export function HydraulicSystemPage() {
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: '86vh', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', overflow: 'hidden', borderBottom: '1px solid rgba(255,255,255,0.08)' };
-const heroMedia: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const hero: CSSProperties = {minHeight:'clamp(600px,79svh,880px)',position:'relative',display:'flex',alignItems:'center',padding:'clamp(7rem,10vw,10rem) clamp(1.25rem,4vw,5rem) clamp(3.5rem,5vw,5rem)',overflow:'hidden'};
+const heroMedia: CSSProperties = {width:'100%',height:'100%',objectFit:'cover',objectPosition:'center',opacity:HERO_MEDIA_TREATMENT.opacity};
+const heroInner: CSSProperties = {width:'100%',maxWidth:'1500px',margin:'0 auto',position:'relative',zIndex:2};
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3rem, 7vw, 6.8rem)', lineHeight: 0.9, letterSpacing: '-0.05em', textTransform: 'uppercase', margin: 0, maxWidth: '960px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '820px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.7vw, 1.14rem)', lineHeight: 1.7, maxWidth: '860px', color: 'rgba(255,255,255,.7)', margin: '1rem 0 0' };
-const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: '#000' };
-const sectionAlt: CSSProperties = { ...section, background: '#070707', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
-const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'start' };
+const section: CSSProperties = {padding:'clamp(3.4rem,5.4vw,6rem) clamp(1.25rem,4vw,5rem)',maxWidth:'1560px',margin:'0 auto'};
+const sectionAlt: CSSProperties = {...section,background:'#080808',borderTop:'1px solid rgba(255,255,255,.09)',borderBottom:'1px solid rgba(255,255,255,.09)'};
+const twoCol: CSSProperties = {display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(100%,500px),1fr))',gap:'clamp(1.8rem,4vw,4.5rem)',alignItems:'start',maxWidth:'1500px',margin:'0 auto'};
 const eyebrow: CSSProperties = { fontFamily: displayFont, fontSize: '.72rem', fontWeight: 700, letterSpacing: '.18em', color: '#FFF12D', textTransform: 'uppercase', margin: '0 0 1rem' };
 const h2: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2rem,4.5vw,4rem)', lineHeight: .98, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0, maxWidth: '950px' };
 const h3: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '1.15rem', textTransform: 'uppercase', margin: '0 0 .7rem' };
 const lead: CSSProperties = { fontSize: 'clamp(1.02rem,1.6vw,1.18rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.82)', margin: 0 };
 const body: CSSProperties = { fontSize: '.98rem', lineHeight: 1.72, color: 'rgba(255,255,255,.62)', margin: '1rem 0 0' };
-const grid2: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.06)' };
-const grid3: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.06)' };
-const grid4: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.06)' };
-const card: CSSProperties = { background: '#000', padding: '1.7rem', minHeight: '190px', flex: '1 1 220px', maxWidth: '350px', minWidth: 0 };
-const lineCard: CSSProperties = { background: '#000', padding: '1.8rem', flex: '1 1 280px', maxWidth: '450px', minWidth: 0 };
+const grid2: CSSProperties = {display:'grid',marginTop:'clamp(1.8rem,3vw,3rem)',gap:'clamp(1rem,1.7vw,1.9rem)'};
+const grid3: CSSProperties = {display:'grid',marginTop:'clamp(1.8rem,3vw,3rem)',gap:'clamp(1rem,1.7vw,1.9rem)'};
+const grid4: CSSProperties = {display:'grid',marginTop:'clamp(1.8rem,3vw,3rem)',gap:'clamp(1rem,1.7vw,1.9rem)'};
+const card: CSSProperties = {background:'#0b0b0b',padding:'clamp(1.3rem,2.4vw,2.4rem)',minWidth:0,borderTop:'2px solid #fff12d'};
+const lineCard: CSSProperties = {background:'#0b0b0b',padding:'clamp(1.3rem,2.4vw,2.4rem)',minWidth:0,borderTop:'2px solid rgba(255,241,45,.5)'};
 const cardLabel: CSSProperties = { ...eyebrow, marginBottom: '.7rem' };
 const cardBody: CSSProperties = { ...body, marginTop: 0 };
 const systemLabel: CSSProperties = { fontFamily: displayFont, fontSize: '.72rem', fontWeight: 700, color: 'rgba(255,255,255,.58)', letterSpacing: '.12em', textTransform: 'uppercase', margin: '.65rem 0' };
@@ -272,12 +262,10 @@ const hierarchy: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', di
 const hierarchyNode: CSSProperties = { flex: '1 1 210px', minHeight: '120px', border: '1px solid rgba(255,255,255,.08)', background: '#070707', padding: '1.3rem', textDecoration: 'none', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '.45rem' };
 const nodeLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.65rem', letterSpacing: '.16em', textTransform: 'uppercase' };
 const hierarchyArrow: CSSProperties = { alignSelf: 'center', color: '#FFF12D', fontSize: '1.4rem' };
-const decisionFlow: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.06)' };
-const decisionStep: CSSProperties = { background: '#070707', padding: '1.4rem', fontFamily: displayFont, fontWeight: 700, fontSize: '.78rem', lineHeight: 1.45, letterSpacing: '.08em', color: 'rgba(255,255,255,.82)', flex: '1 1 200px', maxWidth: '320px', minWidth: 0 };
-const faqGrid: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '1px', background: 'rgba(255,255,255,.06)' };
+const decisionFlow: CSSProperties = {display:'grid',gap:'1px',background:'rgba(255,255,255,.14)',marginTop:'2rem',maxWidth:'1520px'};
+const decisionStep: CSSProperties = {background:'#090909',padding:'clamp(1.4rem,2.4vw,2.4rem)',minWidth:0,fontFamily:'var(--font-display)',fontSize:'.8rem',fontWeight:700,letterSpacing:'.05em'};
 const faqCard: CSSProperties = { background: '#000', padding: '1.7rem' };
-const faqQuestion: CSSProperties = { ...h3, color: '#fff', fontSize: '1rem' };
-const finalCta: CSSProperties = { padding: 'clamp(5rem,9vw,8rem) clamp(1.25rem,6vw,6rem)', background: '#050505', borderTop: '1px solid rgba(255,241,45,.16)' };
+const finalCta: CSSProperties = {padding:'clamp(3.6rem,6vw,7rem) clamp(1.25rem,4vw,5rem)',maxWidth:'none',borderTop:'1px solid rgba(255,241,45,.18)',background:'radial-gradient(circle at top left,rgba(255,241,45,.08),transparent 40%),#070707'};
 const buttonRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2rem' };
 const yellowButton: CSSProperties = { display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minHeight: '48px', padding: '.9rem 1.2rem', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, fontSize: '.78rem', letterSpacing: '.07em', textTransform: 'uppercase' };
 const darkButton: CSSProperties = { ...yellowButton, background: '#0b0b0b', color: '#fff', border: '1px solid rgba(255,255,255,.16)' };
