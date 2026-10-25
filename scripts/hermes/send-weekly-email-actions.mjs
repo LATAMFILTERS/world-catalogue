@@ -7,6 +7,7 @@ import { pathToFileURL } from 'node:url';
 import { latestWeeklyReport, resolveMailConfig, buildMessage } from './send-weekly-email.mjs';
 import { validateWeeklyEmailContract, validateRenderedWeeklyEmail } from './weekly-email-integrity.mjs';
 import { renderIndustryDigest } from './industry-digest.mjs';
+import { emailShell, sectionHeader, weeklyKpis } from './weekly-email-layout.mjs';
 
 const require = createRequire(import.meta.url);
 const { buildReviewUrl } = require('../../lib/hermes-review-token');
@@ -104,8 +105,8 @@ function buildExecutiveMessage(report, env = process.env) {
       text.push(`Acción propuesta: ${c.proposed_action || rr.proposed_action || 'n/a'}`);
       text.push('Para autorizar la investigación completa: responde APROBADO ' + c.entity_code + ' en la primera línea.', '');
 
-      cards.push(`<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0">
-        <div style="font-size:12px;text-transform:uppercase;color:#666">${esc(candidateTypeLabel(type))}</div>
+      cards.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e3e3e3;border-left:5px solid #111;margin:0 0 14px;font-size:13px"><tr><td style="padding:14px 16px">
+        <div style="font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#666">${esc(candidateTypeLabel(type))}</div>
         <h3 style="margin:6px 0 10px">${esc(rr.finding_title || c.entity_code)}</h3>
         <p><strong>Código interno:</strong> ${esc(c.entity_code)}</p>
         <p><strong>Fuente:</strong> ${esc(c.source_publisher || 'n/a')} — ${esc(rr.evidence_url || c.source_url || 'n/a')}</p>
@@ -115,23 +116,20 @@ function buildExecutiveMessage(report, env = process.env) {
         ${Array.isArray(c.affected_entities) ? `<p><strong>Entidades afectadas:</strong> ${esc(c.affected_entities.join(', '))}</p>` : ''}
         <p><strong>Acción propuesta:</strong> ${esc(c.proposed_action || rr.proposed_action || 'n/a')}</p>
         <p><strong>Investigar todos los filtros:</strong> responde al correo con APROBADO ${esc(c.entity_code)} en la primera línea.</p>\n        ${actionButtons(c, cfg)}
-      </div>`);
+      </td></tr></table>`);
     }
   }
 
   const notice = 'Este correo contiene únicamente hallazgos que HERMES ya investigó y verificó para revisión humana. Las colas internas de investigación no se incluyen.';
-  const html = `<div style="font-family:Arial,sans-serif;max-width:760px;color:#111">
-    <h2>${esc(subject)}</h2>
-    <div style="background:#f5f5f5;padding:14px;border-radius:8px">
-      <strong>Resumen ejecutivo</strong><br>
-      Listos para revisión: ${esc(totals.review_ready ?? cards.length)}
-    </div>
-    <p><strong>${esc(notice)}</strong></p>
-    ${digest.html}
-    ${digest.html ? '<h3>Candidatos para catálogo / Knowledge Center</h3>' : ''}
-    ${cards.join('\n')}
-    <hr><p style="font-size:12px;color:#666">HERMES no modifica catálogo, Knowledge Center, Obsidian ni PostgreSQL sin aprobación explícita.</p>
-  </div>`;
+  const html = emailShell({
+    title: 'Inteligencia lista para tu decisión',
+    period: data.industry_digest?.window ? `${data.industry_digest.window.start} — ${data.industry_digest.window.end}` : `${String(data.reporting_period?.start || '').slice(0, 10)} — ${String(data.reporting_period?.end || '').slice(0, 10)}`,
+    kpis: weeklyKpis(data),
+    notice,
+    body: `${digest.html}
+    ${sectionHeader('Candidatos para catálogo / Knowledge Center')}
+    ${cards.join('\n')}`
+  });
 
   const finalText = `${notice}\n\n${text.join('\n')}`;
   validateRenderedWeeklyEmail(data, { html, text: finalText });

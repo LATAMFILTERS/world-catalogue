@@ -238,4 +238,12 @@ export async function runNewsroomIntelligence({ outputDir = resolveRealCandidate
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const result = await runNewsroomIntelligence();
   console.log(`[HERMES newsroom] ${JSON.stringify(result)}`);
+  // Highlights from the unreviewed headlines, within what is left of the scheduler's 40-min stage limit.
+  const leftMs = 39 * 60_000 - process.uptime() * 1000;
+  if (leftMs < 60_000) console.log('[HERMES annex-highlights] {"outcome":"NO_TIME_LEFT"}');
+  else {
+    const { runAnnexHighlights } = await import('./annex-highlights.mjs');
+    try { console.log(`[HERMES annex-highlights] ${JSON.stringify(await runAnnexHighlights({ timeoutMs: Math.min(4 * 60_000, leftMs - 30_000) }))}`); }
+    catch (error) { console.log(`[HERMES annex-highlights] ${JSON.stringify({ outcome: 'ERROR', error: error.message })}`); }
+  }
 }
