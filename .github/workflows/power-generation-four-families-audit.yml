@@ -1,0 +1,45 @@
+name: Power Generation Four Families Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/power-generation-four-families-audit.yml
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: TypeScript typecheck
+        working-directory: frontend
+        run: npm run type-check
+      - name: Audit power-generation filter families and scope
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const page = fs.readFileSync('frontend/src/components/PowerGenerationIndustryPage.tsx','utf8');
+          const carousel = fs.readFileSync('frontend/src/components/IndustryFilterCarousel.tsx','utf8');
+          const match = carousel.match(/const POWER_GENERATION_KEYS: FamilyKey\[\] = \[([^\]]+)\]/);
+          if (!match) throw Error('Missing POWER_GENERATION_KEYS');
+          const keys = [...match[1].matchAll(/'([^']+)'/g)].map(x => x[1]);
+          const expected = ['primary-air','primary-fuel','oil-filters','fuel-water-separators'];
+          if (JSON.stringify(keys) !== JSON.stringify(expected)) throw Error('Wrong Power Generation families: '+keys.join(', '));
+          if (/THERMACORE|coolant.filters?|coolant filtration|coolant-filters/i.test(page)) throw Error('Unsupported coolant-filter product in Power Generation page');
+          const technologies = [...page.matchAll(/\['[^']+', '[^']+', '[^']+', '([^']+™)', '\/technologies\//g)].map(x=>x[1]);
+          const expectedTech = ['HYDROCORE™','SYNTAPORE™','MACROCORE™','SYNTRAX™'];
+          if (JSON.stringify(technologies) !== JSON.stringify(expectedTech)) throw Error('Wrong advertised technologies: '+technologies.join(', '));
+          console.log('PASS: 4 applicable filter families; no coolant filter claims; 4 scoped technologies');
+          NODE
