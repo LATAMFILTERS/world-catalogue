@@ -10,6 +10,7 @@ const CORE_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'c
 const HD_EXTRA_KEYS: FamilyKey[] = ['fuel-water-separators', 'hydraulic-filters'];
 const FLEET_ONLY_KEYS: FamilyKey[] = ['air-dryer-filters', 'coolant-filters'];
 const POWER_GENERATION_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators'];
+const TRUCK_FLEET_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'cabin-filters', 'coolant-filters', 'air-dryer-filters'];
 const FLEET_INDUSTRIES = ['Trucks Fleets', 'Waste Municipal', 'Bus Coach'];
 const NO_CABIN_INDUSTRIES = ['Manufacturing', 'Oil Gas', 'Power Generation'];
 const NO_HYDRAULIC_INDUSTRIES = ['Power Generation'];
@@ -66,12 +67,13 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
   },
   'Trucks Fleets': {
-    'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
+    'primary-air': `${R2_BASE}/EA17682.png`,
+    'primary-fuel': `${R2_BASE}/EF97440.png`,
+    'oil-filters': `${R2_BASE}/EL81807.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91242.png`,
     'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
-    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
+    'coolant-filters': `${R2_BASE}/EW74685.png`,
+    'air-dryer-filters': `${R2_BASE}/ED43571.png`,
   },
   Manufacturing: {
     'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
@@ -142,6 +144,8 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
   const keys = (
     dutyClass === 'LD'
       ? CORE_KEYS
+      : industryName === 'Trucks Fleets'
+        ? TRUCK_FLEET_KEYS
       : industryName === 'Power Generation'
         ? POWER_GENERATION_KEYS
         : FLEET_INDUSTRIES.includes(industryName)
@@ -160,17 +164,15 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
 
   const family = families[index];
   const image =
-    industryName === 'Trucks Fleets' && family.key === 'air-dryer-filters'
-      ? '/images/airdryer.avif'
-      : industryName === 'Trucks Fleets' && family.key === 'coolant-filters'
-        ? '/images/coolant-mesa.avif'
-        : family.key === 'air-dryer-filters'
-          ? AIR_DRYER_IMAGE
-          : family.key === 'coolant-filters'
-            ? COOLANT_IMAGE
-            : dutyClass === 'LD'
-              ? LD_IMAGES[family.key]
-              : HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key];
+    industryName === 'Trucks Fleets'
+      ? HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key]
+      : family.key === 'air-dryer-filters'
+        ? AIR_DRYER_IMAGE
+        : family.key === 'coolant-filters'
+          ? COOLANT_IMAGE
+          : dutyClass === 'LD'
+            ? LD_IMAGES[family.key]
+            : HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key];
 
   return (
     <section style={{ background: '#000', padding: 'clamp(4rem, 8vw, 7rem) 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
