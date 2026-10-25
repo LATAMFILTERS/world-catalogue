@@ -10,9 +10,27 @@ const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/systems/fuel-cleanliness/`;
 
 const pathways = [
-  ['PARTICULATE CONTROL', 'Hard particles + storage debris + transfer contamination', 'SYNTAPORE™', '/technologies/syntapore/'],
-  ['FUEL / WATER SEPARATION', 'Free water + entrained moisture before sensitive fuel components', 'HYDROCORE™', '/technologies/hydrocore/'],
-  ['TURBINE-SERIES SEPARATION', 'Multi-stage fuel conditioning in applicable FH / FG turbine systems', 'TURBOCORE™', '/technologies/turbocore/'],
+  [
+    'PARTICULATE CONTROL', 'Hard particles + storage debris + transfer contamination',
+    'SYNTAPORE™', '/technologies/syntapore/', '/images/hero-syntapore.avif',
+    'SYNTAPORE™ fuel filtration service environment',
+    'Particulate capture in approved primary, secondary, spin-on and cartridge diesel positions. Media selection balances particle-control objectives, contaminant capacity and fuel-side pressure loss.',
+    'Verify engine, filtration stage, required fuel flow, permissible pressure differential, sealing interfaces and application evidence. Particulate filtration alone does not establish water-separation capability.'
+  ],
+  [
+    'FUEL / WATER SEPARATION', 'Free water + entrained moisture before sensitive fuel components',
+    'HYDROCORE™', '/technologies/hydrocore/', '/images/fuellseparator-hero.avif',
+    'HYDROCORE™ conventional diesel fuel-water separator assembly',
+    'Conventional non-turbine fuel/water separation architecture for approved spin-on or cartridge separators, including applicable drain and transparent-bowl configurations. Free-water and dispersed-water performance depends on the validated assembly.',
+    'Confirm fuel flow, incoming water condition, separation-media specification, drainage, bowl configuration and downstream component requirements. FH/FG turbine-style assemblies are outside HYDROCORE™ scope.'
+  ],
+  [
+    'TURBINE-SERIES SEPARATION', 'Multi-stage fuel conditioning in applicable FH / FG turbine systems',
+    'TURBOCORE™', '/technologies/turbocore/', '/images/TURBOCORE-hero.avif',
+    'TURBOCORE™ FH and FG turbine-style fuel separation system',
+    'Dedicated multi-stage fuel/water separation architecture for approved FH/FG turbine-style assemblies, compatible replacement elements and approved fuel-processor housings.',
+    'Verify the exact housing series, element specification, flow routing, sealing geometry, bowl or drainage arrangement and documented application. TURBOCORE™ is not interchangeable with conventional HYDROCORE™ separators.'
+  ]
 ] as const;
 
 const protectedFunctions = [
@@ -111,7 +129,7 @@ export function FuelCleanlinessSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Fuel Cleanliness Protection" />
 
       <section style={hero}>
-        <ReviewedImage src="/images/turbine-plant.avif" alt="Fuel cleanliness protection system" style={heroMedia} />
+        <ReviewedImage src="/images/hero-syntapore.avif" alt="Fuel cleanliness protection system" style={heroMedia} />
         <div style={heroOverlay} />
         <div style={heroInner}>
           <p style={eyebrow}><ReviewedText text={"DIESEL FUEL CONTAMINATION CONTROL"} /></p>
@@ -139,13 +157,18 @@ export function FuelCleanlinessSystemPage() {
       <section id="fuel-path" style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"PROTECTION PATHWAYS"} /></p>
         <h2 style={h2}><ReviewedText text={"Start with the contamination function the fuel system actually requires."} /></h2>
+        <p style={{ ...lead, maxWidth: '950px', margin: '1.3rem auto 0' }}><ReviewedText text={"SYNTAPORE™, HYDROCORE™ and TURBOCORE™ are proprietary ELIMFILTERS engineering architectures with distinct operating scopes. A technology designation does not certify performance or authorize interchangeability."} /></p>
         <div style={grid3}>
-          {pathways.map(([title, exposure, technology, href]) => (
+          {pathways.map(([title, exposure, technology, href, image, imageAlt, mechanism, verification]) => (
             <article key={title} style={card}>
+              <ReviewedImage src={image} alt={imageAlt} loading="lazy" style={pathwayImage} />
               <p style={cardLabel}><ReviewedText text={title} /></p>
               <p style={cardBody}><ReviewedText text={exposure} /></p>
-              <div style={arrow}>↓</div>
-              <Link href={href} style={techLink}>{technology}</Link>
+              <h3 style={{ ...h3, fontSize: '1.5rem', margin: '1.1rem 0 0' }}>{technology}</h3>
+              <p style={cardBody}><ReviewedText text={mechanism} /></p>
+              <p style={technicalDetailLabel}><ReviewedText text={"APPLICATION VERIFICATION"} /></p>
+              <p style={cardBody}><ReviewedText text={verification} /></p>
+              <Link href={href} style={{ ...techLink, display: 'inline-block', marginTop: '1.5rem', color: '#FFF12D', fontSize: '.85rem' }}><ReviewedText text={"EXPLORE TECHNOLOGY"} /> ↗</Link>
             </article>
           ))}
         </div>
@@ -267,6 +290,8 @@ const card: CSSProperties = { background: '#000', padding: '1.6rem', flex: '1 1 
 const lineCard: CSSProperties = { background: '#000', padding: '1.7rem', flex: '1 1 300px', maxWidth: '480px', minWidth: 0 };
 const cardLabel: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '.76rem', letterSpacing: '.1em', color: '#FFF12D', margin: 0 };
 const cardBody: CSSProperties = { fontSize: '.92rem', lineHeight: 1.65, color: 'rgba(255,255,255,.58)', margin: '.8rem 0 0' };
+const pathwayImage: CSSProperties = { display: 'block', width: 'calc(100% + 3.2rem)', margin: '-1.6rem -1.6rem 1.5rem', aspectRatio: '16 / 9', objectFit: 'cover', objectPosition: 'center', background: '#151515' };
+const technicalDetailLabel: CSSProperties = { ...cardLabel, marginTop: '1.5rem', paddingTop: '1.15rem', borderTop: '1px solid rgba(255,255,255,.13)' };
 const arrow: CSSProperties = { color: 'rgba(255,255,255,.28)', fontSize: '1.4rem', margin: '1rem 0 .65rem' };
 const techLink: CSSProperties = { fontFamily: displayFont, fontWeight: 700, color: '#fff', textDecoration: 'none', textTransform: 'uppercase', fontSize: '1.08rem' };
 const familyGrid: CSSProperties = { maxWidth: '1180px', margin: '2.4rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.07)' };
