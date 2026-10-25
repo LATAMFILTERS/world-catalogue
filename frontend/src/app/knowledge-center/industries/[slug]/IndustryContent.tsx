@@ -63,14 +63,15 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
   const tr = useReviewed();
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
+      <style>{`@media(max-width: 900px){.kc-industry-detail-grid{grid-template-columns:minmax(0,1fr)!important}}`}</style>
 
       {/* Breadcrumb */}
       <div style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: '1520px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{tr('Knowledge Center')}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <Link href="/knowledge-center/industries" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{tr('Industries')}</Link>
@@ -81,11 +82,11 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
 
       {/* Hero */}
       <section style={{
-        background: 'linear-gradient(160deg, #080808 0%, #000 100%)',
+        background: 'radial-gradient(ellipse at 82% 35%, rgba(255,241,45,0.08), transparent 54%), linear-gradient(160deg, #080808 0%, #000 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1520px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,7 +120,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               marginBottom: '0.75rem',
             }}
           >
-            {industry.title}
+            {tr(industry.title)}
           </motion.h1>
 
           <motion.p
@@ -135,7 +136,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               lineHeight: 1.7,
             }}
           >
-            {industry.description}
+            {tr(industry.description)}
           </motion.p>
 
           <motion.div
@@ -180,7 +181,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                 {tr('CONTAMINATION ENVIRONMENT')}
               </p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>
-                {detail.contaminationEnvironment}
+                {tr(detail.contaminationEnvironment)}
               </p>
             </motion.div>
           )}
@@ -188,13 +189,13 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
       </section>
 
       {/* Two-column content */}
-      <div style={{
-        maxWidth: '1200px',
+      <div className="kc-industry-detail-grid" style={{
+        maxWidth: '1520px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
         display: 'grid',
-        gridTemplateColumns: 'minmax(0, 1fr) 280px',
-        gap: '3rem',
+        gridTemplateColumns: 'minmax(0, 1fr) minmax(240px, 310px)',
+        gap: 'clamp(1.5rem, 3vw, 3rem)',
         alignItems: 'start',
       }}>
 
