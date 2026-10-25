@@ -77,14 +77,14 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
-      <style>{`@media(max-width: 960px){.kc-tech-reading-grid{grid-template-columns:minmax(0,1fr)!important}.kc-tech-reading-grid aside{position:static!important}}`}</style>
+      <style>{`.kc-macrocore-technical-reading p{font-size:clamp(1.05rem,1.15vw,1.18rem)!important;line-height:1.78!important;color:rgba(255,255,255,.86)!important}.kc-macrocore-technical-reading h2{font-size:clamp(1.55rem,2vw,2.1rem)!important}.kc-macrocore-technical-reading h3{font-size:clamp(1.2rem,1.5vw,1.5rem)!important}.kc-macrocore-technical-reading li{font-size:clamp(1.02rem,1.1vw,1.14rem)!important;line-height:1.7!important;color:rgba(255,255,255,.84)!important}@media(max-width: 960px){.kc-tech-reading-grid{grid-template-columns:minmax(0,1fr)!important}.kc-tech-reading-grid aside{position:static!important}}`}</style>
 
       {/* Breadcrumb */}
       <div style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: tech.slug === 'macrocore' ? '1520px' : '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: tech.slug === 'macrocore' ? '1560px' : '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.kc}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <Link href="/knowledge-center/technologies" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.technologies}</Link>
@@ -169,10 +169,10 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
       <div className="kc-tech-reading-grid" style={{
         maxWidth: tech.slug === 'macrocore' ? '1520px' : '1200px',
         margin: '0 auto',
-        padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
+        padding: tech.slug === 'macrocore' ? 'clamp(2rem, 4vw, 3.2rem) clamp(1rem, 2.2vw, 2.2rem)' : 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
         display: 'grid',
-        gridTemplateColumns: tech.slug === 'macrocore' ? 'minmax(0, 1fr) minmax(260px, 320px)' : 'minmax(0, 1fr) 280px',
-        gap: '3rem',
+        gridTemplateColumns: tech.slug === 'macrocore' ? 'minmax(0, 1fr) minmax(280px, 350px)' : 'minmax(0, 1fr) 280px',
+        gap: tech.slug === 'macrocore' ? 'clamp(1.5rem, 2.6vw, 2.75rem)' : '3rem',
         alignItems: 'start',
       }}>
 
@@ -255,7 +255,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
             </div>
           </motion.section>
 
-          <HowItWorks tech={tech} />
+          <div className={tech.slug === 'macrocore' ? 'kc-macrocore-technical-reading' : undefined}><HowItWorks tech={tech} /></div>
 
           <motion.section
             initial={{ opacity: 0, y: 16 }}
