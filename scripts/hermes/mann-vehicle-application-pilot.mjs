@@ -255,11 +255,17 @@ const onlyCurrent = [...curKeys.keys()].filter((k) => !mannKeys.has(k));
 //   EMPTY        one side has no engine code (nothing contradicts)
 //   CONTAINS     one code contains the other (B58B30M0 vs B58B30)
 //   LIST_OVERLAP MANN lists several codes ("D14A2, A6, A8") and one matches
-const engineClass = (a, b) => {
+// Engine text cleanup before comparing: manufacturer names written in front of the code and the
+// emission-standard label (Tier 3B vs Stage IIIB vs Euro 4 / EEV) do not identify a different engine.
+const ENGINE_MAKERS = /\b(?:CUMMINS|JOHN\s+DEERE|DEUTZ|CATERPILLAR|CAT|PERKINS|IVECO|FPT|MAN|DAF|VOLVO|MERCEDES(?:-BENZ)?|MB|DETROIT(?:\s+DIESEL)?|KOMATSU|KUBOTA|YANMAR|ISUZU|HINO|SCANIA|LIEBHERR|NAVISTAR|INTERNATIONAL|MITSUBISHI|TOYOTA|NISSAN|HYUNDAI|DOOSAN|MTU|AGCO(?:\s+POWER)?|SISU)\b/gi;
+const EMISSION = /\b(?:TIER\s*[0-9IV]+[A-Z]?|STAGE\s*[0-9IV]+[A-Z]?|EURO\s*[0-9IV]+|EEV|INTERIM|FINAL)\b/gi;
+const engineText = (s) => String(s || '').replace(ENGINE_MAKERS, ' ').replace(EMISSION, ' ');
+const engineClass = (a0, b0) => {
+  const a = engineText(a0), b = engineText(b0);
   const na = norm(a), nb = norm(b);
   if (!na || !nb) return 'EMPTY';
   if (na === nb) return 'EQUAL';
-  if (na.includes(nb) || nb.includes(na)) return 'CONTAINS';
+  if (Math.min(na.length, nb.length) >= 3 && (na.includes(nb) || nb.includes(na))) return 'CONTAINS';
   const toks = (s) => String(s || '').split(/[,;/]|\s+(?:and|y)\s+/i).map(norm).filter((t) => t.length >= 2);
   const ta = toks(a), tb = toks(b);
   if (ta.some((x) => tb.some((y) => x === y || (x.length >= 4 && y.length >= 4 && (x.includes(y) || y.includes(x)))))) return 'LIST_OVERLAP';
