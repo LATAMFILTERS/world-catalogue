@@ -479,7 +479,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
             {system && !airFamilyEditorial && (
               <div style={strategyItem}>
                 <span style={strategyLabel}>{c.systemContext}</span>
-                <p style={strategyText}>{airFamilyEditorial ? airFamilyEditorial.mechanism : system.engineeringPrinciple}</p>
+                <p style={strategyText}>{system.engineeringPrinciple}</p>
               </div>
             )}
             <div style={strategyItem}>
