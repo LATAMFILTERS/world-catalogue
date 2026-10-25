@@ -292,7 +292,6 @@ const cardLabel: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fon
 const cardBody: CSSProperties = { fontSize: '.92rem', lineHeight: 1.65, color: 'rgba(255,255,255,.58)', margin: '.8rem 0 0' };
 const pathwayImage: CSSProperties = { display: 'block', width: 'calc(100% + 3.2rem)', margin: '-1.6rem -1.6rem 1.5rem', aspectRatio: '16 / 9', objectFit: 'cover', objectPosition: 'center', background: '#151515' };
 const technicalDetailLabel: CSSProperties = { ...cardLabel, marginTop: '1.5rem', paddingTop: '1.15rem', borderTop: '1px solid rgba(255,255,255,.13)' };
-const arrow: CSSProperties = { color: 'rgba(255,255,255,.28)', fontSize: '1.4rem', margin: '1rem 0 .65rem' };
 const techLink: CSSProperties = { fontFamily: displayFont, fontWeight: 700, color: '#fff', textDecoration: 'none', textTransform: 'uppercase', fontSize: '1.08rem' };
 const familyGrid: CSSProperties = { maxWidth: '1180px', margin: '2.4rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.07)' };
 const familyCard: CSSProperties = { background: '#000', padding: '1.6rem', textDecoration: 'none', color: '#fff', display: 'block', flex: '1 1 240px', maxWidth: '380px', minWidth: 0 };
