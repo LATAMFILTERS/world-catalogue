@@ -40,7 +40,7 @@ export const AIR_FAMILY_TECHNICAL_COPY = {
         "Evaluate dust, pollen and particle exposure; specify carbon adsorption only for validated element configurations.",
         "Confirm blower airflow, pressure-drop allowance, maintenance access and any applicable cabin filtration test evidence."
       ],
-      "boundary": "Cabin filtration must not be presented as certified respiratory protection or universal protection from exhaust gases. EC1/EC3 catalogue prefixes are not filtration-performance specifications."
+      "boundary": "Cabin filtration must not be presented as certified respiratory protection or universal protection from exhaust gases. Media capabilities must be verified for each approved application."
     }
   },
   "es": {
@@ -82,7 +82,7 @@ export const AIR_FAMILY_TECHNICAL_COPY = {
         "Evaluar polvo, polen y partículas; especificar carbón activo solo en configuraciones de elemento validadas.",
         "Confirmar caudal del ventilador, presión diferencial admisible, acceso de servicio y ensayos aplicables de filtración de cabina."
       ],
-      "boundary": "La filtración de cabina no debe presentarse como protección respiratoria certificada ni como barrera universal contra gases de escape. EC1/EC3 son prefijos de catálogo, no especificaciones de eficiencia."
+      "boundary": "La filtración de cabina no debe presentarse como protección respiratoria certificada ni como barrera universal contra gases de escape. Las prestaciones del medio deben verificarse para cada aplicación aprobada."
     }
   },
   "pt": {
@@ -124,7 +124,7 @@ export const AIR_FAMILY_TECHNICAL_COPY = {
         "Avaliar poeira, pólen e partículas; especificar carvão ativado apenas em configurações de elemento validadas.",
         "Confirmar vazão do ventilador, diferencial de pressão permitido, acesso de manutenção e ensaios aplicáveis à filtração de cabine."
       ],
-      "boundary": "A filtração de cabine não deve ser apresentada como proteção respiratória certificada ou barreira universal contra gases de escapamento. EC1/EC3 são prefixos de catálogo, não especificações de desempenho."
+      "boundary": "A filtração de cabine não deve ser apresentada como proteção respiratória certificada ou barreira universal contra gases de escapamento. O desempenho do meio deve ser verificado para cada aplicação aprovada."
     }
   }
 } as const;
