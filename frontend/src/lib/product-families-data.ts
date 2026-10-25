@@ -49,9 +49,9 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   },
   'air-cleaner-housings': {
     key: 'air-cleaner-housings', name: 'Air Cleaner Housings', slug: 'air-cleaner-housings', dutyClass: 'HD', hdPrefix: 'EA1', ldPrefix: null,
-    purpose: 'Air cleaner housings provide the structural enclosure and sealing interface for primary and secondary air elements.',
-    engineering: 'INTEKCORE™ housing architecture controls sealing geometry, structural integrity, airflow routing, and protection against bypass at the element-to-housing interface.',
-    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/intekcore(fn).avif',
+    purpose: 'Air-cleaner housings establish the mechanical intake boundary: they retain the approved filter elements, route engine airflow and preserve the seals needed to prevent unfiltered air bypass.'
+    engineering: 'INTEKCORE™ addresses housing geometry, inlet/outlet orientation, element retention, gasket compression, cover closure and service access. Match the complete assembly to required airflow and allowable restriction; a housing is not itself a particulate-filter medium.'
+    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA22580-INTEKCORE-approved-opt.png',
     ...relationships('air-cleaner-housings'),
   },
   'primary-fuel': {
@@ -98,8 +98,8 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   },
   'cabin-filters': {
     key: 'cabin-filters', name: 'Cabin Filters', slug: 'cabin-filters', dutyClass: 'HD+LD', hdPrefix: 'EC1', ldPrefix: 'EC3',
-    purpose: 'Cabin filters protect operator and passenger air from particulate, allergens, odors, and selected gaseous contaminants.',
-    engineering: 'MICROKAPPA™ combines mechanical and electrostatic particle capture with adsorption layers where required by the application.',
+    purpose: 'Cabin-air elements condition incoming HVAC ventilation air by capturing dust, pollen and airborne particles; odor or selected-gas adsorption applies only to validated activated-carbon configurations.'
+    engineering: 'MICROKAPPA™ is the cabin HVAC media architecture. Selection must consider particulate-media configuration, any specified adsorption layer, actual blower airflow, pressure loss, housing sealing and installation direction. Cabin filtration is not respiratory protection or a universal exhaust-gas barrier.'
     construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/cabin-hero.avif',
     ...relationships('cabin-filters'),
   },
