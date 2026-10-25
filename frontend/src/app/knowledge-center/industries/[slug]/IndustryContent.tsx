@@ -63,7 +63,8 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
   const tr = useReviewed();
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
+      <style>{`@media(max-width: 900px){.kc-industry-detail-grid{grid-template-columns:minmax(0,1fr)!important}}`}</style>
 
       {/* Breadcrumb */}
       <div style={{
@@ -188,7 +189,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
       </section>
 
       {/* Two-column content */}
-      <div style={{
+      <div className="kc-industry-detail-grid" style={{
         maxWidth: '1520px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
