@@ -251,8 +251,24 @@ const mannKeys = new Map(mann.map((r) => [keyMann(r), r]));
 const matched = [...mannKeys.keys()].filter((k) => curKeys.has(k));
 const onlyMann = [...mannKeys.keys()].filter((k) => !curKeys.has(k));
 const onlyCurrent = [...curKeys.keys()].filter((k) => !mannKeys.has(k));
-const engineCodeMismatch = matched.filter((k) => norm(mannKeys.get(k).engine_code) !== norm(curKeys.get(k).engine_code))
-  .map((k) => ({ key: k, mann: mannKeys.get(k).engine_code, current: curKeys.get(k).engine_code }));
+// Engine-code comparison: only a TRUE conflict blocks. Benign differences:
+//   EMPTY        one side has no engine code (nothing contradicts)
+//   CONTAINS     one code contains the other (B58B30M0 vs B58B30)
+//   LIST_OVERLAP MANN lists several codes ("D14A2, A6, A8") and one matches
+const engineClass = (a, b) => {
+  const na = norm(a), nb = norm(b);
+  if (!na || !nb) return 'EMPTY';
+  if (na === nb) return 'EQUAL';
+  if (na.includes(nb) || nb.includes(na)) return 'CONTAINS';
+  const toks = (s) => String(s || '').split(/[,;/]|\s+(?:and|y)\s+/i).map(norm).filter((t) => t.length >= 2);
+  const ta = toks(a), tb = toks(b);
+  if (ta.some((x) => tb.some((y) => x === y || (x.length >= 4 && y.length >= 4 && (x.includes(y) || y.includes(x)))))) return 'LIST_OVERLAP';
+  return 'CONFLICT';
+};
+const engineDiffs = matched.map((k) => ({ key: k, mann: mannKeys.get(k).engine_code, current: curKeys.get(k).engine_code,
+  cls: engineClass(mannKeys.get(k).engine_code, curKeys.get(k).engine_code) })).filter((d) => d.cls !== 'EQUAL');
+const engineCodeMismatch = engineDiffs.filter((d) => d.cls === 'CONFLICT');
+const engineBenign = engineDiffs.filter((d) => d.cls !== 'CONFLICT');
 const currentDuplicateRows = current.length - curKeys.size;
 
 const oeOf = (e) => normalizePart(e && typeof e === 'object' ? e.code || e.part_number || e.reference : e);
@@ -277,11 +293,13 @@ const report = {
     current_distinct_keys: curKeys.size,
     current_duplicate_rows: currentDuplicateRows,
     matched_engine_code_mismatch: engineCodeMismatch.length,
+    matched_engine_code_benign_diff: engineBenign.length,
   },
   oe_overlap_sample: oeOverlap.slice(0, 10),
   current_year_formats: formats,
   comparison_mode: yearAgnostic ? 'MAKE_MODEL_ONLY_PRODUCTION_PERIODS' : 'MAKE_MODEL_YEAR',
   engine_code_mismatch_sample: engineCodeMismatch.slice(0, 20),
+  engine_code_benign_sample: engineBenign.slice(0, 10),
   mann_makes: [...new Set(mann.map((r) => r.make))],
   mann_years: [...new Set(mann.map((r) => r.year))].sort(),
   kw_hp_anomalies_set_to_null: anomalies,
