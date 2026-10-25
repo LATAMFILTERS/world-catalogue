@@ -52,13 +52,13 @@ const standards = [
 ] as const;
 
 const faqs = [
-  ["What is Fuel Cleanliness Protection?", "Fuel Cleanliness Protection controls particulate and water exposure along the diesel-fuel path to help protect precision pumps and injectors. ELIMFILTERS connects the contamination risk to the appropriate filtration or separation function, based on the equipment, operating conditions and validated application evidence."],
-  ["Which ELIMFILTERS technologies belong to Fuel Cleanliness Protection?", "SYNTAPORE™ controls particles in approved fuel-filtration positions. HYDROCORE™ addresses conventional, non-turbine fuel/water separation. TURBOCORE™ applies to approved FH/FG turbine-style systems. Each technology serves a distinct function; none is a universal substitute for the others."],
-  ["Is every fuel filter a fuel/water separator?", "No. Particle filtration and water separation are different functions. A particulate filter does not automatically remove water. Confirm the required stage, separator architecture and approved housing before choosing the element."],
-  ["Why does stored fuel matter?", "Condensation, sediment and handling can contaminate diesel before it reaches the vehicle. Storage and transfer practices therefore form part of fuel-system protection. Filtration and water separation complement these controls; they do not replace them."],
-  ["Can a fuel filter be selected only from a cross reference?", "No. A cross-reference identifies a candidate, not a validated installation. Verify the engine, primary or secondary stage, separation requirement, housing interfaces and OEM application evidence before approving the part."],
-  ["What information is useful for fuel-filter identification?", "Provide the equipment and engine, installed filter or OEM reference, filtration stage, housing type and water-separation requirement. Dimensions, seal and drain details, and known contamination conditions help confirm a suitable part."],
-  ["Where does the turbine-series product line fit?", "TURBOCORE™ is for validated FH/FG turbine-style fuel processors and their dedicated replacement elements. It is not interchangeable with conventional HYDROCORE™ separators or standard particulate elements. Verify the housing, element series, filtration grade and seals."],
+  ["What is Fuel Cleanliness Protection?", "ELIMFILTERS coordinates particle filtration and water separation to help protect diesel pumps, injectors and sensitive components. Selection follows the actual fuel-system configuration and validated application."],
+  ["Which ELIMFILTERS technologies belong to Fuel Cleanliness Protection?", "SYNTAPORE™ controls particles; HYDROCORE™ separates water in conventional non-turbine systems; TURBOCORE™ serves approved FH/FG turbine-style assemblies. Each technology has a distinct application."],
+  ["Is every fuel filter a fuel/water separator?", "No. Particle filtration and water separation are separate functions. Check the filtration stage, separator design and approved application before selecting a filter."],
+  ["Why does stored fuel matter?", "Storage and transfer can introduce water and sediment before fuel reaches the engine. Proper handling, filtration and applicable water separation help limit downstream contamination."],
+  ["Can a fuel filter be selected only from a cross reference?", "No. A cross-reference identifies a candidate. Confirm the engine, filtration stage, separation function, dimensions and validated OEM application before installation."],
+  ["What information is useful for fuel-filter identification?", "Provide the equipment model, engine, installed filter or OEM number, filtration stage, housing configuration and dimensions. Include any known water-contamination or service issues."],
+  ["Where does the turbine-series product line fit?", "TURBOCORE™ elements serve compatible FH/FG turbine-style fuel separation systems. Confirm housing, element series and sealing configuration; these elements are not interchangeable with conventional separators."],
 ] as const;
 
 export function FuelCleanlinessSystemPage() {
