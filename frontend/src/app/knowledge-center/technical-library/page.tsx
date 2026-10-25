@@ -71,11 +71,11 @@ export default function TechnicalLibraryPage() {
         alignItems: 'center',
         backgroundColor: '#050505',
         backgroundImage: heroBackgroundImage('/images/grupo3-oil.avif'),
-        backgroundSize: '100% 100%, contain',
-        backgroundPosition: 'center, 72% center',
+        backgroundSize: '100% 100%, cover',
+        backgroundPosition: 'center, center',
         backgroundRepeat: 'no-repeat, no-repeat',
       }}>
-        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1520px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
@@ -136,7 +136,7 @@ export default function TechnicalLibraryPage() {
 
       {/* Library Documents */}
       <section style={{
-        maxWidth: '1200px',
+        maxWidth: '1520px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
         display: 'flex',
@@ -242,7 +242,7 @@ export default function TechnicalLibraryPage() {
 
       {/* Engineering CTA */}
       <section style={{
-        maxWidth: '1200px',
+        maxWidth: '1520px',
         margin: '0 auto 4rem',
         padding: '0 clamp(1.5rem, 4vw, 4rem)',
       }}>

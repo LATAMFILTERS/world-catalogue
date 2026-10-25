@@ -74,8 +74,8 @@ export default function EngineeringReferencePage() {
           borderBottom: '1px solid rgba(255,255,255,0.08)',
           backgroundColor: '#050505',
           backgroundImage: heroBackgroundImage('/images/oil-instalado.avif'),
-          backgroundSize: '100% 100%, contain',
-          backgroundPosition: 'center, 72% center',
+          backgroundSize: '100% 100%, cover',
+          backgroundPosition: 'center, center',
           backgroundRepeat: 'no-repeat, no-repeat',
         }}
       >
