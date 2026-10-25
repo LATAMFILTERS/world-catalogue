@@ -101,7 +101,7 @@ try {
     await db.query('SAVEPOINT s');
     try {
       await db.query(
-        `UPDATE public.elimfilters_catalog SET codigo_base=$2, canonical_source_brand='MANN-FILTER', canonical_source_code=$2,
+        `UPDATE public.elimfilters_catalog SET codigo_base=$2::text, canonical_source_brand='MANN-FILTER', canonical_source_code=$2::text,
            canonical_source_url=$3, canonical_source_status='VERIFIED', canonical_verified_at=now(),
            canonical_evidence=$4::jsonb, enrichment_data=$5::jsonb
          WHERE sku=$1 AND catalog_active`,
@@ -138,5 +138,6 @@ fs.writeFileSync(out, JSON.stringify(report, null, 2));
 const reasons = report.held.reduce((m, h) => { m[h.reason] = (m[h.reason] || 0) + 1; return m; }, {});
 console.log(JSON.stringify({ mode: report.mode, candidates: report.candidates, written: report.written.length, held: report.held.length, held_reasons: reasons,
   sample: report.written.slice(0, 6).map((w) => `${w.sku}: ${w.from} -> ${w.to}`),
-  held_sample: report.held.filter((h) => !['NON_EUROPEAN_ORIGIN'].includes(h.reason)).slice(0, 6).map((h) => `${h.sku} ${h.mann_code} ${h.reason} ${h.error || h.others || h.brand || ''}`),
+  held_sample: Object.keys(reasons).flatMap((reason) => report.held.filter((h) => h.reason === reason).slice(0, 3)
+    .map((h) => `${h.sku} ${h.mann_code} ${h.reason} ${h.error || h.others || h.brand || (h.european_share != null ? 'eu=' + h.european_share : '')}`)),
   transaction: report.transaction, error: report.error, file: out }, null, 2));
