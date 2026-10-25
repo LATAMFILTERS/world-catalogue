@@ -44,6 +44,9 @@ const exclude = new Set(String(args.exclude || '').split(',').map((x) => x.trim(
 const targetPrefix = String(args['target-prefix'] || 'EH6').toUpperCase();
 if (!['EH6', 'EL8'].includes(targetPrefix)) throw new Error('--target-prefix must be EH6 or EL8');
 const only = new Set(String(args.only || '').split(',').map((x) => x.trim().toUpperCase()).filter(Boolean));
+// Inventories from ld-family-mismatch-inventory.mjs carry target_prefixes per row (EH6/EW7/EF9/ES9/EL8/EA1);
+// those rows are validated against their own family. The CLI EL8 override still needs --only.
+const rowPrefixInventory = true;
 if (targetPrefix !== 'EH6' && !only.size) throw new Error('--target-prefix EL8 requires --only <LD SKU list>');
 const standardHd = (sku) => new RegExp(`^${targetPrefix}\\d{4}$`).test(sku);
 // --without-successor (operator ruling 2026-10-24): LD rows whose WD has NO HD SKU or SEVERAL HD
@@ -82,6 +85,8 @@ try {
           superseded_by: null,
           hd_backlog: true,
           mann_wd_code: wd,
+          mann_title: t.mann_title || null,
+          expected_hd_family: t.expected_family || null,
           hd_candidates: candidates,
           decided_by: 'OPERATOR',
           updated_at: '2026-10-24',
@@ -103,8 +108,9 @@ try {
     const L = rows.find((r) => r.sku === ld); const H = rows.find((r) => r.sku === hd);
     const skip = (reason) => report.skipped.push({ ld, hd, wd, reason });
     if (!L || L.duty !== 'LIGHT_DUTY' || !L.catalog_active) { skip('LD_ROW_CHANGED_OR_INACTIVE'); continue; }
-    if (!H || H.duty !== 'HEAVY_DUTY' || !H.catalog_active || !hd.startsWith(targetPrefix)) { skip(`HD_TARGET_NOT_ACTIVE_${targetPrefix}`); continue; }
-    if (!standardHd(hd)) { skip('HD_TARGET_NON_STANDARD_SKU_FORMAT'); continue; }
+    const prefixes = Array.isArray(t.target_prefixes) && t.target_prefixes.length ? t.target_prefixes : [targetPrefix];
+    if (!H || H.duty !== 'HEAVY_DUTY' || !H.catalog_active || !prefixes.some((p) => hd.startsWith(p))) { skip(`HD_TARGET_NOT_ACTIVE_${prefixes.join('|')}`); continue; }
+    if (!prefixes.some((p) => new RegExp(`^${p}\\d{4}$`).test(hd))) { skip('HD_TARGET_NON_STANDARD_SKU_FORMAT'); continue; }
     if (!(H.competitor_codes || []).some((e) => norm(codeOf(e)) === wd)) { skip('HD_TARGET_DOES_NOT_CITE_WD'); continue; }
 
     const u = await db.query(
@@ -114,7 +120,7 @@ try {
        WHERE sku = $1 AND catalog_active`,
       [ld, JSON.stringify({
         state: 'INACTIVE_RETIRED',
-        reason: 'LIGHT_DUTY_ROW_FOR_A_HEAVY_DUTY_MANN_WD_HYDRAULIC',
+        reason: t.mann_title ? `LIGHT_DUTY_ROW_FOR_A_HEAVY_DUTY_MANN_PRODUCT: ${t.mann_title}` : 'LIGHT_DUTY_ROW_FOR_A_HEAVY_DUTY_MANN_WD_HYDRAULIC',
         superseded_by: hd,
         mann_wd_code: wd,
         decided_by: 'OPERATOR',
