@@ -1,6 +1,16 @@
 import type { PageLang } from '@/lib/localized-routes';
 const translations: Record<'es'|'pt',Record<string,string>> = {
   "es": {
+    "Vehicle": "Vehículo",
+    "Confirm year, make, model and vehicle class.": "Confirme año, marca, modelo y clase del vehículo.",
+    "Engine": "Motor",
+    "Identify engine, fuel type and relevant system configuration.": "Identifique motor, tipo de combustible y configuración del sistema.",
+    "Duty": "Régimen operativo",
+    "Define urban, highway, fleet and environmental exposure.": "Defina exposición urbana, carretera, uso de flota y condiciones ambientales.",
+    "Protection": "Protección",
+    "Identify the air, fuel, lubrication or cabin-air position.": "Identifique posición de aire, combustible, lubricación o cabina.",
+    "Evidence": "Evidencia técnica",
+    "Validate with OEM reference, dimensions and documented application data.": "Valide con referencia OEM, dimensiones y datos documentados de aplicación.",
     "Automotive filtration for vehicle owners, independent workshops, fleet service managers and technicians who verify engine air, fuel, lubrication and cabin applications by vehicle identification and OEM evidence.": "Filtración automotriz para propietarios, talleres independientes, gestores de flota y técnicos que verifican admisión, combustible, lubricación y cabina con identificación del vehículo y evidencia OEM.",
     "Automotive and light-duty applications": "Aplicaciones automotrices y de vehículos livianos",
     "AUTOMOTIVE / VEHICLE SERVICE ENGINEERING": "AUTOMOTRIZ / INGENIERÍA DE MANTENIMIENTO DE VEHÍCULOS",
@@ -128,6 +138,16 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
     "Yes. Part Search is the fastest route when a known reference exists. For uncertain applications, include the vehicle and engine information so the cross-reference can be evaluated in context.": "Sí. Part Search es la vía más rápida con una referencia conocida. Para aplicaciones inciertas, incluya vehículo y motor para evaluar la equivalencia en contexto."
   },
   "pt": {
+    "Vehicle": "Veículo",
+    "Confirm year, make, model and vehicle class.": "Confirme ano, marca, modelo e classe do veículo.",
+    "Engine": "Motor",
+    "Identify engine, fuel type and relevant system configuration.": "Identifique motor, combustível e configuração do sistema.",
+    "Duty": "Regime operacional",
+    "Define urban, highway, fleet and environmental exposure.": "Defina exposição urbana, rodoviária, uso em frota e condições ambientais.",
+    "Protection": "Proteção",
+    "Identify the air, fuel, lubrication or cabin-air position.": "Identifique a posição de ar, combustível, lubrificação ou cabine.",
+    "Evidence": "Evidência técnica",
+    "Validate with OEM reference, dimensions and documented application data.": "Valide por referência OEM, dimensões e dados documentados da aplicação.",
     "Automotive filtration for vehicle owners, independent workshops, fleet service managers and technicians who verify engine air, fuel, lubrication and cabin applications by vehicle identification and OEM evidence.": "Filtração automotiva para proprietários, oficinas independentes, gestores de frota e técnicos que verificam admissão, combustível, lubrificação e cabine com identificação do veículo e evidências OEM.",
     "Automotive and light-duty applications": "Aplicações automotivas e de veículos leves",
     "AUTOMOTIVE / VEHICLE SERVICE ENGINEERING": "AUTOMOTIVO / ENGENHARIA DE MANUTENÇÃO DE VEÍCULOS",
