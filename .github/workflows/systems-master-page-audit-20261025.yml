@@ -1,0 +1,65 @@
+name: Systems Master Page Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/systems-master-page-audit-20261025.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit page, media and translations
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os,re,sys
+          base='frontend/public'
+          assets=['/images/air-filters-lab.avif','/images/syntapore_mecanico_camion.avif','/images/oil-hand.avif','/images/hidraulic.avif','/images/coolant-filters.avif','/images/banco-pruebas-filtros.png','/images/sistems-hero.avif','/images/Robotic_arm_replacing_filtration_system.mp4']
+          for a in assets:
+            p=base+a
+            print('MEDIA',a,os.path.getsize(p) if os.path.isfile(p) else 'MISSING',flush=True)
+            if not os.path.isfile(p) or os.path.getsize(p)<1000:
+              raise Exception('missing or empty media '+a)
+          c=open('frontend/src/components/SystemsLanding.tsx',encoding='utf8').read()
+          d=open('frontend/src/lib/systems-i18n.ts',encoding='utf8').read()
+          css=open('frontend/src/components/SystemsLanding.module.css',encoding='utf8').read()
+          systems=re.findall(r"^  '?(air-intake|fuel-cleanliness|lubrication|hydraulic|cooling-system)'?: \\{",d,re.M)
+          print('FIVE_SYSTEMS',systems,flush=True)
+          assert len(systems)==5
+          textkeys=re.findall(r"tr\\('((?:[^'\\\\]|\\\\.)*)'\\)",c)
+          missing=[k for k in textkeys if "'"+k+"': [" not in d]
+          print('TRANSLATION_KEYS',len(set(textkeys)),'MISSING',missing,flush=True)
+          assert not missing
+          assert 'max-width: 1560px' in css and 'max-width: 1180px' not in css
+          for lng in ('en','es','pt'):
+            path='frontend/src/app/'+('' if lng=='en' else lng+'/')+'systems/page.tsx'
+            assert os.path.isfile(path),path
+          assert "  '/systems'," in open('frontend/src/lib/localized-routes.ts').read()
+          print('PASS_MASTER_PAGE_LAYOUT_LOCALES',flush=True)
+          PY
+      - name: Install ffprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Inspect systems hero codec
+        shell: bash
+        run: |
+          ffprobe -v error -show_entries stream=codec_name,codec_type,pix_fmt,width,height -show_entries format=duration,size -of json frontend/public/images/Robotic_arm_replacing_filtration_system.mp4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: TypeScript validation
+        working-directory: frontend
+        run: npm run type-check
+      - name: Production build
+        working-directory: frontend
+        run: npm run build
