@@ -37,7 +37,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'primary-air', name: 'Primary Air', slug: 'primary-air', dutyClass: 'HD+LD', hdPrefix: 'EA1', ldPrefix: 'EA3',
     purpose: 'Primary engine-air elements carry the normal particulate load in the intake path, reducing dust transport toward the turbocharger, cylinders and combustion circuit while supporting the engine’s required airflow.',
     engineering: 'MACROCORE™ primary filtration combines the specified media architecture, effective filtration area and sealing geometry to manage dust retention, contaminant-holding capacity and intake restriction. Performance and replacement limits require evidence for the actual element and installation.',
-    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/pelon-air_converted.avif',
+    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA33603.png',
     ...relationships('primary-air'),
   },
   'secondary-air': {
@@ -100,7 +100,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'cabin-filters', name: 'Cabin Filters', slug: 'cabin-filters', dutyClass: 'HD+LD', hdPrefix: 'EC1', ldPrefix: 'EC3',
     purpose: 'Cabin-air elements condition incoming HVAC ventilation air by capturing dust, pollen and airborne particles; odor or selected-gas adsorption applies only to validated activated-carbon configurations.',
     engineering: 'MICROKAPPA™ is the cabin HVAC media architecture. Selection must consider particulate-media configuration, any specified adsorption layer, actual blower airflow, pressure loss, housing sealing and installation direction. Cabin filtration is not respiratory protection or a universal exhaust-gas barrier.',
-    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/cabin-hero.avif',
+    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EC10025.png',
     ...relationships('cabin-filters'),
   },
   'fuel-turbine': {
@@ -112,8 +112,8 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   },
   'air-dryer-filters': {
     key: 'air-dryer-filters', name: 'Air Dryer Filters', slug: 'air-dryer-filters', dutyClass: 'HD', hdPrefix: 'ED4', ldPrefix: null,
-    purpose: 'Air dryer elements remove water vapor from pneumatic braking and instrument-air systems.',
-    engineering: 'DRYCORE™ molecular-sieve desiccant adsorbs water vapor to protect valves, actuators, and pneumatic controls from corrosion and freeze events.',
+    purpose: 'Air-dryer cartridges control moisture in approved compressed-air circuits so the downstream pneumatic system receives air conditioned for its operating requirements.',
+    engineering: 'DRYCORE™ addresses the validated dryer-cartridge configuration, desiccant capacity, air flow, purge cycle and sealing interfaces. Control of moisture exposure depends on the complete compressor, dryer and pneumatic installation, not on the cartridge alone.',
     construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/airdryer-hero.avif',
     ...relationships('air-dryer-filters'),
   },
