@@ -12,19 +12,19 @@ export interface FamilyEs {
 
 export const FAMILY_ES: Record<string, FamilyEs> = {
   'primary-air': {
-    name: 'Aire primario',
+    name: 'Aire primario del motor',
     seoTitle: 'Elementos de filtro de aire primario para motores de servicio pesado',
     purpose: 'Los elementos primarios de aire del motor soportan la carga normal de partículas en la admisión y reducen el transporte de polvo hacia el turbocompresor, los cilindros y el circuito de combustión, manteniendo el caudal de aire requerido por el motor.',
     engineering: 'La filtración primaria MACROCORE™ integra la arquitectura de medio especificada, el área filtrante efectiva y la geometría de sellado para controlar la retención de polvo, la capacidad de carga y la restricción de admisión. El desempeño y los límites de sustitución requieren evidencia del elemento y su instalación.',
   },
   'secondary-air': {
-    name: 'Elementos de aire secundario / de seguridad',
+    name: 'Aire secundario / de seguridad',
     seoTitle: 'Elementos de filtro de aire secundario y de seguridad',
     purpose: 'Los elementos secundarios o de seguridad, cuando el diseño de admisión los requiere, aportan una barrera adicional aguas abajo durante el servicio del primario o si este pierde integridad. No están destinados a soportar la carga normal de polvo.',
     engineering: 'La etapa secundaria MACROCORE™ requiere posición correcta aguas abajo, especificación del medio, sellado independiente y compatibilidad con la carcasa. El elemento de seguridad no sustituye la etapa primaria; su contaminación o daño exige revisión según el procedimiento del fabricante del equipo.',
   },
   'air-cleaner-housings': {
-    name: 'Carcasas de filtro de aire',
+    name: 'Carcasas de admisión de aire',
     seoTitle: 'Carcasas de filtro de aire para servicio pesado',
     purpose: 'Las carcasas de admisión establecen el límite mecánico de protección: retienen los elementos aprobados, conducen el caudal requerido por el motor y mantienen los sellos que impiden el paso de aire sin filtrar.',
     engineering: 'INTEKCORE™ abarca geometría de carcasa, orientación de entradas y salidas, retención del elemento, compresión de juntas, cierre de tapas y acceso de servicio. El conjunto debe corresponder al caudal y la restricción admisibles; la carcasa no es un medio filtrante de partículas.',
@@ -66,7 +66,7 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
     engineering: 'THERMACORE™ combina la liberación controlada de aditivos con la retención de partículas para proteger camisas, sellos, conductos y superficies de transferencia de calor.',
   },
   'cabin-filters': {
-    name: 'Filtros de cabina',
+    name: 'Filtros de aire de cabina',
     seoTitle: 'Filtros de aire de cabina para camiones y equipos',
     purpose: 'Los elementos de cabina acondicionan el aire entrante del sistema HVAC mediante captura de polvo, polen y partículas suspendidas; la adsorción de olores o ciertos gases aplica únicamente a configuraciones validadas con carbón activado.',
     engineering: 'MICROKAPPA™ corresponde a la arquitectura de medios del HVAC de cabina. La selección considera medio de partículas, capa adsorbente cuando aplique, caudal real del ventilador, pérdida de presión, sellado y dirección de montaje. Un filtro de cabina no constituye protección respiratoria ni una barrera universal frente a gases de escape.',
@@ -78,8 +78,8 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
     engineering: 'TURBOCORE™ gobierna exclusivamente la arquitectura de carcasa y elemento tipo turbina FH/FG. La familia del elemento y el grado de micras se seleccionan por separado: 2010 = serie 500, 2020 = serie 1000 y 2040 = serie 900. Cada familia puede usar grados de 2, 10 o 30 µm cuando estén aprobados; 2 µm es filtración final, 10 µm filtración secundaria y 30 µm filtración primaria. Los sufijos históricos SM/TM/PM corresponden a 2/10/30 µm. El número 2010/2020/2040 nunca define por sí solo el grado de micras. HYDROCORE™ se reserva para separadores de agua y combustible estándar, no tipo turbina.',
   },
   'air-dryer-filters': {
-    name: 'Filtros secadores de aire',
-    seoTitle: 'Cartuchos secadores de aire para frenos',
+    name: 'Filtros secadores neumáticos',
+    seoTitle: 'Cartuchos secadores para sistemas de aire comprimido',
     purpose: 'Los cartuchos secadores controlan la humedad en los circuitos de aire comprimido aprobados, para suministrar aire acondicionado conforme a los requisitos operativos del sistema neumático.',
     engineering: 'DRYCORE™ comprende la configuración validada del cartucho secador, la capacidad desecante, el caudal, el ciclo de purga y las interfaces de sellado. El control de humedad depende del conjunto completo de compresor, secador e instalación neumática, no solamente del cartucho.',
   },

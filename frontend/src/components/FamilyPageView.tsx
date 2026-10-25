@@ -7,7 +7,7 @@ import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getTechnologyEngineering } from '@/lib/canonical-engineering';
 import { FAILURE_KNOWLEDGE } from '@/lib/failure-knowledge';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
-import { AIR_FAMILY_TECHNICAL_COPY, AIR_FAMILY_SECTION_LABELS } from '@/lib/air-family-technical-data';
+import { AIR_FAMILY_TECHNICAL_COPY, AIR_FAMILY_SECTION_LABELS, type AirFamilyTechnical } from '@/lib/air-family-technical-data';
 import {
   FAMILY_ES, TECHNOLOGY_ES, SYSTEM_ES, FAILURE_ES, PROTECTED_COMPONENTS_ES,
   FIELD_QUESTIONS_ES, SERVICE_DISCIPLINE_ES, INDUSTRY_ES,
@@ -310,7 +310,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
     ? localizedPath(`/technologies/${fam.primaryTechnology}`, lang)
     : `/technologies/${fam.primaryTechnology}/`;
   const hubBase = `https://part-search.elimfilters.com${lang === 'en' ? '' : `/${lang}`}`;
-  const airFamilyEditorial: { readonly headline: string; readonly mechanism: string; readonly checks: readonly string[]; readonly boundary: string } | undefined =
+  const airFamilyEditorial: AirFamilyTechnical | undefined =
     Object.entries(AIR_FAMILY_TECHNICAL_COPY[lang]).find(([key]) => key === fam.slug)?.[1];
   const airLabels = AIR_FAMILY_SECTION_LABELS[lang];
 
@@ -383,31 +383,86 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
       )}
 
       {airFamilyEditorial && (
-        <section style={airFamilySection} aria-labelledby="air-family-engineering-title">
-          <div style={airFamilySectionInner}>
-            <p style={sectionKicker}>{airLabels.label}</p>
-            <h2 id="air-family-engineering-title" style={airFamilySectionTitle}>{airFamilyEditorial.headline}</h2>
-            <div style={airFamilyEngineeringGrid}>
-              <article style={airFamilyEngineeringPanel}>
-                <h3 style={airFamilyPanelTitle}>{airLabels.mechanism}</h3>
-                <p style={airFamilyPanelText}>{airFamilyEditorial.mechanism}</p>
-                <h3 style={{ ...airFamilyPanelTitle, marginTop: '2rem' }}>{airLabels.boundary}</h3>
-                <p style={airFamilyPanelText}>{airFamilyEditorial.boundary}</p>
-              </article>
-              <article style={airFamilyEngineeringPanel}>
-                <h3 style={airFamilyPanelTitle}>{airLabels.checks}</h3>
-                <ol style={airFamilyCheckList}>
-                  {airFamilyEditorial.checks.map((check, index) => (
-                    <li key={check} style={airFamilyCheckItem}>
-                      <span style={airFamilyCheckNumber}>{String(index + 1).padStart(2, '0')}</span>
-                      <span>{check}</span>
-                    </li>
-                  ))}
-                </ol>
-              </article>
+        <>
+          <section style={airFamilySection} aria-labelledby="air-family-engineering-title">
+            <div style={airFamilySectionInner}>
+              <p style={sectionKicker}>{airLabels.mechanism}</p>
+              <h2 id="air-family-engineering-title" style={airFamilySectionTitle}>{airFamilyEditorial.headline}</h2>
+              <div style={airFamilyEngineeringGrid}>
+                <article style={airFamilyEngineeringPanel}>
+                  <h3 style={airFamilyPanelTitle}>{airLabels.mechanism}</h3>
+                  <p style={airFamilyPanelText}>{airFamilyEditorial.mechanism}</p>
+                </article>
+                <article style={airFamilyEngineeringPanel}>
+                  <h3 style={airFamilyPanelTitle}>{airLabels.boundary}</h3>
+                  <p style={airFamilyPanelText}>{airFamilyEditorial.boundary}</p>
+                </article>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          <section style={airFamilySectionAlt} aria-labelledby="air-family-verification-title">
+            <div style={airFamilySectionInner}>
+              <p style={sectionKicker}>{airLabels.label}</p>
+              <h2 id="air-family-verification-title" style={airFamilySectionTitle}>{airLabels.checks}</h2>
+              <div style={airFamilyEngineeringGrid}>
+                <article style={airFamilyEngineeringPanel}>
+                  <h3 style={airFamilyPanelTitle}>{airLabels.checks}</h3>
+                  <ol style={airFamilyCheckList}>
+                    {airFamilyEditorial.checks.map((check, index) => (
+                      <li key={check} style={airFamilyCheckItem}>
+                        <span style={airFamilyCheckNumber}>{String(index + 1).padStart(2, '0')}</span>
+                        <span>{check}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
+                <article style={airFamilyEngineeringPanel}>
+                  <h3 style={airFamilyPanelTitle}>{airLabels.parameters}</h3>
+                  <ol style={airFamilyCheckList}>
+                    {airFamilyEditorial.parameters.map((parameter, index) => (
+                      <li key={parameter} style={airFamilyCheckItem}>
+                        <span style={airFamilyCheckNumber}>{String(index + 1).padStart(2, '0')}</span>
+                        <span>{parameter}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section style={airFamilySection} aria-labelledby="air-family-service-title">
+            <div style={airFamilySectionInner}>
+              <p style={sectionKicker}>{airLabels.failureSignals}</p>
+              <h2 id="air-family-service-title" style={airFamilySectionTitle}>{airLabels.service}</h2>
+              <div style={airFamilyEngineeringGrid}>
+                <article style={airFamilyEngineeringPanel}>
+                  <h3 style={airFamilyPanelTitle}>{airLabels.failureSignals}</h3>
+                  <ol style={airFamilyCheckList}>
+                    {airFamilyEditorial.failureSignals.map((signal, index) => (
+                      <li key={signal} style={airFamilyCheckItem}>
+                        <span style={airFamilyCheckNumber}>{String(index + 1).padStart(2, '0')}</span>
+                        <span>{signal}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
+                <article style={airFamilyEngineeringPanel}>
+                  <h3 style={airFamilyPanelTitle}>{airLabels.service}</h3>
+                  <ol style={airFamilyCheckList}>
+                    {airFamilyEditorial.service.map((step, index) => (
+                      <li key={step} style={airFamilyCheckItem}>
+                        <span style={airFamilyCheckNumber}>{String(index + 1).padStart(2, '0')}</span>
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
+              </div>
+            </div>
+          </section>
+        </>
       )}
 
       {!airFamilyEditorial && <section style={introSection}>
@@ -424,8 +479,8 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
       </section>}
 
       <section style={assetSection}>
-        <div style={wrap}>
-          <div style={sectionHeadingRow}>
+        <div style={airFamilyEditorial ? airFamilySectionInner : wrap}>
+          <div style={airFamilyEditorial ? airFamilyResponsiveRow : sectionHeadingRow}>
             <div>
               <span style={sectionKicker}>{c.assetKicker}</span>
               <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Protected interfaces and components', es: 'Interfaces y componentes protegidos', pt: 'Interfaces e componentes protegidos' }[lang]) : c.assetTitle}</h2>
@@ -443,14 +498,14 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         </div>
       </section>
 
-      {failures.length > 0 && (
+      {!airFamilyEditorial && failures.length > 0 && (
         <section style={riskSection}>
           <div style={wrap}>
             <span style={sectionKicker}>{c.riskKicker}</span>
-            <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Failure mechanisms and operational impact', es: 'Mecanismos de falla e impacto operativo', pt: 'Mecanismos de falha e impacto operacional' }[lang]) : c.riskTitle}</h2>
+            <h2 style={sectionTitleSmall}>{c.riskTitle}</h2>
             <div style={riskGrid}>
               {failures.map((failure) => (
-                <article key={failure.key} style={airFamilyEditorial ? { ...riskCard, minHeight: 0 } : riskCard}>
+                <article key={failure.key} style={riskCard}>
                   <h3 style={cardTitle}>{failure.name}</h3>
                   <p style={cardBody}>{failure.mechanism}</p>
                   <div style={riskDivider} />
@@ -463,11 +518,11 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         </section>
       )}
 
-      <section style={strategySection}>
+      {!airFamilyEditorial && <section style={strategySection}>
         <div style={strategyGrid}>
           <div>
             <span style={sectionKicker}>{c.strategyKicker}</span>
-            <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Selection must satisfy the installed circuit', es: 'La selección debe cumplir los requisitos del conjunto instalado', pt: 'A seleção deve atender aos requisitos do conjunto instalado' }[lang]) : c.strategyTitle}</h2>
+            <h2 style={sectionTitleSmall}>{c.strategyTitle}</h2>
           </div>
           <div style={strategyStack}>
             {technology && (
@@ -476,7 +531,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
                 <p style={strategyText}>{technology.controlStrategy}</p>
               </div>
             )}
-            {system && !airFamilyEditorial && (
+            {system && (
               <div style={strategyItem}>
                 <span style={strategyLabel}>{c.systemContext}</span>
                 <p style={strategyText}>{system.engineeringPrinciple}</p>
@@ -488,9 +543,9 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
-      {fieldQuestions.length > 0 && (
+      {!airFamilyEditorial && fieldQuestions.length > 0 && (
         <section style={selectionSection}>
           <div style={wrap}>
             <div style={selectionIntro}>
@@ -510,7 +565,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         </section>
       )}
 
-      {serviceDiscipline.length > 0 && (
+      {!airFamilyEditorial && serviceDiscipline.length > 0 && (
         <section style={serviceSection}>
           <div style={serviceGrid}>
             <div>
@@ -530,8 +585,8 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
       )}
 
       <section style={standardsSection}>
-        <div style={wrap}>
-          <div style={standardsHeader}>
+        <div style={airFamilyEditorial ? airFamilySectionInner : wrap}>
+          <div style={airFamilyEditorial ? airFamilyResponsiveRow : standardsHeader}>
             <div>
               <span style={sectionKicker}>{c.contextKicker}</span>
               <h2 style={sectionTitleSmall}>{c.contextTitle}</h2>
@@ -539,7 +594,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
             <p style={headingNote}>{c.contextNote}</p>
           </div>
 
-          <div style={contextGrid}>
+          <div style={airFamilyEditorial ? airFamilyEngineeringGrid : contextGrid}>
             {technology && (
               <Link href={technologyHref} style={contextCardYellow}>
                 <span style={contextLabel}>{c.technology}</span>
@@ -596,7 +651,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
       )}
 
       <section style={actionSection}>
-        <div style={actionInner}>
+        <div style={airFamilyEditorial ? airFamilyActionInner : actionInner}>
           <div>
             <span style={sectionKicker}>{c.actionKicker}</span>
             <h2 style={actionTitle}>{c.actionTitle}</h2>
@@ -620,17 +675,20 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
 const airFamilyHero: CSSProperties = { padding: 'clamp(7rem, 10vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(3.5rem, 6vw, 6.5rem)', background: '#090909', borderBottom: '1px solid rgba(255,255,255,.12)' };
 const airFamilyHeroGrid: CSSProperties = { width: '100%', maxWidth: '1480px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))', gap: 'clamp(2rem, 5vw, 5.5rem)', alignItems: 'center' };
 const airFamilyHeroCopy: CSSProperties = { minWidth: 0 };
-const airFamilyHeroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 750, fontSize: 'clamp(2.8rem, 5vw, 5.6rem)', letterSpacing: '-.045em', lineHeight: 1.01, textTransform: 'uppercase', overflowWrap: 'anywhere', margin: '1rem 0 0' };
+const airFamilyHeroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 750, fontSize: 'clamp(2.5rem, 4.5vw, 5.2rem)', letterSpacing: '-.045em', lineHeight: 1.01, textTransform: 'uppercase', overflowWrap: 'anywhere', margin: '1rem 0 0' };
 const airFamilyHeroLead: CSSProperties = { maxWidth: '760px', fontFamily: bodyFont, fontSize: 'clamp(1.04rem, 1.35vw, 1.2rem)', lineHeight: 1.7, margin: '1.55rem 0 0', color: 'rgba(255,255,255,.84)' };
 const airFamilyMediaFrame: CSSProperties = { minWidth: 0, margin: 0, padding: 'clamp(.7rem, 1.6vw, 1.3rem)', background: '#161616', border: '1px solid rgba(255,255,255,.16)' };
-const airFamilyProductImage: CSSProperties = { display: 'block', width: '100%', height: 'clamp(300px, 39vw, 600px)', objectFit: 'contain', objectPosition: 'center', background: '#161616', opacity: 1, filter: 'none' };
+const airFamilyProductImage: CSSProperties = { display: 'block', width: '100%', height: 'clamp(320px, 35vw, 540px)', objectFit: 'contain', objectPosition: 'center', background: '#161616', opacity: 1, filter: 'none' };
 const airFamilyCaption: CSSProperties = { padding: '1rem .4rem .2rem', borderTop: '1px solid rgba(255,255,255,.13)', color: 'rgba(255,255,255,.65)', fontFamily: displayFont, fontSize: '.72rem', letterSpacing: '.06em', textTransform: 'uppercase' };
-const airFamilySection: CSSProperties = { padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 5vw, 5rem)', borderBottom: '1px solid rgba(255,255,255,.12)', background: '#050505' };
-const airFamilySectionInner: CSSProperties = { maxWidth: '1400px', width: '100%', margin: '0 auto' };
+const airFamilySection: CSSProperties = { padding: 'clamp(3.5rem, 5.5vw, 6rem) clamp(1.25rem, 5vw, 5rem)', borderBottom: '1px solid rgba(255,255,255,.12)', background: '#050505' };
+const airFamilySectionAlt: CSSProperties = { ...airFamilySection, background: '#0b0b0b' };
+const airFamilyResponsiveRow: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%, 440px), 1fr))', gap: 'clamp(1.6rem,4vw,4.5rem)', alignItems: 'start' };
+const airFamilyActionInner: CSSProperties = { width: '100%', maxWidth: '1460px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,520px),1fr))', alignItems: 'center', gap: 'clamp(2rem,5vw,5rem)' };
+const airFamilySectionInner: CSSProperties = { maxWidth: '1460px', width: '100%', margin: '0 auto' };
 const airFamilySectionTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.7rem, 3vw, 3rem)', lineHeight: 1.18, textTransform: 'uppercase', maxWidth: '1080px', letterSpacing: '-.026em', margin: '0 0 clamp(2rem,4vw,3rem)' };
 const airFamilyComponentGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,245px),1fr))', gap: '1rem', marginTop: '2.4rem' };
 const airFamilyEngineeringGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%, 490px),1fr))', gap: 'clamp(1.3rem, 3vw, 3rem)' };
-const airFamilyEngineeringPanel: CSSProperties = { padding: 'clamp(1.3rem, 2.2vw, 2.6rem)', background: '#101010', borderTop: '2px solid #fff12d', minWidth: 0 };
+const airFamilyEngineeringPanel: CSSProperties = { padding: 'clamp(1.5rem, 2.4vw, 2.9rem)', background: '#101010', borderTop: '2px solid #fff12d', minWidth: 0, height: '100%' };
 const airFamilyPanelTitle: CSSProperties = { fontFamily: displayFont, color: '#fff12d', fontSize: '.8rem', letterSpacing: '.09em', margin: '0 0 .9rem', textTransform: 'uppercase' };
 const airFamilyPanelText: CSSProperties = { fontFamily: bodyFont, color: 'rgba(255,255,255,.84)', fontSize: 'clamp(1rem,1.18vw,1.13rem)', lineHeight: 1.73, margin: 0 };
 const airFamilyCheckList: CSSProperties = { listStyle: 'none', padding: 0, margin: 0 };

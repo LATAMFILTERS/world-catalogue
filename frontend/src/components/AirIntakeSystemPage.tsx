@@ -1,6 +1,8 @@
 import Link from '@/components/LocalizedLink';
 import { PageHeader } from '@/components/PageHeader';
 import { AIR_TECHNOLOGIES, AIR_FAMILIES, AIR_CHECKS, airCopy, localAir } from '@/lib/air-intake-expert-i18n';
+import { AIR_FAMILY_TECHNICAL_COPY } from '@/lib/air-family-technical-data';
+import { getFamilyBySlug } from '@/lib/product-families-data';
 import type { PageLang } from '@/lib/localized-routes';
 import styles from './AirIntakeSystemPage.module.css';
 
@@ -126,14 +128,24 @@ export function AirIntakeSystemPage({ lang = 'en' }: { lang?: PageLang }) {
           <h2 id="air-family-heading" className={styles.h2}>{t('familyTitle')}</h2>
           <p className={styles.sectionIntro}>{t('familyLead')}</p>
           <div className={styles.familiesGrid}>
-            {AIR_FAMILIES.map((fam, i) => (
-              <Link href={`/families/${fam.slug}/`} className={styles.familyCard} key={fam.slug}>
-                <span className={styles.familyNumber}>0{i + 1}</span>
-                <h3>{localAir(lang, fam.name)}</h3>
-                <p>{localAir(lang, fam.note)}</p>
-                <span className={styles.link}>{t('viewFamily')} <span aria-hidden="true">↗</span></span>
-              </Link>
-            ))}
+            {AIR_FAMILIES.map((fam, i) => {
+              const family = getFamilyBySlug(fam.slug);
+              const technical = AIR_FAMILY_TECHNICAL_COPY[lang][fam.slug];
+              return (
+                <Link href={`/families/${fam.slug}/`} className={styles.familyCard} key={fam.slug}>
+                  <div className={styles.familyMedia}>
+                    {family && <img src={family.heroImage} alt={localAir(lang, fam.name)} loading="lazy" />}
+                  </div>
+                  <div className={styles.familyContent}>
+                    <span className={styles.familyNumber}>0{i + 1} / 05</span>
+                    <h3>{localAir(lang, fam.name)}</h3>
+                    <p className={styles.familyRole}>{localAir(lang, fam.note)}</p>
+                    <p className={styles.familyDetail}>{technical.mechanism}</p>
+                    <span className={styles.familyLink}>{t('viewFamily')} <span aria-hidden="true">↗</span></span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
