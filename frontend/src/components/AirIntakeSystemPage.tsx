@@ -101,7 +101,7 @@ export function AirIntakeSystemPage({ lang = 'en' }: { lang?: PageLang }) {
             {AIR_TECHNOLOGIES.map((tech, i) =>
               <article className={styles.technologyCard} key={tech.key}>
                 <div className={styles.technologyMedia}>
-                  <img src={tech.image} alt={tech.name} loading="lazy" />
+                  <img src={tech.image} alt={localAir(lang, tech.imageAlt)} loading="lazy" />
                   <span className={styles.cardNumber}>0{i + 1} / 04</span>
                 </div>
                 <div className={styles.technologyBody}>
