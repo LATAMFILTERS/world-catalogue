@@ -1,0 +1,55 @@
+name: Manufacturing Media and Types Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/manufacturing-media-audit-20261024.yml
+permissions:
+  contents: read
+jobs:
+  media-and-types:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify manufacturing carousel images via HTTP
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,json,struct,re
+          src=open('frontend/src/components/IndustryFilterCarousel.tsx').read()
+          base=re.search(r"const R2_BASE = '([^']+)'",src).group(1)
+          block=src.split("  Manufacturing: {",1)[1].split("\n  },",1)[0]
+          imgs=re.findall(r"'([^']+)': `\$\{R2_BASE\}/([^`]+)`",block)
+          for key,name in imgs:
+            try:
+              req=urllib.request.Request(base+'/'+name,headers={'User-Agent':'ELIMFILTERS-Image-Verification','Accept':'image/*'})
+              with urllib.request.urlopen(req,timeout=20) as r:
+                data=r.read(11000000)
+                png=data[:8]==bytes([137,80,78,71,13,10,26,10])
+                dims=struct.unpack('>II',data[16:24]) if png else []
+                print('IMAGE_CHECK '+json.dumps({'family':key,'file':name,'http':r.status,'png':png,'size':len(data),'dimensions':dims}),flush=True)
+            except urllib.error.HTTPError as e:print('IMAGE_CHECK '+json.dumps({'family':key,'file':name,'http':e.code}),flush=True)
+            except Exception as e:print('IMAGE_CHECK '+json.dumps({'family':key,'file':name,'error':str(e)}),flush=True)
+          PY
+      - name: Install ffprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Inspect manufacturing video
+        shell: bash
+        run: |
+          test -s frontend/public/images/Manufacture-1.mp4
+          ffprobe -v error -show_entries stream=codec_name,codec_type,pix_fmt,width,height -show_entries format=duration,size -of json frontend/public/images/Manufacture-1.mp4
+          test -s frontend/public/images/manufacture.avif
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Typecheck
+        working-directory: frontend
+        run: npm run type-check
