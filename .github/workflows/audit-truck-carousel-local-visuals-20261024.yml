@@ -1,0 +1,30 @@
+name: Preview local carousel fallback images
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/audit-truck-carousel-local-visuals-20261024.yml
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Convert original air dryer and coolant assets to inspectable small previews
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          for item in airdryer.avif coolant-mesa.avif coolant-elimf.avif; do
+            src="frontend/public/images/$item"
+            out="/tmp/$item.jpg"
+            test -s "$src"
+            ffmpeg -hide_banner -loglevel error -nostdin -y -i "$src" -frames:v 1 -vf "scale=420:-2" -q:v 7 "$out"
+            echo "THUMB_BEGIN $item"
+            base64 -w0 "$out"
+            echo
+            echo "THUMB_END $item"
+          done
