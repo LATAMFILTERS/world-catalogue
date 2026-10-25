@@ -1,5 +1,6 @@
 'use client';
 import { useTranslation } from 'react-i18next';
+import { ReviewedImage } from './ReviewedMedia';
 import layout from './EngineeringSystemsLayout.module.css';
 
 type SystemKey = 'lubrication' | 'hydraulic' | 'cooling-system';
@@ -212,6 +213,17 @@ const CONTENT: Record<Language,Record<SystemKey,Entry>> = {
   }
 };
 
+const MEDIA: Record<SystemKey,string> = {
+  lubrication:'/images/oil-instalado.avif',
+  hydraulic:'/images/nanoforce-hero.avif',
+  'cooling-system':'/images/coolant-mesa.avif'
+};
+const MEDIA_ALT: Record<Language,Record<SystemKey,string>> = {
+  en:{lubrication:'Installed oil filtration in the engine lubrication circuit',hydraulic:'NANOFORCE hydraulic filtration application', 'cooling-system':'Coolant filtration components used in engine cooling systems'},
+  es:{lubrication:'Filtración de aceite instalada en el circuito de lubricación',hydraulic:'Aplicación de filtración hidráulica NANOFORCE','cooling-system':'Componentes de filtración de refrigerante para motores'},
+  pt:{lubrication:'Filtração de óleo instalada no circuito de lubrificação',hydraulic:'Aplicação de filtração hidráulica NANOFORCE','cooling-system':'Componentes de filtração de fluido de arrefecimento do motor'}
+};
+
 export function EngineeringSystemControls({ system }: {system:SystemKey}) {
   const { i18n } = useTranslation();
   const language = i18n.resolvedLanguage?.split('-')[0] ?? i18n.language?.split('-')[0] ?? 'en';
@@ -220,9 +232,16 @@ export function EngineeringSystemControls({ system }: {system:SystemKey}) {
   const kicker: Record<Language,string> = { en:'ENGINEERING VALIDATION', es:'VALIDACIÓN DE INGENIERÍA', pt:'VALIDAÇÃO DE ENGENHARIA' };
   return (
     <section className={layout.contentSection} style={{maxWidth:'1560px',margin:'0 auto'}} aria-label={kicker[lang]}>
-      <p style={{color:'#fff12d',fontSize:'.76rem',fontWeight:700,letterSpacing:'.12em'}}>{kicker[lang]}</p>
-      <h2 style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.4vw,3.4rem)',lineHeight:1.12,maxWidth:'1300px',margin:'1rem 0'}}>{content.title}</h2>
-      <p style={{fontSize:'clamp(1.05rem,1.25vw,1.24rem)',color:'rgba(255,255,255,.83)',lineHeight:1.7,maxWidth:'1190px',margin:'0 0 2.1rem'}}>{content.intro}</p>
+      <div className={layout.engineeringOverview}>
+        <div>
+          <p style={{color:'#fff12d',fontSize:'.76rem',fontWeight:700,letterSpacing:'.12em'}}>{kicker[lang]}</p>
+          <h2 style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.4vw,3.4rem)',lineHeight:1.12,maxWidth:'950px',margin:'1rem 0'}}>{content.title}</h2>
+          <p style={{fontSize:'clamp(1.05rem,1.25vw,1.24rem)',color:'rgba(255,255,255,.83)',lineHeight:1.7,maxWidth:'850px',margin:'1.4rem 0 0'}}>{content.intro}</p>
+        </div>
+        <figure className={layout.engineeringMedia}>
+          <ReviewedImage src={MEDIA[system]} alt={MEDIA_ALT[lang][system]} loading="lazy" />
+        </figure>
+      </div>
       <div className={layout.cardGrid4}>
         {content.fields.map(([heading, description], index) => (
           <article key={heading} style={{padding:'clamp(1.4rem,2.4vw,2.5rem)',background:'#0b0b0b',borderTop:'2px solid #fff12d',minWidth:0}}>
