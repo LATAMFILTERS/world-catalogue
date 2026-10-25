@@ -160,6 +160,30 @@ for (const ev of events) {
   });
 }
 
+// ---------- OE numbers tab (independent identity evidence) ----------
+// Slice from the "OE Numbers" accordion header to the next section (Downloads / Legal), take the
+// manufacturer from the last heading and every part-number-like token from cells / list items.
+const oeNumbers = [];
+{
+  // The section is the accordion item with id="oeNumbers" (the earlier "OE Numbers" text is only a nav link).
+  let start = body.search(/id="oeNumbers"/i);
+  if (start < 0) start = body.search(/<span[^>]*cmp-accordion__title[^>]*>\s*(?:OE Numbers|N[uú]meros de equipo original)/i);
+  if (start >= 0) {
+    const rest = body.slice(start);
+    const endRel = rest.slice(20).search(/id="(?:downloads|reachInformation)"/i);
+    const oe = endRel >= 0 ? rest.slice(0, endRel + 20) : rest.slice(0, 200000);
+    let maker = null;
+    const re = /<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>|<(?:td|li|span|a|p|div)[^>]*>([^<]{1,300})<\/(?:td|li|span|a|p|div)>/gi;
+    for (let m; (m = re.exec(oe));) {
+      if (m[1] !== undefined) { const h = decode(m[1]); if (h && !/OE Numbers|equipo original/i.test(h)) maker = h; continue; }
+      for (const piece of decode(m[2]).split(/[,;]\s*/)) {
+        const t = piece.trim();
+        if (/\d/.test(t) && /^[A-Z0-9][A-Z0-9 .\-\/]{2,40}$/i.test(t) && !/^(?:OE|MANN)/i.test(t)) oeNumbers.push({ manufacturer: maker, code: t });
+      }
+    }
+  }
+}
+fs.writeFileSync(path.join(outDir, 'mann-oe-numbers.json'), JSON.stringify(oeNumbers, null, 2));
 const seen = new Set();
 const mann = parsed.filter((r) => { const k = JSON.stringify(r); if (seen.has(k)) return false; seen.add(k); return true; });
 fs.writeFileSync(path.join(outDir, 'mann-applications.json'), JSON.stringify(mann, null, 2));
@@ -174,7 +198,7 @@ let evidence;
 try {
   await db.query('BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY');
   ({ rows: [row] } = await db.query(
-    `SELECT sku, duty, codigo_base, vehicle_applications, md5(vehicle_applications::text) AS vehicle_db_hash
+    `SELECT sku, duty, codigo_base, vehicle_applications, oem_codes, md5(vehicle_applications::text) AS vehicle_db_hash
        FROM public.elimfilters_catalog WHERE sku = $1`, [sku]));
   ({ rows: evidence } = await db.query(
     `SELECT application_kind, verified, source_url, evidence_hash, payload_hash, evidence_authority
@@ -227,16 +251,39 @@ const mannKeys = new Map(mann.map((r) => [keyMann(r), r]));
 const matched = [...mannKeys.keys()].filter((k) => curKeys.has(k));
 const onlyMann = [...mannKeys.keys()].filter((k) => !curKeys.has(k));
 const onlyCurrent = [...curKeys.keys()].filter((k) => !mannKeys.has(k));
-const engineCodeMismatch = matched.filter((k) => norm(mannKeys.get(k).engine_code) !== norm(curKeys.get(k).engine_code))
-  .map((k) => ({ key: k, mann: mannKeys.get(k).engine_code, current: curKeys.get(k).engine_code }));
+// Engine-code comparison: only a TRUE conflict blocks. Benign differences:
+//   EMPTY        one side has no engine code (nothing contradicts)
+//   CONTAINS     one code contains the other (B58B30M0 vs B58B30)
+//   LIST_OVERLAP MANN lists several codes ("D14A2, A6, A8") and one matches
+const engineClass = (a, b) => {
+  const na = norm(a), nb = norm(b);
+  if (!na || !nb) return 'EMPTY';
+  if (na === nb) return 'EQUAL';
+  if (na.includes(nb) || nb.includes(na)) return 'CONTAINS';
+  const toks = (s) => String(s || '').split(/[,;/]|\s+(?:and|y)\s+/i).map(norm).filter((t) => t.length >= 2);
+  const ta = toks(a), tb = toks(b);
+  if (ta.some((x) => tb.some((y) => x === y || (x.length >= 4 && y.length >= 4 && (x.includes(y) || y.includes(x)))))) return 'LIST_OVERLAP';
+  return 'CONFLICT';
+};
+const engineDiffs = matched.map((k) => ({ key: k, mann: mannKeys.get(k).engine_code, current: curKeys.get(k).engine_code,
+  cls: engineClass(mannKeys.get(k).engine_code, curKeys.get(k).engine_code) })).filter((d) => d.cls !== 'EQUAL');
+const engineCodeMismatch = engineDiffs.filter((d) => d.cls === 'CONFLICT');
+const engineBenign = engineDiffs.filter((d) => d.cls !== 'CONFLICT');
 const currentDuplicateRows = current.length - curKeys.size;
 
+const oeOf = (e) => normalizePart(e && typeof e === 'object' ? e.code || e.part_number || e.reference : e);
+const skuOe = new Set((Array.isArray(row.oem_codes) ? row.oem_codes : []).map(oeOf).filter((x) => x.length >= 4));
+const pageOe = new Set(oeNumbers.map((o) => normalizePart(o.code)).filter((x) => x.length >= 4));
+const oeOverlap = [...pageOe].filter((c) => skuOe.has(c));
 const report = {
   generated_at: new Date().toISOString(),
   mode: 'READ_ONLY_PILOT_NO_WRITES',
   sku, duty: row.duty, codigo_base: row.codigo_base, mann_code: mannCode,
   source: { url: finalUrl, http_status: httpStatus, page_sha256: pageSha256, title: identity.title },
   counts: {
+    oe_on_page: pageOe.size,
+    oe_on_sku: skuOe.size,
+    oe_overlap: oeOverlap.length,
     mann_rows_raw: parsed.length,
     mann_rows_dedup: mann.length,
     current_rows: current.length,
@@ -246,10 +293,13 @@ const report = {
     current_distinct_keys: curKeys.size,
     current_duplicate_rows: currentDuplicateRows,
     matched_engine_code_mismatch: engineCodeMismatch.length,
+    matched_engine_code_benign_diff: engineBenign.length,
   },
+  oe_overlap_sample: oeOverlap.slice(0, 10),
   current_year_formats: formats,
   comparison_mode: yearAgnostic ? 'MAKE_MODEL_ONLY_PRODUCTION_PERIODS' : 'MAKE_MODEL_YEAR',
   engine_code_mismatch_sample: engineCodeMismatch.slice(0, 20),
+  engine_code_benign_sample: engineBenign.slice(0, 10),
   mann_makes: [...new Set(mann.map((r) => r.make))],
   mann_years: [...new Set(mann.map((r) => r.year))].sort(),
   kw_hp_anomalies_set_to_null: anomalies,

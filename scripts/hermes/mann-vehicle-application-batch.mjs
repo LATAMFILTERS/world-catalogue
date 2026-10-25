@@ -38,6 +38,15 @@ const prefix = args.prefix ? String(args.prefix).toUpperCase() : null;
 // --after <SKU>: stable cursor. Committed SKUs drop out of the target list, so
 // --offset shifts after a commit; --after does not.
 const after = args.after ? String(args.after).toUpperCase() : null;
+// --retry-from <summary.json[,summary.json]> --retry-reason <REASON>: only SKUs held with that reason.
+let only = null;
+if (args['retry-from']) {
+  const reason = String(args['retry-reason'] || 'NO_MATCHING_APPLICATION');
+  only = [];
+  for (const f of String(args['retry-from']).split(',')) {
+    for (const r of JSON.parse(fs.readFileSync(f.trim(), 'utf8')).rows || []) if (String(r.reason || '').startsWith(reason)) only.push(r.sku);
+  }
+}
 const minMatch = Number(args['min-match'] || 0.7);
 const delayMs = Number(args['delay-ms'] || 2000);
 const commitEligible = args['commit-eligible'] === 'true';
@@ -126,7 +135,8 @@ const { rows: targets } = await db.query(`
     AND (i.canonical_part_number IS NOT NULL OR rel.k IS NOT NULL)
     AND ($3::text IS NULL OR c.sku LIKE $3::text || '%')
     AND ($4::text IS NULL OR c.sku > $4::text)
-  ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit, prefix, after]);
+    AND ($5::text[] IS NULL OR c.sku = ANY($5::text[]))
+  ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit, prefix, after, only]);
 await db.query('ROLLBACK');
 await db.end();
 
@@ -161,7 +171,7 @@ for (const [i, t] of targets.entries()) {
   const row = { sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, locale, dir, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
     current_distinct: c?.current_distinct_keys ?? null, matched: c?.matched_make_model_year ?? null,
     only_in_current: c?.only_in_current ?? null, engine_mismatch: c?.matched_engine_code_mismatch ?? null,
-    match_ratio: null, guard_after: null, eligible: false, reason: null };
+    oe_overlap: c?.oe_overlap ?? null, match_ratio: null, guard_after: null, eligible: false, reason: null };
   if (pilot.status !== 0 || !c) {
     row.reason = `PILOT_FAILED: ${pilot.error}`;
   } else {
@@ -180,7 +190,9 @@ for (const [i, t] of targets.entries()) {
     row.guard_after = apply.json?.after?.guard?.state || null;
     if (apply.json?.result !== 'ROLLED_BACK_NO_CHANGES') row.reason = `DRY_RUN_FAILED: ${apply.json?.error || apply.error}`;
     else if (c.matched_engine_code_mismatch !== 0) row.reason = 'ENGINE_CODE_MISMATCH';
-    else if (rule === 'base-code' && c.matched_make_model_year < 1) row.reason = 'NO_MATCHING_APPLICATION';
+    // Approved 2026-10-25: with 0 matching applications (current rows are junk), an OE number shared
+    // between the official MANN page and the SKU is the independent identity proof.
+    else if (rule === 'base-code' && c.matched_make_model_year < 1 && !(c.oe_overlap >= 1)) row.reason = 'NO_MATCHING_APPLICATION';
     else if (rule === 'ratio' && row.match_ratio < minMatch) row.reason = `LOW_MATCH_${row.match_ratio}`;
     else { row.eligible = true; row.reason = 'OK'; }
   }
