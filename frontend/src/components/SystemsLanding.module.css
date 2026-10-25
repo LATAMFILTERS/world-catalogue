@@ -99,6 +99,8 @@
   background: #141414; overflow: hidden; flex: 0 0 auto;
 }
 .systemMedia img { width: 100%; height: 100%; display: block; object-fit: cover; }
+/* Keep the full THERMACORE element and lithography visible in its card. */
+.systemMedia img.thermacoreProduct { object-fit: contain; background: #0d0d0d; }
 .systemMedia::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(0deg,rgba(0,0,0,.53),transparent 53%);
