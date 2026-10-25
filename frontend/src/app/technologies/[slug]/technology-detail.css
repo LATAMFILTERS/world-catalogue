@@ -291,3 +291,6 @@
     letter-spacing: .16em !important;
   }
 }
+
+/* Wider editorial reading grid for the TURBOCORE technology chapter. */
+.technology-editorial-container { max-width: 1520px; }
