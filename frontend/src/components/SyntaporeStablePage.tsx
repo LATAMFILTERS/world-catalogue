@@ -154,7 +154,7 @@ export function SyntaporeStablePage() {
               <p><span><ReviewedText text={"Technical review:"} /></span> <Link href="/about/leadership/"><ReviewedText text={"Víctor Abreu — Founder & CEO"} /></Link></p>
             </div>
             <p className={styles.eyebrow}><ReviewedText text={"DESCRIPTION"} /></p>
-            <h3 className={styles.featureTitle}><ReviewedText text={"Advanced Particle Control in Fuel"} /></h3>
+            <h3 className={styles.featureTitle}><ReviewedText text={"Fuel particulate control for precision injection-system protection"} /></h3>
             <p className={styles.lead}><ReviewedText text={"SYNTAPORE™ is the ELIMFILTERS architecture for particulate control in primary, secondary and cartridge diesel-fuel filtration stages. Its configuration is selected around efficiency, contaminant-holding capacity, flow and pressure drop for each application."} /></p>
           </div>
           <figure className={styles.mediaFigure}>
@@ -166,7 +166,7 @@ export function SyntaporeStablePage() {
 
       <section className={styles.band}><div className={styles.inner}>
         <p className={styles.eyebrow}><ReviewedText text={"OPERATING REALITY"} /></p>
-        <h2 className={styles.h2}><ReviewedText text={"Modern fuel systems do not tolerate casual contamination control."} /></h2>
+        <h2 className={styles.h2}><ReviewedText text={"Diesel fuel cleanliness is a precision-component protection requirement."} /></h2>
         <p className={styles.lead}><ReviewedText text={"Particles that once passed through lower-pressure fuel systems can become damaging at precision pumps and injectors. SYNTAPORE™ is used for approved primary, secondary and cartridge fuel-filter positions where particulate control is the main filtration duty."} /></p>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"A useful distinction"} /></h3><p className={styles.body}><ReviewedText text={"“Fuel filter” describes a category. The application position tells us what the element is actually being asked to do."} /></p></article>
