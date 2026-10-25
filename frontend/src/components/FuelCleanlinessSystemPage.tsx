@@ -1,4 +1,5 @@
 import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
@@ -126,7 +127,7 @@ export function FuelCleanlinessSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Fuel Cleanliness Protection" />
 
       <section className={airStyles.hero} aria-labelledby="fuel-hero-title">
-        <img className={airStyles.heroPhoto} src="/images/hero-syntapore.avif" alt="Engine diesel fuel-filtration service environment" />
+        <ReviewedImage className={airStyles.heroPhoto} src="/images/hero-syntapore.avif" alt="Engine diesel fuel-filtration service environment" />
         <div className={airStyles.heroOverlay} aria-hidden="true" />
         <div className={airStyles.shell}>
           <div style={heroEditorial}>
@@ -177,7 +178,7 @@ export function FuelCleanlinessSystemPage() {
             {pathways.map(([title, exposure, technology, href, photo, mechanism, verification], index) => (
               <article key={technology} className={airStyles.technologyCard}>
                 <div className={airStyles.technologyMedia}>
-                  <img src={photo} alt={`${technology} — ${title}`} loading="lazy" />
+                  <ReviewedImage src={photo} alt={`${technology} — ${title}`} loading="lazy" />
                   <span className={airStyles.cardNumber}>0{index + 1} / 03</span>
                 </div>
                 <div className={airStyles.technologyBody}>
