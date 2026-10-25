@@ -73,20 +73,23 @@
 .link:hover { text-decoration: underline; }
 .technologyBody .link { margin-top: auto; }
 .sectionIntro { font-size: clamp(1.07rem,1.2vw,1.23rem); line-height: 1.72; color: rgba(255,255,255,.81); max-width: 1370px; margin: 1.3rem 0 0; }
-.familiesGrid, .checkGrid {
-  display: grid; grid-template-columns: repeat(6,minmax(0,1fr));
-  gap: clamp(.85rem,1.4vw,1.4rem); margin-top: clamp(2rem,3.6vw,3rem);
-}
-.familyCard, .checkCard { min-width: 0; background: #0c0c0c; border: 1px solid rgba(255,255,255,.16); padding: clamp(1.5rem,2.2vw,2.3rem); }
-.familyCard { grid-column: span 2; min-height: 270px; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-.familyCard:nth-last-child(-n+2) { grid-column: span 3; }
-.familyCard:hover { border-color: var(--accent); }
-.familyNumber, .checkNumber { color: var(--accent); font: 700 1.2rem/1.4 var(--font-display); }
-.familyCard h3, .checkCard h3 { margin: 1.35rem 0 .9rem; font: 700 clamp(1.3rem,1.52vw,1.75rem)/1.17 var(--font-display); text-transform: uppercase; }
-.familyCard p, .checkCard p:last-child { font-size: clamp(1.04rem,1.12vw,1.17rem); line-height: 1.68; color: rgba(255,255,255,.83); margin: 0 0 1.5rem; }
-.familyCard .link { margin-top: auto; }
-.checkCard { grid-column: span 2; min-height: 245px; }
+.familiesGrid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(1rem,1.8vw,1.9rem); margin-top: clamp(2rem,3.5vw,3.5rem); }
+.familyCard { min-width: 0; display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); min-height: 320px; background: #0b0b0b; border: 1px solid rgba(255,255,255,.19); text-decoration: none; color: #fff; overflow: hidden; }
+.familyCard:last-child { grid-column: 1 / -1; grid-template-columns: minmax(0,.45fr) minmax(0,1fr); }
+.familyCard:hover, .familyCard:focus-visible { border-color: var(--accent); }
+.familyMedia { min-width: 0; min-height: 270px; padding: clamp(.6rem,1.4vw,1.4rem); background: #151515; display: flex; align-items: center; justify-content: center; }
+.familyMedia img { display: block; width: 100%; height: 100%; max-height: 355px; object-fit: contain; object-position: center; filter: none; }
+.familyContent { min-width: 0; padding: clamp(1.4rem,2.4vw,2.65rem); display: flex; flex-direction: column; align-items: flex-start; }
+.familyNumber, .checkNumber { color: var(--accent); font: 700 .88rem/1.35 var(--font-display); letter-spacing: .11em; }
+.familyContent h3 { margin: 1rem 0 .5rem; font: 700 clamp(1.4rem,1.8vw,2.05rem)/1.15 var(--font-display); text-transform: uppercase; letter-spacing: -.025em; }
+.familyRole { margin: 0 0 1rem; color: var(--accent); font-size: .86rem; font-weight: 700; line-height: 1.4; }
+.familyDetail { margin: 0 0 1.3rem; font-size: clamp(.96rem,1.07vw,1.08rem); line-height: 1.64; color: rgba(255,255,255,.82); }
+.familyLink { display: inline-block; margin-top: auto; padding-top: .95rem; border-top: 1px solid rgba(255,255,255,.25); color: var(--accent); font: 700 .78rem/1.5 var(--font-display); letter-spacing: .08em; text-transform: uppercase; }
+.checkGrid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: clamp(.85rem,1.4vw,1.4rem); margin-top: clamp(2rem,3.6vw,3rem); }
+.checkCard { grid-column: span 2; min-width: 0; min-height: 245px; padding: clamp(1.5rem,2.2vw,2.3rem); background: #0c0c0c; border: 1px solid rgba(255,255,255,.16); }
 .checkCard:nth-last-child(-n+2) { grid-column: span 3; }
+.checkCard h3 { margin: 1.35rem 0 .9rem; font: 700 clamp(1.3rem,1.52vw,1.75rem)/1.17 var(--font-display); text-transform: uppercase; }
+.checkCard p:last-child { font-size: clamp(1.04rem,1.12vw,1.17rem); line-height: 1.68; color: rgba(255,255,255,.83); margin: 0 0 1.5rem; }
 .checkNumber { margin: 0; }
 .standardHeading { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(2rem,5vw,5rem); align-items: start; }
 .standardHeading > * { min-width: 0; }
@@ -115,8 +118,9 @@
   .heroActions > * { flex: 1 1 0; }
   .technologyGrid, .faqGrid { grid-template-columns: minmax(0,1fr); }
   .technologyMedia { aspect-ratio: 16/8; min-height: 250px; }
-  .familiesGrid, .checkGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .familyCard, .familyCard:nth-last-child(-n+2), .checkCard, .checkCard:nth-last-child(-n+2) { grid-column: span 1; }
+  .familiesGrid, .checkGrid { grid-template-columns: minmax(0,1fr); }
+  .familyCard, .familyCard:last-child { grid-column: auto; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); }
+  .checkCard, .checkCard:nth-last-child(-n+2) { grid-column: auto; }
   .standardsGrid { grid-template-columns: minmax(0,1fr); }
   .standardCard { min-height: 0; }
   .contactActions { max-width: none; justify-self: stretch; }
@@ -126,6 +130,9 @@
   .heroTitle { font-size: clamp(2.7rem,10.5vw,4.3rem); }
   .heroActions { flex-direction: column; }
   .familiesGrid, .checkGrid { grid-template-columns: minmax(0,1fr); }
-  .familyCard, .familyCard:nth-last-child(-n+2), .checkCard, .checkCard:nth-last-child(-n+2) { grid-column: auto; min-height: 0; }
+  .familyCard, .familyCard:last-child { display: flex; flex-direction: column; min-height: 0; }
+  .familyMedia { min-height: 240px; height: 260px; }
+  .familyMedia img { max-height: 235px; }
+  .checkCard { grid-column: auto; min-height: 0; }
   .technologyMedia { min-height: 210px; }
 }
