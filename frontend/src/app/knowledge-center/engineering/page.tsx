@@ -50,7 +50,7 @@ export default function EngineeringHubPage() {
         backgroundPosition: 'center, 72% center',
         backgroundRepeat: 'no-repeat, no-repeat',
       }}>
-        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1520px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center/" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
@@ -115,7 +115,7 @@ export default function EngineeringHubPage() {
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
         background: 'radial-gradient(circle at 100% 0%, rgba(255,241,45,0.08), transparent 30%), #050505',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1520px', margin: '0 auto' }}>
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.62rem',
@@ -145,7 +145,7 @@ export default function EngineeringHubPage() {
           </p>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(440px, 100%), 1fr))',
             gap: '1px',
             background: 'rgba(255,255,255,0.08)',
             border: '1px solid rgba(255,255,255,0.08)',
@@ -159,7 +159,7 @@ export default function EngineeringHubPage() {
                   padding: '1.5rem',
                   textDecoration: 'none',
                   color: '#fff',
-                  minHeight: '190px',
+                  minHeight: '172px',
                   display: 'flex',
                   flexDirection: 'column',
                   minWidth: 0,
@@ -207,13 +207,14 @@ export default function EngineeringHubPage() {
       </section>
 
       <section style={{
-        maxWidth: '1200px',
+        maxWidth: '1520px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
+        boxSizing: 'border-box',
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(min(300px, 100%), 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(360px, 100%), 1fr))',
           gap: '1px',
           background: 'rgba(255,255,255,0.05)',
           border: '1px solid rgba(255,255,255,0.05)',
