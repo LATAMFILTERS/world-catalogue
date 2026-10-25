@@ -120,3 +120,13 @@
   .heroHeadline { font-size: clamp(2.2rem, 9.4vw, 3.4rem); }
   .heroSummary { font-size: 1.05rem; line-height: 1.55; }
 }
+
+
+/* Fuel FAQ: seven concise, equal-width answers; final card uses full remaining row. */
+.faqGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+.faqGrid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+.faqGrid > :last-child:nth-child(odd) p { max-width: 1050px; }
+@media (max-width: 850px) {
+  .faqGrid { grid-template-columns: minmax(0, 1fr); }
+  .faqGrid > :last-child:nth-child(odd) { grid-column: auto; }
+}
