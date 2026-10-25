@@ -13,7 +13,7 @@ const VIDEOS = [
   { id:'mining', title:'Mining Equipment Protection', description:'Industrial filtration for extreme mining conditions', page:'/industries/mining/', content:'/images/Mineria-Video1.mp4' },
   { id:'construction', title:'Construction Equipment Filtration', description:'Filtration systems for construction and heavy equipment', page:'/industries/construction/', content:'/images/construction-2.mp4' },
   { id:'trucks-fleets', title:'Fleet Maintenance Optimization', description:'Total cost of ownership optimization for commercial fleets', page:'/industries/trucks-fleets/', content:'/images/truck-fleets-hero-h264.mp4' },
-  { id:'railway', title:'Railway Systems Protection', description:'Filtration solutions for rail transport and locomotive systems', page:'/industries/railway/', content:'/images/Train.mp4' },
+  { id:'railway', title:'Railway Systems Protection', description:'Filtration solutions for rail transport and locomotive systems', page:'/industries/railway/', content:'/images/railway-hero-h264.mp4' },
   { id:'marine', title:'Marine Vessel Filtration', description:'Advanced filtration for maritime and ocean-going vessels', page:'/industries/marine/', content:'/images/Marino-1.mp4' },
   { id:'manufacturing', title:'Industrial Manufacturing Systems', description:'Filtration for precision manufacturing and production equipment', page:'/industries/manufacturing/', content:'/images/manufacturing-hero-h264.mp4' },
   { id:'power-generation', title:'Power Generation Protection', description:'Filtration systems for power plants and electrical generation', page:'/industries/power-generation/', content:'/images/powergenerator-Video-1.mp4' },
