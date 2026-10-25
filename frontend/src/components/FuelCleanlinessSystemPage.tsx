@@ -253,7 +253,7 @@ export function FuelCleanlinessSystemPage() {
       <section style={section}>
         <p style={eyebrow}><ReviewedText text={"FROM FUEL CONDITION TO PART"} /></p>
         <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
-        <div className="decision-flow" style={decisionFlow}>
+        <div className={`decision-flow ${fuelStyles.decisionFlow}`} style={decisionFlow}>
           {['1. EQUIPMENT / VEHICLE', '2. ENGINE + FUEL SYSTEM', '3. FILTRATION STAGE', '4. WATER-SEPARATION REQUIREMENT', '5. OEM / FILTER EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
             <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>
           ))}
@@ -315,7 +315,7 @@ const cardLabel: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fon
 const cardBody: CSSProperties = { fontSize: '.92rem', lineHeight: 1.65, color: 'rgba(255,255,255,.58)', margin: '.8rem 0 0' };
 const technicalDetailLabel: CSSProperties = { ...cardLabel, marginTop: '1.5rem', paddingTop: '1.15rem', borderTop: '1px solid rgba(255,255,255,.13)' };
 const techLink: CSSProperties = { fontFamily: displayFont, fontWeight: 700, color: '#fff', textDecoration: 'none', textTransform: 'uppercase', fontSize: '1.08rem' };
-const decisionFlow: CSSProperties = { maxWidth: '1540px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,220px),1fr))', gap: '1px', background: 'rgba(255,255,255,.13)' };
+const decisionFlow: CSSProperties = { maxWidth: '1540px', margin: '2.2rem auto 0', display: 'grid', gap: '1px', background: 'rgba(255,255,255,.13)' };
 const decisionStep: CSSProperties = { background: '#070707', padding: '1.6rem', fontFamily: displayFont, fontSize: '.74rem', fontWeight: 700, letterSpacing: '.08em', color: 'rgba(255,255,255,.84)', minWidth: 0 };
 const faqGrid: CSSProperties = { maxWidth: '1540px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,500px),1fr))', gap: 'clamp(1rem,1.7vw,1.8rem)' };
 const faqCard: CSSProperties = { background: '#000', padding: '1.6rem' };
