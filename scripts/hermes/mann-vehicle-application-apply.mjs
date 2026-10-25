@@ -116,7 +116,9 @@ const report = { sku, mode: commit ? 'COMMIT' : 'DRY_RUN_ROLLBACK', source: comp
 try {
   await db.query('BEGIN');
   const { rows: [before] } = await db.query(
-    'SELECT md5(vehicle_applications::text) h, jsonb_array_length(vehicle_applications) n, catalog_active, duty FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE', [sku]);
+    'SELECT md5(vehicle_applications::text) h, jsonb_array_length(vehicle_applications) n, catalog_active, duty, canonical_source_brand, canonical_source_status FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE', [sku]);
+  // A base verified with another brand (FRAM, OEM...) is never overwritten with MANN evidence.
+  if (['VERIFIED', 'EXCEPTION_CONFIRMED'].includes(String(before.canonical_source_status || '').toUpperCase()) && !/^MANN/i.test(before.canonical_source_brand || '')) stop(`canonical source verified as ${before.canonical_source_brand}`);
   // Retired rows never receive applications; LD only.
   if (!before.catalog_active) stop('SKU is inactive/retired');
   if (before.duty !== 'LIGHT_DUTY') stop(`SKU duty is ${before.duty}`);
