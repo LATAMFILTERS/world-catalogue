@@ -20,7 +20,7 @@ export const TURBOCORE_EDITORIAL: TechnologyEditorial = {
   },
   mechanism: {
     title: 'Housing, staged flow and dedicated element positions work together.',
-    copy: 'TURBOCORE™ relies on the approved turbine housing geometry to route fuel through the intended separation and filtration stages. Housing condition, element compatibility, sealing, drainage, flow demand and service condition all influence whether the architecture performs as intended.'
+    copy: 'TURBOCORE™ relies on the approved turbine housing geometry to route fuel through the intended separation and filtration stages. Housing integrity, the exact approved replacement series, seal compression, water-collection and drainage condition, required fuel flow and allowable restriction must be verified together. Otherwise contamination carryover or inadequate fuel supply can expose downstream pumps and injectors to abnormal wear and operating instability.'
   },
   protectedAssets: {
     title: 'Downstream components depend on the turbine boundary remaining intact',
@@ -30,15 +30,16 @@ export const TURBOCORE_EDITORIAL: TechnologyEditorial = {
     title: 'Selection starts with the exact FH/FG architecture',
     items: [
       'Confirm the exact FH or FG housing model',
-      'Confirm the dedicated replacement-element series and position',
+      'Confirm the dedicated replacement-element series and position: 2010 (500-series), 2020 (1000-series) or 2040 (900-series) only where approved for the exact housing',
+      'Select the validated filtration grade independently (2, 10 or 30 µm where applicable); the 2010/2020/2040 family number does not define the micron rating',
       'Validate required fuel flow and duty cycle',
       'Confirm bowl, drain, sensor and sealing configuration',
-      'Do not substitute a standard non-turbine HYDROCORE™ separator by visual similarity alone'
+      'Do not substitute a standard non-turbine HYDROCORE™ separator or particulate-only SYNTAPORE™ element by external similarity alone'
     ]
   },
   parameters: {
     title: 'Engineering parameters',
-    items: ['Approved housing model', 'Fuel flow requirement', 'Element series and stage position', 'Water-management configuration', 'Pressure drop', 'Seal and drain configuration', 'Service access and duty cycle']
+    items: ['Approved FH/FG housing model', 'Fuel flow requirement', '2010/2020/2040 element family and independently validated micron grade', 'Water-management configuration', 'Pressure differential at operating flow', 'Seal and drain configuration', 'Service access and duty cycle']
   },
   conditions: {
     title: 'Conditions that increase turbine-system workload',
