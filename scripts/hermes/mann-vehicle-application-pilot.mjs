@@ -165,17 +165,21 @@ for (const ev of events) {
 // manufacturer from the last heading and every part-number-like token from cells / list items.
 const oeNumbers = [];
 {
-  const start = body.search(/<h[1-6][^>]*>\s*(?:OE Numbers|OE numbers|N[uú]meros de equipo original)\s*<\/h[1-6]>/i);
+  // The section is the accordion item with id="oeNumbers" (the earlier "OE Numbers" text is only a nav link).
+  let start = body.search(/id="oeNumbers"/i);
+  if (start < 0) start = body.search(/<span[^>]*cmp-accordion__title[^>]*>\s*(?:OE Numbers|N[uú]meros de equipo original)/i);
   if (start >= 0) {
-    const rest = body.slice(start + 10);
-    const endRel = rest.search(/<h[1-6][^>]*>\s*(?:Downloads|Descargas|Legal Information|Informaci[oó]n legal)\s*<\/h[1-6]>/i);
-    const oe = endRel >= 0 ? rest.slice(0, endRel) : rest.slice(0, 200000);
+    const rest = body.slice(start);
+    const endRel = rest.slice(20).search(/id="(?:downloads|reachInformation)"/i);
+    const oe = endRel >= 0 ? rest.slice(0, endRel + 20) : rest.slice(0, 200000);
     let maker = null;
-    const re = /<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>|<(?:td|li|span|a)[^>]*>([^<]{3,60})<\/(?:td|li|span|a)>/gi;
+    const re = /<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>|<(?:td|li|span|a|p|div)[^>]*>([^<]{1,300})<\/(?:td|li|span|a|p|div)>/gi;
     for (let m; (m = re.exec(oe));) {
-      if (m[1] !== undefined) { maker = decode(m[1]); continue; }
-      const t = decode(m[2]);
-      if (/\d/.test(t) && /^[A-Z0-9][A-Z0-9 .\-\/]{2,40}$/i.test(t) && !/^(?:OE|MANN)/i.test(t)) oeNumbers.push({ manufacturer: maker, code: t });
+      if (m[1] !== undefined) { const h = decode(m[1]); if (h && !/OE Numbers|equipo original/i.test(h)) maker = h; continue; }
+      for (const piece of decode(m[2]).split(/[,;]\s*/)) {
+        const t = piece.trim();
+        if (/\d/.test(t) && /^[A-Z0-9][A-Z0-9 .\-\/]{2,40}$/i.test(t) && !/^(?:OE|MANN)/i.test(t)) oeNumbers.push({ manufacturer: maker, code: t });
+      }
     }
   }
 }
