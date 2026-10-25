@@ -21,6 +21,7 @@ import {
   CitationBlock,
 } from '@/components/knowledge-center';
 import DiagramBlock from '@/components/knowledge-center/DiagramBlock';
+import CoolingEngineeringHero from './CoolingEngineeringHero';
 import { getArticleSidebarData } from '@/lib/knowledge-center/navigation-index';
 import { getDiagramsForArticle } from '@/lib/knowledge-center-data';
 import type { KCDecisionNode } from '@/lib/knowledge-center-data';
@@ -454,12 +455,12 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
         { label: article.title },
       ]} />
 
-      <ArticleHero
+      {isCooling ? <CoolingEngineeringHero article={article} /> : <ArticleHero
         overline={`${article.category} · ${article.readTime}`}
         title={article.title}
         subtitle={article.subtitle}
         intro={article.intro}
-      />
+      />}
 
       {/* EEAT Metadata Panel: not displayed as editorial attribution on cooling reference */}
       {!isCooling && article.eeat && (
