@@ -76,14 +76,15 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
   const c = COPY[tr ?? 'en'];
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
+      <style>{`@media(max-width: 960px){.kc-tech-reading-grid{grid-template-columns:minmax(0,1fr)!important}.kc-tech-reading-grid aside{position:static!important}}`}</style>
 
       {/* Breadcrumb */}
       <div style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: tech.slug === 'macrocore' ? '1520px' : '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.kc}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <Link href="/knowledge-center/technologies" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.technologies}</Link>
@@ -98,7 +99,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: tech.slug === 'macrocore' ? '1520px' : '1200px', margin: '0 auto' }}>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -156,7 +157,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               fontSize: '0.95rem',
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.7)',
-              maxWidth: '820px',
+              maxWidth: tech.slug === 'macrocore' ? '1080px' : '820px',
             }}
           >
             {tech.engineeringPrinciple}
@@ -165,12 +166,12 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
       </section>
 
       {/* Two-column: content + sidebar */}
-      <div style={{
-        maxWidth: '1200px',
+      <div className="kc-tech-reading-grid" style={{
+        maxWidth: tech.slug === 'macrocore' ? '1520px' : '1200px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
         display: 'grid',
-        gridTemplateColumns: 'minmax(0, 1fr) 280px',
+        gridTemplateColumns: tech.slug === 'macrocore' ? 'minmax(0, 1fr) minmax(260px, 320px)' : 'minmax(0, 1fr) 280px',
         gap: '3rem',
         alignItems: 'start',
       }}>
