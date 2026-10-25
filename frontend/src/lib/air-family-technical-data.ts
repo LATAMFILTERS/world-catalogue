@@ -1,5 +1,15 @@
-// Scoped engineering editorial for the four air-related product families.
-// These are application principles, not SKU-specific test or fitment approvals.
+// Scoped engineering editorial for the five air-related product families.
+// Product-level performance and fitment require separate application evidence.
+export type AirFamilyTechnical = {
+  readonly headline: string;
+  readonly mechanism: string;
+  readonly checks: readonly string[];
+  readonly boundary: string;
+  readonly parameters: readonly string[];
+  readonly failureSignals: readonly string[];
+  readonly service: readonly string[];
+};
+
 export const AIR_FAMILY_TECHNICAL_COPY = {
   "en": {
     "primary-air": {
