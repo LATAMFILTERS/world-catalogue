@@ -1,0 +1,59 @@
+name: Railway Technical Page Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/railway-release-audit-20261024.yml
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect five railway carousel images
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,re,json,struct
+          s=open('frontend/src/components/IndustryFilterCarousel.tsx',encoding='utf8').read()
+          base=re.search(r"const R2_BASE = '([^']+)'",s).group(1)
+          block=s.split("  Railway: {",1)[1].split("\n  },",1)[0]
+          imgs=re.findall(r"'([^']+)': `\$\{R2_BASE\}/([^`]+)`",block)
+          chosen=['primary-air','primary-fuel','oil-filters','fuel-water-separators','hydraulic-filters']
+          print('RAIL_FAMILIES',chosen,flush=True)
+          for key,name in imgs:
+            if key not in chosen: continue
+            try:
+              req=urllib.request.Request(base+'/'+name,headers={'User-Agent':'ELIMFILTERS-Rail-Image-Audit','Accept':'image/*'})
+              with urllib.request.urlopen(req,timeout=20) as r:
+                data=r.read(20000000)
+                png=data[:8]==bytes([137,80,78,71,13,10,26,10])
+                size=struct.unpack('>II',data[16:24]) if png else ()
+                print('RAIL_IMAGE '+json.dumps({'family':key,'file':name,'status':r.status,'png':png,'dimensions':size,'bytes':len(data)}),flush=True)
+            except urllib.error.HTTPError as e: print('RAIL_IMAGE '+json.dumps({'family':key,'file':name,'status':e.code}),flush=True)
+            except Exception as e: print('RAIL_IMAGE '+json.dumps({'family':key,'file':name,'error':str(e)}),flush=True)
+          PY
+      - name: Install ffprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Inspect original locomotive hero
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s frontend/public/images/Train.mp4
+          test -s frontend/public/images/trenes.avif
+          ffprobe -v error -show_entries stream=codec_name,codec_type,pix_fmt,width,height -show_entries format=duration,size -of json frontend/public/images/Train.mp4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend packages
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify TypeScript
+        working-directory: frontend
+        run: npm run type-check
