@@ -1,0 +1,44 @@
+name: Prepare Railway H264 Hero
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/prepare-railway-h264-20261024.yml
+permissions:
+  contents: write
+jobs:
+  transcode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Encode H264 from existing locomotive footage
+        shell: bash
+        run: |
+          set -euo pipefail
+          src='frontend/public/images/Train.mp4'
+          out='frontend/public/images/railway-hero-h264.mp4'
+          test -s "$src"
+          ffmpeg -hide_banner -loglevel error -nostdin -y -i "$src" -map 0:v:0 -an -vf 'fps=24,scale=1280:-2:force_original_aspect_ratio=decrease,setsar=1' -c:v libx264 -preset medium -crf 25 -pix_fmt yuv420p -movflags +faststart "$out"
+          test -s "$out"
+          test "$(stat -c%s "$out")" -le 20000000
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,pix_fmt,width,height -of default=noprint_wrappers=1 "$out" | tee /tmp/railway-codec
+          grep -qx 'codec_name=h264' /tmp/railway-codec
+          grep -qx 'pix_fmt=yuv420p' /tmp/railway-codec
+          ls -lh "$src" "$out"
+      - name: Save verified H264 in review branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'ELIMFILTERS Media Validation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f frontend/public/images/railway-hero-h264.mp4
+          git diff --cached --quiet && exit 0
+          git commit -m 'fix(media): add browser-compatible H264 railway hero [skip ci]'
+          git push origin HEAD:refs/heads/fix/railway-h264-20261024
