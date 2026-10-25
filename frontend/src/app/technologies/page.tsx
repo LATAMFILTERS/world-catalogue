@@ -305,15 +305,19 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      <section className="technologies-final-cta" style={cta}>
-        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={eyebrow}><ReviewedText text={"READY TO RESOLVE THE APPLICATION?"} /></p>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto' }}><ReviewedText text={"Connect the protection system to the correct technology, family and part."} /></h2>
-          <p style={{ ...bodyText, maxWidth: '760px', margin: '1.25rem auto 0' }}><ReviewedText text={"Use Product Intelligence when you already have a reference or known application. Use Application Support when the protected system, duty conditions or technical fit still need to be resolved."} /></p>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence" style={yellowButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
-            <Link href="/contact/" data-conversion-action="application-support" style={darkButton}><ReviewedText text={"IDENTIFY MY PROTECTION PATH"} /></Link>
-            <Link href="/systems/" style={darkButton}><ReviewedText text={"EXPLORE PROTECTION SYSTEMS"} /></Link>
+      <section className="technologies-final-cta" style={cta} aria-labelledby="technology-final-cta-title">
+        <div className={styles.ctaGrid}>
+          <div>
+            <p style={eyebrow}><ReviewedText text={"READY TO RESOLVE THE APPLICATION?"} /></p>
+            <h2 id="technology-final-cta-title" style={sectionTitle}><ReviewedText text={"Connect the protection system to the correct technology, family and part."} /></h2>
+          </div>
+          <div className={styles.ctaContent}>
+            <p style={bodyText}><ReviewedText text={"Use Product Intelligence when you already have a reference or known application. Use Application Support when the protected system, duty conditions or technical fit still need to be resolved."} /></p>
+            <div className={styles.ctaActions}>
+              <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence" style={yellowButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
+              <Link href="/contact/" data-conversion-action="application-support" style={darkButton}><ReviewedText text={"IDENTIFY MY PROTECTION PATH"} /></Link>
+              <Link href="/systems/" style={darkButton}><ReviewedText text={"EXPLORE PROTECTION SYSTEMS"} /></Link>
+            </div>
           </div>
         </div>
       </section>
