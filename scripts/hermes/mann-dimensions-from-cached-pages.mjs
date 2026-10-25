@@ -79,7 +79,14 @@ try {
     if (!file) { hold('NO_CACHED_PAGE_FOR_EVIDENCE_HASH'); continue; }
     const html = fs.readFileSync(file, 'utf8');
     const code = (/MANN-FILTER\s+(.+?)\s+(?:Oil|Air|Cabin|Fuel|Hydraul|Secondary|Filter)/i.exec(verifyProductIdentity(html, '').title) || [])[1];
-    const { values } = parseMannSummary(html);
+    const { values, summary } = parseMannSummary(html);
+    // The shared parser lets "Inner diameter" also match "Inner diameter 1" (optional " 1").
+    // If the page has only the "... 1" label, drop the duplicated plain value instead of inventing it.
+    for (const [plain, one] of [['inner_diameter_mm', 'inner_diameter_1_mm'], ['outer_diameter_mm', 'outer_diameter_1_mm']]) {
+      const label = plain.startsWith('inner') ? 'Inner diameter' : 'Outer diameter';
+      const plainOnPage = new RegExp(`${label}(?!\\s*1)(?:\\s*\\([^)]*\\))?\\s*=`, 'i').test(summary || '');
+      if (values[one] != null && values[plain] != null && !plainOnPage) delete values[plain];
+    }
     const keys = Object.keys(values);
     if (!keys.length) { hold('NO_EXPLICIT_DIMENSIONS_ON_PAGE'); continue; }
     const unmapped = keys.filter((k) => !report.dimension_columns.includes(k));
