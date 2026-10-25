@@ -76,3 +76,47 @@
   .decisionFlow { grid-template-columns: minmax(0, 1fr); }
   .decisionFlow > :nth-child(n)::after { display: none; }
 }
+
+
+/* Focused, single-column engineering hero. The technology pathways are explained below the fold. */
+.fuelHero {
+  min-height: clamp(570px, 78svh, 850px);
+  align-items: center;
+  padding-block: clamp(8rem, 12vw, 11rem) clamp(3.5rem, 5vw, 5rem);
+}
+.heroContent {
+  width: 100%;
+  max-width: 1050px;
+  min-width: 0;
+}
+.heroHeadline {
+  max-width: 1000px !important;
+  font-size: clamp(2.7rem, 5vw, 5.5rem);
+  line-height: 1.045;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.heroTitleAccent {
+  display: block;
+  color: #fff12d;
+}
+.heroSummary {
+  font: 700 clamp(1.12rem, 1.85vw, 1.48rem)/1.55 var(--font-display);
+  max-width: 850px;
+  margin: clamp(1.35rem, 2.5vw, 2.2rem) 0 0;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0,0,0,.7);
+}
+@media (max-width: 800px) {
+  .fuelHero {
+    min-height: clamp(560px, 74svh, 810px);
+    padding-block: 7rem 3.5rem;
+  }
+  .heroHeadline { font-size: clamp(2.45rem, 7.2vw, 4.7rem); }
+  .heroContent { max-width: 100%; }
+}
+@media (max-width: 540px) {
+  .fuelHero { min-height: 590px; padding-block: 6.5rem 2.75rem; }
+  .heroHeadline { font-size: clamp(2.2rem, 9.4vw, 3.4rem); }
+  .heroSummary { font-size: 1.05rem; line-height: 1.55; }
+}
