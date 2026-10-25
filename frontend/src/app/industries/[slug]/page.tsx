@@ -47,7 +47,7 @@ const industryMetaDescription: Record<string, string> = {
   'Oil Gas': 'Filtration engineering for oil and gas maintenance teams protecting diesel engines, hydraulic circuits and lubricated field equipment under demanding duty and limited shutdown windows.',
   'Power Generation': 'Power generation filtration for standby and prime-power diesel generator sets, covering verified air intake, diesel fuel particulate, fuel/water separation and lubricating-oil filter applications.',
   Railway: 'Railway filtration systems for freight and passenger locomotives, diesel multiple units, auxiliary power units and rail maintenance equipment operating under vibration, route dust, fuel-handling exposure and extended duty.',
-  'Trucks Fleets': 'Truck fleet filtration systems for long-haul, regional, vocational and mixed commercial fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
+  'Trucks Fleets': 'Filtration maintenance for truck fleet owners, managers and engineers. Match diesel fuel, engine air, lubrication and OEM-specified cabin, cooling and air-dryer filtration to each vehicle and its duty.',
   'Waste Municipal': 'Waste and municipal filtration systems for refuse trucks, street sweepers, sewer and vacuum trucks, utility vehicles and public-works fleets operating under stop-start urban duty, dust, debris and hydraulic load.',
 };
 
@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             : item.name === 'Power Generation'
               ? 'Power Generation Filtration for Generator Maintenance | ELIMFILTERS'
               : item.name === 'Trucks Fleets'
-                ? 'Truck Fleet Filtration Systems | Heavy-Duty Fleets | ELIMFILTERS'
+                ? 'Truck Fleet Filtration & Maintenance Engineering | ELIMFILTERS'
                 : item.name === 'Manufacturing'
                   ? 'Manufacturing Filtration Systems | Industrial Equipment | ELIMFILTERS'
                   : item.name === 'Railway'
