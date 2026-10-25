@@ -26,7 +26,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
   Automotive: { image: '/images/autos-02.avif', video: '/images/Autos-Vin4.mp4' },
   'Bus Coach': { image: '/images/bus-hero.avif', video: '/images/buses-2.mp4' },
   Construction: { image: '/images/construccion.avif', video: '/images/construction-2.mp4' },
-  Manufacturing: { image: '/images/manufacture.avif', video: '/images/Manufacture-1.mp4' },
+  Manufacturing: { image: '/images/manufacture.avif', video: '/images/manufacturing-hero-h264.mp4' },
   Marine: { image: '/images/marine-2_converted.avif', video: '/images/Marino-1.mp4' },
   Mining: { image: '/images/mineria.avif', video: '/images/Mineria-Video1.mp4' },
   'Oil Gas': { image: '/images/ingpetrolero.avif', video: '/images/petro-gas-hero-h264.mp4' },
