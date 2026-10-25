@@ -117,7 +117,7 @@ export function BusCoachIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: lang === 'es' ? 'Inicio' : lang === 'pt' ? 'Início' : 'Home', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/` },
           { '@type': 'ListItem', position: 2, name: lang === 'es' ? 'Industrias' : lang === 'pt' ? 'Indústrias' : 'Industries', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/` },
-          { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Autobuses y autocares' : lang === 'pt' ? 'Ônibus e rodoviários' : 'Bus & Coach', item: pageUrl },
+          { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Autobuses' : lang === 'pt' ? 'Ônibus e rodoviários' : 'Bus & Coach', item: pageUrl },
         ],
       },
       {
