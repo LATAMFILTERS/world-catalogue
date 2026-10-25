@@ -74,8 +74,8 @@ export const FAMILY_PT: Record<string, FamilyEs> = {
   'air-dryer-filters': {
     name: 'Filtros secadores de ar',
     seoTitle: 'Cartuchos secadores de ar para freios',
-    purpose: 'Os elementos secadores de ar removem o vapor de água dos sistemas pneumáticos de freio e de ar de instrumentos.',
-    engineering: 'O dessecante de peneira molecular DRYCORE™ adsorve o vapor de água para proteger válvulas, atuadores e controles pneumáticos contra corrosão e congelamento.',
+    purpose: 'Os cartuchos secadores controlam a umidade em circuitos aprovados de ar comprimido, fornecendo ar condicionado conforme os requisitos operacionais do sistema pneumático.',
+    engineering: 'DRYCORE™ abrange a configuração validada do cartucho secador, a capacidade dessecante, a vazão, o ciclo de purga e as interfaces de vedação. O controle de umidade depende do conjunto completo de compressor, secador e instalação pneumática, não apenas do cartucho.',
   },
 };
 
