@@ -270,10 +270,12 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)' }}>{tech.evidenceBoundary}</p>
           </motion.section>
 
+          {tech.slug !== 'macrocore' && (
           <section aria-label="Technical review" style={{ marginBottom: '3rem', padding: '1.1rem 1.25rem', border: '1px solid rgba(255,241,45,0.16)', background: 'rgba(255,241,45,0.025)' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: '#FFF12D', marginBottom: '0.5rem' }}>{c.reviewEyebrow}</p>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.62)', margin: 0 }}>{c.reviewedBy} <Link href="/about/leadership/" style={{ color: '#FFF12D' }}>Víctor Abreu</Link>{c.reviewRole}</p>
           </section>
+          )}
 
           {/* Protected Systems */}
           {tech.relatedSystems.length > 0 && (
@@ -492,7 +494,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         url: `https://elimfilters.com/knowledge-center/technologies/${tech.slug}`,
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        reviewedBy: TECHNICAL_REVIEWER,
+        ...(tech.slug === 'macrocore' ? {} : { reviewedBy: TECHNICAL_REVIEWER }),
         keywords: [tech.domain, ...tech.standards, ...tech.contamination.slice(0, 3)].join(', '),
         about: {
           '@type': 'Thing',
