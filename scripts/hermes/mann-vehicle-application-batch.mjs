@@ -118,7 +118,7 @@ const { rows: targets } = await db.query(`
   LEFT JOIN ld_catalog.ld_canonical_product_identity i
          ON i.elimfilters_sku = c.sku AND i.canonical_brand = 'MANN-FILTER' AND i.status = 'ACTIVE'
   LEFT JOIN rel ON rel.sku = c.sku
-  WHERE c.duty = 'LIGHT_DUTY'
+  WHERE c.duty = 'LIGHT_DUTY' AND c.catalog_active = true
     AND jsonb_array_length(coalesce(c.vehicle_applications, '[]'::jsonb)) > 0
     AND NOT EXISTS (SELECT 1 FROM public.catalog_application_evidence e
                     WHERE e.sku = c.sku AND e.application_kind = 'VEHICLE' AND e.verified = true
