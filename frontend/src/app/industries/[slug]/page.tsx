@@ -48,7 +48,7 @@ const industryMetaDescription: Record<string, string> = {
   'Power Generation': 'Power generation filtration for standby and prime-power diesel generator sets, covering verified air intake, diesel fuel particulate, fuel/water separation and lubricating-oil filter applications.',
   Railway: 'Railway filtration maintenance for operators, depot technicians and reliability engineers protecting locomotive diesel fuel, engine air, lubrication and approved auxiliary hydraulic circuits.',
   'Trucks Fleets': 'Filtration maintenance for truck fleet owners, managers and engineers. Match diesel fuel, engine air, lubrication and OEM-specified cabin, cooling and air-dryer filtration to each vehicle and its duty.',
-  'Waste Municipal': 'Waste and municipal filtration systems for refuse trucks, street sweepers, sewer and vacuum trucks, utility vehicles and public-works fleets operating under stop-start urban duty, dust, debris and hydraulic load.',
+  'Waste Municipal': 'Public-service fleet filtration for municipal collection, sanitation, sweeping and public-works operators; verified diesel-engine, fuel and auxiliary hydraulic applications.',
 };
 
 export function generateStaticParams() {
