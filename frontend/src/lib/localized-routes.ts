@@ -16,6 +16,7 @@ export const LOCALIZED_ROUTES: readonly string[] = [
   '/contact',
   '/partners',
   '/distributor-application',
+  '/systems',
   '/industries',
   '/industries/mining',
   '/industries/agriculture',
