@@ -41,7 +41,7 @@ const industryMetaDescription: Record<string, string> = {
   Automotive: 'Automotive filtration systems for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets requiring engine air, fuel, lubrication and cabin-air protection.',
   'Bus Coach': 'Bus and coach filtration systems for transit buses, intercity coaches, school buses and shuttle fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
   Construction: 'Construction filtration systems for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, hydraulic load, vibration and severe off-road duty.',
-  Manufacturing: 'Manufacturing filtration systems for hydraulic power units, compressors, pumps, machine tools and production equipment requiring contamination control across continuous plant duty and planned maintenance windows.',
+  Manufacturing: 'Manufacturing filtration for plant maintenance and reliability teams protecting approved hydraulic circuits, diesel-powered utilities and critical production support equipment.',
   Marine: 'Marine filtration for vessel owners, maintenance engineers and technicians protecting propulsion engines, diesel fuel systems, deck hydraulics and auxiliary equipment through validated application selection.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
   'Oil Gas': 'Filtration engineering for oil and gas maintenance teams protecting diesel engines, hydraulic circuits and lubricated field equipment under demanding duty and limited shutdown windows.',
@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
               : item.name === 'Trucks Fleets'
                 ? 'Truck Fleet Filtration & Maintenance Engineering | ELIMFILTERS'
                 : item.name === 'Manufacturing'
-                  ? 'Manufacturing Filtration Systems | Industrial Equipment | ELIMFILTERS'
+                  ? 'Manufacturing Filtration for Plant Maintenance | ELIMFILTERS'
                   : item.name === 'Railway'
                     ? 'Railway Filtration Systems | Locomotives & Rail Fleets | ELIMFILTERS'
                     : item.name === 'Waste Municipal'
