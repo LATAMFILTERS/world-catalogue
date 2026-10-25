@@ -38,7 +38,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
 
 const industryMetaDescription: Record<string, string> = {
   Agriculture: 'Agricultural filtration systems for tractors, combines, harvesters, sprayers, irrigation engines and field support equipment operating in soil dust, crop residue, heat and seasonal duty cycles.',
-  Automotive: 'Automotive filtration systems for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets requiring engine air, fuel, lubrication and cabin-air protection.',
+  Automotive: 'Automotive filtration maintenance for vehicle owners, service technicians and fleet engineers selecting engine air, verified fuel, oil and cabin HVAC filters by exact vehicle and OEM application evidence.',
   'Bus Coach': 'Filtration for bus and coach fleet operators, depot technicians and reliability engineers protecting diesel-engine, fuel, oil, pneumatic air-dryer, cabin HVAC and approved coolant-filter applications.',
   Construction: 'Construction filtration systems for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, hydraulic load, vibration and severe off-road duty.',
   Manufacturing: 'Manufacturing filtration for plant maintenance and reliability teams protecting approved hydraulic circuits, diesel-powered utilities and critical production support equipment.',
