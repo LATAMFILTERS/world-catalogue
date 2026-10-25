@@ -35,23 +35,23 @@ const relationships = <K extends FamilyKey>(key: K) => {
 export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   'primary-air': {
     key: 'primary-air', name: 'Primary Air', slug: 'primary-air', dutyClass: 'HD+LD', hdPrefix: 'EA1', ldPrefix: 'EA3',
-    purpose: 'Primary air elements are the main contamination barrier protecting the combustion chamber from particulate ingestion.',
-    engineering: 'MACROCORE™ progressive-density media distributes contaminant loading through the full media depth while balancing efficiency, capacity, and restriction.',
-    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/mecanica-air.avif',
+    purpose: 'Primary engine-air elements carry the normal particulate load in the intake path, reducing dust transport toward the turbocharger, cylinders and combustion circuit while supporting the engine’s required airflow.',
+    engineering: 'MACROCORE™ primary filtration combines the specified media architecture, effective filtration area and sealing geometry to manage dust retention, contaminant-holding capacity and intake restriction. Performance and replacement limits require evidence for the actual element and installation.',
+    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/pelon-air_converted.avif',
     ...relationships('primary-air'),
   },
   'secondary-air': {
     key: 'secondary-air', name: 'Secondary / Safety Air Elements', slug: 'secondary-air', dutyClass: 'HD+LD', hdPrefix: 'EA1', ldPrefix: 'EA3',
-    purpose: 'Secondary and safety air elements form the final protective barrier downstream of the primary element when the primary is damaged, overloaded, incorrectly seated, or removed during service.',
-    engineering: 'Fine-fibre safety media provides protective redundancy rather than routine dust loading. This single family replaces the former duplicate Safety Elements listing.',
+    purpose: 'Secondary or safety engine-air elements, where specified by the intake design, provide an additional downstream contamination barrier during primary-element servicing or loss of primary-element integrity. They are not intended to carry normal dust loading.',
+    engineering: 'The MACROCORE™ secondary stage depends on correct downstream placement, media specification, independent sealing and housing fit. A safety element is not a replacement for the primary stage; contamination or damage requires assessment under the equipment manufacturer’s service procedure.',
     construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/secondaryfilter.avif',
     ...relationships('secondary-air'),
   },
   'air-cleaner-housings': {
     key: 'air-cleaner-housings', name: 'Air Cleaner Housings', slug: 'air-cleaner-housings', dutyClass: 'HD', hdPrefix: 'EA1', ldPrefix: null,
-    purpose: 'Air cleaner housings provide the structural enclosure and sealing interface for primary and secondary air elements.',
-    engineering: 'INTEKCORE™ housing architecture controls sealing geometry, structural integrity, airflow routing, and protection against bypass at the element-to-housing interface.',
-    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/intekcore(fn).avif',
+    purpose: 'Air-cleaner housings establish the mechanical intake boundary: they retain the approved filter elements, route engine airflow and preserve the seals needed to prevent unfiltered air bypass.'
+    engineering: 'INTEKCORE™ addresses housing geometry, inlet/outlet orientation, element retention, gasket compression, cover closure and service access. Match the complete assembly to required airflow and allowable restriction; a housing is not itself a particulate-filter medium.'
+    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA22580-INTEKCORE-approved-opt.png',
     ...relationships('air-cleaner-housings'),
   },
   'primary-fuel': {
@@ -98,8 +98,8 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   },
   'cabin-filters': {
     key: 'cabin-filters', name: 'Cabin Filters', slug: 'cabin-filters', dutyClass: 'HD+LD', hdPrefix: 'EC1', ldPrefix: 'EC3',
-    purpose: 'Cabin filters protect operator and passenger air from particulate, allergens, odors, and selected gaseous contaminants.',
-    engineering: 'MICROKAPPA™ combines mechanical and electrostatic particle capture with adsorption layers where required by the application.',
+    purpose: 'Cabin-air elements condition incoming HVAC ventilation air by capturing dust, pollen and airborne particles; odor or selected-gas adsorption applies only to validated activated-carbon configurations.'
+    engineering: 'MICROKAPPA™ is the cabin HVAC media architecture. Selection must consider particulate-media configuration, any specified adsorption layer, actual blower airflow, pressure loss, housing sealing and installation direction. Cabin filtration is not respiratory protection or a universal exhaust-gas barrier.'
     construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/cabin-hero.avif',
     ...relationships('cabin-filters'),
   },

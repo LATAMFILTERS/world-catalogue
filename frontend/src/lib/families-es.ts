@@ -14,20 +14,20 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
   'primary-air': {
     name: 'Aire primario',
     seoTitle: 'Elementos de filtro de aire primario para motores de servicio pesado',
-    purpose: 'Los elementos de aire primario son la principal barrera contra la contaminación que protege la cámara de combustión de la ingestión de partículas.',
-    engineering: 'El medio de densidad progresiva MACROCORE™ distribuye la carga de contaminantes en toda la profundidad del medio, equilibrando eficiencia, capacidad y restricción.',
+    purpose: 'Los elementos primarios de aire del motor soportan la carga normal de partículas en la admisión y reducen el transporte de polvo hacia el turbocompresor, los cilindros y el circuito de combustión, manteniendo el caudal de aire requerido por el motor.',
+    engineering: 'La filtración primaria MACROCORE™ integra la arquitectura de medio especificada, el área filtrante efectiva y la geometría de sellado para controlar la retención de polvo, la capacidad de carga y la restricción de admisión. El desempeño y los límites de sustitución requieren evidencia del elemento y su instalación.',
   },
   'secondary-air': {
     name: 'Elementos de aire secundario / de seguridad',
     seoTitle: 'Elementos de filtro de aire secundario y de seguridad',
-    purpose: 'Los elementos de aire secundario y de seguridad forman la barrera de protección final aguas abajo del elemento primario cuando este está dañado, sobrecargado, mal asentado o retirado durante el servicio.',
-    engineering: 'El medio de seguridad de fibra fina aporta redundancia de protección, no carga rutinaria de polvo. Esta familia única reemplaza el antiguo listado duplicado de Elementos de Seguridad.',
+    purpose: 'Los elementos secundarios o de seguridad, cuando el diseño de admisión los requiere, aportan una barrera adicional aguas abajo durante el servicio del primario o si este pierde integridad. No están destinados a soportar la carga normal de polvo.',
+    engineering: 'La etapa secundaria MACROCORE™ requiere posición correcta aguas abajo, especificación del medio, sellado independiente y compatibilidad con la carcasa. El elemento de seguridad no sustituye la etapa primaria; su contaminación o daño exige revisión según el procedimiento del fabricante del equipo.',
   },
   'air-cleaner-housings': {
     name: 'Carcasas de filtro de aire',
     seoTitle: 'Carcasas de filtro de aire para servicio pesado',
-    purpose: 'Las carcasas de filtro de aire proporcionan el alojamiento estructural y la interfaz de sellado para los elementos de aire primario y secundario.',
-    engineering: 'La arquitectura de carcasa INTEKCORE™ controla la geometría de sellado, la integridad estructural, el recorrido del flujo de aire y la protección contra el bypass en la interfaz entre elemento y carcasa.',
+    purpose: 'Las carcasas de admisión establecen el límite mecánico de protección: retienen los elementos aprobados, conducen el caudal requerido por el motor y mantienen los sellos que impiden el paso de aire sin filtrar.',
+    engineering: 'INTEKCORE™ abarca geometría de carcasa, orientación de entradas y salidas, retención del elemento, compresión de juntas, cierre de tapas y acceso de servicio. El conjunto debe corresponder al caudal y la restricción admisibles; la carcasa no es un medio filtrante de partículas.',
   },
   'primary-fuel': {
     name: 'Combustible primario',
@@ -68,8 +68,8 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
   'cabin-filters': {
     name: 'Filtros de cabina',
     seoTitle: 'Filtros de aire de cabina para camiones y equipos',
-    purpose: 'Los filtros de cabina protegen el aire del operador y de los pasajeros frente a partículas, alérgenos, olores y determinados contaminantes gaseosos.',
-    engineering: 'MICROKAPPA™ combina la captura mecánica y electrostática de partículas con capas de adsorción cuando la aplicación lo requiere.',
+    purpose: 'Los elementos de cabina acondicionan el aire entrante del sistema HVAC mediante captura de polvo, polen y partículas suspendidas; la adsorción de olores o ciertos gases aplica únicamente a configuraciones validadas con carbón activado.',
+    engineering: 'MICROKAPPA™ corresponde a la arquitectura de medios del HVAC de cabina. La selección considera medio de partículas, capa adsorbente cuando aplique, caudal real del ventilador, pérdida de presión, sellado y dirección de montaje. Un filtro de cabina no constituye protección respiratoria ni una barrera universal frente a gases de escape.',
   },
   'fuel-turbine': {
     name: 'Separación de combustible tipo turbina',

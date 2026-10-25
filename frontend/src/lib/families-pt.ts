@@ -8,20 +8,20 @@ export const FAMILY_PT: Record<string, FamilyEs> = {
   'primary-air': {
     name: 'Ar primário',
     seoTitle: 'Elementos de filtro de ar primário para motores pesados',
-    purpose: 'Os elementos de ar primário são a principal barreira contra a contaminação que protege a câmara de combustão da admissão de partículas.',
-    engineering: 'O meio de densidade progressiva MACROCORE™ distribui a carga de contaminantes por toda a profundidade do meio, equilibrando eficiência, capacidade e restrição.',
+    purpose: 'Os elementos primários de ar do motor suportam a carga normal de partículas na admissão e reduzem o transporte de poeira para o turbocompressor, os cilindros e o circuito de combustão, mantendo a vazão de ar exigida pelo motor.',
+    engineering: 'A filtração primária MACROCORE™ integra a arquitetura de meio especificada, a área filtrante efetiva e a geometria de vedação para controlar retenção de poeira, capacidade de carga e restrição da admissão. O desempenho e os limites de substituição exigem evidência do elemento e da instalação.',
   },
   'secondary-air': {
     name: 'Elementos de ar secundário / de segurança',
     seoTitle: 'Elementos de filtro de ar secundário e de segurança',
-    purpose: 'Os elementos de ar secundário e de segurança formam a barreira de proteção final a jusante do elemento primário quando ele está danificado, sobrecarregado, mal assentado ou removido durante a manutenção.',
-    engineering: 'O meio de segurança de fibra fina oferece redundância de proteção, e não carga rotineira de poeira. Esta família única substitui a antiga listagem duplicada de Elementos de Segurança.',
+    purpose: 'Os elementos secundários ou de segurança, quando previstos no projeto da admissão, oferecem uma barreira adicional a jusante durante a manutenção do primário ou na perda de integridade do elemento principal. Não se destinam à carga normal de poeira.',
+    engineering: 'O estágio secundário MACROCORE™ exige posição correta a jusante, especificação do meio, vedação independente e compatibilidade com a carcaça. O elemento de segurança não substitui o estágio primário; contaminação ou dano exigem avaliação conforme os procedimentos do fabricante do equipamento.',
   },
   'air-cleaner-housings': {
     name: 'Carcaças de filtro de ar',
     seoTitle: 'Carcaças de filtro de ar para linha pesada',
-    purpose: 'As carcaças de filtro de ar fornecem o invólucro estrutural e a interface de vedação para os elementos de ar primário e secundário.',
-    engineering: 'A arquitetura de carcaça INTEKCORE™ controla a geometria de vedação, a integridade estrutural, o trajeto do fluxo de ar e a proteção contra bypass na interface entre elemento e carcaça.',
+    purpose: 'As carcaças de admissão estabelecem o limite mecânico de proteção: retêm os elementos aprovados, conduzem a vazão exigida pelo motor e mantêm as vedações necessárias para evitar passagem de ar não filtrado.',
+    engineering: 'INTEKCORE™ abrange geometria da carcaça, orientação das entradas e saídas, retenção do elemento, compressão das vedações, fechamento de tampas e acesso de manutenção. O conjunto deve corresponder à vazão e à restrição permitidas; a carcaça não é um meio de filtração de partículas.',
   },
   'primary-fuel': {
     name: 'Combustível primário',
@@ -62,8 +62,8 @@ export const FAMILY_PT: Record<string, FamilyEs> = {
   'cabin-filters': {
     name: 'Filtros de cabine',
     seoTitle: 'Filtros de ar de cabine para caminhões e equipamentos',
-    purpose: 'Os filtros de cabine protegem o ar do operador e dos passageiros contra partículas, alérgenos, odores e determinados contaminantes gasosos.',
-    engineering: 'O MICROKAPPA™ combina captura mecânica e eletrostática de partículas com camadas de adsorção quando a aplicação exige.',
+    purpose: 'Os elementos de cabine condicionam o ar de ventilação recebido pelo HVAC, capturando poeira, pólen e partículas suspensas; a adsorção de odores ou gases selecionados ocorre somente em configurações validadas com carvão ativado.',
+    engineering: 'MICROKAPPA™ é a arquitetura de meios do HVAC de cabine. A seleção considera o meio de partículas, eventual camada adsorvente, vazão real do ventilador, perda de pressão, vedação e direção de montagem. Um filtro de cabine não oferece proteção respiratória nem barreira universal contra gases de escapamento.',
   },
   'fuel-turbine': {
     name: 'Separação de combustível tipo turbina',
