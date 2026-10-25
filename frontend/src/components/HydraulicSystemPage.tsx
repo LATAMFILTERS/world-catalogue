@@ -116,7 +116,7 @@ export function HydraulicSystemPage() {
           <p style={eyebrow}><ReviewedText text={"HYDRAULIC CONTAMINATION CONTROL"} /></p>
           <h1 style={heroTitle}><ReviewedText text={"Hydraulic"} context="HydraulicSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="HydraulicSystemPageTitle" /></span></h1>
           <p style={heroPromise}><ReviewedText text={"Control particle contamination around the hydraulic clearances that determine pressure, movement and machine response."} /></p>
-          <p style={heroLead}><ReviewedText text={"ELIMFILTERS Hydraulic Protection organizes fluid cleanliness around pumps, valves, actuators and precision controls. The hydraulic circuit, flow, pressure context, cleanliness requirement and application evidence must be resolved before a part number is accepted."} /></p>
+
           <div style={buttonRow}>
             <Link href="#protection-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE HYDRAULIC PATH"} /></Link>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
@@ -239,7 +239,6 @@ const heroMedia: CSSProperties = {width:'100%',height:'100%',objectFit:'cover',o
 const heroInner: CSSProperties = {width:'100%',maxWidth:'1500px',margin:'0 auto',position:'relative',zIndex:2};
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3rem, 7vw, 6.8rem)', lineHeight: 0.9, letterSpacing: '-0.05em', textTransform: 'uppercase', margin: 0, maxWidth: '960px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '820px', margin: '1.6rem 0 0' };
-const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.7vw, 1.14rem)', lineHeight: 1.7, maxWidth: '860px', color: 'rgba(255,255,255,.7)', margin: '1rem 0 0' };
 const section: CSSProperties = {padding:'clamp(3.4rem,5.4vw,6rem) clamp(1.25rem,4vw,5rem)',maxWidth:'1560px',margin:'0 auto'};
 const sectionAlt: CSSProperties = {...section,background:'#080808',borderTop:'1px solid rgba(255,255,255,.09)',borderBottom:'1px solid rgba(255,255,255,.09)'};
 const twoCol: CSSProperties = {display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(100%,500px),1fr))',gap:'clamp(1.8rem,4vw,4.5rem)',alignItems:'start',maxWidth:'1500px',margin:'0 auto'};
