@@ -4,7 +4,6 @@ import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
-import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/systems/fuel-cleanliness/`;
@@ -281,8 +280,6 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
 const hero: CSSProperties = { minHeight: 'clamp(620px,80vh,920px)', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(7rem, 10vw, 10rem) clamp(1.25rem, 4vw, 5rem) clamp(3.5rem, 5vw, 5rem)', overflow: 'hidden', background: 'radial-gradient(ellipse at 74% 30%, rgba(255,241,45,.06), transparent 52%), #050505', borderBottom: '1px solid rgba(255,255,255,0.12)' };
-const heroMedia: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
 const heroInner: CSSProperties = { maxWidth: '1540px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroEditorial: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,560px),1fr))', gap: 'clamp(2.5rem,5vw,5rem)', alignItems: 'center' };
 const heroProtectionPanel: CSSProperties = { minWidth: 0, borderTop: '2px solid #FFF12D' };
@@ -294,7 +291,7 @@ const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fon
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '840px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.72, maxWidth: '850px', color: 'rgba(255,255,255,.72)', margin: '1.1rem 0 0' };
 const section: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1.25rem, 4vw, 5rem)', maxWidth: '1540px', margin: '0 auto' };
-const sectionAlt: CSSProperties = { ...section, maxWidth: 'none', background: 'rgba(255,255,255,.018)', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
+const sectionAlt: CSSProperties = { ...section, maxWidth: '1540px', background: 'rgba(255,255,255,.018)', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
 const twoCol: CSSProperties = { maxWidth: '1540px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,460px),1fr))', gap: 'clamp(2rem,5vw,5rem)', alignItems: 'start' };
 const eyebrow: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '.72rem', letterSpacing: '.16em', color: '#FFF12D', textTransform: 'uppercase', margin: '0 0 1rem' };
 const h2: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2rem,4.2vw,3.8rem)', lineHeight: .96, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0 };
