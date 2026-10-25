@@ -4,7 +4,6 @@ import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_TECHNOLOGIES, KCTechnology } from '@/lib/knowledge-center-data';
 import { getTechSidebarData } from '@/lib/knowledge-center/navigation-index';
-import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 import HowItWorks from './HowItWorks';
 import { useTranslation } from 'react-i18next';
 import { siteLangFromTag } from '@/lib/language-preference';
@@ -74,7 +73,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
   const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   const tr = lang === 'es' || lang === 'pt' ? lang : null;
   const c = COPY[tr ?? 'en'];
-  const isFocusTechnology = tech.slug === 'macrocore' || tech.slug === 'intekcore';
+  // All Knowledge Center technologies use the same governed technical reading layout.
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
@@ -85,7 +84,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: isFocusTechnology ? '1560px' : '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: '1560px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.kc}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <Link href="/knowledge-center/technologies" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.technologies}</Link>
@@ -100,7 +99,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: isFocusTechnology ? '1520px' : '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1560px', margin: '0 auto' }}>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -158,7 +157,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               fontSize: '0.95rem',
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.7)',
-              maxWidth: isFocusTechnology ? '1080px' : '820px',
+              maxWidth: '1080px',
             }}
           >
             {tech.engineeringPrinciple}
@@ -168,12 +167,12 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
 
       {/* Two-column: content + sidebar */}
       <div className="kc-tech-reading-grid" style={{
-        maxWidth: isFocusTechnology ? '1520px' : '1200px',
+        maxWidth: '1560px',
         margin: '0 auto',
-        padding: isFocusTechnology ? 'clamp(2rem, 4vw, 3.2rem) clamp(1rem, 2.2vw, 2.2rem)' : 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
+        padding: 'clamp(2rem, 4vw, 3.2rem) clamp(1rem, 2.2vw, 2.2rem)',
         display: 'grid',
-        gridTemplateColumns: isFocusTechnology ? 'minmax(0, 1fr) minmax(280px, 350px)' : 'minmax(0, 1fr) 280px',
-        gap: isFocusTechnology ? 'clamp(1.5rem, 2.6vw, 2.75rem)' : '3rem',
+        gridTemplateColumns: 'minmax(0, 1fr) minmax(280px, 350px)',
+        gap: 'clamp(1.5rem, 2.6vw, 2.75rem)',
         alignItems: 'start',
       }}>
 
@@ -256,7 +255,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
             </div>
           </motion.section>
 
-          <div className={isFocusTechnology ? 'kc-macrocore-technical-reading' : undefined}><HowItWorks tech={tech} /></div>
+          <div className="kc-macrocore-technical-reading"><HowItWorks tech={tech} /></div>
 
           <motion.section
             initial={{ opacity: 0, y: 16 }}
@@ -270,13 +269,6 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>{c.evidence}</h2>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)' }}>{tech.evidenceBoundary}</p>
           </motion.section>
-
-          {!isFocusTechnology && (
-          <section aria-label="Technical review" style={{ marginBottom: '3rem', padding: '1.1rem 1.25rem', border: '1px solid rgba(255,241,45,0.16)', background: 'rgba(255,241,45,0.025)' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: '#FFF12D', marginBottom: '0.5rem' }}>{c.reviewEyebrow}</p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.62)', margin: 0 }}>{c.reviewedBy} <Link href="/about/leadership/" style={{ color: '#FFF12D' }}>Víctor Abreu</Link>{c.reviewRole}</p>
-          </section>
-          )}
 
           {/* Protected Systems */}
           {tech.relatedSystems.length > 0 && (
@@ -495,7 +487,6 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         url: `https://elimfilters.com/knowledge-center/technologies/${tech.slug}`,
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        ...(isFocusTechnology ? {} : { reviewedBy: TECHNICAL_REVIEWER }),
         keywords: [tech.domain, ...tech.standards, ...tech.contamination.slice(0, 3)].join(', '),
         about: {
           '@type': 'Thing',
