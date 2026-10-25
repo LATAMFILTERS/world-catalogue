@@ -138,3 +138,31 @@ test('weekly dashboard: one page, live buttons or decided badges, one-click deci
     server.close(); Object.assign(store, orig); delete process.env.HERMES_REVIEW_TOKEN_SECRET;
   }
 });
+
+test('REVISAR on a digest card: Claude re-reads following the instruction; the revised card returns with a new code', async () => {
+  const { queueRevision } = await import('../../scripts/hermes/headline-research.mjs');
+  const state = stateWith([]);
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-revision-out-'));
+  const card = {
+    entity_code: 'HERMES_REAL_SWEEP_OEM_ENGINES_EQUIPMENT_ABC123', category: 'industry_sweep:oem_engines_equipment', source_publisher: 'Equipment World',
+    source_url: 'https://equipmentworld.example/volvo', source_title: 'Volvo creates mining business', published_at: '2026-10-23T10:00:00Z', affected_entities: ['EQUIPMENT_WORLD'],
+    research_resolution: { evidence_url: 'https://equipmentworld.example/volvo', finding_title: 'Volvo creates mining business', resumen_es: 'Resumen viejo.' }
+  };
+  const row = { candidate_code: card.entity_code, decision: 'research', decision_reason: 'Confirma qué motores usan los camiones mineros', decided_at: '2026-10-27T09:00:00Z', candidate: card };
+  assert.equal(queueRevision(row, { stateRoot: state }), true);
+  assert.equal(queueRevision({ ...row, candidate: { ...card, category: 'catalogue' } }, { stateRoot: state }), false); // non-digest REVISAR keeps the old path
+  assert.equal(queueRevision({ ...row, decision_reason: '' }, { stateRoot: state }), false);
+
+  let prompt;
+  const answer = { leida: true, url_original: 'https://equipmentworld.example/volvo', titulo_es: 'Volvo crea negocio minero', resumen_es: 'Los camiones usan motores Volvo D13.', por_que_importa_es: 'Motor D13: cobertura por revisar.', hecho_publico_en: 'A maker created a mining unit.', tecnico: false };
+  const res = await runHeadlineResearch({ stateRoot: state, outputDir: out, now: new Date('2026-10-27T15:00:00Z'), claude: async (p) => { prompt = p; return { code: 0, out: JSON.stringify(answer) }; } });
+  assert.equal(res.results[0].candidate, 'HERMES_REAL_SWEEP_OEM_ENGINES_EQUIPMENT_ABC123_R1');
+  assert.match(prompt, /Instrucción de Victor: Confirma qué motores usan los camiones mineros/);
+  assert.match(prompt, /Resumen anterior: Resumen viejo\./);
+  const [file] = fs.readdirSync(out);
+  const revised = JSON.parse(fs.readFileSync(path.join(out, file), 'utf8'));
+  assert.equal(revised.research_resolution.revision_of, card.entity_code);
+  const d = buildIndustryDigest([revised], { now: new Date('2026-11-02T13:00:00Z'), sweepSummaryPath: path.join(state, 'none.json'), unreviewedPath: path.join(state, 'newsroom-unreviewed.json') });
+  assert.deepEqual(d.items.map((i) => [i.entity_code, i.duty]), [['HERMES_REAL_SWEEP_OEM_ENGINES_EQUIPMENT_ABC123_R1', 'HD']]); // requested in the 10-26..11-01 window
+  assert.match(renderIndustryDigest(d).html, /Revisado según tu instrucción:<\/strong> Confirma qué motores/);
+});
