@@ -12,7 +12,7 @@ const BASE_URL = 'https://elimfilters.com';
 const images: Record<string, string> = {
   'air-intake': '/images/air-filters-lab.avif',
   'fuel-cleanliness': '/images/syntapore_mecanico_camion.avif',
-  lubrication: '/images/oil-hand.avif',
+  lubrication: '/images/oil-instalado.avif',
   hydraulic: '/images/hidraulic.avif',
   'cooling-system': 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EW74685.png'
 };
