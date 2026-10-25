@@ -1,8 +1,11 @@
 import { ReviewedText } from '@/components/ReviewedText';
+import { ReviewedImage } from '@/components/ReviewedMedia';
 import { PublicUiText } from '@/components/PublicUiText';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
+import airStyles from './AirIntakeSystemPage.module.css';
+import fuelStyles from './FuelCleanlinessSystemPage.module.css';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/systems/fuel-cleanliness/`;
@@ -10,19 +13,19 @@ const PAGE_URL = `${BASE_URL}/systems/fuel-cleanliness/`;
 const pathways = [
   [
     'PARTICULATE CONTROL', 'Hard particles + storage debris + transfer contamination',
-    'SYNTAPORE™', '/technologies/syntapore/',
+    'SYNTAPORE™', '/technologies/syntapore/', '/images/fuel-filter.avif',
     'Particulate capture in approved primary, secondary, spin-on and cartridge diesel positions. Media selection balances particle-control objectives, contaminant capacity and fuel-side pressure loss.',
     'Verify engine, filtration stage, required fuel flow, permissible pressure differential, sealing interfaces and application evidence. Particulate filtration alone does not establish water-separation capability.'
   ],
   [
     'FUEL / WATER SEPARATION', 'Free water + entrained moisture before sensitive fuel components',
-    'HYDROCORE™', '/technologies/hydrocore/',
+    'HYDROCORE™', '/technologies/hydrocore/', '/images/fuellseparator-hero.avif',
     'Conventional non-turbine fuel/water separation architecture for approved spin-on or cartridge separators, including applicable drain and transparent-bowl configurations. Free-water and dispersed-water performance depends on the validated assembly.',
     'Confirm fuel flow, incoming water condition, separation-media specification, drainage, bowl configuration and downstream component requirements. FH/FG turbine-style assemblies are outside HYDROCORE™ scope.'
   ],
   [
     'TURBINE-SERIES SEPARATION', 'Multi-stage fuel conditioning in applicable FH / FG turbine systems',
-    'TURBOCORE™', '/technologies/turbocore/',
+    'TURBOCORE™', '/technologies/turbocore/', '/images/TURBOCORE-hero.avif',
     'Dedicated multi-stage fuel/water separation architecture for approved FH/FG turbine-style assemblies, compatible replacement elements and approved fuel-processor housings.',
     'Verify the exact housing series, element specification, flow routing, sealing geometry, bowl or drainage arrangement and documented application. TURBOCORE™ is not interchangeable with conventional HYDROCORE™ separators.'
   ]
@@ -116,20 +119,21 @@ export function FuelCleanlinessSystemPage() {
   ];
 
   return (
-    <main style={main}>
+    <main style={main} className={airStyles.page}>
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       ))}
 
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Fuel Cleanliness Protection" />
 
-      <section style={hero}>
-
-        <div style={heroInner}>
+      <section className={airStyles.hero} aria-labelledby="fuel-hero-title">
+        <ReviewedImage className={airStyles.heroPhoto} src="/images/hero-syntapore.avif" alt="Engine diesel fuel-filtration service environment" />
+        <div className={airStyles.heroOverlay} aria-hidden="true" />
+        <div className={airStyles.shell}>
           <div style={heroEditorial}>
           <div>
           <p style={eyebrow}><ReviewedText text={"DIESEL FUEL CONTAMINATION CONTROL"} /></p>
-          <h1 style={heroTitle}><ReviewedText text={"Fuel Cleanliness"} context="FuelCleanlinessSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="FuelCleanlinessSystemPageTitle" /></span></h1>
+          <h1 id="fuel-hero-title" className={airStyles.heroTitle}><ReviewedText text={"Fuel Cleanliness"} context="FuelCleanlinessSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="FuelCleanlinessSystemPageTitle" /></span></h1>
           <p style={heroPromise}><ReviewedText text={"Control particles and water before contaminated fuel reaches precision pumps, injectors and downstream fuel-system components."} /></p>
           <p style={heroLead}><ReviewedText text={"ELIMFILTERS separates particulate filtration, fuel/water separation and applicable turbine-series fuel conditioning into distinct functions within one fuel-protection architecture. The correct path depends on the engine, fuel-system stage, contamination exposure and validated application evidence."} /></p>
           <div style={buttonRow}>
@@ -156,39 +160,50 @@ export function FuelCleanlinessSystemPage() {
           <div>
             <p style={lead}><ReviewedText text={"Fuel Cleanliness Protection organizes the filtration stages that control particulate contamination and water before diesel fuel reaches sensitive downstream components."} /></p>
             <p style={body}><ReviewedText text={"Primary filtration, secondary filtration, fuel/water separation and turbine-series separation may exist in different combinations. They should not be treated as interchangeable simply because every component is installed in the fuel path."} /></p>
+            <div className={airStyles.technicalRule}>
+              <strong><ReviewedText text={"ENGINEERING PRINCIPLE"} /></strong>
+              <p><ReviewedText text={"A filter that captures particulate is not automatically a fuel/water separator. Likewise, a separator architecture should not be assumed from external dimensions or cross-reference similarity alone."} /></p>
+              <p><ReviewedText text={"ELIMFILTERS keeps the hierarchy explicit: fuel contamination problem → protection function → technology → product family → validated part number."} /></p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="fuel-path" style={sectionAlt}>
-        <p style={eyebrow}><ReviewedText text={"PROTECTION PATHWAYS"} /></p>
-        <h2 style={h2}><ReviewedText text={"Start with the contamination function the fuel system actually requires."} /></h2>
-        <p style={{ ...lead, maxWidth: '950px', margin: '1.3rem auto 0' }}><ReviewedText text={"SYNTAPORE™, HYDROCORE™ and TURBOCORE™ are proprietary ELIMFILTERS engineering architectures with distinct operating scopes. A technology designation does not certify performance or authorize interchangeability."} /></p>
-        <div style={grid3}>
-          {pathways.map(([title, exposure, technology, href, mechanism, verification], index) => (
-            <article key={title} style={card}>
-              <span style={pathwayStage}>0{index + 1} / 03</span>
-              <p style={cardLabel}><ReviewedText text={title} /></p>
-              <p style={cardBody}><ReviewedText text={exposure} /></p>
-              <h3 style={{ ...h3, fontSize: '1.5rem', margin: '1.1rem 0 0' }}>{technology}</h3>
-              <p style={cardBody}><ReviewedText text={mechanism} /></p>
-              <p style={technicalDetailLabel}><ReviewedText text={"APPLICATION VERIFICATION"} /></p>
-              <p style={cardBody}><ReviewedText text={verification} /></p>
-              <Link href={href} style={{ ...techLink, display: 'inline-block', marginTop: '1.5rem', color: '#FFF12D', fontSize: '.85rem' }}><ReviewedText text={"EXPLORE TECHNOLOGY"} /> ↗</Link>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section style={section}>
-        <div style={twoCol}>
-          <div>
-            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
-            <h2 style={h2}><ReviewedText text={"Particles and water create different risks and require different protection mechanisms."} /></h2>
-          </div>
-          <div>
-            <p style={lead}><ReviewedText text={"A filter that captures particulate is not automatically a fuel/water separator. Likewise, a separator architecture should not be assumed from external dimensions or cross-reference similarity alone."} /></p>
-            <p style={body}><ReviewedText text={"ELIMFILTERS keeps the hierarchy explicit: fuel contamination problem → protection function → technology → product family → validated part number."} /></p>
+      <section id="fuel-path" className={airStyles.sectionDark} aria-labelledby="fuel-tech-heading">
+        <div className={airStyles.shell}>
+          <p className={airStyles.eyebrow}><ReviewedText text={"PROTECTION PATHWAYS"} /></p>
+          <h2 className={airStyles.h2} id="fuel-tech-heading"><ReviewedText text={"Start with the contamination function the fuel system actually requires."} /></h2>
+          <p className={airStyles.sectionIntro}><ReviewedText text={"SYNTAPORE™, HYDROCORE™ and TURBOCORE™ are proprietary ELIMFILTERS engineering architectures with distinct operating scopes. A technology designation does not certify performance or authorize interchangeability."} /></p>
+          <div className={fuelStyles.fuelGrid}>
+            {pathways.map(([title, exposure, technology, href, photo, mechanism, verification], index) => (
+              <article key={technology} className={airStyles.technologyCard}>
+                <div className={airStyles.technologyMedia}>
+                  <ReviewedImage src={photo} alt={`${technology} — ${title}`} loading="lazy" />
+                  <span className={airStyles.cardNumber}>0{index + 1} / 03</span>
+                </div>
+                <div className={airStyles.technologyBody}>
+                  <p className={airStyles.technicalDomain}><ReviewedText text={title} /></p>
+                  <h3>{technology}</h3>
+                  <dl className={airStyles.technicalData}>
+                    <div>
+                      <dt><ReviewedText text={"DIESEL FUEL CONTAMINATION CONTROL"} /></dt>
+                      <dd><ReviewedText text={exposure} /></dd>
+                    </div>
+                    <div>
+                      <dt><ReviewedText text={"ENGINEERING PRINCIPLE"} /></dt>
+                      <dd><ReviewedText text={mechanism} /></dd>
+                    </div>
+                    <div>
+                      <dt><ReviewedText text={"APPLICATION VERIFICATION"} /></dt>
+                      <dd><ReviewedText text={verification} /></dd>
+                    </div>
+                  </dl>
+                  <Link href={href} className={airStyles.link}>
+                    <ReviewedText text={"EXPLORE TECHNOLOGY"} /> <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -209,12 +224,13 @@ export function FuelCleanlinessSystemPage() {
       <section style={section}>
         <p style={eyebrow}><ReviewedText text={"PRODUCT ARCHITECTURE"} /></p>
         <h2 style={h2}><ReviewedText text={"From fuel-protection function to physical filtration component."} /></h2>
-        <div style={familyGrid}>
-          {families.map(([name, slug, purpose]) => (
-            <Link key={slug} href={`/families/${slug}/`} style={familyCard}>
-              <h3 style={h3}><ReviewedText text={name} /></h3>
-              <p style={body}><ReviewedText text={purpose} /></p>
-              <span style={smallLink}><ReviewedText text={"VIEW PRODUCT FAMILY →"} /></span>
+        <div className={fuelStyles.familyGrid}>
+          {families.map(([name, slug, purpose], index) => (
+            <Link key={slug} href={`/families/${slug}/`} className={fuelStyles.familyCard}>
+              <span className={fuelStyles.familyNumber}>0{index + 1} / 04</span>
+              <h3 className={fuelStyles.familyTitle}><ReviewedText text={name} /></h3>
+              <p className={fuelStyles.familyPurpose}><ReviewedText text={purpose} /></p>
+              <span className={fuelStyles.familyLink}><ReviewedText text={"VIEW PRODUCT FAMILY →"} /></span>
             </Link>
           ))}
         </div>
@@ -275,15 +291,12 @@ export function FuelCleanlinessSystemPage() {
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: 'clamp(620px,80vh,920px)', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(7rem, 10vw, 10rem) clamp(1.25rem, 4vw, 5rem) clamp(3.5rem, 5vw, 5rem)', overflow: 'hidden', background: 'radial-gradient(ellipse at 74% 30%, rgba(255,241,45,.06), transparent 52%), #050505', borderBottom: '1px solid rgba(255,255,255,0.12)' };
-const heroInner: CSSProperties = { maxWidth: '1540px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroEditorial: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,560px),1fr))', gap: 'clamp(2.5rem,5vw,5rem)', alignItems: 'center' };
 const heroProtectionPanel: CSSProperties = { minWidth: 0, borderTop: '2px solid #FFF12D' };
 const heroPathRow: CSSProperties = { display: 'grid', gridTemplateColumns: '3rem 1fr', gap: 'clamp(.8rem,1.4vw,1.5rem)', padding: '1.35rem .7rem', borderBottom: '1px solid rgba(255,255,255,.24)', color: '#fff', textDecoration: 'none' };
 const heroPathIndex: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.85rem', fontWeight: 700 };
 const heroPathTitle: CSSProperties = { display: 'block', fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.2rem,1.7vw,1.8rem)' };
 const heroPathDescription: CSSProperties = { display: 'block', marginTop: '.4rem', color: 'rgba(255,255,255,.7)', lineHeight: 1.55, fontSize: '.93rem' };
-const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3rem, 7vw, 6.8rem)', lineHeight: 0.9, letterSpacing: '-0.05em', textTransform: 'uppercase', margin: 0, maxWidth: '960px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '840px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.72, maxWidth: '850px', color: 'rgba(255,255,255,.72)', margin: '1.1rem 0 0' };
 const section: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1.25rem, 4vw, 5rem)', maxWidth: '1540px', margin: '0 auto' };
@@ -300,12 +313,8 @@ const card: CSSProperties = { background: '#090909', border: '1px solid rgba(255
 const lineCard: CSSProperties = { background: '#080808', padding: 'clamp(1.5rem,2.4vw,2.4rem)', borderTop: '2px solid rgba(255,241,45,.5)', minWidth: 0 };
 const cardLabel: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '.76rem', letterSpacing: '.1em', color: '#FFF12D', margin: 0 };
 const cardBody: CSSProperties = { fontSize: '.92rem', lineHeight: 1.65, color: 'rgba(255,255,255,.58)', margin: '.8rem 0 0' };
-const pathwayStage: CSSProperties = { display: 'block', color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, fontSize: '.84rem', letterSpacing: '.1em', paddingBottom: '1.5rem', marginBottom: '1.5rem', borderBottom: '1px solid rgba(255,255,255,.2)' };
 const technicalDetailLabel: CSSProperties = { ...cardLabel, marginTop: '1.5rem', paddingTop: '1.15rem', borderTop: '1px solid rgba(255,255,255,.13)' };
 const techLink: CSSProperties = { fontFamily: displayFont, fontWeight: 700, color: '#fff', textDecoration: 'none', textTransform: 'uppercase', fontSize: '1.08rem' };
-const familyGrid: CSSProperties = { maxWidth: '1540px', margin: '2.4rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,470px),1fr))', gap: 'clamp(1rem,2vw,2rem)' };
-const familyCard: CSSProperties = { background: '#080808', padding: 'clamp(1.4rem,2.4vw,2.5rem)', textDecoration: 'none', color: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', minWidth: 0, border: '1px solid rgba(255,255,255,.15)' };
-const smallLink: CSSProperties = { display: 'inline-block', marginTop: '1.2rem', fontFamily: displayFont, fontSize: '.66rem', fontWeight: 700, letterSpacing: '.12em', color: '#FFF12D' };
 const decisionFlow: CSSProperties = { maxWidth: '1540px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,220px),1fr))', gap: '1px', background: 'rgba(255,255,255,.13)' };
 const decisionStep: CSSProperties = { background: '#070707', padding: '1.6rem', fontFamily: displayFont, fontSize: '.74rem', fontWeight: 700, letterSpacing: '.08em', color: 'rgba(255,255,255,.84)', minWidth: 0 };
 const faqGrid: CSSProperties = { maxWidth: '1540px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,500px),1fr))', gap: 'clamp(1rem,1.7vw,1.8rem)' };
