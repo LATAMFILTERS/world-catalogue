@@ -30,7 +30,8 @@ jobs:
           assert "DRYCORE™" in f and 'does not certify braking performance' in f
           assert 'INTEKCORE™ is not a particulate-filter medium' in f
           assert 'no blanket protection claim for exhaust gases or toxic exposures' in f
-          assert 'ISO 5011' in f and 'ISO 11155-1' in f and 'ISO 8573-1' in f
+          page=open('frontend/src/components/AirIntakeSystemPage.tsx',encoding='utf8').read()
+          assert all(x in f+page for x in ('ISO 5011','ISO 11155-1','ISO 8573-1'))
           assert 'performance certification or approved OEM fitment' in f
           css=open('frontend/src/components/AirIntakeSystemPage.module.css').read()
           assert 'max-width: 1560px' in css
