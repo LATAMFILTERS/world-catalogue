@@ -209,7 +209,7 @@ export default function TechnologiesPage() {
       <PageHeader currentPage="Technologies" />
 
       <section className={styles.hero} style={hero}>
-        <video autoPlay muted loop playsInline preload="auto" style={heroImage}>
+        <video autoPlay muted loop playsInline preload="metadata" poster="/images/operator-technology.avif" style={heroImage}>
           <source src="/images/Operator_enters_machine_cabin_20_tecnology.mp4" type="video/mp4" />
         </video>
         <div style={heroOverlay} />
