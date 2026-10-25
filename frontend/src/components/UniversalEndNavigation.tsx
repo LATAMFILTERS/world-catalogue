@@ -1,7 +1,7 @@
 'use client';
 
 import Link from '@/components/LocalizedLink';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { trackNavigationClick } from '@/lib/analytics';
@@ -127,71 +127,11 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
   const config = navigationFor(pathname);
   const { t, i18n } = useTranslation();
   const [hydrated, setHydrated] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
   const language = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
-  const isMacrocore = pathname === '/technologies/macrocore' || pathname === '/technologies/macrocore/';
 
   useEffect(() => {
     setHydrated(true);
   }, []);
-
-  // Best-effort reposition next to <footer>. This never gates visibility -
-  // the block always renders immediately where React puts it; relocating it
-  // is a pure background improvement, not a precondition for showing it.
-  useEffect(() => {
-    if (isMacrocore || !hydrated || !navRef.current) return;
-
-    let cancelled = false;
-    const tryRelocate = () => {
-      if (cancelled || !navRef.current) return false;
-      const footer = document.querySelector('footer');
-      if (!footer) return false;
-      const parent = footer.parentElement;
-      if (parent && navRef.current.parentElement !== parent) {
-        parent.insertBefore(navRef.current, footer);
-      }
-      return true;
-    };
-
-    if (tryRelocate()) return;
-
-    const interval = window.setInterval(() => {
-      if (tryRelocate()) window.clearInterval(interval);
-    }, 100);
-    const stopRetrying = window.setTimeout(() => window.clearInterval(interval), 3000);
-
-    return () => {
-      cancelled = true;
-      window.clearInterval(interval);
-      window.clearTimeout(stopRetrying);
-    };
-  }, [hydrated, isMacrocore, pathname]);
-
-  useEffect(() => {
-    if (isMacrocore || !config || !hydrated || language !== 'en') return;
-    const main = document.querySelector('main');
-    if (!main) return;
-
-    const hiddenSections: HTMLElement[] = [];
-    const sections = Array.from(main.querySelectorAll<HTMLElement>(':scope > section'));
-
-    sections.forEach((section) => {
-      const heading = section.querySelector('h2, h3, p, span, [data-navigation-marker]');
-      const text = heading?.textContent?.trim().toLowerCase() ?? '';
-      if (text && LEGACY_ENDING_MARKERS.some((marker) => text.includes(marker))) {
-        section.dataset.universalEndNavHidden = 'true';
-        section.style.display = 'none';
-        hiddenSections.push(section);
-      }
-    });
-
-    return () => {
-      hiddenSections.forEach((section) => {
-        section.style.removeProperty('display');
-        delete section.dataset.universalEndNavHidden;
-      });
-    };
-  }, [config, pathname, hydrated, language, isMacrocore]);
 
   if (!config || !hydrated || language !== 'en') return null;
 
@@ -199,7 +139,6 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
 
   return (
     <nav
-      ref={navRef}
       className={`universal-end-nav universal-end-nav--${config.kind}`}
       aria-label={t('nav.continueLabel', 'Continue through the ELIMFILTERS platform')}
       role="navigation"
