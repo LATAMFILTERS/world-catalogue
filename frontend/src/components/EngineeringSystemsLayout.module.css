@@ -1,0 +1,81 @@
+/* Technical system editorial shared only by Lubrication, Hydraulic and Cooling.
+   Keep the five protection architectures scoped; no global image or section mutations. */
+.page { --system-accent: #fff12d; background: #050505; color: #fff; overflow-x: hidden; }
+.page *, .page *::before, .page *::after { box-sizing: border-box; }
+.page a:focus-visible, .page summary:focus-visible { outline: 2px solid var(--system-accent); outline-offset: 4px; }
+.page > section { width: 100%; max-width: 1560px; margin-inline: auto; }
+.page > section.hero { max-width: none; isolation: isolate; }
+.hero { min-height: clamp(600px,79svh,880px); position: relative; display: flex; align-items: center; }
+.heroImage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.heroScrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg,rgba(0,0,0,.91) 0%,rgba(0,0,0,.81) 35%,rgba(0,0,0,.56) 68%,rgba(0,0,0,.34) 100%),linear-gradient(0deg,rgba(0,0,0,.66),transparent 65%);
+}
+.heroInner { width: 100%; max-width: 1500px; margin-inline: auto; position: relative; z-index: 1; }
+.heroCopy { max-width: 1000px; }
+.heroCopy h1 { max-width: 1000px; overflow-wrap: anywhere; text-wrap: balance; }
+.heroCopy p { max-width: 910px; }
+.heroActions { display: flex; gap: .9rem; flex-wrap: wrap; margin-top: 2rem; }
+.heroActions a { max-width: 100%; text-align: center; min-height: 52px; display: inline-flex; align-items: center; justify-content: center; }
+.heroCopy :is(h1,p) { text-shadow: 0 3px 20px rgba(0,0,0,.45); }
+.engineeringLead { color: rgba(255,255,255,.9); line-height: 1.68; }
+.page :is(h2,h3) { overflow-wrap: anywhere; text-wrap: balance; }
+.contentSection { max-width: 1560px; padding: clamp(3.4rem,5.4vw,6rem) clamp(1.25rem,4vw,5rem); }
+.contentSection > h2 { max-width: 1320px; }
+.columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1.8rem,4vw,5rem); align-items: start; }
+.columns > * { min-width: 0; }
+.cardGrid2 { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1rem,1.7vw,1.9rem); margin-top: clamp(1.8rem,3vw,3rem); }
+.cardGrid3 { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(1rem,1.7vw,1.9rem); margin-top: clamp(1.8rem,3vw,3rem); }
+.cardGrid4 { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1rem,1.7vw,1.9rem); margin-top: clamp(1.8rem,3vw,3rem); }
+.cardGrid2 > *, .cardGrid3 > *, .cardGrid4 > * {
+  min-width: 0; min-height: 0; height: 100%;
+  border: 1px solid rgba(255,255,255,.15);
+}
+.cardGrid4 > *, .cardGrid3 > *, .cardGrid2 > * { display: flex; flex-direction: column; justify-content: flex-start; }
+.architecture { display: flex; gap: clamp(.5rem,1vw,1rem); align-items: stretch; margin-top: 2.4rem; }
+.architecture > a, .architecture > div:not(.flowArrow) { min-width: 0; flex: 1 1 0; }
+.flowArrow { flex: 0 0 20px; align-self: center; }
+.decisionGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; margin-top: 2.2rem; background: rgba(255,255,255,.12); }
+.decisionGrid > * { min-width: 0; min-height: 130px; max-width: none; }
+.decisionGrid > :nth-child(3)::after { display: none; }
+.faqGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1rem,1.6vw,1.7rem); margin-top: 2rem; }
+.faq { align-self: start; min-width: 0; border: 1px solid rgba(255,255,255,.15); background: #090909; }
+.faq[open] { border-color: rgba(255,241,45,.4); }
+.faqSummary { cursor: pointer; display: flex; gap: 1rem; justify-content: space-between; align-items: baseline; font-size: clamp(1rem,1.13vw,1.2rem); font-weight: 700; text-transform: uppercase; line-height: 1.48; }
+.faqSummary::after { content: '+'; font-size: 1.45rem; color: var(--system-accent); flex: 0 0 auto; }
+.faq[open] .faqSummary::after { content: '−'; }
+.faqSummary::-webkit-details-marker { display: none; }
+.faqSummary::marker { content: ''; }
+.faqAnswer { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.85); font-size: 1rem; line-height: 1.76; }
+.finalCta { max-width: none !important; }
+.finalCta > div { max-width: 1380px !important; }
+@media (max-width: 1050px) {
+  .cardGrid3 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .cardGrid3 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .columns { grid-template-columns: minmax(0,1fr); gap: 1.6rem; }
+  .architecture { flex-wrap: wrap; }
+  .architecture > a,.architecture > div:not(.flowArrow) { flex: 1 1 40%; }
+  .flowArrow { display: none; }
+}
+@media (max-width: 720px) {
+  .hero { min-height: 650px; }
+  .heroCopy h1 { font-size: clamp(2.65rem,9vw,4.2rem) !important; line-height: 1.04 !important; }
+  .heroActions a { flex: 1 1 100%; }
+  .cardGrid2,.cardGrid3,.cardGrid4,.faqGrid { grid-template-columns: minmax(0,1fr); }
+  .decisionGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .decisionGrid > :nth-child(3)::after { display: block; }
+  .decisionGrid > :nth-child(2n)::after { display: none; }
+  .architecture > a,.architecture > div:not(.flowArrow) { flex: 1 1 100%; }
+}
+@media (max-width: 520px) {
+  .hero { min-height: 690px; }
+  .decisionGrid { grid-template-columns: minmax(0,1fr); }
+  .decisionGrid > :nth-child(n)::after { display: none; }
+}
+
+
+.engineeringOverview { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); gap: clamp(2rem,4vw,5rem); align-items: center; margin-bottom: clamp(2.2rem,3.5vw,3.5rem); }
+.engineeringOverview > * { min-width: 0; }
+.engineeringMedia { margin: 0; padding: clamp(.7rem,1.2vw,1.3rem); background: #141414; border: 1px solid rgba(255,255,255,.16); }
+.engineeringMedia img { display: block; width: 100%; height: clamp(280px,28vw,445px); object-fit: contain; object-position: center; filter: none; }
+@media (max-width: 900px) { .engineeringOverview { grid-template-columns: minmax(0,1fr); } .engineeringMedia img { height: clamp(240px,45vw,370px); } }
