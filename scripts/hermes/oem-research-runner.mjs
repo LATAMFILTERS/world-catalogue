@@ -53,12 +53,12 @@ export function buildPrompt(gap, { caseId, outputPath, template, pageTool = 'scr
 
 // Isolated child: only Write (inside its working folder = the SKU inbox), WebSearch and the official-page
 // reader; no user permission rules, no MCP connectors (Gmail, Drive...), no file reading, no secrets in env.
-export function runClaude(prompt, { cwd, pageTool, bin = process.env.HERMES_CLAUDE_BIN || 'C:\\Users\\ELIMSERVER\\.local\\bin\\claude.exe', timeoutMs = CASE_TIMEOUT_MS } = {}) {
+export function runClaude(prompt, { cwd, pageTool, toolArgs = null, bin = process.env.HERMES_CLAUDE_BIN || 'C:\\Users\\ELIMSERVER\\.local\\bin\\claude.exe', timeoutMs = CASE_TIMEOUT_MS } = {}) {
   const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => !SECRET_ENV.test(k)));
   // dontAsk: anything not explicitly allowed below is denied (no auto-approved "read-only" shell commands).
   const args = ['-p', prompt, '--output-format', 'text', '--max-turns', '120', '--strict-mcp-config', '--setting-sources', 'project,local',
-    '--permission-mode', 'dontAsk', '--tools', 'Write', 'WebSearch', 'Bash',
-    '--allowedTools', 'WebSearch', 'Edit(./**)', `Bash(node ${pageTool.replaceAll('\\', '/')}:*)`];
+    '--permission-mode', 'dontAsk', ...(toolArgs || ['--tools', 'Write', 'WebSearch', 'Bash',
+    '--allowedTools', 'WebSearch', 'Edit(./**)', `Bash(node ${pageTool.replaceAll('\\', '/')}:*)`])];
   return new Promise((resolve) => {
     // Long path: 8.3 short names (ELIMSE~1) trip Claude Code's path safety check.
     const child = spawn(bin, args, { cwd: fs.realpathSync.native(cwd), env, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });

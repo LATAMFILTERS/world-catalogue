@@ -4,6 +4,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { renderIndustryDigest } from './industry-digest.mjs';
+import { emailShell, sectionHeader, weeklyKpis } from './weekly-email-layout.mjs';
 
 const require = createRequire(import.meta.url);
 
@@ -128,8 +129,8 @@ function buildSpanishExecutiveReport(data, fallbackText, digestOptions = {}) {
   for (const [type, candidates] of Object.entries(groups).sort()) {
     for (const c of candidates) {
       const rr = c.research_resolution || {};
-      cards.push(`<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0">
-        <div style="font-size:12px;text-transform:uppercase;color:#666">${esc(translateCandidateType(type))}</div>
+      cards.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e3e3e3;border-left:5px solid #111;margin:0 0 14px;font-size:13px"><tr><td style="padding:14px 16px">
+        <div style="font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#666">${esc(translateCandidateType(type))}</div>
         <h3 style="margin:6px 0 10px">${esc(rr.finding_title || c.entity_code)}</h3>
         <p><strong>Código interno:</strong> ${esc(c.entity_code)}</p>
         <p><strong>Fuente:</strong> ${esc(c.source_publisher || 'n/a')} — ${esc(rr.evidence_url || c.source_url || 'n/a')}</p>
@@ -140,24 +141,20 @@ function buildSpanishExecutiveReport(data, fallbackText, digestOptions = {}) {
         <p><strong>Acción propuesta:</strong> ${esc(c.proposed_action || 'n/a')}</p>
         <p><strong>Recomendación:</strong> REVISAR PARA APROBACIÓN</p>
         <p style="font-size:12px;color:#666">Decisión: APROBAR / RECHAZAR / INVESTIGAR MÁS</p>
-      </div>`);
+      </td></tr></table>`);
     }
   }
 
-  const html = `<div style="font-family:Arial,sans-serif;max-width:760px;color:#111">
-    <h2>HERMES — Revisión Semanal de Inteligencia</h2>
-    <p><strong>Período:</strong> ${esc(data.reporting_period?.start || 'n/a')} — ${esc(data.reporting_period?.end || 'n/a')}</p>
-    <div style="background:#f5f5f5;padding:14px;border-radius:8px">
-      <strong>Resumen ejecutivo</strong><br>
-      Candidatos analizados: ${esc(totals.scanned ?? 0)} · Cambios detectados: ${esc(totals.source_changes_detected ?? 0)} · Resueltos por Groq: ${esc(totals.groq_resolved ?? 0)} · Listos para revisión: ${esc(totals.review_ready ?? 0)} · Requieren investigación: ${esc(totals.needs_research ?? 0)}
-    </div>
-    <p><strong>Este informe es solo para revisión.</strong> HERMES no modifica el catálogo, Knowledge Center, Obsidian ni PostgreSQL sin tu aprobación explícita.</p>
-    ${digest.html}
-    ${digest.html ? '<h3>Candidatos para catálogo / Knowledge Center</h3>' : ''}
-    ${cards.join('\n') || '<p>No hay hallazgos listos para revisión en este ciclo.</p>'}
-    ${pending.length ? `<h3>Requieren más investigación</h3><ul>${pending.map((item) => `<li>${esc(item.entity_code)}: ${esc(item.reason || 'RESEARCH_NOT_RESOLVED')}</li>`).join('')}</ul>` : ''}
-    <hr><p><strong>Autoridad de decisión:</strong> solo Victor Abreu puede aprobar, rechazar o solicitar investigación adicional.</p>
-  </div>`;
+  const html = emailShell({
+    title: 'Revisión semanal de inteligencia',
+    period: data.industry_digest?.window ? `${data.industry_digest.window.start} — ${data.industry_digest.window.end}` : `${String(data.reporting_period?.start || 'n/a').slice(0, 10)} — ${String(data.reporting_period?.end || 'n/a').slice(0, 10)}`,
+    kpis: weeklyKpis(data),
+    notice: `Ningún cambio en catálogo o Knowledge Center se aplica sin tu aprobación. Candidatos de catálogo analizados: ${totals.scanned ?? 0} · en investigación: ${totals.needs_research ?? 0}.`,
+    body: `${digest.html}
+    ${sectionHeader('Candidatos para catálogo / Knowledge Center')}
+    ${cards.join('\n') || '<p style="background:#f6f6f6;padding:14px;margin:0">No hay hallazgos listos para revisión en este ciclo.</p>'}
+    ${pending.length ? `${sectionHeader('Requieren más investigación')}<ul style="font-size:12px;color:#444">${pending.map((item) => `<li>${esc(item.entity_code)}: ${esc(item.reason || 'RESEARCH_NOT_RESOLVED')}</li>`).join('')}</ul>` : ''}`
+  });
 
   return { text: text.join('\n'), html };
 }
@@ -172,7 +169,7 @@ export function buildMessage(report, config, digestOptions = {}) {
     to: config.recipient,
     subject,
     text: `${notice}\n\n${executive.text}`,
-    html: `<div style="font-family:Arial,sans-serif;max-width:760px"><p><strong>${esc(notice)}</strong></p>${executive.html}</div>`,
+    html: executive.html, // the shell footer already states the approval rule
     date
   };
 }

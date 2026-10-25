@@ -9,6 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { validateCandidate } from './hermes-core.mjs';
+import { BRAND_YELLOW, esc, sectionHeader } from './weekly-email-layout.mjs';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -43,6 +44,36 @@ export const CATEGORY_LABELS_ES = {
   technical_publication: 'Publicación técnica', technical_publications: 'Publicación técnica',
   strategic_supplier: 'Proveedores', suppliers: 'Proveedores'
 };
+
+// Duty sections for the email, from the category each source already has in the registries.
+export const DUTY_ORDER = ['HD', 'LD', 'IND', 'GEN'];
+export const DUTY_LABELS_ES = { HD: 'Heavy Duty', LD: 'Light Duty', IND: 'Industrial & Process', GEN: 'Filtración, materiales y normas' };
+export function dutyFromCategory(category = '') {
+  const c = String(category);
+  if (c === 'oem_light_duty') return 'LD';
+  if (c.startsWith('oem_')) return 'HD';
+  if (c.startsWith('industrial_')) return 'IND';
+  return 'GEN';
+}
+const dutyKey = (v) => String(v || '').toLowerCase().replace(/\s*\(google news\)\s*$/, '').trim();
+let dutyIndex = null;
+function loadDutyIndex(repoDir = process.cwd()) {
+  if (dutyIndex) return dutyIndex;
+  dutyIndex = new Map();
+  const read = (f) => { try { return JSON.parse(fs.readFileSync(path.join(repoDir, 'hermes/config', f), 'utf8')); } catch { return null; } };
+  for (const o of read('source-organizations.json')?.organizations || []) { const d = dutyFromCategory(o.category); dutyIndex.set(dutyKey(o.id), d); dutyIndex.set(dutyKey(o.name), d); }
+  for (const f of read('newsroom-feeds.json')?.feeds || []) {
+    const d = /^gn_ld_|^automotive_world$/.test(f.id) ? 'LD' : f.domain === 'oem_engines_equipment' ? 'HD' : dutyFromCategory(f.domain);
+    dutyIndex.set(dutyKey(f.id), d); dutyIndex.set(dutyKey(f.name), d);
+  }
+  return dutyIndex;
+}
+/** Duty of a source by id or name; unknown sources fall back to their domain. */
+export function dutyOf({ id, name, domainId = '' } = {}) {
+  if (String(domainId).startsWith('industrial_')) return 'IND';
+  const idx = loadDutyIndex();
+  return idx.get(dutyKey(id)) || idx.get(dutyKey(name)) || (domainId === 'oem_engines_equipment' ? 'HD' : 'GEN');
+}
 
 export const isIndustrySweepCandidate = (c) => String(c?.category || '').startsWith('industry_sweep:');
 const isSourceChangeSignal = (c) => c?.change_classification === 'CHANGE_DETECTED_REQUIRES_RESEARCH';
@@ -91,7 +122,21 @@ function mergeAnnex(groups, extra) {
   return groups;
 }
 
-export function buildIndustryDigest(candidates, { now = new Date(), sweepSummaryPath = path.resolve('hermes/industry-sweep/last-run.json'), unreviewedPath = path.resolve(process.env.HERMES_STATE_ROOT || 'hermes/state', 'newsroom-unreviewed.json') } = {}) {
+// Annex headlines Claude flagged as worth a look (annex-highlights.mjs); only those still in this week's annex.
+function takeHighlights(file, annex) {
+  const inAnnex = new Map(annex.flatMap((g) => g.items.map((i) => [i.url, g])));
+  const out = [];
+  const picks = readSweepSummary(file)?.items;
+  for (const h of Array.isArray(picks) ? picks : []) {
+    const g = inAnnex.get(h?.url);
+    if (!g || !h.title_es || !h.why_es) continue;
+    g.items = g.items.filter((i) => i.url !== h.url); inAnnex.delete(h.url);
+    out.push({ duty: dutyOf({ name: h.source, domainId: h.domain }), title: h.title_es, company: h.source, date: h.date, domain: DOMAIN_LABELS_ES[h.domain] || DOMAIN_LABELS_ES.industry_markets, why: h.why_es, url: h.url });
+  }
+  return { highlights: out, annex: annex.filter((g) => g.items.length).map((g) => ({ ...g, duty: dutyOf({ name: g.source }) })) };
+}
+
+export function buildIndustryDigest(candidates, { now = new Date(), sweepSummaryPath = path.resolve('hermes/industry-sweep/last-run.json'), unreviewedPath = path.resolve(process.env.HERMES_STATE_ROOT || 'hermes/state', 'newsroom-unreviewed.json'), highlightsPath = path.join(path.dirname(unreviewedPath), 'newsroom-highlights.json') } = {}) {
   const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
   const start = new Date(end.getTime() - 7 * DAY_MS);
   const items = []; const unsummarized = []; const byCode = new Map();
@@ -111,6 +156,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
     byCode.set(c.entity_code, c);
     items.push({
       entity_code: c.entity_code,
+      duty: dutyOf({ id: c.affected_entities?.[0], name: c.source_publisher, domainId }),
       status: c.evidence_level === 'PRIMARY' ? 'VERIFICADO' : 'SEÑAL',
       title: rr.titulo_es || original,
       original_title: original,
@@ -132,6 +178,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
     seenUrls.add(c.source_url);
     const domain = CATEGORY_LABELS_ES[c.category] || String(c.category || 'fuente vigilada').replaceAll('_', ' ');
     items.push({
+      duty: dutyFromCategory(c.category),
       status: 'SEÑAL',
       title: `Novedad en ${c.source_publisher}: ${decodeEntities(c.source_title)}`,
       company: c.source_publisher,
@@ -146,39 +193,76 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
   // Same story from the maker's newsroom and a press/Google News copy: keep the first (VERIFICADO sorts first).
   const seenStories = new Set();
   const unique = items.filter((i) => { const k = storyKey(i.original_title || i.title); if (!k) return true; if (seenStories.has(k)) return false; seenStories.add(k); return true; });
+  const { highlights, annex } = takeHighlights(highlightsPath, mergeAnnex(readLinkAnnex(unreviewedPath, start, now), unsummarized));
   return {
     window: { start: start.toISOString().slice(0, 10), end: new Date(end.getTime() - DAY_MS).toISOString().slice(0, 10) },
     items: unique,
+    highlights,
     review_candidates: unique.filter((i) => byCode.has(i.entity_code)).map((i) => byCode.get(i.entity_code)), // shown cards can be approved from the email
-    link_annex: mergeAnnex(readLinkAnnex(unreviewedPath, start, now), unsummarized),
+    link_annex: annex,
     excluded: { no_published_date: noDate, outside_window: outOfWindow, invalid },
     empty_reason: unique.length ? null : emptyReason(readSweepSummary(sweepSummaryPath))
   };
 }
 
-const esc = (v) => String(v ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const safeHref = (u) => { try { return ['http:', 'https:'].includes(new URL(u).protocol) ? u : null; } catch { return null; } };
+const link = (url, label) => { const href = safeHref(url); return href ? `<a href="${esc(href)}" style="color:#111;font-weight:700">${esc(label)}</a>` : esc(url); };
+const chip = (text, bg = '#eeeeee', fg = '#333') => `<span style="display:inline-block;background:${bg};color:${fg};font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;margin:0 4px 4px 0">${esc(text)}</span>`;
+const STATUS_COLOR = { VERIFICADO: '#1a7f37', 'SEÑAL': BRAND_YELLOW };
 
 const ANNEX_PER_SOURCE = 30;
+
+// Groups by duty in the fixed HD, LD, Industrial, general order; empty duties are skipped.
+const byDuty = (list = []) => DUTY_ORDER.map((d) => [d, list.filter((x) => (x.duty || 'GEN') === d)]).filter(([, l]) => l.length);
+const dutyBar = (duty, count, unit) => `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:18px 0 10px"><tr>
+  <td style="background:#111;padding:8px 12px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:${BRAND_YELLOW}">${esc(DUTY_LABELS_ES[duty])}</td>
+  <td align="right" style="background:#111;padding:8px 12px;font-size:11px;color:#bbb">${count} ${esc(unit)}</td></tr></table>`;
+const dutyText = (duty) => `== ${DUTY_LABELS_ES[duty].toUpperCase()} ==`;
 
 function renderLinkAnnex(groups = []) {
   if (!groups.length) return { text: '', html: '' };
   const total = groups.reduce((n, g) => n + g.items.length, 0);
   const intro = `${total} titulares que HERMES no alcanzó a resumir esta semana (sin revisar, solo enlaces).`;
   const text = ['', 'ANEXO: ENLACES SIN REVISAR', intro];
-  const html = [`<h3>Anexo: enlaces sin revisar</h3><p style="font-size:12px;color:#666">${esc(intro)}</p>`];
-  for (const g of groups) {
-    const shown = g.items.slice(0, ANNEX_PER_SOURCE); const more = g.items.length - shown.length;
-    text.push('', `${g.source} (${g.items.length})`, ...shown.map((i) => `- ${i.date} ${i.title} ${i.url}`), ...(more > 0 ? [`- +${more} más`] : []));
-    html.push(`<h4 style="margin:12px 0 4px">${esc(g.source)} (${g.items.length})</h4><ul style="font-size:13px;margin:0;padding-left:18px">${shown.map((i) => `<li>${esc(i.date)} · <a href="${esc(i.url)}">${esc(i.title)}</a></li>`).join('')}${more > 0 ? `<li>+${more} más</li>` : ''}</ul>`);
+  const html = [sectionHeader('Anexo: enlaces sin revisar', intro), '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f6f6"><tr><td style="padding:4px 14px 12px">'];
+  for (const [duty, list] of byDuty(groups)) {
+    text.push('', dutyText(duty));
+    html.push(`<div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#111;border-bottom:2px solid ${BRAND_YELLOW};padding:16px 0 4px">${esc(DUTY_LABELS_ES[duty])}</div>`);
+    for (const g of list) {
+      const shown = g.items.slice(0, ANNEX_PER_SOURCE); const more = g.items.length - shown.length;
+      text.push('', `${g.source} (${g.items.length})`, ...shown.map((i) => `- ${i.date} ${i.title} ${i.url}`), ...(more > 0 ? [`- +${more} más`] : []));
+      html.push(`<div style="font-size:12px;font-weight:800;color:#111;padding:12px 0 4px">${esc(g.source)} <span style="color:#888;font-weight:400">(${g.items.length})</span></div><ul style="font-size:12px;line-height:1.5;color:#444;margin:0;padding-left:18px">${shown.map((i) => `<li>${esc(i.date)} · <a href="${esc(i.url)}">${esc(i.title)}</a></li>`).join('')}${more > 0 ? `<li>+${more} más</li>` : ''}</ul>`);
+    }
   }
+  html.push('</td></tr></table>');
   return { text: text.join('\n'), html: html.join('\n') };
+}
+
+function renderHighlights(list = []) {
+  if (!list.length) return { text: '', html: '' };
+  const intro = 'Elegidos por HERMES entre los titulares sin revisar. SEÑAL: solo se leyó el titular, no la nota. Sin botones: si uno interesa, abre la fuente.';
+  const text = ['', 'DESTACADOS DEL ANEXO', intro];
+  let k = 0;
+  const row = (h) => {
+    k += 1;
+    text.push('', `[SEÑAL · solo titular] ${h.title}`, `${h.company} · ${h.date} · ${h.domain}`, `Por qué importa: ${h.why}`, `Fuente: ${h.url}`);
+    return `<tr><td valign="top" width="34" style="padding:12px 0;border-bottom:1px solid #eee;font-size:20px;font-weight:800;color:#bbb">${String(k).padStart(2, '0')}</td>
+      <td valign="top" style="padding:12px 0;border-bottom:1px solid #eee">
+        ${chip('SEÑAL · solo titular', BRAND_YELLOW, '#000')}${chip(h.domain)}
+        <div style="font-size:15px;font-weight:800;color:#111;padding:2px 0">${esc(h.title)}</div>
+        <div style="font-size:12px;color:#777">${esc(h.company)} · ${esc(h.date)}</div>
+        <div style="font-size:13px;color:#333;padding-top:6px"><strong>Por qué importa:</strong> ${esc(h.why)}</div>
+        <div style="font-size:12px;padding-top:6px">${link(h.url, 'Ver fuente →')}</div>
+      </td></tr>`;
+  };
+  const blocks = byDuty(list).map(([duty, l]) => { text.push('', dutyText(duty)); return `${dutyBar(duty, l.length, l.length === 1 ? 'destacado' : 'destacados')}<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${l.map(row).join('')}</table>`; });
+  return { text: text.join('\n'), html: `${sectionHeader('Destacados del anexo', intro)}${blocks.join('')}` };
 }
 
 export function renderIndustryDigest(digest, { actionsFor = null } = {}) {
   if (!digest) return { text: '', html: '' };
-  const main = renderDigestBody(digest, actionsFor); const annex = renderLinkAnnex(digest.link_annex);
-  return { text: main.text + annex.text, html: main.html + annex.html };
+  const main = renderDigestBody(digest, actionsFor); const top = renderHighlights(digest.highlights); const annex = renderLinkAnnex(digest.link_annex);
+  return { text: main.text + top.text + annex.text, html: main.html + top.html + annex.html };
 }
 
 function renderDigestBody(digest, actionsFor) {
@@ -189,26 +273,26 @@ function renderDigestBody(digest, actionsFor) {
     const msg = `Sin novedades de industria esta semana. ${digest.empty_reason || ''}`.trim();
     return {
       text: [title, period, msg, ''].join('\n'),
-      html: `<h3>Inteligencia de industria de la semana</h3><p style="font-size:12px;color:#666">${esc(period)}</p><p><strong>${esc(msg)}</strong></p>`
+      html: `${sectionHeader('Inteligencia de industria de la semana', period)}<p style="background:#f6f6f6;padding:14px;margin:0"><strong>${esc(msg)}</strong></p>`
     };
   }
   const text = [title, period, note, ''];
-  const cards = digest.items.map((i) => {
+  const card = (i) => {
     text.push(`[${i.status}] ${i.title}`, `${i.company} · ${i.date} · ${i.domain}`, `Resumen: ${i.summary}`, `Por qué importa: ${i.why}`, `Fuente: ${i.url}`, '');
-    const href = safeHref(i.url);
-    const badge = i.status === 'VERIFICADO' ? 'background:#1a7f37;color:#fff' : 'background:#FFF12D;color:#000';
-    return `<div style="border:1px solid #ddd;border-radius:8px;padding:14px;margin:12px 0">
-      <span style="${badge};font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px">${esc(i.status)}</span>
-      <h4 style="margin:8px 0 4px">${esc(i.title)}</h4>
-      <div style="font-size:12px;color:#666">${esc(i.company)} · ${esc(i.date)} · ${esc(i.domain)}</div>
-      <p><strong>Resumen:</strong> ${esc(i.summary)}</p>
-      <p><strong>Por qué importa:</strong> ${esc(i.why)}</p>
-      <p>${href ? `<a href="${esc(href)}">Ver fuente</a>` : esc(i.url)}</p>
+    const color = STATUS_COLOR[i.status] || '#999';
+    return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e3e3e3;border-left:5px solid ${color};margin:0 0 14px"><tr><td style="padding:14px 16px">
+      ${chip(i.status, color, i.status === 'VERIFICADO' ? '#fff' : '#000')}${chip(i.domain)}
+      <div style="font-size:16px;font-weight:800;color:#111;padding:4px 0 2px">${esc(i.title)}</div>
+      <div style="font-size:12px;color:#777">${esc(i.company)} · ${esc(i.date)}</div>
+      <p style="margin:10px 0 6px;font-size:14px;color:#222"><strong>Resumen:</strong> ${esc(i.summary)}</p>
+      <p style="margin:0 0 8px;font-size:14px;color:#222"><strong>Por qué importa:</strong> ${esc(i.why)}</p>
+      <div style="font-size:12px">${link(i.url, 'Ver fuente →')}</div>
       ${i.entity_code && actionsFor ? actionsFor(i.entity_code) : ''}
-    </div>`;
-  });
+    </td></tr></table>`;
+  };
+  const blocks = byDuty(digest.items).map(([duty, l]) => { text.push(dutyText(duty), ''); return `${dutyBar(duty, l.length, l.length === 1 ? 'noticia' : 'noticias')}${l.map(card).join('\n')}`; });
   return {
     text: text.join('\n'),
-    html: `<h3>Inteligencia de industria de la semana</h3><p style="font-size:12px;color:#666">${esc(period)} · ${esc(note)}</p>${cards.join('\n')}`
+    html: `${sectionHeader('Inteligencia de industria de la semana', `${period} · ${note}`)}${blocks.join('\n')}`
   };
 }

@@ -46,7 +46,7 @@ test('only Spanish cards; findings without a Spanish summary go to the link anne
     sweep({ code: 'EN', published: '2026-10-21', es: false, url: 'https://example.com/en' })
   ], { now, sweepSummaryPath: noSummary, unreviewedPath: noSummary });
   assert.deepEqual(d.items.map((i) => i.title), ['Engine platform ES']);
-  assert.deepEqual(d.link_annex, [{ source: 'Example OEM', items: [{ title: 'Engine platform EN', date: '2026-10-21', url: 'https://example.com/en' }] }]);
+  assert.deepEqual(d.link_annex, [{ source: 'Example OEM', items: [{ title: 'Engine platform EN', date: '2026-10-21', url: 'https://example.com/en' }], duty: 'GEN' }]);
   d.items.push({ ...d.items[0], url: 'javascript:alert(1)' });
   const r = renderIndustryDigest(d);
   assert.match(r.html, /Resumen:<\/strong> Resumen en español\./);
@@ -111,4 +111,17 @@ test('headlines the local model had no time for are listed as links grouped by s
   assert.match(out.html, /<a href="https:\/\/news\.example\.com\/b">Ford &amp; partners update V8<\/a>/);
   assert.doesNotMatch(out.html, /javascript:|Old item/);
   assert.equal(buildIndustryDigest([], { now, sweepSummaryPath: noSummary, unreviewedPath: file + '.missing' }).link_annex.length, 0);
+});
+
+test('cards, highlights and annex are sectioned by duty: Heavy Duty, Light Duty, Industrial, general', () => {
+  const ld = { ...sweep({ code: 'LD', published: '2026-10-21', url: 'https://example.com/ld' }), affected_entities: ['GN_LD_TOYOTA'], source_publisher: 'Toyota / Lexus (Google News)' };
+  const hd = { ...sweep({ code: 'HD', published: '2026-10-21', url: 'https://example.com/hd' }), affected_entities: ['EQUIPMENT_WORLD'], source_publisher: 'Equipment World' };
+  const gen = { ...sweep({ code: 'GEN', published: '2026-10-21', url: 'https://example.com/gen' }), affected_entities: ['GN_DONALDSON'], source_publisher: 'Donaldson (Google News)', category: 'industry_sweep:aftermarket_filtration' };
+  const ind = { ...sweep({ code: 'IND', published: '2026-10-21', url: 'https://example.com/ind' }), category: 'industry_sweep:industrial_water_treatment' };
+  const d = buildIndustryDigest([gen, ld, ind, hd], { now, sweepSummaryPath: noSummary, unreviewedPath: noSummary });
+  assert.deepEqual(Object.fromEntries(d.items.map((i) => [i.url.split('/').pop(), i.duty])), { ld: 'LD', hd: 'HD', gen: 'GEN', ind: 'IND' });
+  const r = renderIndustryDigest(d);
+  const order = ['Heavy Duty', 'Light Duty', 'Industrial &amp; Process', 'Filtración, materiales y normas'].map((l) => r.html.indexOf(l));
+  assert.ok(order.every((x, k) => x > 0 && (k === 0 || x > order[k - 1])), String(order));
+  assert.match(r.text, /== HEAVY DUTY ==/);
 });
