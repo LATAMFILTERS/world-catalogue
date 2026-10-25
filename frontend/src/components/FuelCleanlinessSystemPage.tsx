@@ -129,9 +129,10 @@ export function FuelCleanlinessSystemPage() {
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Fuel Cleanliness Protection" />
 
       <section style={hero}>
-        <ReviewedImage src="/images/hero-syntapore.avif" alt="Fuel cleanliness protection system" style={heroMedia} />
-        <div style={heroOverlay} />
+
         <div style={heroInner}>
+          <div style={heroEditorial}>
+          <div>
           <p style={eyebrow}><ReviewedText text={"DIESEL FUEL CONTAMINATION CONTROL"} /></p>
           <h1 style={heroTitle}><ReviewedText text={"Fuel Cleanliness"} context="FuelCleanlinessSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="FuelCleanlinessSystemPageTitle" /></span></h1>
           <p style={heroPromise}><ReviewedText text={"Control particles and water before contaminated fuel reaches precision pumps, injectors and downstream fuel-system components."} /></p>
@@ -139,6 +140,16 @@ export function FuelCleanlinessSystemPage() {
           <div style={buttonRow}>
             <Link href="#fuel-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE FUEL PATH"} /></Link>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
+          </div>
+          </div>
+          <div style={heroProtectionPanel}>
+            {pathways.map(([title, exposure, technology, href], index) => (
+              <Link href={href} key={technology} style={heroPathRow}>
+                <span style={heroPathIndex}>{String(index + 1).padStart(2,'0')}</span>
+                <span><strong style={heroPathTitle}>{technology}</strong><span style={heroPathDescription}><ReviewedText text={title} /> — <ReviewedText text={exposure} /></span></span>
+              </Link>
+            ))}
+          </div>
           </div>
         </div>
       </section>
@@ -269,36 +280,42 @@ export function FuelCleanlinessSystemPage() {
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: '86vh', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', overflow: 'hidden', borderBottom: '1px solid rgba(255,255,255,0.08)' };
+const hero: CSSProperties = { minHeight: 'clamp(620px,80vh,920px)', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(7rem, 10vw, 10rem) clamp(1.25rem, 4vw, 5rem) clamp(3.5rem, 5vw, 5rem)', overflow: 'hidden', background: 'radial-gradient(ellipse at 74% 30%, rgba(255,241,45,.06), transparent 52%), #050505', borderBottom: '1px solid rgba(255,255,255,0.12)' };
 const heroMedia: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity };
 const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const heroInner: CSSProperties = { maxWidth: '1540px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const heroEditorial: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,560px),1fr))', gap: 'clamp(2.5rem,5vw,5rem)', alignItems: 'center' };
+const heroProtectionPanel: CSSProperties = { minWidth: 0, borderTop: '2px solid #FFF12D' };
+const heroPathRow: CSSProperties = { display: 'grid', gridTemplateColumns: '3rem 1fr', gap: 'clamp(.8rem,1.4vw,1.5rem)', padding: '1.35rem .7rem', borderBottom: '1px solid rgba(255,255,255,.24)', color: '#fff', textDecoration: 'none' };
+const heroPathIndex: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.85rem', fontWeight: 700 };
+const heroPathTitle: CSSProperties = { display: 'block', fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.2rem,1.7vw,1.8rem)' };
+const heroPathDescription: CSSProperties = { display: 'block', marginTop: '.4rem', color: 'rgba(255,255,255,.7)', lineHeight: 1.55, fontSize: '.93rem' };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3rem, 7vw, 6.8rem)', lineHeight: 0.9, letterSpacing: '-0.05em', textTransform: 'uppercase', margin: 0, maxWidth: '960px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '840px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.72, maxWidth: '850px', color: 'rgba(255,255,255,.72)', margin: '1.1rem 0 0' };
-const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', maxWidth: '1320px', margin: '0 auto' };
+const section: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1.25rem, 4vw, 5rem)', maxWidth: '1540px', margin: '0 auto' };
 const sectionAlt: CSSProperties = { ...section, maxWidth: 'none', background: 'rgba(255,255,255,.018)', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
-const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'start' };
+const twoCol: CSSProperties = { maxWidth: '1540px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,460px),1fr))', gap: 'clamp(2rem,5vw,5rem)', alignItems: 'start' };
 const eyebrow: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '.72rem', letterSpacing: '.16em', color: '#FFF12D', textTransform: 'uppercase', margin: '0 0 1rem' };
 const h2: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2rem,4.2vw,3.8rem)', lineHeight: .96, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0 };
 const h3: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '1.05rem', textTransform: 'uppercase', margin: '0 0 .7rem' };
 const lead: CSSProperties = { fontSize: 'clamp(1.02rem,1.6vw,1.18rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.78)', margin: 0 };
 const body: CSSProperties = { fontSize: '.98rem', lineHeight: 1.72, color: 'rgba(255,255,255,.6)', margin: '1rem 0 0' };
-const grid3: CSSProperties = { maxWidth: '1180px', margin: '2.4rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.08)' };
-const grid2: CSSProperties = { maxWidth: '1180px', margin: '2.4rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.07)' };
-const card: CSSProperties = { background: '#000', padding: '1.6rem', flex: '1 1 250px', maxWidth: '400px', minWidth: 0 };
-const lineCard: CSSProperties = { background: '#000', padding: '1.7rem', flex: '1 1 300px', maxWidth: '480px', minWidth: 0 };
+const grid3: CSSProperties = { maxWidth: '1540px', margin: '2.4rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,380px),1fr))', gap: 'clamp(1rem,1.8vw,2rem)' };
+const grid2: CSSProperties = { maxWidth: '1540px', margin: '2.4rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,490px),1fr))', gap: 'clamp(1rem,2vw,2rem)' };
+const card: CSSProperties = { background: '#090909', border: '1px solid rgba(255,255,255,.13)', padding: 'clamp(1.3rem,2vw,2.2rem)', minWidth: 0, display: 'flex', flexDirection: 'column' };
+const lineCard: CSSProperties = { background: '#080808', padding: 'clamp(1.5rem,2.4vw,2.4rem)', borderTop: '2px solid rgba(255,241,45,.5)', minWidth: 0 };
 const cardLabel: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '.76rem', letterSpacing: '.1em', color: '#FFF12D', margin: 0 };
 const cardBody: CSSProperties = { fontSize: '.92rem', lineHeight: 1.65, color: 'rgba(255,255,255,.58)', margin: '.8rem 0 0' };
-const pathwayImage: CSSProperties = { display: 'block', width: 'calc(100% + 3.2rem)', margin: '-1.6rem -1.6rem 1.5rem', aspectRatio: '16 / 9', objectFit: 'cover', objectPosition: 'center', background: '#151515' };
+const pathwayImage: CSSProperties = { display: 'block', width: '100%', height: 'clamp(220px,20vw,340px)', margin: '0 0 1.6rem', objectFit: 'contain', objectPosition: 'center', background: '#141414', border: '1px solid rgba(255,255,255,.1)' };
 const technicalDetailLabel: CSSProperties = { ...cardLabel, marginTop: '1.5rem', paddingTop: '1.15rem', borderTop: '1px solid rgba(255,255,255,.13)' };
 const techLink: CSSProperties = { fontFamily: displayFont, fontWeight: 700, color: '#fff', textDecoration: 'none', textTransform: 'uppercase', fontSize: '1.08rem' };
-const familyGrid: CSSProperties = { maxWidth: '1180px', margin: '2.4rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.07)' };
-const familyCard: CSSProperties = { background: '#000', padding: '1.6rem', textDecoration: 'none', color: '#fff', display: 'block', flex: '1 1 240px', maxWidth: '380px', minWidth: 0 };
+const familyGrid: CSSProperties = { maxWidth: '1540px', margin: '2.4rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,470px),1fr))', gap: 'clamp(1rem,2vw,2rem)' };
+const familyCard: CSSProperties = { background: '#080808', padding: 'clamp(1.4rem,2.4vw,2.5rem)', textDecoration: 'none', color: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', minWidth: 0, border: '1px solid rgba(255,255,255,.15)' };
 const smallLink: CSSProperties = { display: 'inline-block', marginTop: '1.2rem', fontFamily: displayFont, fontSize: '.66rem', fontWeight: 700, letterSpacing: '.12em', color: '#FFF12D' };
-const decisionFlow: CSSProperties = { maxWidth: '1180px', margin: '2.2rem auto 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.08)' };
-const decisionStep: CSSProperties = { background: '#000', padding: '1.25rem', fontFamily: displayFont, fontSize: '.72rem', fontWeight: 700, letterSpacing: '.08em', color: 'rgba(255,255,255,.72)', flex: '1 1 180px', maxWidth: '290px', minWidth: 0 };
-const faqGrid: CSSProperties = { maxWidth: '1180px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '1px', background: 'rgba(255,255,255,.07)' };
+const decisionFlow: CSSProperties = { maxWidth: '1540px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,220px),1fr))', gap: '1px', background: 'rgba(255,255,255,.13)' };
+const decisionStep: CSSProperties = { background: '#070707', padding: '1.6rem', fontFamily: displayFont, fontSize: '.74rem', fontWeight: 700, letterSpacing: '.08em', color: 'rgba(255,255,255,.84)', minWidth: 0 };
+const faqGrid: CSSProperties = { maxWidth: '1540px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,500px),1fr))', gap: 'clamp(1rem,1.7vw,1.8rem)' };
 const faqCard: CSSProperties = { background: '#000', padding: '1.6rem' };
 const faqQuestion: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '1rem', lineHeight: 1.3, margin: 0 };
 const finalCta: CSSProperties = { padding: 'clamp(5rem,9vw,8rem) clamp(1.25rem,6vw,6rem)', background: 'linear-gradient(180deg,#050505,#000)', borderTop: '1px solid rgba(255,241,45,.16)' };
