@@ -46,7 +46,7 @@ if (!/@(127\.0\.0\.1|localhost)[:/]/.test(url)) throw new Error('database is not
 const db = new pg.Client({ connectionString: url });
 await db.connect();
 
-const report = { mode: execute ? 'EXECUTE' : 'DRY_RUN_ROLLBACK', cached_pages: pageBySha.size, written: [], held: [], conflicts: [] };
+const report = { mode: execute ? 'EXECUTE' : 'DRY_RUN_ROLLBACK', cached_pages: pageBySha.size, written: [], held: [], conflicts: [], rejected: [] };
 try {
   await db.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
   const { rows: targets } = await db.query(`
@@ -59,6 +59,8 @@ try {
       AND NOT EXISTS (SELECT 1 FROM public.exact_part_reference x WHERE x.sku = c.sku AND x.source = $1)
     ORDER BY c.sku`, [SOURCE]);
   report.candidates = targets.length;
+  report.part_number_check = (await db.query(`SELECT pg_get_constraintdef(oid) d FROM pg_constraint
+    WHERE conrelid='public.exact_part_reference'::regclass AND conname='exact_part_reference_part_number_check'`)).rows[0]?.d || null;
 
   // Existing registrations: (type|brand|number) -> set of SKUs
   const { rows: existing } = await db.query(`
@@ -88,11 +90,24 @@ try {
       const key = `${r.type}|${normalizePart(r.brand)}|${normalizePart(r.code)}`;
       const other = [...(owners.get(key) || [])].filter((s) => s !== t.sku);
       if (other.length) { report.conflicts.push({ sku: t.sku, ref: `${r.type} ${r.brand} ${r.code}`, other }); continue; }
-      const ins = await db.query(
-        `INSERT INTO public.exact_part_reference(reference_type, brand, part_number, sku, source)
-         VALUES ($1,$2,$3,$4,$5) ON CONFLICT (reference_type, brand, part_number, sku, source) DO NOTHING`,
-        [r.type, r.brand, r.code, t.sku, SOURCE]);
-      added += ins.rowCount;
+      // The table has a part_number CHECK whose exact rule is not in this repo: try the published
+      // form, then the normalized form (A-Z0-9), each inside a savepoint; a rejected value is reported.
+      let ok = false;
+      for (const value of [...new Set([r.code, normalizePart(r.code)])]) {
+        await db.query('SAVEPOINT ref');
+        try {
+          const ins = await db.query(
+            `INSERT INTO public.exact_part_reference(reference_type, brand, part_number, sku, source)
+             VALUES ($1,$2,$3,$4,$5) ON CONFLICT (reference_type, brand, part_number, sku, source) DO NOTHING`,
+            [r.type, r.brand, value, t.sku, SOURCE]);
+          await db.query('RELEASE SAVEPOINT ref');
+          added += ins.rowCount; ok = true; break;
+        } catch (e) {
+          await db.query('ROLLBACK TO SAVEPOINT ref');
+          if (!/check constraint/i.test(e.message)) throw e;
+        }
+      }
+      if (!ok) report.rejected.push({ sku: t.sku, ref: `${r.type} ${r.brand} ${r.code}` });
     }
     if (!added) { report.held.push({ sku: t.sku, reason: 'NOTHING_NEW_OR_ALL_CONFLICT' }); continue; }
     await db.query(
@@ -122,6 +137,8 @@ const reasons = report.held.reduce((m, h) => { m[h.reason] = (m[h.reason] || 0) 
 console.log(JSON.stringify({ mode: report.mode, cached_pages: report.cached_pages, candidates: report.candidates,
   written: report.written.length, references_added: report.written.reduce((n, w) => n + w.added, 0),
   held: report.held.length, held_reasons: reasons, conflicts: report.conflicts.length,
+  rejected_by_check: report.rejected.length, part_number_check: report.part_number_check,
+  rejected_sample: report.rejected.slice(0, 5).map((r) => `${r.sku} ${r.ref}`),
   sample: report.written.slice(0, 5).map((w) => `${w.sku} ${w.mann_code} +${w.added}`),
   conflict_sample: report.conflicts.slice(0, 5).map((c) => `${c.sku} ${c.ref} ya en ${c.other.join(',')}`),
   transaction: report.transaction, error: report.error, file: out }, null, 2));
