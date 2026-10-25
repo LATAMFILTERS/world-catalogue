@@ -198,7 +198,7 @@ export function ReviewedText({ text, context, stripNumber = false }: { text: str
   const fallback = match && locale.startsWith('es') ? match[0] : match && locale.startsWith('pt') ? match[1] : text;
   const translated = t(reviewedCopyKey(text) + (context ? '_' + context : ''), { defaultValue: fallback });
   // Never render an empty content block when a locale entry is absent or accidentally blank.
-  const safeText = typeof translated === 'string' && translated.trim() ? translated : fallback;
+  const safeText = typeof translated === 'string' && translated.trim() && !(match && fallback !== text && translated === text) ? translated : fallback;
   return <>{stripNumber ? safeText.replace(/^\d+\.\s*/, '') : safeText}</>;
 }
 
