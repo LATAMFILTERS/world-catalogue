@@ -15,7 +15,7 @@ const VIDEOS = [
   { id:'trucks-fleets', title:'Fleet Maintenance Optimization', description:'Total cost of ownership optimization for commercial fleets', page:'/industries/trucks-fleets/', content:'/images/truck-fleets-hero-h264.mp4' },
   { id:'railway', title:'Railway Systems Protection', description:'Filtration solutions for rail transport and locomotive systems', page:'/industries/railway/', content:'/images/Train.mp4' },
   { id:'marine', title:'Marine Vessel Filtration', description:'Advanced filtration for maritime and ocean-going vessels', page:'/industries/marine/', content:'/images/Marino-1.mp4' },
-  { id:'manufacturing', title:'Industrial Manufacturing Systems', description:'Filtration for precision manufacturing and production equipment', page:'/industries/manufacturing/', content:'/images/Manufacture-1.mp4' },
+  { id:'manufacturing', title:'Industrial Manufacturing Systems', description:'Filtration for precision manufacturing and production equipment', page:'/industries/manufacturing/', content:'/images/manufacturing-hero-h264.mp4' },
   { id:'power-generation', title:'Power Generation Protection', description:'Filtration systems for power plants and electrical generation', page:'/industries/power-generation/', content:'/images/powergenerator-Video-1.mp4' },
   { id:'oil-gas', title:'Oil & Gas Operations', description:'Specialized filtration for upstream and downstream operations', page:'/industries/oil-gas/', content:'/images/petro-gas-hero-h264.mp4' },
   { id:'bus-coach', title:'Transit & Coach Systems', description:'Reliable filtration for public transportation and coach services', page:'/industries/bus-coach/', content:'/images/buses-2.mp4' },
