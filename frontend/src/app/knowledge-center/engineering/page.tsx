@@ -46,8 +46,8 @@ export default function EngineeringHubPage() {
         alignItems: 'center',
         backgroundColor: '#050505',
         backgroundImage: heroBackgroundImage('/images/operador-bancopruebas.png'),
-        backgroundSize: '100% 100%, contain',
-        backgroundPosition: 'center, 72% center',
+        backgroundSize: '100% 100%, cover',
+        backgroundPosition: 'center, center',
         backgroundRepeat: 'no-repeat, no-repeat',
       }}>
         <div style={{ maxWidth: '1520px', width: '100%', margin: '0 auto' }}>
