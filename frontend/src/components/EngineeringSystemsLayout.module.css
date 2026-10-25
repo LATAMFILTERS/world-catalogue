@@ -51,6 +51,7 @@
 .finalCta > div { max-width: 1380px !important; }
 @media (max-width: 1050px) {
   .cardGrid3 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .cardGrid3 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
   .columns { grid-template-columns: minmax(0,1fr); gap: 1.6rem; }
   .architecture { flex-wrap: wrap; }
   .architecture > a,.architecture > div:not(.flowArrow) { flex: 1 1 40%; }
