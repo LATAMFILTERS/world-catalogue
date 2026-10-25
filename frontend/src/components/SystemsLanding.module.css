@@ -5,6 +5,9 @@
   background: #030303;
   color: #fff;
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
   overflow-x: hidden;
   font-family: var(--body-font);
 }
@@ -50,7 +53,7 @@
   background: linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.70) 45%,rgba(0,0,0,.37)),
     linear-gradient(0deg,rgba(0,0,0,.9),transparent 68%);
 }
-.heroInner { width: 100%; max-width: 1560px; margin-inline: auto; }
+.heroInner { position: relative; z-index: 2; width: 100%; max-width: 1560px; margin-inline: auto; }
 .heroTitle {
   max-width: min(100%,1500px) !important; margin: 1.15rem 0 0;
   font: 700 clamp(3rem,5.8vw,6.85rem)/.99 var(--font-display);
