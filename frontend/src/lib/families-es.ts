@@ -14,14 +14,14 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
   'primary-air': {
     name: 'Aire primario',
     seoTitle: 'Elementos de filtro de aire primario para motores de servicio pesado',
-    purpose: 'Los elementos de aire primario son la principal barrera contra la contaminación que protege la cámara de combustión de la ingestión de partículas.',
-    engineering: 'El medio de densidad progresiva MACROCORE™ distribuye la carga de contaminantes en toda la profundidad del medio, equilibrando eficiencia, capacidad y restricción.',
+    purpose: 'Los elementos primarios de aire del motor soportan la carga normal de partículas en la admisión y reducen el transporte de polvo hacia el turbocompresor, los cilindros y el circuito de combustión, manteniendo el caudal de aire requerido por el motor.',
+    engineering: 'La filtración primaria MACROCORE™ integra la arquitectura de medio especificada, el área filtrante efectiva y la geometría de sellado para controlar la retención de polvo, la capacidad de carga y la restricción de admisión. El desempeño y los límites de sustitución requieren evidencia del elemento y su instalación.',
   },
   'secondary-air': {
     name: 'Elementos de aire secundario / de seguridad',
     seoTitle: 'Elementos de filtro de aire secundario y de seguridad',
-    purpose: 'Los elementos de aire secundario y de seguridad forman la barrera de protección final aguas abajo del elemento primario cuando este está dañado, sobrecargado, mal asentado o retirado durante el servicio.',
-    engineering: 'El medio de seguridad de fibra fina aporta redundancia de protección, no carga rutinaria de polvo. Esta familia única reemplaza el antiguo listado duplicado de Elementos de Seguridad.',
+    purpose: 'Los elementos secundarios o de seguridad, cuando el diseño de admisión los requiere, aportan una barrera adicional aguas abajo durante el servicio del primario o si este pierde integridad. No están destinados a soportar la carga normal de polvo.',
+    engineering: 'La etapa secundaria MACROCORE™ requiere posición correcta aguas abajo, especificación del medio, sellado independiente y compatibilidad con la carcasa. El elemento de seguridad no sustituye la etapa primaria; su contaminación o daño exige revisión según el procedimiento del fabricante del equipo.',
   },
   'air-cleaner-housings': {
     name: 'Carcasas de filtro de aire',
