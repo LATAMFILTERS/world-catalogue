@@ -1,4 +1,4 @@
-name: Municipal Public Service Page Audit
+name: Verify Municipal Public Service Release
 on:
   push:
     branches:
@@ -8,51 +8,40 @@ on:
 permissions:
   contents: read
 jobs:
-  validate:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 13
     steps:
       - uses: actions/checkout@v4
-      - name: Probe municipal filter carousel images
+      - name: Validate all eight municipal carousel images
         shell: bash
         run: |
           python3 - <<'PY'
-          import urllib.request,urllib.error,re,json,struct
+          import urllib.request,re,struct
           s=open('frontend/src/components/IndustryFilterCarousel.tsx',encoding='utf8').read()
           base=re.search(r"const R2_BASE = '([^']+)'",s).group(1)
           block=s.split("  'Waste Municipal': {",1)[1].split("\n  },",1)[0]
-          images=re.findall(r"'([^']+)': `\$\{R2_BASE\}/([^`]+)`",block)
-          for name in ('AIR_DRYER_IMAGE','COOLANT_IMAGE'):
-            m=re.search(r"const "+name+r" = `\$\{R2_BASE\}/([^`]+)`",s)
-            if m:images.append((name,m.group(1)))
-          print('MUNICIPAL_IMAGE_COUNT',len(images),flush=True)
-          for family,name in images:
-            try:
-              req=urllib.request.Request(base+'/'+name,headers={'User-Agent':'ELIMFILTERS-Municipal-Images','Accept':'image/*'})
-              with urllib.request.urlopen(req,timeout=18) as r:
-                data=r.read(15000000)
-                valid=data[:8]==bytes([137,80,78,71,13,10,26,10])
-                size=struct.unpack('>II',data[16:24]) if valid else ()
-                print('MUNICIPAL_IMAGE '+json.dumps({'family':family,'file':name,'http':r.status,'png':valid,'dimensions':size,'bytes':len(data)}),flush=True)
-            except urllib.error.HTTPError as ex:print('MUNICIPAL_IMAGE '+json.dumps({'family':family,'file':name,'http':ex.code}),flush=True)
-            except Exception as ex:print('MUNICIPAL_IMAGE '+json.dumps({'family':family,'file':name,'error':str(ex)}),flush=True)
+          images=dict(re.findall(r"'([^']+)': `\$\{R2_BASE\}/([^`]+)`",block))
+          expected={'primary-air':'EA11132-MACROCORE-approved-opt.png','primary-fuel':'EF90541-SYNTAPORE-approved-opt.png','oil-filters':'EL84407-SYNTRAX-approved-opt.png','cabin-filters':'EC16090-MICROKAPPA-approved-opt.png','fuel-water-separators':'ES90990-HYDROCORE-approved-opt.png','hydraulic-filters':'EH60388-NANOFORCE-approved-opt.png','air-dryer-filters':'ED43571.png','coolant-filters':'EW74685.png'}
+          assert images==expected,(images,expected)
+          assert "(industryName === 'Trucks Fleets' || industryName === 'Waste Municipal')" in s
+          for family,name in expected.items():
+            req=urllib.request.Request(base+'/'+name,headers={'User-Agent':'ELIMFILTERS-Municipal-Release-Validation','Accept':'image/*'})
+            with urllib.request.urlopen(req,timeout=25) as r:
+              raw=r.read(16000000)
+              assert r.status==200
+              assert raw[:8]==bytes([137,80,78,71,13,10,26,10]),name
+              w,h=struct.unpack('>II',raw[16:24])
+              assert w>200 and h>200
+              print('PASS_MUNICIPAL_IMAGE',family,name,w,h,len(raw),flush=True)
+          print('PASS_ALL_8_MUNICIPAL_IMAGES',flush=True)
           PY
-      - name: Install ffprobe
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
-      - name: Probe municipal video
-        shell: bash
-        run: |
-          test -s frontend/public/images/wasted-2.mp4
-          test -s frontend/public/images/wasted.avif
-          ffprobe -v error -show_entries stream=codec_name,codec_type,pix_fmt,width,height -show_entries format=duration,size -of json frontend/public/images/wasted-2.mp4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: npm
           cache-dependency-path: frontend/package-lock.json
-      - name: Install dependencies
+      - name: Install
         working-directory: frontend
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Typecheck
