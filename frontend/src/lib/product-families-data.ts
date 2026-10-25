@@ -114,7 +114,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'air-dryer-filters', name: 'Air Dryer Filters', slug: 'air-dryer-filters', dutyClass: 'HD', hdPrefix: 'ED4', ldPrefix: null,
     purpose: 'Air-dryer cartridges control moisture in approved compressed-air circuits so the downstream pneumatic system receives air conditioned for its operating requirements.',
     engineering: 'DRYCORE™ addresses the validated dryer-cartridge configuration, desiccant capacity, air flow, purge cycle and sealing interfaces. Control of moisture exposure depends on the complete compressor, dryer and pneumatic installation, not on the cartridge alone.',
-    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/airdryer-hero.avif',
+    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ED43571.png',
     ...relationships('air-dryer-filters'),
   },
 };
