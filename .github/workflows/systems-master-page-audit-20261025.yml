@@ -27,10 +27,10 @@ jobs:
           c=open('frontend/src/components/SystemsLanding.tsx',encoding='utf8').read()
           d=open('frontend/src/lib/systems-i18n.ts',encoding='utf8').read()
           css=open('frontend/src/components/SystemsLanding.module.css',encoding='utf8').read()
-          systems=re.findall(r"^  '?(air-intake|fuel-cleanliness|lubrication|hydraulic|cooling-system)'?: \\{",d,re.M)
+          systems=re.findall(r"^  '?(air-intake|fuel-cleanliness|lubrication|hydraulic|cooling-system)'?: \{",d,re.M)
           print('FIVE_SYSTEMS',systems,flush=True)
           assert len(systems)==5
-          textkeys=re.findall(r"tr\\('((?:[^'\\\\]|\\\\.)*)'\\)",c)
+          textkeys=re.findall(r"tr\('((?:[^'\\]|\\.)*)'\)",c)
           missing=[k for k in textkeys if "'"+k+"': [" not in d]
           print('TRANSLATION_KEYS',len(set(textkeys)),'MISSING',missing,flush=True)
           assert not missing
