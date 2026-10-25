@@ -1,0 +1,65 @@
+name: Verify Trucks Fleets Seven Images
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/verify-trucks-fleets-seven-images-20261024.yml
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify seven exact R2 image URLs and isolated mapping
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,struct,os
+          p='frontend/src/components/IndustryFilterCarousel.tsx'
+          page=open('frontend/src/components/TrucksFleetsIndustryPage.tsx',encoding='utf8').read()
+          s=open(p,encoding='utf8').read()
+          prefix='https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/'
+          expected={
+            'primary-air':'EA17682.png',
+            'primary-fuel':'EF97440.png',
+            'oil-filters':'EL81807.png',
+            'fuel-water-separators':'ES91242.png',
+            'cabin-filters':'EC14547-MICROKAPPA-approved-opt.png',
+            'coolant-filters':'EW74685.png',
+            'air-dryer-filters':'ED43571.png'
+          }
+          block=s.split("  'Trucks Fleets': {",1)[1].split('\n  },',1)[0]
+          for k,v in expected.items():
+            ref=f"'{k}': `${{R2_BASE}}/{v}`"
+            assert ref in block, 'Wrong map '+k
+          assert block.count('${R2_BASE}')==7,'Unexpected image count'
+          assert "industryName === 'Trucks Fleets'" in s
+          assert 'industryName="Trucks Fleets"' in page
+          for key,file in expected.items():
+            req=urllib.request.Request(prefix+file,headers={'User-Agent':'ELIMFILTERS-Carousel-Image-Check','Accept':'image/*'})
+            try:
+              with urllib.request.urlopen(req,timeout=18) as r:
+                content=r.read(30000000)
+                assert r.status==200, (file,r.status)
+                assert content[:8]==b'\x89PNG\r\n\x1a\n',(file,'not PNG')
+                w,h=struct.unpack('>II',content[16:24])
+                assert w>=200 and h>=200,(file,'invalid dimensions')
+                print('PASS',key,file,r.status,w,h,len(content),flush=True)
+            except Exception as exc:
+              print('FAIL',key,file,str(exc),flush=True)
+              raise
+          print('ALL_SEVEN_TRUCK_SLIDES_VALIDATED',flush=True)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Typecheck
+        working-directory: frontend
+        run: npm run type-check
