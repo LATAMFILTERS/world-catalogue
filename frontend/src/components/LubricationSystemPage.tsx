@@ -98,7 +98,7 @@ export function LubricationSystemPage() {
           <p style={eyebrow}><ReviewedText text={"LUBRICANT CONTAMINATION CONTROL"} /></p>
           <h1 style={heroTitle}><ReviewedText text={"Lubrication"} context="LubricationSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="LubricationSystemPageTitle" /></span></h1>
           <p style={heroPromise}><ReviewedText text={"Control contamination while preserving the oil flow and pressure behavior the engine depends on."} /></p>
-          <p style={heroLead}><ReviewedText text={"ELIMFILTERS Lubrication Protection connects oil condition, engine duty, SYNTRAX™ filtration technology and the correct oil-filter family to validated application evidence before a part number is accepted."} /></p>
+
           <div style={buttonRow}>
             <Link href="#lubrication-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE LUBRICATION PATH"} /></Link>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
@@ -192,7 +192,6 @@ const heroMedia: CSSProperties = { width:'100%',height:'100%',objectFit:'cover',
 const heroInner: CSSProperties = { width:'100%',maxWidth:'1500px',margin:'0 auto',position:'relative',zIndex:2 };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(3rem,7vw,6.8rem)', lineHeight: .9, letterSpacing: '-.05em', textTransform: 'uppercase', margin: 0 };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem,2vw,1.45rem)', maxWidth: '800px', lineHeight: 1.35, margin: '1.6rem 0 0' };
-const heroLead: CSSProperties = { fontSize: 'clamp(1rem,1.5vw,1.13rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.7)', maxWidth: '820px', marginTop: '1rem' };
 const section: CSSProperties = { padding:'clamp(3.4rem,5.4vw,6rem) clamp(1.25rem,4vw,5rem)', maxWidth:'1560px',margin:'0 auto' };
 const sectionAlt: CSSProperties = { ...section, background:'#080808',borderTop:'1px solid rgba(255,255,255,.09)',borderBottom:'1px solid rgba(255,255,255,.09)' };
 const twoCol: CSSProperties = { display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(100%,500px),1fr))',gap:'clamp(1.8rem,4vw,4.5rem)',alignItems:'start',maxWidth:'1500px',margin:'0 auto' };
