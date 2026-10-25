@@ -6,8 +6,10 @@ import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { latestWeeklyReport, resolveMailConfig, buildMessage } from './send-weekly-email.mjs';
 import { validateWeeklyEmailContract, validateRenderedWeeklyEmail } from './weekly-email-integrity.mjs';
-import { renderIndustryDigest } from './industry-digest.mjs';
-import { emailShell, sectionHeader, weeklyKpis } from './weekly-email-layout.mjs';
+import { renderIndustryDigest, headlineCandidates } from './industry-digest.mjs';
+import layout from '../../lib/hermes-email-layout.js';
+
+const { emailShell, sectionHeader, weeklyKpis } = layout;
 
 const require = createRequire(import.meta.url);
 const { buildReviewUrl } = require('../../lib/hermes-review-token');
@@ -44,6 +46,43 @@ function actionConfig(env = process.env) {
   return { baseUrl, secret, runId, dryRun, ttlDays, enabled: Boolean(baseUrl && secret && /^\d+$/.test(runId) && (!dryRun || String(env.HERMES_REVIEW_ACTIONS_ENABLED || '').toLowerCase() === 'true')) };
 }
 
+// Dashboard placeholders: Part Search swaps each one for live buttons (or a "decided" badge) when the page opens.
+const placeholder = (kind) => (code) => `<!--HERMES_ACT:${kind}:${code}-->`;
+
+/** Signed link to this run's weekly dashboard on Part Search. */
+function dashboardUrl(cfg) {
+  const exp = Math.floor(Date.now() / 1000) + cfg.ttlDays * 86400;
+  return buildReviewUrl(cfg.baseUrl.replace(/\/hermes\/review\/?$/, '/hermes/weekly'), { candidate: `HERMES_WEEK_${cfg.runId}`, decision: 'view', run_id: cfg.runId, exp }, cfg.secret);
+}
+
+function candidateCard(c, type, actionsHtml = '') {
+  const rr = c.research_resolution || {};
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e3e3e3;border-left:5px solid #111;margin:0 0 14px;font-size:13px"><tr><td style="padding:14px 16px">
+        <div style="font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#666">${esc(candidateTypeLabel(type))}</div>
+        <h3 style="margin:6px 0 10px">${esc(rr.finding_title || c.entity_code)}</h3>
+        <p><strong>Código interno:</strong> ${esc(c.entity_code)}</p>
+        <p><strong>Fuente:</strong> ${esc(c.source_publisher || 'n/a')} — ${esc(rr.evidence_url || c.source_url || 'n/a')}</p>
+        <p><strong>Evidencia:</strong> ${esc(c.evidence_level || 'n/a')} · <strong>Confianza:</strong> ${esc(c.confidence ?? rr.confidence ?? 'n/a')}</p>
+        ${Array.isArray(rr.technical_facts) && rr.technical_facts.length ? `<p><strong>Hechos técnicos:</strong> ${esc(rr.technical_facts.join(' | '))}</p>` : ''}
+        ${rr.relevance ? `<p><strong>Relevancia para ELIMFILTERS:</strong> ${esc(rr.relevance)}</p>` : ''}
+        ${Array.isArray(c.affected_entities) ? `<p><strong>Entidades afectadas:</strong> ${esc(c.affected_entities.join(', '))}</p>` : ''}
+        <p><strong>Acción propuesta:</strong> ${esc(c.proposed_action || rr.proposed_action || 'n/a')}</p>
+        ${actionsHtml}
+      </td></tr></table>`;
+}
+
+/** The full weekly dashboard (news, highlights, whole annex, catalogue candidates), staged as one review-queue row. */
+export function weeklyDashboardRow(data, cfg) {
+  const digest = renderIndustryDigest(data.industry_digest, { actionsFor: placeholder('card'), headlineActionsFor: placeholder('headline'), annexActionsFor: placeholder('headline') });
+  const cards = Object.entries(data.groups || {}).sort().flatMap(([type, list]) => (Array.isArray(list) ? list : []).map((c) => candidateCard(c, type, placeholder('card')(c.entity_code))));
+  const w = data.industry_digest?.window;
+  return {
+    entity_code: `HERMES_WEEK_${cfg.runId}`, kind: 'weekly_dashboard', approval_required: true,
+    title: 'Dashboard semanal HERMES', period: w ? `${w.start} — ${w.end}` : '', kpis: weeklyKpis(data),
+    body_html: `${digest.html}${cards.length ? `${sectionHeader('Candidatos para catálogo / Knowledge Center')}${cards.join('\n')}` : ''}`
+  };
+}
+
 function actionButtons(candidate, cfg) {
   if (!cfg.enabled) {
     return '<p style="font-size:12px;color:#777"><strong>Acciones:</strong> no disponibles; falta configuración del Review Center.</p>';
@@ -73,7 +112,7 @@ function reviewCandidates(data) {
   return Object.values(groups).flatMap((value) => Array.isArray(value) ? value : []);
 }
 
-function buildExecutiveMessage(report, env = process.env) {
+function buildExecutiveMessage(report, env = process.env, digestOptions = null) {
   const date = report.name.match(/\d{4}-\d{2}-\d{2}/)?.[0] || 'current';
   const data = report.data;
   const cfg = actionConfig(env);
@@ -91,7 +130,7 @@ function buildExecutiveMessage(report, env = process.env) {
   const text = [];
   text.push('HERMES — Inteligencia lista para revisión', '');
   text.push(`Listos para revisión: ${totals.review_ready ?? 0}`, '');
-  const digest = renderIndustryDigest(data.industry_digest, { actionsFor: cfg.enabled ? (code) => actionButtons({ entity_code: code }, cfg) : null });
+  const digest = renderIndustryDigest(data.industry_digest, digestOptions || { actionsFor: cfg.enabled ? (code) => actionButtons({ entity_code: code }, cfg) : null });
   if (digest.text) text.push(digest.text);
 
   for (const [type, candidates] of Object.entries(groups).sort()) {
@@ -105,18 +144,7 @@ function buildExecutiveMessage(report, env = process.env) {
       text.push(`Acción propuesta: ${c.proposed_action || rr.proposed_action || 'n/a'}`);
       text.push('Para autorizar la investigación completa: responde APROBADO ' + c.entity_code + ' en la primera línea.', '');
 
-      cards.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e3e3e3;border-left:5px solid #111;margin:0 0 14px;font-size:13px"><tr><td style="padding:14px 16px">
-        <div style="font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#666">${esc(candidateTypeLabel(type))}</div>
-        <h3 style="margin:6px 0 10px">${esc(rr.finding_title || c.entity_code)}</h3>
-        <p><strong>Código interno:</strong> ${esc(c.entity_code)}</p>
-        <p><strong>Fuente:</strong> ${esc(c.source_publisher || 'n/a')} — ${esc(rr.evidence_url || c.source_url || 'n/a')}</p>
-        <p><strong>Evidencia:</strong> ${esc(c.evidence_level || 'n/a')} · <strong>Confianza:</strong> ${esc(c.confidence ?? rr.confidence ?? 'n/a')}</p>
-        ${Array.isArray(rr.technical_facts) && rr.technical_facts.length ? `<p><strong>Hechos técnicos:</strong> ${esc(rr.technical_facts.join(' | '))}</p>` : ''}
-        ${rr.relevance ? `<p><strong>Relevancia para ELIMFILTERS:</strong> ${esc(rr.relevance)}</p>` : ''}
-        ${Array.isArray(c.affected_entities) ? `<p><strong>Entidades afectadas:</strong> ${esc(c.affected_entities.join(', '))}</p>` : ''}
-        <p><strong>Acción propuesta:</strong> ${esc(c.proposed_action || rr.proposed_action || 'n/a')}</p>
-        <p><strong>Investigar todos los filtros:</strong> responde al correo con APROBADO ${esc(c.entity_code)} en la primera línea.</p>\n        ${actionButtons(c, cfg)}
-      </td></tr></table>`);
+      cards.push(candidateCard(c, type, digestOptions?.dashboardUrl ? '<p style="font-size:12px;color:#777">Decide en el dashboard.</p>' : `<p><strong>Investigar todos los filtros:</strong> responde al correo con APROBADO ${esc(c.entity_code)} en la primera línea.</p>${actionButtons(c, cfg)}`));
     }
   }
 
@@ -148,15 +176,17 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
   // Verified industry-sweep findings are approvable too (ACEPTAR / ELIMINAR in the digest).
   const digestReview = Array.isArray(report.data?.industry_digest?.review_candidates) ? report.data.industry_digest.review_candidates : [];
   let fallbackReason = null;
-  let digestActions = null;
-  if (hasReviewReady || digestReview.length) {
+  const headlineRows = headlineCandidates(report.data?.industry_digest);
+  let digestActions = null; let digestOptions = null;
+  if (hasReviewReady || report.data?.industry_digest) {
     if (!env.HERMES_REVIEW_RUN_ID) env.HERMES_REVIEW_RUN_ID = String(env.GITHUB_RUN_ID || Date.now());
     const cfg = actionConfig(env);
     if (!cfg.enabled) fallbackReason = 'REVIEW_ACTIONS_UNAVAILABLE';
     else {
       try {
-        await stage([...reviewCandidates(report.data), ...digestReview], { cycleId: cfg.runId, env });
+        await stage([...reviewCandidates(report.data), ...digestReview, ...headlineRows, weeklyDashboardRow(report.data, cfg)], { cycleId: cfg.runId, env });
         digestActions = (code) => actionButtons({ entity_code: code }, cfg);
+        digestOptions = { dashboardUrl: dashboardUrl(cfg) }; // the email is the summary; decisions happen on the dashboard
       } catch (error) { fallbackReason = `REVIEW_STAGING_FAILED: ${error.message}`; }
     }
     if (!hasReviewReady) fallbackReason = null; // nothing in the catalogue queue: no warning banner
@@ -166,7 +196,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
     // Weekly intelligence delivery is mandatory even when all findings are still pending
     // research. Returning success without sending caused the Lenovo scheduler to mark a week
     // as sent while Victor received no HERMES email.
-    const digest = buildMessage(report, config, { actionsFor: digestActions });
+    const digest = buildMessage(report, config, digestOptions || { actionsFor: digestActions });
     if (fallbackReason) {
       const notice = 'Hay candidatos listos para revisión, pero los botones de aprobación no están disponibles en esta corrida. Revísalos abajo; ningún cambio se aplica sin tu aprobación explícita.';
       digest.html = `<p style="background:#FFF12D;padding:10px;border-radius:6px"><strong>${esc(notice)}</strong></p>${digest.html}`;
@@ -211,7 +241,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
   }
 
 
-  const message = buildExecutiveMessage(report, env);
+  const message = buildExecutiveMessage(report, env, digestOptions);
 
   if (!config.live) {
     const preview = path.join(path.resolve(reportsDir), `hermes-email-preview-${message.date}.html`);

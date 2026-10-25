@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { runClaude } from './oem-research-runner.mjs';
-import { DOMAIN_LABELS_ES } from './industry-digest.mjs';
+import { DOMAIN_LABELS_ES, decidedHeadlineUrls } from './industry-digest.mjs';
 
 export const MAX_HIGHLIGHTS = 8;
 const DAY_MS = 86_400_000;
@@ -21,8 +21,8 @@ Responde SOLO con JSON, sin texto adicional:
 {"destacados":[{"n":<número de la lista>,"titulo_es":"titular traducido al español","dominio":"<uno de: ${Object.keys(DOMAIN_LABELS_ES).join(', ')}>","por_que_importa_es":"1 frase: qué significa para ELIMFILTERS"}]}`;
 
 /** Headlines still unreviewed this week (same rules as the email annex). */
-export function annexItems(unreviewed, now = new Date()) {
-  const since = now.getTime() - 7 * DAY_MS; const urls = new Set();
+export function annexItems(unreviewed, now = new Date(), decided = new Set()) {
+  const since = now.getTime() - 7 * DAY_MS; const urls = new Set(decided);
   return (Array.isArray(unreviewed?.items) ? unreviewed.items : []).filter((i) => {
     const at = Date.parse(i?.published_at || '');
     if (Number.isNaN(at) || at < since || at > now.getTime() || !/^https:\/\//.test(i.url || '') || urls.has(i.url)) return false;
@@ -53,7 +53,7 @@ export async function runAnnexHighlights({ stateRoot = process.env.HERMES_STATE_
   fs.rmSync(outPath, { force: true }); // never show last week's picks
   let unreviewed = null;
   try { unreviewed = JSON.parse(fs.readFileSync(path.resolve(stateRoot, 'newsroom-unreviewed.json'), 'utf8')); } catch {}
-  const items = annexItems(unreviewed, now);
+  const items = annexItems(unreviewed, now, decidedHeadlineUrls(stateRoot));
   if (!items.length) return { outcome: 'NOTHING_TO_REVIEW' };
   // The child sees only this folder: one input file, Read as its only tool.
   const work = path.resolve(stateRoot, 'annex-highlights-work');
