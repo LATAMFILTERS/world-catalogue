@@ -9,8 +9,8 @@
 //   1. ld_catalog relational rows whose source_sku is the WD code (vehicle applications,
 //      specifications, competitor/OEM cross references when those tables carry source_sku)
 //      are backed up to the report file and deleted (precedent: run_100 quarantine).
-//   2. public vehicle_applications: entries that match a deleted WD relational row
-//      (make + model_family + model_type) are removed; everything else is kept.
+//   2. public vehicle_applications are not edited (trigger run_077 requires verified evidence);
+//      the WD rows still in that payload are counted and stay withheld by the guard.
 //   3. public competitor_codes / oem_codes: entries whose code is the WD code are removed
 //      through the write gateway in rejection-cleanup mode (remove-only).
 // The HD side is not changed. Nothing new is created.
@@ -83,9 +83,12 @@ try {
         [sku, [...wd]])).rowCount;
     }
 
-    // 2. public vehicle applications that came from the WD rows
+    // 2. public vehicle_applications are NOT edited here: the DB trigger (run_077) only accepts an
+    //    application payload with verified evidence, and the remaining rows have none. They are
+    //    already withheld by the presentation guard. Once the WD source rows are gone, the SKU can
+    //    resolve to a single base code and the MANN batch replaces the payload with evidence.
     const apps = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
-    const keepApps = apps.filter((a) => !wdAppKeys.has([norm(a.make), norm(a.model_family), norm(a.model_type)].join('|')));
+    const wdAppsStillInPayload = apps.filter((a) => wdAppKeys.has([norm(a.make), norm(a.model_family), norm(a.model_type)].join('|'))).length;
     // 3. WD codes in the LD reference lists (remove-only)
     const keepComp = (row.competitor_codes || []).filter((e) => !wd.has(norm(codeOf(e))));
     const keepOem = (row.oem_codes || []).filter((e) => !wd.has(norm(codeOf(e))));
@@ -93,19 +96,20 @@ try {
     if (refsChanged) {
       assertGovernedCatalogPatch(row, { competitor_codes: keepComp, oem_codes: keepOem }, { rejectionCleanup: true });
     }
-    if (keepApps.length !== apps.length || refsChanged) {
-      await db.query(
-        `UPDATE public.elimfilters_catalog SET vehicle_applications=$2::jsonb, competitor_codes=$3::jsonb, oem_codes=$4::jsonb,
-           enrichment_data = jsonb_set(coalesce(enrichment_data,'{}'::jsonb), '{wd_hd_cleanup}', $5::jsonb)
-         WHERE sku=$1`,
-        [sku, JSON.stringify(keepApps), JSON.stringify(keepComp), JSON.stringify(keepOem), JSON.stringify({
-          removed_wd_codes: [...wd], vehicle_apps_removed: apps.length - keepApps.length,
-          decided_by: 'OPERATOR', updated_at: '2026-10-24', procedure: 'strip-wd-from-mixed-ld',
-        })]);
-    }
+    await db.query(
+      `UPDATE public.elimfilters_catalog SET competitor_codes=$2::jsonb, oem_codes=$3::jsonb,
+         enrichment_data = jsonb_set(coalesce(enrichment_data,'{}'::jsonb), '{wd_hd_cleanup}', $4::jsonb)
+       WHERE sku=$1`,
+      [sku, JSON.stringify(keepComp), JSON.stringify(keepOem), JSON.stringify({
+        removed_wd_codes: [...wd], relational_rows_removed: removed,
+        public_vehicle_apps_from_wd_pending_evidence_rewrite: wdAppsStillInPayload,
+        decided_by: 'OPERATOR', updated_at: '2026-10-24', procedure: 'strip-wd-from-mixed-ld',
+      })]);
+    const keepApps = apps;
     report.done.push({
       sku, wd: [...wd], relational_removed: removed,
       vehicle_apps: `${apps.length}->${keepApps.length}`,
+      wd_apps_pending_in_public_payload: wdAppsStillInPayload,
       competitor_removed: (row.competitor_codes || []).length - keepComp.length,
       oem_removed: (row.oem_codes || []).length - keepOem.length,
     });
@@ -134,6 +138,6 @@ fs.writeFileSync(out, JSON.stringify(report, null, 2));
 const tot = report.done.reduce((m, d) => { m.apps += Number(d.vehicle_apps.split('->')[0]) - Number(d.vehicle_apps.split('->')[1]); m.comp += d.competitor_removed; m.oem += d.oem_removed;
   for (const [k, v] of Object.entries(d.relational_removed)) m.rel[k] = (m.rel[k] || 0) + v; return m; }, { apps: 0, comp: 0, oem: 0, rel: {} });
 console.log(JSON.stringify({ mode: report.mode, eligible: report.eligible, processed: report.done.length, skipped: report.skipped,
-  totals: { public_vehicle_apps_removed: tot.apps, competitor_codes_removed: tot.comp, oem_codes_removed: tot.oem, relational_rows_removed: tot.rel },
+  totals: { wd_apps_pending_in_public_payload: report.done.reduce((n, d) => n + d.wd_apps_pending_in_public_payload, 0), competitor_codes_removed: tot.comp, oem_codes_removed: tot.oem, relational_rows_removed: tot.rel },
   sample: report.done.slice(0, 8).map((d) => `${d.sku} ${d.wd.join('+')} apps ${d.vehicle_apps} comp-${d.competitor_removed} rel=${JSON.stringify(d.relational_removed)}`),
   relational_tables: report.relational_tables, transaction: report.transaction, error: report.error, file: out }, null, 2));
