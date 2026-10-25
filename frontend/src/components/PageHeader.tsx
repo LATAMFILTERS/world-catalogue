@@ -41,7 +41,7 @@ const INDUSTRY_BREADCRUMB_LABELS: Record<string, string> = {
   'Oil Gas': 'Oil & Gas Filtration Systems',
   'Power Generation': 'Power Generation Filtration Systems',
   Railway: 'Railway Filtration Systems',
-  'Trucks Fleets': 'Truck Fleets Filtration Systems',
+  'Trucks Fleets': 'Trucks & Fleets',
   'Waste Municipal': 'Waste & Municipal Filtration Systems',
 };
 
@@ -57,7 +57,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
     'Oil Gas': 'Petróleo y gas',
     'Power Generation': 'Generación eléctrica',
     Railway: 'Sistemas de filtración ferroviaria',
-    'Trucks Fleets': 'Filtración para flotas de camiones',
+    'Trucks Fleets': 'Camiones y flotas',
     'Waste Municipal': 'Filtración para flotas municipales y de residuos',
   },
   pt: {
@@ -71,7 +71,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
     'Oil Gas': 'Petróleo e gás',
     'Power Generation': 'Geração de energia',
     Railway: 'Sistemas de filtração ferroviária',
-    'Trucks Fleets': 'Filtração para frotas de caminhões',
+    'Trucks Fleets': 'Caminhões e frotas',
     'Waste Municipal': 'Filtração para frotas municipais e de resíduos',
   },
 };
