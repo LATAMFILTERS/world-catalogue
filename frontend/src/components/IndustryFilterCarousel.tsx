@@ -79,7 +79,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
   Manufacturing: {
     'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF90345-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL81807-SYNTRAX-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
     'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`,
