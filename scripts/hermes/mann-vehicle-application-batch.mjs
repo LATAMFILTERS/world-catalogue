@@ -35,9 +35,23 @@ const offset = Number(args.offset || 0);
 const rule = String(args.rule || 'base-code');
 if (!['base-code', 'ratio'].includes(rule)) throw new Error('--rule must be base-code or ratio');
 const prefix = args.prefix ? String(args.prefix).toUpperCase() : null;
+// --after <SKU>: stable cursor. Committed SKUs drop out of the target list, so
+// --offset shifts after a commit; --after does not.
+const after = args.after ? String(args.after).toUpperCase() : null;
 const minMatch = Number(args['min-match'] || 0.7);
 const delayMs = Number(args['delay-ms'] || 2000);
 const commitEligible = args['commit-eligible'] === 'true';
+// LD family must match the official product type. EA3 = engine air, so "Cabin Air Filter"
+// (MANN FP/CU/CUK) is NOT an EA3 match even though it contains "air filter".
+const ldFamilyMatches = (sku, title) => {
+  const t = String(title || '');
+  const fam = sku.slice(0, 3);
+  if (fam === 'EA3') return /air filter/i.test(t) && !/cabin|interior/i.test(t);
+  if (fam === 'EC3') return /cabin|interior/i.test(t);
+  if (fam === 'EL3') return /oil filter/i.test(t);
+  if (fam === 'EF3') return /fuel filter/i.test(t);
+  return true;
+};
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const slug = (code) => String(code).toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9/()]/g, '');
 
@@ -111,7 +125,8 @@ const { rows: targets } = await db.query(`
                       AND e.payload_hash = md5(c.vehicle_applications::text))
     AND (i.canonical_part_number IS NOT NULL OR rel.k IS NOT NULL)
     AND ($3::text IS NULL OR c.sku LIKE $3::text || '%')
-  ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit, prefix]);
+    AND ($4::text IS NULL OR c.sku > $4::text)
+  ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit, prefix, after]);
 await db.query('ROLLBACK');
 await db.end();
 
@@ -152,9 +167,8 @@ for (const [i, t] of targets.entries()) {
   } else {
     row.match_ratio = c.current_distinct_keys ? Number((c.matched_make_model_year / c.current_distinct_keys).toFixed(3)) : 0;
     // LD family must match the official product type (EL3 oil, EA3 air, EC3 cabin, EF3 fuel).
-    const family = { EL3: /oil filter/i, EA3: /air filter/i, EC3: /cabin|interior/i, EF3: /fuel filter/i }[t.sku.slice(0, 3)];
     row.mann_title = pilot.json?.source?.title || null;
-    if (family && !family.test(row.mann_title || '')) {
+    if (!ldFamilyMatches(t.sku, row.mann_title)) {
       row.reason = `FAMILY_MISMATCH: ${row.mann_title}`;
       rows.push(row);
       console.log(`[${i + 1}/${targets.length}] ${t.sku} ${t.mann_code}\tHOLD\t${row.reason}`);

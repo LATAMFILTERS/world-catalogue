@@ -59,6 +59,16 @@ const exact = titleCompact.some((_, i) => {
   return false;
 });
 if (!exact) stop(`page title "${comparison.source.title}" is not an exact match for ${comparison.mann_code}`);
+// LD family gate (repeated here so commits re-check it): EA3 engine air excludes cabin filters.
+{
+  const t = String(comparison.source.title || '');
+  const fam = sku.slice(0, 3);
+  const ok = fam === 'EA3' ? /air filter/i.test(t) && !/cabin|interior/i.test(t)
+    : fam === 'EC3' ? /cabin|interior/i.test(t)
+    : fam === 'EL3' ? /oil filter/i.test(t)
+    : fam === 'EF3' ? /fuel filter/i.test(t) : true;
+  if (!ok) stop(`FAMILY_MISMATCH: ${sku} vs "${t}"`);
+}
 
 // ---------- Target payload (MANN official rows, structured) ----------
 const clean = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== null && v !== undefined && v !== ''));
