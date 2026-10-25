@@ -47,7 +47,7 @@ export default async function TechnologyPage({params}:Props){
  return <main style={{background:'#000',color:'#fff'}}>
   {articleSchema&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(articleSchema)}}/>}{questionsSchema&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(questionsSchema)}}/>}<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbs)}}/>
   <section aria-label={`${canonical.name} technology hero`} style={{position:'relative',minHeight:slug==='turbocore'?'clamp(400px,58vh,670px)':'clamp(560px, 82vh, 860px)',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden'}}>
-    {slug!=='turbocore' && <div aria-hidden="true" style={{position:'absolute',inset:0,backgroundImage:`url(${technologyHero})`,backgroundSize:'cover',backgroundPosition:'center center',backgroundRepeat:'no-repeat',opacity:HERO_MEDIA_TREATMENT.opacity}}/>}
+    {<div aria-hidden="true" style={{position:'absolute',inset:0,backgroundImage:`url(${technologyHero})`,backgroundSize:'cover',backgroundPosition:'center center',backgroundRepeat:'no-repeat',opacity:HERO_MEDIA_TREATMENT.opacity}}/>}
     <div aria-hidden="true" style={{position:'absolute',inset:0,background:HERO_MEDIA_TREATMENT.overlayBackground,zIndex:1}}/>
     <img src={technologyAsset} alt={canonical.name} style={{position:'relative',zIndex:2,width:'min(520px, 48vw)',height:'auto',display:'block',mixBlendMode:'screen',filter:'drop-shadow(0 2px 12px rgba(0,0,0,0.5))'}}/>
   </section>
