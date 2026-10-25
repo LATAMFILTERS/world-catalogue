@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     url: URL,
     type: 'website',
     siteName: 'ELIMFILTERS',
-    images: [{ url: `${BASE_URL}/images/turbine-plant.avif`, width: 1200, height: 630, alt: 'Fuel Cleanliness Protection — ELIMFILTERS' }],
+    images: [{ url: `${BASE_URL}/images/hero-syntapore.avif`, width: 1200, height: 630, alt: 'Fuel Cleanliness Protection — ELIMFILTERS' }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fuel Cleanliness Protection | ELIMFILTERS',
     description: 'Diesel fuel contamination-control architecture for particulate filtration, water separation and applicable turbine-series fuel conditioning.',
-    images: [`${BASE_URL}/images/turbine-plant.avif`],
+    images: [`${BASE_URL}/images/hero-syntapore.avif`],
   },
 };
 
