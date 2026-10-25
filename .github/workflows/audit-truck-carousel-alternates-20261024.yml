@@ -1,0 +1,46 @@
+name: Audit truck carousel replacement candidates
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/audit-truck-carousel-alternates-20261024.yml
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Probe candidate R2 assets
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,struct,json,concurrent.futures
+          base='https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/'
+          groups={
+            'primary-fuel':['EF90529-SYNTAPORE-approved-opt.png','EF90541-SYNTAPORE-approved-opt.png','EF96745-SYNTAPORE-approved-opt.png','EF90345-SYNTAPORE-approved-opt.png','EF91315-SYNTAPORE-approved-opt.png','EF92478-SYNTAPORE-approved-opt.png','EF98960-SYNTAPORE-approved-opt.png','EF95811-FF5971NN-2of20-approved-opt.png'],
+            'oil-filters':['EL87900-LF14000NN-1of20-approved.png/EL87900-LF14000NN-1of20-approved.png','EL87900-LF14000NN-1of20-approved-opt.png','EL84407-SYNTRAX-approved-opt.png','EL84403-SYNTRAX-approved-opt.png','EL80352-SYNTRAX-approved-opt.png','EL80428-LF3970-2of20-approved-opt.png','EL83000-SYNTRAX-approved-opt.png','EL87345-SYNTRAX-approved-opt.png'],
+            'fuel-water-separators':['ES99030-HYDROCORE-approved-opt.png','ES91354-HYDROCORE-approved-opt.png','ES91432-HYDROCORE-approved-opt.png','ES91108-HYDROCORE-approved-opt.png','ES90990-HYDROCORE-approved-opt.png','ES91430-HYDROCORE-approved-opt.png'],
+            'air-dryer-filters':['ED43571-DRYCORE-approved-opt.png','ED43571-THERMACORE-approved-opt.png','ED41413-DRYCORE-approved-opt.png','ED44764-DRYCORE-approved-opt.png','ED43571-approved-opt.png','ED43571-THERMACORE-approved-opt.png/ED43571-THERMACORE-approved-opt.png'],
+            'coolant-filters':['EW74685-WF2077-2of20-approved-opt.png','EW74685-WF2077-2of20-approved.png','EW74685-THERMACORE-approved-opt.png','EW74685-THERMACORE-approved.png','EW74685-WF2077-2of20-approved.png/EW74685-WF2077-2of20-approved.png','EW74685-approved-opt.png','EW74685-WF2077-2of20-approved-opt.png/EW74685-WF2077-2of20-approved-opt.png']
+          }
+          def check(row):
+            group,name=row
+            url=base+name
+            try:
+              req=urllib.request.Request(url,headers={'User-Agent':'ELIMFILTERS-Image-Verification','Accept':'image/*'})
+              with urllib.request.urlopen(req,timeout=13) as r:
+                data=r.read(12000000);status=r.status;ctype=r.headers.get('Content-Type','')
+              ok=status==200 and data[:8]==b'\x89PNG\r\n\x1a\n'
+              dims=struct.unpack('>II',data[16:24]) if ok else []
+              return dict(group=group,name=name,status=status,valid_png=ok,dimensions=dims,bytes=len(data),content_type=ctype)
+            except urllib.error.HTTPError as e:
+              return dict(group=group,name=name,status=e.code)
+            except Exception as e:
+              return dict(group=group,name=name,error=str(e))
+          pairs=[(group,f) for group,names in groups.items() for f in names]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+            results=list(ex.map(check,pairs))
+          for row in results:print('CANDIDATE '+json.dumps(row,ensure_ascii=False),flush=True)
+          print('SUMMARY '+json.dumps({g:[x['name'] for x in results if x['group']==g and x.get('valid_png')] for g in groups}),flush=True)
+          PY
