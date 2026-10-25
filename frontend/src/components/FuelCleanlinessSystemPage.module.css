@@ -59,3 +59,20 @@
   .fuelGrid > article > div:first-child { height: 265px; min-height: 0; aspect-ratio: auto; }
   .familyGrid,.assuranceGrid { grid-template-columns: minmax(0,1fr); }
 }
+
+
+/* Six-stage fuel identification sequence: balanced 3 × 2 on desktop.
+   Step numbers and connecting markers continue to use the shared decision-flow styling. */
+.decisionFlow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.decisionFlow > :nth-child(3)::after { display: none; }
+@media (max-width: 900px) {
+  .decisionFlow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .decisionFlow > :nth-child(3)::after { display: block; }
+  .decisionFlow > :nth-child(2n)::after { display: none; }
+}
+@media (max-width: 560px) {
+  .decisionFlow { grid-template-columns: minmax(0, 1fr); }
+  .decisionFlow > :nth-child(n)::after { display: none; }
+}
