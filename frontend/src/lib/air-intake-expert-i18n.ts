@@ -70,7 +70,7 @@ export const AIR_TECHNOLOGIES = [
     verification: ['Confirm engine airflow, permissible restriction, housing fit and seal integrity; review applicable ISO 5011 test evidence for the exact element. Safety stages are not routine primary loading elements.', 'Confirmar caudal del motor, restricción admisible, ajuste en carcasa e integridad de sellos; revisar evidencia ISO 5011 aplicable al elemento. La etapa de seguridad no se utiliza para carga habitual de polvo.', 'Confirmar vazão do motor, restrição admissível, encaixe na carcaça e integridade das vedações; revisar evidências ISO 5011 aplicáveis ao elemento. O estágio de segurança não se destina à carga rotineira de poeira.']
   },
   {
-    key: 'intekcore', name: 'INTEKCORE™', image: '/images/intekcore(fn).avif', href: '/technologies/intekcore/',
+    key: 'intekcore', name: 'INTEKCORE™', image: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA20080-INTEKCORE-approved-opt.png', href: '/technologies/intekcore/',
     imageAlt: ["INTEKCORE™ air-cleaner housing and sealing assembly","Conjunto de carcasa y sellado de admisión INTEKCORE™","Conjunto de carcaça e vedação de admissão INTEKCORE™"],
     families: ['air-cleaner-housings'],
     domain: ['AIR-CLEANER HOUSING & SEALING', 'CARCASA Y SELLADO DE ADMISIÓN', 'CARCAÇA E VEDAÇÃO DE ADMISSÃO'],
