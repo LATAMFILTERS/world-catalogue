@@ -16,8 +16,8 @@ export default function SystemsPage() {
       <section style={{
         backgroundColor: '#050505',
         backgroundImage: heroBackgroundImage('/images/dossier-filters.avif'),
-        backgroundSize: '100% 100%, contain',
-        backgroundPosition: 'center, 72% center',
+        backgroundSize: '100% 100%, cover',
+        backgroundPosition: 'center, center',
         backgroundRepeat: 'no-repeat, no-repeat',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem)',
@@ -25,7 +25,7 @@ export default function SystemsPage() {
         display: 'flex',
         alignItems: 'center',
       }}>
-        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1520px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
@@ -85,7 +85,7 @@ export default function SystemsPage() {
 
       {/* Systems Grid */}
       <section style={{
-        maxWidth: '1200px',
+        maxWidth: '1520px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
         display: 'grid',
