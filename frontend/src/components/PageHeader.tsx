@@ -42,7 +42,7 @@ const INDUSTRY_BREADCRUMB_LABELS: Record<string, string> = {
   'Power Generation': 'Power Generation Filtration Systems',
   Railway: 'Railway',
   'Trucks Fleets': 'Trucks & Fleets',
-  'Waste Municipal': 'Waste & Municipal Filtration Systems',
+  'Waste Municipal': 'Waste & Municipal',
 };
 
 const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = {
@@ -58,7 +58,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
     'Power Generation': 'Generación eléctrica',
     Railway: 'Ferrocarriles',
     'Trucks Fleets': 'Camiones y flotas',
-    'Waste Municipal': 'Filtración para flotas municipales y de residuos',
+    'Waste Municipal': 'Residuos y servicios municipales',
   },
   pt: {
     Agriculture: 'Sistemas de filtração agrícola',
@@ -72,7 +72,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
     'Power Generation': 'Geração de energia',
     Railway: 'Ferrovias',
     'Trucks Fleets': 'Caminhões e frotas',
-    'Waste Municipal': 'Filtração para frotas municipais e de resíduos',
+    'Waste Municipal': 'Resíduos e serviços municipais',
   },
 };
 
