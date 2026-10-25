@@ -134,7 +134,7 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={hero}>
         <video aria-hidden="true" className="miningHeroVideo" autoPlay muted loop playsInline preload="auto" style={heroVideo}>
-          <source src="/images/Train.mp4" type="video/mp4" />
+          <source src="/images/railway-hero-h264.mp4" type="video/mp4" />
         </video>
         <div className="miningHeroShade" style={heroShade} />
         <div className="miningHeroContainer" style={heroInner}>
