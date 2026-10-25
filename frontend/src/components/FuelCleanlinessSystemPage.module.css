@@ -1,0 +1,61 @@
+/* Fuel Cleanliness follows the same image-led engineering hierarchy as Air Intake.
+   The three fuel technologies stay scoped: particulate / standard water / FH-FG turbine. */
+.fuelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.7vw, 1.8rem);
+  margin-top: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: stretch;
+}
+.fuelGrid > * { min-width: 0; }
+.fuelGrid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center;
+  background: #151515;
+  filter: none;
+}
+.fuelCardBody { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.fuelData { margin-top: .8rem; }
+.fuelData > div { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.15); }
+.fuelData dt { font: 700 .73rem/1.4 var(--font-display); color: #fff12d; letter-spacing: .08em; margin-bottom: .45rem; }
+.fuelData dd { margin: 0; line-height: 1.68; color: rgba(255,255,255,.88); font-size: clamp(1rem,1.06vw,1.15rem); }
+.fuelLink { display: inline-block; margin-top: auto; padding-top: 1.2rem; color: #fff12d; font: 700 .8rem/1.5 var(--font-display); text-decoration: none; letter-spacing: .09em; text-transform: uppercase; }
+.familyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 1.7vw, 1.8rem);
+  margin-top: clamp(2rem, 3.5vw, 3.5rem);
+}
+.familyGrid > * { min-width: 0; }
+.familyCard {
+  min-height: 255px;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem,2.5vw,2.8rem);
+  border: 1px solid rgba(255,255,255,.2);
+  background: #0b0b0b;
+  color: #fff;
+  text-decoration: none;
+}
+.familyCard:hover,.familyCard:focus-visible { border-color: #fff12d; }
+.familyNumber { color: #fff12d; font: 700 .8rem/1.4 var(--font-display); letter-spacing: .1em; }
+.familyTitle { font: 700 clamp(1.5rem,2vw,2.1rem)/1.15 var(--font-display); margin: 1.25rem 0 .55rem; text-transform: uppercase; }
+.familyPurpose { color: rgba(255,255,255,.84); font-size: clamp(1rem,1.12vw,1.18rem); line-height: 1.7; margin: .6rem 0 1.3rem; }
+.familyLink { color: #fff12d; font: 700 .8rem/1.5 var(--font-display); margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.2); letter-spacing: .09em; }
+.supportBand { width: 100%; border-bottom: 1px solid rgba(255,255,255,.12); background: #090909; }
+.supportInner { max-width: 1560px; width: 100%; margin: 0 auto; }
+.assuranceGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1rem,2vw,2rem); margin-top: clamp(2rem,3vw,3rem); }
+.assuranceGrid article { min-width: 0; padding: clamp(1.5rem,2.4vw,2.6rem); background: #050505; border-top: 3px solid #fff12d; }
+@media (max-width: 1250px) {
+  .fuelGrid { grid-template-columns: minmax(0,1fr); }
+  .fuelGrid > article { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); }
+  .fuelGrid > article > div:first-child { height: 100%; min-height: 340px; aspect-ratio: auto; }
+}
+@media (max-width: 800px) {
+  .fuelGrid > article { display: flex; flex-direction: column; }
+  .fuelGrid > article > div:first-child { height: 265px; min-height: 0; aspect-ratio: auto; }
+  .familyGrid,.assuranceGrid { grid-template-columns: minmax(0,1fr); }
+}
