@@ -29,7 +29,6 @@ const protection = [
   ['FUEL PARTICULATE', 'Dirt introduced into diesel tanks, transfer hoses and filling points', 'DIESEL FUEL', 'SYNTAPORE™', '/technologies/syntapore/'],
   ['AIRBORNE PARTICULATE', 'Ambient dust + enclosure ingress + engine air demand', 'AIR INTAKE', 'MACROCORE™', '/technologies/macrocore/'],
   ['LUBE CONTAMINATION', 'Wear debris + soot + oxidation byproducts + service ingress', 'LUBRICATION', 'SYNTRAX™', '/technologies/syntrax/'],
-  ['COOLANT CONTAMINATION', 'Scale, corrosion debris and coolant condition where a filtration circuit is specified', 'COOLING SYSTEM', 'THERMACORE™', '/technologies/thermacore/'],
 ] as const;
 
 const serviceChecks: Record<string, string> = {
@@ -37,7 +36,6 @@ const serviceChecks: Record<string, string> = {
   'SYNTAPORE™': 'Review diesel particulate exposure during transfers and fueling; check engine-specific filtration and restriction requirements.',
   'MACROCORE™': 'Check intake restriction, filter-housing sealing and air paths; follow the engine OEM service criteria.',
   'SYNTRAX™': 'Review oil condition, service history and operating hours against the engine manufacturer requirements.',
-  'THERMACORE™': 'Only evaluate a coolant filter when the engine manufacturer specifies a compatible cooling-system filtration circuit; verify coolant chemistry and service requirements.'
 };
 
 const ownerReadiness = [
@@ -52,16 +50,16 @@ const consequences = [
   ['Starting Reliability', 'Fuel, air and lubrication condition influence whether the engine can transition from standby to stable operation when demanded.'],
   ['Load Acceptance', 'A generator must move from start-up into electrical load without contamination-related restrictions compromising protected engine systems.'],
   ['Fuel-System Integrity', 'Stored-fuel contamination can reach pumps and injectors before an emergency event exposes the weakness.'],
-  ['Thermal Stability', 'Cooling-fluid condition and unobstructed heat rejection matter under load. A coolant filter is appropriate only where specified by the generator-engine OEM.'],
+  ['Thermal Stability', 'Check coolant condition, radiator airflow and heat-exchanger performance under the engine OEM procedure. These maintenance checks are separate from the listed ELIMFILTERS filtration products.'],
   ['Maintenance Readiness', 'Inspection and service decisions should be completed before an outage turns maintenance access into an operating constraint.'],
   ['Power Availability', 'Filtration manages defined engine contamination risks. Electrical availability also depends on batteries, controls, alternator, protection, switching and verified testing.'],
 ] as const;
 
 const questions = [
-  ['What filtration systems are most important on generator sets?', 'Diesel-fuel particulate control, approved fuel/water separation, engine air intake and lubrication are frequent filtration priorities. Cooling-system filtration applies only where an OEM-approved filter circuit exists. Selection depends on the engine, duty, stored-fuel conditions and verified application.'],
+  ['What filtration systems are most important on generator sets?', 'For the applications covered here, the filter families are air intake, diesel-fuel particulate, approved fuel/water separation and lubricating oil. Selection depends on the engine, duty, fuel-storage conditions and verified OEM/application evidence.'],
   ['Why is standby generator filtration different from continuously operated equipment?', 'A standby generator can remain idle for long periods while fuel, fluids, seals and environmental exposure continue to change. When called, the asset may have to start and accept load immediately. Filtration and maintenance planning should therefore account for stored-fluid condition and readiness, not only running hours.'],
   ['How can stored generator fuel become contaminated?', 'Fuel can acquire particulate or water through bulk storage, tank breathing, condensation, transfer equipment, maintenance activity and extended storage. The protection strategy should consider the complete fuel path before fuel reaches sensitive pumps and injectors.'],
-  ['Why does cooling-system protection matter in power generation?', 'Generator engines can transition quickly to substantial thermal load. Coolant quality, radiator airflow, heat exchanger condition and OEM maintenance requirements matter. A coolant filter must not be assumed compatible unless a specified circuit and application exist.'],
+  ['What cooling checks are required as part of generator maintenance?', 'Generator engines can transition quickly to substantial thermal load. Qualified maintenance teams must check coolant condition, radiator airflow, heat-exchanger operation and the applicable engine-OEM procedure separately from filtration-product selection.'],
   ['Should generator filters be selected only by operating hours?', 'No. Running hours do not capture stored-fuel condition, calendar aging, environmental dust, fluid degradation, standby duration, testing frequency or the consequences of an emergency start. Selection and service planning should reflect the actual duty profile.'],
   ['What information is needed to identify the correct generator filter?', 'Use the generator-set or engine model, protected system, standby or prime-power duty, fuel-storage conditions, environment, OEM or existing part reference, dimensions when available and validated application evidence.'],
   ['Can ELIMFILTERS identify a generator filter from an OEM or part number?', 'A known OEM or filter reference is a starting point for searching candidate cross-references in Part Search. Final compatibility must be verified against generator or engine identity, dimensions, protected system and documented application evidence; an unverified cross-reference is not an approved fitment.'],
@@ -87,19 +85,16 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           { '@type': 'Thing', name: 'Standby generator filtration' },
           { '@type': 'Thing', name: 'Prime power filtration' },
           { '@type': 'Thing', name: 'Stored fuel contamination' },
-          { '@type': 'Thing', name: 'Generator cooling system protection' },
           { '@type': 'Thing', name: 'Emergency power readiness' },
         ],
         mentions: [
           { '@type': 'Thing', name: 'Fuel filtration and water separation' },
           { '@type': 'Thing', name: 'Air intake filtration' },
           { '@type': 'Thing', name: 'Lubrication filtration' },
-          { '@type': 'Thing', name: 'Coolant filtration' },
           { '@type': 'Thing', name: 'HYDROCORE' },
           { '@type': 'Thing', name: 'SYNTAPORE' },
           { '@type': 'Thing', name: 'MACROCORE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
-          { '@type': 'Thing', name: 'THERMACORE' },
         ],
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
@@ -143,7 +138,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           <div className="miningHeroLower">
             <div className="miningHeroCopy">
               <p className="miningHeroPromise" style={heroPromise}>{powerGenerationText(lang, "Engineering support for generator owners, facility maintenance managers, reliability engineers and service technicians.")}</p>
-              <p style={heroLead}>{powerGenerationText(lang, "Keep standby and prime-power diesel engines prepared for demand. Manage stored-fuel water and particles, air-intake restriction, lubricating-oil condition and OEM-specified coolant filtration before the next load event.")}</p>
+              <p style={heroLead}>{powerGenerationText(lang, "Maintain standby and prime-power diesel engines for demand by controlling water and particles in stored fuel, air-intake restriction and lubrication contamination, following OEM requirements and verified filter applications.")}</p>
             </div>
             <div className="miningHeroActions" style={actions}>
               <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{powerGenerationText(lang, "PLAN GENERATOR MAINTENANCE")}</Link>
@@ -161,7 +156,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
           </div>
           <div>
             <p style={directText}>{powerGenerationText(lang, "Power-generation filtration starts with the generator set and its readiness requirement, then resolves stored-fuel condition, protected system, standby or prime-power duty, environmental exposure, maintenance access and validated application evidence. A filter should not be selected from running hours or generator category alone.")}</p>
-            <p style={directText} className="powerScopeText">{powerGenerationText(lang, "Scope: filtration reduces specified contamination risks but cannot verify generator start, load acceptance or automatic transfer. Battery, controls, ATS, alternator, electrical protection and OEM-approved load tests require separate checks. Coolant filters require a specified compatible circuit and coolant chemistry.")}</p>
+            <p style={directText} className="powerScopeText">{powerGenerationText(lang, "Scope: air, diesel-fuel and lubricating-oil filtration address specific engine contamination risks, but do not verify generator starting, load acceptance or automatic transfer. Battery, controls, ATS, alternator, electrical protection, cooling-system maintenance and OEM-approved load tests require separate checks.")}</p>
           </div>
         </div>
       </section>
@@ -229,7 +224,7 @@ export function PowerGenerationIndustryPage({ lang = 'en' }: { lang?: PageLang }
             ['Generator / Engine', 'Identify the generator set, engine family and protected subsystem.'],
             ['Readiness Duty', 'Define standby, emergency, prime-power or continuous operating responsibility.'],
             ['Stored Condition', 'Assess fuel storage, fluid age, environment, testing frequency and contamination exposure.'],
-            ['Protection', 'Match the contamination mechanism to fuel, air intake, lubrication or cooling-system protection.'],
+            ['Protection', 'Match the contamination mechanism to diesel fuel, air intake or lubrication; verify each filter application against engine and OEM evidence.'],
             ['Application Evidence', 'Validate the final filter using OEM reference, dimensions and documented application evidence.'],
           ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{powerGenerationText(lang, title)}</h3><p style={bodyText}>{powerGenerationText(lang, text)}</p></article>)}</div>
         </div>
