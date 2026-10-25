@@ -5,6 +5,8 @@ import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
+import layout from './EngineeringSystemsLayout.module.css';
+import { EngineeringSystemControls } from './EngineeringSystemControls';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/systems/cooling-system/`;
@@ -87,17 +89,17 @@ const schemas = [
 
 export function CoolingSystemPage() {
   return (
-    <main style={main}>
+    <main className={layout.page} style={main}>
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       ))}
 
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Cooling System Protection" />
 
-      <section style={hero}>
-        <ReviewedImage src="/images/thermacore_mecnico.jpg" alt="Cooling system protection" style={heroMedia} />
-        <div style={heroOverlay} />
-        <div style={heroInner}>
+      <section className={layout.hero} style={hero}>
+        <ReviewedImage src="/images/thermacore_mecnico.jpg" alt="Cooling system protection" className={layout.heroImage} style={heroMedia} />
+        <div className={layout.heroScrim} />
+        <div className={layout.heroInner} style={heroInner}><div className={layout.heroCopy}>
           <p style={eyebrow}><ReviewedText text={"THERMAL SYSTEM CONTAMINATION CONTROL"} /></p>
           <h1 style={heroTitle}><ReviewedText text={"Cooling System"} context="CoolingSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="CoolingSystemPageTitle" /></span></h1>
           <p style={heroPromise}><ReviewedText text={"Protect coolant circulation, heat-transfer surfaces and heavy-duty engine components before contamination becomes a thermal-system problem."} /></p>
@@ -106,7 +108,7 @@ export function CoolingSystemPage() {
             <Link href="#protection-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE COOLING PATH"} /></Link>
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
-        </div>
+        </div></div>
       </section>
 
       <section style={section}>
@@ -120,10 +122,12 @@ export function CoolingSystemPage() {
         </div>
       </section>
 
+      <EngineeringSystemControls system="cooling-system" />
+
       <section id="protection-path" style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"CONTAMINATION PATHWAYS"} /></p>
         <h2 style={h2}><ReviewedText text={"Control what circulates through the thermal circuit."} /></h2>
-        <div style={grid4}>
+        <div className={layout.cardGrid4} style={grid4}>
           {contamination.map(([title, text]) => (
             <article key={title} style={card}>
               <p style={cardLabel}><ReviewedText text={title} /></p>
@@ -133,23 +137,10 @@ export function CoolingSystemPage() {
         </div>
       </section>
 
-      <section style={section}>
-        <div style={twoCol}>
-          <div>
-            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
-            <h2 style={h2}><ReviewedText text={"Cooling performance depends on fluid condition, circulation and clean heat-transfer surfaces."} /></h2>
-          </div>
-          <div>
-            <p style={lead}><ReviewedText text={"The filter must support the intended cooling-system strategy without being treated as a substitute for correct coolant chemistry, service practice or application validation."} /></p>
-            <p style={body}><ReviewedText text={"THERMACORE™ is the canonical technology for this system. Product selection remains tied to the actual equipment configuration and evidence."} /></p>
-          </div>
-        </div>
-      </section>
-
       <section style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"WHAT THE SYSTEM PROTECTS"} /></p>
         <h2 style={h2}><ReviewedText text={"The cooling circuit protects more than engine temperature."} /></h2>
-        <div style={grid2}>
+        <div className={layout.cardGrid2} style={grid2}>
           {protectedComponents.map(([title, text]) => (
             <article key={title} style={lineCard}>
               <h3 style={h3}><ReviewedText text={title} /></h3>
@@ -190,7 +181,7 @@ export function CoolingSystemPage() {
       <section style={section}>
         <p style={eyebrow}><ReviewedText text={"FROM COOLING CIRCUIT TO PART"} /></p>
         <h2 style={h2}><ReviewedText text={"Resolve the application in a controlled sequence."} /></h2>
-        <div className="decision-flow" style={decisionFlow}>
+        <div className={`decision-flow ${layout.decisionGrid}`} style={decisionFlow}>
           {['1. EQUIPMENT / VEHICLE', '2. ENGINE', '3. COOLING-SYSTEM CONFIGURATION', '4. COOLANT + SERVICE CONTEXT', '5. OEM / FILTER EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
             <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step} stripNumber /></span></div>
           ))}
@@ -200,12 +191,12 @@ export function CoolingSystemPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p>
         <h2 style={h2}><ReviewedText text={"Cooling System Protection"} /></h2>
-        <div className="faq-grid" style={faqGrid}>
+        <div className={layout.faqGrid}>
           {faqs.map(([question, answer]) => (
-            <article key={question} style={faqCard}>
-              <h3 style={faqQuestion}><ReviewedText text={question} /></h3>
-              <p style={body}><ReviewedText text={answer} /></p>
-            </article>
+            <details key={question} className={layout.faq} style={faqCard}>
+              <summary className={layout.faqSummary}><ReviewedText text={question} /></summary>
+              <p className={layout.faqAnswer}><ReviewedText text={answer} /></p>
+            </details>
           ))}
         </div>
       </section>
@@ -228,25 +219,24 @@ export function CoolingSystemPage() {
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const hero: CSSProperties = { minHeight: '86vh', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', overflow: 'hidden', borderBottom: '1px solid rgba(255,255,255,0.08)' };
-const heroMedia: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
-const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const hero: CSSProperties = {minHeight:'clamp(600px,79svh,880px)',position:'relative',display:'flex',alignItems:'center',padding:'clamp(7rem,10vw,10rem) clamp(1.25rem,4vw,5rem) clamp(3.5rem,5vw,5rem)',overflow:'hidden'};
+const heroMedia: CSSProperties = {width:'100%',height:'100%',objectFit:'cover',objectPosition:'center',opacity:HERO_MEDIA_TREATMENT.opacity};
+const heroInner: CSSProperties = {width:'100%',maxWidth:'1500px',margin:'0 auto',position:'relative',zIndex:2};
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3rem, 7vw, 6.8rem)', lineHeight: 0.9, letterSpacing: '-0.05em', textTransform: 'uppercase', margin: 0, maxWidth: '960px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '820px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { maxWidth: '820px', color: 'rgba(255,255,255,.72)', lineHeight: 1.72, fontSize: '1rem', marginTop: '1.1rem' };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', letterSpacing: '.16em', fontSize: '.72rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem' };
-const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', maxWidth: '1320px', margin: '0 auto' };
-const sectionAlt: CSSProperties = { ...section, maxWidth: 'none', background: 'rgba(255,255,255,.025)', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
-const twoCol: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'start' };
+const section: CSSProperties = {padding:'clamp(3.4rem,5.4vw,6rem) clamp(1.25rem,4vw,5rem)',maxWidth:'1560px',margin:'0 auto'};
+const sectionAlt: CSSProperties = {...section,background:'#080808',borderTop:'1px solid rgba(255,255,255,.09)',borderBottom:'1px solid rgba(255,255,255,.09)'};
+const twoCol: CSSProperties = {display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(100%,500px),1fr))',gap:'clamp(1.8rem,4vw,4.5rem)',alignItems:'start',maxWidth:'1500px',margin:'0 auto'};
 const h2: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem,4vw,3.6rem)', lineHeight: .98, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0 };
 const h3: CSSProperties = { fontFamily: displayFont, fontSize: '1.05rem', textTransform: 'uppercase', margin: '0 0 .7rem' };
 const lead: CSSProperties = { fontSize: 'clamp(1.02rem,1.5vw,1.15rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.82)', margin: 0 };
 const body: CSSProperties = { fontSize: '.98rem', lineHeight: 1.72, color: 'rgba(255,255,255,.62)', margin: '1rem 0 0' };
-const grid4: CSSProperties = { display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.08)', marginTop: '2.2rem' };
-const grid2: CSSProperties = { display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.07)', marginTop: '2rem' };
-const card: CSSProperties = { background: '#050505', padding: '1.5rem', flex: '1 1 220px', maxWidth: '350px', minWidth: 0 };
-const lineCard: CSSProperties = { background: '#000', padding: '1.5rem 1.7rem', flex: '1 1 300px', maxWidth: '480px', minWidth: 0 };
+const grid4: CSSProperties = {display:'grid',marginTop:'clamp(1.8rem,3vw,3rem)',gap:'clamp(1rem,1.7vw,1.9rem)'};
+const grid2: CSSProperties = {display:'grid',marginTop:'clamp(1.8rem,3vw,3rem)',gap:'clamp(1rem,1.7vw,1.9rem)'};
+const card: CSSProperties = {background:'#0b0b0b',padding:'clamp(1.3rem,2.4vw,2.4rem)',minWidth:0,borderTop:'2px solid #fff12d'};
+const lineCard: CSSProperties = {background:'#0b0b0b',padding:'clamp(1.3rem,2.4vw,2.4rem)',minWidth:0,borderTop:'2px solid rgba(255,241,45,.5)'};
 const cardLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontWeight: 700, fontSize: '.8rem', letterSpacing: '.08em', margin: 0 };
 const cardBody: CSSProperties = { color: 'rgba(255,255,255,.62)', lineHeight: 1.65, fontSize: '.94rem', marginTop: '.7rem' };
 const architecture: CSSProperties = { display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', gap: '.7rem', marginTop: '2rem' };
@@ -254,12 +244,10 @@ const architectureCard: CSSProperties = { minWidth: '190px', flex: '1 1 190px', 
 const architectureLink: CSSProperties = { ...architectureCard, textDecoration: 'none', color: '#fff', borderColor: 'rgba(255,241,45,.28)' };
 const smallLabel: CSSProperties = { fontFamily: displayFont, fontSize: '.62rem', letterSpacing: '.13em', color: 'rgba(255,255,255,.4)' };
 const arrow: CSSProperties = { alignSelf: 'center', color: '#FFF12D', fontSize: '1.3rem', padding: '.2rem' };
-const decisionFlow: CSSProperties = { display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,.07)', marginTop: '2rem' };
-const decisionStep: CSSProperties = { background: '#050505', padding: '1.25rem', fontFamily: displayFont, fontWeight: 700, fontSize: '.78rem', letterSpacing: '.06em', flex: '1 1 190px', maxWidth: '300px', minWidth: 0 };
-const faqGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '1px', background: 'rgba(255,255,255,.06)', marginTop: '2rem' };
+const decisionFlow: CSSProperties = {display:'grid',gap:'1px',background:'rgba(255,255,255,.14)',marginTop:'2rem',maxWidth:'1520px'};
+const decisionStep: CSSProperties = {background:'#090909',padding:'clamp(1.4rem,2.4vw,2.4rem)',minWidth:0,fontFamily:'var(--font-display)',fontSize:'.8rem',fontWeight:700,letterSpacing:'.05em'};
 const faqCard: CSSProperties = { background: '#000', padding: '1.5rem' };
-const faqQuestion: CSSProperties = { fontFamily: displayFont, fontSize: '1rem', lineHeight: 1.3, margin: 0 };
 const buttonRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2rem' };
 const yellowButton: CSSProperties = { background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, fontSize: '.78rem', letterSpacing: '.06em', padding: '.95rem 1.2rem' };
 const darkButton: CSSProperties = { border: '1px solid rgba(255,255,255,.22)', color: '#fff', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, fontSize: '.78rem', letterSpacing: '.06em', padding: '.95rem 1.2rem' };
-const finalCta: CSSProperties = { padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,241,45,.18)', background: 'radial-gradient(circle at top left,rgba(255,241,45,.08),transparent 35%),#000' };
+const finalCta: CSSProperties = {padding:'clamp(3.6rem,6vw,7rem) clamp(1.25rem,4vw,5rem)',maxWidth:'none',borderTop:'1px solid rgba(255,241,45,.18)',background:'radial-gradient(circle at top left,rgba(255,241,45,.08),transparent 40%),#070707'};
