@@ -502,10 +502,10 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         <section style={riskSection}>
           <div style={wrap}>
             <span style={sectionKicker}>{c.riskKicker}</span>
-            <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Failure mechanisms and operational impact', es: 'Mecanismos de falla e impacto operativo', pt: 'Mecanismos de falha e impacto operacional' }[lang]) : c.riskTitle}</h2>
+            <h2 style={sectionTitleSmall}>{c.riskTitle}</h2>
             <div style={riskGrid}>
               {failures.map((failure) => (
-                <article key={failure.key} style={airFamilyEditorial ? { ...riskCard, minHeight: 0 } : riskCard}>
+                <article key={failure.key} style={riskCard}>
                   <h3 style={cardTitle}>{failure.name}</h3>
                   <p style={cardBody}>{failure.mechanism}</p>
                   <div style={riskDivider} />
@@ -522,7 +522,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         <div style={strategyGrid}>
           <div>
             <span style={sectionKicker}>{c.strategyKicker}</span>
-            <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Selection must satisfy the installed circuit', es: 'La selección debe cumplir los requisitos del conjunto instalado', pt: 'A seleção deve atender aos requisitos do conjunto instalado' }[lang]) : c.strategyTitle}</h2>
+            <h2 style={sectionTitleSmall}>{c.strategyTitle}</h2>
           </div>
           <div style={strategyStack}>
             {technology && (
@@ -531,7 +531,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
                 <p style={strategyText}>{technology.controlStrategy}</p>
               </div>
             )}
-            {system && !airFamilyEditorial && (
+            {system && (
               <div style={strategyItem}>
                 <span style={strategyLabel}>{c.systemContext}</span>
                 <p style={strategyText}>{system.engineeringPrinciple}</p>
