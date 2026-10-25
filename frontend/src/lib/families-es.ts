@@ -80,8 +80,8 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
   'air-dryer-filters': {
     name: 'Filtros secadores de aire',
     seoTitle: 'Cartuchos secadores de aire para frenos',
-    purpose: 'Los elementos secadores de aire retiran el vapor de agua de los sistemas neumáticos de frenado y de aire de instrumentos.',
-    engineering: 'El desecante de tamiz molecular DRYCORE™ adsorbe el vapor de agua para proteger válvulas, actuadores y controles neumáticos frente a la corrosión y el congelamiento.',
+    purpose: 'Los cartuchos secadores controlan la humedad en los circuitos de aire comprimido aprobados, para suministrar aire acondicionado conforme a los requisitos operativos del sistema neumático.',
+    engineering: 'DRYCORE™ comprende la configuración validada del cartucho secador, la capacidad desecante, el caudal, el ciclo de purga y las interfaces de sellado. El control de humedad depende del conjunto completo de compresor, secador e instalación neumática, no solamente del cartucho.',
   },
 };
 
