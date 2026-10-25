@@ -61,8 +61,8 @@ export function airCopy(lang: PageLang, key: keyof typeof airExpertCopy): string
 
 export const AIR_TECHNOLOGIES = [
   {
-    key: 'macrocore', name: 'MACROCORE™', image: '/images/MACROCORE-media.png', href: '/technologies/macrocore/',
-    imageAlt: ["Conceptual MACROCORE™ engine-intake filtration media structure","Estructura conceptual del medio de filtración de admisión MACROCORE™","Estrutura conceitual do meio de filtração de admissão MACROCORE™"],
+    key: 'macrocore', name: 'MACROCORE™', image: '/images/mecanica-air.avif', href: '/technologies/macrocore/',
+    imageAlt: ["MACROCORE™ engine air-filtration application","Aplicación de filtración de aire de motor MACROCORE™","Aplicação de filtração de ar do motor MACROCORE™"],
     families: ['primary-air','secondary-air'],
     domain: ['ENGINE AIR INTAKE', 'ADMISIÓN DE AIRE DEL MOTOR', 'ADMISSÃO DE AR DO MOTOR'],
     exposure: ['Abrasive mineral dust, fine particles and intake bypass entering the combustion-air stream.', 'Polvo mineral abrasivo, partículas finas y aire sin filtrar que ingresa a la admisión.', 'Poeira mineral abrasiva, partículas finas e ar não filtrado entrando na admissão.'],
@@ -79,8 +79,8 @@ export const AIR_TECHNOLOGIES = [
     verification: ['Confirm housing reference, inlet/outlet routing, seal compression, element seating, mounting and restriction against the installed assembly.', 'Confirmar referencia de carcasa, entradas y salidas, compresión del sello, asiento del elemento, montaje y restricción del conjunto instalado.', 'Confirmar referência da carcaça, entradas e saídas, compressão das vedações, assentamento do elemento, montagem e restrição do conjunto instalado.']
   },
   {
-    key: 'microkappa', name: 'MICROKAPPA™', image: '/images/MICROKAPPA-Media.jpeg', href: '/technologies/microkappa/',
-    imageAlt: ["Microscopic view of MICROKAPPA™ cabin-air filtration media","Vista microscópica del medio de filtración de cabina MICROKAPPA™","Vista microscópica do meio de filtração de cabine MICROKAPPA™"],
+    key: 'microkappa', name: 'MICROKAPPA™', image: '/images/cabin-hero.avif', href: '/technologies/microkappa/',
+    imageAlt: ["MICROKAPPA™ cabin HVAC filtration application","Aplicación de filtración de aire de cabina MICROKAPPA™","Aplicação de filtração do ar da cabine MICROKAPPA™"],
     families: ['cabin-filters'],
     domain: ['CABIN HVAC AIR', 'AIRE DEL HVAC DE CABINA', 'AR DO HVAC DA CABINE'],
     exposure: ['Dust, pollen and fine airborne particulate at the ventilation intake; odors or selected gases only where adsorption media is specified.', 'Polvo, polen y partículas finas en la toma de ventilación; olores o determinados gases solo cuando se especifique medio adsorbente.', 'Poeira, pólen e partículas finas na entrada de ventilação; odores ou gases selecionados somente quando houver meio adsorvente especificado.'],
