@@ -37,11 +37,11 @@ export default function GlossaryPage() {
         alignItems: 'center',
         backgroundColor: '#050505',
         backgroundImage: heroBackgroundImage('/images/system-hero.avif'),
-        backgroundSize: '100% 100%, contain',
-        backgroundPosition: 'center, 72% center',
+        backgroundSize: '100% 100%, cover',
+        backgroundPosition: 'center, center',
         backgroundRepeat: 'no-repeat, no-repeat',
       }}>
-        <div style={{ maxWidth: '1100px', width: '100%', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1520px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
@@ -122,7 +122,7 @@ export default function GlossaryPage() {
 
       {/* Categories */}
       <div style={{
-        maxWidth: '1100px',
+        maxWidth: '1520px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
@@ -255,7 +255,7 @@ export default function GlossaryPage() {
         borderTop: '1px solid rgba(255,241,45,0.2)',
         borderBottom: '1px solid rgba(255,241,45,0.2)',
       }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1520px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
