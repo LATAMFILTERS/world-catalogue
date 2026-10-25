@@ -14,7 +14,7 @@ const images: Record<string, string> = {
   'fuel-cleanliness': '/images/syntapore_mecanico_camion.avif',
   lubrication: '/images/oil-hand.avif',
   hydraulic: '/images/hidraulic.avif',
-  'cooling-system': '/images/coolant-filters.avif'
+  'cooling-system': 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EW74685.png'
 };
 
 const selectionSteps = [
