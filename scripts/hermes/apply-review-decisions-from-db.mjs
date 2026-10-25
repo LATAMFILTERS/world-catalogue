@@ -134,5 +134,8 @@ export async function processDecisions({ fetch = fetchDecisions, mark = markAppl
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const results = await processDecisions();
   console.log(JSON.stringify({ outcome: 'OK', processed: results.length, results }, null, 2));
+  // AUTORIZAR phase 1: authorized "existing SKU -> new equipment" decisions become a reviewed catalogue PR.
+  try { const { buildAuthorizationBatch } = await import('./catalogue-authorization-batch.mjs'); console.log(`[HERMES catalogue-auth] ${JSON.stringify(await buildAuthorizationBatch({ live: true }))}`); }
+  catch (error) { console.error(`[HERMES catalogue-auth] ${error.message}`); }
   if (results.some((r) => r.outcome !== 'APPLIED')) process.exitCode = 1;
 }
