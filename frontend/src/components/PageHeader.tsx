@@ -49,7 +49,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
   es: {
     Agriculture: 'Agricultura',
     Automotive: 'Sistemas de filtración automotriz',
-    'Bus Coach': 'Autobuses y autocares',
+    'Bus Coach': 'Autobuses',
     Construction: 'Construcción',
     Manufacturing: 'Manufactura',
     Marine: 'Marina',
