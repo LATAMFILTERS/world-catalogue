@@ -98,8 +98,8 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   },
   'cabin-filters': {
     key: 'cabin-filters', name: 'Cabin Filters', slug: 'cabin-filters', dutyClass: 'HD+LD', hdPrefix: 'EC1', ldPrefix: 'EC3',
-    purpose: 'Cabin-air elements condition incoming HVAC ventilation air by capturing dust, pollen and airborne particles; odor or selected-gas adsorption applies only to validated activated-carbon configurations.'
-    engineering: 'MICROKAPPA™ is the cabin HVAC media architecture. Selection must consider particulate-media configuration, any specified adsorption layer, actual blower airflow, pressure loss, housing sealing and installation direction. Cabin filtration is not respiratory protection or a universal exhaust-gas barrier.'
+    purpose: 'Cabin-air elements condition incoming HVAC ventilation air by capturing dust, pollen and airborne particles; odor or selected-gas adsorption applies only to validated activated-carbon configurations.',
+    engineering: 'MICROKAPPA™ is the cabin HVAC media architecture. Selection must consider particulate-media configuration, any specified adsorption layer, actual blower airflow, pressure loss, housing sealing and installation direction. Cabin filtration is not respiratory protection or a universal exhaust-gas barrier.',
     construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/cabin-hero.avif',
     ...relationships('cabin-filters'),
   },
