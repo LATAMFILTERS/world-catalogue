@@ -95,11 +95,13 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
   },
   'Waste Municipal': {
     'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
     'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
     'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
+    'air-dryer-filters': `${R2_BASE}/ED43571.png`,
+    'coolant-filters': `${R2_BASE}/EW74685.png`,
   },
   'Bus Coach': {
     'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
@@ -170,7 +172,7 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
 
   const family = families[index];
   const image =
-    industryName === 'Trucks Fleets'
+    (industryName === 'Trucks Fleets' || industryName === 'Waste Municipal')
       ? HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key]
       : family.key === 'air-dryer-filters'
         ? AIR_DRYER_IMAGE
