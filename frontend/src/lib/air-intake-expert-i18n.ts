@@ -61,7 +61,8 @@ export function airCopy(lang: PageLang, key: keyof typeof airExpertCopy): string
 
 export const AIR_TECHNOLOGIES = [
   {
-    key: 'macrocore', name: 'MACROCORE™', image: '/images/mecanica-air.avif', href: '/technologies/macrocore/',
+    key: 'macrocore', name: 'MACROCORE™', image: '/images/MACROCORE-media.png', href: '/technologies/macrocore/',
+    imageAlt: ["Conceptual MACROCORE™ engine-intake filtration media structure","Estructura conceptual del medio de filtración de admisión MACROCORE™","Estrutura conceitual do meio de filtração de admissão MACROCORE™"],
     families: ['primary-air','secondary-air'],
     domain: ['ENGINE AIR INTAKE', 'ADMISIÓN DE AIRE DEL MOTOR', 'ADMISSÃO DE AR DO MOTOR'],
     exposure: ['Abrasive mineral dust, fine particles and intake bypass entering the combustion-air stream.', 'Polvo mineral abrasivo, partículas finas y aire sin filtrar que ingresa a la admisión.', 'Poeira mineral abrasiva, partículas finas e ar não filtrado entrando na admissão.'],
@@ -69,7 +70,8 @@ export const AIR_TECHNOLOGIES = [
     verification: ['Confirm engine airflow, permissible restriction, housing fit and seal integrity; review applicable ISO 5011 test evidence for the exact element. Safety stages are not routine primary loading elements.', 'Confirmar caudal del motor, restricción admisible, ajuste en carcasa e integridad de sellos; revisar evidencia ISO 5011 aplicable al elemento. La etapa de seguridad no se utiliza para carga habitual de polvo.', 'Confirmar vazão do motor, restrição admissível, encaixe na carcaça e integridade das vedações; revisar evidências ISO 5011 aplicáveis ao elemento. O estágio de segurança não se destina à carga rotineira de poeira.']
   },
   {
-    key: 'intekcore', name: 'INTEKCORE™', image: '/images/intekcore(fn).avif', href: '/technologies/intekcore/',
+    key: 'intekcore', name: 'INTEKCORE™', image: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA20080-INTEKCORE-approved-opt.png', href: '/technologies/intekcore/',
+    imageAlt: ["INTEKCORE™ air-cleaner housing and sealing assembly","Conjunto de carcasa y sellado de admisión INTEKCORE™","Conjunto de carcaça e vedação de admissão INTEKCORE™"],
     families: ['air-cleaner-housings'],
     domain: ['AIR-CLEANER HOUSING & SEALING', 'CARCASA Y SELLADO DE ADMISIÓN', 'CARCAÇA E VEDAÇÃO DE ADMISSÃO'],
     exposure: ['Unfiltered air bypass caused by damaged seals, housing mismatch, retention faults or intake-routing defects.', 'Paso de aire sin filtrar por sellos dañados, carcasas incompatibles, retención deficiente o problemas en conductos.', 'Passagem de ar não filtrado por vedações danificadas, carcaças incompatíveis, retenção inadequada ou problemas nos dutos.'],
@@ -77,7 +79,8 @@ export const AIR_TECHNOLOGIES = [
     verification: ['Confirm housing reference, inlet/outlet routing, seal compression, element seating, mounting and restriction against the installed assembly.', 'Confirmar referencia de carcasa, entradas y salidas, compresión del sello, asiento del elemento, montaje y restricción del conjunto instalado.', 'Confirmar referência da carcaça, entradas e saídas, compressão das vedações, assentamento do elemento, montagem e restrição do conjunto instalado.']
   },
   {
-    key: 'microkappa', name: 'MICROKAPPA™', image: '/images/cabin-hero.avif', href: '/technologies/microkappa/',
+    key: 'microkappa', name: 'MICROKAPPA™', image: '/images/MICROKAPPA-Media.jpeg', href: '/technologies/microkappa/',
+    imageAlt: ["Microscopic view of MICROKAPPA™ cabin-air filtration media","Vista microscópica del medio de filtración de cabina MICROKAPPA™","Vista microscópica do meio de filtração de cabine MICROKAPPA™"],
     families: ['cabin-filters'],
     domain: ['CABIN HVAC AIR', 'AIRE DEL HVAC DE CABINA', 'AR DO HVAC DA CABINE'],
     exposure: ['Dust, pollen and fine airborne particulate at the ventilation intake; odors or selected gases only where adsorption media is specified.', 'Polvo, polen y partículas finas en la toma de ventilación; olores o determinados gases solo cuando se especifique medio adsorbente.', 'Poeira, pólen e partículas finas na entrada de ventilação; odores ou gases selecionados somente quando houver meio adsorvente especificado.'],
@@ -86,6 +89,7 @@ export const AIR_TECHNOLOGIES = [
   },
   {
     key: 'drycore', name: 'DRYCORE™', image: '/images/airdryer-hero.avif', href: '/technologies/drycore/',
+    imageAlt: ["DRYCORE™ pneumatic air-dryer service environment","Entorno de servicio del secador neumático DRYCORE™","Ambiente de serviço do secador pneumático DRYCORE™"],
     families: ['air-dryer-filters'],
     domain: ['PNEUMATIC AIR DRYING', 'SECADO DEL AIRE NEUMÁTICO', 'SECAGEM DO AR PNEUMÁTICO'],
     exposure: ['Water vapor, condensate and entrained contaminants generated or admitted in applicable compressed-air circuits.', 'Vapor de agua, condensación y contaminantes incorporados o generados en circuitos neumáticos aplicables.', 'Vapor de água, condensado e contaminantes incorporados ou gerados em circuitos pneumáticos aplicáveis.'],
