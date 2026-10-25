@@ -8,14 +8,14 @@ export const FAMILY_PT: Record<string, FamilyEs> = {
   'primary-air': {
     name: 'Ar primário',
     seoTitle: 'Elementos de filtro de ar primário para motores pesados',
-    purpose: 'Os elementos de ar primário são a principal barreira contra a contaminação que protege a câmara de combustão da admissão de partículas.',
-    engineering: 'O meio de densidade progressiva MACROCORE™ distribui a carga de contaminantes por toda a profundidade do meio, equilibrando eficiência, capacidade e restrição.',
+    purpose: 'Os elementos primários de ar do motor suportam a carga normal de partículas na admissão e reduzem o transporte de poeira para o turbocompressor, os cilindros e o circuito de combustão, mantendo a vazão de ar exigida pelo motor.',
+    engineering: 'A filtração primária MACROCORE™ integra a arquitetura de meio especificada, a área filtrante efetiva e a geometria de vedação para controlar retenção de poeira, capacidade de carga e restrição da admissão. O desempenho e os limites de substituição exigem evidência do elemento e da instalação.',
   },
   'secondary-air': {
     name: 'Elementos de ar secundário / de segurança',
     seoTitle: 'Elementos de filtro de ar secundário e de segurança',
-    purpose: 'Os elementos de ar secundário e de segurança formam a barreira de proteção final a jusante do elemento primário quando ele está danificado, sobrecarregado, mal assentado ou removido durante a manutenção.',
-    engineering: 'O meio de segurança de fibra fina oferece redundância de proteção, e não carga rotineira de poeira. Esta família única substitui a antiga listagem duplicada de Elementos de Segurança.',
+    purpose: 'Os elementos secundários ou de segurança, quando previstos no projeto da admissão, oferecem uma barreira adicional a jusante durante a manutenção do primário ou na perda de integridade do elemento principal. Não se destinam à carga normal de poeira.',
+    engineering: 'O estágio secundário MACROCORE™ exige posição correta a jusante, especificação do meio, vedação independente e compatibilidade com a carcaça. O elemento de segurança não substitui o estágio primário; contaminação ou dano exigem avaliação conforme os procedimentos do fabricante do equipamento.',
   },
   'air-cleaner-housings': {
     name: 'Carcaças de filtro de ar',
