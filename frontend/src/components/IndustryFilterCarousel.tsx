@@ -67,10 +67,10 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
   },
   'Trucks Fleets': {
     'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL87900-LF14000NN-1of20-approved.png`,
+    'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
     'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
   },
   Manufacturing: {
@@ -160,13 +160,17 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
 
   const family = families[index];
   const image =
-    family.key === 'air-dryer-filters'
-      ? AIR_DRYER_IMAGE
-      : family.key === 'coolant-filters'
-        ? COOLANT_IMAGE
-        : dutyClass === 'LD'
-          ? LD_IMAGES[family.key]
-          : HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key];
+    industryName === 'Trucks Fleets' && family.key === 'air-dryer-filters'
+      ? '/images/airdryer.avif'
+      : industryName === 'Trucks Fleets' && family.key === 'coolant-filters'
+        ? '/images/coolant-mesa.avif'
+        : family.key === 'air-dryer-filters'
+          ? AIR_DRYER_IMAGE
+          : family.key === 'coolant-filters'
+            ? COOLANT_IMAGE
+            : dutyClass === 'LD'
+              ? LD_IMAGES[family.key]
+              : HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key];
 
   return (
     <section style={{ background: '#000', padding: 'clamp(4rem, 8vw, 7rem) 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
