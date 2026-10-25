@@ -24,7 +24,7 @@ import { createRequire } from 'node:module';
 import pg from 'pg';
 
 const require = createRequire(import.meta.url);
-const { verifyProductIdentity, normalizePart } = require('../../lib/mann-official-spec-verifier.js');
+const { verifyProductIdentity, normalizePart, parseMannOeNumbers } = require('../../lib/mann-official-spec-verifier.js');
 const { normalizedApplication, applicationPayloadHash } = require('../../lib/catalog-application-governance.js');
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((acc, cur, i, arr) => {
@@ -163,26 +163,7 @@ for (const ev of events) {
 // ---------- OE numbers tab (independent identity evidence) ----------
 // Slice from the "OE Numbers" accordion header to the next section (Downloads / Legal), take the
 // manufacturer from the last heading and every part-number-like token from cells / list items.
-const oeNumbers = [];
-{
-  // The section is the accordion item with id="oeNumbers" (the earlier "OE Numbers" text is only a nav link).
-  let start = body.search(/id="oeNumbers"/i);
-  if (start < 0) start = body.search(/<span[^>]*cmp-accordion__title[^>]*>\s*(?:OE Numbers|N[uú]meros de equipo original)/i);
-  if (start >= 0) {
-    const rest = body.slice(start);
-    const endRel = rest.slice(20).search(/id="(?:downloads|reachInformation)"/i);
-    const oe = endRel >= 0 ? rest.slice(0, endRel + 20) : rest.slice(0, 200000);
-    let maker = null;
-    const re = /<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>|<(?:td|li|span|a|p|div)[^>]*>([^<]{1,300})<\/(?:td|li|span|a|p|div)>/gi;
-    for (let m; (m = re.exec(oe));) {
-      if (m[1] !== undefined) { const h = decode(m[1]); if (h && !/OE Numbers|equipo original/i.test(h)) maker = h; continue; }
-      for (const piece of decode(m[2]).split(/[,;]\s*/)) {
-        const t = piece.trim();
-        if (/\d/.test(t) && /^[A-Z0-9][A-Z0-9 .\-\/]{2,40}$/i.test(t) && !/^(?:OE|MANN)/i.test(t)) oeNumbers.push({ manufacturer: maker, code: t });
-      }
-    }
-  }
-}
+const oeNumbers = parseMannOeNumbers(html);
 fs.writeFileSync(path.join(outDir, 'mann-oe-numbers.json'), JSON.stringify(oeNumbers, null, 2));
 const seen = new Set();
 const mann = parsed.filter((r) => { const k = JSON.stringify(r); if (seen.has(k)) return false; seen.add(k); return true; });
