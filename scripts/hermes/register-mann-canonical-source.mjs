@@ -94,7 +94,14 @@ try {
       evidence_note: NOTE, evidence_url: t.source_url, evidence_page_sha256: t.evidence_hash,
       vehicle_origin: origin, decided_by: 'OPERATOR', decided_at: '2026-10-25',
     };
-    const nextRow = { ...row, codigo_base: base, enrichment_data: { ...oldData, codigo_base_governance: gov } };
+    // The gateway needs arrays; the new base must not stay listed as its own alternate (the MANN code
+    // usually sat in competitor_codes before becoming the base): it is removed from both lists.
+    const codeOf = (e) => normalizePart(e && typeof e === 'object' ? e.code || e.reference || e.part_number : e);
+    const oem = (Array.isArray(row.oem_codes) ? row.oem_codes : []).filter((e) => codeOf(e) !== base);
+    const comp = (Array.isArray(row.competitor_codes) ? row.competitor_codes : []).filter((e) => codeOf(e) !== base);
+    const removedAlternates = (Array.isArray(row.oem_codes) ? row.oem_codes.length : 0) + (Array.isArray(row.competitor_codes) ? row.competitor_codes.length : 0) - oem.length - comp.length;
+    gov.base_removed_from_alternates = removedAlternates;
+    const nextRow = { ...row, oem_codes: oem, competitor_codes: comp, codigo_base: base, enrichment_data: { ...oldData, codigo_base_governance: gov } };
     try { assertCanonicalWrite(nextRow, { validateApplications: false }); }
     catch (e) { hold('GATEWAY_BLOCKED', { error: e.message }); continue; }
 
@@ -103,10 +110,10 @@ try {
       await db.query(
         `UPDATE public.elimfilters_catalog SET codigo_base=$2::text, canonical_source_brand='MANN-FILTER', canonical_source_code=$2::text,
            canonical_source_url=$3, canonical_source_status='VERIFIED', canonical_verified_at=now(),
-           canonical_evidence=$4::jsonb, enrichment_data=$5::jsonb
+           canonical_evidence=$4::jsonb, enrichment_data=$5::jsonb, oem_codes=$6::jsonb, competitor_codes=$7::jsonb
          WHERE sku=$1 AND catalog_active`,
         [sku, base, t.source_url, JSON.stringify({ authority: 'MANN_OFFICIAL_CATALOG', source_url: t.source_url, page_sha256: t.evidence_hash, mann_code: t.mann_code, note: NOTE }),
-         JSON.stringify(nextRow.enrichment_data)]);
+         JSON.stringify(nextRow.enrichment_data), JSON.stringify(oem), JSON.stringify(comp)]);
       const ident = await db.query(`SELECT 1 FROM ld_catalog.ld_canonical_product_identity WHERE elimfilters_sku=$1 AND status='ACTIVE'`, [sku]);
       if (!ident.rowCount) {
         await db.query(
@@ -117,7 +124,7 @@ try {
           [sku, t.mann_code, row.filter_type || 'unknown']);
       }
       await db.query('RELEASE SAVEPOINT s');
-      report.written.push({ sku, from: row.codigo_base, to: base });
+      report.written.push({ sku, from: row.codigo_base, to: base, alternates_removed: removedAlternates });
     } catch (e) {
       await db.query('ROLLBACK TO SAVEPOINT s');
       hold(/uq_ld_canonical_brand_part|duplicate key/i.test(e.message) ? 'IDENTITY_COLLISION' : 'DB_REJECTED', { error: e.message.slice(0, 200) });
