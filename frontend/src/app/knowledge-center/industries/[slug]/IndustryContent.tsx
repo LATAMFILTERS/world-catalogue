@@ -1,6 +1,8 @@
 'use client';
 
 import Link from '@/components/LocalizedLink';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { useReviewed } from '@/components/ReviewedText';
 import { KC_INDUSTRIES, KC_INDUSTRY_DETAILS, KC_TECHNOLOGIES, KCIndustryDetail } from '@/lib/knowledge-center-data';
@@ -61,10 +63,15 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
   const dustColor = DUST_COLORS[industry.dust] || '#FFF12D';
   const commercialSlug = COMMERCIAL_INDUSTRY_SLUG[industry.slug] ?? industry.slug;
   const tr = useReviewed();
+  const { i18n } = useTranslation();
+  const isMining = industry.slug === 'mining';
+  const locale = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
+  const labels = locale === 'es' ? { dashboard: 'PANEL DE INGENIERÍA MINERA', explore: 'Explorar análisis técnico', context: 'Diagnóstico y protección de activos', select: 'Seleccione un área técnica para consultar su análisis', risks: 'Riesgos de contaminación', metrics: 'Indicadores de aplicación', technologies: 'Tecnologías vinculadas', standards: 'Normas técnicas' } : locale === 'pt' ? { dashboard: 'PAINEL DE ENGENHARIA DE MINERAÇÃO', explore: 'Explorar análise técnica', context: 'Diagnóstico e proteção de ativos', select: 'Selecione uma área técnica para consultar sua análise', risks: 'Riscos de contaminação', metrics: 'Indicadores de aplicação', technologies: 'Tecnologias relacionadas', standards: 'Normas técnicas' } : { dashboard: 'MINING ENGINEERING DASHBOARD', explore: 'Explore technical analysis', context: 'Asset diagnosis and protection', select: 'Select an engineering topic to review its analysis', risks: 'Contamination risks', metrics: 'Application indicators', technologies: 'Related technologies', standards: 'Technical standards' };
+  const [selectedSection, setSelectedSection] = useState(0);
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
-      <style>{`@media(max-width: 900px){.kc-industry-detail-grid{grid-template-columns:minmax(0,1fr)!important}}`}</style>
+      <style>{`@media(max-width: 900px){.kc-industry-detail-grid{grid-template-columns:minmax(0,1fr)!important}.kc-mining-dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width: 600px){.kc-mining-dashboard-metrics{grid-template-columns:minmax(0,1fr)!important}.kc-mining-tabs{grid-template-columns:minmax(0,1fr)!important}}`}</style>
 
       {/* Breadcrumb */}
       <div style={{
@@ -82,7 +89,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
 
       {/* Hero */}
       <section style={{
-        background: 'radial-gradient(ellipse at 82% 35%, rgba(255,241,45,0.08), transparent 54%), linear-gradient(160deg, #080808 0%, #000 100%)',
+        background: isMining ? 'radial-gradient(ellipse at 84% 35%, rgba(255,241,45,0.13), transparent 55%), linear-gradient(135deg, #0c0c0c 0%, #000 100%)' : 'radial-gradient(ellipse at 82% 35%, rgba(255,241,45,0.08), transparent 54%), linear-gradient(160deg, #080808 0%, #000 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
@@ -108,6 +115,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
             </span>
           </motion.div>
 
+          {isMining && <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem', color: '#fff12d', letterSpacing: '0.13em', marginBottom: '1.1rem' }}>{labels.dashboard}</p>}
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,7 +123,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
             style={{
               fontFamily: 'Outfit, sans-serif',
               fontWeight: 700,
-              fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
+              fontSize: isMining ? 'clamp(2.5rem, 5vw, 4.6rem)' : 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.12,
               marginBottom: '0.75rem',
             }}
@@ -201,14 +209,16 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
 
         {/* Main */}
         <div>
+          {isMining && detail && <div style={{ marginBottom: '2rem' }}><p style={{ color: '#fff12d', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.76rem', letterSpacing: '0.1em' }}>{labels.context}</p><p style={{ fontSize: 'clamp(1.1rem, 1.7vw, 1.4rem)', lineHeight: 1.55, color: 'rgba(255,255,255,.84)', marginTop: '.6rem' }}>{tr(industry.description)}</p></div>}
           {detail && detail.keyMetrics.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
+              className={isMining ? 'kc-mining-dashboard-metrics' : undefined}
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+                gridTemplateColumns: isMining ? 'repeat(auto-fit, minmax(210px, 1fr))' : 'repeat(auto-fit, minmax(160px, 1fr))',
                 gap: '1px',
                 background: `${dustColor}15`,
                 border: `1px solid ${dustColor}30`,
@@ -287,7 +297,21 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
             </motion.section>
           )}
 
-          {detail && detail.sections.map((section, i) => (
+          {isMining && detail && detail.sections.length > 0 && (
+            <section style={{ marginBottom: '3rem' }} aria-label={labels.explore}>
+              <p style={{ color: '#fff12d', fontFamily: 'JetBrains Mono, monospace', fontSize: '.76rem', letterSpacing: '.12em' }}>{labels.explore}</p>
+              <h2 style={{ fontSize: 'clamp(1.5rem,2.8vw,2.2rem)', fontFamily: 'Outfit,sans-serif', margin: '.75rem 0' }}>{labels.context}</h2>
+              <p style={{ color: 'rgba(255,255,255,.68)', lineHeight: 1.6, marginBottom: '1.5rem' }}>{labels.select}</p>
+              <div className="kc-mining-tabs" role="tablist" aria-label={labels.explore} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '.6rem', marginBottom: '1.4rem' }}>
+                {detail.sections.map((section,i)=><button key={section.heading} id={`mining-tab-${i}`} role="tab" aria-selected={selectedSection === i} aria-controls="mining-analysis-panel" onClick={()=>setSelectedSection(i)} style={{ cursor:'pointer', textAlign:'left', padding:'1rem 1.15rem', color:selectedSection===i?'#000':'#fff', background:selectedSection===i?'#fff12d':'#111', border:'1px solid rgba(255,241,45,.35)', fontFamily:'Outfit,sans-serif', fontSize:'1rem', lineHeight:1.35 }}><span style={{ fontFamily:'JetBrains Mono,monospace', fontSize:'.7rem', marginRight:'.8rem' }}>{String(i+1).padStart(2,'0')}</span>{tr(section.heading)}</button>)}
+              </div>
+              <article id="mining-analysis-panel" role="tabpanel" aria-labelledby={`mining-tab-${selectedSection}`} style={{ background:'#0d0d0d', border:'1px solid rgba(255,241,45,.25)', padding:'clamp(1.5rem,3vw,3rem)' }}>
+                <h3 style={{ fontFamily:'Outfit,sans-serif', fontSize:'clamp(1.4rem,2.5vw,2rem)', margin:'0 0 1rem', color:'#fff' }}>{tr(detail.sections[selectedSection].heading)}</h3>
+                <p style={{ fontSize:'clamp(1rem,1.4vw,1.16rem)', lineHeight:1.8, color:'rgba(255,255,255,.83)', margin:0 }}>{tr(detail.sections[selectedSection].body)}</p>
+              </article>
+            </section>
+          )}
+          {!isMining && detail && detail.sections.map((section, i) => (
             <motion.section
               key={section.heading}
               initial={{ opacity: 0, y: 16 }}
