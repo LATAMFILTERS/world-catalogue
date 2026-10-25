@@ -1,4 +1,5 @@
 import { PublicUiText } from '@/components/PublicUiText';
+import { ReviewedText } from '@/components/ReviewedText';
 import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 
@@ -27,6 +28,19 @@ const technologies: readonly TechnologyCard[] = [
   ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA_final.avif', 1.029],
 ];
 
+const ROLES: Record<string, string> = {
+  macrocore: 'Engine intake: particle retention, dust capacity, restriction and primary/safety sealing.',
+  intekcore: 'Intake housing: element retention, air routing and resistance to unfiltered-air bypass.',
+  microkappa: 'Cabin HVAC: controlled particulate exposure and airflow in approved configurations.',
+  drycore: 'Compressed-air dryers: moisture adsorption, purge behavior and pneumatic reliability.',
+  syntapore: 'Diesel fuel: particulate filtration in validated primary and secondary positions.',
+  hydrocore: 'Diesel fuel: water separation in approved conventional non-turbine assemblies.',
+  turbocore: 'Diesel fuel: dedicated FH/FG turbine-style separation elements and housings.',
+  syntrax: 'Engine lubrication: contaminant capacity, oil supply and wear-sensitive interfaces.',
+  nanoforce: 'Hydraulics: fluid cleanliness for pumps, precision valves and actuators.',
+  thermacore: 'Engine cooling: coolant compatibility, contamination and thermal-circuit protection.',
+};
+
 export function TechnologiesPortfolio() {
   return (
     <section className="technology-portfolio-section" style={section}>
@@ -43,12 +57,13 @@ export function TechnologiesPortfolio() {
           }
           .technology-portfolio-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
           .technology-portfolio-card { position: relative !important; display: flex !important; flex-direction: column !important; width: 100% !important; min-height: 0 !important; overflow: hidden !important; }
-          .technology-portfolio-logo-stage { position: relative !important; inset: auto !important; width: 100% !important; height: 230px !important; padding: 1.35rem 1.6rem !important; flex: 0 0 auto !important; }
+          .technology-portfolio-logo-stage { position: relative !important; inset: auto !important; width: 100% !important; height: 205px !important; padding: 1.2rem !important; flex: 0 0 auto !important; }
           .technology-portfolio-image { display: block !important; width: 100% !important; height: 100% !important; object-fit: contain !important; object-position: center !important; opacity: 0.94 !important; }
-          .technology-portfolio-content { position: relative !important; inset: auto !important; min-height: 70px !important; padding: 1.1rem 1.2rem !important; justify-content: center !important; }
+          .technology-portfolio-content { position: relative !important; inset: auto !important; min-height: 0 !important; padding: 1.1rem 1.2rem !important; justify-content: flex-start !important; }
           .technology-portfolio-explore { white-space: nowrap !important; }
         }
-        @media (max-width: 430px) { .technology-portfolio-logo-stage { height: 205px !important; } }
+        @media (max-width: 1250px) and (min-width: 861px) { .technology-portfolio-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
+        @media (max-width: 430px) { .technology-portfolio-logo-stage { height: 190px !important; } }
       `}</style>
       <div style={wrap}>
         <p className="technology-portfolio-eyebrow" style={eyebrow}><PublicUiText textKey="publicUi.text20">{"TECHNOLOGY PORTFOLIO"}</PublicUiText></p>
@@ -64,8 +79,8 @@ export function TechnologiesPortfolio() {
                   style={{ ...imageStyle, transform: `scale(${visualScale})` }}
                 />
               </div>
-              <div style={overlay} />
               <div className="technology-portfolio-content" style={content}>
+                <p style={technologyRole}><ReviewedText text={ROLES[slug]} /></p>
                 <span className="technology-portfolio-explore" style={explore}><PublicUiText textKey="publicUi.text18">{"EXPLORE TECHNOLOGY →"}</PublicUiText></span>
               </div>
             </Link>
@@ -77,13 +92,13 @@ export function TechnologiesPortfolio() {
 }
 
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)', background: '#000' };
-const wrap: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
+const wrap: CSSProperties = { maxWidth: '1560px', margin: '0 auto' };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', margin: '0 0 1rem' };
 const title: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.95, letterSpacing: '-0.02em', margin: '0 0 2.4rem', textTransform: 'uppercase', color: '#fff' };
-const grid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem' };
-const card: CSSProperties = { display: 'block', width: '100%', minHeight: '420px', position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
-const logoStage: CSSProperties = { position: 'absolute', top: '1rem', left: '1rem', right: '1rem', height: '300px', padding: '1.7rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' };
+const grid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(5, minmax(0, 1fr))', gap: 'clamp(.8rem,1.35vw,1.5rem)' };
+const card: CSSProperties = { display: 'flex', flexDirection:'column', width:'100%', minHeight:'355px', position:'relative', overflow:'hidden', textDecoration:'none', color:'#fff', border:'1px solid rgba(255,255,255,.18)', background:'#0b0b0b' };
+const logoStage: CSSProperties = { position:'relative', height:'210px', padding:'1rem 1.15rem', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden', background:'#050505', flex:'0 0 auto' };
 const imageStyle: CSSProperties = { display: 'block', width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', opacity: 0.92, filter: 'brightness(1.16) contrast(1.05)', transformOrigin: 'center center' };
-const overlay: CSSProperties = { position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.78) 100%)' };
-const content: CSSProperties = { position: 'absolute', inset: 0, padding: '1.35rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' };
+const content: CSSProperties = { position:'relative', padding:'1.1rem 1.2rem 1.35rem', display:'flex', flexDirection:'column', justifyContent:'space-between', gap:'1.3rem', flex:1, borderTop:'1px solid rgba(255,255,255,.12)' };
+const technologyRole: CSSProperties = { color:'rgba(255,255,255,.86)', fontSize:'clamp(.94rem,1vw,1.07rem)', lineHeight:1.55, margin:0 };
 const explore: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.72rem' };
