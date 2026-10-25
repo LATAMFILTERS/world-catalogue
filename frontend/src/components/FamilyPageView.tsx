@@ -310,7 +310,8 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
     ? localizedPath(`/technologies/${fam.primaryTechnology}`, lang)
     : `/technologies/${fam.primaryTechnology}/`;
   const hubBase = `https://part-search.elimfilters.com${lang === 'en' ? '' : `/${lang}`}`;
-  const airFamilyEditorial = Object.entries(AIR_FAMILY_TECHNICAL_COPY[lang]).find(([key]) => key === fam.slug)?.[1];
+  const airFamilyEditorial: { readonly headline: string; readonly mechanism: string; readonly checks: readonly string[]; readonly boundary: string } | undefined =
+    Object.entries(AIR_FAMILY_TECHNICAL_COPY[lang]).find(([key]) => key === fam.slug)?.[1];
   const airLabels = AIR_FAMILY_SECTION_LABELS[lang];
 
   const breadcrumb = {
