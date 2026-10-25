@@ -39,7 +39,13 @@ const inventory = JSON.parse(fs.readFileSync(args.inventory, 'utf8'));
 // --exclude EL33008,EL3xxxx : rows held back for review (e.g. non-standard HD SKU format).
 const exclude = new Set(String(args.exclude || '').split(',').map((x) => x.trim().toUpperCase()).filter(Boolean));
 // Standard HD SKU = 3-char prefix + 4 digits (EH6 + 4). A longer SKU is not a governed target.
-const standardHd = (sku) => /^EH6\d{4}$/.test(sku);
+// --target-prefix EL8 --only EL31005 : WD that MANN publishes as "Oil Filter" retire into the HD
+// lube SKU (EL8) instead of a hydraulic EH6. Requires --only so it is never applied in bulk.
+const targetPrefix = String(args['target-prefix'] || 'EH6').toUpperCase();
+if (!['EH6', 'EL8'].includes(targetPrefix)) throw new Error('--target-prefix must be EH6 or EL8');
+const only = new Set(String(args.only || '').split(',').map((x) => x.trim().toUpperCase()).filter(Boolean));
+if (targetPrefix !== 'EH6' && !only.size) throw new Error('--target-prefix EL8 requires --only <LD SKU list>');
+const standardHd = (sku) => new RegExp(`^${targetPrefix}\\d{4}$`).test(sku);
 // --without-successor (operator ruling 2026-10-24): LD rows whose WD has NO HD SKU or SEVERAL HD
 // candidates leave LD now, with no successor. The row records hd_backlog=true, the WD code and
 // the HD candidates (if any), so the HD SKU can be resolved later (Donaldson -> Fleetguard -> OEM).
@@ -47,7 +53,7 @@ const withoutSuccessor = args['without-successor'] === 'true';
 const targets = withoutSuccessor
   ? inventory.filter((r) => r.wd_scope === 'WD_SOLE_BASE' && ['NO_HD_MATCH', 'MULTIPLE_HD_MATCHES'].includes(r.status) && !exclude.has(r.ld_sku))
   : inventory.filter((r) => r.wd_scope === 'WD_SOLE_BASE' && r.status === 'HD_HAS_WD_AS_COMPETITOR'
-    && r.hd_matches.length === 1 && !exclude.has(r.ld_sku));
+    && r.hd_matches.length === 1 && !exclude.has(r.ld_sku) && (!only.size || only.has(r.ld_sku)));
 if (execute && Number(args['confirm-count']) !== targets.length) throw new Error(`--confirm-count must be ${targets.length}`);
 
 const url = process.env.CATALOG_DATABASE_URL;
@@ -97,7 +103,7 @@ try {
     const L = rows.find((r) => r.sku === ld); const H = rows.find((r) => r.sku === hd);
     const skip = (reason) => report.skipped.push({ ld, hd, wd, reason });
     if (!L || L.duty !== 'LIGHT_DUTY' || !L.catalog_active) { skip('LD_ROW_CHANGED_OR_INACTIVE'); continue; }
-    if (!H || H.duty !== 'HEAVY_DUTY' || !H.catalog_active || !hd.startsWith('EH6')) { skip('HD_TARGET_NOT_ACTIVE_EH6'); continue; }
+    if (!H || H.duty !== 'HEAVY_DUTY' || !H.catalog_active || !hd.startsWith(targetPrefix)) { skip(`HD_TARGET_NOT_ACTIVE_${targetPrefix}`); continue; }
     if (!standardHd(hd)) { skip('HD_TARGET_NON_STANDARD_SKU_FORMAT'); continue; }
     if (!(H.competitor_codes || []).some((e) => norm(codeOf(e)) === wd)) { skip('HD_TARGET_DOES_NOT_CITE_WD'); continue; }
 
