@@ -1,6 +1,14 @@
 import type { PageLang } from '@/lib/localized-routes';
 const translations: Record<'es'|'pt',Record<string,string>> = {
   "es": {
+    "Rail Asset": "Activo ferroviario",
+    "Identify the locomotive, multiple unit, auxiliary power unit or maintenance equipment.": "Identifique locomotora, unidad múltiple, unidad de potencia auxiliar o equipo de mantenimiento.",
+    "Engine + System": "Motor y sistema",
+    "Confirm the engine and the exact air, fuel, lubrication or hydraulic filter position.": "Confirme motor y posición exacta del filtro de aire, combustible, lubricación o hidráulico.",
+    "Route Duty": "Régimen de servicio en ruta",
+    "Define operating hours, load, route dust, vibration, ambient conditions and maintenance access.": "Determine horas de operación, carga, polvo de ruta, vibración, condiciones ambientales y acceso a mantenimiento.",
+    "Match the contamination mechanism to the protected system and service requirement.": "Relacione el mecanismo de contaminación con el sistema protegido y el requisito de servicio.",
+    "Validate the final filter using OEM reference, dimensions and documented application evidence.": "Valide el filtro final mediante referencia OEM, dimensiones y evidencia documentada de aplicación.",
     "Railway filtration maintenance guidance for locomotive operators, depot technicians and reliability engineers responsible for verified air, diesel-fuel, lubrication and applicable auxiliary hydraulic systems.": "Guía de filtración y mantenimiento para operadores ferroviarios, técnicos de depósito e ingenieros de confiabilidad responsables de sistemas de aire, combustible diésel, lubricación e hidráulica auxiliar con aplicación verificada.",
     "Railway equipment applications": "Aplicaciones de equipos ferroviarios",
     "RAILWAY / LOCOMOTIVE RELIABILITY": "FERROCARRILES / CONFIABILIDAD DE LOCOMOTORAS",
@@ -138,6 +146,14 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
     "Application Evidence": "Evidencia de aplicación"
   },
   "pt": {
+    "Rail Asset": "Ativo ferroviário",
+    "Identify the locomotive, multiple unit, auxiliary power unit or maintenance equipment.": "Identifique locomotiva, unidade múltipla, unidade de potência auxiliar ou equipamento de manutenção.",
+    "Engine + System": "Motor e sistema",
+    "Confirm the engine and the exact air, fuel, lubrication or hydraulic filter position.": "Confirme motor e posição exata do filtro de ar, combustível, lubrificação ou hidráulico.",
+    "Route Duty": "Regime operacional na rota",
+    "Define operating hours, load, route dust, vibration, ambient conditions and maintenance access.": "Defina horas de operação, carga, poeira da rota, vibração, condições ambientais e acesso à manutenção.",
+    "Match the contamination mechanism to the protected system and service requirement.": "Relacione o mecanismo de contaminação com o sistema protegido e os requisitos de manutenção.",
+    "Validate the final filter using OEM reference, dimensions and documented application evidence.": "Valide o filtro final pela referência OEM, dimensões e evidências documentadas da aplicação.",
     "Railway filtration maintenance guidance for locomotive operators, depot technicians and reliability engineers responsible for verified air, diesel-fuel, lubrication and applicable auxiliary hydraulic systems.": "Orientação de filtração e manutenção para operadores ferroviários, técnicos de oficina e engenheiros de confiabilidade responsáveis por sistemas de ar, diesel, lubrificação e hidráulica auxiliar com aplicação verificada.",
     "Railway equipment applications": "Aplicações de equipamentos ferroviários",
     "RAILWAY / LOCOMOTIVE RELIABILITY": "FERROVIAS / CONFIABILIDADE DAS LOCOMOTIVAS",
