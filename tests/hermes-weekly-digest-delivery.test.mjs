@@ -81,7 +81,7 @@ test('review-ready week still emails the candidates when signed review actions a
   assert.match(sends[0].text,/Verified OEM finding/);
 });
 
-test('verified industry findings get ACEPTAR / ELIMINAR buttons and are staged for review', async()=>{
+test('with signed actions the email is a summary with one dashboard link; findings and the dashboard are staged', async()=>{
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'hermes-weekly-digest-actions-'));
   const finding={entity_code:'HERMES_REAL_SWEEP_STANDARDS_TESTING_ABC123',source_url:'https://example.test/std',research_resolution:{status:'VERIFIED'}};
   fs.writeFileSync(path.join(dir,'hermes-weekly-2026-10-26.md'),'# weekly','utf8');
@@ -98,9 +98,12 @@ test('verified industry findings get ACEPTAR / ELIMINAR buttons and are staged f
       HERMES_REVIEW_BASE_URL:'https://part-search.example.test/hermes/review',HERMES_REVIEW_TOKEN_SECRET:'test-secret',HERMES_REVIEW_RUN_ID:'123'}
   });
   assert.equal(result.outcome,'DRY_RUN');
-  assert.deepEqual(staged.map((c)=>c.entity_code),[finding.entity_code]);
+  assert.deepEqual(staged.map((c)=>c.entity_code),[finding.entity_code,'HERMES_WEEK_123']);
+  const week=staged.find((c)=>c.kind==='weekly_dashboard');
+  assert.match(week.body_html,/Norma revisada[\s\S]*<!--HERMES_ACT:card:HERMES_REAL_SWEEP_STANDARDS_TESTING_ABC123-->/);
   const html=fs.readFileSync(result.preview,'utf8');
-  assert.match(html,/ACEPTAR/);
-  assert.match(html,/ELIMINAR/);
-  assert.match(html,/part-search\.example\.test\/hermes\/review/);
+  assert.match(html,/ABRIR DASHBOARD/);
+  assert.match(html,/part-search\.example\.test\/hermes\/weekly\?candidate=HERMES_WEEK_123/);
+  assert.match(html,/Norma revisada/);
+  assert.doesNotMatch(html,/>ACEPTAR<|HERMES_ACT/); // no decision buttons inside the email
 });

@@ -4,6 +4,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { isResearchResolved } from './hermes-core.mjs';
+import { applyHeadlineDecision } from './headline-research.mjs';
 
 const require = createRequire(import.meta.url);
 const { fetchDecisions, markApplied } = require('../../lib/hermes-review-store');
@@ -108,6 +109,7 @@ export async function processDecisions({ fetch = fetchDecisions, mark = markAppl
   for (const row of await fetch()) {
     try {
       if (String(row.candidate_code).startsWith('HERMES_SKU_')) { const done = applySkuDecision(row); await mark(row.candidate_code); results.push(done); continue; }
+      if (String(row.candidate_code).startsWith('HERMES_HEADLINE_')) { const done = applyHeadlineDecision(row); await mark(row.candidate_code); results.push(done); continue; }
       const result = applyDecision(row);
       if (result.decision === 'approve' && needsOemResearch(result.approved)) {
         const out = await research(result.approved);

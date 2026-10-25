@@ -46,7 +46,7 @@ test('only Spanish cards; findings without a Spanish summary go to the link anne
     sweep({ code: 'EN', published: '2026-10-21', es: false, url: 'https://example.com/en' })
   ], { now, sweepSummaryPath: noSummary, unreviewedPath: noSummary });
   assert.deepEqual(d.items.map((i) => i.title), ['Engine platform ES']);
-  assert.deepEqual(d.link_annex, [{ source: 'Example OEM', items: [{ title: 'Engine platform EN', date: '2026-10-21', url: 'https://example.com/en' }], duty: 'GEN' }]);
+  assert.deepEqual(d.link_annex.map((g) => ({ source: g.source, duty: g.duty, items: g.items.map(({ title, date, url }) => ({ title, date, url })) })), [{ source: 'Example OEM', duty: 'GEN', items: [{ title: 'Engine platform EN', date: '2026-10-21', url: 'https://example.com/en' }] }]);
   d.items.push({ ...d.items[0], url: 'javascript:alert(1)' });
   const r = renderIndustryDigest(d);
   assert.match(r.html, /Resumen:<\/strong> Resumen en español\./);

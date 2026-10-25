@@ -4,7 +4,9 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { renderIndustryDigest } from './industry-digest.mjs';
-import { emailShell, sectionHeader, weeklyKpis } from './weekly-email-layout.mjs';
+import layout from '../../lib/hermes-email-layout.js';
+
+const { emailShell, sectionHeader, weeklyKpis } = layout;
 
 const require = createRequire(import.meta.url);
 
