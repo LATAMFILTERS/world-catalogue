@@ -81,7 +81,7 @@ export function MacrocoreStablePage() {
           <p className={styles.eyebrow}><ReviewedText text={"FILTRATION TECHNOLOGY"} /></p>
           <h2 className={styles.displayTitle}>MACROCORE™</h2>
           <p className={styles.applicationLine}><strong><ReviewedText text={"Primary and secondary engine air filtration"} /></strong></p>
-          <p className={styles.lead}><ReviewedText text={"An engine air-intake filtration architecture for controlling airborne particulate while managing airflow demand, restriction development and sealing integrity."} /></p>
+          <p className={styles.lead}><ReviewedText text={"MACROCORE™ protects the engine air-intake boundary by controlling particulate exposure while respecting airflow demand, restriction limits, filter capacity and sealing integrity."} /></p>
           <p className={styles.bodyWide}><ReviewedText text={"Applied across approved primary and secondary / safety engine-air filtration positions upstream of turbocharger, cylinder and combustion-air components."} /></p>
 
           <div className={styles.mediaGrid}>
@@ -92,7 +92,7 @@ export function MacrocoreStablePage() {
                 <p><span><ReviewedText text={"Technical review:"} /></span> <Link href="/about/leadership/"><ReviewedText text={"Víctor Abreu — Founder & CEO"} /></Link></p>
               </div>
               <p className={styles.eyebrow}><ReviewedText text={"DESCRIPTION"} /></p>
-              <h3 className={styles.featureTitle}><ReviewedText text={"Airflow Management and Particle Control"} /></h3>
+              <h3 className={styles.featureTitle}><ReviewedText text={"Protecting engines begins at the clean-air boundary"} /></h3>
               <p className={styles.lead}><ReviewedText text={"MACROCORE™ is the ELIMFILTERS architecture for engine air-intake protection. It integrates media configuration, contaminant-holding capacity, restriction control, and sealing integrity according to airflow demand and operating conditions."} /></p>
             </div>
             <figure className={styles.mediaFigure}>
@@ -111,7 +111,7 @@ export function MacrocoreStablePage() {
       </section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}><ReviewedText text={"OPERATING REALITY"} /></p><h2 className={styles.h2}><ReviewedText text={"Engine air systems do not tolerate uncontrolled dust ingestion."} /></h2>
+        <p className={styles.eyebrow}><ReviewedText text={"OPERATING REALITY"} /></p><h2 className={styles.h2}><ReviewedText text={"Dust ingestion is an asset-protection risk, not just a filter-maintenance issue."} /></h2>
         <p className={styles.lead}><ReviewedText text={"Airborne particulate that crosses the clean-air boundary can contribute to abrasive and erosive wear at turbocharger, cylinder, ring and combustion-air surfaces."} /></p>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"A useful distinction"} /></h3><p className={styles.body}><ReviewedText text={"“Air filter” describes a category. Position, housing, airflow requirement and protection strategy determine what the element is actually being asked to do."} /></p></article>
@@ -120,7 +120,7 @@ export function MacrocoreStablePage() {
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}><ReviewedText text={"APPLICATION ENVIRONMENT"} /></p><h2 className={styles.h2}><ReviewedText text={"Where MACROCORE™ belongs"} /></h2>
+        <p className={styles.eyebrow}><ReviewedText text={"APPLICATION ENVIRONMENT"} /></p><h2 className={styles.h2}><ReviewedText text={"Where intake contamination threatens equipment availability"} /></h2>
         <div className={styles.editorialColumns}>
           <div><h3 className={styles.h3}><ReviewedText text={"Application positions"} /></h3><ul className={styles.list}>{positions.map(x=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
           <div><h3 className={styles.h3}><ReviewedText text={"Operating conditions that change filter duty"} /></h3><ul className={styles.list}>{conditions.map(x=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
@@ -129,7 +129,7 @@ export function MacrocoreStablePage() {
       </div></section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}><ReviewedText text={"SPECIFICATION & SELECTION"} /></p><h2 className={styles.h2}><ReviewedText text={"Questions before selecting an engine air filter"} /></h2>
+        <p className={styles.eyebrow}><ReviewedText text={"SPECIFICATION & SELECTION"} /></p><h2 className={styles.h2}><ReviewedText text={"Engineering checks before approving an engine-air filter"} /></h2>
         <div className={styles.editorialColumns}>
           <div><h3 className={styles.h3}><ReviewedText text={"Key engineering parameters"} /></h3><ul className={styles.list}>{parameters.map(x=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
           <div><h3 className={styles.h3}><ReviewedText text={"Common selection errors"} /></h3><ul className={styles.list}>{errors.map(x=><li key={x}><ReviewedText text={x} /></li>)}</ul></div>
@@ -139,7 +139,7 @@ export function MacrocoreStablePage() {
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}><ReviewedText text={"HOW THE SYSTEM BEHAVES"} /></p><h2 className={styles.h2}><ReviewedText text={"Different intake stages do different work."} /></h2>
+        <p className={styles.eyebrow}><ReviewedText text={"HOW THE SYSTEM BEHAVES"} /></p><h2 className={styles.h2}><ReviewedText text={"Primary filtration, safety elements and housing integrity form one protection boundary."} /></h2>
         <p className={styles.lead}><ReviewedText text={"The primary element carries the normal contamination burden. Where specified, a secondary / safety element provides an additional clean-side protection layer. Selection must resolve airflow, restriction, sealing and housing requirements together."} /></p>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Primary stage"} /></h3><p className={styles.body}><ReviewedText text={"Carries the normal contamination load while supporting required engine airflow."} /></p></article>
@@ -150,7 +150,7 @@ export function MacrocoreStablePage() {
       </div></section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}><ReviewedText text={"SERVICE & DIAGNOSIS"} /></p><h2 className={styles.h2}><ReviewedText text={"What early restriction or dust downstream may be telling you"} /></h2>
+        <p className={styles.eyebrow}><ReviewedText text={"SERVICE & DIAGNOSIS"} /></p><h2 className={styles.h2}><ReviewedText text={"Diagnose the intake system before replacing filters repeatedly"} /></h2>
         <ul className={`${styles.list} ${styles.serviceList}`}>{['Premature restriction or repeated short intervals','Dust tracks downstream of the element','Damaged or displaced seals','Housing, clamp or retention problems','Restriction that does not match expected duty','Contamination introduced during service'].map(x=><li key={x}><ReviewedText text={x} /></li>)}</ul>
         <div className={styles.inlineCta}><p><ReviewedText text={"Dust downstream, premature restriction or repeated filter changes?"} /></p><a href="mailto:applications@elimfilters.com?subject=MACROCORE%20Intake%20System%20Review" data-conversion-action="application-support"><ReviewedText text={"REQUEST INTAKE SYSTEM REVIEW"} /></a></div>
       </div></section>
@@ -169,7 +169,7 @@ export function MacrocoreStablePage() {
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}><ReviewedText text={"WHEN A TECHNICAL REVIEW MAKES SENSE"} /></p><h2 className={styles.h2}><ReviewedText text={"When engine air filtration becomes a fleet-level problem"} /></h2>
+        <p className={styles.eyebrow}><ReviewedText text={"WHEN A TECHNICAL REVIEW MAKES SENSE"} /></p><h2 className={styles.h2}><ReviewedText text={"When intake contamination becomes a fleet reliability problem"} /></h2>
         <p className={styles.lead}><ReviewedText text={"Repeated dust downstream, short filter intervals, recurring seal failures, unexplained restriction or accelerated wear justify reviewing the complete intake boundary, operating environment and maintenance strategy."} /></p>
       </div></section>
 
@@ -179,7 +179,7 @@ export function MacrocoreStablePage() {
       </div></section>
 
       <section className={styles.ctaSection}><div className={styles.inner}>
-        <p className={styles.eyebrow}><ReviewedText text={"APPLICATION SUPPORT"} /></p><h2 className={styles.h2}><ReviewedText text={"Bring us the application, duty cycle and failure pattern — not just the part number."} /></h2>
+        <p className={styles.eyebrow}><ReviewedText text={"APPLICATION SUPPORT"} /></p><h2 className={styles.h2}><ReviewedText text={"Specify the operating duty and protection requirement—not only the filter reference."} /></h2>
         <p className={styles.lead}><ReviewedText text={"Use Part Search when the application is already known. When the issue is repeated contamination, short service life, uncertain restriction behavior, component exposure or an unclear intake architecture, use the technical review path."} /></p>
         <div className={styles.buttonRow}><a className={styles.primaryButton} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence"><ReviewedText text={"FIND MY PART"} /></a><a className={styles.secondaryButton} href="mailto:applications@elimfilters.com?subject=MACROCORE%20Application%20Assessment" data-conversion-action="application-support"><ReviewedText text={"TECHNICAL REVIEW PATH"} /></a></div>
       </div></section>
