@@ -39,7 +39,7 @@ try {
     FROM public.elimfilters_catalog c
     LEFT JOIN ld_catalog.ld_canonical_product_identity i ON i.elimfilters_sku = c.sku AND i.status = 'ACTIVE'
     LEFT JOIN rel ON rel.sku = c.sku
-    WHERE c.duty = 'LIGHT_DUTY'
+    WHERE c.duty = 'LIGHT_DUTY' AND c.catalog_active = true
       AND (i.canonical_part_number ~* '^\\s*WD\\s*[0-9]' OR rel.sku IS NOT NULL)
     ORDER BY c.sku`));
   // HD SKUs with their competitor and OEM code lists.
