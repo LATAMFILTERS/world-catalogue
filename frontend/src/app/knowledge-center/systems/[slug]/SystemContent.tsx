@@ -47,15 +47,17 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
   const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   const c = COPY[lang === 'es' || lang === 'pt' ? lang : 'en'];
 
+  const isAirIntake = system.slug === 'air-intake-protection';
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
+      <style>{`.kc-air-intake-main p{font-size:clamp(1.04rem,1.12vw,1.15rem)!important;line-height:1.76!important;color:rgba(255,255,255,.85)!important}@media(max-width:960px){.kc-air-intake-grid{grid-template-columns:minmax(0,1fr)!important}.kc-air-intake-grid aside{position:static!important}}`}</style>
 
       {/* Breadcrumb */}
       <div style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '0.875rem clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: isAirIntake ? '1560px' : '1200px', margin: '0 auto', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <Link href="/knowledge-center" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.kc}</Link>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>›</span>
           <Link href="/knowledge-center/systems" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>{c.systems}</Link>
@@ -70,7 +72,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: isAirIntake ? '1560px' : '1200px', margin: '0 auto' }}>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,18 +141,18 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
       </section>
 
       {/* Two-column content */}
-      <div style={{
-        maxWidth: '1200px',
+      <div className={isAirIntake ? 'kc-air-intake-grid' : undefined} style={{
+        maxWidth: isAirIntake ? '1560px' : '1200px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem)',
         display: 'grid',
-        gridTemplateColumns: 'minmax(0, 1fr) 280px',
-        gap: '3rem',
+        gridTemplateColumns: isAirIntake ? 'minmax(0, 1fr) minmax(280px, 350px)' : 'minmax(0, 1fr) 280px',
+        gap: isAirIntake ? 'clamp(1.5rem, 2.6vw, 2.75rem)' : '3rem',
         alignItems: 'start',
       }}>
 
         {/* Main */}
-        <div>
+        <div className={isAirIntake ? 'kc-air-intake-main' : undefined}>
           {detail && detail.keyMetrics.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
