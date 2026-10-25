@@ -1,0 +1,57 @@
+name: Bus Coach Technical and Media Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/audit-bus-coach-release-20261024.yml
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check bus carousel image URLs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,re,struct,json
+          s=open('frontend/src/components/IndustryFilterCarousel.tsx',encoding='utf8').read()
+          base=re.search(r"const R2_BASE = '([^']+)'",s).group(1)
+          block=s.split("  'Bus Coach': {",1)[1].split("\n  },",1)[0]
+          images=re.findall(r"'([^']+)': `\$\{R2_BASE\}/([^`]+)`",block)
+          print('BUS_IMAGE_COUNT',len(images),flush=True)
+          for family,file in images:
+            try:
+              req=urllib.request.Request(base+'/'+file,headers={'User-Agent':'ELIMFILTERS-Bus-Coach-Images','Accept':'image/*'})
+              with urllib.request.urlopen(req,timeout=23) as r:
+                data=r.read(16000000)
+                valid=data[:8]==bytes([137,80,78,71,13,10,26,10])
+                dims=struct.unpack('>II',data[16:24]) if valid else ()
+                print('BUS_IMAGE '+json.dumps({'family':family,'file':file,'http':r.status,'png':valid,'size':len(data),'dimensions':dims}),flush=True)
+            except urllib.error.HTTPError as e: print('BUS_IMAGE '+json.dumps({'family':family,'file':file,'http':e.code}),flush=True)
+            except Exception as e: print('BUS_IMAGE '+json.dumps({'family':family,'file':file,'error':str(e)}),flush=True)
+          PY
+      - name: Install FFprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Inspect existing passenger-transport video
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s frontend/public/images/buses-2.mp4
+          test -s frontend/public/images/bus-hero.avif
+          ffprobe -v error -show_entries stream=codec_name,codec_type,pix_fmt,width,height -show_entries format=duration,size -of json frontend/public/images/buses-2.mp4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Typecheck
+        working-directory: frontend
+        run: npm run type-check
