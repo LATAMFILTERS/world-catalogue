@@ -32,7 +32,7 @@ export function HydrocoreStablePage(){
  const faq={'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))};
  const breadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://elimfilters.com/'},{'@type':'ListItem',position:2,name:'Technologies',item:'https://elimfilters.com/technologies/'},{'@type':'ListItem',position:3,name:'HYDROCORE™',item:'https://elimfilters.com/technologies/hydrocore/'}]};
 
- return <main id="main-content" className={styles.page}>
+ return <main id="main-content" className={`${styles.page} ${styles.fuelTechnology}`}>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(article)}}/>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faq)}}/>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumb)}}/>
@@ -72,17 +72,21 @@ export function HydrocoreStablePage(){
      <p className={styles.bodyWide}>Water accumulation, inadequate drainage, contaminated bulk fuel and microbial growth can accelerate separator loading and contribute to premature restriction. For this reason, HYDROCORE™ is treated as part of the complete fuel-cleanliness strategy rather than as an isolated filter element.</p>
      <p className={styles.bodyWide}>HYDROCORE™ can be configured for approved standard spin-on and cartridge fuel/water separator designs, including drain and transparent-bowl arrangements. FH and FG turbine-style systems remain outside this architecture and are governed separately by TURBOCORE™.</p>
     </div>
-    <figure className={styles.mediaFigure}>
-     <div style={{overflow:'hidden',border:'1px solid rgba(255,255,255,.12)',background:'#707070'}}>
-      <img
-       className={styles.mediaImage}
-       src="/images/SYNTAPORE_media.png"
-       alt="Conceptual fibrous fuel/water separation media structure for HYDROCORE"
-       style={{border:0,filter:'grayscale(1) contrast(1.08) brightness(.96)',transform:'scale(1.035)',transformOrigin:'center center'}}
-      />
+    <aside className={styles.mediaFigure} aria-label="Technical separation sequence">
+     <div className={styles.fuelProcess}>
+      {[
+       ['Incoming fuel and contaminant load','Match inlet flow, particulate load and incoming water condition to the approved separator design.'],
+       ['Droplet coalescence and separation','Applicable coalescing and separation stages encourage water removal within the validated non-turbine element configuration.'],
+       ['Water collection and drainage','Collected water must be removed through the specified drain or bowl arrangement before it can compromise the system.'],
+       ['Protected downstream fuel path','Check sealing, available fuel flow and pressure differential to protect pumps and injectors from water carryover or restriction.']
+      ].map(([title, description], index) => (
+       <div className={styles.fuelProcessStep} key={title}>
+        <span>{String(index + 1).padStart(2,'0')}</span>
+        <div><strong>{title}</strong><p>{description}</p></div>
+       </div>
+      ))}
      </div>
-     <figcaption>Microscopic visualization of filtration media structure used for technical illustration.</figcaption>
-    </figure>
+    </aside>
    </div>
   </div></section>
 
