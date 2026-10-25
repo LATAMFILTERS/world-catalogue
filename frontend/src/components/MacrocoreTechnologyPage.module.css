@@ -224,3 +224,13 @@
   .textLinks { grid-template-columns: 1fr; gap: 0; }
   .textLinks a { padding: 1rem 0; font-size: 0.7rem; }
 }
+
+@media (max-width: 980px) {
+  .fuelTechnology .mediaGrid, .fuelTechnology .twoColumnNotes, .fuelTechnology .systemGrid { grid-template-columns: minmax(0,1fr); }
+  .fuelTechnology .editorialColumns { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .fuelTechnology .editorialColumns { grid-template-columns: minmax(0,1fr); }
+  .fuelTechnology .introSection,.fuelTechnology .band,.fuelTechnology .bandAlt,.fuelTechnology .ctaSection { padding: 3rem 1rem; }
+  .fuelProcessStep { grid-template-columns: 2.1rem 1fr; padding: 1.2rem; }
+}
