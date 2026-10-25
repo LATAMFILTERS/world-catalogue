@@ -160,6 +160,26 @@ for (const ev of events) {
   });
 }
 
+// ---------- OE numbers tab (independent identity evidence) ----------
+// Slice from the "OE Numbers" accordion header to the next section (Downloads / Legal), take the
+// manufacturer from the last heading and every part-number-like token from cells / list items.
+const oeNumbers = [];
+{
+  const start = body.search(/<h[1-6][^>]*>\s*(?:OE Numbers|OE numbers|N[uú]meros de equipo original)\s*<\/h[1-6]>/i);
+  if (start >= 0) {
+    const rest = body.slice(start + 10);
+    const endRel = rest.search(/<h[1-6][^>]*>\s*(?:Downloads|Descargas|Legal Information|Informaci[oó]n legal)\s*<\/h[1-6]>/i);
+    const oe = endRel >= 0 ? rest.slice(0, endRel) : rest.slice(0, 200000);
+    let maker = null;
+    const re = /<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>|<(?:td|li|span|a)[^>]*>([^<]{3,60})<\/(?:td|li|span|a)>/gi;
+    for (let m; (m = re.exec(oe));) {
+      if (m[1] !== undefined) { maker = decode(m[1]); continue; }
+      const t = decode(m[2]);
+      if (/\d/.test(t) && /^[A-Z0-9][A-Z0-9 .\-\/]{2,40}$/i.test(t) && !/^(?:OE|MANN)/i.test(t)) oeNumbers.push({ manufacturer: maker, code: t });
+    }
+  }
+}
+fs.writeFileSync(path.join(outDir, 'mann-oe-numbers.json'), JSON.stringify(oeNumbers, null, 2));
 const seen = new Set();
 const mann = parsed.filter((r) => { const k = JSON.stringify(r); if (seen.has(k)) return false; seen.add(k); return true; });
 fs.writeFileSync(path.join(outDir, 'mann-applications.json'), JSON.stringify(mann, null, 2));
@@ -174,7 +194,7 @@ let evidence;
 try {
   await db.query('BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY');
   ({ rows: [row] } = await db.query(
-    `SELECT sku, duty, codigo_base, vehicle_applications, md5(vehicle_applications::text) AS vehicle_db_hash
+    `SELECT sku, duty, codigo_base, vehicle_applications, oem_codes, md5(vehicle_applications::text) AS vehicle_db_hash
        FROM public.elimfilters_catalog WHERE sku = $1`, [sku]));
   ({ rows: evidence } = await db.query(
     `SELECT application_kind, verified, source_url, evidence_hash, payload_hash, evidence_authority
@@ -231,12 +251,19 @@ const engineCodeMismatch = matched.filter((k) => norm(mannKeys.get(k).engine_cod
   .map((k) => ({ key: k, mann: mannKeys.get(k).engine_code, current: curKeys.get(k).engine_code }));
 const currentDuplicateRows = current.length - curKeys.size;
 
+const oeOf = (e) => normalizePart(e && typeof e === 'object' ? e.code || e.part_number || e.reference : e);
+const skuOe = new Set((Array.isArray(row.oem_codes) ? row.oem_codes : []).map(oeOf).filter((x) => x.length >= 4));
+const pageOe = new Set(oeNumbers.map((o) => normalizePart(o.code)).filter((x) => x.length >= 4));
+const oeOverlap = [...pageOe].filter((c) => skuOe.has(c));
 const report = {
   generated_at: new Date().toISOString(),
   mode: 'READ_ONLY_PILOT_NO_WRITES',
   sku, duty: row.duty, codigo_base: row.codigo_base, mann_code: mannCode,
   source: { url: finalUrl, http_status: httpStatus, page_sha256: pageSha256, title: identity.title },
   counts: {
+    oe_on_page: pageOe.size,
+    oe_on_sku: skuOe.size,
+    oe_overlap: oeOverlap.length,
     mann_rows_raw: parsed.length,
     mann_rows_dedup: mann.length,
     current_rows: current.length,
@@ -247,6 +274,7 @@ const report = {
     current_duplicate_rows: currentDuplicateRows,
     matched_engine_code_mismatch: engineCodeMismatch.length,
   },
+  oe_overlap_sample: oeOverlap.slice(0, 10),
   current_year_formats: formats,
   comparison_mode: yearAgnostic ? 'MAKE_MODEL_ONLY_PRODUCTION_PERIODS' : 'MAKE_MODEL_YEAR',
   engine_code_mismatch_sample: engineCodeMismatch.slice(0, 20),
