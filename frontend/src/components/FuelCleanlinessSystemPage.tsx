@@ -25,7 +25,7 @@ const pathways = [
   ],
   [
     'TURBINE-SERIES SEPARATION', 'Multi-stage fuel conditioning in applicable FH / FG turbine systems',
-    'TURBOCORE™', '/technologies/turbocore/', '/images/TURBOCORE-hero.avif',
+    'TURBOCORE™', '/technologies/turbocore/', '/images/turbine-1.avif',
     'Dedicated multi-stage fuel/water separation architecture for approved FH/FG turbine-style assemblies, compatible replacement elements and approved fuel-processor housings.',
     'Verify the exact housing series, element specification, flow routing, sealing geometry, bowl or drainage arrangement and documented application. TURBOCORE™ is not interchangeable with conventional HYDROCORE™ separators.'
   ]
