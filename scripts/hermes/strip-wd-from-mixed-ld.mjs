@@ -117,11 +117,18 @@ try {
 
   // Post-check: no WD code left on any processed LD row's reference lists.
   const skus = report.done.map((d) => d.sku);
-  const left = (await db.query(`
-    SELECT count(*)::int n FROM public.elimfilters_catalog c,
+  const { rows: leftRows } = await db.query(`
+    SELECT c.sku, e->>'manufacturer' AS manufacturer, coalesce(e->>'code', e#>>'{}') AS code,
+           CASE WHEN c.oem_codes @> jsonb_build_array(e) THEN 'oem_codes' ELSE 'competitor_codes' END AS field
+    FROM public.elimfilters_catalog c,
       jsonb_array_elements(coalesce(c.competitor_codes,'[]'::jsonb) || coalesce(c.oem_codes,'[]'::jsonb)) e
-    WHERE c.sku = ANY($1::text[]) AND upper(regexp_replace(coalesce(e->>'code', e#>>'{}'),'[^A-Za-z0-9]','','g')) ~ '^WD[0-9]'`, [skus])).rows[0].n;
-  if (left) throw new Error(`POSTCHECK_WD_STILL_ON_LD ${left}`);
+    WHERE c.sku = ANY($1::text[]) AND upper(regexp_replace(coalesce(e->>'code', e#>>'{}'),'[^A-Za-z0-9]','','g')) ~ '^WD[0-9]'
+    ORDER BY 1, 3`, [skus]);
+  if (leftRows.length) {
+    // Other WD codes (not the SKU's own WD base) still cited on these LD rows: listed for review.
+    report.wd_left_on_ld = leftRows;
+    throw new Error(`POSTCHECK_WD_STILL_ON_LD ${leftRows.length} (see wd_left_on_ld in the report file)`);
+  }
 
   await db.query(execute ? 'COMMIT' : 'ROLLBACK');
   report.transaction = execute ? 'COMMIT' : 'ROLLBACK';
@@ -140,4 +147,4 @@ const tot = report.done.reduce((m, d) => { m.apps += Number(d.vehicle_apps.split
 console.log(JSON.stringify({ mode: report.mode, eligible: report.eligible, processed: report.done.length, skipped: report.skipped,
   totals: { wd_apps_pending_in_public_payload: report.done.reduce((n, d) => n + d.wd_apps_pending_in_public_payload, 0), competitor_codes_removed: tot.comp, oem_codes_removed: tot.oem, relational_rows_removed: tot.rel },
   sample: report.done.slice(0, 8).map((d) => `${d.sku} ${d.wd.join('+')} apps ${d.vehicle_apps} comp-${d.competitor_removed} rel=${JSON.stringify(d.relational_removed)}`),
-  relational_tables: report.relational_tables, transaction: report.transaction, error: report.error, file: out }, null, 2));
+  relational_tables: report.relational_tables, wd_left_on_ld: (report.wd_left_on_ld || []).slice(0, 15).map((r) => `${r.sku} ${r.field} ${r.manufacturer || '?'} ${r.code}`), transaction: report.transaction, error: report.error, file: out }, null, 2));
