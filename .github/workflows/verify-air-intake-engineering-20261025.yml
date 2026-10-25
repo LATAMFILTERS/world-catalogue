@@ -1,0 +1,60 @@
+name: Air Intake Engineering Page Verification
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/verify-air-intake-engineering-20261025.yml
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify published media scope and three locales
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os,re
+          base='frontend/public/images/'
+          images=['carcasa.jd.avif','mecanica-air.avif','intekcore(fn).avif','cabin-hero.avif','airdryer-hero.avif']
+          for name in images:
+            path=base+name
+            assert os.path.isfile(path) and os.stat(path).st_size>1000, path
+            print('PASS_AIR_IMAGE',name,os.stat(path).st_size,flush=True)
+          f=open('frontend/src/lib/air-intake-expert-i18n.ts',encoding='utf8').read()
+          for tech in ['MACROCORE™','INTEKCORE™','MICROKAPPA™','DRYCORE™']:
+            assert tech in f,tech
+          assert "DRYCORE™" in f and 'does not certify braking performance' in f
+          assert 'INTEKCORE™ is not a particulate-filter medium' in f
+          assert 'no blanket protection claim for exhaust gases or toxic exposures' in f
+          assert 'ISO 5011' in f and 'ISO 11155-1' in f and 'ISO 8573-1' in f
+          assert 'performance certification or approved OEM fitment' in f
+          css=open('frontend/src/components/AirIntakeSystemPage.module.css').read()
+          assert 'max-width: 1560px' in css
+          assert 'repeat(2,minmax(0,1fr))' in css
+          assert '@media(max-width:580px)' in css
+          for lng in ('en','es','pt'):
+            file='frontend/src/app/'+('' if lng=='en' else lng+'/')+'systems/air-intake/page.tsx'
+            assert os.path.exists(file),file
+            print('PASS_AIR_LOCALE',lng,flush=True)
+          routes=open('frontend/src/lib/localized-routes.ts').read()
+          assert "'/systems/air-intake'" in routes
+          print('PASS_AIR_GOVERNANCE',flush=True)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: TypeScript
+        working-directory: frontend
+        run: npm run type-check
+      - name: Production build
+        working-directory: frontend
+        run: npm run build
