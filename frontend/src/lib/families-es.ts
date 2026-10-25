@@ -26,8 +26,8 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
   'air-cleaner-housings': {
     name: 'Carcasas de filtro de aire',
     seoTitle: 'Carcasas de filtro de aire para servicio pesado',
-    purpose: 'Las carcasas de filtro de aire proporcionan el alojamiento estructural y la interfaz de sellado para los elementos de aire primario y secundario.',
-    engineering: 'La arquitectura de carcasa INTEKCORE™ controla la geometría de sellado, la integridad estructural, el recorrido del flujo de aire y la protección contra el bypass en la interfaz entre elemento y carcasa.',
+    purpose: 'Las carcasas de admisión establecen el límite mecánico de protección: retienen los elementos aprobados, conducen el caudal requerido por el motor y mantienen los sellos que impiden el paso de aire sin filtrar.',
+    engineering: 'INTEKCORE™ abarca geometría de carcasa, orientación de entradas y salidas, retención del elemento, compresión de juntas, cierre de tapas y acceso de servicio. El conjunto debe corresponder al caudal y la restricción admisibles; la carcasa no es un medio filtrante de partículas.',
   },
   'primary-fuel': {
     name: 'Combustible primario',
@@ -68,8 +68,8 @@ export const FAMILY_ES: Record<string, FamilyEs> = {
   'cabin-filters': {
     name: 'Filtros de cabina',
     seoTitle: 'Filtros de aire de cabina para camiones y equipos',
-    purpose: 'Los filtros de cabina protegen el aire del operador y de los pasajeros frente a partículas, alérgenos, olores y determinados contaminantes gaseosos.',
-    engineering: 'MICROKAPPA™ combina la captura mecánica y electrostática de partículas con capas de adsorción cuando la aplicación lo requiere.',
+    purpose: 'Los elementos de cabina acondicionan el aire entrante del sistema HVAC mediante captura de polvo, polen y partículas suspendidas; la adsorción de olores o ciertos gases aplica únicamente a configuraciones validadas con carbón activado.',
+    engineering: 'MICROKAPPA™ corresponde a la arquitectura de medios del HVAC de cabina. La selección considera medio de partículas, capa adsorbente cuando aplique, caudal real del ventilador, pérdida de presión, sellado y dirección de montaje. Un filtro de cabina no constituye protección respiratoria ni una barrera universal frente a gases de escape.',
   },
   'fuel-turbine': {
     name: 'Separación de combustible tipo turbina',
