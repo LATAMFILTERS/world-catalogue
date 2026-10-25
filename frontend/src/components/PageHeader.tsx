@@ -32,7 +32,7 @@ const PAGE_KEYS: Record<string, string> = {
 
 const INDUSTRY_BREADCRUMB_LABELS: Record<string, string> = {
   Agriculture: 'Agricultural Filtration Systems',
-  Automotive: 'Automotive Filtration Systems',
+  Automotive: 'Automotive',
   'Bus Coach': 'Bus & Coach',
   Construction: 'Construction Filtration Systems',
   Manufacturing: 'Manufacturing',
@@ -48,7 +48,7 @@ const INDUSTRY_BREADCRUMB_LABELS: Record<string, string> = {
 const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = {
   es: {
     Agriculture: 'Agricultura',
-    Automotive: 'Sistemas de filtración automotriz',
+    Automotive: 'Automotriz',
     'Bus Coach': 'Autobuses',
     Construction: 'Construcción',
     Manufacturing: 'Manufactura',
@@ -62,7 +62,7 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
   },
   pt: {
     Agriculture: 'Sistemas de filtração agrícola',
-    Automotive: 'Sistemas de filtração automotiva',
+    Automotive: 'Automotivo',
     'Bus Coach': 'Ônibus e rodoviários',
     Construction: 'Construção',
     Manufacturing: 'Manufatura',
