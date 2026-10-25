@@ -75,10 +75,26 @@ function readLinkAnnex(file, start, now) {
   return [...groups].map(([source, items]) => ({ source, items: items.sort((a, b) => b.date.localeCompare(a.date)) }));
 }
 
+// Google News titles end in " - Publisher"; compare the headline only.
+const storyKey = (t) => decodeEntities(t).replace(/\s+[-–|]\s+[^-–|]{2,60}$/, '').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, ' ').trim();
+
+function mergeAnnex(groups, extra) {
+  const urls = new Set(groups.flatMap((g) => g.items.map((i) => i.url)));
+  for (const i of extra) {
+    if (!/^https:\/\//.test(i.url || '') || urls.has(i.url)) continue;
+    urls.add(i.url);
+    let g = groups.find((x) => x.source === i.source);
+    if (!g) groups.push(g = { source: i.source, items: [] });
+    g.items.push({ title: i.title, date: i.date, url: i.url });
+    g.items.sort((a, b) => b.date.localeCompare(a.date));
+  }
+  return groups;
+}
+
 export function buildIndustryDigest(candidates, { now = new Date(), sweepSummaryPath = path.resolve('hermes/industry-sweep/last-run.json'), unreviewedPath = path.resolve(process.env.HERMES_STATE_ROOT || 'hermes/state', 'newsroom-unreviewed.json') } = {}) {
   const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
   const start = new Date(end.getTime() - 7 * DAY_MS);
-  const items = []; const reviewCandidates = [];
+  const items = []; const unsummarized = []; const byCode = new Map();
   let noDate = 0; let outOfWindow = 0; let invalid = 0;
   for (const c of candidates.filter(isIndustrySweepCandidate)) {
     if (validateCandidate(c).length) { invalid += 1; continue; }
@@ -87,20 +103,24 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
     if (published < start.getTime() || published >= end.getTime()) { outOfWindow += 1; continue; }
     const rr = c.research_resolution || {};
     const domainId = c.category.slice('industry_sweep:'.length);
+    const url = rr.evidence_url || c.source_url;
+    const original = rr.finding_title || c.source_title || c.entity_code;
+    const date = new Date(published).toISOString().slice(0, 10);
+    // No Spanish summary -> link-only annex entry, never an English card.
+    if (!rr.resumen_es?.trim() || !rr.por_que_importa_es?.trim()) { unsummarized.push({ source: c.source_publisher, title: decodeEntities(original), date, url }); continue; }
+    byCode.set(c.entity_code, c);
     items.push({
       entity_code: c.entity_code,
       status: c.evidence_level === 'PRIMARY' ? 'VERIFICADO' : 'SEÑAL',
-      title: rr.titulo_es || rr.finding_title || c.source_title || c.entity_code,
+      title: rr.titulo_es || original,
+      original_title: original,
       company: c.source_publisher,
-      date: new Date(published).toISOString().slice(0, 10),
+      date,
       domain: DOMAIN_LABELS_ES[domainId] || domainId,
-      summary: rr.resumen_es || [rr.public_safe_fact, ...(rr.technical_facts || [])].filter(Boolean).join(' '),
-      summary_lang: rr.resumen_es ? 'es' : 'en',
-      why: rr.por_que_importa_es || rr.relevance || '',
-      why_lang: rr.por_que_importa_es ? 'es' : 'en',
-      url: rr.evidence_url || c.source_url
+      summary: rr.resumen_es.trim(),
+      why: rr.por_que_importa_es.trim(),
+      url
     });
-    reviewCandidates.push(c); // verified sweep findings can be approved from the email
   }
   // Zero-cost, no-LLM signals: official pages whose content changed since the
   // last harvest. The harvest state keeps a change from repeating next week.
@@ -118,26 +138,26 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
       date: new Date(captured).toISOString().slice(0, 10),
       domain,
       summary: 'HERMES detectó contenido nuevo en esta página oficial. Todavía no se investigó qué cambió.',
-      summary_lang: 'es',
       why: `Fuente oficial vigilada (${domain}). Abre el enlace para ver la novedad.`,
-      why_lang: 'es',
       url: c.source_url
     });
   }
   items.sort((a, b) => (a.status === b.status ? b.date.localeCompare(a.date) : a.status === 'VERIFICADO' ? -1 : 1));
+  // Same story from the maker's newsroom and a press/Google News copy: keep the first (VERIFICADO sorts first).
+  const seenStories = new Set();
+  const unique = items.filter((i) => { const k = storyKey(i.original_title || i.title); if (!k) return true; if (seenStories.has(k)) return false; seenStories.add(k); return true; });
   return {
     window: { start: start.toISOString().slice(0, 10), end: new Date(end.getTime() - DAY_MS).toISOString().slice(0, 10) },
-    items,
-    review_candidates: reviewCandidates,
-    link_annex: readLinkAnnex(unreviewedPath, start, now),
+    items: unique,
+    review_candidates: unique.filter((i) => byCode.has(i.entity_code)).map((i) => byCode.get(i.entity_code)), // shown cards can be approved from the email
+    link_annex: mergeAnnex(readLinkAnnex(unreviewedPath, start, now), unsummarized),
     excluded: { no_published_date: noDate, outside_window: outOfWindow, invalid },
-    empty_reason: items.length ? null : emptyReason(readSweepSummary(sweepSummaryPath))
+    empty_reason: unique.length ? null : emptyReason(readSweepSummary(sweepSummaryPath))
   };
 }
 
 const esc = (v) => String(v ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const safeHref = (u) => { try { return ['http:', 'https:'].includes(new URL(u).protocol) ? u : null; } catch { return null; } };
-const en = (lang) => (lang === 'en' ? ' (EN)' : '');
 
 const ANNEX_PER_SOURCE = 30;
 
@@ -163,7 +183,7 @@ export function renderIndustryDigest(digest, { actionsFor = null } = {}) {
 
 function renderDigestBody(digest, actionsFor) {
   const title = 'INTELIGENCIA DE INDUSTRIA DE LA SEMANA';
-  const note = 'Sección informativa: no pasa por revisión ni modifica catálogo, Knowledge Center, Obsidian ni PostgreSQL.';
+  const note = 'Nada se aplica sin tu decisión: ACEPTAR en una noticia técnica abre un PR al Knowledge Center (sin duplicar lo existente) y en un OEM abre investigación de SKU; el catálogo y Part Search no se modifican automáticamente.';
   const period = `Período: ${digest.window.start} a ${digest.window.end}`;
   if (!digest.items.length) {
     const msg = `Sin novedades de industria esta semana. ${digest.empty_reason || ''}`.trim();
@@ -174,15 +194,15 @@ function renderDigestBody(digest, actionsFor) {
   }
   const text = [title, period, note, ''];
   const cards = digest.items.map((i) => {
-    text.push(`[${i.status}] ${i.title}`, `${i.company} · ${i.date} · ${i.domain}`, `Resumen${en(i.summary_lang)}: ${i.summary}`, `Por qué importa${en(i.why_lang)}: ${i.why}`, `Fuente: ${i.url}`, '');
+    text.push(`[${i.status}] ${i.title}`, `${i.company} · ${i.date} · ${i.domain}`, `Resumen: ${i.summary}`, `Por qué importa: ${i.why}`, `Fuente: ${i.url}`, '');
     const href = safeHref(i.url);
     const badge = i.status === 'VERIFICADO' ? 'background:#1a7f37;color:#fff' : 'background:#FFF12D;color:#000';
     return `<div style="border:1px solid #ddd;border-radius:8px;padding:14px;margin:12px 0">
       <span style="${badge};font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px">${esc(i.status)}</span>
       <h4 style="margin:8px 0 4px">${esc(i.title)}</h4>
       <div style="font-size:12px;color:#666">${esc(i.company)} · ${esc(i.date)} · ${esc(i.domain)}</div>
-      <p><strong>Resumen${en(i.summary_lang)}:</strong> ${esc(i.summary)}</p>
-      <p><strong>Por qué importa${en(i.why_lang)}:</strong> ${esc(i.why)}</p>
+      <p><strong>Resumen:</strong> ${esc(i.summary)}</p>
+      <p><strong>Por qué importa:</strong> ${esc(i.why)}</p>
       <p>${href ? `<a href="${esc(href)}">Ver fuente</a>` : esc(i.url)}</p>
       ${i.entity_code && actionsFor ? actionsFor(i.entity_code) : ''}
     </div>`;

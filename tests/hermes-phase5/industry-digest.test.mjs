@@ -40,17 +40,31 @@ test('digest keeps only the 7 full UTC days before the run and labels evidence',
   assert.equal(d.items[0].domain, 'Motores y equipos OEM');
 });
 
-test('render uses Spanish fields, marks English fallback and never emits unsafe links', () => {
+test('only Spanish cards; findings without a Spanish summary go to the link annex; no unsafe links', () => {
   const d = buildIndustryDigest([
     sweep({ code: 'ES', published: '2026-10-20' }),
     sweep({ code: 'EN', published: '2026-10-21', es: false, url: 'https://example.com/en' })
-  ], { now, sweepSummaryPath: noSummary });
+  ], { now, sweepSummaryPath: noSummary, unreviewedPath: noSummary });
+  assert.deepEqual(d.items.map((i) => i.title), ['Engine platform ES']);
+  assert.deepEqual(d.link_annex, [{ source: 'Example OEM', items: [{ title: 'Engine platform EN', date: '2026-10-21', url: 'https://example.com/en' }] }]);
   d.items.push({ ...d.items[0], url: 'javascript:alert(1)' });
   const r = renderIndustryDigest(d);
   assert.match(r.html, /Resumen:<\/strong> Resumen en español\./);
-  assert.match(r.html, /Resumen \(EN\):<\/strong> Public fact EN\. Fact EN\./);
+  assert.doesNotMatch(r.html, /\(EN\)|Public fact EN/);
+  assert.deepEqual(d.review_candidates.map((c) => c.entity_code), ['HERMES_REAL_SWEEP_OEM_ENGINES_EQUIPMENT_ES']);
   assert.ok(!r.html.includes('href="javascript:'));
-  assert.match(r.text, /\[VERIFICADO\] Engine platform EN/);
+  assert.match(r.text, /ANEXO: ENLACES SIN REVISAR[\s\S]*Engine platform EN https:\/\/example\.com\/en/);
+});
+
+test('the same story from the maker and a Google News copy appears once, keeping VERIFICADO', () => {
+  const official = sweep({ code: 'OFF', published: '2026-10-22', url: 'https://maker.example/news/x' });
+  official.research_resolution.finding_title = 'Cummins launches X15N natural-gas engine';
+  const copy = sweep({ code: 'GN', published: '2026-10-23', level: 'SECONDARY_VERIFIED', url: 'https://news.google.com/x' });
+  copy.research_resolution.finding_title = 'Cummins Launches X15N Natural-Gas Engine - Trucking Info';
+  const other = sweep({ code: 'OTH', published: '2026-10-23', url: 'https://maker.example/news/y' });
+  const d = buildIndustryDigest([copy, official, other], { now, sweepSummaryPath: noSummary, unreviewedPath: noSummary });
+  assert.deepEqual(d.items.map((i) => [i.url, i.status]), [['https://maker.example/news/y', 'VERIFICADO'], ['https://maker.example/news/x', 'VERIFICADO']]);
+  assert.ok(!d.review_candidates.some((c) => c.entity_code.endsWith('_GN'))); // the dropped copy is not approvable
 });
 
 test('empty week says so explicitly with the sweep reason', () => {
