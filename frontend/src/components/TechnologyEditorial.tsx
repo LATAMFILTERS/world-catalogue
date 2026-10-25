@@ -171,7 +171,7 @@ function chapterOrder(editorial: Editorial) {
     .map(({ chapter }) => chapter);
 }
 
-export default function TechnologyEditorial({ editorial }: { editorial: Editorial }) {
+export default function TechnologyEditorial({ editorial, wideLayout = false }: { editorial: Editorial; wideLayout?: boolean }) {
   const chapters = chapterOrder(editorial);
   const close = highValueClose(editorial);
 
@@ -194,7 +194,7 @@ export default function TechnologyEditorial({ editorial }: { editorial: Editoria
                 : index % 2 === 1 ? '#050505' : '#000',
             }}
           >
-            <div className="technology-editorial-chapter" style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0,0.72fr) minmax(0,1.28fr)', gap: 'clamp(2.5rem, 7vw, 7rem)', alignItems: 'start' }}>
+            <div className="technology-editorial-chapter" style={{ maxWidth: wideLayout ? '1540px' : '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: wideLayout ? 'minmax(0,.92fr) minmax(0,1.08fr)' : 'minmax(0,0.72fr) minmax(0,1.28fr)', gap: wideLayout ? 'clamp(2rem,4vw,5rem)' : 'clamp(2.5rem, 7vw, 7rem)', alignItems: 'start' }}>
               <div>
                 <div style={eyebrow}>{chapter.label}</div>
                 <h2 style={heading}>{chapterHeading(chapter, editorial)}</h2>

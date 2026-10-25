@@ -140,6 +140,21 @@
 .primaryButton { color: #000; background: var(--yellow); }
 .secondaryButton { color: var(--yellow); border: 1px solid rgba(255, 241, 45, 0.45); background: transparent; }
 
+/* Dedicated fuel-technology chapters use a wider engineering grid; non-fuel pages keep their established layout. */
+.fuelTechnology .inner { width: min(1520px,100%); }
+.fuelTechnology .introSection,.fuelTechnology .band,.fuelTechnology .bandAlt,.fuelTechnology .ctaSection { padding-inline: clamp(1.25rem,4vw,5rem); padding-block: clamp(3.1rem,5vw,5.6rem); }
+.fuelTechnology .mediaGrid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(2rem,4.5vw,5rem); align-items: start; }
+.fuelTechnology .mediaImage { height: auto; object-fit: contain; }
+.fuelTechnology .twoColumnNotes { gap: clamp(1.6rem,3vw,3.2rem); }
+.fuelTechnology .editorialColumns { gap: clamp(1.5rem,2.6vw,3.2rem); }
+.fuelTechnology .h2 { max-width: 1250px; }
+.fuelProcess { display: grid; gap: 0; border: 1px solid rgba(255,255,255,.16); background: #090909; }
+.fuelProcessStep { display: grid; grid-template-columns: 2.9rem 1fr; gap: 1rem; padding: clamp(1.35rem,2vw,2rem); border-bottom: 1px solid rgba(255,255,255,.14); }
+.fuelProcessStep:last-child { border-bottom: 0; }
+.fuelProcessStep > span { color: #fff12d; font-family: var(--font-display); font-size: .82rem; font-weight: 700; }
+.fuelProcessStep strong { font-family: var(--font-display); color: #fff; font-size: clamp(1rem,1.3vw,1.25rem); text-transform: uppercase; }
+.fuelProcessStep p { margin: .55rem 0 0; line-height: 1.65; color: rgba(255,255,255,.78); }
+
 @media (max-width: 980px) {
   .hero { min-height: clamp(480px, 68svh, 680px); }
   .heroMark { width: min(520px, 78vw); }
@@ -208,4 +223,14 @@
   .faqItem p { font-size: 0.94rem; line-height: 1.65; }
   .textLinks { grid-template-columns: 1fr; gap: 0; }
   .textLinks a { padding: 1rem 0; font-size: 0.7rem; }
+}
+
+@media (max-width: 980px) {
+  .fuelTechnology .mediaGrid, .fuelTechnology .twoColumnNotes, .fuelTechnology .systemGrid { grid-template-columns: minmax(0,1fr); }
+  .fuelTechnology .editorialColumns { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .fuelTechnology .editorialColumns { grid-template-columns: minmax(0,1fr); }
+  .fuelTechnology .introSection,.fuelTechnology .band,.fuelTechnology .bandAlt,.fuelTechnology .ctaSection { padding: 3rem 1rem; }
+  .fuelProcessStep { grid-template-columns: 2.1rem 1fr; padding: 1.2rem; }
 }
