@@ -316,6 +316,7 @@ const smallLabelYellow: CSSProperties = { ...smallLabel, color: '#FFF12D' };
 const pathwaySource: CSSProperties = { fontFamily: displayFont, fontSize: '1.15rem', textTransform: 'uppercase' };
 const pathwaySystem: CSSProperties = { fontFamily: displayFont, fontSize: '1.05rem', textTransform: 'uppercase' };
 const smallText: CSSProperties = { ...bodyText, fontSize: '1.08rem', lineHeight: 1.55, marginTop: '.6rem' };
+const dividerLine: CSSProperties = { height: '1px', background: 'rgba(255,255,255,.12)' };
 const technologyLink: CSSProperties = { textDecoration: 'none', borderTop: '1px solid rgba(255,241,45,.18)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' };
 const technologyName: CSSProperties = { fontFamily: displayFont, fontSize: '1.16rem', color: '#FFF12D', textTransform: 'uppercase' };
 const technologyCta: CSSProperties = { fontFamily: displayFont, fontSize: '.72rem', letterSpacing: '.1em', color: 'rgba(255,255,255,.6)', marginTop: '.65rem' };
