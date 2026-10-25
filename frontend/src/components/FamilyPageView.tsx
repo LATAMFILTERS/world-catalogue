@@ -409,7 +409,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         </section>
       )}
 
-      <section style={introSection}>
+      {!airFamilyEditorial && <section style={introSection}>
         <div style={introGrid}>
           <div>
             <span style={sectionKicker}>{c.whyKicker}</span>
@@ -420,21 +420,21 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
             {technology && <p style={bodyText}>{technology.engineeringPrinciple}</p>}
           </div>
         </div>
-      </section>
+      </section>}
 
       <section style={assetSection}>
         <div style={wrap}>
           <div style={sectionHeadingRow}>
             <div>
               <span style={sectionKicker}>{c.assetKicker}</span>
-              <h2 style={sectionTitleSmall}>{c.assetTitle}</h2>
+              <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Protected interfaces and components', es: 'Interfaces y componentes protegidos', pt: 'Interfaces e componentes protegidos' }[lang]) : c.assetTitle}</h2>
             </div>
             {technology && <p style={headingNote}>{technology.operationalImpact}</p>}
           </div>
 
-          <div style={componentGrid}>
+          <div style={airFamilyEditorial ? airFamilyComponentGrid : componentGrid}>
             {components.map((component) => (
-              <div key={component} style={componentCard}>
+              <div key={component} style={airFamilyEditorial ? { ...componentCard, maxWidth: 'none', minHeight: '110px' } : componentCard}>
                 <span style={componentName}>{component}</span>
               </div>
             ))}
@@ -446,10 +446,10 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         <section style={riskSection}>
           <div style={wrap}>
             <span style={sectionKicker}>{c.riskKicker}</span>
-            <h2 style={sectionTitleSmall}>{c.riskTitle}</h2>
+            <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Failure mechanisms and operational impact', es: 'Mecanismos de falla e impacto operativo', pt: 'Mecanismos de falha e impacto operacional' }[lang]) : c.riskTitle}</h2>
             <div style={riskGrid}>
               {failures.map((failure) => (
-                <article key={failure.key} style={riskCard}>
+                <article key={failure.key} style={airFamilyEditorial ? { ...riskCard, minHeight: 0 } : riskCard}>
                   <h3 style={cardTitle}>{failure.name}</h3>
                   <p style={cardBody}>{failure.mechanism}</p>
                   <div style={riskDivider} />
@@ -466,7 +466,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         <div style={strategyGrid}>
           <div>
             <span style={sectionKicker}>{c.strategyKicker}</span>
-            <h2 style={sectionTitleSmall}>{c.strategyTitle}</h2>
+            <h2 style={sectionTitleSmall}>{airFamilyEditorial ? ({ en: 'Selection must satisfy the installed circuit', es: 'La selección debe cumplir los requisitos del conjunto instalado', pt: 'A seleção deve atender aos requisitos do conjunto instalado' }[lang]) : c.strategyTitle}</h2>
           </div>
           <div style={strategyStack}>
             {technology && (
@@ -475,7 +475,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
                 <p style={strategyText}>{technology.controlStrategy}</p>
               </div>
             )}
-            {system && (
+            {system && !airFamilyEditorial && (
               <div style={strategyItem}>
                 <span style={strategyLabel}>{c.systemContext}</span>
                 <p style={strategyText}>{airFamilyEditorial ? airFamilyEditorial.mechanism : system.engineeringPrinciple}</p>
@@ -566,7 +566,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
         </div>
       </section>
 
-      {system && system.relatedIndustries.length > 0 && (
+      {system && !airFamilyEditorial && system.relatedIndustries.length > 0 && (
         <section style={industriesSection}>
           <div style={wrap}>
             <span style={sectionKicker}>{c.industriesKicker}</span>
@@ -627,6 +627,7 @@ const airFamilyCaption: CSSProperties = { padding: '1rem .4rem .2rem', borderTop
 const airFamilySection: CSSProperties = { padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 5vw, 5rem)', borderBottom: '1px solid rgba(255,255,255,.12)', background: '#050505' };
 const airFamilySectionInner: CSSProperties = { maxWidth: '1400px', width: '100%', margin: '0 auto' };
 const airFamilySectionTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.7rem, 3vw, 3rem)', lineHeight: 1.18, textTransform: 'uppercase', maxWidth: '1080px', letterSpacing: '-.026em', margin: '0 0 clamp(2rem,4vw,3rem)' };
+const airFamilyComponentGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,245px),1fr))', gap: '1rem', marginTop: '2.4rem' };
 const airFamilyEngineeringGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%, 490px),1fr))', gap: 'clamp(1.3rem, 3vw, 3rem)' };
 const airFamilyEngineeringPanel: CSSProperties = { padding: 'clamp(1.3rem, 2.2vw, 2.6rem)', background: '#101010', borderTop: '2px solid #fff12d', minWidth: 0 };
 const airFamilyPanelTitle: CSSProperties = { fontFamily: displayFont, color: '#fff12d', fontSize: '.8rem', letterSpacing: '.09em', margin: '0 0 .9rem', textTransform: 'uppercase' };
