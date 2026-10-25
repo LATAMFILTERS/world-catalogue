@@ -40,8 +40,14 @@ const inventory = JSON.parse(fs.readFileSync(args.inventory, 'utf8'));
 const exclude = new Set(String(args.exclude || '').split(',').map((x) => x.trim().toUpperCase()).filter(Boolean));
 // Standard HD SKU = 3-char prefix + 4 digits (EH6 + 4). A longer SKU is not a governed target.
 const standardHd = (sku) => /^EH6\d{4}$/.test(sku);
-const targets = inventory.filter((r) => r.wd_scope === 'WD_SOLE_BASE' && r.status === 'HD_HAS_WD_AS_COMPETITOR'
-  && r.hd_matches.length === 1 && !exclude.has(r.ld_sku));
+// --without-successor (operator ruling 2026-10-24): LD rows whose WD has NO HD SKU or SEVERAL HD
+// candidates leave LD now, with no successor. The row records hd_backlog=true, the WD code and
+// the HD candidates (if any), so the HD SKU can be resolved later (Donaldson -> Fleetguard -> OEM).
+const withoutSuccessor = args['without-successor'] === 'true';
+const targets = withoutSuccessor
+  ? inventory.filter((r) => r.wd_scope === 'WD_SOLE_BASE' && ['NO_HD_MATCH', 'MULTIPLE_HD_MATCHES'].includes(r.status) && !exclude.has(r.ld_sku))
+  : inventory.filter((r) => r.wd_scope === 'WD_SOLE_BASE' && r.status === 'HD_HAS_WD_AS_COMPETITOR'
+    && r.hd_matches.length === 1 && !exclude.has(r.ld_sku));
 if (execute && Number(args['confirm-count']) !== targets.length) throw new Error(`--confirm-count must be ${targets.length}`);
 
 const url = process.env.CATALOG_DATABASE_URL;
@@ -54,6 +60,36 @@ const report = { mode: execute ? 'EXECUTE' : 'DRY_RUN_ROLLBACK', eligible: targe
 try {
   await db.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
   for (const t of targets) {
+    if (withoutSuccessor) {
+      const ld = t.ld_sku; const wd = t.wd_codes[0];
+      const { rows: [L] } = await db.query('SELECT sku, duty, catalog_active, vehicle_applications FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE', [ld]);
+      if (!L || L.duty !== 'LIGHT_DUTY' || !L.catalog_active) { report.skipped.push({ ld, wd, reason: 'LD_ROW_CHANGED_OR_INACTIVE' }); continue; }
+      const candidates = t.hd_matches.map((m) => m.sku);
+      const u = await db.query(
+        `UPDATE public.elimfilters_catalog
+           SET catalog_active = false,
+               enrichment_data = jsonb_set(coalesce(enrichment_data,'{}'::jsonb), '{resolution_status}', $2::jsonb)
+         WHERE sku = $1 AND catalog_active`,
+        [ld, JSON.stringify({
+          state: 'INACTIVE_RETIRED',
+          reason: t.status === 'NO_HD_MATCH' ? 'LIGHT_DUTY_ROW_FOR_MANN_WD_HD_NO_HD_SKU_YET' : 'LIGHT_DUTY_ROW_FOR_MANN_WD_HD_SEVERAL_HD_CANDIDATES',
+          superseded_by: null,
+          hd_backlog: true,
+          mann_wd_code: wd,
+          hd_candidates: candidates,
+          decided_by: 'OPERATOR',
+          updated_at: '2026-10-24',
+          procedure: 'retire-ld-wd-into-hd --without-successor',
+        })]);
+      if (u.rowCount !== 1) throw new Error(`RETIRE_UPDATE_COUNT ${ld}`);
+      const cache = (await db.query('DELETE FROM public.crossref_resolved_cache WHERE sku = $1', [ld])).rowCount;
+      const ident = (await db.query(
+        `UPDATE ld_catalog.ld_canonical_product_identity SET status = 'RETIRED', updated_at = now()
+         WHERE elimfilters_sku = $1 AND status = 'ACTIVE'`, [ld])).rowCount;
+      report.retired.push({ ld, hd: null, wd, status: t.status, hd_candidates: candidates, cache_rows_removed: cache, identity_retired: ident,
+        ld_vehicle_apps_not_carried: (L.vehicle_applications || []).length, ld_references_not_on_hd: 0 });
+      continue;
+    }
     const ld = t.ld_sku; const hd = t.hd_matches[0].sku; const wd = t.wd_codes[0];
     const { rows } = await db.query(
       'SELECT sku, duty, catalog_active, codigo_base, oem_codes, competitor_codes, vehicle_applications, equipment_applications FROM public.elimfilters_catalog WHERE sku = ANY($1::text[]) FOR UPDATE',
@@ -104,7 +140,7 @@ try {
   const ldSkus = report.retired.map((r) => r.ld);
   const stillActive = (await db.query('SELECT count(*)::int n FROM public.elimfilters_catalog WHERE sku = ANY($1::text[]) AND catalog_active', [ldSkus])).rows[0].n;
   if (stillActive) throw new Error(`POSTCHECK_ACTIVE_LD ${stillActive}`);
-  report.superseded_refs = (await db.query(
+  if (!withoutSuccessor) report.superseded_refs = (await db.query(
     "SELECT count(*)::int n FROM public.exact_part_reference WHERE reference_type='SUPERSEDED' AND part_number = ANY($1::text[])", [ldSkus])).rows[0].n;
 
   await db.query(execute ? 'COMMIT' : 'ROLLBACK');
@@ -117,6 +153,6 @@ try {
 } finally {
   await db.end();
 }
-const out = path.join(path.dirname(args.inventory), `retire-${execute ? 'execute' : 'dryrun'}-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
+const out = path.join(path.dirname(args.inventory), `retire${withoutSuccessor ? '-nosucc' : ''}-${execute ? 'execute' : 'dryrun'}-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
 fs.writeFileSync(out, JSON.stringify(report, null, 2));
-console.log(JSON.stringify({ ...report, retired: report.retired.map((r) => `${r.ld} -> ${r.hd} (${r.wd}) apps_no_llevadas=${r.ld_vehicle_apps_not_carried} refs_no_en_hd=${r.ld_references_not_on_hd}`), file: out }, null, 2));
+console.log(JSON.stringify({ ...report, retired: report.retired.map((r) => r.hd ? `${r.ld} -> ${r.hd} (${r.wd}) apps_no_llevadas=${r.ld_vehicle_apps_not_carried} refs_no_en_hd=${r.ld_references_not_on_hd}` : `${r.ld} -> SIN SUCESOR (${r.wd}) ${r.status}${r.hd_candidates.length ? ' candidatos=' + r.hd_candidates.join(',') : ''}`), file: out }, null, 2));
