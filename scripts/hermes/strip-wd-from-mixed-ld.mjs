@@ -90,8 +90,16 @@ try {
     const apps = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
     const wdAppsStillInPayload = apps.filter((a) => wdAppKeys.has([norm(a.make), norm(a.model_family), norm(a.model_type)].join('|'))).length;
     // 3. WD codes in the LD reference lists (remove-only)
-    const keepComp = (row.competitor_codes || []).filter((e) => !wd.has(norm(codeOf(e))));
-    const keepOem = (row.oem_codes || []).filter((e) => !wd.has(norm(codeOf(e))));
+    // Remove the SKU's WD base AND any other MANN WD code cited on the row (all MANN WD are HD).
+    // WD-prefixed codes of other brands (e.g. DELUXE WD96) are not MANN products and stay.
+    const isMannWd = (e) => {
+      const c = norm(codeOf(e));
+      if (wd.has(c)) return true;
+      const m = norm(e && typeof e === 'object' ? e.manufacturer || e.brand : '');
+      return /^WD\d/.test(c) && ['MANN', 'MANNFILTER', 'MANNHUMMEL'].includes(m);
+    };
+    const keepComp = (row.competitor_codes || []).filter((e) => !isMannWd(e));
+    const keepOem = (row.oem_codes || []).filter((e) => !isMannWd(e));
     const refsChanged = keepComp.length !== (row.competitor_codes || []).length || keepOem.length !== (row.oem_codes || []).length;
     if (refsChanged) {
       assertGovernedCatalogPatch(row, { competitor_codes: keepComp, oem_codes: keepOem }, { rejectionCleanup: true });
@@ -123,6 +131,7 @@ try {
     FROM public.elimfilters_catalog c,
       jsonb_array_elements(coalesce(c.competitor_codes,'[]'::jsonb) || coalesce(c.oem_codes,'[]'::jsonb)) e
     WHERE c.sku = ANY($1::text[]) AND upper(regexp_replace(coalesce(e->>'code', e#>>'{}'),'[^A-Za-z0-9]','','g')) ~ '^WD[0-9]'
+      AND upper(regexp_replace(coalesce(e->>'manufacturer', e->>'brand', ''),'[^A-Za-z0-9]','','g')) IN ('MANN','MANNFILTER','MANNHUMMEL')
     ORDER BY 1, 3`, [skus]);
   if (leftRows.length) {
     // Other WD codes (not the SKU's own WD base) still cited on these LD rows: listed for review.
