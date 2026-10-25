@@ -265,8 +265,22 @@ const engineClass = (a, b) => {
   if (ta.some((x) => tb.some((y) => x === y || (x.length >= 4 && y.length >= 4 && (x.includes(y) || y.includes(x)))))) return 'LIST_OVERLAP';
   return 'CONFLICT';
 };
-const engineDiffs = matched.map((k) => ({ key: k, mann: mannKeys.get(k).engine_code, current: curKeys.get(k).engine_code,
-  cls: engineClass(mannKeys.get(k).engine_code, curKeys.get(k).engine_code) })).filter((d) => d.cls !== 'EQUAL');
+// A model usually has several engine variants: compare each current engine against ALL MANN engines
+// listed for the same key, not one arbitrary row (Map keeps a single row per key).
+const groupBy = (rows, keyFn, codeFn) => { const m = new Map(); for (const r of rows) { const k = keyFn(r); if (!m.has(k)) m.set(k, []); m.get(k).push(codeFn(r)); } return m; };
+const mannEng = groupBy(mann, keyMann, (r) => r.engine_code);
+const curEng = groupBy(curParsed, keyCur, (p) => p.engine_code);
+const rank = { EQUAL: 0, CONTAINS: 1, LIST_OVERLAP: 2, EMPTY: 3, CONFLICT: 4 };
+const engineDiffs = [];
+for (const k of matched) {
+  const mannCodes = [...new Set(mannEng.get(k) || [])];
+  for (const cur of [...new Set(curEng.get(k) || [])]) {
+    let best = 'CONFLICT', bestMann = mannCodes[0];
+    if (!norm(cur) || mannCodes.every((m) => !norm(m))) best = 'EMPTY';
+    else for (const m of mannCodes) { const c = engineClass(m, cur); if (rank[c] < rank[best]) { best = c; bestMann = m; } }
+    if (best !== 'EQUAL') engineDiffs.push({ key: k, mann: best === 'CONFLICT' ? mannCodes.join(' | ') : bestMann, current: cur, cls: best });
+  }
+}
 const engineCodeMismatch = engineDiffs.filter((d) => d.cls === 'CONFLICT');
 const engineBenign = engineDiffs.filter((d) => d.cls !== 'CONFLICT');
 const currentDuplicateRows = current.length - curKeys.size;
