@@ -126,29 +126,23 @@ export function FuelCleanlinessSystemPage() {
 
       <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Fuel Cleanliness Protection" />
 
-      <section className={airStyles.hero} aria-labelledby="fuel-hero-title">
+      <section className={`${airStyles.hero} ${fuelStyles.fuelHero}`} aria-labelledby="fuel-hero-title">
         <ReviewedImage className={airStyles.heroPhoto} src="/images/hero-syntapore.avif" alt="Engine diesel fuel-filtration service environment" />
         <div className={airStyles.heroOverlay} aria-hidden="true" />
         <div className={airStyles.shell}>
-          <div style={heroEditorial}>
-          <div>
-          <p style={eyebrow}><ReviewedText text={"DIESEL FUEL CONTAMINATION CONTROL"} /></p>
-          <h1 id="fuel-hero-title" className={airStyles.heroTitle}><ReviewedText text={"Fuel Cleanliness"} context="FuelCleanlinessSystemPageTitle" /><br /><span style={{ color: '#FFF12D' }}><ReviewedText text={"Protection"} context="FuelCleanlinessSystemPageTitle" /></span></h1>
-          <p style={heroPromise}><ReviewedText text={"Control particles and water before contaminated fuel reaches precision pumps, injectors and downstream fuel-system components."} /></p>
-          <p style={heroLead}><ReviewedText text={"ELIMFILTERS separates particulate filtration, fuel/water separation and applicable turbine-series fuel conditioning into distinct functions within one fuel-protection architecture. The correct path depends on the engine, fuel-system stage, contamination exposure and validated application evidence."} /></p>
-          <div style={buttonRow}>
-            <Link href="#fuel-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE FUEL PATH"} /></Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
-          </div>
-          </div>
-          <div style={heroProtectionPanel}>
-            {pathways.map(([title, exposure, technology, href], index) => (
-              <Link href={href} key={technology} style={heroPathRow}>
-                <span style={heroPathIndex}>{String(index + 1).padStart(2,'0')}</span>
-                <span><strong style={heroPathTitle}>{technology}</strong><span style={heroPathDescription}><ReviewedText text={title} /> — <ReviewedText text={exposure} /></span></span>
-              </Link>
-            ))}
-          </div>
+          <div className={fuelStyles.heroContent}>
+            <p style={eyebrow}><ReviewedText text={"DIESEL FUEL CONTAMINATION CONTROL"} /></p>
+            <h1 id="fuel-hero-title" className={`${airStyles.heroTitle} ${fuelStyles.heroHeadline}`}>
+              <ReviewedText text={"Fuel Cleanliness"} context="FuelCleanlinessSystemPageTitle" />
+              <span className={fuelStyles.heroTitleAccent}><ReviewedText text={"Protection"} context="FuelCleanlinessSystemPageTitle" /></span>
+            </h1>
+            <p className={fuelStyles.heroSummary}>
+              <ReviewedText text={"Control particles and water before contaminated fuel reaches precision pumps, injectors and downstream fuel-system components."} />
+            </p>
+            <div style={buttonRow}>
+              <Link href="#fuel-path" style={yellowButton}><ReviewedText text={"IDENTIFY THE FUEL PATH"} /></Link>
+              <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
+            </div>
           </div>
         </div>
       </section>
@@ -291,14 +285,6 @@ export function FuelCleanlinessSystemPage() {
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
-const heroEditorial: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,560px),1fr))', gap: 'clamp(2.5rem,5vw,5rem)', alignItems: 'center' };
-const heroProtectionPanel: CSSProperties = { minWidth: 0, borderTop: '2px solid #FFF12D' };
-const heroPathRow: CSSProperties = { display: 'grid', gridTemplateColumns: '3rem 1fr', gap: 'clamp(.8rem,1.4vw,1.5rem)', padding: '1.35rem .7rem', borderBottom: '1px solid rgba(255,255,255,.24)', color: '#fff', textDecoration: 'none' };
-const heroPathIndex: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.85rem', fontWeight: 700 };
-const heroPathTitle: CSSProperties = { display: 'block', fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.2rem,1.7vw,1.8rem)' };
-const heroPathDescription: CSSProperties = { display: 'block', marginTop: '.4rem', color: 'rgba(255,255,255,.7)', lineHeight: 1.55, fontSize: '.93rem' };
-const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '840px', margin: '1.6rem 0 0' };
-const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.72, maxWidth: '850px', color: 'rgba(255,255,255,.72)', margin: '1.1rem 0 0' };
 const section: CSSProperties = { padding: 'clamp(3.5rem, 6vw, 6rem) clamp(1.25rem, 4vw, 5rem)', maxWidth: '1540px', margin: '0 auto' };
 const sectionAlt: CSSProperties = { ...section, maxWidth: '1540px', background: 'rgba(255,255,255,.018)', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
 const twoCol: CSSProperties = { maxWidth: '1540px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,460px),1fr))', gap: 'clamp(2rem,5vw,5rem)', alignItems: 'start' };
