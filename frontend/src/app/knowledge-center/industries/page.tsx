@@ -79,10 +79,10 @@ export default function IndustriesPage() {
             transition={{ duration: 0.4, delay: 0.15 }}
             style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.95rem',
-              lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.68)',
-              maxWidth: '820px',
+              fontSize: 'clamp(1.12rem, 1.5vw, 1.3rem)',
+              lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.9)',
+              maxWidth: '940px',
             }}
           >
             {tr('Twelve industry-specific technical profiles connect contamination exposure, equipment duty, protected systems and application evidence across the complete ELIMFILTERS market portfolio, including Automotive & Light Duty and Bus & Coach.')}
@@ -90,11 +90,11 @@ export default function IndustriesPage() {
 
           <p style={{
             fontFamily: 'Inter, sans-serif',
-            fontSize: '0.85rem',
-            lineHeight: 1.7,
+            fontSize: 'clamp(1.05rem, 1.3vw, 1.17rem)',
+            lineHeight: 1.65,
             marginTop: '1rem',
-            color: 'rgba(255,255,255,0.52)',
-            maxWidth: '600px',
+            color: 'rgba(255,255,255,0.84)',
+            maxWidth: '940px',
           }}>
             {tr('Looking for commercial filtration solutions by industry? See')} <Link href="/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>{tr('ELIMFILTERS Industries')}</Link>.
           </p>
