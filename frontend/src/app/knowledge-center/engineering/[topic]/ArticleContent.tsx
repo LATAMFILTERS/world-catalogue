@@ -265,6 +265,9 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
   const lang = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
   const sidebarData = getArticleSidebarData(article.slug);
   const relatedDiagrams = getDiagramsForArticle(article.slug);
+  const isCooling = article.slug === 'cooling-system-contamination';
+  const [coolingSection, setCoolingSection] = useState(0);
+  const coolingCopy = lang === 'es' ? { dashboard: 'PANEL DE INGENIERÍA · REFRIGERACIÓN', explore: 'Análisis de contaminación y protección térmica', select: 'Seleccione un mecanismo o tema de ingeniería para consultar el análisis completo.' } : lang === 'pt' ? { dashboard: 'PAINEL DE ENGENHARIA · ARREFECIMENTO', explore: 'Análise de contaminação e proteção térmica', select: 'Selecione um mecanismo ou tema de engenharia para consultar a análise completa.' } : { dashboard: 'ENGINEERING DASHBOARD · COOLING', explore: 'Contamination and thermal protection analysis', select: 'Select an engineering topic to read its full technical analysis.' };
 
   const sidebar = (
     <>
@@ -442,7 +445,8 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
   );
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
+      {isCooling && <style>{`@media(max-width:650px){.kc-cooling-tabs{grid-template-columns:minmax(0,1fr)!important}}`}</style>}
 
       <ArticleBreadcrumb items={[
         { label: tr('Knowledge Center'), href: '/knowledge-center' },
@@ -457,8 +461,8 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
         intro={article.intro}
       />
 
-      {/* EEAT Metadata Panel */}
-      {article.eeat && (
+      {/* EEAT Metadata Panel: not displayed as editorial attribution on cooling reference */}
+      {!isCooling && article.eeat && (
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -522,7 +526,8 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
         </motion.div>
       )}
 
-      <ArticleLayout sidebar={sidebar}>
+      <ArticleLayout sidebar={sidebar} maxWidth={isCooling ? '1560px' : undefined} sidebarWidth={isCooling ? '340px' : undefined}>
+        {isCooling && <div style={{ marginBottom:'2rem' }}><p style={{ color:'#fff12d', fontSize:'.8rem', fontFamily:'JetBrains Mono,monospace', letterSpacing:'.1em' }}>{coolingCopy.dashboard}</p><h2 style={{ color:'#fff', fontSize:'clamp(1.5rem,2.4vw,2.1rem)', margin:'.7rem 0', fontFamily:'Outfit,sans-serif' }}>{coolingCopy.explore}</h2><p style={{ color:'rgba(255,255,255,.8)', fontSize:'1.05rem', lineHeight:1.7 }}>{coolingCopy.select}</p></div>}
 
         {article.keyMetrics.length > 0 && (
           <motion.div
@@ -538,7 +543,8 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
           </motion.div>
         )}
 
-        {article.sections.map((section, i) => (
+        {isCooling && article.sections.length > 0 && <section aria-label={coolingCopy.explore} style={{marginBottom:'3rem'}}><div className="kc-cooling-tabs" role="tablist" aria-label={coolingCopy.explore} style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:'.7rem',marginBottom:'1.2rem'}}>{article.sections.map((section,i)=><button key={section.heading} id={`cooling-tab-${i}`} type="button" role="tab" aria-selected={coolingSection===i} aria-controls="cooling-analysis-panel" onClick={()=>setCoolingSection(i)} style={{padding:'1rem',textAlign:'left',cursor:'pointer',border:'1px solid rgba(255,241,45,.3)',background:coolingSection===i?'#fff12d':'#101010',color:coolingSection===i?'#000':'#fff',fontFamily:'Outfit,sans-serif',fontSize:'1rem',lineHeight:1.4}}><span style={{opacity:.7,marginRight:'.6rem'}}>{String(i+1).padStart(2,'0')}</span>{section.heading}</button>)}</div><article id="cooling-analysis-panel" role="tabpanel" aria-labelledby={`cooling-tab-${coolingSection}`} style={{border:'1px solid rgba(255,241,45,.2)',background:'#0c0c0c',padding:'clamp(1.5rem,3vw,2.7rem)'}}><h3 style={{fontFamily:'Outfit,sans-serif',fontSize:'clamp(1.4rem,2.5vw,2rem)',margin:'0 0 1.2rem'}}>{article.sections[coolingSection].heading}</h3><p style={{fontFamily:'Inter,sans-serif',fontSize:'clamp(1.05rem,1.25vw,1.17rem)',lineHeight:1.85,color:'rgba(255,255,255,.85)'}}>{article.sections[coolingSection].body}</p>{article.sections[coolingSection].callout && article.sections[coolingSection].callout!.length>0 && <EngineeringNote items={article.sections[coolingSection].callout!} variant="white" />}</article></section>}
+        {!isCooling && article.sections.map((section, i) => (
           <motion.section
             key={section.heading}
             initial={{ opacity: 0, y: 16 }}
