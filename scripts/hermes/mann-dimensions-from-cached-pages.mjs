@@ -30,6 +30,7 @@ const args = Object.fromEntries(process.argv.slice(2).reduce((acc, cur, i, arr) 
 }, []));
 const execute = args.execute === 'true';
 const limit = Number(args.limit || 5000);
+const overwrite = args['overwrite-conflicts'] === 'true';
 
 // 1. Index cached pages by SHA-256 (out/mann-batch/<run>/<SKU>/ and out/mann-pilot/<dir>/).
 const pageBySha = new Map();
@@ -79,13 +80,24 @@ try {
     if (!file) { hold('NO_CACHED_PAGE_FOR_EVIDENCE_HASH'); continue; }
     const html = fs.readFileSync(file, 'utf8');
     const code = (/MANN-FILTER\s+(.+?)\s+(?:Oil|Air|Cabin|Fuel|Hydraul|Secondary|Filter)/i.exec(verifyProductIdentity(html, '').title) || [])[1];
-    const { values } = parseMannSummary(html);
+    const { values, summary } = parseMannSummary(html);
+    // The shared parser lets "Inner diameter" also match "Inner diameter 1" (optional " 1").
+    // If the page has only the "... 1" label, drop the duplicated plain value instead of inventing it.
+    for (const [plain, one] of [['inner_diameter_mm', 'inner_diameter_1_mm'], ['outer_diameter_mm', 'outer_diameter_1_mm']]) {
+      const label = plain.startsWith('inner') ? 'Inner diameter' : 'Outer diameter';
+      const plainOnPage = new RegExp(`${label}(?!\\s*1)(?:\\s*\\([^)]*\\))?\\s*=`, 'i').test(summary || '');
+      if (values[one] != null && values[plain] != null && !plainOnPage) delete values[plain];
+    }
     const keys = Object.keys(values);
     if (!keys.length) { hold('NO_EXPLICIT_DIMENSIONS_ON_PAGE'); continue; }
     const unmapped = keys.filter((k) => !report.dimension_columns.includes(k));
     if (unmapped.length) { hold('PARTIAL_NO_COLUMN', { unmapped }); continue; }
     const conflicts = keys.filter((k) => t.row[k] != null && String(t.row[k]) !== String(values[k]) && Number(t.row[k]) !== Number(values[k]));
-    if (conflicts.length) { hold('CONFLICT_WITH_EXISTING', { conflicts: conflicts.map((k) => `${k}: ${t.row[k]} vs ${values[k]}`) }); continue; }
+    // --overwrite-conflicts (operator 2026-10-24): existing values on these rows are UNVERIFIED (verified
+    // rows are not candidates) and include inch conversions and impossible sizes (6375.4 mm). For a MANN-base
+    // SKU the official MANN page wins; the previous values are kept in dimension_evidence.replaced.
+    if (conflicts.length && !overwrite) { hold('CONFLICT_WITH_EXISTING', { conflicts: conflicts.map((k) => `${k}: ${t.row[k]} vs ${values[k]}`) }); continue; }
+    const replaced = Object.fromEntries(conflicts.map((k) => [k, t.row[k]]));
 
     const sets = keys.map((k, i) => `${k} = $${i + 2}`).join(', ');
     const params = [t.sku, ...keys.map((k) => values[k])];
@@ -96,9 +108,9 @@ try {
          product_dimensions_validation_status = 'FULL_PRODUCT_DIMENSIONS_OFFICIAL',
          enrichment_data = jsonb_set(coalesce(enrichment_data,'{}'::jsonb), '{dimension_evidence}', $${n + 1}::jsonb)
        WHERE sku = $1 AND catalog_active`,
-      [...params, JSON.stringify({ authority: 'MANN_OFFICIAL_CATALOG', source_url: t.source_url, page_sha256: t.evidence_hash, mann_code: code || null, values, captured_from: 'cached_vehicle_batch_page', recorded_at: new Date().toISOString() })]);
+      [...params, JSON.stringify({ authority: 'MANN_OFFICIAL_CATALOG', source_url: t.source_url, page_sha256: t.evidence_hash, mann_code: code || null, values, replaced: Object.keys(replaced).length ? replaced : undefined, captured_from: 'cached_vehicle_batch_page', recorded_at: new Date().toISOString() })]);
     if (u.rowCount !== 1) throw new Error(`UPDATE_COUNT ${t.sku}`);
-    report.written.push({ sku: t.sku, values });
+    report.written.push({ sku: t.sku, values, replaced });
   }
 
   if (execute && Number(args['confirm-count']) !== report.written.length) {

@@ -48,6 +48,8 @@ if (pageSha !== comparison.source.page_sha256) stop('mann-page.html does not mat
 if (!/^https:\/\/www\.mann-filter\.com\//.test(comparison.source.url)) stop('source URL is not mann-filter.com');
 if (comparison.counts.matched_engine_code_mismatch !== 0) stop('engine-code mismatches between MANN and current rows');
 if (!mannRows.length) stop('no MANN rows');
+// Operator ruling 2026-10-24: MANN WD codes are Heavy Duty and must not be published in LD.
+if (/^\s*WD/i.test(String(comparison.mann_code || ''))) stop(`MANN WD code ${comparison.mann_code} is HD; not published in LD`);
 // Exact identity: the page title must name this code as a whole token
 // ("C 37" must not be satisfied by "C 37 001").
 const normTitle = String(comparison.source.title || '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ');
@@ -114,7 +116,10 @@ const report = { sku, mode: commit ? 'COMMIT' : 'DRY_RUN_ROLLBACK', source: comp
 try {
   await db.query('BEGIN');
   const { rows: [before] } = await db.query(
-    'SELECT md5(vehicle_applications::text) h, jsonb_array_length(vehicle_applications) n FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE', [sku]);
+    'SELECT md5(vehicle_applications::text) h, jsonb_array_length(vehicle_applications) n, catalog_active, duty FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE', [sku]);
+  // Retired rows never receive applications; LD only.
+  if (!before.catalog_active) stop('SKU is inactive/retired');
+  if (before.duty !== 'LIGHT_DUTY') stop(`SKU duty is ${before.duty}`);
   if (before.h !== comparison.current_vehicle_db_hash) stop('vehicle_applications changed since the pilot ran; rerun the pilot');
   report.before = { rows: before.n, guard: await guardState() };
 
