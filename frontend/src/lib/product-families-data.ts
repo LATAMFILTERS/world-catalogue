@@ -49,8 +49,8 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   },
   'air-cleaner-housings': {
     key: 'air-cleaner-housings', name: 'Air Cleaner Housings', slug: 'air-cleaner-housings', dutyClass: 'HD', hdPrefix: 'EA1', ldPrefix: null,
-    purpose: 'Air-cleaner housings establish the mechanical intake boundary: they retain the approved filter elements, route engine airflow and preserve the seals needed to prevent unfiltered air bypass.'
-    engineering: 'INTEKCORE™ addresses housing geometry, inlet/outlet orientation, element retention, gasket compression, cover closure and service access. Match the complete assembly to required airflow and allowable restriction; a housing is not itself a particulate-filter medium.'
+    purpose: 'Air-cleaner housings establish the mechanical intake boundary: they retain the approved filter elements, route engine airflow and preserve the seals needed to prevent unfiltered air bypass.',
+    engineering: 'INTEKCORE™ addresses housing geometry, inlet/outlet orientation, element retention, gasket compression, cover closure and service access. Match the complete assembly to required airflow and allowable restriction; a housing is not itself a particulate-filter medium.',
     construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA22580-INTEKCORE-approved-opt.png',
     ...relationships('air-cleaner-housings'),
   },
