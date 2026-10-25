@@ -32,7 +32,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
   'Oil Gas': { image: '/images/ingpetrolero.avif', video: '/images/petro-gas-hero-h264.mp4' },
   'Power Generation': { image: '/images/power-generator.avif', video: '/images/powergenerator-hero-h264.mp4' },
   Railway: { image: '/images/trenes.avif', video: '/images/Train.mp4' },
-  'Trucks Fleets': { image: '/images/trucks-1.avif', video: '/images/Trucks&Feel-1.mp4' },
+  'Trucks Fleets': { image: '/images/trucks-1.avif', video: '/images/truck-fleets-hero-h264.mp4' },
   'Waste Municipal': { image: '/images/wasted.avif', video: '/images/wasted-2.mp4' },
 };
 
