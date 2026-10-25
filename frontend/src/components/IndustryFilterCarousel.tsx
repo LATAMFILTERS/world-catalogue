@@ -13,6 +13,7 @@ const POWER_GENERATION_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-
 const TRUCK_FLEET_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'cabin-filters', 'coolant-filters', 'air-dryer-filters'];
 const MANUFACTURING_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'hydraulic-filters'];
 const RAILWAY_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'hydraulic-filters'];
+const MUNICIPAL_KEYS: FamilyKey[] = ['primary-air', 'air-dryer-filters', 'cabin-filters', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'coolant-filters'];
 const FLEET_INDUSTRIES = ['Trucks Fleets', 'Waste Municipal', 'Bus Coach'];
 const NO_CABIN_INDUSTRIES = ['Manufacturing', 'Oil Gas', 'Power Generation'];
 const NO_HYDRAULIC_INDUSTRIES = ['Power Generation'];
@@ -95,12 +96,11 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
   },
   'Waste Municipal': {
     'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
-    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
-    'air-dryer-filters': `${R2_BASE}/ED43571.png`,
+    'air-dryer-filters': `${R2_BASE}/ED47754.png`,
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF91311.png`,
+    'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES90588.png`,
     'coolant-filters': `${R2_BASE}/EW74685.png`,
   },
   'Bus Coach': {
@@ -154,6 +154,8 @@ export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }:
         ? MANUFACTURING_KEYS
       : industryName === 'Railway'
         ? RAILWAY_KEYS
+      : industryName === 'Waste Municipal'
+        ? MUNICIPAL_KEYS
       : industryName === 'Power Generation'
         ? POWER_GENERATION_KEYS
         : FLEET_INDUSTRIES.includes(industryName)
