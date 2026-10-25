@@ -98,11 +98,11 @@ export default function EngineeringHubPage() {
             transition={{ duration: 0.4, delay: 0.15 }}
             style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.95rem',
-              lineHeight: 1.75,
+              fontSize: 'clamp(1.16rem, 1.6vw, 1.4rem)',
+              lineHeight: 1.65,
               textAlign: 'left',
-              color: 'rgba(255,255,255,0.68)',
-              maxWidth: '820px',
+              color: 'rgba(255,255,255,0.92)',
+              maxWidth: '1180px',
             }}
           >
             <ReviewedText text={"Technical references covering filtration theory, contamination modes, fluid mechanics, asset protection and system engineering for heavy equipment and industrial applications."} />
