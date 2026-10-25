@@ -82,7 +82,7 @@ export function SystemsLanding({ lang = 'en' }: { lang?: PageLang }) {
       <PageHeader currentPage="Systems" />
 
       <section className={styles.hero} aria-labelledby="systems-page-title">
-        <video className={styles.heroVideo} poster="/images/sistems-hero.avif" aria-hidden="true" autoPlay muted loop playsInline preload="metadata">
+        <video className={styles.heroVideo} aria-hidden="true" autoPlay muted loop playsInline preload="auto">
           <source src="/images/Robotic_arm_replacing_filtration_system.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroShade} />
