@@ -36,7 +36,12 @@ const norm = (s) => String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 const codeOf = (e) => (e && typeof e === 'object' ? e.code || e.part_number || e.reference : e);
 
 const inventory = JSON.parse(fs.readFileSync(args.inventory, 'utf8'));
-const targets = inventory.filter((r) => r.wd_scope === 'WD_SOLE_BASE' && r.status === 'HD_HAS_WD_AS_COMPETITOR' && r.hd_matches.length === 1);
+// --exclude EL33008,EL3xxxx : rows held back for review (e.g. non-standard HD SKU format).
+const exclude = new Set(String(args.exclude || '').split(',').map((x) => x.trim().toUpperCase()).filter(Boolean));
+// Standard HD SKU = 3-char prefix + 4 digits (EH6 + 4). A longer SKU is not a governed target.
+const standardHd = (sku) => /^EH6\d{4}$/.test(sku);
+const targets = inventory.filter((r) => r.wd_scope === 'WD_SOLE_BASE' && r.status === 'HD_HAS_WD_AS_COMPETITOR'
+  && r.hd_matches.length === 1 && !exclude.has(r.ld_sku));
 if (execute && Number(args['confirm-count']) !== targets.length) throw new Error(`--confirm-count must be ${targets.length}`);
 
 const url = process.env.CATALOG_DATABASE_URL;
@@ -57,6 +62,7 @@ try {
     const skip = (reason) => report.skipped.push({ ld, hd, wd, reason });
     if (!L || L.duty !== 'LIGHT_DUTY' || !L.catalog_active) { skip('LD_ROW_CHANGED_OR_INACTIVE'); continue; }
     if (!H || H.duty !== 'HEAVY_DUTY' || !H.catalog_active || !hd.startsWith('EH6')) { skip('HD_TARGET_NOT_ACTIVE_EH6'); continue; }
+    if (!standardHd(hd)) { skip('HD_TARGET_NON_STANDARD_SKU_FORMAT'); continue; }
     if (!(H.competitor_codes || []).some((e) => norm(codeOf(e)) === wd)) { skip('HD_TARGET_DOES_NOT_CITE_WD'); continue; }
 
     const u = await db.query(
