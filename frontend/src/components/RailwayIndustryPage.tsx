@@ -7,7 +7,6 @@ import { railwayText } from '@/lib/railway-i18n';
 import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
-const PAGE_URL = `${BASE_URL}/industries/railway/`;
 
 const assets = [
   'Freight Locomotives',
@@ -27,9 +26,26 @@ const operatingPressures = [
 
 const pathways = [
   ['AIRBORNE PARTICULATE', 'Route dust + ballast particulate + intake loading', 'AIR INTAKE', 'MACROCORE™', '/technologies/macrocore/'],
-  ['FUEL + WATER', 'Bulk storage + transfer + condensation + depot refueling', 'FUEL / WATER SEPARATION', 'HYDROCORE™', '/technologies/hydrocore/'],
+  ['DIESEL PARTICULATE', 'Particles introduced during depot storage, fueling, transfer and equipment maintenance', 'DIESEL FUEL', 'SYNTAPORE™', '/technologies/syntapore/'],
+  ['FUEL + WATER', 'Condensation and free water in depot diesel tanks, transfers and equipment fuel circuits', 'FUEL / WATER SEPARATION', 'HYDROCORE™', '/technologies/hydrocore/'],
   ['LUBE CONTAMINATION', 'Wear debris + soot + service ingress', 'LUBRICATION', 'SYNTRAX™', '/technologies/syntrax/'],
-  ['HYDRAULIC DEBRIS', 'Wear + service contamination in applicable auxiliary and support systems', 'HYDRAULIC', 'NANOFORCE™', '/technologies/nanoforce/'],
+  ['HYDRAULIC DEBRIS', 'Wear particles or ingress in OEM-specified hydraulic circuits of rail support and auxiliary equipment', 'APPROVED HYDRAULIC CIRCUITS', 'NANOFORCE™', '/technologies/nanoforce/'],
+] as const;
+
+const serviceChecks: Record<string,string> = {
+  'MACROCORE™': 'Inspect locomotive diesel-engine intake restriction, housing seals and duct integrity against the applicable engine OEM limits; do not replace on appearance alone.',
+  'SYNTAPORE™': 'Examine particulate exposure from depot diesel tanks, transfer systems and refueling, then verify engine-specific fuel-filter positions and service requirements.',
+  'HYDROCORE™': 'Check water accumulation, drainage and seals of the approved conventional fuel/water separator. Do not treat turbine-style equipment as interchangeable.',
+  'SYNTRAX™': 'Review diesel-engine oil condition, soot and wear trends, service hours and the verified lubrication-filter application.',
+  'NANOFORCE™': 'Measure or sample cleanliness in an OEM-specified hydraulic circuit where applicable; verify pressure, flow, element geometry and restriction before selecting the part.'
+};
+
+const railMaintenanceRoles = [
+  ['Rail operator / fleet manager', 'Prioritize locomotive availability, service commitments and critical spare coverage. Have crews document loss of power, warnings, excessive restriction or abnormal operating observations for maintenance assessment.'],
+  ['Depot maintenance supervisor', 'Plan planned-outs and shop windows using locomotive number, engine type, service hours, depot fueling history, filter inventory and documented corrective work.'],
+  ['Rail reliability engineer', 'Investigate recurrence with oil or fuel analysis, intake restriction when measured, contamination trends, duty history and OEM application evidence before approving substitutions.'],
+  ['Locomotive maintenance technician', 'Follow railway isolation and lockout procedures, prevent contamination during element changes, check seals and leaks, document fitted references and follow the approved return-to-service protocol.'
+  ]
 ] as const;
 
 const consequences = [
@@ -48,7 +64,7 @@ const questions = [
   ['Why does air-intake protection matter on locomotives?', 'Locomotive air systems can be exposed to route dust, ballast particulate and changing ambient conditions. Air-intake selection should account for loading, sealing, engine requirements and the actual operating environment.'],
   ['Should railway filters be selected only by service interval?', 'No. A fixed interval does not describe contamination loading, fuel quality, engine configuration, route exposure, sealing condition or maintenance access. Service planning should reflect the actual application.'],
   ['What information is needed to identify the correct railway filter?', 'Use the locomotive or rail asset, engine, protected system, duty cycle, route environment, OEM or current filter reference, dimensions when available and validated application evidence.'],
-  ['Can ELIMFILTERS identify a railway filter from an OEM or part number?', 'Yes. If an OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For engineering review, include the locomotive or asset, engine, protected system and operating conditions.'],
+  ['Can ELIMFILTERS identify a railway filter from an OEM or part number?', 'A known OEM or installed-filter reference can locate candidate cross-references in Part Search. Confirm the rail asset, engine, protected system, dimensions and documented application before accepting any substitute.'],
   ['How should a mixed railway fleet standardize filters?', 'Standardization should follow confirmed compatibility at the engine, system and part level. Similar locomotive classes or duty profiles do not by themselves establish interchangeability.'],
 ] as const;
 
@@ -63,7 +79,7 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         url: pageUrl,
         name: lang === 'es' ? 'Sistemas de filtración ferroviaria' : lang === 'pt' ? 'Sistemas de filtração ferroviária' : 'Railway Filtration Systems',
         inLanguage: lang === 'pt' ? 'pt-BR' : lang,
-        description: 'Railway filtration systems for freight and passenger locomotives, diesel multiple units, auxiliary power units and rail maintenance equipment operating under vibration, route dust, fuel-handling exposure and extended duty.',
+        description: railwayText(lang, 'Railway filtration maintenance guidance for locomotive operators, depot technicians and reliability engineers responsible for verified air, diesel-fuel, lubrication and applicable auxiliary hydraulic systems.'),
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
         about: [
@@ -81,6 +97,7 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           { '@type': 'Thing', name: 'Hydraulic filtration' },
           { '@type': 'Thing', name: 'MACROCORE' },
           { '@type': 'Thing', name: 'HYDROCORE' },
+          { '@type': 'Thing', name: 'SYNTAPORE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
           { '@type': 'Thing', name: 'NANOFORCE' },
         ],
@@ -90,15 +107,15 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         '@type': 'BreadcrumbList',
         '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Railway Filtration Systems', item: pageUrl },
+          { '@type': 'ListItem', position: 1, name: lang === 'es' ? 'Inicio' : lang === 'pt' ? 'Início' : 'Home', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/` },
+          { '@type': 'ListItem', position: 2, name: lang === 'es' ? 'Industrias' : lang === 'pt' ? 'Indústrias' : 'Industries', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/` },
+          { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Ferrocarriles' : lang === 'pt' ? 'Ferrovias' : 'Railway', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
         '@id': `${pageUrl}#equipment`,
-        name: 'Railway equipment applications',
+        name: railwayText(lang, 'Railway equipment applications'),
         itemListElement: assets.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: railwayText(lang, name) })),
       },
       {
@@ -110,32 +127,42 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className="mining-industry-page railway-industry-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <style>{railwayPageLayout}</style>
       <PageHeader currentPage="Railway" />
 
       <section style={hero}>
-        <video autoPlay muted loop playsInline preload="auto" style={heroVideo}>
+        <video aria-hidden="true" className="miningHeroVideo" autoPlay muted loop playsInline preload="auto" style={heroVideo}>
           <source src="/images/Train.mp4" type="video/mp4" />
         </video>
-        <div style={heroShade} />
-        <div style={heroInner}>
-          <p style={eyebrow}>{railwayText(lang, "RAILWAY / FLEET AVAILABILITY")}</p>
-          <h1 style={heroTitle}>{railwayText(lang, "Railway Filtration")}<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>{railwayText(lang, "Protect locomotive systems around route duty, depot service and validated application evidence.")}</p>
-          <p style={heroLead}>{railwayText(lang, "Air intake, fuel-water separation, lubrication and applicable hydraulic contamination control for locomotives, diesel multiple units, auxiliary power units and rail-support equipment operating under vibration, route dust and extended duty.")}</p>
-          <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{railwayText(lang, "IDENTIFY MY RAIL PROTECTION PATH")}</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{railwayText(lang, "FIND MY FILTER")}</a>
+        <div className="miningHeroShade" style={heroShade} />
+        <div className="miningHeroContainer" style={heroInner}>
+          <p style={eyebrow}>{railwayText(lang, "RAILWAY / LOCOMOTIVE RELIABILITY")}</p>
+          <h1 style={heroTitle} className="miningHeroHeading">{railwayText(lang, "FILTRATION FOR")}<br /><span style={yellow}>{railwayText(lang, "RAILWAY EQUIPMENT")}</span></h1>
+          <div className="miningHeroLower">
+            <div className="miningHeroCopy">
+              <p className="miningHeroPromise" style={heroPromise}>{railwayText(lang, "Engineering filtration support for rail operators, depot maintenance teams, reliability engineers and locomotive technicians.")}</p>
+              <p style={heroLead}>{railwayText(lang, "Address diesel fuel water and particulate, locomotive-engine air intake, lubricating oil and approved auxiliary hydraulics. Protect the service window with equipment identification, contamination evidence and verified OEM applications.")}</p>
+            </div>
+            <div className="miningHeroActions" style={actions}>
+              <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{railwayText(lang, "REVIEW RAIL APPLICATION")}</Link>
+              <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{railwayText(lang, "FIND MY FILTER")}</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="rail-direct-title">
-        <div style={contentWidth}>
-          <p style={eyebrow}>{railwayText(lang, "DIRECT ANSWER")}</p>
-          <h2 id="rail-direct-title" style={directTitle}>{railwayText(lang, "What defines the correct railway filtration strategy?")}</h2>
-          <p style={directText}>{railwayText(lang, "Railway filtration should start with the locomotive or rail asset, engine and protected system, then resolve route exposure, fuel handling, duty cycle, maintenance window and validated application evidence. Similar locomotive classes should not be treated as interchangeable without confirming the actual filter position and application.")}</p>
+        <div style={contentWidth} className="railwayEditorialIntro">
+          <div>
+            <p style={eyebrow}>{railwayText(lang, "DIRECT ANSWER")}</p>
+            <h2 id="rail-direct-title" style={directTitle}>{railwayText(lang, "What defines the correct railway filtration strategy?")}</h2>
+          </div>
+          <div>
+            <p style={directText}>{railwayText(lang, "Railway filtration should start with the locomotive or rail asset, engine and protected system, then resolve route exposure, fuel handling, duty cycle, maintenance window and validated application evidence. Similar locomotive classes should not be treated as interchangeable without confirming the actual filter position and application.")}</p>
+            <p style={directText} className="railwayScope">{railwayText(lang, "Scope: filtration mitigates contamination in specified systems; it does not certify train braking, signaling, traction electronics or operational safety. Maintenance release requires the operator's approved rail safety procedures.")}</p>
+          </div>
         </div>
       </section>
 
@@ -144,18 +171,18 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{railwayText(lang, "RAIL OPERATING REALITY")}</p>
           <h2 id="reality-title" style={sectionTitle}>{railwayText(lang, "The maintenance window is short. The duty cycle is not.")}</h2>
           <p style={wideText}>{railwayText(lang, "Rail assets combine long operating periods with vibration, changing ambient conditions, depot fuel handling and scheduled service events. Filtration decisions have to fit that operating rhythm.")}</p>
-          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{railwayText(lang, title)}</h3><p style={bodyText}>{railwayText(lang, text)}</p></article>)}</div>
+          <div style={pressureGrid} className="miningRiskGrid">{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard} className="miningRiskCard"><h3 style={cardTitle}>{railwayText(lang, title)}</h3><p style={bodyText}>{railwayText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
-        <div style={equipmentGrid}>
+        <div style={equipmentGrid} className="miningEquipmentGrid">
           <div style={equipmentCopy}>
             <h2 id="equipment-title" style={sectionTitle}>{railwayText(lang, "One rail network can contain several filtration architectures.")}</h2>
             <p style={wideText}>{railwayText(lang, "Freight, passenger, maintenance and auxiliary equipment can share depots while using different engines, protected systems and service requirements.")}</p>
-            <div role="list" aria-label="Railway equipment applications" style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{railwayText(lang, asset)}</span></div>)}</div>
+            <div role="list" aria-label={railwayText(lang, "Railway equipment applications")} style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{railwayText(lang, asset)}</span></div>)}</div>
           </div>
-          <div style={equipmentMedia}><img src="/images/trenes.avif" alt="Railway locomotive operating in demanding service conditions" style={equipmentImage} /></div>
+          <div style={equipmentMedia}><img src="/images/trenes.avif" alt={railwayText(lang, "Locomotive operating on a rail network")} style={equipmentImage} /></div>
         </div>
       </section>
 
@@ -164,12 +191,12 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{railwayText(lang, "CONTAMINATION PATHWAYS")}</p>
           <h2 id="path-title" style={sectionTitle}>{railwayText(lang, "Trace the contamination path before choosing the part.")}</h2>
           <p style={wideText}>{railwayText(lang, "Railway selection should connect the contamination source to the protected system, then to the appropriate ELIMFILTERS technology and finally to a validated application.")}</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{railwayText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{railwayText(lang, source)}</strong><p style={smallText}>{railwayText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{railwayText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{railwayText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{railwayText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{railwayText(lang, "EXPLORE →")}</span></Link></article>)}</div>
+          <div className="miningPathwayFlow" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{railwayText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{railwayText(lang, source)}</strong><p style={smallText}>{railwayText(lang, detail)}</p></div><div><span style={smallLabel}>{railwayText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{railwayText(lang, system)}</strong></div><div><span style={smallLabel}>{railwayText(lang, "DEPOT SERVICE CHECK")}</span><p style={smallText}>{railwayText(lang, serviceChecks[technology])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{railwayText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{railwayText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>{railwayText(lang, "RAILWAY ENGINEERING PRINCIPLE")}</span><p style={principleText}>{railwayText(lang, "The correct railway filter must resolve the locomotive or asset, engine, protected system, route duty, service environment and application evidence before interchangeability is accepted.")}</p></div>
+        <div style={principle} className="railwayPrinciple"><span style={principleLabel}>{railwayText(lang, "RAILWAY ENGINEERING PRINCIPLE")}</span><p style={principleText}>{railwayText(lang, "The correct railway filter must resolve the locomotive or asset, engine, protected system, route duty, service environment and application evidence before interchangeability is accepted.")}</p></div>
       </section>
 
       <IndustryFilterCarousel dutyClass="HD" industryName="Railway" lang={lang} />
@@ -179,7 +206,18 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{railwayText(lang, "FLEET AVAILABILITY")}</p>
           <h2 id="impact-title" style={sectionTitle}>{railwayText(lang, "Protect the locomotive before contamination becomes a network constraint.")}</h2>
           <p style={wideText}>{railwayText(lang, "Filtration supports more than the component. It helps protect the engine, fuel path, service plan and fleet allocation decisions surrounding the asset.")}</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{railwayText(lang, title)}</h3><p style={bodyText}>{railwayText(lang, text)}</p></article>)}</div>
+          <div style={impactGrid} className="miningStakesGrid">{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{railwayText(lang, title)}</h3><p style={bodyText}>{railwayText(lang, text)}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section style={section} aria-labelledby="railway-roles-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>{railwayText(lang, "RAIL OPERATIONS AND DEPOT MAINTENANCE")}</p>
+          <h2 id="railway-roles-title" style={sectionTitle}>{railwayText(lang, "Four responsibilities before a locomotive returns to duty.")}</h2>
+          <p style={wideText}>{railwayText(lang, "A reliable rail return-to-service decision requires operator observations, depot planning, engineering analysis and disciplined maintenance execution. A filter replacement cannot substitute for railway safety or operator release checks.")}</p>
+          <div style={pressureGrid} className="miningRiskGrid">
+            {railMaintenanceRoles.map(([role, guidance]) => <article key={role} style={pressureCard} className="miningRiskCard"><h3 style={cardTitle}>{railwayText(lang, role)}</h3><p style={bodyText}>{railwayText(lang, guidance)}</p></article>)}
+          </div>
         </div>
       </section>
 
@@ -187,7 +225,7 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{railwayText(lang, "FROM LOCOMOTIVE TO PART")}</p>
           <h2 id="decision-title" style={sectionTitle}>{railwayText(lang, "Resolve the railway application in five decisions.")}</h2>
-          <div style={decisionGrid}>{[
+          <div style={decisionGrid} className="miningDecisionGrid">{[
             ['Rail Asset', 'Identify the locomotive, multiple unit, auxiliary power unit or maintenance equipment.'],
             ['Engine + System', 'Confirm the engine and the exact air, fuel, lubrication or hydraulic filter position.'],
             ['Route Duty', 'Define operating hours, load, route dust, vibration, ambient conditions and maintenance access.'],
@@ -209,13 +247,13 @@ export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{railwayText(lang, "RAILWAY FILTRATION QUESTIONS")}</p>
           <h2 id="faq-title" style={sectionTitle}>{railwayText(lang, "What rail operators and maintenance teams need to know.")}</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{railwayText(lang, q)}</h3><p style={faqAnswer}>{railwayText(lang, a)}</p></article>)}</div>
+          <div style={faqList} className="miningFaqGrid">{questions.map(([q, a]) => <article key={q} style={faqItem} className="miningFaqItem"><h3 style={faqQuestion}>{railwayText(lang, q)}</h3><p style={faqAnswer}>{railwayText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
-        <div style={conversionGrid}>
-          <div><p style={eyebrow}>{railwayText(lang, "HAVE A LOCOMOTIVE OR RAIL APPLICATION TO RESOLVE?")}</p><h2 style={conversionTitle}>{railwayText(lang, "Identify the protection path before the maintenance window opens.")}</h2><p style={conversionText}>{railwayText(lang, "Send the locomotive or rail asset, engine, protected system, route conditions and any known OEM or current filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{railwayText(lang, "IDENTIFY MY RAIL PROTECTION PATH")}</Link></div>
+        <div style={conversionGrid} className="miningConversionGrid">
+          <div><p style={eyebrow}>{railwayText(lang, "HAVE A LOCOMOTIVE OR RAIL APPLICATION TO RESOLVE?")}</p><h2 style={conversionTitle}>{railwayText(lang, "Identify the protection path before the maintenance window opens.")}</h2><p style={conversionText}>{railwayText(lang, "Provide locomotive or rail-asset class and unit number, engine model, protected system, operating hours, depot fuel history, contamination or restriction readings, current filter/OEM reference and next shop window.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{railwayText(lang, "IDENTIFY MY RAIL PROTECTION PATH")}</Link></div>
           <div style={conversionSecondary}><div><p style={eyebrow}>{railwayText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{railwayText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{railwayText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{railwayText(lang, "SERVE RAIL CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{railwayText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{railwayText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
