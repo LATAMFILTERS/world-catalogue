@@ -132,7 +132,7 @@ export function ManufacturingIndustryPage({ lang = 'en' }: { lang?: PageLang }) 
 
       <section style={hero}>
         <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="auto" style={heroVideo}>
-          <source src="/images/Manufacture-1.mp4" type="video/mp4" />
+          <source src="/images/manufacturing-hero-h264.mp4" type="video/mp4" />
         </video>
         <div className="miningHeroShade" style={heroShade} />
         <div className="miningHeroContainer" style={heroInner}>
