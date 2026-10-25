@@ -10,7 +10,7 @@ import path from 'node:path';
 import { runClaude } from './oem-research-runner.mjs';
 import { candidateFrom } from './newsroom-intelligence.mjs';
 import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
-import { readHeadlineDecisions, headlineDecisionsPath } from './industry-digest.mjs';
+import { readHeadlineDecisions, headlineDecisionsPath, dutyOf, isIndustrySweepCandidate } from './industry-digest.mjs';
 
 export const PER_RUN = 3;
 const DOMAIN_BY_DUTY = { HD: 'oem_engines_equipment', LD: 'oem_engines_equipment', IND: 'industry_markets', GEN: 'industry_markets' };
@@ -35,7 +35,47 @@ export function applyHeadlineDecision(row, { stateRoot = process.env.HERMES_STAT
   return { candidate: row.candidate_code, decision, outcome: 'APPLIED' };
 }
 
+/**
+ * REVISAR on a digest card: queue a re-investigation that follows Victor's instruction.
+ * The revised card gets a new code (<original>_R<n>) so it comes back with fresh buttons.
+ * Returns false for candidates outside the industry digest (their REVISAR keeps the old path).
+ */
+export function queueRevision(row, { stateRoot = process.env.HERMES_STATE_ROOT || 'hermes/state' } = {}) {
+  const c = row.candidate || {};
+  if (!isIndustrySweepCandidate(c)) return false;
+  const rr = c.research_resolution || {};
+  const url = rr.evidence_url || c.source_url;
+  const instruction = String(row.decision_reason || '').trim();
+  if (!/^https:\/\//.test(url || '') || !instruction) return false;
+  const data = readHeadlineDecisions(stateRoot);
+  const n = Object.values(data.research).filter((e) => e.revise_of === c.entity_code).length + 1;
+  const domain = c.category.slice('industry_sweep:'.length);
+  data.research[`${url}#rev-${c.entity_code}-${n}`] = {
+    url, revise_of: c.entity_code, revision: n, code: `${c.entity_code}_R${n}`,
+    headline: rr.finding_title || c.source_title, title_es: rr.titulo_es || null, source: c.source_publisher,
+    date: String(c.published_at || '').slice(0, 10) || new Date().toISOString().slice(0, 10), domain,
+    duty: dutyOf({ id: c.affected_entities?.[0], name: c.source_publisher, domainId: domain }),
+    previous_summary: rr.resumen_es || null, requested_at: new Date(row.decided_at || Date.now()).toISOString(),
+    reason: instruction, status: 'QUEUED', attempts: 0
+  };
+  save(stateRoot, data);
+  return true;
+}
+
 export function buildPrompt(entry, url) {
+  if (entry.revise_of) {
+    return `Eres analista de inteligencia de ELIMFILTERS, fabricante de filtros industriales (aire, combustible, lubricación, hidráulica, refrigeración).
+Victor revisó este hallazgo y pidió corregirlo:
+- Titular: ${entry.headline}
+- Fuente: ${entry.source} · ${entry.date}
+- Enlace: ${url}
+- Resumen anterior: ${entry.previous_summary || 'n/a'}
+- Instrucción de Victor: ${entry.reason}
+Vuelve a abrir y leer la nota (si el enlace no abre, busca el titular en la web). Sigue la instrucción de Victor. Si la instrucción pide otra fuente o un dato, búscalo y usa solo lo que encuentres publicado.
+Usa SOLO lo que dicen las fuentes; no inventes cifras, nombres ni detalles. Si no puedes leer la nota, responde "leida": false.
+Responde SOLO con JSON, sin texto adicional:
+{"leida":true,"url_original":"https://...","titulo_es":"","resumen_es":"2-3 frases con los hechos de la nota","por_que_importa_es":"1 frase: qué significa para ELIMFILTERS","hecho_publico_en":"one neutral English sentence without company names","tecnico":true|false}`;
+  }
   return `Eres analista de inteligencia de ELIMFILTERS, fabricante de filtros industriales (aire, combustible, lubricación, hidráulica, refrigeración).
 Victor pidió investigar este titular:
 - Titular: ${entry.headline}
@@ -63,14 +103,16 @@ export async function runHeadlineResearch({ stateRoot = process.env.HERMES_STATE
   const work = path.resolve(stateRoot, 'headline-research-work'); fs.mkdirSync(work, { recursive: true });
   fs.mkdirSync(path.resolve(outputDir), { recursive: true });
   const results = [];
-  for (const [url, entry] of todo) {
+  for (const [key, entry] of todo) {
+    const url = entry.url || key;
     entry.attempts = (entry.attempts || 0) + 1;
     const res = await claude(buildPrompt(entry, url), { cwd: work, timeoutMs: 5 * 60_000, toolArgs: ['--tools', 'WebSearch', 'WebFetch', '--allowedTools', 'WebSearch', 'WebFetch'] });
     const llm = res.code === 0 ? parseAnswer(res.out) : null;
     if (!llm) { if (entry.attempts >= 2) entry.status = 'UNREADABLE'; results.push({ url, outcome: entry.status === 'UNREADABLE' ? 'UNREADABLE' : 'RETRY' }); save(stateRoot, data); continue; }
     const candidate = candidateFrom({ url: llm.url, headline: entry.headline, published_at: new Date(`${entry.date}T12:00:00Z`).toISOString() },
-      { name: entry.source, domain: DOMAIN_BY_DUTY[entry.duty] || 'industry_markets', feed: true }, llm, now);
-    Object.assign(candidate.research_resolution, { engine: 'CLAUDE_CODE', search_mode: 'HEADLINE_INVESTIGATION', requested_at: entry.requested_at, requested_headline_url: url, victor_instruction: entry.reason });
+      { name: entry.source, domain: entry.domain || DOMAIN_BY_DUTY[entry.duty] || 'industry_markets', feed: true }, llm, now);
+    Object.assign(candidate.research_resolution, { engine: 'CLAUDE_CODE', search_mode: entry.revise_of ? 'VICTOR_REVISION' : 'HEADLINE_INVESTIGATION', requested_at: entry.requested_at, requested_headline_url: url, victor_instruction: entry.reason });
+    if (entry.revise_of) { candidate.entity_code = entry.code; candidate.deduplication_key = `${candidate.deduplication_key}:rev${entry.revision}`; candidate.research_resolution.revision_of = entry.revise_of; }
     const errors = validateCandidate(candidate);
     if (errors.length) { entry.status = 'INVALID'; entry.error = errors.join('; ').slice(0, 300); results.push({ url, outcome: 'INVALID' }); save(stateRoot, data); continue; }
     fs.writeFileSync(path.resolve(outputDir, `${candidate.entity_code.toLowerCase()}.json`), `${JSON.stringify(candidate, null, 2)}\n`);

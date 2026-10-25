@@ -192,6 +192,7 @@ export function buildIndustryDigest(candidates, { now = new Date(), sweepSummary
       domain: DOMAIN_LABELS_ES[domainId] || domainId,
       summary: rr.resumen_es.trim(),
       why: rr.por_que_importa_es.trim(),
+      instruction: rr.revision_of ? (rr.victor_instruction || null) : null,
       url
     });
   }
@@ -338,6 +339,7 @@ function renderDigestBody(digest, actionsFor) {
       <div style="font-size:12px;color:#777">${esc(i.company)} · ${esc(i.date)}</div>
       <p style="margin:10px 0 6px;font-size:14px;color:#222"><strong>Resumen:</strong> ${esc(i.summary)}</p>
       <p style="margin:0 0 8px;font-size:14px;color:#222"><strong>Por qué importa:</strong> ${esc(i.why)}</p>
+      ${i.instruction ? `<p style="margin:0 0 8px;font-size:12px;color:#555;background:#f6f6f6;padding:6px 8px"><strong>Revisado según tu instrucción:</strong> ${esc(i.instruction)}</p>` : ''}
       <div style="font-size:12px">${link(i.url, 'Ver fuente →')}</div>
       ${i.entity_code && actionsFor ? actionsFor(i.entity_code) : ''}
     </td></tr></table>`;
