@@ -7,7 +7,6 @@ import { automotiveText } from '@/lib/automotive-i18n';
 import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
-const PAGE_URL = `${BASE_URL}/industries/automotive/`;
 
 const applications = [
   'Passenger Vehicles',
@@ -27,9 +26,23 @@ const operatingConditions = [
 
 const pathways = [
   ['ROAD DUST + PARTICULATE', 'Ambient dust + road debris + intake loading', 'AIR INTAKE', 'MACROCORE™', '/technologies/macrocore/'],
-  ['FUEL CONTAMINATION', 'Storage + dispensing + vehicle fuel-system exposure', 'FUEL FILTRATION', 'APPLICATION-SPECIFIC FUEL PROTECTION', '/families/primary-fuel/'],
+  ['FUEL PARTICULATE / SYSTEM CONTAMINATION', 'Diesel particulate loading or gasoline-system contamination depending on the OEM-specified filter position', 'VEHICLE FUEL SYSTEM', 'APPLICATION-SPECIFIC FUEL PROTECTION', '/families/primary-fuel/'],
   ['LUBE CONTAMINATION', 'Wear debris + combustion byproducts + service ingress', 'LUBRICATION', 'SYNTRAX™', '/technologies/syntrax/'],
   ['CABIN PARTICULATE', 'Dust + pollen + urban airborne particulate', 'CABIN AIR', 'MICROKAPPA™', '/technologies/microkappa/'],
+] as const;
+
+const serviceChecks: Record<string,string> = {
+  'MACROCORE™': 'Inspect intake housing, sealing surfaces and filter loading. Verify restriction where available and confirm geometry and engine-specific OEM fitment.',
+  'APPLICATION-SPECIFIC FUEL PROTECTION': 'Identify gasoline or diesel system and OEM fuel-filter position. SYNTAPORE™ addresses approved diesel particulate applications only; do not assume interchangeability with gasoline-system filters.',
+  'SYNTRAX™': 'Review oil grade and change history, engine type, service hours or mileage, deposits and the documented oil-filter application before installation.',
+  'MICROKAPPA™': 'Inspect cabin HVAC intake, housing seals, airflow and filter dimensions; choose the element approved for the specific vehicle and HVAC system.'
+};
+
+const automotiveServiceRoles = [
+  ['Vehicle owner / fleet operator', 'Report mileage, short-trip duty, warning indicators and service history. Select maintenance intervals using the vehicle OEM schedule and actual operating conditions.'],
+  ['Independent workshop / service manager', 'Plan bay time, stock and confirmed filter references by year, make, model, engine and VIN where available. Prevent repeat service from incorrect parts.'],
+  ['Automotive maintenance technician', 'Check dimensions, seals, oil and fuel connections, correct filter orientation and contamination controls. Document the installed part and perform OEM-prescribed post-service checks.'],
+  ['Fleet reliability / maintenance engineer', 'Analyze repeat faults, engine variant differences, fuel-system configuration, wear trends and verified cross-reference evidence before consolidating parts across a mixed fleet.']
 ] as const;
 
 const outcomes = [
@@ -48,7 +61,7 @@ const questions = [
   ['How should a fleet standardize automotive filters?', 'Group vehicles by confirmed platform, engine, system and application evidence. Standardization should follow verified compatibility rather than appearance, thread size or a single cross-reference alone.'],
   ['Is an OEM or current filter number enough to identify the correct replacement?', 'It is a strong starting point, but the final match should be reconciled with vehicle, engine, model year, dimensions and documented application evidence when available.'],
   ['What information helps ELIMFILTERS identify an automotive filter?', 'Provide year, make, model, engine, fuel type, protected system and any known OEM or current filter reference. Dimensions can help when application evidence is incomplete.'],
-  ['Can ELIMFILTERS identify a filter from an existing part number?', 'Yes. Part Search is the fastest route when a known reference exists. For uncertain applications, include the vehicle and engine information so the cross-reference can be evaluated in context.'],
+  ['Can ELIMFILTERS identify a filter from an existing part number?', 'A known reference can help locate candidate cross-references in Part Search. Confirm the vehicle, engine, fuel system, physical interfaces and documented fitment; an unverified cross-reference is not approval to install.'],
 ] as const;
 
 export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
@@ -62,7 +75,7 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         url: pageUrl,
         name: lang === 'es' ? 'Sistemas de filtración automotriz' : lang === 'pt' ? 'Sistemas de filtração automotiva' : 'Automotive Filtration Systems',
         inLanguage: lang === 'pt' ? 'pt-BR' : lang,
-        description: 'Automotive filtration systems for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets requiring engine air, fuel, lubrication and cabin-air protection.',
+        description: automotiveText(lang, 'Automotive filtration for vehicle owners, independent workshops, fleet service managers and technicians who verify engine air, fuel, lubrication and cabin applications by vehicle identification and OEM evidence.'),
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
         about: [
@@ -80,6 +93,7 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           { '@type': 'Thing', name: 'MACROCORE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
           { '@type': 'Thing', name: 'MICROKAPPA' },
+          { '@type': 'Thing', name: 'SYNTAPORE for approved diesel fuel applications' },
         ],
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
@@ -87,16 +101,16 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         '@type': 'BreadcrumbList',
         '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Automotive Filtration Systems', item: pageUrl },
+          { '@type': 'ListItem', position: 1, name: lang === 'es' ? 'Inicio' : lang === 'pt' ? 'Início' : 'Home', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/` },
+          { '@type': 'ListItem', position: 2, name: lang === 'es' ? 'Industrias' : lang === 'pt' ? 'Indústrias' : 'Industries', item: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/` },
+          { '@type': 'ListItem', position: 3, name: lang === 'es' ? 'Automotriz' : lang === 'pt' ? 'Automotivo' : 'Automotive', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
         '@id': `${pageUrl}#applications`,
-        name: 'Automotive and light-duty applications',
-        itemListElement: applications.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        name: automotiveText(lang, 'Automotive and light-duty applications'),
+        itemListElement: applications.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: automotiveText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
@@ -107,32 +121,42 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className="mining-industry-page automotive-industry-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <style>{automotivePageLayout}</style>
       <PageHeader currentPage="Automotive" />
 
       <section style={hero}>
-        <video autoPlay muted loop playsInline preload="auto" style={heroVideo}>
+        <video className="miningHeroVideo" aria-hidden="true" autoPlay muted loop playsInline preload="auto" style={heroVideo}>
           <source src="/images/Autos-Vin4.mp4" type="video/mp4" />
         </video>
-        <div style={heroShade} />
-        <div style={heroInner}>
-          <p style={eyebrow}>{automotiveText(lang, "AUTOMOTIVE / LIGHT-DUTY ASSET PROTECTION")}</p>
-          <h1 style={heroTitle}>{automotiveText(lang, "Automotive Filtration")}<br /><span style={yellow}>{automotiveText(lang, "Systems")}</span></h1>
-          <p style={heroPromise}>{automotiveText(lang, "Match the filter to the actual vehicle, engine and operating environment—not just the part number.")}</p>
-          <p style={heroLead}>{automotiveText(lang, "Engine air, fuel, lubrication and cabin-air filtration for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets.")}</p>
-          <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{automotiveText(lang, "IDENTIFY MY VEHICLE PROTECTION PATH")}</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{automotiveText(lang, "FIND MY FILTER")}</a>
+        <div className="miningHeroShade" style={heroShade} />
+        <div className="miningHeroContainer" style={heroInner}>
+          <p style={eyebrow}>{automotiveText(lang, "AUTOMOTIVE / VEHICLE SERVICE ENGINEERING")}</p>
+          <h1 style={heroTitle} className="miningHeroHeading">{automotiveText(lang, "FILTRATION FOR")}<br /><span style={yellow}>{automotiveText(lang, "AUTOMOTIVE ASSETS")}</span></h1>
+          <div className="miningHeroLower">
+            <div className="miningHeroCopy">
+              <p className="miningHeroPromise" style={heroPromise}>{automotiveText(lang, "Application-specific filtration for vehicle owners, independent workshops, service technicians and light-duty fleet operators.")}</p>
+              <p style={heroLead}>{automotiveText(lang, "Protect engine intake, approved fuel systems, lubrication and cabin HVAC. Confirm the exact vehicle, engine, model year and filter position before choosing a replacement.")}</p>
+            </div>
+            <div className="miningHeroActions" style={actions}>
+              <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{automotiveText(lang, "REVIEW AUTOMOTIVE APPLICATION")}</Link>
+              <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{automotiveText(lang, "FIND MY FILTER")}</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="auto-direct-title">
-        <div style={contentWidth}>
-          <p style={eyebrow}>{automotiveText(lang, "DIRECT ANSWER")}</p>
-          <h2 id="auto-direct-title" style={directTitle}>{automotiveText(lang, "What defines the correct automotive filter?")}</h2>
-          <p style={directText}>{automotiveText(lang, "Correct automotive filtration starts with year, make, model, engine and protected system, then checks the operating environment, known reference, dimensions and application evidence. A cross-reference should not be accepted solely because a filter looks similar or shares one specification.")}</p>
+        <div style={contentWidth} className="automotiveEditorialIntro">
+          <div>
+            <p style={eyebrow}>{automotiveText(lang, "DIRECT ANSWER")}</p>
+            <h2 id="auto-direct-title" style={directTitle}>{automotiveText(lang, "What defines the correct automotive filter?")}</h2>
+          </div>
+          <div>
+            <p style={directText}>{automotiveText(lang, "Correct automotive filtration starts with year, make, model, engine and protected system, then checks the operating environment, known reference, dimensions and application evidence. A cross-reference should not be accepted solely because a filter looks similar or shares one specification.")}</p>
+            <p className="automotiveScope" style={directText}>{automotiveText(lang, "Fuel technology scope: gasoline and diesel fuel systems require their own approved filter designs. SYNTAPORE™ applies to verified diesel particulate applications, not every passenger-car fuel filter. A catalogue cross-reference must be confirmed before installation.")}</p>
+          </div>
         </div>
       </section>
 
@@ -141,19 +165,19 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
           <p style={eyebrow}>{automotiveText(lang, "VEHICLE DUTY PROFILE")}</p>
           <h2 id="duty-title" style={sectionTitle}>{automotiveText(lang, "The same platform can live a very different service life.")}</h2>
           <p style={wideText}>{automotiveText(lang, "A commuter vehicle, delivery van and service fleet can share components while accumulating contamination under very different operating conditions.")}</p>
-          <div style={grid}>{operatingConditions.map(([title, text]) => <article key={title} style={card}><h3 style={cardTitle}>{automotiveText(lang, title)}</h3><p style={bodyText}>{automotiveText(lang, text)}</p></article>)}</div>
+          <div style={grid} className="miningRiskGrid">{operatingConditions.map(([title, text]) => <article key={title} style={card} className="miningRiskCard"><h3 style={cardTitle}>{automotiveText(lang, title)}</h3><p style={bodyText}>{automotiveText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={applicationSection} aria-labelledby="applications-title">
-        <div style={applicationGrid}>
+        <div style={applicationGrid} className="miningEquipmentGrid">
           <div>
             <p style={eyebrow}>{automotiveText(lang, "AUTOMOTIVE APPLICATIONS")}</p>
             <h2 id="applications-title" style={sectionTitle}>{automotiveText(lang, "One light-duty market. Multiple operating profiles.")}</h2>
             <p style={wideText}>{automotiveText(lang, "Vehicle class alone does not resolve the filtration requirement. Engine, system configuration and operating profile determine the application path.")}</p>
-            <div role="list" aria-label="Automotive applications" style={applicationList}>{applications.map((asset) => <div role="listitem" key={asset} style={applicationRow}><span style={applicationName}>{automotiveText(lang, asset)}</span></div>)}</div>
+            <div role="list" aria-label={automotiveText(lang, "Automotive and light-duty applications")} style={applicationList}>{applications.map((asset) => <div role="listitem" key={asset} style={applicationRow}><span style={applicationName}>{automotiveText(lang, asset)}</span></div>)}</div>
           </div>
-          <div><img src="/images/autos-02.avif" alt="Automotive and light-duty vehicle applications" style={applicationImage} /></div>
+          <div><img src="/images/autos-02.avif" alt={automotiveText(lang, "Automotive and light-duty vehicles in daily use")} style={applicationImage} /></div>
         </div>
       </section>
 
@@ -161,11 +185,11 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{automotiveText(lang, "PROTECTION PATHWAYS")}</p>
           <h2 id="path-title" style={sectionTitle}>{automotiveText(lang, "Identify the contamination path before selecting the replacement filter.")}</h2>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{automotiveText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{automotiveText(lang, source)}</strong><p style={smallText}>{automotiveText(lang, detail)}</p></div><div style={dividerLine} /><div><span style={smallLabel}>{automotiveText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{automotiveText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{automotiveText(lang, "ELIMFILTERS PROTECTION PATH")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{automotiveText(lang, "EXPLORE →")}</span></Link></article>)}</div>
+          <div className="miningPathwayFlow" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={source} style={pathwayCard} className="miningPathwayRow"><div><span style={smallLabel}>{automotiveText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{automotiveText(lang, source)}</strong><p style={smallText}>{automotiveText(lang, detail)}</p></div><div><span style={smallLabel}>{automotiveText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{automotiveText(lang, system)}</strong></div><div><span style={smallLabel}>{automotiveText(lang, "WORKSHOP SERVICE CHECK")}</span><p style={smallText}>{automotiveText(lang, serviceChecks[technology])}</p></div><Link href={href} style={technologyLink} className="miningTechnologyCell"><span style={smallLabelYellow}>{automotiveText(lang, "ELIMFILTERS PROTECTION PATH")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{automotiveText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
-      <section style={principleSection}><div style={principle}><span style={principleLabel}>{automotiveText(lang, "AUTOMOTIVE ENGINEERING PRINCIPLE")}</span><p style={principleText}>{automotiveText(lang, "Year, make and model identify the vehicle family; engine, system configuration and application evidence determine whether the filter is actually correct.")}</p></div></section>
+      <section style={principleSection}><div style={principle} className="automotivePrinciple"><span style={principleLabel}>{automotiveText(lang, "AUTOMOTIVE ENGINEERING PRINCIPLE")}</span><p style={principleText}>{automotiveText(lang, "Year, make and model identify the vehicle family; engine, system configuration and application evidence determine whether the filter is actually correct.")}</p></div></section>
 
       <IndustryFilterCarousel dutyClass="LD" industryName="Automotive" lang={lang} />
 
@@ -173,7 +197,18 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{automotiveText(lang, "SERVICE ACCURACY")}</p>
           <h2 id="impact-title" style={sectionTitle}>{automotiveText(lang, "Protect the vehicle by getting the application right before the service starts.")}</h2>
-          <div style={impactGrid}>{outcomes.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{automotiveText(lang, title)}</h3><p style={bodyText}>{automotiveText(lang, text)}</p></article>)}</div>
+          <div style={impactGrid} className="miningStakesGrid">{outcomes.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{automotiveText(lang, title)}</h3><p style={bodyText}>{automotiveText(lang, text)}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section style={section} aria-labelledby="automotive-roles-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>{automotiveText(lang, "WORKSHOP AND FLEET SERVICE RESPONSIBILITIES")}</p>
+          <h2 id="automotive-roles-title" style={sectionTitle}>{automotiveText(lang, "Four decisions connecting the driver, workshop and fleet engineer.")}</h2>
+          <p style={wideText}>{automotiveText(lang, "Reliable service requires correct vehicle identification, part verification, contamination control and documented post-service inspection—not a match based on appearance alone.")}</p>
+          <div style={grid} className="miningRiskGrid">
+            {automotiveServiceRoles.map(([role, detail]) => <article key={role} style={card} className="miningRiskCard"><h3 style={cardTitle}>{automotiveText(lang, role)}</h3><p style={bodyText}>{automotiveText(lang, detail)}</p></article>)}
+          </div>
         </div>
       </section>
 
@@ -181,7 +216,7 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{automotiveText(lang, "FROM VEHICLE TO PART")}</p>
           <h2 id="decision-title" style={sectionTitle}>{automotiveText(lang, "Resolve the automotive application in five decisions.")}</h2>
-          <div style={decisionGrid}>{[
+          <div style={decisionGrid} className="miningDecisionGrid">{[
             ['Vehicle', 'Confirm year, make, model and vehicle class.'],
             ['Engine', 'Identify engine, fuel type and relevant system configuration.'],
             ['Duty', 'Define urban, highway, fleet and environmental exposure.'],
@@ -203,13 +238,13 @@ export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
         <div style={contentWidth}>
           <p style={eyebrow}>{automotiveText(lang, "AUTOMOTIVE FILTRATION QUESTIONS")}</p>
           <h2 id="faq-title" style={sectionTitle}>{automotiveText(lang, "What vehicle owners, service teams and fleet managers need to know.")}</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{automotiveText(lang, q)}</h3><p style={faqAnswer}>{automotiveText(lang, a)}</p></article>)}</div>
+          <div style={faqList} className="miningFaqGrid">{questions.map(([q, a]) => <article key={q} style={faqItem} className="miningFaqItem"><h3 style={faqQuestion}>{automotiveText(lang, q)}</h3><p style={faqAnswer}>{automotiveText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
-        <div style={conversionGrid}>
-          <div><p style={eyebrow}>{automotiveText(lang, "HAVE A VEHICLE OR PART NUMBER?")}</p><h2 style={conversionTitle}>{automotiveText(lang, "Identify the correct filtration path before the service decision becomes a mismatch.")}</h2><p style={conversionText}>{automotiveText(lang, "Send the year, make, model, engine, protected system and any known OEM or current filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{automotiveText(lang, "IDENTIFY MY VEHICLE PROTECTION PATH")}</Link></div>
+        <div style={conversionGrid} className="miningConversionGrid">
+          <div><p style={eyebrow}>{automotiveText(lang, "HAVE A VEHICLE OR PART NUMBER?")}</p><h2 style={conversionTitle}>{automotiveText(lang, "Identify the correct filtration path before the service decision becomes a mismatch.")}</h2><p style={conversionText}>{automotiveText(lang, "Provide vehicle year, make, model, VIN or engine code, fuel type, exact filter position, OEM or installed reference, measurements if required, vehicle duty and service history.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{automotiveText(lang, "IDENTIFY MY VEHICLE PROTECTION PATH")}</Link></div>
           <div style={conversionSecondary}><div><p style={eyebrow}>{automotiveText(lang, "ALREADY HAVE A REFERENCE?")}</p><h3 style={conversionSubTitle}>{automotiveText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{automotiveText(lang, "FIND MY FILTER")}</a></div><div style={dividerLine} /><div><p style={eyebrow}>{automotiveText(lang, "SERVE AUTOMOTIVE CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{automotiveText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{automotiveText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
