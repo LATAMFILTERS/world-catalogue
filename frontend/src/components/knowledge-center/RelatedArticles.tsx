@@ -20,7 +20,7 @@ export interface RelatedArticlesProps {
 export default function RelatedArticles({
   items,
   title = 'RELATED TOPICS',
-  minColumnWidth = '220px',
+  minColumnWidth = '320px',
 }: RelatedArticlesProps) {
   if (items.length === 0) return null;
 
@@ -40,17 +40,25 @@ export default function RelatedArticles({
       </p>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: `repeat(auto-fit, minmax(${minColumnWidth}, 1fr))`,
-        gap: '0.75rem',
+        gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${minColumnWidth}), 1fr))`,
+        gap: '1rem',
+        alignItems: 'stretch',
       }}>
         {items.map((item) => (
-          <Link key={item.href} href={item.href} style={{ textDecoration: 'none' }}>
+          <Link key={item.href} href={item.href} style={{ textDecoration: 'none', display: 'block', height: '100%', minWidth: 0 }}>
             <motion.div
               whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }}
               style={{
                 border: '1px solid rgba(255,255,255,0.07)',
-                padding: '1.1rem',
-                transition: 'border-color 0.2s',
+                padding: '1.25rem',
+                minHeight: '154px',
+                height: '100%',
+                boxSizing: 'border-box',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                background: 'rgba(255,255,255,0.018)',
+                transition: 'border-color 0.2s, background 0.2s',
               }}
             >
               {item.label && (
@@ -68,18 +76,20 @@ export default function RelatedArticles({
               <p style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 600,
-                fontSize: '0.9rem',
+                fontSize: 'clamp(1rem, 1.1vw, 1.15rem)',
+                overflowWrap: 'break-word',
+                textAlign: 'left',
                 color: '#fff',
                 marginBottom: item.description || item.meta ? '0.25rem' : '0',
-                lineHeight: 1.25,
+                lineHeight: 1.4,
               }}>
                 {item.title}
               </p>
               {item.description && (
                 <p style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.75rem',
-                  color: 'rgba(255,255,255,0.4)',
+                  fontSize: '0.84rem',
+                  color: 'rgba(255,255,255,0.68)',
                   lineHeight: 1.4,
                 }}>
                   {item.description}
@@ -88,8 +98,8 @@ export default function RelatedArticles({
               {!item.description && item.meta && (
                 <p style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.72rem',
-                  color: 'rgba(255,255,255,0.3)',
+                  fontSize: '0.82rem',
+                  color: 'rgba(255,255,255,0.60)',
                 }}>
                   {item.meta}
                 </p>
