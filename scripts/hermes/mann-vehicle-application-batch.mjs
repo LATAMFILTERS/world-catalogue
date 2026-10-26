@@ -110,7 +110,28 @@ await db.query('BEGIN READ ONLY');
 // 2) ld_vehicle_applications.source_sku when the SKU has exactly ONE distinct
 //    source code (origin master/external_recovered). SKUs with 2+ source codes
 //    are mixed imports (e.g. EL30816 = HU816X + HU816ZKIT) and go to review.
-const { rows: targets } = await db.query(`
+// --from-classification <ld-base-classification json> [--class MANN_SAME_DIGITS]: targets are the SKUs of that class
+// (European origin, a MANN code with the SKU's last four digits). The MANN code is taken RAW from competitor/oem codes
+// (keeps "/" and spaces for the official URL); 2+ distinct same-digit MANN codes -> MULTIPLE_MANN_CODES (held).
+let classTargets = null;
+if (args['from-classification']) {
+  const cls = String(args.class || 'MANN_SAME_DIGITS');
+  const picked = JSON.parse(fs.readFileSync(args['from-classification'], 'utf8')).rows
+    .filter((r) => r.cls === cls && (!prefix || r.sku.startsWith(prefix)) && (!after || r.sku > after));
+  const normCode = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const { rows: raw } = await db.query(`SELECT sku, competitor_codes, oem_codes, codigo_base FROM public.elimfilters_catalog WHERE sku = ANY($1::text[])`, [picked.map((r) => r.sku)]);
+  const bySku = new Map(raw.map((r) => [r.sku, r]));
+  classTargets = picked.slice(offset, offset + limit).map((r) => {
+    const row = bySku.get(r.sku) || {};
+    const pool = [...(row.competitor_codes || []), ...(row.oem_codes || [])].map((e) => (e && typeof e === 'object' ? e.code || e.part_number || e.reference : e));
+    if (row.codigo_base) pool.push(row.codigo_base);
+    const want = new Set(r.same_digit_mann);
+    const rawCodes = [...new Map(pool.filter((c) => want.has(normCode(c))).map((c) => [normCode(c), String(c).trim()])).values()];
+    if (rawCodes.length === 1) return { sku: r.sku, mann_code: rawCodes[0], code_source: `CLASSIFICATION_${cls}`, source_codes: 1 };
+    return { sku: r.sku, mann_code: null, code_source: rawCodes.length > 1 ? 'MULTIPLE_MANN_CODES' : 'MANN_CODE_NOT_FOUND_RAW', source_codes: rawCodes.length };
+  });
+}
+const { rows: dbTargets } = classTargets ? { rows: [] } : await db.query(`
   WITH rel AS (
     SELECT v.elimfilters_sku AS sku, min(btrim(v.source_sku)) AS code,
            count(DISTINCT ld_catalog.norm_part(v.source_sku)) AS k
@@ -138,6 +159,7 @@ const { rows: targets } = await db.query(`
     AND ($4::text IS NULL OR c.sku > $4::text)
     AND ($5::text[] IS NULL OR c.sku = ANY($5::text[]))
   ORDER BY c.sku OFFSET $1 LIMIT $2`, [offset, limit, prefix, after, only]);
+const targets = classTargets || dbTargets;
 await db.query('ROLLBACK');
 await db.end();
 
