@@ -78,11 +78,6 @@
       "count": 1
     }
   },
-  "src/app/knowledge-center/engineering-reference/page.tsx": {
-    "react/no-unescaped-entities": {
-      "count": 1
-    }
-  },
   "src/app/knowledge-center/fleet-optimization/asset-protection-system/page.tsx": {
     "react/no-unescaped-entities": {
       "count": 14
