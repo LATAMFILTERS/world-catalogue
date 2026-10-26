@@ -20,6 +20,7 @@ import { createRequire } from 'node:module';
 import pg from 'pg';
 import { loadPublicCatalogConfig, fetchFramPartBundle } from './lib/fram-usa-smtp-client.mjs';
 import { originGroupOf } from './ld-origin-group.mjs';
+import { norm, last4, codeOf, framBase, currentParts, matchesCurrent, yearSet } from './lib/ld-fram-base.mjs';
 
 const require = createRequire(import.meta.url);
 const { splitCrossReferences, selectAutomotiveApplications } = require('../../lib/knowledge-governance/fram-usa-ld-enrichment');
@@ -33,10 +34,6 @@ const delayMs = Number(args['delay-ms'] || 500);
 const prefix = args.prefix ? String(args.prefix).toUpperCase() : null;
 const after = args.after ? String(args.after).toUpperCase() : null;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const norm = (s) => String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
-const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
-const codeOf = (e) => (e && typeof e === 'object' ? e.code || e.part_number || e.reference : e);
-const makerOf = (e) => (e && typeof e === 'object' ? e.manufacturer || e.brand || '' : '');
 const FAMILY = { EA3: /air filter/i, EC3: /cabin/i, EL3: /oil filter/i, EF3: /fuel/i };
 const notCabin = (fam, t) => fam !== 'EA3' || !/cabin/i.test(t);
 
@@ -51,7 +48,7 @@ try {
     WITH rel AS (
       SELECT elimfilters_sku sku, min(btrim(source_sku)) code, count(DISTINCT upper(regexp_replace(source_sku,'[^A-Za-z0-9]','','g'))) k
       FROM ld_catalog.ld_vehicle_applications WHERE source_origin='FRAM_LD_MULTI_REGION' AND nullif(btrim(source_sku),'') IS NOT NULL GROUP BY 1)
-    SELECT c.sku, c.canonical_source_brand, c.canonical_source_code, c.canonical_source_status,
+    SELECT c.sku, c.codigo_base, c.canonical_source_brand, c.canonical_source_code, c.canonical_source_status,
            i.canonical_part_number AS identity_fram, rel.code AS rel_code, rel.k AS rel_k,
            c.competitor_codes, c.oem_codes, c.vehicle_applications, md5(c.vehicle_applications::text) AS vehicle_db_hash
     FROM public.elimfilters_catalog c
@@ -65,31 +62,6 @@ try {
       AND ($2::text IS NULL OR c.sku > $2::text)
     ORDER BY c.sku LIMIT $3`, [prefix, after, limit]));
 } finally { await db.query('ROLLBACK').catch(() => {}); await db.end(); }
-
-function framBase(t) {
-  if (/^FRAM$/i.test(t.canonical_source_brand || '') && t.canonical_source_code) return [t.canonical_source_code, 'CANONICAL_SOURCE'];
-  if (t.identity_fram) return [t.identity_fram, 'CANONICAL_IDENTITY'];
-  if (t.rel_code && Number(t.rel_k) === 1) return [t.rel_code, 'RELATIONAL_SOURCE_SKU'];
-  const fram = [...(t.competitor_codes || []), ...(t.oem_codes || [])].filter((e) => /^FRAM\b/i.test(makerOf(e)) && last4(codeOf(e)) === last4(t.sku));
-  const distinct = [...new Set(fram.map((e) => norm(codeOf(e))))];
-  if (distinct.length === 1) return [codeOf(fram[0]), 'FRAM_COMPETITOR_CODE'];
-  return [null, distinct.length > 1 ? 'MULTIPLE_FRAM_CODES' : 'NONE'];
-}
-
-// Current payload -> {make, years:Set, text}
-function currentParts(e) {
-  const fam = String(e.model_family || '').trim();
-  let year = String(e.year || '').trim();
-  let model = String(e.model || '').trim();
-  if (!year && /^(19|20)\d{2}$/.test(fam)) year = fam;
-  const m = /^((?:19|20)\d{2})\s+(.+)$/.exec(model); if (!year && m) { year = m[1]; model = m[2]; }
-  const years = new Set();
-  const range = /((?:19|20)\d{2})\s*[-–]\s*((?:19|20)\d{2})/.exec(`${year} ${e.year_range || ''}`);
-  if (range) for (let y = Number(range[1]); y <= Number(range[2]) && y - Number(range[1]) < 60; y++) years.add(String(y));
-  else if (/^(19|20)\d{2}$/.test(year)) years.add(year);
-  const text = norm([/^(19|20)\d{2}$/.test(fam) ? '' : fam, e.model_type, model].join(' ').replace(/\([^)]*\)/g, ' '));
-  return { make: norm(String(e.make || '').replace(/\([^)]*\)/g, ' ')), years, text };
-}
 
 const config = await loadPublicCatalogConfig();
 const runId = new Date().toISOString().replace(/[:.]/g, '-');
@@ -123,10 +95,7 @@ for (const [i, t] of targets.entries()) {
   row.origin = origin;
   const cur = (Array.isArray(t.vehicle_applications) ? t.vehicle_applications : []).map(currentParts);
   row.current_rows = cur.length;
-  row.matched_apps = apps.filter((a) => {
-    const mk = norm(a.make), md = norm(a.model);
-    return md.length >= 2 && cur.some((c) => (c.make === mk || c.make.startsWith(mk) || mk.startsWith(c.make)) && c.text.includes(md) && (!c.years.size || c.years.has(String(a.year))));
-  }).length;
+  row.matched_apps = apps.filter((a) => matchesCurrent({ make: a.make, model: a.model, years: yearSet(a.year) }, cur)).length;
   const skuOe = new Set([...(t.oem_codes || [])].map((e) => norm(codeOf(e))).filter((x) => x.length >= 4));
   const split = splitCrossReferences(bundle.cross_references, bundle.part.part_number);
   const pageOe = [...split.oem_candidates, ...split.unresolved_cross_candidates].map((o) => norm(o.part_number)).filter((x) => x.length >= 4);
