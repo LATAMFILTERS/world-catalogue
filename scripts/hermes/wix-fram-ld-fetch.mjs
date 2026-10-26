@@ -76,7 +76,7 @@ const stylesSeen = {}; const specLabels = {};
 for (const [i, t] of targets.entries()) {
   const [code, baseSource] = framBase(t);
   const fam = t.sku.slice(0, 3);
-  const row = { sku: t.sku, fram_code: code, base_source: baseSource, vehicle_db_hash: t.vehicle_db_hash,
+  const row = { sku: t.sku, codigo_base: t.codigo_base, fram_code: code, base_source: baseSource, vehicle_db_hash: t.vehicle_db_hash,
     current_vehicle_authority: t.current_vehicle_authority || null, eligible: false, reason: null };
   const done = () => { rows.push(row); console.log(`[${i + 1}/${targets.length}] ${t.sku} ${code || '-'} -> ${row.wix_part || '-'}\t${row.eligible ? 'ELIGIBLE' : 'HOLD'}\t${row.reason}`); if ((i + 1) % 25 === 0) save(); };
   if (!code) { row.reason = baseSource === 'MULTIPLE_FRAM_CODES' ? 'MULTIPLE_FRAM_CODES' : 'NO_FRAM_BASE_CODE'; done(); continue; }
@@ -146,6 +146,9 @@ const eligible = rows.filter((r) => r.eligible);
 console.log(JSON.stringify({ run_dir: runDir, processed: rows.length, eligible: eligible.length, hold: rows.length - eligible.length,
   hold_reasons: rows.filter((r) => !r.eligible).reduce((m, r) => { const k = String(r.reason).split(':')[0]; m[k] = (m[k] || 0) + 1; return m; }, {}),
   eligible_wix_listed_in_sku: eligible.filter((r) => r.wix_listed_in_sku).length,
+  no_base_codigo_shapes: Object.fromEntries(Object.entries(rows.filter((r) => r.reason === 'NO_FRAM_BASE_CODE').reduce((m, r) => {
+    const k = String(r.codigo_base || '(null)').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/\d/g, '9').replace(/9+/g, '9'); m[k] = (m[k] || 0) + 1; return m; }, {}))
+    .sort((a, b) => b[1] - a[1]).slice(0, 20)),
   base_sources: rows.reduce((m, r) => { m[r.base_source] = (m[r.base_source] || 0) + 1; return m; }, {}),
   eligible_with_current_mann_evidence: eligible.filter((r) => r.current_vehicle_authority === 'MANN_OFFICIAL_CATALOG').length,
   wix_styles: stylesSeen, spec_labels: specLabels, summary: path.join(runDir, 'summary.json') }, null, 2));
