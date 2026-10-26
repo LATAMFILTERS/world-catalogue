@@ -11,7 +11,7 @@ const faqs = [
   ['What is surface loading in air filtration?', 'Surface-oriented loading keeps a greater share of contamination near the upstream face of the media. Its value depends on media structure, airflow, contaminant characteristics and available filtration area.'],
   ['What is depth loading in air filtration?', 'Depth loading distributes more contamination through the thickness of the filtration structure. It can provide useful contaminant capacity in some duties, but restriction behavior depends on the specific media and application.'],
   ['What causes dust downstream of an engine air filter?', 'Possible causes include damaged or incorrectly seated elements, compromised seals, housing defects, incorrect part selection or contamination introduced during service.'],
-  ['What does ISO 5011 mean for MACROCORE™?', 'ISO 5011 provides test methods for engine air cleaners and filter elements. Numeric performance claims remain tied to validated data for the specific element or assembly.'],
+  ['What does ISO 5011 mean for MACROCORE™?', 'ISO 5011 provides test methods for engine air cleaners and filter elements.'],
 ] as const;
 
 const positions = ['Primary engine air filtration','Secondary / safety air filtration where specified','Heavy-duty air-cleaner assemblies in dusty environments','Applications where airflow, restriction and sealing must be evaluated together'];
@@ -102,7 +102,7 @@ export function MacrocoreStablePage() {
           </div>
 
           <div className={styles.twoColumnNotes}>
-            <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Fine-fiber capture"} /></h3><p className={styles.body}><ReviewedText text={"Finer fiber structures can increase interception opportunities for small airborne particles. Specific MACROCORE™ media construction must be confirmed from validated product data."} /></p></article>
+            <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Fine-fiber capture"} /></h3><p className={styles.body}><ReviewedText text={"Finer fiber structures can increase interception opportunities for small airborne particles."} /></p></article>
             <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Surface-oriented loading"} /></h3><p className={styles.body}><ReviewedText text={"Keeping more contamination near the upstream surface can reduce deep particle penetration. Its value depends on airflow, dust characteristics and available filtration area."} /></p></article>
             <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Depth loading"} /></h3><p className={styles.body}><ReviewedText text={"Depth-oriented media distributes contamination through more of the media thickness. Restriction behavior depends on fiber structure, contaminant distribution and airflow."} /></p></article>
             <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Restriction control"} /></h3><p className={styles.body}><ReviewedText text={"Capture efficiency alone does not define a successful engine-air filter. Particle control, contaminant capacity and airflow resistance must remain balanced through the service cycle."} /></p></article>
@@ -163,8 +163,7 @@ export function MacrocoreStablePage() {
       <section className={styles.band}><div className={styles.inner}>
         <p className={styles.eyebrow}><ReviewedText text={"TECHNICAL BASIS"} /></p><h2 className={styles.h2}><ReviewedText text={"Technical reference"} /></h2>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"ISO 5011 context"} /></h3><p className={styles.body}><ReviewedText text={"Engine air-cleaner performance is commonly evaluated using ISO 5011 methods. Published efficiency, dust-capacity and restriction values should remain tied to validated product data."} /></p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Claim governance"} /></h3><p className={styles.body}><ReviewedText text={"No universal micron rating, fiber diameter, efficiency percentage, manufacturing process or service-life multiplier is assigned across MACROCORE™ without validated product evidence."} /></p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"ISO 5011 context"} /></h3><p className={styles.body}><ReviewedText text={"Engine air-cleaner performance is commonly evaluated using ISO 5011 methods."} /></p></article>
         </div>
       </div></section>
 
@@ -175,7 +174,7 @@ export function MacrocoreStablePage() {
 
       <section className={styles.band}><div className={styles.inner}>
         <p className={styles.eyebrow}><ReviewedText text={"SYSTEM INTEGRATION"} /></p><h2 className={styles.h2}><ReviewedText text={"Air Intake & Airflow Protection"} /></h2>
-        <div className={styles.systemGrid}><div><p className={styles.lead}><ReviewedText text={"Air Intake & Airflow Protection controls contamination entering the engine and manages the clean-air path required to support equipment performance and component life."} /></p><Link className={styles.systemButton} href="/systems/air-intake/"><ReviewedText text={"EXPLORE PROTECTION SYSTEM"} /></Link></div><p className={styles.bodyWide}><ReviewedText text={"MACROCORE™ provides primary and secondary engine-air filtration within this architecture. Final selection resolves the protected asset, contamination mechanism, airflow requirement, duty cycle, housing interface and validated product evidence."} /></p></div>
+        <div className={styles.systemGrid}><div><p className={styles.lead}><ReviewedText text={"Air Intake & Airflow Protection controls contamination entering the engine and manages the clean-air path required to support equipment performance and component life."} /></p><Link className={styles.systemButton} href="/systems/air-intake/"><ReviewedText text={"EXPLORE PROTECTION SYSTEM"} /></Link></div><p className={styles.bodyWide}><ReviewedText text={"MACROCORE™ provides primary and secondary engine-air filtration within this architecture. Final selection resolves the protected asset, contamination mechanism, airflow requirement, duty cycle and housing interface."} /></p></div>
       </div></section>
 
       <section className={styles.ctaSection}><div className={styles.inner}>

@@ -793,7 +793,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Does DEWATIS™ remove both free and dissolved water?', 'The family covers water-removal architectures for different water states, but the selected mechanism must be qualified for the specific oil and water condition. A method effective on free water is not automatically suitable for dissolved moisture.'],
           ['Why can water return after treatment?', 'Water can re-enter through condensation, coolers, seals, washdown, reservoir breathing or process ingress. The source must be identified and controlled or the moisture condition can rebound after successful treatment.'],
           ['Is vacuum dehydration always required?', 'No. Vacuum dehydration is one treatment path. The correct method depends on whether water is free, emulsified or dissolved, along with oil chemistry, viscosity, temperature, water load and the required outlet condition.'],
-          ['Can one universal final water value be assigned to DEWATIS™?', 'No. The acceptable moisture condition depends on the fluid, equipment, operating temperature and project requirement. Numeric limits must be tied to validated product or application evidence.'],
+          ['Can one universal final water value be assigned to DEWATIS™?', 'No. The acceptable moisture condition depends on the fluid, equipment, operating temperature and project requirement.'],
           ['Does DEWATIS™ mean ELIMFILTERS supplies the dehydration machine?', 'No. DEWATIS™ defines the water-removal treatment family and the validated replacement media or element scope. Vacuum-dehydration machines, pumps, skids and controls shown in application context are not presented as ELIMFILTERS-manufactured equipment unless separately approved.'],
         ],
       },
@@ -966,7 +966,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         knowledgeCenterSlug: 'ip-aquvexis-depth-filtration',
         customFaqs: [
           ['What does AQUVEXIS™ Depth Filtration remove?', 'It addresses suspended particulate in industrial water by capturing solids through the thickness of a porous medium. The required element depends on the feed solids, flow, pressure-drop budget and required downstream condition.'],
-          ['Can a nominal micron rating define the complete filter performance?', 'No. Removal efficiency, dirt capacity and differential-pressure behavior are product-specific and require validated test evidence rather than a nominal size description alone.'],
+          ['Can a nominal micron rating define the complete filter performance?', 'No. Removal efficiency, dirt capacity and differential-pressure behavior are product-specific and cannot be described by a nominal size alone.'],
           ['Where is depth filtration used in a treatment train?', 'It can be used as standalone particulate control or as pretreatment ahead of adsorption, membrane, ion-exchange or other water-treatment stages that are sensitive to suspended solids.'],
           ['What does rapid plugging usually indicate?', 'Rapid restriction can indicate higher-than-expected solids loading, an undersized element area, an unsuitable media grade or a changed feed-water condition. The cause should be confirmed before simply moving to a finer medium.'],
         ],
