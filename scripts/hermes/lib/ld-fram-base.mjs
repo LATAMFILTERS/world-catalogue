@@ -9,7 +9,7 @@ export const makerOf = (e) => (e && typeof e === 'object' ? e.manufacturer || e.
 
 // FRAM base code, in order: canonical source FRAM; LD canonical identity FRAM ACTIVE; single relational
 // source_sku from FRAM_LD_MULTI_REGION; FRAM-shaped codigo_base with the SKU last four digits; exactly one FRAM code
-// in competitor/oem codes with the SKU last four digits.
+// in competitor/oem codes with FRAM shape and the SKU last four digits (glued strings like CA8AF1128F are ignored).
 export const FRAM_SHAPE = /^(CA|CF|CH|PH|XG|TG|HM|HP|HPG|PS|CS|FT|FS|FPG|PG|G|C|P)\d{1,6}[A-Z]{0,3}$/;
 export function framBase(t) {
   if (/^FRAM$/i.test(t.canonical_source_brand || '') && t.canonical_source_code) return [t.canonical_source_code, 'CANONICAL_SOURCE'];
@@ -18,7 +18,7 @@ export function framBase(t) {
   // Most LD SKUs carry the FRAM code as codigo_base (e.g. EA30016 -> CA16). Accepted only with FRAM shape and the
   // SKU's last four digits; the WIX/FRAM lookup must still confirm it as a FRAM part (manufacturer FRAM, exact code).
   if (FRAM_SHAPE.test(norm(t.codigo_base)) && last4(t.codigo_base) === last4(t.sku)) return [t.codigo_base, 'CODIGO_BASE_FRAM_SHAPE'];
-  const fram = [...(t.competitor_codes || []), ...(t.oem_codes || [])].filter((e) => /^FRAM\b/i.test(makerOf(e)) && last4(codeOf(e)) === last4(t.sku));
+  const fram = [...(t.competitor_codes || []), ...(t.oem_codes || [])].filter((e) => /^FRAM\b/i.test(makerOf(e)) && FRAM_SHAPE.test(norm(codeOf(e))) && last4(codeOf(e)) === last4(t.sku));
   const distinct = [...new Set(fram.map((e) => norm(codeOf(e))))];
   if (distinct.length === 1) return [codeOf(fram[0]), 'FRAM_COMPETITOR_CODE'];
   return [null, distinct.length > 1 ? 'MULTIPLE_FRAM_CODES' : 'NONE'];
