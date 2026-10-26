@@ -65,7 +65,7 @@ export default function EngineeringReferencePage() {
 
       <section
         style={{
-          minHeight: 'clamp(500px, 52vw, 620px)',
+          minHeight: 'clamp(420px, 39vw, 540px)',
           position: 'relative',
           overflow: 'hidden',
           display: 'flex',
@@ -75,11 +75,11 @@ export default function EngineeringReferencePage() {
           backgroundColor: '#050505',
           backgroundImage: heroBackgroundImage('/images/oil-instalado.avif'),
           backgroundSize: '100% 100%, cover',
-          backgroundPosition: 'center, center',
+          backgroundPosition: 'center, 52% 42%',
           backgroundRepeat: 'no-repeat, no-repeat',
         }}
       >
-        <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
+        <div style={{ maxWidth: '1520px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
           <motion.h1
             initial={false}
             animate={{ opacity: 1, y: 0 }}
@@ -89,8 +89,8 @@ export default function EngineeringReferencePage() {
               fontWeight: 700,
               letterSpacing: '-0.055em',
               lineHeight: 0.88,
-              fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
-              maxWidth: '1120px',
+              fontSize: 'clamp(2.7rem, 5.3vw, 5.6rem)',
+              maxWidth: '1300px',
               margin: 0,
               textTransform: 'uppercase',
               textShadow: '0 4px 22px rgba(0,0,0,0.45)',
