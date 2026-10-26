@@ -117,8 +117,8 @@
     "standards": "Standards",
     "fleetOpt": "Fleet Optimization",
     "locationText": "Frisco, Texas",
-    "kleoText": "© 2015–2026 Kleo Technologies",
-    "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | Intelligence and Engineering in Filtration",
+    "kleoText": "© 2015–2026 Kleo Technology LLC",
+    "elimfiltersCopyright": "© 2015–2026 Kleo Technology LLC | Intelligence and Engineering in Filtration",
     "elimfiltersYear": "2015–2026",
     "aboutUs": "About Us",
     "products": "PRODUCTS",
@@ -174,7 +174,7 @@
     "heroLine_industrial": "Industrial",
     "heroLine_assets": "Assets.",
     "hero2": "through contamination control.",
-    "heroPositioning1": "ELIMFILTERS is not a filter company.",
+    "heroPositioning1": "Industrial filtration engineering focused on asset protection.",
     "heroPositioning2": "ELIMFILTERS is an Asset Protection Technology company.",
     "heroDesc": "Advanced contamination control systems engineered to reduce wear, minimize downtime, improve reliability, and extend the operational life of critical industrial equipment.",
     "heroSubHead": "Through contamination control across critical mechanical, hydraulic, fuel, lubrication, cooling, and air intake systems.",
@@ -250,7 +250,7 @@
     ],
     "whyTitle1": "ASSET PROTECTION",
     "whyTitle2": "TECHNOLOGY",
-    "whyP1": "ELIMFILTERS® is not a filter company. It is an ",
+    "whyP1": "ELIMFILTERS®: industrial filtration engineering focused on asset protection. An ",
     "whyP1hl": "Asset Protection Technology",
     "whyP1after": " company, engineering systems that control contamination, prevent degradation, and protect the value of critical industrial assets.",
     "whyP2": "Every ELIMFILTERS technology addresses a defined contamination-control function within a protected system. The objective is equipment reliability and asset protection, not unsupported universal performance claims.",
@@ -356,7 +356,7 @@
         "a": "Most industrial hydraulic systems require ISO 17/15/12 cleanliness to protect proportional valve spools. Critical systems may specify ISO 15/13/10. ELIMFILTERS® contamination control strategies target measured cleanliness codes — the ISO 4406 standard — not product brands."
       },
       {
-        "q": "Why is ELIMFILTERS not a filter company?",
+        "q": "Why does ELIMFILTERS define itself as industrial filtration engineering focused on asset protection?",
         "a": "ELIMFILTERS engineers contamination control systems, not commodity filters. A filter is a component. An asset protection system is a strategy — it defines contamination targets, selects the right technologies for each system domain, and measures performance over the equipment lifecycle. ELIMFILTERS operates at the system level."
       }
     ],
@@ -2510,6 +2510,7 @@
     "copyebd132a8_128": "Industrial dust and fume filtration for process-generated particulate, extraction systems and demanding production environments.",
     "copy3beec001_29": "Gas Conditioning Technologies",
     "copy516aaf78_139": "Gas-stream conditioning for entrained liquid aerosols, droplets and free-liquid carryover in natural-gas and industrial process-gas duties.",
+    "copy1a3fac4e_244": "Gas-stream conditioning for entrained liquid aerosols, droplets and free-liquid carryover in natural-gas and industrial process-gas duties. Includes industrial compressed-air treatment: coalescing and separation elements for compressor systems.",
     "copyb64e1d14_31": "Fluid Conditioning Technologies",
     "copy95ab209f_126": "Industrial hydraulic- and lubrication-fluid conditioning for solid contamination, water and selected oil-degradation products.",
     "copyb42bdd9e_28": "Water Treatment Technologies",

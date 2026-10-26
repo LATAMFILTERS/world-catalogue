@@ -487,7 +487,7 @@ export default function Home() {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                   style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem', textAlign: 'justify' }}>
-                  {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company: we engineer systems that control contamination, prevent degradation, and protect the value of your critical industrial assets.')}
+                  {t('home.whyP1', 'ELIMFILTERS®: industrial filtration engineering focused on asset protection. An ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company: we engineer systems that control contamination, prevent degradation, and protect the value of your critical industrial assets.')}
                 </motion.p>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                   style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem', textAlign: 'justify' }}>

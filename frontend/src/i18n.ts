@@ -13,7 +13,7 @@ type TranslationTree = Record<string, unknown>;
 
 const GOVERNED_EN_OVERRIDES: Record<string, string> = {
   // Corporate positioning — governed by docs/brand/CLAIM_REGISTRY.md.
-  'home.whyP1': 'ELIMFILTERS® is not a filter company. It is an ',
+  'home.whyP1': 'ELIMFILTERS®: industrial filtration engineering focused on asset protection. An ',
   'home.whyP1after': ' company, engineering systems that control contamination, prevent degradation, and protect the value of critical industrial assets.',
   'home.ctaDealerTag': '// COUNTRY DISTRIBUTION',
   'home.ctaDealerTitle': 'BUILD ELIMFILTERS',
@@ -73,7 +73,7 @@ const GOVERNED_EN_OVERRIDES: Record<string, string> = {
 // Spanish counterparts of GOVERNED_EN_OVERRIDES. The legacy es bundle still carried the
 // retired quantitative, certification and absolute-performance claims.
 export const GOVERNED_ES_OVERRIDES: Record<string, string> = {
-  'home.whyP1': 'ELIMFILTERS® no es una empresa de filtros. Es una empresa de ',
+  'home.whyP1': 'ELIMFILTERS®: ingeniería en filtración industrial enfocada en la protección de activos. Una empresa de ',
   'home.whyP1after': ' que diseña sistemas para controlar la contaminación, prevenir la degradación y proteger el valor de los activos industriales críticos.',
   'home.ctaDealerTag': '// DISTRIBUCIÓN POR PAÍS',
   'home.ctaDealerTitle': 'DESARROLLE ELIMFILTERS',
@@ -131,7 +131,7 @@ export const GOVERNED_ES_OVERRIDES: Record<string, string> = {
 // Portuguese (pt-BR) counterparts of GOVERNED_EN_OVERRIDES; the legacy pt bundle carried the same
 // retired claims as the Spanish one.
 export const GOVERNED_PT_OVERRIDES: Record<string, string> = {
-  'home.whyP1': 'A ELIMFILTERS® não é uma empresa de filtros. É uma empresa de ',
+  'home.whyP1': 'ELIMFILTERS®: engenharia em filtração industrial focada na proteção de ativos. Uma empresa de ',
   'home.whyP1after': ' que projeta sistemas para controlar a contaminação, evitar a degradação e proteger o valor dos ativos industriais críticos.',
   'home.ctaDealerTag': '// DISTRIBUIÇÃO POR PAÍS',
   'home.ctaDealerTitle': 'DESENVOLVA A ELIMFILTERS',

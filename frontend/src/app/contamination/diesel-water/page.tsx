@@ -435,7 +435,7 @@ export default function DieselWaterContaminationPage() {
           </p>
 
           <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
-            <strong>Result:</strong> Fuel water stabilized at 150-200 ppm (control range). Zero injector failures in subsequent 18 months. Saved $50,000+ in prevented repairs and extended equipment lifespan by 3+ years.
+            <strong>Result:</strong> Fuel water stabilized at 150-200 ppm (control range). Zero injector failures in subsequent 18 months.
           </p>
         </motion.section>
 

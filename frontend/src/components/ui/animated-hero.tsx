@@ -63,7 +63,7 @@ export function AnimatedHero() {
             <div className="h-[2px] w-[60px] bg-[#FFF12D]/50 mx-auto mt-4 mb-2" />
 
             <div className="text-center mb-6">
-              <p className="font-semibold text-white/80" style={{ fontFamily: 'var(--font-inter)' }}>ELIMFILTERS is not a filter company.</p>
+              <p className="font-semibold text-white/80" style={{ fontFamily: 'var(--font-inter)' }}>Industrial filtration engineering focused on asset protection.</p>
               <p className="font-semibold text-[#FFF12D]" style={{ fontFamily: 'var(--font-inter)' }}>ELIMFILTERS is an Asset Protection Technology company.</p>
             </div>
 
