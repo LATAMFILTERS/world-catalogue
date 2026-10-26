@@ -283,6 +283,35 @@ export default function IndustrialProcessPage() {
           </div>
         </section>
 
+        <section id="industrial-element-gallery" style={section} aria-labelledby="industrial-gallery-title">
+          <div style={container}>
+            <p style={eyebrow}>INDUSTRIAL FILTER ELEMENT CONFIGURATIONS</p>
+            <h2 id="industrial-gallery-title" style={sectionTitle}>See the filter elements behind industrial process protection.</h2>
+            <p style={{ ...lead, maxWidth: 1060 }}>Explore representative element constructions and geometries. Final technology assignment, performance and equipment compatibility require technical validation.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%, 320px),1fr))', gap: 20, marginTop: 32 }}>
+              {[
+                { file: 'IMG_3179.jpg', label: 'Tall cylindrical pleated element', detail: 'Pleated medium with external support grid', width: 1206, height: 1534 },
+                { file: 'IMG_3180.jpg', label: 'Compact perforated cartridge', detail: 'Perforated cylindrical body and spring assembly', width: 1191, height: 1425 },
+                { file: 'IMG_3182.jpg', label: 'Metal-supported cylindrical element', detail: 'Perforated structure and machined end cap', width: 1199, height: 1322 },
+                { file: 'IMG_3183.jpg', label: 'Rectangular framed filter assembly', detail: 'Large-area framed construction with retention hardware', width: 1206, height: 1081 },
+                { file: 'IMG_3184.jpg', label: 'Box-style rectangular element', detail: 'Rigid enclosure with expanded metal support', width: 1206, height: 1243 },
+                { file: 'IMG_3186.jpg', label: 'Cylindrical pleated cartridge', detail: 'Pleated media with expanded metal support and polymer end caps', width: 1206, height: 1265 },
+              ].map((element) => (
+                <article key={element.file} style={{ border: '1px solid rgba(255,255,255,0.13)', background: '#0b0b0b', minWidth: 0 }}>
+                  <div style={{ aspectRatio: '1 / 1', background: '#e8e8e8', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', padding: 12 }}>
+                    <img src={`/images/industrial-process-elements/${element.file}`} alt={element.label} width={element.width} height={element.height} loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
+                  <div style={{ padding: '18px 20px 22px' }}>
+                    <h3 style={{ fontSize: '1.1rem', margin: '0 0 8px', fontWeight: 700, lineHeight: 1.3 }}>{element.label}</h3>
+                    <p style={{ ...bodyCopy, margin: 0 }}>{element.detail}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p style={{ ...bodyCopy, fontSize: '0.82rem', marginTop: 18 }}>Representative construction images; not an assertion of product availability, qualification, or certified performance.</p>
+          </div>
+        </section>
+
         <section style={{ ...section, background: '#050505' }} aria-labelledby="standards-title">
           <div style={container}>
             <p style={eyebrow}>STANDARDS & TEST GOVERNANCE</p>
