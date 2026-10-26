@@ -300,7 +300,7 @@ export default function IndustrialProcessPage() {
               ].map((element) => (
                 <article key={element.file} style={{ border: '1px solid rgba(255,255,255,0.13)', background: '#0b0b0b', minWidth: 0 }}>
                   <div style={{ aspectRatio: '1 / 1', background: '#e8e8e8', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', padding: 12 }}>
-                    <img src={`/images/industrial-process-elements/${element.file}`} alt={element.file.replace(".jpg", "")} width={element.width} height={element.height} loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'contain' }} />
+                    <img src={`/images/industrial-process-elements/${element.file}`} alt="" width={element.width} height={element.height} loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'contain' }} />
                   </div>
                   <div style={{ padding: '18px 20px 22px' }}>
                     <h3 style={{ fontSize: '1.1rem', margin: '0 0 8px', fontWeight: 700, lineHeight: 1.3 }}><ReviewedText text={element.label} /></h3>
