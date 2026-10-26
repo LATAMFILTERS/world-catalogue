@@ -1,0 +1,33 @@
+/* Scoped to the five Industrial & Process platform cards. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+  margin-top: 34px;
+  align-items: stretch;
+}
+.card {
+  grid-column: span 2;
+  text-align: left;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.card:nth-last-child(-n + 2) {
+  grid-column: span 3;
+}
+.card p,
+.card a {
+  text-align: left;
+  text-align-last: left;
+  word-spacing: normal;
+  hyphens: none;
+}
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card, .card:nth-last-child(-n + 2) { grid-column: span 1; }
+  .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .card, .card:nth-last-child(-n + 2), .card:last-child:nth-child(odd) { grid-column: span 1; }
+}
