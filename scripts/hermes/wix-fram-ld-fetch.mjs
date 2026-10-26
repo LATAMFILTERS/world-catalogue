@@ -8,12 +8,13 @@
 //   1. resolve the FRAM base code (lib/ld-fram-base.mjs, same rules as fram-ld-fetch.mjs);
 //   2. WIX Exactmatch for that code; keep only rows Manufacturer=FRAM with the exact (normalized) FRAM code;
 //   3. per distinct WIX part: detail page (style, dimensions) + applications page;
-//   4. pick the WIX part by identity, never by order:
-//        family gate (WIX style vs SKU prefix) AND >=1 WIX application matching the SKU payload (make/model/year);
-//      exactly one passing part -> ELIGIBLE; several -> AMBIGUOUS_WIX_PARTS (held).
+//   4. the WIX cross must be unambiguous: exactly ONE WIX part for the FRAM code (2+ -> AMBIGUOUS_WIX_PARTS, held),
+//      with family gate (WIX style vs SKU prefix) and the detail page part number equal to the cross.
 // Held reasons: NO_FRAM_BASE_CODE | MULTIPLE_FRAM_CODES | DIGITS_MISMATCH | WIX_NO_FRAM_CROSS | FAMILY_MISMATCH |
-//   NO_WIX_APPLICATIONS | EUROPEAN_ORIGIN | NO_CURRENT_APPLICATIONS | NO_IDENTITY_PROOF | AMBIGUOUS_WIX_PARTS |
-//   WIX_APPS_PAGINATED | FETCH_FAILED
+//   NO_WIX_APPLICATIONS | NO_WIX_AUTOMOTIVE_APPLICATIONS | EUROPEAN_ORIGIN | MANN_VERIFIED_APPLICATIONS |
+//   AMBIGUOUS_WIX_PARTS | WIX_APPS_PAGINATED | FETCH_FAILED
+// Eligible modes: MATCHED (>=1 WIX row matches the payload) | REPLACE_UNVERIFIED (payload contradicts WIX; it was not
+// verified and is replaced, previous rows kept by the apply) | FILL_EMPTY (SKU had no applications).
 // Evidence (raw HTML of the 3 pages + sha256) is saved per SKU under out/wix-batch/<run>/<sku>/.
 //
 // Usage: node scripts/hermes/wix-fram-ld-fetch.mjs [--prefix EA3] [--after EA30000] [--limit 5000] [--delay-ms 600]
@@ -76,7 +77,7 @@ const stylesSeen = {}; const specLabels = {};
 for (const [i, t] of targets.entries()) {
   const [code, baseSource] = framBase(t);
   const fam = t.sku.slice(0, 3);
-  const row = { sku: t.sku, fram_code: code, base_source: baseSource, vehicle_db_hash: t.vehicle_db_hash,
+  const row = { sku: t.sku, codigo_base: t.codigo_base, fram_code: code, base_source: baseSource, vehicle_db_hash: t.vehicle_db_hash,
     current_vehicle_authority: t.current_vehicle_authority || null, eligible: false, reason: null };
   const done = () => { rows.push(row); console.log(`[${i + 1}/${targets.length}] ${t.sku} ${code || '-'} -> ${row.wix_part || '-'}\t${row.eligible ? 'ELIGIBLE' : 'HOLD'}\t${row.reason}`); if ((i + 1) % 25 === 0) save(); };
   if (!code) { row.reason = baseSource === 'MULTIPLE_FRAM_CODES' ? 'MULTIPLE_FRAM_CODES' : 'NO_FRAM_BASE_CODE'; done(); continue; }
@@ -101,42 +102,49 @@ for (const [i, t] of targets.entries()) {
       const appsPart = d.apps_link_part || p.wix_part;
       const ap = await wixGet(`${WIX_BASE}PartApplications.aspx?Part=${encodeURIComponent(appsPart)}`, { delayMs });
       const a = parsePartApplications(ap.html);
+      // WIX writes non-automotive categories into Make ("ARIENS+Garden Tractors", "DODGE+TRUCKS"): not LD vehicles.
+      const auto = a.apps.filter((x) => !x.make.includes('+'));
       stylesSeen[d.style || '-'] = (stylesSeen[d.style || '-'] || 0) + 1;
       for (const k of Object.keys(d.specs)) specLabels[k] = (specLabels[k] || 0) + 1;
       const styleText = `${d.style || ''} ${d.service || ''}`;
-      evaluated.push({ p, d, a, em, det, ap,
+      evaluated.push({ p, d, a, auto, em, det, ap,
         family_ok: FAMILY[fam] ? FAMILY[fam](styleText) : true,
         identity_ok: d.part_number ? norm(d.part_number) === norm(p.wix_part) : false,
-        matched: a.apps.filter((x) => matchesCurrent(x, cur)).length,
-        origin: originGroupOf(a.apps) });
+        matched: auto.filter((x) => matchesCurrent(x, cur)).length,
+        origin: originGroupOf(auto) });
     }
     row.candidates = evaluated.map((e) => ({ wix_part: e.p.wix_part, style: e.d.style, family_ok: e.family_ok, identity_ok: e.identity_ok,
-      wix_apps: e.a.apps.length, matched_apps: e.matched, listed_in_sku_competitors: listedWix.has(norm(e.p.wix_part)), origin: e.origin.group, paginated: e.a.paginated }));
-    const passing = evaluated.filter((e) => e.family_ok && e.identity_ok && e.matched >= 1);
-    const famOk = evaluated.filter((e) => e.family_ok && e.identity_ok);
-    if (!famOk.length) row.reason = `FAMILY_MISMATCH: ${evaluated.map((e) => e.d.style).join(' / ')}`;
-    else if (!famOk.some((e) => e.a.apps.length)) row.reason = 'NO_WIX_APPLICATIONS';
-    else if (!cur.length) row.reason = 'NO_CURRENT_APPLICATIONS';
-    else if (passing.length > 1) row.reason = 'AMBIGUOUS_WIX_PARTS';
-    else if (!passing.length) row.reason = 'NO_IDENTITY_PROOF';
+      wix_apps: e.a.apps.length, wix_auto_apps: e.auto.length, matched_apps: e.matched, listed_in_sku_competitors: listedWix.has(norm(e.p.wix_part)),
+      origin: e.origin.group, paginated: e.a.paginated }));
+    // Rule approved by Victor 2026-10-25: FRAM stays the base for non-European LD; WIX (official FRAM cross) is right.
+    // Exactly one WIX part for the FRAM code -> its applications replace UNVERIFIED current ones even when they do not
+    // match (those were imported by 4-digit collisions). Held: 2+ WIX parts, MANN-verified applications, European origin.
+    const e = evaluated[0];
+    if (evaluated.length > 1) row.reason = 'AMBIGUOUS_WIX_PARTS';
+    else if (!e.identity_ok || !e.family_ok) row.reason = `FAMILY_MISMATCH: ${e.d.style}`;
+    else if (!e.a.apps.length) row.reason = 'NO_WIX_APPLICATIONS';
+    else if (!e.auto.length) row.reason = 'NO_WIX_AUTOMOTIVE_APPLICATIONS';
+    else if (e.a.paginated) row.reason = 'WIX_APPS_PAGINATED';
+    else if (t.current_vehicle_authority === 'MANN_OFFICIAL_CATALOG') row.reason = 'MANN_VERIFIED_APPLICATIONS';
+    else if (e.origin.group === 'EUROPEAN') row.reason = 'EUROPEAN_ORIGIN';
     else {
-      const e = passing[0];
-      row.wix_part = e.p.wix_part; row.wix_listed_in_sku = listedWix.has(norm(e.p.wix_part)); row.wix_detail_id = e.p.detail_id; row.origin = e.origin; row.matched_apps = e.matched; row.wix_apps = e.a.apps.length;
-      if (e.a.paginated) row.reason = 'WIX_APPS_PAGINATED';
-      else if (e.origin.group === 'EUROPEAN') row.reason = 'EUROPEAN_ORIGIN';
-      else {
-        const dir = path.join(runDir, t.sku); fs.mkdirSync(dir, { recursive: true });
-        const pages = { exactmatch: e.em, details: e.det, applications: e.ap };
-        row.pages = {};
-        for (const [k, v] of Object.entries(pages)) { fs.writeFileSync(path.join(dir, `wix-${k}.html`), v.html); row.pages[k] = { url: v.url, sha256: sha256(v.html) }; }
-        const evidence = { captured_at: new Date().toISOString(), authority: 'WIX_OFFICIAL_CATALOG', fram_code: code, wix_part: e.p.wix_part,
-          cross_rows: cross.filter((r) => norm(r.wix_part) === norm(e.p.wix_part)), details: e.d,
-          applications: e.a.apps.map((x) => ({ make: x.make, model: x.model, year_text: x.year_text, engine: x.engine })), pages: row.pages };
-        fs.writeFileSync(path.join(dir, 'wix-evidence.json'), JSON.stringify(evidence, null, 2));
-        row.dir = dir; row.style = e.d.style;
-        row.dims_mm = Object.fromEntries(Object.entries(e.d.specs).filter(([, v]) => v.mm != null).map(([k, v]) => [k, v.mm]));
-        row.eligible = true; row.reason = 'OK';
-      }
+      row.wix_part = e.p.wix_part; row.wix_listed_in_sku = listedWix.has(norm(e.p.wix_part)); row.wix_detail_id = e.p.detail_id;
+      row.origin = e.origin; row.matched_apps = e.matched; row.wix_apps = e.auto.length;
+      row.mode = !cur.length ? 'FILL_EMPTY' : e.matched ? 'MATCHED' : 'REPLACE_UNVERIFIED';
+      const dir = path.join(runDir, t.sku); fs.mkdirSync(dir, { recursive: true });
+      const pages = { exactmatch: e.em, details: e.det, applications: e.ap };
+      row.pages = {};
+      for (const [k, v] of Object.entries(pages)) { fs.writeFileSync(path.join(dir, `wix-${k}.html`), v.html); row.pages[k] = { url: v.url, sha256: sha256(v.html) }; }
+      const evidence = { captured_at: new Date().toISOString(), authority: 'WIX_OFFICIAL_CATALOG', fram_code: code, wix_part: e.p.wix_part,
+        cross_rows: cross.filter((r) => norm(r.wix_part) === norm(e.p.wix_part)), details: e.d,
+        applications: e.auto.map((x) => ({ make: x.make, model: x.model, year_text: x.year_text, engine: x.engine })),
+        excluded_non_automotive: e.a.apps.length - e.auto.length, pages: row.pages };
+      const raw = JSON.stringify(evidence, null, 2);
+      fs.writeFileSync(path.join(dir, 'wix-evidence.json'), raw);
+      row.evidence_sha256 = sha256(raw);
+      row.dir = dir; row.style = e.d.style;
+      row.dims_mm = Object.fromEntries(Object.entries(e.d.specs).filter(([, v]) => v.mm != null).map(([k, v]) => [k, v.mm]));
+      row.eligible = true; row.reason = 'OK';
     }
   } catch (e) { row.reason = `FETCH_FAILED: ${e.message}`.slice(0, 160); }
   done();
@@ -145,7 +153,11 @@ save();
 const eligible = rows.filter((r) => r.eligible);
 console.log(JSON.stringify({ run_dir: runDir, processed: rows.length, eligible: eligible.length, hold: rows.length - eligible.length,
   hold_reasons: rows.filter((r) => !r.eligible).reduce((m, r) => { const k = String(r.reason).split(':')[0]; m[k] = (m[k] || 0) + 1; return m; }, {}),
+  eligible_modes: eligible.reduce((m, r) => { m[r.mode] = (m[r.mode] || 0) + 1; return m; }, {}),
   eligible_wix_listed_in_sku: eligible.filter((r) => r.wix_listed_in_sku).length,
+  no_base_codigo_shapes: Object.fromEntries(Object.entries(rows.filter((r) => r.reason === 'NO_FRAM_BASE_CODE').reduce((m, r) => {
+    const k = String(r.codigo_base || '(null)').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/\d/g, '9').replace(/9+/g, '9'); m[k] = (m[k] || 0) + 1; return m; }, {}))
+    .sort((a, b) => b[1] - a[1]).slice(0, 20)),
   base_sources: rows.reduce((m, r) => { m[r.base_source] = (m[r.base_source] || 0) + 1; return m; }, {}),
   eligible_with_current_mann_evidence: eligible.filter((r) => r.current_vehicle_authority === 'MANN_OFFICIAL_CATALOG').length,
   wix_styles: stylesSeen, spec_labels: specLabels, summary: path.join(runDir, 'summary.json') }, null, 2));

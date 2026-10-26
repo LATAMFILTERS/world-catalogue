@@ -44,10 +44,16 @@ function gridRows(html, id) {
 
 // FRAM (or any) code -> interchange rows [{code, manufacturer, wix_part, detail_id}]
 export function parseExactMatch(html) {
-  return gridRows(html, 'gvPL').slice(1).filter((r) => r.cells.length >= 3).map((r) => ({
-    code: r.cells[0], manufacturer: r.cells[1], wix_part: r.cells[2],
+  // Columns located by header text: the grid starts with an empty (&nbsp;) column, so positions are not fixed.
+  const rows = gridRows(html, 'gvPL');
+  const head = (rows[0]?.cells || []).map((c) => c.toUpperCase());
+  const col = (name) => head.findIndex((h) => h === name);
+  const iCode = col('MANUFACTURER PART NUMBER'), iMaker = col('MANUFACTURER'), iWix = col('WIX PART NUMBER');
+  if (iCode < 0 || iMaker < 0 || iWix < 0) return [];
+  return rows.slice(1).filter((r) => r.cells.length > Math.max(iCode, iMaker, iWix)).map((r) => ({
+    code: r.cells[iCode], manufacturer: r.cells[iMaker], wix_part: r.cells[iWix],
     detail_id: (r.raw.match(/PartDetails\.aspx\?Part=(\d+)/i) || [])[1] || null,
-  }));
+  })).filter((r) => r.code && r.wix_part);
 }
 
 // Detail page -> {part_number, style, service, media, specs:{label:{text, mm}}, gaskets:[], principal_application}
