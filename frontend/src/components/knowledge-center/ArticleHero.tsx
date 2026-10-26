@@ -11,6 +11,7 @@ export interface ArticleHeroProps {
   intro?: string;
   gradient?: boolean;
   maxWidth?: string;
+  compactLongTitle?: boolean;
   children?: React.ReactNode;
 }
 
@@ -22,6 +23,7 @@ export default function ArticleHero({
   intro,
   gradient = true,
   maxWidth = '1200px',
+  compactLongTitle = false,
   children,
 }: ArticleHeroProps) {
   const containerMaxWidth = maxWidth === '860px' ? '1200px' : maxWidth;
@@ -64,11 +66,11 @@ export default function ArticleHero({
           } : {
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 700,
-            fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
+            fontSize: compactLongTitle ? 'clamp(1.85rem, 2.65vw, 3.15rem)' : 'clamp(1.8rem, 4vw, 2.8rem)',
             lineHeight: 1.12,
             textWrap: 'balance',
             marginBottom: subtitle ? '0.75rem' : '1.25rem',
-            maxWidth: '1000px',
+            maxWidth: compactLongTitle ? '1480px' : '1000px',
           }}
         >
           {title}
@@ -85,7 +87,7 @@ export default function ArticleHero({
               fontSize: 'clamp(1rem, 2vw, 1.2rem)',
               color: 'rgba(255,255,255,0.5)',
               marginBottom: intro || children ? '1.5rem' : '0',
-              maxWidth: '900px',
+              maxWidth: compactLongTitle ? '1280px' : '900px',
             }}
           >
             {subtitle}
@@ -102,7 +104,7 @@ export default function ArticleHero({
               fontSize: '1rem',
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.7)',
-              maxWidth: '860px',
+              maxWidth: compactLongTitle ? '1320px' : '860px',
               marginBottom: children ? '1rem' : '0',
             }}
           >
