@@ -1,3 +1,4 @@
+import platformStyles from './industrial-platform-grid.module.css';
 import { ReviewedText } from '@/components/ReviewedText';
 import { PublicUiText } from '@/components/PublicUiText';
 import type { Metadata } from 'next';
@@ -235,11 +236,11 @@ export default function IndustrialProcessPage() {
           <div style={container}>
             <p style={eyebrow}><ReviewedText text={"FIVE COMMERCIAL TECHNOLOGY PLATFORMS"} /></p>
             <h2 id="platform-title" style={sectionTitle}><ReviewedText text={"Navigate by treatment function."} /></h2>
-            <div style={platformGrid}>
+            <div className={platformStyles.grid}>
               {INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => (
-                <article key={platform.slug} style={platformCard}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline' }}>
-                    <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
+                <article key={platform.slug} className={platformStyles.card} style={platformCard}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'flex-start', flexWrap: 'nowrap' }}>
+                    <span style={{ ...numberStyle, flexShrink: 0, whiteSpace: 'nowrap' }}>{String(index + 1).padStart(2, '0')}</span>
                     <span style={platformDescriptor}><ReviewedText text={platform.descriptor} /></span>
                   </div>
                   <Link href={industrialProcessPlatformUrl(platform.slug)} style={{ color: '#fff', textDecoration: 'none' }}>
@@ -366,9 +367,9 @@ const bodyCopy: React.CSSProperties = { color: 'rgba(255,255,255,0.62)', lineHei
 const twoCol: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'minmax(0,0.9fr) minmax(0,1.1fr)', gap: 'clamp(2.5rem,7vw,7rem)', alignItems: 'start' };
 const threeCol: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16 };
 const platformGrid: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 16, marginTop: 34 };
-const platformCard: React.CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', background: '#090909', padding: 'clamp(1.4rem,3vw,2rem)', minHeight: 360 };
+const platformCard: React.CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', background: '#090909', padding: 'clamp(1.4rem,3vw,2rem)', minWidth: 0, textAlign: 'left' };
 const platformMark: React.CSSProperties = { fontFamily: 'var(--font-display)', color: '#fff', fontSize: 'clamp(2rem,4vw,3.4rem)', textTransform: 'uppercase', margin: '22px 0 12px' };
-const platformDescriptor: React.CSSProperties = { color: 'rgba(255,255,255,0.48)', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.11em', textAlign: 'right' };
+const platformDescriptor: React.CSSProperties = { minWidth: 0, overflowWrap: 'normal', wordBreak: 'normal', color: 'rgba(255,255,255,0.48)', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.11em', textAlign: 'right' };
 const numberStyle: React.CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.12em' };
 const familyRow: React.CSSProperties = { padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.055)', color: 'rgba(255,255,255,0.78)', fontWeight: 600 };
 const requirementRow: React.CSSProperties = { display: 'grid', gridTemplateColumns: '48px 1fr', gap: 16, padding: '15px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.78)' };
