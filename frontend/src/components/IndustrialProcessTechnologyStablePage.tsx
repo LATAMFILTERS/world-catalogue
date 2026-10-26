@@ -36,7 +36,7 @@ function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialPro
     ],
     [
       `Does ${technology.name} have one universal efficiency or service-life claim?`,
-      'No universal performance value is assigned across the family. Numeric efficiency, capacity, pressure-drop, service-life or outlet-quality claims must remain tied to validated product or project evidence.',
+      'No universal performance value is assigned across the family. Efficiency, capacity, pressure drop, service life and outlet quality are defined for each specific product and application.',
     ],
     [
       `Does this page mean ELIMFILTERS supplies the complete process equipment for ${technology.name}?`,
@@ -195,7 +195,6 @@ export function IndustrialProcessTechnologyStablePage({
         <p className={styles.lead}><ReviewedText text={"The filtration, separation or treatment element/media is one part of the complete process result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance."} /></p>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"A useful distinction"} /></h3><p className={styles.body}>{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"identifies a treatment function. It does not make every replacement element or treatment medium inside that category technically interchangeable."} /></p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Evidence before claims"} /></h3><p className={styles.body}><ReviewedText text={"Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence."} /></p></article>
         </div>
       </div></section>
 
@@ -285,7 +284,7 @@ export function IndustrialProcessTechnologyStablePage({
           <h2 className={styles.h2}><ReviewedText text={"Applicable standards and test methods"} /></h2>
           <p className={styles.lead}><ReviewedText text={"The standards below are resolved from the governed ELIMFILTERS Knowledge Center for this treatment family. Applicability remains product-, fluid-, contaminant- and duty-specific."} /></p>
           <ul className={`${styles.list} ${styles.serviceList}`}>{standards.map((standard)=><li key={standard}><ReviewedText text={standard} /></li>)}</ul>
-          <p className={styles.bodyWide}><ReviewedText text={"A listed standard identifies a relevant engineering or verification method. It does not mean every"} />{' '}{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"element is certified, qualified or tested to every listed method. Product claims require the corresponding validated test evidence."} /></p>
+          <p className={styles.bodyWide}><ReviewedText text={"A listed standard identifies a relevant engineering or verification method. It does not mean every"} />{' '}{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"element is certified, qualified or tested to every listed method."} /></p>
           {technology.knowledgeCenterSlug ? <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}><ReviewedText text={"OPEN GOVERNED STANDARD CONTEXT →"} /></Link></div> : null}
         </div></section>
       ) : null}
@@ -295,7 +294,6 @@ export function IndustrialProcessTechnologyStablePage({
         <h2 className={styles.h2}><ReviewedText text={"Technical reference and claim governance"} /></h2>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Engineering core"} /></h3><p className={styles.body}>{coreLabel(technology.technologyCore)}{' '}<ReviewedText text={"remains the mechanism-level engineering identifier behind the customer-facing family."} /></p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Claim governance"} /></h3><p className={styles.body}><ReviewedText text={"No universal efficiency, capacity, micron rating, separation percentage, service-life multiplier or outlet-quality value is assigned across"} />{' '}{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"without validated evidence for the specific product or project."} /></p></article>
           {technology.knowledgeCenterSlug ? (
             <article className={styles.noteBlock}>
               <h3 className={styles.h3}><ReviewedText text={"Canonical Knowledge Center reference"} /></h3>
@@ -317,7 +315,7 @@ export function IndustrialProcessTechnologyStablePage({
         <h2 className={styles.h2}>{platform.name} — <ReviewedText text={platform.descriptor} /></h2>
         <div className={styles.systemGrid}>
           <div><p className={styles.lead}><ReviewedText text={platform.summary} /></p><Link className={styles.systemButton} href={industrialProcessPlatformUrl(platform.slug)}><ReviewedText text={"EXPLORE PLATFORM"} /></Link></div>
-          <p className={styles.bodyWide}>{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"is resolved inside the"} />{' '}{platform.name}{' '}<ReviewedText text={"platform. Final selection connects the treatment mechanism to operating conditions, contamination load, compatibility, required outcome and validated product evidence."} /></p>
+          <p className={styles.bodyWide}>{technologyName(technology.name, technology.branded)}{' '}<ReviewedText text={"is resolved inside the"} />{' '}{platform.name}{' '}<ReviewedText text={"platform. Final selection connects the treatment mechanism to operating conditions, contamination load, compatibility and required outcome."} /></p>
         </div>
       </div></section>
 

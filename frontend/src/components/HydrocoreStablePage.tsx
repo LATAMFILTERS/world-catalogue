@@ -144,7 +144,6 @@ export function HydrocoreStablePage(){
    <p className={styles.eyebrow}>TECHNICAL BASIS</p>
    <h2 className={styles.h2}>Technical reference</h2>
    <div className={styles.twoColumnNotes}>
-    <article className={styles.noteBlock}><h3 className={styles.h3}>Product-level evidence</h3><p className={styles.body}>Water-separation efficiency, pressure drop, flow capability, water-holding capacity and service limits belong to validated individual separator data and the applicable test method.</p></article>
     <article className={styles.noteBlock}><h3 className={styles.h3}>Claim governance</h3><p className={styles.body}>HYDROCORE™ is not assigned one universal separation efficiency, micron rating, capacity, flow limit or service interval across every application.</p></article>
    </div>
   </div></section>

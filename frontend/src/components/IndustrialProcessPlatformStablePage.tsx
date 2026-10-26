@@ -120,7 +120,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <p className={styles.lead}><ReviewedText text={"Flow, pressure, temperature, chemistry, contaminant form, duty cycle, compatibility, existing equipment and required outlet condition determine which treatment family and physical configuration belong in the project."} /></p>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Platform first"} /></h3><p className={styles.body}>{platform.name}{' '}<ReviewedText text={"narrows the project to the correct treatment universe without forcing an early product choice."} /></p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Technology second"} /></h3><p className={styles.body}><ReviewedText text={"The family page defines the mechanism, application context and evidence required before replacement-element or treatment-media specification."} /></p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"Technology second"} /></h3><p className={styles.body}><ReviewedText text={"The family page defines the mechanism, application context and selection requirements before replacement-element or treatment-media specification."} /></p></article>
         </div>
       </div></section>
 
@@ -129,7 +129,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <h2 className={styles.h2}><ReviewedText text={"The treatment element is the product. Process equipment is the application context."} /></h2>
         <p className={styles.lead}><ReviewedText text={"ELIMFILTERS Industrial & Process is centered on validated filtration, separation and treatment media and replacement elements. Housings, pressure vessels, collectors, skids, pumps, fans, ductwork, controls and other process equipment shown or referenced on these pages remain application context unless a separate ELIMFILTERS system scope is explicitly approved."} /></p>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"What ELIMFILTERS defines"} /></h3><p className={styles.body}><ReviewedText text={"The page defines the treatment mechanism, replaceable media or element function, operating inputs, interface requirements and evidence needed to qualify the application."} /></p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"What ELIMFILTERS defines"} /></h3><p className={styles.body}><ReviewedText text={"The page defines the treatment mechanism, replaceable media or element function, operating inputs, interface requirements and the information needed to qualify the application."} /></p></article>
           <article className={styles.noteBlock}><h3 className={styles.h3}><ReviewedText text={"What is not implied"} /></h3><p className={styles.body}><ReviewedText text={"Showing or discussing a collector, vessel, skid, air handler, purifier, membrane train or other plant equipment does not represent that equipment as an ELIMFILTERS-manufactured product."} /></p></article>
         </div>
       </div></section>
@@ -170,10 +170,6 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
               <h3 className={styles.h3}><ReviewedText text={"Canonical Knowledge Center reference"} /></h3>
               <p className={styles.body}><ReviewedText text={"Approved treatment relationships, operating conditions and diagnostic guidance for"} />{' '}{platform.name}{' '}<ReviewedText text={"are maintained in the governed ELIMFILTERS Knowledge Center."} /></p>
               <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${platform.knowledgeCenterSlug}/`}><ReviewedText text={"OPEN ENGINEERING REFERENCE →"} /></Link></div>
-            </article>
-            <article className={styles.noteBlock}>
-              <h3 className={styles.h3}><ReviewedText text={"Evidence before claims"} /></h3>
-              <p className={styles.body}><ReviewedText text={"Numeric performance, capacity, pressure-drop, service-life and outlet-condition claims remain tied to validated product or project evidence."} /></p>
             </article>
           </div>
         </div></section>
