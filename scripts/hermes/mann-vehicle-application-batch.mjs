@@ -133,7 +133,7 @@ let classTargets = null;
 if (args['from-classification']) {
   const cls = String(args.class || 'MANN_SAME_DIGITS');
   const picked = JSON.parse(fs.readFileSync(args['from-classification'], 'utf8')).rows
-    .filter((r) => r.cls === cls && (!prefix || r.sku.startsWith(prefix)) && (!after || r.sku > after));
+    .filter((r) => r.cls === cls && (!prefix || r.sku.startsWith(prefix)) && (!after || r.sku > after) && (!only || only.includes(r.sku)));
   const normCode = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
   const { rows: raw } = await db.query(`SELECT sku, competitor_codes, oem_codes, codigo_base FROM public.elimfilters_catalog WHERE sku = ANY($1::text[])`, [picked.map((r) => r.sku)]);
   const bySku = new Map(raw.map((r) => [r.sku, r]));
