@@ -51,7 +51,7 @@ try {
     WITH rel AS (
       SELECT elimfilters_sku sku, min(btrim(source_sku)) code, count(DISTINCT upper(regexp_replace(source_sku,'[^A-Za-z0-9]','','g'))) k
       FROM ld_catalog.ld_vehicle_applications WHERE source_origin='FRAM_LD_MULTI_REGION' AND nullif(btrim(source_sku),'') IS NOT NULL GROUP BY 1)
-    SELECT c.sku, c.canonical_source_brand, c.canonical_source_code, c.canonical_source_status,
+    SELECT c.sku, c.codigo_base, c.canonical_source_brand, c.canonical_source_code, c.canonical_source_status,
            i.canonical_part_number AS identity_fram, rel.code AS rel_code, rel.k AS rel_k,
            c.competitor_codes, c.oem_codes, c.vehicle_applications, md5(c.vehicle_applications::text) AS vehicle_db_hash,
            (SELECT e.evidence_authority FROM public.catalog_application_evidence e WHERE e.sku=c.sku AND e.application_kind='VEHICLE'
@@ -83,9 +83,14 @@ for (const [i, t] of targets.entries()) {
   if (last4(code) !== last4(t.sku)) { row.reason = 'DIGITS_MISMATCH'; done(); continue; }
   try {
     const em = await wixGet(`${WIX_BASE}Exactmatch.aspx?PartNo=${encodeURIComponent(code)}`, { delayMs });
-    const cross = parseExactMatch(em.html).filter((r) => /^FRAM$/i.test(r.manufacturer) && norm(r.code) === norm(code) && r.detail_id);
+    const allRows = parseExactMatch(em.html);
+    row.wix_lookup_rows = allRows.length;
+    row.wix_lookup_makers = [...new Set(allRows.map((r) => r.manufacturer))].slice(0, 8);
+    const cross = allRows.filter((r) => /^FRAM$/i.test(r.manufacturer) && norm(r.code) === norm(code) && r.detail_id);
     const parts = [...new Map(cross.map((r) => [norm(r.wix_part), r])).values()];
     row.wix_candidates = parts.map((p) => p.wix_part);
+    const listedWix = new Set([...(t.competitor_codes || [])].filter((e) => /^WIX$/i.test(e?.manufacturer || e?.brand || '')).map((e) => norm(e?.code || e?.part_number || e?.reference)));
+    row.sku_lists_wix = [...listedWix];
     if (!parts.length) { row.reason = 'WIX_NO_FRAM_CROSS'; done(); continue; }
     const cur = (Array.isArray(t.vehicle_applications) ? t.vehicle_applications : []).map(currentParts);
     row.current_rows = cur.length;
@@ -106,7 +111,7 @@ for (const [i, t] of targets.entries()) {
         origin: originGroupOf(a.apps) });
     }
     row.candidates = evaluated.map((e) => ({ wix_part: e.p.wix_part, style: e.d.style, family_ok: e.family_ok, identity_ok: e.identity_ok,
-      wix_apps: e.a.apps.length, matched_apps: e.matched, origin: e.origin.group, paginated: e.a.paginated }));
+      wix_apps: e.a.apps.length, matched_apps: e.matched, listed_in_sku_competitors: listedWix.has(norm(e.p.wix_part)), origin: e.origin.group, paginated: e.a.paginated }));
     const passing = evaluated.filter((e) => e.family_ok && e.identity_ok && e.matched >= 1);
     const famOk = evaluated.filter((e) => e.family_ok && e.identity_ok);
     if (!famOk.length) row.reason = `FAMILY_MISMATCH: ${evaluated.map((e) => e.d.style).join(' / ')}`;
@@ -116,7 +121,7 @@ for (const [i, t] of targets.entries()) {
     else if (!passing.length) row.reason = 'NO_IDENTITY_PROOF';
     else {
       const e = passing[0];
-      row.wix_part = e.p.wix_part; row.wix_detail_id = e.p.detail_id; row.origin = e.origin; row.matched_apps = e.matched; row.wix_apps = e.a.apps.length;
+      row.wix_part = e.p.wix_part; row.wix_listed_in_sku = listedWix.has(norm(e.p.wix_part)); row.wix_detail_id = e.p.detail_id; row.origin = e.origin; row.matched_apps = e.matched; row.wix_apps = e.a.apps.length;
       if (e.a.paginated) row.reason = 'WIX_APPS_PAGINATED';
       else if (e.origin.group === 'EUROPEAN') row.reason = 'EUROPEAN_ORIGIN';
       else {
@@ -140,5 +145,7 @@ save();
 const eligible = rows.filter((r) => r.eligible);
 console.log(JSON.stringify({ run_dir: runDir, processed: rows.length, eligible: eligible.length, hold: rows.length - eligible.length,
   hold_reasons: rows.filter((r) => !r.eligible).reduce((m, r) => { const k = String(r.reason).split(':')[0]; m[k] = (m[k] || 0) + 1; return m; }, {}),
+  eligible_wix_listed_in_sku: eligible.filter((r) => r.wix_listed_in_sku).length,
+  base_sources: rows.reduce((m, r) => { m[r.base_source] = (m[r.base_source] || 0) + 1; return m; }, {}),
   eligible_with_current_mann_evidence: eligible.filter((r) => r.current_vehicle_authority === 'MANN_OFFICIAL_CATALOG').length,
   wix_styles: stylesSeen, spec_labels: specLabels, summary: path.join(runDir, 'summary.json') }, null, 2));

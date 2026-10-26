@@ -48,7 +48,7 @@ try {
     WITH rel AS (
       SELECT elimfilters_sku sku, min(btrim(source_sku)) code, count(DISTINCT upper(regexp_replace(source_sku,'[^A-Za-z0-9]','','g'))) k
       FROM ld_catalog.ld_vehicle_applications WHERE source_origin='FRAM_LD_MULTI_REGION' AND nullif(btrim(source_sku),'') IS NOT NULL GROUP BY 1)
-    SELECT c.sku, c.canonical_source_brand, c.canonical_source_code, c.canonical_source_status,
+    SELECT c.sku, c.codigo_base, c.canonical_source_brand, c.canonical_source_code, c.canonical_source_status,
            i.canonical_part_number AS identity_fram, rel.code AS rel_code, rel.k AS rel_k,
            c.competitor_codes, c.oem_codes, c.vehicle_applications, md5(c.vehicle_applications::text) AS vehicle_db_hash
     FROM public.elimfilters_catalog c
