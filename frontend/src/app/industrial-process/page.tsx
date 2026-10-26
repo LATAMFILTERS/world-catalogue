@@ -265,9 +265,9 @@ export default function IndustrialProcessPage() {
 
         <section id="industrial-element-gallery" style={section} aria-labelledby="industrial-gallery-title">
           <div style={container}>
-            <p style={eyebrow}>INDUSTRIAL FILTER ELEMENT CONFIGURATIONS</p>
-            <h2 id="industrial-gallery-title" style={sectionTitle}>See the filter elements behind industrial process protection.</h2>
-            <p style={{ ...lead, maxWidth: 1060 }}>Explore representative element constructions and geometries. Final technology assignment, performance and equipment compatibility require technical validation.</p>
+            <p style={eyebrow}><ReviewedText text={"INDUSTRIAL FILTER ELEMENT CONFIGURATIONS"} /></p>
+            <h2 id="industrial-gallery-title" style={sectionTitle}><ReviewedText text={"See the filter elements behind industrial process protection."} /></h2>
+            <p style={{ ...lead, maxWidth: 1060 }}><ReviewedText text={"Explore representative element constructions and geometries. Final technology assignment, performance and equipment compatibility require technical validation."} /></p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%, 320px),1fr))', gap: 20, marginTop: 32 }}>
               {[
                 { file: 'IMG_3179.jpg', label: 'Tall cylindrical pleated element', detail: 'Pleated medium with external support grid', width: 1206, height: 1534 },
@@ -279,16 +279,16 @@ export default function IndustrialProcessPage() {
               ].map((element) => (
                 <article key={element.file} style={{ border: '1px solid rgba(255,255,255,0.13)', background: '#0b0b0b', minWidth: 0 }}>
                   <div style={{ aspectRatio: '1 / 1', background: '#e8e8e8', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', padding: 12 }}>
-                    <img src={`/images/industrial-process-elements/${element.file}`} alt={element.label} width={element.width} height={element.height} loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'contain' }} />
+                    <img src={`/images/industrial-process-elements/${element.file}`} alt="" width={element.width} height={element.height} loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'contain' }} />
                   </div>
                   <div style={{ padding: '18px 20px 22px' }}>
-                    <h3 style={{ fontSize: '1.1rem', margin: '0 0 8px', fontWeight: 700, lineHeight: 1.3 }}>{element.label}</h3>
-                    <p style={{ ...bodyCopy, margin: 0 }}>{element.detail}</p>
+                    <h3 style={{ fontSize: '1.1rem', margin: '0 0 8px', fontWeight: 700, lineHeight: 1.3 }}><ReviewedText text={element.label} /></h3>
+                    <p style={{ ...bodyCopy, margin: 0 }}><ReviewedText text={element.detail} /></p>
                   </div>
                 </article>
               ))}
             </div>
-            <p style={{ ...bodyCopy, fontSize: '0.82rem', marginTop: 18 }}>Representative construction images; not an assertion of product availability, qualification, or certified performance.</p>
+            <p style={{ ...bodyCopy, fontSize: '0.82rem', marginTop: 18 }}><ReviewedText text={"Representative construction images; not an assertion of product availability, qualification, or certified performance."} /></p>
           </div>
         </section>
 
