@@ -267,6 +267,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
   const sidebarData = getArticleSidebarData(article.slug);
   const relatedDiagrams = getDiagramsForArticle(article.slug);
   const isCooling = article.slug === 'cooling-system-contamination';
+  const isDryer = article.slug === 'compressed-air-dryer-selection';
   const [coolingSection, setCoolingSection] = useState(0);
   const coolingCopy = lang === 'es' ? { dashboard: 'PANEL DE INGENIERÍA · REFRIGERACIÓN', explore: 'Análisis de contaminación y protección térmica', select: 'Seleccione un mecanismo o tema de ingeniería para consultar el análisis completo.' } : lang === 'pt' ? { dashboard: 'PAINEL DE ENGENHARIA · ARREFECIMENTO', explore: 'Análise de contaminação e proteção térmica', select: 'Selecione um mecanismo ou tema de engenharia para consultar a análise completa.' } : { dashboard: 'ENGINEERING DASHBOARD · COOLING', explore: 'Contamination and thermal protection analysis', select: 'Select an engineering topic to read its full technical analysis.' };
 
@@ -447,6 +448,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
+      {isDryer && <style>{`.kc-dryer-article h2{font-size:clamp(1.5rem,2vw,2rem)!important;line-height:1.3!important}.kc-dryer-article p{line-height:1.75}.kc-dryer-article .kc-article-sidebar{font-size:1rem}`}</style>}
       {isCooling && <style>{`@media(max-width:650px){.kc-cooling-tabs{grid-template-columns:minmax(0,1fr)!important}}`}</style>}
 
       <ArticleBreadcrumb items={[
@@ -460,6 +462,8 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
         title={article.title}
         subtitle={article.subtitle}
         intro={article.intro}
+        maxWidth={isDryer ? '1560px' : undefined}
+        compactLongTitle={isDryer}
       />}
 
       {/* EEAT Metadata Panel: not displayed as editorial attribution on cooling reference */}
@@ -527,7 +531,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
         </motion.div>
       )}
 
-      <ArticleLayout sidebar={sidebar} maxWidth={isCooling ? '1560px' : undefined} sidebarWidth={isCooling ? '340px' : undefined}>
+      <ArticleLayout sidebar={sidebar} maxWidth={isCooling || isDryer ? '1560px' : undefined} sidebarWidth={isCooling || isDryer ? '340px' : undefined}>
         {isCooling && <div style={{ marginBottom:'2rem' }}><p style={{ color:'#fff12d', fontSize:'.8rem', fontFamily:'JetBrains Mono,monospace', letterSpacing:'.1em' }}>{coolingCopy.dashboard}</p><h2 style={{ color:'#fff', fontSize:'clamp(1.5rem,2.4vw,2.1rem)', margin:'.7rem 0', fontFamily:'Outfit,sans-serif' }}>{coolingCopy.explore}</h2><p style={{ color:'rgba(255,255,255,.8)', fontSize:'1.05rem', lineHeight:1.7 }}>{coolingCopy.select}</p></div>}
 
         {article.keyMetrics.length > 0 && (
