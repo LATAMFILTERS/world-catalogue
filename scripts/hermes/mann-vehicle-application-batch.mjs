@@ -62,6 +62,22 @@ const ldFamilyMatches = (sku, title) => {
   return true;
 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const normCode = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+async function resolveViaMannSearch(code) {
+  const q = encodeURIComponent(normCode(code));
+  const url = `https://www.mann-filter.com/en/catalog/search-results.html?mode=smart&displayView=Grid&smart=${q}&smartSearchTerm=${q}`;
+  try {
+    const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'text/html' } });
+    await sleep(delayMs);
+    if (!res.ok) return { url: null, note: `HTTP_${res.status}` };
+    const html = await res.text();
+    const links = [...new Set([...html.matchAll(/\/catalog\/search-results\/product\.html\/([^"'?#<>\s]+?)_mann-filter\.html/gi)].map((m) => decodeURIComponent(m[1])))];
+    if (!links.length) return { url: null, note: /no results found/i.test(html) ? 'NO_RESULT' : 'NO_PRODUCT_LINK_IN_HTML' };
+    const exact = links.filter((l) => normCode(l) === normCode(code));
+    if (exact.length !== 1) return { url: null, note: exact.length ? 'MULTIPLE_EXACT' : `NO_EXACT_MATCH(${links.slice(0, 3).join('|')})` };
+    return { url: `https://www.mann-filter.com/en/catalog/search-results/product.html/${exact[0]}_mann-filter.html`, note: 'RESOLVED' };
+  } catch (e) { return { url: null, note: `FETCH_ERROR ${e.message}`.slice(0, 80) }; }
+}
 const slug = (code) => String(code).toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9/()]/g, '');
 
 const runNode = (script, scriptArgs) => {
@@ -117,7 +133,7 @@ let classTargets = null;
 if (args['from-classification']) {
   const cls = String(args.class || 'MANN_SAME_DIGITS');
   const picked = JSON.parse(fs.readFileSync(args['from-classification'], 'utf8')).rows
-    .filter((r) => r.cls === cls && (!prefix || r.sku.startsWith(prefix)) && (!after || r.sku > after));
+    .filter((r) => r.cls === cls && (!prefix || r.sku.startsWith(prefix)) && (!after || r.sku > after) && (!only || only.includes(r.sku)));
   const normCode = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
   const { rows: raw } = await db.query(`SELECT sku, competitor_codes, oem_codes, codigo_base FROM public.elimfilters_catalog WHERE sku = ANY($1::text[])`, [picked.map((r) => r.sku)]);
   const bySku = new Map(raw.map((r) => [r.sku, r]));
@@ -190,13 +206,30 @@ for (const [i, t] of targets.entries()) {
     if (!/MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) break;
     await sleep(delayMs);
   }
+  // Catalogue codes are often stored without spaces/"/" (W7301 = W 730/1, HU8152X = HU 815/2 x), so the direct URL
+  // 404s. Fallback: the official MANN SmartSearch; accepted only when exactly ONE product link has the identical
+  // normalized code. The pilot/apply then run the usual identity, family and engine guards on that official page.
+  let resolvedUrl = null; let resolveNote = null;
+  if (pilot.status !== 0 && /MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) {
+    const r = await resolveViaMannSearch(t.mann_code);
+    resolveNote = r.note;
+    if (r.url) {
+      for (const loc of ['us-en', 'en']) {
+        resolvedUrl = r.url.replace(/mann-filter\.com\/[a-z-]+\//, `mann-filter.com/${loc}/`);
+        locale = loc;
+        pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', t.sku, '--mann', t.mann_code, '--url', resolvedUrl, '--out', dir]);
+        if (pilot.status === 0 && pilot.json?.counts) break;
+        await sleep(delayMs);
+      }
+    }
+  }
   const c = pilot.json?.counts;
-  const row = { sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, locale, dir, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
+  const row = { sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, locale, dir, resolved_url: resolvedUrl, resolve_note: resolveNote, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
     current_distinct: c?.current_distinct_keys ?? null, matched: c?.matched_make_model_year ?? null,
     only_in_current: c?.only_in_current ?? null, engine_mismatch: c?.matched_engine_code_mismatch ?? null,
     oe_overlap: c?.oe_overlap ?? null, match_ratio: null, guard_after: null, eligible: false, reason: null };
   if (pilot.status !== 0 || !c) {
-    row.reason = `PILOT_FAILED: ${pilot.error}`;
+    row.reason = resolveNote && !resolvedUrl ? `MANN_SEARCH_${resolveNote}` : `PILOT_FAILED: ${pilot.error}`;
   } else {
     row.match_ratio = c.current_distinct_keys ? Number((c.matched_make_model_year / c.current_distinct_keys).toFixed(3)) : 0;
     // LD family must match the official product type (EL3 oil, EA3 air, EC3 cabin, EF3 fuel).
