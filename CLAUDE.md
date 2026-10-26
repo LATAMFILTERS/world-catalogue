@@ -117,6 +117,13 @@ Canonical detail:
 
 Caso ejecutado (entre 2026-10-04 y 2026-10-05): EF90668 y EF90669 se renumeraron a ES91026 y ES91027 porque son separadores de agua, no fuel filters.
 
+## Comunicación externa siempre por agentes (definido por Victor, 2026-10-21)
+- Toda comunicación externa con proveedores, distribuidores y clientes sale desde el buzón y la identidad del agente responsable. Nunca desde `vabreu@elimfilters.com` ni a nombre de Victor.
+- Proveedores: `purshase.order@elimfilters.com` ("Purchase Team"). Distribuidores: `distribution_network@`. Logística: `logistics@`. Copias obligatorias: `vabreu@` y `elimfilters@gmail.com`.
+- Nada sale sin aprobación explícita del CEO.
+- Si no se puede enviar desde el buzón del agente, no se sustituye por el correo del CEO.
+- El dueño de esta política es `LATAMFILTERS/elimfilters-crm`.
+
 ## Hard rules
 
 - Resolve technology names and scopes from canonical registries only.
