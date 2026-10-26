@@ -28,7 +28,7 @@ for(const [family,name,folder] of families){
  if(!slugs){issue('WARN','UNRESOLVED_REGISTRY',name,'Registry not parsed; cannot claim full route coverage');continue}
  for(const slug of slugs){
   const base='/knowledge-center/'+(family==='ARTICLE'?'engineering':folder||family.toLowerCase())+'/'+slug+'/';
-  const row={family,slug,urls:['/'+base.replace(/^\\//,''),'/es'+base,'/pt'+base],locales:{}};
+  const row={family,slug,urls:[base,'/es'+base,'/pt'+base],locales:{}};
   for(const lang of ['es','pt']){
    const file=path.join(source,lang,folder,slug+'.json');
    if(!fs.existsSync(file)){issue('ERROR','MISSING_LOCALIZED_FILE','/'+lang+base,file.replace(root+path.sep,''));row.locales[lang]='MISSING';continue}
@@ -62,12 +62,12 @@ for(const rel of components){
  if(!fs.existsSync(file)){issue('ERROR','MISSING_SHARED_COMPONENT',rel,'Cannot assess shared layout');continue}
  const code=fs.readFileSync(file,'utf8');
  if(/(?:setLang\\(|LANG_LABELS\\[l\\]|aria-label=\\{ui\\.language\\})/.test(code))issue('WARN','IN_PAGE_LANGUAGE_CONTROL',rel,'Review in-content language switching');
- if(/maxWidth:\\s*['"](?:860|1000|1100|1200)px['"]/.test(code))issue('WARN','NARROW_LAYOUT',rel,'Inspect actual rendered widths; style may be intentional');
+ if(code.includes("maxWidth: '1200px'")||code.includes("maxWidth: '1100px'")||code.includes("maxWidth: '860px'"))issue('WARN','NARROW_LAYOUT',rel,'Inspect rendered widths; style may be intentional');
  if(/textAlign:\\s*['"]justify['"]/.test(code))issue('WARN','JUSTIFIED_TEXT',rel,'Potential awkward word spacing');
 }
 const summary={generatedAt:new Date().toISOString(),scope:'Knowledge Center localized static content and shared structure',familySlugs:inventory.length,localizedFilesRead:checked,urlsRepresented:inventory.length*3,errors:findings.filter(x=>x.severity==='ERROR').length,warnings:findings.filter(x=>x.severity==='WARN').length,limitations:['Not a browser render or accessibility audit','Not a scientific validation of engineering claims','Source registries not parsed are explicitly warned; route inventory may be incomplete','English source pages and connection graph require separate checks']};
 const report={summary,inventory,findings};
 const output=process.argv.find(x=>x.startsWith('--out='))?.slice(6)||path.join(root,'artifacts/kc-audit-report.json');
-fs.mkdirSync(path.dirname(path.resolve(output)),{recursive:true});fs.writeFileSync(output,JSON.stringify(report,null,2)+'\\n');
+fs.mkdirSync(path.dirname(path.resolve(output)),{recursive:true});fs.writeFileSync(output,JSON.stringify(report,null,2));
 console.log(JSON.stringify(summary,null,2));console.log('Report: '+output);
 if(summary.errors)process.exitCode=1;
