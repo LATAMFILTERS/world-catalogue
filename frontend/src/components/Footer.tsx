@@ -90,7 +90,7 @@ export function Footer() {
             <div>
               <img
                 src="/images/KLEO-TECHNOLOGY-fn.avif"
-                alt="Kleo Technologies"
+                alt="Kleo Technology LLC"
                 width={1640}
                 height={656}
                 style={{ maxHeight: '64px', maxWidth: '200px', objectFit: 'contain', display: 'block' }}
@@ -104,7 +104,7 @@ export function Footer() {
                   maxWidth: '240px',
                   margin: 0,
                 }}>
-                  {t('footer.elimfiltersCopyright', 'KLEO TECHNOLOGY LLC | Intelligence and Engineering in Filtration')}
+                  {t('footer.elimfiltersCopyright', '© 2015–2026 Kleo Technology LLC | Intelligence and Engineering in Filtration')}
                 </p>
               </div>
             </div>
@@ -250,10 +250,9 @@ export function Footer() {
             fontFamily: 'var(--font-body)',
             lineHeight: 1.5,
             width: '100%',
-            textTransform: 'lowercase',
           }}>
             <p style={{ margin: 0 }}>
-              {t('footer.legalLine', '© KLEO TECHNOLOGY LLC. ELIMFILTERS® is a registered trademark. Legal Headquarters: Frisco, Texas, USA. ELIMFILTERS operates through a distributor-first global commercial model with coordinated strategic-account capability.')}
+              {t('footer.legalLine', '© 2015–2026 Kleo Technology LLC. ELIMFILTERS® is a registered trademark. Legal Headquarters: Frisco, Texas, USA. ELIMFILTERS operates through a distributor-first global commercial model with coordinated strategic-account capability.')}
             </p>
           </div>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
