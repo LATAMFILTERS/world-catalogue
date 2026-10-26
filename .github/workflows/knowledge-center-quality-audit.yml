@@ -1,0 +1,35 @@
+name: Knowledge Center quality audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'frontend/src/app/knowledge-center/**'
+      - 'frontend/src/components/knowledge-center/**'
+      - 'frontend/src/lib/knowledge-center-data/**'
+      - 'scripts/audit-knowledge-center-quality.cjs'
+      - '.github/workflows/knowledge-center-quality-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/src/app/knowledge-center/**'
+      - 'frontend/src/components/knowledge-center/**'
+      - 'frontend/src/lib/knowledge-center-data/**'
+jobs:
+  source-inventory:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate three-language structural report
+        run: node scripts/audit-knowledge-center-quality.cjs --out=artifacts/kc-audit-report.json
+      - name: Upload route-level findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kc-quality-report
+          path: artifacts/kc-audit-report.json
+          if-no-files-found: error
