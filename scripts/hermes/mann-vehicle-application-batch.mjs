@@ -20,6 +20,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import pg from 'pg';
+import { dutyOfMannRows } from './lib/mann-duty.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const args = Object.fromEntries(process.argv.slice(2).reduce((acc, cur, i, arr) => {
@@ -232,6 +233,7 @@ const runDir = path.resolve('out', 'mann-batch', runId);
 fs.mkdirSync(runDir, { recursive: true });
 const rows = [];
 const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
+const hdBacklog = [];
 for (const [i, t] of targets.entries()) {
   let dir = path.join(runDir, t.sku);
   if (!t.mann_code && t.mann_candidates) {
@@ -246,15 +248,33 @@ for (const [i, t] of targets.entries()) {
         && cc.matched_make_model_year >= 1 && cc.matched_engine_code_mismatch === 0) valid.push({ code, cdir, res });
       await sleep(delayMs);
     }
-    if (valid.length === 1) {
-      t.mann_code = valid[0].code; t.code_source = 'MULTIPLE_MANN_CODES_ONE_VALID'; t.candidates_tried = t.mann_candidates; dir = valid[0].cdir;
-      t.preset = valid[0].res;
+    // Tie-break (Victor 2026-10-27): validate the duty of each tied MANN code from its official applications.
+    // LD -> base of this LD SKU; HD -> competitor code on the HD side (Donaldson base), logged to the HD backlog.
+    let pick = valid.length === 1 ? valid[0] : null;
+    if (valid.length > 1) {
+      for (const v of valid) {
+        let mannRows = [];
+        try { mannRows = JSON.parse(fs.readFileSync(path.join(v.cdir, 'mann-applications.json'), 'utf8')); } catch { /* no rows */ }
+        v.duty = dutyOfMannRows(mannRows);
+      }
+      const ld = valid.filter((v) => v.duty.duty === 'LIGHT_DUTY');
+      for (const v of valid.filter((x) => x.duty.duty === 'HEAVY_DUTY')) {
+        hdBacklog.push({ ld_sku: t.sku, mann_code: v.code, duty: v.duty, action: 'COMPETITOR_CODE_ON_HD_SKU (Donaldson base)' });
+      }
+      t.duty_check = valid.map((v) => ({ code: v.code, ...v.duty }));
+      if (ld.length === 1) { pick = ld[0]; t.code_source = 'MULTIPLE_MANN_CODES_LD_BY_DUTY'; }
+    }
+    if (pick) {
+      t.mann_code = pick.code; t.code_source = t.code_source === 'MULTIPLE_MANN_CODES_LD_BY_DUTY' ? t.code_source : 'MULTIPLE_MANN_CODES_ONE_VALID';
+      t.candidates_tried = t.mann_candidates; dir = pick.cdir; t.preset = pick.res;
+    } else if (t.duty_check) {
+      t.code_source = `MULTIPLE_MANN_LD_TIE(${t.duty_check.map((d) => `${d.code}:${d.duty}`).join('|')})`;
     } else {
       t.code_source = valid.length ? `MULTIPLE_MANN_VALID(${valid.map((v) => v.code).join('|')})` : 'MULTIPLE_MANN_NONE_VALID';
     }
   }
   if (!t.mann_code) {
-    rows.push({ sku: t.sku, mann_code: null, code_source: t.code_source, source_codes: t.source_codes, candidates: t.mann_candidates || null, eligible: false, reason: t.code_source });
+    rows.push({ sku: t.sku, mann_code: null, code_source: t.code_source, source_codes: t.source_codes, candidates: t.mann_candidates || null, duty_check: t.duty_check || null, eligible: false, reason: t.code_source });
     console.log(`[${i + 1}/${targets.length}] ${t.sku} -\tHOLD\t${t.code_source} (${t.source_codes} codigos)`);
     continue;
   }
@@ -299,6 +319,7 @@ for (const [i, t] of targets.entries()) {
   if (i < targets.length - 1) await sleep(delayMs);
 }
 fs.writeFileSync(path.join(runDir, 'summary.json'), JSON.stringify({ run_id: runId, offset, limit, prefix, rule, min_match: minMatch, rows }, null, 2));
+if (hdBacklog.length) fs.writeFileSync(path.join(runDir, 'hd-competitor-backlog.json'), JSON.stringify(hdBacklog, null, 2));
 const eligible = rows.filter((r) => r.eligible).length;
 console.log(JSON.stringify({ run_dir: runDir, processed: rows.length, eligible, hold: rows.length - eligible,
   hold_reasons: rows.filter((r) => !r.eligible).reduce((m, r) => { const k = String(r.reason).split(':')[0].replace(/_0\.\d+$/, ''); m[k] = (m[k] || 0) + 1; return m; }, {}),
