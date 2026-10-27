@@ -47,6 +47,8 @@ if (args['retry-from']) {
     for (const r of JSON.parse(fs.readFileSync(f.trim(), 'utf8')).rows || []) if (String(r.reason || '').startsWith(reason)) only.push(r.sku);
   }
 }
+// --skus A,B,C: only these SKUs (small verification runs).
+if (args.skus) only = String(args.skus).toUpperCase().split(',').map((x) => x.trim()).filter(Boolean);
 const minMatch = Number(args['min-match'] || 0.7);
 const delayMs = Number(args['delay-ms'] || 2000);
 const commitEligible = args['commit-eligible'] === 'true';
@@ -63,20 +65,32 @@ const ldFamilyMatches = (sku, title) => {
 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const normCode = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+// Catalogue codes are stored without spaces/"/" (W7301 = W 730/1, HU8152X = HU 815/2 x). The official product URL
+// keeps the "/" (verified by the operator: .../product.html/w730/1_mann-filter.html). Candidates: "/" before the last
+// 1 or 2 digits. Accepted only when EXACTLY ONE candidate is an existing official page whose <title> names MANN-FILTER
+// and contains the code; the pilot/apply then re-run identity, family and engine guards on that page.
+function slugVariants(code) {
+  const m = /^([A-Z]+)(\d+)([A-Z]*)$/.exec(normCode(code));
+  if (!m) return [];
+  const [, pre, dig, suf] = m;
+  return [1, 2].filter((k) => dig.length > k + 1).map((k) => `${pre}${dig.slice(0, -k)}/${dig.slice(-k)}${suf}`.toLowerCase());
+}
 async function resolveViaMannSearch(code) {
-  const q = encodeURIComponent(normCode(code));
-  const url = `https://www.mann-filter.com/en/catalog/search-results.html?mode=smart&displayView=Grid&smart=${q}&smartSearchTerm=${q}`;
-  try {
-    const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'text/html' } });
-    await sleep(delayMs);
-    if (!res.ok) return { url: null, note: `HTTP_${res.status}` };
-    const html = await res.text();
-    const links = [...new Set([...html.matchAll(/\/catalog\/search-results\/product\.html\/([^"'?#<>\s]+?)_mann-filter\.html/gi)].map((m) => decodeURIComponent(m[1])))];
-    if (!links.length) return { url: null, note: /no results found/i.test(html) ? 'NO_RESULT' : 'NO_PRODUCT_LINK_IN_HTML' };
-    const exact = links.filter((l) => normCode(l) === normCode(code));
-    if (exact.length !== 1) return { url: null, note: exact.length ? 'MULTIPLE_EXACT' : `NO_EXACT_MATCH(${links.slice(0, 3).join('|')})` };
-    return { url: `https://www.mann-filter.com/en/catalog/search-results/product.html/${exact[0]}_mann-filter.html`, note: 'RESOLVED' };
-  } catch (e) { return { url: null, note: `FETCH_ERROR ${e.message}`.slice(0, 80) }; }
+  const variants = slugVariants(code);
+  if (!variants.length) return { url: null, note: 'NO_SLASH_VARIANT' };
+  const found = [];
+  for (const v of variants) {
+    const url = `https://www.mann-filter.com/en/catalog/search-results/product.html/${v}_mann-filter.html`;
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'text/html' } });
+      await sleep(delayMs);
+      if (res.status !== 200) continue;
+      const title = (/<title>([^<]+)<\/title>/i.exec(await res.text()) || [])[1] || '';
+      if (/MANN-FILTER/i.test(title) && normCode(title).includes(normCode(code))) found.push({ url, v });
+    } catch { /* try next variant */ }
+  }
+  if (found.length !== 1) return { url: null, note: found.length ? `MULTIPLE_VARIANTS(${found.map((f) => f.v).join('|')})` : `NO_VARIANT_PAGE(${variants.join('|')})` };
+  return { url: found[0].url, note: 'RESOLVED', variant: found[0].v };
 }
 const slug = (code) => String(code).toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9/()]/g, '');
 
@@ -128,7 +142,8 @@ await db.query('BEGIN READ ONLY');
 //    are mixed imports (e.g. EL30816 = HU816X + HU816ZKIT) and go to review.
 // --from-classification <ld-base-classification json> [--class MANN_SAME_DIGITS]: targets are the SKUs of that class
 // (European origin, a MANN code with the SKU's last four digits). The MANN code is taken RAW from competitor/oem codes
-// (keeps "/" and spaces for the official URL); 2+ distinct same-digit MANN codes -> MULTIPLE_MANN_CODES (held).
+// (keeps "/" and spaces for the official URL); 2+ distinct same-digit MANN codes: each one is tried against the official
+// page and the SKU proceeds only when EXACTLY ONE candidate has a valid page of the right family (else held).
 let classTargets = null;
 if (args['from-classification']) {
   const cls = String(args.class || 'MANN_SAME_DIGITS');
@@ -144,7 +159,8 @@ if (args['from-classification']) {
     const want = new Set(r.same_digit_mann);
     const rawCodes = [...new Map(pool.filter((c) => want.has(normCode(c))).map((c) => [normCode(c), String(c).trim()])).values()];
     if (rawCodes.length === 1) return { sku: r.sku, mann_code: rawCodes[0], code_source: `CLASSIFICATION_${cls}`, source_codes: 1 };
-    return { sku: r.sku, mann_code: null, code_source: rawCodes.length > 1 ? 'MULTIPLE_MANN_CODES' : 'MANN_CODE_NOT_FOUND_RAW', source_codes: rawCodes.length };
+    return { sku: r.sku, mann_code: null, mann_candidates: rawCodes.length > 1 ? rawCodes : null,
+      code_source: rawCodes.length > 1 ? 'MULTIPLE_MANN_CODES' : 'MANN_CODE_NOT_FOUND_RAW', source_codes: rawCodes.length };
   });
 }
 const { rows: dbTargets } = classTargets ? { rows: [] } : await db.query(`
@@ -179,15 +195,62 @@ const targets = classTargets || dbTargets;
 await db.query('ROLLBACK');
 await db.end();
 
+// Official page for one MANN code: direct URL (us-en, then en), then the "/"-restored variant (resolveViaMannSearch).
+async function findPilot(sku, code, dir) {
+  // us-en first (US vehicle listings); fall back to the global en page when the
+  // product is missing there or lists no vehicles.
+  let pilot; let locale;
+  for (locale of ['us-en', 'en']) {
+    const url = `https://www.mann-filter.com/${locale}/catalog/search-results/product.html/${slug(code)}_mann-filter.html`;
+    pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', sku, '--mann', code, '--url', url, '--out', dir]);
+    if (pilot.status === 0 && pilot.json?.counts) break;
+    if (!/MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) break;
+    await sleep(delayMs);
+  }
+  // Catalogue codes are often stored without spaces/"/" (W7301 = W 730/1, HU8152X = HU 815/2 x), so the direct URL
+  // 404s. Fallback: official product page with the "/" restored (slugVariants / resolveViaMannSearch).
+  let resolvedUrl = null; let resolveNote = null;
+  if (pilot.status !== 0 && /MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) {
+    const r = await resolveViaMannSearch(code);
+    resolveNote = r.note;
+    if (r.url) {
+      for (const loc of ['us-en', 'en']) {
+        resolvedUrl = r.url.replace(/mann-filter\.com\/[a-z-]+\//, `mann-filter.com/${loc}/`);
+        locale = loc;
+        pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', sku, '--mann', code, '--url', resolvedUrl, '--out', dir]);
+        if (pilot.status === 0 && pilot.json?.counts) break;
+        await sleep(delayMs);
+      }
+    }
+  }
+  return { pilot, locale, resolvedUrl, resolveNote };
+}
+
 const runId = new Date().toISOString().replace(/[:.]/g, '-');
 const runDir = path.resolve('out', 'mann-batch', runId);
 fs.mkdirSync(runDir, { recursive: true });
 const rows = [];
+const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
 for (const [i, t] of targets.entries()) {
-  const dir = path.join(runDir, t.sku);
-  const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
+  let dir = path.join(runDir, t.sku);
+  if (!t.mann_code && t.mann_candidates) {
+    const valid = [];
+    for (const [k, code] of t.mann_candidates.entries()) {
+      if (last4(code) !== last4(t.sku)) continue;
+      const cdir = path.join(runDir, t.sku, `candidate-${k + 1}`);
+      const res = await findPilot(t.sku, code, cdir);
+      if (res.pilot.status === 0 && res.pilot.json?.counts && ldFamilyMatches(t.sku, res.pilot.json?.source?.title)) valid.push({ code, cdir, res });
+      await sleep(delayMs);
+    }
+    if (valid.length === 1) {
+      t.mann_code = valid[0].code; t.code_source = 'MULTIPLE_MANN_CODES_ONE_VALID'; t.candidates_tried = t.mann_candidates; dir = valid[0].cdir;
+      t.preset = valid[0].res;
+    } else {
+      t.code_source = valid.length ? `MULTIPLE_MANN_VALID(${valid.map((v) => v.code).join('|')})` : 'MULTIPLE_MANN_NONE_VALID';
+    }
+  }
   if (!t.mann_code) {
-    rows.push({ sku: t.sku, mann_code: null, code_source: t.code_source, source_codes: t.source_codes, eligible: false, reason: t.code_source });
+    rows.push({ sku: t.sku, mann_code: null, code_source: t.code_source, source_codes: t.source_codes, candidates: t.mann_candidates || null, eligible: false, reason: t.code_source });
     console.log(`[${i + 1}/${targets.length}] ${t.sku} -\tHOLD\t${t.code_source} (${t.source_codes} codigos)`);
     continue;
   }
@@ -196,33 +259,7 @@ for (const [i, t] of targets.entries()) {
     console.log(`[${i + 1}/${targets.length}] ${t.sku} ${t.mann_code}\tHOLD\tBASE_CODE_SKU_DIGITS_MISMATCH`);
     continue;
   }
-  // us-en first (US vehicle listings); fall back to the global en page when the
-  // product is missing there or lists no vehicles.
-  let pilot; let locale;
-  for (locale of ['us-en', 'en']) {
-    const url = `https://www.mann-filter.com/${locale}/catalog/search-results/product.html/${slug(t.mann_code)}_mann-filter.html`;
-    pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', t.sku, '--mann', t.mann_code, '--url', url, '--out', dir]);
-    if (pilot.status === 0 && pilot.json?.counts) break;
-    if (!/MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) break;
-    await sleep(delayMs);
-  }
-  // Catalogue codes are often stored without spaces/"/" (W7301 = W 730/1, HU8152X = HU 815/2 x), so the direct URL
-  // 404s. Fallback: the official MANN SmartSearch; accepted only when exactly ONE product link has the identical
-  // normalized code. The pilot/apply then run the usual identity, family and engine guards on that official page.
-  let resolvedUrl = null; let resolveNote = null;
-  if (pilot.status !== 0 && /MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) {
-    const r = await resolveViaMannSearch(t.mann_code);
-    resolveNote = r.note;
-    if (r.url) {
-      for (const loc of ['us-en', 'en']) {
-        resolvedUrl = r.url.replace(/mann-filter\.com\/[a-z-]+\//, `mann-filter.com/${loc}/`);
-        locale = loc;
-        pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', t.sku, '--mann', t.mann_code, '--url', resolvedUrl, '--out', dir]);
-        if (pilot.status === 0 && pilot.json?.counts) break;
-        await sleep(delayMs);
-      }
-    }
-  }
+  let { pilot, locale, resolvedUrl, resolveNote } = t.preset || await findPilot(t.sku, t.mann_code, dir);
   const c = pilot.json?.counts;
   const row = { sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, locale, dir, resolved_url: resolvedUrl, resolve_note: resolveNote, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
     current_distinct: c?.current_distinct_keys ?? null, matched: c?.matched_make_model_year ?? null,
