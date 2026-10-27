@@ -47,6 +47,8 @@ if (args['retry-from']) {
     for (const r of JSON.parse(fs.readFileSync(f.trim(), 'utf8')).rows || []) if (String(r.reason || '').startsWith(reason)) only.push(r.sku);
   }
 }
+// --skus A,B,C: only these SKUs (small verification runs).
+if (args.skus) only = String(args.skus).toUpperCase().split(',').map((x) => x.trim()).filter(Boolean);
 const minMatch = Number(args['min-match'] || 0.7);
 const delayMs = Number(args['delay-ms'] || 2000);
 const commitEligible = args['commit-eligible'] === 'true';
@@ -63,20 +65,37 @@ const ldFamilyMatches = (sku, title) => {
 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const normCode = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+// MANN site = Adobe AEM CIF + Magento GraphQL. The store view and endpoint are published by the official page in
+// <meta name="store-config" content="{...}">, read once instead of guessed.
+let mannStore = null;
+async function mannStoreConfig() {
+  if (mannStore) return mannStore;
+  const res = await fetch('https://www.mann-filter.com/en/catalog/search-results.html', { headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'text/html' } });
+  const html = await res.text();
+  const meta = /<meta[^>]+name="store-config"[^>]+content="([^"]+)"/i.exec(html) || /<meta[^>]+content="([^"]+)"[^>]+name="store-config"/i.exec(html);
+  if (!meta) throw new Error(`NO_STORE_CONFIG metas=${[...html.matchAll(/<meta[^>]+name="([^"]+)"/gi)].map((m) => m[1]).join(',').slice(0, 200)}`);
+  const cfg = JSON.parse(meta[1].replace(/&quot;|&#34;/g, '"').replace(/&amp;/g, '&'));
+  mannStore = { store: cfg.storeView || cfg.storeCode || null, endpoint: new URL(cfg.graphqlEndpoint || '/api/graphql/catalog-prod', 'https://www.mann-filter.com').href,
+    method: String(cfg.graphqlMethod || 'POST').toUpperCase(), headers: cfg.httpHeaders || {} };
+  return mannStore;
+}
 async function resolveViaMannSearch(code) {
-  const q = encodeURIComponent(normCode(code));
-  const url = `https://www.mann-filter.com/en/catalog/search-results.html?mode=smart&displayView=Grid&smart=${q}&smartSearchTerm=${q}`;
   try {
-    const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'text/html' } });
+    const cfg = await mannStoreConfig();
+    const query = `{ products(search: ${JSON.stringify(normCode(code))}, pageSize: 20) { items { sku name url_key } } }`;
+    const headers = { 'User-Agent': 'Mozilla/5.0', Accept: 'application/json', ...cfg.headers, ...(cfg.store ? { Store: cfg.store } : {}) };
+    const res = cfg.method === 'GET'
+      ? await fetch(`${cfg.endpoint}?query=${encodeURIComponent(query)}`, { headers })
+      : await fetch(cfg.endpoint, { method: 'POST', headers: { ...headers, 'Content-Type': 'application/json' }, body: JSON.stringify({ query }) });
     await sleep(delayMs);
-    if (!res.ok) return { url: null, note: `HTTP_${res.status}` };
-    const html = await res.text();
-    const links = [...new Set([...html.matchAll(/\/catalog\/search-results\/product\.html\/([^"'?#<>\s]+?)_mann-filter\.html/gi)].map((m) => decodeURIComponent(m[1])))];
-    if (!links.length) return { url: null, note: /no results found/i.test(html) ? 'NO_RESULT' : 'NO_PRODUCT_LINK_IN_HTML' };
-    const exact = links.filter((l) => normCode(l) === normCode(code));
-    if (exact.length !== 1) return { url: null, note: exact.length ? 'MULTIPLE_EXACT' : `NO_EXACT_MATCH(${links.slice(0, 3).join('|')})` };
-    return { url: `https://www.mann-filter.com/en/catalog/search-results/product.html/${exact[0]}_mann-filter.html`, note: 'RESOLVED' };
-  } catch (e) { return { url: null, note: `FETCH_ERROR ${e.message}`.slice(0, 80) }; }
+    const body = await res.json().catch(() => null);
+    if (!res.ok || body?.errors) return { url: null, note: `API_${res.status} ${JSON.stringify(body?.errors?.[0]?.message || '').slice(0, 80)}` };
+    const items = body?.data?.products?.items || [];
+    if (!items.length) return { url: null, note: 'NO_RESULT' };
+    const exact = items.filter((it) => normCode(it.sku) === normCode(code) || normCode(String(it.url_key || '').replace(/_mann-filter$/i, '')) === normCode(code));
+    if (exact.length !== 1 || !exact[0].url_key) return { url: null, note: exact.length ? 'MULTIPLE_EXACT' : `NO_EXACT_MATCH(${items.slice(0, 3).map((it) => it.sku).join('|')})` };
+    return { url: `https://www.mann-filter.com/en/catalog/search-results/product.html/${exact[0].url_key}.html`, note: 'RESOLVED', sku: exact[0].sku };
+  } catch (e) { return { url: null, note: `ERROR ${e.message}`.slice(0, 160) }; }
 }
 const slug = (code) => String(code).toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9/()]/g, '');
 
@@ -207,7 +226,7 @@ for (const [i, t] of targets.entries()) {
     await sleep(delayMs);
   }
   // Catalogue codes are often stored without spaces/"/" (W7301 = W 730/1, HU8152X = HU 815/2 x), so the direct URL
-  // 404s. Fallback: the official MANN SmartSearch; accepted only when exactly ONE product link has the identical
+  // 404s. Fallback: the official MANN catalogue API; accepted only when exactly ONE product has the identical
   // normalized code. The pilot/apply then run the usual identity, family and engine guards on that official page.
   let resolvedUrl = null; let resolveNote = null;
   if (pilot.status !== 0 && /MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) {
