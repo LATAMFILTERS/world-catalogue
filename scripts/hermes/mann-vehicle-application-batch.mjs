@@ -142,7 +142,8 @@ await db.query('BEGIN READ ONLY');
 //    are mixed imports (e.g. EL30816 = HU816X + HU816ZKIT) and go to review.
 // --from-classification <ld-base-classification json> [--class MANN_SAME_DIGITS]: targets are the SKUs of that class
 // (European origin, a MANN code with the SKU's last four digits). The MANN code is taken RAW from competitor/oem codes
-// (keeps "/" and spaces for the official URL); 2+ distinct same-digit MANN codes -> MULTIPLE_MANN_CODES (held).
+// (keeps "/" and spaces for the official URL); 2+ distinct same-digit MANN codes: each one is tried against the official
+// page and the SKU proceeds only when EXACTLY ONE candidate has a valid page of the right family (else held).
 let classTargets = null;
 if (args['from-classification']) {
   const cls = String(args.class || 'MANN_SAME_DIGITS');
@@ -158,7 +159,8 @@ if (args['from-classification']) {
     const want = new Set(r.same_digit_mann);
     const rawCodes = [...new Map(pool.filter((c) => want.has(normCode(c))).map((c) => [normCode(c), String(c).trim()])).values()];
     if (rawCodes.length === 1) return { sku: r.sku, mann_code: rawCodes[0], code_source: `CLASSIFICATION_${cls}`, source_codes: 1 };
-    return { sku: r.sku, mann_code: null, code_source: rawCodes.length > 1 ? 'MULTIPLE_MANN_CODES' : 'MANN_CODE_NOT_FOUND_RAW', source_codes: rawCodes.length };
+    return { sku: r.sku, mann_code: null, mann_candidates: rawCodes.length > 1 ? rawCodes : null,
+      code_source: rawCodes.length > 1 ? 'MULTIPLE_MANN_CODES' : 'MANN_CODE_NOT_FOUND_RAW', source_codes: rawCodes.length };
   });
 }
 const { rows: dbTargets } = classTargets ? { rows: [] } : await db.query(`
@@ -193,29 +195,14 @@ const targets = classTargets || dbTargets;
 await db.query('ROLLBACK');
 await db.end();
 
-const runId = new Date().toISOString().replace(/[:.]/g, '-');
-const runDir = path.resolve('out', 'mann-batch', runId);
-fs.mkdirSync(runDir, { recursive: true });
-const rows = [];
-for (const [i, t] of targets.entries()) {
-  const dir = path.join(runDir, t.sku);
-  const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
-  if (!t.mann_code) {
-    rows.push({ sku: t.sku, mann_code: null, code_source: t.code_source, source_codes: t.source_codes, eligible: false, reason: t.code_source });
-    console.log(`[${i + 1}/${targets.length}] ${t.sku} -\tHOLD\t${t.code_source} (${t.source_codes} codigos)`);
-    continue;
-  }
-  if (last4(t.mann_code) !== last4(t.sku)) {
-    rows.push({ sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, eligible: false, reason: 'BASE_CODE_SKU_DIGITS_MISMATCH' });
-    console.log(`[${i + 1}/${targets.length}] ${t.sku} ${t.mann_code}\tHOLD\tBASE_CODE_SKU_DIGITS_MISMATCH`);
-    continue;
-  }
+// Official page for one MANN code: direct URL (us-en, then en), then the "/"-restored variant (resolveViaMannSearch).
+async function findPilot(sku, code, dir) {
   // us-en first (US vehicle listings); fall back to the global en page when the
   // product is missing there or lists no vehicles.
   let pilot; let locale;
   for (locale of ['us-en', 'en']) {
-    const url = `https://www.mann-filter.com/${locale}/catalog/search-results/product.html/${slug(t.mann_code)}_mann-filter.html`;
-    pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', t.sku, '--mann', t.mann_code, '--url', url, '--out', dir]);
+    const url = `https://www.mann-filter.com/${locale}/catalog/search-results/product.html/${slug(code)}_mann-filter.html`;
+    pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', sku, '--mann', code, '--url', url, '--out', dir]);
     if (pilot.status === 0 && pilot.json?.counts) break;
     if (!/MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) break;
     await sleep(delayMs);
@@ -224,18 +211,55 @@ for (const [i, t] of targets.entries()) {
   // 404s. Fallback: official product page with the "/" restored (slugVariants / resolveViaMannSearch).
   let resolvedUrl = null; let resolveNote = null;
   if (pilot.status !== 0 && /MANN HTTP 404|0 MANN rows/.test(pilot.error || '')) {
-    const r = await resolveViaMannSearch(t.mann_code);
+    const r = await resolveViaMannSearch(code);
     resolveNote = r.note;
     if (r.url) {
       for (const loc of ['us-en', 'en']) {
         resolvedUrl = r.url.replace(/mann-filter\.com\/[a-z-]+\//, `mann-filter.com/${loc}/`);
         locale = loc;
-        pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', t.sku, '--mann', t.mann_code, '--url', resolvedUrl, '--out', dir]);
+        pilot = runNode('mann-vehicle-application-pilot.mjs', ['--sku', sku, '--mann', code, '--url', resolvedUrl, '--out', dir]);
         if (pilot.status === 0 && pilot.json?.counts) break;
         await sleep(delayMs);
       }
     }
   }
+  return { pilot, locale, resolvedUrl, resolveNote };
+}
+
+const runId = new Date().toISOString().replace(/[:.]/g, '-');
+const runDir = path.resolve('out', 'mann-batch', runId);
+fs.mkdirSync(runDir, { recursive: true });
+const rows = [];
+const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
+for (const [i, t] of targets.entries()) {
+  let dir = path.join(runDir, t.sku);
+  if (!t.mann_code && t.mann_candidates) {
+    const valid = [];
+    for (const [k, code] of t.mann_candidates.entries()) {
+      if (last4(code) !== last4(t.sku)) continue;
+      const cdir = path.join(runDir, t.sku, `candidate-${k + 1}`);
+      const res = await findPilot(t.sku, code, cdir);
+      if (res.pilot.status === 0 && res.pilot.json?.counts && ldFamilyMatches(t.sku, res.pilot.json?.source?.title)) valid.push({ code, cdir, res });
+      await sleep(delayMs);
+    }
+    if (valid.length === 1) {
+      t.mann_code = valid[0].code; t.code_source = 'MULTIPLE_MANN_CODES_ONE_VALID'; t.candidates_tried = t.mann_candidates; dir = valid[0].cdir;
+      t.preset = valid[0].res;
+    } else {
+      t.code_source = valid.length ? `MULTIPLE_MANN_VALID(${valid.map((v) => v.code).join('|')})` : 'MULTIPLE_MANN_NONE_VALID';
+    }
+  }
+  if (!t.mann_code) {
+    rows.push({ sku: t.sku, mann_code: null, code_source: t.code_source, source_codes: t.source_codes, candidates: t.mann_candidates || null, eligible: false, reason: t.code_source });
+    console.log(`[${i + 1}/${targets.length}] ${t.sku} -\tHOLD\t${t.code_source} (${t.source_codes} codigos)`);
+    continue;
+  }
+  if (last4(t.mann_code) !== last4(t.sku)) {
+    rows.push({ sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, eligible: false, reason: 'BASE_CODE_SKU_DIGITS_MISMATCH' });
+    console.log(`[${i + 1}/${targets.length}] ${t.sku} ${t.mann_code}\tHOLD\tBASE_CODE_SKU_DIGITS_MISMATCH`);
+    continue;
+  }
+  let { pilot, locale, resolvedUrl, resolveNote } = t.preset || await findPilot(t.sku, t.mann_code, dir);
   const c = pilot.json?.counts;
   const row = { sku: t.sku, mann_code: t.mann_code, code_source: t.code_source, locale, dir, resolved_url: resolvedUrl, resolve_note: resolveNote, mann_rows: c?.mann_rows_dedup ?? null, current_rows: c?.current_rows ?? null,
     current_distinct: c?.current_distinct_keys ?? null, matched: c?.matched_make_model_year ?? null,
