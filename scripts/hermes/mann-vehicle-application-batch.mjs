@@ -143,7 +143,8 @@ await db.query('BEGIN READ ONLY');
 // --from-classification <ld-base-classification json> [--class MANN_SAME_DIGITS]: targets are the SKUs of that class
 // (European origin, a MANN code with the SKU's last four digits). The MANN code is taken RAW from competitor/oem codes
 // (keeps "/" and spaces for the official URL); 2+ distinct same-digit MANN codes: each one is tried against the official
-// page and the SKU proceeds only when EXACTLY ONE candidate has a valid page of the right family (else held).
+// page and the SKU proceeds only when EXACTLY ONE candidate has a valid page of the right family that reproduces the
+// SKU (>=1 matching application, 0 engine conflicts); otherwise held (e.g. CU vs CUK carbon variants need a decision).
 let classTargets = null;
 if (args['from-classification']) {
   const cls = String(args.class || 'MANN_SAME_DIGITS');
@@ -239,7 +240,10 @@ for (const [i, t] of targets.entries()) {
       if (last4(code) !== last4(t.sku)) continue;
       const cdir = path.join(runDir, t.sku, `candidate-${k + 1}`);
       const res = await findPilot(t.sku, code, cdir);
-      if (res.pilot.status === 0 && res.pilot.json?.counts && ldFamilyMatches(t.sku, res.pilot.json?.source?.title)) valid.push({ code, cdir, res });
+      const cc = res.pilot.json?.counts;
+      // Valid = official page of the right family that reproduces the SKU (>=1 matching application, 0 engine conflicts).
+      if (res.pilot.status === 0 && cc && ldFamilyMatches(t.sku, res.pilot.json?.source?.title)
+        && cc.matched_make_model_year >= 1 && cc.matched_engine_code_mismatch === 0) valid.push({ code, cdir, res });
       await sleep(delayMs);
     }
     if (valid.length === 1) {
