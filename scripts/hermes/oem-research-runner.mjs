@@ -123,10 +123,13 @@ export async function runOemResearch({ now = new Date(), stateRoot = process.env
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  // INVESTIGAR on headlines runs every Lenovo run (max 3, ~5 min each) before the Tue/Wed OEM research.
-  try { const { runHeadlineResearch } = await import('./headline-research.mjs'); console.log(`[HERMES headline-research] ${JSON.stringify(await runHeadlineResearch())}`); }
-  catch (error) { console.error(`[HERMES headline-research] ${error.message}`); }
-  runOemResearch({ force: process.argv.includes('--force') })
-    .then((r) => console.log(`[HERMES oem-research] ${JSON.stringify(r)}`))
-    .catch((error) => { console.error(`[HERMES oem-research] ${error.message}`); process.exit(1); });
+  // Not a top-level await: headline-research imports this module, and a top-level await on that import
+  // never settles (circular import) -> Node exits 13 before any research runs.
+  (async () => {
+    // INVESTIGAR on headlines runs every Lenovo run (max 3, ~5 min each) before the Tue/Wed OEM research.
+    try { const { runHeadlineResearch } = await import('./headline-research.mjs'); console.log(`[HERMES headline-research] ${JSON.stringify(await runHeadlineResearch())}`); }
+    catch (error) { console.error(`[HERMES headline-research] ${error.message}`); }
+    const r = await runOemResearch({ force: process.argv.includes('--force') });
+    console.log(`[HERMES oem-research] ${JSON.stringify(r)}`);
+  })().catch((error) => { console.error(`[HERMES oem-research] ${error.message}`); process.exit(1); });
 }
