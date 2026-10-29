@@ -25,7 +25,6 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import SkipNavigation from '@/components/SkipNavigation';
 
 const BASE_URL = 'https://elimfilters.com';
-const GA_ID = 'G-T7STY4TY9C';
 const BRAND_TITLE = "ELIMFILTERS — Advanced Filtration Engineering & Intelligence";
 const BRAND_DESCRIPTION = "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.";
 
@@ -126,17 +125,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ad_personalization: 'denied',
               wait_for_update: 500
             });
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}', {
-              send_page_view: false,
-              anonymize_ip: true
-            });
           `}
         </Script>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
       </head>
       <body>
         <ClientProviders>
