@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.1.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-09-22T17:14:51.168Z",
-  "count": 61,
+  "generatedAt": "2026-10-28T11:17:34.214Z",
+  "count": 67,
   "records": [
     {
       "id": "HD-AIR-RADIAL-SEAL-HOUSING-COMPATIBILITY",
@@ -206,6 +206,252 @@
       ]
     },
     {
+      "id": "INTEL-13C5F10802D4",
+      "slug": "intel-13c5f10802d4",
+      "title": "Deere Warns Equipment Owners of Texas Diesel Waiver and Harm to Tier 4 Engines",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Industry Intelligence",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "platforms": [],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "A temporary EPA waiver allows the distribution of high-sulfur diesel, which can cause damage to Tier 4 engines."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "Deere Warns Equipment Owners of Texas Diesel Waiver and Harm to Tier 4 Engines",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Industry Intelligence",
+        "Shared / none",
+        "None assigned",
+        "A temporary EPA waiver allows the distribution of high-sulfur diesel, which can cause damage to Tier 4 engines."
+      ]
+    },
+    {
+      "id": "INTEL-13E1026ECC25",
+      "slug": "intel-13e1026ecc25",
+      "title": "New Holland’s Largest Mini Track Loader Packs 2,400-Pound Capacity",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Industry Intelligence",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "platforms": [],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "The new machine features high-flow hydraulics which may impact system efficiency and maintenance requirements."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "New Holland’s Largest Mini Track Loader Packs 2,400-Pound Capacity",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Industry Intelligence",
+        "Shared / none",
+        "None assigned",
+        "The new machine features high-flow hydraulics which may impact system efficiency and maintenance requirements."
+      ]
+    },
+    {
+      "id": "INTEL-415DCFE5AFA7",
+      "slug": "intel-415dcfe5afa7",
+      "title": "Filtration’s Next Chapter Takes Shape At FiltXPO™",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Industry Intelligence",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "platforms": [],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "The event highlights emerging filtration technologies and industry trends that could impact filtration standards and applications."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "Filtration’s Next Chapter Takes Shape At FiltXPO™",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Industry Intelligence",
+        "Shared / none",
+        "None assigned",
+        "The event highlights emerging filtration technologies and industry trends that could impact filtration standards and applications."
+      ]
+    },
+    {
+      "id": "INTEL-72552951790B",
+      "slug": "intel-72552951790b",
+      "title": "The little engines that could: 3 OEMs stand ready to meet EPA's strictest ever NOx limits",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Industry Intelligence",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "platforms": [],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "The article mentions that some OEMs will use emissions credits to meet the new EPA regulations, indicating a shift in compliance strategies within the industry."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "The little engines that could: 3 OEMs stand ready to meet EPA's strictest ever NOx limits",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Industry Intelligence",
+        "Shared / none",
+        "None assigned",
+        "The article mentions that some OEMs will use emissions credits to meet the new EPA regulations, indicating a shift in compliance strategies within the industry."
+      ]
+    },
+    {
+      "id": "INTEL-79A04E5E56C0",
+      "slug": "intel-79a04e5e56c0",
+      "title": "How Ultrasonic Bonding Supports Assembly of Filters Made With Synthetic Media",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Industry Intelligence",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "platforms": [],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Ultrasonic bonding can improve the integrity and efficiency of filtration systems by eliminating the need for adhesives and threads in filter assembly."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "How Ultrasonic Bonding Supports Assembly of Filters Made With Synthetic Media",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Industry Intelligence",
+        "Shared / none",
+        "None assigned",
+        "Ultrasonic bonding can improve the integrity and efficiency of filtration systems by eliminating the need for adhesives and threads in filter assembly."
+      ]
+    },
+    {
+      "id": "INTEL-F44A9F56F8B8",
+      "slug": "intel-f44a9f56f8b8",
+      "title": "Bacterial Retentive Filters Market To 2035: Semiconductor and Biopharma Demand Supports 8–10% Annual Growth - News and S",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Industry Intelligence",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "platforms": [],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "The bacterial retentive filters market is projected to grow at an annual rate of 8-10% through 2035, driven by increasing demand in semiconductor and biopharmaceutical industries."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "Bacterial Retentive Filters Market To 2035: Semiconductor and Biopharma Demand Supports 8–10% Annual Growth - News and S",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Industry Intelligence",
+        "Shared / none",
+        "None assigned",
+        "The bacterial retentive filters market is projected to grow at an annual rate of 8-10% through 2035, driven by increasing demand in semiconductor and biopharmaceutical industries."
+      ]
+    },
+    {
       "id": "IP-AEREMIS-AIR-TREATMENT-ARCHITECTURE",
       "slug": "ip-aeremis-air-treatment-architecture",
       "title": "AEREMIS Air Treatment Architecture",
@@ -284,6 +530,7 @@
         "Manufacturing",
         "Industrial & Process",
         "AEREMIS™",
+        "GAIRFIL™",
         "HE-CRIVA™",
         "MA-TREA™",
         "General particulate filtration stages",
@@ -387,12 +634,13 @@
         "Service Life"
       ],
       "keywords": [
-        "General Air Filtration for Industrial Ventilation",
+        "GAIRFIL General Air Filtration for Industrial Ventilation",
         "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
         "Engineering Reference",
         "Manufacturing",
         "Industrial & Process",
         "AEREMIS™",
+        "GAIRFIL™",
         "Airborne particulate loading",
         "Visible dust downstream",
         "Unexpected pressure-drop rise",
@@ -2030,6 +2278,7 @@
         "Industrial & Process",
         "COALVEX™",
         "COALERIS™",
+        "GASLIQ™",
         "Gas coalescing elements and media",
         "Bulk or intermediate separation internals where applicable",
         "Element-to-housing sealing interfaces",
@@ -2176,7 +2425,7 @@
         "Failure Analysis"
       ],
       "keywords": [
-        "Gas-Liquid Separation for Industrial Gas Conditioning",
+        "GASLIQ Gas-Liquid Separation for Industrial Gas Conditioning",
         "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
         "Engineering Reference",
         "Oil & Gas",
@@ -2184,7 +2433,7 @@
         "Power Generation",
         "Industrial & Process",
         "COALVEX™",
-        "None assigned",
+        "GASLIQ™",
         "Gas-liquid separation vessel or chamber",
         "Separation internals where applicable",
         "Liquid disengagement volume",
