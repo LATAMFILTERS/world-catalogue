@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { acceptedLeadResponse, commercialLeadKind, leadDedupKey } from '@/lib/lead-conversion-governance.mjs';
 import { useConsent } from '@/lib/useConsent';
 import { trackEvent } from '@/lib/analytics';
 import { sendCommercialIntelligenceEvent } from '@/lib/commercial-intelligence';
@@ -109,56 +110,19 @@ function parseBody(init?: RequestInit): Record<string, unknown> {
   }
 }
 
-function trackSuccessfulRequest(urlValue: string, init?: RequestInit) {
-  let url: URL;
-  try {
-    url = new URL(urlValue, window.location.origin);
-  } catch {
-    return;
-  }
-
-  const path = url.pathname.toLowerCase();
-  const payload = parseBody(init);
-
-  if (path === '/api/distributor') {
+function trackSuccessfulRequest(kind: string, payload: Record<string, unknown>) {
+  if (kind === 'distributor' || kind === 'partner') {
     sendEvent('distributor_application_submit', {
-      lead_type: 'distributor',
-      form_name: 'authorized_distributor_application',
+      lead_type: kind, form_name: kind === 'partner' ? 'partner_application' : 'authorized_distributor_application',
     });
-    sendEvent('generate_lead', {
-      lead_type: 'distributor',
-      form_name: 'authorized_distributor_application',
-    });
-    return;
-  }
-
-  if (path === '/api/lead-capture') {
+    sendEvent('generate_lead', { lead_type: kind });
+  } else if (kind === 'lead_capture') {
     const leadType = typeof payload.leadType === 'string' ? payload.leadType : 'unknown';
-    sendEvent('lead_capture_submit', {
-      lead_type: leadType,
-      form_name: 'conversion_lead_capture',
-    });
-    sendEvent('generate_lead', {
-      lead_type: leadType,
-      form_name: 'conversion_lead_capture',
-    });
-    return;
-  }
-
-  if (path.includes('/api/contact') || path.includes('/api/commercial')) {
-    sendEvent('commercial_form_submit', {
-      lead_type: 'commercial',
-      form_name: path.split('/').filter(Boolean).pop() || 'contact',
-    });
+    sendEvent('lead_capture_submit', { lead_type: leadType, form_name: 'conversion_lead_capture' });
+    sendEvent('generate_lead', { lead_type: leadType });
+  } else if (kind === 'commercial') {
+    sendEvent('commercial_form_submit', { lead_type: 'commercial' });
     sendEvent('generate_lead', { lead_type: 'commercial' });
-    return;
-  }
-
-  if (path.includes('/api/support')) {
-    sendEvent('technical_support_submit', {
-      lead_type: 'technical_support',
-      form_name: path.split('/').filter(Boolean).pop() || 'support',
-    });
   }
 }
 
@@ -278,9 +242,25 @@ export default function CommercialAnalytics() {
     };
 
     const originalFetch = window.fetch.bind(window);
+    const recorded = new Set<string>();
     window.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
       const response = await originalFetch(input, init);
-      if (response.ok) trackSuccessfulRequest(requestUrl(input), init);
+      const kind = commercialLeadKind(requestUrl(input), window.location.origin);
+      const method = (init?.method || (input instanceof Request ? input.method : 'GET')).toUpperCase();
+      if (kind && method === 'POST' && response.ok) {
+        // Cloned body only; never consume the response used by the form.
+        let result: unknown = null;
+        try { result = await response.clone().json(); } catch { /* Non-JSON is not proof of acceptance. */ }
+        if (acceptedLeadResponse(response, result)) {
+          const requestPayload = parseBody(init);
+          const key = leadDedupKey(kind, requestPayload, result);
+          // Missing stable ID is not enough to certify exactly-once attribution.
+          if (key && !recorded.has(key)) {
+            recorded.add(key);
+            trackSuccessfulRequest(kind, requestPayload);
+          }
+        }
+      }
       return response;
     };
 
