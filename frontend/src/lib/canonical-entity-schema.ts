@@ -128,14 +128,6 @@ export function buildOrganizationSchema() {
       'filtration standards and test methods',
       'failure analysis and reliability engineering',
     ],
-    additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Primary catalog products', value: '12,192 unique SKUs', description: 'Database-audited 2026-08-31' },
-      { '@type': 'PropertyValue', name: 'Cross-reference intelligence', value: '1,044,939 unique relationships', description: 'Database-audited across primary and LD catalog layers on 2026-08-31' },
-      { '@type': 'PropertyValue', name: 'Equipment makes', value: '423 active makes', description: 'Curated equipment graph, database-audited 2026-08-31' },
-      { '@type': 'PropertyValue', name: 'Equipment models', value: '37,751 models', description: 'Curated equipment graph, database-audited 2026-08-31' },
-      { '@type': 'PropertyValue', name: 'Product-to-equipment links', value: '135,157 application links', description: 'Database-audited 2026-08-31' },
-      { '@type': 'PropertyValue', name: 'LD vehicle configurations', value: '123,357 distinct configurations', description: 'Derived from 282,252 LD application records, database-audited 2026-08-31' },
-    ],
     subjectOf: [
       { '@type': 'WebPage', name: 'ELIMFILTERS Knowledge Center', url: `${BASE_URL}/knowledge-center/` },
       { '@type': 'WebApplication', name: 'ELIMFILTERS Part Search', url: 'https://part-search.elimfilters.com' },
