@@ -82,7 +82,7 @@ async function worker(){
 }
 await Promise.all(Array.from({length:Math.min(6,targets.length)},()=>worker()));
 const passed=results.filter(x=>x.status==='PASS').length,failed=results.filter(x=>x.status==='FAIL').length,blocked=results.filter(x=>x.status==='BLOCKED').length;
-const status=failed?'FAIL':blocked||issuesGlobal.length?'BLOCKED':'PASS';
+const status=failed?'FAIL':blocked||issuesGlobal.length||incomplete.length?'BLOCKED':'PASS';
 const report={timestamp:new Date().toISOString(),scope:'PUBLIC_SITEMAP_MULTILINGUAL_TRIPLETS',mode:'READ_ONLY_GET_NO_JS',status,sitemapUrls:urls.length,completeTriplets:groups.length,checked:results.length,passed,failed,blocked,incompleteLocaleGroups:incomplete,globalIssues:issuesGlobal,results};
 fs.mkdirSync(path.dirname(output),{recursive:true});fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({status,sitemapUrls:urls.length,completeTriplets:groups.length,incompleteLocaleGroups:incomplete.length,checked:results.length,passed,failed,blocked,report_path:output},null,2));
