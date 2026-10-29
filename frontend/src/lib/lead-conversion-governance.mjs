@@ -15,6 +15,8 @@ export function acceptedLeadResponse(response, payload) {
   if (!response?.ok || ![200, 201, 202].includes(response.status)) return false;
   if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return false;
   if (payload.success === false || payload.ok === false || payload.accepted === false || payload.error || payload.errors) return false;
+  // The lead-capture endpoint may acknowledge an event without persisting it.
+  if (payload.delivery === 'database_not_configured' || payload.persisted === false) return false;
   return payload.success === true || payload.ok === true || payload.accepted === true
     || typeof payload.leadId === 'string' && payload.leadId.length > 0
     || typeof payload.applicationId === 'string' && payload.applicationId.length > 0
@@ -22,7 +24,8 @@ export function acceptedLeadResponse(response, payload) {
 }
 
 export function leadDedupKey(kind, requestPayload, resultPayload) {
-  const explicit = resultPayload?.leadId || resultPayload?.applicationId ||
+  const explicit = (resultPayload?.persisted === true && resultPayload?.accepted === true ? resultPayload?.eventId : null) ||
+    resultPayload?.leadId || resultPayload?.applicationId ||
     (resultPayload?.status === 'accepted' || resultPayload?.status === 'created' ? resultPayload?.id : null) ||
     requestPayload?.idempotencyKey;
   return explicit ? `${kind}:${String(explicit)}` : null;
