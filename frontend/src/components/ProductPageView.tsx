@@ -31,9 +31,10 @@ function structuredData(p: ProductPage, familyName: string, familyUrl: string) {
       brand: { '@type': 'Brand', '@id': `${BASE_URL}/#brand`, name: 'ELIMFILTERS' },
       manufacturer: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
       additionalProperty,
-      isRelatedTo: [...p.oem, ...p.crossRefs].map((r) => ({ '@type': 'Product', name: `${r.brand} ${r.code}`, mpn: r.code, brand: { '@type': 'Brand', name: r.brand } })),
-      // Price and availability are not part of the catalogue record, so the Offer carries none.
-      offers: { '@type': 'Offer', url, seller: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' } },
+      // Cross-reference codes identify lookup candidates; they are not independently
+      // certified product relationships. Do not emit Product.isRelatedTo from them.
+      // Likewise, the technical catalogue has no verified commercial offer data,
+      // so do not emit Product.offers without a real offer.
     },
     {
       '@context': 'https://schema.org',
