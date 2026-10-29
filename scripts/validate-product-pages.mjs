@@ -87,9 +87,9 @@ for (const p of snapshot.products) {
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => { try { return JSON.parse(m[1]); } catch { fail(sku, 'invalid JSON-LD'); return {}; } });
   const product = blocks.find((b) => b['@type'] === 'Product');
   const crumbs = blocks.find((b) => b['@type'] === 'BreadcrumbList');
-  if (!product || product.sku !== sku || product.mpn !== sku || product.brand?.name !== 'ELIMFILTERS' || product.offers?.['@type'] !== 'Offer' || !(product.additionalProperty || []).length) fail(sku, 'Product JSON-LD incomplete');
+  if (!product || product.sku !== sku || product.mpn !== sku || product.brand?.name !== 'ELIMFILTERS' || !(product.additionalProperty || []).length) fail(sku, 'Product JSON-LD incomplete');
   if (!crumbs || crumbs.itemListElement?.length !== 4) fail(sku, 'BreadcrumbList incomplete');
-  if (product?.offers && ('price' in product.offers || 'availability' in product.offers)) fail(sku, 'Offer carries price/availability that the catalogue does not hold');
+  // Technical catalogue data does not constitute a verified commercial offer.\n  if (product && Object.prototype.hasOwnProperty.call(product, 'offers')) fail(sku, 'unverified Product.offers must not be published');\n  // Reference codes are lookup candidates, not certified Product-to-Product relationships.\n  if (product && (Object.prototype.hasOwnProperty.call(product, 'isRelatedTo') || Object.prototype.hasOwnProperty.call(product, 'isSimilarTo'))) fail(sku, 'unverified Product relationship must not be published');
   const famFile = path.join(OUT, 'families', p.family, 'index.html');
   if (!existsSync(famFile) || !read(famFile).includes(`href="/products/${p.slug}/"`)) fail(sku, `family page /families/${p.family}/ does not link to the SKU`);
 }
