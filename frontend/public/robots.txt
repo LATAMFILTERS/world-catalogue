@@ -1,34 +1,63 @@
+# Single authoritative robots.txt. Maintained as static public asset.
 User-agent: *
 Allow: /
 Disallow: /api/admin/
+Disallow: /admin/
 Disallow: /knowledge-center/coverage/
+Disallow: /search?
 
-# Live AI answer/search retrieval is allowed.
+# Search and AI retrievers; sensitive paths remain disallowed per group.
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /api/admin/
+Disallow: /admin/
+Disallow: /knowledge-center/coverage/
+Disallow: /search?
 
 User-agent: GPTBot
 Allow: /
+Disallow: /api/admin/
+Disallow: /admin/
+Disallow: /knowledge-center/coverage/
+Disallow: /search?
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /api/admin/
+Disallow: /admin/
+Disallow: /knowledge-center/coverage/
+Disallow: /search?
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /api/admin/
+Disallow: /admin/
+Disallow: /knowledge-center/coverage/
+Disallow: /search?
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/admin/
+Disallow: /admin/
+Disallow: /knowledge-center/coverage/
+Disallow: /search?
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /api/admin/
+Disallow: /admin/
+Disallow: /knowledge-center/coverage/
+Disallow: /search?
 
-# Training/corpus crawlers remain separate from live answer retrieval.
+# Training/corpus crawlers are a separate policy decision.
 User-agent: CCBot
 Disallow: /
 
 User-agent: Bytespider
 Disallow: /
 
+Sitemap: https://elimfilters.com/sitemap-index.xml
 Sitemap: https://elimfilters.com/sitemap.xml
 Sitemap: https://elimfilters.com/sitemap-ai.xml
 Sitemap: https://elimfilters.com/video-sitemap.xml
+Sitemap: https://part-search.elimfilters.com/sitemap.xml
