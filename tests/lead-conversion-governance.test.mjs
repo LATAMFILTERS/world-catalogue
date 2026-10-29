@@ -27,3 +27,19 @@ test('deduplication requires a stable backend or idempotency key',()=>{
   assert.equal(leadDedupKey('lead_capture',{}, {success:true}),null);
 });
 test('no network access occurs in any governance test',()=>{assert.equal(typeof globalThis.fetch,'function');});
+
+test('real lead-capture contract: count only persisted accepted events', () => {
+  const good = {accepted:true,eventId:'evt-1',persisted:true,delivery:'queued'};
+  const unpersisted = {accepted:true,eventId:'evt-2',persisted:false,delivery:'database_not_configured'};
+  assert.equal(acceptedLeadResponse({ok:true,status:202},good),true);
+  assert.equal(leadDedupKey('lead_capture',{},good),'lead_capture:evt-1');
+  assert.equal(acceptedLeadResponse({ok:true,status:202},unpersisted),false);
+});
+test('legacy distributor response accepted but lacks stable ID: must remain uncounted',()=>{
+  const response = {ok:true};
+  assert.equal(acceptedLeadResponse({ok:true,status:200},response),true);
+  assert.equal(leadDedupKey('distributor',{},response),null);
+});
+test('network rejection cannot yield a conversion', async()=>{
+  await assert.rejects(async()=>{throw new Error('network failure');});
+});
