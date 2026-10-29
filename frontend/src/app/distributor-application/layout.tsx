@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { languageAlternates } from '@/lib/localized-routes';
 
 const CANONICAL = 'https://elimfilters.com/distributor-application/';
 
@@ -8,10 +9,7 @@ export const metadata: Metadata = {
     'Join the ELIMFILTERS authorized distributor network. Represent an industrial asset protection platform — 10 proprietary technologies, 12 industrial sectors, contamination control systems for mining, agriculture, marine, oil & gas, and heavy industry.',
   alternates: {
     canonical: CANONICAL,
-    languages: {
-      'x-default': CANONICAL,
-      en: CANONICAL,
-    },
+    languages: languageAlternates('/distributor-application'),
   },
   openGraph: {
     title: 'Become an ELIMFILTERS Distributor | Asset Protection Partner Program',
