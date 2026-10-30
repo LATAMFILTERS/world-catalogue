@@ -42,21 +42,21 @@ export async function extractTechnicalIdentity({sku, sourceCode, directory, allo
   const codeValid = observedCode === code;
   const pageHasExactCode = Boolean(match);
   const technicalFields = {
-    outer_diameter_mm:/Outer diameter\\s*\\(A\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i,
-    inner_diameter_mm:/Inner diameter\\s*\\(B\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i,
-    height_mm:/Height\\s*\\(H\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i
+    outer_diameter_mm:/Outer diameter\s*\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*mm/i,
+    inner_diameter_mm:/Inner diameter\s*\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*mm/i,
+    height_mm:/Height\s*\(H\)\s*=\s*(\d+(?:\.\d+)?)\s*mm/i
   };
   const attributes = ['outer_diameter_mm','inner_diameter_mm','height_mm'];
   const checked = {};
   for (const key of attributes) {
-    const value=output[key];
-    // A number's presence somewhere in a page does not establish that it represents this dimension.
+    // Extract only explicitly labeled dimensions from the immutable source, independent of LLM omissions.
     const documented = technicalSnippet.match(technicalFields[key]);
-    const matchesDocument = documented && typeof value==='number' && Number.isFinite(value) && value===Number(documented[1]);
-    checked[key]={value:matchesDocument?value:null,status:matchesDocument?'DOCUMENT_MATCH_REVIEW_REQUIRED':'REVIEW_REQUIRED'};
+    const number = documented ? Number(documented[1]) : null;
+    const valid = number !== null && Number.isFinite(number) && number > 0;
+    checked[key]={value:valid?number:null,status:valid?'DOCUMENT_MATCH_REVIEW_REQUIRED':'REVIEW_REQUIRED'};
   }
   return {sku,expected_source_code:sourceCode,model,code_observed:output.source_code ?? null,
-    code_exact:codeValid,page_code_observed:pageHasExactCode,product_type:output.product_type ?? null,dimensions:checked,
+    code_exact:codeValid,page_code_observed:pageHasExactCode,identity_source_confirmed:pageHasExactCode,product_type:output.product_type ?? null,dimensions:checked,
     evidence_url:source.url,evidence_sha256:source.sha256,status:'REVIEW_REQUIRED',
     warning:'A product-page mention and LLM extraction do not certify fitment or any dimension.'};
 }

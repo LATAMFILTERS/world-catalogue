@@ -46,8 +46,9 @@ test('matches dimension labels and refuses unsupported model values', async () =
   };
   const result=await extractTechnicalIdentity({sku:'EL30816',sourceCode:'HU 816 x',directory:dir,fetcher});
   assert.equal(result.code_exact,true);
+  assert.equal(result.identity_source_confirmed,true);
   assert.equal(result.dimensions.outer_diameter_mm.status,'DOCUMENT_MATCH_REVIEW_REQUIRED');
-  assert.equal(result.dimensions.inner_diameter_mm.value,null);
+  assert.equal(result.dimensions.inner_diameter_mm.value,41);
   assert.equal(result.dimensions.height_mm.value,79);
   assert.equal(result.status,'REVIEW_REQUIRED');
  } finally {await rm(dir,{recursive:true,force:true});}
