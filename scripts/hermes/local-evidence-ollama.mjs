@@ -52,7 +52,7 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
       method: 'POST',
       headers: {'content-type':'application/json'},
       signal:controller.signal,
-      body:JSON.stringify({model, stream:false, format:'json', options:{temperature:0},
+      body:JSON.stringify({model, stream:false, think:false, format:'json', options:{temperature:0},
         messages:[{role:'system',content:system},
           {role:'user',content:JSON.stringify({sku,target:item,required_shape:requiredShape,sources})}]})
     });
