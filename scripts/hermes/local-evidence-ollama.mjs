@@ -6,7 +6,7 @@ import crypto from 'node:crypto';
 
 const MAX_SOURCE_CHARS = 50000;
 const MAX_PROMPT_CHARS_PER_SOURCE = 6500;
-const EVIDENCE_TERMS = /(?:dimension|diameter|height|length|thread|mm\b|inch|oil filter|air filter|fuel filter|hu\s*816\s*x|application|oem|cross.reference|product information)/i;
+const EVIDENCE_TERMS = /(?:dimension|diameter|height|length|thread|mm\b|inch|oil filter|air filter|fuel filter|application|oem|cross.reference|product information)/i;
 function boundedExcerpt(text, code) {
   const lines = String(text).split(/(?<=[.!?])\s+|\n+/).map(x=>x.trim()).filter(Boolean);
   const normalized = x=>x.toUpperCase().replace(/[^A-Z0-9]/g,'');
@@ -48,7 +48,12 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
     return {url:u.href, content:s.content, sha256:s.sha256, source_type:s.source_type || null};
   });
   const sourceCandidate = item?.discovery_hints?.source_candidate_code || '';
-  const promptSources = sources.map(source => ({...source, content:boundedExcerpt(source.content,sourceCandidate)}));
+  let remaining = 10000;
+  const promptSources = sources.map(source => {
+    const excerpt = boundedExcerpt(source.content,sourceCandidate).slice(0,Math.max(0,remaining));
+    remaining -= excerpt.length;
+    return {...source,content:excerpt};
+  });
   if (promptSources.some(s=>!s.content)) throw new Error('NO_RELEVANT_EVIDENCE_EXCERPT');
   const model = options.model || process.env.HERMES_LOCAL_LLM_MODEL || 'qwen3:8b';
   const system = [
