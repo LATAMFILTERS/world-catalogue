@@ -57,3 +57,20 @@ test('rejects an oversized response before reading body', async () => {
         headers:new Headers({'content-type':'text/html','content-length':'5000000'}),text:async()=>{throw Error('SHOULD_NOT_READ');}})}),/EVIDENCE_TOO_LARGE/);
   } finally {await rm(dir,{recursive:true,force:true});}
 });
+
+test('segments long US application evidence losslessly with source integrity',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'hermes-us-'));
+ const content='BMW 128i N51B30A '.repeat(4500).trim();
+ const html='<html><body>'+content+'</body></html>';
+ try {
+  const fetcher=async url=>({ok:true,status:200,redirected:false,url,headers:new Headers({'content-type':'text/html'}),text:async()=>html});
+  await assert.rejects(acquireOfficialHtml({sku:'EL30816',urls:['https://www.mann-filter.com/us-en/'],directory:dir,allowedHosts:'mann-filter.com',fetcher}),/EVIDENCE_CONTENT_INVALID/);
+  const result=await acquireOfficialHtml({sku:'EL30816',urls:['https://www.mann-filter.com/us-en/'],directory:dir,allowedHosts:'mann-filter.com',splitOversizedText:true,fetcher});
+  const bundle=JSON.parse(await readFile(result.file,'utf8'));
+  assert.ok(bundle.sources.length>1);
+  assert.ok(bundle.sources.every(x=>x.content.length<=50000 && x.part_count===bundle.sources.length));
+  assert.ok(bundle.sources.every(x=>x.sha256===crypto.createHash('sha256').update(x.content).digest('hex')));
+  assert.equal(bundle.sources.map(x=>x.content).join(' '),content);
+  assert.ok(bundle.sources.every(x=>x.full_text_sha256===crypto.createHash('sha256').update(content).digest('hex')));
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
