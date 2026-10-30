@@ -52,6 +52,10 @@ if (args.skus) only = String(args.skus).toUpperCase().split(',').map((x) => x.tr
 const minMatch = Number(args['min-match'] || 0.7);
 const delayMs = Number(args['delay-ms'] || 2000);
 const commitEligible = args['commit-eligible'] === 'true';
+// Retired 5-series are historical references only; never collect or commit them.
+const retiredLdSku = (sku) => /^(EA5|EL5|EF5|EC5)/i.test(String(sku || ''));
+const activeLdSku = (sku) => /^(EA3|EL3|EF3|EC3)/i.test(String(sku || ''));
+
 // LD family must match the official product type. EA3 = engine air, so "Cabin Air Filter"
 // (MANN FP/CU/CUK) is NOT an EA3 match even though it contains "air filter".
 const ldFamilyMatches = (sku, title) => {
@@ -116,6 +120,7 @@ if (commitEligible) {
   if (!args['from-summary']) throw new Error('--commit-eligible requires --from-summary <summary.json>');
   const summary = JSON.parse(fs.readFileSync(args['from-summary'], 'utf8'));
   const eligible = summary.rows.filter((r) => r.eligible);
+  if (eligible.some((r) => !activeLdSku(r.sku))) throw new Error('NON_CURRENT_LD_SKU_IN_APPROVED_SUMMARY');
   if (Number(args['confirm-count']) !== eligible.length) throw new Error(`--confirm-count must be ${eligible.length} (eligible SKUs in that summary)`);
   const results = [];
   for (const r of eligible) {
@@ -148,7 +153,7 @@ let classTargets = null;
 if (args['from-classification']) {
   const cls = String(args.class || 'MANN_SAME_DIGITS');
   const picked = JSON.parse(fs.readFileSync(args['from-classification'], 'utf8')).rows
-    .filter((r) => r.cls === cls && (!prefix || r.sku.startsWith(prefix)) && (!after || r.sku > after) && (!only || only.includes(r.sku)));
+    .filter((r) => activeLdSku(r.sku) && r.cls === cls && (!prefix || r.sku.startsWith(prefix)) && (!after || r.sku > after) && (!only || only.includes(r.sku)));
   const normCode = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
   const { rows: raw } = await db.query(`SELECT sku, competitor_codes, oem_codes, codigo_base FROM public.elimfilters_catalog WHERE sku = ANY($1::text[])`, [picked.map((r) => r.sku)]);
   const bySku = new Map(raw.map((r) => [r.sku, r]));
@@ -181,6 +186,7 @@ const { rows: dbTargets } = classTargets ? { rows: [] } : await db.query(`
          ON i.elimfilters_sku = c.sku AND i.canonical_brand = 'MANN-FILTER' AND i.status = 'ACTIVE'
   LEFT JOIN rel ON rel.sku = c.sku
   WHERE c.duty = 'LIGHT_DUTY' AND c.catalog_active = true
+    AND left(upper(c.sku),3) IN ('EA3','EL3','EF3','EC3')
     AND NOT (upper(coalesce(c.canonical_source_status,'')) IN ('VERIFIED','EXCEPTION_CONFIRMED') AND coalesce(c.canonical_source_brand,'') !~* '^MANN')
     AND jsonb_array_length(coalesce(c.vehicle_applications, '[]'::jsonb)) > 0
     AND NOT EXISTS (SELECT 1 FROM public.catalog_application_evidence e
@@ -232,6 +238,7 @@ fs.mkdirSync(runDir, { recursive: true });
 const rows = [];
 const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0');
 for (const [i, t] of targets.entries()) {
+  if (!activeLdSku(t.sku)) throw new Error('RETIRED_OR_NONCURRENT_LD_SKU: ' + t.sku);
   let dir = path.join(runDir, t.sku);
   if (!t.mann_code && t.mann_candidates) {
     const valid = [];
