@@ -22,7 +22,10 @@ export async function extractTechnicalIdentity({sku, sourceCode, directory, allo
   const pattern = sourceCode.trim().replace(/\s+/g,'\\s*');
   const match = new RegExp(pattern,'i').exec(flat);
   const anchor = match?.index ?? 0;
-  const snippet = flat.slice(Math.max(0,anchor-300),Math.min(flat.length,anchor+2700));
+  const identitySnippet = flat.slice(Math.max(0,anchor-100),Math.min(flat.length,anchor+500));
+  const technicalMatch = /Outer diameter\s*\(A\)\s*=\s*\d+(?:\.\d+)?\s*mm\s*;?\s*Inner diameter\s*\(B\)\s*=\s*\d+(?:\.\d+)?\s*mm[\s\S]{0,160}?Height\s*\(H\)\s*=\s*\d+(?:\.\d+)?\s*mm/i.exec(flat);
+  const technicalSnippet = technicalMatch?.[0] || '';
+  const snippet = identitySnippet + '\\nTECHNICAL DATA: ' + technicalSnippet;
   const request = {model,stream:false,think:false,format:'json',options:{temperature:0,num_ctx:2048,num_predict:250},
     messages:[
       {role:'system',content:'Extract only explicit facts from supplied product text. JSON fields: source_code, product_type, outer_diameter_mm, inner_diameter_mm, height_mm. Use null for absent facts. Do not infer or certify.'},
@@ -37,15 +40,23 @@ export async function extractTechnicalIdentity({sku, sourceCode, directory, allo
   const output = JSON.parse((await response.json()).message?.content ?? '{}');
   const observedCode = normalize(output.source_code);
   const codeValid = observedCode === code;
+  const pageHasExactCode = Boolean(match);
+  const technicalFields = {
+    outer_diameter_mm:/Outer diameter\\s*\\(A\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i,
+    inner_diameter_mm:/Inner diameter\\s*\\(B\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i,
+    height_mm:/Height\\s*\\(H\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i
+  };
   const attributes = ['outer_diameter_mm','inner_diameter_mm','height_mm'];
   const checked = {};
   for (const key of attributes) {
     const value=output[key];
     // A number's presence somewhere in a page does not establish that it represents this dimension.
-    checked[key]={value:typeof value==='number'&&Number.isFinite(value)?value:null,status:'REVIEW_REQUIRED'};
+    const documented = technicalSnippet.match(technicalFields[key]);
+    const matchesDocument = documented && typeof value==='number' && Number.isFinite(value) && value===Number(documented[1]);
+    checked[key]={value:matchesDocument?value:null,status:matchesDocument?'DOCUMENT_MATCH_REVIEW_REQUIRED':'REVIEW_REQUIRED'};
   }
   return {sku,expected_source_code:sourceCode,model,code_observed:output.source_code ?? null,
-    code_exact:codeValid,product_type:output.product_type ?? null,dimensions:checked,
+    code_exact:codeValid,page_code_observed:pageHasExactCode,product_type:output.product_type ?? null,dimensions:checked,
     evidence_url:source.url,evidence_sha256:source.sha256,status:'REVIEW_REQUIRED',
     warning:'A product-page mention and LLM extraction do not certify fitment or any dimension.'};
 }
