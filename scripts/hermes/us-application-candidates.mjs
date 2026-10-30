@@ -40,7 +40,9 @@ export async function extractUsApplicationCandidates({sku,directory}) {
     for(const m of hits) {
       const model=clean(m[1]).replace(/^.*?\bYear of Manufacture\s*/,'').trim();
       const engineCodes=m[3].split(',').map(clean);
-      const contaminated = /\b(?:Oil Filter|Engine Code|Filter Type|Year of Manufacture)\b/i.test(model) ||\n        /(?:^|\s)(?:\d{3,5}|-)(?:\s+(?:\d{1,4}|-)){1,2}\s+[A-Za-z0-9]/.test(model);\n      if(!model || model.length>65 || contaminated || !engineCodes.every(e=>/^[A-Z]\d[A-Z0-9]{3,15}$/.test(e))) {
+      const contaminated = /\b(?:Oil Filter|Engine Code|Filter Type|Year of Manufacture)\b/i.test(model) ||
+        /(?:^|\s)(?:\d{3,5}|-)(?:\s+(?:\d{1,4}|-)){1,2}\s+[A-Za-z0-9]/.test(model);
+      if(!model || model.length>65 || contaminated || !engineCodes.every(e=>/^[A-Z]\d[A-Z0-9]{3,15}$/.test(e))) {
         skipped.push({year,reason:'AMBIGUOUS_MODEL_OR_ENGINE'}); continue;
       }
       for(const engine_code of engineCodes) {
