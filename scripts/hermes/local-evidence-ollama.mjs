@@ -2,6 +2,7 @@
 // No browsing, no SQL, no catalogue writes. Fail closed on missing evidence.
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const MAX_SOURCE_CHARS = 50000;
 const MAX_SOURCES = 12;
@@ -22,11 +23,16 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
   const bundle = JSON.parse(await fs.readFile(filename, 'utf8'));
   if (bundle.sku !== sku || !Array.isArray(bundle.sources) || bundle.sources.length === 0 || bundle.sources.length > MAX_SOURCES)
     throw new Error('INVALID_OFFICIAL_EVIDENCE_BUNDLE');
+  const hosts = String(options.allowedHosts || process.env.HERMES_OFFICIAL_SOURCE_HOSTS || '')
+    .split(',').map(h => h.trim().toLowerCase()).filter(Boolean);
+  if (!hosts.length) throw new Error('OFFICIAL_SOURCE_ALLOWLIST_REQUIRED');
   const sources = bundle.sources.map(s => {
     const u = new URL(s.url);
     if (u.protocol !== 'https:' || u.username || u.password || !/^[a-z0-9.-]+$/i.test(u.hostname) ||
+        !hosts.some(h => u.hostname.toLowerCase() === h || u.hostname.toLowerCase().endsWith('.' + h)) ||
         !String(s.content || '').trim() || String(s.content).length > MAX_SOURCE_CHARS ||
-        !/^[0-9a-f]{64}$/i.test(String(s.sha256 || ''))) throw new Error('INVALID_EVIDENCE_SOURCE');
+        !/^[0-9a-f]{64}$/i.test(String(s.sha256 || '')) ||
+        crypto.createHash('sha256').update(String(s.content),'utf8').digest('hex') !== s.sha256.toLowerCase()) throw new Error('INVALID_EVIDENCE_SOURCE');
     return {url:u.href, content:s.content, sha256:s.sha256, source_type:s.source_type || null};
   });
   const model = options.model || process.env.HERMES_LOCAL_LLM_MODEL || 'qwen3:8b';
