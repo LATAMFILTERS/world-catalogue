@@ -7,6 +7,7 @@ import { createRequire } from 'node:module';
 import pg from 'pg';
 import { assessDossier, canonicalRoleForDossier, resolutionDisposition } from './catalogue-dossier-core.mjs';
 import { assertZeroCostGroqAllowed } from './zero-cost-policy.mjs';
+import { interpretLocalEvidence } from './local-evidence-ollama.mjs';
 
 const require = createRequire(import.meta.url);
 const { buildBrandResearchStrategy } = require('../../lib/hermes-brand-search-router');
@@ -23,8 +24,11 @@ const retries=Math.max(0,Math.min(3,Number(process.env.HERMES_CATALOGUE_RESEARCH
 const maxResearchAttempts=Math.max(1,Math.min(10,Number(process.env.HERMES_CATALOGUE_MAX_RESEARCH_ATTEMPTS||3)));
 const timeoutMs=Math.max(10000,Number(process.env.HERMES_CATALOGUE_RESEARCH_TIMEOUT_MS||45000));
 if(!url) throw new Error('CATALOG_DATABASE_URL/DATABASE_URL is required');
-if(!apiKey) throw new Error('GROQ_API_KEY is required');
-assertZeroCostGroqAllowed();
+const localEvidenceMode = process.env.HERMES_DOSSIER_PROVIDER === 'ollama-evidence';
+if (!localEvidenceMode) {
+  if(!apiKey) throw new Error('GROQ_API_KEY is required');
+  assertZeroCostGroqAllowed();
+}
 
 const stableId=v=>crypto.createHash('sha256').update(String(v)).digest('hex').slice(0,32);
 const sha=v=>crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex');
@@ -89,6 +93,7 @@ function retryDelay(status,body,attempt){
   return Math.ceil((m?Number(m[1]):15)*1000)+1500+(attempt*1000);
 }
 async function research(item){
+  if (localEvidenceMode) return interpretLocalEvidence(item, dossierShape());
   const strategyBrands = [
     item.discovery_hints?.source_candidate_brand,
     item.organization?.name,
