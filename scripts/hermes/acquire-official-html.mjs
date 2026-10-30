@@ -15,13 +15,14 @@ function validateUrl(raw, hosts) {
     throw new Error('UNAPPROVED_EVIDENCE_URL');
   return u.href;
 }
-export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, splitOversizedText = false, fetcher = fetch}) {
+export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, splitOversizedText = false, preserveHtml = false, fetcher = fetch}) {
   if (!/^[A-Z0-9_-]{2,45}$/.test(String(sku||''))) throw new Error('INVALID_SKU');
   if (!directory || !path.isAbsolute(directory)) throw new Error('ABSOLUTE_OUTPUT_DIRECTORY_REQUIRED');
   const hosts=String(allowedHosts||'').split(',').map(cleanHost).filter(h => /^[a-z0-9.-]+$/.test(h));
   if (!hosts.length) throw new Error('OFFICIAL_SOURCE_ALLOWLIST_REQUIRED');
   if (!Array.isArray(urls) || !urls.length || urls.length > 12) throw new Error('INVALID_URL_COUNT');
   const sources=[];
+  const rawDocuments=[];
   for (const raw of urls) {
     const target=validateUrl(raw,hosts);
     const controller=new AbortController();
@@ -57,6 +58,9 @@ export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, s
       rawText=await response.text();
       if(Buffer.byteLength(rawText,'utf8')>MAX_RAW_BYTES)throw new Error('EVIDENCE_TOO_LARGE');
     }
+    if (preserveHtml && !/^text\/html(?:;|$)/.test(mime)) throw new Error('RAW_EVIDENCE_REQUIRES_HTML');
+    if (preserveHtml) rawDocuments.push({url:response.url||target, html:rawText,
+      sha256:crypto.createHash('sha256').update(rawText,'utf8').digest('hex')});
     const cleaned=rawText.replace(/<script[\s\S]*?<\/script>/gi,' ')
       .replace(/<style[\s\S]*?<\/style>/gi,' ')
       .replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
@@ -86,6 +90,30 @@ export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, s
   }
   const destination=path.join(directory,sku+'.json');
   await fs.mkdir(directory,{recursive:true});
-  await fs.writeFile(destination,JSON.stringify({sku,sources},null,2)+'\n',{flag:'wx',mode:0o600});
-  return {sku,source_count:sources.length,file:destination};
+  // New capture directories only: never overwrite existing evidence bundles or HTML.
+  const manifest={sku,sources};
+  if (preserveHtml) {
+    const rawFiles=rawDocuments.map((doc,i)=>({
+      url:doc.url, file:sku+'.source-'+(i+1)+'.html',
+      sha256:doc.sha256,
+      byte_length:Buffer.byteLength(doc.html,'utf8')
+    }));
+    manifest.raw_html_sources=rawFiles;
+    const written=[];
+    try {
+      for (const [i,doc] of rawDocuments.entries()) {
+        const dest=path.join(directory,rawFiles[i].file);
+        await fs.writeFile(dest,doc.html,{flag:'wx',mode:0o600});
+        written.push(dest);
+      }
+      await fs.writeFile(destination,JSON.stringify(manifest,null,2)+'\n',{flag:'wx',mode:0o600});
+    } catch(error) {
+      for (const dest of written) await fs.rm(dest,{force:true});
+      throw error;
+    }
+  } else {
+    await fs.writeFile(destination,JSON.stringify(manifest,null,2)+'\n',{flag:'wx',mode:0o600});
+  }
+  return {sku,source_count:sources.length,file:destination,
+    ...(preserveHtml?{raw_html_sources:manifest.raw_html_sources}: {})};
 }
