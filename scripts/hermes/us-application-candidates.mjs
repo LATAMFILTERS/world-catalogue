@@ -81,7 +81,7 @@ export async function extractUsStructuredApplications({sku,directory}) {
   const html=await fs.readFile(path.join(directory,source.file),'utf8');
   if(Buffer.byteLength(html,'utf8')!==source.byte_length || hash(html)!==source.sha256)
     throw Error('INVALID_RAW_HTML_HASH');
-  const candidates=new Map(), skipped=[];
+  const candidates=new Map(), partialCandidates=new Map(), skipped=[];
   const links=/<a\b([^>]*data-g-binding-params="([^"]+)"[^>]*)>([\s\S]*?)<\/a>/gi;
   const decode=s=>s.replace(/&amp;/gi,'&').replace(/&#38;/g,'&');
   for(const match of html.matchAll(links)) {
@@ -98,9 +98,19 @@ export async function extractUsStructuredApplications({sku,directory}) {
     const engines=(engineText || '').split(',').map(e=>e.trim()).filter(Boolean);
     if(!/^(19|20)\d{2}$/.test(yearText||'') || !Number.isSafeInteger(year) ||
       !name || name!==renderedName || name.length>75 ||
-      !/^\d{8,20}$/.test(id||'') || engines.length<1 ||
-      !engines.every(e=>/^[A-Z][A-Z0-9]{3,16}$/.test(e))) {
+      !/^\d{8,20}$/.test(id||'')) {
       skipped.push({year:yearText||null,vehicle_name:name||null,reason:'INVALID_STRUCTURED_ROW'});
+      continue;
+    }
+    if (!engines.length || !engines.every(e=>/^[A-Z][A-Z0-9]{3,16}$/.test(e))) {
+      const key=[year,name,id,engineText||''].join('|');
+      if(!partialCandidates.has(key)) partialCandidates.set(key,{
+        sku,manufacturer:'BMW',market:'US',year,model:name,vehicle_type_id:id,
+        engine_code:null,engine_code_literal:engineText || null,
+        evidence_class:engines.length?'ENGINE_CODE_PARTIAL':'ENGINE_NOT_PUBLISHED',
+        status:'REVIEW_REQUIRED',evidence_url:source.url,evidence_sha256:source.sha256,
+        evidence_binding_params:match[2]
+      });
       continue;
     }
     for(const engine_code of engines) {
@@ -113,6 +123,6 @@ export async function extractUsStructuredApplications({sku,directory}) {
     }
   }
   return {sku,market:'US',source_url:source.url,raw_html_sha256:source.sha256,
-    candidates:[...candidates.values()],skipped,status:'REVIEW_REQUIRED',
+    candidates:[...candidates.values()],partial_candidates:[...partialCandidates.values()],skipped,status:'REVIEW_REQUIRED',
     warning:'A source-side binding is evidence of the listed row, not approval for an ELIMFILTERS application.'};
 }
