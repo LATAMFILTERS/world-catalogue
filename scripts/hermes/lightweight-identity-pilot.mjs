@@ -55,8 +55,18 @@ export async function extractTechnicalIdentity({sku, sourceCode, directory, allo
     const valid = number !== null && Number.isFinite(number) && number > 0;
     checked[key]={value:valid?number:null,status:valid?'DOCUMENT_MATCH_REVIEW_REQUIRED':'REVIEW_REQUIRED'};
   }
+
+  // OE numbers are candidates only: require an explicit manufacturer-specific OE section.
+  const oeSection = /\bOE Numbers\s+BMW\s+([\s\S]*?)(?:Legal Information|$)/i.exec(flat)?.[1] || '';
+  const oeCodes = [...new Set((oeSection.match(/\b11\s+42\s+\d\s+\d{3}\s+\d{3}\b/g) || []).map(x => x.trim().replace(/\s+/g,' ')))];
+  const oeCandidates = oeCodes.map(value => ({
+    manufacturer:'BMW',code:value,status:'REVIEW_REQUIRED',
+    evidence_url:source.url,evidence_sha256:source.sha256
+  }));
+  // A summary of main applications is not a vehicle/engine/year fitment record.
+  const mainApplication = /\bMain application:\s*(.{0,500}?)(?=\s+with gasket|\s+GTIN Code|\s+Dimensions\b)/i.exec(flat)?.[1]?.trim() || null;
   return {sku,expected_source_code:sourceCode,model,code_observed:output.source_code ?? null,
-    code_exact:codeValid,page_code_observed:pageHasExactCode,identity_source_confirmed:pageHasExactCode,product_type:output.product_type ?? null,dimensions:checked,
+    code_exact:codeValid,page_code_observed:pageHasExactCode,identity_source_confirmed:pageHasExactCode,product_type:output.product_type ?? null,dimensions:checked,oe_candidates:oeCandidates,main_application_summary_candidate:mainApplication,
     evidence_url:source.url,evidence_sha256:source.sha256,status:'REVIEW_REQUIRED',
     warning:'A product-page mention and LLM extraction do not certify fitment or any dimension.'};
 }
