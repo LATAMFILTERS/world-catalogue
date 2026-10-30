@@ -42,9 +42,9 @@ export async function extractTechnicalIdentity({sku, sourceCode, directory, allo
   const codeValid = observedCode === code;
   const pageHasExactCode = Boolean(match);
   const technicalFields = {
-    outer_diameter_mm:/Outer diameter\\s*\\(A\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i,
-    inner_diameter_mm:/Inner diameter\\s*\\(B\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i,
-    height_mm:/Height\\s*\\(H\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)\\s*mm/i
+    outer_diameter_mm:/Outer diameter\s*\(A\)\s*=\s*(\d+(?:\.\d+)?)\s*mm/i,
+    inner_diameter_mm:/Inner diameter\s*\(B\)\s*=\s*(\d+(?:\.\d+)?)\s*mm/i,
+    height_mm:/Height\s*\(H\)\s*=\s*(\d+(?:\.\d+)?)\s*mm/i
   };
   const attributes = ['outer_diameter_mm','inner_diameter_mm','height_mm'];
   const checked = {};
