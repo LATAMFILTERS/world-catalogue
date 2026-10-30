@@ -68,3 +68,20 @@ test('structured MANN source binds one BMW year/model to two engines and rejects
   await assert.rejects(extractUsStructuredApplications({sku:'EL30816',directory:dir}),/INVALID_RAW_HTML_HASH/);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+
+test('preserves missing and short engine codes without assigning inferred full code',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'hermes-us-partial-'));
+ const mk=(name,id,engine)=>'<a data-g-binding-params="'+encodeURIComponent('?mode=application&vehicleMake=BMW (USA)&vehicleModel=2012&vehicleName='+name+'&vehicleTypeId='+id+'&engineCode='+engine)+'" data-g-binding-application-link>'+name+'</a>';
+ const html=mk('328i','00000000821658','N52')+mk('328i Sports Wagon','00000000821506','')+mk('335i','00000000821662','N55B30A');
+ try{
+  await writeFile(path.join(dir,'EL30816.source-1.html'),html);
+  await writeFile(path.join(dir,'EL30816.json'),JSON.stringify({sku:'EL30816',raw_html_sources:[{url:'https://www.mann-filter.com/us-en/p',file:'EL30816.source-1.html',sha256:hash(html),byte_length:Buffer.byteLength(html)}]}));
+  const r=await extractUsStructuredApplications({sku:'EL30816',directory:dir});
+  assert.equal(r.candidates.length,1);
+  assert.equal(r.partial_candidates.length,2);
+  assert.deepEqual(r.partial_candidates.map(x=>[x.model,x.engine_code,x.engine_code_literal,x.evidence_class]),[
+   ['328i',null,'N52','ENGINE_CODE_PARTIAL'],['328i Sports Wagon',null,null,'ENGINE_NOT_PUBLISHED']
+  ]);
+  assert.ok(r.partial_candidates.every(x=>x.status==='REVIEW_REQUIRED'));
+ }finally{await rm(dir,{recursive:true,force:true});}
+});
