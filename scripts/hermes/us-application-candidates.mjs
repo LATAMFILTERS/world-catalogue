@@ -87,7 +87,7 @@ export async function extractUsStructuredApplications({sku,directory}) {
   for(const match of html.matchAll(links)) {
     const attrs=match[1];
     if(!/data-g-binding-application-link\b/.test(attrs)) continue;
-    const params=new URLSearchParams(decode(match[2]).replace(/^\?/,''));
+    const params=new URLSearchParams(decodeURIComponent(decode(match[2])).replace(/^\?/,''));
     if(params.get('mode')!=='application' || params.get('vehicleMake')!=='BMW (USA)') continue;
     const yearText=params.get('vehicleModel');
     const name=params.get('vehicleName');
