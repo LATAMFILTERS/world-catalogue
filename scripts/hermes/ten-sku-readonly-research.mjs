@@ -8,8 +8,15 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 
 const root=process.cwd();
-const count=10;
-const folder=path.resolve(root,'out/hermes-ten-sku');
+const cli=process.argv.slice(2);
+const arg=name=>{const i=cli.indexOf(name);return i<0?null:cli[i+1]||null;};
+const europeanBatch=cli.includes('--european-batch');
+const count=europeanBatch?Math.min(100,Math.max(1,Number(arg('--limit')||25))):10;
+const offset=europeanBatch?Math.max(0,Number(arg('--offset')||0)):0;
+if(!Number.isSafeInteger(count)||!Number.isSafeInteger(offset))throw Error('INVALID_BATCH_BOUNDS');
+const classificationFile=arg('--from-classification');
+if(europeanBatch&&!classificationFile)throw Error('EUROPEAN_BATCH_REQUIRES_LD_CLASSIFICATION');
+const folder=path.resolve(root,europeanBatch?('out/hermes-european-ld/batch-'+offset+'-'+count):'out/hermes-ten-sku');
 fs.mkdirSync(folder,{recursive:true});
 const psql=process.env.PSQL_PATH || (process.platform==='win32' ? 'C:\\Program Files\\PostgreSQL\\18\\bin\\psql.exe' : 'psql');
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
@@ -22,8 +29,15 @@ const p=spawnSync(psql,['-h','127.0.0.1','-p','5432','-U',process.env.PGUSER||'p
 if(p.status!==0)throw Error('PSQL_READ_ONLY_FAILED: '+String(p.stderr).slice(0,350));
 const pairs=p.stdout.split(/\r?\n/).map(x=>x.trim()).filter(x=>x&&x!=='BEGIN'&&x!=='ROLLBACK').map(row=>{const m=/^"?(EA3|EL3|EF3|EC3)[A-Z0-9]{3,20}"?,("[^"]+"|[^,]+)$/.exec(row);return m?{sku:row.split(',')[0].replaceAll('"',''),code:m[2].replace(/^"|"$/g,'')}:null}).filter(Boolean).filter(x=>validSku(x.sku));
 if(!pairs.length)throw Error('NO_ACTIVE_LD_CANDIDATES');
+let selected=pairs;
+if(europeanBatch){
+  const classification=JSON.parse(fs.readFileSync(path.resolve(classificationFile),'utf8'));
+  if(!Array.isArray(classification.rows))throw Error('INVALID_CLASSIFICATION');
+  const europe=new Set(classification.rows.filter(r=>['MANN_SAME_DIGITS','MANN_OTHER_DIGITS'].includes(r.cls)).map(r=>r.sku));
+  selected=pairs.filter(r=>europe.has(r.sku)).slice(offset);
+}
 const results=[];
-for(const entry of pairs){
+for(const entry of selected){
   if(results.filter(r=>r.result==='EVIDENCE_CAPTURED').length>=count)break;
   // Do not silently associate several source identities with one SKU.
   const {sku,code}=entry;
@@ -59,7 +73,7 @@ for(const entry of pairs){
   results.push(item);
   fs.writeFileSync(path.join(folder,sku+'.review.json'),JSON.stringify(item,null,2)+'\n',{flag:'wx'});
 }
-const manifest={created_at:new Date().toISOString(),mode:'READ_ONLY_RESEARCH',target:count,captured:results.filter(r=>r.result==='EVIDENCE_CAPTURED').length,attempted:results.length,approved:0,published:0,postgres_writes:0,records:results};
+const manifest={classification_source:europeanBatch?classificationFile:null,selection:europeanBatch?'EUROPEAN_CLASSIFIED_MANN_ONLY':'PILOT',offset,created_at:new Date().toISOString(),mode:'READ_ONLY_RESEARCH',target:count,captured:results.filter(r=>r.result==='EVIDENCE_CAPTURED').length,attempted:results.length,approved:0,published:0,postgres_writes:0,records:results};
 fs.writeFileSync(path.join(folder,'manifest.json'),JSON.stringify(manifest,null,2)+'\n',{flag:'wx'});
 console.log(JSON.stringify({target:count,captured:manifest.captured,attempted:manifest.attempted,report:path.join(folder,'manifest.json')},null,2));
 if(manifest.captured<count)process.exitCode=2;
