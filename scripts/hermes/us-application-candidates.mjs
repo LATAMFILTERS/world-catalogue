@@ -63,3 +63,56 @@ export async function extractUsApplicationCandidates({sku,directory}) {
     status:'REVIEW_REQUIRED',
     warning:'Text-only parsing is preliminary; candidates require independent row-level verification against the original MANN application table.'};
 }
+
+
+// Independent row-level proof from original MANN application-link metadata.
+// Deliberately does NOT promote any application into the catalogue.
+export async function extractUsStructuredApplications({sku,directory}) {
+  if(!/^[A-Z0-9_-]{2,45}$/.test(sku) || !directory) throw Error('INVALID_INPUT');
+  const manifest=JSON.parse(await fs.readFile(path.join(directory,sku+'.json'),'utf8'));
+  if(manifest.sku!==sku || !Array.isArray(manifest.raw_html_sources) || manifest.raw_html_sources.length!==1)
+    throw Error('RAW_HTML_REQUIRED');
+  const source=manifest.raw_html_sources[0];
+  const u=new URL(source.url);
+  if(u.protocol!=='https:' || !/^([a-z0-9-]+\.)*mann-filter\.com$/i.test(u.hostname) ||
+    u.username || u.password || u.port) throw Error('UNTRUSTED_HOST');
+  if(!/^EL[A-Z0-9_-]*\.source-1\.html$/.test(source.file) || source.file!==sku+'.source-1.html')
+    throw Error('INVALID_HTML_PATH');
+  const html=await fs.readFile(path.join(directory,source.file),'utf8');
+  if(Buffer.byteLength(html,'utf8')!==source.byte_length || hash(html)!==source.sha256)
+    throw Error('INVALID_RAW_HTML_HASH');
+  const candidates=new Map(), skipped=[];
+  const links=/<a\b([^>]*data-g-binding-params="([^"]+)"[^>]*)>([\s\S]*?)<\/a>/gi;
+  const decode=s=>s.replace(/&amp;/gi,'&').replace(/&#38;/g,'&');
+  for(const match of html.matchAll(links)) {
+    const attrs=match[1];
+    if(!/data-g-binding-application-link\b/.test(attrs)) continue;
+    const params=new URLSearchParams(decodeURIComponent(decode(match[2])).replace(/^\?/,''));
+    if(params.get('mode')!=='application' || params.get('vehicleMake')!=='BMW (USA)') continue;
+    const yearText=params.get('vehicleModel');
+    const name=params.get('vehicleName');
+    const engineText=params.get('engineCode');
+    const id=params.get('vehicleTypeId');
+    const renderedName=match[3].replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+    const year=Number(yearText);
+    const engines=(engineText || '').split(',').map(e=>e.trim()).filter(Boolean);
+    if(!/^(19|20)\d{2}$/.test(yearText||'') || !Number.isSafeInteger(year) ||
+      !name || name!==renderedName || name.length>75 ||
+      !/^\d{8,20}$/.test(id||'') || engines.length<1 ||
+      !engines.every(e=>/^[A-Z][A-Z0-9]{3,16}$/.test(e))) {
+      skipped.push({year:yearText||null,vehicle_name:name||null,reason:'INVALID_STRUCTURED_ROW'});
+      continue;
+    }
+    for(const engine_code of engines) {
+      const key=[year,name,engine_code,id].join('|');
+      if(!candidates.has(key)) candidates.set(key,{
+        sku,manufacturer:'BMW',market:'US',year,model:name,engine_code,vehicle_type_id:id,
+        status:'REVIEW_REQUIRED',evidence_url:source.url,evidence_sha256:source.sha256,
+        evidence_binding_params:match[2]
+      });
+    }
+  }
+  return {sku,market:'US',source_url:source.url,raw_html_sha256:source.sha256,
+    candidates:[...candidates.values()],skipped,status:'REVIEW_REQUIRED',
+    warning:'A source-side binding is evidence of the listed row, not approval for an ELIMFILTERS application.'};
+}
