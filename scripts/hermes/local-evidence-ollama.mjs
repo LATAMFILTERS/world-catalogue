@@ -5,6 +5,18 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 
 const MAX_SOURCE_CHARS = 50000;
+const MAX_PROMPT_CHARS_PER_SOURCE = 6500;
+const EVIDENCE_TERMS = /(?:dimension|diameter|height|length|thread|mm\b|inch|oil filter|air filter|fuel filter|hu\s*816\s*x|application|oem|cross.reference|product information)/i;
+function boundedExcerpt(text, code) {
+  const lines = String(text).split(/(?<=[.!?])\s+|\n+/).map(x=>x.trim()).filter(Boolean);
+  const normalized = x=>x.toUpperCase().replace(/[^A-Z0-9]/g,'');
+  const target=normalized(code);
+  const selected=[];
+  for (const line of lines) {
+    if ((target && normalized(line).includes(target)) || EVIDENCE_TERMS.test(line)) selected.push(line);
+  }
+  return selected.join('\n').slice(0,MAX_PROMPT_CHARS_PER_SOURCE);
+}
 const MAX_SOURCES = 12;
 const MAX_BYTES = 700000;
 const LOCAL_ENDPOINT = 'http://127.0.0.1:11434/api/chat';
@@ -35,6 +47,9 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
         crypto.createHash('sha256').update(String(s.content),'utf8').digest('hex') !== s.sha256.toLowerCase()) throw new Error('INVALID_EVIDENCE_SOURCE');
     return {url:u.href, content:s.content, sha256:s.sha256, source_type:s.source_type || null};
   });
+  const sourceCandidate = item?.discovery_hints?.source_candidate_code || '';
+  const promptSources = sources.map(source => ({...source, content:boundedExcerpt(source.content,sourceCandidate)}));
+  if (promptSources.some(s=>!s.content)) throw new Error('NO_RELEVANT_EVIDENCE_EXCERPT');
   const model = options.model || process.env.HERMES_LOCAL_LLM_MODEL || 'qwen3:8b';
   const system = [
     'You extract product facts ONLY from the source texts provided. You cannot browse.',
@@ -52,9 +67,9 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
       method: 'POST',
       headers: {'content-type':'application/json'},
       signal:controller.signal,
-      body:JSON.stringify({model, stream:false, think:false, format:'json', options:{temperature:0},
+      body:JSON.stringify({model, stream:false, think:false, format:'json', options:{temperature:0,num_predict:1300,num_ctx:8192},
         messages:[{role:'system',content:system},
-          {role:'user',content:JSON.stringify({sku,target:item,required_shape:requiredShape,sources})}]})
+          {role:'user',content:JSON.stringify({sku,target:item,required_shape:requiredShape,sources:promptSources})}]})
     });
   } finally { clearTimeout(timeout); }
   if (!response.ok) throw new Error('OLLAMA_HTTP_' + response.status);
