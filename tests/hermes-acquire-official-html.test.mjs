@@ -74,3 +74,22 @@ test('segments long US application evidence losslessly with source integrity',as
   assert.ok(bundle.sources.every(x=>x.full_text_sha256===crypto.createHash('sha256').update(content).digest('hex')));
  } finally {await rm(dir,{recursive:true,force:true});}
 });
+
+test('preserves raw table markup with verified hash without overwriting old capture',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'hermes-raw-tables-'));
+ const html='<html><body><table><tr><th>Year</th><th>Model</th><th>Engine Code</th></tr><tr><td>2011</td><td>128i</td><td>N51B30A</td></tr></table></body></html>';
+ const args={sku:'EL30816',urls:['https://www.mann-filter.com/us-en/p'],directory:dir,
+  allowedHosts:'mann-filter.com',preserveHtml:true,
+  fetcher:async url=>({ok:true,status:200,redirected:false,url,
+    headers:new Headers({'content-type':'text/html'}),text:async()=>html})};
+ try {
+  const result=await acquireOfficialHtml(args);
+  const record=JSON.parse(await readFile(result.file,'utf8'));
+  assert.equal(record.raw_html_sources.length,1);
+  const raw=await readFile(path.join(dir,record.raw_html_sources[0].file),'utf8');
+  assert.equal(raw,html);
+  assert.equal(record.raw_html_sources[0].sha256,crypto.createHash('sha256').update(html).digest('hex'));
+  await assert.rejects(acquireOfficialHtml(args),/EEXIST/);
+  assert.equal(await readFile(path.join(dir,record.raw_html_sources[0].file),'utf8'),html);
+ }finally {await rm(dir,{recursive:true,force:true});}
+});
