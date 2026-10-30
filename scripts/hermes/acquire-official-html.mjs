@@ -4,6 +4,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
+const MAX_RAW_BYTES = 4 * 1024 * 1024;
+const MAX_EXTRACTED_CHARS = 50000;
 const cleanHost = value => String(value||'').trim().toLowerCase();
 function validateUrl(raw, hosts) {
   const u = new URL(raw);
@@ -34,13 +36,31 @@ export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, f
     const mime=(response.headers.get('content-type')||'').toLowerCase();
     if (!/^text\/(html|plain)(?:;|$)/.test(mime)) throw new Error('EVIDENCE_NOT_TEXT_HTML');
     const size=Number(response.headers.get('content-length')||'0');
-    if (size>250000) throw new Error('EVIDENCE_TOO_LARGE');
-    const rawText=await response.text();
-    if (rawText.length>250000) throw new Error('EVIDENCE_TOO_LARGE');
+    if (size>MAX_RAW_BYTES) throw new Error('EVIDENCE_TOO_LARGE');
+    // Consume with a strict byte budget, including when Content-Length is absent.
+    let rawText;
+    if (response.body && typeof response.body.getReader === 'function') {
+      const reader=response.body.getReader();
+      const chunks=[];let total=0;
+      try {
+        while (true) {
+          const {done,value}=await reader.read();
+          if(done)break;
+          total+=value.byteLength;
+          if(total>MAX_RAW_BYTES) throw new Error('EVIDENCE_TOO_LARGE');
+          chunks.push(value);
+        }
+      } finally {await reader.cancel().catch(()=>{});}
+      rawText=new TextDecoder().decode(Buffer.concat(chunks.map(c=>Buffer.from(c))));
+    } else {
+      // Compatibility with injected test fetchers without a streamed body.
+      rawText=await response.text();
+      if(Buffer.byteLength(rawText,'utf8')>MAX_RAW_BYTES)throw new Error('EVIDENCE_TOO_LARGE');
+    }
     const cleaned=rawText.replace(/<script[\s\S]*?<\/script>/gi,' ')
       .replace(/<style[\s\S]*?<\/style>/gi,' ')
       .replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
-    if (!cleaned || cleaned.length>50000) throw new Error('EVIDENCE_CONTENT_INVALID');
+    if (!cleaned || cleaned.length>MAX_EXTRACTED_CHARS) throw new Error('EVIDENCE_CONTENT_INVALID');
     sources.push({url:response.url||target,source_type:'official_product_page',content:cleaned,
       sha256:crypto.createHash('sha256').update(cleaned,'utf8').digest('hex')});
   }
