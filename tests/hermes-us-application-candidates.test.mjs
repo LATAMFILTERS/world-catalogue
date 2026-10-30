@@ -33,3 +33,19 @@ test('US BMW applications retain exact year/model/engine associations without ce
   await assert.rejects(extractUsApplicationCandidates({sku:'EL30816',directory:dir}),/INVALID_EVIDENCE_PART/);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+
+test('rejects a model polluted by trailing values of preceding row',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'hermes-us-polluted-'));
+ const text='MANN-FILTER HU 816 x BMW (USA) 2012 Model Type Filter Type Engine Code ccm kW HP Year of Manufacture '+
+ '128i (L6 3.0L FI Turbo) Oil Filter N52 2996 169 230 335i (L6 3.0L FI Turbo) Oil Filter N55B30A 2979 221 300';
+ try {
+  await writeFile(path.join(dir,'EL30816.json'),JSON.stringify({sku:'EL30816',sources:[{
+   url:'https://www.mann-filter.com/us-en/p',content:text,sha256:hash(text),full_text_sha256:hash(text),
+   part_index:1,part_count:1
+  }]}));
+  const result=await extractUsApplicationCandidates({sku:'EL30816',directory:dir});
+  assert.ok(!result.candidates.some(c=>c.model.includes('Oil Filter')));
+  assert.ok(result.skipped.some(c=>c.reason==='AMBIGUOUS_MODEL_OR_ENGINE'));
+  assert.equal(result.status,'REVIEW_REQUIRED');
+ }finally{await rm(dir,{recursive:true,force:true});}
+});
