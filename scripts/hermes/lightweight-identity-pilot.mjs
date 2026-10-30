@@ -6,7 +6,7 @@ import crypto from 'node:crypto';
 const normalize = x => String(x ?? '').toUpperCase().replace(/[^A-Z0-9]/g,'');
 export async function extractTechnicalIdentity({sku, sourceCode, directory, allowedHost = 'mann-filter.com', model = 'qwen3:1.7b', fetcher = fetch}) {
   if (!/^[A-Z0-9_-]{2,45}$/.test(String(sku))) throw Error('INVALID_SKU');
-  if (!sourceCode || !directory) throw Error('MISSING_INPUT');
+  if (!sourceCode || !/^[A-Za-z0-9 /-]+$/.test(sourceCode) || !directory) throw Error('INVALID_INPUT');
   const bundle = JSON.parse(await fs.readFile(path.join(directory,sku+'.json'),'utf8'));
   if(bundle.sku !== sku || bundle.sources?.length !== 1) throw Error('INVALID_BUNDLE');
   const source = bundle.sources[0];
@@ -18,9 +18,8 @@ export async function extractTechnicalIdentity({sku, sourceCode, directory, allo
   if (!normalize(content).includes(code)) throw Error('SOURCE_CODE_NOT_VISIBLE');
   // Select a small window around the exact candidate, then any dimensions observed in that window.
   const flat = content.replace(/\s+/g,' ');
-  const index = normalize(flat).indexOf(code);
   // Use the source string as-is, rather than normalized offsets, when locating the anchor.
-  const pattern = sourceCode.trim().split(/\s+/).map(x => x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('\\s*');
+  const pattern = sourceCode.trim().replace(/\s+/g,'\\s*');
   const match = new RegExp(pattern,'i').exec(flat);
   const anchor = match?.index ?? 0;
   const snippet = flat.slice(Math.max(0,anchor-300),Math.min(flat.length,anchor+2700));
