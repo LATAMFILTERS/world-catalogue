@@ -33,7 +33,7 @@ const csvLine=row=>{const fields=[];let value='',quoted=false;for(let i=0;i<row.
 let pairs;
 if(csvFile){
   const csv=fs.readFileSync(path.resolve(csvFile),'utf8').replace(/^\\uFEFF/,'');
-  const lines=csv.split(/\\r?\\n/).filter(Boolean);
+  const lines=csv.split(/\r?\n/).filter(Boolean);
   const cols=csvLine(lines.shift()).map(x=>x.trim().toLowerCase());
   const skuIndex=cols.indexOf('sku'),codeIndex=cols.indexOf('codigo_base');
   if(skuIndex<0||codeIndex<0)throw Error('CSV_REQUIRES_SKU_AND_CODIGO_BASE');
@@ -41,7 +41,7 @@ if(csvFile){
 }else{
   const p=spawnSync(psql,['-h','127.0.0.1','-p','5432','-U',process.env.PGUSER||'postgres','-d','catalogo_elimfilters','-w','-X','-A','-q','-v','ON_ERROR_STOP=1'],{input:sql,encoding:'utf8',timeout:90000,maxBuffer:64*1024*1024,env:{...process.env,PGCONNECT_TIMEOUT:'5'}});
   if(p.status!==0)throw Error('PSQL_READ_ONLY_FAILED status='+p.status+' signal='+p.signal+' error='+String(p.error?.message||'')+' stderr='+String(p.stderr||'').slice(0,500));
-  pairs=p.stdout.split(/\\r?\\n/).map(x=>x.trim()).filter(x=>x&&x!=='BEGIN'&&x!=='ROLLBACK').map(row=>{const fields=csvLine(row);if(fields.length!==4)return null;let apps=[];try{apps=JSON.parse(fields[2]||'[]');}catch{}return {sku:fields[0],code:fields[1],origin:originGroupOf(apps),brand:fields[3]};}).filter(Boolean).filter(x=>validSku(x.sku));
+  pairs=p.stdout.split(/\r?\n/).map(x=>x.trim()).filter(x=>x&&x!=='BEGIN'&&x!=='ROLLBACK').map(row=>{const fields=csvLine(row);if(fields.length!==4)return null;let apps=[];try{apps=JSON.parse(fields[2]||'[]');}catch{}return {sku:fields[0],code:fields[1],origin:originGroupOf(apps),brand:fields[3]};}).filter(Boolean).filter(x=>validSku(x.sku));
 }
 if(!pairs.length)throw Error('NO_ACTIVE_LD_CANDIDATES');
 let selected=pairs;
