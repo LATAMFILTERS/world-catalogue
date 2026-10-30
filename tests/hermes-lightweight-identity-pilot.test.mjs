@@ -53,3 +53,25 @@ test('matches dimension labels and refuses unsupported model values', async () =
   assert.equal(result.status,'REVIEW_REQUIRED');
  } finally {await rm(dir,{recursive:true,force:true});}
 });
+
+test('BMW OE candidates come only from explicit OE section and remain review only', async () => {
+ const dir=await mkdtemp(path.join(os.tmpdir(),'hermes-oe-'));
+ const content='MANN-FILTER HU 816 x Oil Filter. Main application: BMW 1 (E81). with gasket. '+
+   'Outer diameter (A) = 74 mm; Inner diameter (B) = 41 mm; Inner diameter 1 (C) = 41 mm; Height (H) = 79 mm. '+
+   'An unrelated 11 42 1 111 111. OE Numbers BMW 11 42 7 541 827 11 42 7 953 129 '+
+   '11 42 7 523 201 11 42 7 566 327 11 42 8 683 196 Legal Information.';
+ try {
+  await writeFile(path.join(dir,'EL30816.json'),JSON.stringify({sku:'EL30816',sources:[{
+   url:'https://www.mann-filter.com/official',content,sha256:crypto.createHash('sha256').update(content).digest('hex')
+  }]}));
+  const fetcher=async()=>({ok:true,json:async()=>({message:{content:JSON.stringify({source_code:'HU 816 x',product_type:'Oil Filter'})}})});
+  const result=await extractTechnicalIdentity({sku:'EL30816',sourceCode:'HU 816 x',directory:dir,fetcher});
+  assert.deepEqual(result.oe_candidates.map(x=>x.code),[
+   '11 42 7 541 827','11 42 7 953 129','11 42 7 523 201',
+   '11 42 7 566 327','11 42 8 683 196'
+  ]);
+  assert.ok(result.oe_candidates.every(x=>x.status==='REVIEW_REQUIRED' && x.evidence_sha256));
+  assert.match(result.main_application_summary_candidate,/BMW 1/);
+  assert.equal(result.status,'REVIEW_REQUIRED');
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
