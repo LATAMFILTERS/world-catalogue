@@ -15,7 +15,7 @@ function validateUrl(raw, hosts) {
     throw new Error('UNAPPROVED_EVIDENCE_URL');
   return u.href;
 }
-export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, fetcher = fetch}) {
+export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, splitOversizedText = false, fetcher = fetch}) {
   if (!/^[A-Z0-9_-]{2,45}$/.test(String(sku||''))) throw new Error('INVALID_SKU');
   if (!directory || !path.isAbsolute(directory)) throw new Error('ABSOLUTE_OUTPUT_DIRECTORY_REQUIRED');
   const hosts=String(allowedHosts||'').split(',').map(cleanHost).filter(h => /^[a-z0-9.-]+$/.test(h));
@@ -60,9 +60,29 @@ export async function acquireOfficialHtml({sku, urls, directory, allowedHosts, f
     const cleaned=rawText.replace(/<script[\s\S]*?<\/script>/gi,' ')
       .replace(/<style[\s\S]*?<\/style>/gi,' ')
       .replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
-    if (!cleaned || cleaned.length>MAX_EXTRACTED_CHARS) throw new Error('EVIDENCE_CONTENT_INVALID');
-    sources.push({url:response.url||target,source_type:'official_product_page',content:cleaned,
-      sha256:crypto.createHash('sha256').update(cleaned,'utf8').digest('hex')});
+    if (!cleaned) throw new Error('EVIDENCE_CONTENT_INVALID');
+    if (cleaned.length > MAX_EXTRACTED_CHARS && !splitOversizedText)
+      throw new Error('EVIDENCE_CONTENT_INVALID');
+    const parts = [];
+    if (splitOversizedText) {
+      let remaining = cleaned;
+      while (remaining.length) {
+        if (parts.length + sources.length >= 12) throw new Error('EVIDENCE_TOO_MANY_PARTS');
+        if (remaining.length <= MAX_EXTRACTED_CHARS) {
+          parts.push(remaining); break;
+        }
+        const cut = remaining.lastIndexOf(' ', MAX_EXTRACTED_CHARS);
+        if (cut < Math.floor(MAX_EXTRACTED_CHARS / 2)) throw new Error('EVIDENCE_NO_SAFE_SPLIT');
+        parts.push(remaining.slice(0,cut));
+        remaining = remaining.slice(cut+1);
+      }
+    } else parts.push(cleaned);
+    const fullTextSha256 = crypto.createHash('sha256').update(cleaned,'utf8').digest('hex');
+    for (const [index,part] of parts.entries()) {
+      sources.push({url:response.url||target,source_type:'official_product_page',
+        content:part,sha256:crypto.createHash('sha256').update(part,'utf8').digest('hex'),
+        part_index:index+1,part_count:parts.length,full_text_sha256:fullTextSha256});
+    }
   }
   const destination=path.join(directory,sku+'.json');
   await fs.mkdir(directory,{recursive:true});
