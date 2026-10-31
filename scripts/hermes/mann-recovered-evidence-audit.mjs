@@ -22,11 +22,11 @@ for(const record of Object.values(ledger)){
  const canonicalMatch=norm(candidateCode)===norm(productCode);
  const originalMatch=norm(record.mann_code_claim)===norm(productCode);
  const status=exact&&canonicalMatch&&originalMatch?'MANN_IDENTITY_RECONFIRMED_MAPPING_REVIEW_REQUIRED':'REVIEW_SOURCE_IDENTITY_MISMATCH';
- rows.push({sku:record.sku,mann_code_claim:record.mann_code_claim,mann_product_code:productCode,url:found.url,sha256:found.sha256,status});
+ rows.push({sku:record.sku,mann_code_claim:record.mann_code_claim,mann_product_code:productCode,url:found.url,sha256:found.sha256,checks:{declared_code_matches_page:exact,url_matches_page:canonicalMatch,original_matches_page:originalMatch},status});
 }
 const tally={};
 for(const r of rows)tally[r.status]=(tally[r.status]||0)+1;
 const report={total:rows.length,counts:tally,certified:0,postgres_writes:0,publication:false,status:'REVIEW_REQUIRED'};
 fs.writeFileSync(path.join(root,'independent-review.json'),JSON.stringify(rows,null,2)+'\n');
 fs.writeFileSync(path.join(root,'independent-review-summary.json'),JSON.stringify(report,null,2)+'\n');
-console.log(JSON.stringify(report,null,2));
+console.log(JSON.stringify({...report,mismatch_samples:rows.filter(r=>r.status==='REVIEW_SOURCE_IDENTITY_MISMATCH').slice(0,5)},null,2));
