@@ -42,21 +42,33 @@ for n in range(12,523):
   make=previous_make;group=previous_group
  candidates=0
  if group=='EU':
-  # Use exact table data cells by vertical span below column headings.
-  # Page screenshot: oil=47–59%, air=59–71%, cabin=71–83%, fuel=83–96%.
-  for block in page.get_text('blocks'):
-   if len(block)<5:continue
-   x0,y0,x1,y1,txt=block[:5]
-   if not (H*.15<y0<H*.95):continue
-   family='oil' if .46<=x0/W<.59 else 'air' if .59<=x0/W<.71 else 'cabin' if .71<=x0/W<.83 else 'fuel' if .83<=x0/W<.96 else None
-   if not family:continue
-   for m in product_regex.finditer(txt):
-    raw=' '.join(m.group().upper().split())
-    # Token may carry catalog footnotes; don't claim model or engine linkage.
-    rows.append({'mann_code':raw,'make':make,'filter_family':family,'pdf_page':n+1,'printed_page':n-1,
-     'source_sha256':digest,'bbox':[round(v,1) for v in (x0,y0,x1,y1)],
-     'status':'PDF_CANDIDATE_SOURCE_ROW_REVIEW_REQUIRED'})
-    candidates+=1
+  # Actual PDF table (confirmed on printed page 11):
+  # Oil 46.6-58.6%, air 58.6-70.5%, cabin 70.5-82.5%, fuel 82.5-94%.
+  # Use each word's X coordinate: text blocks may span multiple columns.
+  cells={'oil':[],'air':[],'cabin':[],'fuel':[]}
+  for w in words:
+   x0,y0,x1,y1,token=w[:5]
+   if not (H*.145 < y0 < H*.94):continue
+   x=x0/W
+   family='oil' if .465<=x<.585 else 'air' if .585<=x<.705 else 'cabin' if .705<=x<.825 else 'fuel' if .825<=x<.945 else None
+   if family:cells[family].append((x0,y0,x1,y1,str(token)))
+  for family,items in cells.items():
+   # Collect tokens on identical baselines, avoiding cross-row joins.
+   lines=[]
+   for item in sorted(items,key=lambda z:(z[1],z[0])):
+    target=next((line for line in lines if abs(line[0]-item[1])<=2.8),None)
+    if target is None:lines.append([item[1],[item]])
+    else:target[1].append(item)
+   for y,line in lines:
+    line.sort(key=lambda v:v[0])
+    txt=' '.join(w[4] for w in line)
+    for m in product_regex.finditer(txt):
+     raw=' '.join(m.group().upper().split())
+     first=line[0];last=line[-1]
+     rows.append({'mann_code':raw,'make':make,'filter_family':family,'pdf_page':n+1,'printed_page':n-1,
+      'source_sha256':digest,'bbox':[round(first[0],1),round(y,1),round(last[2],1),round(max(w[3] for w in line),1)],
+      'status':'PDF_CANDIDATE_SOURCE_ROW_REVIEW_REQUIRED'})
+     candidates+=1
  pageaudit.append({'pdf_page':n+1,'header_text':top[:160],'make':make,'group':group,'candidates':candidates,
                    'reason':None if make else 'HEADER_MAKE_NOT_UNAMBIGUOUS'})
 keys={}
