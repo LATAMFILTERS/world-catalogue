@@ -111,6 +111,21 @@ for row in baseline:
  if len(hits)==1:matched.append(outrow)
  elif not hits:missing.append(outrow)
  else:ambiguous.append(outrow)
+# Prioritize unmatched references by independent repetition across source pages,
+# and quarantine short/ambiguous tokens instead of calling all 484 missing SKUs.
+quality=[]
+for row in missing:
+ pages=row.get('evidence_pages',[])
+ code=row['mann_code']
+ # Evidence spans can be duplicate line captures; require separate PDF pages.
+ strong_prefix=bool(re.fullmatch(r'(?:CUK|CU|FP|HU|WK|PU|CF|CP|CS|C|H|W|P)\\s*\\d{3,6}(?:\\s*[/.-]\\s*\\d{1,5})?(?:\\s*[A-Z])?(?:\\s*\\(\\s*\\d+\\s*\\))?',code,re.I))
+ quality.append({**row,'distinct_evidence_pages':len(set(pages)),
+  'candidate_quality':'HIGHER_PRIORITY_SOURCE_REVIEW' if strong_prefix and len(set(pages))>=2 else 'MANUAL_SOURCE_REVIEW_REQUIRED',
+  'missing_status':'NOT_PRESENT_AS_MANN_CLAIM_NOT_CONFIRMED_MISSING_PRODUCT'})
+save('na-2024-structured-unmatched-review-priority.json',quality)
+report.update({'unmatched_multi_page_review_priority':sum(r['candidate_quality']=='HIGHER_PRIORITY_SOURCE_REVIEW' for r in quality),
+ 'unmatched_manual_source_review':sum(r['candidate_quality']=='MANUAL_SOURCE_REVIEW_REQUIRED' for r in quality),
+ 'unmatched_confirmed_missing_skus':0})
 save('na-2024-structured-present-by-code.json',matched)
 save('na-2024-structured-unmatched-codes.json',missing)
 save('na-2024-structured-ambiguous-codes.json',ambiguous)
