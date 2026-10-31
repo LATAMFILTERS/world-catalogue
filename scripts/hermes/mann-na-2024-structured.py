@@ -92,5 +92,30 @@ report={'pdf_pages_examined':len(pageaudit),'european_pages':sum(p['group']=='EU
  'european_source_candidates':len(rows),'european_unique_product_candidates':len(baseline),
  'all_pages_classified':all(p['group'] not in ('UNRESOLVED','CONFLICT') for p in pageaudit),
  '2026_usa_coverage_verified':False,'coverage_percent':None,'status':'REVIEW_REQUIRED','postgres_writes':0,'publication':False}
+# Compare by MANN code only; internal candidate claims cannot verify equivalence.
+internal_files=[
+ Path('out/hermes-mann-audit/technical-summary.json'),
+ Path('out/hermes-mann-recovered-technical/technical-summary-integrated.json')]
+internal={}
+for f in internal_files:
+ if not f.exists():sys.exit('MISSING_INTERNAL_EVIDENCE '+str(f))
+ source=json.loads(f.read_text(encoding='utf8'))
+ entries=source if isinstance(source,list) else source.get('results',[])
+ for item in entries:
+  k=norm(str(item.get('mann_part') or ''))
+  if k:internal.setdefault(k,[]).append(item.get('sku'))
+matched=[];missing=[];ambiguous=[]
+for row in baseline:
+ hits=sorted(set(str(s) for s in internal.get(norm(row['mann_code']),[]) if s))
+ outrow={**row,'elimfilters_skus':hits,'match_type':'MANN_CODE_LITERAL_ONLY','equivalence':'UNVERIFIED'}
+ if len(hits)==1:matched.append(outrow)
+ elif not hits:missing.append(outrow)
+ else:ambiguous.append(outrow)
+save('na-2024-structured-present-by-code.json',matched)
+save('na-2024-structured-unmatched-codes.json',missing)
+save('na-2024-structured-ambiguous-codes.json',ambiguous)
+report.update({'matched_code_only':len(matched),'not_in_internal_mann_claims':len(missing),
+ 'ambiguous_code_claims':len(ambiguous),'coverage_percent':None,
+ 'reliability_note':'Candidate tokens on 14 unclassified pages and source-row verification remain outstanding.'})
 save('na-2024-structured-summary.json',report)
 print(json.dumps(report,indent=2))
