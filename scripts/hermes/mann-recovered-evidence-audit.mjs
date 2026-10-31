@@ -16,7 +16,8 @@ for(const record of Object.values(ledger)){
  const body=fs.readFileSync(file,'utf8');
  if(digest(body)!==found.sha256){rows.push({sku:record.sku,status:'HASH_MISMATCH'});continue;}
  const visible=body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/\s+/g,' ');
- const productCode=(visible.match(/\b(?:Product|Produkt|Producto)\s*:\s*([A-Z]{1,3}\s*\d[\d\s/]*[A-Z]?)(?=\s|$)/i)||[])[1]||'';
+ const pageCodes=[...visible.matchAll(/\b(?:Product|Produkt|Producto)\s*:\s*([A-Z]{1,3}\s*\d[\d\s/()-]*[A-Z]?(?:-\d+)?)(?=\s|$)/gi)].map(m=>m[1]);
+ const productCode=pageCodes.find(code=>norm(code)===norm(record.mann_code_claim))||pageCodes.at(-1)||'';
  const exact=norm(productCode)===norm(found.declared_product_code);
  const candidateCode=decodeURIComponent(new URL(found.url).pathname.split('/product.html/')[1]?.replace(/_mann-filter\.html$/,'')||'');
  const canonicalMatch=norm(candidateCode)===norm(productCode);
