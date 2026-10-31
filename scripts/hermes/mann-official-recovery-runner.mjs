@@ -33,7 +33,7 @@ function candidates(raw){
 async function run(){
  let fetched=0,matched=0,unresolved=0;
  for(const [i,item] of queue.entries()){
-  if(ledger[item.sku])continue;
+  if(ledger[item.sku]?.parser_version===2)continue;
   const variants=candidates(item.mann_code);
   const attempts=[];let found=null;
   for(const variant of variants){
@@ -43,11 +43,12 @@ async function run(){
    try{
     const res=await fetch(url,{signal:AbortSignal.timeout(12000),headers:{'User-Agent':'ELIMFILTERS-Catalogue-Research/1.0'}});
     const body=await res.text();fetched++;
-    const pageCode=(body.match(/(?:Product|Produkt)\s*:\s*([A-Z]{1,3}\s*\d[\w\s/.-]*)/i)||[])[1]||'';
-    const textCode=(body.match(/<h1[^>]*>[\s\S]{0,300}?<\/h1>/i)||[])[0]||'';
+    const visible=body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/\s+/g,' ');
+    const pageCode=(visible.match(/\b(?:Product|Produkt)\s*:\s*([A-Z]{1,3}\s*\d[\d\s/]*[A-Z]?)(?=\s|$)/i)||[])[1]||'';
     const exact=normalize(pageCode)===normalize(variant);
-    attempts.push({url,http_status:res.status,content_sha256:hash(body),declared_product_code:pageCode.trim(),identity_verified:res.ok&&exact});
-    if(res.ok&&exact){
+    const isProductPage=/\bGTIN Code\b|\bProduct Details\b|\bOE Numbers\b/i.test(visible);
+    attempts.push({url,http_status:res.status,content_sha256:hash(body),declared_product_code:pageCode.trim(),identity_verified:res.ok&&exact&&isProductPage});
+    if(res.ok&&exact&&isProductPage){
      const filename=item.sku+'-'+hash(url).slice(0,12)+'.html';
      fs.writeFileSync(path.join(outDir,filename),body);
      found={url,declared_product_code:pageCode.trim(),sha256:hash(body),file:filename,status:'MANN_PRODUCT_IDENTITY_CONFIRMED_ELIMFILTERS_MAPPING_REVIEW_REQUIRED'};
@@ -55,7 +56,7 @@ async function run(){
     }
    }catch(e){attempts.push({url,error:String(e.message||e)});}
   }
-  ledger[item.sku]={sku:item.sku,mann_code_claim:item.mann_code,candidate:found,attempts,status:found?'MANN_PRODUCT_FOUND_REVIEW_REQUIRED':'NO_OFFICIAL_IDENTITY_MATCH',certified:false};
+  ledger[item.sku]={parser_version:2,sku:item.sku,mann_code_claim:item.mann_code,candidate:found,attempts,status:found?'MANN_PRODUCT_FOUND_REVIEW_REQUIRED':'NO_OFFICIAL_IDENTITY_MATCH',certified:false};
   fs.writeFileSync(ledgerFile,JSON.stringify(ledger,null,2)+'\n');
   found?matched++:unresolved++;
   if((i+1)%25===0)console.log(JSON.stringify({processed:i+1,total:queue.length,matched,unresolved,fetched}));
