@@ -8,6 +8,7 @@ import { createRequire } from 'node:module';
 const require=createRequire(import.meta.url);
 const {parseMannSummary,parseMannOeNumbers}=require('../../lib/mann-official-spec-verifier.js');
 import { assessDossier, canonicalRoleForDossier } from './catalogue-dossier-core.mjs';
+import { isEuropeanMake } from './ld-origin-group.mjs';
 const dir=path.resolve(process.argv[2]||'out/hermes-ten-sku');
 const manifest=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
@@ -35,9 +36,9 @@ for(const entry of manifest.records.filter(r=>r.result==='EVIDENCE_CAPTURED')){
     sourceLinks.set(JSON.stringify(sourceRecord),sourceRecord);
     const make=p.get('vehicleMake'),year=p.get('vehicleModel'),model=p.get('vehicleName'),id=p.get('vehicleTypeId'),eng=p.get('engineCode');
     if(make)makeSet.add(make);
-    if(!make||!model||!/^(19|20)\d{2}$/.test(year||'')||!/^\d{8,20}$/.test(id||'')){skipped.push('INCOMPLETE_SOURCE_ROW');unresolved.push({source_record:sourceRecord,reason:'SOURCE_FIELDS_NOT_IN_EXPECTED_FORMAT',status:'REVIEW_REQUIRED'});continue;}
+    if(!make||!model){skipped.push('INCOMPLETE_SOURCE_ROW');unresolved.push({source_record:sourceRecord,reason:'SOURCE_FIELDS_NOT_IN_EXPECTED_FORMAT',status:'REVIEW_REQUIRED'});continue;}
     const engines=String(eng||'').split(',').map(x=>x.trim()).filter(Boolean);
-    const row={make,year:Number(year),model,vehicle_type_id:id,engine_code_literal:eng||null,engine_codes:engines,engine_status:!engines.length?'ENGINE_NOT_PUBLISHED':engines.every(x=>/^[A-Z][A-Z0-9]{3,16}$/.test(x))?'ENGINE_CODES_PUBLISHED':'ENGINE_CODES_PARTIAL',source_url:entry.evidence.url,source_sha256:entry.evidence.sha256,status:'REVIEW_REQUIRED'};
+    const row={make,year:/^(19|20)\d{2}$/.test(year||'')?Number(year):null,source_year_literal:year||null,model,vehicle_type_id:id||null,source_fields_complete:Boolean(/^(19|20)\d{2}$/.test(year||'')&&id),origin_is_european:isEuropeanMake(make),engine_code_literal:eng||null,engine_codes:engines,engine_status:!engines.length?'ENGINE_NOT_PUBLISHED':engines.every(x=>/^[A-Z][A-Z0-9]{3,16}$/.test(x))?'ENGINE_CODES_PUBLISHED':'ENGINE_CODES_PARTIAL',source_url:entry.evidence.url,source_sha256:entry.evidence.sha256,status:'REVIEW_REQUIRED'};
     fitments.set([make,year,model,id,eng].join('|'),row);
   }
   const dimensionsParsed=parseMannSummary(html);
@@ -56,16 +57,16 @@ for(const entry of manifest.records.filter(r=>r.result==='EVIDENCE_CAPTURED')){
     technical_specs:axis(Object.entries(dimensionsParsed.values).map(([field,value])=>({field,value})),Object.keys(dimensionsParsed.values).length>0),
     oem_codes:axis(oeParsed,oeParsed.length>0),
     cross_references:axis([],false),
-    applications:axis([...fitments.values()],fitments.size>0),
+    applications:axis([...fitments.values()].filter(r=>r.origin_is_european&&r.source_fields_complete),fitments.size>0&&[...fitments.values()].some(r=>r.origin_is_european&&r.source_fields_complete)),
     provenance:{sources:[{url:sourceUrl,authority:'MANN-FILTER',source_type:'official product page',supports:['identity','dimensions','technical_specs','oem_codes','applications']}]},
     consistency:{status:'UNRESOLVED',conflicts:[],notes:['ELIMFILTERS equivalence and FRAM/non-European fitments not independently verified']}
   };
   const dossierAssessment=assessDossier(structuredDossier);
   const sourceRole=canonicalRoleForDossier({duty:'LIGHT_DUTY'},structuredDossier);
-  const result={sku:entry.sku,mann_part:entry.canonical_base_claim,source_title:title,evidence:entry.evidence,integrated_dossier:structuredDossier,dossier_assessment:dossierAssessment,canonical_source_role:sourceRole,source_page_identity_observed:true,elimfilters_equivalence_verified:false,applications_certified:0,publication_authorized:false,database_write_authorized:false,status:'REVIEW_REQUIRED',application_rows:[...fitments.values()],application_rows_count:fitments.size,engine_missing_or_partial:[...fitments.values()].filter(x=>x.engine_status!=='ENGINE_CODES_PUBLISHED').length,application_source_warnings:skipped.length,application_links_observed:applicationLinks,unresolved_source_rows:unresolved,source_application_coverage:fitments.size?'PARTIAL_SOURCE_ROWS_CAPTURED':applicationLinks?'APPLICATION_LINKS_UNRESOLVED':'NO_STRUCTURED_APPLICATION_LINKS_OBSERVED',source_makes:[...makeSet],raw_structured_application_records:[...sourceLinks.values()],dimensions:technicalAxes.specifications,oem_codes:technicalAxes.oem_codes,competitor_codes:technicalAxes.competitor_codes,vehicle_applications_governance:technicalAxes.ld_vehicle_applications,technical_completeness:'INCOMPLETE_PENDING_CROSS_BRAND_AND_MARKET_VERIFICATION'};
+  const result={sku:entry.sku,mann_part:entry.canonical_base_claim,source_title:title,evidence:entry.evidence,integrated_dossier:structuredDossier,dossier_assessment:dossierAssessment,canonical_source_role:sourceRole,source_page_identity_observed:true,elimfilters_equivalence_verified:false,applications_certified:0,publication_authorized:false,database_write_authorized:false,status:'REVIEW_REQUIRED',application_rows:[...fitments.values()],application_rows_count:fitments.size,european_application_rows:[...fitments.values()].filter(r=>r.origin_is_european).length,partial_application_rows:[...fitments.values()].filter(r=>!r.source_fields_complete).length,engine_missing_or_partial:[...fitments.values()].filter(x=>x.engine_status!=='ENGINE_CODES_PUBLISHED').length,application_source_warnings:skipped.length,application_links_observed:applicationLinks,unresolved_source_rows:unresolved,source_application_coverage:fitments.size?'PARTIAL_SOURCE_ROWS_CAPTURED':applicationLinks?'APPLICATION_LINKS_UNRESOLVED':'NO_STRUCTURED_APPLICATION_LINKS_OBSERVED',source_makes:[...makeSet],raw_structured_application_records:[...sourceLinks.values()],dimensions:technicalAxes.specifications,oem_codes:technicalAxes.oem_codes,competitor_codes:technicalAxes.competitor_codes,vehicle_applications_governance:technicalAxes.ld_vehicle_applications,technical_completeness:'INCOMPLETE_PENDING_CROSS_BRAND_AND_MARKET_VERIFICATION'};
   const out=path.join(dir,entry.sku+'.technical-review-integrated.json');
   fs.writeFileSync(out,JSON.stringify(result,null,2)+'\n',{flag:'w'});
-  results.push({sku:entry.sku,mann_part:entry.canonical_base_claim,applications:fitments.size,incomplete_engine:result.engine_missing_or_partial,warnings:skipped.length,dossier_complete:dossierAssessment.complete,unresolved_axes:dossierAssessment.unresolved_axes,dimension_fields:Object.keys(dimensionsParsed.values).length,oem_codes:oeParsed.length,competitor_codes_verified:0,application_links:applicationLinks,source_coverage:result.source_application_coverage,report:path.basename(out)});
+  results.push({sku:entry.sku,mann_part:entry.canonical_base_claim,applications:fitments.size,european_applications:[...fitments.values()].filter(r=>r.origin_is_european).length,partial_applications:[...fitments.values()].filter(r=>!r.source_fields_complete).length,incomplete_engine:result.engine_missing_or_partial,warnings:skipped.length,dossier_complete:dossierAssessment.complete,unresolved_axes:dossierAssessment.unresolved_axes,dimension_fields:Object.keys(dimensionsParsed.values).length,oem_codes:oeParsed.length,competitor_codes_verified:0,application_links:applicationLinks,source_coverage:result.source_application_coverage,report:path.basename(out)});
 }
 const output={status:'REVIEW_REQUIRED',captured_skus:results.length,certified:0,postgres_writes:0,publication:false,results};
 fs.writeFileSync(path.join(dir,'technical-summary-integrated.json'),JSON.stringify(output,null,2)+'\n',{flag:'w'});
