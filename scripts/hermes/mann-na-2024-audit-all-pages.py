@@ -31,7 +31,7 @@ for i in range(12,523):
   d=codes.setdefault(key,{"mann_code":raw,"evidence_pages":[],"status":"UNCLASSIFIED_PDF_CODE_CANDIDATE"})
   d["evidence_pages"].append(i+1)
  # Extract header snippets solely for review, not for brand attribution.
- header=page.get_text("clip=pymupdf.Rect(0,0,page.rect.width,page.rect.height*0.23)").strip()
+ header=page.get_text("text",clip=pymupdf.Rect(0,0,page.rect.width,page.rect.height*0.23)).strip()
  pages.append({"pdf_page":i+1,"printed_page":i-1,"header_excerpt":header[:500],
    "code_candidates":len(hits),"status":"NEEDS_MAKE_AND_COLUMN_VALIDATION"})
 for filename,data in {
