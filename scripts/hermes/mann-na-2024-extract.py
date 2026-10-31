@@ -38,23 +38,32 @@ evidence=[];pages=[];current_brand=None;errors=[]
 for n in range(first,last+1):
     page=doc[n]
     words=page.get_text("words",sort=True)
-    # Prefer the large centered make label, not running header on left.
+    # Never carry a make from the previous page: a non-European section
+    # must not silently inherit the preceding European manufacturer's name.
     blocks=page.get_text("blocks")
-    headings=[]
-    for b in blocks:
-        if len(b)<5:continue
-        x0,y0,x1,y1,txt=b[:5]
-        if y0>page.rect.height*.30:continue
-        if x1-x0<30:continue
-        for match in pattern.finditer(txt.upper()):
-            cand=match.group(1).upper()
-            if cand in brands:headings.append((y0,x0,brands[cand]))
-    if headings:
-        headings.sort(key=lambda a:(a[0],a[1]))
-        current_brand=headings[-1][2]
-    # When no brand heading detected do not silently infer across large gaps.
-    if not current_brand:
-        pages.append({"pdf_page":n+1,"status":"MAKE_UNDETERMINED","rows":0});continue
+    header=" ".join(str(b[4]) for b in blocks if len(b)>=5 and b[1]<page.rect.height*.19).upper()
+    # Publisher's running header includes e.g. "BMW 2023", "ACURA 2024-2020".
+    # Require a brand immediately preceding a year in the running header.
+    brand_in_header=re.search(r"\b([A-Z][A-Z& -]{1,28})\s+(?:19|20)\d{2}(?:\s*[-–]\s*(?:19|20)\d{2})?\b",header)
+    current_brand=None
+    if brand_in_header:
+        label=brand_in_header.group(1).strip()
+        for name in sorted(brands,key=len,reverse=True):
+            if label==name or label.endswith(" "+name):
+                current_brand=brands[name]
+                break
+    if current_brand is None:
+        # On first pages the manufacturer is printed as a standalone heading
+        # below the header; restrict search to exact standalone heading text.
+        for b in blocks:
+            if len(b)<5 or b[1]>page.rect.height*.27:continue
+            t=str(b[4]).strip().upper()
+            if t in brands:
+                current_brand=brands[t]
+                break
+    if current_brand is None:
+        pages.append({"pdf_page":n+1,"status":"NOT_EUROPEAN_OR_MAKE_UNCONFIRMED","rows":0})
+        continue
     width=page.rect.width
     # Actual columns on catalogue page: engine code ~35-42%,
     # oil ~42-54%, air ~54-66%, cabin ~66-78%, fuel ~78-94%.
