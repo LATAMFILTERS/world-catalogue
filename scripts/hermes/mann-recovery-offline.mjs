@@ -42,9 +42,9 @@ for(const r of successes){
   const started=query.get('vehicleManufacturedFrom'),ended=query.get('vehicleManufacturedTo');
   const year=/^(19|20)\d{2}$/.test(model||'')?Number(model):null;
   const manufacturedYear=/^(19|20)\d{2}-\d{2}-\d{2}$/.test(started||'')?Number(started.slice(0,4)):null;
+  const id=query.get('vehicleTypeId')||null;
   const sourceFieldsComplete=Boolean(make&&model&&variant&&id&&manufacturedYear&&query.get('engineCode'));
   const missingFields=[['model_series',model],['vehicle_variant',variant],['type_id',id],['manufactured_from',manufacturedYear],['engine_code',query.get('engineCode')]].filter(([,v])=>!v).map(([name])=>name);
-  const id=query.get('vehicleTypeId')||null;
   const identity=[make,model,variant,id,query.get('engineCode')].join('|');
   if(seen.has(identity))continue;seen.add(identity);
   applications.push({sku:r.sku,mann_code:r.canonical_base_claim,make,model:variant||null,model_series:model||null,
