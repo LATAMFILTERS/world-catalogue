@@ -13,33 +13,32 @@ const ledger=fs.existsSync(ledgerFile)?JSON.parse(fs.readFileSync(ledgerFile,'ut
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 const normalize=s=>String(s).toLowerCase().replace(/[^a-z0-9]/g,'');
 function candidates(raw){
- const code=String(raw).toUpperCase().replace(/\s/g,'');
- const m=/^([A-Z]+)(\d+)([A-Z0-9]*)$/.exec(code);
+ const code=String(raw).toUpperCase().replace(/[\s/-]/g,'');
+ const m=/^([A-Z]+)(\d+)([A-Z]*)$/.exec(code);
  if(!m)return [];
  const [,prefix,digits,suffix]=m;
- const result=new Set([code.toLowerCase()]);
- // Official MANN product slugs frequently use a slash before a trailing variant digit.
- // These are search hypotheses, not verified equivalences.
- if(digits.length>=3){
-  result.add((prefix+digits.slice(0,-1)+'/'+digits.slice(-1)+suffix).toLowerCase());
-  if(suffix)result.add((prefix+digits.slice(0,-1)+'/'+digits.slice(-1)+suffix).toLowerCase());
+ const result=new Set();
+ // Alternate slash positions: only previously untried, official MANN slugs.
+ for(let take=1;take<=Math.min(3,digits.length-2);take++){
+  result.add((prefix+digits.slice(0,-take)+'/'+digits.slice(-take)+suffix).toLowerCase());
  }
- if(suffix){
-  const sx=/^(\d)([A-Z].*)$/.exec(suffix);
-  if(sx)result.add((prefix+digits+'/'+sx[1]+sx[2]).toLowerCase());
- }
- return [...result].slice(0,4);
+ // Suffixes may be placed after the slash e.g. PU 821/2 x.
+ if(suffix&&digits.length>=3)result.add((prefix+digits.slice(0,-1)+'/'+digits.slice(-1)+suffix).toLowerCase());
+ return [...result];
 }
 async function run(){
  let fetched=0,matched=0,unresolved=0;
  for(const [i,item] of queue.entries()){
-  if(ledger[item.sku]?.parser_version===2)continue;
+  if(ledger[item.sku]?.candidate)continue;
+  if(ledger[item.sku]?.parser_version===3)continue;
   const variants=candidates(item.mann_code);
-  const attempts=[];let found=null;
+  const attempts=[...(ledger[item.sku]?.attempts||[])];let found=null;
+  const attemptedUrls=new Set(attempts.map(a=>a.url));
   for(const variant of variants){
    // No retry of original failed URLs: only a newly formatted candidate with a slash.
    if(!variant.includes('/'))continue;
    const url='https://www.mann-filter.com/en/catalog/search-results/product.html/'+variant+'_mann-filter.html';
+   if(attemptedUrls.has(url))continue;
    try{
     const res=await fetch(url,{signal:AbortSignal.timeout(12000),headers:{'User-Agent':'ELIMFILTERS-Catalogue-Research/1.0'}});
     const body=await res.text();fetched++;
@@ -56,10 +55,10 @@ async function run(){
     }
    }catch(e){attempts.push({url,error:String(e.message||e)});}
   }
-  ledger[item.sku]={parser_version:2,sku:item.sku,mann_code_claim:item.mann_code,candidate:found,attempts,status:found?'MANN_PRODUCT_FOUND_REVIEW_REQUIRED':'NO_OFFICIAL_IDENTITY_MATCH',certified:false};
+  ledger[item.sku]={parser_version:3,sku:item.sku,mann_code_claim:item.mann_code,candidate:found,attempts,status:found?'MANN_PRODUCT_FOUND_REVIEW_REQUIRED':'NO_OFFICIAL_IDENTITY_MATCH',certified:false};
   fs.writeFileSync(ledgerFile,JSON.stringify(ledger,null,2)+'\n');
   found?matched++:unresolved++;
-  if((i+1)%25===0)console.log(JSON.stringify({processed:i+1,total:queue.length,matched,unresolved,fetched}));
+  if((i+1)%25===0)console.log(JSON.stringify({processed:i+1,total:queue.length,new_matches:matched,new_unresolved:unresolved,new_requests:fetched}));
  }
  const result={processed:Object.keys(ledger).length,queue_size:queue.length,official_identities_confirmed:Object.values(ledger).filter(x=>x.candidate).length,status:'REVIEW_REQUIRED',certified:0,postgres_writes:0,publication:false};
  fs.writeFileSync(path.join(outDir,'summary.json'),JSON.stringify(result,null,2)+'\n');
