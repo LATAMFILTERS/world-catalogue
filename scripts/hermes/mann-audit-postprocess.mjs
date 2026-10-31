@@ -19,9 +19,23 @@ for(const folder of folders){
  technical.push(...summary.results);
 }
 const failureRows=records.filter(r=>r.result!=='EVIDENCE_CAPTURED').map(r=>({sku:r.sku,mann_code:r.canonical_base_claim,reason:r.result,attempts:r.attempts||[]}));
-const byReason=Object.fromEntries([...new Set(failureRows.map(r=>r.reason))].sort().map(k=>[k,failureRows.filter(r=>r.reason===k).length]));
+const classifyFailure=r=>{
+ if(r.reason!=='REVIEW_REQUIRED')return r.reason;
+ const attempts=r.attempts||[];
+ if(!attempts.length)return 'NO_SOURCE_ATTEMPTS';
+ const codes=attempts.filter(a=>Number.isInteger(a.http_status)).map(a=>a.http_status);
+ if(codes.length&&codes.every(x=>x===404))return 'MANN_HTTP_404';
+ if(codes.some(x=>x===403||x===429))return 'MANN_ACCESS_BLOCKED';
+ if(codes.some(x=>x>=500))return 'MANN_SERVER_ERROR';
+ if(codes.some(x=>x>=200&&x<300))return 'MANN_PAGE_NOT_ACCEPTED';
+ if(attempts.some(a=>a.error))return 'NETWORK_OR_TIMEOUT';
+ if(codes.length)return 'MANN_HTTP_OTHER';
+ return 'RESEARCH_UNRESOLVED';
+};
+for(const row of failureRows)row.diagnostic_reason=classifyFailure(row);
+const byReason=Object.fromEntries([...new Set(failureRows.map(r=>r.diagnostic_reason))].sort().map(k=>[k,failureRows.filter(r=>r.diagnostic_reason===k).length]));
 const unique=new Set(records.map(r=>r.sku));
-const output={status:failures.length?'PARTIAL_REVIEW':'REVIEW_REQUIRED',processed:records.length,unique_skus:unique.size,mann_pages_confirmed:records.filter(r=>r.result==='EVIDENCE_CAPTURED').length,not_confirmed:failureRows.length,failures_by_reason:byReason,technical_extracted:technical.length,with_dimensions:technical.filter(r=>r.dimension_fields>0).length,with_oem:technical.filter(r=>r.oem_codes>0).length,with_structured_applications:technical.filter(r=>r.applications>0).length,competitor_codes_verified:0,certified:0,postgres_writes:0,publication:false,batch_errors:failures};
+const output={status:failures.length?'PARTIAL_REVIEW':'REVIEW_REQUIRED',processed:records.length,unique_skus:unique.size,mann_pages_confirmed:records.filter(r=>r.result==='EVIDENCE_CAPTURED').length,not_confirmed:failureRows.length,failures_by_reason:byReason,technical_extracted:technical.length,with_dimensions:technical.filter(r=>r.dimension_fields>0).length,with_oem:technical.filter(r=>r.oem_codes>0).length,with_structured_applications:technical.filter(r=>r.applications>0).length,with_european_applications:technical.filter(r=>r.european_applications>0).length,with_partial_application_rows:technical.filter(r=>r.partial_applications>0).length,competitor_codes_verified:0,certified:0,postgres_writes:0,publication:false,batch_errors:failures};
 fs.writeFileSync(path.join(root,'audit-summary.json'),JSON.stringify(output,null,2)+'\n');
 fs.writeFileSync(path.join(root,'not-confirmed.json'),JSON.stringify(failureRows,null,2)+'\n');
 fs.writeFileSync(path.join(root,'technical-summary.json'),JSON.stringify(technical,null,2)+'\n');
