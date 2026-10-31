@@ -24,12 +24,21 @@ for(const row of Object.values(ledger)){
  recovered.push(...european.filter(r=>!r.engine_code_literal).map(r=>({sku:row.sku,mann_code:row.mann_code_claim,make:r.make,model:r.model,source_year_literal:r.source_year_literal,vehicle_type_id:r.vehicle_type_id,source_url:r.source_url,source_sha256:r.source_sha256,status:'MANN_ENGINE_NOT_PUBLISHED_REVIEW_REQUIRED'})));
 }
 const missingOld=oldRows.filter(r=>!r.engine_code_literal).map(r=>({sku:r.sku,mann_code:r.mann_code,make:r.make,model:r.model,source_url:r.source_url,source_sha256:r.source_sha256,status:'MANN_ENGINE_NOT_PUBLISHED_REVIEW_REQUIRED'}));
-const engineRows=[...missingOld,...recovered];
-const seen=new Set(),uniqueEngines=engineRows.filter(r=>{const key=[r.sku,r.mann_code,r.make,r.model,r.source_sha256].join('|');if(seen.has(key))return false;seen.add(key);return true;});
+const engineRows=[...missingOld.map((r,i)=>({...r,source_dataset:'ORIGINAL_MANN',source_row_index:i})),...recovered.map((r,i)=>({...r,source_dataset:'RECOVERED_MANN',source_row_index:i}))];
+// Never discard distinct applications. Group only for investigation, and retain every source row.
+const groups=new Map();
+for(const row of engineRows){
+ const key=JSON.stringify([row.sku,row.mann_code,row.make,row.model,row.source_sha256]);
+ if(!groups.has(key))groups.set(key,[]);
+ groups.get(key).push(row);
+}
+const collapsedGroups=[...groups.values()].filter(g=>g.length>1);
+const suspectCollisions=collapsedGroups.map(g=>({key:{sku:g[0].sku,mann_code:g[0].mann_code,make:g[0].make,model:g[0].model,source_sha256:g[0].source_sha256},rows:g}));
 const counts={unresolved_mann_products:unresolved.length,independent_mann_products:independent.filter(r=>r.status==='MANN_IDENTITY_RECONFIRMED_MAPPING_REVIEW_REQUIRED').length,
-reviewed_recovered_products:review.results.length,missing_engine_original:missingOld.length,missing_engine_recovered:recovered.length,unique_missing_engine_rows:uniqueEngines.length,
+reviewed_recovered_products:review.results.length,missing_engine_original:missingOld.length,missing_engine_recovered:recovered.length,unique_grouping_keys:groups.size,grouping_collisions:engineRows.length-groups.size,collision_groups:collapsedGroups.length,retained_engine_rows:engineRows.length,
 status:'REVIEW_REQUIRED',certified:0,postgres_writes:0,publication:false};
 fs.writeFileSync(path.join(audit,'mann-36-unresolved.json'),JSON.stringify(unresolved,null,2)+'\n');
-fs.writeFileSync(path.join(audit,'mann-engine-open-gaps-all.json'),JSON.stringify(uniqueEngines,null,2)+'\n');
+fs.writeFileSync(path.join(audit,'mann-engine-open-gaps-all.json'),JSON.stringify(engineRows,null,2)+'\n');
+fs.writeFileSync(path.join(audit,'mann-engine-grouping-collisions.json'),JSON.stringify(suspectCollisions,null,2)+'\n');
 fs.writeFileSync(path.join(audit,'mann-open-gaps-summary.json'),JSON.stringify(counts,null,2)+'\n');
 console.log(JSON.stringify(counts,null,2));
