@@ -18,7 +18,12 @@ allbrands=sorted(set(eu+other),key=len,reverse=True)
 make_regex=re.compile(r'(?<![A-Z])('+'|'.join(re.escape(x) for x in allbrands)+r')\s+(?:19|20)\d{2}\b',re.I)
 product_regex=re.compile(r'(?<![A-Z0-9])(?:CUK|CU|FP|HU|WK|PU|CF|CP|CS|C|H|W|P)\s*\d{2,6}(?:\s*[/.-]\s*\d{1,5})?(?:\s*[A-Z])?(?:\s*\(\s*\d+\s*\))?(?![A-Z0-9])',re.I)
 norm=lambda s:re.sub('[^A-Z0-9]','',s.upper())
-rows=[];pageaudit=[]
+# Reuse existing header classifications instead of discarding their evidence.
+# Disagreement between independent header readers is quarantined.
+prior_file=root/'na-2024-header-page-classification.json'
+if not prior_file.is_file():sys.exit('MISSING_PRIOR_PAGE_CLASSIFICATION')
+prior={int(r['pdf_page']):r for r in json.loads(prior_file.read_text(encoding='utf8'))}
+rows=[];pageaudit=[];conflicts=[]
 for n in range(12,523):
  page=doc[n];W,H=page.rect.width,page.rect.height
  words=page.get_text('words',sort=True)
@@ -27,6 +32,14 @@ for n in range(12,523):
  makes=list({m.group(1).upper() for m in make_regex.finditer(top)})
  make=makes[0] if len(makes)==1 else None
  group='EU' if make in eu else 'NON_EU' if make in other else 'UNRESOLVED'
+ previous=prior.get(n+1,{})
+ previous_group=previous.get('group','UNRESOLVED')
+ previous_make=previous.get('make')
+ if group!='UNRESOLVED' and previous_group!='UNRESOLVED' and (group!=previous_group or norm(make)!=norm(previous_make)):
+  conflicts.append({'pdf_page':n+1,'previous_make':previous_make,'new_make':make,'previous_group':previous_group,'new_group':group})
+  make=None;group='CONFLICT'
+ elif group=='UNRESOLVED' and previous_group in ('EU','NON_EU') and previous_make:
+  make=previous_make;group=previous_group
  candidates=0
  if group=='EU':
   # Use exact table data cells by vertical span below column headings.
@@ -56,14 +69,16 @@ baseline=[{'mann_code':v['mann_code'],'makes':sorted(v['makes']),'families':sort
  'evidence_pages':sorted(v['pages']),'status':'PDF_CANDIDATE_NOT_2026_USA_VERIFIED'} for v in keys.values()]
 baseline.sort(key=lambda x:norm(x['mann_code']))
 def save(name,data):(root/name).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+save('na-2024-structured-page-conflicts.json',conflicts)
 save('na-2024-structured-row-evidence.json',rows)
 save('na-2024-structured-page-audit.json',pageaudit)
 save('na-2024-structured-european-candidates.json',baseline)
 report={'pdf_pages_examined':len(pageaudit),'european_pages':sum(p['group']=='EU' for p in pageaudit),
  'non_european_pages':sum(p['group']=='NON_EU' for p in pageaudit),
  'unresolved_pages':sum(p['group']=='UNRESOLVED' for p in pageaudit),
+ 'classification_conflict_pages':len(conflicts),
  'european_source_candidates':len(rows),'european_unique_product_candidates':len(baseline),
- 'all_pages_classified':all(p['group']!='UNRESOLVED' for p in pageaudit),
+ 'all_pages_classified':all(p['group'] not in ('UNRESOLVED','CONFLICT') for p in pageaudit),
  '2026_usa_coverage_verified':False,'coverage_percent':None,'status':'REVIEW_REQUIRED','postgres_writes':0,'publication':False}
 save('na-2024-structured-summary.json',report)
 print(json.dumps(report,indent=2))
