@@ -15,7 +15,6 @@ for f in [SCRIPT,BASE/'out/hermes-mann-audit/technical-summary.json',BASE/'out/h
 proc=subprocess.run([sys.executable,str(SCRIPT),str(PDF)],cwd=BASE,check=False)
 if proc.returncode:sys.exit(proc.returncode)
 summary=json.loads((ROOT/'na-2024-structured-summary.json').read_text(encoding='utf8'))
-if summary['source_pdf_sha256'] if 'source_pdf_sha256' in summary else False: pass
 rows=json.loads((ROOT/'na-2024-structured-european-candidates.json').read_text(encoding='utf8'))
 pages=json.loads((ROOT/'na-2024-structured-page-audit.json').read_text(encoding='utf8'))
 pdf_sha=hashlib.sha256(PDF.read_bytes()).hexdigest()
