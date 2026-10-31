@@ -1,0 +1,38 @@
+name: DNS-AID public preflight (read-only)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/dns-aid-public-preflight.yml'
+      - 'scripts/audit-dns-aid-readonly.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  dns-aid-public-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Query public DNS and HTTPS without writes
+        id: audit
+        shell: bash
+        run: |
+          set +e
+          node scripts/audit-dns-aid-readonly.mjs > dns-aid-evidence.json
+          status=$?
+          cat dns-aid-evidence.json
+          echo "audit_exit_code=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Preserve evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: dns-aid-public-evidence
+          path: dns-aid-evidence.json
+      - name: Report readiness
+        run: |
+          if [ "${{ steps.audit.outputs.audit_exit_code }}" != "0" ]; then
+            echo "::warning::DNS-AID preflight NO-GO: see evidence artifact; no DNS changed."
+          fi

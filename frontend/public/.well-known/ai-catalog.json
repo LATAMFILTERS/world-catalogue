@@ -1,0 +1,31 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "ELIMFILTERS",
+    "documentationUrl": "https://elimfilters.com/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:elimfilters.com:document:llms",
+      "displayName": "ELIMFILTERS public engineering and website guide",
+      "type": "text/plain",
+      "url": "https://elimfilters.com/llms.txt",
+      "description": "Public guide to ELIMFILTERS engineering, product information and knowledge resources; does not certify compatibility or cross-reference applications.",
+      "representativeQueries": [
+        "Where can I find ELIMFILTERS public engineering information?",
+        "How can I discover ELIMFILTERS website resources?"
+      ]
+    },
+    {
+      "identifier": "urn:air:elimfilters.com:document:sitemap",
+      "displayName": "ELIMFILTERS public sitemap index",
+      "type": "application/xml",
+      "url": "https://elimfilters.com/sitemap-index.xml",
+      "description": "Index of public website sitemaps. It does not grant permission to use unpublished catalog evidence.",
+      "representativeQueries": [
+        "Which public ELIMFILTERS website pages are indexed?",
+        "Where is the ELIMFILTERS sitemap index?"
+      ]
+    }
+  ]
+}
