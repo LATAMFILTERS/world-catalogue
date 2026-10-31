@@ -7,7 +7,7 @@ Install dependency: py -m pip install pymupdf
 import sys, re, json, hashlib
 from pathlib import Path
 try:
-    import fitz
+    import pymupdf as fitz
 except ImportError:
     sys.exit("DEPENDENCY_MISSING: py -m pip install pymupdf")
 if len(sys.argv)<2: sys.exit("USAGE: py scripts/hermes/mann-na-2024-extract.py PATH_TO_PDF")
@@ -34,7 +34,7 @@ brands={
 pattern=re.compile(r"(?<![A-Z])("+"|".join(re.escape(k) for k in sorted(brands,key=len,reverse=True))+r")(?:\s*\(Cont['’]?d/?Suite\))?(?![A-Z])",re.I)
 code=re.compile(r"\b(?:C(?:U|UK|F|P|S)?|FP|H|HU|W|WK|PU|P|BFU|BF|MA|MC|MCF|LC|E)\s*\d{1,6}(?:\s*[/.-]\s*\d{1,4})?(?:\s*(?:-\s*\d+|\(\s*\d+\s*\)))?\b",re.I)
 skip=re.compile(r"^(?:N/S|N\/A|—|-|–|none|no filter|see page|cont'd|continued)$",re.I)
-evidence=[];pages=[],current_brand=None;errors=[]
+evidence=[];pages=[];current_brand=None;errors=[]
 for n in range(first,last+1):
     page=doc[n]
     words=page.get_text("words",sort=True)
