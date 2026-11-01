@@ -1,0 +1,38 @@
+name: Verify live AI catalog link
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-live-ai-catalog.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-html:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check raw production HTML and discovery endpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import urllib.request, json, re, sys
+          base='https://elimfilters.com'
+          req=urllib.request.Request(base+'/',headers={'User-Agent':'ELIMFILTERS-discovery-verification/1.0','Cache-Control':'no-cache'})
+          with urllib.request.urlopen(req,timeout=20) as response:
+              html=response.read().decode('utf-8')
+              code=response.status
+          head=html.split('</head>',1)[0]
+          match=re.search(r'<link\b[^>]*\brel=["\']ai-catalog["\'][^>]*>',head,re.I)
+          ok=bool(match and '/.well-known/ai-catalog.json' in match.group(0))
+          print(json.dumps({'check':'production_html_head','http_status':code,'link_found':ok,'link_tag':match.group(0) if match else None}))
+          req=urllib.request.Request(base+'/.well-known/ai-catalog.json',headers={'Accept':'application/json','Cache-Control':'no-cache'})
+          with urllib.request.urlopen(req,timeout=20) as response:
+              catalog=json.loads(response.read())
+              content_type=response.headers.get('Content-Type')
+              catalog_status=response.status
+          valid=catalog.get('host',{}).get('displayName')=='ELIMFILTERS' and len(catalog.get('entries',[]))==2
+          print(json.dumps({'check':'public_catalog','http_status':catalog_status,'content_type':content_type,'valid_public_resources':valid}))
+          if not(ok and code==200 and catalog_status==200 and valid and 'json' in content_type):
+              sys.exit(1)
+          PY
