@@ -19,7 +19,7 @@ async function checkHttps(path, contentType) {
     checks.push({check:'https '+path,pass:!!ok,status:r.status,type:r.headers.get('content-type'),finalUrl:r.url,bytes:body.length});
   } catch(e) {checks.push({check:'https '+path,pass:false,error:String(e)});}
 }
-for(const [name,type] of [['elimfilters.com','DS'],['elimfilters.com','DNSKEY'],['_index._agents.elimfilters.com','SVCB'],['_index._agents.elimfilters.com','TXT']]){
+for(const [name,type] of [['elimfilters.com','DS'],['elimfilters.com','DNSKEY'],['_index._agents.elimfilters.com','SVCB'],['_index._agents.elimfilters.com','TXT'],['_public-discovery._https._agents.elimfilters.com','SVCB']]){
   try{
     const r=await dns(name,type);
     checks.push({check:'dns '+type+' '+name,pass:r.Status===0 && !!r.Answer?.length,status:r.Status,ad:r.AD===true,answers:r.Answer?.map(x=>({type:x.type,data:x.data}))??[]});
@@ -42,6 +42,7 @@ await checkHttps('/llms.txt','text/plain');
 await checkHttps('/robots.txt','text/plain');
 await checkHttps('/sitemap-index.xml','application/xml');
 await checkHttps('/.well-known/ai-catalog.json','application/json');
+await checkHttps('/.well-known/public-discovery-agent.json','application/json');
 // The DNS-AID reference index is a TXT inventory, not an SVCB alias.
 // A published SVCB pointer alone must never be reported as agent readiness.
 try {
@@ -62,10 +63,13 @@ const manifest=checks.find(x=>x.check==='https /.well-known/ai-catalog.json');
 const mcpDeny=checks.find(x=>x.check==='mcp anonymous tools/list denied');
 const dnsIndex=checks.find(x=>x.check==='dns TXT _index._agents.elimfilters.com');
 const registry=checks.find(x=>x.check==='public agent registry activation');
-const agentsInIndex=dnsIndex?.answers?.some(x=>x.type===16 && /agents=[^\s"]+:[a-z]+/i.test(x.data))===true;
+const agentSvcb=checks.find(x=>x.check==='dns SVCB _public-discovery._https._agents.elimfilters.com');
+const discoveryDoc=checks.find(x=>x.check==='https /.well-known/public-discovery-agent.json');
+const agentsInIndex=dnsIndex?.answers?.some(x=>x.type===16 && x.data.includes('agents=public-discovery:https'))===true;
+const expectedTarget=agentSvcb?.answers?.some(x=>x.type===64 && /^1\s+elimfilters\.com\.?\s*(?:$|\s)/i.test(x.data))===true;
 // A reachable authenticated MCP service is NOT itself an approved public agent registry.
 // DNSSEC AD, authorized discovery records, and public capability review are separate gates.
-const verdict=ds?.pass && key?.pass && ds?.ad && key?.ad && manifest?.pass && mcpDeny?.pass && dnsIndex?.pass && dnsIndex?.ad && agentsInIndex && registry?.pass
+const verdict=ds?.pass && key?.pass && ds?.ad && key?.ad && manifest?.pass && mcpDeny?.pass && dnsIndex?.pass && dnsIndex?.ad && agentsInIndex && registry?.pass && agentSvcb?.pass && agentSvcb?.ad && expectedTarget && discoveryDoc?.pass
   ? 'PENDING_MANUAL_SPEC_AND_SECURITY_REVIEW' : 'NO_GO_DNS_AID';
 console.log(JSON.stringify({timestamp:new Date().toISOString(),verdict,checks},null,2));
 process.exitCode=verdict==='NO_GO_DNS_AID'?1:0;
