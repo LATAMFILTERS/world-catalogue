@@ -18,4 +18,4 @@ jobs:
       - name: Syntax and functional tests
         run: |
           node --check workers/markdown-for-agents/index.mjs
-          node --test workers/markdown-for-agents/index.test.mjs
+          node --test workers/markdown-for-agents/index.test.mjs workers/markdown-for-agents/zone-route.test.mjs
