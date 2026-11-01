@@ -47,11 +47,16 @@ export function equivalenceLine(p: ProductPage, max = 2) {
   return pool.slice(0, max).map((r) => `${r.brand} ${r.code}`).join(', ');
 }
 
+// Search snippets only describe the product itself; reference codes are lookup hints,
+// not certified interchangeability or equipment fitment.
 export function productMetaDescription(p: ProductPage) {
   const spec = (name: string) => p.specs.find((s) => s.name === name)?.value;
-  const parts = [`${p.sku} ${p.title.toLowerCase()}`, spec('Thread') && `thread ${spec('Thread')}`, spec('Height') && `${spec('Height')} high`].filter(Boolean).join(', ');
-  const cross = !p.oem.length ? '' : p.crossRefs[0] ? `; also ${p.crossRefs[0].brand} ${p.crossRefs[0].code}` : '';
-  const base = `${parts}. Reference codes: ${equivalenceLine(p)}${cross}.`;
+  const parts = [
+    `ELIMFILTERS ${p.sku} – ${p.title}`,
+    spec('Thread') && `thread ${spec('Thread')}`,
+    spec('Height') && `height ${spec('Height')}`,
+  ].filter(Boolean);
+  const base = parts.join(', ') + '.';
   const withTech = `${base} ${p.technology}™ technology.`;
-  return withTech.length <= 160 ? withTech : base;
+  return withTech.length <= 160 ? withTech : base.slice(0, 160);
 }
