@@ -1,0 +1,54 @@
+name: ES EN PT Markdown rollout preflight
+on:
+  pull_request:
+    paths: ['.github/workflows/markdown-es-en-pt-preflight.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check public HTML and Worker preview for all locales
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request, urllib.error, json
+          canonical='https://elimfilters.com'
+          worker='https://elimfilters-markdown-agents.elimfilters-storage.workers.dev'
+          paths=['/es/knowledge-center/','/knowledge-center/','/pt/knowledge-center/']
+          errors=[]
+          for path in paths:
+              for base in [canonical,worker]:
+                  url=base+path
+                  for accept in ['text/html','text/markdown']:
+                      req=urllib.request.Request(url,headers={'Accept':accept,'User-Agent':'ELIMFILTERS-ES-EN-PT-preflight/1.0'})
+                      try:
+                          with urllib.request.urlopen(req,timeout=20) as resp:
+                              body=resp.read(250000).decode('utf-8','replace')
+                              status=resp.status
+                              ct=resp.headers.get('Content-Type','')
+                              vary=resp.headers.get('Vary','')
+                      except Exception as e:
+                          errors.append({'url':url,'accept':accept,'error':str(e)})
+                          continue
+                      source=next((line for line in body.splitlines() if line.startswith('Source: ')),None)
+                      markdown='text/markdown' in ct
+                      html='text/html' in ct
+                      expected_source='Source: '+canonical+path
+                      result={'url':url,'accept':accept,'status':status,'content_type':ct,'source':source,'canonical_source':source==expected_source if markdown else None,'render_links':body.count('elimfilters-frontend.onrender.com') if markdown else None}
+                      print(json.dumps(result),flush=True)
+                      if status!=200: errors.append({'url':url,'accept':accept,'failure':'HTTP_NOT_200'})
+                      if accept=='text/html' and not html: errors.append({'url':url,'accept':accept,'failure':'HTML_MISSING'})
+                      if base==worker and accept=='text/markdown':
+                          if not markdown: errors.append({'url':url,'failure':'WORKER_MARKDOWN_MISSING'})
+                          if source!=expected_source or 'elimfilters-frontend.onrender.com' in body: errors.append({'url':url,'failure':'NON_CANONICAL_SOURCE_OR_LINKS'})
+                      if base==canonical and accept=='text/markdown' and markdown:
+                          if source!=expected_source or 'elimfilters-frontend.onrender.com' in body: errors.append({'url':url,'failure':'PUBLIC_MARKDOWN_NON_CANONICAL'})
+                      if base==canonical and accept=='text/markdown' and html:
+                          print('ZONE_NOT_ENABLED_FOR_THIS_PATH',path,flush=True)
+          print('PREFLIGHT_ERRORS',json.dumps(errors),flush=True)
+          if errors: raise SystemExit(1)
+          print('PREFLIGHT PASS: Workers preview functional; zone enablement reported separately')
+          PY
