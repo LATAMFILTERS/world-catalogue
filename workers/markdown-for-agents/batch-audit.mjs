@@ -17,7 +17,7 @@ const mainContent=html=>(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)||[])[1]|
 // Compare only text that the Worker is designed to publish; UI chrome is excluded.
 const scrub=s=>s
   .replace(/<!--([\\s\\S]*?)-->/g,'')
-  .replace(/<(script|style|svg|noscript|template|nav|footer|form|button)\\b[^>]*>[\\s\\S]*?<\\/\\1\\s*>/gi,'')
+  .replace(/<(script|style|svg|noscript|template|nav|footer|form|button)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,'')
   .replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ');
 
 const units=['kPa','ISO 8573','bar','°C','micron','µm','psi','mm'];
