@@ -25,6 +25,19 @@ for(const [name,type] of [['elimfilters.com','DS'],['elimfilters.com','DNSKEY'],
     checks.push({check:'dns '+type+' '+name,pass:r.Status===0 && !!r.Answer?.length,status:r.Status,ad:r.AD===true,answers:r.Answer?.map(x=>({type:x.type,data:x.data}))??[]});
   }catch(e){checks.push({check:'dns '+type+' '+name,pass:false,error:String(e)});}
 }
+// MCP is externally reachable, but MUST reject unauthenticated capability discovery.
+// Never send bearer tokens or call MCP tools during DNS-AID preflight.
+try {
+  const r=await fetch('https://crm-api.elimfilters.com/mcp',{
+    method:'POST',
+    headers:{'content-type':'application/json','accept':'application/json'},
+    body:JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/list',params:{}}),
+    redirect:'manual',
+    signal:AbortSignal.timeout(12000)
+  });
+  checks.push({check:'mcp anonymous tools/list denied',pass:r.status===401,status:r.status});
+} catch(e) {checks.push({check:'mcp anonymous tools/list denied',pass:false,error:String(e)});}
+
 await checkHttps('/llms.txt','text/plain');
 await checkHttps('/robots.txt','text/plain');
 await checkHttps('/sitemap-index.xml','application/xml');
@@ -32,6 +45,11 @@ await checkHttps('/.well-known/ai-catalog.json','application/json');
 const ds=checks.find(x=>x.check==='dns DS elimfilters.com');
 const key=checks.find(x=>x.check==='dns DNSKEY elimfilters.com');
 const manifest=checks.find(x=>x.check==='https /.well-known/ai-catalog.json');
-const verdict=ds?.pass && key?.pass && manifest?.pass ? 'PENDING_MANUAL_SPEC_AND_SECURITY_REVIEW' : 'NO_GO_DNS_AID';
+const mcpDeny=checks.find(x=>x.check==='mcp anonymous tools/list denied');
+const dnsIndex=checks.find(x=>x.check==='dns SVCB _index._agents.elimfilters.com');
+// A reachable authenticated MCP service is NOT itself an approved public agent registry.
+// DNSSEC AD, authorized discovery records, and public capability review are separate gates.
+const verdict=ds?.pass && key?.pass && ds?.ad && key?.ad && manifest?.pass && mcpDeny?.pass && dnsIndex?.pass && dnsIndex?.ad
+  ? 'PENDING_MANUAL_SPEC_AND_SECURITY_REVIEW' : 'NO_GO_DNS_AID';
 console.log(JSON.stringify({timestamp:new Date().toISOString(),verdict,checks},null,2));
 process.exitCode=verdict==='NO_GO_DNS_AID'?1:0;
