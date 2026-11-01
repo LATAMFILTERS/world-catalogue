@@ -1,0 +1,45 @@
+name: Verify deployed Markdown Worker HTTP negotiation
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-markdown-worker-http.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Inspect HTML and Markdown responses on isolated workers.dev
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.error,json
+          root='https://elimfilters-markdown-agents.elimfilters-storage.workers.dev'
+          paths=['/','/es/knowledge-center/','/pt/knowledge-center/']
+          errors=[]
+          for path in paths:
+            for accept in ['text/html','text/markdown']:
+              req=urllib.request.Request(root+path,headers={'Accept':accept,'User-Agent':'ELIMFILTERS-worker-live-check/1.0'})
+              try:
+                with urllib.request.urlopen(req,timeout=18) as r:
+                  data=r.read(250000)
+                  status=r.status
+                  ct=r.headers.get('Content-Type','')
+                  vary=r.headers.get('Vary','')
+              except Exception as e:
+                print(json.dumps({'path':path,'accept':accept,'error':str(e)}),flush=True)
+                errors.append((path,accept,str(e)))
+                continue
+              html = data.lstrip().lower().startswith(b'<!doctype html') or b'<html' in data[:500].lower()
+              markdown = b'# ' in data[:1000] or b'Source:' in data[:1000]
+              valid=(status==200 and (('text/html' in ct and html) if accept=='text/html' else ('text/markdown' in ct and markdown and 'accept' in vary.lower())))
+              row={'path':path,'accept':accept,'status':status,'content_type':ct,'vary':vary,'bytes':len(data),'valid':valid,'body_prefix':data[:110].decode('utf8','replace') if not valid else None}
+              print(json.dumps(row,ensure_ascii=False),flush=True)
+              if not valid:errors.append((path,accept,'invalid response'))
+          if errors:
+            print('RESULT: NO-GO',errors)
+            raise SystemExit(1)
+          print('RESULT: PASS')
+          PY
