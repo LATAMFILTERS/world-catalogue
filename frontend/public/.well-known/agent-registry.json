@@ -1,10 +1,26 @@
 {
   "schemaVersion": "1.0",
   "service": "ELIMFILTERS public agent discovery",
-  "status": "NOT_ACTIVATED",
+  "status": "ACTIVE",
   "protocol": "informational-read-only",
   "dnsAidAdvertised": false,
-  "agents": [],
+  "agents": [
+    {
+      "id": "public-discovery",
+      "name": "ELIMFILTERS public resource discovery",
+      "protocol": "https",
+      "endpoint": "https://elimfilters.com/.well-known/public-discovery-agent.json",
+      "method": "GET",
+      "mode": "read-only",
+      "capabilities": [
+        "list-public-resources"
+      ],
+      "public": true,
+      "access": "anonymous",
+      "dnsName": "_public-discovery._https._agents.elimfilters.com",
+      "verifiedScope": "public documentation and catalog discovery; no product applications, CRM or internal tools"
+    }
+  ],
   "resources": [
     {
       "rel": "ai-catalog",
@@ -24,5 +40,5 @@
     "applicationsWithoutVerifiedEvidenceExcluded": true,
     "crossReferencesDoNotEstablishCompatibility": true
   },
-  "note": "This endpoint is not an A2A Agent Card, an MCP server, or a DNS-AID service advertisement. No publicly callable agent has been certified."
+  "note": "Public read-only resource discovery endpoint independently observed live at Render and elimfilters.com. DNS-AID publication is separate and remains unadvertised until TXT index and agent SVCB DNSSEC verification."
 }
