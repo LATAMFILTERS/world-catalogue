@@ -1,4 +1,5 @@
 name: Verify official Markdown negotiation
+# Recheck after Cloudflare route was added 2026-11-01
 on:
   push:
     branches: [main]
