@@ -28,3 +28,19 @@ test('Content-Type, Vary, CSP and browser fallback',async()=>{
   assert.match(api.headers.get('Content-Type'),/text\/html/);
  } finally {globalThis.fetch=saved;}
 });
+
+test('production zone route cannot recursively fetch itself',async()=>{
+ const previous=globalThis.fetch;const calls=[];
+ globalThis.fetch=async request=>{
+   calls.push(new URL(request.url).hostname);
+   return new Response('<title>Test</title><main><h1>Safe</h1></main>',{headers:{'Content-Type':'text/html'}});
+ };
+ try {
+   for(const accept of ['text/html','text/markdown']){
+     const result=await worker.fetch(new Request('https://elimfilters.com/es/knowledge-center/',{headers:{Accept:accept}}));
+     assert.equal(result.status,200);
+     assert.match(result.headers.get('Content-Type'),accept==='text/html'?/text\/html/:/text\/markdown/);
+   }
+   assert.deepEqual(calls,['elimfilters-frontend.onrender.com','elimfilters-frontend.onrender.com']);
+ } finally{globalThis.fetch=previous;}
+});
