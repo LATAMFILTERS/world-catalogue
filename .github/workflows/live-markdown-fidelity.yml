@@ -1,5 +1,6 @@
 name: Live Knowledge Center Markdown fidelity
 on:
+  pull_request:
   push:
     branches:
       - test/markdown-live-content-20261101
