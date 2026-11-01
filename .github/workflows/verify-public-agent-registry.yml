@@ -46,19 +46,41 @@ jobs:
               sys.exit(f'NO-GO: invalid JSON: {exc}')
           expected = {
               'schemaVersion': '1.0',
-              'status': 'NOT_ACTIVATED',
+              'status': 'ACTIVE',
               'dnsAidAdvertised': False,
               'protocol': 'informational-read-only'
           }
           for key, value in expected.items():
               if data.get(key) != value: sys.exit(f'NO-GO: {key} differs from approved safe registry')
-          if data.get('agents') != [] or not isinstance(data.get('resources'),list):
-              sys.exit('NO-GO: unexpected public agents or absent resource index')
+          agents=data.get('agents')
+          if not isinstance(agents,list) or len(agents)!=1 or not isinstance(data.get('resources'),list):
+              sys.exit('NO-GO: expected exactly one public discovery agent')
+          agent=agents[0]
+          for k,v in {
+              'id':'public-discovery',
+              'protocol':'https',
+              'endpoint':'https://elimfilters.com/.well-known/public-discovery-agent.json',
+              'method':'GET',
+              'mode':'read-only',
+              'public':True,
+              'access':'anonymous'
+          }.items():
+              if agent.get(k)!=v: sys.exit(f'NO-GO: agent {k} mismatch')
+          endpoint=urllib.request.Request(agent['endpoint'],headers={'Accept':'application/json'})
+          try:
+              with urllib.request.urlopen(endpoint,timeout=20) as service:
+                  if service.status!=200 or 'application/json' not in service.headers.get('Content-Type',''):
+                      sys.exit('NO-GO: public agent endpoint not JSON HTTP 200')
+                  document=json.load(service)
+          except Exception as exc:
+              sys.exit(f'NO-GO: public agent endpoint unavailable: {exc}')
+          if document.get('mode')!='read-only' or document.get('restrictions',{}).get('noPrivateAgents') is not True:
+              sys.exit('NO-GO: unsafe live agent document')
           policy = data.get('policy') or {}
           for key in ('publicAgentEndpointsRequireIndependentVerification', 'internalAgentsNotPublic','applicationsWithoutVerifiedEvidenceExcluded','crossReferencesDoNotEstablishCompatibility'):
               if policy.get(key) is not True: sys.exit(f'NO-GO: missing safety policy {key}')
           if policy.get('automaticPublication') is not False:
               sys.exit('NO-GO: automatic publication may not be enabled')
-          print('HTTP 200, JSON content-type, safe inactive registry verified in production.')
-          print('DNS-AID remains NO-GO: no independently verified callable agent or signed DNS bootstrap.')
+          print('HTTP 200, one active public read-only discovery agent and live document verified.')
+          print('DNS-AID remains NO-GO until authenticated public TXT index and per-agent SVCB are confirmed.')
           PY
