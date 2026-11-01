@@ -1,0 +1,41 @@
+name: Audit Markdown locale and technical tables
+on:
+  pull_request:
+    paths: ['.github/workflows/audit-markdown-locale-tables.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify HTML, Markdown, locale and technical table evidence
+        run: |
+          node --input-type=module <<'JS'
+          import {htmlToMarkdown} from './workers/markdown-for-agents/index.mjs';
+          const urls=[
+            'https://elimfilters.com/knowledge-center/',
+            'https://elimfilters.com/pt/knowledge-center/',
+            'https://elimfilters.com/knowledge-center/engineering/compressed-air-dryer-selection/',
+            'https://elimfilters.com/pt/knowledge-center/engineering/compressed-air-dryer-selection/',
+            'https://elimfilters.com/es/knowledge-center/engineering/compressed-air-dryer-selection/'
+          ];
+          const findings=[];
+          for(const url of urls){
+            const r=await fetch(url,{headers:{Accept:'text/html','User-Agent':'ELIMFILTERS-markdown-table-audit/1.0'}});
+            const html=await r.text();
+            const main=html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]||'';
+            const tables=[...main.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)];
+            const md=htmlToMarkdown(html,url);
+            const rec={url,status:r.status,htmlBytes:html.length,markdownLength:md.length,sourceOk:md.includes('Source: '+url),tables:tables.length,markdownTables:(md.match(/^\|.*\|$/gm)||[]).length,technicalTerms:['ISO 8573','bar','°C','kPa','micron'].filter(t=>main.includes(t)).map(t=>({term:t,retained:md.includes(t)}))};
+            findings.push(rec);console.log(JSON.stringify(rec));
+            if(r.status!==200||md.length<300||!rec.sourceOk||rec.technicalTerms.some(x=>!x.retained)||tables.length>0&&rec.markdownTables<2)process.exitCode=1;
+          }
+          console.log('REAL_HTML_TABLES_FOUND',findings.reduce((x,y)=>x+y.tables,0));
+          if(!findings.some(f=>f.tables))console.log('COVERAGE_GAP: sample has no actual HTML tables; cannot certify table fidelity.');
+          JS
