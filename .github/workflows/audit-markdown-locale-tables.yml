@@ -32,7 +32,7 @@ jobs:
             const main=html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]||'';
             const tables=[...main.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)];
             const md=htmlToMarkdown(html,url);
-            const rec={url,status:r.status,htmlBytes:html.length,markdownLength:md.length,sourceOk:md.includes('Source: '+url),tables:tables.length,markdownTables:(md.match(/^\|.*\|$/gm)||[]).length,technicalTerms:['ISO 8573','bar','°C','kPa','micron'].filter(t=>main.includes(t)).map(t=>({term:t,retained:md.includes(t)}))};
+            const rec={url,status:r.status,htmlBytes:html.length,markdownLength:md.length,sourceOk:md.includes('Source: '+url),tables:tables.length,markdownTables:(md.match(/^\|.*\|$/gm)||[]).length,technicalTerms:['ISO 8573','bar','°C','kPa','micron'].filter(t=>visibleMain.includes(t)).map(t=>({term:t,retained:md.includes(t)}))};
             findings.push(rec);console.log(JSON.stringify(rec));
             if(r.status!==200||md.length<300||!rec.sourceOk||rec.technicalTerms.some(x=>!x.retained)||tables.length>0&&rec.markdownTables<2)process.exitCode=1;
           }
