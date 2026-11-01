@@ -1,5 +1,7 @@
 name: Verify deployed Markdown Worker HTTP negotiation
 on:
+  push:
+    branches: [audit/worker-markdown-negotiation-live-20261101]
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
