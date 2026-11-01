@@ -13,8 +13,8 @@ const get=async(url,accept='text/html')=>{
     return {status:response.status,ct:response.headers.get('content-type')||'',vary:response.headers.get('vary')||'',body:await response.text()};
   } finally {clearTimeout(timer);}
 };
-const mainContent=html=>(html.match(/<main\\b[^>]*>([\\s\\S]*?)<\\/main>/i)||[])[1]||'';
-const scrub=s=>s.replace(/<(script|style|svg|noscript|template)\\b[^>]*>[\\s\\S]*?<\\/\\1>/gi,'').replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ');
+const mainContent=html=>(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)||[])[1]||'';
+const scrub=s=>s.replace(/<(script|style|svg|noscript|template)\b[^>]*>[\s\S]*?<\/\1>/gi,'').replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ');
 const units=['kPa','ISO 8573','bar','°C','micron','µm','psi','mm'];
 async function discover(){
   const queue=[ORIGIN+'/sitemap.xml'],seen=new Set(),pages=new Set(),errors=[];
@@ -22,11 +22,11 @@ async function discover(){
     const url=queue.shift();if(seen.has(url))continue;seen.add(url);
     try{
       const r=await get(url,'application/xml');if(r.status!==200){errors.push({url,status:r.status});continue;}
-      const locs=[...r.body.matchAll(/<loc[^>]*>([\\s\\S]*?)<\\/loc>/gi)].map(m=>escapeXml(m[1].trim()));
+      const locs=[...r.body.matchAll(/<loc[^>]*>([\s\S]*?)<\/loc>/gi)].map(m=>escapeXml(m[1].trim()));
       for(const loc of locs){
         if(!loc.startsWith(ORIGIN+'/'))continue;
-        if(/\\.xml(?:\\?|$)/i.test(loc)){if(!seen.has(loc))queue.push(loc);}
-        else if(/\\/(?:es\\/|pt\\/)?knowledge-center\\//i.test(loc))pages.add(loc);
+        if(/\.xml(?:\?|$)/i.test(loc)){if(!seen.has(loc))queue.push(loc);}
+        else if(/\/(?:es\/|pt\/)?knowledge-center\//i.test(loc))pages.add(loc);
         if(pages.size>=CAP)break;
       }
     }catch(e){errors.push({url,error:String(e)});}
@@ -41,11 +41,11 @@ async function audit(url){
     const main=mainContent(html.body);
     const md=htmlToMarkdown(html.body,url);
     result.htmlBytes=html.body.length;result.markdownBytes=md.length;
-    result.tables=(main.match(/<table\\b/gi)||[]).length;
+    result.tables=(main.match(/<table\b/gi)||[]).length;
     if(!md.includes('Source: '+url))result.issues.push('NON_CANONICAL_SOURCE');
     if(md.includes('elimfilters-frontend.onrender.com'))result.issues.push('RENDER_HOST_LEAK');
     if(md.length<150)result.issues.push('SHORT_MARKDOWN');
-    if(result.tables&&!(md.match(/^\\|.*\\|$/gm)||[]).length)result.issues.push('MISSING_TABLE');
+    if(result.tables&&!(md.match(/^\|.*\|$/gm)||[]).length)result.issues.push('MISSING_TABLE');
     const visible=scrub(main);
     result.units=units.filter(u=>visible.includes(u)).map(u=>({unit:u,retained:md.includes(u)}));
     for(const {unit,retained} of result.units)if(!retained)result.issues.push('UNIT_MISSING:'+unit);
@@ -85,7 +85,7 @@ async function main(){
     '',found.errors.length?'## Sitemap errors':'',
     ...found.errors.map(e=>'- '+JSON.stringify(e)),
     '',counts.htmlTables===0?'Coverage gap: no real HTML tables were found in scanned pages.':''
-  ].join('\\n'));
+  ].join('\n'));
   console.log(JSON.stringify({counts,examples:results.filter(r=>r.issues.length).slice(0,12),sitemapErrors:found.errors.slice(0,5)},null,2));
   // Findings are reported, not swept into false PASS. Fail on missing page availability;
   // content findings are a remediation queue for one grouped PR review.
