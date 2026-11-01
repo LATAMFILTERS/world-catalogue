@@ -7,8 +7,8 @@ for (const url of ['https://elimfilters.com/.well-known/ai-catalog.json','https:
   assert.ok(source.includes(url), 'Missing public canonical resource '+url);
 }
 assert.ok(source.includes('export function GET()'), 'Public GET endpoint required');
-assert.ok(source.includes('export function POST()'), 'Explicit mutation denial required');
-assert.ok(source.includes("status: 405"), 'POST must be denied');
+assert.ok(!source.includes('export function POST()'), 'Static export must not define POST handlers');
+assert.ok(source.includes("dynamic = 'force-static'"), 'Static export requires a static GET handler');
 assert.ok(source.includes("noPrivateAgents: true"), 'No private agent exposure');
 assert.ok(source.includes("noCatalogFitmentAssertions: true"), 'No unverified fitment');
 assert.ok(source.includes("noDatabaseAccess: true"), 'No database exposure');
