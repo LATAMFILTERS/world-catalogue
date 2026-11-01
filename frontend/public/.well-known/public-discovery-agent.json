@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "name": "ELIMFILTERS public-discovery",
+  "type": "public-resource-discovery",
+  "protocol": "https",
+  "mode": "read-only",
+  "status": "PUBLIC_DISCOVERY_ONLY",
+  "capabilities": [
+    "list-public-resources"
+  ],
+  "resources": [
+    {
+      "rel": "catalog",
+      "href": "https://elimfilters.com/.well-known/ai-catalog.json",
+      "contentType": "application/json"
+    },
+    {
+      "rel": "documentation",
+      "href": "https://elimfilters.com/llms.txt",
+      "contentType": "text/plain"
+    },
+    {
+      "rel": "sitemap",
+      "href": "https://elimfilters.com/sitemap-index.xml",
+      "contentType": "application/xml"
+    }
+  ],
+  "restrictions": {
+    "noPrivateAgents": true,
+    "noDatabaseAccess": true,
+    "noMutations": true,
+    "noCatalogFitmentAssertions": true
+  },
+  "note": "Static public discovery document. Not an MCP endpoint or A2A Agent Card. DNS-AID advertisement requires separately verified public records and activation."
+}
