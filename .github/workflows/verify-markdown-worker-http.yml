@@ -1,8 +1,8 @@
-name: Verify deployed Markdown Worker HTTP negotiation
+name: Verify official Markdown negotiation
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/verify-markdown-worker-http.yml'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify-markdown-worker-http.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -42,4 +42,29 @@ jobs:
             print('RESULT: NO-GO',errors)
             raise SystemExit(1)
           print('RESULT: PASS')
+          PY
+
+      - name: Inspect official Knowledge Center negotiation
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request, urllib.error, json
+          url='https://elimfilters.com/es/knowledge-center/'
+          results=[]
+          for accept in ('text/html','text/markdown'):
+            request=urllib.request.Request(url,headers={'Accept':accept,'User-Agent':'ELIMFILTERS-markdown-official-verifier/1.0'})
+            try:
+              with urllib.request.urlopen(request,timeout=20) as response:
+                body=response.read(180000)
+                result={'accept':accept,'status':response.status,'content_type':response.headers.get('Content-Type'),'vary':response.headers.get('Vary'),'prefix':body[:100].decode('utf-8','replace')}
+            except urllib.error.HTTPError as e:
+              result={'accept':accept,'status':e.code,'content_type':e.headers.get('Content-Type'),'prefix':e.read(120).decode('utf-8','replace')}
+            except Exception as e:
+              result={'accept':accept,'error':str(e)}
+            print(json.dumps(result,ensure_ascii=False),flush=True)
+            results.append(result)
+          html,markdown=results
+          good=(html.get('status')==200 and 'text/html' in (html.get('content_type') or '') and markdown.get('status')==200 and 'text/markdown' in (markdown.get('content_type') or '') and 'Accept' in (markdown.get('vary') or ''))
+          print('OFFICIAL RESULT:', 'PASS' if good else 'NO-GO',flush=True)
+          if not good: raise SystemExit(1)
           PY
