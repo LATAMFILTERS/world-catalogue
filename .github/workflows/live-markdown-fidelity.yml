@@ -1,0 +1,20 @@
+name: Live Knowledge Center Markdown fidelity
+on:
+  pull_request:
+  push:
+    branches:
+      - test/markdown-live-content-20261101
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live-fidelity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run public page fidelity checks
+        run: node --test workers/markdown-for-agents/live-fidelity.test.mjs
