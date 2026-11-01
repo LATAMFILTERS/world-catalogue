@@ -33,6 +33,7 @@ The corporate pillars are engineering and technology, technical intelligence, an
 ## Machine-readable resources
 
 - Canonical AI knowledge reference: https://elimfilters.com/llm.txt
+- Public SKU discovery index (governance-filtered; no fitment claims): https://elimfilters.com/agent-products.json
 - Citation API index: https://elimfilters.com/api/citation/index.json
 - Citation graph: https://elimfilters.com/api/citation/graph.json
 - Main sitemap: https://elimfilters.com/sitemap.xml

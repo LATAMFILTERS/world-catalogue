@@ -1,0 +1,42 @@
+name: Verify public agent SKU index
+on:
+  pull_request:
+    paths:
+      - 'frontend/src/app/agent-products.json/route.ts'
+      - 'frontend/public/llms.txt'
+      - '.github/workflows/verify-agent-sku-index.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm install --no-audit --no-fund
+      - name: Build with existing publication guards
+        working-directory: frontend
+        run: npm run build
+      - name: Check static index and non-disclosure
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync, existsSync } from 'node:fs';
+          const file = 'frontend/out/agent-products.json';
+          if (!existsSync(file)) throw Error('Static SKU index not exported');
+          const payload = JSON.parse(readFileSync(file, 'utf8'));
+          if (!Array.isArray(payload.products) || !payload.products.length) throw Error('No published SKUs');
+          if (payload.products.length !== payload.productCount) throw Error('Count mismatch');
+          for (const p of payload.products) {
+            if (!/^E[A-Z][0-9]+$/.test(p.sku)) throw Error('Unexpected SKU ' + p.sku);
+            if (p.url !== 'https://elimfilters.com/products/' + p.sku.toLowerCase() + '/') throw Error('Noncanonical URL ' + p.sku);
+            if (Object.keys(p).sort().join(',') !== ['duty','family','name','sku','technology','url'].sort().join(',')) throw Error('Unapproved product fields in ' + p.sku);
+          }
+          if (!readFileSync('frontend/out/llms.txt','utf8').includes('https://elimfilters.com/agent-products.json')) throw Error('Discovery URL missing in llms.txt');
+          console.log(JSON.stringify({result:'PASS',productCount:payload.productCount,fields:Object.keys(payload.products[0])}));
+          JS
