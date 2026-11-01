@@ -1,0 +1,30 @@
+name: Verify production Markdown canonical source
+on:
+  pull_request:
+    paths: ['.github/workflows/verify-markdown-canonical-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canonical-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Verify canonical Source and relative links
+        run: |
+          python3 - <<'PY'
+          import urllib.request, json
+          url='https://elimfilters.com/es/knowledge-center/'
+          req=urllib.request.Request(url,headers={'Accept':'text/markdown','User-Agent':'ELIMFILTERS-canonical-source-check/1.0'})
+          with urllib.request.urlopen(req,timeout=20) as response:
+              content_type=response.headers.get('Content-Type','')
+              body=response.read(250000).decode('utf-8','replace')
+              status=response.status
+          source=next((line for line in body.splitlines() if line.startswith('Source: ')),None)
+          expected='Source: '+url
+          result={'status':status,'content_type':content_type,'source':source,'expected':expected,'render_links_in_text':body.count('elimfilters-frontend.onrender.com')}
+          print(json.dumps(result),flush=True)
+          if status!=200 or 'text/markdown' not in content_type or source!=expected or result['render_links_in_text']!=0:
+              raise SystemExit('NO-GO: deployed Cloudflare Worker has stale canonical URLs')
+          print('CANONICAL SOURCE: PASS')
+          PY
