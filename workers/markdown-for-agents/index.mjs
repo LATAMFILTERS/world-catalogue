@@ -9,6 +9,15 @@ const decode = s => s.replace(/&#(x[\da-f]+|\d+);|&([a-z]+);/gi,(_,n,k) => {
   if(n) { const cp = n[0].toLowerCase()==="x" ? parseInt(n.slice(1),16):parseInt(n,10); return cp>0&&cp<=0x10ffff?String.fromCodePoint(cp):""; }
   return HTML_ENTITIES[k.toLowerCase()] ?? `&${k};`;
 });
+const attribute = (s,name)=>s.match(new RegExp('\\\\b'+name+'\\\\s*=\\\\s*(["\\\'])(.*?)\\\\1','i'))?.[2]||null;
+const absolute = (s,url)=>{try{const u=new URL(decode(s),url);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}};
+const mdTable = html=>{
+  const rows=[...html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)].map(m=>[...m[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)].map(c=>clean(c[1]).replace(/\\|/g,'\\\\|'))).filter(r=>r.length);
+  if(!rows.length)return '';
+  const width=Math.max(...rows.map(r=>r.length));
+  const fmt=r=>'| '+Array.from({length:width},(_,i)=>r[i]||'').join(' | ')+' |';
+  return '\\n\\n'+fmt(rows[0])+'\\n'+fmt(Array(width).fill('---'))+'\\n'+rows.slice(1).map(fmt).join('\\n')+'\\n\\n';
+};
 const clean = s => decode(s.replace(/<[^>]*>/g,"")).replace(/[ \t\r]+/g," ").trim();
 export function htmlToMarkdown(html, url) {
   // The origin's public HTML is the ONLY content source.
@@ -16,6 +25,8 @@ export function htmlToMarkdown(html, url) {
   let content = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1];
   if(!content) content = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || "";
   content = content
+    .replace(/<table\\b[^>]*>[\\s\\S]*?<\\/table>/gi, s=>mdTable(s))
+    .replace(/<img\\b([^>]*?)\\/?\\s*>/gi, (_,attrs)=>{const src=absolute(attribute(attrs,'src')||'',url);return src?`![${clean(attribute(attrs,'alt')||'')}](${src})`:'';})
     .replace(/<!--([\s\S]*?)-->/g,"")
     .replace(/<(script|style|svg|noscript|template|nav|footer|form|button)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,"")
     .replace(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi,(_,n,s)=>`\n\n${"#".repeat(Number(n))} ${clean(s)}\n\n`)
@@ -52,7 +63,7 @@ export default {
     headers.delete("Content-Length");
     headers.delete("Content-Encoding");
     headers.delete("ETag");
-    headers.delete("Content-Security-Policy");
+    // Keep CSP and all other security headers intact.
     return new Response(markdown,{status:response.status,headers});
   }
 };
