@@ -35,6 +35,8 @@ jobs:
                       for v in values:
                           if isinstance(v,dict):types.append(v.get('@type'))
                   except Exception:parse_errors+=1
+              sample_i=body.find('schema.org')
+              print('SCHEMA_CONTEXT',sku,repr(body[max(0,sample_i-180):sample_i+300]))
               print(json.dumps({'sku':sku,'status':code,'ld_tag_count':len(ld_tags),'ld_tags':ld_tags[:2],'parsed_types':types,'parse_errors':parse_errors,'body_mentions_product':body.count('schema.org'),'raw_sample':raw_sample},ensure_ascii=False))
               if code!=200:failures.append(sku+': non-200')
           if failures:raise SystemExit('; '.join(failures))
