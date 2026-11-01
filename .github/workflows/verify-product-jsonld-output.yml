@@ -1,0 +1,46 @@
+name: Verify existing public Product JSON-LD
+on:
+  pull_request:
+    paths: ['.github/workflows/verify-product-jsonld-output.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Parse product JSON-LD with HTMLParser instead of regex
+        run: |
+          python3 - <<'PY'
+          import urllib.request,json
+          from html.parser import HTMLParser
+          class Scripts(HTMLParser):
+              def __init__(self):super().__init__();self.active=False;self.parts=[];self.blocks=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag=='script' and dict(attrs).get('type','').lower()=='application/ld+json':
+                      self.active=True;self.parts=[]
+              def handle_data(self,data):
+                  if self.active:self.parts.append(data)
+              def handle_endtag(self,tag):
+                  if tag=='script' and self.active:
+                      self.blocks.append(''.join(self.parts));self.active=False
+          for sku in ['ea13648','ed47754','es91026','el83191']:
+              url='https://elimfilters.com/products/'+sku+'/'
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'ELIMFILTERS-ProductSchemaVerification/2.0'}),timeout=20) as r:
+                  html=r.read(1200000).decode('utf-8','replace')
+              parser=Scripts();parser.feed(html)
+              types=[];matching=[]
+              def visit(o):
+                  if isinstance(o,list):
+                      for x in o:visit(x)
+                  elif isinstance(o,dict):
+                      if o.get('@type') is not None:types.append(o['@type'])
+                      if '@graph' in o:visit(o['@graph'])
+                      if o.get('@type')=='Product':matching.append({'sku':o.get('sku'),'url':o.get('url'),'hasOffers':'offers' in o,'hasRelated':'isRelatedTo' in o})
+              for block in parser.blocks:visit(json.loads(block))
+              print(json.dumps({'sku':sku,'script_count':len(parser.blocks),'types':types,'products':matching},ensure_ascii=False))
+              if len(matching)!=1 or matching[0]['sku']!=sku.upper() or matching[0]['url']!=url or matching[0]['hasOffers'] or matching[0]['hasRelated']:
+                  raise SystemExit('NO-GO: Product JSON-LD missing, mismatched or unjustified offers/related products')
+          print('LIVE PRODUCT JSON-LD: PASS')
+          PY

@@ -35,7 +35,7 @@ jobs:
               c1=re.search(r'<link[^>]*rel=["\\x27]canonical["\\x27][^>]*href=["\\x27]([^"\\x27]+)',html,re.I)
               c2=re.search(r'<link[^>]*href=["\\x27]([^"\\x27]+)["\\x27][^>]*rel=["\\x27]canonical["\\x27]',html,re.I)
               robots=re.search(r'<meta[^>]*name=["\\x27]robots["\\x27][^>]*content=["\\x27]([^"\\x27]+)',html,re.I)
-              blocks=re.findall(r'<script[^>]*type=["\\x27]application/ld\\+json["\\x27][^>]*>(.*?)</script>',html,re.I|re.S)
+              blocks=re.findall(r'<script[^>]*type="application/ld[+]json"[^>]*>(.*?)</script>',html,re.I|re.S)
               types=[]; sku=[];invalid=0
               def visit(o):
                   if isinstance(o,list):
