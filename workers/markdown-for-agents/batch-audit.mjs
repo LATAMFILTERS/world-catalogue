@@ -53,7 +53,11 @@ async function audit(url){
     if(result.tables&&!(md.match(/^\|.*\|$/gm)||[]).length)result.issues.push('MISSING_TABLE');
     const visible=scrub(main);
     result.units=units.filter(u=>visible.includes(u)).map(u=>({unit:u,retained:md.includes(u)}));
-    for(const {unit,retained} of result.units)if(!retained){\n      result.issues.push('UNIT_MISSING:'+unit);\n      const pos=visible.indexOf(unit);\n      (result.missingContexts??=[]).push({unit,context:visible.slice(Math.max(0,pos-65),pos+unit.length+65)});\n    }
+    for(const {unit,retained} of result.units)if(!retained){
+      result.issues.push('UNIT_MISSING:'+unit);
+      const pos=visible.indexOf(unit);
+      (result.missingContexts??=[]).push({unit,context:visible.slice(Math.max(0,pos-65),pos+unit.length+65)});
+    }
     // Test deployed Markdown only when the zone route actually returns Markdown.
     if(url.includes('/knowledge-center/')){
       const pub=await get(url,'text/markdown');
