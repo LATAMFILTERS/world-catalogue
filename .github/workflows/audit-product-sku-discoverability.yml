@@ -1,0 +1,75 @@
+name: Audit public SKU page discoverability
+on:
+  pull_request:
+    paths: ['.github/workflows/audit-product-sku-discoverability.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sku-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Inspect product URLs, JSON-LD, canonical and indexing signals
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request,urllib.parse,re,json,os,datetime,concurrent.futures,xml.etree.ElementTree as ET
+          from html import unescape
+          base='https://elimfilters.com'
+          def fetch(url):
+              req=urllib.request.Request(url,headers={'User-Agent':'ELIMFILTERS-SKU-Discovery-Audit/1.0','Accept':'text/html,application/xml'})
+              try:
+                  with urllib.request.urlopen(req,timeout=18) as r:
+                      return r.status,r.geturl(),r.headers, r.read(1200000).decode('utf-8','replace')
+              except Exception as e:return None,url,None,str(e)
+          status,_,_,xml=fetch(base+'/sitemap.xml')
+          locs=re.findall(r'<loc[^>]*>(.*?)</loc>',xml,re.I|re.S)
+          urls=[unescape(x.strip()) for x in locs if x.strip().startswith(base+'/')]
+          product=[u for u in urls if re.search(r'/(?:products?|catalog|sku|parts?)/',urllib.parse.urlsplit(u).path,re.I)]
+          chosen=product[:40]
+          def audit(url):
+              status,final,headers,html=fetch(url)
+              ct=headers.get('Content-Type','') if headers else ''
+              title=re.search(r'<title[^>]*>(.*?)</title>',html,re.I|re.S)
+              c1=re.search(r'<link[^>]*rel=["\\x27]canonical["\\x27][^>]*href=["\\x27]([^"\\x27]+)',html,re.I)
+              c2=re.search(r'<link[^>]*href=["\\x27]([^"\\x27]+)["\\x27][^>]*rel=["\\x27]canonical["\\x27]',html,re.I)
+              robots=re.search(r'<meta[^>]*name=["\\x27]robots["\\x27][^>]*content=["\\x27]([^"\\x27]+)',html,re.I)
+              blocks=re.findall(r'<script[^>]*type=["\\x27]application/ld\\+json["\\x27][^>]*>(.*?)</script>',html,re.I|re.S)
+              types=[]; sku=[];invalid=0
+              def visit(o):
+                  if isinstance(o,list):
+                      for v in o:visit(v)
+                  elif isinstance(o,dict):
+                      if o.get('@type'):types.append(o['@type'])
+                      if o.get('sku'):sku.append(str(o['sku']))
+                      if '@graph' in o:visit(o['@graph'])
+              for block in blocks:
+                  try:visit(json.loads(block))
+                  except:invalid+=1
+              noindex=bool(robots and 'noindex' in robots.group(1).lower())
+              canonical=(c1 or c2).group(1) if c1 or c2 else None
+              result={'url':url,'http_status':status,'final_url':final,'content_type':ct,'title':unescape(title.group(1).strip()) if title else None,'canonical':canonical,'noindex':noindex,'json_ld_types':types,'json_ld_skus':sku,'invalid_json_ld':invalid,'has_product_schema':any('Product' in str(t) for t in types)}
+              result['findings']=[]
+              if status!=200:result['findings'].append('NOT_HTTP_200')
+              if not canonical:result['findings'].append('CANONICAL_ABSENT')
+              elif urllib.parse.urlsplit(canonical).netloc!='elimfilters.com':result['findings'].append('NONPUBLIC_CANONICAL')
+              if noindex:result['findings'].append('NOINDEX')
+              if not result['has_product_schema']:result['findings'].append('PRODUCT_JSONLD_ABSENT')
+              if invalid:result['findings'].append('INVALID_JSONLD')
+              return result
+          with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:items=list(pool.map(audit,chosen))
+          counts={'sitemap_status':status,'root_sitemap_urls':len(urls),'product_candidate_urls':len(product),'sampled':len(items),'http200':sum(x['http_status']==200 for x in items),'with_product_schema':sum(x['has_product_schema'] for x in items),'canonical_present':sum(bool(x['canonical']) for x in items),'with_findings':sum(bool(x['findings']) for x in items)}
+          report={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'counts':counts,'scope':'root sitemap product path candidates; not Google index coverage or AI recommendations','results':items,'limits':['No GSC/GA4 account data: search visibility, impressions and citations not established','No backend or PostgreSQL writes','Product path patterns may miss SKU pages outside these URL conventions']}
+          os.makedirs('out/product-discovery',exist_ok=True)
+          with open('out/product-discovery/report.json','w') as f:json.dump(report,f,indent=2,ensure_ascii=False)
+          print(json.dumps({'counts':counts,'examples':items[:10]},ensure_ascii=False))
+          if status!=200 or not items:raise SystemExit('NO-GO: Sitemap unreadable or zero product URLs; audit coverage missing')
+          PY
+      - name: Store report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-sku-discovery-audit
+          path: out/product-discovery/report.json
+          if-no-files-found: warn
