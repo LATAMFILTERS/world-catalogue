@@ -1,0 +1,50 @@
+name: Verify live AI catalog link
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-live-ai-catalog.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-html:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Compare public and origin responses without changing configuration
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request, urllib.error, json, re
+          hosts=['https://elimfilters.com','https://elimfilters-frontend.onrender.com']
+          paths=['/','/.well-known/ai-catalog.json']
+          agents=['ELIMFILTERS-discovery-verification/1.0','Mozilla/5.0']
+          for host in hosts:
+            for path in paths:
+              for agent in agents:
+                url=host+path
+                req=urllib.request.Request(url,headers={'User-Agent':agent,'Accept':'application/json' if path.endswith('.json') else 'text/html','Cache-Control':'no-cache'})
+                try:
+                  with urllib.request.urlopen(req,timeout=15) as r:
+                    body=r.read()
+                    status=r.status
+                    headers=dict(r.headers.items())
+                except urllib.error.HTTPError as e:
+                  body=e.read()
+                  status=e.code
+                  headers=dict(e.headers.items())
+                except Exception as e:
+                  print(json.dumps({'url':url,'agent':agent,'error':str(e)}),flush=True)
+                  continue
+                record={'url':url,'agent':agent,'status':status,'content_type':headers.get('Content-Type'),'server':headers.get('Server'),'cf_ray':headers.get('Cf-Ray'),'cf_mitigated':headers.get('Cf-Mitigated'),'body_prefix':body[:170].decode('utf-8','replace') if status!=200 else None}
+                if path=='/':
+                  m=re.search(rb'<link\s+[^>]*rel=["\x27]ai-catalog["\x27][^>]*>',body,re.I)
+                  record['ai_catalog_link']=m.group(0).decode() if m else None
+                else:
+                  try:
+                    data=json.loads(body)
+                    record['valid_catalog']=data.get('host',{}).get('displayName')=='ELIMFILTERS' and len(data.get('entries',[]))==2
+                  except Exception:
+                    record['valid_catalog']=False
+                print(json.dumps(record),flush=True)
+          PY
