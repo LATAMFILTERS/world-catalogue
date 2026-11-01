@@ -25,8 +25,8 @@ export function htmlToMarkdown(html, url) {
   let content = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1];
   if(!content) content = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || "";
   content = content
-    .replace(/<table\\b[^>]*>[\\s\\S]*?<\\/table>/gi, s=>mdTable(s))
-    .replace(/<img\\b([^>]*?)\\/?\\s*>/gi, (_,attrs)=>{const src=absolute(attribute(attrs,'src')||'',url);return src?`![${clean(attribute(attrs,'alt')||'')}](${src})`:'';})
+    .replace(/<table\b[^>]*>[\s\S]*?<\/table>/gi, s=>mdTable(s))
+    .replace(/<img\b([^>]*?)\/?\s*>/gi, (_,attrs)=>{const src=absolute(attribute(attrs,'src')||'',url);return src?`![${clean(attribute(attrs,'alt')||'')}](${src})`:'';})
     .replace(/<!--([\s\S]*?)-->/g,"")
     .replace(/<(script|style|svg|noscript|template|nav|footer|form|button)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,"")
     .replace(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi,(_,n,s)=>`\n\n${"#".repeat(Number(n))} ${clean(s)}\n\n`)
