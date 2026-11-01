@@ -1,6 +1,7 @@
 name: Verify deployed Markdown Worker HTTP negotiation
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
     paths:
       - '.github/workflows/verify-markdown-worker-http.yml'
   workflow_dispatch:
