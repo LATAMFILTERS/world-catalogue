@@ -9,14 +9,14 @@ const decode = s => s.replace(/&#(x[\da-f]+|\d+);|&([a-z]+);/gi,(_,n,k) => {
   if(n) { const cp = n[0].toLowerCase()==="x" ? parseInt(n.slice(1),16):parseInt(n,10); return cp>0&&cp<=0x10ffff?String.fromCodePoint(cp):""; }
   return HTML_ENTITIES[k.toLowerCase()] ?? `&${k};`;
 });
-const attribute = (s,name)=>s.match(new RegExp('\\\\b'+name+'\\\\s*=\\\\s*(["\\\'])(.*?)\\\\1','i'))?.[2]||null;
+const attribute = (s,name)=>s.match(new RegExp('\\b'+name+'\\s*=\\s*(["\x27])(.*?)\\1','i'))?.[2]||null;
 const absolute = (s,url)=>{try{const u=new URL(decode(s),url);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}};
 const mdTable = html=>{
-  const rows=[...html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)].map(m=>[...m[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)].map(c=>clean(c[1]).replace(/\\|/g,'\\\\|'))).filter(r=>r.length);
+  const rows=[...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map(m=>[...m[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(c=>clean(c[1]).replace(/\|/g,'\\|'))).filter(r=>r.length);
   if(!rows.length)return '';
   const width=Math.max(...rows.map(r=>r.length));
   const fmt=r=>'| '+Array.from({length:width},(_,i)=>r[i]||'').join(' | ')+' |';
-  return '\\n\\n'+fmt(rows[0])+'\\n'+fmt(Array(width).fill('---'))+'\\n'+rows.slice(1).map(fmt).join('\\n')+'\\n\\n';
+  return '\n\n'+fmt(rows[0])+'\n'+fmt(Array(width).fill('---'))+'\n'+rows.slice(1).map(fmt).join('\n')+'\n\n';
 };
 const clean = s => decode(s.replace(/<[^>]*>/g,"")).replace(/[ \t\r]+/g," ").trim();
 export function htmlToMarkdown(html, url) {
