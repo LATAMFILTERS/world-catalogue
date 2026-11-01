@@ -2,6 +2,7 @@
  * ELIMFILTERS public HTML -> Markdown negotiation.
  * Deploy as a Cloudflare Worker route only after live tests.
  * Cloudflare build trigger 2026-11-01: isolated workers.dev verification; no zone routes.
+ * Deploy sync after recursion fix 35881d2c; workers.dev only.
  * Never changes the ordinary HTML response or fetches private catalogue data.
  */
 const EXCLUDED = /^\/(?:api|admin|_next|assets|cdn-cgi|\.well-known)(?:\/|$)/i;
