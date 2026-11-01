@@ -49,14 +49,19 @@ export function htmlToMarkdown(html, url) {
 export default {
   async fetch(request) {
     const url=new URL(request.url);
+    // workers.dev is a standalone preview hostname, with no HTML origin.
+    // Fetch the existing public site explicitly; no production DNS/routes changed.
+    const previewHost=url.hostname.endsWith('.workers.dev');
+    const originUrl=previewHost ? new URL(url.pathname+url.search, 'https://elimfilters.com') : url;
+    const originRequest=previewHost ? new Request(originUrl, request) : request;
     if(request.method!=="GET" || !request.headers.get("Accept")?.split(",").some(x=>x.trim().split(";")[0].trim().toLowerCase()==="text/markdown") || EXCLUDED.test(url.pathname) || /\.[a-z\d]{1,8}$/i.test(url.pathname)){
-      return fetch(request);
+      return fetch(originRequest);
     }
-    const response=await fetch(request);
+    const response=await fetch(originRequest);
     const ct=response.headers.get("Content-Type")||"";
     if(!response.ok || !/text\/html/i.test(ct))return response;
     const html=await response.text();
-    const markdown=htmlToMarkdown(html,url.href);
+    const markdown=htmlToMarkdown(html,originUrl.href);
     const headers=new Headers(response.headers);
     headers.set("Content-Type","text/markdown; charset=utf-8");
     headers.set("Vary",Array.from(new Set([...(headers.get("Vary")||"").split(",").map(s=>s.trim()).filter(Boolean),"Accept"])).join(", "));
