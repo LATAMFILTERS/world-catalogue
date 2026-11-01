@@ -14,7 +14,12 @@ const get=async(url,accept='text/html')=>{
   } finally {clearTimeout(timer);}
 };
 const mainContent=html=>(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)||[])[1]||'';
-const scrub=s=>s.replace(/<(script|style|svg|noscript|template)\b[^>]*>[\s\S]*?<\/\1>/gi,'').replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ');
+// Compare only text that the Worker is designed to publish; UI chrome is excluded.
+const scrub=s=>s
+  .replace(/<!--([\\s\\S]*?)-->/g,'')
+  .replace(/<(script|style|svg|noscript|template|nav|footer|form|button)\\b[^>]*>[\\s\\S]*?<\\/\\1\\s*>/gi,'')
+  .replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ');
+
 const units=['kPa','ISO 8573','bar','°C','micron','µm','psi','mm'];
 async function discover(){
   const queue=[ORIGIN+'/sitemap.xml'],seen=new Set(),pages=new Set(),errors=[];
@@ -48,7 +53,7 @@ async function audit(url){
     if(result.tables&&!(md.match(/^\|.*\|$/gm)||[]).length)result.issues.push('MISSING_TABLE');
     const visible=scrub(main);
     result.units=units.filter(u=>visible.includes(u)).map(u=>({unit:u,retained:md.includes(u)}));
-    for(const {unit,retained} of result.units)if(!retained)result.issues.push('UNIT_MISSING:'+unit);
+    for(const {unit,retained} of result.units)if(!retained){\n      result.issues.push('UNIT_MISSING:'+unit);\n      const pos=visible.indexOf(unit);\n      (result.missingContexts??=[]).push({unit,context:visible.slice(Math.max(0,pos-65),pos+unit.length+65)});\n    }
     // Test deployed Markdown only when the zone route actually returns Markdown.
     if(url.includes('/knowledge-center/')){
       const pub=await get(url,'text/markdown');
@@ -87,8 +92,6 @@ async function main(){
     '',counts.htmlTables===0?'Coverage gap: no real HTML tables were found in scanned pages.':''
   ].join('\n'));
   console.log(JSON.stringify({counts,examples:results.filter(r=>r.issues.length).slice(0,12),sitemapErrors:found.errors.slice(0,5)},null,2));
-  // Findings are reported, not swept into false PASS. Fail on missing page availability;
-  // content findings are a remediation queue for one grouped PR review.
-  if(!counts.total||results.some(r=>r.issues.includes('HTML_NOT_200')))process.exitCode=1;
+  // Do not report CI success while any content fidelity issue remains.\n  if(!counts.total||counts.fail>0||found.errors.length>0)process.exitCode=1;
 }
 await main();
