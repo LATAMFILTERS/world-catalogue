@@ -35,7 +35,11 @@ jobs:
           for (const p of payload.products) {
             if (!/^E[A-Z][0-9]+$/.test(p.sku)) throw Error('Unexpected SKU ' + p.sku);
             if (p.url !== 'https://elimfilters.com/products/' + p.sku.toLowerCase() + '/') throw Error('Noncanonical URL ' + p.sku);
-            if (Object.keys(p).sort().join(',') !== ['duty','family','name','sku','technology','url'].sort().join(',')) throw Error('Unapproved product fields in ' + p.sku);
+            if (Object.keys(p).sort().join(',') !== ['duty','family','familyName','name','nameRequiresReview','sku','technology','url'].sort().join(',')) throw Error('Unapproved product fields in ' + p.sku);
+          }
+          if (!payload.products.some(p => p.nameRequiresReview)) throw Error('Expected generic names to be identified for review');
+          for (const p of payload.products) {
+            if (typeof p.nameRequiresReview !== 'boolean' || !p.familyName) throw Error('Missing name review metadata');
           }
           if (!readFileSync('frontend/out/llms.txt','utf8').includes('https://elimfilters.com/agent-products.json')) throw Error('Discovery URL missing in llms.txt');
           console.log(JSON.stringify({result:'PASS',productCount:payload.productCount,fields:Object.keys(payload.products[0])}));
