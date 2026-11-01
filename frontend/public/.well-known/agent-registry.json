@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "service": "ELIMFILTERS public agent discovery",
+  "status": "NOT_ACTIVATED",
+  "protocol": "informational-read-only",
+  "dnsAidAdvertised": false,
+  "agents": [],
+  "resources": [
+    {
+      "rel": "ai-catalog",
+      "href": "https://elimfilters.com/.well-known/ai-catalog.json",
+      "contentType": "application/json"
+    },
+    {
+      "rel": "documentation",
+      "href": "https://elimfilters.com/llms.txt",
+      "contentType": "text/plain"
+    }
+  ],
+  "policy": {
+    "publicAgentEndpointsRequireIndependentVerification": true,
+    "internalAgentsNotPublic": true,
+    "automaticPublication": false,
+    "applicationsWithoutVerifiedEvidenceExcluded": true,
+    "crossReferencesDoNotEstablishCompatibility": true
+  },
+  "note": "This endpoint is not an A2A Agent Card, an MCP server, or a DNS-AID service advertisement. No publicly callable agent has been certified."
+}
