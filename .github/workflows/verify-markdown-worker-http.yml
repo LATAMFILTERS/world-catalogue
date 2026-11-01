@@ -1,5 +1,5 @@
 name: Verify official Markdown negotiation
-# Test after limited Cloudflare route was added
+# Validate official negotiation after merge #1180 (2026-11-01)
 # Recheck after Cloudflare route was added 2026-11-01
 on:
   push:
