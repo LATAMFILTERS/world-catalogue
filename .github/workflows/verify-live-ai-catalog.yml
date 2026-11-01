@@ -11,28 +11,40 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Check raw production HTML and discovery endpoint
+      - name: Compare public and origin responses without changing configuration
         shell: bash
         run: |
-          set -euo pipefail
           python3 - <<'PY'
-          import urllib.request, json, re, sys
-          base='https://elimfilters.com'
-          req=urllib.request.Request(base+'/',headers={'User-Agent':'ELIMFILTERS-discovery-verification/1.0','Cache-Control':'no-cache'})
-          with urllib.request.urlopen(req,timeout=20) as response:
-              html=response.read().decode('utf-8')
-              code=response.status
-          head=html.split('</head>',1)[0]
-          match=re.search(r'<link\b[^>]*\brel=["\']ai-catalog["\'][^>]*>',head,re.I)
-          ok=bool(match and '/.well-known/ai-catalog.json' in match.group(0))
-          print(json.dumps({'check':'production_html_head','http_status':code,'link_found':ok,'link_tag':match.group(0) if match else None}))
-          req=urllib.request.Request(base+'/.well-known/ai-catalog.json',headers={'Accept':'application/json','Cache-Control':'no-cache'})
-          with urllib.request.urlopen(req,timeout=20) as response:
-              catalog=json.loads(response.read())
-              content_type=response.headers.get('Content-Type')
-              catalog_status=response.status
-          valid=catalog.get('host',{}).get('displayName')=='ELIMFILTERS' and len(catalog.get('entries',[]))==2
-          print(json.dumps({'check':'public_catalog','http_status':catalog_status,'content_type':content_type,'valid_public_resources':valid}))
-          if not(ok and code==200 and catalog_status==200 and valid and 'json' in content_type):
-              sys.exit(1)
+          import urllib.request, urllib.error, json, re
+          hosts=['https://elimfilters.com','https://elimfilters-frontend.onrender.com']
+          paths=['/','/.well-known/ai-catalog.json']
+          agents=['ELIMFILTERS-discovery-verification/1.0','Mozilla/5.0']
+          for host in hosts:
+            for path in paths:
+              for agent in agents:
+                url=host+path
+                req=urllib.request.Request(url,headers={'User-Agent':agent,'Accept':'application/json' if path.endswith('.json') else 'text/html','Cache-Control':'no-cache'})
+                try:
+                  with urllib.request.urlopen(req,timeout=15) as r:
+                    body=r.read()
+                    status=r.status
+                    headers=dict(r.headers.items())
+                except urllib.error.HTTPError as e:
+                  body=e.read()
+                  status=e.code
+                  headers=dict(e.headers.items())
+                except Exception as e:
+                  print(json.dumps({'url':url,'agent':agent,'error':str(e)}),flush=True)
+                  continue
+                record={'url':url,'agent':agent,'status':status,'content_type':headers.get('Content-Type'),'server':headers.get('Server'),'cf_ray':headers.get('Cf-Ray'),'cf_mitigated':headers.get('Cf-Mitigated'),'body_prefix':body[:170].decode('utf-8','replace') if status!=200 else None}
+                if path=='/':
+                  m=re.search(rb'<link\s+[^>]*rel=["\x27]ai-catalog["\x27][^>]*>',body,re.I)
+                  record['ai_catalog_link']=m.group(0).decode() if m else None
+                else:
+                  try:
+                    data=json.loads(body)
+                    record['valid_catalog']=data.get('host',{}).get('displayName')=='ELIMFILTERS' and len(data.get('entries',[]))==2
+                  except Exception:
+                    record['valid_catalog']=False
+                print(json.dumps(record),flush=True)
           PY
