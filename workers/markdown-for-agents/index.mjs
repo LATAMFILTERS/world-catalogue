@@ -64,7 +64,9 @@ export default {
     const ct=response.headers.get("Content-Type")||"";
     if(!response.ok || !/text\/html/i.test(ct))return response;
     const html=await response.text();
-    const markdown=htmlToMarkdown(html,originUrl.href);
+    // Public links and source attribution must use the canonical domain, not Render.
+    const canonicalUrl = zoneHost ? url.href : new URL(url.pathname+url.search, 'https://elimfilters.com').href;
+    const markdown=htmlToMarkdown(html,canonicalUrl);
     const headers=new Headers(response.headers);
     headers.set("Content-Type","text/markdown; charset=utf-8");
     headers.set("Vary",Array.from(new Set([...(headers.get("Vary")||"").split(",").map(s=>s.trim()).filter(Boolean),"Accept"])).join(", "));
