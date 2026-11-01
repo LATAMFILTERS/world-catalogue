@@ -1,9 +1,13 @@
 name: Verify official Markdown negotiation
+# Test after limited Cloudflare route was added
 # Recheck after Cloudflare route was added 2026-11-01
 on:
   push:
     branches: [main]
     paths: ['.github/workflows/verify-markdown-worker-http.yml']
+  pull_request:
+    paths:
+      - '.github/workflows/verify-markdown-worker-http.yml'
   workflow_dispatch:
 permissions:
   contents: read
