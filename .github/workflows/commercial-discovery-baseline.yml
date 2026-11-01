@@ -1,0 +1,59 @@
+name: Commercial discoverability baseline
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/commercial-discovery-baseline.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit-public:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Inspect public crawlability and product discovery
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,re,urllib.request,urllib.error,os,datetime
+          from html import unescape
+          from concurrent.futures import ThreadPoolExecutor
+          base='https://elimfilters.com'
+          paths=['/','/es/','/pt/','/families/','/knowledge-center/','/robots.txt','/llms.txt','/.well-known/ai-catalog.json','/sitemap.xml']
+          def check(path):
+              try:
+                  request=urllib.request.Request(base+path,headers={'User-Agent':'ELIMFILTERS-PublicDiscoveryAudit/1.0'})
+                  with urllib.request.urlopen(request,timeout=18) as resp:
+                      body=resp.read(900000).decode('utf-8','replace')
+                      content_type=resp.headers.get('Content-Type','')
+                      status=resp.status
+                  html='text/html' in content_type
+                  title=re.search(r'<title[^>]*>(.*?)</title>',body,re.I|re.S) if html else None
+                  canonical=re.search(r'<link[^>]*rel=["\\x27]canonical["\\x27][^>]*href=["\\x27]([^"\\x27]+)',body,re.I) if html else None
+                  schema=re.findall(r'<script[^>]*type=["\\x27]application/ld\\+json["\\x27][^>]*>(.*?)</script>',body,re.I|re.S) if html else []
+                  types=[]
+                  for item in schema:
+                      try:
+                          data=json.loads(item)
+                          types.append(str(data.get('@type') or [v.get('@type') for v in data.get('@graph',[])]) if isinstance(data,dict) else 'list')
+                      except:types.append('INVALID_JSON_LD')
+                  return {'path':path,'status':status,'content_type':content_type,'title':unescape(title.group(1)) if title else None,'canonical':canonical.group(1) if canonical else None,'json_ld_types':types,'noindex':bool(re.search(r'<meta[^>]*name=["\\x27]robots["\\x27][^>]*content=["\\x27][^>]*noindex',body,re.I)) if html else None,'links_to_search': 'search-api.elimfilters.com' in body if html else None,'body':body}
+              except Exception as exc:return {'path':path,'error':str(exc)}
+          with ThreadPoolExecutor(max_workers=5) as pool: rows=list(pool.map(check,paths))
+          xml=next((x.get('body','') for x in rows if x['path']=='/sitemap.xml'),'')
+          locs=re.findall(r'<loc[^>]*>(.*?)</loc>',xml,re.I|re.S)
+          product_paths=[x[len(base):] for x in locs if x.startswith(base+'/') and re.search(r'/(?:products?|catalog|sku|parts?)/',x,re.I)][:20]
+          with ThreadPoolExecutor(max_workers=5) as pool: products=list(pool.map(check,product_paths))
+          safe=lambda x:{k:v for k,v in x.items() if k!='body'}
+          report={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'public HTTP; not ranking or AI citation measurement','pages':[safe(x) for x in rows],'root_sitemap_urls':len(locs),'product_candidate_sample':[safe(x) for x in products],'limitations':['Only root sitemap loc elements evaluated; nested sitemap coverage not established','No GSC/GA4 data available from current connected account','Search indexing, AI referrals and conversion rates cannot be inferred from HTTP status']}
+          os.makedirs('out/commercial-discovery',exist_ok=True)
+          with open('out/commercial-discovery/baseline.json','w') as f:json.dump(report,f,indent=2,ensure_ascii=False)
+          print(json.dumps({'pages':[{'path':x['path'],'status':x.get('status'),'error':x.get('error'),'title':x.get('title'),'json_ld_types':x.get('json_ld_types')} for x in rows],'root_sitemap_urls':len(locs),'product_sample_size':len(products)},ensure_ascii=False))
+          if any(x.get('error') for x in rows):raise SystemExit(1)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: commercial-discovery-baseline
+          path: out/commercial-discovery/baseline.json
+          if-no-files-found: warn
