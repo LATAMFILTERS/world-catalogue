@@ -49,11 +49,13 @@ export function htmlToMarkdown(html, url) {
 export default {
   async fetch(request) {
     const url=new URL(request.url);
-    // workers.dev is a standalone preview hostname, with no HTML origin.
-    // Fetch the existing public site explicitly; no production DNS/routes changed.
+    // Never fetch a zone-routed URL from this Worker: that would invoke itself.
+    // The Render hostname is a separate origin and bypasses Cloudflare zone routes.
     const previewHost=url.hostname.endsWith('.workers.dev');
-    const originUrl=previewHost ? new URL(url.pathname+url.search, 'https://elimfilters.com') : url;
-    const originRequest=previewHost ? new Request(originUrl, request) : request;
+    const zoneHost=url.hostname==='elimfilters.com';
+    const upstreamHost=zoneHost ? 'https://elimfilters-frontend.onrender.com' : 'https://elimfilters.com';
+    const originUrl=(previewHost||zoneHost) ? new URL(url.pathname+url.search,upstreamHost) : url;
+    const originRequest=(previewHost||zoneHost) ? new Request(originUrl,request) : request;
     if(request.method!=="GET" || !request.headers.get("Accept")?.split(",").some(x=>x.trim().split(";")[0].trim().toLowerCase()==="text/markdown") || EXCLUDED.test(url.pathname) || /\.[a-z\d]{1,8}$/i.test(url.pathname)){
       return fetch(originRequest);
     }
