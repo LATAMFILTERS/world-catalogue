@@ -1,0 +1,21 @@
+name: Markdown for Agents tests
+on:
+  pull_request:
+    paths:
+      - 'workers/markdown-for-agents/**'
+      - '.github/workflows/test-markdown-for-agents.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  markdown-worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and functional tests
+        run: |
+          node --check workers/markdown-for-agents/index.mjs
+          node --test workers/markdown-for-agents/index.test.mjs
