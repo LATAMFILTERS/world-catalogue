@@ -43,6 +43,3 @@ export function GET() {
   }, {headers: {'Cache-Control': 'public, max-age=300'}});
 }
 
-export function POST() {
-  return NextResponse.json({error: 'read_only'}, {status: 405});
-}
