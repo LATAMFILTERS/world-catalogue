@@ -84,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <SchemaMarkup />
+        <link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/json" />
         {/*
           Motion (framer-motion) SSR-renders each animated element's
           `initial` state directly as an inline style, e.g.
