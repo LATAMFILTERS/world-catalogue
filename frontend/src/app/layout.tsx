@@ -130,6 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </head>
       <body>
+        <Script src="/webmcp-public-tools.js" strategy="afterInteractive" />
         <ClientProviders>
           <SkipNavigation />
           {children}
