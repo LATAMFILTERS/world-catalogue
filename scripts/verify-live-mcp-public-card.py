@@ -14,21 +14,32 @@ def request(url, *, data=None, headers=None):
     except urllib.error.HTTPError as exc:
         return exc.code, exc.headers.get("content-type", ""), exc.read(4096)
 
+card_errors = []
 status, ctype, payload = request(CARD, headers={"Accept": "application/json"})
 if status != 200 or "json" not in ctype.lower() or len(payload) > 131072:
-    raise SystemExit(f"FAIL: public card status={status}, content-type={ctype}, bytes={len(payload)}")
-try:
-    card=json.loads(payload)
-except ValueError as exc:
-    raise SystemExit(f"FAIL: invalid public card JSON: {exc}")
-info=card.get("serverInfo") or {}
-if info.get("name") != "elimfilters-governed-operations" or info.get("version") != "1.0.0":
-    raise SystemExit("FAIL: public card does not identify the actual MCP server")
-if (card.get("transport") or {}).get("endpoint") != MCP:
-    raise SystemExit("FAIL: public card transport does not match actual MCP endpoint")
-if not (card.get("authentication") or {}).get("required") is True:
-    raise SystemExit("FAIL: card does not declare required authentication")
-print("PASS: MCP public server card HTTP 200, JSON, expected identity/endpoint, auth required")
+    card_errors.append(f"public card status={status}, content-type={ctype}, bytes={len(payload)}")
+else:
+    try:
+        card = json.loads(payload)
+        info = card.get("serverInfo") or {}
+        if info.get("name") != "elimfilters-governed-operations" or info.get("version") != "1.0.0":
+            card_errors.append("card identity/version mismatch")
+        if (card.get("transport") or {}).get("endpoint") != MCP:
+            card_errors.append("card MCP transport endpoint mismatch")
+        if (card.get("authentication") or {}).get("required") is not True:
+            card_errors.append("card missing required authentication declaration")
+    except (ValueError, AttributeError) as exc:
+        card_errors.append(f"invalid public card JSON: {type(exc).__name__}")
+if not card_errors:
+    print("PASS: public card HTTP 200, JSON, identity, endpoint, authentication requirement")
+else:
+    for msg in card_errors:
+        print("FAIL: " + msg)
+    # Safe diagnostic: compare only status and content type from direct Render origin.
+    origin_status, origin_type, _ = request(
+        "https://elimfilters-frontend.onrender.com/.well-known/mcp/server-card.json",
+        headers={"Accept": "application/json"})
+    print(f"DIAGNOSTIC: Render origin card status={origin_status}, content-type={origin_type}")
 
 probe=json.dumps({"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}).encode()
 status, ctype, body = request(MCP, data=probe, headers={
@@ -37,5 +48,9 @@ status, ctype, body = request(MCP, data=probe, headers={
     "User-Agent": "ELIMFILTERS-MCP-Anonymous-Deny-Audit/1.0",
 })
 if status != 401:
-    raise SystemExit(f"FAIL: MCP anonymous tools/list returned HTTP {status}, expected 401")
-print("PASS: MCP anonymous tools/list rejected HTTP 401; no token sent")
+    print(f"FAIL: MCP anonymous tools/list returned HTTP {status}, expected 401")
+    card_errors.append(f"MCP anonymous access HTTP {status} instead of 401")
+else:
+    print("PASS: MCP anonymous tools/list rejected HTTP 401; no token sent")
+if card_errors:
+    raise SystemExit(1)
