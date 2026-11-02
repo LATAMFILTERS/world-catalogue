@@ -1,5 +1,8 @@
 # Single authoritative robots.txt. Maintained as static public asset.
 User-agent: *
+# Content Signals: allow search discovery; prohibit AI training and AI input use.
+# These preferences do not replace Disallow policies for private or restricted paths.
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/admin/
 Disallow: /admin/
