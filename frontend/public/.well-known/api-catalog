@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://elimfilters.com/api/agents/public-discovery/",
+      "service-doc": [
+        {
+          "href": "https://elimfilters.com/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://elimfilters.com/.well-known/public-discovery-agent.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}
