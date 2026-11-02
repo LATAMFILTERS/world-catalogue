@@ -1,0 +1,17 @@
+name: Verify live Agent Skills
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 11 * * *'
+permissions:
+  contents: read
+jobs:
+  verify-live-skills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/verify-live-agent-skills.py
