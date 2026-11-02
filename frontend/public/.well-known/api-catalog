@@ -1,16 +1,16 @@
 {
   "linkset": [
     {
-      "anchor": "https://elimfilters.com/api/agents/public-discovery/",
+      "anchor": "https://crm-api.elimfilters.com/mcp",
       "service-doc": [
         {
-          "href": "https://elimfilters.com/llms.txt",
-          "type": "text/plain"
+          "href": "https://elimfilters.com/.well-known/mcp/server-card.json",
+          "type": "application/json"
         }
       ],
       "service-meta": [
         {
-          "href": "https://elimfilters.com/.well-known/public-discovery-agent.json",
+          "href": "https://elimfilters.com/.well-known/mcp/server-card.json",
           "type": "application/json"
         }
       ]
