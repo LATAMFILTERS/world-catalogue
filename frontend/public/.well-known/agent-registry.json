@@ -3,7 +3,7 @@
   "service": "ELIMFILTERS public agent discovery",
   "status": "ACTIVE",
   "protocol": "informational-read-only",
-  "dnsAidAdvertised": false,
+  "dnsAidAdvertised": true,
   "agents": [
     {
       "id": "public-discovery",
@@ -40,5 +40,5 @@
     "applicationsWithoutVerifiedEvidenceExcluded": true,
     "crossReferencesDoNotEstablishCompatibility": true
   },
-  "note": "Public read-only resource discovery endpoint independently observed live at Render and elimfilters.com. DNS-AID publication is separate and remains unadvertised until TXT index and agent SVCB DNSSEC verification."
+  "note": "Public HTTPS read-only discovery agent. DNS-AID TXT index and per-agent SVCB were verified with Google Public DNS: NOERROR, AD=true, TTL=300, on 2026-11-01. This static document does not offer MCP or A2A callable tools."
 }

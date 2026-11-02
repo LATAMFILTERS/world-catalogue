@@ -47,7 +47,7 @@ jobs:
           expected = {
               'schemaVersion': '1.0',
               'status': 'ACTIVE',
-              'dnsAidAdvertised': False,
+              'dnsAidAdvertised': True,
               'protocol': 'informational-read-only'
           }
           for key, value in expected.items():
@@ -82,5 +82,5 @@ jobs:
           if policy.get('automaticPublication') is not False:
               sys.exit('NO-GO: automatic publication may not be enabled')
           print('HTTP 200, one active public read-only discovery agent and live document verified.')
-          print('DNS-AID remains NO-GO until authenticated public TXT index and per-agent SVCB are confirmed.')
+          print('DNS-AID DNS record evidence separately verified; public resource discovery only, not callable A2A/MCP.')
           PY

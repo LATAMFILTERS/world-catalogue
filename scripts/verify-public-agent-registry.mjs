@@ -4,7 +4,7 @@ const registry = JSON.parse(readFileSync('frontend/public/.well-known/agent-regi
 const catalog = JSON.parse(readFileSync('frontend/public/.well-known/ai-catalog.json', 'utf8'));
 const internal = JSON.parse(readFileSync('config/elimserver/agents.json', 'utf8'));
 assert.equal(registry.status, 'ACTIVE');
-assert.equal(registry.dnsAidAdvertised, false);
+assert.equal(registry.dnsAidAdvertised, true);
 assert.equal(registry.protocol, 'informational-read-only');
 assert.equal(registry.agents.length, 1, 'Only the verified public discovery endpoint may be listed');
 const publicAgent = registry.agents[0];
@@ -31,4 +31,4 @@ assert.ok(Array.isArray(catalog.entries) && catalog.entries.length);
 assert.ok(catalog.entries.every(e => /^https:\/\/elimfilters\.com\//.test(e.url)));
 const forbidden = ['equipment_applications', 'vehicle_applications', 'EVIDENCE_REQUIRED', 'competitor_codes'];
 for (const field of forbidden) assert.ok(!serialized.includes(field), 'No raw catalog or fitment data allowed');
-console.log('PASS: exactly one verified read-only public discovery agent; DNS-AID still unadvertised, private agents excluded');
+console.log('PASS: exactly one verified read-only public discovery agent; DNS-AID public discovery advertised, private agents excluded');
