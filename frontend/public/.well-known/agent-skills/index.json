@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "find-elimfilters-public-resources",
+      "type": "skill-md",
+      "description": "Locate publicly published ELIMFILTERS technical documentation and catalog navigation resources without asserting unverified filter compatibility.",
+      "url": "/.well-known/agent-skills/find-elimfilters-public-resources/SKILL.md",
+      "digest": "sha256:f157feb86ca6f4b31e2f7871187f60e5e7986836573629ba1c849835eb1c877b"
+    }
+  ]
+}
