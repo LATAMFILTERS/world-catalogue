@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-11-25",
+  "serverInfo": {
+    "name": "elimfilters-governed-operations",
+    "title": "ELIMFILTERS Governed Operations",
+    "version": "1.0.0"
+  },
+  "description": "Protected ELIMFILTERS governed operations MCP server. Requires a separately provisioned private bearer token; no anonymous tools, resources, prompts, or provisioning.",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://crm-api.elimfilters.com/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "authentication": {
+    "required": true,
+    "schemes": [
+      "bearer"
+    ]
+  },
+  "instructions": "This server is not open for anonymous access. Tools and authorized workflows must be discovered only after private authentication. No self-service signup or public access to operational actions."
+}
