@@ -987,6 +987,7 @@ const dbConfig = {
   max: 10,
 };
 const pool = new Pool(dbConfig);
+require('./lib/r2-catalog-image-sync').startR2CatalogImageSync(pool);
 pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
@@ -3726,3 +3727,4 @@ app.listen(PORT, () => {
   console.log(`[server] ✅ Listening on port ${PORT}`);
   console.log(`[server] ✅ ELIMFILTERS API ready`);
 });
+
