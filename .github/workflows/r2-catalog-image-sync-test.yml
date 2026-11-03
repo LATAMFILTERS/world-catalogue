@@ -1,0 +1,31 @@
+name: R2 catalogue image sync tests
+
+on:
+  pull_request:
+    paths:
+      - 'lib/r2-catalog-image-sync.js'
+      - 'tests/r2-catalog-image-sync.test.js'
+      - 'server-original.js'
+      - '.github/workflows/r2-catalog-image-sync-test.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'lib/r2-catalog-image-sync.js'
+      - 'tests/r2-catalog-image-sync.test.js'
+      - 'server-original.js'
+      - '.github/workflows/r2-catalog-image-sync-test.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node --test tests/r2-catalog-image-sync.test.js
+      - run: node --check server-original.js
+      - run: node --check lib/r2-catalog-image-sync.js
