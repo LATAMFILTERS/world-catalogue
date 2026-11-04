@@ -826,14 +826,17 @@ textarea {
     .hero-info .card-header { margin-bottom: 0.15rem; }
     .hero-type { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--fg); margin-bottom: 1rem; }
     /* badges on one line, two lines of space below the description, two more before related parts */
-    .hero-row { display: flex; flex-direction: column; gap: 3.3rem; align-items: stretch; margin-top: 2.1rem; }
+    .hero-row { display: flex; flex-direction: column; flex: 1 1 auto; gap: 3.3rem; align-items: stretch; margin-top: 2.1rem; }
     .hero-row .card-badges { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
     .hero-row .card-badges::-webkit-scrollbar { display: none; }
     .hero-row .badge { flex: 0 0 auto; font-size: 0.74rem; padding: 0.22rem 0.5rem; letter-spacing: 0.06em; }
-    .hero-related { border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.2rem; }
-    .hero-related-title { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--fg); margin-bottom: 0.5rem; }
-    .hero-related-sub { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
-    .hero-related-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    /* related parts on one line, bottom edge aligned with the image */
+    .hero-related { display: flex; align-items: center; gap: 1.1rem; flex-wrap: nowrap; margin-top: auto; border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1.2rem; }
+    .hero-related-title { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--fg); margin: 0; white-space: nowrap; flex: 0 0 auto; }
+    .hero-related-sub { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: var(--muted); margin: 0; white-space: nowrap; flex: 0 0 auto; }
+    .hero-related-chips { display: flex; flex-wrap: nowrap; gap: 0.5rem; flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+    .hero-related-chips::-webkit-scrollbar { display: none; }
+    .hero-related-chips .see-also-chip { flex: 0 0 auto; white-space: nowrap; }
     /* photo slot: same size for every SKU, in-box hover zoom */
     .spec-photo { flex: 0 0 auto; align-self: flex-start; width: min(420px, 100%); aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #d9dde3; overflow: hidden; padding: 10px; box-sizing: border-box; position: relative; cursor: zoom-in; }
     .spec-photo img { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: var(--zx, 50%) var(--zy, 50%); transition: transform 0.18s ease-out; }
