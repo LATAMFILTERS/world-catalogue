@@ -31,7 +31,7 @@ const last4 = (v) => String(v || '').replace(/\D/g, '').slice(-4).padStart(4, '0
 function familyOf(desc) {
   const d = String(desc || '').toUpperCase();
   if (/WATER SEPARATOR|FUEL\/WATER|FUEL WATER/.test(d)) return 'ES9';
-  if (/CABIN/.test(d)) return 'EC1';
+  if (/CABIN|VENTILATION/.test(d)) return 'EC1'; // Donaldson "AIR FILTER, PANEL/ROUND VENTILATION" = cab ventilation
   if (/AIR DRYER/.test(d)) return 'ED4';
   if (/COOLANT/.test(d)) return 'EW7';
   if (/HYDRAULIC/.test(d)) return 'EH6';

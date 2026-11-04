@@ -22,8 +22,11 @@ require('dotenv').config();
 const { Client } = require('pg');
 
 const APPLY = process.argv.includes('--execute');
-const PAIRS = require('./run_237_ef9_separators_to_es9.data.json');
-const SOURCE = 'RUN_237_EF9_TO_ES9_RENUMBER';
+// --data <file> reuses this mechanism for later batches of the same ruling (e.g. run_285, Donaldson local capture
+// 2026-11-02); --source labels the SUPERSEDED rows of that batch.
+const argOf = (name) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : null; };
+const PAIRS = argOf('--data') ? require(require('path').resolve(argOf('--data'))) : require('./run_237_ef9_separators_to_es9.data.json');
+const SOURCE = argOf('--source') || 'RUN_237_EF9_TO_ES9_RENUMBER';
 
 // Same no-FK surfaces as run_227.
 const DERIVED = [
@@ -43,6 +46,7 @@ const DERIVED = [
   // technology_id stays as is: kg_technologies has no HYDROCORE™ row to point at
   ['public.kg_product_technologies', 'product_sku'],
   ['public.oem_codes_legacy', 'sku'], // read by v_crossref_engine
+  ['public.catalog_application_evidence', 'sku'], // verified vehicle/equipment applications (added after run_237)
 ];
 
 // jsonb columns of elimfilters_catalog that can carry a SKU as text

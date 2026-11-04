@@ -1,0 +1,72 @@
+[
+ {
+  "from": "EF90735",
+  "to": "ES90735",
+  "codigo_base": "P550735",
+  "official_description": "FUEL FILTER, WATER SEPARATOR SPIN-ON",
+  "source": "DONALDSON",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550735/20518",
+  "scraped_at": "2026-11-03T05:59:08.855Z",
+  "capture": "operator local capture donaldson-local 2026-11-02"
+ },
+ {
+  "from": "EF91047",
+  "to": "ES91047",
+  "codigo_base": "P551047",
+  "official_description": "FUEL FILTER, WATER SEPARATOR SPIN-ON TWIST&DRAIN",
+  "source": "DONALDSON",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551047/40170",
+  "scraped_at": "2026-11-03T06:01:45.420Z",
+  "capture": "operator local capture donaldson-local 2026-11-02"
+ },
+ {
+  "from": "EF91055",
+  "to": "ES91055",
+  "codigo_base": "P551055",
+  "official_description": "FUEL FILTER, WATER SEPARATOR SPIN-ON TWIST&DRAIN",
+  "source": "DONALDSON",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551055/62874",
+  "scraped_at": "2026-11-03T06:02:38.243Z",
+  "capture": "operator local capture donaldson-local 2026-11-02"
+ },
+ {
+  "from": "EF91122",
+  "to": "ES91122",
+  "codigo_base": "P551122",
+  "official_description": "FUEL FILTER, WATER SEPARATOR SPIN-ON TWIST&DRAIN",
+  "source": "DONALDSON",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551122/39311",
+  "scraped_at": "2026-11-03T06:04:38.104Z",
+  "capture": "operator local capture donaldson-local 2026-11-02"
+ },
+ {
+  "from": "EF91768",
+  "to": "ES91768",
+  "codigo_base": "P551768",
+  "official_description": "FUEL FILTER, WATER SEPARATOR SPIN-ON",
+  "source": "DONALDSON",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551768/23237",
+  "scraped_at": "2026-11-03T06:08:56.242Z",
+  "capture": "operator local capture donaldson-local 2026-11-02"
+ },
+ {
+  "from": "EF92006",
+  "to": "ES92006",
+  "codigo_base": "P552006",
+  "official_description": "FUEL FILTER, WATER SEPARATOR SPIN-ON TWIST&DRAIN",
+  "source": "DONALDSON",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552006/40165",
+  "scraped_at": "2026-11-03T06:10:19.808Z",
+  "capture": "operator local capture donaldson-local 2026-11-02"
+ },
+ {
+  "from": "EF93201",
+  "to": "ES93201",
+  "codigo_base": "P553201",
+  "official_description": "FUEL FILTER, WATER SEPARATOR SPIN-ON TWIST&DRAIN",
+  "source": "DONALDSON",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553201/40174",
+  "scraped_at": "2026-11-04T05:18:48.380Z",
+  "capture": "operator local capture donaldson-local 2026-11-02"
+ }
+]
