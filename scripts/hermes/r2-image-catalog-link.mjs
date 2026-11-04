@@ -44,7 +44,12 @@ for (const o of images) {
   const sku = m[1].toUpperCase();
   const tech = TECH.find((t) => new RegExp(`(^|[-_ ])${t}([-_. ]|$)`, 'i').test(base)) || null;
   // Technology-like words outside the canonical registry (e.g. MICROCORE, MARINECLEAN) must not go live unreviewed.
-  const foreignTech = (base.toUpperCase().match(/[A-Z]{4,}(?:CORE|KAPPA|FORCE|PORE|TRAX|CLEAN)/g) || []).filter((w) => !TECH.includes(w));
+  // MARINECLEAN / DURATECH are approved specialized commercial solutions (Victor 2026-11-04: MARINECLEAN = marine
+  // applications), not errors. EA10695's file says MICROCORE by a file-name typo; its lithography is MACROCORE (operator).
+  const OK_WORDS = ['MARINECLEAN', 'DURATECH'];
+  const NAME_TYPO_OK = { EA10695: ['MICROCORE'] };
+  const foreignTech = (base.toUpperCase().match(/[A-Z]{4,}(?:CORE|KAPPA|FORCE|PORE|TRAX|CLEAN)/g) || [])
+    .filter((w) => !TECH.includes(w) && !OK_WORDS.includes(w) && !(NAME_TYPO_OK[(/^(?:fleetguard_)?(E[A-Z]\d{5,6})/i.exec(base) || [])[1]?.toUpperCase()] || []).includes(w));
   (bySku.get(sku) || bySku.set(sku, []).get(sku)).push({ ...o, base, tech, foreignTech, approved: /approved/i.test(base) });
 }
 
