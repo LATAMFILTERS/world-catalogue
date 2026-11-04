@@ -9,7 +9,7 @@
 // dimensions not already verified; every value numeric and 0 < mm < 3000.
 // Mapping: Outer Diameter -> outer_diameter_mm, Inner Diameter -> inner_diameter_mm, Width -> product_width_mm,
 // Height -> height_mm, Length -> height_mm for round/spin-on parts (no Width) or product_length_mm when Width exists
-// (panels), Thread Size -> thread_size, Gasket OD/ID -> gasket_od_mm/gasket_id_mm. Other labels stay in the evidence.
+// (panels; "Overall Length" when Length is absent), Thread Size -> thread_size, Gasket OD/ID -> gasket_od_mm/gasket_id_mm. Other labels stay in the evidence.
 // Previous unverified values are replaced (same rule approved for MANN, 2026-10-24) and kept in
 // enrichment_data.dimension_evidence.replaced.
 //
@@ -50,6 +50,8 @@ function dimsFrom(a) {
   set('inner_diameter_mm', 'Inner Diameter');
   set('product_width_mm', 'Width');
   set('height_mm', 'Height');
+  // Hydraulic/fuel elements often publish only "Overall Length": same role as Length when Length is absent.
+  if (a.Length == null && a['Overall Length'] != null) a = { ...a, Length: a['Overall Length'] };
   if (a.Length != null) { if (a.Width != null) set('product_length_mm', 'Length'); else if (out.height_mm == null) set('height_mm', 'Length'); else set('product_length_mm', 'Length'); }
   set('gasket_od_mm', 'Gasket OD'); set('gasket_id_mm', 'Gasket ID');
   if (a['Thread Size']) out.thread_size = String(a['Thread Size']).trim();
