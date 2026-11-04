@@ -149,8 +149,8 @@ Cada vez que se anexa o publica una imagen de producto en Cloudflare (R2 `elimfi
 
 - La asignación es por SKU exacto. El archivo debe llamarse `products/<SKU>/...` (con `manifest.json`), `<SKU>.png|jpg|webp` o `<SKU>-...-approved.png`. Nunca se asigna por parecido ni por suposición; si el nombre no lleva el SKU exacto, se corrige el nombre antes de publicar.
 - `lib/r2-catalog-image-sync.js` (arrancado desde `server-original.js`) escribe `elimfilters_catalog.image_url` de ese SKU. `buildFilterData` lo expone (solo URLs `https://cdn.elimfilters.com/`) y `part-search/results.html` lo muestra en el espacio de imagen de la tarjeta del SKU. Cada SKU mantiene ese espacio; sin imagen aprobada se muestra un marcador "Image coming soon".
-- Después de publicar, verificar que (1) la fila del SKU tiene `image_url` y (2) la página de resultados del SKU muestra la imagen. No dar la imagen por asignada sin esa comprobación.
-- Pendiente conocido: las páginas SEO estáticas por SKU (`lib/install-part-seo-pages.js`) todavía no usan `image_url`.
+- La página SEO de cada SKU (`lib/install-part-seo-pages.js`) usa el mismo `image_url`: imagen visible, `og:image` y `image` en el JSON-LD del Product (solo origen `https://cdn.elimfilters.com/`). La caché de esas páginas es de 15 minutos (`PART_SEO_CACHE_TTL_MS`), así que una imagen nueva puede tardar hasta ese tiempo en aparecer.
+- Después de publicar, verificar que (1) la fila del SKU tiene `image_url`, (2) la página de resultados del SKU muestra la imagen y (3) la página SEO del SKU la muestra. No dar la imagen por asignada sin esa comprobación.
 
 ## Ponytail implementation rule
 
