@@ -814,6 +814,48 @@ textarea {
     min-width: 0;
   }
 }
+
+    /* HERO (Fleetguard-style layout): crumbs, photo slot, identity, badges, related parts */
+    .card-crumbs { font-family: 'Outfit', sans-serif; font-size: 0.95rem; color: var(--muted); margin-bottom: 1.2rem; }
+    .card-crumbs a { color: var(--y); text-decoration: none; }
+    .card-crumbs a:hover { text-decoration: underline; }
+    .card-crumbs span { text-transform: capitalize; }
+    .card-crumbs strong { color: var(--fg); font-weight: 500; }
+    .card-hero { display: flex; gap: 2rem; align-items: stretch; margin-bottom: 1.4rem; }
+    .hero-info { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+    .hero-info .card-header { margin-bottom: 0.15rem; }
+    .hero-type { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--fg); margin-bottom: 1rem; }
+    /* badges on one line, two lines of space below the description, two more before related parts */
+    .hero-row { display: flex; flex-direction: column; flex: 1 1 auto; gap: 3.3rem; align-items: stretch; margin-top: 2.1rem; }
+    .hero-row .card-badges { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .hero-row .card-badges::-webkit-scrollbar { display: none; }
+    .hero-row .badge { flex: 0 0 auto; font-size: 0.74rem; padding: 0.22rem 0.5rem; letter-spacing: 0.06em; }
+    /* related parts on one line, bottom edge aligned with the image */
+    .hero-related { display: flex; align-items: center; gap: 1.1rem; flex-wrap: nowrap; margin-top: auto; border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1.2rem; }
+    .hero-related-title { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--fg); margin: 0; white-space: nowrap; flex: 0 0 auto; }
+    .hero-related-sub { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: var(--muted); margin: 0; white-space: nowrap; flex: 0 0 auto; }
+    .hero-related-chips { display: flex; flex-wrap: nowrap; gap: 0.5rem; flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+    .hero-related-chips::-webkit-scrollbar { display: none; }
+    .hero-related-chips .see-also-chip { flex: 0 0 auto; white-space: nowrap; }
+    /* photo slot: same size for every SKU, in-box hover zoom */
+    .spec-photo { flex: 0 0 auto; align-self: flex-start; width: min(420px, 100%); aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #d9dde3; overflow: hidden; padding: 10px; box-sizing: border-box; position: relative; cursor: zoom-in; }
+    .spec-photo img { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: var(--zx, 50%) var(--zy, 50%); transition: transform 0.18s ease-out; }
+    @media (hover: hover) and (pointer: fine) { .spec-photo.is-zoom img { transform: scale(2.5); } }
+    .photo-lightbox { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); cursor: zoom-out; padding: 1.5rem; }
+    .photo-lightbox img { max-width: min(92vw, 900px); max-height: 90vh; background: #fff; border-radius: 10px; padding: 12px; object-fit: contain; }
+    .spec-photo.is-empty { cursor: default; flex-direction: column; background: rgba(255,255,255,0.04); border-color: var(--border); }
+    .spec-photo.is-empty img { display: none; }
+    .spec-photo-ph { display: none; }
+    .spec-photo.is-empty .spec-photo-ph { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: center; }
+    .spec-photo.is-empty .spec-photo-ph::before { content: ''; width: 84px; height: 84px; background: url(/e.png) center / contain no-repeat; opacity: 0.45; }
+    /* specs: Dimensions and Performance side by side, three columns each (two rows) */
+    .specs-main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; align-items: start; }
+    @media (max-width: 900px) { .specs-main { grid-template-columns: 1fr; } }
+    .specs-main .specs-title { grid-column: 1 / -1; }
+    .specs-main .specs-group-divider { display: none; }
+    .specs-main .specs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 1.25rem; }
+    @media (max-width: 640px) { .specs-main .specs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 820px) { .card-hero { flex-direction: column; gap: 1.2rem; } .spec-photo { width: 100%; max-width: 420px; } }
 </style>
 </head>
 <body>
@@ -1308,6 +1350,7 @@ function renderCard(p, index) {
     specHTML(T.specLength,   dimFmt(p.height_mm)),
     specHTML(T.specGasketOD, dimFmt(p.gasket_od_mm)),
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
+    specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)), // burst pressure sits under Length (column 3, row 2)
   ].filter(Boolean);
 
   // Group 2 — filtration performance (Style omitted: already shown as badge)
@@ -1315,7 +1358,6 @@ function renderCard(p, index) {
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
     specHTML(T.specMediaType, MEDIA_LABEL),
-    specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)),
     specHTML(T.specCollapse,  psiFmt(p.collapse_pressure_psi)),
   ].filter(Boolean);
 
@@ -1343,29 +1385,56 @@ function renderCard(p, index) {
     ? 'Producto identificado. Referencias OEM y de competidores pendientes de revisi\u00f3n t\u00e9cnica. Las aplicaciones sin evidencia verificada no se muestran.'
     : 'Product identified. OEM and competitor references require technical review. Applications without verified evidence are withheld.';
 
+  // Hero block (Fleetguard-style layout): photo slot + identity + description + related parts.
+  // The photo slot is rendered for every SKU; without an approved CDN image it shows a placeholder.
+  const hasPhoto = Boolean(p.image_url && /^https:\/\/cdn\.elimfilters\.com\//.test(String(p.image_url)));
+  const phText = currentLang === 'es' ? 'Imagen próximamente' : 'Image coming soon';
+  const photoHTML = hasPhoto
+    ? `<div class="spec-photo" tabindex="0" role="button" aria-label="Zoom ${esc(sku)}"><img src="${esc(p.image_url)}" alt="${esc(sku)} ELIMFILTERS" loading="lazy" decoding="async" onerror="this.closest('.spec-photo').classList.add('is-empty');this.remove()"><span class="spec-photo-ph">${phText}</span></div>`
+    : `<div class="spec-photo is-empty"><span class="spec-photo-ph">${phText}</span></div>`;
+  const relatedHTML = (() => {
+    const alts = Array.isArray(p.alternatives) ? p.alternatives.filter(Boolean) : [];
+    const chips = alts.map(a => {
+      const altSku = typeof a === 'object' ? (a.sku || a.code || '') : String(a);
+      return altSku ? `<a href="/results.html?q=${encodeURIComponent(altSku)}" class="see-also-chip">${esc(altSku)}</a>` : '';
+    }).filter(Boolean).join('');
+    if (!chips) return '';
+    return `<div class="hero-related"><p class="hero-related-title">${currentLang === 'es' ? 'Piezas relacionadas' : 'Related Parts'}</p><p class="hero-related-sub">${T.altTitle || 'See Also'}</p><div class="hero-related-chips">${chips}</div></div>`;
+  })();
+
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
       <div class="card-inner">
-        <div class="card-header">
-          <div class="card-identity">
+        <nav class="card-crumbs" aria-label="Breadcrumb"><a href="https://elimfilters.com">${currentLang === 'es' ? 'Inicio' : 'Home'}</a> / <a href="/">Part Search</a>${p.filter_type ? ` / <span>${esc(p.filter_type)}</span>` : ''}${p.filter_subtype ? ` / <span>${esc(p.filter_subtype)}</span>` : ''} / <strong>${esc(sku)}</strong></nav>
+        <div class="card-hero">
+          ${photoHTML}
+          <div class="hero-info">
+            <div class="card-header">
+              <div class="card-identity">
             <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERSÂ®</span>
             <span class="card-sku">${esc(sku)}</span>
           </div>
-          <div class="card-badges">
+            </div>
+            <p class="hero-type">${esc([p.filter_type, p.filter_subtype].filter(Boolean).join(', '))}</p>
+
+<p class="card-desc" role="status">${esc(reviewNotice)}</p>
+        ${p.catalog_validation?.state === 'BLOCKED' ? `<p class="card-desc" role="status">${currentLang === 'es' ? 'SKU bloqueado en la auditoría registrada; requiere revisión antes de usar su compatibilidad.' : 'SKU blocked in the recorded audit; compatibility requires review before use.'}</p>` : ''}
+        ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
+            <div class="hero-row">
+              <div class="card-badges">
             ${p.filter_type      ? `<span class="badge badge-type">${esc(p.filter_type)}</span>` : ''}
             <span class="badge badge-type">${MEDIA_LABEL}</span>
             ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
             ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
             ${p.technology       ? `<a href="https://elimfilters.com/technologies/${String(p.technology).replace(/[™®©]/g, '').normalize('NFKD').replace(/[^A-Za-z0-9]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
           </div>
+              ${relatedHTML}
+            </div>
+          </div>
         </div>
 
-        <p class="card-desc" role="status">${esc(reviewNotice)}</p>
-        ${p.catalog_validation?.state === 'BLOCKED' ? `<p class="card-desc" role="status">${currentLang === 'es' ? 'SKU bloqueado en la auditoría registrada; requiere revisión antes de usar su compatibilidad.' : 'SKU blocked in the recorded audit; compatibility requires review before use.'}</p>` : ''}
-        ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
-
         ${specs.length ? `
-          <div class="specs-section">
+          <div class="specs-section specs-main">
             <p class="specs-title">${T.specsTitle}</p>
             ${dimSpecs.length ? `
             <div class="specs-group">
@@ -1463,18 +1532,6 @@ function renderCard(p, index) {
             </div>
           </div>
         ` : ''}
-
-        ${(() => {
-          const alts = Array.isArray(p.alternatives) ? p.alternatives.filter(Boolean) : [];
-          if (!alts.length) return '';
-          const chips = alts.map(a => {
-            const altSku = typeof a === 'object' ? (a.sku || a.code || '') : String(a);
-            if (!altSku) return '';
-            return `<a href="/results.html?q=${encodeURIComponent(altSku)}" class="see-also-chip">${esc(altSku)}</a>`;
-          }).filter(Boolean).join('');
-          if (!chips) return '';
-          return `<div class="see-also"><span class="see-also-label">${T.altTitle || 'See Also'}</span>${chips}</div>`;
-        })()}
       </div>
     </article>`;
 }
@@ -1694,5 +1751,31 @@ async function primaryResultsWithDiscoveredAlternatives(results, rawReference) {
 // executeSearch() is called by detectLang().then() above — no boot call needed
 </script>
 
+<script>
+/* part-search: in-box hover zoom + click/tap/Enter lightbox for .spec-photo */
+(function () {
+  var fine = matchMedia('(hover:hover) and (pointer:fine)');
+  function box(t) { return t && t.closest ? t.closest('.spec-photo') : null; }
+  function pos(b, e) {
+    var r = b.getBoundingClientRect();
+    b.style.setProperty('--zx', ((e.clientX - r.left) / r.width * 100) + '%');
+    b.style.setProperty('--zy', ((e.clientY - r.top) / r.height * 100) + '%');
+  }
+  document.addEventListener('mouseover', function (e) { var b = box(e.target); if (b && fine.matches) { pos(b, e); b.classList.add('is-zoom'); } });
+  document.addEventListener('mousemove', function (e) { var b = box(e.target); if (b && fine.matches) pos(b, e); });
+  document.addEventListener('mouseout', function (e) { var b = box(e.target); if (b && !b.contains(e.relatedTarget)) b.classList.remove('is-zoom'); });
+  function open(b) {
+    var src = b.querySelector('img'); if (!src) return;
+    var o = document.createElement('div'), i = document.createElement('img');
+    o.className = 'photo-lightbox'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-label', src.alt);
+    i.src = src.src; i.alt = src.alt; o.appendChild(i);
+    function close() { o.remove(); document.removeEventListener('keydown', k); }
+    function k(ev) { if (ev.key === 'Escape') close(); }
+    o.addEventListener('click', close); document.addEventListener('keydown', k); document.body.appendChild(o);
+  }
+  document.addEventListener('click', function (e) { var b = box(e.target); if (b) open(b); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var b = box(document.activeElement); if (b) open(b); } });
+})();
+</script>
 </body>
 </html>

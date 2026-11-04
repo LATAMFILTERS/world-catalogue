@@ -143,6 +143,15 @@ If the request names the Branding Subagent, or otherwise asks for an ELIMFILTERS
 
 Do not ask the user to restate routine colors, logo, technology, release procedure, or per-image approval when those values resolve from the canonical catalog, Branding governance, and the authorized render packet. Fail closed only when required product identity, official mechanical reference, or mandatory evidence cannot be resolved.
 
+## Imagen en Cloudflare = asignada a la página de su SKU (definido por Victor, 2026-11-04)
+
+Cada vez que se anexa o publica una imagen de producto en Cloudflare (R2 `elimfilters-renders`, servida en `https://cdn.elimfilters.com`) debe quedar asignada a la página del SKU correspondiente.
+
+- La asignación es por SKU exacto. El archivo debe llamarse `products/<SKU>/...` (con `manifest.json`), `<SKU>.png|jpg|webp` o `<SKU>-...-approved.png`. Nunca se asigna por parecido ni por suposición; si el nombre no lleva el SKU exacto, se corrige el nombre antes de publicar.
+- `lib/r2-catalog-image-sync.js` (arrancado desde `server-original.js`) escribe `elimfilters_catalog.image_url` de ese SKU. `buildFilterData` lo expone (solo URLs `https://cdn.elimfilters.com/`) y `part-search/results.html` lo muestra en el espacio de imagen de la tarjeta del SKU. Cada SKU mantiene ese espacio; sin imagen aprobada se muestra un marcador "Image coming soon".
+- Después de publicar, verificar que (1) la fila del SKU tiene `image_url` y (2) la página de resultados del SKU muestra la imagen. No dar la imagen por asignada sin esa comprobación.
+- Pendiente conocido: las páginas SEO estáticas por SKU (`lib/install-part-seo-pages.js`) todavía no usan `image_url`.
+
 ## Ponytail implementation rule
 
 Ponytail is the default code-simplification discipline for agentic changes in this repository. Apply it after understanding and tracing the real flow, never instead of analysis.
