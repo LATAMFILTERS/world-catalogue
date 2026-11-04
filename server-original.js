@@ -15,6 +15,7 @@ const { publicFilterType, publicSubType } = require('./lib/public-filter-type');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
 const { findPlatform, parseVehicleSearchText, normalizeAlphaNum } = require('./lib/vehicle-application-normalizer');
+const { resolveDeterministically } = require('./lib/bot-protocol-unified-orchestrator');
 
 // ─── Rate Limiters ────────────────────────────────────────────────────────────
 const searchLimiter = rateLimit({
@@ -792,6 +793,36 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       return res.json({reply,outcome:'follow_up',supportRecommended:true,escalated:true});
     }
 
+    // Resolve catalog/application questions deterministically before knowledge engine or LLM.
+    // This is the authoritative path for vehicle fitment, exact references and governed catalog facts.
+    const deterministic = await resolveDeterministically({
+      message: message.trim(),
+      sessionId,
+      conversation_id: sessionId,
+      channel: 'web',
+      lang
+    });
+    if (deterministic?.answer) {
+      const reply = deterministic.answer;
+      session.unresolvedAttempts = 0;
+      session.history.push(
+        { role: 'user', content: message.trim() },
+        { role: 'assistant', content: reply }
+      );
+      session.history = session.history.slice(-20);
+      session.lastActivity = Date.now();
+      _chatSessions.set(sessionId, session);
+      return res.json({
+        reply,
+        outcome: 'resolved',
+        buyerType: session.buyerType,
+        unresolvedAttempts: 0,
+        supportRecommended: false,
+        escalated: false,
+        source: deterministic.deterministic_router?.source || 'bot_protocol'
+      });
+    }
+
     // Attempt to create candidate case for knowledge center workflow
     let candidateCaseId = null;
     if (KNOWLEDGE_CENTER_API_URL && KNOWLEDGE_CENTER_API_KEY) {
@@ -1062,7 +1093,7 @@ async function cacheSet(key, val, ttlMs) {
 const COMPETITOR_BRANDS = new Set([
   'DONALDSON','BALDWIN','FLEETGUARD','MANN','MANN+HUMMEL','MANN-HUMMEL',
   'WIX','FRAM','PUROLATOR','NAPA','NAPA GOLD','AC DELCO','ACDELCO','BOSCH','MAHLE','MAHLE/KNECHT',
-  'HENGST','SAKURA','HASTINGS','LUBER-FINER','LUBERFINER','PARKER',
+  'HENGST','SAKURA','HASTINGS','LUBER-FINER','LUBERFINER','HIFI','HIFI FILTER','VMC','PARKER',
   'PALL','HYDAC','MP FILTRI','MPFILTRI','UFI','CHAMPION','COOPERSFITERS',
   'COOPERSFILTERS','MOTORCRAFT','KNECHT','SOGEFI','FILTRON','SOFIMA',
   'FIAAM','NIPPARTS','STARLINE','CHAMPION LABS','CARQUEST','PRONTO',
@@ -1083,6 +1114,7 @@ function normalizeBrandKey(s) {
   return s.toUpperCase().replace(/[®™]/g, '').replace(/[-+]/g, ' ').replace(/\s+/g, ' ').trim();
 }
 const NORMALIZED_COMPETITOR_BRANDS = new Set([...COMPETITOR_BRANDS].map(normalizeBrandKey));
+const { classifyReference } = require('./lib/cross-reference-classification');
 
 function isCompetitor(manufacturer) {
   if (!manufacturer) return false;
@@ -1173,7 +1205,7 @@ function parseRefs(arr){
     const codeHasDigit = /\d/.test(r.code);
     const manuHasDigit = /\d/.test(r.manufacturer);
     if (!codeHasDigit && manuHasDigit && r.code.length >= 3 && HAS_LETTER.test(r.code)) {
-      return { manufacturer: r.code, code: r.manufacturer };
+      return { ...r, manufacturer: r.code, code: r.manufacturer };
     }
     return r;
   }
@@ -1181,7 +1213,9 @@ function parseRefs(arr){
   return arr
     .map(item => ({
       manufacturer: fixMojibake(String(item.manufacturer || item.brand || '').trim()),
-      code: fixMojibake(String(item.code || '').trim())
+      code: fixMojibake(String(item.code || item.reference || '').trim()),
+      classification: item.classification || null,
+      source_type: item.source_type || null
     }))
     .map(unswap)
     .filter(r => r.manufacturer && r.code)
@@ -1259,14 +1293,15 @@ async function enrichAlternatives(products, client) {
 
 // Split a combined refs array into { oem, competitor }
 function splitRefs(arr) {
-  if (!arr || !Array.isArray(arr)) return { oem: [], competitor: [] };
-  const oem = [], competitor = [];
+  if (!arr || !Array.isArray(arr)) return { oem: [], competitor: [], unknown: [] };
+  const oem = [], competitor = [], unknown = [];
   arr.forEach(item => {
-    const mfr = item.manufacturer || item.brand || '';
-    if (isCompetitor(mfr)) competitor.push(item);
-    else oem.push(item);
+    const classification = classifyReference(item);
+    if (classification === 'OEM') oem.push(item);
+    else if (classification === 'AFTERMARKET') competitor.push(item);
+    else unknown.push(item);
   });
-  return { oem, competitor };
+  return { oem, competitor, unknown };
 }
 
 function detectLang(req) {
@@ -1377,7 +1412,25 @@ function buildFilterData(row, lang = 'en'){
   // may contain competitor filter-brand codes. Merging both arrays and running
   // splitRefs() keeps OEM equipment manufacturers and competitor filter brands
   // in the correct columns regardless of what the DB stored.
-  const refs = splitRefs([...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)]);
+  const oemStored = parseRefs(row.oem_codes);
+  const compStored = parseRefs(row.competitor_codes);
+  const refs = splitRefs([...oemStored, ...compStored]);
+  // Manufacturers the classifier does not know (UNKNOWN) used to be dropped from the response.
+  // Keep them in the column where the catalog stored them: oem_codes -> OEM, competitor_codes -> competitor.
+  // A reference already shown (same manufacturer alias + code) is not repeated in the other column.
+  if (refs.unknown && refs.unknown.length) {
+    const aliasBrand = (b) => {
+      let s = normalizeBrandKey(String(b || '')).replace(/\b(PTY|LTD|INC|CORP|CORPORATION|CO)\b/g, '').replace(/\s+/g, ' ').trim();
+      if (s === 'AMC') s = 'AMERICAN MOTORS';
+      return s;
+    };
+    const keyOf = (r) => aliasBrand(r.manufacturer) + '|' + String(r.code || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    const shown = new Set([...refs.oem, ...refs.competitor].map(keyOf));
+    const fromOem = refs.unknown.filter(r => oemStored.includes(r));
+    const fromComp = refs.unknown.filter(r => !oemStored.includes(r));
+    for (const r of fromOem) { const k = keyOf(r); if (!shown.has(k)) { shown.add(k); refs.oem.push(r); } }
+    for (const r of fromComp) { const k = keyOf(r); if (!shown.has(k)) { shown.add(k); refs.competitor.push(r); } }
+  }
 
   return {
     elimfilters_sku: row.sku,
@@ -1408,6 +1461,13 @@ function buildFilterData(row, lang = 'en'){
     competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
+    supersession: enrichment.supersession || null,
+    reference_relationships: enrichment.reference_relationships || null,
+    matched_reference: row.matched_reference ? {
+      part_number: row.matched_reference,
+      reference_type: row.matched_reference_type || null,
+      source: row.matched_reference_source || null
+    } : null,
     equipment_applications: fixMojibakeDeep(row.equipment_applications),
     vehicle_applications: fixMojibakeDeep(row.vehicle_applications)
   };
@@ -1744,6 +1804,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   try {
     await client.query("SET client_encoding = 'UTF8'");
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
+    const qNormalized = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
 
 
     // A retired row that names a successor (resolution_status.superseded_by) is not out of scope:
@@ -1773,8 +1834,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     // 1b. codigo_base match (Donaldson base code e.g. P552100)
     const byBase = await client.query(
-      `SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(codigo_base,'-','')) = $1 LIMIT 10`,
-      [q]
+      `SELECT * FROM elimfilters_catalog_active_v
+       WHERE UPPER(REPLACE(codigo_base,'-','')) = $1
+          OR REGEXP_REPLACE(UPPER(COALESCE(codigo_base,'')), '[^A-Z0-9]', '', 'g') = $2
+       LIMIT 10`,
+      [q, qNormalized]
     );
     if (byBase.rows.length > 0) {
       const products = byBase.rows.map(r => buildFilterData(r, lang));
@@ -1798,11 +1862,14 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     // 1c. Exact governed reference match (e.g. Donaldson listing aliases / consolidated source codes)
     // A renumbered ELIMFILTERS SKU is registered here as SUPERSEDED so the former SKU still finds the product.
     const byExactRef = await client.query(
-      `SELECT DISTINCT ON (c.sku) c.*
+      `SELECT DISTINCT ON (c.sku)
+         c.*,
+         e.reference_type AS matched_reference_type,
+         e.part_number AS matched_reference,
+         e.source AS matched_reference_source
        FROM exact_part_reference e
        JOIN elimfilters_catalog_active_v c ON c.sku = e.sku
-       WHERE (UPPER(e.brand) = 'DONALDSON'
-              OR (UPPER(e.brand) = 'ELIMFILTERS' AND e.reference_type = 'SUPERSEDED'))
+       WHERE (UPPER(e.brand) = 'DONALDSON' OR (UPPER(e.brand) = 'ELIMFILTERS' AND e.reference_type = 'SUPERSEDED'))
          AND UPPER(REPLACE(REPLACE(e.part_number,'-',''),' ','')) = $1
        ORDER BY c.sku, e.id DESC
        LIMIT 10`,
@@ -1837,11 +1904,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
        LEFT JOIN search_result_priority p
          ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
         AND p.sku = v.sku
-       WHERE v.code = $1
-       ${validDuty ? 'AND c.duty = $2' : ''}
+       WHERE (v.code = $1 OR REGEXP_REPLACE(UPPER(COALESCE(v.code,'')), '[^A-Z0-9]', '', 'g') = $2)
+       ${validDuty ? 'AND c.duty = $3' : ''}
        ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
        LIMIT 20`,
-      [q, ...dutyArgs]
+      [q, qNormalized, ...dutyArgs]
     );
     if (xrefResult.rows.length > 0) {
       const xrows = xrefResult.rows;
@@ -1892,6 +1959,30 @@ app.get('/api/search', searchLimiter, async (req, res) => {
           candidates: topSkus,
           message: `Code ${raw} matches ${topSkus.length} products with equal priority. Provide duty or manufacturer to resolve.`,
           source: 'xref_ambiguous',
+        });
+      }
+
+      const singlePolicy = governanceForReferences([raw]);
+      const singleApprovedSet = singlePolicy?.approvedSkus?.length
+        ? new Set(singlePolicy.approvedSkus.map(s => s.toUpperCase()))
+        : null;
+      const singleGovernedRows = singleApprovedSet
+        ? xrows.filter(r => singleApprovedSet.has(String(r.sku).toUpperCase()))
+        : [];
+      if (singleGovernedRows.length) {
+        if (!validDuty) {
+          const mixed = await handleMixedDuty(singleGovernedRows, lang, client);
+          if (mixed) return res.json(mixed);
+        }
+        const products = singleGovernedRows.slice(0, 10).map(r => buildFilterData(r, lang));
+        await enrichAlternatives(products, client);
+        singleGovernedRows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+        return res.json({
+          success: true,
+          results: products,
+          source: 'xref_governed',
+          resolution: 'RESOLVED',
+          governed_reference: singlePolicy.reference,
         });
       }
 
@@ -3394,6 +3485,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
   try {
     await client.query("SET client_encoding = 'UTF8'");
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
+    const qNormalized = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
 
 
     const excludedSku = await client.query(
