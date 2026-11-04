@@ -14,8 +14,10 @@ routes.get('/health', async (_req, res) => {
   res.json({ status: 'ok', service: 'knowledge-center-api' });
 });
 
-routes.post('/candidate-cases', requireRole('SUPPORT_REVIEWER','ENGINEERING_REVIEWER','ADMIN','SYSTEM'), async (req: ActorRequest,res) => {
-  res.status(201).json(await service.createCandidateCase(createCandidateCaseSchema.parse(req.body), req.actorId!));
+routes.post('/candidate-cases', requireRole('SUPPORT_REVIEWER','ENGINEERING_REVIEWER','ADMIN','SYSTEM','BOT_PROTOCOL'), async (req: ActorRequest,res,next) => {
+  try {
+    res.status(201).json(await service.createCandidateCase(createCandidateCaseSchema.parse(req.body), req.actorId!));
+  } catch (error) { next(error); }
 });
 routes.get('/candidate-cases', requireRole('SUPPORT_REVIEWER','ENGINEERING_REVIEWER','APPROVER','ADMIN'), async (req,res) => {
   const q=z.object({limit:z.coerce.number().int().min(1).max(100).default(25),offset:z.coerce.number().int().min(0).default(0)}).parse(req.query);

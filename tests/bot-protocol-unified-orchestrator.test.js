@@ -7,12 +7,20 @@ const {
   PROTOCOL_VERSION,
   isReplacementElementRequest,
   extractApplicationEntities,
-  shouldDeferReferenceToCanonical
+  requestedFilterSystem,
+  shouldDeferReferenceToCanonical,
+  maintenanceSystem,
+  serviceRole,
+  isIntegratedComponent,
+  governApplicationProducts
 } = require('../lib/bot-protocol-unified-orchestrator');
 const {
   normalizeState,
   createEmptyState
 } = require('../lib/bot-protocol-memory');
+const {
+  looksLikeVehicleApplicationQuery
+} = require('../lib/bot-protocol-deterministic-router');
 const {
   RACOR_TURBINE_COMPATIBILITY,
   compatibleSeriesFromProduct,
@@ -53,6 +61,80 @@ test('extracts Toyota RAV4 year application entities', () => {
 test('normalizes common RAV4 voice variants', () => {
   assert.equal(extractApplicationEntities('Toyota RAV 4 2022, qué filtros usa').model, 'RAV4');
   assert.equal(extractApplicationEntities('Toyota Rackford 2022, qué filtros usa').model, 'RAV4');
+});
+
+test('RAV4 application query infers Toyota when brand is omitted', () => {
+  assert.deepEqual(extractApplicationEntities('me podrias indicar que filtros usa la rav4 2022'), {
+    brand: 'TOYOTA',
+    model: 'RAV4',
+    engine: null,
+    year: 2022,
+    tokens: ['TOYOTA', 'RAV4']
+  });
+});
+
+test('RAV4 application query bypasses exact-reference preflight without explicit Toyota', () => {
+  assert.equal(looksLikeVehicleApplicationQuery('me podrias indicar que filtros usa la rav4 2022'), true);
+  assert.equal(looksLikeVehicleApplicationQuery('qué filtros usa la RAV-4 2022'), true);
+});
+
+test('generic vehicle and equipment application queries do not depend on a hardcoded brand list', () => {
+  assert.deepEqual(extractApplicationEntities('qué filtros usa Bobcat T770 2021'), {
+    brand: 'BOBCAT',
+    model: 'T770',
+    engine: null,
+    year: 2021,
+    tokens: ['BOBCAT', 'T770']
+  });
+  assert.deepEqual(extractApplicationEntities('qué filtros lleva CAT 320D'), {
+    brand: 'CAT',
+    model: '320D',
+    engine: null,
+    year: null,
+    tokens: ['CAT', '320D']
+  });
+  assert.equal(looksLikeVehicleApplicationQuery('qué filtros usa Bobcat T770 2021'), true);
+  assert.equal(looksLikeVehicleApplicationQuery('qué filtros lleva CAT 320D'), true);
+});
+
+test('equipment continuation routes Freightliner model as application, not part reference', () => {
+  const message = 'para un freightliner columbia cl120 motor detroit diesel';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'FREIGHTLINER',
+    model: 'COLUMBIA CL120',
+    engine: 'DETROIT DIESEL',
+    year: null,
+    tokens: ['FREIGHTLINER', 'COLUMBIA CL120', 'DETROIT DIESEL']
+  });
+  assert.equal(looksLikeVehicleApplicationQuery(message), true);
+});
+
+test('normalizes Freightliner S60 alias even when make follows model', () => {
+  const message = 'que filtros lleva el columbia Cl120 Freightliner como motor detroit diesel s60';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'FREIGHTLINER',
+    model: 'COLUMBIA CL120',
+    engine: 'DETROIT DIESEL SERIES 60',
+    year: null,
+    tokens: ['FREIGHTLINER', 'COLUMBIA CL120', 'DETROIT DIESEL SERIES 60']
+  });
+  assert.equal(requestedFilterSystem(message), null);
+});
+
+test('keeps requested filter system separate from Mack MP8 equipment entities', () => {
+  const message = 'que filtro de aceite usa el Mack con motor Mp8';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'MACK',
+    model: null,
+    engine: 'MP8',
+    year: null,
+    tokens: ['MACK', 'MP8']
+  });
+  assert.equal(requestedFilterSystem(message), 'oil');
+});
+
+test('bare part-number phrasing can still use reference resolution', () => {
+  assert.equal(looksLikeVehicleApplicationQuery('filtros para P551313'), false);
 });
 
 test('persists identified housing in normalized conversation state', () => {
@@ -143,4 +225,91 @@ test('active diagnostic data collection keeps a supplied filter reference in the
     shouldDeferReferenceToCanonical('¿Cuál es la equivalencia de P552100?', state, false),
     false
   );
+});
+
+test('heavy-equipment service roles allow legitimate same-system filters', () => {
+  const governed = governApplicationProducts([
+    { sku: 'EA10001', filter_type: 'Air Filter', description: 'Primary outer element' },
+    { sku: 'EA10002', filter_type: 'Air Filter', description: 'Secondary safety inner element' },
+    { sku: 'EL10001', filter_type: 'Lube Oil Filter', description: 'Full-flow engine oil filter' },
+    { sku: 'EL10002', filter_type: 'Lube Oil Filter', description: 'Bypass engine oil filter' },
+    { sku: 'EF10001', filter_type: 'Fuel Water Separator', description: 'Primary water separator' },
+    { sku: 'EF10002', filter_type: 'Fuel Filter', description: 'Secondary final fuel filter' }
+  ]);
+
+  assert.deepEqual(governed.routine.map(product => product.sku), [
+    'EA10001', 'EA10002', 'EL10001', 'EL10002', 'EF10001', 'EF10002'
+  ]);
+  assert.equal(governed.conflicts.length, 0);
+});
+
+test('same service position remains a governed conflict', () => {
+  const governed = governApplicationProducts([
+    { sku: 'EA20001', filter_type: 'Air Filter', description: 'Primary outer element' },
+    { sku: 'EA20002', filter_type: 'Air Filter', description: 'Primary outer element' }
+  ]);
+
+  assert.equal(governed.routine.length, 0);
+  assert.equal(governed.conflicts.length, 1);
+  assert.equal(governed.conflicts[0].system, 'air');
+  assert.equal(governed.conflicts[0].service_role, 'primary_outer');
+});
+
+test('DRYCORE products normalize to air-dryer service and conflicting variants fail closed', () => {
+  assert.equal(maintenanceSystem({ sku: 'ED47747', filter_type: 'air' }), 'air_dryer');
+  assert.equal(maintenanceSystem({
+    sku: 'ED47747',
+    filter_type: 'air',
+    technology: 'DRYCORE™'
+  }), 'air_dryer');
+
+  assert.equal(serviceRole({
+    sku: 'ED47747',
+    filter_type: 'air',
+    technology: 'DRYCORE™'
+  }), 'air_dryer');
+
+  const governed = governApplicationProducts([
+    {
+      sku: 'ED47747',
+      filter_type: 'air',
+      technology: 'DRYCORE™',
+      service_role: 'primary',
+      configuration: 'variant-a'
+    },
+    {
+      sku: 'ED47750',
+      filter_type: 'air',
+      technology: 'DRYCORE™',
+      service_role: 'secondary',
+      configuration: 'variant-b'
+    }
+  ]);
+
+  assert.equal(governed.routine.length, 0);
+  assert.equal(governed.conflicts.length, 1);
+  assert.equal(governed.conflicts[0].system, 'air_dryer');
+  assert.equal(governed.conflicts[0].service_role, 'air_dryer');
+  assert.deepEqual(governed.conflicts[0].configurations.sort(), ['VARIANT-A', 'VARIANT-B']);
+});
+
+test('generic filter assembly is not automatically classified as integrated', () => {
+  assert.equal(isIntegratedComponent({
+    sku: 'EF30001',
+    filter_type: 'Fuel Filter Assembly',
+    description: 'Service replacement filter assembly'
+  }), false);
+
+  assert.equal(isIntegratedComponent({
+    sku: 'EF30002',
+    filter_type: 'Fuel Filter',
+    description: 'Integrated into fuel pump module inside the tank'
+  }), true);
+});
+
+test('service role recognizes hydraulic and transmission positions', () => {
+  assert.equal(serviceRole({ filter_type: 'Hydraulic Filter', description: 'Hydraulic return filter' }), 'return');
+  assert.equal(serviceRole({ filter_type: 'Hydraulic Filter', description: 'Pilot circuit filter' }), 'pilot');
+  assert.equal(maintenanceSystem({ filter_type: 'Transmission Filter', description: 'External transmission return filter' }), 'transmission');
+  assert.equal(serviceRole({ filter_type: 'Transmission Filter', description: 'External transmission return filter' }), 'return');
 });

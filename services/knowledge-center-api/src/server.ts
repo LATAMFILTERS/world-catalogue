@@ -5,7 +5,7 @@ const port = Number(process.env.PORT ?? 3002);
 
 if (bridgeUpstream) {
   const app = createBridgeApp(bridgeUpstream, 'knowledge-center-api');
-  const server = app.listen(port, () => {
+  const server = app.listen(port, process.env.HOST || '0.0.0.0', () => {
     console.log(`Knowledge Center API bridge listening on port ${port} -> ${bridgeUpstream}`);
   });
 
@@ -24,7 +24,7 @@ if (bridgeUpstream) {
   ]);
 
   await checkDatabase();
-  const server = app.listen(config.PORT, () => {
+  const server = app.listen(config.PORT, process.env.HOST || '0.0.0.0', () => {
     console.log(`Knowledge Center API listening on port ${config.PORT}`);
   });
   async function shutdown(signal: string) {

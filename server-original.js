@@ -11,10 +11,12 @@ const {
   isSameFunctionalFamily,
   filterAlternativesByFunctionalFamily,
 } = require('./lib/alternative-functional-family');
+const { publicFilterType, publicSubType } = require('./lib/public-filter-type');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
+const { resolveDeterministically } = require('./lib/bot-protocol-unified-orchestrator');
 
-// ─── Rate Limiters ────────────────────────────────────────────────────────────
+// â”€â”€â”€ Rate Limiters â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const searchLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 60,
@@ -37,7 +39,7 @@ const importLimiter = rateLimit({
   legacyHeaders: false,
   message: { error: 'Too many import requests.' },
 });
-// ─── Admin key middleware ─────────────────────────────────────────────────────
+// â”€â”€â”€ Admin key middleware â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const ADMIN_KEY = process.env.ADMIN_KEY;
 if (!ADMIN_KEY) throw new Error('ADMIN_KEY environment variable is required');
 
@@ -63,11 +65,11 @@ require('./lib/install-content-intelligence').installContentIntelligence(app, re
 app.set('trust proxy', 1);
 
 // Mounts /api/bot/protocol (+ /image) once, explicitly, right after the app
-// is created — no express-module patching, no load-order dependency between
+// is created â€” no express-module patching, no load-order dependency between
 // server.js and server-protocol.js.
 require('./lib/install-bot-protocol').installBotProtocol(app);
 
-// ─── HTTPS enforcement + security headers (production only) ────────────────────────────────────────
+// â”€â”€â”€ HTTPS enforcement + security headers (production only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production' && !req.secure && req.get('x-forwarded-proto') !== 'https') {
     return res.redirect(301, 'https://' + req.get('host') + req.originalUrl);
@@ -80,7 +82,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// ─── Outlook Mail Service (Microsoft 365) ────────────────────────────────────────
+// â”€â”€â”€ Outlook Mail Service (Microsoft 365) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let outlookMailService = null;
 try {
   outlookMailService = new OutlookMailService();
@@ -90,7 +92,7 @@ try {
   console.warn('[outlook] Email delivery may fail. Ensure AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID are set.');
 }
 
-// ─── Translation Service (google-translate-free library - no API key needed) ────────
+// â”€â”€â”€ Translation Service (google-translate-free library - no API key needed) â”€â”€â”€â”€â”€â”€â”€â”€
 let translationService = null;
 try {
   translationService = new TranslationService();
@@ -103,7 +105,7 @@ try {
 const emailIntentClassifier = new EmailIntentClassifier();
 console.log('[email-classifier] Initialized with 6 intent types');
 
-// ─── SEO/GEO Redirects (knowledge-system -> knowledge-center) ───────────────────
+// â”€â”€â”€ SEO/GEO Redirects (knowledge-system -> knowledge-center) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Maps legacy routes to new structures. Covers trailing slashes and retains query parameters.
 const LEGACY_REDIRECTS = {
   '/knowledge-system': '/knowledge-center',
@@ -200,7 +202,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// ─── SEO Redirects: retired pre-migration marketing URLs ───────────────────
+// â”€â”€â”€ SEO Redirects: retired pre-migration marketing URLs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Flat WordPress-era URLs and superseded /systems, /technologies slugs found
 // still receiving Search Console impressions after the Next.js migration.
 // Each destination was verified to exist in frontend/src/app before mapping.
@@ -274,7 +276,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Healthcheck FIRST — must respond before anything else can fail
+// Healthcheck FIRST â€” must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.1-ld-diag' }));
 
 
@@ -370,8 +372,8 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
   }
   const safeName    = _escHtml(name);
   const safeEmail   = _escHtml(email);
-  const safePhone   = _escHtml(phone || '—');
-  const safeCompany = _escHtml(company || '—');
+  const safePhone   = _escHtml(phone || 'â€”');
+  const safeCompany = _escHtml(company || 'â€”');
   const safeMessage = _escHtml(message).replace(/\n/g, '<br>');
   try {
     const htmlContent = `
@@ -389,7 +391,7 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
     if (outlookMailService) {
       await outlookMailService.send(
         'info@elimfilters.com',
-        `[Web Contact] ${safeName} — ${safeCompany}`,
+        `[Web Contact] ${safeName} â€” ${safeCompany}`,
         htmlContent,
         null,
         'contact'  // Routes to info@elimfilters.com
@@ -441,19 +443,19 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
     }
 
     const htmlContent = `
-      <h2 style="color:#000">New distributor application — elimfilters.com</h2>
+      <h2 style="color:#000">New distributor application â€” elimfilters.com</h2>
       <table cellpadding="8" style="border-collapse:collapse;width:100%;font-family:sans-serif">
         <tr style="background:#f5f5f5"><td><b>Company</b></td><td>${esc(companyName)}</td></tr>
-        <tr><td><b>Legal name</b></td><td>${esc(legalName || '—')}</td></tr>
+        <tr><td><b>Legal name</b></td><td>${esc(legalName || 'â€”')}</td></tr>
         <tr style="background:#f5f5f5"><td><b>Contact</b></td><td>${esc(contactName)}</td></tr>
         <tr><td><b>Email</b></td><td>${esc(email)}</td></tr>
-        <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || '—')}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || 'â€”')}</td></tr>
         <tr><td><b>Country</b></td><td>${esc(country)}</td></tr>
-        <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || '—')}</td></tr>
-        <tr><td><b>Employees</b></td><td>${esc(employees || '—')}</td></tr>
-        <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || '—')}</td></tr>
-        <tr><td><b>Current products</b></td><td>${esc(currentProducts || '—')}</td></tr>
-        <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || '—')}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || 'â€”')}</td></tr>
+        <tr><td><b>Employees</b></td><td>${esc(employees || 'â€”')}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || 'â€”')}</td></tr>
+        <tr><td><b>Current products</b></td><td>${esc(currentProducts || 'â€”')}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || 'â€”')}</td></tr>
       </table>
       ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
     `;
@@ -461,7 +463,7 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
     if (outlookMailService) {
       await outlookMailService.send(
         'distribution_network@elimfilters.com',
-        `[Distributor] ${esc(companyName)} — ${esc(country)}`,
+        `[Distributor] ${esc(companyName)} â€” ${esc(country)}`,
         htmlContent,
         null,
         'distributor'  // Routes to distribution_network@elimfilters.com
@@ -477,7 +479,7 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── Knowledge Center API Integration ────────────────────────────────────────
+// â”€â”€â”€ Knowledge Center API Integration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const KNOWLEDGE_CENTER_API_URL = process.env.KNOWLEDGE_CENTER_API_URL;
 const KNOWLEDGE_CENTER_API_KEY = process.env.KNOWLEDGE_CENTER_API_KEY;
 const KNOWLEDGE_ENGINE_RUNTIME_URL = process.env.KNOWLEDGE_ENGINE_RUNTIME_URL;
@@ -598,7 +600,7 @@ async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
   }
 }
 
-// ─── Chat API (Groq / Llama-3.3-70b) ────────────────────────────────────────
+// â”€â”€â”€ Chat API (Groq / Llama-3.3-70b) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const _chatSessions = new Map();
 const CHAT_UNRESOLVED_LIMIT = 5;
 const CHAT_SUPPORT_EMAIL = 'support@elimfilters.com';
@@ -628,18 +630,18 @@ const CHAT_SYSTEM_PROMPT = `${CHAT_MANDATORY_POLICY}\n\nYou are the official ELI
 ## Conversation approach
 
 **For non-technical users or vague questions:**
-Guide them step by step with short, friendly questions — one at a time. Never overwhelm. Discover:
+Guide them step by step with short, friendly questions â€” one at a time. Never overwhelm. Discover:
 1. What type of equipment or machinery they use (truck, excavator, agricultural tractor, compressor, hydraulic press, etc.)
 2. What problem or concern they have (excessive wear, filter clogging, contamination, high downtime, oil looking dirty, etc.)
 3. Which system is affected (engine, hydraulic circuit, fuel system, cabin, compressed air)
-Then connect the verified chain only in this order: observed symptom → probable contamination mechanism supported by ELIMFILTERS evidence → affected asset risk → protection objective → applicable ELIMFILTERS technology or product line. Never start by asking which filter they want.
+Then connect the verified chain only in this order: observed symptom â†’ probable contamination mechanism supported by ELIMFILTERS evidence â†’ affected asset risk â†’ protection objective â†’ applicable ELIMFILTERS technology or product line. Never start by asking which filter they want.
 
 **For technical users** (they use terms like ISO, Beta ratio, micron, cleanliness code, ppm, etc.):
 Answer directly, precisely, and cordially. Use the full technical depth they expect. Reference ISO codes, Beta ratios, micron ratings, and quantified operational impacts.
 
 **In both cases:**
-- Be human, warm, and conversational — never robotic or like a product catalog
-- Keep responses concise (2–3 short paragraphs or a brief guided question)
+- Be human, warm, and conversational â€” never robotic or like a product catalog
+- Keep responses concise (2â€“3 short paragraphs or a brief guided question)
 - Never list all capabilities unprompted
 - No marketing language ("best", "leading", "superior", "premium")
 - Respond in the same language as the user
@@ -665,26 +667,26 @@ Filtration domains and key standards:
 - [domain:compressed-air] Compressed air: ISO 8573-1 (purity classes: particles, water, oil)
 
 ELIMFILTERS technologies by domain:
-- [technology:macrocore] MACROCORE → air intake (ISO 5011 certified)
-- [technology:syntrax] SYNTRAX → engine lube oil (ISO 16889)
-- [technology:nanoforce] NANOFORCE → hydraulic systems (ISO 16889, sub-micron)
-- [technology:syntapore] SYNTAPORE → primary and secondary spin-on/cartridge diesel fuel filters upstream of pumps and injectors -- NOT water separators, NOT turbine systems (ASTM D6304)
-- [technology:hydrocore] HYDROCORE → fuel/water separation across approved spin-on and cartridge separators (e.g. a generic Racor-style separator) and Turbine Series FH and FG fuel-separation systems (e.g. Turbine Series FH/FG housings and their 2010/2020/2040-series replacement elements, ISO 16332). TURBOCORE is retired; never use it -- HYDROCORE covers both standard and turbine-style separators (or SYNTAPORE if it isn't a separator at all).
-- [technology:microkappa] MICROKAPPA → cabin air (ISO 11155, DIN 71220)
-- [technology:drycore] DRYCORE → compressed air / pneumatic (ISO 8573)
-- [technology:thermacore] THERMACORE → cooling system SCA additive
-- [technology:intekcore] INTEKCORE → zero-bypass radial seal filter housing, air intake (ISO 5011)
-- [technology:duratech] DURATECH → Commercial Line, fleet maintenance kits per vehicle/equipment
-- [technology:marineclean] MARINECLEAN → Commercial Line, marine diesel and hydraulic filtration SKUs
+- [technology:macrocore] MACROCORE â†’ air intake (ISO 5011 certified)
+- [technology:syntrax] SYNTRAX â†’ engine lube oil (ISO 16889)
+- [technology:nanoforce] NANOFORCE â†’ hydraulic systems (ISO 16889, sub-micron)
+- [technology:syntapore] SYNTAPORE â†’ primary and secondary spin-on/cartridge diesel fuel filters upstream of pumps and injectors -- NOT water separators, NOT turbine systems (ASTM D6304)
+- [technology:hydrocore] HYDROCORE â†’ fuel/water separation across approved spin-on and cartridge separators (e.g. a generic Racor-style separator) and Turbine Series FH and FG fuel-separation systems (e.g. Turbine Series FH/FG housings and their 2010/2020/2040-series replacement elements, ISO 16332). TURBOCORE is retired; never use it -- HYDROCORE covers both standard and turbine-style separators (or SYNTAPORE if it isn't a separator at all).
+- [technology:microkappa] MICROKAPPA â†’ cabin air (ISO 11155, DIN 71220)
+- [technology:drycore] DRYCORE â†’ compressed air / pneumatic (ISO 8573)
+- [technology:thermacore] THERMACORE â†’ cooling system SCA additive
+- [technology:intekcore] INTEKCORE â†’ zero-bypass radial seal filter housing, air intake (ISO 5011)
+- [technology:duratech] DURATECH â†’ Commercial Line, fleet maintenance kits per vehicle/equipment
+- [technology:marineclean] MARINECLEAN â†’ Commercial Line, marine diesel and hydraulic filtration SKUs
 
 Validated application records:
 - [application:freightliner-columbia-cl120-detroit-series-60-lube] A Freightliner Columbia CL120 equipped with a Detroit Diesel Series 60 uses two identical full-flow engine-oil filters. Detroit Diesel OEM 23530573 supersedes 23518480 and 23527033. Validated cross-references: Fleetguard LF3620, Baldwin B495, and Donaldson P552100.
 
-Failure chains (root cause → consequence):
-- Particles in oil → abrasive wear → bearing clearance reduction → seizure
-- Water in diesel → injector stiction → HPCR pump failure
-- Dirty hydraulic fluid → valve spool wear → control loss → unplanned downtime
-- Unfiltered cabin air → operator PM10 exposure → health / regulatory risk`;
+Failure chains (root cause â†’ consequence):
+- Particles in oil â†’ abrasive wear â†’ bearing clearance reduction â†’ seizure
+- Water in diesel â†’ injector stiction â†’ HPCR pump failure
+- Dirty hydraulic fluid â†’ valve spool wear â†’ control loss â†’ unplanned downtime
+- Unfiltered cabin air â†’ operator PM10 exposure â†’ health / regulatory risk`;
 
 
 // Cleanup sessions older than 24 h (run every hour)
@@ -698,7 +700,7 @@ setInterval(() => {
 // Maps the frontend's geo-detected language code (sent as `lang`) to the
 // language name used to hint the LLM. Short or ambiguous messages ("ok",
 // a bare part number) carry no language signal of their own, so this gives
-// Groq a starting point — the system prompt still tells it to switch if the
+// Groq a starting point â€” the system prompt still tells it to switch if the
 // user's actual message is written in a different language.
 const CHAT_LANG_NAMES = {
   es: 'Spanish', pt: 'Portuguese', fr: 'French', it: 'Italian', nl: 'Dutch',
@@ -729,24 +731,24 @@ const CHAT_APPLICATION_EVIDENCE_IDS = new Set([
 ]);
 const isApplicationQuestion = (message) => {
   const text = String(message || '').toLowerCase();
-  const asksApplicationFact = /\b(cu[aá]ntos?|cantidad|usa|utiliza|lleva|aplica|compatible|equivalen(?:cia|te)|n[uú]mero de parte|part number|how many|uses?|fits?|compatible|cross[- ]?reference)\b/i.test(text);
-  const mentionsEquipment = /\b(cami[oó]n|truck|motor|engine|freightliner|detroit|series 60|s60|cl120|veh[ií]culo|vehicle|equipo|equipment|maquinaria|machine)\b/i.test(text);
+  const asksApplicationFact = /\b(cu[aÃ¡]ntos?|cantidad|usa|utiliza|lleva|aplica|compatible|equivalen(?:cia|te)|n[uÃº]mero de parte|part number|how many|uses?|fits?|compatible|cross[- ]?reference)\b/i.test(text);
+  const mentionsEquipment = /\b(cami[oÃ³]n|truck|motor|engine|freightliner|detroit|series 60|s60|cl120|veh[iÃ­]culo|vehicle|equipo|equipment|maquinaria|machine)\b/i.test(text);
   return asksApplicationFact && mentionsEquipment;
 };
 const CHAT_SUPPORT_REPLIES = {
-  es: `No encontré una referencia ELIMFILTERS verificada para confirmarlo. Por favor, indicame tu correo electrónico para que nuestro equipo de soporte técnico revise la aplicación y se contacte contigo.`,
-  pt: `Não tenho informações oficiais suficientes para confirmar isso. Escreva para ${CHAT_SUPPORT_EMAIL}.`,
-  fr: `Je ne dispose pas de suffisamment d'informations officielles pour le confirmer. Écrivez à ${CHAT_SUPPORT_EMAIL}.`,
+  es: `No encontrÃ© una referencia ELIMFILTERS verificada para confirmarlo. Por favor, indicame tu correo electrÃ³nico para que nuestro equipo de soporte tÃ©cnico revise la aplicaciÃ³n y se contacte contigo.`,
+  pt: `NÃ£o tenho informaÃ§Ãµes oficiais suficientes para confirmar isso. Escreva para ${CHAT_SUPPORT_EMAIL}.`,
+  fr: `Je ne dispose pas de suffisamment d'informations officielles pour le confirmer. Ã‰crivez Ã  ${CHAT_SUPPORT_EMAIL}.`,
   it: `Non dispongo di informazioni ufficiali sufficienti per confermarlo. Scrivi a ${CHAT_SUPPORT_EMAIL}.`,
   en: `I did not find a verified ELIMFILTERS reference. Please share your email address so our technical support team can review the application and contact you.`,
 };
 const chatSupportReply = (lang) => CHAT_SUPPORT_REPLIES[lang] || CHAT_SUPPORT_REPLIES.en;
 
 const CHAT_OUTPUT_LEAK_PATTERNS = [
-  /\b(okay|ok),?\s+(let['’]?s|let us)\s+(see|think)/i,
+  /\b(okay|ok),?\s+(let['â€™]?s|let us)\s+(see|think)/i,
   /\b(the user|user is asking|i need to|we need to|first,? i|the rules say|according to the rules)\b/i,
   /\b(analysis|reasoning|chain[- ]of[- ]thought|system prompt|developer message|hidden instructions?)\b/i,
-  /\b(el usuario|necesito (?:recordar|analizar|responder)|las reglas dicen|según las reglas|razonamiento interno)\b/i,
+  /\b(el usuario|necesito (?:recordar|analizar|responder)|las reglas dicen|segÃºn las reglas|razonamiento interno)\b/i,
   /TECHNICAL KNOWLEDGE BASE|Required output|Non-negotiable boundaries/i,
 ];
 const isSafeChatOutput = (text) => {
@@ -780,15 +782,45 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
 
     const submittedEmail = message.match(/\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b/i)?.[0]?.toLowerCase() || '';
     const awaitingSupportEmail = session.history.slice(-8).some((turn) =>
-      turn.role === 'assistant' && /correo electr[oó]nico|direcci[oó]n de correo|email address/i.test(turn.content)
+      turn.role === 'assistant' && /correo electr[oÃ³]nico|direcci[oÃ³]n de correo|email address/i.test(turn.content)
     );
     if (submittedEmail && awaitingSupportEmail) {
-      const reply = `Gracias. Registramos tu correo ${submittedEmail}. Nuestro equipo de soporte técnico revisará la aplicación y se pondrá en contacto contigo.`;
+      const reply = `Gracias. Registramos tu correo ${submittedEmail}. Nuestro equipo de soporte tÃ©cnico revisarÃ¡ la aplicaciÃ³n y se pondrÃ¡ en contacto contigo.`;
       session.supportEmail = submittedEmail;
       session.history.push({role:'user',content:message.trim()},{role:'assistant',content:reply});
       session.history = session.history.slice(-20);
       _chatSessions.set(sessionId, session);
       return res.json({reply,outcome:'follow_up',supportRecommended:true,escalated:true});
+    }
+
+    // Resolve catalog/application questions deterministically before knowledge engine or LLM.
+    // This is the authoritative path for vehicle fitment, exact references and governed catalog facts.
+    const deterministic = await resolveDeterministically({
+      message: message.trim(),
+      sessionId,
+      conversation_id: sessionId,
+      channel: 'web',
+      lang
+    });
+    if (deterministic?.answer) {
+      const reply = deterministic.answer;
+      session.unresolvedAttempts = 0;
+      session.history.push(
+        { role: 'user', content: message.trim() },
+        { role: 'assistant', content: reply }
+      );
+      session.history = session.history.slice(-20);
+      session.lastActivity = Date.now();
+      _chatSessions.set(sessionId, session);
+      return res.json({
+        reply,
+        outcome: 'resolved',
+        buyerType: session.buyerType,
+        unresolvedAttempts: 0,
+        supportRecommended: false,
+        escalated: false,
+        source: deterministic.deterministic_router?.source || 'bot_protocol'
+      });
     }
 
     // Attempt to create candidate case for knowledge center workflow
@@ -958,9 +990,9 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     return res.status(500).json({ error: 'Internal error' });
   }
 });
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-// Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
+// Middleware para encoding UTF-8 â€” solo rutas API, no archivos estÃ¡ticos ni webhook
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -982,9 +1014,9 @@ pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
 
-// ─── A: Real-time Learning Loop ───────────────────────────────────────────────
+// â”€â”€â”€ A: Real-time Learning Loop â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
-// function after every cross-reference resolution. Non-blocking — errors are
+// function after every cross-reference resolution. Non-blocking â€” errors are
 // logged but never propagate to the API response.
 async function recordLearning(manufacturer, status) {
   if (!manufacturer || !status) return;
@@ -998,7 +1030,7 @@ async function recordLearning(manufacturer, status) {
   }
 }
 
-// ─── Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) ────────────
+// â”€â”€â”€ Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let _redis = null;
 if (process.env.REDIS_URL) {
   const Redis = require('ioredis');
@@ -1010,7 +1042,7 @@ if (process.env.REDIS_URL) {
   });
   _redis.on('error', (e) => console.error('[redis]', e.message));
   _redis.connect().then(() => console.log('[cache] Redis connected')).catch(() => {
-    console.warn('[cache] Redis unavailable — falling back to in-memory cache');
+    console.warn('[cache] Redis unavailable â€” falling back to in-memory cache');
     _redis = null;
   });
 }
@@ -1048,21 +1080,21 @@ async function cacheSet(key, val, ttlMs) {
   _memCache.set(key, { val, exp: Date.now() + ttlMs });
 }
 
-// Filter brands (competitors) — everything else is an OEM equipment manufacturer
+// Filter brands (competitors) â€” everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
   'DONALDSON','BALDWIN','FLEETGUARD','MANN','MANN+HUMMEL','MANN-HUMMEL',
-  'WIX','FRAM','PUROLATOR','NAPA','AC DELCO','ACDELCO','BOSCH','MAHLE',
-  'HENGST','SAKURA','HASTINGS','LUBER-FINER','LUBERFINER','PARKER',
+  'WIX','FRAM','PUROLATOR','NAPA','NAPA GOLD','AC DELCO','ACDELCO','BOSCH','MAHLE','MAHLE/KNECHT',
+  'HENGST','SAKURA','HASTINGS','LUBER-FINER','LUBERFINER','HIFI','HIFI FILTER','VMC','PARKER',
   'PALL','HYDAC','MP FILTRI','MPFILTRI','UFI','CHAMPION','COOPERSFITERS',
   'COOPERSFILTERS','MOTORCRAFT','KNECHT','SOGEFI','FILTRON','SOFIMA',
   'FIAAM','NIPPARTS','STARLINE','CHAMPION LABS','CARQUEST','PRONTO',
-  'DEFENSE','PENNZOIL','CASTROL','MOBIL','SHELL','TOTAL','DENSO',
+  'DEFENSE','PENNZOIL','CASTROL','MOBIL','MOBIL 1','SHELL','TOTAL','DENSO',
   'TISCO','TRACTORPARTS','AGCO','ATLAS COPCO','SULLAIR','INGERSOLL RAND',
   'COMPAIR','GARDNER DENVER','QUINCY','LEROI','KOBELCO COMPRESSORS',
   'ALCO','INLINE','GOLDENROD','RACOR','PARKER RACOR','DAVCO',
   'FLEETRITE','JOHN DEERE PARTS','CAT PARTS','CASE PARTS',
   'EUROPART','DINEX','TRUCKTEC','FEBI','SWAG','MEYLE','VALEO',
-  'ELOFIC','WABCO','KNORR','ALLISON','ZF',
+  'ELOFIC','ECOGARD','K&N','PREMIUM GUARD','WABCO','KNORR','ALLISON','ZF',
 ]);
 
 // Hyphens/pluses and spacing vary between scraped rows for the same brand
@@ -1070,9 +1102,10 @@ const COMPETITOR_BRANDS = new Set([
 // blocklist and the incoming value the same way so the comparison is
 // consistent regardless of which punctuation variant a row happened to use.
 function normalizeBrandKey(s) {
-  return s.toUpperCase().replace(/[®™]/g, '').replace(/[-+]/g, ' ').replace(/\s+/g, ' ').trim();
+  return s.toUpperCase().replace(/[Â®â„¢]/g, '').replace(/[-+]/g, ' ').replace(/\s+/g, ' ').trim();
 }
 const NORMALIZED_COMPETITOR_BRANDS = new Set([...COMPETITOR_BRANDS].map(normalizeBrandKey));
+const { classifyReference } = require('./lib/cross-reference-classification');
 
 function isCompetitor(manufacturer) {
   if (!manufacturer) return false;
@@ -1088,7 +1121,7 @@ function parseRefs(arr){
 
   // Bad scraper data occasionally stores an internal field name (a spec-table
   // column header, or literal webpage UI text like "Find a Dealer") in either
-  // the "manufacturer" or the "code" position of a cross-reference entry —
+  // the "manufacturer" or the "code" position of a cross-reference entry â€”
   // the two got scrambled at import time, not consistently in one position.
   // These must never reach the API response.
   const INVALID = new Set([
@@ -1133,11 +1166,11 @@ function parseRefs(arr){
 
   // A real manufacturer name always contains at least one letter (Caterpillar,
   // 3M, SKF...). Some scraped rows pair two part numbers together (e.g.
-  // {manufacturer: "23518480", code: "23527033"} — a related/alternate code
+  // {manufacturer: "23518480", code: "23527033"} â€” a related/alternate code
   // relationship, not a cross-reference brand) with no company name at all.
   const HAS_LETTER = /[A-Za-z]/;
 
-  // A real manufacturer name is never *shaped* like a part number either —
+  // A real manufacturer name is never *shaped* like a part number either â€”
   // a short letter prefix (0-4 chars) immediately followed by 3+ digits
   // (LF3620, FL1994, E12981309) is a reference code, not a company name.
   // Real company names are either pure letters/spaces (CATERPILLAR, ATLAS
@@ -1148,7 +1181,7 @@ function parseRefs(arr){
   // 2Y8097) start with a digit, so CODE_SHAPED above never catches them.
   // Generalizing: no real manufacturer name has 3+ digit characters in it
   // anywhere (verified against every legitimate brand seen in production
-  // data, including alphanumeric ones like 3M) — anything with that many
+  // data, including alphanumeric ones like 3M) â€” anything with that many
   // digits is a reference code, not a company name.
   const DIGIT_HEAVY = (s) => (s.match(/\d/g) || []).length >= 3;
 
@@ -1157,13 +1190,13 @@ function parseRefs(arr){
   // Real reference codes are almost always alphanumeric (they contain a
   // digit); real manufacturer names almost always contain a digit-free
   // brand word. When scraped rows get their two fields scrambled the wrong
-  // way around — e.g. {manufacturer: "TL2FSO", code: "SANDVIK"} — swapping
+  // way around â€” e.g. {manufacturer: "TL2FSO", code: "SANDVIK"} â€” swapping
   // them recovers the genuine cross-reference instead of discarding it.
   function unswap(r) {
     const codeHasDigit = /\d/.test(r.code);
     const manuHasDigit = /\d/.test(r.manufacturer);
     if (!codeHasDigit && manuHasDigit && r.code.length >= 3 && HAS_LETTER.test(r.code)) {
-      return { manufacturer: r.code, code: r.manufacturer };
+      return { ...r, manufacturer: r.code, code: r.manufacturer };
     }
     return r;
   }
@@ -1171,7 +1204,9 @@ function parseRefs(arr){
   return arr
     .map(item => ({
       manufacturer: fixMojibake(String(item.manufacturer || item.brand || '').trim()),
-      code: fixMojibake(String(item.code || '').trim())
+      code: fixMojibake(String(item.code || item.reference || '').trim()),
+      classification: item.classification || null,
+      source_type: item.source_type || null
     }))
     .map(unswap)
     .filter(r => r.manufacturer && r.code)
@@ -1188,9 +1223,9 @@ function parseRefs(arr){
     });
 }
 
-// ── Shared: resolve alternatives[] P-codes → ELIMFILTERS SKUs + inherit data ──
+// â”€â”€ Shared: resolve alternatives[] P-codes â†’ ELIMFILTERS SKUs + inherit data â”€â”€
 // Called from every search endpoint so all modes (part / VIN / equipment) benefit.
-// alternatives[] is stored as codigo_base values ("P552100"). This function resolves
+// alternatives[] may store codigo_base values ("P552100") or ELIMFILTERS SKUs ("EL82100" / "EH62949"). This function resolves
 // them to EL-SKUs in one batch query and inherits equipment_applications /
 // competitor_codes from the source product when the current product has none.
 async function enrichAlternatives(products, client) {
@@ -1210,13 +1245,16 @@ async function enrichAlternatives(products, client) {
   const { rows } = await client.query(
     `SELECT sku, codigo_base, description, filter_type, sub_type, technology, duty,
             oem_codes, competitor_codes, equipment_applications
-     FROM elimfilters_catalog
-     WHERE UPPER(codigo_base) = ANY($1)`,
+     FROM elimfilters_catalog_active_v
+     WHERE UPPER(codigo_base) = ANY($1) OR UPPER(sku) = ANY($1)`,
     [altCodes]
   );
 
   const altMap = {};
-  rows.forEach(r => { if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r; });
+  rows.forEach(r => {
+    if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r;
+    if (r.sku) altMap[r.sku.toUpperCase()] = r;
+  });
 
   for (const p of withAlts) {
     const resolvedSkus = [];
@@ -1246,14 +1284,15 @@ async function enrichAlternatives(products, client) {
 
 // Split a combined refs array into { oem, competitor }
 function splitRefs(arr) {
-  if (!arr || !Array.isArray(arr)) return { oem: [], competitor: [] };
-  const oem = [], competitor = [];
+  if (!arr || !Array.isArray(arr)) return { oem: [], competitor: [], unknown: [] };
+  const oem = [], competitor = [], unknown = [];
   arr.forEach(item => {
-    const mfr = item.manufacturer || item.brand || '';
-    if (isCompetitor(mfr)) competitor.push(item);
-    else oem.push(item);
+    const classification = classifyReference(item);
+    if (classification === 'OEM') oem.push(item);
+    else if (classification === 'AFTERMARKET') competitor.push(item);
+    else unknown.push(item);
   });
-  return { oem, competitor };
+  return { oem, competitor, unknown };
 }
 
 function detectLang(req) {
@@ -1269,29 +1308,29 @@ function detectLang(req) {
 }
 
 const PROPRIETARY_SUBTYPES = new Set([
-  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquabloc® ii', 'aquabloc ii',
-  'alpha-web™', 'alpha-web', 'synteq xp™',
+  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquablocÂ® ii', 'aquabloc ii',
+  'alpha-webâ„¢', 'alpha-web', 'synteq xpâ„¢',
 ]);
 function safeSubtype(val, lang = 'en') {
   const text = extractText(val, lang);
   if (!text) return null;
-  if (/[®™]/.test(text)) return null;
+  if (/[Â®â„¢]/.test(text)) return null;
   if (PROPRIETARY_SUBTYPES.has(text.toLowerCase())) return null;
   return text;
 }
 
-// ── Mojibake repair ──────────────────────────────────────────────────────────
+// â”€â”€ Mojibake repair â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Some catalog rows were imported through a pipeline that read UTF-8 bytes as
-// Latin-1 and re-encoded them, producing sequences like "Â", "â€”", "â†'".
+// Latin-1 and re-encoded them, producing sequences like "Ã‚", "Ã¢â‚¬â€", "Ã¢â€ '".
 // Re-interpreting the string as Latin-1 bytes and decoding as UTF-8 undoes
 // exactly that mistake. Only applied when the string looks corrupted, and
 // only kept if the repair doesn't produce replacement characters.
-const MOJIBAKE_PATTERN = /Ã[\x80-\xBF]|Â[\x80-\xBF ®™]|â€[™"" -]|â†[’'-]/;
+const MOJIBAKE_PATTERN = /Ãƒ[\x80-\xBF]|Ã‚[\x80-\xBF Â®â„¢]|Ã¢â‚¬[â„¢"" -]|Ã¢â€ [â€™'-]/;
 function fixMojibake(str) {
   if (typeof str !== 'string' || !MOJIBAKE_PATTERN.test(str)) return str;
   try {
     const repaired = Buffer.from(str, 'latin1').toString('utf8');
-    if (repaired && !repaired.includes('�') && repaired !== str) return repaired;
+    if (repaired && !repaired.includes('ï¿½') && repaired !== str) return repaired;
   } catch (_) {}
   return str;
 }
@@ -1302,7 +1341,7 @@ function extractText(val, lang = 'en') {
   if (typeof val === 'object' && !Array.isArray(val)) {
     return fixMojibake(val[lang] || val.en || val.es || Object.values(val)[0] || null);
   }
-  // String – may be raw text OR a JSON-encoded object
+  // String â€“ may be raw text OR a JSON-encoded object
   if (typeof val === 'string') {
     const trimmed = val.trim();
     if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
@@ -1336,7 +1375,7 @@ const TECH_LOGO_MAP = {
 
 function getTechLogo(tech) {
   if (!tech) return null;
-  const key = tech.toLowerCase().replace(/[™®\s™]/g, '').trim();
+  const key = tech.toLowerCase().replace(/[â„¢Â®\sâ„¢]/g, '').trim();
   const mapped = TECH_LOGO_MAP[key];
   return mapped ? `/assets/logo-${mapped}.png` : null;
 }
@@ -1370,23 +1409,45 @@ function fixMojibakeDeep(arr) {
 
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
+  const enrichment = row.enrichment_data && typeof row.enrichment_data === 'object' && !Array.isArray(row.enrichment_data)
+    ? row.enrichment_data
+    : {};
 
   // Enforce rule: No Cellulose/Celulosa media (sub_type) for any filter
   if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
-    subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
+    subtype = lang === 'es' ? 'HÃ­brida' : 'Genuine Media';
   }
 
   // Re-classify on every response: after the consolidation migration oem_codes
   // may contain competitor filter-brand codes. Merging both arrays and running
   // splitRefs() keeps OEM equipment manufacturers and competitor filter brands
   // in the correct columns regardless of what the DB stored.
-  const refs = splitRefs([...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)]);
+  const oemStored = parseRefs(row.oem_codes);
+  const compStored = parseRefs(row.competitor_codes);
+  const refs = splitRefs([...oemStored, ...compStored]);
+  // Manufacturers the classifier does not know (UNKNOWN) used to be dropped from the response.
+  // Keep them in the column where the catalog stored them: oem_codes -> OEM, competitor_codes -> competitor.
+  // A reference already shown (same manufacturer alias + code) is not repeated in the other column.
+  if (refs.unknown && refs.unknown.length) {
+    const aliasBrand = (b) => {
+      let s = normalizeBrandKey(String(b || '')).replace(/\b(PTY|LTD|INC|CORP|CORPORATION|CO)\b/g, '').replace(/\s+/g, ' ').trim();
+      if (s === 'AMC') s = 'AMERICAN MOTORS';
+      return s;
+    };
+    const keyOf = (r) => aliasBrand(r.manufacturer) + '|' + String(r.code || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    const shown = new Set([...refs.oem, ...refs.competitor].map(keyOf));
+    const fromOem = refs.unknown.filter(r => oemStored.includes(r));
+    const fromComp = refs.unknown.filter(r => !oemStored.includes(r));
+    for (const r of fromOem) { const k = keyOf(r); if (!shown.has(k)) { shown.add(k); refs.oem.push(r); } }
+    for (const r of fromComp) { const k = keyOf(r); if (!shown.has(k)) { shown.add(k); refs.competitor.push(r); } }
+  }
 
   return {
     elimfilters_sku: row.sku,
     description: extractText(row.description, lang),
-    filter_type: extractText(row.filter_type, lang),
-    filter_subtype: subtype,
+    filter_type: publicFilterType(row) || extractText(row.filter_type, lang),
+    filter_subtype: publicSubType(row),
+    filter_media: 'GENUINE FILTER MEDIA', // operator rule 2026-10-13 (PR #932, #934)
     technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
     technology_logo: getTechLogo(TECH_NAME_FIXES[row.technology] || row.technology),
     installation_type: row.installation_type || null,
@@ -1401,16 +1462,27 @@ function buildFilterData(row, lang = 'en'){
     burst_pressure_psi: row.burst_pressure_psi || null,
     collapse_pressure_psi: row.collapse_pressure_psi || null,
     duty: row.duty || null,
+    image_url: row.image_url || null,
+    canonical_source_brand: row.canonical_source_brand || null,
+    canonical_source_code: row.canonical_source_code || null,
+    canonical_source_status: row.canonical_source_status || null,
     oem_codes:        refs.oem,
     competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
+    supersession: enrichment.supersession || null,
+    reference_relationships: enrichment.reference_relationships || null,
+    matched_reference: row.matched_reference ? {
+      part_number: row.matched_reference,
+      reference_type: row.matched_reference_type || null,
+      source: row.matched_reference_source || null
+    } : null,
     equipment_applications: fixMojibakeDeep(row.equipment_applications),
     vehicle_applications: fixMojibakeDeep(row.vehicle_applications)
   };
 }
 
-// Duplicate status route removed — the authoritative one is at top of file (v3.8.0)
+// Duplicate status route removed â€” the authoritative one is at top of file (v3.8.0)
 
 
 
@@ -1419,7 +1491,7 @@ function buildFilterData(row, lang = 'en'){
 
 
 
-// POST /api/kits — create a kit from filter SKUs + equipment name
+// POST /api/kits â€” create a kit from filter SKUs + equipment name
 // kit_sku format: {EK5|EK3}{brandCode 2 digits}{sequence 2 digits} - e.g.
 // EK50101 = HD, brand code 01, kit #01 for that brand. Brand codes are
 // auto-assigned the first time a brand is used (kit_brand_codes table)
@@ -1439,7 +1511,7 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
 
     // Determine duty from the first filter found
     const sample = await client.query(
-      'SELECT duty FROM elimfilters_catalog WHERE sku = ANY($1) AND duty IS NOT NULL LIMIT 1',
+      'SELECT duty FROM elimfilters_catalog_active_v WHERE sku = ANY($1) AND duty IS NOT NULL LIMIT 1',
       [filter_skus]
     );
     const duty = sample.rows[0]?.duty || 'LIGHT_DUTY';
@@ -1499,7 +1571,7 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
   }
 });
 
-// GET /api/kits/:kit_sku — full kit details with all component filters
+// GET /api/kits/:kit_sku â€” full kit details with all component filters
 app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
   const kit_sku = req.params.kit_sku.trim().toUpperCase();
   const lang = detectLang(req);
@@ -1515,7 +1587,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
 
     const components = await client.query(
       `SELECT c.*, kc.kit_sku, kc.qty
-       FROM elimfilters_catalog c
+       FROM elimfilters_catalog_active_v c
        JOIN kit_components kc ON kc.filter_sku = c.sku
        WHERE kc.kit_sku = $1`,
       [kit_sku]
@@ -1523,7 +1595,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
 
     const addons = await client.query(
       `SELECT c.*, ka.kit_sku, ka.note
-       FROM elimfilters_catalog c
+       FROM elimfilters_catalog_active_v c
        JOIN kit_suggested_addons ka ON ka.filter_sku = c.sku
        WHERE ka.kit_sku = $1`,
       [kit_sku]
@@ -1549,8 +1621,8 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
   }
 });
 
-// GET /api/filters/kits?sku=XXX — which kits contain this filter
-// POST /api/kits/:kit_sku/suggested-addons — add optional recommended
+// GET /api/filters/kits?sku=XXX â€” which kits contain this filter
+// POST /api/kits/:kit_sku/suggested-addons â€” add optional recommended
 // filters to an existing kit (e.g. an air filter offered alongside an
 // oil/fuel/coolant kit rather than bundled inside it, since it runs on
 // a different service interval and is a separate purchase decision)
@@ -1622,7 +1694,7 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
       `SELECT sku, codigo_base, description, filter_type, sub_type, technology,
               duty, oem_codes, competitor_codes, brand_crossrefs,
               alternatives, equipment_applications
-       FROM elimfilters_catalog
+       FROM elimfilters_catalog_active_v
        WHERE sku = $1`,
       [sku]
     );
@@ -1640,7 +1712,7 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
       `SELECT sku, codigo_base, description, filter_type, sub_type, technology,
               duty, oem_codes, competitor_codes, brand_crossrefs,
               alternatives, equipment_applications
-       FROM elimfilters_catalog
+       FROM elimfilters_catalog_active_v
        WHERE UPPER(codigo_base) = ANY($1)`,
       [altCodes]
     );
@@ -1680,7 +1752,7 @@ async function handleMixedDuty(rows, lang, client) {
   };
 }
 
-// ─── GET /api/autocomplete ────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/autocomplete â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Predictive suggestions for the part number search box: SKU / codigo_base
 // prefix matches and OEM/competitor cross-reference code prefix matches.
 app.get('/api/autocomplete', searchLimiter, async (req, res) => {
@@ -1694,19 +1766,19 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
     const { rows } = await client.query(
       `SELECT DISTINCT ON (val) val, type FROM (
          SELECT sku AS val, 'SKU' AS type
-         FROM elimfilters_catalog
+         FROM elimfilters_catalog_active_v
          WHERE UPPER(REPLACE(sku,'-','')) LIKE $1
          UNION ALL
          SELECT codigo_base AS val, 'BASE CODE' AS type
-         FROM elimfilters_catalog
+         FROM elimfilters_catalog_active_v
          WHERE codigo_base IS NOT NULL AND UPPER(REPLACE(codigo_base,'-','')) LIKE $1
          UNION ALL
          SELECT ref->>'code' AS val, 'OEM' AS type
-         FROM elimfilters_catalog, jsonb_array_elements(oem_codes) AS ref
+         FROM elimfilters_catalog_active_v, jsonb_array_elements(oem_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
          UNION ALL
          SELECT ref->>'code' AS val, 'CROSS-REF' AS type
-         FROM elimfilters_catalog, jsonb_array_elements(competitor_codes) AS ref
+         FROM elimfilters_catalog_active_v, jsonb_array_elements(competitor_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
        ) matches
        WHERE val IS NOT NULL AND val <> ''
@@ -1723,7 +1795,7 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search ──────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/search â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || req.query.sku || '').trim();
   if (!raw) return res.json({ success: false, results: [] });
@@ -1741,10 +1813,24 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   try {
     await client.query("SET client_encoding = 'UTF8'");
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
+    const qNormalized = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
+
+
+    const excludedSku = await client.query(
+      `SELECT 1 FROM elimfilters_catalog
+       WHERE catalog_active = false
+         AND UPPER(REPLACE(sku,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
+       LIMIT 1`,
+      [q]
+    );
+    if (excludedSku.rows.length > 0) {
+      return res.json({ success: true, results: [], source: 'catalog_scope_excluded' });
+    }
 
     // 1. Exact SKU match
     const exact = await client.query(
-      `SELECT * FROM elimfilters_catalog WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`,
+      `SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`,
       [q]
     );
     if (exact.rows.length > 0) {
@@ -1755,8 +1841,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     // 1b. codigo_base match (Donaldson base code e.g. P552100)
     const byBase = await client.query(
-      `SELECT * FROM elimfilters_catalog WHERE UPPER(REPLACE(codigo_base,'-','')) = $1 LIMIT 10`,
-      [q]
+      `SELECT * FROM elimfilters_catalog_active_v
+       WHERE UPPER(REPLACE(codigo_base,'-','')) = $1
+          OR REGEXP_REPLACE(UPPER(COALESCE(codigo_base,'')), '[^A-Z0-9]', '', 'g') = $2
+       LIMIT 10`,
+      [q, qNormalized]
     );
     if (byBase.rows.length > 0) {
       const products = byBase.rows.map(r => buildFilterData(r, lang));
@@ -1764,7 +1853,41 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'codigo_base' });
     }
 
-    // Equipment class filter — HD and LD parts must never be mixed in a single
+
+    const excludedBase = await client.query(
+      `SELECT 1 FROM elimfilters_catalog
+       WHERE catalog_active = false
+         AND UPPER(REPLACE(codigo_base,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
+       LIMIT 1`,
+      [q]
+    );
+    if (excludedBase.rows.length > 0) {
+      return res.json({ success: true, results: [], source: 'catalog_scope_excluded' });
+    }
+
+    // 1c. Exact governed reference match (e.g. Donaldson listing aliases / consolidated source codes)
+    const byExactRef = await client.query(
+      `SELECT DISTINCT ON (c.sku)
+         c.*,
+         e.reference_type AS matched_reference_type,
+         e.part_number AS matched_reference,
+         e.source AS matched_reference_source
+       FROM exact_part_reference e
+       JOIN elimfilters_catalog_active_v c ON c.sku = e.sku
+       WHERE (UPPER(e.brand) = 'DONALDSON' OR (UPPER(e.brand) = 'ELIMFILTERS' AND e.reference_type = 'SUPERSEDED'))
+         AND UPPER(REPLACE(REPLACE(e.part_number,'-',''),' ','')) = $1
+       ORDER BY c.sku, e.id DESC
+       LIMIT 10`,
+      [q]
+    );
+    if (byExactRef.rows.length > 0) {
+      const products = byExactRef.rows.map(r => buildFilterData(r, lang));
+      await enrichAlternatives(products, client);
+      return res.json({ success: true, results: products, source: 'exact_part_reference' });
+    }
+
+    // Equipment class filter â€” HD and LD parts must never be mixed in a single
     // result set (different thread sizes / bypass pressures). When the caller
     // doesn't specify one and a cross-reference code hits both classes, the
     // duty-separated shape below is returned instead of a flat list.
@@ -1783,20 +1906,20 @@ app.get('/api/search', searchLimiter, async (req, res) => {
          (v.score + COALESCE(p.priority, 0)) AS resolver_score,
          v.manufacturer AS resolver_manufacturer
        FROM v_api_resolver_v5 v
-       JOIN elimfilters_catalog c ON c.sku = v.sku
+       JOIN elimfilters_catalog_active_v c ON c.sku = v.sku
        LEFT JOIN search_result_priority p
          ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
         AND p.sku = v.sku
-       WHERE v.code = $1
-       ${validDuty ? 'AND c.duty = $2' : ''}
+       WHERE (v.code = $1 OR REGEXP_REPLACE(UPPER(COALESCE(v.code,'')), '[^A-Z0-9]', '', 'g') = $2)
+       ${validDuty ? 'AND c.duty = $3' : ''}
        ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
        LIMIT 20`,
-      [q, ...dutyArgs]
+      [q, qNormalized, ...dutyArgs]
     );
     if (xrefResult.rows.length > 0) {
       const xrows = xrefResult.rows;
 
-      // B: Multi-SKU AMBIGUOUS detection — multiple distinct SKUs at equal top score
+      // B: Multi-SKU AMBIGUOUS detection â€” multiple distinct SKUs at equal top score
       const topScore = Math.max(...xrows.map(r => parseFloat(r.resolver_score) || 0));
       const topSkus  = [...new Set(
         xrows
@@ -1807,7 +1930,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
         // A reference-governance policy names one canonical SKU for a tied
         // family (e.g. same-envelope Donaldson alternates with different
         // media). When one applies, resolve to it instead of surfacing an
-        // AMBIGUOUS empty result — the other tied SKUs still reach the
+        // AMBIGUOUS empty result â€” the other tied SKUs still reach the
         // client via enrichAlternatives(), since the primary's alternatives[]
         // already lists their codigo_base values.
         const policy = governanceForReferences([raw]);
@@ -1845,7 +1968,31 @@ app.get('/api/search', searchLimiter, async (req, res) => {
         });
       }
 
-      // Single/top resolution — standard flow
+      const singlePolicy = governanceForReferences([raw]);
+      const singleApprovedSet = singlePolicy?.approvedSkus?.length
+        ? new Set(singlePolicy.approvedSkus.map(s => s.toUpperCase()))
+        : null;
+      const singleGovernedRows = singleApprovedSet
+        ? xrows.filter(r => singleApprovedSet.has(String(r.sku).toUpperCase()))
+        : [];
+      if (singleGovernedRows.length) {
+        if (!validDuty) {
+          const mixed = await handleMixedDuty(singleGovernedRows, lang, client);
+          if (mixed) return res.json(mixed);
+        }
+        const products = singleGovernedRows.slice(0, 10).map(r => buildFilterData(r, lang));
+        await enrichAlternatives(products, client);
+        singleGovernedRows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+        return res.json({
+          success: true,
+          results: products,
+          source: 'xref_governed',
+          resolution: 'RESOLVED',
+          governed_reference: singlePolicy.reference,
+        });
+      }
+
+      // Single/top resolution â€” standard flow
       if (!validDuty) {
         const mixed = await handleMixedDuty(xrows, lang, client);
         if (mixed) return res.json(mixed);
@@ -1865,7 +2012,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
            (v.score + COALESCE(p.priority, 0)) AS resolver_score,
            v.manufacturer AS resolver_manufacturer
          FROM v_api_resolver_v5 v
-         JOIN elimfilters_catalog c ON c.sku = v.sku
+         JOIN elimfilters_catalog_active_v c ON c.sku = v.sku
          LEFT JOIN search_result_priority p
            ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
           AND p.sku = v.sku
@@ -1914,7 +2061,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     // turning every true no-match search into a 500 instead of an empty
     // result. Cast directly to text before building the tsvector.
     const desc = await client.query(
-      `SELECT * FROM elimfilters_catalog
+      `SELECT * FROM elimfilters_catalog_active_v
        WHERE to_tsvector('english', COALESCE(description::text, ''))
          @@ plainto_tsquery('english', $1)
        LIMIT 10`,
@@ -1935,7 +2082,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search/vin ──────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/search/vin â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Searches by vehicle make / model / engine / year in:
 //   - vehicle_applications JSONB (Light Duty)
 //   - kg_product_equipment relational table (Heavy Duty)
@@ -1956,7 +2103,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
     const params = [];
     let idx = 1;
 
-    // ── Light Duty: vehicle_applications JSONB ───────────────────────────────
+    // â”€â”€ Light Duty: vehicle_applications JSONB â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const modelPat = '%' + model.toUpperCase() + '%';
     params.push(modelPat);                          // $1 = model LIKE
     const engineCond = engine
@@ -1967,7 +2114,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
       : '';
     if (engine) params.push('%' + engine.toUpperCase() + '%');
 
-    // year_range in LD JSONB is stored as "MM/YY → MM/YY" string so we match
+    // year_range in LD JSONB is stored as "MM/YY â†’ MM/YY" string so we match
     // just the year portion with a LIKE pattern.
     const yearCondLD = year
       ? `AND va->>'year_range' LIKE $${++idx}`
@@ -1976,7 +2123,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
 
     const idxAfterLD = idx;
 
-    // ── Heavy Duty: kg_product_equipment relational ──────────────────────────
+    // â”€â”€ Heavy Duty: kg_product_equipment relational â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     params.push(modelPat);                          // next $ = model LIKE HD
     idx++;
     const hdEngineCond = engine
@@ -1989,7 +2136,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
 
     const { rows } = await client.query(`
       SELECT DISTINCT ON (c.sku) c.*
-      FROM elimfilters_catalog c
+      FROM elimfilters_catalog_active_v c
       WHERE
         -- Light Duty: search in vehicle_applications
         (
@@ -2047,10 +2194,10 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
 });
 
 
-// ─── GET /api/search/equipment ────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/search/equipment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Searches by equipment make / model / engine in:
 //   - equipment_applications JSONB (Heavy Duty)
-//   - vehicle_applications   JSONB (Light Duty – industrial machines stored here)
+//   - vehicle_applications   JSONB (Light Duty â€“ industrial machines stored here)
 app.get('/api/search/equipment', searchLimiter, async (req, res) => {
   const { make, model, year, engine } = req.query;
   if (!make && !model) return res.status(400).json({ success: false, error: 'make or model required' });
@@ -2117,14 +2264,14 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
         FROM kg_product_equipment kpe
         JOIN kg_equipment_models km ON kpe.model_id = km.id
         LEFT JOIN kg_equipment_makes kmk ON km.make_id = kmk.id
-        WHERE kpe.product_sku = elimfilters_catalog.sku
+        WHERE kpe.product_sku = elimfilters_catalog_active_v.sku
           AND ${kgConds.join(' AND ')}
       )`);
     }
 
     const whereClause = conditions.length > 0 ? 'WHERE (' + conditions.join(') OR (') + ')' : '';
     const { rows } = await client.query(
-      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog ${whereClause} ORDER BY sku LIMIT 30`,
+      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog_active_v ${whereClause} ORDER BY sku LIMIT 30`,
       params
     );
 
@@ -2140,7 +2287,7 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
 });
 
 
-// ─── GET /api/debug/bad-jsonb-applications ────────────────────────────────────
+// â”€â”€â”€ GET /api/debug/bad-jsonb-applications â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Finds rows where vehicle_applications / equipment_applications hold a
 // non-array JSON value, which breaks any query calling jsonb_array_elements()
 // on that column directly (no typeof guard).
@@ -2164,7 +2311,7 @@ app.get('/api/debug/bad-jsonb-applications', adminLimiter, requireAdmin, async (
   }
 });
 
-// ─── GET /api/debug/sku-codes ───────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/debug/sku-codes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/debug/sku-codes', adminLimiter, requireAdmin, async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.status(400).json({ error: 'sku required' });
@@ -2193,7 +2340,7 @@ app.get('/api/debug/sku-codes', adminLimiter, requireAdmin, async (req, res) => 
   }
 });
 
-// ─── GET /api/debug/suspects-equipment ─────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/debug/suspects-equipment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/debug/suspects-equipment', adminLimiter, requireAdmin, async (req, res) => {
 
   const limit = Math.min(parseInt(req.query.limit) || 100, 500);
@@ -2232,7 +2379,20 @@ app.get('/api/debug/suspects-equipment', adminLimiter, requireAdmin, async (req,
   }
 });
 
-// ─── POST /api/import/donaldson ─────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ CATALOG MUTATION HTTP GATE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// The public Search runtime is read-only by default. Legacy /api/import and /api/admin
+// mutation routes remain available only during an explicit maintenance window.
+app.use(['/api/import', '/api/admin'], (req, res, next) => {
+  const mutating = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method);
+  if (!mutating) return next();
+  if (String(process.env.ELIM_CATALOG_MUTATION_API_ENABLED || '').toLowerCase() === 'true') return next();
+  return res.status(503).json({
+    error: 'CATALOG_MUTATION_API_DISABLED',
+    message: 'Catalog HTTP mutations are disabled on the production Search runtime; use the governed Lenovo maintenance path.'
+  });
+});
+
+// â”€â”€â”€ POST /api/import/donaldson â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const FILTER_TYPE_CANONICAL = {
   'Air Filter':                'air',
   'Air Filter Housing':        'air',
@@ -2268,7 +2428,7 @@ function _validateImportRow(row) {
 
 // FRAM, NAPA, AC DELCO, PUROLATOR, CHAMPION, and SCT are Light Duty-only
 // brands in this catalog (confirmed by ELIMFILTERS) and must never end up
-// on a HEAVY_DUTY row — symmetric to LD_HD_ONLY_BRANDS above. This endpoint
+// on a HEAVY_DUTY row â€” symmetric to LD_HD_ONLY_BRANDS above. This endpoint
 // previously stored whatever oem_codes/competitor_codes the caller sent
 // with no filtering, so a batch mixing in LD cross-reference data silently
 // wrote LD-only brand codes onto Donaldson-based HD products.
@@ -2303,7 +2463,7 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
       try {
         const existing = await client.query('SELECT sku FROM elimfilters_catalog WHERE sku = $1', [sku]);
         if (existing.rows.length > 0) {
-          // UPDATE — merge JSONB arrays (competitor_codes, oem_codes, equipment_applications)
+          // UPDATE â€” merge JSONB arrays (competitor_codes, oem_codes, equipment_applications)
           await client.query(`
             UPDATE elimfilters_catalog SET
               codigo_base = COALESCE($2, codigo_base),
@@ -2438,7 +2598,7 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/import/mann-specs ─────────────────────────────────────────────
+// â”€â”€â”€ POST /api/import/mann-specs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Patches dimensional + performance specs into existing LD products.
 // Body: array of { sku (EL/EA/EC/EF-format), thread_size, outer_diameter_mm,
 //   height_mm, gasket_od_mm, gasket_id_mm, micron_rating, iso_test_method,
@@ -2509,9 +2669,9 @@ app.post('/api/import/mann-specs', importLimiter, requireAdmin, async (req, res)
   }
 });
 
-// ─── POST /api/import/mann ───────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/import/mann â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // FLEETGUARD, DONALDSON, and BALDWIN are Heavy Duty-only brands in this
-// catalog and must never end up on a LIGHT_DUTY row — but this endpoint
+// catalog and must never end up on a LIGHT_DUTY row â€” but this endpoint
 // previously stored whatever oem_codes/competitor_codes the caller sent
 // with no filtering, so a batch that mixed in HD cross-reference data
 // (e.g. reused from the Donaldson-based competitor matrix) silently wrote
@@ -2648,7 +2808,7 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
   }
 });
 
-// ─── POST /api/import/hd-fitment ─────────────────────────────────────────────
+// â”€â”€â”€ POST /api/import/hd-fitment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Bulk-write equipment_applications scraped from Fleetguard / Donaldson.
 // Body: array of { part, brand, mann_part, equipment: [{make,model,engine,year,equipment}] }
 // Lookup: finds ELIMFILTERS SKU via competitor_codes @> [{"manufacturer":"FLEETGUARD","code":part}]
@@ -2705,7 +2865,7 @@ app.post('/api/import/hd-fitment', importLimiter, requireAdmin, async (req, res)
   }
 });
 
-// ─── POST /api/admin/rename-sku ──────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/admin/rename-sku â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Renames a SKU: copies all data to new_sku, deletes old_sku.
 // Body: { old_sku: "EA200003", new_sku: "EA20003" }
 // Both must match /^[A-Z]{2,3}[0-9]{4}$/ (3-char prefix + 4 digits).
@@ -2771,7 +2931,7 @@ app.post('/api/admin/rename-sku', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/admin/delete-sku ──────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/admin/delete-sku â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Permanently deletes a single SKU from the catalog.
 // Body: { sku: "EA200003" }
 app.post('/api/admin/delete-sku', importLimiter, requireAdmin, async (req, res) => {
@@ -2787,7 +2947,7 @@ app.post('/api/admin/delete-sku', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/admin/fix-ld-duty ─────────────────────────────────────────────
+// â”€â”€â”€ POST /api/admin/fix-ld-duty â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Bulk-corrects EL3/EA3/EC3/EF3 records that have wrong duty value.
 app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
@@ -2807,7 +2967,7 @@ app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/admin/migrate-ld-vehicle-applications ─────────────────────────
+// â”€â”€â”€ POST /api/admin/migrate-ld-vehicle-applications â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // One-time fix: earlier /api/import/mann writes stored MANN vehicle fitment in
 // equipment_applications (the HD column) instead of vehicle_applications (what
 // /api/search/vin and /api/search/equipment query for duty='LIGHT_DUTY'). Moves
@@ -2845,7 +3005,7 @@ app.post('/api/admin/migrate-ld-vehicle-applications', adminLimiter, requireAdmi
   }
 });
 
-// ─── POST /api/update/mann-crossrefs ──────────────────────────────────────────
+// â”€â”€â”€ POST /api/update/mann-crossrefs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Bulk-apply competitor cross-reference codes to LD products via Mann part number.
 // Body: { rows: [{ sku: "W940/21", crossrefs: { FRAM: ["PH5316"], WIX: ["51452"] } }] }
 app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, res) => {
@@ -2876,7 +3036,7 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       if (newCodes.length === 0) { pushSkip(mannSku, null, 'no_valid_codes'); continue; }
 
       // Find the LD product by codigo_base (last 4 digits of Mann part number)
-      // Mann W940/21 → digits "94021" → last 4 = "4021" → codigo_base
+      // Mann W940/21 â†’ digits "94021" â†’ last 4 = "4021" â†’ codigo_base
       const digits = mannSku.replace(/\D/g, '');
       if (!digits) { pushSkip(mannSku, null, 'no_digits'); continue; }
       const codigoBase = digits.slice(-4).padStart(4, '0');
@@ -2914,7 +3074,7 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
   }
 });
 
-// ─── GET /api/admin/lookup-competitor ─────────────────────────────────────────
+// â”€â”€â”€ GET /api/admin/lookup-competitor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/admin/lookup-competitor', adminLimiter, requireAdmin, async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
   if (!code) return res.status(400).json({ error: 'code required' });
@@ -2938,7 +3098,7 @@ app.get('/api/admin/lookup-competitor', adminLimiter, requireAdmin, async (req, 
   }
 });
 
-// ─── POST /api/cleanup/fram-hd-force ───────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/cleanup/fram-hd-force â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Hard SQL-based cleanup: strip ALL FRAM PH/CA/CF/G codes from HD SKUs (EL8, EA1, EC1, EF9).
 // Handles any manufacturer key format (uppercase, lowercase, missing).
 app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, res) => {
@@ -2978,7 +3138,7 @@ app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, 
   }
 });
 
-// ─── POST /api/cleanup/oem-reclassify ─────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/cleanup/oem-reclassify â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Re-runs the isCompetitor() classification on every row to fix any oem_codes/competitor_codes
 // that were stored in the wrong column.
 app.post('/api/cleanup/oem-reclassify', importLimiter, requireAdmin, async (req, res) => {
@@ -3015,7 +3175,7 @@ app.post('/api/cleanup/oem-reclassify', importLimiter, requireAdmin, async (req,
   }
 });
 
-// ─── GET /api/admin/audit ───────────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/admin/audit â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/admin/audit', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
@@ -3046,7 +3206,7 @@ app.get('/api/admin/audit', adminLimiter, requireAdmin, async (req, res) => {
   }
 });
 
-// ─── GET /api/admin/logistics-audit ───────────────────────────────────────────
+// â”€â”€â”€ GET /api/admin/logistics-audit â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Read-only. Reports how many SKUs already have each logistics/packaging field
 // populated on elimfilters_catalog, for the packaging-data enrichment project.
 // Never writes. Auto-detects whichever of the 16 target columns already exist.
@@ -3119,7 +3279,7 @@ app.get('/api/admin/logistics-audit', adminLimiter, requireAdmin, async (req, re
   }
 });
 
-// ─── POST /api/admin/run-logistics-migration ──────────────────────────────────
+// â”€â”€â”€ POST /api/admin/run-logistics-migration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Runs 098_LOGISTICS_PACKAGING_FIELDS: adds the 16 logistics/packaging
 // columns to elimfilters_catalog (all nullable, no defaults) plus the
 // generated logistics_data_complete flag. Additive-only, idempotent.
@@ -3135,7 +3295,7 @@ app.post('/api/admin/run-logistics-migration', adminLimiter, requireAdmin, async
   }
 });
 
-// ─── POST /api/admin/run-confirmed-units-sample ───────────────────────────────
+// â”€â”€â”€ POST /api/admin/run-confirmed-units-sample â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Runs 099_CONFIRMED_UNITS_PER_CASE_SAMPLE: applies the three plant-confirmed
 // units_per_case values (P552100=6, P554004=12, P502042=12). Only touches
 // units_per_case + provenance fields; never fabricates weight/volume/dims.
@@ -3151,7 +3311,7 @@ app.post('/api/admin/run-confirmed-units-sample', adminLimiter, requireAdmin, as
   }
 });
 
-// ─── POST /api/admin/run-fleetguard-turbocore-housings ────────────────────────
+// â”€â”€â”€ POST /api/admin/run-fleetguard-turbocore-housings â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Runs 100_FLEETGUARD_TURBOCORE_HOUSINGS: creates 10 new ELIMFILTERS SKUs for
 // Fleetguard fuel/water separator housings Donaldson doesn't make, per the
 // confirmed brand-coverage-gap rule (Fleetguard code as base, ET9/TURBOCORE
@@ -3168,7 +3328,7 @@ app.post('/api/admin/run-fleetguard-turbocore-housings', adminLimiter, requireAd
   }
 });
 
-// ─── GET /api/admin/fallback-example ──────────────────────────────────────────
+// â”€â”€â”€ GET /api/admin/fallback-example â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Read-only. Returns one existing HD SKU whose codigo_base_governance shows
 // fallback_manufacturer_verified=true, as a template for the exact data
 // shape the codigo_base + alternate-integrity triggers both require.
@@ -3191,7 +3351,7 @@ app.get('/api/admin/fallback-example', adminLimiter, requireAdmin, async (req, r
   }
 });
 
-// ─── GET /api/admin/hd-donaldson-codes ────────────────────────────────────────
+// â”€â”€â”€ GET /api/admin/hd-donaldson-codes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Read-only. Lists sku + codigo_base for HEAVY_DUTY rows whose codigo_base
 // looks like a Donaldson code, for the Etapa 3 official-source scrape.
 app.get('/api/admin/hd-donaldson-codes', adminLimiter, requireAdmin, async (req, res) => {
@@ -3214,8 +3374,8 @@ app.get('/api/admin/hd-donaldson-codes', adminLimiter, requireAdmin, async (req,
   }
 });
 
-// ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
-// Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
+// â”€â”€â”€ GET /api/admin/malformed-skus â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Lists all SKUs that donâ€™t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
@@ -3235,7 +3395,7 @@ app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res
   }
 });
 
-// ─── POST /api/admin/rebuild-crossref-cache ───────────────────────────────────
+// â”€â”€â”€ POST /api/admin/rebuild-crossref-cache â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Triggers a full rebuild of crossref_resolved_cache from oem_codes and
 // competitor_codes JSONB. Use after bulk imports or when cache is suspected stale.
 app.post('/api/admin/rebuild-crossref-cache', adminLimiter, requireAdmin, async (req, res) => {
@@ -3251,7 +3411,7 @@ app.post('/api/admin/rebuild-crossref-cache', adminLimiter, requireAdmin, async 
   }
 });
 
-// ─── GET /api/ai/search ─────────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/ai/search â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/ai/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || '').trim();
   if (!raw) return res.json({ success: false, results: [] });
@@ -3266,10 +3426,24 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
   try {
     await client.query("SET client_encoding = 'UTF8'");
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
+    const qNormalized = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
+
+
+    const excludedSku = await client.query(
+      `SELECT 1 FROM elimfilters_catalog
+       WHERE catalog_active = false
+         AND UPPER(REPLACE(sku,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
+       LIMIT 1`,
+      [q]
+    );
+    if (excludedSku.rows.length > 0) {
+      return res.json({ success: true, results: [], source: 'catalog_scope_excluded' });
+    }
 
     // Try exact SKU match
     const exact = await client.query(
-      `SELECT * FROM elimfilters_catalog WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`, [q]
+      `SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`, [q]
     );
     if (exact.rows.length > 0) {
       const products = exact.rows.map(r => buildFilterData(r, lang));
@@ -3285,7 +3459,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
          (v.score + COALESCE(p.priority, 0)) AS resolver_score,
          v.manufacturer AS resolver_manufacturer
        FROM v_api_resolver_v5 v
-       JOIN elimfilters_catalog c ON c.sku = v.sku
+       JOIN elimfilters_catalog_active_v c ON c.sku = v.sku
        LEFT JOIN search_result_priority p
          ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
         AND p.sku = v.sku
@@ -3310,7 +3484,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── POST /api/ai/escalate ───────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/ai/escalate â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
   const { session_id, lang, messages } = req.body || {};
   if (!session_id || !Array.isArray(messages) || messages.length === 0) {
@@ -3340,7 +3514,7 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
     if (outlookMailService) {
       await outlookMailService.send(
         'support@elimfilters.com',
-        `[Chat Escalation] Session ${safeSessionId} — ${usedLang.toUpperCase()}`,
+        `[Chat Escalation] Session ${safeSessionId} â€” ${usedLang.toUpperCase()}`,
         htmlContent,
         null,
         'support'  // Routes to support@elimfilters.com
@@ -3355,7 +3529,7 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── Smart Email Intent Classifier & Auto-Responder ───────────────────────────
+// â”€â”€â”€ Smart Email Intent Classifier & Auto-Responder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // POST /api/email/smart-route
 // Analyzes incoming emails and sends intelligent auto-responses
 // Routes messages to correct mailbox based on intent
@@ -3440,7 +3614,7 @@ app.post('/api/email/smart-route', async (req, res) => {
       try {
         await outlookMailService.send(
           classification.respondTo,
-          `[${classification.type.toUpperCase()}] ${internalSubject} — Auto-routed`,
+          `[${classification.type.toUpperCase()}] ${internalSubject} â€” Auto-routed`,
           internalHTMLContent,
           null,
           classification.type
@@ -3470,14 +3644,14 @@ app.post('/api/email/smart-route', async (req, res) => {
   }
 });
 
-// ─── Instagram Business API Webhook ──────────────────────────────────────────
+// â”€â”€â”€ Instagram Business API Webhook â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const INSTAGRAM_VERIFY_TOKEN = process.env.INSTAGRAM_VERIFY_TOKEN;
 const INSTAGRAM_ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
 const INSTAGRAM_APP_SECRET = process.env.INSTAGRAM_APP_SECRET;
 const INSTAGRAM_ACCOUNT_ID = process.env.INSTAGRAM_ACCOUNT_ID;
 
 if (!INSTAGRAM_VERIFY_TOKEN || !INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_APP_SECRET || !INSTAGRAM_ACCOUNT_ID) {
-  console.warn('[instagram/webhook] one or more INSTAGRAM_* environment variables are not set — webhook will reject requests');
+  console.warn('[instagram/webhook] one or more INSTAGRAM_* environment variables are not set â€” webhook will reject requests');
 }
 
 // Safe, non-reversible fingerprint of the configured app secret, logged once
@@ -3485,7 +3659,7 @@ if (!INSTAGRAM_VERIFY_TOKEN || !INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_APP_SECRET 
 // paste" can be confirmed without ever printing the secret itself.
 if (INSTAGRAM_APP_SECRET) {
   const fingerprint = crypto.createHash('sha256').update(INSTAGRAM_APP_SECRET).digest('hex').slice(0, 8);
-  console.log(`[instagram/webhook] INSTAGRAM_APP_SECRET loaded — length ${INSTAGRAM_APP_SECRET.length}, fingerprint ${fingerprint}`);
+  console.log(`[instagram/webhook] INSTAGRAM_APP_SECRET loaded â€” length ${INSTAGRAM_APP_SECRET.length}, fingerprint ${fingerprint}`);
 }
 
 // Meta calls this during webhook subscription setup to confirm ownership.
@@ -3504,7 +3678,7 @@ app.get('/api/instagram/webhook', (req, res) => {
 });
 
 app.post('/api/instagram/webhook', (req, res) => {
-  // Safe receipt log — confirms an event arrived without ever touching
+  // Safe receipt log â€” confirms an event arrived without ever touching
   // req.rawBody/signature/tokens, so it can't leak secrets even if logging
   // is misconfigured or forwarded to a third-party log sink.
   console.log('[instagram/webhook] Instagram event received', {
@@ -3516,7 +3690,7 @@ app.post('/api/instagram/webhook', (req, res) => {
   const signatureHeader = req.get('x-hub-signature-256') || '';
 
   if (!INSTAGRAM_APP_SECRET || !req.rawBody) {
-    console.warn('[instagram/webhook] rejected event — app secret or raw body unavailable');
+    console.warn('[instagram/webhook] rejected event â€” app secret or raw body unavailable');
     return res.sendStatus(403);
   }
 
@@ -3527,7 +3701,7 @@ app.post('/api/instagram/webhook', (req, res) => {
     && crypto.timingSafeEqual(providedBuffer, expectedBuffer);
 
   if (!isValidSignature) {
-    console.warn('[instagram/webhook] rejected event — invalid X-Hub-Signature-256');
+    console.warn('[instagram/webhook] rejected event â€” invalid X-Hub-Signature-256');
     return res.sendStatus(403);
   }
 
@@ -3536,17 +3710,17 @@ app.post('/api/instagram/webhook', (req, res) => {
   res.sendStatus(200);
 });
 
-// Temporary, admin-protected diagnostic endpoint — confirms the configured
+// Temporary, admin-protected diagnostic endpoint â€” confirms the configured
 // Instagram Business account credentials work against the real Meta Graph
 // API. INSTAGRAM_ACCESS_TOKEN is sent only as an outbound Authorization
 // header (never in the URL, never logged, never included in the response).
 app.get('/api/instagram/test', adminLimiter, requireAdmin, async (req, res) => {
   if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_ACCOUNT_ID) {
-    console.warn('[instagram/test] rejected — INSTAGRAM_ACCESS_TOKEN or INSTAGRAM_ACCOUNT_ID not configured');
+    console.warn('[instagram/test] rejected â€” INSTAGRAM_ACCESS_TOKEN or INSTAGRAM_ACCOUNT_ID not configured');
     return res.status(502).json({ ok: false, error: 'Instagram account is not configured' });
   }
 
-  // graph.instagram.com (not graph.facebook.com) — IGAA-prefixed tokens from
+  // graph.instagram.com (not graph.facebook.com) â€” IGAA-prefixed tokens from
   // the Instagram API with Instagram Login product are scoped to this host,
   // and INSTAGRAM_ACCOUNT_ID must be the Instagram-scoped ID this host
   // returns (different from the Page-linked ID graph.facebook.com uses for
@@ -3560,7 +3734,7 @@ app.get('/api/instagram/test', adminLimiter, requireAdmin, async (req, res) => {
     const data = await metaResponse.json().catch(() => ({}));
 
     if (!metaResponse.ok || data.error) {
-      console.warn(`[instagram/test] Meta rejected the request — status ${metaResponse.status}`);
+      console.warn(`[instagram/test] Meta rejected the request â€” status ${metaResponse.status}`);
       return res.status(502).json({
         ok: false,
         status: metaResponse.status,
@@ -3568,7 +3742,7 @@ app.get('/api/instagram/test', adminLimiter, requireAdmin, async (req, res) => {
       });
     }
 
-    console.log(`[instagram/test] Meta responded OK — status ${metaResponse.status}, account ${data.id || '(unknown)'}`);
+    console.log(`[instagram/test] Meta responded OK â€” status ${metaResponse.status}, account ${data.id || '(unknown)'}`);
     return res.status(200).json({
       ok: true,
       status: metaResponse.status,
@@ -3585,6 +3759,6 @@ app.get('/api/instagram/test', adminLimiter, requireAdmin, async (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`[server] ✅ Listening on port ${PORT}`);
-  console.log(`[server] ✅ ELIMFILTERS API ready`);
+  console.log(`[server] âœ… Listening on port ${PORT}`);
+  console.log(`[server] âœ… ELIMFILTERS API ready`);
 });

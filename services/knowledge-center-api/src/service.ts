@@ -1,3 +1,4 @@
+import { isDeepStrictEqual } from 'node:util';
 import type pg from 'pg';
 import { withTransaction } from './db.js';
 
@@ -8,9 +9,25 @@ export class KnowledgeCenterService {
         `INSERT INTO candidate_cases
           (external_id,status,priority,source_channel,protection_system,technical_family,asset_summary,symptom_summary,structured_intake,novelty_classification,novelty_score,created_by,due_at)
          VALUES ($1,'CAPTURED',$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
+         ON CONFLICT (external_id) DO NOTHING
          RETURNING *`,
         [input.externalId,input.priority,input.sourceChannel,input.protectionSystem ?? null,input.technicalFamily ?? null,input.assetSummary,input.symptomSummary,input.structuredIntake,input.noveltyClassification ?? null,input.noveltyScore ?? null,actorId,input.dueAt ?? null]
       );
+      if (!result.rows.length) {
+        // A retry may follow a committed intake whose HTTP response was lost.
+        // Never reveal another actor's case through the intake endpoint.
+        const existing = await client.query(
+          'SELECT * FROM candidate_cases WHERE external_id = $1 AND created_by = $2',
+          [input.externalId, actorId]
+        );
+        const candidate = existing.rows[0];
+        if (!candidate || !isDeepStrictEqual(candidate.structured_intake, input.structuredIntake)
+          || candidate.symptom_summary !== input.symptomSummary || !isDeepStrictEqual(candidate.asset_summary, input.assetSummary)
+          || candidate.source_channel !== input.sourceChannel || candidate.priority !== input.priority) {
+          throw new Error('Candidate case external ID conflict');
+        }
+        return candidate;
+      }
       const candidate = result.rows[0];
       await client.query(
         `INSERT INTO candidate_case_events(candidate_case_id,event_type,new_status,reason,actor_id)

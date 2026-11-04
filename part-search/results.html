@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -32,7 +32,7 @@
       overflow-x: hidden;
     }
 
-    /* â”€â”€â”€ HEADER â”€â”€â”€ */
+    /* ─── HEADER ─── */
     .header {
       position: sticky;
       top: 0;
@@ -110,7 +110,7 @@
     }
     .header-back:hover { color: var(--y); }
 
-    /* â”€â”€â”€ RESULTS META â”€â”€â”€ */
+    /* ─── RESULTS META ─── */
     .results-meta {
       padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 3rem) 0;
       max-width: 1600px;
@@ -162,7 +162,7 @@
       margin-top: 1.2rem;
     }
 
-    /* â”€â”€â”€ PRODUCT GRID â”€â”€â”€ */
+    /* ─── PRODUCT GRID ─── */
     .products {
       max-width: 1600px;
       margin: 0 auto;
@@ -172,7 +172,7 @@
       gap: 1.2rem;
     }
 
-    /* â”€â”€â”€ MATCH BADGE â”€â”€â”€ */
+    /* ─── MATCH BADGE ─── */
     .match-badge {
       display: inline-flex;
       align-items: center;
@@ -194,7 +194,7 @@
       opacity: 0.7;
     }
 
-    /* â”€â”€â”€ PRODUCT CARD â”€â”€â”€ */
+    /* ─── PRODUCT CARD ─── */
     .product-card {
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -524,7 +524,7 @@
       border-radius: 2px;
     }
 
-    /* â”€â”€â”€ SEE ALSO â”€â”€â”€ */
+    /* ─── SEE ALSO ─── */
     .see-also {
       border-top: 1px solid var(--border);
       padding-top: 1rem;
@@ -560,7 +560,7 @@
       border-color: rgba(255,241,45,0.55);
     }
 
-    /* â”€â”€â”€ STATUS MESSAGES â”€â”€â”€ */
+    /* ─── STATUS MESSAGES ─── */
     .status-container {
       max-width: 1600px;
       margin: 0 auto;
@@ -607,7 +607,7 @@
     }
     .status-action:hover { background: #ffe800; }
 
-    /* â”€â”€â”€ LOADING ANIMATION â”€â”€â”€ */
+    /* ─── LOADING ANIMATION ─── */
     .scan-line {
       position: fixed;
       top: 72px;
@@ -626,7 +626,7 @@
       100% { transform: translateX(100%); opacity: 0; }
     }
 
-    /* â”€â”€â”€ LOADING DOTS â”€â”€â”€ */
+    /* ─── LOADING DOTS ─── */
     .loading-container {
       max-width: 1600px;
       margin: 0 auto;
@@ -662,7 +662,7 @@
       100% { transform: translateX(350%); }
     }
 
-    /* â”€â”€â”€ FOOTER â”€â”€â”€ */
+    /* ─── FOOTER ─── */
     .footer {
       border-top: 1px solid var(--border);
       text-align: center;
@@ -678,7 +678,7 @@
     .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
     .footer-line a:hover { color: var(--y); }
 
-    /* â”€â”€â”€ KLEO BADGE â”€â”€â”€ */
+    /* ─── KLEO BADGE ─── */
     #kleo-badge {
       position: fixed;
       bottom: 1.5rem;
@@ -706,12 +706,12 @@
       text-transform: uppercase;
     }
 
-    /* â”€â”€â”€ ANIMATIONS â”€â”€â”€ */
+    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       .header { height: 60px; gap: 0.75rem; }
       .header-logo img { height: 32px; }
@@ -814,13 +814,52 @@ textarea {
     min-width: 0;
   }
 }
+
+    /* ─── HERO (Fleetguard-style layout, 2026-11-04) ─── */
+    .card-crumbs { font-family: 'Outfit', sans-serif; font-size: 0.95rem; color: var(--muted); margin-bottom: 1.2rem; }
+    .card-crumbs a { color: var(--y); text-decoration: none; }
+    .card-crumbs a:hover { text-decoration: underline; }
+    .card-crumbs span { text-transform: capitalize; }
+    .card-crumbs strong { color: var(--fg); font-weight: 500; }
+    .card-hero { display: flex; gap: 2rem; align-items: stretch; margin-bottom: 1.4rem; }
+    .hero-info { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+    .hero-info .card-header { margin-bottom: 0.15rem; }
+    .hero-type { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--fg); margin-bottom: 1rem; }
+    .hero-row { display: flex; flex-direction: column; flex: 1 1 auto; gap: 3.3rem; align-items: stretch; margin-top: 2.1rem; }
+    .hero-row .card-badges { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .hero-row .card-badges::-webkit-scrollbar { display: none; }
+    .hero-row .badge { flex: 0 0 auto; font-size: 0.74rem; padding: 0.22rem 0.5rem; letter-spacing: 0.06em; }
+    /* related parts on one line, bottom edge aligned with the image */
+    .hero-related { display: flex; align-items: center; gap: 1.1rem; flex-wrap: nowrap; margin-top: auto; border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1.2rem; }
+    .hero-related-title { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--fg); margin: 0; white-space: nowrap; flex: 0 0 auto; }
+    .hero-related-sub { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: var(--muted); margin: 0; white-space: nowrap; flex: 0 0 auto; }
+    .hero-related-chips { display: flex; flex-wrap: nowrap; gap: 0.5rem; flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+    .hero-related-chips::-webkit-scrollbar { display: none; }
+    .hero-related-chips .see-also-chip { flex: 0 0 auto; white-space: nowrap; }
+    .spec-photo { flex: 0 0 auto; align-self: flex-start; width: min(420px, 100%); aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #d9dde3; overflow: hidden; padding: 10px; box-sizing: border-box; position: relative; cursor: zoom-in; }
+    .spec-photo img { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: var(--zx, 50%) var(--zy, 50%); transition: transform 0.18s ease-out; }
+    @media (hover: hover) and (pointer: fine) { .spec-photo.is-zoom img { transform: scale(2.5); } }
+    .photo-lightbox { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); cursor: zoom-out; padding: 1.5rem; }
+    .photo-lightbox img { max-width: min(92vw, 900px); max-height: 90vh; background: #fff; border-radius: 10px; padding: 12px; object-fit: contain; }
+    .spec-photo.is-empty { cursor: default; flex-direction: column; background: rgba(255,255,255,0.04); border-color: var(--border); }
+    .spec-photo.is-empty img { display: none; }
+    .spec-photo-ph { display: none; }
+    .spec-photo.is-empty .spec-photo-ph { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: center; }
+    .spec-photo.is-empty .spec-photo-ph::before { content: ''; width: 84px; height: 84px; background: url(/e.png) center / contain no-repeat; opacity: 0.45; }
+    .specs-main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; align-items: start; }
+    @media (max-width: 900px) { .specs-main { grid-template-columns: 1fr; } }
+    .specs-main .specs-title { grid-column: 1 / -1; }
+    .specs-main .specs-group-divider { display: none; }
+    .specs-main .specs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 1.25rem; }
+    @media (max-width: 640px) { .specs-main .specs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 820px) { .card-hero { flex-direction: column; gap: 1.2rem; } .spec-photo { width: 100%; max-width: 420px; } }
 </style>
 </head>
 <body>
 
 <div class="scan-line"></div>
 
-<!-- â”€â”€â”€ HEADER â”€â”€â”€ -->
+<!-- ─── HEADER ─── -->
 <header class="header">
   <a href="https://elimfilters.com" class="header-logo" aria-label="ELIMFILTERS homepage">
     <img src="https://elimfilters.com/assets/elimfilters-logo-white.png" alt="ELIMFILTERS Logo">
@@ -835,21 +874,21 @@ textarea {
   <a href="/index.html" class="header-back">â† BACK TO SEARCH</a>
 </header>
 
-<!-- â”€â”€â”€ KLEO BADGE â”€â”€â”€ -->
+<!-- ─── KLEO BADGE ─── -->
 
 
-<!-- â”€â”€â”€ MAIN CONTENT â”€â”€â”€ -->
+<!-- ─── MAIN CONTENT ─── -->
 <div id="app"></div>
 
-<!-- â”€â”€â”€ FOOTER â”€â”€â”€ -->
+<!-- ─── FOOTER ─── -->
 <footer class="footer">
   <p class="footer-line">
-    ELIMFILTERSÂ® INDUSTRIAL FILTRATION &nbsp;Â·&nbsp;
+    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;Â·&nbsp;
     <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;Â·&nbsp;
     <a href="https://elimfilters.com/knowledge-center">Knowledge System</a>
   </p>
   <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1); font-size: 0.45rem;">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERSÂ® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
   </p>
 </footer>
 
@@ -857,9 +896,9 @@ textarea {
 <script>
 'use strict';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // i18n — TRANSLATION DICTIONARY (results page)
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 const TRANSLATIONS = {
   en: {
     searchPlaceholder: 'Search again...',
@@ -1003,15 +1042,15 @@ detectLang().then(lang => {
   executeSearch();
 });
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 
 const API = '';
 const app = document.getElementById('app');
 
-// â”€â”€â”€ HTML escape — prevents XSS from URL parameters injected into innerHTML â”€â”€â”€
+// ─── HTML escape — prevents XSS from URL parameters injected into innerHTML ───
 const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 
-// â”€â”€â”€ Parse URL parameters â”€â”€â”€
+// ─── Parse URL parameters ───
 const params = new URLSearchParams(window.location.search);
 const query = (params.get('q') || '').trim();
 const mode  = params.get('mode') || 'part';
@@ -1093,7 +1132,7 @@ function showLoading(term) {
     </div>`;
 }
 
-// â”€â”€â”€ Warmup timer: shows message after 8s if server is cold-starting â”€â”€â”€
+// ─── Warmup timer: shows message after 8s if server is cold-starting ───
 function startWarmupTimer(term) {
   return setTimeout(() => {
     const msg = document.getElementById('loading-msg');
@@ -1106,7 +1145,7 @@ function startWarmupTimer(term) {
   }, 8000);
 }
 
-// â”€â”€â”€ Render Empty â”€â”€â”€
+// ─── Render Empty ───
 function showEmpty(term) {
   app.innerHTML = `
     <div class="status-container">
@@ -1159,7 +1198,7 @@ function showEmpty(term) {
     </div>`;
 }
 
-// â”€â”€â”€ Render Error â”€â”€â”€
+// ─── Render Error ───
 function showError() {
   app.innerHTML = `
     <div class="status-container">
@@ -1170,7 +1209,7 @@ function showError() {
     </div>`;
 }
 
-// â”€â”€â”€ HTML escape (XSS prevention) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── HTML escape (XSS prevention) ───────────────────────────────────────────
 function esc(str) {
   if (str == null) return '';
   return String(str)
@@ -1178,7 +1217,7 @@ function esc(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 }
 
-// â”€â”€â”€ Parse description (may come as JSON string from API) â”€â”€â”€
+// ─── Parse description (may come as JSON string from API) ───
 function parseDesc(val) {
   if (!val) return null;
   const lang = currentLang;
@@ -1199,10 +1238,10 @@ function parseDesc(val) {
   return val;
 }
 
-// â”€â”€â”€ Format Refs â”€â”€â”€
+// ─── Format Refs ───
 function normalizeBrand(b) {
   if (!b) return '';
-  // Normalize brand name variations (AC-DELCO â†’ AC DELCO, BIG-A â†’ BIG A, etc.)
+  // Normalize brand name variations (AC-DELCO → AC DELCO, BIG-A → BIG A, etc.)
   return b.trim().replace(/-/g, ' ').replace(/\s+/g, ' ').toUpperCase();
 }
 
@@ -1268,13 +1307,13 @@ function splitCrossReferences(oemArr, compArr) {
   return { oem, comp };
 }
 
-// â”€â”€â”€ Render Spec Item â”€â”€â”€
+// ─── Render Spec Item ───
 function specHTML(label, value) {
   if (!value) return '';
   return `<div class="spec-item"><span class="spec-label">${label}</span><span class="spec-value">${value}</span></div>`;
 }
 
-// â”€â”€â”€ Render Product Card â”€â”€â”€
+// ─── Render Product Card ───
 function renderCard(p, index) {
   const sku = p.elimfilters_sku || p.sku || '—';
 
@@ -1284,12 +1323,8 @@ function renderCard(p, index) {
     const mmRound = Math.round(mm);
     return inches + ' inch\n' + mmRound + ' mm';
   }
-  function mediaLabel(val) {
-    if (!val) return null;
-    const v = String(val).toLowerCase().trim();
-    if (v === 'cellulose' || v === 'celulosa') return currentLang === 'es' ? 'HÃ­brida' : 'Genuine Media';
-    return val;
-  }
+  // Operator rule 2026-10-13: the media line reads the same on every SKU.
+  const MEDIA_LABEL = 'GENUINE FILTER MEDIA';
   function psiFmt(psi) {
     if (!psi) return null;
     const bar = (psi * 0.0689476).toFixed(1);
@@ -1312,48 +1347,175 @@ function renderCard(p, index) {
     specHTML(T.specLength,   dimFmt(p.height_mm)),
     specHTML(T.specGasketOD, dimFmt(p.gasket_od_mm)),
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
+    specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)), // burst pressure sits under Length (column 3, row 2)
   ].filter(Boolean);
 
   // Group 2 — filtration performance (Style omitted: already shown as badge)
   const perfSpecs = [
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
-    specHTML(T.specMediaType, mediaLabel(p.filter_subtype) || null),
-    specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)),
+    specHTML(T.specMediaType, MEDIA_LABEL),
     specHTML(T.specCollapse,  psiFmt(p.collapse_pressure_psi)),
   ].filter(Boolean);
 
   const specs = [...dimSpecs, ...perfSpecs]; // kept for empty-check
 
   const { oem, comp } = splitCrossReferences(p.oem_codes, p.competitor_codes);
+  // The canonical (base) reference lives in codigo_base only. Show it under its own manufacturer,
+  // in the column that matches its type: filter makers -> competitor, other manufacturers -> OEM.
+  // Existing server classification is untouched; only shown when the canonical source is VERIFIED.
+  {
+    const cbrand = normalizeBrand(p.canonical_source_brand || '');
+    const ccode = String(p.canonical_source_code || '').trim().toUpperCase();
+    if (cbrand && cbrand !== 'ELIMFILTERS' && ccode && String(p.canonical_source_status || '').toUpperCase() === 'VERIFIED') {
+      const filterMakers = ['DONALDSON', 'MANN FILTER', 'MANN', 'FRAM', 'FLEETGUARD', 'RACOR'];
+      const target = filterMakers.includes(cbrand) ? comp : oem;
+      if (!target.some(r => r.brand === cbrand && String(r.code).toUpperCase() === ccode)) {
+        target.push({ brand: cbrand, code: ccode });
+        target.sort((a, b) => (a.brand || '').localeCompare(b.brand || ''));
+      }
+    }
+  }
   const isLD = p.duty === 'LIGHT_DUTY';
   const vehicleApps = Array.isArray(p.vehicle_applications) ? p.vehicle_applications : [];
   const equipApps   = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
   // LD products show vehicle fitment; HD products show equipment applications
-  const apps = isLD && vehicleApps.length ? vehicleApps : equipApps;
+  const applicationField = isLD ? 'vehicle_applications' : 'equipment_applications';
+  const applicationVerified = p.application_validation?.[applicationField]?.state === 'EVIDENCE_VERIFIED';
+  const suppliedEF90057Apps = [
+  {
+    "equipment": "ISUZU NPR",
+    "engine": "4BD1 / 4BD1-T (3.9 L)",
+    "year": "1986\u20131998"
+  },
+  {
+    "equipment": "ISUZU NPR",
+    "engine": "4HE1-T (4.8 L)",
+    "year": "1998\u20132004"
+  },
+  {
+    "equipment": "ISUZU NHR / NKR",
+    "engine": "4JB1 (2.8 L) / 4JA1 (2.5 L)",
+    "year": "1988\u20132002"
+  },
+  {
+    "equipment": "TOYOTA DYNA",
+    "engine": "14B (3.7 L) / 15B-F (4.1 L)",
+    "year": "1988\u20132001"
+  },
+  {
+    "equipment": "TOYOTA DYNA",
+    "engine": "2B (3.2 L) / 3B (3.4 L)",
+    "year": "1984\u20131995"
+  },
+  {
+    "equipment": "TOYOTA COASTER",
+    "engine": "14B (3.7 L) / 3B (3.4 L)",
+    "year": "1990\u20132004"
+  },
+  {
+    "equipment": "CHEVROLET / GMC W4 TILTMASTER",
+    "engine": "4BD1 / 4BD1-T",
+    "year": "1986\u20131994"
+  },
+  {
+    "equipment": "KOMATSU D20A / D21",
+    "engine": "4D94",
+    "year": "1985\u20131995"
+  },
+  {
+    "equipment": "KOMATSU D21-6",
+    "engine": "4D95S",
+    "year": "1991\u20131998"
+  },
+  {
+    "equipment": "KOMATSU W20-1 / W30-1",
+    "engine": "4D105",
+    "year": "1984\u20131992"
+  },
+  {
+    "equipment": "JOHN DEERE 125",
+    "engine": "C190",
+    "year": "1982\u20131990"
+  },
+  {
+    "equipment": "HITACHI EX60 / EX75",
+    "engine": "4BD1 / BD30",
+    "year": "1990\u20132002"
+  },
+  {
+    "equipment": "TOYOTA FORKLIFT SERIES 5 Y 6",
+    "engine": "1DZ (di\u00e9sel) / 2J",
+    "year": "1989\u20131999"
+  },
+  {
+    "equipment": "NISSAN FORKLIFT",
+    "engine": "SD22 / SD25 / SD33",
+    "year": "1985\u20131996"
+  },
+  {
+    "equipment": "KOMATSU FORKLIFT",
+    "engine": "4D94E / 4D98E",
+    "year": "1993\u20132005"
+  }
+];
+  const suppliedEF90057 = String(sku).toUpperCase() === 'EF90057' && !isLD && !applicationVerified;
+  const apps = suppliedEF90057 ? suppliedEF90057Apps : (applicationVerified ? (isLD ? vehicleApps : equipApps) : []);
+  // Keep internal audit notices out of EF90057 commercial presentation.
+  const showInternalReviewNotices = false; // avisos internos ocultos en todo el catalogo (2026-11-01)
+  const reviewNotice = currentLang === 'es'
+    ? 'Producto identificado. Referencias OEM y de competidores pendientes de revisi\u00f3n t\u00e9cnica. Las aplicaciones sin evidencia verificada no se muestran.'
+    : 'Product identified. OEM and competitor references require technical review. Applications without verified evidence are withheld.';
+
+  // Hero block (Fleetguard-style layout, 2026-11-04): photo + identity + description + related parts.
+  const hasPhoto = Boolean(p.image_url && /^https:\/\/cdn\.elimfilters\.com\//.test(String(p.image_url)));
+  const phText = currentLang === 'es' ? 'Imagen próximamente' : 'Image coming soon';
+  const photoHTML = hasPhoto
+    ? `<div class="spec-photo" tabindex="0" role="button" aria-label="Zoom ${esc(sku)}"><img src="${esc(p.image_url)}" alt="${esc(sku)} ELIMFILTERS" loading="lazy" decoding="async" onerror="this.closest('.spec-photo').classList.add('is-empty');this.remove()"><span class="spec-photo-ph">${phText}</span></div>`
+    : `<div class="spec-photo is-empty"><span class="spec-photo-ph">${phText}</span></div>`;
+  const relatedHTML = (() => {
+    const alts = Array.isArray(p.alternatives) ? p.alternatives.filter(Boolean) : [];
+    const chips = alts.map(a => {
+      const altSku = typeof a === 'object' ? (a.sku || a.code || '') : String(a);
+      return altSku ? `<a href="/results.html?q=${encodeURIComponent(altSku)}" class="see-also-chip">${esc(altSku)}</a>` : '';
+    }).filter(Boolean).join('');
+    if (!chips) return '';
+    return `<div class="hero-related"><p class="hero-related-title">${currentLang === 'es' ? 'Piezas relacionadas' : 'Related Parts'}</p><p class="hero-related-sub">${T.altTitle || 'See Also'}</p><div class="hero-related-chips">${chips}</div></div>`;
+  })();
 
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
       <div class="card-inner">
-        <div class="card-header">
-          <div class="card-identity">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERSÂ®</span>
+<nav class="card-crumbs" aria-label="Breadcrumb"><a href="https://elimfilters.com">${currentLang === 'es' ? 'Inicio' : 'Home'}</a> / <a href="/">Part Search</a>${p.filter_type ? ` / <span>${esc(p.filter_type)}</span>` : ''}${p.filter_subtype ? ` / <span>${esc(p.filter_subtype)}</span>` : ''} / <strong>${esc(sku)}</strong></nav>
+        <div class="card-hero">
+          ${photoHTML}
+          <div class="hero-info">
+            <div class="card-header">
+              <div class="card-identity">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERS®</span>
             <span class="card-sku">${esc(sku)}</span>
           </div>
-          <div class="card-badges">
+            </div>
+            <p class="hero-type">${esc([p.filter_type, p.filter_subtype].filter(Boolean).join(', '))}</p>
+
+        ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNotice)}</p>` : ''}
+        ${showInternalReviewNotices && p.catalog_validation?.state === 'BLOCKED' ? `<p class="card-desc" role="status">${currentLang === 'es' ? 'SKU bloqueado en la auditoría registrada; requiere revisión antes de usar su compatibilidad.' : 'SKU blocked in the recorded audit; compatibility requires review before use.'}</p>` : ''}
+        ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
+            <div class="hero-row">
+              <div class="card-badges">
             ${p.filter_type      ? `<span class="badge badge-type">${esc(p.filter_type)}</span>` : ''}
+            <span class="badge badge-type">${MEDIA_LABEL}</span>
             ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
-            ${p.installation_type ? `<span class="badge badge-type">${esc(p.installation_type)}</span>` : ''}
             ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
             ${p.technology       ? `<a href="https://elimfilters.com/technologies/${String(p.technology).replace(/[™®©]/g, '').normalize('NFKD').replace(/[^A-Za-z0-9]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
           </div>
+              ${relatedHTML}
+            </div>
+          </div>
         </div>
 
-        ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
-
         ${specs.length ? `
-          <div class="specs-section">
-            <p class="specs-title">${T.specsTitle}</p>
+          <div class="specs-section" style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;"><div class="specs-main" style="flex:1 1 360px;min-width:0;"><p class="specs-title">${T.specsTitle}</p>
             ${dimSpecs.length ? `
             <div class="specs-group">
               <span class="specs-group-label">// DIMENSIONS</span>
@@ -1365,6 +1527,7 @@ function renderCard(p, index) {
               <span class="specs-group-label">// PERFORMANCE</span>
               <div class="specs-grid">${perfSpecs.join('')}</div>
             </div>` : ''}
+          </div>
           </div>` : ''}
 
         ${(oem.length || comp.length || apps.length) ? `
@@ -1424,7 +1587,12 @@ function renderCard(p, index) {
                           nameLine = `<span class="equip-mfr">${esc(fullName)}</span>`;
                         }
 
-                        const subLine = [eng, yearType].filter(Boolean).join(' Â· ');
+                        const sourceDetails = [
+                          a.filter_position || '',
+                          a.serial_restriction ? (currentLang === 'es' ? 'Serie: ' : 'Serial: ') + a.serial_restriction : '',
+                          a.source_scope === 'DONALDSON_CANONICAL_PART_APPLICATION' ? (currentLang === 'es' ? 'Aplicaci\u00f3n documentada para ' : 'Documented application for ') + a.source_part_number + (currentLang === 'es' ? '; equivalencia ELIMFILTERS pendiente' : '; ELIMFILTERS equivalence pending') : ''
+                        ].filter(Boolean).join(' | ');
+                        const subLine = [eng, yearType, sourceDetails].filter(Boolean).join(' | ');
                         return `<span class="equip-chip"><span class="equip-name">${nameLine}</span>${subLine ? `<span class="equip-sub">${esc(subLine)}</span>` : ''}</span>`;
                       }
                       
@@ -1439,29 +1607,17 @@ function renderCard(p, index) {
                       }
                       return `<span class="equip-chip"><span class="equip-name">${nameLine}</span></span>`;
                     }).join('') 
-                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoEquip}</span>`
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${applicationVerified ? T.specNoEquip : (currentLang === 'es' ? 'Compatibilidad pendiente de validaci\u00f3n' : 'Compatibility pending validation')}</span>`
                 }
               </div>
             </div>
           </div>
         ` : ''}
-
-        ${(() => {
-          const alts = Array.isArray(p.alternatives) ? p.alternatives.filter(Boolean) : [];
-          if (!alts.length) return '';
-          const chips = alts.map(a => {
-            const altSku = typeof a === 'object' ? (a.sku || a.code || '') : String(a);
-            if (!altSku) return '';
-            return `<a href="/results.html?q=${encodeURIComponent(altSku)}" class="see-also-chip">${esc(altSku)}</a>`;
-          }).filter(Boolean).join('');
-          if (!chips) return '';
-          return `<div class="see-also"><span class="see-also-label">${T.altTitle || 'See Also'}</span>${chips}</div>`;
-        })()}
       </div>
     </article>`;
 }
 
-// â”€â”€â”€ Render Results â”€â”€â”€
+// ─── Render Results ───
 // Mixed HD/LD duty classes are intercepted earlier by showMixedDutyPrompt()
 // before this function is ever called, so it only ever renders a single,
 // duty-consistent result set.
@@ -1478,7 +1634,7 @@ function renderResults(items, count, searchMode, searchTerm) {
   app.innerHTML = `<div class="products">${items.map((p, i) => renderCard(p, i)).join('')}</div>`;
 }
 
-// â”€â”€â”€ SEARCH EXECUTION â”€â”€â”€
+// ─── SEARCH EXECUTION ───
 async function decodeNHTSA(vin) {
   try {
     const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`);
@@ -1574,6 +1730,392 @@ async function executeSearch() {
 // executeSearch() is called by detectLang().then() above — no boot call needed
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="part-search-results-fixes">
+.search-summary-mode { display: none !important; }
+</style>
+<script id="part-search-results-fixes-script">
+(function () {
+  var technologyRoutes = {
+    MACROCORE: 'technologies/macrocore',
+    MICROKAPPA: 'technologies/microkappa',
+    DRYCORE: 'technologies/drycore',
+    INTEKCORE: 'technologies/intekcore',
+    SYNTAPORE: 'technologies/syntapore',
+    HYDROCORE: 'technologies/hydrocore',
+    SYNTRAX: 'technologies/syntrax',
+    NANOFORCE: 'technologies/nanoforce',
+    THERMACORE: 'technologies/thermacore',
+    DURATECH: 'commercial-lines/duratech',
+    MARINECLEAN: 'commercial-lines/marineclean'
+  };
+
+  function canonicalTechnologyName(value) {
+    return String(value || '')
+      .replace(/[™®©]/g, '')
+      .normalize('NFKD')
+      .replace(/[^A-Za-z0-9]/g, '')
+      .toUpperCase();
+  }
+
+  function normalizedSearchQuery() {
+    var params = new URLSearchParams(window.location.search || '');
+    return String(params.get('q') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  }
+
+  function resultLanguage() {
+    var params = new URLSearchParams(window.location.search || '');
+    var lang = String(params.get('lang') || document.documentElement.lang || 'en').toLowerCase();
+    if (lang.indexOf('es') === 0) return 'es';
+    if (lang.indexOf('pt') === 0) return 'pt';
+    return 'en';
+  }
+
+  function normalizeR90DisambiguationUi(scope) {
+    if (normalizedSearchQuery() !== 'R90') return;
+    var root = scope || document;
+    var title = root.querySelector && root.querySelector('.status-title');
+    var desc = root.querySelector && root.querySelector('.status-desc');
+    if (!title || !desc) {
+      title = document.querySelector('.status-title');
+      desc = document.querySelector('.status-desc');
+    }
+    if (!title || !desc) return;
+
+    var copy = {
+      en: {
+        title: 'MANUFACTURER REQUIRED',
+        desc: 'R90 is used by more than one manufacturer. Enter TECNOCAR R90 for the validated TECNOCAR cross-reference, or enter the complete RACOR element reference R90S, R90T, or R90P.'
+      },
+      es: {
+        title: 'FABRICANTE REQUERIDO',
+        desc: 'R90 es utilizado por más de un fabricante. Ingresa TECNOCAR R90 para la referencia validada de TECNOCAR, o ingresa la referencia completa del elemento RACOR: R90S, R90T o R90P.'
+      },
+      pt: {
+        title: 'FABRICANTE OBRIGATÓRIO',
+        desc: 'R90 é utilizado por mais de um fabricante. Digite TECNOCAR R90 para a referência TECNOCAR validada, ou digite a referência completa do elemento RACOR: R90S, R90T ou R90P.'
+      }
+    }[resultLanguage()];
+
+    title.textContent = copy.title;
+    desc.textContent = copy.desc;
+    title.setAttribute('data-resolution', 'AMBIGUOUS_MANUFACTURER');
+    desc.setAttribute('data-manufacturer-required', 'true');
+  }
+
+  function normalizeResultsUi(root) {
+    var scope = root || document;
+
+    scope.querySelectorAll('.search-summary-mode').forEach(function (node) { node.remove(); });
+
+    scope.querySelectorAll('.header-back').forEach(function (link) {
+      link.textContent = 'BACK TO SEARCH';
+      link.href = '/';
+    });
+
+    scope.querySelectorAll('.badge-tech').forEach(function (badge) {
+      var key = canonicalTechnologyName(badge.textContent);
+      var routePath = technologyRoutes[key];
+      if (!routePath) {
+        badge.remove();
+        return;
+      }
+      var canonicalUrl = 'https://elimfilters.com/' + routePath + '/';
+      badge.href = canonicalUrl;
+      badge.target = '_blank';
+      badge.rel = 'noopener noreferrer';
+      badge.title = 'Learn more about ' + (badge.textContent || key).trim();
+      badge.setAttribute('aria-label', 'Open ' + key + ' technology page');
+    });
+
+    normalizeR90DisambiguationUi(scope);
+  }
+
+  function start() {
+    normalizeResultsUi(document);
+    document.addEventListener('click', function (event) {
+      var badge = event.target.closest && event.target.closest('.badge-tech');
+      if (!badge) return;
+      var key = canonicalTechnologyName(badge.textContent);
+      var routePath = technologyRoutes[key];
+      if (!routePath) return;
+      event.preventDefault();
+      window.open('https://elimfilters.com/' + routePath + '/', '_blank', 'noopener,noreferrer');
+    });
+
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.nodeType === 1) normalizeResultsUi(node.matches && node.matches('.badge-tech, .header-back, .search-summary-mode, .status-container, .status-title, .status-desc') ? node.parentNode || document : node);
+        });
+      });
+      normalizeR90DisambiguationUi(document);
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
+})();
+</script>
+<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260909_R90_DISAMBIGUATION -->
+<script>
+/* part-search: in-box hover zoom + click/tap/Enter lightbox for .spec-photo (2026-11-04) */
+(function () {
+  var fine = matchMedia('(hover:hover) and (pointer:fine)');
+  function box(t) { return t && t.closest ? t.closest('.spec-photo') : null; }
+  function pos(b, e) {
+    var r = b.getBoundingClientRect();
+    b.style.setProperty('--zx', ((e.clientX - r.left) / r.width * 100) + '%');
+    b.style.setProperty('--zy', ((e.clientY - r.top) / r.height * 100) + '%');
+  }
+  document.addEventListener('mouseover', function (e) { var b = box(e.target); if (b && fine.matches) { pos(b, e); b.classList.add('is-zoom'); } });
+  document.addEventListener('mousemove', function (e) { var b = box(e.target); if (b && fine.matches) pos(b, e); });
+  document.addEventListener('mouseout', function (e) { var b = box(e.target); if (b && !b.contains(e.relatedTarget)) b.classList.remove('is-zoom'); });
+  function open(b) {
+    var src = b.querySelector('img'); if (!src) return;
+    var o = document.createElement('div'), i = document.createElement('img');
+    o.className = 'photo-lightbox'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-label', src.alt);
+    i.src = src.src; i.alt = src.alt; o.appendChild(i);
+    function close() { o.remove(); document.removeEventListener('keydown', k); }
+    function k(ev) { if (ev.key === 'Escape') close(); }
+    o.addEventListener('click', close); document.addEventListener('keydown', k); document.body.appendChild(o);
+  }
+  document.addEventListener('click', function (e) { var b = box(e.target); if (b) open(b); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var b = box(document.activeElement); if (b) open(b); } });
+})();
+</script>
 </body>
 </html>
 
