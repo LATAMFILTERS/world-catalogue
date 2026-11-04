@@ -1381,6 +1381,8 @@ function buildFilterData(row, lang = 'en'){
 
   return {
     elimfilters_sku: row.sku,
+    // Image assigned to this SKU by the R2 sync (lib/r2-catalog-image-sync.js); CDN origin only.
+    image_url: /^https:\/\/cdn\.elimfilters\.com\//.test(String(row.image_url || '')) ? row.image_url : null,
     description: extractText(row.description, lang),
     filter_type: publicFilterType(row) || extractText(row.filter_type, lang),
     filter_subtype: publicSubType(row),
