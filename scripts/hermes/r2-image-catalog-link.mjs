@@ -37,11 +37,15 @@ const images = objects.filter((o) => /\.(png|webp|jpe?g)$/i.test(o.key || ''));
 const bySku = new Map(); const unparsed = [];
 for (const o of images) {
   const base = path.posix.basename(o.key);
-  const m = /^(?:fleetguard_)?(E[A-Z]\d{5})(?=[-_.]|$)/i.exec(base);
+  // SKU at the start of the name; delimiters seen in the bucket: "-", "_", ".", " " ("EC30025 Microkappa.png"),
+  // "(" ("EF90440 (2).png"). Non-standard 6-digit SKUs (EA135396) exist in the catalogue.
+  const m = /^(?:fleetguard_)?(E[A-Z]\d{5,6})(?=[-_. (]|$)/i.exec(base);
   if (!m) { unparsed.push(o.key); continue; }
   const sku = m[1].toUpperCase();
-  const tech = TECH.find((t) => new RegExp(`(^|[-_])${t}([-_.]|$)`, 'i').test(base)) || null;
-  (bySku.get(sku) || bySku.set(sku, []).get(sku)).push({ ...o, base, tech, approved: /approved/i.test(base) });
+  const tech = TECH.find((t) => new RegExp(`(^|[-_ ])${t}([-_. ]|$)`, 'i').test(base)) || null;
+  // Technology-like words outside the canonical registry (e.g. MICROCORE, MARINECLEAN) must not go live unreviewed.
+  const foreignTech = (base.toUpperCase().match(/[A-Z]{4,}(?:CORE|KAPPA|FORCE|PORE|TRAX|CLEAN)/g) || []).filter((w) => !TECH.includes(w));
+  (bySku.get(sku) || bySku.set(sku, []).get(sku)).push({ ...o, base, tech, foreignTech, approved: /approved/i.test(base) });
 }
 
 const url = process.env.CATALOG_DATABASE_URL;
@@ -67,6 +71,7 @@ try {
       if (list.length > 1) { hold('MULTIPLE_UNAPPROVED'); continue; }
       pick = list[0];
     }
+    if (pick.foreignTech.length) { hold('NON_CANONICAL_TECHNOLOGY_NAME', { words: pick.foreignTech }); continue; }
     const catTech = String(row.technology || '').toUpperCase().replace(/[^A-Z]/g, '');
     if (pick.tech && catTech && pick.tech !== catTech) { hold('TECHNOLOGY_MISMATCH', { file_tech: pick.tech, catalog_tech: catTech }); continue; }
     const cdnUrl = CDN + pick.key.split('/').map(encodeURIComponent).join('/');
