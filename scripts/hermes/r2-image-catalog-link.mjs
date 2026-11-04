@@ -76,7 +76,10 @@ try {
     if (pick.tech && catTech && pick.tech !== catTech) { hold('TECHNOLOGY_MISMATCH', { file_tech: pick.tech, catalog_tech: catTech }); continue; }
     const cdnUrl = CDN + pick.key.split('/').map(encodeURIComponent).join('/');
     let status = 0; let ctype = '';
-    try { const r = await fetch(cdnUrl, { method: 'HEAD' }); status = r.status; ctype = r.headers.get('content-type') || ''; } catch (e) { ctype = e.message; }
+    for (let attempt = 0; attempt < 3 && status !== 200; attempt++) {
+      try { const r = await fetch(cdnUrl, { method: 'HEAD', signal: AbortSignal.timeout(15000) }); status = r.status; ctype = r.headers.get('content-type') || ''; }
+      catch (e) { ctype = e.message; await sleep(1000); }
+    }
     await sleep(100);
     if (status !== 200 || !/^image\//i.test(ctype)) { hold('CDN_NOT_REACHABLE', { cdn_url: cdnUrl, status, ctype }); continue; }
     if (row.image_url === cdnUrl) { report.unchanged.push(sku); continue; }
