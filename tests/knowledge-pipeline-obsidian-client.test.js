@@ -36,7 +36,7 @@ test('an ANSWER action with a sourced citation becomes validated, approved evide
   stubReason({
     action: 'ANSWER',
     confidence: 0.9,
-    answer: 'Cambiar el filtro de combustible cada 500 horas según el manual OEM.',
+    answer: 'Verificar el circuito y consultar el manual OEM aplicable antes de definir el intervalo.',
     citations: [{ recordId: 'rec-1', versionId: 'ver-1', sourceId: 'src-1', label: 'Manual OEM Mack MP8' }]
   });
 
@@ -79,7 +79,7 @@ test('an ANSWER action whose citation carries no sourceId is never treated as ap
 test('an ESCALATE action means no approved knowledge matched', async () => {
   stubReason({ action: 'ESCALATE', confidence: 0, answer: null, citations: [], escalationReason: 'No approved knowledge matched the request.' });
 
-  const result = await queryApprovedTechnicalKnowledge({ question: 'pregunta sin evidencia', equipment: { brand: 'VOLVO' }, requestId: 'req-3' });
+  const result = await queryApprovedTechnicalKnowledge({ question: 'Qué intervalo OEM aplica sin evidencia' , equipment: { brand: 'VOLVO' }, requestId: 'req-3' });
 
   assert.equal(result.status, 'not_found');
   assert.equal(result.source_count, 0);
@@ -94,7 +94,7 @@ test('a VERIFY action (contradiction detected) never resolves to validated', asy
     citations: [{ recordId: 'rec-4', versionId: 'ver-4', sourceId: 'src-4', label: 'Fuente en conflicto' }]
   });
 
-  const result = await queryApprovedTechnicalKnowledge({ question: 'pregunta con conflicto', equipment: { brand: 'MACK' }, requestId: 'req-4' });
+  const result = await queryApprovedTechnicalKnowledge({ question: 'Qué intervalo OEM aplica con conflicto' , equipment: { brand: 'MACK' }, requestId: 'req-4' });
 
   assert.equal(result.status, 'conflicting_sources');
   assert.equal(result.conflicts_detected, true);
