@@ -1350,6 +1350,7 @@ function renderCard(p, index) {
     specHTML(T.specLength,   dimFmt(p.height_mm)),
     specHTML(T.specGasketOD, dimFmt(p.gasket_od_mm)),
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
+    specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)), // burst pressure sits under Length (column 3, row 2)
   ].filter(Boolean);
 
   // Group 2 — filtration performance (Style omitted: already shown as badge)
@@ -1357,7 +1358,6 @@ function renderCard(p, index) {
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
     specHTML(T.specMediaType, MEDIA_LABEL),
-    specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)),
     specHTML(T.specCollapse,  psiFmt(p.collapse_pressure_psi)),
   ].filter(Boolean);
 
