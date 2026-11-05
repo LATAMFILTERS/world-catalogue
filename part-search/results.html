@@ -1463,7 +1463,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
               <div class="refs-grid">
                 ${oemDisplay.length 
                   ? oemDisplay.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
-                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
+                  : stationary.length ? '' : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
                 }
               </div>
             </div>
