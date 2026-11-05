@@ -150,3 +150,30 @@ test('EL30246 holds EL36122-branded photo without replacing SKU or references', 
   assert.equal(guard(other,new URLSearchParams('q=EL36122')).changed,false);
   assert.ok(other.results[0].image_url);
 });
+
+test('EL30246 uses the newly published exact-SKU R2 image after the mismatched old photo is held', () => {
+  const scope={addEventListener(){},URL};
+  vm.runInNewContext(source + '\n globalThis.__el30246 = {guardConflictedSkuResponse,patchApprovedEL30246Image,EL30246_APPROVED_URL};',scope);
+  const {guardConflictedSkuResponse,patchApprovedEL30246Image,EL30246_APPROVED_URL}=scope.__el30246;
+  assert.equal(EL30246_APPROVED_URL,'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL30246.webp');
+  const products=[
+    {elimfilters_sku:'EL30246',image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL36122.png',
+     catalog_validation:{state:'CERTIFIED'},competitor_codes:[{manufacturer:'FRAM',code:'CH10246'}]},
+    {elimfilters_sku:'EL30013',image_url:null},
+    {elimfilters_sku:'EL82352',image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL80352-SYNTRAX-approved-opt.png'}
+  ];
+  const refs=JSON.stringify(products.map(p=>({sku:p.elimfilters_sku,refs:p.competitor_codes,validation:p.catalog_validation})));
+  const body={source:'exact_sku',results:products};
+  const held=guardConflictedSkuResponse(body,new URLSearchParams('q=EL30246'));
+  assert.equal(held.held,'EL30246_IMAGE_IDENTITY_UNVERIFIED');
+  assert.equal(products[0].image_url,null);
+  assert.equal(patchApprovedEL30246Image(body),true);
+  assert.equal(products[0].image_url,EL30246_APPROVED_URL);
+  assert.equal(patchApprovedEL30246Image(body),false);
+  assert.equal(products[1].image_url,null);
+  assert.equal(products[2].image_url,'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL80352-SYNTRAX-approved-opt.png');
+  assert.equal(JSON.stringify(products.map(p=>({sku:p.elimfilters_sku,refs:p.competitor_codes,validation:p.catalog_validation}))),refs);
+  const external={results:[{elimfilters_sku:'EL30246',image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL30246-other-approved.png'}]};
+  assert.equal(patchApprovedEL30246Image(external),false);
+  assert.match(external.results[0].image_url,/EL30246-other-approved/);
+});
