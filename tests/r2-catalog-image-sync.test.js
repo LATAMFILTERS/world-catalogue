@@ -141,3 +141,17 @@ test('public CDN fetch uses hash version to bypass a stale same-key image', asyn
   assert.equal(result.url, `https://cdn.elimfilters.com/EL81807.png?v=${digest}`);
   assert.equal(calls[0], result.url);
 });
+
+test('maps only complete existing suffix-letter SKU names, never prefix cousins', () => {
+  const objects = [
+    {key:'fleetguard/page-1/01-20/ET92020P.png',modified:'2026-11-05T13:58:06Z',etag:'P'},
+    {key:'fleetguard/page-1/01-20/ET92020S.png',modified:'2026-11-05T13:59:17Z',etag:'S'},
+    {key:'fleetguard/page-1/01-20/ET92020T.png',modified:'2026-11-05T13:58:07Z',etag:'T'},
+    {key:'fleetguard/page-1/01-20/ET92020PX.png',modified:'2026-11-05T13:58:08Z',etag:'bad'},
+    {key:'fleetguard/page-1/01-20/ET92020.png',modified:'2026-11-05T13:58:10Z',etag:'other'}
+  ];
+  const known = new Set(['ET92020P','ET92020S','ET92020T']);
+  const result = candidates(objects, known);
+  assert.deepEqual(result.selected.map(x => x.sku).sort(), [...known].sort());
+  assert.deepEqual(result.ambiguous, []);
+});
