@@ -6,6 +6,8 @@ on:
       - 'lib/r2-catalog-image-sync.js'
       - 'tests/r2-catalog-image-sync.test.js'
       - 'server-original.js'
+      - 'edge/et90010-tunnel-image-worker.js'
+      - 'tests/part-search-r2-missing-image-bridge.test.js'
       - '.github/workflows/r2-catalog-image-sync-test.yml'
   push:
     branches: [main]
@@ -13,6 +15,8 @@ on:
       - 'lib/r2-catalog-image-sync.js'
       - 'tests/r2-catalog-image-sync.test.js'
       - 'server-original.js'
+      - 'edge/et90010-tunnel-image-worker.js'
+      - 'tests/part-search-r2-missing-image-bridge.test.js'
       - '.github/workflows/r2-catalog-image-sync-test.yml'
 
 permissions:
@@ -26,6 +30,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: node --test tests/r2-catalog-image-sync.test.js
+      - run: node --test tests/r2-catalog-image-sync.test.js tests/part-search-r2-missing-image-bridge.test.js
       - run: node --check server-original.js
       - run: node --check lib/r2-catalog-image-sync.js
+      - run: node --check edge/et90010-tunnel-image-worker.js
