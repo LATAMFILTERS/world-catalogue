@@ -1454,7 +1454,11 @@ function buildFilterData(row, lang = 'en'){
     ...(row.sku === 'ET90010' ? {
       reference_manufacturer: 'Baldwin Filters',
       reference_part_number: 'B10-AL',
-      reference_usage: [
+      reference_usage: lang === 'es' ? [
+        'Tanque estacionario de almacenamiento de combustible',
+        'Tanque estacionario con descarga por gravedad',
+        'Bomba de trasiego o surtidor de combustible'
+      ] : [
         'Stationary fuel storage tank (discharge outlet)',
         'Gravity-fed stationary fuel tank',
         'Fuel transfer or dispensing pump'
