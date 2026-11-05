@@ -1439,7 +1439,11 @@ function buildFilterData(row, lang = 'en'){
     image_url: row.sku === 'ET90010'
       ? imageUrlForSku('https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png', row.sku)
       : imageUrlForSku(row.image_url, row.sku),
-    description: extractText(row.description, lang),
+    description: row.sku === 'ET90010'
+      ? (lang === 'es'
+        ? 'Conjunto de filtración de combustible con vaso transparente y drenaje para tanques estacionarios de almacenamiento, líneas de trasiego y surtidores con bomba o alimentación por gravedad. Su función es retener partículas y permitir la recolección de agua antes del suministro al equipo consumidor. La elección de caudal, conexiones y compatibilidad debe validarse contra la instalación real.'
+        : 'Fuel filtration assembly with a transparent collection bowl and drain, intended for stationary bulk storage tanks, fuel transfer lines, dispensing pumps and gravity-fed installations. Designed to capture particles and collect water before fuel reaches the receiving equipment. Flow capacity, port sizing and fuel compatibility require verification for the actual installation.')
+      : extractText(row.description, lang),
     filter_type: publicFilterType(row) || extractText(row.filter_type, lang),
     filter_subtype: publicSubType(row),
     filter_media: MEDIA_LABEL,
