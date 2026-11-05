@@ -73,6 +73,7 @@ export function ProductPageView({ product: p }: { product: ProductPage }) {
       <header style={hero}>
         <span style={kicker}>{p.duty} · {familyName}</span>
         <h1 style={h1}>{productHeading(p)}</h1>
+        {p.imageUrl && <img src={p.imageUrl} alt={`${p.sku} ELIMFILTERS complete fuel filtration assembly`} loading="lazy" width={400} height={460} style={{ display: 'block', marginTop: '1.5rem', maxWidth: '100%', height: 'auto', width: 'min(400px,100%)', objectFit: 'contain' }} />}
         <p style={lead}>{p.description}{(p.oem.length > 0 || p.crossRefs.length > 0) && <> <PublicUiText textKey="publicUi.text9">{"Reference codes:"}</PublicUiText>{' '}{equivalenceLine(p, 3)}. Reference numbers are for lookup only; confirm fitment independently.</>}</p>
         <p style={meta}><PublicUiText textKey="publicUi.text8">{"Technology:"}</PublicUiText>{' '}<Link href={`/technologies/${p.technology.toLowerCase()}/`} style={link}>{p.technology}™</Link></p>
       </header>
