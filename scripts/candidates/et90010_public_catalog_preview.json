@@ -61,20 +61,57 @@
       "value": "Diésel; gasolina, biodiésel y gasohol sujetos a compatibilidad verificada de vaso y juntas"
     }
   ],
-  "crossRefs": [],
-  "oem": [],
+  "crossRefs": [
+    {
+      "brand": "Fleetguard",
+      "code": "3307454S",
+      "scope": "COMPLETE_ASSEMBLY",
+      "evidence": "Baldwin manufacturer cross-reference",
+      "review": "CONFIRMED_REFERENCE"
+    },
+    {
+      "brand": "WIX",
+      "code": "24380",
+      "scope": "COMPLETE_ASSEMBLY",
+      "evidence": "Baldwin cross-reference guide",
+      "review": "CONFIRMED_REFERENCE"
+    },
+    {
+      "brand": "WIX",
+      "code": "24389",
+      "scope": "COMPLETE_ASSEMBLY",
+      "evidence": "third-party interchange list; physical validation pending",
+      "review": "PENDING_PHYSICAL_VERIFICATION"
+    },
+    {
+      "brand": "Hastings",
+      "code": "KF10AL",
+      "scope": "COMPLETE_ASSEMBLY",
+      "evidence": "third-party interchange list; physical validation pending",
+      "review": "PENDING_PHYSICAL_VERIFICATION"
+    }
+  ],
+  "oem": [
+    {
+      "brand": "Baldwin",
+      "code": "B10AL",
+      "scope": "COMPLETE_ASSEMBLY",
+      "note": "Original external assembly reference; not an ELIMFILTERS OEM manufacturer claim"
+    }
+  ],
   "applications": [],
   "callouts": [
-    "Conjunto completo; no confundir con el elemento ES90674",
-    "Referencia de servicio compatible bajo validación del conjunto",
-    "No publicar equivalencias de conjuntos ni aplicaciones vehiculares sin evidencia"
+    "OEM CODE B10AL applies only to the complete assembly ET90010",
+    "COMPETITOR CODES shown for ET90010 apply to complete assemblies, not replacement cartridges",
+    "ES90674 replacement-element interchanges appear in a separate section",
+    "Publication remains blocked pending the existing ET9 category guard and product verification"
   ],
   "governance": {
     "catalogActive": false,
     "publicationReady": false,
     "approvalState": "DRAFT_REVIEW",
     "skuExistenceInLiveDatabase": "NOT_VERIFIED",
-    "supplierReferenceDisplayed": false,
+    "supplierReferenceDisplayed": true,
     "assemblyClassificationRequiresReview": true,
     "performanceOfOwnElementVerified": false
   },
@@ -86,5 +123,32 @@
   "source": {
     "kind": "user-provided-design-and-specifications",
     "authority": "pending"
+  },
+  "oemCode": "B10AL",
+  "elementCrossRefs": {
+    "sku": "ES90674",
+    "notAssemblyCrossRefs": true,
+    "items": [
+      {
+        "brand": "Baldwin",
+        "code": "PF10"
+      },
+      {
+        "brand": "Fleetguard",
+        "code": "FF246"
+      },
+      {
+        "brand": "Donaldson",
+        "code": "P550674"
+      },
+      {
+        "brand": "WIX",
+        "code": "24043"
+      },
+      {
+        "brand": "Hastings",
+        "code": "FF1002"
+      }
+    ]
   }
 }
