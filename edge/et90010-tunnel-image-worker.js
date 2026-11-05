@@ -108,6 +108,24 @@ function guardConflictedSkuResponse(body, searchParams) {
   return {changed,held:changed?'EL30246_IMAGE_IDENTITY_UNVERIFIED':null};
 }
 
+// Approved visual revision uploaded to R2 on 2026-11-05 at the exact active SKU.
+// Replace only the old, mismatched EL36122 image on EL30246's existing result.
+// Do not alter catalog identities, reference history, or other SKU images.
+const EL30246_APPROVED_URL = 'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL30246.webp';
+function patchApprovedEL30246Image(body) {
+  if (!body || !Array.isArray(body.results)) return false;
+  let changed = false;
+  for (const p of body.results) {
+    if (!p || String(p.elimfilters_sku || p.sku || '').trim().toUpperCase() !== 'EL30246') continue;
+    const old = String(p.image_url || '').trim();
+    if (old === EL30246_APPROVED_URL) continue;
+    if (old) continue; // A different image requires separate approval.
+    p.image_url = EL30246_APPROVED_URL;
+    changed = true;
+  }
+  return changed;
+}
+
 // The public hostname currently uses a Cloudflare Tunnel serving an older
 // results.html than the Render/GitHub checkout. Keep this small, ES90674-only
 // presentation adaptation until the Lenovo origin is updated.
@@ -207,14 +225,16 @@ async function handleSearch(request) {
   const imagePatched = patchImage(body);
   const descriptionPatched = patchRetiredSkuDescription(body);
   const guarded = guardConflictedSkuResponse(body, target.searchParams);
-  if (!imagePatched && !descriptionPatched && !guarded.changed) return upstream;
+  const el30246ImagePatched = patchApprovedEL30246Image(body);
+  if (!imagePatched && !descriptionPatched && !guarded.changed && !el30246ImagePatched) return upstream;
 
   const headers = new Headers(upstream.headers);
   headers.set('content-type', 'application/json; charset=utf-8');
   headers.set('cache-control', 'no-store');
   if (imagePatched) headers.set('x-elimfilters-image-patch', 'R2_MATCHED_MISSING_ONLY');
   if (descriptionPatched) headers.set('x-elimfilters-identity-display', 'VERIFIED_CURRENT_SKU');
-  if (guarded.held) headers.set('x-elimfilters-reference-guard', guarded.held);
+  if (guarded.held && !el30246ImagePatched) headers.set('x-elimfilters-reference-guard', guarded.held);
+  if (el30246ImagePatched) headers.set('x-elimfilters-image-correction', 'EL30246_R2_APPROVED');
   headers.delete('content-length');
   headers.delete('content-encoding');
   headers.delete('etag');
