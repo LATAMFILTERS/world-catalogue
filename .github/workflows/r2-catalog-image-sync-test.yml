@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'lib/r2-catalog-image-sync.js'
+      - 'lib/sku-image.js'
+      - 'tests/sku-image.test.js'
       - 'tests/r2-catalog-image-sync.test.js'
       - 'server-original.js'
       - 'edge/et90010-tunnel-image-worker.js'
@@ -13,6 +15,8 @@ on:
     branches: [main]
     paths:
       - 'lib/r2-catalog-image-sync.js'
+      - 'lib/sku-image.js'
+      - 'tests/sku-image.test.js'
       - 'tests/r2-catalog-image-sync.test.js'
       - 'server-original.js'
       - 'edge/et90010-tunnel-image-worker.js'
@@ -30,7 +34,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: node --test tests/r2-catalog-image-sync.test.js tests/part-search-r2-missing-image-bridge.test.js
+      - run: node --test tests/r2-catalog-image-sync.test.js tests/sku-image.test.js tests/part-search-r2-missing-image-bridge.test.js
       - run: node --check server-original.js
       - run: node --check lib/r2-catalog-image-sync.js
       - run: node --check edge/et90010-tunnel-image-worker.js

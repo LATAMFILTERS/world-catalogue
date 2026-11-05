@@ -62,3 +62,11 @@ test('ET90010 accepts only its exact pre-existing R2 public image URL', () => {
   assert.equal(imageUrlForSku(url + '?redirect=other', 'ET90010'), null);
   assert.equal(imageUrlForSku(url.replace('ET90010.png', 'ET90011.png'), 'ET90010'), null);
 });
+
+test('accepts suffix-letter product images without sharing another SKU identity', () => {
+  const url = `${CDN}/fleetguard/page-1/01-20/ET92020P.png`;
+  assert.equal(imageUrlForSku(url, 'ET92020P'), url);
+  assert.equal(imageUrlForSku(url, 'ET92020S'), null);
+  assert.equal(imageUrlForSku(url, 'ET92020'), null);
+  assert.equal(imageUrlForSku(`${CDN}/fleetguard/page-1/01-20/ET92020PX.png`, 'ET92020P'), null);
+});
