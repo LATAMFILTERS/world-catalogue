@@ -10,7 +10,7 @@ const port = Number(process.env.PORT ?? 8086);
 
 if (bridgeUpstream) {
   const bridgeApp = createBridgeApp(bridgeUpstream, 'knowledge-engine-runtime');
-  const server = bridgeApp.listen(port, () => log.info({ port, bridgeUpstream }, 'knowledge engine bridge started'));
+  const server = bridgeApp.listen(port, process.env.HOST || '0.0.0.0', () => log.info({ port, bridgeUpstream }, 'knowledge engine bridge started'));
   for (const signal of ['SIGTERM', 'SIGINT']) process.on(signal, () => server.close(() => process.exit(0)));
 } else {
   const [{ reasoningRequestSchema }, { ensureRuntimeSchema, readiness, reason }] = await Promise.all([
@@ -53,9 +53,10 @@ if (bridgeUpstream) {
   });
 
   try {
-    await ensureRuntimeSchema();
+    // Production startup checks existing schema; bootstrap requires explicit authorization.
+    if (process.env.KNOWLEDGE_SCHEMA_BOOTSTRAP === 'true') await ensureRuntimeSchema();
     await readiness();
-    const server = app.listen(port, () => log.info({ port }, 'knowledge engine runtime started'));
+    const server = app.listen(port, process.env.HOST || '0.0.0.0', () => log.info({ port }, 'knowledge engine runtime started'));
     for (const signal of ['SIGTERM', 'SIGINT']) process.on(signal, () => server.close(() => process.exit(0)));
   } catch (error) {
     log.fatal({ err: error }, 'knowledge engine runtime startup failed');

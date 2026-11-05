@@ -29,6 +29,7 @@ function createFakeKnowledgeGapTable() {
       async query(sql, params = []) {
         const text = String(sql);
         if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
+        if (/SELECT pg_advisory_xact_lock/.test(text)) return { rows: [] };
 
         if (/SELECT \* FROM bot_governance\.knowledge_gaps WHERE deduplication_key = \$1/i.test(text)) {
           const row = rows.get(params[0]);

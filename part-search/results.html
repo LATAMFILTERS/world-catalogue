@@ -1779,5 +1779,135 @@ async function primaryResultsWithDiscoveredAlternatives(results, rawReference) {
   document.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var b = box(document.activeElement); if (b) open(b); } });
 })();
 </script>
+<!-- Ported from the production copy on the Lenovo node: canonical technology badge links (unapproved aliases removed),
+     summary-mode hidden, and R90 manufacturer-required copy. TURBOCORE added: it is an approved technology. -->
+<style id="part-search-results-fixes">
+.search-summary-mode { display: none !important; }
+</style>
+<script id="part-search-results-fixes-script">
+(function () {
+  var technologyRoutes = {
+    MACROCORE: 'technologies/macrocore',
+    MICROKAPPA: 'technologies/microkappa',
+    DRYCORE: 'technologies/drycore',
+    INTEKCORE: 'technologies/intekcore',
+    SYNTAPORE: 'technologies/syntapore',
+    HYDROCORE: 'technologies/hydrocore',
+    SYNTRAX: 'technologies/syntrax',
+    NANOFORCE: 'technologies/nanoforce',
+    THERMACORE: 'technologies/thermacore',
+    TURBOCORE: 'technologies/turbocore',
+    DURATECH: 'commercial-lines/duratech',
+    MARINECLEAN: 'commercial-lines/marineclean'
+  };
+
+  function canonicalTechnologyName(value) {
+    return String(value || '')
+      .replace(/[™®©]/g, '')
+      .normalize('NFKD')
+      .replace(/[^A-Za-z0-9]/g, '')
+      .toUpperCase();
+  }
+
+  function normalizedSearchQuery() {
+    var params = new URLSearchParams(window.location.search || '');
+    return String(params.get('q') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  }
+
+  function resultLanguage() {
+    var params = new URLSearchParams(window.location.search || '');
+    var lang = String(params.get('lang') || document.documentElement.lang || 'en').toLowerCase();
+    if (lang.indexOf('es') === 0) return 'es';
+    if (lang.indexOf('pt') === 0) return 'pt';
+    return 'en';
+  }
+
+  function normalizeR90DisambiguationUi(scope) {
+    if (normalizedSearchQuery() !== 'R90') return;
+    var root = scope || document;
+    var title = root.querySelector && root.querySelector('.status-title');
+    var desc = root.querySelector && root.querySelector('.status-desc');
+    if (!title || !desc) {
+      title = document.querySelector('.status-title');
+      desc = document.querySelector('.status-desc');
+    }
+    if (!title || !desc) return;
+
+    var copy = {
+      en: {
+        title: 'MANUFACTURER REQUIRED',
+        desc: 'R90 is used by more than one manufacturer. Enter TECNOCAR R90 for the validated TECNOCAR cross-reference, or enter the complete RACOR element reference R90S, R90T, or R90P.'
+      },
+      es: {
+        title: 'FABRICANTE REQUERIDO',
+        desc: 'R90 es utilizado por más de un fabricante. Ingresa TECNOCAR R90 para la referencia validada de TECNOCAR, o ingresa la referencia completa del elemento RACOR: R90S, R90T o R90P.'
+      },
+      pt: {
+        title: 'FABRICANTE OBRIGATÓRIO',
+        desc: 'R90 é utilizado por mais de um fabricante. Digite TECNOCAR R90 para a referência TECNOCAR validada, ou digite a referência completa do elemento RACOR: R90S, R90T ou R90P.'
+      }
+    }[resultLanguage()];
+
+    title.textContent = copy.title;
+    desc.textContent = copy.desc;
+    title.setAttribute('data-resolution', 'AMBIGUOUS_MANUFACTURER');
+    desc.setAttribute('data-manufacturer-required', 'true');
+  }
+
+  function normalizeResultsUi(root) {
+    var scope = root || document;
+
+    scope.querySelectorAll('.search-summary-mode').forEach(function (node) { node.remove(); });
+
+    scope.querySelectorAll('.header-back').forEach(function (link) {
+      link.textContent = 'BACK TO SEARCH';
+      link.href = '/';
+    });
+
+    scope.querySelectorAll('.badge-tech').forEach(function (badge) {
+      var key = canonicalTechnologyName(badge.textContent);
+      var routePath = technologyRoutes[key];
+      if (!routePath) {
+        badge.remove();
+        return;
+      }
+      var canonicalUrl = 'https://elimfilters.com/' + routePath + '/';
+      badge.href = canonicalUrl;
+      badge.target = '_blank';
+      badge.rel = 'noopener noreferrer';
+      badge.title = 'Learn more about ' + (badge.textContent || key).trim();
+      badge.setAttribute('aria-label', 'Open ' + key + ' technology page');
+    });
+
+    normalizeR90DisambiguationUi(scope);
+  }
+
+  function start() {
+    normalizeResultsUi(document);
+    document.addEventListener('click', function (event) {
+      var badge = event.target.closest && event.target.closest('.badge-tech');
+      if (!badge) return;
+      var key = canonicalTechnologyName(badge.textContent);
+      var routePath = technologyRoutes[key];
+      if (!routePath) return;
+      event.preventDefault();
+      window.open('https://elimfilters.com/' + routePath + '/', '_blank', 'noopener,noreferrer');
+    });
+
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.nodeType === 1) normalizeResultsUi(node.matches && node.matches('.badge-tech, .header-back, .search-summary-mode, .status-container, .status-title, .status-desc') ? node.parentNode || document : node);
+        });
+      });
+      normalizeR90DisambiguationUi(document);
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
+})();
+</script>
+
 </body>
 </html>
