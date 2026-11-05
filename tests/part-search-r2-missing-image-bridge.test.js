@@ -115,7 +115,7 @@ test('EL30013 retired FRAM PH13 SKU cannot resolve to an unrelated hydraulic EH6
   const result=guard(body,new URLSearchParams('q=EL30013&lang=en'));
   assert.equal(result.changed,true);
   assert.equal(result.held,'EL30013_WRONG_FAMILY_REFERENCE');
-  assert.deepEqual(body.results,[]);
+  assert.equal(body.results.length,0);
   assert.equal(body.source,'no_match');
   assert.equal(body.reference_safety_status,'IDENTITY_REVIEW_REQUIRED');
   const real={source:'exact_sku',results:[{elimfilters_sku:'EH64348'}]};
