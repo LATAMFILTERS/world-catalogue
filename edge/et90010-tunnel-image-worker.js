@@ -49,9 +49,95 @@ function patchImage(body) {
   return changed;
 }
 
+// The public hostname currently uses a Cloudflare Tunnel serving an older
+// results.html than the Render/GitHub checkout. Keep this small, ES90674-only
+// presentation adaptation until the Lenovo origin is updated.
+const ES90674_ASSEMBLY_SCRIPT = \`<script>
+(function () {
+  var wanted = new URLSearchParams(location.search).get('q');
+  if (String(wanted || '').trim().toUpperCase() !== 'ES90674') return;
+  var spanish = String(document.documentElement.lang || '').toLowerCase().startsWith('es')
+    || new URLSearchParams(location.search).get('lang') === 'es';
+
+  function placeAssemblyNote() {
+    var cards = document.querySelectorAll('.product-card');
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var sku = card.querySelector('.card-sku');
+      if (!sku || sku.textContent.trim().toUpperCase() !== 'ES90674') continue;
+      if (card.querySelector('[data-assembly-compatibility="ES90674-ET90010"]')) return;
+      var grid = card.querySelector('.equip-grid');
+      var host = grid || card.querySelector('.card-inner');
+      if (!host) return;
+      var section = document.createElement('div');
+      section.setAttribute('data-assembly-compatibility', 'ES90674-ET90010');
+      if (!grid) {
+        section.className = 'specs-section';
+        var title = document.createElement('p');
+        title.className = 'specs-title';
+        title.textContent = spanish ? 'COMPATIBILIDAD CON CONJUNTOS' : 'ASSEMBLY COMPATIBILITY';
+        section.appendChild(title);
+      }
+      var link = document.createElement('a');
+      link.className = 'equip-chip';
+      link.href = '/results.html?q=ET90010&mode=part';
+      link.style.textDecoration = 'none';
+      link.style.display = 'block';
+      var heading = document.createElement('span');
+      heading.className = 'equip-name';
+      heading.textContent = 'ET90010 — TURBOCORE™';
+      var description = document.createElement('span');
+      description.style.display = 'block';
+      description.style.marginTop = '0.35rem';
+      description.style.color = 'var(--muted)';
+      description.textContent = spanish
+        ? 'Conjunto completo · Ver ficha'
+        : 'Complete assembly · View product';
+      link.appendChild(heading);
+      link.appendChild(description);
+      section.appendChild(link);
+      var note = document.createElement('p');
+      note.style.fontSize = '0.8rem';
+      note.style.lineHeight = '1.55';
+      note.style.marginTop = '0.55rem';
+      note.style.color = 'var(--muted)';
+      note.textContent = spanish
+        ? 'ES90674 es un elemento de reemplazo para ET90010. No se afirma compatibilidad exclusiva ni con modelos específicos de maquinaria.'
+        : 'ES90674 is a replacement element for ET90010. Exclusive compatibility or machine-model fitment is not established.';
+      section.appendChild(note);
+      host.appendChild(section);
+      return;
+    }
+  }
+  placeAssemblyNote();
+  var root = document.getElementById('app') || document.body;
+  new MutationObserver(placeAssemblyNote).observe(root, {childList:true,subtree:true});
+})();
+</script>\`;
+
+async function handleResultsPage(request, upstream, target) {
+  if (request.method !== 'GET' || target.pathname !== '/results.html'
+      || String(target.searchParams.get('q') || '').trim().toUpperCase() !== 'ES90674'
+      || !upstream.ok || !String(upstream.headers.get('content-type') || '').includes('text/html')) {
+    return upstream;
+  }
+  const headers = new Headers(upstream.headers);
+  headers.delete('content-length');
+  headers.delete('etag');
+  headers.set('cache-control', 'no-store');
+  headers.set('x-elimfilters-assembly-link', 'ES90674-ET90010');
+  const transformed = new HTMLRewriter()
+    .on('body', {element(element) {
+      element.append(ES90674_ASSEMBLY_SCRIPT, {html: true});
+    }})
+    .transform(upstream);
+  return new Response(transformed.body, {status: transformed.status, headers});
+}
+
 async function handleSearch(request) {
   const upstream = await fetch(request);
   const target = new URL(request.url);
+  if (target.pathname === '/results.html') return handleResultsPage(request, upstream, target);
   if (request.method !== 'GET' || target.pathname !== '/api/search' ||
       !upstream.ok || !String(upstream.headers.get('content-type') || '').includes('json')) {
     return upstream;
