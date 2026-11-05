@@ -8,6 +8,13 @@ const { assertGovernedCatalogPatch } = require('../lib/catalog-write-gateway');
 const { applyVerifiedApplications } = require('../lib/catalog-application-write-service');
 
 const APPLY = process.argv.includes('--apply');
+// --capture <file>: read an operator/Claude capture of shop.donaldson.com product pages (productos.json format:
+// requested_code, status EXTRAIDO, source_url, official{part_number, description, cross_references_raw[[maker,code,notes]],
+// equipment_raw[[equipment, year, type, options, engine, engine option]]}) instead of the legacy INPUT_FILES.
+// --fill-empty-only: never overwrite; oem_codes / competitor_codes / equipment_applications are written only when the
+// row has none (2026-11-04 operator-approved completeness plan).
+const captureArg = process.argv.indexOf('--capture') > 0 ? process.argv[process.argv.indexOf('--capture') + 1] : null;
+const FILL_EMPTY_ONLY = process.argv.includes('--fill-empty-only');
 const limitArg = process.argv.find((x) => x.startsWith('--limit='));
 const LIMIT = limitArg ? Math.max(1, Number(limitArg.split('=')[1]) || 1) : Infinity;
 const ROOT = path.resolve(__dirname, '..');
@@ -199,7 +206,34 @@ function extractApplications(record) {
   return out;
 }
 
+// productos.json record -> the record shape this script already understands.
+function fromCaptureRecord(r) {
+  const o = (r && r.official) || {};
+  const cross = arr(o.cross_references_raw).filter((x) => Array.isArray(x) && x.length >= 2).map((x) => ({ manufacturer: x[0], code: x[1] }));
+  const equipment = arr(o.equipment_raw).filter((x) => Array.isArray(x) && clean(x[0])).map((x) => {
+    const e = { equipment: clean(x[0]) };
+    if (clean(x[2]) && clean(x[2]) !== '-') e.type = clean(x[2]);
+    const engine = clean(x[4]);
+    if (engine && !engine.startsWith('-')) e.engine = engine;
+    if (clean(x[1]) && clean(x[1]) !== '-') e.year = clean(x[1]);
+    return e;
+  });
+  return { part_number: o.part_number || r.requested_code, source_url: r.source_url, cross_references: cross, equipment };
+}
+
+function loadCapture(file) {
+  const byPart = new Map();
+  const records = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8').replace(/^﻿/, ''));
+  for (const r of records) {
+    if (r.status !== 'EXTRAIDO' || norm(r.official && r.official.part_number) !== norm(r.requested_code)) continue;
+    const rec = fromCaptureRecord(r);
+    byPart.set(norm(rec.part_number), Object.assign(rec, { __capture_file: path.basename(file), __part_number: rec.part_number }));
+  }
+  return { byPart, collisions: new Map(), files: [{ file: path.basename(file), records: records.length }] };
+}
+
 function loadDataset() {
+  if (captureArg) return loadCapture(captureArg);
   const byPart = new Map();
   const collisions = new Map();
   const files = [];
@@ -262,7 +296,23 @@ async function insertExactRefs(client, sku, refs, type, captureFile) {
 
 async function processSku(client, row, record, report) {
   const refs = extractReferences(record);
-  const applications = extractApplications(record);
+  let applications = extractApplications(record);
+  // A row's own base must never be repeated as an alternate (ALTERNATE_INTEGRITY), nor one code in both columns.
+  const own = new Set([norm(row.codigo_base), norm(row.canonical_source_code), norm(row.sku)].filter(Boolean));
+  refs.oem = refs.oem.filter((r) => !own.has(norm(r.code)));
+  const oemCodes = new Set(refs.oem.map((r) => norm(r.code)));
+  refs.competitors = refs.competitors.filter((r) => !own.has(norm(r.code)) && !oemCodes.has(norm(r.code)));
+  if (FILL_EMPTY_ONLY) {
+    if (arr(row.oem_codes).length) refs.oem = [];
+    if (arr(row.competitor_codes).length) refs.competitors = [];
+    if (arr(row.equipment_applications).length) applications = [];
+    // keep the untouched column as it is in the patch below
+    refs.__keepOem = arr(row.oem_codes).length > 0; refs.__keepComp = arr(row.competitor_codes).length > 0;
+    if (!refs.oem.length && !refs.competitors.length && !applications.length) {
+      report.items.push({ sku: row.sku, status: 'NOTHING_EMPTY_TO_FILL', blockers: [] });
+      return;
+    }
+  }
   const captureFile = record.__capture_file;
   const capturePart = record.__part_number;
   const captureHash = sha(record);
@@ -290,9 +340,16 @@ async function processSku(client, row, record, report) {
 
   const patch = {};
   if (refs.oem.length || refs.competitors.length) {
-    patch.oem_codes = refs.oem;
-    patch.competitor_codes = refs.competitors;
-    patch.brand_crossrefs = buildBrandCrossrefs(refs.competitors);
+    patch.oem_codes = refs.__keepOem ? arr(row.oem_codes) : refs.oem;
+    patch.competitor_codes = refs.__keepComp ? arr(row.competitor_codes) : refs.competitors;
+    patch.brand_crossrefs = refs.__keepComp ? (row.brand_crossrefs || {}) : buildBrandCrossrefs(refs.competitors);
+    if (refs.__keepOem || refs.__keepComp) {
+      // existing column kept: drop new codes already present in the other column (cross-column duplicates)
+      const inOem = new Set(arr(patch.oem_codes).map((r) => norm(r && (r.code || r))));
+      const inComp = new Set(arr(patch.competitor_codes).map((r) => norm(r && (r.code || r))));
+      if (!refs.__keepOem) patch.oem_codes = patch.oem_codes.filter((r) => !inComp.has(norm(r.code)));
+      if (!refs.__keepComp) { patch.competitor_codes = patch.competitor_codes.filter((r) => !inOem.has(norm(r.code))); patch.brand_crossrefs = buildBrandCrossrefs(patch.competitor_codes); }
+    }
     try {
       assertGovernedCatalogPatch(row, patch, { validateApplications: false });
       item.refs_ready = true;
