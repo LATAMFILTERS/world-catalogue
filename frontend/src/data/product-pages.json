@@ -16927,13 +16927,70 @@
     "kind": "catalogue-db",
     "table": "elimfilters_catalog"
    }
-  }
- ],
- "blocked": [
+  },
   {
    "sku": "ET90010",
-   "reason": "catalogue row is not active; awaiting authoritative DB activation and governed export",
-   "kind": "STOP_REVIEW"
+   "slug": "et90010",
+   "family": "fuel-turbine",
+   "duty": "Heavy Duty",
+   "title": "Bulk Fuel Filter / Water Separator Assembly",
+   "technology": "TURBOCORE",
+   "description": "ET90010 is an ELIMFILTERS bulk fuel filter and water separator assembly protected by TURBOCORE™ technology. The ES90674 cartridge is the designated replacement element. Confirm fluid compatibility, connection and application before installation.",
+   "imageUrl": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png",
+   "specs": [
+    {
+     "name": "OEM CODE",
+     "value": "B10AL"
+    },
+    {
+     "name": "Thread",
+     "value": "1 NPT"
+    },
+    {
+     "name": "Height",
+     "value": "248.4 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "105.6 mm"
+    },
+    {
+     "name": "Replacement element",
+     "value": "ES90674"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Baldwin",
+     "code": "B10AL"
+    },
+    {
+     "brand": "WIX",
+     "code": "24380"
+    }
+   ],
+   "crossRefsTotal": 2,
+   "applications": [],
+   "physicalWarnings": [],
+   "governance": {
+    "internalProductIdentityVerified": true,
+    "applicationEvidencePublicationReady": false,
+    "canonicalSourceBrand": "ELIMFILTERS",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "PENDING",
+    "active": true
+   },
+   "source": {
+    "kind": "operator-verified-postgresql-commit",
+    "table": "elimfilters_catalog",
+    "evidence": "ET90010: COMMITTED, CERTIFIED, blocker_count=0, catalog_active=true (2026-11-05)"
+   }
   }
- ]
+ ],
+ "blocked": []
 }
