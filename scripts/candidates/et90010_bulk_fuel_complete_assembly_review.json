@@ -26,9 +26,25 @@
       {
         "brand": "Fleetguard",
         "code": "3307454S",
-        "status": "Baldwin-reported assembly replacement; verify exact interchange before publication"
+        "status": "DOCUMENTED_MANUFACTURER_CROSS"
+      },
+      {
+        "brand": "WIX",
+        "code": "24380",
+        "status": "DOCUMENTED_MANUFACTURER_CROSS"
+      },
+      {
+        "brand": "WIX",
+        "code": "24389",
+        "status": "SECONDARY_CROSS_PHYSICAL_CHECK_PENDING"
+      },
+      {
+        "brand": "Hastings",
+        "code": "KF10AL",
+        "status": "SECONDARY_CROSS_PHYSICAL_CHECK_PENDING"
       }
-    ]
+    ],
+    "oem_code": "B10AL"
   },
   "_physical": {
     "outer_diameter_mm": 105.6,
@@ -79,15 +95,16 @@
         "code": "PF10"
       }
     ],
-    "additional_proposed_ref": {
-      "brand": "Hastings",
-      "code": "KF10-AL",
-      "status": "UNVERIFIED"
-    },
     "requested_wix_24389": {
-      "status": "UNVERIFIED — existing ES90674 catalog lists WIX 24043, 33185, 524043, not 24389"
+      "status": "WHOLE_ASSEMBLY_CROSS_CANDIDATE — NOT AN ES90674 ELEMENT CROSS"
     },
-    "note": "Element-only cross references belong to ES90674 and MUST NOT become assembly cross references"
+    "note": "ES90674 is cartridge-only: Donaldson P550674, Fleetguard FF246, Baldwin PF10, WIX 24043, Hastings FF1002. Do not add whole-assembly WIX 24389 or Hastings KF10AL to service-element refs.",
+    "hastings": {
+      "brand": "Hastings",
+      "code": "FF1002",
+      "scope": "ELEMENT_ONLY",
+      "status": "SECONDARY_CROSS_CHECK_PENDING"
+    }
   },
   "_application": {
     "kind": "Bulk storage / fuel dispensing unit; do not create unverified vehicle application records",
