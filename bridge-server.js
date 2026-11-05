@@ -18,6 +18,32 @@ const BRIDGE_PRODUCT_PRESENTATION = Object.freeze({
     canonical_source_brand: 'ELIMFILTERS',
     canonical_source_code: 'ET97784',
     canonical_source_status: 'VERIFIED'
+  }),
+  // Part Search is a bridge to search-api.elimfilters.com. The local
+  // server-original.js product mapper is NOT used in this deployment.
+  // Patch presentation only, never search identity, equipment fitment,
+  // cross-reference policy or product certification.
+  ET90010: Object.freeze({
+    image_url: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png',
+    reference_manufacturer: 'Baldwin Filters',
+    reference_part_number: 'B10-AL',
+    reference_usage: [
+      'Stationary fuel storage tank outlet',
+      'Gravity-fed stationary fuel tank',
+      'Fuel transfer or dispensing pump'
+    ],
+    reference_operating_conditions: Object.freeze({
+      pumped_flow_gpm: 25,
+      gravity_flow_gpm: 10,
+      gravity_head_in: 30,
+      evidence_brand: 'Baldwin',
+      evidence_code: 'B10-AL',
+      note: 'Baldwin reference conditions, not independently qualified ET90010 flow ratings'
+    }),
+    technology: 'TURBOCORE™',
+    canonical_source_brand: 'ELIMFILTERS',
+    canonical_source_code: 'ET90010',
+    canonical_source_status: 'VERIFIED'
   })
 });
 
@@ -134,6 +160,9 @@ function applyBridgeProductPresentation(body) {
       const sku = productSku(product);
       const presentation = BRIDGE_PRODUCT_PRESENTATION[sku];
       if (!presentation) return product;
+      // The upstream may supply its own description; retain it rather than
+      // changing unrelated catalog fields. Only the public ET90010 image and
+      // approved Baldwin reference presentation are supplied by the bridge.
       return { ...product, ...presentation };
     })
   };
