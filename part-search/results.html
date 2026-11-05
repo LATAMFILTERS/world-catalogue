@@ -1389,7 +1389,8 @@ function renderCard(p, index) {
 
   // Hero block (Fleetguard-style layout): photo slot + identity + description + related parts.
   // The photo slot is rendered for every SKU; without an approved CDN image it shows a placeholder.
-  const hasPhoto = Boolean(p.image_url && /^https:\/\/cdn\.elimfilters\.com\//.test(String(p.image_url)));
+  const et90010Photo = sku === 'ET90010' && p.image_url === 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png';
+  const hasPhoto = Boolean(p.image_url && (/^https:\/\/cdn\.elimfilters\.com\//.test(String(p.image_url)) || et90010Photo));
   const phText = currentLang === 'es' ? 'Imagen próximamente' : 'Image coming soon';
   const photoHTML = hasPhoto
     ? `<div class="spec-photo" tabindex="0" role="button" aria-label="Zoom ${esc(sku)}"><img src="${esc(p.image_url)}" alt="${esc(sku)} ELIMFILTERS" loading="lazy" decoding="async" onerror="this.closest('.spec-photo').classList.add('is-empty');this.remove()"><span class="spec-photo-ph">${phText}</span></div>`
