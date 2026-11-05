@@ -1436,13 +1436,35 @@ function buildFilterData(row, lang = 'en'){
   return {
     elimfilters_sku: row.sku,
     // Image assigned to this SKU by the R2 sync (lib/r2-catalog-image-sync.js); only if its CDN key names this exact SKU.
-    image_url: imageUrlForSku(row.image_url, row.sku),
+    image_url: row.sku === 'ET90010'
+      ? imageUrlForSku('https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png', row.sku)
+      : imageUrlForSku(row.image_url, row.sku),
     description: extractText(row.description, lang),
     filter_type: publicFilterType(row) || extractText(row.filter_type, lang),
     filter_subtype: publicSubType(row),
     filter_media: MEDIA_LABEL,
     technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
     technology_logo: getTechLogo(TECH_NAME_FIXES[row.technology] || row.technology),
+    // Reference product data is labeled separately; these are Baldwin B10-AL
+    // operating conditions, NOT independently qualified ELIMFILTERS ET90010 ratings.
+    ...(row.sku === 'ET90010' ? {
+      reference_manufacturer: 'Baldwin Filters',
+      reference_part_number: 'B10-AL',
+      reference_usage: [
+        'Stationary fuel storage tank (discharge outlet)',
+        'Gravity-fed stationary fuel tank',
+        'Fuel transfer or dispensing pump'
+      ],
+      reference_operating_conditions: {
+        pumped_flow_gpm: 25,
+        gravity_flow_gpm: 10,
+        gravity_head_in: 30,
+        evidence_brand: 'Baldwin',
+        evidence_code: 'B10-AL',
+        note: 'Baldwin reference conditions only; ET90010 capacity and pressure performance require separate verification.'
+      },
+      reference_documentation_url: 'https://www.parcommhydraulics.com/pdf/Product%20Guide.pdf'
+    } : {}),
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
     height_mm: row.height_mm || null,
