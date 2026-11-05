@@ -1455,7 +1455,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
             </div>` : ''}
           </div>` : ''}
 
-        ${(oemDisplay.length || comp.length || apps.length) ? `
+        ${(oemDisplay.length || comp.length || apps.length || stationary.length) ? `
           <div class="columns-container">
             <!-- OEM Column -->
             <div>
@@ -1483,6 +1483,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
             <div>
               <p class="equip-title">${isLD ? (T.vehicleTitle || 'Vehicle Applications') : T.equipTitle}</p>
               <div class="equip-grid">
+                ${stationary.length ? `<div style="grid-column:1/-1;color:#FFF12D;font-size:0.65rem;">${currentLang === 'es' ? 'USOS DOCUMENTADOS (SIN MODELOS CERTIFICADOS)' : 'DOCUMENTED USE (NO CERTIFIED MODELS)'}</div>${stationary.map(x => `<span class="equip-chip"><span class="equip-name">${esc(x)}</span></span>`).join('')}` : ''}
                 ${apps.length
                   ? apps.map(a => {
                       if (typeof a === 'object') {
