@@ -106,9 +106,11 @@
     "vehicle_applications": []
   },
   "_media_asset": {
-    "source": "User-supplied ET90010 product photograph",
-    "desired_public_asset": "ET90010.png",
-    "publication_status": "Not uploaded to repo; image artwork is evidence of proposed branding, not dimensional validation"
+    "source": "Cloudflare R2 existing public asset",
+    "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png",
+    "mode": "REMOTE_URL",
+    "repository_upload_required": false,
+    "publication_status": "URL PROVIDED; PUBLIC ENDPOINT NOT VERIFIED IN THIS SESSION"
   },
   "_sources": [
     {
@@ -133,7 +135,6 @@
     "Reconcile ET9/TURBOCORE turbine-only guard against user-requested assembly category WITHOUT bypassing existing governance",
     "Verify ES90674 cartridge compatibility and part cross references, including WIX discrepancy",
     "Confirm approved fuels and polymer-bowl/solvent compatibility per configuration",
-    "Obtain image asset upload and approval without modifying user artwork",
     "Apply via existing catalog-write-gateway with before/after records and rollback; then regenerate public exports and verify product route"
   ],
   "_write_authorized": false

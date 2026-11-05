@@ -109,9 +109,11 @@
     "performanceOfOwnElementVerified": false
   },
   "media": {
-    "asset": "ET90010.png",
-    "source": "USER_SUPPLIED",
-    "imageInRepository": false
+    "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png",
+    "source": "CLOUDFLARE_R2_PUBLIC_URL",
+    "mode": "REMOTE_URL",
+    "uploadToRepoRequired": false,
+    "verification": "URL_PROVIDED_BY_OPERATOR_NOT_RUNTIME_VERIFIED"
   },
   "source": {
     "kind": "user-provided-design-and-specifications",
