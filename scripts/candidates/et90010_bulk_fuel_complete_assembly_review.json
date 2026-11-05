@@ -24,11 +24,6 @@
     },
     "assembly_cross_refs": [
       {
-        "brand": "Fleetguard",
-        "code": "3307454S",
-        "status": "DOCUMENTED_MANUFACTURER_CROSS"
-      },
-      {
         "brand": "WIX",
         "code": "24380",
         "status": "DOCUMENTED_MANUFACTURER_CROSS"
