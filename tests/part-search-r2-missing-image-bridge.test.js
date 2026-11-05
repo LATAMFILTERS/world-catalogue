@@ -76,3 +76,32 @@ test('ES90674 assembly note is restricted to its own results page and links to E
   assert.equal(unchanged,other);
   assert.equal(injected,null);
 });
+
+test('retired SKU identifiers in exact current-SKU descriptions are corrected without touching image or audit state', () => {
+  const sandbox = { addEventListener() {} };
+  vm.runInNewContext(source + '\n globalThis.__identity = { patchRetiredSkuDescription };', sandbox);
+  const patch = sandbox.__identity.patchRetiredSkuDescription;
+  const records = [
+    {elimfilters_sku:'EA15967',description:'ELIMFILTERS® EA135396 MACROCORE™, radial seal secondary air element',
+      image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EA135396-MACROCORE-approved-opt.png',
+      catalog_validation:{state:'BLOCKED'},application_validation:{equipment_applications:{state:'EVIDENCE_VERIFIED'}}},
+    {elimfilters_sku:'EL82352',description:'ELIMFILTERS® EL80352 SYNTRAX™ high-performance lube filter',
+      image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL80352-SYNTRAX-approved-opt.png',
+      catalog_validation:{state:'CERTIFIED'},application_validation:{equipment_applications:{state:'EVIDENCE_REQUIRED'}}},
+    {elimfilters_sku:'EL30246',description:'ELIMFILTERS® EL36122 SYNTRAX™ different product',
+      image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL36122.png'}
+  ];
+  const initial = structuredClone(records);
+  assert.equal(patch({results:records}),true);
+  assert.equal(records[0].description,'ELIMFILTERS® EA15967 MACROCORE™, radial seal secondary air element');
+  assert.equal(records[1].description,'ELIMFILTERS® EL82352 SYNTRAX™ high-performance lube filter');
+  assert.equal(records[2].description,initial[2].description);
+  for(let i=0;i<records.length;i++){
+    assert.equal(records[i].image_url,initial[i].image_url);
+    assert.deepEqual(records[i].catalog_validation,initial[i].catalog_validation);
+    assert.deepEqual(records[i].application_validation,initial[i].application_validation);
+  }
+  assert.equal(patch({results:records}),false);
+  assert.equal(patch({results:[{elimfilters_sku:'EA15967',description:'Product with EA135396 in the middle'}]}),false);
+  assert.equal(patch(null),false);
+});
