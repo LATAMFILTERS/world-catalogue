@@ -48,3 +48,31 @@ test('does not fabricate missing records or reinterpret a search response', () =
   assert.equal(patchImage({results:null}),false);
   assert.equal(patchImage(null),false);
 });
+
+test('ES90674 assembly note is restricted to its own results page and links to ET90010', async () => {
+  let injected = null;
+  class FakeRewriter {
+    on(selector, handler) {
+      assert.equal(selector, 'body');
+      handler.element({append: (html, options) => {injected = html; assert.equal(options.html, true);}});
+      return this;
+    }
+    transform(response) { return response; }
+  }
+  const ctx = {addEventListener() {}, URL, Headers, Response, HTMLRewriter: FakeRewriter};
+  vm.runInNewContext(source + '\n globalThis.__assembly = {handleResultsPage};', ctx);
+  const src = new Response('<html><body></body></html>', {status:200,headers:{'content-type':'text/html'}});
+  const returned = await ctx.__assembly.handleResultsPage({method:'GET'},src,
+    new URL('https://part-search.elimfilters.com/results.html?q=ES90674&mode=part'));
+  assert.equal(returned.headers.get('x-elimfilters-assembly-link'), 'ES90674-ET90010');
+  assert.match(injected, /ET90010/);
+  assert.match(injected, /COMPATIBILIDAD CON CONJUNTOS/);
+  assert.match(injected, /\/results\.html\?q=ET90010&mode=part/);
+  assert.match(injected, /No se afirma compatibilidad exclusiva/);
+  injected = null;
+  const other = new Response('<html><body></body></html>', {status:200,headers:{'content-type':'text/html'}});
+  const unchanged = await ctx.__assembly.handleResultsPage({method:'GET'},other,
+    new URL('https://part-search.elimfilters.com/results.html?q=ES90944&mode=part'));
+  assert.equal(unchanged,other);
+  assert.equal(injected,null);
+});
