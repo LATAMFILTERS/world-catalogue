@@ -52,7 +52,7 @@ function patchImage(body) {
 // The public hostname currently uses a Cloudflare Tunnel serving an older
 // results.html than the Render/GitHub checkout. Keep this small, ES90674-only
 // presentation adaptation until the Lenovo origin is updated.
-const ES90674_ASSEMBLY_SCRIPT = \`<script>
+const ES90674_ASSEMBLY_SCRIPT = `<script>
 (function () {
   var wanted = new URLSearchParams(location.search).get('q');
   if (String(wanted || '').trim().toUpperCase() !== 'ES90674') return;
@@ -113,7 +113,7 @@ const ES90674_ASSEMBLY_SCRIPT = \`<script>
   var root = document.getElementById('app') || document.body;
   new MutationObserver(placeAssemblyNote).observe(root, {childList:true,subtree:true});
 })();
-</script>\`;
+</script>`;
 
 async function handleResultsPage(request, upstream, target) {
   if (request.method !== 'GET' || target.pathname !== '/results.html'
