@@ -105,3 +105,48 @@ test('retired SKU identifiers in exact current-SKU descriptions are corrected wi
   assert.equal(patch({results:[{elimfilters_sku:'EA15967',description:'Product with EA135396 in the middle'}]}),false);
   assert.equal(patch(null),false);
 });
+
+test('EL30013 retired FRAM PH13 SKU cannot resolve to an unrelated hydraulic EH64348', () => {
+  const sandbox = {addEventListener(){},URL};
+  vm.runInNewContext(source+'\n globalThis.__guard = guardConflictedSkuResponse;',sandbox);
+  const guard = sandbox.__guard;
+  const body={source:'exact_part_reference',results:[{elimfilters_sku:'EH64348',filter_type:'Hydraulic',
+    image_url:null,competitor_codes:[{code:'HF6002'}]}],reference_safety_status:'SEARCH_RESULT_ONLY'};
+  const result=guard(body,new URLSearchParams('q=EL30013&lang=en'));
+  assert.equal(result.changed,true);
+  assert.equal(result.held,'EL30013_WRONG_FAMILY_REFERENCE');
+  assert.equal(body.results.length,0);
+  assert.equal(body.source,'no_match');
+  assert.equal(body.reference_safety_status,'IDENTITY_REVIEW_REQUIRED');
+  const real={source:'exact_sku',results:[{elimfilters_sku:'EH64348'}]};
+  assert.equal(guard(real,new URLSearchParams('q=EH64348')).changed,false);
+  assert.equal(real.results[0].elimfilters_sku,'EH64348');
+  const mixed={source:'exact_part_reference',results:[{elimfilters_sku:'EH64348'},{elimfilters_sku:'EL30013'}]};
+  assert.equal(guard(mixed,new URLSearchParams('q=EL30013')).changed,false);
+  assert.equal(mixed.results.length,2);
+});
+
+test('EL30246 holds EL36122-branded photo without replacing SKU or references', () => {
+  const sandbox={addEventListener(){},URL};
+  vm.runInNewContext(source+'\n globalThis.__guard = guardConflictedSkuResponse;',sandbox);
+  const guard=sandbox.__guard;
+  const p={elimfilters_sku:'EL30246',image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL36122.png',
+    description:'ELIMFILTERS® EL30246',competitor_codes:[{code:'PF2264G'}],catalog_validation:{state:'CERTIFIED'}};
+  const body={source:'exact_sku',results:[p]};
+  const result=guard(body,new URLSearchParams('q=EL30246'));
+  assert.equal(result.changed,true);
+  assert.equal(result.held,'EL30246_IMAGE_IDENTITY_UNVERIFIED');
+  assert.equal(p.image_url,null);
+  assert.equal(p.elimfilters_sku,'EL30246');
+  assert.deepEqual(p.competitor_codes,[{code:'PF2264G'}]);
+  assert.deepEqual(p.catalog_validation,{state:'CERTIFIED'});
+  assert.equal(guard(body,new URLSearchParams('q=EL36122')).changed,false);
+  const correct={source:'exact_sku',results:[{elimfilters_sku:'EL30246',
+    image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL30246.png'}]};
+  assert.equal(guard(correct,new URLSearchParams('q=EL30246')).changed,false);
+  assert.match(correct.results[0].image_url,/EL30246.png/);
+  const other={source:'exact_sku',results:[{elimfilters_sku:'EL36122',
+    image_url:'https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL36122.png'}]};
+  assert.equal(guard(other,new URLSearchParams('q=EL36122')).changed,false);
+  assert.ok(other.results[0].image_url);
+});

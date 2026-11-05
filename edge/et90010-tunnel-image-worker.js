@@ -74,6 +74,40 @@ function patchRetiredSkuDescription(body) {
   return changed;
 }
 
+// Audit step 2 (2026-11-05): contain two unproven cross-identity responses.
+// EL30013 is a retired FRAM PH13 candidate (run_286); its public exact-reference
+// fallback currently yields unrelated hydraulic EH64348. Hide only this
+// unverified fallback, never change the EH64348 product or its other searches.
+// EL30246 currently carries a CDN image named EL36122.png. Do not display an
+// image branded with a different SKU without a verified migration record.
+// Both are presentation guards: underlying PostgreSQL evidence is unchanged.
+function guardConflictedSkuResponse(body, searchParams) {
+  if (!body || !Array.isArray(body.results)) return { changed:false, held:null };
+  const q = String(searchParams.get('q') || '').trim().toUpperCase();
+  if (q === 'EL30013' && body.source === 'exact_part_reference'
+      && body.results.length > 0
+      && body.results.every(p => String(p?.elimfilters_sku || p?.sku || '').toUpperCase() === 'EH64348')) {
+    body.results = [];
+    body.source = 'no_match';
+    body.reference_safety_status = 'IDENTITY_REVIEW_REQUIRED';
+    return {changed:true, held:'EL30013_WRONG_FAMILY_REFERENCE'};
+  }
+  let changed = false;
+  for (const product of body.results) {
+    if (!product || String(product.elimfilters_sku || product.sku || '').toUpperCase() !== 'EL30246') continue;
+    if (typeof product.image_url !== 'string') continue;
+    try {
+      const url = new URL(product.image_url);
+      const file = decodeURIComponent(url.pathname.split('/').pop() || '').toUpperCase();
+      if (url.protocol === 'https:' && url.hostname === 'cdn.elimfilters.com' && /^EL36122(?:[. _(-])/.test(file)) {
+        product.image_url = null;
+        changed = true;
+      }
+    } catch { /* leave invalid URL to existing frontend validation */ }
+  }
+  return {changed,held:changed?'EL30246_IMAGE_IDENTITY_UNVERIFIED':null};
+}
+
 // The public hostname currently uses a Cloudflare Tunnel serving an older
 // results.html than the Render/GitHub checkout. Keep this small, ES90674-only
 // presentation adaptation until the Lenovo origin is updated.
@@ -172,13 +206,15 @@ async function handleSearch(request) {
   catch { return upstream; }
   const imagePatched = patchImage(body);
   const descriptionPatched = patchRetiredSkuDescription(body);
-  if (!imagePatched && !descriptionPatched) return upstream;
+  const guarded = guardConflictedSkuResponse(body, target.searchParams);
+  if (!imagePatched && !descriptionPatched && !guarded.changed) return upstream;
 
   const headers = new Headers(upstream.headers);
   headers.set('content-type', 'application/json; charset=utf-8');
   headers.set('cache-control', 'no-store');
   if (imagePatched) headers.set('x-elimfilters-image-patch', 'R2_MATCHED_MISSING_ONLY');
   if (descriptionPatched) headers.set('x-elimfilters-identity-display', 'VERIFIED_CURRENT_SKU');
+  if (guarded.held) headers.set('x-elimfilters-reference-guard', guarded.held);
   headers.delete('content-length');
   headers.delete('content-encoding');
   headers.delete('etag');
