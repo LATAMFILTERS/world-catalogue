@@ -41,7 +41,15 @@ test('SEO product page ignores image URLs outside the ELIMFILTERS CDN origin', (
   }
 });
 
+test('SEO product page never shows an image that belongs to another SKU', () => {
+  const other = 'https://cdn.elimfilters.com/products/EL82101/approved/abc123.png';
+  const html = renderProduct(row({ image_url: other }), 'en');
+  assert.ok(!html.includes('class="photo"'));
+  assert.ok(!html.includes('og:image'));
+  assert.equal(schemaOf(html).image, undefined);
+});
+
 test('image URL is HTML-escaped in attributes', () => {
-  const html = renderProduct(row({ image_url: 'https://cdn.elimfilters.com/a.png?x="><script>1</script>' }), 'es');
+  const html = renderProduct(row({ image_url: 'https://cdn.elimfilters.com/products/EL82100/approved/a.png?x="><script>1</script>' }), 'es');
   assert.ok(!html.includes('"><script>1</script>'));
 });

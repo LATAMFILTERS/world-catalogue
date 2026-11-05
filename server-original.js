@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const OutlookMailService = require('./lib/outlook-mail');
 const { governanceForReferences } = require('./lib/part-search-reference-governance-patch');
+const { imageUrlForSku } = require('./lib/sku-image');
 const {
   isSameFunctionalFamily,
   filterAlternativesByFunctionalFamily,
@@ -1381,8 +1382,8 @@ function buildFilterData(row, lang = 'en'){
 
   return {
     elimfilters_sku: row.sku,
-    // Image assigned to this SKU by the R2 sync (lib/r2-catalog-image-sync.js); CDN origin only.
-    image_url: /^https:\/\/cdn\.elimfilters\.com\//.test(String(row.image_url || '')) ? row.image_url : null,
+    // Image assigned to this SKU by the R2 sync (lib/r2-catalog-image-sync.js); only if its CDN key names this exact SKU.
+    image_url: imageUrlForSku(row.image_url, row.sku),
     description: extractText(row.description, lang),
     filter_type: publicFilterType(row) || extractText(row.filter_type, lang),
     filter_subtype: publicSubType(row),
