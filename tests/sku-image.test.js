@@ -54,3 +54,11 @@ test('rejects invalid SKUs', () => {
     assert.equal(imageUrlForSku(`${CDN}/EL82100.png`, sku), null, String(sku));
   }
 });
+
+test('ET90010 accepts only its exact pre-existing R2 public image URL', () => {
+  const url = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png';
+  assert.equal(imageUrlForSku(url, 'ET90010'), url);
+  assert.equal(imageUrlForSku(url, 'ET90011'), null);
+  assert.equal(imageUrlForSku(url + '?redirect=other', 'ET90010'), null);
+  assert.equal(imageUrlForSku(url.replace('ET90010.png', 'ET90011.png'), 'ET90010'), null);
+});
