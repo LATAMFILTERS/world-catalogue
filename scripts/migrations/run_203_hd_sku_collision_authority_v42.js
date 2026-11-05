@@ -57,7 +57,8 @@ function patchPolicyFunction(definition) {
 async function main() {
   const url = process.env.CATALOG_DATABASE_URL || process.env.ELIMFILTERS_DATABASE_URL || process.env.DATABASE_URL;
   if (!url) throw new Error('DB URL missing');
-  const db = new Client({ connectionString: url, ssl: { rejectUnauthorized: false } });
+  const local = /@(127\.0\.0\.1|localhost)[:/]/.test(url); // local ELIMSERVER Postgres has no SSL
+  const db = new Client({ connectionString: url, ssl: local ? false : { rejectUnauthorized: false } });
   await db.connect();
   try {
     await db.query('BEGIN');
