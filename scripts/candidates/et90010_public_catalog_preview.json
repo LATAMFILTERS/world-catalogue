@@ -63,13 +63,6 @@
   ],
   "crossRefs": [
     {
-      "brand": "Fleetguard",
-      "code": "3307454S",
-      "scope": "COMPLETE_ASSEMBLY",
-      "evidence": "Baldwin manufacturer cross-reference",
-      "review": "CONFIRMED_REFERENCE"
-    },
-    {
       "brand": "WIX",
       "code": "24380",
       "scope": "COMPLETE_ASSEMBLY",
