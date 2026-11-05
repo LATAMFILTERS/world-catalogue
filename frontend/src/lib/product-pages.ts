@@ -11,6 +11,7 @@ export interface ProductPage {
   title: string;
   technology: string;
   description: string;
+  imageUrl?: string;
   specs: { name: string; value: string }[];
   oem: { brand: string; code: string }[];
   oemTotal: number;
