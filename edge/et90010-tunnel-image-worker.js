@@ -49,6 +49,31 @@ function patchImage(body) {
   return changed;
 }
 
+// Identity corrections were performed in the catalog on 2026-10-07/08.
+// The source DB's free-form description still begins with the retired SKU.
+// Correct only that stale introductory identifier on the public response;
+// never rewrite fitment, OEM, image, evidence or validation status.
+const VERIFIED_SKU_RENAMES = Object.freeze({
+  EA15967: 'EA135396',
+  EL82352: 'EL80352'
+});
+
+function patchRetiredSkuDescription(body) {
+  if (!body || !Array.isArray(body.results)) return false;
+  let changed = false;
+  for (const product of body.results) {
+    if (!product || typeof product !== 'object') continue;
+    const sku = String(product.elimfilters_sku || product.sku || '').trim().toUpperCase();
+    const prior = VERIFIED_SKU_RENAMES[sku];
+    if (!prior || typeof product.description !== 'string') continue;
+    const prefix = 'ELIMFILTERS® ' + prior + ' ';
+    if (!product.description.startsWith(prefix)) continue;
+    product.description = 'ELIMFILTERS® ' + sku + ' ' + product.description.slice(prefix.length);
+    changed = true;
+  }
+  return changed;
+}
+
 // The public hostname currently uses a Cloudflare Tunnel serving an older
 // results.html than the Render/GitHub checkout. Keep this small, ES90674-only
 // presentation adaptation until the Lenovo origin is updated.
@@ -145,12 +170,15 @@ async function handleSearch(request) {
   let body;
   try { body = await upstream.clone().json(); }
   catch { return upstream; }
-  if (!patchImage(body)) return upstream;
+  const imagePatched = patchImage(body);
+  const descriptionPatched = patchRetiredSkuDescription(body);
+  if (!imagePatched && !descriptionPatched) return upstream;
 
   const headers = new Headers(upstream.headers);
   headers.set('content-type', 'application/json; charset=utf-8');
   headers.set('cache-control', 'no-store');
-  headers.set('x-elimfilters-image-patch', 'R2_MATCHED_MISSING_ONLY');
+  if (imagePatched) headers.set('x-elimfilters-image-patch', 'R2_MATCHED_MISSING_ONLY');
+  if (descriptionPatched) headers.set('x-elimfilters-identity-display', 'VERIFIED_CURRENT_SKU');
   headers.delete('content-length');
   headers.delete('content-encoding');
   headers.delete('etag');
