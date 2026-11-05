@@ -1381,6 +1381,8 @@ function renderCard(p, index) {
   const applicationField = isLD ? 'vehicle_applications' : 'equipment_applications';
   const applicationVerified = p.application_validation?.[applicationField]?.state === 'EVIDENCE_VERIFIED';
   const apps = applicationVerified ? (isLD ? vehicleApps : equipApps) : [];
+  const stationary = sku === 'ET90010' && Array.isArray(p.reference_usage) ? p.reference_usage : [];
+  const referenceBox = sku === 'ET90010' ? `<div class="specs-section"><p class="specs-title">BALDWIN B10-AL — ${currentLang === 'es' ? 'REFERENCIA ORIGINAL' : 'ORIGINAL REFERENCE'}</p><div class="specs-grid">${specHTML(currentLang === 'es' ? 'Fabricante de referencia' : 'Reference manufacturer', 'Baldwin Filters')}${specHTML(currentLang === 'es' ? 'Código original' : 'Original code', 'B10-AL')}${specHTML(currentLang === 'es' ? 'Con bomba (Baldwin)' : 'Pumped (Baldwin)', '25 US gpm / 94.6 L/min')}${specHTML(currentLang === 'es' ? 'Por gravedad (Baldwin)' : 'Gravity (Baldwin)', '10 US gpm / 37.9 L/min')}${specHTML(currentLang === 'es' ? 'Altura de carga' : 'Gravity head', '30 in / 762 mm')}</div><p style="font-size:0.75rem;color:#aaa;">${currentLang === 'es' ? 'Valores de referencia Baldwin, no prestaciones certificadas de ET90010. Baldwin es fabricante de la referencia, no fabricante acreditado del producto ELIMFILTERS.' : 'Baldwin reference data, not certified ET90010 performance. Baldwin makes the reference product; it is not established as the manufacturer of the ELIMFILTERS SKU.'}</p></div>` : '';
   // Internal audit notices stay out of the public presentation (operator rule, 2026-11-01).
   const showInternalReviewNotices = false;
   const reviewNotice = currentLang === 'es'
@@ -1389,7 +1391,8 @@ function renderCard(p, index) {
 
   // Hero block (Fleetguard-style layout): photo slot + identity + description + related parts.
   // The photo slot is rendered for every SKU; without an approved CDN image it shows a placeholder.
-  const hasPhoto = Boolean(p.image_url && /^https:\/\/cdn\.elimfilters\.com\//.test(String(p.image_url)));
+  const et90010Photo = sku === 'ET90010' && p.image_url === 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png';
+  const hasPhoto = Boolean(p.image_url && (/^https:\/\/cdn\.elimfilters\.com\//.test(String(p.image_url)) || et90010Photo));
   const phText = currentLang === 'es' ? 'Imagen próximamente' : 'Image coming soon';
   const photoHTML = hasPhoto
     ? `<div class="spec-photo" tabindex="0" role="button" aria-label="Zoom ${esc(sku)}"><img src="${esc(p.image_url)}" alt="${esc(sku)} ELIMFILTERS" loading="lazy" decoding="async" onerror="this.closest('.spec-photo').classList.add('is-empty');this.remove()"><span class="spec-photo-ph">${phText}</span></div>`
@@ -1435,6 +1438,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
           </div>
         </div>
 
+        ${referenceBox}
         ${specs.length ? `
           <div class="specs-section specs-main">
             <p class="specs-title">${T.specsTitle}</p>
@@ -1451,7 +1455,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
             </div>` : ''}
           </div>` : ''}
 
-        ${(oemDisplay.length || comp.length || apps.length) ? `
+        ${(oemDisplay.length || comp.length || apps.length || stationary.length) ? `
           <div class="columns-container">
             <!-- OEM Column -->
             <div>
@@ -1459,7 +1463,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
               <div class="refs-grid">
                 ${oemDisplay.length 
                   ? oemDisplay.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
-                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
+                  : stationary.length ? '' : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
                 }
               </div>
             </div>
@@ -1479,6 +1483,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
             <div>
               <p class="equip-title">${isLD ? (T.vehicleTitle || 'Vehicle Applications') : T.equipTitle}</p>
               <div class="equip-grid">
+                ${stationary.length ? `<div style="grid-column:1/-1;color:#FFF12D;font-size:0.65rem;">${currentLang === 'es' ? 'USOS DOCUMENTADOS (SIN MODELOS CERTIFICADOS)' : 'DOCUMENTED USE (NO CERTIFIED MODELS)'}</div>${stationary.map(x => `<span class="equip-chip"><span class="equip-name">${esc(x)}</span></span>`).join('')}` : ''}
                 ${apps.length
                   ? apps.map(a => {
                       if (typeof a === 'object') {
