@@ -1,0 +1,147 @@
+{
+  "sku": "ET90010",
+  "slug": "et90010",
+  "family": "fuel-water-separators",
+  "duty": "Heavy Duty",
+  "title": "Conjunto de filtración y separación de agua para combustible a granel",
+  "technology": "TURBOCORE",
+  "technologyStatus": "Pending category rule validation for non-FH/FG bulk tank assembly",
+  "description": "Conjunto completo de filtración de combustible para tanques de almacenamiento, surtidores y sistemas de transferencia. Combina filtración de partículas y recolección de agua en un vaso transparente con drenaje manual. Requiere validación de compatibilidad con el combustible y condiciones de operación.",
+  "productType": "Fuel",
+  "subType": "Assembly",
+  "includedComponents": [
+    "Cabezal de aluminio",
+    "Vaso transparente ámbar con drenaje",
+    "Elemento reemplazable ES90674"
+  ],
+  "serviceElementSku": "ES90674",
+  "specs": [
+    {
+      "name": "Diámetro exterior",
+      "value": "105,6 mm (4 5/32 in)"
+    },
+    {
+      "name": "Altura total",
+      "value": "248,4 mm (9 25/32 in)"
+    },
+    {
+      "name": "Conexiones entrada/salida",
+      "value": "1 in NPT"
+    },
+    {
+      "name": "Presión máxima de referencia",
+      "value": "150 psi (10,3 bar) — pendiente de validación de ET90010"
+    },
+    {
+      "name": "Caudal de referencia con bomba",
+      "value": "Hasta 25 GPM (95 L/min) — pendiente de validación de ET90010"
+    },
+    {
+      "name": "Caudal de referencia por gravedad",
+      "value": "Hasta 10 GPM (38 L/min), con carga de 30 in — pendiente de validación de ET90010"
+    },
+    {
+      "name": "Material del cabezal",
+      "value": "Aluminio"
+    },
+    {
+      "name": "Vaso de recolección",
+      "value": "Polímero transparente ámbar; drenaje manual"
+    },
+    {
+      "name": "Elemento de repuesto",
+      "value": "ES90674"
+    },
+    {
+      "name": "Clasificación de filtración",
+      "value": "4 μm nominal / 15 μm absoluto — valor de elemento de referencia, pendiente de ensayo en ES90674"
+    },
+    {
+      "name": "Combustibles",
+      "value": "Diésel; gasolina, biodiésel y gasohol sujetos a compatibilidad verificada de vaso y juntas"
+    }
+  ],
+  "crossRefs": [
+    {
+      "brand": "WIX",
+      "code": "24380",
+      "scope": "COMPLETE_ASSEMBLY",
+      "evidence": "Baldwin cross-reference guide",
+      "review": "CONFIRMED_REFERENCE"
+    },
+    {
+      "brand": "WIX",
+      "code": "24389",
+      "scope": "COMPLETE_ASSEMBLY",
+      "evidence": "third-party interchange list; physical validation pending",
+      "review": "PENDING_PHYSICAL_VERIFICATION"
+    },
+    {
+      "brand": "Hastings",
+      "code": "KF10AL",
+      "scope": "COMPLETE_ASSEMBLY",
+      "evidence": "third-party interchange list; physical validation pending",
+      "review": "PENDING_PHYSICAL_VERIFICATION"
+    }
+  ],
+  "oem": [
+    {
+      "brand": "Baldwin",
+      "code": "B10AL",
+      "scope": "COMPLETE_ASSEMBLY",
+      "note": "Original external assembly reference; not an ELIMFILTERS OEM manufacturer claim"
+    }
+  ],
+  "applications": [],
+  "callouts": [
+    "OEM CODE B10AL applies only to the complete assembly ET90010",
+    "COMPETITOR CODES shown for ET90010 apply to complete assemblies, not replacement cartridges",
+    "ES90674 replacement-element interchanges appear in a separate section",
+    "Publication remains blocked pending the existing ET9 category guard and product verification"
+  ],
+  "governance": {
+    "catalogActive": false,
+    "publicationReady": false,
+    "approvalState": "DRAFT_REVIEW",
+    "skuExistenceInLiveDatabase": "NOT_VERIFIED",
+    "supplierReferenceDisplayed": true,
+    "assemblyClassificationRequiresReview": true,
+    "performanceOfOwnElementVerified": false
+  },
+  "media": {
+    "asset": "ET90010.png",
+    "source": "USER_SUPPLIED",
+    "imageInRepository": false
+  },
+  "source": {
+    "kind": "user-provided-design-and-specifications",
+    "authority": "pending"
+  },
+  "oemCode": "B10AL",
+  "elementCrossRefs": {
+    "sku": "ES90674",
+    "notAssemblyCrossRefs": true,
+    "items": [
+      {
+        "brand": "Baldwin",
+        "code": "PF10"
+      },
+      {
+        "brand": "Fleetguard",
+        "code": "FF246"
+      },
+      {
+        "brand": "Donaldson",
+        "code": "P550674"
+      },
+      {
+        "brand": "WIX",
+        "code": "24043"
+      },
+      {
+        "brand": "Hastings",
+        "code": "FF1002"
+      }
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "_status": "TECHNICAL_REVIEW_REQUIRED — NOT APPROVED FOR PUBLICATION OR DATABASE WRITE",
+  "_scope": "Proposed new Heavy Duty complete assembly, Fleetguard-style ET9 complete-unit classification; existing ES90674 service element must remain unchanged",
+  "_classification": {
+    "sku": "ET90010",
+    "codigo_base": "ET90010",
+    "name": "BULK FUEL STORAGE / DISPENSING FUEL FILTER ASSEMBLY WITH WATER COLLECTION BOWL",
+    "filter_type": "fuel",
+    "sub_type": "Assembly",
+    "duty": "HEAVY_DUTY",
+    "technology": "TURBOCORE™",
+    "technology_status": "PENDING_ENGINEERING_CLASSIFICATION_EXCEPTION — existing ET9 pre-load guard expects turbine-specific evidence; this product is a bulk-tank dispensing assembly and is not an FH/FG turbine separator",
+    "family": "FUEL_TURBINE / COMPLETE_ASSEMBLIES_PENDING_CLASSIFICATION",
+    "installation_type": "Bulk storage tank / dispensing pump, not a vehicle installation",
+    "publication_ready": false
+  },
+  "_reference_complete_assembly": {
+    "manufacturer": "Baldwin",
+    "part_number": "B10-AL",
+    "connection": "1 inch NPT inlet and outlet",
+    "alternate_variant": {
+      "part_number": "B10-AL BSP",
+      "connection": "1 inch BSP; distinct assembly, not the same part number"
+    },
+    "assembly_cross_refs": [
+      {
+        "brand": "WIX",
+        "code": "24380",
+        "status": "DOCUMENTED_MANUFACTURER_CROSS"
+      },
+      {
+        "brand": "WIX",
+        "code": "24389",
+        "status": "SECONDARY_CROSS_PHYSICAL_CHECK_PENDING"
+      },
+      {
+        "brand": "Hastings",
+        "code": "KF10AL",
+        "status": "SECONDARY_CROSS_PHYSICAL_CHECK_PENDING"
+      }
+    ],
+    "oem_code": "B10AL"
+  },
+  "_physical": {
+    "outer_diameter_mm": 105.6,
+    "overall_height_mm": 248.4,
+    "cap_material": "Aluminium",
+    "bowl": "Transparent amber polymer bowl with manual drain",
+    "included_components": [
+      "mounting cap",
+      "transparent bowl and drain",
+      "replaceable PF10-type element"
+    ]
+  },
+  "_operations": {
+    "maximum_pressure_psi": 150,
+    "maximum_pump_flow_gpm": 25,
+    "gravity_flow_gpm": 10,
+    "gravity_test_head_inches": 30,
+    "operating_conditions_note": "Flow and pressure are Baldwin reference ratings, not independent ET90010 qualification results"
+  },
+  "_media": {
+    "nominal_micron": 4,
+    "absolute_micron": 15,
+    "source_scope": "Baldwin PF10 reference element ONLY; do not claim verified performance for ELIMFILTERS ES90674 without its own test/evidence",
+    "fuels": [
+      "Diesel",
+      "Gasoline",
+      "Biodiesel",
+      "Gasohol"
+    ],
+    "fuels_status": "FUEL COMPATIBILITY HOLD — verify transparent polymer bowl, seals and additives for every fuel, especially gasoline/gasohol/biodiesel; third-party listing conflicts with broad compatibility claim"
+  },
+  "_replacement_element": {
+    "sku": "ES90674",
+    "relation": "SERVICE_ELEMENT",
+    "existing_sku": true,
+    "existing_catalog_base": "Donaldson P550674",
+    "manufacturer_cross_refs_current_catalog": [
+      {
+        "brand": "Donaldson",
+        "code": "P550674"
+      },
+      {
+        "brand": "Fleetguard",
+        "code": "FF246"
+      },
+      {
+        "brand": "Baldwin",
+        "code": "PF10"
+      }
+    ],
+    "requested_wix_24389": {
+      "status": "WHOLE_ASSEMBLY_CROSS_CANDIDATE — NOT AN ES90674 ELEMENT CROSS"
+    },
+    "note": "ES90674 is cartridge-only: Donaldson P550674, Fleetguard FF246, Baldwin PF10, WIX 24043, Hastings FF1002. Do not add whole-assembly WIX 24389 or Hastings KF10AL to service-element refs.",
+    "hastings": {
+      "brand": "Hastings",
+      "code": "FF1002",
+      "scope": "ELEMENT_ONLY",
+      "status": "SECONDARY_CROSS_CHECK_PENDING"
+    }
+  },
+  "_application": {
+    "kind": "Bulk storage / fuel dispensing unit; do not create unverified vehicle application records",
+    "vehicle_applications": []
+  },
+  "_media_asset": {
+    "source": "User-supplied ET90010 product photograph",
+    "desired_public_asset": "ET90010.png",
+    "publication_status": "Not uploaded to repo; image artwork is evidence of proposed branding, not dimensional validation"
+  },
+  "_sources": [
+    {
+      "type": "manufacturer",
+      "url": "https://test.baldwinfilters.com/content/dam/Parker-com/Literature/EMAM/EMAM_Baldwin_Fuel_Storage_Filters-Guide_Form587.pdf",
+      "covers": "B10-AL complete assembly, physical dimensions, 1 inch NPT and included PF10"
+    },
+    {
+      "type": "manufacturer",
+      "url": "https://www.parker.com/content/dam/Parker-com/Literature/EMAM/EMAM_Baldwin_Installation_B10-AL-BSP.pdf",
+      "covers": "B10-AL BSP fuel tank assembly gravity flow, pressure rating and component architecture"
+    },
+    {
+      "type": "manufacturer_element",
+      "url": "https://d1gl05fn2ps7ea.cloudfront.net/wp-content/uploads/_imported/FBW/FBW-PF10.pdf",
+      "covers": "PF10 nominal 4 micron, absolute 15 micron; element not whole assembly"
+    }
+  ],
+  "_checks_required": [
+    "Read-only SQL ET90010 absence/collision check against authoritative PostgreSQL; GitHub text search alone is insufficient",
+    "Confirm exact supplied physical product matches B10-AL dimensions, threads, pressure and flow in factory drawings",
+    "Reconcile ET9/TURBOCORE turbine-only guard against user-requested assembly category WITHOUT bypassing existing governance",
+    "Verify ES90674 cartridge compatibility and part cross references, including WIX discrepancy",
+    "Confirm approved fuels and polymer-bowl/solvent compatibility per configuration",
+    "Obtain image asset upload and approval without modifying user artwork",
+    "Apply via existing catalog-write-gateway with before/after records and rollback; then regenerate public exports and verify product route"
+  ],
+  "_write_authorized": false
+}
