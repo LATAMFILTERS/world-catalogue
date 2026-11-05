@@ -9,17 +9,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 import pg from 'pg';
 
+// --duty LD audits LIGHT_DUTY instead (applications = vehicle_applications).
+const LD = process.argv.includes('--duty') && /^LD|LIGHT/i.test(process.argv[process.argv.indexOf('--duty') + 1] || '');
+const DUTY = LD ? 'LIGHT_DUTY' : 'HEAVY_DUTY'; const APPS = LD ? 'vehicle_applications' : 'equipment_applications';
 const db = new pg.Client({ connectionString: process.env.CATALOG_DATABASE_URL });
 await db.connect(); await db.query('BEGIN READ ONLY');
 const { rows } = await db.query(`SELECT sku, codigo_base, technology,
   jsonb_typeof(oem_codes)='array' AND jsonb_array_length(oem_codes)>0 AS oem,
   jsonb_typeof(competitor_codes)='array' AND jsonb_array_length(competitor_codes)>0 AS comp,
-  jsonb_typeof(equipment_applications)='array' AND jsonb_array_length(equipment_applications)>0 AS equip,
+  jsonb_typeof(${APPS})='array' AND jsonb_array_length(${APPS})>0 AS equip,
   (coalesce(outer_diameter_mm,height_mm,product_length_mm,product_width_mm) IS NOT NULL) AS dims,
   upper(coalesce(product_dimensions_validation_status,'')) IN ('VERIFIED','FULL_PRODUCT_DIMENSIONS_OFFICIAL') AS dims_official,
   (jsonb_typeof(alternatives)='array' AND jsonb_array_length(alternatives)>0) OR (alternative_products IS NOT NULL AND alternative_products::text NOT IN ('null','[]','{}')) AS alt,
   btrim(coalesce(description,''))<>'' AS descr
-  FROM public.elimfilters_catalog WHERE catalog_active AND duty='HEAVY_DUTY' ORDER BY sku`);
+  FROM public.elimfilters_catalog WHERE catalog_active AND duty='${DUTY}' ORDER BY sku`);
 await db.query('ROLLBACK'); await db.end();
 const cols = ['oem', 'comp', 'equip', 'specs', 'alt', 'descr'];
 for (const r of rows) { r.specs = r.dims && r.dims_official; r.missing = cols.filter((c) => !r[c]); r.full = r.missing.length === 0; }
@@ -27,7 +30,7 @@ const sum = (list) => ({ skus: list.length, full: list.filter((r) => r.full).len
   dims_any: list.filter((r) => r.dims).length });
 const byPrefix = {}; for (const r of rows) (byPrefix[r.sku.slice(0, 3)] ||= []).push(r);
 const out = path.resolve('out', 'audit'); fs.mkdirSync(out, { recursive: true });
-const file = path.join(out, `hd-completeness-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
+const file = path.join(out, `${LD ? 'ld' : 'hd'}-completeness-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
 fs.writeFileSync(file, JSON.stringify(rows.map((r) => ({ sku: r.sku, base: r.codigo_base, missing: r.missing })), null, 1));
 const missCombo = rows.reduce((m, r) => { const k = r.missing.join('+') || 'COMPLETE'; m[k] = (m[k] || 0) + 1; return m; }, {});
 console.log(JSON.stringify({ total: sum(rows), by_prefix: Object.fromEntries(Object.entries(byPrefix).sort().map(([k, v]) => [k, sum(v)])),
