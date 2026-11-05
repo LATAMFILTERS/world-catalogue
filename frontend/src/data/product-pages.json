@@ -16929,5 +16929,11 @@
    }
   }
  ],
- "blocked": []
+ "blocked": [
+  {
+   "sku": "ET90010",
+   "reason": "catalogue row is not active; awaiting authoritative DB activation and governed export",
+   "kind": "STOP_REVIEW"
+  }
+ ]
 }
