@@ -77,6 +77,37 @@ test('ES90674 assembly note is restricted to its own results page and links to E
   assert.equal(injected,null);
 });
 
+test('ET90010 legacy Tunnel page receives only its ES90674 clickable service-element link', async () => {
+  let injected = null;
+  class FakeRewriter {
+    on(selector, handler) {
+      assert.equal(selector, 'body');
+      handler.element({ append(html, opts) { injected = html; assert.equal(opts.html, true); } });
+      return this;
+    }
+    transform(response) { return response; }
+  }
+  const ctx = {addEventListener() {}, URL, Headers, Response, HTMLRewriter: FakeRewriter};
+  vm.runInNewContext(source + '\n globalThis.__replacement = {handleResultsPage};', ctx);
+  const makeHtml = () => new Response('<html><body></body></html>',
+    {status:200,headers:{'content-type':'text/html'}});
+  const supplied = makeHtml();
+  const result = await ctx.__replacement.handleResultsPage({method:'GET'},supplied,
+    new URL('https://part-search.elimfilters.com/results.html?q=ET90010&mode=part'));
+  assert.equal(result.headers.get('x-elimfilters-assembly-link'), 'ET90010-ES90674');
+  assert.match(injected, /REPLACEABLE FILTER ELEMENT/);
+  assert.match(injected, /ELEMENTO FILTRANTE REEMPLAZABLE/);
+  assert.match(injected, /ELIMFILTERS ES90674/);
+  assert.ok(injected.includes('/results.html?q=ES90674&mode=part'));
+  assert.match(injected, /data-replacement-element/);
+  injected = null;
+  const other = makeHtml();
+  const passed = await ctx.__replacement.handleResultsPage({method:'GET'},other,
+    new URL('https://part-search.elimfilters.com/results.html?q=EL82100'));
+  assert.equal(passed, other);
+  assert.equal(injected, null);
+});
+
 test('retired SKU identifiers in exact current-SKU descriptions are corrected without touching image or audit state', () => {
   const sandbox = { addEventListener() {} };
   vm.runInNewContext(source + '\n globalThis.__identity = { patchRetiredSkuDescription };', sandbox);
