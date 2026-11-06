@@ -98,7 +98,7 @@ test('ET90010 legacy Tunnel page receives only its ES90674 clickable service-ele
   assert.match(injected, /REPLACEABLE FILTER ELEMENT/);
   assert.match(injected, /ELEMENTO FILTRANTE REEMPLAZABLE/);
   assert.match(injected, /ELIMFILTERS ES90674/);
-  assert.match(injected, /\\/results\\.html\\?q=ES90674&mode=part/);
+  assert.ok(injected.includes('/results.html?q=ES90674&mode=part'));
   assert.match(injected, /data-replacement-element/);
   injected = null;
   const other = makeHtml();
