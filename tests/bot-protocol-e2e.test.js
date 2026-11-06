@@ -460,7 +460,7 @@ test('no already-captured field is asked for again across a full conversation', 
   const t3 = await sendMessage('Carretera, filtro Fleetguard LF3970', { conversationId });
   questions.push(t3.body.answer);
 
-  assert.equal(new Set(questions).size, questions.length, 'a question was repeated verbatim');
+  assert.equal(new Set(questions).size, questions.length, `a question was repeated verbatim; turns=${JSON.stringify([t1.body, t2.body, t3.body].map(p => ({ intent: p.intent, phase: p.state?.phase, pending: p.pending_field, duration: p.state?.duration, symptoms: p.state?.symptoms, answer: p.answer })))}`);
   assert.doesNotMatch(t3.body.answer, /qu[eé] equipo|marca, modelo y motor/i);
   assert.doesNotMatch(t3.body.answer, /desde cu[aá]ndo/i);
 });
