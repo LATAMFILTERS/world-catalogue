@@ -12,9 +12,17 @@ $runtimeSeo = Join-Path $Runtime 'lib\install-part-seo-pages.js'
 if (!(Test-Path $runtimeSeo) -or !(Test-Path $Node)) { throw 'Missing runtime SEO module or Node executable' }
 
 function RunGit([string[]]$argv) {
-  $output = & $git -C $Runtime @argv 2>&1
-  if ($LASTEXITCODE -ne 0) { throw "git command failed: $output" }
-  return $output
+  # Let Git progress messages use stderr normally; do not merge them into the success stream.
+  $previousPreference = $ErrorActionPreference
+  try {
+    $ErrorActionPreference = 'Continue'
+    $output = & $git -C $Runtime @argv
+    $code = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previousPreference
+  }
+  if ($code -ne 0) { throw "git command failed (exit $code): $output" }
+  return @($output | Where-Object { $_ -is [string] })
 }
 
 $beforeStatus = @(& $git -C $Runtime status --porcelain=v1 --untracked-files=all)
