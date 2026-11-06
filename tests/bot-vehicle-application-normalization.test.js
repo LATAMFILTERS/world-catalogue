@@ -126,7 +126,7 @@ test('generic NPR does not silently widen to NPR-HD', async () => {
   assert.equal(capturedParams[1], 'NPR');
 });
 
-test('legacy equipment lookup remains backward compatible and does not claim vehicle verification', async () => {
+test('legacy equipment lookup without model year and engine is blocked without unsupported claims', async () => {
   let capturedSql = '';
   __setProtocolPoolForTests({
     connect: async () => ({
@@ -141,13 +141,13 @@ test('legacy equipment lookup remains backward compatible and does not claim veh
   });
 
   const result = await searchByApplication(['MACK', 'MP8'], null, null, null);
-  assert.equal(result.lookupStatus, 'completed');
-  assert.equal(result.applicationScope, 'EQUIPMENT');
-  assert.match(capturedSql, /equipment_applications::text/);
-  assert.doesNotMatch(capturedSql, /vehicle_verified/);
+  assert.equal(result.lookupStatus, 'insufficient_identity');
+  assert.equal(result.claim, 'NONE');
+  assert.deepEqual(result.products, []);
+  assert.equal(capturedSql, '', 'insufficient equipment identity must not query SQL');
 });
 
-test('explicit filter system never falls back to unrelated filters', async () => {
+test('explicit filter system never falls back to unrelated filters without verified configuration', async () => {
   __setProtocolPoolForTests({
     connect: async () => ({
       async query(sql) {
@@ -176,8 +176,10 @@ test('explicit filter system never falls back to unrelated filters', async () =>
   });
 
   const unfiltered = await searchByApplication(['MACK', 'MP8'], null, null, null);
-  assert.equal(unfiltered.products.length, 1);
+  assert.deepEqual(unfiltered.products, []);
+  assert.equal(unfiltered.lookupStatus, 'insufficient_identity');
 
   const oilOnly = await searchByApplication(['MACK', 'MP8'], null, 'oil', null);
   assert.deepEqual(oilOnly.products, []);
+  assert.equal(oilOnly.claim, 'NONE');
 });
