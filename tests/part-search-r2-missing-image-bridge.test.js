@@ -12,13 +12,25 @@ const { patchImage, IMAGE_URL_BY_SKU } = sandbox.__r2Audit;
 const missing = ['EA17484','EL30358','ES90352','ES90674','ES90944','ES91840',
   'ET90900','ET91000','ET92020P','ET92020S','ET92020T'];
 
-test('verified R2 map covers 11 missing public SKUs plus existing ET90010', () => {
-  assert.deepEqual(Object.keys(IMAGE_URL_BY_SKU).sort(), ['ET90010', ...missing].sort());
-  for (const sku of Object.keys(IMAGE_URL_BY_SKU)) {
-    assert.equal(IMAGE_URL_BY_SKU[sku],
-      'https://cdn.elimfilters.com/fleetguard/page-1/01-20/' + sku + '.png');
+test('R2 inventory maps 135 distinct SKU-prefixed images without inventing product records', () => {
+  assert.equal(Object.keys(IMAGE_URL_BY_SKU).length, 135);
+  for (const [sku, url] of Object.entries(IMAGE_URL_BY_SKU)) {
+    assert.match(sku, /^[A-Z]{2}\\d{4,7}[A-Z]?$/);
+    assert.equal(new URL(url).origin, 'https://cdn.elimfilters.com');
+    const filename = decodeURIComponent(new URL(url).pathname.split('/').pop());
+    assert.ok(filename.startsWith(sku), sku + ': ' + filename);
+    assert.match(filename.slice(sku.length), /^(?:\\.(?:png|jpe?g|webp)|-[A-Za-z0-9-]+\\.(?:png|jpe?g|webp)| (?:Microkappa|Syntrax|\\([12]\\))\\.png)$/i);
   }
+  for (const sku of ['ET90010', 'ES90674', 'EL83191', 'EL84004', 'EL87483', 'EA17682', 'EL81807']) {
+    assert.equal(IMAGE_URL_BY_SKU[sku], 'https://cdn.elimfilters.com/fleetguard/page-1/01-20/' + sku + '.png');
+  }
+  assert.equal(IMAGE_URL_BY_SKU.EC30025.endsWith('EC30025%20Microkappa.png'), true);
+  assert.equal(IMAGE_URL_BY_SKU.EF90440.includes('EF90440%20(2).png'), true);
+  assert.equal(IMAGE_URL_BY_SKU.EL31665.endsWith('EL31665%20Syntrax.png'), true);
+  assert.equal(IMAGE_URL_BY_SKU.P502042, undefined);
+  assert.equal(IMAGE_URL_BY_SKU.ET97784, undefined);
 });
+
 test('fills missing image without altering the existing product identity, references or applications', () => {
   const original = missing.map(sku=>({elimfilters_sku:sku,image_url:null,
     competitor_codes:[{code:'TEST'}],equipment_applications:[]}));
