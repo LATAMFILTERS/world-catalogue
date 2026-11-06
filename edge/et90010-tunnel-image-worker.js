@@ -192,9 +192,55 @@ const ES90674_ASSEMBLY_SCRIPT = `<script>
 })();
 </script>`;
 
+// The Tunnel still serves a legacy results.html. Keep the reciprocal assembly
+// -> replacement-element link at the edge until the origin HTML is upgraded.
+const ET90010_REPLACEMENT_SCRIPT = `<script>
+(function () {
+  var requested = new URLSearchParams(location.search).get('q');
+  if (String(requested || '').trim().toUpperCase() !== 'ET90010') return;
+
+  function placeReplacementLink() {
+    var cards = document.querySelectorAll('.product-card');
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var sku = card.querySelector('.card-sku');
+      if (!sku || sku.textContent.trim().toUpperCase() !== 'ET90010') continue;
+      if (card.querySelector('[data-replacement-element="ET90010-ES90674"]')) return;
+      var badges = card.querySelector('.card-badges');
+      if (!badges || !badges.parentNode) return;
+
+      var lang = String(document.documentElement.lang || '').toLowerCase();
+      var queryLang = new URLSearchParams(location.search).get('lang');
+      if (queryLang) lang = queryLang.toLowerCase();
+      var label = lang.startsWith('es') ? 'ELEMENTO FILTRANTE REEMPLAZABLE'
+        : lang.startsWith('pt') ? 'ELEMENTO FILTRANTE SUBSTITUÍVEL'
+        : 'REPLACEABLE FILTER ELEMENT';
+      var row = document.createElement('div');
+      row.setAttribute('data-replacement-element', 'ET90010-ES90674');
+      row.style.cssText = 'display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;margin-top:-2.6rem;font-family:JetBrains Mono,monospace;font-size:0.76rem;letter-spacing:0.04em;color:rgba(255,255,255,0.85)';
+      var text = document.createElement('span');
+      text.textContent = label;
+      var link = document.createElement('a');
+      link.href = '/results.html?q=ES90674&mode=part';
+      link.textContent = 'ELIMFILTERS ES90674';
+      link.setAttribute('aria-label', 'ELIMFILTERS ES90674');
+      link.style.cssText = 'color:#FFF12D;text-decoration:none;border:1px solid rgba(255,241,45,0.35);padding:0.35rem 0.55rem;border-radius:4px';
+      row.appendChild(text);
+      row.appendChild(link);
+      badges.insertAdjacentElement('afterend', row);
+      return;
+    }
+  }
+  placeReplacementLink();
+  var root = document.getElementById('app') || document.body;
+  new MutationObserver(placeReplacementLink).observe(root, { childList: true, subtree: true });
+})();
+</script>`;
+
 async function handleResultsPage(request, upstream, target) {
+  const requested = String(target.searchParams.get('q') || '').trim().toUpperCase();
   if (request.method !== 'GET' || target.pathname !== '/results.html'
-      || String(target.searchParams.get('q') || '').trim().toUpperCase() !== 'ES90674'
+      || (requested !== 'ES90674' && requested !== 'ET90010')
       || !upstream.ok || !String(upstream.headers.get('content-type') || '').includes('text/html')) {
     return upstream;
   }
@@ -202,10 +248,10 @@ async function handleResultsPage(request, upstream, target) {
   headers.delete('content-length');
   headers.delete('etag');
   headers.set('cache-control', 'no-store');
-  headers.set('x-elimfilters-assembly-link', 'ES90674-ET90010');
+  headers.set('x-elimfilters-assembly-link', requested === 'ET90010' ? 'ET90010-ES90674' : 'ES90674-ET90010');
   const transformed = new HTMLRewriter()
     .on('body', {element(element) {
-      element.append(ES90674_ASSEMBLY_SCRIPT, {html: true});
+      element.append(requested === 'ET90010' ? ET90010_REPLACEMENT_SCRIPT : ES90674_ASSEMBLY_SCRIPT, {html: true});
     }})
     .transform(upstream);
   return new Response(transformed.body, {status: transformed.status, headers});
