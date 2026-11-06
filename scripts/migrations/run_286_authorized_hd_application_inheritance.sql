@@ -55,7 +55,11 @@ DECLARE
            AND coalesce(
              NEW.enrichment_data->'documented_alternative_relations'->src.sku->>'official_authority',
              ''
-           )='DONALDSON'
+           )<>''
+           AND coalesce(
+             NEW.enrichment_data->'documented_alternative_relations'->src.sku->>'source_url',
+             ''
+           )=a.official_relation_url
        ) THEN
       RAISE EXCEPTION 'APPLICATION_INHERITANCE_NOT_AUTHORIZED: %',NEW.sku;
     END IF;
