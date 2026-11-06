@@ -16,6 +16,7 @@ services:
       ELIM_DOMAIN: WORLD_CATALOGUE
       ELIM_SCHEDULER_ENABLED: ${ELIM_SCHEDULER_ENABLED:-true}
       CLOUDFLARE_TUNNEL_REQUIRED: "true"
+      ELIM_RELEASE_SHA: ${ELIM_RELEASE_SHA:-}
       CLOUDFLARE_TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:-}
     command: ["sh", "-c", "node scripts/validate-hybrid-runtime.js && npm start"]
     ports:

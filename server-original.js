@@ -61,6 +61,16 @@ process.on('uncaughtException', (err) => console.error('[uncaughtException]', er
 process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
 
 const app = express();
+// Public read-only deployment identity. No database or secrets exposed.
+app.get('/__runtime-revision', (_req, res) => {
+  res.set('Cache-Control', 'no-store');
+  res.set('X-Robots-Tag', 'noindex');
+  res.json({
+    commit: process.env.ELIM_RELEASE_SHA || null,
+    role: process.env.ELIM_RUNTIME_ROLE || null,
+    node: process.env.ELIM_RUNTIME_NODE || null,
+  });
+});
 require('./lib/install-commercial-intelligence').installCommercialIntelligence(app);
 require('./lib/install-commercial-intelligence-retry').installCommercialIntelligenceRetry();
 require('./lib/install-content-intelligence').installContentIntelligence(app, requireAdmin);
