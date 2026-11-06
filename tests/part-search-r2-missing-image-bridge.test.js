@@ -88,7 +88,7 @@ test('ET90010 legacy Tunnel page receives only its ES90674 clickable service-ele
     transform(response) { return response; }
   }
   const ctx = {addEventListener() {}, URL, Headers, Response, HTMLRewriter: FakeRewriter};
-  vm.runInNewContext(source + '\\n globalThis.__replacement = {handleResultsPage};', ctx);
+  vm.runInNewContext(source + '\n globalThis.__replacement = {handleResultsPage};', ctx);
   const makeHtml = () => new Response('<html><body></body></html>',
     {status:200,headers:{'content-type':'text/html'}});
   const supplied = makeHtml();
