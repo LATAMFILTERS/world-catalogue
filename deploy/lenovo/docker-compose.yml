@@ -18,7 +18,7 @@ services:
       CLOUDFLARE_TUNNEL_REQUIRED: "true"
       ELIM_RELEASE_SHA: ${ELIM_RELEASE_SHA:-}
       CLOUDFLARE_TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:-}
-    command: ["sh", "-c", "node scripts/validate-hybrid-runtime.js && npm start"]
+    command: ["sh", "-c", "node scripts/validate-hybrid-runtime.js && node scripts/migrations/run_286_authorized_hd_application_inheritance.js --execute-after-dry-run && npm start"]
     ports:
       - "127.0.0.1:${WORLD_CATALOGUE_HOST_PORT:-3100}:3000"
     volumes:
