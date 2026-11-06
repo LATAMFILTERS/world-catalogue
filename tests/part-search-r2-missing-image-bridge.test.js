@@ -47,7 +47,7 @@ test('fills missing image without altering the existing product identity, refere
 });
 test('does not overwrite an existing source image or affect unrelated SKU', () => {
   const body={results:[{sku:'ES90674',image_url:'https://cdn.elimfilters.com/products/ES90674/approved/sha.png'},
-    {sku:'EL82100',image_url:null},{sku:'EA17484',image_url:' '}]};
+    {sku:'EL82101',image_url:null},{sku:'EA17484',image_url:' '}]};
   assert.equal(patchImage(body),true);
   assert.equal(body.results[0].image_url,'https://cdn.elimfilters.com/products/ES90674/approved/sha.png');
   assert.equal(body.results[1].image_url,null);
