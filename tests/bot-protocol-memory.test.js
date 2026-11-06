@@ -33,7 +33,7 @@ test('createEmptyState matches the canonical conversation-state shape', () => {
     'unresolvedAttempts', 'updatedAt', 'validatedProducts'
   ].sort());
   assert.deepEqual(state.supportLead, { status: null, email: null, created: false, ticketId: null, createdAt: null });
-  assert.deepEqual(state.equipment, { brand: null, model: null, engine: null, year: null });
+  assert.deepEqual(state.equipment, { duty: null, position: null, system: null, brand: null, model: null, engine: null, year: null });
   assert.deepEqual(state.installedFilter, { type: null, brand: null, reference: null, status: null });
   assert.deepEqual(state.identifiedHousing, { sku: null, externalReference: null, compatibleSeries: [] });
   // Bloque 2 (knowledge governance pipeline) pointers — see spec section 9.
@@ -41,6 +41,39 @@ test('createEmptyState matches the canonical conversation-state shape', () => {
   assert.deepEqual(state.oemMaintenance, { status: null, system: null, component: null, evidenceId: null });
   assert.deepEqual(state.knowledgeGap, { requestId: null, deduplicationKey: null, status: null, hermesResearchId: null });
   assert.deepEqual(state.productRecommendation, { categories: [], validatedSkus: [] });
+});
+
+test('equipment state retains duty, position and system across normalization', () => {
+  const normalized = normalizeState({
+    equipment: {
+      duty: 'HEAVY_DUTY',
+      position: 'PRIMARY_AIR',
+      system: 'AIR_INTAKE',
+      brand: 'MACK',
+      model: 'ANTHEM',
+      engine: 'MP8',
+      year: 2020
+    }
+  });
+  assert.deepEqual(normalized.equipment, {
+    duty: 'HEAVY_DUTY',
+    position: 'PRIMARY_AIR',
+    system: 'AIR_INTAKE',
+    brand: 'MACK',
+    model: 'ANTHEM',
+    engine: 'MP8',
+    year: 2020
+  });
+});
+
+test('legacy four-field equipment state receives null defaults without losing values', () => {
+  const normalized = normalizeState({
+    equipment: { brand: 'MACK', model: 'ANTHEM', engine: 'MP8', year: 2020 }
+  });
+  assert.deepEqual(normalized.equipment, {
+    duty: null, position: null, system: null,
+    brand: 'MACK', model: 'ANTHEM', engine: 'MP8', year: 2020
+  });
 });
 
 test('normalizeState dedupes symptoms by code+system', () => {
@@ -64,7 +97,7 @@ test('a completed diagnostic followed by a new reported problem resets diagnosti
   assert.equal(isNewDiagnosticStart('¿Y ese filtro tiene stock?', state), false);
 
   const reset = resetDiagnosticState(state);
-  assert.deepEqual(reset.equipment, { brand: null, model: null, engine: null, year: null });
+  assert.deepEqual(reset.equipment, { duty: null, position: null, system: null, brand: null, model: null, engine: null, year: null });
   assert.deepEqual(reset.symptoms, []);
   assert.deepEqual(reset.identifiedHousing, { sku: null, externalReference: null, compatibleSeries: [] });
   assert.equal(reset.intent, null);
@@ -84,6 +117,33 @@ test('memory persists via injected fake redis client and reports memory_source: 
     const { state, source: readSource } = await loadMemory(key);
     assert.equal(readSource, 'redis');
     assert.equal(state.intent, 'diagnostic');
+  } finally {
+    __setRedisClientForTests(null);
+  }
+});
+
+test('new equipment fields survive persistence and load', async () => {
+  const store = new Map();
+  __setRedisClientForTests({
+    status: 'ready',
+    get: async key => store.get(key) ?? null,
+    set: async (key, value) => { store.set(key, value); return 'OK'; }
+  });
+  try {
+    const key = 'bot-protocol:whatsapp:equipment-contract';
+    await saveMemory(key, {
+      ...createEmptyState(),
+      equipment: {
+        duty: 'HEAVY_DUTY', position: 'PRIMARY_AIR', system: 'AIR_INTAKE',
+        brand: 'MACK', model: 'ANTHEM', engine: 'MP8', year: 2020
+      }
+    });
+    const { state, source } = await loadMemory(key);
+    assert.equal(source, 'redis');
+    assert.equal(state.equipment.duty, 'HEAVY_DUTY');
+    assert.equal(state.equipment.position, 'PRIMARY_AIR');
+    assert.equal(state.equipment.system, 'AIR_INTAKE');
+    assert.equal(state.equipment.engine, 'MP8');
   } finally {
     __setRedisClientForTests(null);
   }
