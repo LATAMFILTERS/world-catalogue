@@ -56,7 +56,9 @@ function fakeCatalogClient() {
       const text = String(sql);
       if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
       if (/FROM elimfilters_catalog/i.test(text)) {
-        const refs = (params[0] || []).map(normalizeRef);
+        // Reference queries pass a text[]; application queries use scalar parameters.
+        // The fake client must not throw a synthetic DATABASE_ERROR for those.
+        const refs = (Array.isArray(params[0]) ? params[0] : []).map(normalizeRef);
         const rows = CATALOG_ROWS.filter(row => {
           if (refs.includes(normalizeRef(row.sku)) || refs.includes(normalizeRef(row.codigo_base))) return true;
           if ((row.oem_codes || []).some(c => refs.includes(normalizeRef(c.code)))) return true;
@@ -127,6 +129,13 @@ test('greeting resets the conversation', async () => {
 test('a greeting combined with a technical query is not classified as greeting', async () => {
   const { body } = await sendMessage('Hola, tengo un Mack 2024 con agua en el sistema', { conversationId: `greet-query-${Date.now()}` });
   assert.notEqual(body.intent, 'greeting');
+  assert.equal(body.intent, 'diagnostic');
+});
+
+test('equipment plus water symptom is diagnostic without greeting', async () => {
+  const { body } = await sendMessage('Tengo un Mack 2024 con agua en el sistema', {
+    conversationId: `symptom-priority-${Date.now()}`
+  });
   assert.equal(body.intent, 'diagnostic');
 });
 
