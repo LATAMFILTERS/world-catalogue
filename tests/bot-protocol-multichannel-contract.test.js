@@ -16,13 +16,8 @@
 // `channel`, which is the correct place to prove "same contract, every
 // channel" rather than re-implementing five separate bot test harnesses.
 //
-// KNOWN GAP, reported here rather than silently worked around: literal
-// customer-email capture ("pedir el correo, validarlo, agradecer, registrar
-// el caso") does not exist in the central engine yet. What exists today is
-// attempt-count-driven escalation to a FIXED internal support address
-// (lib/bot-protocol-guardrails.js, MAX_UNRESOLVED_ATTEMPTS=5) -- this suite
-// tests that real behavior and flags the missing piece explicitly instead
-// of asserting something the code doesn't do.
+// Support lead creation is validated with isolated Redis SET NX and mail
+// fakes. Never send email or persist real tickets during protocol tests.
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -31,6 +26,7 @@ const express = require('express');
 
 const { __setProtocolPoolForTests } = require('../lib/bot-protocol-db');
 const { __setRedisClientForTests } = require('../lib/bot-protocol-memory');
+const { __setTicketDeliveryForTests } = require('../lib/bot-protocol-escalation');
 
 const ORIGINAL_ENV = { ...process.env };
 process.env.BOT_PROTOCOL_API_KEY = 'test-key';
@@ -49,9 +45,9 @@ function normalizeRef(value) {
   return String(value || '').replace(/[^A-Z0-9]/gi, '').toUpperCase();
 }
 
-// Two distinct products sharing one OEM reference (P552100) via
-// cross-reference so the "multiple candidates" scenario is real, not
-// contrived -- both are legitimately returned as separate SKUs.
+// A legacy secondary SKU carries the same OEM reference but only the
+// canonical resolver owner is approved for publication. Never promote the
+// secondary solely because the raw reference matches.
 const CATALOG_ROWS = [
   {
     id: 1, sku: 'EL82100', codigo_base: 'EL82100', name: 'Full-Flow Lube Oil Filter',
@@ -119,6 +115,18 @@ let server;
 let baseUrl;
 
 test.before(async () => {
+  const tickets = new Map();
+  __setTicketDeliveryForTests({
+    redisClient: {
+      status: 'ready',
+      set: async (key, value, _ex, _ttl, condition) => {
+        if (condition === 'NX' && tickets.has(key)) return null;
+        tickets.set(key, value);
+        return 'OK';
+      }
+    },
+    mailClient: { send: async () => true }
+  });
   installFakePool();
   const app = express();
   installBotProtocol(app);
@@ -128,6 +136,7 @@ test.before(async () => {
 });
 
 test.after(async () => {
+  __setTicketDeliveryForTests();
   __setProtocolPoolForTests(null);
   __setRedisClientForTests(null);
   Object.keys(process.env).forEach(key => { if (!(key in ORIGINAL_ENV)) delete process.env[key]; });
@@ -200,13 +209,14 @@ for (const channel of CHANNELS) {
     assert.equal(body.evidence.validated, true, 'catalog lookup already normalizes non-alphanumeric characters (upper/regexp_replace) independently of migration 065');
   });
 
-  test(`[${channel}] multiple candidates: an OEM code shared by two distinct SKUs surfaces both, never auto-picks one`, async () => {
+  test(`[${channel}] canonical authority: shared OEM code returns only the governed canonical SKU`, async () => {
     const conversationId = `${channel}-multi-candidate-${Date.now()}`;
     await sendMessage('Tengo un Mack con pérdida de potencia', { conversationId, channel });
     await sendMessage('Hace una semana', { conversationId, channel });
     const { body } = await sendMessage('Carretera, filtro Donaldson P552100', { conversationId, channel });
     const skus = body.evidence.products.map(p => p.sku);
-    assert.ok(skus.includes('EL82100') && skus.includes('EL82101'), 'both candidates sharing the OEM code must be returned');
+    assert.deepEqual(skus, ['EL82100'], 'canonical resolver must not publish an unapproved second SKU');
+    assert.equal(body.evidence.validated, true);
   });
 
   test(`[${channel}] no result: an unknown reference never invents a SKU`, async () => {
