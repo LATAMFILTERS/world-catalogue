@@ -23,7 +23,9 @@ test('unpublished SKU is noindex in HTML, not merely HTTP headers', () => {
 test('indexed SKU structured data identifies the same canonical URL as HTML', () => {
   const html = renderProduct(row());
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
-  const json = JSON.parse(html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/)?.[1]);
+  const jsonStart = html.indexOf('<script type="application/ld+json">') + '<script type="application/ld+json">'.length;
+  const jsonEnd = html.indexOf('</script>', jsonStart);
+  const json = JSON.parse(html.slice(jsonStart, jsonEnd));
   assert.equal(json.url, canonical);
   assert.equal(json['@id'], canonical + '#product');
 });
@@ -47,6 +49,6 @@ test('verified SKU sitemap excludes unverified and inactive rows by query', asyn
   };
   const req = { get() { return 'part-search.elimfilters.com'; } };
   await routes.get('/sitemap.xml')(req, res, () => {});
-  assert.match(res.body, /part\/EF99999\//);
-  assert.doesNotMatch(res.body, /part\/OTHER_SKU\//);
+  assert.ok(res.body.includes('/part/EF99999/'));
+  assert.ok(!res.body.includes('/part/OTHER_SKU/'));
 });
