@@ -831,6 +831,9 @@ textarea {
     .hero-row .card-badges::-webkit-scrollbar { display: none; }
     .hero-row .badge { flex: 0 0 auto; font-size: 0.74rem; padding: 0.22rem 0.5rem; letter-spacing: 0.06em; }
     /* related parts on one line, bottom edge aligned with the image */
+    .replacement-element-link { display: flex; align-items: center; flex-wrap: wrap; gap: 0.55rem; margin-top: -2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.85); }
+    .replacement-element-link a { display: inline-block; color: #FFF12D; text-decoration: none; border: 1px solid rgba(255,241,45,0.35); padding: 0.35rem 0.55rem; border-radius: 4px; }
+    .replacement-element-link a:hover, .replacement-element-link a:focus-visible { border-color: #FFF12D; text-decoration: underline; }
     .hero-related { display: flex; align-items: center; gap: 1.1rem; flex-wrap: nowrap; margin-top: auto; border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1.2rem; }
     .hero-related-title { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--fg); margin: 0; white-space: nowrap; flex: 0 0 auto; }
     .hero-related-sub { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: var(--muted); margin: 0; white-space: nowrap; flex: 0 0 auto; }
@@ -1409,6 +1412,12 @@ function renderCard(p, index) {
   const photoHTML = hasPhoto
     ? `<div class="spec-photo" tabindex="0" role="button" aria-label="Zoom ${esc(sku)}"><img src="${esc(p.image_url)}" alt="${esc(sku)} ELIMFILTERS" loading="lazy" decoding="async" onerror="this.closest('.spec-photo').classList.add('is-empty');this.remove()"><span class="spec-photo-ph">${phText}</span></div>`
     : `<div class="spec-photo is-empty"><span class="spec-photo-ph">${phText}</span></div>`;
+  // ET90010 complete assembly -> its service element, no vehicle-fitment claim.
+  const replacementElementLink = sku === 'ET90010' ? `
+    <div class="replacement-element-link" data-replacement-element="ET90010-ES90674">
+      <span>${currentLang === 'es' ? 'ELEMENTO FILTRANTE REEMPLAZABLE' : currentLang === 'pt' ? 'ELEMENTO FILTRANTE SUBSTITUÍVEL' : 'REPLACEABLE FILTER ELEMENT'}</span>
+      <a href="/results.html?q=ES90674&amp;mode=part" aria-label="ELIMFILTERS ES90674">ELIMFILTERS ES90674</a>
+    </div>` : '';
   const relatedHTML = (() => {
     const alts = Array.isArray(p.alternatives) ? p.alternatives.filter(Boolean) : [];
     const chips = alts.map(a => {
@@ -1445,6 +1454,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
             ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
             ${p.technology       ? `<a href="https://elimfilters.com/technologies/${String(p.technology).replace(/[™®©]/g, '').normalize('NFKD').replace(/[^A-Za-z0-9]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
           </div>
+              ${replacementElementLink}
               ${relatedHTML}
             </div>
           </div>
