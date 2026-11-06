@@ -15,6 +15,10 @@ existing `products/<SKU>/manifest.json` format and existing legacy product uploa
   to agree. Hold malformed manifests instead of falling back to another image.
 - Legacy accepted names are `SKU.png|jpg|jpeg|webp` and
   `SKU[-<description>]-approved[-opt].png|jpg|jpeg|webp` (case insensitive).
+  Also recognize reviewed, uniquely SKU-prefixed user-upload filenames with a
+  literal space before `Microkappa`, `Syntrax`, `(1)` or `(2)` (such as
+  `EL31665 Syntrax.png` and `ET92040P (1).png`). Arbitrary suffixes,
+  source pictures and non-SKU prefixes remain excluded.
   Pick the latest R2 LastModified per SKU; equal timestamps are held as ambiguous
   unless a single canonical manifest resolves that publication batch. A newer
   direct legacy upload supersedes an older manifest; legacy names must be final,
@@ -77,3 +81,33 @@ new URL, so a rollback cannot overwrite a subsequent unrelated edit.
 matching, manifest/hash/CDN rejection, retry, transaction behaviour, idempotence,
 ETag replacement, age protection and runtime ownership using controlled doubles.
 It is **not** evidence of live R2 access, PostgreSQL permissions or deployment.
+
+## November 2026 production reconciliation checkpoint
+
+Cloudflare R2 `elimfilters-renders/fleetguard/page-1/01-20/` currently has
+137 product-directory objects. Of those, 135 are traceable to unique
+ELIMFILTERS SKU prefixes (including nine reviewed filename suffixes). The
+remaining files `P502042.png` and `fleetguard_ET97784.png` require identity
+review and must not be auto-associated. The R2-to-Part-Search edge fallback
+is a *display* mechanism; it cannot prove a database row was updated.
+
+Persisting images is a separate, Lenovo-only operation. Verify that the
+existing Part Search process on the Lenovo has the configured environment
+above, R2 bucket-read permission, and write rights to the *actual Part Search*
+PostgreSQL database. Deploy the reviewed code to that **existing** process;
+never create a second writer. Its startup/poll log must report actual
+`[r2-catalog-sync]` outcome (updated / unchanged / ambiguous / errors).
+Check the `catalog_r2_image_sync` ledger and the final
+`elimfilters_catalog.image_url` for each active mapped SKU, including
+`EL83191`, `EL87483` and `EL31665`. Success requires durable URLs
+containing the SHA-256 version and verified corresponding public CDN bytes.
+If any prerequisites are unavailable, record **BLOCKED** rather than
+claiming the database was synchronized.
+
+SEO/GEO/AEO is a **separate acceptance gate**: exact-SKU results currently
+declare `<meta name="robots" content="noindex, nofollow">`. Persisting the
+image URL does not override that exclusion. Before introducing indexing or
+Product structured data, audit canonical public product URLs, template
+rendering, approved product claims and the intended indexation policy.
+Do not remove `noindex` from general search-result pages simply to make
+uploaded images discoverable.

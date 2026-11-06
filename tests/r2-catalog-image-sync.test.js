@@ -155,3 +155,45 @@ test('maps only complete existing suffix-letter SKU names, never prefix cousins'
   assert.deepEqual(result.selected.map(x => x.sku).sort(), [...known].sort());
   assert.deepEqual(result.ambiguous, []);
 });
+
+test('matches R2 uploaded images with reviewed label or copy suffixes to existing SKU only', () => {
+  const prefix = 'fleetguard/page-1/01-20/';
+  const names = [
+    'EC30025 Microkappa.png',
+    'EF90440 (2).png',
+    'EL31665 Syntrax.png',
+    'ET92010P (1).png',
+    'ET92010S (1).png',
+    'ET92010T (1).png',
+    'ET92040P (1).png',
+    'ET92040S (1).png',
+    'ET92040T (1).png'
+  ];
+  const objects = names.map((name, i) => ({key:prefix + name, modified:object.modified, etag:String(i)}));
+  const known = new Set(['EC30025','EF90440','EL31665','ET92010P','ET92010S','ET92010T','ET92040P','ET92040S','ET92040T']);
+  const selected = candidates(objects, known);
+  assert.deepEqual(selected.ambiguous, []);
+  assert.deepEqual(selected.selected.map(item => item.sku).sort(), [...known].sort());
+  const excluded = candidates([
+    {key:prefix+'P502042.png',modified:object.modified,etag:'not-our-sku'},
+    {key:prefix+'fleetguard_ET97784.png',modified:object.modified,etag:'noncanonical'},
+    {key:prefix+'EL31665 candidate.png',modified:object.modified,etag:'unapproved'},
+    {key:prefix+'EL31665 (3).png',modified:object.modified,etag:'unreviewed-copy'},
+    {key:prefix+'EL316650.png',modified:object.modified,etag:'prefix-cousin'}
+  ], new Set(['EL31665','ET97784','EL316650']));
+  assert.equal(excluded.selected.length, 1); // EL316650 is an exact, separately known SKU
+  assert.equal(excluded.selected[0].sku, 'EL316650');
+  assert.equal(excluded.ambiguous.length, 0);
+});
+
+test('recognized legacy label files are persisted with hash-versioned URLs and history', async () => {
+  const db = database({sku:'EL31665',image_url:null});
+  const file = {key:'fleetguard/page-1/01-20/EL31665 Syntrax.png',modified:object.modified,etag:'new'};
+  const items = candidates([file],new Set(['EL31665'])).selected;
+  assert.equal(items.length,1);
+  const report=await reconcile(db,r2(items));
+  assert.equal(report.status,'OK');
+  assert.equal(report.updated,1);
+  assert.equal(db.state.row.image_url, 'https://cdn.elimfilters.com/'+file.key+'?v='+digest);
+  assert.equal(db.state.history.length,1);
+});
