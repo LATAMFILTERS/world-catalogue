@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS public.catalog_authorized_application_inheritance (
   source_sku text NOT NULL,
   target_sku text NOT NULL,
   source_payload_hash text NOT NULL,
-  authorization text NOT NULL,
+  authorized_by text NOT NULL,
   official_relation_url text NOT NULL,
   inherited_count integer NOT NULL CHECK (inherited_count > 0),
   individual_fitment_verified boolean NOT NULL DEFAULT false,
@@ -37,7 +37,7 @@ DECLARE
            ON src.sku=a.source_sku
          WHERE a.target_sku=NEW.sku
            AND a.source_sku=gov->>'inherited_from'
-           AND a.authorization='ELIMFILTERS_CEO'
+           AND a.authorized_by='ELIMFILTERS_CEO'
            AND a.individual_fitment_verified IS FALSE
            AND src.duty='HEAVY_DUTY'
            AND src.catalog_active IS TRUE
@@ -113,7 +113,7 @@ BEGIN
     RAISE EXCEPTION 'TARGET_HAS_DIFFERENT_APPLICATIONS'; END IF;
   payload_hash := md5(src.equipment_applications::text);
   INSERT INTO public.catalog_authorized_application_inheritance
-   (source_sku,target_sku,source_payload_hash,authorization,official_relation_url,
+   (source_sku,target_sku,source_payload_hash,authorized_by,official_relation_url,
     inherited_count,individual_fitment_verified)
   VALUES ('EA11767','EA15231',payload_hash,'ELIMFILTERS_CEO',
     'https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/north-america/donaldson-blue/F111417-ENG/Donaldson-Blue-Filtration-Overview.pdf',
