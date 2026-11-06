@@ -108,6 +108,35 @@ test('ET90010 legacy Tunnel page receives only its ES90674 clickable service-ele
   assert.equal(injected, null);
 });
 
+test('B76 result presentation labels primary P553191 separately from P554004 and DBL7483', async () => {
+  let injected = null;
+  class FakeRewriter {
+    on(selector, handler) {
+      assert.equal(selector, 'body');
+      handler.element({ append(html, options) { injected = html; assert.equal(options.html, true); } });
+      return this;
+    }
+    transform(response) { return response; }
+  }
+  const ctx = { addEventListener() {}, URL, Headers, Response, HTMLRewriter: FakeRewriter };
+  vm.runInNewContext(source + '\n globalThis.__b76 = {handleResultsPage};', ctx);
+  const page = () => new Response('<html><body></body></html>', {status:200,headers:{'content-type':'text/html'}});
+  const output = await ctx.__b76.handleResultsPage({method:'GET'},page(),
+    new URL('https://part-search.elimfilters.com/results.html?q=b76&mode=part'));
+  assert.equal(output.headers.get('x-elimfilters-reference-presentation'), 'B76_CANONICAL_AND_ALTERNATE');
+  assert.match(injected, /P553191/);
+  assert.match(injected, /EL83191/);
+  assert.match(injected, /P554004/);
+  assert.match(injected, /DBL7483/);
+  assert.match(injected, /P551807/);
+  assert.match(injected, /data-b76-reference-guide/);
+  injected = null;
+  const other = page();
+  assert.equal(await ctx.__b76.handleResultsPage({method:'GET'},other,
+    new URL('https://part-search.elimfilters.com/results.html?q=B7600')), other);
+  assert.equal(injected, null);
+});
+
 test('retired SKU identifiers in exact current-SKU descriptions are corrected without touching image or audit state', () => {
   const sandbox = { addEventListener() {} };
   vm.runInNewContext(source + '\n globalThis.__identity = { patchRetiredSkuDescription };', sandbox);

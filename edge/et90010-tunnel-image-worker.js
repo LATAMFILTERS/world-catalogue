@@ -237,10 +237,62 @@ const ET90010_REPLACEMENT_SCRIPT = `<script>
 })();
 </script>`;
 
+// Legacy Tunnel results route is older than source Part Search: annotate only
+// exact Baldwin B76 searches; never change resolver results, references or apps.
+const B76_REFERENCE_GUIDE_SCRIPT = `<script>
+(function () {
+  if (String(new URLSearchParams(location.search).get('q') || '').trim().toUpperCase() !== 'B76') return;
+  function annotateB76() {
+    var app = document.getElementById('app');
+    if (!app) return;
+    var cards = app.querySelectorAll('.product-card');
+    if (!cards.length) return;
+    var primary = false;
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var node = card.querySelector('.card-sku');
+      var sku = node ? node.textContent.trim().toUpperCase() : '';
+      if (sku === 'EL83191') primary = true;
+      if (card.querySelector('[data-b76-match-role]')) continue;
+      var copy = {
+        EL83191: ['PRIMARY B76 MATCH', 'COINCIDENCIA PRINCIPAL B76'],
+        EL84004: ['RELATED VERSION P554004 · VERIFY APPLICATION', 'OTRA VERSIÓN P554004 · REVISAR APLICACIÓN'],
+        EL87483: ['BLUE ALTERNATIVE DBL7483 · VERIFY APPLICATION', 'ALTERNATIVA BLUE DBL7483 · REVISAR APLICACIÓN']
+      }[sku];
+      if (!copy) continue;
+      var span = document.createElement('p');
+      span.setAttribute('data-b76-match-role', sku);
+      span.style.cssText = 'font-family:JetBrains Mono,monospace;font-size:0.75rem;color:#FFF12D;margin:0 0 0.9rem';
+      span.textContent = (String(document.documentElement.lang || '').toLowerCase().startsWith('es') ? copy[1] : copy[0]);
+      var inner = card.querySelector('.card-inner') || card;
+      inner.insertBefore(span, inner.firstChild);
+    }
+    if (primary && !app.querySelector('[data-b76-reference-guide]')) {
+      var box = document.createElement('div');
+      box.setAttribute('data-b76-reference-guide', '');
+      box.style.cssText = 'margin:1.2rem auto 0;padding:1rem 1.25rem;max-width:1600px;border:1px solid rgba(255,241,45,0.35);border-radius:5px;color:#ddd;font:0.88rem/1.6 Outfit,sans-serif';
+      var strong = document.createElement('strong');
+      strong.style.color = '#FFF12D';
+      strong.textContent = 'BALDWIN B76 → DONALDSON P553191 → ELIMFILTERS EL83191';
+      var p = document.createElement('p');
+      p.textContent = String(document.documentElement.lang || '').toLowerCase().startsWith('es')
+        ? 'Correspondencia principal documentada. P554004 y DBL7483 son versiones relacionadas; verificar sus especificaciones y aplicaciones antes de sustituir. Para motores Euro 5/6 Donaldson indica P551807 (EL81807).'
+        : 'Documented primary match. P554004 and DBL7483 are related versions; verify specifications and applications before substitution. For Euro 5/6 engines Donaldson specifies P551807 (EL81807).';
+      box.appendChild(strong);
+      box.appendChild(p);
+      app.insertBefore(box, app.firstChild);
+    }
+  }
+  annotateB76();
+  var root = document.getElementById('app') || document.body;
+  new MutationObserver(annotateB76).observe(root, {childList:true,subtree:true});
+})();
+</script>`;
+
 async function handleResultsPage(request, upstream, target) {
   const requested = String(target.searchParams.get('q') || '').trim().toUpperCase();
   if (request.method !== 'GET' || target.pathname !== '/results.html'
-      || (requested !== 'ES90674' && requested !== 'ET90010')
+      || (requested !== 'ES90674' && requested !== 'ET90010' && requested !== 'B76')
       || !upstream.ok || !String(upstream.headers.get('content-type') || '').includes('text/html')) {
     return upstream;
   }
@@ -248,10 +300,11 @@ async function handleResultsPage(request, upstream, target) {
   headers.delete('content-length');
   headers.delete('etag');
   headers.set('cache-control', 'no-store');
-  headers.set('x-elimfilters-assembly-link', requested === 'ET90010' ? 'ET90010-ES90674' : 'ES90674-ET90010');
+  if (requested === 'B76') headers.set('x-elimfilters-reference-presentation', 'B76_CANONICAL_AND_ALTERNATE');
+  else headers.set('x-elimfilters-assembly-link', requested === 'ET90010' ? 'ET90010-ES90674' : 'ES90674-ET90010');
   const transformed = new HTMLRewriter()
     .on('body', {element(element) {
-      element.append(requested === 'ET90010' ? ET90010_REPLACEMENT_SCRIPT : ES90674_ASSEMBLY_SCRIPT, {html: true});
+      element.append(requested === 'B76' ? B76_REFERENCE_GUIDE_SCRIPT : requested === 'ET90010' ? ET90010_REPLACEMENT_SCRIPT : ES90674_ASSEMBLY_SCRIPT, {html: true});
     }})
     .transform(upstream);
   return new Response(transformed.body, {status: transformed.status, headers});
