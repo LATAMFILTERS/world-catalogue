@@ -15,11 +15,11 @@ const missing = ['EA17484','EL30358','ES90352','ES90674','ES90944','ES91840',
 test('R2 inventory maps 135 distinct SKU-prefixed images without inventing product records', () => {
   assert.equal(Object.keys(IMAGE_URL_BY_SKU).length, 135);
   for (const [sku, url] of Object.entries(IMAGE_URL_BY_SKU)) {
-    assert.match(sku, /^[A-Z]{2}\\d{4,7}[A-Z]?$/);
+    assert.match(sku, /^[A-Z]{2}\d{4,7}[A-Z]?$/);
     assert.equal(new URL(url).origin, 'https://cdn.elimfilters.com');
     const filename = decodeURIComponent(new URL(url).pathname.split('/').pop());
     assert.ok(filename.startsWith(sku), sku + ': ' + filename);
-    assert.match(filename.slice(sku.length), /^(?:\\.(?:png|jpe?g|webp)|-[A-Za-z0-9-]+\\.(?:png|jpe?g|webp)| (?:Microkappa|Syntrax|\\([12]\\))\\.png)$/i);
+    assert.match(filename.slice(sku.length), /^(?:\.(?:png|jpe?g|webp)|-[A-Za-z0-9-]+\.(?:png|jpe?g|webp)| (?:Microkappa|Syntrax|\([12]\))\.png)$/i);
   }
   for (const sku of ['ET90010', 'ES90674', 'EL83191', 'EL84004', 'EL87483', 'EA17682', 'EL81807']) {
     assert.equal(IMAGE_URL_BY_SKU[sku], 'https://cdn.elimfilters.com/fleetguard/page-1/01-20/' + sku + '.png');
