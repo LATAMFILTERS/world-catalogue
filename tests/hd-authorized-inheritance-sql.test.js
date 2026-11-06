@@ -31,8 +31,41 @@ test('transaction is fail closed and verifies 161 exact matches',()=>{
  assert.match(sql,/TARGET_HAS_DIFFERENT_APPLICATIONS/);
  assert.match(sql,/INHERITANCE_POSTCHECK_FAILED/);
  assert.match(sql,/jsonb_array_length\(src\.equipment_applications\)<>161/);
- assert.match(sql,/\\if :\\{\\?execute\\}/);
+ assert.ok(sql.includes('\\if :{?execute}'));
  assert.match(sql,/DRY_RUN_ROLLBACK_NO_DATA_MODIFIED/);
  assert.match(sql,/^ROLLBACK;/m);
  assert.match(sql,/^COMMIT;/m);
+});
+
+const {
+ buildExecutableSql,
+ stateIsComplete
+}=require('../scripts/migrations/run_286_authorized_hd_application_inheritance');
+
+test('node runner preserves the canonical transaction and chooses one terminal action',()=>{
+ const dry=buildExecutableSql(sql,false);
+ const execute=buildExecutableSql(sql,true);
+ assert.match(dry,/DRY RUN default/);
+ assert.match(dry,/ROLLBACK;/);
+ assert.doesNotMatch(dry,/\\if|\\else|\\endif/);
+ assert.match(execute,/COMMIT;/);
+ assert.doesNotMatch(execute,/\\if|\\else|\\endif/);
+});
+
+test('completion requires all live invariants',()=>{
+ const complete={
+  source_count:161,target_count:161,payloads_identical:true,
+  inheritance_status:'INHERITED_AUTHORIZED',individual_fitment_verified:'false',
+  authorization_recorded:true,trigger_extension_installed:true
+ };
+ assert.equal(stateIsComplete(complete),true);
+ for(const key of Object.keys(complete)){
+  const broken={...complete,[key]:key.endsWith('_count')?0:false};
+  assert.equal(stateIsComplete(broken),false,key);
+ }
+});
+
+test('Lenovo deployment executes the idempotent HD completion before starting',()=>{
+ const compose=fs.readFileSync(path.resolve(__dirname,'../deploy/lenovo/docker-compose.yml'),'utf8');
+ assert.match(compose,/run_286_authorized_hd_application_inheritance\.js --execute-after-dry-run && npm start/);
 });
