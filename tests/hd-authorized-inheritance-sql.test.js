@@ -29,5 +29,8 @@ test('transaction is fail closed and verifies 161 exact matches',()=>{
  assert.match(sql,/TARGET_HAS_DIFFERENT_APPLICATIONS/);
  assert.match(sql,/INHERITANCE_POSTCHECK_FAILED/);
  assert.match(sql,/jsonb_array_length\(src\.equipment_applications\)<>161/);
+ assert.match(sql,/\\if :\\{\\?execute\\}/);
+ assert.match(sql,/DRY_RUN_ROLLBACK_NO_DATA_MODIFIED/);
+ assert.match(sql,/^ROLLBACK;/m);
  assert.match(sql,/^COMMIT;/m);
 });

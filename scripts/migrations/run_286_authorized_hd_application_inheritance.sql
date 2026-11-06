@@ -1,5 +1,6 @@
 -- HD governed application inheritance, first authorized pair EA11767 -> EA15231.
--- Apply with psql -X -v ON_ERROR_STOP=1 -f <this file>.
+-- DRY RUN default: psql -X -v ON_ERROR_STOP=1 -f <this file> (ROLLBACK).
+-- COMMIT only with -v execute=1; do not execute until verified on local staging.
 -- Transaction fails closed; no trigger disabling and no false individual-fitment verification.
 BEGIN;
 SET LOCAL lock_timeout = '5s';
@@ -154,7 +155,13 @@ BEGIN
   ) THEN RAISE EXCEPTION 'INHERITANCE_POSTCHECK_FAILED'; END IF;
 END
 $apply$;
+\if :{?execute}
+\echo EXECUTION_REQUESTED_COMMIT
 COMMIT;
+\else
+\echo DRY_RUN_ROLLBACK_NO_DATA_MODIFIED
+ROLLBACK;
+\endif
 
 SELECT sku,codigo_base,jsonb_array_length(equipment_applications) AS equipment_count,
        enrichment_data->'application_inheritance'->>'status' AS inheritance_status,
