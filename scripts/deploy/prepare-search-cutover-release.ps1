@@ -12,9 +12,18 @@ $runtimeSeo = Join-Path $Runtime 'lib\install-part-seo-pages.js'
 if (!(Test-Path $runtimeSeo) -or !(Test-Path $Node)) { throw 'Missing runtime SEO module or Node executable' }
 
 function RunGit([string[]]$argv) {
-  $output = & $git -C $Runtime @argv 2>&1
-  if ($LASTEXITCODE -ne 0) { throw "git command failed: $output" }
-  return $output
+  # Windows PowerShell 5.1 converts native stderr into PowerShell error records
+  # when redirected with 2>&1. Git writes successful fetch progress to stderr.
+  $previousPreference = $ErrorActionPreference
+  try {
+    $ErrorActionPreference = 'Continue'
+    $output = & $git -C $Runtime @argv 2>&1
+    $code = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previousPreference
+  }
+  if ($code -ne 0) { throw "git command failed (exit $code): $output" }
+  return @($output | Where-Object { $_ -is [string] })
 }
 
 $beforeStatus = @(& $git -C $Runtime status --porcelain=v1 --untracked-files=all)
