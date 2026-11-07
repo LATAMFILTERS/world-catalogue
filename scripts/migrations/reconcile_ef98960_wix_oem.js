@@ -42,10 +42,12 @@ const fail=s=>{throw new Error('BLOCKED: '+s)};
   if(!comp.some(r=>matches(r,'WIX','WF10624')))
     comp.push({manufacturer:'WIX',code:'WF10624',classification:'AFTERMARKET',
       classification_source:'WIX_OFFICIAL_WF10624',source_url:WIX_URL});
+  // codigo_base is already the canonical Caterpillar 3608960 authority.
+  // Database policy forbids repeating canonical identity among OEM alternates.
+  // Preserve the existing OEM list without adding 360-8960.
+  if(oldOem.some(r=>normalizeCode(r.code)===normalizeCode(row.codigo_base)))
+    fail('Canonical base already duplicated in OEM alternates: manual review required');
   const oem=[...oldOem];
-  if(!oem.some(r=>matches(r,'CATERPILLAR','360-8960')))
-    oem.push({manufacturer:'CATERPILLAR',code:'360-8960',classification:'OEM',
-      classification_source:'WIX_OFFICIAL_WF10624',source_url:WIX_URL});
   const enrichment={...(row.enrichment_data||{})};
   const baseGov={...g,primary_manufacturer_verified:true,
     reconciliation_source_url:WIX_URL,
