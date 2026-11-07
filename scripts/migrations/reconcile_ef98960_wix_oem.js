@@ -15,7 +15,7 @@ const fail=s=>{throw new Error('BLOCKED: '+s)};
 (async()=>{
  const url=process.env.CATALOG_DATABASE_URL||process.env.ELIMFILTERS_DATABASE_URL||process.env.DATABASE_URL;
  if(!url)fail('DB URL missing');
- const local=/@(127\\.0\\.0\\.1|localhost)[:/]/.test(url);
+ const local=url.includes('@127.0.0.1:')||url.includes('@localhost:')||url.includes('@127.0.0.1/')||url.includes('@localhost/');
  const db=new Client({connectionString:url,ssl:local?false:{rejectUnauthorized:false}});
  await db.connect();
  try{
