@@ -6,6 +6,10 @@
  * Never claims that ELIMFILTERS has manufactured or physically certified this filter.
  */
 const { Client } = require('pg');
+// Retired: source WIX WF10624 is assigned to existing canonical EF98960.
+// Prevent accidental duplicate inserts, including with --apply.
+console.error('RETIRED: EF90624 must not be created; use EF98960 reconciliation.');
+process.exit(3);
 const APPLY = process.argv.includes('--apply');
 const SKU = 'EF90624';
 const SOURCE = 'WF10624';
