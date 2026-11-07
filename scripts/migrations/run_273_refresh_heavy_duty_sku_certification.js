@@ -31,7 +31,8 @@ require('dotenv').config();
 const { Client } = require('pg');
 
 const APPLY = process.argv.includes('--execute');
-const POLICY_VERSION = '2026-10-12-hd-cert-refresh-v1';
+const POLICY_VERSION = '2026-11-06-hd-cert-refresh-v2';
+const { clearableSkus } = require('./lib/hd-exact-conflict-rule');
 const { manualLedgerRow } = require('./run_093_global_sku_certification_audit');
 
 const EVALUATE = `
@@ -146,6 +147,19 @@ const EVALUATE = `
     const ldBefore = await ld();
 
     await db.query(`CREATE TEMP TABLE hd_eval ON COMMIT DROP AS ${EVALUATE}`);
+    // Shared references that are technically consistent and officially sourced per SKU
+    // no longer block; every other exact conflict keeps EXACT_PART_REFERENCE_CONFLICT.
+    const detail = await db.query(`
+      SELECT r.part_number, r.sku, r.reference_type, r.source, e.duty, e.catalog_active, e.filter_type, e.sub_type,
+             e.installation_type, e.thread_size, e.height_mm, e.outer_diameter_mm
+      FROM public.exact_part_reference r JOIN public.elimfilters_catalog e ON e.sku=r.sku
+      WHERE r.part_number IN (SELECT part_number FROM public.exact_part_conflicts)`);
+    const cleared = [...clearableSkus(detail.rows)];
+    const cleanup = await db.query(
+      `UPDATE hd_eval SET exact_reference_conflict_free=true,
+         blockers=array_remove(blockers,'EXACT_PART_REFERENCE_CONFLICT')
+       WHERE NOT exact_reference_conflict_free AND sku = ANY($1::text[]) RETURNING sku`, [cleared]);
+    report.exact_conflict_cleared = cleanup.rows.map(r => r.sku).sort();
     await db.query(`CREATE TEMP TABLE hd_before ON COMMIT DROP AS SELECT sku, certification_state FROM public.catalog_sku_certification`);
 
     const written = await db.query(`
