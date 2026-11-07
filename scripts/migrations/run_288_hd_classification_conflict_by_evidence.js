@@ -23,6 +23,11 @@ const { Client } = require('pg');
 const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway');
 
 const APPLY = process.argv.includes('--execute');
+// --only-skus <file>: restrict to the SKUs listed (one per line). --snapshot <file.json>: write the before-values of every changed SKU (revert source).
+const arg = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : null; };
+const ONLY = arg('--only-skus') ? new Set(require('fs').readFileSync(arg('--only-skus'), 'utf8').split(/\s+/).filter(Boolean)) : null;
+const SNAPSHOT = arg('--snapshot');
+const snap = [];
 const SOURCE = 'OWN_EVIDENCE_REFERENCE_TYPE_20261106';
 
 const norm = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -128,6 +133,7 @@ if (process.argv.includes('--self-check')) { selfCheck(); return; }
     }
 
     for (const row of rows) {
+      if (ONLY && !ONLY.has(row.sku)) continue;
       const evidence = new Map();
       for (const [k, types] of ev.get(row.sku) || []) if (types.size === 1) evidence.set(k, [...types][0]);
       const p = plan(row, evidence);
@@ -150,12 +156,14 @@ if (process.argv.includes('--self-check')) { selfCheck(); return; }
       // trg_sync_crossref_cache rebuilds crossref_resolved_cache for the row on this update
       await db.query('UPDATE public.elimfilters_catalog SET oem_codes=$2::jsonb, competitor_codes=$3::jsonb WHERE sku=$1',
         [row.sku, JSON.stringify(p.oem_codes), JSON.stringify(p.competitor_codes)]);
+      snap.push({ sku: row.sku, before: { oem_codes: row.oem_codes, competitor_codes: row.competitor_codes }, after: patch });
       report.products_changed += 1;
       for (const k of ['left_oem', 'left_competitor', 'moved_to_oem', 'moved_to_competitor', 'codes_in_both_before', 'codes_in_both_after']) report[k] += p[k];
       if (p.codes_in_both_after === 0) report.products_fully_resolved += 1;
     }
 
     report.active_products_in_conflict_after = await conflictProducts();
+    if (SNAPSHOT) require('fs').writeFileSync(SNAPSHOT, JSON.stringify(snap, null, 1));
     await db.query(APPLY ? 'COMMIT' : 'ROLLBACK');
     report.transaction = APPLY ? 'COMMIT' : 'ROLLBACK';
     console.log(JSON.stringify(report, null, 2));
