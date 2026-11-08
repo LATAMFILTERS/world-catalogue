@@ -36,8 +36,8 @@ function GetSkuList {
   $records = if ($parsed -is [array]) { $parsed } elseif ($parsed.skus) { $parsed.skus } elseif ($parsed.rows) { $parsed.rows } elseif ($parsed.items) { $parsed.items } else { throw 'UNKNOWN_HD_SNAPSHOT_SHAPE' }
   $all = @($records | ForEach-Object {
     if ($_ -is [string]) { $_ }
-    elseif ($_.sku) { $_.sku }
-  } | Where-Object { $_ -and $_ -match '^[A-Z]{2}[0-9]{4,8}$' } | Sort-Object -Unique)
+    elseif ($_.sku -and ((-not $_.PSObject.Properties['duty']) -or $_.duty -eq 'HEAVY_DUTY')) { $_.sku }
+  } | ForEach-Object { [string]$_ } | Where-Object { $_ -match '^[A-Z0-9_-]{2,45}$' } | Sort-Object -Unique)
   if ($all.Count -lt 1) { throw 'HD_SNAPSHOT_EMPTY_OR_INVALID' }
   return $all
 }
@@ -49,24 +49,43 @@ function RunCycle {
     $module = Join-Path $repo 'scripts\hermes\hd-local-evidence-review.mjs'
     if (-not (Test-Path $module)) { LogLine 'BLOCKED_REVIEW_MODULE_MISSING'; return }
     $all = @(GetSkuList)
-    $state = if (Test-Path $statePath) { Get-Content $statePath -Raw | ConvertFrom-Json } else { [pscustomobject]@{version=1; completed=@(); last_update=$null} }
-    $done = New-Object 'System.Collections.Generic.HashSet[string]'
-    foreach($s in $state.completed) { [void]$done.Add([string]$s) }
-    $pending = @($all | Where-Object { -not $done.Contains($_) })
-    if ($pending.Count -eq 0) { LogLine ('QUEUE_EMPTY processed=' + $done.Count); return }
+    # Old state.completed includes SKUs skipped without evidence; preserve only
+    # review files demonstrating Ollama was actually invoked.
     $outDir = Join-Path $stateDir 'reviews'
     New-Item -Path $outDir -ItemType Directory -Force | Out-Null
     $manual = Join-Path $stateDir 'manual-review.csv'
-    if (-not (Test-Path $manual)) { 'sku,reason' | Set-Content -LiteralPath $manual -Encoding ASCII }
-    $selected = @($pending | Select-Object -First 100)
-    $ready = @()
-    foreach($sku in $selected) {
-      if (Test-Path (Join-Path $bundleDir ($sku + '.json'))) { $ready += $sku }
-      else {
-        Add-Content -LiteralPath $manual -Value ($sku + ',OFFICIAL_EVIDENCE_BUNDLE_MISSING')
-        [void]$done.Add($sku)
+    $reviewed = New-Object 'System.Collections.Generic.HashSet[string]'
+    $manualScanned = New-Object 'System.Collections.Generic.HashSet[string]'
+    if (Test-Path $manual) {
+      foreach ($row in (Import-Csv -LiteralPath $manual)) {
+        if ($row.sku -match '^[A-Z0-9_-]{2,45}$') { [void]$manualScanned.Add($row.sku) }
       }
-      if ($ready.Count -ge 3) { break }
+    } else { 'sku,reason' | Set-Content -LiteralPath $manual -Encoding ASCII }
+    foreach ($file in @(Get-ChildItem -LiteralPath $outDir -Filter '*.review.json' -File -ErrorAction SilentlyContinue)) {
+      try {
+        $rec = Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json
+        if ($rec.status -eq 'REVIEW_REQUIRED' -and $rec.provider -eq 'HERMES_LOCAL_OLLAMA') {
+          [void]$reviewed.Add([string]$rec.sku)
+        }
+      } catch { LogLine ('REVIEW_FILE_INVALID ' + $file.Name) }
+    }
+    # New SKUs are examined once per catalogue snapshot, not retried forever
+    # without evidence. Previously skipped SKUs become eligible when a bundle appears.
+    $unscanned = @($all | Where-Object { -not $reviewed.Contains($_) -and -not $manualScanned.Contains($_) })
+    $newScan = @($unscanned | Select-Object -First 100)
+    $newlyAvailable = @($all | Where-Object {
+      $manualScanned.Contains($_) -and -not $reviewed.Contains($_) -and
+      (Test-Path (Join-Path $bundleDir ($_ + '.json')))
+    } | Select-Object -First 3)
+    $ready = New-Object 'System.Collections.Generic.List[string]'
+    foreach ($sku in $newlyAvailable) { [void]$ready.Add([string]$sku) }
+    foreach ($sku in $newScan) {
+      if (Test-Path (Join-Path $bundleDir ($sku + '.json'))) {
+        if ($ready.Count -lt 3) { [void]$ready.Add([string]$sku) }
+      } else {
+        Add-Content -LiteralPath $manual -Value ($sku + ',OFFICIAL_EVIDENCE_BUNDLE_MISSING')
+        [void]$manualScanned.Add([string]$sku)
+      }
     }
     if ($ready.Count -gt 0) {
       $list = Join-Path $stateDir 'current-batch.txt'
@@ -74,19 +93,29 @@ function RunCycle {
       $node = (Get-Command node -ErrorAction Stop).Source
       & $node $module --sku-file $list --bundle-dir $bundleDir --out-dir $outDir --allowed-hosts $allowedHosts --limit 3 2>&1 | Out-File -LiteralPath $logPath -Append -Encoding utf8
       if ($LASTEXITCODE -ne 0) { LogLine ('BATCH_ERROR exit=' + $LASTEXITCODE); return }
-      foreach($sku in $ready) {
+      foreach ($sku in $ready) {
         $result = Join-Path $outDir ($sku + '.review.json')
         if (-not (Test-Path $result)) { LogLine ('BATCH_RESULT_MISSING ' + $sku); continue }
         $rec = Get-Content -LiteralPath $result -Raw | ConvertFrom-Json
-        if ($rec.status -ne 'REVIEW_REQUIRED') {
+        if ($rec.status -eq 'REVIEW_REQUIRED') {
+          [void]$reviewed.Add([string]$sku)
+        } elseif ($manualScanned.Add([string]$sku)) {
           Add-Content -LiteralPath $manual -Value ($sku + ',' + $rec.status + '_' + $rec.reason)
         }
-        [void]$done.Add($sku)
       }
     }
-    $state = [pscustomobject]@{version=1; completed=@($done | Sort-Object); last_update=(Get-Date).ToString('o'); total=$all.Count}
+    $state = [pscustomobject]@{
+      version=2
+      reviewed=@($reviewed | Sort-Object)
+      missing_evidence=$manualScanned.Count
+      last_update=(Get-Date).ToString('o')
+      total=$all.Count
+    }
     SaveState $state
-    LogLine ('CYCLE_DONE examined=' + $selected.Count + ' ollama=' + $ready.Count + ' completed=' + $done.Count + ' total=' + $all.Count)
+    LogLine ('CYCLE_DONE newly_scanned=' + $newScan.Count + ' ollama_attempted=' + $ready.Count + ' reviewed=' + $reviewed.Count + ' manual_queue=' + $manualScanned.Count + ' total_snapshot=' + $all.Count)
+    if (-not $newScan.Count -and -not $ready.Count) {
+      LogLine 'WAITING_FOR_NEW_OFFICIAL_EVIDENCE_BUNDLES'
+    }
   } catch {
     LogLine ('CYCLE_ERROR ' + $_.Exception.Message)
     throw
