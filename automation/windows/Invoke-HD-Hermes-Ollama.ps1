@@ -10,11 +10,14 @@ $allowedHosts = if ($env:HERMES_OFFICIAL_SOURCE_HOSTS) { $env:HERMES_OFFICIAL_SO
 $taskName = 'ELIMFILTERS-HD-HERMES-OLLAMA-REVIEW'
 $scriptPath = Join-Path $stateDir 'Invoke-HD-Hermes-Ollama.ps1'
 $logPath = Join-Path $stateDir 'worker.log'
+# Node processes own worker.log. Installer and scheduled workers must not
+# contend for its exclusive PowerShell Out-File writer handle.
+$eventLog = Join-Path $stateDir ('worker-events-{0}.log' -f $PID)
 $statePath = Join-Path $stateDir 'state.json'
 New-Item -ItemType Directory -Path $stateDir -Force | Out-Null
 function LogLine([string]$message) {
   $message = ('{0} {1}' -f (Get-Date -Format o), $message)
-  Add-Content -LiteralPath $logPath -Value $message
+  [System.IO.File]::AppendAllText($eventLog, ($message + [Environment]::NewLine), (New-Object System.Text.UTF8Encoding($false)))
   Write-Host $message
 }
 function SaveState($state) {
