@@ -1,0 +1,67 @@
+{
+  "_status": "APPROVED_FOR_PUBLICATION by CEO instruction 2026-11-08",
+  "_decision": "ET96380 is an ELIMFILTERS TURBOCORE fuel/water separator assembly. Not manufactured by Donaldson or Fleetguard; its OEM code is Perkins 130306380. Own codigo_base per ET97784 precedent (run_281).",
+  "sku": "ET96380",
+  "oem_codes": [
+    {
+      "manufacturer": "PERKINS",
+      "code": "130306380"
+    }
+  ],
+  "competitor_codes": [
+    {
+      "manufacturer": "HIFI FILTER",
+      "code": "MO 1657"
+    },
+    {
+      "manufacturer": "FLEETGUARD",
+      "code": "FS20088"
+    },
+    {
+      "manufacturer": "WIX",
+      "code": "WF10190"
+    },
+    {
+      "manufacturer": "SF FILTER",
+      "code": "SK 3177"
+    },
+    {
+      "manufacturer": "FIN-FILTER",
+      "code": "FIN-FF30614"
+    }
+  ],
+  "withheld_unverified": {
+    "oem_other": [
+      "130446120",
+      "130306180",
+      "130306360 (internal mesh element, not the assembly)",
+      "CAT 276-1804/2761804",
+      "FG Wilson 0000000038, 915-093, 10000-00038, 10000-06412, 10000-46303",
+      "P130306380"
+    ],
+    "competitor": [
+      "HIFI SO 8000 / MO 1657 (page 403)",
+      "Baldwin PF7982",
+      "Fleetguard FS20088",
+      "WIX WF10190",
+      "SF SK 3177",
+      "Fin-Filter FF30614"
+    ],
+    "rejected": [
+      "Donaldson P550860 = codigo_base of EF90860 (different filter)"
+    ],
+    "reason": "No verifiable source; not invented as equivalences.",
+    "competitor_published": "operator-provided, loaded by run_293",
+    "competitor_excluded_conflict": [
+      "HIFI SO 8000 -> already EL37144",
+      "Baldwin PF7982 -> already ES92422 (Donaldson P502422)"
+    ]
+  },
+  "specs": {
+    "micron": 100,
+    "bowl_diameter_mm": 60,
+    "hose_mm": 8,
+    "mounting_hole_distance_mm": 9
+  },
+  "engines": "63 Perkins models, see run_293 (source: shop.perkins.com 2026-11-08)"
+}
