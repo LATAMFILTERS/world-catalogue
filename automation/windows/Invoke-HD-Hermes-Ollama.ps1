@@ -101,7 +101,7 @@ function RunCycle {
         }
       } else { LogLine 'OFFICIAL_ACQUIRER_NOT_INSTALLED' }
     }
-    $compactAttemptsFile = Join-Path $stateDir 'ollama-compact-attempted.txt'
+    $compactAttemptsFile = Join-Path $stateDir 'ollama-facts-only-attempted-v3.txt'
     $compactAttempts = New-Object 'System.Collections.Generic.HashSet[string]'
     if (Test-Path $compactAttemptsFile) {
       foreach ($skuAttempt in (Get-Content -LiteralPath $compactAttemptsFile)) { [void]$compactAttempts.Add([string]$skuAttempt) }
@@ -203,6 +203,10 @@ $testText = ($testSource -join [Environment]::NewLine) + [Environment]::NewLine
 if ((-not (Test-Path $acquirerTest)) -or ((Get-Content -LiteralPath $acquirerTest -Raw) -ne $testText)) {
   [System.IO.File]::WriteAllText($acquirerTest,$testText,(New-Object System.Text.UTF8Encoding($false)))
 }
+$factsTest = Join-Path $repo 'tests\hd-ollama-facts-only.test.mjs'
+$factsSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-ollama-facts-only.test.mjs'
+if ($LASTEXITCODE -ne 0 -or -not $factsSource) { throw 'FETCH_FACTS_TEST_FAILED' }
+[System.IO.File]::WriteAllText($factsTest,(($factsSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
 $compactTest = Join-Path $repo 'tests\hd-local-compact-ollama.test.mjs'
 $compactSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-local-compact-ollama.test.mjs'
 if ($LASTEXITCODE -ne 0 -or -not $compactSource) { throw 'FETCH_COMPACT_TEST_FAILED' }
@@ -217,7 +221,7 @@ if (-not (Test-Path $testPath)) {
 }
 Push-Location $repo
 try {
-  & node --test $testPath $acquirerTest $compactTest
+  & node --test $testPath $acquirerTest $compactTest $factsTest
   if ($LASTEXITCODE -ne 0) { throw 'UNIT_TESTS_FAILED' }
 } finally { Pop-Location }
 $scriptContent = Get-Content -LiteralPath $PSCommandPath -Raw
