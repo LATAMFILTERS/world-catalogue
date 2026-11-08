@@ -37,7 +37,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'primary-air', name: 'Primary Air', slug: 'primary-air', dutyClass: 'HD+LD', hdPrefix: 'EA1', ldPrefix: 'EA3',
     purpose: 'Primary engine-air elements carry the normal particulate load in the intake path, reducing dust transport toward the turbocharger, cylinders and combustion circuit while supporting the engine’s required airflow.',
     engineering: 'MACROCORE™ primary filtration combines the specified media architecture, effective filtration area and sealing geometry to manage dust retention, contaminant-holding capacity and intake restriction. Performance and replacement limits require evidence for the actual element and installation.',
-    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA33603.png',
+    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/EA3/EA33603.png',
     ...relationships('primary-air'),
   },
   'secondary-air': {
@@ -51,7 +51,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'air-cleaner-housings', name: 'Air Cleaner Housings', slug: 'air-cleaner-housings', dutyClass: 'HD', hdPrefix: 'EA1', ldPrefix: null,
     purpose: 'Air-cleaner housings establish the mechanical intake boundary: they retain the approved filter elements, route engine airflow and preserve the seals needed to prevent unfiltered air bypass.',
     engineering: 'INTEKCORE™ addresses housing geometry, inlet/outlet orientation, element retention, gasket compression, cover closure and service access. Match the complete assembly to required airflow and allowable restriction; a housing is not itself a particulate-filter medium.',
-    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA22580-INTEKCORE-approved-opt.png',
+    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/EA2/EA22580.png',
     ...relationships('air-cleaner-housings'),
   },
   'primary-fuel': {
@@ -114,7 +114,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'air-dryer-filters', name: 'Air Dryer Filters', slug: 'air-dryer-filters', dutyClass: 'HD', hdPrefix: 'ED4', ldPrefix: null,
     purpose: 'Air-dryer cartridges control moisture in approved compressed-air circuits so the downstream pneumatic system receives air conditioned for its operating requirements.',
     engineering: 'DRYCORE™ addresses the validated dryer-cartridge configuration, desiccant capacity, air flow, purge cycle and sealing interfaces. Control of moisture exposure depends on the complete compressor, dryer and pneumatic installation, not on the cartridge alone.',
-    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ED43571.png',
+    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/ED4/ED43571.png',
     ...relationships('air-dryer-filters'),
   },
 };

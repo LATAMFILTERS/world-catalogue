@@ -24,7 +24,7 @@ const BRIDGE_PRODUCT_PRESENTATION = Object.freeze({
   // Patch presentation only, never search identity, equipment fitment,
   // cross-reference policy or product certification.
   ET90010: Object.freeze({
-    image_url: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ET90010.png',
+    image_url: 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/ET9/ET90010.png',
     reference_manufacturer: 'Baldwin Filters',
     reference_part_number: 'B10-AL',
     reference_usage: [
