@@ -41,14 +41,14 @@ export async function reviewHdEvidence({skus,bundleDir,outDir,allowedHosts,limit
   if(candidates.some(sku=>!SKU_RE.test(sku))) throw Error('INVALID_SKU_LIST');
   if(!Number.isInteger(limit) || limit<1 || limit>100) throw Error('LIMIT_MUST_BE_1_TO_100');
   await fs.mkdir(outDir,{recursive:true});
-  const manifest={schema_version:1,mode:'READ_ONLY_EVIDENCE_REVIEW',model:model||'qwen3:8b',results:[]};
+  const manifest={schema_version:1,mode:'READ_ONLY_EVIDENCE_REVIEW',model:model||'qwen3:1.7b',results:[]};
   for(const sku of candidates.slice(0,limit)){
     const bundlePath=path.join(bundleDir,sku+'.json');
     let status='NEEDS_EVIDENCE',reason='OFFICIAL_EVIDENCE_BUNDLE_MISSING',dossier=null;
     try{
       await fs.access(bundlePath);
       const item={sku,duty:'HEAVY_DUTY',discovery_hints:{}};
-      const result=await interpret(item,requiredShape(),{directory:bundleDir,allowedHosts,model});
+      const result=await interpret(item,requiredShape(),{directory:bundleDir,allowedHosts,model,compactMode:true,timeoutMs:85000});
       dossier=result.dossier;
       // A local LLM extraction is NEVER a certified catalogue record.
       status='REVIEW_REQUIRED';
