@@ -48,7 +48,7 @@ export async function reviewHdEvidence({skus,bundleDir,outDir,allowedHosts,limit
     try{
       await fs.access(bundlePath);
       const item={sku,duty:'HEAVY_DUTY',discovery_hints:{}};
-      const result=await interpret(item,requiredShape(),{directory:bundleDir,allowedHosts,model,compactMode:true,timeoutMs:85000});
+      const result=await interpret(item,requiredShape(),{directory:bundleDir,allowedHosts,model,compactMode:true,factsOnly:true,timeoutMs:65000});
       dossier=result.dossier;
       // A local LLM extraction is NEVER a certified catalogue record.
       status='REVIEW_REQUIRED';
