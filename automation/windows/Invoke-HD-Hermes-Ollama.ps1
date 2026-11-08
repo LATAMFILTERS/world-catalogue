@@ -139,6 +139,12 @@ function RunCycle {
         }
       }
     }
+    # Audit every saved review against the hashed source bundle; report-only.
+    # This also refreshes distinct timeout and invalid-response queues.
+    $node = (Get-Command node -ErrorAction Stop).Source
+    & $node $module --audit-only true --bundle-dir $bundleDir --out-dir $outDir 2>&1 | Out-File -LiteralPath (Join-Path $stateDir 'review-audit-worker.log') -Append -Encoding utf8
+    if ($LASTEXITCODE -ne 0) { LogLine ('REVIEW_AUDIT_FAILED exit=' + $LASTEXITCODE) }
+    else { LogLine 'REVIEW_AUDIT_UPDATED_NO_CATALOGUE_WRITES' }
     $state = [pscustomobject]@{
       version=2
       reviewed=@($reviewed | Sort-Object)
@@ -207,6 +213,10 @@ $factsTest = Join-Path $repo 'tests\hd-ollama-facts-only.test.mjs'
 $factsSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-ollama-facts-only.test.mjs'
 if ($LASTEXITCODE -ne 0 -or -not $factsSource) { throw 'FETCH_FACTS_TEST_FAILED' }
 [System.IO.File]::WriteAllText($factsTest,(($factsSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
+$auditTest = Join-Path $repo 'tests\hd-review-audit.test.mjs'
+$auditTestSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-review-audit.test.mjs'
+if ($LASTEXITCODE -ne 0 -or -not $auditTestSource) { throw 'FETCH_AUDIT_TEST_FAILED' }
+[System.IO.File]::WriteAllText($auditTest,(($auditTestSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
 $compactTest = Join-Path $repo 'tests\hd-local-compact-ollama.test.mjs'
 $compactSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-local-compact-ollama.test.mjs'
 if ($LASTEXITCODE -ne 0 -or -not $compactSource) { throw 'FETCH_COMPACT_TEST_FAILED' }
@@ -221,7 +231,7 @@ if (-not (Test-Path $testPath)) {
 }
 Push-Location $repo
 try {
-  & node --test $testPath $acquirerTest $compactTest $factsTest
+  & node --test $testPath $acquirerTest $compactTest $factsTest $auditTest
   if ($LASTEXITCODE -ne 0) { throw 'UNIT_TESTS_FAILED' }
 } finally { Pop-Location }
 $scriptContent = Get-Content -LiteralPath $PSCommandPath -Raw
