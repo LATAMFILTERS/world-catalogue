@@ -31,6 +31,9 @@ require('dotenv').config();
 const { Client } = require('pg');
 
 const APPLY = process.argv.includes('--execute');
+const argOf = (k) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : null; };
+const SNAPSHOT = argOf('--snapshot');
+const EXCLUDE = argOf('--exclude-skus') ? require('fs').readFileSync(argOf('--exclude-skus'), 'utf8').split(/[\s,]+/).filter(Boolean) : [];
 const POLICY_VERSION = '2026-11-06-hd-cert-refresh-v2';
 const { clearableSkus } = require('./lib/hd-exact-conflict-rule');
 const { manualLedgerRow } = require('./run_093_global_sku_certification_audit');
@@ -62,9 +65,8 @@ const EVALUATE = `
     SELECT sku::text, count(*)::int AS conflict_count FROM public.catalog_reference_classification_conflicts_v GROUP BY sku
   ),
   quarantined AS (
-    -- Quarantine is a historical rejection log. Only block when its rejected
-    -- normalized code is STILL attached to the same HD SKU. Removed citations
-    -- must remain quarantined for audit, but must not block certification.
+    -- Historical quarantine entries remain auditable. They block only while
+    -- the rejected normalized code is still present on this same HD SKU.
     SELECT q.source_sku::text AS sku, count(*)::int AS quarantine_count
     FROM public.bad_crossref_quarantine q
     JOIN public.elimfilters_catalog c ON c.sku=q.source_sku
@@ -74,17 +76,12 @@ const EVALUATE = `
       AND EXISTS (
         SELECT 1 FROM (
           SELECT value->>'code' AS code, value->>'reference' AS reference
-          FROM jsonb_array_elements(
-            CASE WHEN jsonb_typeof(c.oem_codes)='array' THEN c.oem_codes ELSE '[]'::jsonb END
-          ) value
+          FROM jsonb_array_elements(CASE WHEN jsonb_typeof(c.oem_codes)='array' THEN c.oem_codes ELSE '[]'::jsonb END) value
           UNION ALL
           SELECT value->>'code', value->>'reference'
-          FROM jsonb_array_elements(
-            CASE WHEN jsonb_typeof(c.competitor_codes)='array' THEN c.competitor_codes ELSE '[]'::jsonb END
-          ) value
+          FROM jsonb_array_elements(CASE WHEN jsonb_typeof(c.competitor_codes)='array' THEN c.competitor_codes ELSE '[]'::jsonb END) value
         ) refs
-        WHERE ld_catalog.norm_part(coalesce(nullif(refs.code,''),refs.reference,'')) =
-              ld_catalog.norm_part(q.query_code)
+        WHERE ld_catalog.norm_part(coalesce(nullif(refs.code,''),refs.reference,''))=ld_catalog.norm_part(q.query_code)
       )
     GROUP BY q.source_sku
   ),
@@ -138,15 +135,23 @@ const EVALUATE = `
     `SELECT c.certification_state AS state, count(*)::int AS n
      FROM public.catalog_sku_certification c JOIN public.elimfilters_catalog e ON e.sku=c.sku
      WHERE e.duty='HEAVY_DUTY' AND e.catalog_active GROUP BY 1 ORDER BY 1`).then(r => r.rows);
+  const hdLedgerFingerprint = () => db.query(
+    `SELECT md5(string_agg(c::text, '|' ORDER BY sku)) AS h
+     FROM public.catalog_sku_certification c WHERE duty='HEAVY_DUTY'`).then(r => r.rows[0].h);
 
   try {
     await db.query('BEGIN');
     await db.query('LOCK TABLE public.catalog_sku_certification IN SHARE ROW EXCLUSIVE MODE');
     report.active_heavy_duty_before = await states();
+    report.hd_ledger_fingerprint_before = await hdLedgerFingerprint();
     const ld = () => db.query(`SELECT md5(string_agg(c::text, '|' ORDER BY sku)) AS h FROM public.catalog_sku_certification c WHERE duty<>'HEAVY_DUTY'`).then(r => r.rows[0].h);
     const ldBefore = await ld();
 
     await db.query(`CREATE TEMP TABLE hd_eval ON COMMIT DROP AS ${EVALUATE}`);
+    // --exclude-skus: these rows keep their current ledger state untouched (asserted below).
+    const exFp = () => db.query(`SELECT md5(coalesce(string_agg(c::text,'|' ORDER BY sku),'')) h, count(*)::int n FROM public.catalog_sku_certification c WHERE sku = ANY($1::text[])`, [EXCLUDE]).then(r => r.rows[0]);
+    const exBefore = await exFp();
+    if (EXCLUDE.length) report.excluded = { requested: EXCLUDE.length, deleted_from_eval: (await db.query('DELETE FROM hd_eval WHERE sku = ANY($1::text[])', [EXCLUDE])).rowCount, ledger_rows: exBefore.n };
     // Shared references that are technically consistent and officially sourced per SKU
     // no longer block; every other exact conflict keeps EXACT_PART_REFERENCE_CONFLICT.
     const detail = await db.query(`
@@ -160,8 +165,18 @@ const EVALUATE = `
          blockers=array_remove(blockers,'EXACT_PART_REFERENCE_CONFLICT')
        WHERE NOT exact_reference_conflict_free AND sku = ANY($1::text[]) RETURNING sku`, [cleared]);
     report.exact_conflict_cleared = cleanup.rows.map(r => r.sku).sort();
-    await db.query(`CREATE TEMP TABLE hd_before ON COMMIT DROP AS SELECT sku, certification_state FROM public.catalog_sku_certification`);
+    await db.query(`CREATE TEMP TABLE hd_before ON COMMIT DROP AS SELECT sku, certification_state, blockers FROM public.catalog_sku_certification`);
 
+    // Evidence-only fields for a dry-run report. All are captured inside the
+    // same transaction as the evaluation and disappear on ROLLBACK.
+    report.ld_fingerprint_before = ldBefore;
+    if (SNAPSHOT) require('fs').writeFileSync(SNAPSHOT, JSON.stringify((await db.query('SELECT * FROM public.catalog_sku_certification WHERE sku IN (SELECT sku FROM hd_eval)')).rows, null, 1));
+    report.heavy_duty_without_ledger_before = (await db.query(`
+      SELECT e.sku FROM public.elimfilters_catalog e
+      WHERE e.duty='HEAVY_DUTY' AND e.catalog_active
+        AND NOT EXISTS (SELECT 1 FROM hd_before b WHERE b.sku=e.sku)
+      ORDER BY e.sku
+    `)).rows.map(r => r.sku);
     const written = await db.query(`
       INSERT INTO public.catalog_sku_certification AS t (
         sku,duty,filter_type,codigo_base,certification_state,policy_version,
@@ -207,6 +222,7 @@ const EVALUATE = `
     report.rows_written = written.rowCount;
 
     if (await ld() !== ldBefore) throw new Error('NON_HEAVY_DUTY_ROWS_CHANGED');
+    if (EXCLUDE.length) { const a = await exFp(); if (a.h !== exBefore.h) throw new Error('EXCLUDED_ROWS_CHANGED'); }
     const missing = await db.query(
       `SELECT count(*)::int AS n FROM public.elimfilters_catalog e
        WHERE e.duty='HEAVY_DUTY' AND NOT EXISTS (SELECT 1 FROM public.catalog_sku_certification c WHERE c.sku=e.sku)`);
@@ -227,9 +243,36 @@ const EVALUATE = `
       `SELECT c.sku, array_to_string(c.blockers,';') AS blockers
        FROM public.catalog_sku_certification c JOIN hd_before b ON b.sku=c.sku
        WHERE b.certification_state='CERTIFIED' AND c.certification_state='BLOCKED' ORDER BY c.sku`)).rows;
+    report.quarantine_impact = (await db.query(`
+      SELECT b.sku, b.certification_state AS before_state,
+             c.certification_state AS after_state,
+             CASE WHEN coalesce(h.quarantine_count,0)>0
+               THEN 'STILL_PRESENT_BLOCKED' ELSE 'STALE_QUARANTINE_NO_LONGER_BLOCKS' END AS outcome,
+             coalesce(h.quarantine_count,0)::int AS live_rejected_reference_count,
+             c.blockers AS blockers_after
+      FROM hd_before b JOIN hd_eval h ON h.sku=b.sku
+      JOIN public.catalog_sku_certification c ON c.sku=b.sku
+      WHERE 'QUARANTINED_REFERENCE_PRESENT'=ANY(b.blockers)
+      ORDER BY outcome,b.sku
+    `)).rows;
+    report.sku_transitions = (await db.query(`
+      SELECT e.sku, coalesce(b.certification_state,'NO_ROW') AS before,
+             c.certification_state AS after,
+             coalesce(array_to_string(c.blockers,';'),'') AS blockers_after
+      FROM public.elimfilters_catalog e
+      LEFT JOIN hd_before b ON b.sku=e.sku
+      LEFT JOIN public.catalog_sku_certification c ON c.sku=e.sku
+      WHERE e.duty='HEAVY_DUTY' AND e.catalog_active
+        AND coalesce(b.certification_state,'NO_ROW') IS DISTINCT FROM c.certification_state
+      ORDER BY e.sku
+    `)).rows;
+    report.ld_fingerprint_after = await ld();
+    report.ld_fingerprint_unchanged = report.ld_fingerprint_before === report.ld_fingerprint_after;
 
     await db.query(APPLY ? 'COMMIT' : 'ROLLBACK');
     report.transaction = APPLY ? 'COMMIT' : 'ROLLBACK';
+    report.hd_ledger_fingerprint_after = await hdLedgerFingerprint();
+    report.hd_ledger_rollback_verified = !APPLY && report.hd_ledger_fingerprint_before === report.hd_ledger_fingerprint_after;
     console.log(JSON.stringify(report, null, 2));
   } catch (e) {
     try { await db.query('ROLLBACK'); } catch (_) {}
