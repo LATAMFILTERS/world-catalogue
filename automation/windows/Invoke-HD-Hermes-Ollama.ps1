@@ -162,10 +162,13 @@ if (-not (Test-Path $module)) {
 }
 if (-not (Test-Path (Join-Path $repo 'scripts\hermes\local-evidence-ollama.mjs'))) { throw 'EXISTING_HERMES_ADAPTER_MISSING' }
 $acquirerPath = Join-Path $repo 'scripts\hermes\hd-official-bundle-acquisition.mjs'
-if (-not (Test-Path $acquirerPath)) {
-  $acquirerSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/hd-official-bundle-acquisition.mjs'
-  if ($LASTEXITCODE -ne 0 -or -not $acquirerSource) { throw 'FETCH_OFFICIAL_ACQUIRER_FAILED' }
-  [System.IO.File]::WriteAllText($acquirerPath,(($acquirerSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
+$acquirerSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/hd-official-bundle-acquisition.mjs'
+if ($LASTEXITCODE -ne 0 -or -not $acquirerSource) { throw 'FETCH_OFFICIAL_ACQUIRER_FAILED' }
+$acquirerText = ($acquirerSource -join [Environment]::NewLine) + [Environment]::NewLine
+if ((-not (Test-Path $acquirerPath)) -or ((Get-Content -LiteralPath $acquirerPath -Raw) -ne $acquirerText)) {
+  if (Test-Path $acquirerPath) { Copy-Item -LiteralPath $acquirerPath -Destination (Join-Path $stateDir 'hd-official-bundle-acquisition.previous.mjs') -Force }
+  [System.IO.File]::WriteAllText($acquirerPath,$acquirerText,(New-Object System.Text.UTF8Encoding($false)))
+  LogLine 'OFFICIAL_ACQUIRER_UPDATED_FROM_BRANCH'
 }
 & node --check $acquirerPath
 if ($LASTEXITCODE -ne 0) { throw 'ACQUIRER_SYNTAX_ERROR' }
