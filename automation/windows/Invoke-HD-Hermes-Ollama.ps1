@@ -98,15 +98,21 @@ function RunCycle {
         }
       } else { LogLine 'OFFICIAL_ACQUIRER_NOT_INSTALLED' }
     }
+    $compactAttemptsFile = Join-Path $stateDir 'ollama-compact-attempted.txt'
+    $compactAttempts = New-Object 'System.Collections.Generic.HashSet[string]'
+    if (Test-Path $compactAttemptsFile) {
+      foreach ($skuAttempt in (Get-Content -LiteralPath $compactAttemptsFile)) { [void]$compactAttempts.Add([string]$skuAttempt) }
+    }
     $newlyAvailable = @($all | Where-Object {
       $manualScanned.Contains($_) -and -not $reviewed.Contains($_) -and
+      -not $compactAttempts.Contains($_) -and
       (Test-Path (Join-Path $bundleDir ($_ + '.json')))
-    } | Select-Object -First 3)
+    } | Select-Object -First 2)
     $ready = New-Object 'System.Collections.Generic.List[string]'
     foreach ($sku in $newlyAvailable) { [void]$ready.Add([string]$sku) }
     foreach ($sku in $newScan) {
       if (Test-Path (Join-Path $bundleDir ($sku + '.json'))) {
-        if ($ready.Count -lt 3) { [void]$ready.Add([string]$sku) }
+        if ($ready.Count -lt 2 -and -not $compactAttempts.Contains($sku) -and -not $ready.Contains($sku)) { [void]$ready.Add([string]$sku) }
       } else {
         Add-Content -LiteralPath $manual -Value ($sku + ',OFFICIAL_EVIDENCE_BUNDLE_MISSING')
         [void]$manualScanned.Add([string]$sku)
@@ -116,8 +122,9 @@ function RunCycle {
       $list = Join-Path $stateDir 'current-batch.txt'
       [System.IO.File]::WriteAllLines($list,[string[]]$ready,(New-Object System.Text.UTF8Encoding($false)))
       $node = (Get-Command node -ErrorAction Stop).Source
-      & $node $module --sku-file $list --bundle-dir $bundleDir --out-dir $outDir --allowed-hosts $allowedHosts --limit 3 2>&1 | Out-File -LiteralPath $logPath -Append -Encoding utf8
+      & $node $module --sku-file $list --bundle-dir $bundleDir --out-dir $outDir --allowed-hosts $allowedHosts --limit 2 --model qwen3:1.7b 2>&1 | Out-File -LiteralPath $logPath -Append -Encoding utf8
       if ($LASTEXITCODE -ne 0) { LogLine ('BATCH_ERROR exit=' + $LASTEXITCODE); return }
+      Add-Content -LiteralPath $compactAttemptsFile -Value @($ready)
       foreach ($sku in $ready) {
         $result = Join-Path $outDir ($sku + '.review.json')
         if (-not (Test-Path $result)) { LogLine ('BATCH_RESULT_MISSING ' + $sku); continue }
@@ -155,12 +162,26 @@ $git=(Get-Command git -ErrorAction Stop).Source
 & $git -C $repo fetch origin 'refs/heads/feat/hd-hermes-ollama-evidence-pilot-20261108:refs/remotes/origin/hd-local-ollama-review'
 if ($LASTEXITCODE -ne 0) { throw 'FETCH_PR1270_FAILED' }
 $module = Join-Path $repo 'scripts\hermes\hd-local-evidence-review.mjs'
-if (-not (Test-Path $module)) {
-  $source = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/hd-local-evidence-review.mjs'
-  if ($LASTEXITCODE -ne 0) { throw 'FETCH_MODULE_FAILED' }
-  [System.IO.File]::WriteAllText($module, (($source -join [Environment]::NewLine) + [Environment]::NewLine), (New-Object System.Text.UTF8Encoding($false)))
+$moduleSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/hd-local-evidence-review.mjs'
+if ($LASTEXITCODE -ne 0 -or -not $moduleSource) { throw 'FETCH_HD_REVIEW_MODULE_FAILED' }
+$moduleText = ($moduleSource -join [Environment]::NewLine) + [Environment]::NewLine
+if ((-not (Test-Path $module)) -or ((Get-Content -LiteralPath $module -Raw) -ne $moduleText)) {
+  if (Test-Path $module) { Copy-Item -LiteralPath $module -Destination (Join-Path $stateDir 'hd-local-evidence-review.previous.mjs') -Force }
+  [System.IO.File]::WriteAllText($module,$moduleText,(New-Object System.Text.UTF8Encoding($false)))
+  LogLine 'HD_LOCAL_REVIEW_UPDATED_FROM_BRANCH'
 }
-if (-not (Test-Path (Join-Path $repo 'scripts\hermes\local-evidence-ollama.mjs'))) { throw 'EXISTING_HERMES_ADAPTER_MISSING' }
+$interpreter = Join-Path $repo 'scripts\hermes\local-evidence-ollama.mjs'
+if (-not (Test-Path $interpreter)) { throw 'EXISTING_HERMES_ADAPTER_MISSING' }
+$interpreterSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/local-evidence-ollama.mjs'
+if ($LASTEXITCODE -ne 0 -or -not $interpreterSource) { throw 'FETCH_EXISTING_HERMES_ADAPTER_FAILED' }
+$interpreterText = ($interpreterSource -join [Environment]::NewLine) + [Environment]::NewLine
+if ((Get-Content -LiteralPath $interpreter -Raw) -ne $interpreterText) {
+  Copy-Item -LiteralPath $interpreter -Destination (Join-Path $stateDir 'local-evidence-ollama.previous.mjs') -Force
+  [System.IO.File]::WriteAllText($interpreter,$interpreterText,(New-Object System.Text.UTF8Encoding($false)))
+  LogLine 'HERMES_OLLAMA_COMPACT_MODE_UPDATED'
+}
+& node --check $interpreter
+if ($LASTEXITCODE -ne 0) { throw 'INTERPRETER_SYNTAX_ERROR' }
 $acquirerPath = Join-Path $repo 'scripts\hermes\hd-official-bundle-acquisition.mjs'
 $acquirerSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/hd-official-bundle-acquisition.mjs'
 if ($LASTEXITCODE -ne 0 -or -not $acquirerSource) { throw 'FETCH_OFFICIAL_ACQUIRER_FAILED' }
@@ -179,6 +200,10 @@ $testText = ($testSource -join [Environment]::NewLine) + [Environment]::NewLine
 if ((-not (Test-Path $acquirerTest)) -or ((Get-Content -LiteralPath $acquirerTest -Raw) -ne $testText)) {
   [System.IO.File]::WriteAllText($acquirerTest,$testText,(New-Object System.Text.UTF8Encoding($false)))
 }
+$compactTest = Join-Path $repo 'tests\hd-local-compact-ollama.test.mjs'
+$compactSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-local-compact-ollama.test.mjs'
+if ($LASTEXITCODE -ne 0 -or -not $compactSource) { throw 'FETCH_COMPACT_TEST_FAILED' }
+[System.IO.File]::WriteAllText($compactTest,(($compactSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
 & node --check $module
 if ($LASTEXITCODE -ne 0) { throw 'MODULE_SYNTAX_ERROR' }
 $testPath = Join-Path $repo 'tests\hd-local-evidence-review.test.mjs'
@@ -189,7 +214,7 @@ if (-not (Test-Path $testPath)) {
 }
 Push-Location $repo
 try {
-  & node --test $testPath $acquirerTest
+  & node --test $testPath $acquirerTest $compactTest
   if ($LASTEXITCODE -ne 0) { throw 'UNIT_TESTS_FAILED' }
 } finally { Pop-Location }
 $scriptContent = Get-Content -LiteralPath $PSCommandPath -Raw
