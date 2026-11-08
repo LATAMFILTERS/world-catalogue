@@ -73,6 +73,31 @@ function RunCycle {
     # without evidence. Previously skipped SKUs become eligible when a bundle appears.
     $unscanned = @($all | Where-Object { -not $reviewed.Contains($_) -and -not $manualScanned.Contains($_) })
     $newScan = @($unscanned | Select-Object -First 100)
+    # Acquire only previously unattempted official canonical URLs.
+    # Missing evidence is still assigned to manual review, never certified.
+    $attemptsFile = Join-Path $stateDir 'official-acquisition-attempted.txt'
+    $attempted = New-Object 'System.Collections.Generic.HashSet[string]'
+    if (Test-Path $attemptsFile) {
+      foreach ($key in (Get-Content -LiteralPath $attemptsFile)) { [void]$attempted.Add([string]$key) }
+    }
+    $acquire = @($all | Where-Object {
+      -not $attempted.Contains($_) -and -not $reviewed.Contains($_)
+    } | Select-Object -First 8)
+    if ($acquire.Count -gt 0) {
+      $acquirer = Join-Path $repo 'scripts\hermes\hd-official-bundle-acquisition.mjs'
+      $acquireList = Join-Path $stateDir 'official-acquisition-batch.txt'
+      [System.IO.File]::WriteAllLines($acquireList,[string[]]$acquire,(New-Object System.Text.UTF8Encoding($false)))
+      if (Test-Path $acquirer) {
+        $node = (Get-Command node -ErrorAction Stop).Source
+        & $node $acquirer --sku-file $acquireList --bundle-dir $bundleDir --allowed-hosts $allowedHosts 2>&1 | Out-File -LiteralPath $logPath -Append -Encoding utf8
+        if ($LASTEXITCODE -eq 0) {
+          Add-Content -LiteralPath $attemptsFile -Value $acquire
+          LogLine ('OFFICIAL_ACQUISITION_ATTEMPTED=' + $acquire.Count)
+        } else {
+          LogLine 'OFFICIAL_ACQUISITION_FAILED_NO_CATALOGUE_WRITES'
+        }
+      } else { LogLine 'OFFICIAL_ACQUIRER_NOT_INSTALLED' }
+    }
     $newlyAvailable = @($all | Where-Object {
       $manualScanned.Contains($_) -and -not $reviewed.Contains($_) -and
       (Test-Path (Join-Path $bundleDir ($_ + '.json')))
@@ -136,6 +161,20 @@ if (-not (Test-Path $module)) {
   [System.IO.File]::WriteAllText($module, (($source -join [Environment]::NewLine) + [Environment]::NewLine), (New-Object System.Text.UTF8Encoding($false)))
 }
 if (-not (Test-Path (Join-Path $repo 'scripts\hermes\local-evidence-ollama.mjs'))) { throw 'EXISTING_HERMES_ADAPTER_MISSING' }
+$acquirerPath = Join-Path $repo 'scripts\hermes\hd-official-bundle-acquisition.mjs'
+if (-not (Test-Path $acquirerPath)) {
+  $acquirerSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/hd-official-bundle-acquisition.mjs'
+  if ($LASTEXITCODE -ne 0 -or -not $acquirerSource) { throw 'FETCH_OFFICIAL_ACQUIRER_FAILED' }
+  [System.IO.File]::WriteAllText($acquirerPath,(($acquirerSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
+}
+& node --check $acquirerPath
+if ($LASTEXITCODE -ne 0) { throw 'ACQUIRER_SYNTAX_ERROR' }
+$acquirerTest = Join-Path $repo 'tests\hd-official-bundle-acquisition.test.mjs'
+if (-not (Test-Path $acquirerTest)) {
+  $testSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-official-bundle-acquisition.test.mjs'
+  if ($LASTEXITCODE -ne 0 -or -not $testSource) { throw 'FETCH_ACQUIRER_TEST_FAILED' }
+  [System.IO.File]::WriteAllText($acquirerTest,(($testSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
+}
 & node --check $module
 if ($LASTEXITCODE -ne 0) { throw 'MODULE_SYNTAX_ERROR' }
 $testPath = Join-Path $repo 'tests\hd-local-evidence-review.test.mjs'
@@ -146,7 +185,7 @@ if (-not (Test-Path $testPath)) {
 }
 Push-Location $repo
 try {
-  & node --test $testPath
+  & node --test $testPath $acquirerTest
   if ($LASTEXITCODE -ne 0) { throw 'UNIT_TESTS_FAILED' }
 } finally { Pop-Location }
 $scriptContent = Get-Content -LiteralPath $PSCommandPath -Raw
