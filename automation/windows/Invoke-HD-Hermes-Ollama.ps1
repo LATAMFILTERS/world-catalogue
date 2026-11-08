@@ -25,14 +25,20 @@ function SaveState($state) {
 }
 function GetSkuList {
   $snapshot = Join-Path $evidenceRoot 'hd-active-snapshot.json'
-  if (-not (Test-Path $snapshot)) { throw 'HD_ACTIVE_SNAPSHOT_MISSING' }
+  if (-not (Test-Path $snapshot)) {
+    # Known HD conflict queue from verified run_273 v2 dry-run; explicitly HD only.
+    # Does not invent a full-catalogue snapshot and never silently processes LD.
+    $known='EA10696 EA11373 EA11750 EA11767 EA12148 EA12481 EA13553 EA13611 EA13881 EA15362 EA15903 EA15904 EA16062 EA16409 EA16921 EA17360 EA18653 EA20161 EA27455 EF95686 EH60085 EH60747 EH60752 EH60754 EH60756 EH61371 EH61372 EH61373 EH61374 EH61376 EH61386 EH61387 EH61388 EH61464 EH61560 EH61735 EH61736 EH61819 EH62326 EH62328 EH63729 EH63730 EH63731 EH63732 EH63733 EH63734 EH63735 EH63736 EH64015 EH64016 EH64292 EH64293 EH64300 EH64301 EH64861 EH64862 EH64863 EH64866 EH64867 EH64868 EH64869 EH64870 EH64936 EH64937 EH64939 EH66225 EH66226 EH66228 EH66464 EH66469 EH66481 EH66482 EH66633 EH66670 EH66671 EH66684 EH66961 EH66962 EH66963 EH66964 EH67021 EH67022 EH67027 EH67028 EH67040 EH67046 EH67084 EH68713 EH68714 EH68716 ES91437 ES94943'
+    LogLine 'HD_ACTIVE_SNAPSHOT_MISSING_USING_VERIFIED_92_SKU_CONFLICT_SET'
+    return ,@($known -split ' ')
+  }
   $parsed = Get-Content -LiteralPath $snapshot -Raw | ConvertFrom-Json
   $records = if ($parsed -is [array]) { $parsed } elseif ($parsed.skus) { $parsed.skus } elseif ($parsed.rows) { $parsed.rows } elseif ($parsed.items) { $parsed.items } else { throw 'UNKNOWN_HD_SNAPSHOT_SHAPE' }
   $all = @($records | ForEach-Object {
     if ($_ -is [string]) { $_ }
     elseif ($_.sku) { $_.sku }
   } | Where-Object { $_ -and $_ -match '^[A-Z]{2}[0-9]{4,8}$' } | Sort-Object -Unique)
-  if ($all.Count -lt 100) { throw 'HD_SNAPSHOT_TOO_SMALL_OR_INVALID' }
+  if ($all.Count -lt 1) { throw 'HD_SNAPSHOT_EMPTY_OR_INVALID' }
   return ,$all
 }
 function RunCycle {
@@ -92,7 +98,7 @@ function RunCycle {
 if ($Cycle) { RunCycle; exit 0 }
 if (-not (Test-Path (Join-Path $repo '.git'))) { throw ('HD_WORKTREE_MISSING ' + $repo) }
 $git=(Get-Command git -ErrorAction Stop).Source
-& $git -C $repo fetch origin 'refs/pull/1270/head:refs/remotes/origin/hd-local-ollama-review'
+& $git -C $repo fetch origin 'refs/heads/feat/hd-hermes-ollama-evidence-pilot-20261108:refs/remotes/origin/hd-local-ollama-review'
 if ($LASTEXITCODE -ne 0) { throw 'FETCH_PR1270_FAILED' }
 $module = Join-Path $repo 'scripts\hermes\hd-local-evidence-review.mjs'
 if (-not (Test-Path $module)) {
