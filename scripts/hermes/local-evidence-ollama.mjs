@@ -85,7 +85,7 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
       method: 'POST',
       headers: {'content-type':'application/json'},
       signal:controller.signal,
-      body:JSON.stringify({model, stream:false, think:false, format:'json', options:{temperature:0,num_predict:factsOnly?180:(fastMode?650:1300),num_ctx:factsOnly?1536:(fastMode?3072:8192)},
+      body:JSON.stringify({model, stream:false, think:false, format:'json', options:{temperature:0,num_predict:factsOnly?260:(fastMode?650:1300),num_ctx:factsOnly?1536:(fastMode?3072:8192)},
         messages:[{role:'system',content:factsOnly ? system+' '+compactTask : system},
           {role:'user',content:JSON.stringify(factsOnly ? {sku,sources:promptSources.map(x=>({url:x.url,content:x.content}))} : {sku,target:item,required_shape:shape,sources:promptSources})}]})
     });
@@ -95,7 +95,10 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
   } finally { clearTimeout(timeout); }
   if (!response.ok) throw new Error('OLLAMA_HTTP_' + response.status);
   const result = await response.json();
-  const raw = JSON.parse(result?.message?.content || '{}');
+  if(result?.done_reason==='length')throw new Error('OLLAMA_OUTPUT_TRUNCATED');
+  let raw;
+  try{raw=JSON.parse(result?.message?.content || '{}');}
+  catch{throw new Error('OLLAMA_JSON_INVALID_OR_INCOMPLETE');}
   let dossier=raw;
   if(factsOnly){
     if(!raw || typeof raw!=='object' || Array.isArray(raw) ||
