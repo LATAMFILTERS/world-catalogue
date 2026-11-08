@@ -1372,11 +1372,6 @@ function renderCard(p, index) {
   const oemDisplay = [...oem];
   const canonicalBrand = normalizeBrand(p.canonical_source_brand || '');
   const canonicalCode = String(p.canonical_source_code || '').toUpperCase();
-  if (canonicalBrand === 'ELIMFILTERS' && canonicalCode && canonicalCode === String(sku).toUpperCase()) {
-    const key = canonicalBrand + '|' + canonicalCode;
-    const exists = oemDisplay.some(r => (r.brand + '|' + r.code) === key);
-    if (!exists) oemDisplay.unshift({ brand: canonicalBrand, code: canonicalCode });
-  }
   const isLD = p.duty === 'LIGHT_DUTY';
   const vehicleApps = Array.isArray(p.vehicle_applications) ? p.vehicle_applications : [];
   const equipApps   = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
