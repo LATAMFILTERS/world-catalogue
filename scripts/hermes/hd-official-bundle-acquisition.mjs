@@ -14,6 +14,31 @@ export function isTrustedOfficialUrl(url,hosts){
       hosts.some(host=>u.hostname.toLowerCase()===host || u.hostname.toLowerCase().endsWith('.'+host));
   }catch{return false;}
 }
+// Every redirect is resolved and checked before requesting it. Redirects to
+// unapproved domains or non-HTTPS URLs are rejected, not followed implicitly.
+export async function fetchOfficialWithRedirects(startUrl,hosts,fetcher,signal,maxRedirects=4){
+  const visited=new Set();
+  let url=startUrl;
+  for(let step=0;step<=maxRedirects;step++){
+    if(!isTrustedOfficialUrl(url,hosts))return {ok:false,status:'UNTRUSTED_REDIRECT',url};
+    if(visited.has(url))return {ok:false,status:'REDIRECT_LOOP',url};
+    visited.add(url);
+    const response=await fetcher(url,{signal,redirect:'manual',headers:{'User-Agent':'ELIMFILTERS-HERMES-EVIDENCE/1.0'}});
+    if([301,302,303,307,308].includes(response.status)){
+      const location=response.headers?.get?.('location');
+      if(!location)return {ok:false,status:'REDIRECT_LOCATION_MISSING',http:response.status,url};
+      let next;
+      try{next=new URL(location,url).href;}
+      catch{return {ok:false,status:'INVALID_REDIRECT_LOCATION',url};}
+      if(!isTrustedOfficialUrl(next,hosts))return {ok:false,status:'UNTRUSTED_REDIRECT',url:next,http:response.status};
+      url=next;
+      continue;
+    }
+    return {ok:response.ok,response,url,status:response.ok?'FETCHED':'OFFICIAL_HTTP_FAILURE',http:response.status};
+  }
+  return {ok:false,status:'TOO_MANY_REDIRECTS',url};
+}
+
 export async function acquireOfficialBundles({skus,directory,allowedHosts,client,fetcher=fetch,timeoutMs=18000}){
   const hosts=String(allowedHosts||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean);
   if(!hosts.length) throw Error('OFFICIAL_SOURCE_ALLOWLIST_REQUIRED');
@@ -35,8 +60,9 @@ export async function acquireOfficialBundles({skus,directory,allowedHosts,client
     if(!item.code || !isTrustedOfficialUrl(item.url,hosts)){results.push({sku,status:'NO_TRUSTED_CANONICAL_URL_OR_CODE'});continue;}
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeoutMs);
     try{
-      const response=await fetcher(item.url,{signal:controller.signal,redirect:'manual',headers:{'User-Agent':'ELIMFILTERS-HERMES-EVIDENCE/1.0'}});
-      if(!response.ok || (response.status>=300&&response.status<400)){results.push({sku,status:'OFFICIAL_FETCH_FAILED',http:response.status});continue;}
+      const retrieved=await fetchOfficialWithRedirects(item.url,hosts,fetcher,controller.signal);
+      if(!retrieved.ok){results.push({sku,status:retrieved.status,http:retrieved.http||null});continue;}
+      const response=retrieved.response;
       const type=String(response.headers?.get?.('content-type')||'');
       if(!/text\/html|text\/plain|application\/json/i.test(type)){results.push({sku,status:'UNSUPPORTED_SOURCE_FORMAT'});continue;}
       const raw=await response.text();
@@ -44,7 +70,7 @@ export async function acquireOfficialBundles({skus,directory,allowedHosts,client
       const cleanText=raw.replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
       if(cleanText.length<40||!norm(cleanText).includes(norm(item.code))){results.push({sku,status:'EXACT_CANONICAL_CODE_NOT_ON_SOURCE'});continue;}
       const digest=crypto.createHash('sha256').update(cleanText,'utf8').digest('hex');
-      const bundle={sku,sources:[{url:item.url,content:cleanText.slice(0,50000),sha256:crypto.createHash('sha256').update(cleanText.slice(0,50000),'utf8').digest('hex'),source_type:'official_product_page'}]};
+      const bundle={sku,sources:[{url:retrieved.url,content:cleanText.slice(0,50000),sha256:crypto.createHash('sha256').update(cleanText.slice(0,50000),'utf8').digest('hex'),source_type:'official_product_page'}]};
       const tmp=dest+'.tmp-'+process.pid;
       await fs.writeFile(tmp,JSON.stringify(bundle)+'\n',{flag:'wx'});
       await fs.rename(tmp,dest);
