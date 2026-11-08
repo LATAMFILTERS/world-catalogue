@@ -75,7 +75,7 @@ function RunCycle {
     $newScan = @($unscanned | Select-Object -First 100)
     # Acquire only previously unattempted official canonical URLs.
     # Missing evidence is still assigned to manual review, never certified.
-    $attemptsFile = Join-Path $stateDir 'official-acquisition-attempted.txt'
+    $attemptsFile = Join-Path $stateDir 'official-acquisition-attempted-redirect-v2.txt'
     $attempted = New-Object 'System.Collections.Generic.HashSet[string]'
     if (Test-Path $attemptsFile) {
       foreach ($key in (Get-Content -LiteralPath $attemptsFile)) { [void]$attempted.Add([string]$key) }
@@ -173,10 +173,11 @@ if ((-not (Test-Path $acquirerPath)) -or ((Get-Content -LiteralPath $acquirerPat
 & node --check $acquirerPath
 if ($LASTEXITCODE -ne 0) { throw 'ACQUIRER_SYNTAX_ERROR' }
 $acquirerTest = Join-Path $repo 'tests\hd-official-bundle-acquisition.test.mjs'
-if (-not (Test-Path $acquirerTest)) {
-  $testSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-official-bundle-acquisition.test.mjs'
-  if ($LASTEXITCODE -ne 0 -or -not $testSource) { throw 'FETCH_ACQUIRER_TEST_FAILED' }
-  [System.IO.File]::WriteAllText($acquirerTest,(($testSource -join [Environment]::NewLine) + [Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false)))
+$testSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-official-bundle-acquisition.test.mjs'
+if ($LASTEXITCODE -ne 0 -or -not $testSource) { throw 'FETCH_ACQUIRER_TEST_FAILED' }
+$testText = ($testSource -join [Environment]::NewLine) + [Environment]::NewLine
+if ((-not (Test-Path $acquirerTest)) -or ((Get-Content -LiteralPath $acquirerTest -Raw) -ne $testText)) {
+  [System.IO.File]::WriteAllText($acquirerTest,$testText,(New-Object System.Text.UTF8Encoding($false)))
 }
 & node --check $module
 if ($LASTEXITCODE -ne 0) { throw 'MODULE_SYNTAX_ERROR' }
