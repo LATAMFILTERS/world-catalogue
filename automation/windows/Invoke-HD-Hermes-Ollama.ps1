@@ -85,7 +85,7 @@ function RunCycle {
     }
     $acquire = @($all | Where-Object {
       -not $attempted.Contains($_) -and -not $reviewed.Contains($_)
-    } | Select-Object -First 8)
+    } | Select-Object -First 16)
     if ($acquire.Count -gt 0) {
       $acquirer = Join-Path $repo 'scripts\hermes\hd-official-bundle-acquisition.mjs'
       $acquireList = Join-Path $stateDir 'official-acquisition-batch.txt'
@@ -145,12 +145,27 @@ function RunCycle {
     & $node $module --audit-only true --bundle-dir $bundleDir --out-dir $outDir 2>&1 | Out-File -LiteralPath (Join-Path $stateDir 'review-audit-worker.log') -Append -Encoding utf8
     if ($LASTEXITCODE -ne 0) { LogLine ('REVIEW_AUDIT_FAILED exit=' + $LASTEXITCODE) }
     else { LogLine 'REVIEW_AUDIT_UPDATED_NO_CATALOGUE_WRITES' }
+    $auditPath = Join-Path $outDir 'hd-review-audit.json'
+    $auditSummary = $null
+    if (Test-Path $auditPath) {
+      try {
+        $audit = Get-Content -LiteralPath $auditPath -Raw | ConvertFrom-Json
+        $auditSummary = [pscustomobject]@{
+          accepted=[int]$audit.accepted
+          with_grounded_facts=[int]$audit.accepted_with_grounded_facts
+          grounded_facts=[int]$audit.grounded_fact_count
+          timeout_queue=[int]$audit.timeout_queue
+          other_error_queue=[int]$audit.other_error_queue
+        }
+      } catch { LogLine 'AUDIT_SUMMARY_UNAVAILABLE' }
+    }
     $state = [pscustomobject]@{
       version=2
       reviewed=@($reviewed | Sort-Object)
       missing_evidence=$manualScanned.Count
       last_update=(Get-Date).ToString('o')
       total=$all.Count
+      audit=$auditSummary
     }
     SaveState $state
     LogLine ('CYCLE_DONE newly_scanned=' + $newScan.Count + ' ollama_attempted=' + $ready.Count + ' reviewed=' + $reviewed.Count + ' manual_queue=' + $manualScanned.Count + ' total_snapshot=' + $all.Count)
