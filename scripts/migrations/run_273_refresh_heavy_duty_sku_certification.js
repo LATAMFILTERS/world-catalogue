@@ -61,8 +61,31 @@ const EVALUATE = `
     SELECT sku::text, count(*)::int AS conflict_count FROM public.catalog_reference_classification_conflicts_v GROUP BY sku
   ),
   quarantined AS (
-    SELECT source_sku::text AS sku, count(*)::int AS quarantine_count
-    FROM public.bad_crossref_quarantine WHERE source_sku IS NOT NULL GROUP BY source_sku
+    -- Quarantine is a historical rejection log. Only block when its rejected
+    -- normalized code is STILL attached to the same HD SKU. Removed citations
+    -- must remain quarantined for audit, but must not block certification.
+    SELECT q.source_sku::text AS sku, count(*)::int AS quarantine_count
+    FROM public.bad_crossref_quarantine q
+    JOIN public.elimfilters_catalog c ON c.sku=q.source_sku
+    WHERE c.duty='HEAVY_DUTY'
+      AND q.source_sku IS NOT NULL
+      AND ld_catalog.norm_part(q.query_code) <> ''
+      AND EXISTS (
+        SELECT 1 FROM (
+          SELECT value->>'code' AS code, value->>'reference' AS reference
+          FROM jsonb_array_elements(
+            CASE WHEN jsonb_typeof(c.oem_codes)='array' THEN c.oem_codes ELSE '[]'::jsonb END
+          ) value
+          UNION ALL
+          SELECT value->>'code', value->>'reference'
+          FROM jsonb_array_elements(
+            CASE WHEN jsonb_typeof(c.competitor_codes)='array' THEN c.competitor_codes ELSE '[]'::jsonb END
+          ) value
+        ) refs
+        WHERE ld_catalog.norm_part(coalesce(nullif(refs.code,''),refs.reference,'')) =
+              ld_catalog.norm_part(q.query_code)
+      )
+    GROUP BY q.source_sku
   ),
   evaluated AS (
     SELECT
