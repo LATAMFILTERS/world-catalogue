@@ -1075,6 +1075,18 @@ const dutyParam = (params.get('duty') || '').trim().toUpperCase();
   }
 })();
 
+// Ctrl+C with no text selected copies the page link as a rich hyperlink
+// ("SKU — ELIMFILTERS Part Search"); plain URL is kept as text/plain fallback.
+document.addEventListener('copy', (e) => {
+  if (String(window.getSelection() || '') !== '') return;
+  const el = document.activeElement;
+  if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable)) return;
+  const url = window.location.href;
+  e.clipboardData.setData('text/html', `<a href="${_esc(url)}">${_esc(document.title)}</a>`);
+  e.clipboardData.setData('text/plain', url);
+  e.preventDefault();
+});
+
 function showMixedDutyPrompt(data, searchTerm) {
   document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
   const summaryEl = document.getElementById('search-summary');
