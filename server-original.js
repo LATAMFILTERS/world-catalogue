@@ -327,14 +327,25 @@ const partSearchStatic = express.static('part-search', {
 // Outlook, LinkedIn, Slack) and "copy as link" read <title>/og:title from the
 // first HTML response, before client JS runs. Format: "<CODE> — ELIMFILTERS Part Search".
 const RESULTS_HTML_PATH = require('path').join(__dirname, 'part-search', 'results.html');
+// Clean SKU URL: https://part-search.elimfilters.com/<SKU> (e.g. /EL81343) serves
+// the same results page; results.html reads the code from the path.
+const PART_SEARCH_SKU_PATH = /^\/([A-Za-z]{2}[A-Za-z0-9]\d{4}[A-Za-z]?)\/?$/;
 function partSearchResultsWithTitle(req, res, next) {
-  if (req.path !== '/results.html' || req.method !== 'GET') return next();
-  const code = String(req.query.q || '').trim().toUpperCase();
+  if (req.method !== 'GET') return next();
+  const pathMatch = PART_SEARCH_SKU_PATH.exec(req.path);
+  if (pathMatch && pathMatch[1] !== pathMatch[1].toUpperCase()) {
+    return res.redirect(301, `/${pathMatch[1].toUpperCase()}`);
+  }
+  if (!pathMatch && req.path !== '/results.html') return next();
+  const code = String(pathMatch ? pathMatch[1] : req.query.q || '').trim().toUpperCase();
   if (!/^[A-Z0-9][A-Z0-9 ._\/-]{0,39}$/.test(code)) return next();
   let html;
   try { html = require('fs').readFileSync(RESULTS_HTML_PATH, 'utf8'); } catch { return next(); }
   const title = `${code} — ELIMFILTERS Part Search`;
-  const og = `<meta property="og:title" content="${title}">\n  <meta property="og:site_name" content="ELIMFILTERS">\n  <meta property="og:url" content="https://part-search.elimfilters.com/results.html?q=${encodeURIComponent(code)}&amp;mode=part">`;
+  const ogUrl = pathMatch
+    ? `https://part-search.elimfilters.com/${code}`
+    : `https://part-search.elimfilters.com/results.html?q=${encodeURIComponent(code)}&amp;mode=part`;
+  const og = `<meta property="og:title" content="${title}">\n  <meta property="og:site_name" content="ELIMFILTERS">\n  <meta property="og:url" content="${ogUrl}">`;
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>\n  ${og}`);
   res.setHeader('Cache-Control', 'no-cache');
   res.type('html').send(html);

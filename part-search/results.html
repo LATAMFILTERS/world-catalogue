@@ -1058,6 +1058,11 @@ const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 
 // ─── Parse URL parameters ───
 const params = new URLSearchParams(window.location.search);
+// Clean SKU URL (/EL81343): take the code from the path when there is no ?q=
+if (!params.get('q')) {
+  const pathSku = window.location.pathname.match(/^\/([A-Za-z]{2}[A-Za-z0-9]\d{4}[A-Za-z]?)\/?$/);
+  if (pathSku) params.set('q', pathSku[1]);
+}
 const query = (params.get('q') || '').trim();
 const mode  = params.get('mode') || 'part';
 const model  = params.get('model') || '';
@@ -1682,15 +1687,13 @@ async function executeSearch() {
       }
       if (!data.results?.length) { showEmpty(query); return; }
       renderResults(data.results, data.results.length, 'PART NUMBER', query);
-      // Competitor/OEM code resolved to one ELIMFILTERS product: make the
-      // address and tab title canonical ("<SKU> — ELIMFILTERS Part Search")
-      // so a copied link always reads like the SKU, not the searched code.
+      // One ELIMFILTERS product resolved (from its SKU or a competitor/OEM code):
+      // make the address and tab title canonical — /<SKU> and
+      // "<SKU> — ELIMFILTERS Part Search" — so a copied link is always clean.
       const sku = String(data.results[0].elimfilters_sku || data.results[0].sku || '').trim().toUpperCase();
-      if (data.results.length === 1 && sku && sku !== query.toUpperCase()) {
+      if (data.results.length === 1 && /^[A-Z]{2}[A-Z0-9]\d{4}[A-Z]?$/.test(sku)) {
         document.title = `${sku} — ELIMFILTERS Part Search`;
-        const u = new URL(window.location.href);
-        u.searchParams.set('q', sku);
-        history.replaceState(null, '', u);
+        history.replaceState(null, '', `/${sku}`);
       }
     } catch { clearTimeout(warmupTimer); showError(); }
 
