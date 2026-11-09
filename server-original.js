@@ -323,11 +323,28 @@ const partSearchStatic = express.static('part-search', {
   },
 });
 
+// Server-side title for /results.html?q=<code>: link previews (WhatsApp,
+// Outlook, LinkedIn, Slack) and "copy as link" read <title>/og:title from the
+// first HTML response, before client JS runs. Format: "<CODE> — ELIMFILTERS Part Search".
+const RESULTS_HTML_PATH = require('path').join(__dirname, 'part-search', 'results.html');
+function partSearchResultsWithTitle(req, res, next) {
+  if (req.path !== '/results.html' || req.method !== 'GET') return next();
+  const code = String(req.query.q || '').trim().toUpperCase();
+  if (!/^[A-Z0-9][A-Z0-9 ._\/-]{0,39}$/.test(code)) return next();
+  let html;
+  try { html = require('fs').readFileSync(RESULTS_HTML_PATH, 'utf8'); } catch { return next(); }
+  const title = `${code} — ELIMFILTERS Part Search`;
+  const og = `<meta property="og:title" content="${title}">\n  <meta property="og:site_name" content="ELIMFILTERS">\n  <meta property="og:url" content="https://part-search.elimfilters.com/results.html?q=${encodeURIComponent(code)}&amp;mode=part">`;
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>\n  ${og}`);
+  res.setHeader('Cache-Control', 'no-cache');
+  res.type('html').send(html);
+}
+
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) return next();
   const host = req.get('host') || req.hostname || '';
   if (host.includes('part-search')) {
-    partSearchStatic(req, res, next);
+    partSearchResultsWithTitle(req, res, () => partSearchStatic(req, res, next));
   } else {
     frontendStatic(req, res, next);
   }
