@@ -876,8 +876,6 @@ textarea {
     <span class="search-summary-mode">PART NUMBER</span>
     <span class="search-summary-main"><strong>—</strong></span>
   </div>
-  <button type="button" id="copy-link-btn" title="Copy link"
-    style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;padding:0.4rem 0.7rem;border:1px solid rgba(255,255,255,0.25);background:transparent;color:rgba(255,255,255,0.75);cursor:pointer;border-radius:2px;white-space:nowrap;">COPY LINK</button>
 
   <a href="/index.html" class="header-back">← BACK TO SEARCH</a>
 </header>
@@ -1075,28 +1073,6 @@ const dutyParam = (params.get('duty') || '').trim().toUpperCase();
       <span class="search-summary-mode">PART NUMBER</span>
       <span class="search-summary-main"><strong>${_esc((query || model).toUpperCase())}</strong></span>`;
   }
-})();
-
-// Copy the page link as a rich hyperlink ("SKU — ELIMFILTERS Part Search") so
-// it pastes into Excel/Word/email as a clean link, with plain-URL fallback.
-(function() {
-  const btn = document.getElementById('copy-link-btn');
-  if (!btn) return;
-  btn.addEventListener('click', async () => {
-    const url = window.location.href;
-    const label = document.title;
-    const html = `<a href="${_esc(url)}">${_esc(label)}</a>`;
-    try {
-      await navigator.clipboard.write([new ClipboardItem({
-        'text/html': new Blob([html], { type: 'text/html' }),
-        'text/plain': new Blob([url], { type: 'text/plain' })
-      })]);
-    } catch (e) {
-      try { await navigator.clipboard.writeText(url); } catch (_) { return; }
-    }
-    btn.textContent = 'COPIED';
-    setTimeout(() => { btn.textContent = 'COPY LINK'; }, 1500);
-  });
 })();
 
 function showMixedDutyPrompt(data, searchTerm) {
