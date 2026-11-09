@@ -1360,6 +1360,25 @@ function renderCard(p, index) {
   const effLabel = pctStr ? (T.specEfficiency || 'Efficiency') + ' ' + pctStr + '%' : (T.specEfficiency || 'Efficiency');
 
   // Group 1 — physical dimensions
+  // Render FRAM measurements in the existing technical-specification grid.
+  // Clearly label them as reference-product data, not ELIMFILTERS certified dimensions.
+  const reference = sku === 'EC30285' && p.reference_specifications?.source_code === 'CF10285'
+    && p.reference_specifications?.source_type === 'REFERENCE_PRODUCT_NOT_ELIMFILTERS_MEASUREMENT'
+    ? p.reference_specifications : null;
+  const refLabel = (es, en, pt) => currentLang === 'es' ? es : currentLang === 'pt' ? pt : en;
+  const refDimension = v => Number.isFinite(Number(v)) && Number(v) > 0
+    ? Number(v).toFixed(3) + ' inch\\n' + (Number(v) * 25.4).toFixed(1) + ' mm'
+    : null;
+  const referenceDimSpecs = reference ? [
+    specHTML(refLabel('FRAM referencia: largo','FRAM reference: length','FRAM referência: comprimento'), esc(refDimension(reference.length_in))),
+    specHTML(refLabel('FRAM referencia: ancho','FRAM reference: width','FRAM referência: largura'), esc(refDimension(reference.width_in))),
+    specHTML(refLabel('FRAM referencia: alto','FRAM reference: height','FRAM referência: altura'), esc(refDimension(reference.height_in))),
+    specHTML(refLabel('FRAM referencia: forma','FRAM reference: shape','FRAM referência: formato'), esc(reference.shape || '')),
+  ].filter(Boolean) : [];
+  const referencePerfSpecs = reference ? [
+    specHTML(refLabel('FRAM referencia: medio','FRAM reference: media','FRAM referência: meio'), esc(reference.media || '')),
+    specHTML(refLabel('FRAM referencia: instalación','FRAM reference: installation','FRAM referência: instalação'), esc(reference.installation_location || '')),
+  ].filter(Boolean) : [];
   const dimSpecs = [
     specHTML(T.specOD,       dimFmt(p.outer_diameter_mm)),
     specHTML(T.specThread,   p.thread_size),
@@ -1367,6 +1386,7 @@ function renderCard(p, index) {
     specHTML(T.specGasketOD, dimFmt(p.gasket_od_mm)),
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
     specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)), // burst pressure sits under Length (column 3, row 2)
+    ...referenceDimSpecs,
   ].filter(Boolean);
 
   // Group 2 — filtration performance (Style omitted: already shown as badge)
@@ -1375,6 +1395,7 @@ function renderCard(p, index) {
     specHTML(T.specTestStd,   p.iso_test_method),
     specHTML(T.specMediaType, MEDIA_LABEL),
     specHTML(T.specCollapse,  psiFmt(p.collapse_pressure_psi)),
+    ...referencePerfSpecs,
   ].filter(Boolean);
 
   const specs = [...dimSpecs, ...perfSpecs]; // kept for empty-check
