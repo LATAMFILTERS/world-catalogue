@@ -1483,6 +1483,11 @@ function buildFilterData(row, lang = 'en'){
       },
       reference_documentation_url: 'https://www.parcommhydraulics.com/pdf/Product%20Guide.pdf'
     } : {}),
+    // Manufacturer reference dimensions only; never substitute for ELIMFILTERS measurements.
+    reference_specifications: row.sku === 'EC30285' && row.codigo_base === 'CF10285' &&
+      row.enrichment_data?.fram_reference_specifications?.source_code === 'CF10285' &&
+      row.enrichment_data?.fram_reference_specifications?.source_sha256 === 'db7f5b38b1824b5e93e20bc07957afa8b94c5d391b538eabfce3cbdf9881facf'
+      ? row.enrichment_data.fram_reference_specifications : null,
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
     height_mm: row.height_mm || null,
