@@ -1068,6 +1068,7 @@ const dutyParam = (params.get('duty') || '').trim().toUpperCase();
 // Init header summary with query (count updated after search)
 (function() {
   const el = document.getElementById('search-summary');
+  if (query) document.title = `${query.toUpperCase()} — ELIMFILTERS Part Search`;
   if (el && (query || model)) {
     el.innerHTML = `
       <span class="search-summary-mode">PART NUMBER</span>
@@ -1660,6 +1661,16 @@ async function executeSearch() {
       }
       if (!data.results?.length) { showEmpty(query); return; }
       renderResults(data.results, data.results.length, 'PART NUMBER', query);
+      // Competitor/OEM code resolved to one ELIMFILTERS product: make the
+      // address and tab title canonical ("<SKU> — ELIMFILTERS Part Search")
+      // so a copied link always reads like the SKU, not the searched code.
+      const sku = String(data.results[0].elimfilters_sku || data.results[0].sku || '').trim().toUpperCase();
+      if (data.results.length === 1 && sku && sku !== query.toUpperCase()) {
+        document.title = `${sku} — ELIMFILTERS Part Search`;
+        const u = new URL(window.location.href);
+        u.searchParams.set('q', sku);
+        history.replaceState(null, '', u);
+      }
     } catch { clearTimeout(warmupTimer); showError(); }
 
   } else if (mode === 'vin' && model) {
