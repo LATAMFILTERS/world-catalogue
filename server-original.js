@@ -356,6 +356,9 @@ app.use((req, res, next) => {
   const host = req.get('host') || req.hostname || '';
   if (host.includes('part-search')) {
     partSearchResultsWithTitle(req, res, () => partSearchStatic(req, res, next));
+  } else if ((req.get('x-forwarded-host') || '').includes('part-search')) {
+    // Reached through the Render bridge (Host is the upstream's): clean SKU URLs only.
+    partSearchResultsWithTitle(req, res, () => frontendStatic(req, res, next));
   } else {
     frontendStatic(req, res, next);
   }

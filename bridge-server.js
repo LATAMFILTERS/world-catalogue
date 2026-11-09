@@ -109,9 +109,30 @@ function approvedResultsHtml() {
     );
 }
 
+// Clean SKU URL (/EL81343): same results page; title/og tags set server-side
+// ("<CODE> — ELIMFILTERS Part Search") so link previews and copied links are clean.
+const SKU_PATH = /^\/([A-Za-z]{2}[A-Za-z0-9]\d{4}[A-Za-z]?)\/?$/;
+
+function resultsHtmlWithTitle(code, ogUrl) {
+  const title = `${code} — ELIMFILTERS Part Search`;
+  const og = `<meta property="og:title" content="${title}">\n  <meta property="og:site_name" content="ELIMFILTERS">\n  <meta property="og:url" content="${ogUrl}">`;
+  return approvedResultsHtml().replace(/<title>[^<]*<\/title>/, `<title>${title}</title>\n  ${og}`);
+}
+
 function localPageFor(target) {
   if (target.pathname === '/' || target.pathname === '/index.html') return approvedHomeHtml();
-  if (target.pathname === '/results.html') return approvedResultsHtml();
+  const skuPath = SKU_PATH.exec(target.pathname);
+  if (skuPath) {
+    const code = skuPath[1].toUpperCase();
+    return resultsHtmlWithTitle(code, `https://part-search.elimfilters.com/${code}`);
+  }
+  if (target.pathname === '/results.html') {
+    const code = String(target.searchParams.get('q') || '').trim().toUpperCase();
+    if (/^[A-Z0-9][A-Z0-9 ._\/-]{0,39}$/.test(code)) {
+      return resultsHtmlWithTitle(code, `https://part-search.elimfilters.com/results.html?q=${encodeURIComponent(code)}&amp;mode=part`);
+    }
+    return approvedResultsHtml();
+  }
   return null;
 }
 
