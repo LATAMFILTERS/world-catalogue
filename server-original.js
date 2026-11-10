@@ -1457,6 +1457,9 @@ function buildFilterData(row, lang = 'en'){
   const oemStored = parseRefs(row.oem_codes);
   const compStored = parseRefs(row.competitor_codes);
   const refs = splitRefs([...oemStored, ...compStored]);
+  // JSONB enrichment is optional; never dereference an undeclared identifier.
+  const enrichment = row.enrichment_data && typeof row.enrichment_data === 'object' && !Array.isArray(row.enrichment_data)
+    ? row.enrichment_data : {};
   // Manufacturers the classifier does not know (UNKNOWN) used to be dropped from the response.
   // Keep them in the column where the catalog stored them: oem_codes -> OEM, competitor_codes -> competitor.
   // A reference already shown (same manufacturer alias + code) is not repeated in the other column.
