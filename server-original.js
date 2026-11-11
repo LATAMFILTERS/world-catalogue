@@ -1528,6 +1528,9 @@ function buildFilterData(row, lang = 'en'){
     outer_diameter_mm: row.outer_diameter_mm || null,
     gasket_od_mm: row.gasket_od_mm || null,
     gasket_id_mm: row.gasket_id_mm || null,
+    // Panel (air/cabin) filters: length x width x height.
+    product_length_mm: row.product_length_mm || null,
+    product_width_mm: row.product_width_mm || null,
     iso_test_method: row.iso_test_method || null,
     micron_rating: row.micron_rating || null,
     nominal_efficiency: row.nominal_efficiency || null,

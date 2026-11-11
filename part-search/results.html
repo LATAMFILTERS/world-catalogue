@@ -932,6 +932,9 @@ const TRANSLATIONS = {
     specOD:            'Outer Diameter',
     specThread:        'Thread Size',
     specLength:        'Length',
+    specHeight:        'Height',
+    specPanelLength:   'Length',
+    specWidth:         'Width',
     specGasketOD:      'Gasket OD',
     specGasketID:      'Gasket ID',
     specEfficiency:    'Efficiency',
@@ -969,6 +972,9 @@ const TRANSLATIONS = {
     specOD:            'Diámetro Exterior',
     specThread:        'Rosca / Hilo',
     specLength:        'Largo / Altura',
+    specHeight:        'Alto',
+    specPanelLength:   'Largo',
+    specWidth:         'Ancho',
     specGasketOD:      'Empaque DE',
     specGasketID:      'Empaque DI',
     specEfficiency:    'Eficiencia',
@@ -1006,6 +1012,9 @@ const TRANSLATIONS = {
     specOD:            'Diâmetro Externo',
     specThread:        'Rosca',
     specLength:        'Comprimento',
+    specHeight:        'Altura',
+    specPanelLength:   'Comprimento',
+    specWidth:         'Largura',
     specGasketOD:      'Gaxeta DE',
     specGasketID:      'Gaxeta DI',
     specEfficiency:    'Eficiência',
@@ -1384,10 +1393,13 @@ function renderCard(p, index) {
     specHTML(refLabel('FRAM referencia: medio','FRAM reference: media','FRAM referência: meio'), esc(reference.media || '')),
     specHTML(refLabel('FRAM referencia: instalación','FRAM reference: installation','FRAM referência: instalação'), esc(reference.installation_location || '')),
   ].filter(Boolean) : [];
+  const isPanel = Boolean(p.product_length_mm || p.product_width_mm);
   const dimSpecs = [
     specHTML(T.specOD,       dimFmt(p.outer_diameter_mm)),
     specHTML(T.specThread,   p.thread_size),
-    specHTML(T.specLength,   dimFmt(p.height_mm)),
+    // Panel filters (product length/width present): Height, Length and Width instead of one 'Length / Height' box.
+    specHTML(isPanel ? T.specHeight : T.specLength, dimFmt(p.height_mm)),
+    ...(isPanel ? [specHTML(T.specPanelLength, dimFmt(p.product_length_mm)), specHTML(T.specWidth, dimFmt(p.product_width_mm))] : []),
     specHTML(T.specGasketOD, dimFmt(p.gasket_od_mm)),
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
     specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)), // burst pressure sits under Length (column 3, row 2)
