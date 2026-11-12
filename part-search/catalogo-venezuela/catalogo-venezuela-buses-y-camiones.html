@@ -77,7 +77,29 @@ body.ficha-open .hero,body.ficha-open .idx{display:none}
   body.ficha-open .brand-block.has-sel{display:block!important}
   body.ficha-open .card.is-sel{display:flex!important}
 }
+/* ——— La ficha elegida como hoja individual ———
+   Al abrir un modelo, su ficha deja de ser una tarjeta más de la
+   cuadrícula: ocupa todo el ancho como hoja propia, con la foto del
+   camión grande, el modelo en titular y los filtros en dos columnas
+   en pantallas anchas, para leerla completa sin esfuerzo. */
+.brand-block.has-sel{padding-top:8px}
+.brand-block.has-sel .brand-head{display:none}
+.brand-block.has-sel .grid{grid-template-columns:1fr}
+.card.is-sel{border-top-width:5px}
+.card.is-sel .card-top{gap:22px;padding:22px 22px 16px;align-items:center}
+.card.is-sel .truck{width:min(320px,40vw);height:auto;max-height:250px}
+.card.is-sel h3{font-size:clamp(26px,4vw,36px)}
+.card.is-sel .card-brand{font-size:13px}
+.card.is-sel .motor{font-size:16px}
+.card.is-sel .fimg{width:118px;height:100px}
+.card.is-sel .fcode{font-size:24px}
+.card.is-sel .oem{font-size:14px}
+@media (min-width:900px){
+  .card.is-sel .filters{display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:10px 16px 16px}
+  .card.is-sel .frow{padding:12px 6px}
+}
 .ficha-nav{padding:16px 0 2px}
+.ficha-nav-bottom{padding:20px 0 4px}
 .back-btn{font:inherit;font-size:14.5px;font-weight:700;background:var(--yellow);color:#141414;border:0;border-radius:8px;padding:11px 18px;min-height:44px;cursor:pointer}
 .back-btn:hover,.back-btn:focus-visible{background:var(--yellow-deep)}
 .card:target{border-color:var(--yellow-deep);box-shadow:0 0 0 3px var(--yellow),var(--shadow)}
@@ -2198,7 +2220,7 @@ footer strong{color:var(--head-ink)}
           </div>
           <ul class="filters"><li class="frow">
               <img class="fimg" src="assets/7c0d797cf343.jpg" alt="Filtro ELIMFILTERS EL84004 — render oficial" loading="lazy">
-              <div class="fmeta"><span class="flabel">Filtro de ACEITE Filtro de ACEITE</span>
+              <div class="fmeta"><span class="flabel">Filtro de ACEITE</span>
               <span class="fcode">EL84004</span><span class="oem">OEM 485GB3191B</span>
               <a class="plink" href="https://part-search.elimfilters.com/results.html?q=EL84004&mode=part" target="_blank" rel="noopener">Ver ficha en Part Search ↗</a>
               </div>
@@ -2244,7 +2266,7 @@ footer strong{color:var(--head-ink)}
           </div>
           <ul class="filters"><li class="frow">
               <img class="fimg" src="assets/7c0d797cf343.jpg" alt="Filtro ELIMFILTERS EL84004 — render oficial" loading="lazy">
-              <div class="fmeta"><span class="flabel">Filtro de ACEITE Filtro de ACEITE</span>
+              <div class="fmeta"><span class="flabel">Filtro de ACEITE</span>
               <span class="fcode">EL84004</span><span class="oem">OEM 485GB3191B</span>
               <a class="plink" href="https://part-search.elimfilters.com/results.html?q=EL84004&mode=part" target="_blank" rel="noopener">Ver ficha en Part Search ↗</a>
               </div>
@@ -2290,7 +2312,7 @@ footer strong{color:var(--head-ink)}
           </div>
           <ul class="filters"><li class="frow">
               <img class="fimg" src="assets/7c0d797cf343.jpg" alt="Filtro ELIMFILTERS EL84004 — render oficial" loading="lazy">
-              <div class="fmeta"><span class="flabel">Filtro de ACEITE Filtro de ACEITE</span>
+              <div class="fmeta"><span class="flabel">Filtro de ACEITE</span>
               <span class="fcode">EL84004</span><span class="oem">OEM 485GB3191B</span>
               <a class="plink" href="https://part-search.elimfilters.com/results.html?q=EL84004&mode=part" target="_blank" rel="noopener">Ver ficha en Part Search ↗</a>
               </div>
@@ -2336,7 +2358,7 @@ footer strong{color:var(--head-ink)}
           </div>
           <ul class="filters"><li class="frow">
               <img class="fimg" src="assets/7c0d797cf343.jpg" alt="Filtro ELIMFILTERS EL84004 — render oficial" loading="lazy">
-              <div class="fmeta"><span class="flabel">Filtro de ACEITE Filtro de ACEITE</span>
+              <div class="fmeta"><span class="flabel">Filtro de ACEITE</span>
               <span class="fcode">EL84004</span><span class="oem">OEM 485GB3191B</span>
               <a class="plink" href="https://part-search.elimfilters.com/results.html?q=EL84004&mode=part" target="_blank" rel="noopener">Ver ficha en Part Search ↗</a>
               </div>
@@ -3651,6 +3673,7 @@ footer strong{color:var(--head-ink)}
               <span class="tech">THERMACORE</span></li></ul>
         <p class="ficha-note">Las marcas y modelos mencionados en este catálogo se citan únicamente como referencia para la identificación del filtro. Toda la información fue verificada por el Departamento de Marketing de ELIMFILTERS con apoyo de inteligencia artificial.</p></article></div>
     </section>
+<div class="ficha-nav ficha-nav-bottom"><button type="button" class="back-btn" id="backToIndexBottom">← Volver al índice</button></div>
 <div class="empty" id="empty"><h3>Sin resultados</h3><p>Ninguna ficha coincide con esa búsqueda. Prueba con el código del filtro (ej. EL84004) o el modelo del camión.</p></div>
 </main>
 <footer>
@@ -3812,7 +3835,7 @@ footer strong{color:var(--head-ink)}
   var segments = [
     { el: document.getElementById('twP1'), text: 'El filtro es solo el medio. Nuestra misión es proteger los activos que mueven tu negocio.' },
     { el: document.getElementById('twP2'), text: 'Este catálogo es tu guía para hacerlo. ' },
-    { el: document.getElementById('twTap'), text: 'Total Asset Protection.' },
+    { el: document.getElementById('twTap'), text: 'Total Assets Protection.' },
     { el: document.getElementById('twP3'), text: 'Una marca nacida en Venezuela para los venezolanos.' }
   ];
   var cursor = document.createElement('span');
@@ -3876,6 +3899,30 @@ var countEl = document.getElementById('count');
 var emptyEl = document.getElementById('empty');
 var mainEl = document.getElementById('main');
 var selectedId = null;
+/* Búsqueda tolerante: sin acentos y por palabras sueltas. El visitante
+   puede escribir las palabras en cualquier orden («isuzu fvr», «mack
+   aceite») o el código/OEM con o sin guiones y espacios («EL 80947»,
+   «8943910492»): la ficha aparece igual. Antes la búsqueda exigía la
+   frase exacta y seguida, y una consulta válida podía dar cero
+   resultados. */
+function foldText(s){
+  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+cards.forEach(function(c){
+  var extra = '';
+  Array.prototype.forEach.call(c.querySelectorAll('.flabel,.tech'), function(el){ extra += ' ' + el.textContent; });
+  c._hay = foldText((c.getAttribute('data-search') || '') + extra);
+  c._sq = c._hay.replace(/[^a-z0-9]/g, '');
+});
+function cardMatches(c, term){
+  var toks = term.split(/\s+/), i, ok = true;
+  for (i = 0; i < toks.length; i++) {
+    if (toks[i] && c._hay.indexOf(toks[i]) === -1) { ok = false; break; }
+  }
+  if (ok) return true;
+  var sq = term.replace(/[^a-z0-9]/g, '');
+  return sq.length >= 4 && c._sq.indexOf(sq) !== -1;
+}
 function cardById(id){
   for (var i = 0; i < cards.length; i++) { if (cards[i].id === id) return cards[i]; }
   return null;
@@ -3897,7 +3944,7 @@ function jumpTo(el){
   de.style.scrollBehavior = prev;
 }
 function render(goToFicha){
-  var term = q.value.trim().toLowerCase();
+  var term = foldText(q.value.trim());
   /* Si la ficha elegida no existe (enlace viejo o desactualizado), se
      vuelve al índice en vez de dejar la página vacía con el texto de
      «ficha abierta» y ninguna tarjeta en pantalla. */
@@ -3905,7 +3952,7 @@ function render(goToFicha){
   var visible = 0;
   cards.forEach(function(c){
     var ok;
-    if (term) ok = c.getAttribute('data-search').indexOf(term) !== -1;
+    if (term) ok = cardMatches(c, term);
     else if (selectedId) ok = c.id === selectedId;
     else ok = false;
     c.style.display = ok ? '' : 'none';
@@ -3973,6 +4020,8 @@ document.querySelectorAll('.idx-model').forEach(function(a){
   });
 });
 document.getElementById('backToIndex').addEventListener('click', showIndex);
+var backBottom = document.getElementById('backToIndexBottom');
+if (backBottom) backBottom.addEventListener('click', showIndex);
 /* Respaldo: si el navegador sigue el enlace del índice por su cuenta y
    cambia el #fragmento (sin pasar por el manejador de clic anterior),
    la ficha se abre igual al detectar el cambio de fragmento. */
