@@ -1474,8 +1474,17 @@ function renderCard(p, index) {
     return `<div class="hero-related"><p class="hero-related-title">${currentLang === 'es' ? 'Piezas relacionadas' : 'Related Parts'}</p><p class="hero-related-sub">${T.altTitle || 'See Also'}</p><div class="hero-related-chips">${chips}</div></div>`;
   })();
 
+  // KIT exception (operator 2026-11-12): only a product typed as Kit whose alternatives list its
+  // component SKUs gets the side-by-side reference table (see the kit script below). Every other
+  // product renders exactly as before.
+  const kitComponents = p.installation_type === 'Kit' && Array.isArray(p.alternatives)
+    ? p.alternatives.map(a => String(typeof a === 'object' ? (a.sku || a.code || '') : a).trim().toUpperCase())
+        .filter(s => /^[A-Z]{2}[A-Z0-9]\d{4}[A-Z]?$/.test(s)).slice(0, 4)
+    : [];
+  const kitAttr = kitComponents.length >= 2 ? ` data-kit-components="${esc(kitComponents.join(','))}"` : '';
+
   return `
-    <article class="product-card" style="animation-delay: ${0.08 * index}s">
+    <article class="product-card"${kitAttr} style="animation-delay: ${0.08 * index}s">
       <div class="card-inner">
         <nav class="card-crumbs" aria-label="Breadcrumb"><a href="https://elimfilters.com">${currentLang === 'es' ? 'Inicio' : 'Home'}</a> / <a href="/">Part Search</a>${p.filter_type ? ` / <span>${esc(p.filter_type)}</span>` : ''}${p.filter_subtype ? ` / <span>${esc(p.filter_subtype)}</span>` : ''} / <strong>${esc(sku)}</strong></nav>
         <div class="card-hero">
@@ -1706,6 +1715,12 @@ async function executeSearch() {
       if (data.results.length === 1 && /^[A-Z]{2}[A-Z0-9]\d{4}[A-Z]?$/.test(sku)) {
         document.title = `${sku} — ELIMFILTERS Part Search`;
         history.replaceState(null, '', `/${sku}`);
+        // A former ELIMFILTERS SKU (renumbered/superseded) must not stay in the header: show the live SKU.
+        const asked = String(query || '').trim().toUpperCase();
+        if (asked !== sku && /^[A-Z]{2}[A-Z0-9]\d{4}[A-Z]?$/.test(asked)) {
+          const sm = document.querySelector('#search-summary .search-summary-main strong');
+          if (sm) sm.textContent = sku;
+        }
       }
     } catch { clearTimeout(warmupTimer); showError(); }
 
@@ -1860,6 +1875,70 @@ async function primaryResultsWithDiscoveredAlternatives(results, rawReference) {
 // executeSearch() is called by detectLang().then() above — no boot call needed
 </script>
 
+<script>
+/* part-search: KIT exception (operator 2026-11-12). On a kit product only (data-kit-components) the OEM and competitor
+   columns list the references of its components 1 to 1: one code of the first component next to one code of the
+   second, grouped by manufacturer. Same three-column layout as every other product. Any failure leaves the
+   normal page untouched. */
+(function () {
+  var done = new WeakSet();
+  function e(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function group(list) {
+    var m = {}; (list || []).forEach(function (r) {
+      var b = String((r && (r.manufacturer || r.brand)) || '').trim().toUpperCase(); var c = r && r.code != null ? String(r.code) : '';
+      if (!c) return; (m[b] = m[b] || []); if (m[b].indexOf(c) < 0) m[b].push(c);
+    }); return m;
+  }
+  function chip(c) { return c ? '<span class="ref-chip"><span></span><span class="ref-code">' + e(c) + '</span></span>' : '<span class="kit-none">&mdash;</span>'; }
+  function pairs(comps, key) {
+    var g = comps.map(function (p) { return group(p[key]); });
+    var count = {}; g.forEach(function (x) { Object.keys(x).forEach(function (b) { count[b] = (count[b] || 0) + 1; }); });
+    var order = Object.keys(count).sort(function (a, b) { return (count[b] - count[a]) || a.localeCompare(b); });
+    if (!order.length) return '';
+    var html = '<div class="kit-pairs"><div class="kit-pair kit-pair-head"><span></span>' + comps.slice(0, 2).map(function (p) { return '<span><strong>' + e(p.sku) + '</strong></span>'; }).join('') + '</div>';
+    order.forEach(function (b) {
+      var a = g[0][b] || [], c = (g[1] || {})[b] || []; var n = Math.max(a.length, c.length);
+      for (var i = 0; i < n; i++) html += '<div class="kit-pair"><span class="kit-brand">' + (i === 0 ? e(b || '—') : '') + '</span>' + chip(a[i]) + chip(c[i]) + '</div>';
+    });
+    return html + '</div>';
+  }
+  function css() {
+    if (document.getElementById('kit-side-css')) return; var s = document.createElement('style'); s.id = 'kit-side-css';
+    s.textContent = '.kit-pairs{display:grid;gap:.35rem;width:100%}.kit-pair{display:grid;grid-template-columns:minmax(64px,.7fr) 1fr 1fr;gap:.45rem;align-items:center}'
+      + '.kit-pair-head{padding-bottom:.35rem;border-bottom:1px solid rgba(255,241,45,.35);margin-bottom:.15rem}.kit-pair-head strong{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.06em}'
+      + '.kit-brand{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.05em;opacity:.8;word-break:break-word}.kit-none{opacity:.3;padding:.3rem .5rem}'
+      + '.kit-pairs .ref-chip{min-width:0;justify-content:center}';
+    document.head.appendChild(s);
+  }
+  // Kit-only polish: a proper product-type label.
+  function polish(card) {
+    var lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+    var label = lang === 'es' ? 'Kit de filtros de aire' : lang === 'pt' ? 'Kit de filtros de ar' : 'Air Filter Kit';
+    var ht = card.querySelector('.hero-type'); if (ht) ht.textContent = label;
+    var cr = card.querySelector('.card-crumbs span'); if (cr) cr.textContent = label;
+    var bd = card.querySelector('.card-badges .badge-type'); if (bd) bd.textContent = label.toUpperCase();
+  }
+  async function build(card) {
+    if (done.has(card)) return; done.add(card);
+    polish(card);
+    var skus = String(card.getAttribute('data-kit-components') || '').split(',').filter(Boolean); if (skus.length < 2) return;
+    var api = (typeof API !== 'undefined' && API) ? API : ''; var lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+    try {
+      var comps = await Promise.all(skus.slice(0, 2).map(async function (sku) {
+        var r = await fetch(api + '/api/search?q=' + encodeURIComponent(sku) + '&lang=' + encodeURIComponent(lang)); if (!r.ok) throw new Error('component ' + sku);
+        var j = await r.json(); var p = (j.results || []).filter(function (x) { return String(x.elimfilters_sku || x.sku).toUpperCase() === sku; })[0]; if (!p) throw new Error('component ' + sku);
+        return { sku: sku, oem_codes: p.oem_codes || [], competitor_codes: p.competitor_codes || [] };
+      }));
+      var cont = card.querySelector('.columns-container'); if (!cont) return;
+      var oemGrid = cont.children[0] && cont.children[0].querySelector('.refs-grid'); var compGrid = cont.children[1] && cont.children[1].querySelector('.refs-grid');
+      var h1 = pairs(comps, 'oem_codes'), h2 = pairs(comps, 'competitor_codes'); css();
+      if (oemGrid && h1) oemGrid.innerHTML = h1; if (compGrid && h2) compGrid.innerHTML = h2;
+    } catch (err) { /* leave the normal page as is */ }
+  }
+  function scan() { document.querySelectorAll('.product-card[data-kit-components]').forEach(build); }
+  new MutationObserver(scan).observe(document.body, { childList: true, subtree: true }); scan();
+})();
+</script>
 <script>
 /* part-search: in-box hover zoom + click/tap/Enter lightbox for .spec-photo */
 (function () {
