@@ -1,0 +1,140 @@
+{
+  "schema": "elimfilters.hermes.el83771.research.v1",
+  "sku": "EL83771",
+  "base_competitor": "DONALDSON P553771",
+  "status": "RESEARCH_ONLY_NOT_AUTHORIZED",
+  "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf",
+  "oem_candidates": [
+    {
+      "manufacturer": "WEICHAI",
+      "code": "61000070005"
+    },
+    {
+      "manufacturer": "WEICHAI",
+      "code": "1000424655"
+    },
+    {
+      "manufacturer": "SINOTRUK",
+      "code": "VG61000070005"
+    }
+  ],
+  "competitor_candidates": [],
+  "equipment_candidates": [
+    {
+      "make": "LIUGONG",
+      "model": "ZL50CN",
+      "engine": "WEICHAI WD10G220E13",
+      "equipment": "LIUGONG ZL50CN",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "1000424655/61000070005",
+      "pdf_page_zero_based": 11,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "LONKING",
+      "model": "ZL50C",
+      "engine": "WEICHAI WD10G220E11",
+      "equipment": "LONKING ZL50C",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "61000070005",
+      "pdf_page_zero_based": 13,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "LONKING",
+      "model": "LG850",
+      "engine": "WEICHAI WD10G220E11",
+      "equipment": "LONKING LG850",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "61000070005",
+      "pdf_page_zero_based": 13,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "LONKING",
+      "model": "LG850D",
+      "engine": "WEICHAI WD10G220E11",
+      "equipment": "LONKING LG850D",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "61000070005",
+      "pdf_page_zero_based": 13,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "XCMG",
+      "model": "ZL50G",
+      "engine": "WEICHAI WD10G220E11",
+      "equipment": "XCMG ZL50G",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "1000424655/61000070005",
+      "pdf_page_zero_based": 15,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "SDLG",
+      "model": "LG952L",
+      "engine": "WEICHAI WD10G220E13",
+      "equipment": "SDLG LG952L",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "1000424655/61000070005",
+      "pdf_page_zero_based": 18,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "HOWO / HOHAN",
+      "model": "J7B",
+      "engine": "D10",
+      "equipment": "HOWO / HOHAN J7B",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "VG61000070005",
+      "pdf_page_zero_based": 20,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "HOWO-7",
+      "model": "4X2",
+      "engine": "SINOTRUK D2066",
+      "equipment": "HOWO-7 4X2",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "VG61000070005",
+      "pdf_page_zero_based": 20,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    },
+    {
+      "make": "HOWO-7",
+      "model": "8X4",
+      "engine": "SINOTRUK D2066",
+      "equipment": "HOWO-7 8X4",
+      "type": "TRUCK / CONSTRUCTION EQUIPMENT",
+      "filter_position": "LUBE FILTER, SPIN-ON FULL FLOW",
+      "oem_reference": "VG61000070005",
+      "pdf_page_zero_based": 20,
+      "source_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/emea/air/f210074/Filtration-Solutions-Asian-Equipment-Europe.pdf"
+    }
+  ],
+  "explicit_exclusions": [
+    {
+      "make": "HOWO-7",
+      "model": "4X2",
+      "engine": "WEICHAI WD615",
+      "donaldson": "P551102",
+      "pdf_page_zero_based": 20
+    },
+    {
+      "make": "LIUGONG",
+      "model": "ZL50C",
+      "engine": "WEICHAI WD10G220E13",
+      "donaldson": "P553000",
+      "pdf_page_zero_based": 11
+    }
+  ],
+  "notes": "Sources identify P553771 for exact combinations only. Candidate data cannot prove prior catalogue state, nonduplication, collision freedom, or certification; read PostgreSQL first."
+}
