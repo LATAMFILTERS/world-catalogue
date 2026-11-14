@@ -31,3 +31,8 @@ test('SKU and active duty are enforced',()=>{
  assert.throws(()=>plan({...base(),sku:'EL83772'}),/SKU_MISSING/);
  assert.throws(()=>plan({...base(),catalog_active:false}),/SKU_NOT_ACTIVE/);
 });
+test('catalogue-shaped equipment ({equipment,engine}) matches research candidates ({make,model,engine})',()=>{
+ const stored=[{type:'TRUCK',engine:'WEICHAI WD10G220E13',equipment:'LIUGONG ZL50CN'}];
+ const cand=[{make:'LIUGONG',model:'ZL50CN',engine:'WEICHAI WD10G220E13',equipment:'LIUGONG ZL50CN'}];
+ assert.equal(additions(stored,cand,appKey).length,0);
+});
