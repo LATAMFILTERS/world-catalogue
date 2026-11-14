@@ -37,7 +37,7 @@ function refs(row){
 }
 function report(rows){
  const targets=rows.filter(r=>TARGET_SKUS.includes(r.sku));
- const found=rows.flatMap(r=>refs(r).map(hit=>({sku:r.sku,...hit})));
+ const found=rows.flatMap(r=>[...refs(r),...['codigo_base','canonical_source_code'].filter(field=>matches(r[field])).map(field=>({field,manufacturer:field==='canonical_source_code'?r.canonical_source_brand:null,code:r[field],groups:classify(r[field])}))].map(hit=>({sku:r.sku,...hit})));
  return {status:'NO_GO_READ_ONLY',operator_code:'1090702000C00',operator_code_exact_matches:found.filter(x=>x.groups.includes('original_received')),
    target_skus:TARGET_SKUS.map(sku=>{const row=targets.find(r=>r.sku===sku);return row?
      {sku,found:true,active:row.catalog_active,duty:row.duty,filter_type:row.filter_type,codigo_base:row.codigo_base,
@@ -59,7 +59,7 @@ async function main(){
  try{
   await db.query('BEGIN READ ONLY');
   await db.query("SET LOCAL statement_timeout='45000ms'");
-  const {rows}=await db.query("SELECT sku,codigo_base,filter_type,duty,catalog_active,canonical_source_brand,canonical_source_code,oem_codes,competitor_codes,equipment_applications FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) OR EXISTS(SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb) || COALESCE(competitor_codes,'[]'::jsonb)) x WHERE regexp_replace(upper(COALESCE(x->>'code',x->>'reference','')),'[^A-Z0-9]','','g')=ANY($2::text[]))", [TARGET_SKUS,wanted]);
+  const {rows}=await db.query("SELECT sku,codigo_base,filter_type,duty,catalog_active,canonical_source_brand,canonical_source_code,oem_codes,competitor_codes,equipment_applications FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) OR regexp_replace(upper(COALESCE(codigo_base,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR regexp_replace(upper(COALESCE(canonical_source_code,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR EXISTS(SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb) || COALESCE(competitor_codes,'[]'::jsonb)) x WHERE regexp_replace(upper(COALESCE(x->>'code',x->>'reference','')),'[^A-Z0-9]','','g')=ANY($2::text[]))", [TARGET_SKUS,wanted]);
   console.log(JSON.stringify(report(rows),null,2));
   await db.query('ROLLBACK');
  }catch(e){await db.query('ROLLBACK').catch(()=>{});throw e;}
