@@ -1053,7 +1053,7 @@ let T = TRANSLATIONS.en; // default, overwritten after detection
 detectLang().then(lang => {
   currentLang = lang || 'en';
   T = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
-  const backBtn = document.querySelector('.header-back');
+  const backBtn = document.querySelector('a.header-back');
   if (backBtn) backBtn.textContent = T.backToSearch;
   executeSearch();
 });
@@ -2134,7 +2134,7 @@ async function primaryResultsWithDiscoveredAlternatives(results, rawReference) {
 
     scope.querySelectorAll('.search-summary-mode').forEach(function (node) { node.remove(); });
 
-    scope.querySelectorAll('.header-back').forEach(function (link) {
+    scope.querySelectorAll('a.header-back').forEach(function (link) {
       link.textContent = 'BACK TO SEARCH';
       link.href = '/';
     });
