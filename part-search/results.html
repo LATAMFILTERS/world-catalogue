@@ -2009,6 +2009,25 @@ async function primaryResultsWithDiscoveredAlternatives(results, rawReference) {
   async function build(card) {
     if (done.has(card)) return; done.add(card);
     polish(card);
+    // EK50401 is sold as a complete assembly. Never replace its cross-references
+    // with those of EA17800 and EA16229 (individual primary/safety elements).
+    // Kit equivalences: Hengst official Chinese CV catalog; Parker China engine/mobile catalog.
+    if (String((card.querySelector('.card-sku') || {}).textContent || '').trim().toUpperCase() === 'EK50401') {
+      var columns = card.querySelector('.columns-container');
+      var oem = columns && columns.children[0] && columns.children[0].querySelector('.refs-grid');
+      var competitor = columns && columns.children[1] && columns.children[1].querySelector('.refs-grid');
+      if (oem) oem.innerHTML = '<p class="kit-ref-unverified">' +
+        (typeof currentLang !== 'undefined' && currentLang === 'es'
+          ? 'Código OEM del kit completo pendiente de verificación.'
+          : 'Complete-kit OEM part number not yet verified.') + '</p>';
+      if (competitor) competitor.innerHTML = '<div class="kit-verified-refs">' +
+        '<div class="kit-pair"><span class="kit-brand">HENGST</span>' + chip('E1896L-2') + '</div>' +
+        '<div class="kit-pair"><span class="kit-brand">FLEETGUARD</span>' + chip('AA90179') + '</div>' +
+        '<div class="kit-pair"><span class="kit-brand">PARKER / BALDWIN</span>' + chip('RS82652 KIT-C') + '</div>' +
+        '</div>';
+      css();
+      return;
+    }
     var skus = String(card.getAttribute('data-kit-components') || '').split(',').filter(Boolean); if (skus.length < 2) return;
     var api = (typeof API !== 'undefined' && API) ? API : ''; var lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
     try {
