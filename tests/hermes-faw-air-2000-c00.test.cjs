@@ -28,3 +28,10 @@ test('base code and canonical code appear as collision candidates',()=>{
  assert.ok(data.reference_matches.some(x=>x.field==='codigo_base' && x.groups.includes('primary_donaldson_candidate')));
  assert.ok(data.reference_matches.some(x=>x.field==='canonical_source_code'));
 });
+
+test('FAW joined pair and Createk CK4945 are classified as kit, not individual filters',()=>{
+ assert.deepEqual(classify('1109060/70-2000-C00'),['kit_faw_commercial_pair']);
+ assert.deepEqual(classify('CK4945'),['kit_createk_candidate']);
+ assert.deepEqual(classify('PUK2652'),['kit_other_commercial_candidates']);
+ assert.deepEqual(classify('PU2652JF'),['kit_other_commercial_candidates']);
+});
