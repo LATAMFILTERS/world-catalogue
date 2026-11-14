@@ -19,7 +19,10 @@ const GROUPS={
   safety_donaldson_candidate:['P641356'],
   kit_mann:['SP26522'],
   kit_fleetguard_candidate:['AA90179'],
-  kit_hengst_candidate:['E1896L2']
+  kit_hengst_candidate:['E1896L2'],
+  kit_faw_commercial_pair:['1109060702000C00'],
+  kit_createk_candidate:['CK4945'],
+  kit_other_commercial_candidates:['PUK2652','PU2652JF','KU2652']
 };
 const normalize=v=>String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
 const wanted=[...new Set(Object.values(GROUPS).flat().map(normalize))];
