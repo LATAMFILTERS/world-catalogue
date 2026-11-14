@@ -877,6 +877,7 @@ textarea {
     <span class="search-summary-main"><strong>—</strong></span>
   </div>
 
+  <button type="button" id="copy-part-link" class="header-back" style="background:none;border:1px solid rgba(255,241,45,.45);border-radius:3px;padding:.45rem .65rem;cursor:pointer;color:#FFF12D;">COPY LINK</button>
   <a href="/index.html" class="header-back">← BACK TO SEARCH</a>
 </header>
 
@@ -1089,6 +1090,45 @@ const dutyParam = (params.get('duty') || '').trim().toUpperCase();
       <span class="search-summary-main"><strong>${_esc((query || model).toUpperCase())}</strong></span>`;
   }
 })();
+
+// Explicit copy control: creates a rich hyperlink for spreadsheets and mail editors.
+// Browser address-bar copying is outside page control, so users should use this button.
+document.getElementById('copy-part-link')?.addEventListener('click', async (e) => {
+  const button = e.currentTarget;
+  const url = window.location.href;
+  const label = document.title;
+  const html = '<a href="' + _esc(url) + '">' + _esc(label) + '</a>';
+  try {
+    if (navigator.clipboard && window.ClipboardItem) {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html], { type: 'text/html' }),
+        'text/plain': new Blob([url], { type: 'text/plain' })
+      })]);
+    } else {
+      // Legacy fallback: select a temporary hyperlink and use the existing copy listener.
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.textContent = label;
+      anchor.style.position = 'fixed';
+      anchor.style.left = '-9999px';
+      document.body.appendChild(anchor);
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNode(anchor);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      const copied = document.execCommand('copy');
+      selection.removeAllRanges();
+      anchor.remove();
+      if (!copied) throw new Error('copy failed');
+    }
+    button.textContent = 'LINK COPIED';
+  } catch (err) {
+    button.textContent = 'COPY FAILED';
+    console.error('Part Search copy link:', err);
+  }
+  window.setTimeout(() => { button.textContent = 'COPY LINK'; }, 2500);
+});
 
 // Ctrl+C with no text selected copies the page link as a rich hyperlink
 // ("SKU — ELIMFILTERS Part Search"); plain URL is kept as text/plain fallback.
