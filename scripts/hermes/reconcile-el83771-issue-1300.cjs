@@ -12,7 +12,8 @@ const crypto = require('crypto');
 const DATA = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../data/catalogue-research/el83771-issue-1300.json'), 'utf8'));
 const norm = v => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 const key = r => norm(r.manufacturer || r.brand || r.make) + ':' + norm(r.code || r.reference || r.model);
-const appKey = r => [norm(r.make || r.brand),norm(r.model),norm(r.engine)].join(':');
+// Catalogue rows store {equipment, engine}; research candidates carry make/model too. Compare on equipment (or make+model) + engine.
+const appKey = r => [norm(r.equipment || ((r.make || r.brand || '') + ' ' + (r.model || ''))),norm(r.engine)].join(':');
 function additions(current, proposed, identify) {
   const seen = new Set((current || []).map(identify));
   return proposed.filter(x => !seen.has(identify(x)) && (seen.add(identify(x)) || true));
