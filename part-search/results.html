@@ -1552,6 +1552,7 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
               ${replacementElementLink}
               ${relatedHTML}
             </div>
+            <section class="hero-related" data-kit-options="${esc(sku)}" aria-live="polite" hidden></section>
           </div>
         </div>
 
@@ -1661,6 +1662,53 @@ ${showInternalReviewNotices ? `<p class="card-desc" role="status">${esc(reviewNo
     </article>`;
 }
 
+// Show kits containing each filter without treating a complete kit as a replacement.
+async function loadContainingKits(scope) {
+  const lang = currentLang;
+  const labels = lang === 'es'
+    ? { title: 'Disponible en kit', link: 'Ver kit', application: 'Aplicación del kit' }
+    : lang === 'pt'
+      ? { title: 'Disponível em kit', link: 'Ver kit', application: 'Aplicação do kit' }
+      : { title: 'Available in a kit', link: 'View kit', application: 'Kit application' };
+  await Promise.all(Array.from(scope.querySelectorAll('[data-kit-options]')).map(async (slot) => {
+    try {
+      const response = await fetch(`${API}/api/filters/kits?sku=${encodeURIComponent(slot.dataset.kitOptions)}`);
+      if (!response.ok) return;
+      const data = await response.json();
+      if (!data.success || !Array.isArray(data.kits) || !slot.isConnected) return;
+      const seen = new Set();
+      const kits = data.kits.filter((kit) => {
+        const sku = String(kit.kit_sku || '').trim().toUpperCase();
+        if (!/^EK\d{4,7}$/.test(sku) || seen.has(sku)) return false;
+        seen.add(sku);
+        return true;
+      });
+      if (!kits.length) return;
+      const heading = document.createElement('p');
+      heading.className = 'hero-related-title';
+      heading.textContent = labels.title;
+      slot.replaceChildren(heading);
+      for (const kit of kits) {
+        const sku = String(kit.kit_sku).trim().toUpperCase();
+        const link = document.createElement('a');
+        link.className = 'see-also-chip';
+        link.href = '/' + encodeURIComponent(sku);
+        link.textContent = labels.link + ' ' + sku;
+        slot.appendChild(link);
+        if (kit.equipment_ref) {
+          const application = document.createElement('p');
+          application.className = 'hero-related-sub';
+          application.textContent = labels.application + ': ' + kit.equipment_ref;
+          slot.appendChild(application);
+        }
+      }
+      slot.hidden = false;
+    } catch (error) {
+      console.warn('Containing kits unavailable:', error);
+    }
+  }));
+}
+
 // ─── Render Results ───
 // Mixed HD/LD duty classes are intercepted earlier by showMixedDutyPrompt()
 // before this function is ever called, so it only ever renders a single,
@@ -1701,6 +1749,7 @@ function renderResults(items, count, searchMode, searchTerm) {
     return label ? `<p data-b76-match-role="${esc(sku)}" style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#FFF12D;padding:0.3rem 0.55rem;">${esc(label)}</p>` : '';
   };
   app.innerHTML = `${b76Heading}<div class="products">${items.map((p, i) => b76Kind(p) + renderCard(p, i)).join('')}</div>`;
+  void loadContainingKits(app);
 }
 
 // ─── SEARCH EXECUTION ───
