@@ -1667,13 +1667,23 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
       [kit_sku]
     );
 
-    const addons = await client.query(
-      `SELECT c.*, ka.kit_sku, ka.note
-       FROM elimfilters_catalog_active_v c
-       JOIN kit_suggested_addons ka ON ka.filter_sku = c.sku
-       WHERE ka.kit_sku = $1`,
-      [kit_sku]
+    // Suggested add-ons are optional (run_047). Some installations have the
+    // core kit tables without that later extension, so omit add-ons only when
+    // the specific optional relation is absent. Any query error against an
+    // existing relation still reaches the outer handler as HTTP 500.
+    const addonsRelation = await client.query(
+      "SELECT to_regclass('public.kit_suggested_addons') AS relation"
     );
+    let addons = { rows: [] };
+    if (addonsRelation.rows[0]?.relation) {
+      addons = await client.query(
+        `SELECT c.*, ka.kit_sku, ka.note
+         FROM elimfilters_catalog_active_v c
+         JOIN kit_suggested_addons ka ON ka.filter_sku = c.sku
+         WHERE ka.kit_sku = $1`,
+        [kit_sku]
+      );
+    }
 
     res.json({
       success: true,
