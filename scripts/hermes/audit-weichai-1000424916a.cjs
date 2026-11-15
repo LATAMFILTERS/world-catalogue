@@ -5,7 +5,7 @@ const norm=v=>String(v??'').toUpperCase().replace(/[^A-Z0-9]/g,'');
 const groups={
  original:['1000424916A'],related_oem:['1000424916','1000424916A-7290'],
  mann_verified:['PL420X'],wix_verified:['95102E'],sf_verified:['SK3359'],
- donaldson_candidate:['P550778','R010017'],fleetguard_candidate:['FS19769'],hifi_candidate:['SN70207']
+ donaldson_candidate:['P550778','R010017'],fleetguard_candidate:['FS19769'],hifi_verified:['SN70207']
 };
 const wanted=[...new Set(Object.values(groups).flat().map(norm))];
 const classify=v=>Object.entries(groups).filter(([,codes])=>codes.map(norm).includes(norm(v))).map(([key])=>key);
