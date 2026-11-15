@@ -59,7 +59,7 @@ function report(rows){
 async function main(){
  const url=process.env.CATALOG_DATABASE_URL||process.env.ELIMFILTERS_DATABASE_URL||process.env.DATABASE_URL;
  if(!url)throw Error('DATABASE_URL_MISSING');
- const db=new Client({connectionString:url,ssl:/@(127\.0\.0\.1|localhost)[:/]/.test(url)?false:{rejectUnauthorized:false}});
+ const db=new Client({connectionString:url,ssl:/(?:@|\/\/)(127\.0\.0\.1|localhost)[:/]/.test(url)?false:{rejectUnauthorized:false}});
  await db.connect();
  try{
   await db.query('BEGIN READ ONLY');
