@@ -18,7 +18,7 @@ function setup() {
     async query(sql, params) {
       calls.push({ sql, params });
       if (/SELECT 1 FROM elimfilters_catalog/.test(sql)) return { rows: [], rowCount: 0 };
-      if (/SELECT sku FROM elimfilters_catalog/.test(sql)) return { rows: [{ sku: 'EF92564' }] };
+      if (/SELECT e\.sku, c\.certified_at FROM elimfilters_catalog/.test(sql)) return { rows: [{ sku: 'EF92564' }] };
       throw new Error('Inactive SKU unexpectedly reached product lookup');
     },
   };
@@ -77,6 +77,7 @@ test('sitemap SQL excludes retired and unverified records', async () => {
   assert.equal(res.statusCode, 200);
   assert.match(calls[0].sql, /catalog_active IS TRUE/);
   assert.match(calls[0].sql, /canonical_source_status = 'VERIFIED'/);
+  assert.match(calls[0].sql, /certification_state = 'CERTIFIED'/);
   assert.match(res.content, /EF92564/);
   assert.doesNotMatch(res.content, /EF39531/);
 });
