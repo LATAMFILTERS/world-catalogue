@@ -82,6 +82,29 @@ test('verified SKU sitemap is English-only, certified-only, with lastmod', async
   assert.ok(!res.body.includes('/es/') && !res.body.includes('/pt/') && !res.body.includes('hreflang'));
 });
 
+test('en page has breadcrumb, FAQ answers and matching JSON-LD; es has none', () => {
+  const html = renderProduct(row({ technology: 'SYNTRAX', height_mm: '178', outer_diameter_mm: '93', oem_codes: [{ manufacturer: 'FUCHS', code: 'ABC123' }] }));
+  assert.match(html, /aria-label="Breadcrumb"/);
+  assert.match(html, /<dt><strong>Which OEM references are listed for EF99999\?<\/strong><\/dt><dd>1 OEM references are on record for this SKU, including FUCHS ABC123\./);
+  assert.ok(!html.includes('manufacturer: FUCHS') && !html.includes('code: ABC123'));
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+  const graph = blocks[1]['@graph'];
+  assert.deepEqual(graph.map((g) => g['@type']), ['BreadcrumbList', 'FAQPage']);
+  assert.equal(graph[0].itemListElement.at(-1).item, 'https://part-search.elimfilters.com/part/EF99999/');
+  assert.ok(graph[1].mainEntity.every((q) => html.includes(q.name)));
+  const es = renderProduct(row(), 'es');
+  assert.ok(!es.includes('Quick answers') && !es.includes('FAQPage'));
+});
+
+test('llms.txt is served on the part host with the sitemap and policy', () => {
+  const routes = new Map();
+  installPartSeoPages({ get(p, h) { if (typeof p === 'string') routes.set(p, h); } }, { async query() { return { rows: [] }; } });
+  const res = { setHeader() {}, type() { return this; }, send(b) { this.body = b; return this; } };
+  routes.get('/llms.txt')({ get() { return 'part-search.elimfilters.com'; } }, res, () => {});
+  assert.match(res.body, /sitemap\.xml/);
+  assert.match(res.body, /Only CERTIFIED SKUs/);
+});
+
 test('IndexNow key file is served on the part host', async () => {
   const routes = new Map();
   const app = { get(path, handler) { if (typeof path === 'string') routes.set(path, handler); } };
