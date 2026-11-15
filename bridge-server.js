@@ -146,7 +146,8 @@ function serveVenezuelaCatalog(req, res, pathname) {
   const root = path.resolve(__dirname, 'part-search', 'catalogo-venezuela');
   let relative;
   try {
-    relative = decodeURIComponent(pathname.slice('/catalogo-venezuela'.length)).replace(/^\\/+/, '');
+    relative = decodeURIComponent(pathname.slice('/catalogo-venezuela'.length));
+    while (relative.startsWith('/')) relative = relative.slice(1);
   } catch {
     res.writeHead(400, { 'cache-control': 'no-store' });
     res.end();
