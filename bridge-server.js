@@ -136,6 +136,57 @@ function localPageFor(target) {
   return null;
 }
 
+// Public Venezuela catalogue is a local, read-only document. Serve its
+// images alongside the HTML; never forward these paths to the search API.
+function serveVenezuelaCatalog(req, res, pathname) {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return false;
+  if (pathname !== '/catalogo-venezuela' &&
+      pathname !== '/catalogo-venezuela/' &&
+      !pathname.startsWith('/catalogo-venezuela/')) return false;
+  const root = path.resolve(__dirname, 'part-search', 'catalogo-venezuela');
+  let relative;
+  try {
+    relative = decodeURIComponent(pathname.slice('/catalogo-venezuela'.length)).replace(/^\\/+/, '');
+  } catch {
+    res.writeHead(400, { 'cache-control': 'no-store' });
+    res.end();
+    return true;
+  }
+  if (!relative || relative === 'index.html') relative = 'catalogo-venezuela-buses-y-camiones.html';
+  const file = path.resolve(root, relative);
+  if (!file.startsWith(root + path.sep)) {
+    res.writeHead(403, { 'cache-control': 'no-store' });
+    res.end();
+    return true;
+  }
+  let stat;
+  try { stat = fs.statSync(file); } catch {
+    res.writeHead(404, { 'cache-control': 'no-store' });
+    res.end();
+    return true;
+  }
+  if (!stat.isFile()) {
+    res.writeHead(404, { 'cache-control': 'no-store' });
+    res.end();
+    return true;
+  }
+  const ext = path.extname(file).toLowerCase();
+  const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
+    '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml',
+    '.gif': 'image/gif', '.woff2': 'font/woff2' };
+  if (!types[ext]) {
+    res.writeHead(403, { 'cache-control': 'no-store' });
+    res.end();
+    return true;
+  }
+  res.writeHead(200, { 'content-type': types[ext], 'cache-control': 'no-cache',
+    'content-length': stat.size, 'x-content-type-options': 'nosniff' });
+  if (req.method === 'HEAD') res.end();
+  else fs.createReadStream(file).pipe(res);
+  return true;
+}
+
 function upstreamTargetFor(requestUrl, upstream) {
   const target = new URL(requestUrl || '/', upstream);
   if (target.pathname.startsWith('/bridge/api/')) {
@@ -233,6 +284,8 @@ function createBridgeServer(upstreamUrl) {
   return http.createServer((req, res) => {
     const requestTarget = new URL(req.url || '/', upstream);
     const target = upstreamTargetFor(req.url, upstream);
+
+    if (serveVenezuelaCatalog(req, res, requestTarget.pathname)) return;
 
     if (req.method === 'GET') {
       const localHtml = localPageFor(requestTarget);
