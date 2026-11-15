@@ -9,6 +9,7 @@ test('direct manufacturer references remain separate from unconfirmed candidates
  assert.deepEqual(classify('PL 420 X'),['mann_verified']);
  assert.deepEqual(classify('95102E'),['wix_verified']);
  assert.deepEqual(classify('SK3359'),['sf_verified']);
+ assert.deepEqual(classify('SN 70207'),['hifi_verified']);
  assert.deepEqual(classify('P550778'),['donaldson_candidate']);
  assert.deepEqual(classify('FS19769'),['fleetguard_candidate']);
 });
