@@ -15,6 +15,10 @@ test('ref matching works without altering arrays',()=>{
  const row={sku:'EA17800',oem_codes:[{manufacturer:'FAW',code:'11090602000'}],competitor_codes:[{manufacturer:'MANN',code:'C 27 800'}]};
  const before=JSON.stringify(row);assert.equal(refs(row).length,2);assert.equal(JSON.stringify(row),before);
 });
+test('ref matching accepts the reference keys supported by the real catalogue schema',()=>{
+ const row={sku:'EK50401',oem_codes:[],competitor_codes:[{manufacturer:'MANN-FILTER',part_number:'SP 2652-2'}]};
+ assert.equal(refs(row)[0].code,'SP 2652-2');
+});
 test('reports missing target SKUs and exact matches without claiming a write',()=>{
  const data=report([{sku:'EK50401',catalog_active:true,duty:'HEAVY_DUTY',oem_codes:[],competitor_codes:[],equipment_applications:[]}]);
  assert.equal(data.status,'NO_GO_READ_ONLY');

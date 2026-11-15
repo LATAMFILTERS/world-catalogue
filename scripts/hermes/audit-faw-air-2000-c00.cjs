@@ -32,7 +32,7 @@ function refs(row){
  const result=[];
  for(const field of ['oem_codes','competitor_codes']){
   for(const r of (Array.isArray(row[field])?row[field]:[])){
-   const code=typeof r==='string'?r:(r && (r.code || r.reference || r.part_number || r.oem));
+   const code=typeof r==='string'?r:(r && (r.code || r.reference || r.part_number || r.partNumber || r.partno || r.oem_code || r.oemCode || r.cross_reference || r.crossReference || r.oem));
    const manufacturer=typeof r==='string'?null:(r && (r.manufacturer||r.brand))||null;
    if(matches(code)) result.push({field,manufacturer,code,groups:classify(code)});
   }
@@ -44,8 +44,9 @@ function report(rows){
  const found=rows.flatMap(r=>[...refs(r),...['codigo_base','canonical_source_code'].filter(field=>matches(r[field])).map(field=>({field,manufacturer:field==='canonical_source_code'?r.canonical_source_brand:null,code:r[field],groups:classify(r[field])}))].map(hit=>({sku:r.sku,...hit})));
  return {status:'NO_GO_READ_ONLY',operator_code:'1090702000C00',operator_code_exact_matches:found.filter(x=>x.groups.includes('original_received')),
    target_skus:TARGET_SKUS.map(sku=>{const row=targets.find(r=>r.sku===sku);return row?
-     {sku,found:true,active:row.catalog_active,canonical_source_status:row.canonical_source_status??null,duty:row.duty,filter_type:row.filter_type,codigo_base:row.codigo_base,
+     {sku,found:true,active:row.catalog_active,duty:row.duty,filter_type:row.filter_type,codigo_base:row.codigo_base,
       canonical_source_brand:row.canonical_source_brand,canonical_source_code:row.canonical_source_code,
+      canonical_source_status:row.canonical_source_status,canonical_source_url:row.canonical_source_url,
       oem_count:Array.isArray(row.oem_codes)?row.oem_codes.length:null,
       competitor_count:Array.isArray(row.competitor_codes)?row.competitor_codes.length:null,
       applications_count:Array.isArray(row.equipment_applications)?row.equipment_applications.length:null,
@@ -63,7 +64,7 @@ async function main(){
  try{
   await db.query('BEGIN READ ONLY');
   await db.query("SET LOCAL statement_timeout='45000ms'");
-  const {rows}=await db.query("SELECT sku,codigo_base,filter_type,duty,catalog_active,canonical_source_status,canonical_source_brand,canonical_source_code,oem_codes,competitor_codes,equipment_applications FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) OR regexp_replace(upper(COALESCE(codigo_base,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR regexp_replace(upper(COALESCE(canonical_source_code,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR EXISTS(SELECT 1 FROM jsonb_array_elements((CASE WHEN jsonb_typeof(oem_codes)='array' THEN oem_codes ELSE '[]'::jsonb END) || (CASE WHEN jsonb_typeof(competitor_codes)='array' THEN competitor_codes ELSE '[]'::jsonb END)) x WHERE regexp_replace(upper(CASE WHEN jsonb_typeof(x)='string' THEN x#>>'{}' WHEN jsonb_typeof(x)='object' THEN COALESCE(x->>'code',x->>'reference',x->>'part_number',x->>'oem','') ELSE '' END),'[^A-Z0-9]','','g')=ANY($2::text[]))", [TARGET_SKUS,wanted]);
+  const {rows}=await db.query("SELECT sku,codigo_base,filter_type,duty,catalog_active,canonical_source_brand,canonical_source_code,canonical_source_status,canonical_source_url,oem_codes,competitor_codes,equipment_applications FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) OR regexp_replace(upper(COALESCE(codigo_base,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR regexp_replace(upper(COALESCE(canonical_source_code,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR EXISTS(SELECT 1 FROM jsonb_array_elements((CASE WHEN jsonb_typeof(oem_codes)='array' THEN oem_codes ELSE '[]'::jsonb END) || (CASE WHEN jsonb_typeof(competitor_codes)='array' THEN competitor_codes ELSE '[]'::jsonb END)) x WHERE regexp_replace(upper(CASE WHEN jsonb_typeof(x)='string' THEN x#>>'{}' WHEN jsonb_typeof(x)='object' THEN COALESCE(x->>'code',x->>'reference',x->>'part_number',x->>'partNumber',x->>'partno',x->>'oem_code',x->>'oemCode',x->>'cross_reference',x->>'crossReference',x->>'oem','') ELSE '' END),'[^A-Z0-9]','','g')=ANY($2::text[]))", [TARGET_SKUS,wanted]);
   console.log(JSON.stringify(report(rows),null,2));
   await db.query('ROLLBACK');
  }catch(e){await db.query('ROLLBACK').catch(()=>{});throw e;}
