@@ -2,7 +2,7 @@
 
 /**
  * EL86352: operator-instructed addition of JAC 1010320FE010 / 1010320-FE010 (client supplied, no official
- * source) and the image URL provided by the operator. Canonical (Donaldson P556352) is untouched.
+ * source) and the final image URL (EL8/EL86352.png, label verified). Canonical (Donaldson P556352) is untouched.
  * Dry-run by default; --execute needs --snapshot <file>.
  */
 require('dotenv').config();
@@ -15,7 +15,7 @@ const APPLY = process.argv.includes('--execute');
 const arg = (name) => { const i = process.argv.indexOf(name); return i >= 0 ? process.argv[i + 1] : null; };
 const SNAPSHOT = arg('--snapshot');
 const SKU = 'EL86352';
-const IMAGE = 'https://cdn.elimfilters.com/EL8/EL80352.png';
+const IMAGE = 'https://cdn.elimfilters.com/EL8/EL86352.png';
 const AT = '2026-11-15T00:00:00.000Z';
 const norm = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 const sha = (v) => crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex');
