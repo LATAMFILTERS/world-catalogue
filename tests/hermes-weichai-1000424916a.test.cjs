@@ -19,3 +19,10 @@ test('reference audit is read-only and reports duplicate candidate owners',()=>{
  assert.equal(refs(rows[0]).length,2);
  const r=report(rows);assert.equal(r.status,'NO_GO_READ_ONLY');assert.deepEqual(r.exact_owners,['ES11111','ES22222']);
 });
+
+test('nested brand_crossrefs are checked before assuming no duplicates',()=>{
+ const row={sku:'ES30001',oem_codes:[],competitor_codes:[],brand_crossrefs:{MANN:['PL 420 X'],WIX:['95102E']}};
+ const hits=refs(row);
+ assert.equal(hits.length,2);
+ assert.deepEqual(hits.map(h=>h.field),['brand_crossrefs','brand_crossrefs']);
+});
