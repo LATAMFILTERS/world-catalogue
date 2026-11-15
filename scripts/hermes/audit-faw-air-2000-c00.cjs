@@ -32,8 +32,9 @@ function refs(row){
  const result=[];
  for(const field of ['oem_codes','competitor_codes']){
   for(const r of (Array.isArray(row[field])?row[field]:[])){
-   const code=r && (r.code || r.reference || r.part_number || r.partNumber || r.partno || r.oem_code || r.oemCode || r.cross_reference || r.crossReference);
-   if(matches(code)) result.push({field,manufacturer:r.manufacturer||r.brand||null,code,groups:classify(code)});
+   const code=typeof r==='string'?r:(r && (r.code || r.reference || r.part_number || r.partNumber || r.partno || r.oem_code || r.oemCode || r.cross_reference || r.crossReference || r.oem));
+   const manufacturer=typeof r==='string'?null:(r && (r.manufacturer||r.brand))||null;
+   if(matches(code)) result.push({field,manufacturer,code,groups:classify(code)});
   }
  }
  return result;
@@ -63,7 +64,7 @@ async function main(){
  try{
   await db.query('BEGIN READ ONLY');
   await db.query("SET LOCAL statement_timeout='45000ms'");
-  const {rows}=await db.query("SELECT sku,codigo_base,filter_type,duty,catalog_active,canonical_source_brand,canonical_source_code,canonical_source_status,canonical_source_url,oem_codes,competitor_codes,equipment_applications FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) OR regexp_replace(upper(COALESCE(codigo_base,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR regexp_replace(upper(COALESCE(canonical_source_code,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR EXISTS(SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb) || COALESCE(competitor_codes,'[]'::jsonb)) x WHERE regexp_replace(upper(COALESCE(x->>'code',x->>'reference',x->>'part_number',x->>'partNumber',x->>'partno',x->>'oem_code',x->>'oemCode',x->>'cross_reference',x->>'crossReference','')),'[^A-Z0-9]','','g')=ANY($2::text[]))", [TARGET_SKUS,wanted]);
+  const {rows}=await db.query("SELECT sku,codigo_base,filter_type,duty,catalog_active,canonical_source_brand,canonical_source_code,canonical_source_status,canonical_source_url,oem_codes,competitor_codes,equipment_applications FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) OR regexp_replace(upper(COALESCE(codigo_base,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR regexp_replace(upper(COALESCE(canonical_source_code,'')),'[^A-Z0-9]','','g')=ANY($2::text[]) OR EXISTS(SELECT 1 FROM jsonb_array_elements((CASE WHEN jsonb_typeof(oem_codes)='array' THEN oem_codes ELSE '[]'::jsonb END) || (CASE WHEN jsonb_typeof(competitor_codes)='array' THEN competitor_codes ELSE '[]'::jsonb END)) x WHERE regexp_replace(upper(CASE WHEN jsonb_typeof(x)='string' THEN x#>>'{}' WHEN jsonb_typeof(x)='object' THEN COALESCE(x->>'code',x->>'reference',x->>'part_number',x->>'partNumber',x->>'partno',x->>'oem_code',x->>'oemCode',x->>'cross_reference',x->>'crossReference',x->>'oem','') ELSE '' END),'[^A-Z0-9]','','g')=ANY($2::text[]))", [TARGET_SKUS,wanted]);
   console.log(JSON.stringify(report(rows),null,2));
   await db.query('ROLLBACK');
  }catch(e){await db.query('ROLLBACK').catch(()=>{});throw e;}

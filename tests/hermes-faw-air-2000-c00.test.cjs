@@ -39,3 +39,13 @@ test('FAW joined pair and Createk CK4945 are classified as kit, not individual f
  assert.deepEqual(classify('PUK2652'),['kit_other_commercial_candidates']);
  assert.deepEqual(classify('PU2652JF'),['kit_other_commercial_candidates']);
 });
+
+test('string reference elements and non-array columns are handled without crashing',()=>{
+ const row={sku:'EA16229',oem_codes:'{}',competitor_codes:['CF 16 229',{brand:'DONALDSON',part_number:'P641356'}]};
+ const hits=refs(row);
+ assert.equal(hits.length,2);
+ assert.deepEqual(hits[0].groups,['safety_mann']);
+ assert.deepEqual(hits[1].groups,['safety_donaldson_candidate']);
+ assert.equal(hits[1].manufacturer,'DONALDSON');
+ assert.equal(report([{sku:'EA16229',canonical_source_status:'UNVERIFIED',oem_codes:{},competitor_codes:[]}]).target_skus[2].canonical_source_status,'UNVERIFIED');
+});
