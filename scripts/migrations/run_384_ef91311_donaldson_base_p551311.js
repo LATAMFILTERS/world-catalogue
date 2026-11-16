@@ -53,7 +53,7 @@ const sha = (v) => crypto.createHash('sha256').update(JSON.stringify(v)).digest(
     report.gateway = assertCanonicalWrite(next, { validateApplications: false }).valid;
     report.policy = evaluateCodigoBase(next);
     if (!report.policy.valid) throw new Error('POLICY_REJECTED ' + JSON.stringify(report.policy));
-    await db.query(`UPDATE public.elimfilters_catalog SET codigo_base=$2, enrichment_data=$3::jsonb, canonical_source_brand='DONALDSON', canonical_source_code=$2,
+    await db.query(`UPDATE public.elimfilters_catalog SET codigo_base=$2::text, enrichment_data=$3::jsonb, canonical_source_brand='DONALDSON', canonical_source_code=$2::text,
       canonical_source_url=$4, canonical_source_status='VERIFIED', canonical_verified_at=$5, canonical_evidence=$6::jsonb WHERE sku=$1`,
       [SKU, BASE, JSON.stringify(next.enrichment_data), URL_DON, AT, JSON.stringify(next.canonical_evidence)]);
     const after = (await db.query('SELECT codigo_base, canonical_source_code FROM public.elimfilters_catalog WHERE sku=$1', [SKU])).rows[0];
