@@ -114,6 +114,9 @@ main{max-width:1180px;margin:0 auto;padding:8px 20px 48px}
 .card-top{display:flex;gap:14px;padding:16px 16px 12px;border-bottom:1px solid var(--line)}
 .truck{width:128px;height:104px;object-fit:contain;background:#fff;border-radius:6px;flex:none}
 .truck.cutout{background:transparent}
+.trucks{display:flex;gap:6px;flex:none}
+.trucks .truck{width:92px;height:84px}
+.card.is-sel .trucks .truck{width:min(200px,22vw);height:auto;max-height:200px}
 .card-brand{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow-deep)}
 .card h3{margin:2px 0 4px;font-size:23px;line-height:1.05;text-transform:uppercase}
 .motor{margin:0;font-size:14.5px;color:var(--muted)}
@@ -211,7 +214,7 @@ footer strong{color:var(--head-ink)}
   .tw-tricolor{transition:none}
   .tw-stage.on .tw-rule{animation-duration:.01s;animation-delay:0s}
 }
-@media (max-width:560px){ .grid{grid-template-columns:1fr} .truck{width:108px;height:90px} }
+@media (max-width:560px){ .grid{grid-template-columns:1fr} .truck{width:108px;height:90px} .trucks .truck{width:70px;height:70px} }
 @media print{
   :root{--paper:#fff;--card:#fff;--line:#ccc;--muted:#444;--chip:#eee;--ink:#000}
   .splash,.tw-stage{display:none!important}
@@ -1342,7 +1345,7 @@ footer strong{color:var(--head-ink)}
       <div class="brand-head"><h2>Freightliner</h2><p>3 modelos · 18 referencias</p></div>
       <div class="grid"><article id="ficha-freightliner-1" class="card" data-search="freightliner cl120 / fld120 detroit diesel serie 60 el82100 25518480 ea13551 af1968m ew74685 wf2077 es90463 fs19765 ef96915 25014274 ea17682 af25139m">
           <div class="card-top">
-            <img class="truck" src="assets/518fa27abab8.jpg" alt="Freightliner CL120 / FLD120">
+            <div class="trucks"><img class="truck" src="assets/518fa27abab8.jpg" alt="Freightliner CL120 / FLD120"><img class="truck" src="assets/b74a60f6202a.jpg" alt="Freightliner Columbia CL120" loading="lazy"></div>
             <div class="card-id">
               <p class="card-brand">Freightliner · Camiones</p>
               <h3>CL120 / FLD120</h3>
