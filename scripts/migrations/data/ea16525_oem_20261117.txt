@@ -1,0 +1,5 @@
+# Fleetguard official product page AF26525, tab "Referencia cruzada OEM" (pasted by the operator 2026-11-17). Format: BRAND: code code ...
+Tec-Fil: ARS7802
+Micro: A1410
+Hino: 1780178020
+Toyota: 1780178030 SUJ17T0101
