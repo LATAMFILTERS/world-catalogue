@@ -1,0 +1,5 @@
+# Third-party "FLEETGUARD FF5734 replacement fuel filters" list pasted by the operator 2026-11-17 (retailer/cross-reference site, not an official sheet). No Donaldson entry.
+# TOYOTA 2339051020 (OEM brand, only in this unofficial list) is NOT loaded; HINO 2339078220/2339078221 and TOYOTA 2339078221 are already in the Fleetguard OEM tab.
+FILDA: FF199
+HIFI-FILTER: SN25078
+SAKURA: EF1112
