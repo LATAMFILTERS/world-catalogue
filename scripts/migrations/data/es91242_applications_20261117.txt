@@ -1,0 +1,162 @@
+# Fleetguard official product page FS1242B, tab "Equipo" (pasted by the operator 2026-11-17). Format: equipment|engine|year (blank engine/year = blank on the page)
+Freightliner - XC CHASSIS|ISC8.3|2010
+Freightliner - XB R CHASSIS|C7|2010
+Freightliner - XC CHASSIS|C7|2010
+Freightliner - XC CHASSIS|ISC8.3|2009
+Freightliner - XB R CHASSIS|C7|2009
+Freightliner - XC CHASSIS|C7|2009
+Freightliner - FS65|C7|2008
+Freightliner - XC CHASSIS|C7|2008
+Freightliner - XC CHASSIS|ISC8.3|2008
+Freightliner - XB R CHASSIS|C7|2008
+Freightliner - FS65 SCHOOL BUS|C7|2007
+Freightliner - FS65 SCHOOL BUS|C7|2006
+Freightliner - FS65 SCHOOL BUS|C7|2005
+Freightliner - FS65 SCHOOL BUS|C7|2004
+Freightliner - CST112|ISM11|2002
+Freightliner - CST120|ISM11|2002
+Freightliner - CONDOR|C10|
+Freightliner - CENTURY CST120|C12|
+Freightliner - CHAMPION BUS|6B5.9|
+Ford - L8511|3126|
+Ford - L8513|3126|
+Ford - LT8511|3126|
+Ford - W9000|NTC|
+Ford - WT9000|L10|
+Ford - WT9000|NTC|
+Ford - W9000|V-903|
+Ford - L8501|3126|
+Ford - LT8513|3126|
+Ford - W9000|L10|
+Ford - WT9000|V-903|
+Peterbilt - 377|3406|1998
+Peterbilt - 320|M11|1996
+Peterbilt - 359|3406|1985
+Peterbilt - 357|3126|
+Peterbilt - 335|3126|
+Peterbilt - 378|3126|
+Peterbilt - 387|3126|
+Peterbilt - 379|3126|
+Kenworth - T350|ISM11|2003
+Kenworth - W900|M11|1999
+Kenworth - T800|N14|1993
+Kenworth - T950|N14|1993
+Cummins -|6BT5.9-G6|
+Cummins -|6BT5.9-G2|
+Cummins -|6BT5.9-G1|
+Cummins -|6BTA5.9-G1|
+Cummins -|6BTA5.9-G3|
+Cummins -|6BT5.9-G4|
+Cummins -|6BT5.9-G5|
+Cummins -|6BTA5.9-G4|
+Cummins -|M11-C|
+Cummins - DGDB|6BT5.9-G1|
+Cummins -|ISB99|
+Cummins -|6BT5.9-G3|
+Cummins -|6BTA5.9-G2|
+Blue Bird - TC2000|3126|
+Blue Bird - Commercial Bus|3126|
+Blue Bird - WANDERLODGE M380|ISL9|
+Western Star - 6900TS|Series 60|2016
+Western Star - 6900TS|Series 60|2015
+Western Star - 6900TS|Series 60|2014
+Western Star - 6900TS|Series 60|2013
+Western Star - 6900TS|Series 60|2012
+Western Star - 5800|3126|
+Western Star - 4900|3126|
+Western Star - 6900|Series 60|
+Western Star - 4800|3126|
+Western Star - 6900XD|Series 60|
+Sterling Truck - SC7000 Cargo|3126|
+Sterling Truck - ST9500|3126|
+Sterling Truck - L8511|3126|
+Sterling Truck - Acterra|3126|
+Sterling Truck - ACTERRA 8500|3126|
+Terex / Terex Advance - TFC45R|M11|
+Terex / Terex Advance - TFC45L|M11|
+Terex / Terex Advance - TFC45LS|M11|
+Terex / Terex Advance - TFC45RS|M11|
+Terex / Terex Advance - TFC45|M11|
+Volkswagen - 31.26|6CTAA|2004
+Volkswagen - 31.31|6CTAA|2004
+Case IH - 1800||
+Case IH - 2377|6CTA8.3|
+Case IH - 2366|6CTA8.3|
+Case IH - 2388|6CTA8.3|
+Hyundai - HL780-3|N14 SERIES|2004
+Hyundai - R360LC-3|D6AZ|
+Hyundai - R360LC-3|LTA10|
+Hyundai - HL770|LTA10|
+Hyundai - HL35|LTA10|
+Hyundai - R320LC|LT10|
+Hyundai - R450LC-3|LTA10|
+Kawasaki - 90ZIV-2|M11-C|2006
+Kawasaki - 85ZII|M11-C|2006
+Kawasaki - 90ZIV|M11-C|2006
+Kawasaki - 85ZIV-2|M11-C|2006
+Kawasaki - 85ZIV|M11-C|2006
+Doosan - G125WCU-1E-T2|6BTAA5.9-G2|2012
+Doosan - G90WCU-1E-T1|6BT5.9-G2|2012
+Xuzhou Const. Machinery Group - QUY100|M11-C|2008
+Chetra - TG-301|M11-C|2008
+Xuzhou Const. Machinery Group - QUY150|M11|2008
+Chetra - T-20.01|M11-C|2008
+Changlin Company - ZL75H|M11-C|2008
+Chetra - T-20.01YABL|M11-C|2008
+Chetra - TG-221|M11-C|2008
+Karosa - B951|CURSOR 8|2004
+Karosa - B952|CURSOR 8|2004
+Karosa - B961|CURSOR 8|2004
+Karosa - B950|CURSOR 8|2004
+Kenworth - W900|ISM11|2003
+Irisbus - CITY BUS E3|CURSOR 8|2003
+Karosa - LC956|CURSOR|2002
+Irisbus - LC956|CURSOR|2002
+Irisbus - RECREO 956|F2BE 1682G|2002
+Karosa - RECREO|CURSOR|2001
+White - WG64|L10|1994
+White - WXLL64|L10|1994
+Detroit Diesel -|Series 50|1993
+White - WHR64T|L10|1993
+White - WHS64|N14|1985
+Liebherr - A954B||
+Bomag - BW219DH-3||
+Ingersoll-Rand - HP525||
+Steiger - KS280|NT855|
+Steiger - PANTHER IV KM325|NTA855|
+Manitowoc - 2900|NH220|
+Ford - 1617|6CT8.3|
+Ford - 1622|6CTA8.3|
+Ford - 1731|6CTAA8.3|
+Ford - 2421|6BTAA5.9|
+Ford - 2422|6CTAA8.3|
+Ford - 2422E|6BT5.9|
+Ford - 2425|6CTAA8.3|
+Ford - 2622E|6BT5.9|
+Ford - 2628E|6BT5.9|
+Ford - 2630|6CTAA8.3|
+Ford - 2631|6CTAA8.3|
+Ford - 2632E|ISC8.3|
+Ford - 2831|6CTAA8.3|
+Ford - 2932E|6CT8.3|
+Ford - 3222|6CTAA8.3|
+Ford - 3224|6CTAA8.3|
+Ford - 4030|6CT8.3|
+Ford - 4030|6CTAA8.3|
+Ford - 4331|6CTAA8.3|
+Ford - 4432E|ISC8.3|
+Ford - 4532E|ISC8.3|
+Ford - 5031|6CTAA8.3|
+Ford - 5032E|ISC8.3|
+Steiger - KM360|NTA855|
+Steiger - KP1360|NTA855|
+Steiger - KP1400|NTA855|
+Aksa - APD145C|6BTAA5.9-G2|
+Liebherr - R954||
+Thermo King - SB I|C201|
+Liebherr - R954B||
+Thomas Built - Vista|3126|
+Aksa - APD110C|6BT5.9-G2|
+Liebherr - A954||
+Ingersoll-Rand - 825|M11|
+Cummins Power Generation - C110 D5|6BT5.9-G1|

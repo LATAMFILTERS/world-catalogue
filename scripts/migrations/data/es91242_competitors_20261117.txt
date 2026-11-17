@@ -1,0 +1,18 @@
+# Third-party "FLEETGUARD FS1242B replacement fuel filters" list pasted by the operator 2026-11-17 (retailer/cross-reference site, not an official sheet).
+# Donaldson entries are intentionally not included. Codes already listed in the Fleetguard OEM tab are not repeated. Format: BRAND: code code ...
+BALDWIN: BF1249-SP BF1321 BF7798SP
+BIG-A: 95431
+CARQUEST: 86242 86431
+Champ-Lab: LFF90011
+Fram: PS3712
+GUD: Z610
+HAMM: 01236377 01236385B
+HIFI-FILTER: SN1242B
+LUBER-FINER: LFF8011 LFF8020 LFF90013
+MANN: WK9052X WK9472
+NAPA: 3242 3431 3783
+RACOR: B32001 S32001 S3201
+SAKURA: SFC190510B
+SOGEFI: FP6063
+WINNFUEL: 200290
+WIX: 33242 33431 33783 WF10022
