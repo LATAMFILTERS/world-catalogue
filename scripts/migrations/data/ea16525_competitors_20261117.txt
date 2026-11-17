@@ -1,0 +1,11 @@
+# Third-party "FLEETGUARD AF26525 replacement filters" list pasted by the operator 2026-11-17 (retailer/cross-reference site, not an official sheet).
+# DONALDSON P902321 is NOT loaded: the Donaldson official site returns no result for P902321 (checked 2026-11-17). Codes already in the Fleetguard OEM tab are not repeated.
+FENGYE FILTERS: FKU-834
+FILDA-FILTER: FA199
+GUD: ADG1385R
+HERTH+BUSS JAKOPARTS: J1322109
+HIFI-FILTER: SA18068
+NAPA: 500229
+RYCO: A1469
+SAKURA: A1177
+UFI: 27B9100
