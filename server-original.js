@@ -2004,7 +2004,8 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       [q, qNormalized, ...dutyArgs]
     );
     if (xrefResult.rows.length > 0) {
-      const xrows = xrefResult.rows;
+      // highest resolver score first (the SQL orders by sku for DISTINCT ON): the first product is the one the page opens
+      const xrows = xrefResult.rows.slice().sort((a, b) => (parseFloat(b.resolver_score) || 0) - (parseFloat(a.resolver_score) || 0));
 
       // B: Multi-SKU AMBIGUOUS detection — multiple distinct SKUs at equal top score
       const topScore = Math.max(...xrows.map(r => parseFloat(r.resolver_score) || 0));
