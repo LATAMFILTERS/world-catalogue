@@ -1,0 +1,9 @@
+# Fleetguard FF5935 equipment tab (operator pasted 2026-11-18). Subset loaded: the Volvo VM entries. Format: equipment|engine|year
+VOLVO VM 260|7A|2005
+VOLVO VM 310|7A260|2005
+VOLVO VM 260|7A260|2005
+VOLVO VM 15 210|7A|2005
+VOLVO VM 310|7A310|2005
+VOLVO VM 15 210|5A206|2005
+VOLVO VM 310|7A|2005
+VOLVO VM 260|7A310|2005
