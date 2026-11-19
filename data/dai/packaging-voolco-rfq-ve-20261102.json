@@ -610,7 +610,7 @@
    "notes": "lista de embarque 2026-11-06; neto/caja = N.W total / cajas"
   },
   {
-   "sku": "EL80013",
+   "sku": "EL30013",
    "source_sheet": "Venezuela2026.11.06 Shipping Li",
    "source_row": 6,
    "pcs_per_box": 24,
@@ -626,10 +626,11 @@
    "cbm_per_box": 0.044032,
    "cbm_per_unit": 0.001835,
    "moq_pcs": null,
-   "notes": "lista de embarque 2026-11-06; neto/caja = N.W total / cajas"
+   "notes": "lista de embarque 2026-11-06; neto/caja = N.W total / cajas | Reasignado a codificacion LD (EL3) por Victor 2026-11-19; en el archivo de Dai figuraba como EL80013",
+   "sku_dai_original": "EL80013"
   },
   {
-   "sku": "EL80060",
+   "sku": "EL30060",
    "source_sheet": "Venezuela2026.11.06 Shipping Li",
    "source_row": 7,
    "pcs_per_box": 48,
@@ -645,7 +646,8 @@
    "cbm_per_box": 0.0357,
    "cbm_per_unit": 0.000744,
    "moq_pcs": null,
-   "notes": "lista de embarque 2026-11-06 sin pesos"
+   "notes": "lista de embarque 2026-11-06 sin pesos | Reasignado a codificacion LD (EL3) por Victor 2026-11-19; en el archivo de Dai figuraba como EL80060",
+   "sku_dai_original": "EL80060"
   }
  ]
 }
