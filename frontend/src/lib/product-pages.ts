@@ -41,7 +41,15 @@ export const productsForFamily = (family: string) => PRODUCT_PAGES.filter((p) =>
 export const productPath = (p: Pick<ProductPage, 'slug'>) => `/products/${p.slug}/`;
 
 export const productHeading = (p: ProductPage) => `${p.sku} – ${p.title}`;
-export const productSeoTitle = (p: ProductPage) => `${productHeading(p)} | ELIMFILTERS`;
+// Keep indexable titles concise without changing the on-page product heading.
+// Preserve the filter role; only remove the secondary form factor if needed.
+export const productSeoTitle = (p: ProductPage) => {
+  const heading = productHeading(p);
+  const full = `${heading} | ELIMFILTERS`;
+  if (full.length <= 60) return full;
+  const compact = `${heading.replace(/, Spin-On$/i, '')} | ELIMFILTERS`;
+  return compact.length <= 60 ? compact : full;
+};
 
 export function equivalenceLine(p: ProductPage, max = 2) {
   const pool = p.oem.length ? p.oem : p.crossRefs;
