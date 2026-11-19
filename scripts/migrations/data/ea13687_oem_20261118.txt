@@ -1,0 +1,3 @@
+# Donaldson P633687 OEM cross tab (operator pasted 2026-11-18)
+DONSSON: DA2005
+JAC: 025DA2005L
