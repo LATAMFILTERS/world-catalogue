@@ -8,7 +8,7 @@
  * Excluded by the operator (still to be verified): FAW, JAC Motors, Sinotruk. SKUs that do not exist in the catalogue are reported, never created.
  * The write goes through the application gateway; evidence = authority ELIMFILTERS_MARKETING_CATALOGUE_VENEZUELA + the public ficha URL. When a SKU already carried
  * other application evidence, that evidence is kept in application_governance.previous_evidence.
- * Usage: node run_425... [--only ficha-id,ficha-id] [--execute --snapshot <file>]. Dry-run by default (ROLLBACK).
+ * Usage: node run_425... [--include-brands "JAC MOTORS"] [--only ficha-id,ficha-id] [--execute --snapshot <file>]. Dry-run by default (ROLLBACK).
  */
 require('dotenv').config();
 const fs = require('fs');
@@ -21,7 +21,8 @@ const APPLY = process.argv.includes('--execute');
 const arg = (name) => { const i = process.argv.indexOf(name); return i >= 0 ? process.argv[i + 1] : null; };
 const SNAPSHOT = arg('--snapshot');
 const ONLY = (arg('--only') || '').split(',').map((s) => s.trim()).filter(Boolean);
-const EXCLUDED_BRANDS = new Set(['FAW', 'JAC MOTORS', 'SINOTRUK']);
+const INCLUDE_BRANDS = new Set((arg('--include-brands') || '').split(',').map((x) => x.trim().toUpperCase()).filter(Boolean)); // operator lifts the exclusion per brand (JAC MOTORS: 2026-11-19)
+const EXCLUDED_BRANDS = new Set(['FAW', 'JAC MOTORS', 'SINOTRUK'].filter((b) => !INCLUDE_BRANDS.has(b)));
 const AUTHORITY = 'ELIMFILTERS_MARKETING_CATALOGUE_VENEZUELA_OPERATOR_AUTHORIZED_20261118';
 const PAGE = 'https://part-search.elimfilters.com/catalogo_on_road_vzla/';
 const sha = (v) => crypto.createHash('sha256').update(typeof v === 'string' ? v : JSON.stringify(v)).digest('hex');
