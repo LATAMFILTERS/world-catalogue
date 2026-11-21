@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     url: 'https://elimfilters.com/commercial-lines/marineclean/',
     type: 'website',
     siteName: 'ELIMFILTERS',
-    images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png', width: 2172, height: 724 }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MARINECLEAN™ — Specialized Marine Filtration Solution | ELIMFILTERS®',
     description: DESC,
-    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+    images: ['https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png'],
   },
   other: {
     'product:classification': 'Specialized Commercial Solution — Marine Filtration',

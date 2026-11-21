@@ -4,7 +4,7 @@
   "status": "approved_hd_phase_1_authority_aligned",
   "authority_file": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
   "identity": {
-    "primary_logotype_asset": "frontend/public/assets/logo-elimfilters.png",
+    "primary_logotype_asset": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "tagline": "TOTAL ASSET PROTECTION",
     "deprecated": ["German Quality", "legacy isotype", "legacy product logo"]
   },
@@ -21,7 +21,7 @@
     "prohibited_added_content": ["qr", "oem_equivalence_text", "technical_spec_panels", "extra_icons", "unapproved_performance_claims", "secondary_print_colors"]
   },
   "required_assets": {
-    "official_logo": "frontend/public/assets/logo-elimfilters.png",
+    "official_logo": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "technology_assets_directory": "frontend/public/assets/"
   },
   "asset_rules": {

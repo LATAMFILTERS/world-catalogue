@@ -8,7 +8,7 @@
     "catalog_resolved_elimfilters_sku",
     "product_master_json",
     "cylindrical_print_layout_authority",
-    "frontend/public/assets/logo-elimfilters.png",
+    "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "authoritative_technology_asset"
   ],
   "source_image_policy": {
@@ -68,7 +68,7 @@
     "competitor_part_number_as_final_sku"
   ],
   "brand_asset_policy": {
-    "logo_asset": "frontend/public/assets/logo-elimfilters.png",
+    "logo_asset": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "logo_asset_usage": "USE_FILE_EXACTLY_DO_NOT_REDRAW",
     "technology_assets_directory": "frontend/public/assets/",
     "technology_asset_usage": "USE_EXISTING_AUTHORITY_ASSET_EXACTLY_DO_NOT_REDRAW"

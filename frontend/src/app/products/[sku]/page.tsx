@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: url },
     robots: { index: true, follow: true },
-    openGraph: { title, description, url, type: 'website', siteName: 'ELIMFILTERS', locale: 'en_US', images: [{ url: `${BASE_URL}/assets/logo-elimfilters.png`, width: 1200, height: 630 }] },
+    openGraph: { title, description, url, type: 'website', siteName: 'ELIMFILTERS', locale: 'en_US', images: [{ url: `${BASE_URL}/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png`, width: 2172, height: 724 }] },
     twitter: { card: 'summary', title, description },
   };
 }

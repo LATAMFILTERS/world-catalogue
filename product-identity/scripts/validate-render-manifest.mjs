@@ -12,7 +12,7 @@ if (manifest.render_mode !== 'EDIT_ONLY') throw new Error('STOP_RENDER_MODE_NOT_
 if (manifest.render_inputs_verified !== true || manifest.manifest_status !== 'PASS') throw new Error('STOP_MANIFEST_NOT_PASS');
 if (manifest.container_color_hex !== '#414141') throw new Error('STOP_CONTAINER_COLOR_AUTHORITY_MISMATCH');
 if (manifest.lithography_color_hex !== '#CBCBCB') throw new Error('STOP_LITHOGRAPHY_COLOR_AUTHORITY_MISMATCH');
-if (manifest.logo_asset_path !== 'frontend/public/assets/logo-elimfilters.png') throw new Error('STOP_LOGO_ASSET_AUTHORITY_MISMATCH');
+if (manifest.logo_asset_path !== 'frontend/public/assets/Logotipo oficial Elimfilters®.png') throw new Error('STOP_LOGO_ASSET_AUTHORITY_MISMATCH');
 if (!/^E[A-Z0-9]+$/.test(manifest.resolved_sku)) throw new Error('STOP_INVALID_RESOLVED_SKU');
 if (!['PHASE_1','PHASE_2','PHASE_3'].includes(manifest.phase)) throw new Error('STOP_INVALID_PHASE');
 if (!['VERTICAL_ONLY','HORIZONTAL_ONLY','BOTH'].includes(manifest.target_view)) throw new Error('STOP_INVALID_TARGET_VIEW');

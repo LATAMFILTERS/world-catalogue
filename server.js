@@ -141,7 +141,7 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
     var logo = document.getElementById('logo');
     var logoImg = logo && logo.querySelector('img');
     if (logoImg) {
-      logoImg.src = 'https://elimfilters.com/assets/elimfilters-logo-white.png';
+      logoImg.src = 'https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png';
       logoImg.alt = 'ELIMFILTERS — Total Asset Protection';
     }
   }

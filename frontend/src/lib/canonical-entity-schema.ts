@@ -106,7 +106,7 @@ export function buildOrganizationSchema() {
       areaServed: 'Worldwide',
       availableLanguage: ['English', 'Spanish'],
     },
-    logo: `${BASE_URL}/assets/elimfilters-logo-transparent.png`,
+    logo: `${BASE_URL}/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png`,
     description: 'ELIMFILTERS is an industrial filtration engineering and asset-protection brand combining contamination-control technologies, technical knowledge, application intelligence, a 12,000+ product primary catalog and more than 1,000,000 cross-reference relationships.',
     brand: {
       '@type': 'Brand',

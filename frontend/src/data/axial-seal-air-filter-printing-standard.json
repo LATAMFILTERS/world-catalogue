@@ -10,7 +10,7 @@
     "secondary_air_filters"
   ],
   "masterAssetRepository": "frontend/public/assets/",
-  "brandAsset": "frontend/public/assets/Logotipo Elimfilters® con eslogan corporativo.png",
+  "brandAsset": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
   "technology": {
     "name": "MACROCORE",
     "asset": "frontend/public/assets/MACROCORE_final.avif"

@@ -62,5 +62,5 @@ export function getTechLogoFile(name: string): string {
     Syntrax: 'logo-sintrax.png',
     Thermacore: 'logo-thermacore.png',
   };
-  return logoMap[name] || 'logo-elimfilters.png';
+  return logoMap[name] || 'Logotipo%20oficial%20Elimfilters%C2%AE.png';
 }

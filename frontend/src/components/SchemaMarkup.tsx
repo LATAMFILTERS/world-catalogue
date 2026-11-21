@@ -11,7 +11,7 @@ export default function SchemaMarkup() {
         logo: {
           '@type': 'ImageObject',
           '@id': 'https://elimfilters.com/#logo',
-          url: 'https://elimfilters.com/assets/elimfilters-logo-transparent.png',
+          url: 'https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png',
         },
         description: "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
         address: {
