@@ -62,7 +62,7 @@ Missing any required geometry evidence = `STOP_RENDER`.
 Only after Steps 1–3 PASS:
 - resolve the homologous ELIMFILTERS SKU live from PostgreSQL/world catalogue;
 - resolve filter type and technology live;
-- load the exact current repository logo `frontend/public/assets/elimfilters-logo-white.png`;
+- load the exact current repository logo `frontend/public/assets/Logotipo oficial Elimfilters®.png`;
 - load the official technology asset from `frontend/public/assets/`;
 - apply body `#414141`, semi-matte industrial coating;
 - apply lithography `#CBCBCB`, metallic silver satin;
@@ -90,7 +90,7 @@ Never infer, remember, copy, or hardcode SKU, technology, color, geometry, or ar
 5. `CURRENT_SKU_GEOMETRY_REQUIRED`: a geometry evidence JSON bound to the current image hash + screenshot hash must contain every mandatory vertical/horizontal/cap/base/thread/gasket/inlet/support/perspective/composition field.
 6. `DATABASE_SKU_REQUIRED`: run `resolve-competitor-sku.mjs` against `world_catalogue.elimfilters_catalog`; resolution must be authoritative and non-arbitrary. The returned ELIMFILTERS SKU is authoritative.
 7. `TECHNOLOGY_ASSET_REQUIRED`: run `resolve-technology-asset.mjs`; technology must derive from live catalog filter type/technology and resolve to the official asset under `frontend/public/assets/`.
-8. `LOGO_ASSET_REQUIRED`: official `frontend/public/assets/elimfilters-logo-white.png` must exist as binary. This exact current repository asset is the only ELIMFILTERS brand logo authority.
+8. `LOGO_ASSET_REQUIRED`: official `frontend/public/assets/Logotipo oficial Elimfilters®.png` must exist as binary. This exact current repository asset is the only ELIMFILTERS brand logo authority.
 9. `AUTHORIZED_RENDER_PACKET_REQUIRED`: run `prepare-product-render.mjs` with catalogue URL/page/position and geometry-evidence path. Required status: `PASS`.
 10. `IMAGE_TOOL_CALL_GATE`: image generator may be called only after reading the exact current SKU PASS packet and using the packet values. No free-form substitutions.
 11. `POST_RENDER_VALIDATION_REQUIRED`: reject before presentation if SKU, technology, colors, artwork, geometry, source binding, screenshot binding, official logo, or protected views drift from packet.

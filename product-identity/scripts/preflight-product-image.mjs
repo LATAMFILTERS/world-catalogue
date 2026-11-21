@@ -25,7 +25,7 @@ const sourceImage = a['source-image'] || sourceEvidence?.source_image_path;
 const screenshot = a.screenshot || sourceEvidence?.screenshot_path || null;
 if(!await fileOK(sourceImage))fail('STOP_SOURCE_IMAGE_MISSING');
 if(!sourceEvidence && !await fileOK(screenshot))fail('STOP_SOURCE_PROVENANCE_MISSING');
-if(!await fileOK('frontend/public/assets/logo-elimfilters.png'))fail('STOP_LOGO_ASSET_MISSING');
+if(!await fileOK('frontend/public/assets/Logotipo oficial Elimfilters®.png'))fail('STOP_LOGO_ASSET_MISSING');
 
 let db;try{db=run('product-identity/scripts/resolve-competitor-sku.mjs',[`--code=${code}`,`--brand=${brand}`,'--duty=HEAVY_DUTY'])}catch(e){fail('STOP_DATABASE_RESOLUTION_FAILED',{detail:e.message})}
 if(db.status!=='RESOLVED')fail('STOP_DATABASE_RESOLUTION_FAILED',{db});
@@ -52,7 +52,7 @@ console.log(JSON.stringify({
   filter_type:db.filter_type,
   technology:tech.technology,
   technology_asset_path:tech.technology_asset_path,
-  logo_asset_path:'frontend/public/assets/logo-elimfilters.png',
+  logo_asset_path:'frontend/public/assets/Logotipo oficial Elimfilters®.png',
   container_color_hex:'#414141',
   lithography_color_hex:'#CBCBCB',
   render_mode:'SOURCE_REFERENCED_TRANSFORMATION',

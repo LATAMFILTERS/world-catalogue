@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                           : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
-    : `${BASE_URL}/assets/logo-elimfilters.png`;
+    : `${BASE_URL}/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png`;
 
   return {
     title,

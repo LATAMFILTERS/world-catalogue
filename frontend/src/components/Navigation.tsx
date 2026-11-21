@@ -66,7 +66,7 @@ export function Navigation() {
               // Size is intentionally fixed — Víctor asked explicitly to keep the
               // header at this exact size (2026-09-01). Don't re-enlarge it.
               <img
-                src="/assets/elimfilters-logo-white.png"
+                src="/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png"
                 alt="ELIMFILTERS — Total Asset Protection"
                 className="nav-logo"
                 onError={() => setLogoError(true)}

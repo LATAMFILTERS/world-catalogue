@@ -31,7 +31,7 @@ if (!source.source_image_sha256 || !source.resolved_official_page_url) throw new
 const db = await run('product-identity/scripts/resolve-competitor-sku.mjs', [`--code=${code}`, `--brand=${brand}`, '--duty=HEAVY_DUTY']);
 if (db.status !== 'RESOLVED') throw new Error(`STOP_DB_RESOLUTION_FAILED:${db.reason || 'UNKNOWN'}`);
 const tech = await run('product-identity/scripts/resolve-technology-asset.mjs', [`--filter-type=${db.filter_type || ''}`, `--technology=${db.catalog_technology || ''}`]);
-const logo = 'frontend/public/assets/logo-elimfilters.png';
+const logo = 'frontend/public/assets/Logotipo oficial Elimfilters®.png';
 const logoStat = await fs.stat(logo).catch(() => null);
 if (!logoStat?.isFile() || logoStat.size === 0) throw new Error('STOP_LOGO_ASSET_MISSING');
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'ELIMFILTERS World Catalogue',
     images: [
       {
-        url: 'https://elimfilters.com/assets/logo-elimfilters.png',
+        url: 'https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png',
         width: 1200,
         height: 630,
         alt: 'ELIMFILTERS Authorized Distributor Program',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'ELIMFILTERS Distributor Program | Industrial Asset Protection',
     description:
       'Join the ELIMFILTERS network. Represent proprietary contamination control technologies across 12 heavy industry sectors.',
-    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+    images: ['https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png'],
   },
 };
 

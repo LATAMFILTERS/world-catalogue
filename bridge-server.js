@@ -72,7 +72,7 @@ document.querySelectorAll('.btn-search').forEach(function(button){button.replace
 document.querySelectorAll('.input-icon').forEach(function(icon){icon.remove()});
 document.querySelectorAll('.logo-badge').forEach(function(badge){badge.replaceChildren(document.createTextNode('HOME'))});
 var logo=document.getElementById('logo');var logoImg=logo&&logo.querySelector('img');
-if(logoImg){logoImg.src='https://elimfilters.com/assets/elimfilters-logo-white.png';logoImg.alt='ELIMFILTERS — Total Asset Protection'}
+if(logoImg){logoImg.src='https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png';logoImg.alt='ELIMFILTERS — Total Asset Protection'}
 }
 normalizePartSearch();document.addEventListener('DOMContentLoaded',normalizePartSearch);window.addEventListener('load',normalizePartSearch);
 })();

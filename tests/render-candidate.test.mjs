@@ -9,7 +9,7 @@ import {
 } from '../product-identity/scripts/generate-render-candidate.mjs';
 
 test('detects image MIME from bytes instead of misleading file extensions', async () => {
-  const logo = await fs.readFile('frontend/public/assets/logo-elimfilters.png');
+  const logo = await fs.readFile('frontend/public/assets/Logotipo oficial Elimfilters®.png');
   const technology = await fs.readFile('frontend/public/assets/SYNTAPORE_final.avif');
   const source = await fs.readFile('product-identity/source-assets/FF5776/FF5776-official-source.jpg');
 
@@ -42,7 +42,7 @@ test('artwork authority binding rejects any route that is not locked to master p
   const authorityBytes = await fs.readFile(authorityPath);
   const authoritySha = crypto.createHash('sha256').update(authorityBytes).digest('hex');
   const packet = {
-    identity: { logo_asset_path: 'frontend/public/assets/logo-elimfilters.png' },
+    identity: { logo_asset_path: 'frontend/public/assets/Logotipo oficial Elimfilters®.png' },
     artwork_lock: {
       authority_id: 'ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY',
       authority_path: authorityPath,
@@ -54,7 +54,7 @@ test('artwork authority binding rejects any route that is not locked to master p
       lithography_finish: 'METALLIC_SILVER_SATIN',
       positioning_line: 'TOTAL ASSET PROTECTION',
       descriptor: 'Powered Filtration',
-      official_logo_asset: 'frontend/public/assets/logo-elimfilters.png',
+      official_logo_asset: 'frontend/public/assets/Logotipo oficial Elimfilters®.png',
       same_artwork_both_sides: true,
       all_other_artwork_locked: true,
       preserve_artwork_hierarchy: true,
