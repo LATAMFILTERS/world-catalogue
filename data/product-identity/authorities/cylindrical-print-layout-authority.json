@@ -15,7 +15,7 @@
   "brandArtworkAuthority": {
     "repository": "LATAMFILTERS/world-catalogue",
     "branch": "main",
-    "officialLogoAsset": "frontend/public/assets/logo-elimfilters.png",
+    "officialLogoAsset": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "rule": "This file is the sole official ELIMFILTERS logo source for cylindrical print artwork. Use the asset exactly as provided; do not redraw, recreate, restyle, alter proportions, substitute typography, or infer a replacement logo."
   },
   "technologyArtworkAuthority": {
@@ -133,7 +133,7 @@
   },
   "lockedArtwork": {
     "brand": "Elimfilters®",
-    "brandLogoAsset": "frontend/public/assets/logo-elimfilters.png",
+    "brandLogoAsset": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "brandClaim": "TOTAL ASSET PROTECTION",
     "technologyDescriptor": "Powered Filtration",
     "printColorHex": "#CBCBCB",

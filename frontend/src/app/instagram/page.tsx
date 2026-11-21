@@ -18,7 +18,7 @@ export default function InstagramLandingPage() {
       <div style={{ width: '100%', maxWidth: 520, margin: '0 auto' }}>
         <header style={{ textAlign: 'center', padding: '2px 8px 26px' }}>
           <img
-            src="/assets/elimfilters-logo-white.png"
+            src="/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png"
             alt="ELIMFILTERS — Total Asset Protection"
             width={1216}
             height={759}

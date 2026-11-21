@@ -96,14 +96,14 @@ export const industriesMetadata = {
     url: `${BASE_URL}/industries/`,
     type: 'website',
     siteName: 'ELIMFILTERS',
-    images: [{ url: `${BASE_URL}/assets/logo-elimfilters.png`, width: 1200, height: 630 }],
+    images: [{ url: `${BASE_URL}/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png`, width: 2172, height: 724 }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Industrial Filtration by Industry | ELIMFILTERS',
     description: 'Industry-specific contamination control and asset protection across 12 operating markets.',
-    images: [`${BASE_URL}/assets/logo-elimfilters.png`],
+    images: [`${BASE_URL}/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png`],
   },
 };
 

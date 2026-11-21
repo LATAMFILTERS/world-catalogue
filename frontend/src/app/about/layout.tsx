@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     url: 'https://elimfilters.com/about',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
-    images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png', width: 2172, height: 724 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About ELIMFILTERS',
     description: "ELIMFILTERS integrates filtration technologies, engineering, specialized knowledge and digital technical intelligence in an international platform for protecting industrial assets, heavy equipment and automotive applications.",
-    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+    images: ['https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png'],
   },
 };
 

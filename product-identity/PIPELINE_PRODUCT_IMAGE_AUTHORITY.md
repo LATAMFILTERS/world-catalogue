@@ -35,7 +35,7 @@ Executable source acquisition: `product-identity/scripts/acquire-manufacturer-so
 - `GEOMETRY_SIGNATURE_REQUIRED`: current source geometry must be recorded before render.
 - `DATABASE_SKU_REQUIRED`: query `world_catalogue.elimfilters_catalog` live with `resolve-competitor-sku.mjs`; exactly one exact match.
 - `TECHNOLOGY_ASSET_REQUIRED`: derive technology from catalog result/filter type and resolve exactly one official binary asset from `frontend/public/assets/`.
-- `LOGO_ASSET_REQUIRED`: `frontend/public/assets/logo-elimfilters.png` must exist.
+- `LOGO_ASSET_REQUIRED`: `frontend/public/assets/Logotipo oficial Elimfilters®.png` must exist.
 - `MANIFEST_PASS_REQUIRED`: manifest must pass validation.
 - `PHASE_APPROVAL_REQUIRED`: explicit user approval before advance.
 - `PROTECTED_VIEW_LOCK_REQUIRED`: opposite approved view is immutable during single-view fixes.

@@ -95,7 +95,7 @@ function buildMaster(row, existing = {}) {
     lithography: {
       same_artwork_both_sides: true,
       elements: [
-        'OFFICIAL_LOGO:frontend/public/assets/logo-elimfilters.png',
+        'OFFICIAL_LOGO:frontend/public/assets/Logotipo oficial Elimfilters®.png',
         'TOTAL ASSET PROTECTION',
         row.sku,
         descriptor,
@@ -114,7 +114,7 @@ function buildMaster(row, existing = {}) {
       geometry_locked: true,
       real_source_image_required: true,
       synthetic_geometry_reference_forbidden: true,
-      official_logo_asset_required: 'frontend/public/assets/logo-elimfilters.png',
+      official_logo_asset_required: 'frontend/public/assets/Logotipo oficial Elimfilters®.png',
       approved_master_image: existing.media?.approved_master_image ?? null,
       explicit_user_image_approval_required: true
     }

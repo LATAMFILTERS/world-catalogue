@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'ELIMFILTERS',
     images: [
       {
-        url: 'https://elimfilters.com/assets/logo-elimfilters.png',
+        url: 'https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png',
         width: 1200,
         height: 630,
         alt: 'Contact ELIMFILTERS — Industrial Filtration Support',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Contact ELIMFILTERS | Industrial Filtration Support',
     description:
       'Reach ELIMFILTERS for technical support, OEM cross-reference intake, and authorized distributor inquiries.',
-    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+    images: ['https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png'],
   },
 };
 

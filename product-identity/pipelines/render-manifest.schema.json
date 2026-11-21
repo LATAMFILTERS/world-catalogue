@@ -25,7 +25,7 @@
     "filter_type": {"type": "string", "minLength": 1},
     "technology": {"type": "string", "minLength": 1},
     "technology_asset_path": {"type": "string", "minLength": 1},
-    "logo_asset_path": {"const": "frontend/public/assets/logo-elimfilters.png"},
+    "logo_asset_path": {"const": "frontend/public/assets/Logotipo oficial Elimfilters®.png"},
     "container_color_hex": {"const": "#414141"},
     "lithography_color_hex": {"const": "#CBCBCB"},
     "target_view": {"enum": ["VERTICAL_ONLY", "HORIZONTAL_ONLY", "BOTH"]},

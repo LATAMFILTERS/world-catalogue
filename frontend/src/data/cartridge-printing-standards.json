@@ -9,7 +9,7 @@
     "cylindrical_cartridge_filters"
   ],
   "masterAssetRepository": "frontend/public/assets/",
-  "brandAsset": "frontend/public/assets/Logotipo Elimfilters® con eslogan corporativo.png",
+  "brandAsset": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
   "printSystem": {
     "mediaPrinting": false,
     "printLocation": "circular_end_cap",

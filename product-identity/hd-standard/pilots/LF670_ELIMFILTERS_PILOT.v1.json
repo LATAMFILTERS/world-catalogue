@@ -31,7 +31,7 @@
   },
   "artwork": {
     "authority": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
-    "official_logo": "frontend/public/assets/logo-elimfilters.png",
+    "official_logo": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "container_color_hex": "#414141",
     "lithography_color_hex": "#CBCBCB",
     "brand_claim": "TOTAL ASSET PROTECTION",

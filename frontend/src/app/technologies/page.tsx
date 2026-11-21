@@ -120,14 +120,14 @@ export const metadata = {
     url: PAGE_URL,
     type: 'website',
     siteName: 'ELIMFILTERS',
-    images: [{ url: `${BASE_URL}/assets/logo-elimfilters.png`, width: 1200, height: 630, alt: 'ELIMFILTERS industrial filtration technologies' }],
+    images: [{ url: `${BASE_URL}/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png`, width: 2172, height: 724, alt: 'ELIMFILTERS industrial filtration technologies' }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Industrial Filtration Technologies | ELIMFILTERS',
     description: 'Ten filtration technologies organized inside five protection systems by contamination function and application path.',
-    images: [`${BASE_URL}/assets/logo-elimfilters.png`],
+    images: [`${BASE_URL}/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png`],
   },
 };
 

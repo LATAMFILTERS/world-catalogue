@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const args = Object.fromEntries(process.argv.slice(2).map(a => { const [k,...v]=a.replace(/^--/,'').split('='); return [k,v.join('=')]; }));
 if (!args['technology-asset']) throw new Error('Usage: --technology-asset=<path> [--out-dir=<dir>]');
-const logo = 'frontend/public/assets/logo-elimfilters.png';
+const logo = 'frontend/public/assets/Logotipo oficial Elimfilters®.png';
 const tech = args['technology-asset'];
 for (const p of [logo, tech]) {
   const st = await fs.stat(p).catch(() => null);

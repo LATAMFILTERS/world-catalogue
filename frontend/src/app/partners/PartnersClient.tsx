@@ -131,7 +131,7 @@ export default function PartnersClient() {
         <header className="partner-header">
           <img
             className="partner-logo"
-            src="/assets/elimfilters-logo-white.png"
+            src="/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png"
             alt="Elimfilters — Total Assets Protection"
           />
           <LanguageMenu />

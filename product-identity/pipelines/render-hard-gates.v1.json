@@ -75,7 +75,7 @@
   "identity_gate": {
     "elimfilters_sku_source": "LIVE_POSTGRES_WORLD_CATALOGUE",
     "technology_source": "LIVE_DB_PLUS_OFFICIAL_REPOSITORY_ASSET",
-    "logo_source": "frontend/public/assets/logo-elimfilters.png",
+    "logo_source": "frontend/public/assets/Logotipo oficial Elimfilters®.png",
     "technology_assets_root": "frontend/public/assets/",
     "remembered_or_hardcoded_sku_forbidden": true,
     "remembered_or_hardcoded_technology_forbidden": true

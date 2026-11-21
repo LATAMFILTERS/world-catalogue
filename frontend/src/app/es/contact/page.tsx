@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     url: CANONICAL,
     type: 'website',
     siteName: 'ELIMFILTERS',
-    images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'Contacte a ELIMFILTERS — soporte en filtración industrial' }],
+    images: [{ url: 'https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png', width: 2172, height: 724, alt: 'Contacte a ELIMFILTERS — soporte en filtración industrial' }],
     locale: 'es_419',
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
     description: 'Contacte a ELIMFILTERS para soporte técnico, referencias cruzadas OEM y consultas de distribuidores autorizados.',
-    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+    images: ['https://elimfilters.com/assets/Logotipo%20oficial%20Elimfilters%C2%AE.png'],
   },
 };
 
