@@ -10,7 +10,7 @@ const POLICY_VERSION = '2026-08-29-global-cert-v1';
 // policy_version values written by the global rebuilds (run_093, run_095, run_273).
 // Any other value is a mark set by hand for that SKU, as is a research hold.
 // Global rebuilds keep those rows as they are.
-const GENERATED_POLICY_VERSIONS = [POLICY_VERSION, '2026-08-29-global-cert-v1.2', '2026-10-12-hd-cert-refresh-v1'];
+const GENERATED_POLICY_VERSIONS = [POLICY_VERSION, '2026-08-29-global-cert-v1.2', '2026-10-12-hd-cert-refresh-v1', '2026-11-06-hd-cert-refresh-v2'];
 const MANUAL_HOLD_BLOCKERS = ['HERMES_RESEARCH_REQUIRED', 'REFERENCE_RECONCILIATION_REQUIRED'];
 const manualLedgerRow = (alias) => `(${alias}.certification_state NOT IN ('CERTIFIED','BLOCKED')
   OR ${alias}.blockers && ARRAY['${MANUAL_HOLD_BLOCKERS.join("','")}']::text[]
