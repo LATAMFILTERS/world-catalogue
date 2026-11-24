@@ -53,7 +53,7 @@ const DISTRIBUTORS = [
     company: 'E&P Parts, C.A.',
     region: 'Andean Region',
     address: 'Valencia, Carabobo, Venezuela',
-    phone: '',
+    phone: '+58 412 4177496',
     social: '@epparts_ve',
     href: 'https://www.instagram.com/epparts_ve/',
   },

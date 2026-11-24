@@ -35,8 +35,8 @@ describe('Distributor public language coverage', () => {
     it(lang + ' renders the distributor page and preserves public contact paths', () => {
       const html = renderToStaticMarkup(<I18nextProvider i18n={instance}><DistributorsPage /></I18nextProvider>).replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
       expect(html).toContain(lang === 'es' ? 'Red de socios comerciales autorizados' : lang === 'pt' ? 'Rede de parceiros comerciais autorizados' : 'Authorized Commercial Partner Network');
-      for (const identity of ['TROY, SRL', 'COLSAISA', 'ELIMPERCA', 'E&amp;P Parts, C.A.', '@epparts_ve', 'Valencia, Carabobo, Venezuela', 'Ave. Las Palmas #64, Santo Domingo, Dominican Republic 10905', 'Cl. 17 #82 - 67, Fontibon, Bogota, Colombia', 'Frisco, Texas, United States', '+57 310 611 2190', '80%', '20%']) expect(html).toContain(identity);
-      for (const href of ['https://part-search.elimfilters.com', 'https://www.instagram.com/troydominicana/', 'https://www.instagram.com/epparts_ve/', 'tel:+573106112190', '#authorized-distributors']) expect(html).toContain('href="' + href + '"');
+      for (const identity of ['TROY, SRL', 'COLSAISA', 'ELIMPERCA', 'E&amp;P Parts, C.A.', '@epparts_ve', 'Valencia, Carabobo, Venezuela', '+58 412 4177496', 'Ave. Las Palmas #64, Santo Domingo, Dominican Republic 10905', 'Cl. 17 #82 - 67, Fontibon, Bogota, Colombia', 'Frisco, Texas, United States', '+57 310 611 2190', '80%', '20%']) expect(html).toContain(identity);
+      for (const href of ['https://part-search.elimfilters.com', 'https://www.instagram.com/troydominicana/', 'https://www.instagram.com/epparts_ve/', 'tel:+573106112190', 'tel:+584124177496', '#authorized-distributors']) expect(html).toContain('href="' + href + '"');
       expect(html).toContain('href="' + (lang === 'en' ? '' : '/' + lang) + '/distributor-application/"');
       expect(html).toContain('href="' + (lang === 'en' ? '' : '/' + lang) + '/contact/"');
       for (const action of ['distributor-locator', 'partner-application', 'product-intelligence', 'application-support']) expect(html).toContain('data-conversion-action="' + action + '"');
