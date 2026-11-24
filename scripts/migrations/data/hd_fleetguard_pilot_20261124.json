@@ -1,56 +1,1874 @@
-[
-  {
-    "sku": "EH60010",
-    "code": "HF30010",
-    "url": "https://www.fleetguard.com/product/HF30010",
-    "description": "Hydraulic Filter, Spin-On",
-    "category": "Hydraulic Filtration > Spin-on Hydraulic Filters",
-    "page_text_sha256": "2067799c948b39cbd2ad059b4536eeddd25b1f1f97f053591efee21f2b0bbdd6",
-    "captured_at": "2026-11-24T18:28:34.118Z"
-  },
-  {
-    "sku": "EH60685",
-    "code": "HF30685",
-    "url": "https://www.fleetguard.com/product/HF30685",
-    "description": "Hydraulic, Cartridge",
-    "category": "Hydraulic Filtration > Cartridge Hydraulic Filters",
-    "page_text_sha256": "e4bf2606a5d054a8f4109a349a4cd3e7bf39dc284d5b215a64bb7c18270b4c1b",
-    "captured_at": "2026-11-24T18:29:50.199Z"
-  },
-  {
-    "sku": "EF92239",
-    "code": "FF42239",
-    "url": "https://www.fleetguard.com/product/FF42239",
-    "description": "Fuel Filter, In-Line",
-    "category": "Fuel Filtration",
-    "page_text_sha256": "f3b50a2f9e22ea6a9c74c09a0871ac310465357719843875ad9a438efc62f7e0",
-    "captured_at": "2026-11-24T18:30:07.560Z"
-  },
-  {
-    "sku": "ES90224",
-    "code": "FS20224",
-    "url": "https://www.fleetguard.com/product/FS20224",
-    "description": "Fuel/Water Separator, Spin-On, StrataPore",
-    "category": "Fuel Filtration",
-    "page_text_sha256": "6d2d518186f212c54cc328446cb8d031c6d0bf9ce70b9e2d7d6c52e43e03e780",
-    "captured_at": "2026-11-24T18:30:10.854Z"
-  },
-  {
-    "sku": "EH65189",
-    "code": "HF35189",
-    "url": "https://www.fleetguard.com/product/HF35189",
-    "description": "Hydraulic Filter, Spin-On",
-    "category": "Hydraulic Filtration > Spin-on Hydraulic Filters",
-    "page_text_sha256": "96e0f9822f39e76d729e4146fafa7f0331ae0c0d98d93f31bd48e742aae6f8ce",
-    "captured_at": "2026-11-24T18:30:59.941Z"
-  },
-  {
-    "sku": "ES90333",
-    "code": "FS20333",
-    "url": "https://www.fleetguard.com/product/FS20333",
-    "description": "Fuel/Water Separator, Cartridge, NanoNet",
-    "category": "Fuel Filtration",
-    "page_text_sha256": "bb2c75eec75788a145517bc1faa113f00c07df105be0ca21b99573ff1eb03616",
-    "captured_at": "2026-11-24T18:31:20.144Z"
-  }
+﻿[
+    {
+        "sku":  "EH60010",
+        "code":  "HF30010",
+        "url":  "https://www.fleetguard.com/product/HF30010",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "2067799c948b39cbd2ad059b4536eeddd25b1f1f97f053591efee21f2b0bbdd6",
+        "captured_at":  "2026-11-24T18:28:34.118Z"
+    },
+    {
+        "sku":  "EH60685",
+        "code":  "HF30685",
+        "url":  "https://www.fleetguard.com/product/HF30685",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "e4bf2606a5d054a8f4109a349a4cd3e7bf39dc284d5b215a64bb7c18270b4c1b",
+        "captured_at":  "2026-11-24T18:29:50.199Z"
+    },
+    {
+        "sku":  "EF92239",
+        "code":  "FF42239",
+        "url":  "https://www.fleetguard.com/product/FF42239",
+        "description":  "Fuel Filter, In-Line",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "f3b50a2f9e22ea6a9c74c09a0871ac310465357719843875ad9a438efc62f7e0",
+        "captured_at":  "2026-11-24T18:30:07.560Z"
+    },
+    {
+        "sku":  "ES90224",
+        "code":  "FS20224",
+        "url":  "https://www.fleetguard.com/product/FS20224",
+        "description":  "Fuel/Water Separator, Spin-On, StrataPore",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "6d2d518186f212c54cc328446cb8d031c6d0bf9ce70b9e2d7d6c52e43e03e780",
+        "captured_at":  "2026-11-24T18:30:10.854Z"
+    },
+    {
+        "sku":  "EH65189",
+        "code":  "HF35189",
+        "url":  "https://www.fleetguard.com/product/HF35189",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "96e0f9822f39e76d729e4146fafa7f0331ae0c0d98d93f31bd48e742aae6f8ce",
+        "captured_at":  "2026-11-24T18:30:59.941Z"
+    },
+    {
+        "sku":  "ES90333",
+        "code":  "FS20333",
+        "url":  "https://www.fleetguard.com/product/FS20333",
+        "description":  "Fuel/Water Separator, Cartridge, NanoNet",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "bb2c75eec75788a145517bc1faa113f00c07df105be0ca21b99573ff1eb03616",
+        "captured_at":  "2026-11-24T18:31:20.144Z"
+    },
+    {
+        "sku":  "EA11802",
+        "code":  "AF1802A",
+        "url":  "https://www.fleetguard.com/product/AF1802A",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "7e6f88860d9ca091602fe03fde691421f384c7c790f5b64b375d3cca933f97bb",
+        "captured_at":  "2026-11-24T18:50:43.670Z"
+    },
+    {
+        "sku":  "EA11823",
+        "code":  "AF1823",
+        "url":  "https://www.fleetguard.com/product/AF1823",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "6c82050c9f4ff2088fbd7867f224804c74c85c5cfe72f48afa6357c613819b08",
+        "captured_at":  "2026-11-24T18:50:45.374Z"
+    },
+    {
+        "sku":  "EA14217",
+        "code":  "AF4217",
+        "url":  "https://www.fleetguard.com/product/AF4217",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "3a0e00be43b7423fce26e55ea8102e9ea0064599af06d8ff290237b568c60c1e",
+        "captured_at":  "2026-11-24T18:51:02.373Z"
+    },
+    {
+        "sku":  "EA14218",
+        "code":  "AF4218",
+        "url":  "https://www.fleetguard.com/product/AF4218",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "08e5afac53a0538766c97ab6791217eb172b29d0cb22e694012b0ef718174088",
+        "captured_at":  "2026-11-24T18:51:03.257Z"
+    },
+    {
+        "sku":  "EA14285",
+        "code":  "AF4285",
+        "url":  "https://www.fleetguard.com/product/AF4285",
+        "description":  "Air Filter, Panel",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "d66b5a8ff2a1ff87b678c137afa6f6e6ba5237e755cc9fabe6e5f1eba60e94a2",
+        "captured_at":  "2026-11-24T18:51:04.720Z"
+    },
+    {
+        "sku":  "EA14611",
+        "code":  "AF4611K",
+        "url":  "https://www.fleetguard.com/product/AF4611K",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "ca5ced70cfae60853472686bacf958c50bfaebb2cb06be45814cb83ff393b800",
+        "captured_at":  "2026-11-24T18:51:09.353Z"
+    },
+    {
+        "sku":  "EA15133",
+        "code":  "AF25133",
+        "url":  "https://www.fleetguard.com/product/AF25133",
+        "description":  "Air Filter",
+        "category":  "Air Filtration \u003e Air Pre-Cleaners",
+        "page_text_sha256":  "76ca0b323eaf128d46a3b9d7660e808d6428d92d54e0177c896d769d8a49ac63",
+        "captured_at":  "2026-11-24T18:51:42.872Z"
+    },
+    {
+        "sku":  "EA15152",
+        "code":  "AF25152",
+        "url":  "https://www.fleetguard.com/product/AF25152",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "7d0d14a064abe2badfa9552f90210fa923974399629ca8305eba03e12fe2220e",
+        "captured_at":  "2026-11-24T18:51:43.104Z"
+    },
+    {
+        "sku":  "EA15272",
+        "code":  "AF25272",
+        "url":  "https://www.fleetguard.com/product/AF25272",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "eff724aef9fb52b297a8ebcb02060e371b061ddb29a48dd36f7955cca1e84d0b",
+        "captured_at":  "2026-11-24T18:51:48.031Z"
+    },
+    {
+        "sku":  "EA15273",
+        "code":  "AF25273",
+        "url":  "https://www.fleetguard.com/product/AF25273",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "b664d06076f89b5d060e133318e20c027119fee7cc0931ec0d5d41c05ae73657",
+        "captured_at":  "2026-11-24T18:51:48.715Z"
+    },
+    {
+        "sku":  "EA15374",
+        "code":  "AF55374",
+        "url":  "https://www.fleetguard.com/product/AF55374",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "19410cc9ed1fe385967fbca920e9e75001124140a1f9eca5d991d65948f6f171",
+        "captured_at":  "2026-11-24T18:51:52.916Z"
+    },
+    {
+        "sku":  "EA15404",
+        "code":  "AF25404KM",
+        "url":  "https://www.fleetguard.com/product/AF25404KM",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "623341f0b215d2e7710d30a03e4a90a84c8e474d23eb1cdcc24446838bdad408",
+        "captured_at":  "2026-11-24T18:51:53.867Z"
+    },
+    {
+        "sku":  "EA15603",
+        "code":  "AF25603",
+        "url":  "https://www.fleetguard.com/product/AF25603",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "c6a320671729c0f57f22fd9bf0c2d16b69a926dbd807332258d7c781e38626b0",
+        "captured_at":  "2026-11-24T18:52:02.703Z"
+    },
+    {
+        "sku":  "EA15606",
+        "code":  "AF25606",
+        "url":  "https://www.fleetguard.com/product/AF25606",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "6194af1b4b123a8b73a78855bf5dd8e158b278611c83b51ed1360fe01285708a",
+        "captured_at":  "2026-11-24T18:52:04.153Z"
+    },
+    {
+        "sku":  "EA15738",
+        "code":  "AF25738",
+        "url":  "https://www.fleetguard.com/product/AF25738",
+        "description":  "Air Filter, Secondary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "53c895cf255d34f36378f15b951c1e8aa58f1b88eb1ec536a92493c1d09e4105",
+        "captured_at":  "2026-11-24T18:52:09.966Z"
+    },
+    {
+        "sku":  "EA15743",
+        "code":  "AF25743",
+        "url":  "https://www.fleetguard.com/product/AF25743",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "7f010a21c55a3cee428138acad0a52f6913c2afa6560da2df88658a7ea6d160b",
+        "captured_at":  "2026-11-24T18:52:10.108Z"
+    },
+    {
+        "sku":  "EA15879",
+        "code":  "AF25879",
+        "url":  "https://www.fleetguard.com/product/AF25879",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "1ba8e4f4a81712dbb1bef12e471c7c36dace37848f5f4dcd256782a53ee1d384",
+        "captured_at":  "2026-11-24T18:52:16.220Z"
+    },
+    {
+        "sku":  "EA15880",
+        "code":  "AF25880",
+        "url":  "https://www.fleetguard.com/product/AF25880",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "9eb25b7a67e7b6d36b9e76a2cede9409b77ba7dafe4cdc0efe3e163b0f9f0b44",
+        "captured_at":  "2026-11-24T18:52:17.313Z"
+    },
+    {
+        "sku":  "EA15973",
+        "code":  "AF25973",
+        "url":  "https://www.fleetguard.com/product/AF25973",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "cd367e76810aeedf8fa445844ecaa5704cfdbcb3263bc8bc1aa8353516c579db",
+        "captured_at":  "2026-11-24T18:52:18.740Z"
+    },
+    {
+        "sku":  "EA15976",
+        "code":  "AF25976A",
+        "url":  "https://www.fleetguard.com/product/AF25976A",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "f0db9b80c322c49b79f7974b03183cd87e84a3810eccc8fe8218f8b77a0ad876",
+        "captured_at":  "2026-11-24T18:52:19.757Z"
+    },
+    {
+        "sku":  "EA15988",
+        "code":  "AF25988",
+        "url":  "https://www.fleetguard.com/product/AF25988",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "0b6339d8dc512a6a594800ae5bf4fa0b38c5483cee0462cdd2eb55ce7497ca95",
+        "captured_at":  "2026-11-24T18:52:20.020Z"
+    },
+    {
+        "sku":  "EA15996",
+        "code":  "AF25996",
+        "url":  "https://www.fleetguard.com/product/AF25996",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "f84962ad6a79232e1728d23953df88fd3095d8164d799bd04017fced9418b18a",
+        "captured_at":  "2026-11-24T18:52:21.080Z"
+    },
+    {
+        "sku":  "EA16009",
+        "code":  "AF26009",
+        "url":  "https://www.fleetguard.com/product/AF26009",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "cb7f9055c18ef0580055530c73534c26e39e7296eba639a8f82c76f7579e5662",
+        "captured_at":  "2026-11-24T18:52:22.467Z"
+    },
+    {
+        "sku":  "EA16060",
+        "code":  "AF26060",
+        "url":  "https://www.fleetguard.com/product/AF26060",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "94bd812fefdfc1b6bee349867f62917a7dfafc9d3c3a201af2a7c6f61c4e5e93",
+        "captured_at":  "2026-11-24T18:52:24.950Z"
+    },
+    {
+        "sku":  "EA16037",
+        "code":  "AF26037M",
+        "url":  "https://www.fleetguard.com/product/AF26037M",
+        "description":  "Air Filter, Primary, Magnum",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "e2840ffd435be9240b30b90c593b2f72a7c95ee1ca3b0f7d050189d947bbd158",
+        "captured_at":  "2026-11-24T18:52:24.970Z"
+    },
+    {
+        "sku":  "EA16063",
+        "code":  "AF26063",
+        "url":  "https://www.fleetguard.com/product/AF26063",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "6c8a5a6f15b5935cc5b7b71019c62b9de6711070e9176b832ab2ad5b5a98306e",
+        "captured_at":  "2026-11-24T18:52:25.819Z"
+    },
+    {
+        "sku":  "EA16069",
+        "code":  "AF56069",
+        "url":  "https://www.fleetguard.com/product/AF56069",
+        "description":  "Air Filter, Panel",
+        "category":  "Air Filtration \u003e Cabin Air Filters",
+        "page_text_sha256":  "b582a9fe3827125393dce5b4cba4635437c18562cad896795ba2c8dc644f5831",
+        "captured_at":  "2026-11-24T18:52:27.418Z"
+    },
+    {
+        "sku":  "EA16082",
+        "code":  "AF26082",
+        "url":  "https://www.fleetguard.com/product/AF26082",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "9e900bdf9265280e0a9f72676da07ddf463849e54398f1dcc37c212e484d8424",
+        "captured_at":  "2026-11-24T18:52:27.418Z"
+    },
+    {
+        "sku":  "EA16148",
+        "code":  "AF26148M",
+        "url":  "https://www.fleetguard.com/product/AF26148M",
+        "description":  "Air Filter, Secondary, Magnum",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "be1c6736350b54d33b29714e4feea0ef5e55336fdcbf1f88f6e7c9816b1e7fdd",
+        "captured_at":  "2026-11-24T18:52:33.298Z"
+    },
+    {
+        "sku":  "EA16224",
+        "code":  "AF26224",
+        "url":  "https://www.fleetguard.com/product/AF26224",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "277e80ac691f1a28e6a30bf44d3de5b9ee627cdfadbab933592fd5a2de3bbfe5",
+        "captured_at":  "2026-11-24T18:52:36.189Z"
+    },
+    {
+        "sku":  "EA16225",
+        "code":  "AF26225",
+        "url":  "https://www.fleetguard.com/product/AF26225",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "cd7494edc0cb46bf9096710a641a94a0416c1b02af6bc0f74575e22340c2e6d5",
+        "captured_at":  "2026-11-24T18:52:36.648Z"
+    },
+    {
+        "sku":  "EA16240",
+        "code":  "AF26240",
+        "url":  "https://www.fleetguard.com/product/AF26240",
+        "description":  "Air Filter, Panel",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "b104354b0d42132fb32a9a0d1badc1dd6dc0f51d41cc4d08ec01dabd447a8012",
+        "captured_at":  "2026-11-24T18:52:38.403Z"
+    },
+    {
+        "sku":  "EA16300",
+        "code":  "AF26300",
+        "url":  "https://www.fleetguard.com/product/AF26300",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "de94e29b41a088a2f4be088838aa79acaf2f424b04b1888349d69f1084f3ebce",
+        "captured_at":  "2026-11-24T18:52:39.023Z"
+    },
+    {
+        "sku":  "EA16495",
+        "code":  "AF26495",
+        "url":  "https://www.fleetguard.com/product/AF26495",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "45c977a7d854df1410956e28ea0b7d1953423df57c0631cfd37eed22f94ac363",
+        "captured_at":  "2026-11-24T18:52:51.731Z"
+    },
+    {
+        "sku":  "EA16496",
+        "code":  "AF26496",
+        "url":  "https://www.fleetguard.com/product/AF26496",
+        "description":  "Air Filter, Secondary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "08c6316199ef0bd823da62e6955a95df18865996e1f22dc42231a8398b76f128",
+        "captured_at":  "2026-11-24T18:52:52.025Z"
+    },
+    {
+        "sku":  "EA16507",
+        "code":  "AF26507",
+        "url":  "https://www.fleetguard.com/product/AF26507",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "8538fb51c2ddd6caa8e419c7d1fc1f58d20d2ce6cc317b1726b1ba08a1d2ec2a",
+        "captured_at":  "2026-11-24T18:52:53.083Z"
+    },
+    {
+        "sku":  "EA16508",
+        "code":  "AF26508",
+        "url":  "https://www.fleetguard.com/product/AF26508",
+        "description":  "Air Filter, Secondary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "8ab995067ba186064ecab199a50a1ce090fa1cfc6cf5af221a9e36976e56ae6d",
+        "captured_at":  "2026-11-24T18:52:54.509Z"
+    },
+    {
+        "sku":  "EA16514",
+        "code":  "AF26514",
+        "url":  "https://www.fleetguard.com/product/AF26514",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "f2f8419c3ec233b739202f19ff935bcfcbdcfc2874f50391b509f0c046079575",
+        "captured_at":  "2026-11-24T18:52:54.550Z"
+    },
+    {
+        "sku":  "EA16515",
+        "code":  "AF26515",
+        "url":  "https://www.fleetguard.com/product/AF26515",
+        "description":  "Air Filter, Secondary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "fd9a2b801b5e54adc891da97358b9e0fc5895e4c3ddfa59ce61fe1cf4f0b3153",
+        "captured_at":  "2026-11-24T18:52:55.611Z"
+    },
+    {
+        "sku":  "EA16516",
+        "code":  "AF26516",
+        "url":  "https://www.fleetguard.com/product/AF26516",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "3718f0d918d3c0956ba9ab35a0cc03957afa490315b5b810bb210cba86a838d0",
+        "captured_at":  "2026-11-24T18:52:57.002Z"
+    },
+    {
+        "sku":  "EA16519",
+        "code":  "AF26519",
+        "url":  "https://www.fleetguard.com/product/AF26519",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "3648f5c7665db34c58c15731b049cf489d5ddcf6fec92f8037485e847e45953c",
+        "captured_at":  "2026-11-24T18:52:57.158Z"
+    },
+    {
+        "sku":  "EA16527",
+        "code":  "AF26527",
+        "url":  "https://www.fleetguard.com/product/AF26527",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "83924a84f52bfcfb024ab20bd8e8aeb085e66e114b536bd2128203568f3619d3",
+        "captured_at":  "2026-11-24T18:52:58.082Z"
+    },
+    {
+        "sku":  "EA16528",
+        "code":  "AF26528",
+        "url":  "https://www.fleetguard.com/product/AF26528",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "069be5f81996360770d3555e205b61e07e8ccdc28e8a136a57e14735299a51f9",
+        "captured_at":  "2026-11-24T18:52:59.412Z"
+    },
+    {
+        "sku":  "EA16530",
+        "code":  "AF26530",
+        "url":  "https://www.fleetguard.com/product/AF26530",
+        "description":  "Air Filter, Secondary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "eced234818fc1f1bd32a63236aced626504cb18ee2330f74d9db2db46a97b24b",
+        "captured_at":  "2026-11-24T18:52:59.630Z"
+    },
+    {
+        "sku":  "EA16540",
+        "code":  "AF26540",
+        "url":  "https://www.fleetguard.com/product/AF26540",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "02cd654fa50bfafcf6dcff525446cbfd26b83339fa4ee061888a2c2013c8e5ea",
+        "captured_at":  "2026-11-24T18:53:00.516Z"
+    },
+    {
+        "sku":  "EA16550",
+        "code":  "AF26550",
+        "url":  "https://www.fleetguard.com/product/AF26550",
+        "description":  "Air Filter, Secondary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "3423986065d7922288014694b3e8575889a9188fa4afc5c27658817bb94be57e",
+        "captured_at":  "2026-11-24T18:53:01.889Z"
+    },
+    {
+        "sku":  "EA16563",
+        "code":  "AF26563",
+        "url":  "https://www.fleetguard.com/product/AF26563",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "768c833dc0fd1a1e4cb5e2054b54a0a095d3b1355d494065006f2a37df7ee2f4",
+        "captured_at":  "2026-11-24T18:53:02.153Z"
+    },
+    {
+        "sku":  "EA16564",
+        "code":  "AF26564",
+        "url":  "https://www.fleetguard.com/product/AF26564",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "9be6e688b4b0298b9dd6eb5b178d4910bf8cfb59abb43cd10ca077fafb25d716",
+        "captured_at":  "2026-11-24T18:53:02.916Z"
+    },
+    {
+        "sku":  "EA16580",
+        "code":  "AF26580",
+        "url":  "https://www.fleetguard.com/product/AF26580",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "ed2af59a347b381fda941d32f656d433691fa37f97a254dc5b354f5de7dcff64",
+        "captured_at":  "2026-11-24T18:53:04.264Z"
+    },
+    {
+        "sku":  "EA16601",
+        "code":  "AF26601",
+        "url":  "https://www.fleetguard.com/product/AF26601",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "c522228be3e19174e43bb20fcf3fe955fcca834a2167bb63e6c3034f839968d0",
+        "captured_at":  "2026-11-24T18:53:05.304Z"
+    },
+    {
+        "sku":  "EA16602",
+        "code":  "AF26602",
+        "url":  "https://www.fleetguard.com/product/AF26602",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "e5c310c9d6bd0ae349c0176691d0296e9dc7428cd55c182549f3ee998e094a4f",
+        "captured_at":  "2026-11-24T18:53:06.609Z"
+    },
+    {
+        "sku":  "EA16607",
+        "code":  "AF26607",
+        "url":  "https://www.fleetguard.com/product/AF26607",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "a05e645a10b22ab90e7b27a76bea990a479b82c0de9a5c9c00ab301071cf359f",
+        "captured_at":  "2026-11-24T18:53:07.044Z"
+    },
+    {
+        "sku":  "EA16613",
+        "code":  "AF26613",
+        "url":  "https://www.fleetguard.com/product/AF26613",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "415e78899ddd1487ff269a4951b4b45fbf77df709575677092e37cb513e7d3ed",
+        "captured_at":  "2026-11-24T18:53:08.004Z"
+    },
+    {
+        "sku":  "EA16639",
+        "code":  "AF26639",
+        "url":  "https://www.fleetguard.com/product/AF26639",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "bd4bd597601da5e0de35435c3ba024105c9b0044ac8f617b8dfd5044a454b981",
+        "captured_at":  "2026-11-24T18:53:08.998Z"
+    },
+    {
+        "sku":  "EA17719",
+        "code":  "AF27719",
+        "url":  "https://www.fleetguard.com/product/AF27719",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "cfa141a6a44d96db8f6a66b02206f6d9f47d702e98ffe2bb5d3f09ed17bd98f7",
+        "captured_at":  "2026-11-24T18:53:10.401Z"
+    },
+    {
+        "sku":  "EA17720",
+        "code":  "AF27720",
+        "url":  "https://www.fleetguard.com/product/AF27720",
+        "description":  "Air Filter, Secondary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "5e885f60b9ba25b95c3b62d56b19c9db1b97df2636b6d83f8042f5a95f9c91bd",
+        "captured_at":  "2026-11-24T18:53:11.509Z"
+    },
+    {
+        "sku":  "EA17968",
+        "code":  "AF27968",
+        "url":  "https://www.fleetguard.com/product/AF27968",
+        "description":  "Air Filter, Primary",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "a9cf93620e6f61d9cc3387d55441c174ca2ccc1b845aabdfefb32e0f1e5a2c2d",
+        "captured_at":  "2026-11-24T18:53:15.079Z"
+    },
+    {
+        "sku":  "EA17996",
+        "code":  "AF27996",
+        "url":  "https://www.fleetguard.com/product/AF27996",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "f5ce27f22bcd599f0042072738c1abe8992ce7686e3e5d7359151786a08474f0",
+        "captured_at":  "2026-11-24T18:53:16.317Z"
+    },
+    {
+        "sku":  "EA18268",
+        "code":  "AF28268",
+        "url":  "https://www.fleetguard.com/product/AF28268",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "75d51b36937c6c41b2ca59764536f1d1f9878bb87894225dfd797405e529902b",
+        "captured_at":  "2026-11-24T18:53:16.817Z"
+    },
+    {
+        "sku":  "EA18269",
+        "code":  "AF28269",
+        "url":  "https://www.fleetguard.com/product/AF28269",
+        "description":  "Air Filter, Secondary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "1a02aea102a0736133dc9c3c44382f49cb9ab9fa7e02414f187b2814455655f9",
+        "captured_at":  "2026-11-24T18:53:17.507Z"
+    },
+    {
+        "sku":  "EA19649",
+        "code":  "AF29649",
+        "url":  "https://www.fleetguard.com/product/AF29649",
+        "description":  "Air Filter, Primary, Direct Flow",
+        "category":  "Air Filtration \u003e Primary and secondary air filters",
+        "page_text_sha256":  "91382e4533b11b1967b728359ac5d9cc0d2067f0a09aa3cc94d72fafbb152fd2",
+        "captured_at":  "2026-11-24T18:53:28.867Z"
+    },
+    {
+        "sku":  "EF92111",
+        "code":  "FF42111",
+        "url":  "https://www.fleetguard.com/product/FF42111",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "d6f7103a8b7d7988fa71f972c23cd8399ccf119bc1dc864a3276c1bf14159ed6",
+        "captured_at":  "2026-11-24T18:59:08.682Z"
+    },
+    {
+        "sku":  "EF92114",
+        "code":  "FF42114",
+        "url":  "https://www.fleetguard.com/product/FF42114",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "111cb9a17e5eb6541c9e095e3611344d01d6678f12dc5b3cd56e4d944c4e6c24",
+        "captured_at":  "2026-11-24T18:59:10.357Z"
+    },
+    {
+        "sku":  "EF92238",
+        "code":  "FF42238",
+        "url":  "https://www.fleetguard.com/product/FF42238",
+        "description":  "Fuel Filter, In-Line",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "f3e24ad7515dc445e0a43e472d09a7f9ab9f501e1409ea4f00ad1cc4e3eacc48",
+        "captured_at":  "2026-11-24T18:59:11.086Z"
+    },
+    {
+        "sku":  "EF93028",
+        "code":  "FF63028",
+        "url":  "https://www.fleetguard.com/product/FF63028",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "1cc9af8b78ea830dd40f49c19af522742eadaadc3a96ba867803fd66fc25cc9b",
+        "captured_at":  "2026-11-24T18:59:12.811Z"
+    },
+    {
+        "sku":  "EF93008",
+        "code":  "FF63008",
+        "url":  "https://www.fleetguard.com/product/FF63008",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "cdf493c3380cb3a70b0f3590152dccf6d832b732af851daa692f9020fe95301e",
+        "captured_at":  "2026-11-24T18:59:12.874Z"
+    },
+    {
+        "sku":  "EF93031",
+        "code":  "FF63031NN",
+        "url":  "https://www.fleetguard.com/product/FF63031NN",
+        "description":  "Fuel Filter, Spin-On, NanoNet",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "2a99dcd41ad7b8d1df3f133f72edbfc2f18799893c9274afeaa20198a6dbc1ec",
+        "captured_at":  "2026-11-24T18:59:13.529Z"
+    },
+    {
+        "sku":  "EF93046",
+        "code":  "FF63046NN",
+        "url":  "https://www.fleetguard.com/product/FF63046NN",
+        "description":  "Fuel Filter, Cartridge, NanoNet",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "4bb13d77d722ec85eb069ffd528d57ae54ee594a5bf9dd61d774749f2c6dc9fe",
+        "captured_at":  "2026-11-24T18:59:15.213Z"
+    },
+    {
+        "sku":  "EF95288",
+        "code":  "FF5288",
+        "url":  "https://www.fleetguard.com/product/FF5288",
+        "description":  "Fuel Filter, In-Line",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "50f5c20347ec04ab45688481867cf2bd7fadaac9012142bf0ef320a86ee218f0",
+        "captured_at":  "2026-11-24T19:00:00.477Z"
+    },
+    {
+        "sku":  "EF95295",
+        "code":  "FF5295",
+        "url":  "https://www.fleetguard.com/product/FF5295",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "df1f921df75ffb49676f5a4823ecc5cbc1f52ee0385cc7bb7d12d090609da0a7",
+        "captured_at":  "2026-11-24T19:00:03.004Z"
+    },
+    {
+        "sku":  "EF95352",
+        "code":  "FF5352",
+        "url":  "https://www.fleetguard.com/product/FF5352",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "138f0131c78f2d7753010a0a69e34a7b6aeb6afb4d1bfa70dfad817b0d0a4ad1",
+        "captured_at":  "2026-11-24T19:00:03.730Z"
+    },
+    {
+        "sku":  "EF95361",
+        "code":  "FF5361",
+        "url":  "https://www.fleetguard.com/product/FF5361",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "96b6165b176d697b8d9ea3e56d62922f9c6298edc6d145d769ce0c6f19185abc",
+        "captured_at":  "2026-11-24T19:00:04.580Z"
+    },
+    {
+        "sku":  "EF95365",
+        "code":  "FF5365",
+        "url":  "https://www.fleetguard.com/product/FF5365",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "cb4e2cfd96e751512c9caf4178131823d2fe2488144e2d9bee7357079d0b23fd",
+        "captured_at":  "2026-11-24T19:00:05.474Z"
+    },
+    {
+        "sku":  "EF95378",
+        "code":  "FF5378",
+        "url":  "https://www.fleetguard.com/product/FF5378",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "d2c71c46ac3413b7e9a8356c12094e1cff910686e2a326ba2f58bdfc8167bbad",
+        "captured_at":  "2026-11-24T19:00:06.119Z"
+    },
+    {
+        "sku":  "EF95429",
+        "code":  "FF5429",
+        "url":  "https://www.fleetguard.com/product/FF5429",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "ab82c5a1fef6e5b87d3b08c6afc0ed3c7c49d465726de0685cce3e99294dbd2c",
+        "captured_at":  "2026-11-24T19:00:10.979Z"
+    },
+    {
+        "sku":  "EF95430",
+        "code":  "FF5430",
+        "url":  "https://www.fleetguard.com/product/FF5430",
+        "description":  "Fuel Filter, In-Line",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "e8220a57a4fbb5916de54be43fbd9d8e008228be3b5b1c97d034930c50cb7fcb",
+        "captured_at":  "2026-11-24T19:00:12.880Z"
+    },
+    {
+        "sku":  "EF95472",
+        "code":  "FF5472",
+        "url":  "https://www.fleetguard.com/product/FF5472",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "5bd90fb69d8dfbd5045308fa71625982f81fc39f8516bd3d0879bc8eab8c1377",
+        "captured_at":  "2026-11-24T19:00:17.859Z"
+    },
+    {
+        "sku":  "EF95478",
+        "code":  "FF5478",
+        "url":  "https://www.fleetguard.com/product/FF5478",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "495245b8975f39c80a9d015a6792792db278bdda318bc6d14668ed68f106fb52",
+        "captured_at":  "2026-11-24T19:00:18.595Z"
+    },
+    {
+        "sku":  "EF95528",
+        "code":  "FF5528",
+        "url":  "https://www.fleetguard.com/product/FF5528",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "9bdd8e2ee7d01d8806f4036e02be01c555449a4f6efba8c893daaa7c12d44216",
+        "captured_at":  "2026-11-24T19:00:21.062Z"
+    },
+    {
+        "sku":  "EF95631",
+        "code":  "FF5631",
+        "url":  "https://www.fleetguard.com/product/FF5631",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "faef8a2c726671b105365f8b75b0157294ef0183c1ab9d37586a79e6f44a275a",
+        "captured_at":  "2026-11-24T19:00:22.647Z"
+    },
+    {
+        "sku":  "EF95648",
+        "code":  "FF5648",
+        "url":  "https://www.fleetguard.com/product/FF5648",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "f4af5816fd40932a70941fdc95ca4db87d6fa9323ca60bef45123d4b85886a3d",
+        "captured_at":  "2026-11-24T19:00:23.286Z"
+    },
+    {
+        "sku":  "EF95649",
+        "code":  "FF5649",
+        "url":  "https://www.fleetguard.com/product/FF5649",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "4b4c18f12b554ae62f5665669d3af73b00551089739891c6b77057726a1f8dc4",
+        "captured_at":  "2026-11-24T19:00:23.613Z"
+    },
+    {
+        "sku":  "EF95650",
+        "code":  "FF5650",
+        "url":  "https://www.fleetguard.com/product/FF5650",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "e9c2c2b21514f1388ee3538f6ab20c967bf16b883d6ec80bd158ca1756114e7f",
+        "captured_at":  "2026-11-24T19:00:25.120Z"
+    },
+    {
+        "sku":  "EF95651",
+        "code":  "FF5651",
+        "url":  "https://www.fleetguard.com/product/FF5651",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "1e5f4f0040a705004b41e52662cdcebe42028110d32d4f3fa0cfb1be321a35f5",
+        "captured_at":  "2026-11-24T19:00:25.734Z"
+    },
+    {
+        "sku":  "EF95652",
+        "code":  "FF5652",
+        "url":  "https://www.fleetguard.com/product/FF5652",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "89e4c415c89b1cecd08a3348564db6df4944e86985d68c35b238b03fd8f63c85",
+        "captured_at":  "2026-11-24T19:00:26.067Z"
+    },
+    {
+        "sku":  "EF95653",
+        "code":  "FF5653",
+        "url":  "https://www.fleetguard.com/product/FF5653",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "0d8f34ac7c420ed57ca4b720acc46a737196d208208eb25b447e846740e05536",
+        "captured_at":  "2026-11-24T19:00:27.960Z"
+    },
+    {
+        "sku":  "EF95658",
+        "code":  "FF5658",
+        "url":  "https://www.fleetguard.com/product/FF5658",
+        "description":  "Fuel Filter, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "83203967cda035781f8940e886ba18ec5e8a31d8b6a99a7d2d12c64d00234470",
+        "captured_at":  "2026-11-24T19:00:28.381Z"
+    },
+    {
+        "sku":  "EF95681",
+        "code":  "FF5681",
+        "url":  "https://www.fleetguard.com/product/FF5681",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "a35f008bd9063bf59ce86f650854f9cf64b8db04fb4c54f8f78c3c071f761236",
+        "captured_at":  "2026-11-24T19:00:43.768Z"
+    },
+    {
+        "sku":  "EF95711",
+        "code":  "FF5711",
+        "url":  "https://www.fleetguard.com/product/FF5711",
+        "description":  "Fuel Filter, In-Line",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "5277490f7ca5a1a0aa4a9be12eb36fd67ebdc2519a74a6cacd868507d1dd669a",
+        "captured_at":  "2026-11-24T19:00:45.146Z"
+    },
+    {
+        "sku":  "EF95722",
+        "code":  "FF5722",
+        "url":  "https://www.fleetguard.com/product/FF5722",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "05875e2f74a4c3c95b886734cb2f89ca4f37aac3f6948a0f9615cdb12b0c5d53",
+        "captured_at":  "2026-11-24T19:00:46.269Z"
+    },
+    {
+        "sku":  "EF95729",
+        "code":  "FF5729",
+        "url":  "https://www.fleetguard.com/product/FF5729",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "ecc59d7ca7c17de904ee7e2e7de81ec1a60ee2f2e0d1af98c64358b7e60fe93f",
+        "captured_at":  "2026-11-24T19:00:47.535Z"
+    },
+    {
+        "sku":  "EF95774",
+        "code":  "FF5774",
+        "url":  "https://www.fleetguard.com/product/FF5774",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "44cbe5400f2e60843b8f02b3b14629b952077fb6fcd968098e1174b4fe1a2995",
+        "captured_at":  "2026-11-24T19:00:49.198Z"
+    },
+    {
+        "sku":  "EF95851",
+        "code":  "FF5851",
+        "url":  "https://www.fleetguard.com/product/FF5851",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "0886a6412d3c275f5e848bed02903639cae37d07f0ce71bd9ef693c821f3ee05",
+        "captured_at":  "2026-11-24T19:00:50.008Z"
+    },
+    {
+        "sku":  "EF95859",
+        "code":  "FF5859",
+        "url":  "https://www.fleetguard.com/product/FF5859",
+        "description":  "Fuel Filter, In-Line",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "fe7ff454895a0af298e1028894dfe55b0a52177c9e94478a10743e619c0325f9",
+        "captured_at":  "2026-11-24T19:00:50.993Z"
+    },
+    {
+        "sku":  "EF95960",
+        "code":  "FF5960",
+        "url":  "https://www.fleetguard.com/product/FF5960",
+        "description":  "Fuel Filter, In-Line",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "ebbd741423846bc03701aa64391aa31f73809b9f50a61862de778e742875414c",
+        "captured_at":  "2026-11-24T19:00:51.748Z"
+    },
+    {
+        "sku":  "EF95969",
+        "code":  "FF5969",
+        "url":  "https://www.fleetguard.com/product/FF5969",
+        "description":  "Fuel Filter, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "14c9e37426f2888a1b232c82e0273f64a9ec9c0a2d994a3fa269bedf87d2202c",
+        "captured_at":  "2026-11-24T19:00:52.660Z"
+    },
+    {
+        "sku":  "EF95978",
+        "code":  "FF5978",
+        "url":  "https://www.fleetguard.com/product/FF5978",
+        "description":  "Fuel Filter, Cartridge, StrataPore",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "b66690a73bec2d70da34f370b575b2b851da071f01ef5baf6e8eb7a55430f989",
+        "captured_at":  "2026-11-24T19:00:53.632Z"
+    },
+    {
+        "sku":  "EF95998",
+        "code":  "FF5998",
+        "url":  "https://www.fleetguard.com/product/FF5998",
+        "description":  "Fuel Filter, Spin-On, StrataPore",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "48544d4b168277e898383b6b759639470882e92517a75d6be6a613484b914e40",
+        "captured_at":  "2026-11-24T19:00:54.375Z"
+    },
+    {
+        "sku":  "EH60750",
+        "code":  "HF30750",
+        "url":  "https://www.fleetguard.com/product/HF30750",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "011dd6f462485f54de00d9fcf6d4a75fe29d10ec94237cedfb4d89dd269fe438",
+        "captured_at":  "2026-11-24T19:02:03.967Z"
+    },
+    {
+        "sku":  "EH60901",
+        "code":  "HF30901",
+        "url":  "https://www.fleetguard.com/product/HF30901",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "1002ea4852c2bef5c33f4d57f2af754bf6b8ed22b6d40ef8c054d8f38a6e3570",
+        "captured_at":  "2026-11-24T19:02:12.658Z"
+    },
+    {
+        "sku":  "EH60902",
+        "code":  "HF30902",
+        "url":  "https://www.fleetguard.com/product/HF30902",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "ad1f8310c576a9733be95623ab4b784bb94fa9add9a28e6425737e0450a0e632",
+        "captured_at":  "2026-11-24T19:02:13.384Z"
+    },
+    {
+        "sku":  "EH65153",
+        "code":  "HF35153",
+        "url":  "https://www.fleetguard.com/product/HF35153",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "e3a0069378970a923fa6ef01f38355cb790ab2c72a177449fd70fb8f4c893533",
+        "captured_at":  "2026-11-24T19:02:31.141Z"
+    },
+    {
+        "sku":  "EH65253",
+        "code":  "HF35253",
+        "url":  "https://www.fleetguard.com/product/HF35253",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "31d20c0fe9d8093c43ca9a67f55c6fd35b4ba0bbfcb838e5d2231b6cb92bf0e9",
+        "captured_at":  "2026-11-24T19:02:32.229Z"
+    },
+    {
+        "sku":  "EH66062",
+        "code":  "HF6062A",
+        "url":  "https://www.fleetguard.com/product/HF6062A",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "c6176b79e3ff4036f3a04c7c4678e4ed0779148ad8aede583dbae271c09d2922",
+        "captured_at":  "2026-11-24T19:02:47.363Z"
+    },
+    {
+        "sku":  "EH66127",
+        "code":  "HF6127",
+        "url":  "https://www.fleetguard.com/product/HF6127",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "8d0a4090f86e92286b6cc69430e9ce732f0738f19463223a4f9f597e93521602",
+        "captured_at":  "2026-11-24T19:02:49.810Z"
+    },
+    {
+        "sku":  "EH66673",
+        "code":  "HF6673",
+        "url":  "https://www.fleetguard.com/product/HF6673",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "9f19b53dae9445ad4f26afe1233c92e72ec9120b196962a38fe7b6bb7a0a2ab0",
+        "captured_at":  "2026-11-24T19:03:09.628Z"
+    },
+    {
+        "sku":  "EH66821",
+        "code":  "HF6821",
+        "url":  "https://www.fleetguard.com/product/HF6821",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "954c00f9e30dc948a6dbb79e83a8dfa08ef873306eb729e38bdaaddab7303e4b",
+        "captured_at":  "2026-11-24T19:03:10.805Z"
+    },
+    {
+        "sku":  "EH66850",
+        "code":  "HF6850",
+        "url":  "https://www.fleetguard.com/product/HF6850",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "739e7c84c740da30692579c3593c3c928c64835ffe9c95ae654788cb4ed69567",
+        "captured_at":  "2026-11-24T19:03:12.050Z"
+    },
+    {
+        "sku":  "EH67488",
+        "code":  "HF7488",
+        "url":  "https://www.fleetguard.com/product/HF7488",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "abdb6531e40b2e52087bafa195207b8f10b9a71cf0b82134c10d071d88d327ab",
+        "captured_at":  "2026-11-24T19:03:53.518Z"
+    },
+    {
+        "sku":  "EH67491",
+        "code":  "HF7491",
+        "url":  "https://www.fleetguard.com/product/HF7491",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "a6da6af77e0f155144a47512023a2f7a20139d4bde45977ad21107eca69d0bf0",
+        "captured_at":  "2026-11-24T19:03:55.317Z"
+    },
+    {
+        "sku":  "EH68179",
+        "code":  "HF8179",
+        "url":  "https://www.fleetguard.com/product/HF8179",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "c9d58cc65560e856cb05def4909198ee2e0c4fe63351fc4d1c05dc59e54d6a09",
+        "captured_at":  "2026-11-24T19:04:56.082Z"
+    },
+    {
+        "sku":  "EH68677",
+        "code":  "HF28677",
+        "url":  "https://www.fleetguard.com/product/HF28677",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "932a054b1857e994686ce997537165fe679d2976427e54e5c4efc50330a26de7",
+        "captured_at":  "2026-11-24T19:05:13.967Z"
+    },
+    {
+        "sku":  "EH68755",
+        "code":  "HF28755",
+        "url":  "https://www.fleetguard.com/product/HF28755",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "c76aba02e06078f376d74240c8d6e326404f510b67e59cd323d41baa44943bd3",
+        "captured_at":  "2026-11-24T19:05:16.370Z"
+    },
+    {
+        "sku":  "EH68880",
+        "code":  "HF28880",
+        "url":  "https://www.fleetguard.com/product/HF28880",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Hydraulic Filter Head Accessories",
+        "page_text_sha256":  "252f0f115898e61d02fd40d578070be356fb9bf6660f088c63cc8873871702c1",
+        "captured_at":  "2026-11-24T19:05:18.767Z"
+    },
+    {
+        "sku":  "EH68883",
+        "code":  "HF28883",
+        "url":  "https://www.fleetguard.com/product/HF28883",
+        "description":  "Hydraulic Filter, Spin-On",
+        "category":  "Hydraulic Filtration \u003e Spin-on Hydraulic Filters",
+        "page_text_sha256":  "6a2c02064e145e04b3c5f7bb670c112691d0e6baae5fc7c9f12be2fe434d34a3",
+        "captured_at":  "2026-11-24T19:05:19.476Z"
+    },
+    {
+        "sku":  "EH68906",
+        "code":  "HF28906",
+        "url":  "https://www.fleetguard.com/product/HF28906",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "72ce9eaa34e0caebe01698f8b72408d6d7371b30cc51ef1db5ef9e1e13de7dbf",
+        "captured_at":  "2026-11-24T19:05:22.229Z"
+    },
+    {
+        "sku":  "EH68928",
+        "code":  "HF28928",
+        "url":  "https://www.fleetguard.com/product/HF28928",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Hydraulic Filter Head Accessories",
+        "page_text_sha256":  "e77a08dc7cf8f56e2b894dc633ff21bbf36533157f4e4a800237d5b3265f86c0",
+        "captured_at":  "2026-11-24T19:05:23.604Z"
+    },
+    {
+        "sku":  "EH68937",
+        "code":  "HF28937",
+        "url":  "https://www.fleetguard.com/product/HF28937",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Hydraulic Filter Head Accessories",
+        "page_text_sha256":  "446c71c91a641b6c8e13979212739e378f27726954d33e9871de402415530636",
+        "captured_at":  "2026-11-24T19:05:24.631Z"
+    },
+    {
+        "sku":  "EH68952",
+        "code":  "HF28952",
+        "url":  "https://www.fleetguard.com/product/HF28952",
+        "description":  "Hydraulic Filter, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Cartridge Hydraulic Filters",
+        "page_text_sha256":  "dee9061bdb06ea5f8fc52baa02a8b6adf0aaedfed0acfb5f307c644db20d26ca",
+        "captured_at":  "2026-11-24T19:05:27.072Z"
+    },
+    {
+        "sku":  "EH68974",
+        "code":  "HF28974",
+        "url":  "https://www.fleetguard.com/product/HF28974",
+        "description":  "Hydraulic, Cartridge",
+        "category":  "Hydraulic Filtration \u003e Hydraulic Filter Head Accessories",
+        "page_text_sha256":  "6a10f598c1985853462d6af633441722124f0aeab7cef7a910fc465d3b0a9ee6",
+        "captured_at":  "2026-11-24T19:05:27.315Z"
+    },
+    {
+        "sku":  "EL82547",
+        "code":  "LF42547",
+        "url":  "https://www.fleetguard.com/product/LF42547",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "b2e2fe747d7fdbcd070227d4cdbe0b846bdf3b6282a3ec23c1b8aae5544a2326",
+        "captured_at":  "2026-11-24T19:05:45.340Z"
+    },
+    {
+        "sku":  "EL83662",
+        "code":  "LF3662",
+        "url":  "https://www.fleetguard.com/product/LF3662",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "a63d65df9ce9699bf82afd3a3e9b39243fdd4d239eb5e9dd9c3b5cf3d249eb9c",
+        "captured_at":  "2026-11-24T19:05:56.780Z"
+    },
+    {
+        "sku":  "EL83723",
+        "code":  "LF3723",
+        "url":  "https://www.fleetguard.com/product/LF3723",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "35fc4f623d833f1d877004500ba0e08702a063a2fc89bb69deb41e1f7e0f84bd",
+        "captured_at":  "2026-11-24T19:05:57.347Z"
+    },
+    {
+        "sku":  "EL83755",
+        "code":  "LF3755",
+        "url":  "https://www.fleetguard.com/product/LF3755",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "8ab3bc6ea3780473e871a4d5873425baef47dfce51f57a2e2a3fe7a85c19d017",
+        "captured_at":  "2026-11-24T19:06:01.654Z"
+    },
+    {
+        "sku":  "EL83833",
+        "code":  "LF3833",
+        "url":  "https://www.fleetguard.com/product/LF3833",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "bf2b8ec11478dc1a16ecd7c453b5b07c3324054b336cfc3e5c9d99e1287ce895",
+        "captured_at":  "2026-11-24T19:06:06.542Z"
+    },
+    {
+        "sku":  "EL83836",
+        "code":  "LF3836",
+        "url":  "https://www.fleetguard.com/product/LF3836",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "f34e0274cbfc80fc0d9d0638dac8511b94346afec9749c86dd4ebe34b57eaeb2",
+        "captured_at":  "2026-11-24T19:06:07.328Z"
+    },
+    {
+        "sku":  "EL83897",
+        "code":  "LF3897",
+        "url":  "https://www.fleetguard.com/product/LF3897",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "1376c4b2f0de92540da657faa80ee171e4ba36762ce39e0f1ae9198fc4355eca",
+        "captured_at":  "2026-11-24T19:06:10.410Z"
+    },
+    {
+        "sku":  "EL83958",
+        "code":  "LF3958",
+        "url":  "https://www.fleetguard.com/product/LF3958",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "df782076492ce7c1109114c8a3acc5e68ea21ad705db2a9d2878b89b55378c74",
+        "captured_at":  "2026-11-24T19:06:13.687Z"
+    },
+    {
+        "sku":  "EL83985",
+        "code":  "LF3985",
+        "url":  "https://www.fleetguard.com/product/LF3985",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "164dadbee95edb46ee524d0cba88bf5b8928797bd85761da7789b3ea62aac393",
+        "captured_at":  "2026-11-24T19:06:14.771Z"
+    },
+    {
+        "sku":  "EL84006",
+        "code":  "LF14006NN",
+        "url":  "https://www.fleetguard.com/product/LF14006NN",
+        "description":  "Lube Filter, Spin-On, NanoNet",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "028ec832b6435b7ff3e4d0b7af90f3db04967de85e0c57e542be89bf3b5a8911",
+        "captured_at":  "2026-11-24T19:06:16.064Z"
+    },
+    {
+        "sku":  "EL85273",
+        "code":  "LF25273",
+        "url":  "https://www.fleetguard.com/product/LF25273",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "11a475c017b1d2a1549af520f1aefb6d9408695e1e3432cc82fe4df9b0cf8435",
+        "captured_at":  "2026-11-24T19:06:25.629Z"
+    },
+    {
+        "sku":  "EL85274",
+        "code":  "LF25274",
+        "url":  "https://www.fleetguard.com/product/LF25274",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "3368528be621bd606d205051fce35d1972b1720a5924acb207ebe7776b5c9b41",
+        "captured_at":  "2026-11-24T19:06:26.004Z"
+    },
+    {
+        "sku":  "EL86003",
+        "code":  "LF16003",
+        "url":  "https://www.fleetguard.com/product/LF16003",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "d36de476aaa37d1f9c15f0f849eb71cccb511bf9151eca6c4bd98508a2cf8d74",
+        "captured_at":  "2026-11-24T19:06:26.870Z"
+    },
+    {
+        "sku":  "EL86018",
+        "code":  "LF16018",
+        "url":  "https://www.fleetguard.com/product/LF16018",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "009d8a079eefceb7873d1e5379ab1642c4ab51702bba7ca57cd542b55fe40df6",
+        "captured_at":  "2026-11-24T19:06:28.383Z"
+    },
+    {
+        "sku":  "EL86030",
+        "code":  "LF16030",
+        "url":  "https://www.fleetguard.com/product/LF16030",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "8af24c63efe06af19e9674c451419c7800532ac50b9fb970b4a2beda5e2ba6a7",
+        "captured_at":  "2026-11-24T19:06:30.551Z"
+    },
+    {
+        "sku":  "EL86042",
+        "code":  "LF16042A",
+        "url":  "https://www.fleetguard.com/product/LF16042A",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "97e7b027f8ac84260db68c031a66e9a69981cb0849bda37860b7bedfd9386fca",
+        "captured_at":  "2026-11-24T19:06:30.967Z"
+    },
+    {
+        "sku":  "EL86049",
+        "code":  "LF16049",
+        "url":  "https://www.fleetguard.com/product/LF16049",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "df8f10b06e841d3d8b885eb93e69dc3f8ed13d749ee253db9bdbdcf416ae34e5",
+        "captured_at":  "2026-11-24T19:06:31.549Z"
+    },
+    {
+        "sku":  "EL86177",
+        "code":  "LF16177",
+        "url":  "https://www.fleetguard.com/product/LF16177",
+        "description":  "Lube Filter",
+        "category":  "Coolants \u0026 Chemicals \u003e Coolant Filters",
+        "page_text_sha256":  "6fcdd6a2aad261f1835a711a8f5c78fbfb142be4ce04eb8880de8ecd055ea3d2",
+        "captured_at":  "2026-11-24T19:06:35.538Z"
+    },
+    {
+        "sku":  "EL86185",
+        "code":  "LF16185",
+        "url":  "https://www.fleetguard.com/product/LF16185",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "0b2e83673b7d8cef1e1e9658ff82668226602c142ada961a9f1f98cc3dcf4ee5",
+        "captured_at":  "2026-11-24T19:06:35.659Z"
+    },
+    {
+        "sku":  "EL86186",
+        "code":  "LF16186",
+        "url":  "https://www.fleetguard.com/product/LF16186",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "06dbb5e64f2bc1da2acbfa7bb85d6d54899ef7f420c45e4afb1489888328f907",
+        "captured_at":  "2026-11-24T19:06:36.375Z"
+    },
+    {
+        "sku":  "EL86187",
+        "code":  "LF16187",
+        "url":  "https://www.fleetguard.com/product/LF16187",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "340b9f4ed2dfdec58633e3e2a282549f8a2ed597a4a430b639daadd384414efa",
+        "captured_at":  "2026-11-24T19:06:37.955Z"
+    },
+    {
+        "sku":  "EL86188",
+        "code":  "LF16188",
+        "url":  "https://www.fleetguard.com/product/LF16188",
+        "description":  "Lube Filter",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "637c695eeeae390f80ae4dae4232e17b59c9712086bc9a581caccaaff3d35a1e",
+        "captured_at":  "2026-11-24T19:06:38.162Z"
+    },
+    {
+        "sku":  "EL86189",
+        "code":  "LF16189",
+        "url":  "https://www.fleetguard.com/product/LF16189",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "3ddc2f64ab588553a621a18b01712ad68914f1b619d1d9efabaab20238a2b067",
+        "captured_at":  "2026-11-24T19:06:39.155Z"
+    },
+    {
+        "sku":  "EL86190",
+        "code":  "LF16190",
+        "url":  "https://www.fleetguard.com/product/LF16190",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "20669bc46297a47dcf48c4c77f87a11458affbd76f36c031e32dcbf2a41b413f",
+        "captured_at":  "2026-11-24T19:06:40.380Z"
+    },
+    {
+        "sku":  "EL86191",
+        "code":  "LF16191",
+        "url":  "https://www.fleetguard.com/product/LF16191",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "c6e23aef1c43dffee4dfe677d832d172a28aaf3523ec8d29efa7547129f5eb5e",
+        "captured_at":  "2026-11-24T19:06:40.636Z"
+    },
+    {
+        "sku":  "EL86192",
+        "code":  "LF16192",
+        "url":  "https://www.fleetguard.com/product/LF16192",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "3f99d0154327d65d6895b7eb7246005675b9e702e020d415f1f4f76f5d68ac2d",
+        "captured_at":  "2026-11-24T19:06:41.541Z"
+    },
+    {
+        "sku":  "EL86193",
+        "code":  "LF16193",
+        "url":  "https://www.fleetguard.com/product/LF16193",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "4e09d330c797948515e988eb9e9aa694f0cde85b2f406b1b0a31a931d1daf7ef",
+        "captured_at":  "2026-11-24T19:06:42.854Z"
+    },
+    {
+        "sku":  "EL86194",
+        "code":  "LF16194",
+        "url":  "https://www.fleetguard.com/product/LF16194",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "5ef818b12dd958ce2076a14cd0f4ffb887418b51913fb0f3b3bb1b62310975e5",
+        "captured_at":  "2026-11-24T19:06:43.117Z"
+    },
+    {
+        "sku":  "EL86195",
+        "code":  "LF16195",
+        "url":  "https://www.fleetguard.com/product/LF16195",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "b018892d66e75f7d477f828d03dc3204108d3b754c36d851361a6eb498e78f94",
+        "captured_at":  "2026-11-24T19:06:43.888Z"
+    },
+    {
+        "sku":  "EL86196",
+        "code":  "LF16196",
+        "url":  "https://www.fleetguard.com/product/LF16196",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "6706a917375af3d73f930d827ee3b6b58e3089cbe9241f80bcd97c90b18f6b81",
+        "captured_at":  "2026-11-24T19:06:45.255Z"
+    },
+    {
+        "sku":  "EL86197",
+        "code":  "LF16197",
+        "url":  "https://www.fleetguard.com/product/LF16197",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "96f4d211473711ebdf4159ef62ae2f1291598b0b7c54e64beb18bcc82e2c02d1",
+        "captured_at":  "2026-11-24T19:06:45.542Z"
+    },
+    {
+        "sku":  "EL86228",
+        "code":  "LF16228",
+        "url":  "https://www.fleetguard.com/product/LF16228",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "278517f767c90b5545b14402725c7b82b356e6b5b142951bba78f5575cc1e10b",
+        "captured_at":  "2026-11-24T19:06:46.249Z"
+    },
+    {
+        "sku":  "EL86254",
+        "code":  "LF16254",
+        "url":  "https://www.fleetguard.com/product/LF16254",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "9b88a2e2abf786c421f5fb3092c0c061b82dd392a280a7a0dfceed736c5846c9",
+        "captured_at":  "2026-11-24T19:06:47.690Z"
+    },
+    {
+        "sku":  "EL86259",
+        "code":  "LF16259",
+        "url":  "https://www.fleetguard.com/product/LF16259",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "52ab58cce23f67309b3327390d0ae51340430fb6ffa42cfeacb313064244cbf2",
+        "captured_at":  "2026-11-24T19:06:48.048Z"
+    },
+    {
+        "sku":  "EL86261",
+        "code":  "LF16261",
+        "url":  "https://www.fleetguard.com/product/LF16261",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "99b846de3202c75efe4102e20342d177e45522921b4903d1ac9717a49229dbc9",
+        "captured_at":  "2026-11-24T19:06:48.820Z"
+    },
+    {
+        "sku":  "EL86262",
+        "code":  "LF16262",
+        "url":  "https://www.fleetguard.com/product/LF16262",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "633415f659ce2543698ad7cdfad9ee2b1e60c8771d22b6c8b1d43a85cb8d2b6e",
+        "captured_at":  "2026-11-24T19:06:50.159Z"
+    },
+    {
+        "sku":  "EL86264",
+        "code":  "LF16264",
+        "url":  "https://www.fleetguard.com/product/LF16264",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "3b98848513b0728f368970b5ba49ace9be1d62fb9bfd121a4225a1e62852abbb",
+        "captured_at":  "2026-11-24T19:06:50.538Z"
+    },
+    {
+        "sku":  "EL86269",
+        "code":  "LF16269",
+        "url":  "https://www.fleetguard.com/product/LF16269",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "2f9b51f54e704433554685b0c93d25a6d5c58ee4c22fe65aee589245d7999f1d",
+        "captured_at":  "2026-11-24T19:06:51.272Z"
+    },
+    {
+        "sku":  "EL86271",
+        "code":  "LF16271",
+        "url":  "https://www.fleetguard.com/product/LF16271",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "eff20874906e5f9ba6b527f8f73708754cd8a87f548e687a1182da2e76ccbd92",
+        "captured_at":  "2026-11-24T19:06:53.058Z"
+    },
+    {
+        "sku":  "EL86274",
+        "code":  "LF16274",
+        "url":  "https://www.fleetguard.com/product/LF16274",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "fdd1487169677e58e635e7fef9f1370576942ddfad8f3de5a532dfebbb9c848f",
+        "captured_at":  "2026-11-24T19:06:53.748Z"
+    },
+    {
+        "sku":  "EL86289",
+        "code":  "LF16289",
+        "url":  "https://www.fleetguard.com/product/LF16289",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "ca85f4ac04e8c30274bb9a15faf84ac985512a6de409bbd786c0940c6c62a7c5",
+        "captured_at":  "2026-11-24T19:06:57.386Z"
+    },
+    {
+        "sku":  "EL86400",
+        "code":  "LF16400",
+        "url":  "https://www.fleetguard.com/product/LF16400",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "ad7651fe53c11be1e6a835450cf126a667ea45050a0ebd35b31f65fb8cab71aa",
+        "captured_at":  "2026-11-24T19:06:57.945Z"
+    },
+    {
+        "sku":  "EL86406",
+        "code":  "LF16406",
+        "url":  "https://www.fleetguard.com/product/LF16406",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "7385f5e62e35a64d39ed63b59cb103e74db9504810a52e27fd82eac1e551fa83",
+        "captured_at":  "2026-11-24T19:06:58.589Z"
+    },
+    {
+        "sku":  "EL86422",
+        "code":  "LF16422",
+        "url":  "https://www.fleetguard.com/product/LF16422",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "8880055305dc04bf8f5f679a3e9602d531a4d83e79f364db1f02b04e09633cc1",
+        "captured_at":  "2026-11-24T19:06:59.872Z"
+    },
+    {
+        "sku":  "EL86431",
+        "code":  "LF16431",
+        "url":  "https://www.fleetguard.com/product/LF16431",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "da3a17bd3c83a16796495db4a0e84fd77f755979f15bf05bc94eb680dcf59303",
+        "captured_at":  "2026-11-24T19:07:00.301Z"
+    },
+    {
+        "sku":  "EL86432",
+        "code":  "LF16432",
+        "url":  "https://www.fleetguard.com/product/LF16432",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "de5d906acf64497509a665112e11b3c49c1136bab5f326bf28261a039f22705d",
+        "captured_at":  "2026-11-24T19:07:01.027Z"
+    },
+    {
+        "sku":  "EL86433",
+        "code":  "LF16433",
+        "url":  "https://www.fleetguard.com/product/LF16433",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "b90478dd6fbe8b013a2be33073a63f941745d395e071f51a32bcb67d987efdd2",
+        "captured_at":  "2026-11-24T19:07:02.227Z"
+    },
+    {
+        "sku":  "EL86453",
+        "code":  "LF16453",
+        "url":  "https://www.fleetguard.com/product/LF16453",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration",
+        "page_text_sha256":  "cba88bc1b1e8cb20b024d1b137024e716d4317950e491f49664955b8bdfe07b3",
+        "captured_at":  "2026-11-24T19:07:02.574Z"
+    },
+    {
+        "sku":  "EL87510",
+        "code":  "LF17510",
+        "url":  "https://www.fleetguard.com/product/LF17510",
+        "description":  "Lube Filter, Spin on",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "6cae4a23258c67fd655d916b909ff6668791bbec966f2be128ecaad97d89cb3f",
+        "captured_at":  "2026-11-24T19:07:05.046Z"
+    },
+    {
+        "sku":  "EL87550",
+        "code":  "LF17550",
+        "url":  "https://www.fleetguard.com/product/LF17550",
+        "description":  "Lube Filter, Cartridge",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "fc6d9f4860acf4f3a4e347a307e30920e8573a5a4e3a3efce9b39e57eb64697f",
+        "captured_at":  "2026-11-24T19:07:05.812Z"
+    },
+    {
+        "sku":  "EL87842",
+        "code":  "LF37842",
+        "url":  "https://www.fleetguard.com/product/LF37842",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "f5918f3907072bd74769c728138fafa3926d40c46c9298962b1635afc71efb68",
+        "captured_at":  "2026-11-24T19:07:06.886Z"
+    },
+    {
+        "sku":  "EL89816",
+        "code":  "LF19816",
+        "url":  "https://www.fleetguard.com/product/LF19816",
+        "description":  "Lube Filter, Spin-On",
+        "category":  "Lube Filtration \u003e Spin-On Lube Filters",
+        "page_text_sha256":  "a19f89b6cc2abdd69fe2ff029da921f553470a064effaa90dd059913eb7a717f",
+        "captured_at":  "2026-11-24T19:07:08.710Z"
+    },
+    {
+        "sku":  "ES90034",
+        "code":  "FS20034",
+        "url":  "https://www.fleetguard.com/product/FS20034",
+        "description":  "Fuel/Water Separator, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "aff279c5d34f3c4f3e0b8a80dd1d4691a31382573b20ecfecb22232e43f1a103",
+        "captured_at":  "2026-11-24T19:07:09.310Z"
+    },
+    {
+        "sku":  "ES90035",
+        "code":  "FS20035",
+        "url":  "https://www.fleetguard.com/product/FS20035",
+        "description":  "Fuel/Water Separator, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "edffa30fc5677a33358fd00e6dd6b38840a3b109934923565e07073355030f1d",
+        "captured_at":  "2026-11-24T19:07:09.732Z"
+    },
+    {
+        "sku":  "ES90094",
+        "code":  "FS20094",
+        "url":  "https://www.fleetguard.com/product/FS20094",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "c2bd44ab78c565adc9c11b0ddadefd60be1e882fecc1cc2240bd5a5a2250e7e2",
+        "captured_at":  "2026-11-24T19:07:11.035Z"
+    },
+    {
+        "sku":  "ES90148",
+        "code":  "FS20148",
+        "url":  "https://www.fleetguard.com/product/FS20148",
+        "description":  "Fuel/Water Separator, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "bfb132f3a0d674feb22f5457c2e15560a7e68af0198106e9c35fafbfae67c3ed",
+        "captured_at":  "2026-11-24T19:07:12.364Z"
+    },
+    {
+        "sku":  "ES90105",
+        "code":  "FS20105",
+        "url":  "https://www.fleetguard.com/product/FS20105",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "0c19dce2ae213d8231ea6d6fc0808df47213cc048230144a8b8b3736a9bfe469",
+        "captured_at":  "2026-11-24T19:07:12.611Z"
+    },
+    {
+        "sku":  "ES90149",
+        "code":  "FS20149",
+        "url":  "https://www.fleetguard.com/product/FS20149",
+        "description":  "Fuel/Water Separator, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "b13dccf71b0f31bf9b8bffc8a18e843de87fee47953bdd1ce35ee942b8ae42f0",
+        "captured_at":  "2026-11-24T19:07:13.378Z"
+    },
+    {
+        "sku":  "ES90232",
+        "code":  "FS20232",
+        "url":  "https://www.fleetguard.com/product/FS20232",
+        "description":  "Fuel/Water Separator, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "450f00dca5e5f69fc825a31ede5a6aaddc764249a0a9d8825db6f5d0cd3e1292",
+        "captured_at":  "2026-11-24T19:07:15.073Z"
+    },
+    {
+        "sku":  "ES90243",
+        "code":  "FS20243",
+        "url":  "https://www.fleetguard.com/product/FS20243",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "bb4322bdff4b45a6dde0d43eedea1629d904dc9b92b919ac101d4037c9667a09",
+        "captured_at":  "2026-11-24T19:07:15.805Z"
+    },
+    {
+        "sku":  "ES90245",
+        "code":  "FS20245",
+        "url":  "https://www.fleetguard.com/product/FS20245",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "7f484f37f08e280ddb987b11b801dae92fd8d5b1a35879334d370fbdd41e2c03",
+        "captured_at":  "2026-11-24T19:07:17.114Z"
+    },
+    {
+        "sku":  "ES90247",
+        "code":  "FS20247",
+        "url":  "https://www.fleetguard.com/product/FS20247",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "19c9d8a2b74f8ab56078a792777c7b765cdb15f849a9842866c1388020d8490c",
+        "captured_at":  "2026-11-24T19:07:17.413Z"
+    },
+    {
+        "sku":  "ES90249",
+        "code":  "FS20249",
+        "url":  "https://www.fleetguard.com/product/FS20249",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "5a5e452fd9e7b03ca1d0d02f0f0a1bce4a49f275631563ebd4da82b755b722bb",
+        "captured_at":  "2026-11-24T19:07:18.156Z"
+    },
+    {
+        "sku":  "ES90319",
+        "code":  "FS20319",
+        "url":  "https://www.fleetguard.com/product/FS20319",
+        "description":  "Fuel/Water Separator, Spin-On, StrataPore",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "eb8ec7281622ec69e91a8d9428ef24d87d420ce96b594467bf30c5286334da97",
+        "captured_at":  "2026-11-24T19:07:19.453Z"
+    },
+    {
+        "sku":  "ES90329",
+        "code":  "FS20329",
+        "url":  "https://www.fleetguard.com/product/FS20329",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "be0810db58e84f87c59c4114232295ea373306beac9334e41af3147b41554072",
+        "captured_at":  "2026-11-24T19:07:19.797Z"
+    },
+    {
+        "sku":  "ES91053",
+        "code":  "FS1053A",
+        "url":  "https://www.fleetguard.com/product/FS1053A",
+        "description":  "Fuel/Water Separator, Spin-On, StrataPore",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "100a410e82c75e5afef3681e0ad057f524ff0f90ca55e55f3e86dd4403ef5998",
+        "captured_at":  "2026-11-24T19:07:24.315Z"
+    },
+    {
+        "sku":  "ES91070",
+        "code":  "FS1070",
+        "url":  "https://www.fleetguard.com/product/FS1070",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "d3f8935b4f2d3dc80ec99693984f9b80a5136424c2c23995c751abb45f7d592c",
+        "captured_at":  "2026-11-24T19:07:24.709Z"
+    },
+    {
+        "sku":  "ES92265",
+        "code":  "FS42265",
+        "url":  "https://www.fleetguard.com/product/FS42265",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "2048b9135fd9e909f846eb84385fc846b4bc7d6dc1238e6cd58757af6ab894e5",
+        "captured_at":  "2026-11-24T19:07:29.903Z"
+    },
+    {
+        "sku":  "ES92269",
+        "code":  "FS42269",
+        "url":  "https://www.fleetguard.com/product/FS42269",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "d63745862205e3afdaae401b56eca2f6f253c57605bece3b88f9022b0306df74",
+        "captured_at":  "2026-11-24T19:07:31.583Z"
+    },
+    {
+        "sku":  "ES92270",
+        "code":  "FS42270",
+        "url":  "https://www.fleetguard.com/product/FS42270",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "c08e408978d2eea91c3454688c18b8810a03b9f0d01a853e20aed36ec39db351",
+        "captured_at":  "2026-11-24T19:07:33.290Z"
+    },
+    {
+        "sku":  "ES93037",
+        "code":  "FS53037NN",
+        "url":  "https://www.fleetguard.com/product/FS53037NN",
+        "description":  "Fuel/Water Separator, Cartridge, NanoNet",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "60b3c52ebb2b6f3509665dc46d5db2eb5e40bac208dac09396713934cfee4a83",
+        "captured_at":  "2026-11-24T19:07:35.260Z"
+    },
+    {
+        "sku":  "ES96272",
+        "code":  "FS36272",
+        "url":  "https://www.fleetguard.com/product/FS36272",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "e1618804d11d9cfed4c131dc68fcf3680d865e1301b7571b235f961f86622467",
+        "captured_at":  "2026-11-24T19:07:38.607Z"
+    },
+    {
+        "sku":  "ES96401",
+        "code":  "FS36401",
+        "url":  "https://www.fleetguard.com/product/FS36401",
+        "description":  "Fuel/Water Separator, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "af070f1fd4a27a660c818eccf802b4a057e61a36f2dbb813d36697503ace0d32",
+        "captured_at":  "2026-11-24T19:07:38.768Z"
+    },
+    {
+        "sku":  "ES99270",
+        "code":  "FS19270",
+        "url":  "https://www.fleetguard.com/product/FS19270",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "63ac3cb1253750cb22da8f9de0d7f0c47a4a16e0d395129fba469a99ab036caf",
+        "captured_at":  "2026-11-24T19:07:41.114Z"
+    },
+    {
+        "sku":  "ES99511",
+        "code":  "FS19511N",
+        "url":  "https://www.fleetguard.com/product/FS19511N",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "4aa231b65c5f7148fbe7ebc9123b4907b33369abca981e0b18c898f0f9cea68a",
+        "captured_at":  "2026-11-24T19:07:41.221Z"
+    },
+    {
+        "sku":  "ES99519",
+        "code":  "FS19519VP",
+        "url":  "https://www.fleetguard.com/product/FS19519VP",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "b4ce43967fcc8b3ca082b4f87d2c583e13848cb0c569c81828934239a3f95249",
+        "captured_at":  "2026-11-24T19:07:43.697Z"
+    },
+    {
+        "sku":  "ES99816",
+        "code":  "FS19816B",
+        "url":  "https://www.fleetguard.com/product/FS19816B",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "5f42f12bbd0255ade9d83e42ffcd1632f70626e5b6f960c60c3f2aa87723196f",
+        "captured_at":  "2026-11-24T19:07:53.578Z"
+    },
+    {
+        "sku":  "ES99817",
+        "code":  "FS19817",
+        "url":  "https://www.fleetguard.com/product/FS19817",
+        "description":  "Fuel/Water Separator, Cartridge",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "82c6a1f97d29f26a4790e1388e72a0da7290e98662f16cb63eeaa9bb4b09339e",
+        "captured_at":  "2026-11-24T19:07:53.890Z"
+    },
+    {
+        "sku":  "ES99854",
+        "code":  "FS19854H",
+        "url":  "https://www.fleetguard.com/product/FS19854H",
+        "description":  "Fuel/Water Separator",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "0ebb3feba4a73711e66232b72df4c79a2000c949022dfa139774d8e98877ddf4",
+        "captured_at":  "2026-11-24T19:07:58.239Z"
+    },
+    {
+        "sku":  "ES99885",
+        "code":  "FS19885",
+        "url":  "https://www.fleetguard.com/product/FS19885",
+        "description":  "Fuel/Water Separator, Spin-On",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "bb69cc9db8a5547069815abc6c2f79b56faa537cb8598adc1dec8dd6bb1e42cb",
+        "captured_at":  "2026-11-24T19:07:58.850Z"
+    },
+    {
+        "sku":  "ES99997",
+        "code":  "FS19997",
+        "url":  "https://www.fleetguard.com/product/FS19997",
+        "description":  "Fuel/Water Separator, Cartridge, StrataPore",
+        "category":  "Fuel Filtration",
+        "page_text_sha256":  "34161de69180cf82510a75075e5aec3c65e6208592e86d9fef7d5177f9c38b68",
+        "captured_at":  "2026-11-24T19:08:00.606Z"
+    },
+    {
+        "sku":  "EW72140",
+        "code":  "WF2140",
+        "url":  "https://www.fleetguard.com/product/WF2140",
+        "description":  "Water Filter",
+        "category":  "Coolants \u0026 Chemicals \u003e Coolant Filters",
+        "page_text_sha256":  "b381fe715af8bec1471a69f107a882d72f8642d9e2178846618a3bba783205e0",
+        "captured_at":  "2026-11-24T19:08:04.454Z"
+    }
 ]
