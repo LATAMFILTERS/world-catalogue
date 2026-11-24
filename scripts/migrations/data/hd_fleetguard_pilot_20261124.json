@@ -1,0 +1,56 @@
+[
+  {
+    "sku": "EH60010",
+    "code": "HF30010",
+    "url": "https://www.fleetguard.com/product/HF30010",
+    "description": "Hydraulic Filter, Spin-On",
+    "category": "Hydraulic Filtration > Spin-on Hydraulic Filters",
+    "page_text_sha256": "2067799c948b39cbd2ad059b4536eeddd25b1f1f97f053591efee21f2b0bbdd6",
+    "captured_at": "2026-11-24T18:28:34.118Z"
+  },
+  {
+    "sku": "EH60685",
+    "code": "HF30685",
+    "url": "https://www.fleetguard.com/product/HF30685",
+    "description": "Hydraulic, Cartridge",
+    "category": "Hydraulic Filtration > Cartridge Hydraulic Filters",
+    "page_text_sha256": "e4bf2606a5d054a8f4109a349a4cd3e7bf39dc284d5b215a64bb7c18270b4c1b",
+    "captured_at": "2026-11-24T18:29:50.199Z"
+  },
+  {
+    "sku": "EF92239",
+    "code": "FF42239",
+    "url": "https://www.fleetguard.com/product/FF42239",
+    "description": "Fuel Filter, In-Line",
+    "category": "Fuel Filtration",
+    "page_text_sha256": "f3b50a2f9e22ea6a9c74c09a0871ac310465357719843875ad9a438efc62f7e0",
+    "captured_at": "2026-11-24T18:30:07.560Z"
+  },
+  {
+    "sku": "ES90224",
+    "code": "FS20224",
+    "url": "https://www.fleetguard.com/product/FS20224",
+    "description": "Fuel/Water Separator, Spin-On, StrataPore",
+    "category": "Fuel Filtration",
+    "page_text_sha256": "6d2d518186f212c54cc328446cb8d031c6d0bf9ce70b9e2d7d6c52e43e03e780",
+    "captured_at": "2026-11-24T18:30:10.854Z"
+  },
+  {
+    "sku": "EH65189",
+    "code": "HF35189",
+    "url": "https://www.fleetguard.com/product/HF35189",
+    "description": "Hydraulic Filter, Spin-On",
+    "category": "Hydraulic Filtration > Spin-on Hydraulic Filters",
+    "page_text_sha256": "96e0f9822f39e76d729e4146fafa7f0331ae0c0d98d93f31bd48e742aae6f8ce",
+    "captured_at": "2026-11-24T18:30:59.941Z"
+  },
+  {
+    "sku": "ES90333",
+    "code": "FS20333",
+    "url": "https://www.fleetguard.com/product/FS20333",
+    "description": "Fuel/Water Separator, Cartridge, NanoNet",
+    "category": "Fuel Filtration",
+    "page_text_sha256": "bb2c75eec75788a145517bc1faa113f00c07df105be0ca21b99573ff1eb03616",
+    "captured_at": "2026-11-24T18:31:20.144Z"
+  }
+]
