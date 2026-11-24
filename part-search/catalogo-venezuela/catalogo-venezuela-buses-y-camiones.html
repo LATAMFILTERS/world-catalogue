@@ -117,6 +117,10 @@ main{max-width:1180px;margin:0 auto;padding:8px 20px 48px}
 .trucks{display:flex;gap:6px;flex:none}
 .trucks .truck{width:92px;height:84px}
 .card.is-sel .trucks .truck{width:min(200px,22vw);height:auto;max-height:200px}
+.card-top.split{align-items:center}
+.card-top.split .card-id{flex:1;min-width:0;text-align:center}
+.card-top.split>.truck{width:92px;height:84px}
+.card.is-sel .card-top.split>.truck{width:min(200px,22vw);height:auto;max-height:200px}
 .card-brand{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow-deep)}
 .card h3{margin:2px 0 4px;font-size:23px;line-height:1.05;text-transform:uppercase}
 .motor{margin:0;font-size:14.5px;color:var(--muted)}
@@ -219,6 +223,7 @@ footer strong{color:var(--head-ink)}
   .tw-stage.on .tw-rule{animation-duration:.01s;animation-delay:0s}
 }
 @media (max-width:560px){ .grid{grid-template-columns:1fr} .truck{width:108px;height:90px} .trucks .truck{width:70px;height:70px} }
+@media (max-width:560px){ .card-top.split>.truck{width:70px;height:70px} }
 @media print{
   :root{--paper:#fff;--card:#fff;--line:#ccc;--muted:#444;--chip:#eee;--ink:#000}
   .splash,.tw-stage{display:none!important}
@@ -1357,13 +1362,14 @@ footer strong{color:var(--head-ink)}
     </section><section class="brand-block" id="marca-freightliner">
       <div class="brand-head"><h2>Freightliner</h2><p>3 modelos · 24 referencias</p></div>
       <div class="grid"><article id="ficha-freightliner-1" class="card" data-search="freightliner cl120 / fld120 detroit diesel serie 60 el82100 25518480 ea13551 af1968m ew74685 dnp554685 es90463 fs19765 ef96915 25014274 ea17682 af25139m ec19422 91559 ef96916 23518482 el82518 p552518 ef90757 p550757 dnp552518 380087">
-          <div class="card-top">
-            <div class="trucks"><img class="truck" src="assets/518fa27abab8.jpg" alt="Freightliner CL120 / FLD120"><img class="truck" src="assets/b74a60f6202a.jpg" alt="Freightliner Columbia CL120" loading="lazy"></div>
+          <div class="card-top split">
+            <img class="truck" src="assets/518fa27abab8.jpg" alt="Freightliner CL120 / FLD120">
             <div class="card-id">
               <p class="card-brand">Freightliner · Camiones</p>
               <h3>CL120 / FLD120</h3>
               <p class="motor"><span>Motor</span> DETROIT DIESEL SERIE 60</p>
             </div>
+            <img class="truck" src="assets/b74a60f6202a.jpg" alt="Freightliner Columbia CL120" loading="lazy">
           </div>
           <ul class="filters"><li class="frow">
               <img class="fimg" src="assets/a452f0e230fe.jpg" alt="Filtro ELIMFILTERS EL82100 — render oficial" loading="lazy">
