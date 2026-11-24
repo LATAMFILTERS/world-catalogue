@@ -48,6 +48,15 @@ const DISTRIBUTORS = [
     social: '',
     href: '',
   },
+  {
+    country: 'Venezuela',
+    company: 'E&P Parts, C.A.',
+    region: 'Andean Region',
+    address: '',
+    phone: '',
+    social: '@epparts_ve',
+    href: 'https://www.instagram.com/epparts_ve/',
+  },
 ];
 
 const TAGS = [
