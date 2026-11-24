@@ -52,7 +52,7 @@ const DISTRIBUTORS = [
     country: 'Venezuela',
     company: 'E&P Parts, C.A.',
     region: 'Andean Region',
-    address: '',
+    address: 'Valencia, Carabobo, Venezuela',
     phone: '',
     social: '@epparts_ve',
     href: 'https://www.instagram.com/epparts_ve/',
