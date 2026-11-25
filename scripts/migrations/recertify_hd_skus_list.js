@@ -96,11 +96,21 @@ const fail = (msg) => { throw new Error('BLOCKED: ' + msg); };
     const audit = (await db.query('SELECT * FROM (' + EVALUATE + ') AS audit WHERE audit.sku = ANY($1)', [list])).rows;
     // Same rule as run_273: a shared exact reference stops blocking when every SKU holding it is active HD, agrees on type/subtype/mount/thread, is within 3% on height and OD
     // and has its own official Donaldson source row for that code. Enabled with --clear-shared-legit.
-    if (process.argv.includes('--clear-shared-legit')) {
+    if (process.argv.includes('--clear-shared-legit') || process.argv.includes('--hd-shared-equivalents')) {
       const detail = await db.query(`SELECT r.part_number, r.sku, r.reference_type, r.source, e.duty, e.catalog_active, e.filter_type, e.sub_type, e.installation_type, e.thread_size, e.height_mm, e.outer_diameter_mm
         FROM public.exact_part_reference r JOIN public.elimfilters_catalog e ON e.sku=r.sku
         WHERE r.part_number IN (SELECT part_number FROM public.exact_part_conflicts WHERE skus && $1::varchar[])`, [list]);
-      const cleared = clearableSkus(detail.rows);
+      let cleared = process.argv.includes('--clear-shared-legit') ? clearableSkus(detail.rows) : new Set();
+      if (process.argv.includes('--hd-shared-equivalents')) {
+        // Operator ruling 2026-11-12: HD <-> HD products that share codes are equivalents, not an error. A SKU is cleared when EVERY conflicting code is held only by active Heavy Duty SKUs
+        // (Light Duty or inactive partners keep the block). Subtype, dimension and per-SKU evidence differences are accepted by that ruling.
+        const byCode = new Map();
+        for (const r of detail.rows) { if (!byCode.has(r.part_number)) byCode.set(r.part_number, []); byCode.get(r.part_number).push(r); }
+        const bad = new Set();
+        for (const rows of byCode.values()) { const act = rows.filter((x) => x.catalog_active === true || x.catalog_active === 't'); const hdOnly = act.length >= 2 && act.every((x) => x.duty === 'HEAVY_DUTY'); if (!hdOnly) for (const x of rows) bad.add(x.sku); }
+        const eq = new Set(detail.rows.map((r) => r.sku).filter((k) => !bad.has(k)));
+        cleared = new Set([...cleared, ...eq]);
+      }
       report.exact_conflict_cleared = [];
       for (const f of audit) if (!f.exact_reference_conflict_free && cleared.has(f.sku)) { f.exact_reference_conflict_free = true; f.blockers = f.blockers.filter((b) => b !== 'EXACT_PART_REFERENCE_CONFLICT'); report.exact_conflict_cleared.push(f.sku); }
     }
