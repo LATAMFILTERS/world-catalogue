@@ -6,6 +6,7 @@ require('dotenv').config();
 const fs = require('fs');
 const { Client } = require('pg');
 const { manualLedgerRow } = require('./run_093_global_sku_certification_audit');
+const { clearableSkus } = require('./lib/hd-exact-conflict-rule');
 const APPLY = process.argv.includes('--execute');
 const arg = (n) => { const i = process.argv.indexOf(n); return i >= 0 ? process.argv[i + 1] : null; };
 const SNAPSHOT = arg('--snapshot');
@@ -93,6 +94,16 @@ const fail = (msg) => { throw new Error('BLOCKED: ' + msg); };
     if (SNAPSHOT) fs.writeFileSync(SNAPSHOT, JSON.stringify({ captured_at: new Date().toISOString(), rows: before }, null, 2));
     const byOld = new Map(before.map((r) => [r.sku, r]));
     const audit = (await db.query('SELECT * FROM (' + EVALUATE + ') AS audit WHERE audit.sku = ANY($1)', [list])).rows;
+    // Same rule as run_273: a shared exact reference stops blocking when every SKU holding it is active HD, agrees on type/subtype/mount/thread, is within 3% on height and OD
+    // and has its own official Donaldson source row for that code. Enabled with --clear-shared-legit.
+    if (process.argv.includes('--clear-shared-legit')) {
+      const detail = await db.query(`SELECT r.part_number, r.sku, r.reference_type, r.source, e.duty, e.catalog_active, e.filter_type, e.sub_type, e.installation_type, e.thread_size, e.height_mm, e.outer_diameter_mm
+        FROM public.exact_part_reference r JOIN public.elimfilters_catalog e ON e.sku=r.sku
+        WHERE r.part_number IN (SELECT part_number FROM public.exact_part_conflicts WHERE skus && $1::varchar[])`, [list]);
+      const cleared = clearableSkus(detail.rows);
+      report.exact_conflict_cleared = [];
+      for (const f of audit) if (!f.exact_reference_conflict_free && cleared.has(f.sku)) { f.exact_reference_conflict_free = true; f.blockers = f.blockers.filter((b) => b !== 'EXACT_PART_REFERENCE_CONFLICT'); report.exact_conflict_cleared.push(f.sku); }
+    }
     const byAudit = new Map(audit.map((r) => [r.sku, r]));
     for (const sku of list) {
       const existing = byOld.get(sku), f = byAudit.get(sku);
