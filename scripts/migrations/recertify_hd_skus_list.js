@@ -1,7 +1,7 @@
 'use strict';
 // Recertification of a LIST of Heavy Duty SKUs (--skus <json array file>) after their reference conflicts were cleared (2026-11-25).
 // Same evaluator as run_273 (HD), same per-SKU rules as recertify_el82043_only.js: a SKU becomes CERTIFIED only when every check passes, no manual/research hold exists and it is currently BLOCKED.
-// SKUs that still have blockers are left untouched and reported. Dry-run by default (ROLLBACK). --execute needs --snapshot <file>. Never runs the global run_273.
+// A retired (inactive) row that still carries the same code base no longer counts against base uniqueness (EA12287 retired into EA14353). SKUs that still have blockers are left untouched and reported. Dry-run by default (ROLLBACK). --execute needs --snapshot <file>. Never runs the global run_273.
 require('dotenv').config();
 const fs = require('fs');
 const { Client } = require('pg');
@@ -15,6 +15,7 @@ const EVALUATE = `
   WITH catalog AS (
     SELECT
       c.sku::text AS sku,
+      c.catalog_active AS is_active,
       c.duty::text AS duty,
       c.filter_type::text AS filter_type,
       nullif(trim(c.codigo_base::text),'') AS codigo_base,
@@ -25,7 +26,7 @@ const EVALUATE = `
     FROM public.elimfilters_catalog c
   ),
   base_dupes AS (
-    SELECT base_key, count(DISTINCT sku)::int AS sku_count FROM catalog WHERE base_key<>'' GROUP BY base_key
+    SELECT base_key, count(DISTINCT sku)::int AS sku_count FROM catalog WHERE base_key<>'' AND is_active GROUP BY base_key
   ),
   resolver_counts AS (
     SELECT ld_catalog.norm_part(code) AS code_key, count(DISTINCT sku)::int AS sku_count, min(sku)::text AS only_sku
