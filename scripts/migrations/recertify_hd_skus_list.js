@@ -118,7 +118,20 @@ const fail = (msg) => { throw new Error('BLOCKED: ' + msg); };
     const byAudit = new Map(audit.map((r) => [r.sku, r]));
     for (const sku of list) {
       const existing = byOld.get(sku), f = byAudit.get(sku);
-      if (!existing || !f) { report.skipped.push(sku + ' (sin fila de registro o no es HD)'); continue; }
+      if (!f) { report.skipped.push(sku + ' (no es HD)'); continue; }
+      if (!existing && process.argv.includes('--create-missing')) {
+        // never audited: create its ledger row from today's evaluation (CERTIFIED only when every check passes, else BLOCKED with the blockers)
+        const ok = !f.blockers.length && f.filter_type && f.resolver_only_sku === sku && f.resolver_sku_count === 1;
+        const blockers = ok ? [] : (f.blockers.length ? f.blockers : ['BASE_CODE_NOT_UNIQUELY_RESOLVED']);
+        await db.query(`INSERT INTO public.catalog_sku_certification(sku,duty,filter_type,codigo_base,certification_state,policy_version,canonical_governance_ok,regional_policy_ok,canonical_identity_ok,base_code_unique,resolver_unique,
+          exact_reference_conflict_free,classification_conflict_free,quarantine_free,application_domain_consistent,blocker_count,blockers,evidence,certified_at,audited_at)
+          VALUES ($1,$2,$3,$4,$5,$6,$7,true,true,$8,$9,$10,$11,$12,$13,$14,$15::text[],$16::jsonb,$17,now())`,
+          [sku, f.duty, f.filter_type, f.codigo_base, ok ? 'CERTIFIED' : 'BLOCKED', POLICY_VERSION, f.canonical_governance_ok, f.base_code_unique, f.resolver_unique, f.exact_reference_conflict_free, f.classification_conflict_free, f.quarantine_free, f.application_domain_consistent,
+           blockers.length, blockers, JSON.stringify({ governance_state: f.governance_state, base_sku_count: f.base_sku_count, resolver_v7_sku_count: f.resolver_sku_count, resolver_v7_only_sku: f.resolver_only_sku, classification_conflict_count: f.classification_conflict_count, quarantine_count: f.quarantine_count, equipment_application_count: f.equipment_app_count, created_by: 'recertify_hd_skus_list --create-missing' }), ok ? new Date() : null]);
+        if (ok) report.certified.push(sku + ' (fila creada)'); else report.still_blocked[sku] = blockers;
+        continue;
+      }
+      if (!existing) { report.skipped.push(sku + ' (sin fila de registro)'); continue; }
       if (existing.certification_state === 'CERTIFIED') { report.skipped.push(sku + ' (ya certificado)'); continue; }
       if (existing.certification_state !== 'BLOCKED') { report.skipped.push(sku + ' (estado ' + existing.certification_state + ')'); continue; }
       const held = (await db.query(`SELECT ${manualLedgerRow('c')} AS held FROM public.catalog_sku_certification c WHERE c.sku=$1`, [sku])).rows[0].held;
