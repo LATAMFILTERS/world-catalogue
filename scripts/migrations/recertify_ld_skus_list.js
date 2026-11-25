@@ -2,6 +2,7 @@
 // Recertification of a LIST of Light Duty SKUs (--skus <json array file>) with current data (operator 2026-11-25). The Light Duty ledger dates from 2026-09-13 (run_093); run_273 only refreshes Heavy Duty.
 // Same checks and blocker names as run_093 (LD branch) evaluated on today's data: governance CANONICAL_VERIFIED, regional policy POLICY_ALIGNED, exactly one ACTIVE canonical identity whose part number
 // equals the code base (MANN-FILTER for EUROPEAN, FRAM for NON_EUROPEAN), base unique among ACTIVE SKUs, resolver v7 unique, no exact/classification conflict with an active partner, no quarantine, no equipment applications.
+// The two operator-approved Millard exceptions (EL35796, EA17203: per-SKU functions in the database) count as aligned regional policy and valid identity.
 // A SKU becomes CERTIFIED only when every check passes, no manual/research hold exists and it is currently BLOCKED. Others are left untouched and reported.
 // Dry-run by default (ROLLBACK). --execute needs --snapshot <file>. Never runs the global audit.
 require('dotenv').config();
@@ -17,6 +18,7 @@ const POLICY_VERSION = '2026-11-25-ld-cert-refresh-v1';
 const EVALUATE = `
   WITH catalog AS (
     SELECT c.sku::text AS sku, c.duty::text AS duty, c.filter_type::text AS filter_type, c.catalog_active AS is_active,
+      (public.el35796_millard_exception_approved(c) OR public.ea17203_millard_exception_approved(c)) AS millard_exception,
       nullif(trim(c.codigo_base::text),'') AS codigo_base,
       upper(regexp_replace(coalesce(c.codigo_base::text,''), '[^A-Za-z0-9]', '', 'g')) AS base_key,
       coalesce(c.enrichment_data->'codigo_base_governance'->>'state', c.enrichment_data->'codigo_base_governance'->>'governance_state', '') AS governance_state,
@@ -54,8 +56,8 @@ const EVALUATE = `
   evaluated AS (
     SELECT x.*,
       (x.codigo_base IS NOT NULL AND x.governance_state='CANONICAL_VERIFIED') AS canonical_governance_ok,
-      (x.regional_policy_state='POLICY_ALIGNED') AS regional_policy_ok,
-      (x.active_identity_count=1 AND upper(regexp_replace(coalesce(x.identity_part_number,''), '[^A-Za-z0-9]', '', 'g'))=x.base_key
+      (x.regional_policy_state='POLICY_ALIGNED' OR x.millard_exception) AS regional_policy_ok,
+      (x.millard_exception OR x.active_identity_count=1 AND upper(regexp_replace(coalesce(x.identity_part_number,''), '[^A-Za-z0-9]', '', 'g'))=x.base_key
         AND ((x.origin_group='EUROPEAN' AND x.identity_origin_group='EUROPEAN' AND upper(coalesce(x.identity_brand,'')) IN ('MANN-FILTER','MANN FILTER','MANN'))
           OR (x.origin_group='NON_EUROPEAN' AND x.identity_origin_group='NON_EUROPEAN' AND upper(coalesce(x.identity_brand,''))='FRAM'))) AS canonical_identity_ok,
       (x.codigo_base IS NOT NULL AND x.base_key<>'' AND x.base_sku_count=1) AS base_code_unique,
