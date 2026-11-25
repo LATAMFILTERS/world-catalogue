@@ -117,7 +117,8 @@ const fail = (msg) => { throw new Error('BLOCKED: ' + msg); };
       if (existing.certification_state === 'CERTIFIED') { report.skipped.push(sku + ' (ya certificado)'); continue; }
       if (existing.certification_state !== 'BLOCKED') { report.skipped.push(sku + ' (estado ' + existing.certification_state + ')'); continue; }
       const held = (await db.query(`SELECT ${manualLedgerRow('c')} AS held FROM public.catalog_sku_certification c WHERE c.sku=$1`, [sku])).rows[0].held;
-      if (held) { report.skipped.push(sku + ' (retención manual)'); continue; }
+      // a row this script itself created (same policy_version) is not a manual hold
+      if (held && existing.policy_version !== POLICY_VERSION) { report.skipped.push(sku + ' (retención manual)'); continue; }
       if (f.blockers.length || !f.filter_type) { report.still_blocked[sku] = f.blockers; continue; }
       const u = await db.query(`UPDATE public.catalog_sku_certification c SET
         duty=$2, filter_type=$3, codigo_base=$4, certification_state='CERTIFIED', policy_version=$5,
