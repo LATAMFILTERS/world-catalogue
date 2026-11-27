@@ -19,6 +19,12 @@ test('facts-only compact inference uses a small request and never marks identity
    return {ok:true,json:async()=>({message:{content:JSON.stringify({source_code:'P12345',product_type:'Fuel Filter',facts:['Height 90 mm.','Unsupported 42 inch']})}})};
   };
   const r=await interpretLocalEvidence({sku:'EA10006'}, {}, {directory:dir,allowedHosts:'donaldson.com',compactMode:true,factsOnly:true,timeoutMs:800});
+  const prompt=req.messages.find(m=>m.role==='system').content;
+  assert.match(prompt,/One term has one meaning/);
+  assert.match(prompt,/not proof of equivalence/);
+  assert.match(prompt,/primary air element, safety air element, and filter kit distinct/);
+  assert.match(prompt,/Do not transfer facts from adjacent products/);
+  assert.match(prompt,/CONFLICTING for contradictory evidence/);
   assert.equal(req.options.num_predict,260);
   assert.equal(req.options.num_ctx,1536);
   assert.equal(r.dossier.identity.status,'UNRESOLVED');
