@@ -5,6 +5,7 @@ import { reviewedCopyKey } from '@/lib/reviewed-copy-key';
 import { useTranslation } from 'react-i18next';
 
 import PartnerTurnstile from './PartnerTurnstile';
+import { DistributorVideo } from './DistributorVideo';
 
 import {  useEffect, useState, useSyncExternalStore, type CSSProperties, useRef } from 'react';
 import { PageHeader } from '@/components/PageHeader';
@@ -275,6 +276,8 @@ export default function DistributorApplication() {
           </div>
         </div>
       </section>
+
+      <DistributorVideo />
 
       <section style={{ ...sectionStyle, background: '#050505' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
