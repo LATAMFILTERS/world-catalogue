@@ -52,10 +52,10 @@ test('rejects partial codes and facts from other source excerpts',async()=>{
  try {
   const sources=[
    {url:'https://shop.donaldson.com/product/P550057',content:'Oil filter P550057. Height 90 mm.'},
-   {url:'https://shop.donaldson.com/product/P550058',content:'Oil filter P550058. Height 120 mm.'}
+   {url:'https://shop.donaldson.com/product/P550058',content:'Oil filter P550058. Height 120 mm. Oil filter P550059.2. Oil filter P550060-2.'}
   ].map(s=>({...s,sha256:crypto.createHash('sha256').update(s.content).digest('hex')}));
   await writeFile(path.join(dir,'EL12345.json'),JSON.stringify({sku:'EL12345',sources}));
-  for(const code of ['P55005','P550057-2','550057','P550057']){
+  for(const code of ['P55005','P550057-2','550057','P550059','P550060','P550057']){
    globalThis.fetch=async()=>({ok:true,json:async()=>({message:{content:JSON.stringify({source_code:code,product_type:'Oil filter',facts:['Height 90 mm.','Height 120 mm.']})}})});
    const r=await interpretLocalEvidence({sku:'EL12345'},{},{directory:dir,allowedHosts:'donaldson.com',compactMode:true,factsOnly:true});
    assert.equal(r.dossier.identity.source_code,code==='P550057'?code:null);

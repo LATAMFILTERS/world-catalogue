@@ -22,7 +22,17 @@ try {
   const {interpretLocalEvidence:baseline}=await import(pathToFileURL(baselinePath).href);
   for (const sku of skus) {
     // Copy each original bundle once so both variants see identical bytes.
-    await writeFile(join(temp,sku+'.json'),await readFile(join(resolve(directory),sku+'.json')));
+    try {
+      await writeFile(join(temp,sku+'.json'),await readFile(join(resolve(directory),sku+'.json')));
+    } catch(e) {
+      errors++;
+      for (const model of ['qwen3:1.7b','qwen3:8b']) {
+        for (const variant of ['baseline','controlled']) {
+          console.log(JSON.stringify({sku,model,variant,error:e.code || String(e.message),assessment:'BLOCKED'}));
+        }
+      }
+      continue;
+    }
     for (const model of ['qwen3:1.7b','qwen3:8b']) {
       for (const [variant,run] of [['baseline',baseline],['controlled',candidate]]) {
         const started=Date.now();
