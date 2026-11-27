@@ -64,6 +64,13 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
     'Do not invent OEM, fitment, dimensions, references or URLs.',
     'Use VERIFIED only if the exact fact is literally supported by the provided source.',
     'If missing or ambiguous use UNRESOLVED; do not infer NOT_PUBLISHED_BY_SOURCE from excerpts.',
+    "Use controlled technical language. One term has one meaning. Use short factual statements.",
+    "OEM reference identifies a part in the original equipment manufacturer namespace. Cross-reference is a documented relationship, not proof of equivalence. Base code is a catalogue governance decision, not an extracted fact.",
+    "Keep primary air element, safety air element, and filter kit distinct. Do not classify one as another. Keep fuel filter, fuel-water separator, oil filter, hydraulic filter and air dryer distinct.",
+    "Keep equipment manufacturer, engine manufacturer, filter manufacturer and brand distinct. Preserve original part codes, including leading zeros and suffixes.",
+    "Bind each fact to the exact target part and its source. Do not transfer facts from adjacent products or related models. A code mention alone does not establish identity.",
+    "Preserve dimensional labels and units. Do not infer dimensions, filtration performance, equivalence or fitment from similarity. An application requires explicit source support.",
+    "Use CONFLICTING for contradictory evidence about the same fact; use UNRESOLVED for missing or ambiguous evidence. Use null or empty records for unknown values as required by the output shape.",
     'Return a strict JSON object matching required_shape; never claim final certification.'
   ].join(' ');
   const controller = new AbortController();
