@@ -183,8 +183,8 @@ function RunCycle {
 if ($Cycle) { RunCycle; exit 0 }
 if (-not (Test-Path (Join-Path $repo '.git'))) { throw ('HD_WORKTREE_MISSING ' + $repo) }
 $git=(Get-Command git -ErrorAction Stop).Source
-& $git -C $repo fetch origin 'refs/heads/feat/hd-hermes-ollama-evidence-pilot-20261108:refs/remotes/origin/hd-local-ollama-review'
-if ($LASTEXITCODE -ne 0) { throw 'FETCH_PR1270_FAILED' }
+& $git -C $repo fetch origin 'refs/heads/main:refs/remotes/origin/hd-local-ollama-review'
+if ($LASTEXITCODE -ne 0) { throw 'FETCH_MAIN_FAILED' }
 $module = Join-Path $repo 'scripts\hermes\hd-local-evidence-review.mjs'
 $moduleSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:scripts/hermes/hd-local-evidence-review.mjs'
 if ($LASTEXITCODE -ne 0 -or -not $moduleSource) { throw 'FETCH_HD_REVIEW_MODULE_FAILED' }
@@ -239,7 +239,7 @@ if ($LASTEXITCODE -ne 0 -or -not $compactSource) { throw 'FETCH_COMPACT_TEST_FAI
 & node --check $module
 if ($LASTEXITCODE -ne 0) { throw 'MODULE_SYNTAX_ERROR' }
 $testPath = Join-Path $repo 'tests\hd-local-evidence-review.test.mjs'
-if (-not (Test-Path $testPath)) {
+& {
   $testSource = & $git -C $repo show 'refs/remotes/origin/hd-local-ollama-review:tests/hd-local-evidence-review.test.mjs'
   if ($LASTEXITCODE -ne 0) { throw 'FETCH_TESTS_FAILED' }
   [System.IO.File]::WriteAllText($testPath, (($testSource -join [Environment]::NewLine) + [Environment]::NewLine), (New-Object System.Text.UTF8Encoding($false)))
