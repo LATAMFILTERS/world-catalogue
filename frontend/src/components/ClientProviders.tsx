@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
+import { setLanguagePreference } from '@/lib/language-preference';
 import { LOCALE_TAG, localeFromPath, localeInstances } from '@/i18n-locales';
 import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
@@ -21,9 +22,8 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       document.documentElement.dir = ['ar', 'fa', 'he'].includes(lng) ? 'rtl' : 'ltr';
     };
     if (locale) {
-      // Opening a /es/ or /pt/ URL is not a language choice: only the globe menu stores one,
-      // otherwise a single visit would send every English URL to that locale for a year.
       updateLang(LOCALE_TAG[locale]);
+      setLanguagePreference(locale);
       return;
     }
     i18n.on('languageChanged', updateLang);

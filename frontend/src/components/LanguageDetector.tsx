@@ -6,7 +6,7 @@ import i18n from '@/i18n';
 import { localeFromPath } from '@/i18n-locales';
 import { applyLanguageInPlace } from '@/lib/apply-language';
 import { detectGeoLanguage, GEO_AUTO_LANGUAGES } from '@/lib/geoLanguage';
-import { getLanguagePreference, siteLangFromTag } from '@/lib/language-preference';
+import { getLanguagePreference, setLanguagePreference, siteLangFromTag } from '@/lib/language-preference';
 import { languageHref } from '@/lib/localized-routes';
 
 /**
@@ -17,15 +17,38 @@ import { languageHref } from '@/lib/localized-routes';
  *  2. With no stored choice, the visitor's country picks the language, but only among
  *     GEO_AUTO_LANGUAGES (es, pt); any other country stays in English. A choice made while
  *     the country lookup is still in flight wins over its result.
+ *  English is the master site: an English URL opened directly (typed, bookmarked or from
+ *  another site, not by navigating inside elimfilters.com) is shown in English and makes
+ *  English the stored choice, so a remembered /es/ or /pt/ visit never locks it away.
  */
+// The page the browser loaded. Pages reached afterwards by client-side navigation (also from
+// /es/ or /pt/ routes, where this component is not mounted) are never "opened directly".
+const landingPath = typeof window === 'undefined' ? null : window.location.pathname;
+let landingChecked = false;
+
+function openedDirectly(): boolean {
+  if (landingChecked || window.location.pathname !== landingPath) return false;
+  landingChecked = true;
+  try {
+    return !document.referrer || new URL(document.referrer).origin !== window.location.origin;
+  } catch {
+    return true;
+  }
+}
+
 export function LanguageDetector() {
   const pathname = usePathname();
 
   useEffect(() => {
     if (localeFromPath(pathname)) return;
     let active = true;
+    const direct = openedDirectly();
 
-    const preference = getLanguagePreference();
+    let preference = getLanguagePreference();
+    if (preference && preference !== 'en' && direct) {
+      setLanguagePreference('en');
+      preference = 'en';
+    }
     if (preference) {
       const target = preference === 'en' ? null : languageHref(pathname, preference);
       if (target) {
