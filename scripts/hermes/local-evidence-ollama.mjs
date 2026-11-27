@@ -112,15 +112,22 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
        (raw.source_code !== null && raw.source_code !== undefined && typeof raw.source_code !== 'string') ||
        (raw.product_type !== null && raw.product_type !== undefined && typeof raw.product_type !== 'string') ||
        !Array.isArray(raw.facts)) throw new Error('OLLAMA_COMPACT_FACTS_INVALID');
-    const fullText=sources.map(x=>x.content).join(' ');
+    // A code embedded in a different part number is not an exact observation.
+    // Check the evidence actually supplied to the model, not omitted text.
     const code=String(raw.source_code||'').trim();
-    const observable=code && fullText.toUpperCase().replace(/[^A-Z0-9]/g,'').includes(code.toUpperCase().replace(/[^A-Z0-9]/g,''));
-    const literalFacts=raw.facts.filter(x=>typeof x==='string' && x.length>3 && x.length<=180 && fullText.includes(x)).slice(0,2);
+    const codePattern=value=>{
+      if (!/^[A-Za-z0-9][A-Za-z0-9 .\/_-]{0,79}$/.test(value)) return null;
+      const escaped=value.replace(/[.*+?^$\x7b\x7d()|[\]\\]/g,'\\$&');
+      return new RegExp('(?<![A-Za-z0-9_./-])'+escaped+'(?![A-Za-z0-9_./-])','i');
+    };
+    const pattern=codePattern(code);
+    const source=pattern && promptSources.find(x=>pattern.test(x.content));
+    const observable=Boolean(source);
+    const literalFacts=observable ? [...new Set(raw.facts.filter(x=>typeof x==='string' && x.length>3 && x.length<=180 && source.content.includes(x)))].slice(0,2) : [];
     const type=String(raw.product_type||'').trim();
-    const source=observable?sources.find(x=>x.content.toUpperCase().replace(/[^A-Z0-9]/g,'').includes(code.toUpperCase().replace(/[^A-Z0-9]/g,''))):null;
     const axis=()=>({status:'UNRESOLVED',records:[],source_urls:[]});
     dossier={
-      identity:{...axis(),manufacturer:null,source_code:observable?code:null,product_type:type && fullText.toLowerCase().includes(type.toLowerCase())?type:null,market_segment:null,source_urls:source?[source.url]:[]},
+      identity:{...axis(),manufacturer:null,source_code:observable?code:null,product_type:type && source && source.content.toLowerCase().includes(type.toLowerCase())?type:null,market_segment:null,source_urls:source?[source.url]:[]},
       technical_specs:{...axis(),records:literalFacts},dimensions:axis(),oem_codes:axis(),cross_references:axis(),applications:axis(),
       provenance:{sources:[]},consistency:{status:'CONFLICTING',conflicts:[],notes:['Model extraction only; all technical and certification checks pending']},
       dossier_status:'DOSSIER_INCOMPLETE'
