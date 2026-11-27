@@ -118,7 +118,7 @@ export async function interpretLocalEvidence(item, requiredShape, options = {}) 
     const codePattern=value=>{
       if (!/^[A-Za-z0-9][A-Za-z0-9 .\/_-]{0,79}$/.test(value)) return null;
       const escaped=value.replace(/[.*+?^$\x7b\x7d()|[\]\\]/g,'\\$&');
-      return new RegExp('(?<![A-Za-z0-9_./-])'+escaped+'(?![A-Za-z0-9_./-])','i');
+      return new RegExp('(?<![A-Za-z0-9_./-])'+escaped+'(?![A-Za-z0-9_/-]|\\.(?![\\s,;:!?)]|$))','i');
     };
     const pattern=codePattern(code);
     const source=pattern && promptSources.find(x=>pattern.test(x.content));
