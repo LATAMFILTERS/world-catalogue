@@ -7,7 +7,7 @@ import crypto from 'node:crypto';
 const MAX_SOURCE_CHARS = 50000;
 const MAX_PROMPT_CHARS_PER_SOURCE = 6500;
 const EVIDENCE_TERMS = /(?:dimension|diameter|height|length|thread|mm\b|inch|oil filter|air filter|fuel filter|application|oem|cross.reference|product information)/i;
-function boundedExcerpt(text, code) {
+export function boundedExcerpt(text, code) {
   const lines = String(text).split(/(?<=[.!?])\s+|\n+/).map(x=>x.trim()).filter(Boolean);
   const normalized = x=>x.toUpperCase().replace(/[^A-Z0-9]/g,'');
   const target=normalized(code);
