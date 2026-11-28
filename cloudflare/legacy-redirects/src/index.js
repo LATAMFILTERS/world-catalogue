@@ -1,4 +1,11 @@
 const REDIRECTS = new Map([
+  // run_511: EA12826 retired into EA32338.
+  ["/part/EA12826", "/part/EA32338/"],
+  ["/part/EA12826/", "/part/EA32338/"],
+  ["/es/part/EA12826", "/es/part/EA32338/"],
+  ["/es/part/EA12826/", "/es/part/EA32338/"],
+  ["/pt/part/EA12826", "/pt/part/EA32338/"],
+  ["/pt/part/EA12826/", "/pt/part/EA32338/"],
   // run_506: EF30221 retired into ES91838.
   ["/part/EF30221", "/part/ES91838/"],
   ["/part/EF30221/", "/part/ES91838/"],
