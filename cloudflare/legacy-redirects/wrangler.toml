@@ -749,5 +749,8 @@ routes = [
   { pattern = "part-search.elimfilters.com/es/part/EA39450*", zone_name = "elimfilters.com" },
   { pattern = "part-search.elimfilters.com/pt/part/EA39450*", zone_name = "elimfilters.com" },
   { pattern = "part-search.elimfilters.com/es", zone_name = "elimfilters.com" },
-  { pattern = "part-search.elimfilters.com/es/", zone_name = "elimfilters.com" }
+  { pattern = "part-search.elimfilters.com/es/", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/part/ES91833*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/es/part/ES91833*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/pt/part/ES91833*", zone_name = "elimfilters.com" }
 ]
