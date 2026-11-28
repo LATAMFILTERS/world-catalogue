@@ -19,6 +19,11 @@ const EVALUATE = `
   WITH catalog AS (
     SELECT c.sku::text AS sku, c.duty::text AS duty, c.filter_type::text AS filter_type, c.catalog_active AS is_active,
       (public.el35796_millard_exception_approved(c) OR public.ea17203_millard_exception_approved(c)) AS millard_exception,
+      -- run_500 (operator 2026-11-27): Mopar diesel pickup kit pair, verified ELIMFILTERS OEM product identity instead of a FRAM / MANN base
+      coalesce(c.sku IN ('EF37291','EF37867') AND c.codigo_base=c.sku
+        AND c.enrichment_data->'codigo_base_governance'->>'identity_type'='ELIMFILTERS_OEM_PRODUCT'
+        AND c.enrichment_data->'codigo_base_governance'->>'internal_product_identity_verified'='true'
+        AND c.enrichment_data->'codigo_base_governance'->'approved_manual_exception'->>'approval_id'='LD_MOPAR_KIT_OPERATOR_EXCEPTION_20261127', false) AS mopar_exception,
       nullif(trim(c.codigo_base::text),'') AS codigo_base,
       upper(regexp_replace(coalesce(c.codigo_base::text,''), '[^A-Za-z0-9]', '', 'g')) AS base_key,
       coalesce(c.enrichment_data->'codigo_base_governance'->>'state', c.enrichment_data->'codigo_base_governance'->>'governance_state', '') AS governance_state,
@@ -56,8 +61,8 @@ const EVALUATE = `
   evaluated AS (
     SELECT x.*,
       (x.codigo_base IS NOT NULL AND x.governance_state='CANONICAL_VERIFIED') AS canonical_governance_ok,
-      (x.regional_policy_state='POLICY_ALIGNED' OR x.millard_exception) AS regional_policy_ok,
-      (x.millard_exception OR x.active_identity_count=1 AND upper(regexp_replace(coalesce(x.identity_part_number,''), '[^A-Za-z0-9]', '', 'g'))=x.base_key
+      (x.regional_policy_state='POLICY_ALIGNED' OR x.millard_exception OR x.mopar_exception) AS regional_policy_ok,
+      (x.millard_exception OR x.mopar_exception OR x.active_identity_count=1 AND upper(regexp_replace(coalesce(x.identity_part_number,''), '[^A-Za-z0-9]', '', 'g'))=x.base_key
         AND ((x.origin_group='EUROPEAN' AND x.identity_origin_group='EUROPEAN' AND upper(coalesce(x.identity_brand,'')) IN ('MANN-FILTER','MANN FILTER','MANN'))
           OR (x.origin_group='NON_EUROPEAN' AND x.identity_origin_group='NON_EUROPEAN' AND upper(coalesce(x.identity_brand,''))='FRAM'))) AS canonical_identity_ok,
       (x.codigo_base IS NOT NULL AND x.base_key<>'' AND x.base_sku_count=1) AS base_code_unique,
