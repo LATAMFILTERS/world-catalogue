@@ -20,7 +20,7 @@ const EVALUATE = `
     SELECT c.sku::text AS sku, c.duty::text AS duty, c.filter_type::text AS filter_type, c.catalog_active AS is_active,
       (public.el35796_millard_exception_approved(c) OR public.ea17203_millard_exception_approved(c)) AS millard_exception,
       -- run_500 (operator 2026-11-27): Mopar diesel pickup kit pair, verified ELIMFILTERS OEM product identity instead of a FRAM / MANN base
-      coalesce(c.sku IN ('EF37291','EF37867') AND c.codigo_base=c.sku
+      coalesce(c.sku IN ('EF37291','EF37867','EK31833') AND c.codigo_base=c.sku
         AND c.enrichment_data->'codigo_base_governance'->>'identity_type'='ELIMFILTERS_OEM_PRODUCT'
         AND c.enrichment_data->'codigo_base_governance'->>'internal_product_identity_verified'='true'
         AND c.enrichment_data->'codigo_base_governance'->'approved_manual_exception'->>'approval_id'='LD_MOPAR_KIT_OPERATOR_EXCEPTION_20261127', false) AS mopar_exception,

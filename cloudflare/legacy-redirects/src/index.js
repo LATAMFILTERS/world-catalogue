@@ -1,4 +1,11 @@
 const REDIRECTS = new Map([
+  // run_501: ES91833 retired into the EK31833 pickup kit.
+  ["/part/ES91833", "/part/EK31833/"],
+  ["/part/ES91833/", "/part/EK31833/"],
+  ["/es/part/ES91833", "/es/part/EK31833/"],
+  ["/es/part/ES91833/", "/es/part/EK31833/"],
+  ["/pt/part/ES91833", "/pt/part/EK31833/"],
+  ["/pt/part/ES91833/", "/pt/part/EK31833/"],
   // Part Search: retired SKUs to their published successors (run_303 / run_331).
   ["/part/EA30112", "/part/EA13611/"],
   ["/part/EA30112/", "/part/EA13611/"],
