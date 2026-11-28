@@ -6,6 +6,7 @@ export default function SchemaMarkup() {
         '@type': 'Organization',
         '@id': 'https://elimfilters.com/#organization',
         name: 'ELIMFILTERS',
+        alternateName: ['Elim Filters', 'ELIM FILTERS'],
         legalName: 'Kleo Technology LLC',
         url: 'https://elimfilters.com/',
         logo: {
@@ -45,7 +46,7 @@ export default function SchemaMarkup() {
         '@type': 'Brand',
         '@id': 'https://elimfilters.com/#brand',
         name: 'ELIMFILTERS',
-        alternateName: 'ELIMFILTERS® Total Asset Protection',
+        alternateName: ['Elim Filters', 'ELIM FILTERS', 'ELIMFILTERS® Total Asset Protection'],
         slogan: 'Advanced Filtration Engineering & Intelligence',
         url: 'https://elimfilters.com/',
         owner: {
@@ -58,6 +59,7 @@ export default function SchemaMarkup() {
         '@id': 'https://elimfilters.com/#website',
         url: 'https://elimfilters.com/',
         name: 'ELIMFILTERS',
+        alternateName: ['Elim Filters', 'ELIM FILTERS'],
         publisher: {
           '@id': 'https://elimfilters.com/#organization',
         },
