@@ -91,8 +91,6 @@
 /knowledge-system/compare/total-cost-of-ownership      /knowledge-center/engineering/total-cost-of-ownership 301
 /knowledge-system/compare/total-cost-of-ownership/     /knowledge-center/engineering/total-cost-of-ownership/ 301
 
-# ── Wildcard catch-all (any remaining /knowledge-system/* path) ──────────────
-/knowledge-system/*                                    /knowledge-center/:splat 301
 
 # ── Product SKU renumbering (2026-10-04): fuel/water separators EF9 → ES9 (HYDROCORE™) ──
 /products/ef90668    /products/es91026/ 301
@@ -350,3 +348,6 @@
 /turbine-fuel/                                          /technologies/turbocore/ 301
 /zh                                                     / 301
 /zh/                                                    / 301
+
+# Wildcard catch-all. MUST stay last: Cloudflare Pages treats every rule after a splat as dynamic (limit 100).
+/knowledge-system/*                                    /knowledge-center/:splat 301
