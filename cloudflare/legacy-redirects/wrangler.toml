@@ -736,4 +736,16 @@ routes = [
   { pattern = "www.elimfilters.com/turbine-fuel*", zone_name = "elimfilters.com" },
   { pattern = "elimfilters.com/zh*", zone_name = "elimfilters.com" },
   { pattern = "www.elimfilters.com/zh*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/part/EA30112*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/es/part/EA30112*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/pt/part/EA30112*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/part/EA32338*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/es/part/EA32338*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/pt/part/EA32338*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/part/EA33062*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/es/part/EA33062*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/pt/part/EA33062*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/part/EA39450*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/es/part/EA39450*", zone_name = "elimfilters.com" },
+  { pattern = "part-search.elimfilters.com/pt/part/EA39450*", zone_name = "elimfilters.com" }
 ]
