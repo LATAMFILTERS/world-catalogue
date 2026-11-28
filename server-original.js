@@ -1900,6 +1900,17 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const qNormalized = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
 
 
+    // Reference shared by a kit and its own filters (set by the strict part-number guard): kit first.
+    if (Array.isArray(req.elimKitFamily)) {
+      const family = await client.query(
+        `SELECT * FROM elimfilters_catalog_active_v WHERE sku = ANY($1::text[]) ORDER BY array_position($1::text[], sku::text)`,
+        [req.elimKitFamily]
+      );
+      const products = family.rows.map(r => buildFilterData(r, lang));
+      await enrichAlternatives(products, client);
+      return res.json({ success: true, results: products, source: 'kit_family' });
+    }
+
     // A retired row that names a successor (resolution_status.superseded_by) is not out of scope:
     // the search goes on and finds the successor through its references.
     const excludedSku = await client.query(
