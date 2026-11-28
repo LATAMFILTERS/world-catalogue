@@ -931,6 +931,11 @@ function permanentRedirect(url, destinationPath) {
 export default {
   async fetch(request) {
     const url = new URL(request.url);
+
+    // Part Search has no Spanish home page. Host check: elimfilters.com/es/ is a real page.
+    if (url.hostname === "part-search.elimfilters.com" && (url.pathname === "/es" || url.pathname === "/es/")) {
+      return permanentRedirect(url, "/");
+    }
     const exactDestination = REDIRECTS.get(url.pathname);
 
     if (exactDestination) {
